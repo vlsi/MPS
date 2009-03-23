@@ -39,7 +39,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6627_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6627_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -51,45 +51,15 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6627_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6627_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_6627_2(context, node));
-    editorCell.addEditorCell(this.createConstant_6627_3(context, node, ""));
-    editorCell.addEditorCell(this.createCollection_6627_3(context, node));
-    editorCell.addEditorCell(this.createCollection_6627_4(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_6627_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6627_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6627_2(context, node, "reference antiquotation"));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_6627_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6627_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_6627_3(context, node, ""));
     editorCell.addEditorCell(this.createConstant_6627_4(context, node, "reference role:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_0(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_6627_4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6627_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6627_5(context, node, "source concept:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_1(context, node));
     return editorCell;
@@ -288,12 +258,17 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6627_1");
   }
 
-  private static void setupBasic_Collection_6627_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6627_2");
-  }
-
   private static void setupBasic_Constant_6627_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6627_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_6627_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -302,6 +277,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -309,16 +285,8 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_6627_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6627_3");
-  }
-
   private static void setupBasic_Constant_6627_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6627_4");
-  }
-
-  private static void setupBasic_Collection_6627_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6627_4");
   }
 
   private static void setupBasic_Constant_6627_5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -327,10 +295,28 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ReadOnlyModelAccessor_6627_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_6627_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ReadOnlyModelAccessor_6627_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_6627_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_6627_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

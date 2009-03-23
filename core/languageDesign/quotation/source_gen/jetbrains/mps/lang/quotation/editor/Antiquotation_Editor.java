@@ -36,7 +36,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_2990_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2990_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -48,35 +48,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_2990_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2990_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2990_2(context, node, "node antiquotation "));
     editorCell.addEditorCell(this.createConstant_2990_3(context, node, ""));
-    editorCell.addEditorCell(this.createCollection_2990_2(context, node));
-    editorCell.addEditorCell(this.createCollection_2990_3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_2990_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2990_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2990_4(context, node, "attributed node concept:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2990_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_2990_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2990_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2990_5(context, node, "attributed node role in parent:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2990_0(context, node));
     return editorCell;
@@ -281,6 +261,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2990_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2990_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_2990_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -289,6 +278,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -296,16 +286,8 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Collection_2990_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2990_2");
-  }
-
   private static void setupBasic_Constant_2990_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2990_4");
-  }
-
-  private static void setupBasic_Collection_2990_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2990_3");
   }
 
   private static void setupBasic_Constant_2990_5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -314,10 +296,28 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ReadOnlyModelAccessor_2990_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_2990_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ReadOnlyModelAccessor_2990_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_2990_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_2990_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

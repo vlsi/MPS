@@ -157,7 +157,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6299_6(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6299_6(editorCell, node, context);
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
@@ -174,13 +174,13 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition6299_10(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_6299_10(context, node));
     }
-    editorCell.addEditorCell(this.createCollection_6299_12(context, node));
+    editorCell.addEditorCell(this.createConstant_6299_15(context, node, "annotations:"));
     editorCell.addEditorCell(this.createRefNodeList_6299_2(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_6299_7(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6299_7(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -191,7 +191,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6299_8(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6299_8(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -202,7 +202,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6299_9(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6299_9(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -213,7 +213,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_6299_10(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6299_10(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -230,16 +230,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_6299_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_6299_12(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6299_12(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6299_15(context, node, "annotations:"));
     return editorCell;
   }
 
@@ -853,6 +843,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -874,6 +865,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -895,6 +887,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -916,6 +909,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -954,12 +948,12 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_annotation");
   }
 
-  private static void setupBasic_Collection_6299_12(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6299_12");
+  private static void setupBasic_Constant_6299_15(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6299_15");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -967,12 +961,17 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_6299_15(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6299_15");
-  }
-
   private static void setupBasic_RefNodeList_6299_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_annotation_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefNode_6299_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
