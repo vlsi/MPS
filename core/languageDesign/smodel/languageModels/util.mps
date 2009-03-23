@@ -466,20 +466,35 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237754018617">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237754021337">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1237754018618">
-              <link role="variableDeclaration" targetNodeId="1237751548612" resolveInfo="myConceptToLanguage" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237754023998">
-              <link role="baseMethodDeclaration" targetNodeId="1.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237754026141">
-                <link role="variableDeclaration" targetNodeId="1237753875951" resolveInfo="conceptFQName" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237800683627">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237800683628">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237800690197">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237800690198">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1237800690199">
+                  <link role="variableDeclaration" targetNodeId="1237751548612" resolveInfo="myConceptToLanguage" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237800690200">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1237800690201">
+                    <link role="variableDeclaration" targetNodeId="1237753875951" resolveInfo="conceptFQName" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237800690202">
+                    <link role="variableDeclaration" targetNodeId="1237753914505" resolveInfo="l" />
+                  </node>
+                </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237754029194">
-                <link role="variableDeclaration" targetNodeId="1237753914505" resolveInfo="l" />
-              </node>
             </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1237800692721">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237800692722">
+              <link role="variableDeclaration" targetNodeId="1237753914505" resolveInfo="l" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237800692723" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237800694069">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237800695946">
+            <link role="variableDeclaration" targetNodeId="1237753914505" resolveInfo="l" />
           </node>
         </node>
       </node>

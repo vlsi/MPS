@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.smodel" />
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.lang.smodel.util" />
+    <model modelUID="r:7e967a7c-8f21-4c1f-a331-9afa31a24388(jetbrains.mps.lang.smodel.util)" />
   </accessoryModels>
   <generators>
     <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
