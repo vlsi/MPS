@@ -22,7 +22,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   }
 
   public EditorCell createCollection_4621_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4621_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

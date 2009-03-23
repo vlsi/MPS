@@ -69,6 +69,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812699196" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1216860146346">
@@ -91,6 +92,7 @@
           </node>
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812795593" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217004808034">
@@ -123,6 +125,7 @@
           </node>
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812805408" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217884859679">
@@ -145,6 +148,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812783152" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217890062975">
@@ -172,6 +176,7 @@
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812814378" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217960436029">
@@ -201,6 +206,7 @@
         <property name="noTargetText" value="&lt;node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1217960407512" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812808768" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1218047951855">
@@ -239,6 +245,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812713806" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1218067348270">
@@ -293,6 +300,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812799578" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1221219511506">
@@ -332,6 +340,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812790498" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1229477688085">
@@ -354,6 +363,7 @@
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812786575" />
     </node>
   </node>
 </model>

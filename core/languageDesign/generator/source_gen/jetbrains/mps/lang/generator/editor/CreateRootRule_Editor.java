@@ -34,7 +34,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_1730_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1730_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -44,6 +44,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1730_1(context, node, "-->"));
     editorCell.addEditorCell(this.createCollection_1730_3(context, node));
     editorCell.addEditorCell(this.createRefCell_1730_1(context, node));
+    editorCell.addEditorCell(this.createConstant_1730_7(context, node, ""));
     return editorCell;
   }
 
@@ -136,6 +137,14 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1730_6(editorCell, node, context);
     setupLabel_Constant_1730_6(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_1730_7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_1730_7(editorCell, node, context);
+    setupLabel_Constant_1730_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -389,6 +398,19 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_1730_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_1730_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1730_7");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1730_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -420,6 +442,9 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefCell_1730_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1730_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition1730_0(SNode node, EditorContext editorContext, IScope scope) {

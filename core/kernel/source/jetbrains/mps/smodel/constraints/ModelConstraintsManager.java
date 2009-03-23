@@ -286,7 +286,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
             } else {
               result = myNodePropertyGettersMap.get(builder.toString());
             }
-            if (result != null) {
+            if (result != null) {                                                                                     
               if (isSetter) {
                 myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
               } else {
