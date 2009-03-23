@@ -26,7 +26,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
   }
 
   public EditorCell createCollection_9629_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9629_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -39,7 +39,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
   }
 
   public EditorCell createCollection_9629_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9629_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -182,6 +182,15 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
   }
 
   private static void setupBasic_RefNode_9629_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_9629_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,6 +199,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };

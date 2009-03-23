@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -26,55 +25,23 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_2981_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2981_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConceptProperty_2981_1(context, node));
     editorCell.addEditorCell(this.createCollection_2981_1(context, node));
-    editorCell.addEditorCell(this.createCollection_2981_2(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_2981_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2981_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConceptProperty_2981_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_2981_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2981_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell2981_0(context, node));
-    editorCell.addEditorCell(this.createCollection_2981_3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_2981_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_2981_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2981_0(context, node, "query"));
-    editorCell.addEditorCell(this.createCollection_2981_4(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_2981_4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2981_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndentCell2981_1(context, node));
     editorCell.addEditorCell(this.createRefNode_2981_1(context, node));
     return editorCell;
   }
@@ -85,16 +52,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     setupLabel_Constant_2981_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  public EditorCell createIndentCell2981_0(EditorContext context, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(context, node);
-    return result;
-  }
-
-  public EditorCell createIndentCell2981_1(EditorContext context, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(context, node);
-    return result;
   }
 
   public EditorCell createRefNode_2981_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -166,32 +123,8 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_2981_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2981_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_2981_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2981_3");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -205,19 +138,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_2981_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2981_4");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -226,6 +147,16 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2981_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConceptProperty_2981_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -235,19 +166,12 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupBasic_Indent_2981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_2981_0");
-  }
-
-  private static void setupBasic_Indent_2981_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_2981_1");
   }
 
   private static void setupLabel_Constant_2981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

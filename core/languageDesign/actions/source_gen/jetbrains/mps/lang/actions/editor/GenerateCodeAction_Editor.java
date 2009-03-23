@@ -34,12 +34,13 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_5804_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5804_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_5804_1(context, node));
+    editorCell.addEditorCell(this.createConstant_5804_8(context, node, "generate code"));
+    editorCell.addEditorCell(this.createProperty_5804_1(context, node));
     editorCell.addEditorCell(this.createConstant_5804_0(context, node, " "));
     editorCell.addEditorCell(this.createConstant_5804_1(context, node, "is applicable:"));
     editorCell.addEditorCell(this.createRefNode_5804_1(context, node));
@@ -52,17 +53,6 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5804_7(context, node, " "));
     editorCell.addEditorCell(this.createConstant_5804_6(context, node, "execute"));
     editorCell.addEditorCell(this.createRefNode_5804_5(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_5804_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5804_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5804_8(context, node, "generate code"));
-    editorCell.addEditorCell(this.createProperty_5804_1(context, node));
     return editorCell;
   }
 
@@ -273,6 +263,15 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_5804_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5804_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -281,6 +280,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -290,6 +290,15 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5804_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5804_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5804_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -298,6 +307,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -307,10 +317,28 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5804_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5804_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_5804_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_smartActionParameter");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5804_4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -319,6 +347,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -328,16 +357,52 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5804_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5804_5");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_5804_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5804_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5804_6");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_5804_2(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5804_7(EditorCell editorCell, SNode node, EditorContext context) {
@@ -346,20 +411,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Collection_5804_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5804_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -373,6 +425,15 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_5804_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_description");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefNode_5804_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
