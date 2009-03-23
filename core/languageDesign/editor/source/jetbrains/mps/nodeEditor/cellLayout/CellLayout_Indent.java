@@ -343,7 +343,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
         appendCell(cell);        
       }
 
-      newLine(true);
+      if (!oldLine.isEmpty()) {
+        newLine(true);
+      }
 
       for (EditorCell cell : newLine) {
         appendCell(cell);
