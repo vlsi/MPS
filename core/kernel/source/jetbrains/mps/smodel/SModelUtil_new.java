@@ -113,7 +113,9 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static String getGenuineLinkRole(LinkDeclaration linkDeclaration) {
-    return getGenuineLinkDeclaration(linkDeclaration).getRole();
+    LinkDeclaration genuinueLinkDeclaration = getGenuineLinkDeclaration(linkDeclaration);
+    if (genuinueLinkDeclaration == null) return null;
+    return genuinueLinkDeclaration.getRole();
   }
 
   public static LinkMetaclass getGenuineLinkMetaclass(LinkDeclaration linkDeclaration) {
