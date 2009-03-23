@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -139,7 +139,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     if (this.myListHandler_9459_0 == null) {
       this.myListHandler_9459_0 = new Annotation_Editor.annotationMethodListHandler_9459_0(node, "annotationMethod", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_9459_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9459_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9459_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -152,7 +152,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     if (this.myListHandler_9459_1 == null) {
       this.myListHandler_9459_1 = new Annotation_Editor.annotationListHandler_9459_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_9459_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9459_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9459_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -165,7 +165,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     if (this.myListHandler_9459_2 == null) {
       this.myListHandler_9459_2 = new Annotation_Editor.annotationListHandler_9459_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_9459_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9459_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9459_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -265,6 +265,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -307,6 +308,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -337,6 +339,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };

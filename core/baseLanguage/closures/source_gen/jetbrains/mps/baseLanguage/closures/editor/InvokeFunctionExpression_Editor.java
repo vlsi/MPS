@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -87,7 +87,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     if (this.myListHandler_1988_0 == null) {
       this.myListHandler_1988_0 = new InvokeFunctionExpression_Editor.parameterListHandler_1988_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1988_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1988_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1988_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

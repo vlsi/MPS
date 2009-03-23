@@ -8,7 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -40,7 +42,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8171_0 == null) {
       this.myListHandler_8171_0 = new TestMethodList_Editor.testMethodListHandler_8171_0(node, "testMethod", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8171_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8171_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8171_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -52,6 +54,15 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_8171_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_testMethod");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_8171_0(EditorCell editorCell, SNode node, EditorContext context) {

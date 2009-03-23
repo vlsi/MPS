@@ -11,8 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -250,7 +248,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_5695_1 == null) {
       this.myListHandler_5695_1 = new StaticMethodDeclaration_Editor.throwsItemListHandler_5695_0(node, "throwsItem", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_5695_1.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_5695_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_5695_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -263,7 +261,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_5695_2 == null) {
       this.myListHandler_5695_2 = new StaticMethodDeclaration_Editor.annotationListHandler_5695_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_5695_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_5695_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_5695_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -276,7 +274,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_5695_3 == null) {
       this.myListHandler_5695_3 = new StaticMethodDeclaration_Editor.annotationListHandler_5695_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_5695_3.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_5695_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_5695_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -505,6 +503,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -531,6 +530,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };

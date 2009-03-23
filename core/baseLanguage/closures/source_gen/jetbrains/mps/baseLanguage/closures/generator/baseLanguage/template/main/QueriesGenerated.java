@@ -2326,7 +2326,7 @@ public class QueriesGenerated {
       {
         SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ptype), true);
       }
-      SPropertyOperations.set(pd, "name", "param" + idx);
+      SPropertyOperations.set(pd, "name", "" + ("param" + idx));
       idx = idx + 1;
       ListSequence.fromList(res).addElement(pd);
     }
@@ -2339,7 +2339,7 @@ public class QueriesGenerated {
     List<SNode> res = ListSequence.<SNode>fromArray();
     for(SNode pdecls : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
       SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null);
-      SPropertyOperations.set(ref, "name", "param" + idx);
+      SPropertyOperations.set(ref, "name", "" + ("param" + idx));
       idx = idx + 1;
       ListSequence.fromList(res).addElement(ref);
     }
@@ -2356,7 +2356,7 @@ public class QueriesGenerated {
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(_context.getNode())) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ft), true);
-      SPropertyOperations.set(pd, "name", "param" + idx);
+      SPropertyOperations.set(pd, "name", "" + ("param" + idx));
       idx = idx + 1;
       ListSequence.fromList(res).addElement(pd);
     }
@@ -2524,7 +2524,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2547,7 +2547,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2557,7 +2557,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2567,7 +2567,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2590,7 +2590,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2600,7 +2600,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2610,7 +2610,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2620,7 +2620,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2649,7 +2649,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2659,7 +2659,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2669,7 +2669,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2679,7 +2679,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2715,7 +2715,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2725,7 +2725,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2735,7 +2735,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2745,7 +2745,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2755,7 +2755,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2765,7 +2765,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2787,7 +2787,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2797,7 +2797,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2807,7 +2807,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2817,7 +2817,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2840,7 +2840,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2850,7 +2850,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2860,7 +2860,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2870,7 +2870,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2893,7 +2893,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2903,7 +2903,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2913,7 +2913,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2923,7 +2923,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2946,7 +2946,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2956,7 +2956,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2966,7 +2966,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2976,7 +2976,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -2999,7 +2999,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3009,7 +3009,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3019,7 +3019,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3029,7 +3029,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3039,7 +3039,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3049,7 +3049,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3072,7 +3072,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3082,7 +3082,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3092,7 +3092,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3102,7 +3102,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3112,7 +3112,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3122,7 +3122,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3145,7 +3145,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3155,7 +3155,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3165,7 +3165,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3175,7 +3175,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3185,7 +3185,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3195,7 +3195,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3205,7 +3205,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3215,7 +3215,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3225,7 +3225,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3235,7 +3235,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3245,7 +3245,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3255,7 +3255,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3265,7 +3265,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3275,7 +3275,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3285,7 +3285,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3295,7 +3295,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3305,7 +3305,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3315,7 +3315,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3325,7 +3325,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3335,7 +3335,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3345,7 +3345,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3355,7 +3355,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3365,7 +3365,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3375,7 +3375,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3385,7 +3385,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3395,7 +3395,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3405,7 +3405,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int e = 0 ; e < SPropertyOperations.getInteger(_context.getNode(), "second") ; e = e + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "E" + (e + 1));
+      SPropertyOperations.set(sph, "value", "" + ("E" + (e + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;
@@ -3415,7 +3415,7 @@ public class QueriesGenerated {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(int p = 0 ; p < SPropertyOperations.getInteger(_context.getNode(), "first") ; p = p + 1) {
       SNode sph = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", null);
-      SPropertyOperations.set(sph, "value", "P" + (p + 1));
+      SPropertyOperations.set(sph, "value", "" + ("P" + (p + 1)));
       ListSequence.fromList(result).addElement(sph);
     }
     return result;

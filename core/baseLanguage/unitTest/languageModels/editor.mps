@@ -132,7 +132,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1224675173872">
-          <property name="vertical" value="true" />
+          <property name="vertical" value="false" />
           <link role="relationDeclaration" targetNodeId="4.1128555889557" />
           <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224675173873">
             <property name="text" value="&lt;&lt; static fields &gt;&gt;" />
@@ -140,6 +140,8 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800981003">
             <property name="flag" value="true" />
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237821176737" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237821176739" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224675173874">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224675173875">
@@ -164,7 +166,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1224675173879">
-          <property name="vertical" value="true" />
+          <property name="vertical" value="false" />
           <link role="relationDeclaration" targetNodeId="4.1107880067339" />
           <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224675173880">
             <property name="text" value="&lt;&lt; methods &gt;&gt;" />
@@ -172,6 +174,8 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800981008">
             <property name="flag" value="true" />
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237821176741" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237821176742" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800981010" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800981011">
@@ -191,11 +195,13 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171931858963">
     <link role="conceptDeclaration" targetNodeId="1.1171931858461" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1171931858964">
-      <property name="vertical" value="true" />
+      <property name="vertical" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1171931858462" />
       <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171931858965">
         <property name="text" value="&lt;&lt; test methods &gt;&gt;" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237821176743" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237821176745" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171978123200">

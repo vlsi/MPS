@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -142,7 +142,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_2231_0 == null) {
       this.myListHandler_2231_0 = new LocalVariableDeclaration_Editor.annotationListHandler_2231_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_2231_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_2231_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_2231_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -155,7 +155,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_2231_1 == null) {
       this.myListHandler_2231_1 = new LocalVariableDeclaration_Editor.annotationListHandler_2231_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_2231_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_2231_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_2231_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -340,6 +340,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -362,6 +363,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_2231_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_annotation_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_2231_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

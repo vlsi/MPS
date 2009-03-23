@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -127,7 +127,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8986_0 == null) {
       this.myListHandler_8986_0 = new UnrestrictedFunctionType_Editor.parameterTypeListHandler_8986_0(node, "parameterType", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8986_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8986_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8986_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -140,7 +140,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8986_1 == null) {
       this.myListHandler_8986_1 = new UnrestrictedFunctionType_Editor.throwsTypeListHandler_8986_0(node, "throwsType", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8986_1.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8986_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8986_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

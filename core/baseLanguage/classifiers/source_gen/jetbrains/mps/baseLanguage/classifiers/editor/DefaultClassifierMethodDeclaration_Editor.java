@@ -14,8 +14,7 @@ import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Compo
 import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent;
 import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -205,7 +204,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     if (this.myListHandler_7205_0 == null) {
       this.myListHandler_7205_0 = new DefaultClassifierMethodDeclaration_Editor.annotationListHandler_7205_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7205_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7205_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7205_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -218,7 +217,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     if (this.myListHandler_7205_1 == null) {
       this.myListHandler_7205_1 = new DefaultClassifierMethodDeclaration_Editor.parameterListHandler_7205_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7205_1.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7205_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7205_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -231,7 +230,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     if (this.myListHandler_7205_2 == null) {
       this.myListHandler_7205_2 = new DefaultClassifierMethodDeclaration_Editor.throwsItemListHandler_7205_0(node, "throwsItem", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7205_2.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7205_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7205_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -244,7 +243,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     if (this.myListHandler_7205_3 == null) {
       this.myListHandler_7205_3 = new DefaultClassifierMethodDeclaration_Editor.annotationListHandler_7205_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7205_3.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7205_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7205_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -345,6 +344,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -481,6 +481,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };

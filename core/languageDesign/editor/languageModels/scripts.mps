@@ -894,6 +894,99 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237817800468">
+      <property name="description" value="CellModel_RefNodeList migration" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237817800469">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237817800470">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237818645808">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1237818650030">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237818650200">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1237818654190">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237818654191">
+                    <link role="concept" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                  </node>
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237818646499">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237818645809" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237818648535">
+                  <link role="link" targetNodeId="1.1140524464360" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237818327316">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237818327317">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237818634252">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1237818637076">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237818640159">
+                    <property name="value" value="false" />
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237818634747">
+                    <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237818634253" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237818636138">
+                      <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237818564823">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237818564824">
+                  <property name="name" value="indentStyle" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237818564825">
+                    <link role="concept" targetNodeId="1.1237308012275" resolveInfo="IndentLayoutNewLineStyleClassItem" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237818577491">
+                    <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1237818581262">
+                      <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237818581263">
+                        <link role="concept" targetNodeId="1.1237308012275" resolveInfo="IndentLayoutNewLineStyleClassItem" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237818370039">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237818375848">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237818370595">
+                    <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237818370040" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237818375086">
+                      <link role="link" targetNodeId="1.1219418656006" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1237818377133">
+                    <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237818605730">
+                      <link role="variableDeclaration" targetNodeId="1237818564824" resolveInfo="indentStyle" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237818336380">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237818334513" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237818358025">
+                <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237817989291">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237817989292">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237817995003">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237818022185">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237818023534" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237817995703">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237817995004" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237818021332">
+                  <link role="link" targetNodeId="1.1140524464360" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

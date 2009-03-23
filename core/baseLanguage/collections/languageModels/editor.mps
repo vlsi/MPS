@@ -1354,6 +1354,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1206657763839">
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1206655902276" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237821002967" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206657759618">
         <property name="text" value="}" />

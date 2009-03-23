@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -130,7 +130,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_0 == null) {
       this.myListHandler_3195_0 = new EnumClass_Editor.fieldListHandler_3195_0(node, "field", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -143,7 +143,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_1 == null) {
       this.myListHandler_3195_1 = new EnumClass_Editor.enumConstantListHandler_3195_0(node, "enumConstant", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -156,7 +156,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_2 == null) {
       this.myListHandler_3195_2 = new EnumClass_Editor.constructorListHandler_3195_0(node, "constructor", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -169,7 +169,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_3 == null) {
       this.myListHandler_3195_3 = new EnumClass_Editor.methodListHandler_3195_0(node, "method", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_3.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -182,7 +182,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_4 == null) {
       this.myListHandler_3195_4 = new EnumClass_Editor.staticMethodListHandler_3195_0(node, "staticMethod", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_4.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_4.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -195,7 +195,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3195_5 == null) {
       this.myListHandler_3195_5 = new EnumClass_Editor.implementedInterfaceListHandler_3195_0(node, "implementedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3195_5.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3195_5.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -241,6 +241,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -302,6 +303,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -331,6 +333,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -345,6 +348,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -359,6 +363,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -439,6 +444,15 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_3195_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_implementedInterface");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_RefNodeList_3195_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -78,6 +78,7 @@
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200499248172">
           <property name="text" value="" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731260" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200498183022">
         <property name="text" value="&gt;" />
@@ -137,6 +138,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1173996742260">
         <link role="editorComponent" targetNodeId="3.1173990860683" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731220" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1179333322202">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Flow" id="1179333322203" />
@@ -225,6 +227,7 @@
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1174318197094" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174318231882" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731261" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174318222192">
         <property name="text" value=")" />
@@ -303,6 +306,7 @@
           <property name="text" value="]" />
           <link role="styleClass" targetNodeId="1219064328208" resolveInfo="SquareBracket" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731216" />
       </node>
       <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1202148806286">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1202148806287">
@@ -336,10 +340,12 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1202148817970">
           <property name="separatorText" value="," />
           <link role="relationDeclaration" targetNodeId="4.1109201940907" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731258" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1202148814343">
           <property name="text" value="&gt;" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731256" />
       </node>
     </node>
   </node>

@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -182,7 +182,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8963_0 == null) {
       this.myListHandler_8963_0 = new Interface_Editor.methodListHandler_8963_0(node, "method", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8963_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8963_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -195,7 +195,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8963_1 == null) {
       this.myListHandler_8963_1 = new Interface_Editor.extendedInterfaceListHandler_8963_0(node, "extendedInterface", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8963_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8963_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -208,7 +208,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8963_2 == null) {
       this.myListHandler_8963_2 = new Interface_Editor.staticFieldListHandler_8963_0(node, "staticField", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8963_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8963_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -221,7 +221,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8963_3 == null) {
       this.myListHandler_8963_3 = new Interface_Editor.annotationListHandler_8963_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8963_3.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8963_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -234,7 +234,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if (this.myListHandler_8963_4 == null) {
       this.myListHandler_8963_4 = new Interface_Editor.annotationListHandler_8963_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_8963_4.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_8963_4.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_4(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -376,6 +376,7 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -385,6 +386,15 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_8963_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_extendedInterface");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Component_8963_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -397,6 +407,7 @@ public class Interface_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -427,6 +438,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -457,6 +469,7 @@ public class Interface_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };

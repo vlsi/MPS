@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -64,7 +64,7 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
     if (this.myListHandler_4662_0 == null) {
       this.myListHandler_4662_0 = new MapInitializer_Editor.entriesListHandler_4662_0(node, "entries", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_4662_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_4662_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4662_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

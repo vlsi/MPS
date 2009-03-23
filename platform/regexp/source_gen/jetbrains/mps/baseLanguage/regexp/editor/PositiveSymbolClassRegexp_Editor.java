@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -61,7 +61,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     if (this.myListHandler_1580_0 == null) {
       this.myListHandler_1580_0 = new PositiveSymbolClassRegexp_Editor.partListHandler_1580_0(node, "part", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_1580_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_1580_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1580_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

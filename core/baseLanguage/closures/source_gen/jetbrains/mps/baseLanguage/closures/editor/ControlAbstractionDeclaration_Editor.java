@@ -9,8 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -182,7 +181,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_7643_0 == null) {
       this.myListHandler_7643_0 = new ControlAbstractionDeclaration_Editor.annotationListHandler_7643_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7643_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7643_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7643_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -195,7 +194,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_7643_1 == null) {
       this.myListHandler_7643_1 = new ControlAbstractionDeclaration_Editor.parameterListHandler_7643_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7643_1.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7643_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7643_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -208,7 +207,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_7643_2 == null) {
       this.myListHandler_7643_2 = new ControlAbstractionDeclaration_Editor.annotationListHandler_7643_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7643_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7643_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7643_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -221,7 +220,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_7643_3 == null) {
       this.myListHandler_7643_3 = new ControlAbstractionDeclaration_Editor.typeVariableDeclarationListHandler_7643_0(node, "typeVariableDeclaration", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7643_3.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7643_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7643_3(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -342,6 +341,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
@@ -465,6 +465,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
 
       };
