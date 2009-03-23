@@ -241,6 +241,15 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9503_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9503_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_9503_1(EditorCell editorCell, SNode node, EditorContext context) {
