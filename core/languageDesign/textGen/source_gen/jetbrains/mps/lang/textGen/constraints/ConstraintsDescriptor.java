@@ -5,6 +5,10 @@ package jetbrains.mps.lang.textGen.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_operationName_PropertyConstraint;
+import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_DefaultSearchScope;
+import jetbrains.mps.lang.textGen.constraints.PrivateMethodDeclaration_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

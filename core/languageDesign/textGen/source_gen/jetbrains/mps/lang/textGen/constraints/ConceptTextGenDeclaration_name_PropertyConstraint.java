@@ -24,7 +24,7 @@ public class ConceptTextGenDeclaration_name_PropertyConstraint implements IModel
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptDeclaration", false), "name") + "_TextGen2";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptDeclaration", false), "name") + "_TextGen";
   }
 
 }

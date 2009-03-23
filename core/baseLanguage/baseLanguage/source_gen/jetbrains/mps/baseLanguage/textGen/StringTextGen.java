@@ -33,7 +33,7 @@ public abstract class StringTextGen {
         result = stringBuilder.toString();
       }
     }
-    textGen.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(s, textGen));
+    textGen.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(result, textGen));
   }
 
   protected static boolean isBadDoubleQuote(String s, int i, final SNodeTextGen textGen) {

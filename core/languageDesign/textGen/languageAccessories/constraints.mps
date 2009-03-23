@@ -54,7 +54,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233750421355">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233750421356">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233750421357">
-                <property name="value" value="_TextGen2" />
+                <property name="value" value="_TextGen" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233750421358">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233750421359">

@@ -14,6 +14,7 @@
       </models>
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+        <generator generatorUID="jetbrains.mps.lang.smodel#1139186730696" />
       </external-templates>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -25,6 +26,20 @@
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="6477ee8f-eec2-4bda-bd85-252b93f5f0ec(jetbrains.mps.lang.textGen#1233678176149)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="2bdcefec-ba49-4b32-ab50-ebc7a41d5090(jetbrains.mps.lang.smodel#1139186730696)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
