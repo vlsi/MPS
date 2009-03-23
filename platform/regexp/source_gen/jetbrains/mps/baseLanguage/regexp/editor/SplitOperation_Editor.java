@@ -22,7 +22,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_0079_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0079_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MatchParensRegexp_Behavior {
@@ -21,7 +21,7 @@ public class MatchParensRegexp_Behavior {
 
   public static int call_getIndex_1223361984345(SNode thisNode) {
     SNode parens = thisNode;
-    List<SNode> parensList = new ArrayList<SNode>();
+    List<SNode> parensList = ListOperations.<SNode>createList();
     Regexp_Behavior.call_getString_1222432436326(Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), parensList);
     return 1 + parensList.indexOf(parens);
   }

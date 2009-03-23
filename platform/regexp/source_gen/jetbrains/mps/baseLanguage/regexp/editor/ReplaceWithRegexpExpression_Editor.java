@@ -24,19 +24,8 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_9889_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9889_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_9889_1(context, node));
-    editorCell.addEditorCell(this.createCollection_9889_2(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9889_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9889_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -44,15 +33,6 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_9889_1(context, node));
     editorCell.addEditorCell(this.createConstant_9889_1(context, node, "in"));
     editorCell.addEditorCell(this.createRefNode_9889_3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9889_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9889_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9889_2(context, node, "  "));
     editorCell.addEditorCell(this.createConstant_9889_3(context, node, "with"));
     editorCell.addEditorCell(this.createRefNode_9889_5(context, node));
@@ -183,10 +163,6 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9889_0");
   }
 
-  private static void setupBasic_Collection_9889_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9889_1");
-  }
-
   private static void setupBasic_Constant_9889_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9889_0");
     {
@@ -217,14 +193,10 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_9889_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_9889_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9889_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -259,6 +231,15 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_9889_2(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_9889_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

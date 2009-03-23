@@ -24,33 +24,13 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_0936_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0936_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_0936_1(context, node));
-    editorCell.addEditorCell(this.createCollection_0936_2(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_0936_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0936_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0936_0(context, node, "replaceAll"));
     editorCell.addEditorCell(this.createRefNode_0936_1(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_0936_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0936_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0936_1(context, node, "  "));
     editorCell.addEditorCell(this.createConstant_0936_2(context, node, "with"));
     editorCell.addEditorCell(this.createRefNode_0936_3(context, node));
@@ -144,10 +124,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_0936_0");
   }
 
-  private static void setupBasic_Collection_0936_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0936_1");
-  }
-
   private static void setupBasic_Constant_0936_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0936_0");
     {
@@ -162,14 +138,10 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0936_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_0936_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0936_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -204,6 +176,15 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0936_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_0936_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

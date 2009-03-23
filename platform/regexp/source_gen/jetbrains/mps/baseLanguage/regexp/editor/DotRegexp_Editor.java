@@ -20,7 +20,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_9914_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9914_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

@@ -24,38 +24,18 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_9156_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9156_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createCollection_9156_1(context, node));
-    editorCell.addEditorCell(this.createCollection_9156_2(context, node));
-    editorCell.addEditorCell(this.createConstant_9156_3(context, node, "}"));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9156_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9156_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9156_0(context, node, "symbol class"));
     editorCell.addEditorCell(this.createProperty_9156_1(context, node));
     editorCell.addEditorCell(this.createConstant_9156_2(context, node, "{"));
-    return editorCell;
-  }
-
-  public EditorCell createCollection_9156_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9156_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9156_1(context, node, "  "));
     editorCell.addEditorCell(this.createConstant_9156_4(context, node, "description:"));
     editorCell.addEditorCell(this.createProperty_9156_3(context, node));
+    editorCell.addEditorCell(this.createConstant_9156_3(context, node, "}"));
     return editorCell;
   }
 
@@ -162,19 +142,6 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9156_0");
   }
 
-  private static void setupBasic_Collection_9156_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9156_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Constant_9156_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9156_0");
     {
@@ -192,12 +159,16 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
   }
 
-  private static void setupBasic_Collection_9156_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9156_2");
+  private static void setupBasic_Constant_9156_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9156_1");
+  }
+
+  private static void setupBasic_Constant_9156_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_9156_2");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
 
       };
@@ -205,16 +176,17 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_9156_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9156_1");
-  }
-
-  private static void setupBasic_Constant_9156_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9156_2");
-  }
-
   private static void setupBasic_Constant_9156_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9156_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_9156_4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -223,6 +195,15 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_9156_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_description");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_9156_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

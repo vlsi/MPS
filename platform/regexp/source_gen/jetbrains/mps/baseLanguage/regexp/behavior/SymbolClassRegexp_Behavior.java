@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -59,10 +59,10 @@ public class SymbolClassRegexp_Behavior {
         SNode left = SLinkOperations.getTarget(iscp, "left", true);
         if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
           SNode tmLeft = left;
-          result.append(Regexp_Behavior.call_getString_1222432436326(tmLeft, new ArrayList<SNode>()));
+          result.append(Regexp_Behavior.call_getString_1222432436326(tmLeft, ListOperations.<SNode>createList()));
         } else if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart")) {
           SNode tmLeft = left;
-          List<SNode> tr = new ArrayList<SNode>();
+          List<SNode> tr = ListOperations.<SNode>createList();
           ListSequence.fromList(tr).addElement(tmLeft);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
         } else
@@ -73,7 +73,7 @@ public class SymbolClassRegexp_Behavior {
         SNode right = SLinkOperations.getTarget(iscp, "left", true);
         if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
           SNode tmrRight = right;
-          List<SNode> tr = new ArrayList<SNode>();
+          List<SNode> tr = ListOperations.<SNode>createList();
           ListSequence.fromList(tr).addElement(tmrRight);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
         } else
