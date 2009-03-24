@@ -56,6 +56,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237897943794">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="licencePath" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233679247700">
     <property name="name" value="LibraryFolder" />

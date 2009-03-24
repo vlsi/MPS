@@ -38,7 +38,6 @@
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d5(jetbrains.mps.build.packaging.editor)" />
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233149986967">
     <link role="conceptDeclaration" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233150025990">
@@ -51,9 +50,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1233150045459">
           <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
           <link role="styleClass" targetNodeId="3v.1203598953979" resolveInfo="projectComponent" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233150056998">
-          <link role="relationDeclaration" targetNodeId="4v.1205340441197" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233150089461">
           <link role="editorComponent" targetNodeId="3v.1224596805841" resolveInfo="IncludeExcludeEditorComponent" />
@@ -110,6 +106,22 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237897978463">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237897978464">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237897983718">
+          <property name="text" value="path to license" />
+          <link role="styleClass" targetNodeId="3v.1203598923024" resolveInfo="keyword" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1237897994105">
+          <link role="relationDeclaration" targetNodeId="1.1237897943794" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237897978466">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233152500147">
         <link role="editorComponent" targetNodeId="3v.1206440283018" resolveInfo="IncludeExcludeInInspector" />
       </node>
@@ -118,6 +130,7 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233679325694">
     <link role="conceptDeclaration" targetNodeId="1.1233679247700" resolveInfo="LibraryFolder" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233679327789">

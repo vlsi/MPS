@@ -20,7 +20,6 @@ public class DistribConfiguration_Styles_StyleSheet {
         this.putAll(PackagingStyles_StyleSheet.getProjectComponent(null));
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
-
     };
   }
 
@@ -40,10 +39,8 @@ public class DistribConfiguration_Styles_StyleSheet {
               cell.getEditorContext()
             ));
           }
-
         });
       }
-
     };
   }
 
@@ -52,7 +49,6 @@ public class DistribConfiguration_Styles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
-
     };
   }
 
@@ -62,7 +58,6 @@ public class DistribConfiguration_Styles_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 

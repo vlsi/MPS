@@ -223,6 +223,14 @@ public class QueriesGenerated {
     return !(MPSModule_Behavior.call_isPackaged_1237471386679(_context.getNode()));
   }
 
+  public static boolean ifMacro_Condition_1237898505805(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "licencePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1237901321779(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "licencePath", true) == null);
+  }
+
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }
@@ -246,6 +254,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1237563071849(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return MPSModule_Behavior.call_createPathFromMPSHome_1237471745588(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1237898470384(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1237901351779(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
   }
 
   public static Iterable sourceNodesQuery_1233670839960(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -275,7 +291,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (IVariableHolder_Behavior.call_findVariable_1234876428215(_context.getCopiedOutputNodeForInputNode(_context.getNode()), SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(it, "antName")) == null);
       }
-
     });
   }
 
@@ -286,7 +301,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (IVariableHolder_Behavior.call_findVariable_1234876428215(_context.getCopiedOutputNodeForInputNode(_context.getNode()), SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(it, "antName")) == null);
       }
-
     });
   }
 

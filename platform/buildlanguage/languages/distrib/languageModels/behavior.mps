@@ -454,6 +454,18 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234793472165" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237900615474">
+      <property name="name" value="getLicensePath" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237900617957" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237900615476">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237900632171">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237900634515">
+            <property name="value" value="license.txt" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237900627705" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230208019849">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230208019850" />
     </node>

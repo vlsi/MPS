@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PlusOperation extends BinaryOperation {
+public class PlusOperation extends jetbrains.mps.buildlanguage.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PlusOperation";
 
   public PlusOperation(SNode node) {

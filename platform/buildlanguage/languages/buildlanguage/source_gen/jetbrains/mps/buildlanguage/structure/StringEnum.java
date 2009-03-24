@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StringEnum extends Enum {
+public class StringEnum extends jetbrains.mps.buildlanguage.structure.Enum {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.StringEnum";
 
   public StringEnum(SNode node) {

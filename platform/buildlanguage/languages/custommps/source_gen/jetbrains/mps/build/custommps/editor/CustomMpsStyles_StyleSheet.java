@@ -27,10 +27,8 @@ public class CustomMpsStyles_StyleSheet {
               cell.getEditorContext()
             ));
           }
-
         });
       }
-
     };
   }
 

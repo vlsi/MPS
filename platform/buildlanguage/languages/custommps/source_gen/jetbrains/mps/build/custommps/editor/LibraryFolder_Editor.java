@@ -8,10 +8,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent;
-import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
-import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
-import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -80,7 +76,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6803_0(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent6803_0 == null) {
-      this.myIncludeExcludeEditorComponent6803_0 = new IncludeExcludeEditorComponent(node);
+      this.myIncludeExcludeEditorComponent6803_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent(node);
     }
     EditorCell editorCell = this.myIncludeExcludeEditorComponent6803_0.createEditorCell(context);
     setupBasic_Component_6803_0(editorCell, node, context);
@@ -89,7 +85,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6803_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6803_0 == null) {
-      this.myConfigurationReferencesEditorComponent6803_0 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6803_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6803_0.createEditorCell(context);
     setupBasic_Component_6803_1(editorCell, node, context);
@@ -98,7 +94,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6803_2(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector6803_0 == null) {
-      this.myIncludeExcludeInInspector6803_0 = new IncludeExcludeInInspector(node);
+      this.myIncludeExcludeInInspector6803_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector(node);
     }
     EditorCell editorCell = this.myIncludeExcludeInInspector6803_0.createEditorCell(context);
     setupBasic_Component_6803_2(editorCell, node, context);
@@ -107,7 +103,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6803_3(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6803_1 == null) {
-      this.myConfigurationReferencesEditorComponent6803_1 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6803_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6803_1.createEditorCell(context);
     setupBasic_Component_6803_3(editorCell, node, context);
@@ -116,7 +112,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6803_4(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent6803_0 == null) {
-      this.myCompositecomponentEntriesEditorComponent6803_0 = new CompositecomponentEntriesEditorComponent(node);
+      this.myCompositecomponentEntriesEditorComponent6803_0 = new jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent(node);
     }
     EditorCell editorCell = this.myCompositecomponentEntriesEditorComponent6803_0.createEditorCell(context);
     setupBasic_Component_6803_4(editorCell, node, context);
@@ -267,7 +263,6 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

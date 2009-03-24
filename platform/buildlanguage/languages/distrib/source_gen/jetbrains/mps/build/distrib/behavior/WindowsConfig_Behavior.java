@@ -36,4 +36,8 @@ public class WindowsConfig_Behavior {
     return "homepage.ico";
   }
 
+  public static String call_getLicensePath_1237900615474(SNode thisNode) {
+    return "license.txt";
+  }
+
 }

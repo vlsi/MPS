@@ -43,7 +43,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
-
         };
         Iterable<IModule> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -56,7 +55,6 @@ public class QueriesGenerated {
                 SPropertyOperations.set(newNode, "name", Module_Behavior.extractModuleProperName_1235487584035((item)));
                 return newNode;
               }
-
             });
           }
         }

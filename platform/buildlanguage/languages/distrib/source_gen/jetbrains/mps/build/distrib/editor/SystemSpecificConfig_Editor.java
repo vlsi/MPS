@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet;
 
 public class SystemSpecificConfig_Editor extends DefaultNodeEditor {
 

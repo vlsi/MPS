@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BooleanLiteral extends PropertyValueExpression {
+public class BooleanLiteral extends jetbrains.mps.buildlanguage.structure.PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.BooleanLiteral";
   public static final String VALUE = "value";
 

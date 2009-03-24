@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IntegerType extends PropertyType {
+public class IntegerType extends jetbrains.mps.buildlanguage.structure.PropertyType {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.IntegerType";
 
   public IntegerType(SNode node) {

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.buildlanguage.plugin.BuildLanguageTool_Tool;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
 

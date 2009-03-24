@@ -424,6 +424,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "antName");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1237900018608(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getLicensePath_1237900615474(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1237900800852(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getLicensePath_1237900615474(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
   }
@@ -649,6 +657,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1237900960279(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1237901191780(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
   }
@@ -675,6 +691,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1237303706714(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true);
+  }
+
+  public static SNode sourceNodeQuery_1237900907410(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "license", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
