@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ContinueStatement extends Statement {
+public class ContinueStatement extends jetbrains.mps.baseLanguage.structure.Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ContinueStatement";
   public static final String LABEL = "label";
 

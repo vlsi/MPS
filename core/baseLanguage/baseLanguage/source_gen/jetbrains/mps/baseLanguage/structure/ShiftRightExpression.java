@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ShiftRightExpression extends BinaryBitwiseOperation {
+public class ShiftRightExpression extends jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ShiftRightExpression";
 
   public ShiftRightExpression(SNode node) {

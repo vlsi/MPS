@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GetCurrentOperation extends AbstractEnumeratorOperation {
+public class GetCurrentOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation";
 
   public GetCurrentOperation(SNode node) {

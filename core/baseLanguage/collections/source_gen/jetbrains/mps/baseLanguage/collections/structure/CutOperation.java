@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CutOperation extends ChunkOperation {
+public class CutOperation extends jetbrains.mps.baseLanguage.collections.structure.ChunkOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.CutOperation";
 
   public CutOperation(SNode node) {

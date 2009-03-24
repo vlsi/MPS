@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveLastElementOperation extends AbstractListOperation {
+public class RemoveLastElementOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation";
 
   public RemoveLastElementOperation(SNode node) {

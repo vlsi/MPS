@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FloatType extends PrimitiveType {
+public class FloatType extends jetbrains.mps.baseLanguage.structure.PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.FloatType";
 
   public FloatType(SNode node) {

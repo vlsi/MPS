@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FloatingPointConstant extends Expression {
+public class FloatingPointConstant extends jetbrains.mps.baseLanguage.structure.Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";
   public static final String VALUE = "value";
 

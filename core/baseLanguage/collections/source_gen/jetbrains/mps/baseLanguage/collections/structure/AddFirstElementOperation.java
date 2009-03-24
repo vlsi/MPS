@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AddFirstElementOperation extends AbstractListOperation {
+public class AddFirstElementOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation";
   public static final String ARGUMENT = "argument";
 
@@ -16,11 +16,11 @@ public class AddFirstElementOperation extends AbstractListOperation {
     super(node);
   }
 
-  public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, AddFirstElementOperation.ARGUMENT);
+  public jetbrains.mps.baseLanguage.structure.Expression getArgument() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, AddFirstElementOperation.ARGUMENT);
   }
 
-  public void setArgument(Expression node) {
+  public void setArgument(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(AddFirstElementOperation.ARGUMENT, node);
   }
 

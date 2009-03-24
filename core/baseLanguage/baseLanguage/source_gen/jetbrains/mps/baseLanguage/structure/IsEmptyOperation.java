@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IsEmptyOperation extends StringBooleanOperation {
+public class IsEmptyOperation extends jetbrains.mps.baseLanguage.structure.StringBooleanOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IsEmptyOperation";
 
   public IsEmptyOperation(SNode node) {

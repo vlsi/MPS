@@ -14,7 +14,6 @@ public class Collections_Style_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -23,7 +22,6 @@ public class Collections_Style_StyleSheet {
       {
         this.set(StyleAttributes.SELECTABLE, false);
       }
-
     };
   }
 
@@ -34,7 +32,6 @@ public class Collections_Style_StyleSheet {
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
-
     };
   }
 
@@ -44,7 +41,6 @@ public class Collections_Style_StyleSheet {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
-
     };
   }
 

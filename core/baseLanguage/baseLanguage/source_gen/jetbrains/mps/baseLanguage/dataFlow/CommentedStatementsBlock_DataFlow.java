@@ -17,7 +17,6 @@ public class CommentedStatementsBlock_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitNop();
       }
-
     });
   }
 

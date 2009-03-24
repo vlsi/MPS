@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MoveNextOperation extends AbstractEnumeratorOperation {
+public class MoveNextOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation";
 
   public MoveNextOperation(SNode node) {

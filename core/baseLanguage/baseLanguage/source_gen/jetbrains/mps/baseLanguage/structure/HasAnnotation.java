@@ -12,12 +12,12 @@ public interface HasAnnotation extends INodeAdapter {
 
   public int getAnnotationsCount();
 
-  public Iterator<AnnotationInstance> annotations();
+  public Iterator<jetbrains.mps.baseLanguage.structure.AnnotationInstance> annotations();
 
-  public List<AnnotationInstance> getAnnotations();
+  public List<jetbrains.mps.baseLanguage.structure.AnnotationInstance> getAnnotations();
 
-  public void addAnnotation(AnnotationInstance node);
+  public void addAnnotation(jetbrains.mps.baseLanguage.structure.AnnotationInstance node);
 
-  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node);
+  public void insertAnnotation(jetbrains.mps.baseLanguage.structure.AnnotationInstance prev, jetbrains.mps.baseLanguage.structure.AnnotationInstance node);
 
 }

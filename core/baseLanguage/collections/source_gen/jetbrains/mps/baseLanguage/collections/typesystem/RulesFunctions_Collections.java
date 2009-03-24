@@ -11,6 +11,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
+import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
@@ -50,9 +51,9 @@ public class RulesFunctions_Collections {
 
   @InferenceMethod()
   public static void setInputSequenceType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
-    // 1. Take input expression
-    // 2. Assert that it is coerceable to sequence
-    // 3. Assign the sequence type to the target
+    //     1. Take input expression
+    //     2. Assert that it is coerceable to sequence
+    //     3. Assign the sequence type to the target
     SNode input = getInput(typeCheckingContext, op);
     if ((input != null)) {
       final SNode elementType_typevar_1184784638219 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -71,9 +72,9 @@ public class RulesFunctions_Collections {
 
   @InferenceMethod()
   public static void setInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
-    // 1. Take input expression
-    // 2. Assert that it is coerceable to sequence
-    // 3. Assign the sequence element type to the target
+    //     1. Take input expression
+    //     2. Assert that it is coerceable to sequence
+    //     3. Assign the sequence element type to the target
     SNode input = getInput(typeCheckingContext, op);
     if ((input != null)) {
       final SNode elementType_typevar_1184844804662 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -92,9 +93,9 @@ public class RulesFunctions_Collections {
 
   @InferenceMethod()
   public static void isInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
-    // 1. Take input expression
-    // 2. Assert that it is coerceable to sequence
-    // 3. Assert that target has sequence element type
+    //     1. Take input expression
+    //     2. Assert that it is coerceable to sequence
+    //     3. Assert that target has sequence element type
     SNode input = getInput(typeCheckingContext, op);
     if ((input != null)) {
       final SNode elementType_typevar_1184850451264 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -178,8 +179,8 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 8:
-                      // don't look inside closures and other code-blocks
-                      // don't look inside commented statements
+                      //                       don't look inside closures and other code-blocks
+                      //                       don't look inside commented statements
                       this.__CP__ = 1;
                       break;
                     case 10:
@@ -197,13 +198,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     return yieldStatements;
   }

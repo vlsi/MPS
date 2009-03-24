@@ -32,7 +32,6 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().before(_context.getNode()));
       }
-
     });
   }
 

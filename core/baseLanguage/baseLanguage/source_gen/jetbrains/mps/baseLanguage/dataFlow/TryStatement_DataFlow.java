@@ -24,7 +24,6 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));
       }
-
     });
     for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode)c);
@@ -33,7 +32,6 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));
         }
-
       });
     }
     _context.getBuilder().emitLabel("afterCatches");

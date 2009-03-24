@@ -20,14 +20,12 @@ public class DoWhileStatement_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));
       }
-
     });
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {
         _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
       }
-
     });
   }
 

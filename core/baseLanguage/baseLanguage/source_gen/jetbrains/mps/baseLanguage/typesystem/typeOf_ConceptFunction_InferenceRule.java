@@ -8,8 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -27,16 +29,16 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new _Quotations.QuotationClass_69().createNode(typeCheckingContext)));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-      // function is expected to return value of any type
+      //       function is expected to return value of any type
       expectedRetType = null;
     }
-    // =============
+    //     =============
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
-    // =============
+    //     =============
     final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (noReturnExpected) {
-      // shouldn't return any values
+      //       shouldn't return any values
       for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
@@ -53,8 +55,8 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       }
     } else
     {
-      // should return subtypes of the 'expected type'
-      // if 'expected type' is null - should still return some value (of any type)
+      //       should return subtypes of the 'expected type'
+      //       if 'expected type' is null - should still return some value (of any type)
       for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
@@ -71,7 +73,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           }
         }
       }
-      // last expression statement can serve as return statement
+      //       last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(func, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);

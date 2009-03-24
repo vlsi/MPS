@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Annotation extends Interface {
+public class Annotation extends jetbrains.mps.baseLanguage.structure.Interface {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Annotation";
 
   public Annotation(SNode node) {

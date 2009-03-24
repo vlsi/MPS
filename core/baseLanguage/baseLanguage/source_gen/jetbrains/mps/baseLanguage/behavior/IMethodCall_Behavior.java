@@ -7,7 +7,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.TypeAnnotable_Behavior;
 
 public class IMethodCall_Behavior {
 
@@ -20,12 +22,11 @@ public class IMethodCall_Behavior {
       public Object select(SNode it) {
         return Expression_Behavior.call_eval_1213877519769(it, module);
       }
-
     })).toGenericArray(Object.class);
   }
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    // is 'experssion' an actual argument in this method call?
+    //     is 'experssion' an actual argument in this method call?
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
       SNode method = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
       int i = SNodeOperations.getIndexInParent(expression);

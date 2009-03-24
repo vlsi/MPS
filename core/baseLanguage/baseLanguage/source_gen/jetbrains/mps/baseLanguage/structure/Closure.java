@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Closure extends ConceptFunction implements Closureoid {
+public class Closure extends jetbrains.mps.baseLanguage.structure.ConceptFunction implements jetbrains.mps.baseLanguage.structure.Closureoid {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Closure";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

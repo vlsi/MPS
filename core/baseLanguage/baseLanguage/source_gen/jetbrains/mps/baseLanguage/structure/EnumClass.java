@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EnumClass extends ClassConcept {
+public class EnumClass extends jetbrains.mps.baseLanguage.structure.ClassConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumClass";
   public static final String ENUM_CONSTANT = "enumConstant";
 
@@ -21,19 +22,19 @@ public class EnumClass extends ClassConcept {
     return this.getChildCount(EnumClass.ENUM_CONSTANT);
   }
 
-  public Iterator<EnumConstantDeclaration> enumConstants() {
+  public Iterator<jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration> enumConstants() {
     return this.children(EnumConstantDeclaration.class, EnumClass.ENUM_CONSTANT);
   }
 
-  public List<EnumConstantDeclaration> getEnumConstants() {
+  public List<jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration> getEnumConstants() {
     return this.getChildren(EnumConstantDeclaration.class, EnumClass.ENUM_CONSTANT);
   }
 
-  public void addEnumConstant(EnumConstantDeclaration node) {
+  public void addEnumConstant(jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration node) {
     this.addChild(EnumClass.ENUM_CONSTANT, node);
   }
 
-  public void insertEnumConstant(EnumConstantDeclaration prev, EnumConstantDeclaration node) {
+  public void insertEnumConstant(jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration prev, jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration node) {
     this.insertChild(prev, EnumClass.ENUM_CONSTANT, node);
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StringType extends Type {
+public class StringType extends jetbrains.mps.baseLanguage.structure.Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StringType";
 
   public StringType(SNode node) {

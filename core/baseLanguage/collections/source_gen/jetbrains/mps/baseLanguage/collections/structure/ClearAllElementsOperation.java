@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClearAllElementsOperation extends AbstractListOperation {
+public class ClearAllElementsOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation";
 
   public ClearAllElementsOperation(SNode node) {

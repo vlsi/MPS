@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ComparatorSortOperation extends InternalSequenceOperation {
+public class ComparatorSortOperation extends jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation";
   public static final String ASCENDING = "ascending";
 
@@ -16,19 +16,19 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
     super(node);
   }
 
-  public Expression getAscending() {
-    return (Expression)this.getChild(Expression.class, ComparatorSortOperation.ASCENDING);
+  public jetbrains.mps.baseLanguage.structure.Expression getAscending() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, ComparatorSortOperation.ASCENDING);
   }
 
-  public void setAscending(Expression node) {
+  public void setAscending(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(ComparatorSortOperation.ASCENDING, node);
   }
 
-  public Expression getComparator() {
+  public jetbrains.mps.baseLanguage.structure.Expression getComparator() {
     return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
-  public void setComparator(Expression node) {
+  public void setComparator(jetbrains.mps.baseLanguage.structure.Expression node) {
     this.setClosure(node);
   }
 

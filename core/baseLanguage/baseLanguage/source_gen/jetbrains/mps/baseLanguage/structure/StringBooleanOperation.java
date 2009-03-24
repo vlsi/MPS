@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StringBooleanOperation extends BaseStringOperation {
+public class StringBooleanOperation extends jetbrains.mps.baseLanguage.structure.BaseStringOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StringBooleanOperation";
 
   public StringBooleanOperation(SNode node) {

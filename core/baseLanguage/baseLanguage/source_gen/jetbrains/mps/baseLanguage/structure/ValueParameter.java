@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ValueParameter extends Expression {
+public class ValueParameter extends jetbrains.mps.baseLanguage.structure.Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ValueParameter";
 
   public ValueParameter(SNode node) {

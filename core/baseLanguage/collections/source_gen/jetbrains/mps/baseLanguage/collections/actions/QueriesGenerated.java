@@ -23,6 +23,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.baseLanguage.collections.actions.ApplicableTypesInfo;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -231,7 +232,6 @@ public class QueriesGenerated {
           }
           return concepts;
         }
-
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
@@ -267,7 +267,6 @@ public class QueriesGenerated {
           }
           return result;
         }
-
       };
       applicableTypesInfo = (ApplicableTypesInfo)calc.calculate();
     }
@@ -299,7 +298,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -326,7 +324,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -362,7 +359,6 @@ public class QueriesGenerated {
         public Object calculate() {
           return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false);
         }
-
       };
       mapType = (SNode)calculable.calculate();
     }
@@ -387,7 +383,6 @@ public class QueriesGenerated {
         public SNode getActionType(String pattern) {
           return SLinkOperations.getTarget(mapType, "valueType", true);
         }
-
       });
     }
     return result;
@@ -415,7 +410,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "add type parameter";
         }
-
       });
     }
     return result;
@@ -444,7 +438,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "list element access";
         }
-
       });
     }
     return result;
@@ -473,7 +466,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "downcast to lower level";
         }
-
       });
     }
     return result;
@@ -501,7 +493,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "initialize with values";
         }
-
       });
     }
     {
@@ -524,7 +515,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "copy elements from sequence";
         }
-
       });
     }
     return result;
@@ -552,7 +542,6 @@ public class QueriesGenerated {
           }
           return result;
         }
-
       };
       applicableTypesInfo = (ApplicableTypesInfo)calc.calculate();
     }
@@ -565,17 +554,16 @@ public class QueriesGenerated {
 
         public boolean met(Object object) {
           if (!(applicableTypesInfo.myApplicableToSequence)) {
-            // remove all subconcepts of SequenceOperation
+            //             remove all subconcepts of SequenceOperation
             return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation");
           }
           if (!(applicableTypesInfo.myApplicableToList)) {
-            // remove all subconcepts of AbstractListOperation
+            //             remove all subconcepts of AbstractListOperation
             return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation");
           }
-          // don't touch anything else
+          //           don't touch anything else
           return false;
         }
-
       };
       if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();

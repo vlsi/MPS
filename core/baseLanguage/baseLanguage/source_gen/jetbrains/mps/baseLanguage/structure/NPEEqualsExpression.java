@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NPEEqualsExpression extends BinaryOperation {
+public class NPEEqualsExpression extends jetbrains.mps.baseLanguage.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression";
 
   public NPEEqualsExpression(SNode node) {

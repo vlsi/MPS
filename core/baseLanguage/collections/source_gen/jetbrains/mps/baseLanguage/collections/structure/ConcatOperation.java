@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConcatOperation extends BinaryOperation {
+public class ConcatOperation extends jetbrains.mps.baseLanguage.collections.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ConcatOperation";
 
   public ConcatOperation(SNode node) {

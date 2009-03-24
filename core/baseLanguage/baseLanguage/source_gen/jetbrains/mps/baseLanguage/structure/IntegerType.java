@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IntegerType extends PrimitiveType {
+public class IntegerType extends jetbrains.mps.baseLanguage.structure.PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerType";
 
   public IntegerType(SNode node) {

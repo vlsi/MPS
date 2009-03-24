@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ListCreatorWithInit extends AbstractContainerCreator {
+public class ListCreatorWithInit extends jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit";
 
   public ListCreatorWithInit(SNode node) {

@@ -29,7 +29,6 @@ public class check_BreakStatement_InferenceRule extends AbstractInferenceRule_Ru
         public boolean accept(SNode it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
-
       });
       if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
         BaseIntentionProvider intentionProvider = null;

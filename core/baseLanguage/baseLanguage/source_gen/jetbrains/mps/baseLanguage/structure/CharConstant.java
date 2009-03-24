@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CharConstant extends Expression {
+public class CharConstant extends jetbrains.mps.baseLanguage.structure.Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CharConstant";
   public static final String CHAR_CONSTANT = "charConstant";
 

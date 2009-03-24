@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class UnionOperation extends BinaryOperation {
+public class UnionOperation extends jetbrains.mps.baseLanguage.collections.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.UnionOperation";
 
   public UnionOperation(SNode node) {

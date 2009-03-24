@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
@@ -24,21 +25,21 @@ public class TypeUtil_Collections {
     if (sequenceType == null) {
       return null;
     }
-    // the following code is not reachable 
+    //     the following code is not reachable 
     if (type == null) {
       return null;
     }
-    // ==========
-    // TEMP FIX FOR DNQ 1
+    //     ==========
+    //     TEMP FIX FOR DNQ 1
     if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
       SNode classifierType = type.getChild("classifierType");
       return new _Quotations.QuotationClass_39().createNode(SNodeOperations.copyNode(classifierType));
     }
-    // END TEMP FIX
-    // ==========
-    // ==========
-    // TEMP FIX FOR DNQ
-    // TODO: extract generics information
+    //     END TEMP FIX
+    //     ==========
+    //     ==========
+    //     TEMP FIX FOR DNQ
+    //     TODO: extract generics information
     if (type != null) {
       SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
       GlobalScope scope = GlobalScope.getInstance();
@@ -55,7 +56,7 @@ public class TypeUtil_Collections {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
         return new _Quotations.QuotationClass_40().createNode(SNodeOperations.copyNode(entity));
       }
-      // ==========
+      //       ==========
       SNode entityIterable = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", Classifier.class, scope));
       SNode entityIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
@@ -63,8 +64,8 @@ public class TypeUtil_Collections {
         return new _Quotations.QuotationClass_41().createNode(SNodeOperations.copyNode(entity));
       }
     }
-    // END FIX
-    // ==========
+    //     END FIX
+    //     ==========
     return null;
   }
 

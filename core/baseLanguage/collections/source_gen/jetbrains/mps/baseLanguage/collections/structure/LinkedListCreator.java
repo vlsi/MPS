@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LinkedListCreator extends AbstractContainerCreator {
+public class LinkedListCreator extends jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator";
 
   public LinkedListCreator(SNode node) {

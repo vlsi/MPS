@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InternalSequenceOperation extends SequenceOperation {
+public class InternalSequenceOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation";
   public static final String CLOSURE = "closure";
 
@@ -16,11 +16,11 @@ public class InternalSequenceOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getClosure() {
-    return (Expression)this.getChild(Expression.class, InternalSequenceOperation.CLOSURE);
+  public jetbrains.mps.baseLanguage.structure.Expression getClosure() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, InternalSequenceOperation.CLOSURE);
   }
 
-  public void setClosure(Expression node) {
+  public void setClosure(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(InternalSequenceOperation.CLOSURE, node);
   }
 

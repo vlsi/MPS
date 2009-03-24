@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NullType extends PrimitiveType {
+public class NullType extends jetbrains.mps.baseLanguage.structure.PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.NullType";
 
   public NullType(SNode node) {

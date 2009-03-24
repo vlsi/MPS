@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LongType extends PrimitiveType {
+public class LongType extends jetbrains.mps.baseLanguage.structure.PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LongType";
 
   public LongType(SNode node) {

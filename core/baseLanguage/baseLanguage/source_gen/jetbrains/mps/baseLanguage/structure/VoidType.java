@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class VoidType extends PrimitiveType {
+public class VoidType extends jetbrains.mps.baseLanguage.structure.PrimitiveType {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VoidType";
 
   public VoidType(SNode node) {

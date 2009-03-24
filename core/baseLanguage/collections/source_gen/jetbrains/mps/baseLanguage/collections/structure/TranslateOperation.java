@@ -8,18 +8,18 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TranslateOperation extends InternalSequenceOperation {
+public class TranslateOperation extends jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation";
 
   public TranslateOperation(SNode node) {
     super(node);
   }
 
-  public Expression getMapper() {
+  public jetbrains.mps.baseLanguage.structure.Expression getMapper() {
     return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
-  public void setMapper(Expression node) {
+  public void setMapper(jetbrains.mps.baseLanguage.structure.Expression node) {
     this.setClosure(node);
   }
 

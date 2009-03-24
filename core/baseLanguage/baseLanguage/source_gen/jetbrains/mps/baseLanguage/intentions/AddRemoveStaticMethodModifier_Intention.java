@@ -44,7 +44,6 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
       }
-
     })) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         return false;

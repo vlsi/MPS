@@ -49,7 +49,6 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variable", false) == oldVariable;
       }
-
     })) {
       SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
     }

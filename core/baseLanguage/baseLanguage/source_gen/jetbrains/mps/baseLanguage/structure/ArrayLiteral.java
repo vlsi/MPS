@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ArrayLiteral extends Expression {
+public class ArrayLiteral extends jetbrains.mps.baseLanguage.structure.Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayLiteral";
   public static final String ITEM = "item";
 
@@ -21,19 +22,19 @@ public class ArrayLiteral extends Expression {
     return this.getChildCount(ArrayLiteral.ITEM);
   }
 
-  public Iterator<Expression> items() {
+  public Iterator<jetbrains.mps.baseLanguage.structure.Expression> items() {
     return this.children(Expression.class, ArrayLiteral.ITEM);
   }
 
-  public List<Expression> getItems() {
+  public List<jetbrains.mps.baseLanguage.structure.Expression> getItems() {
     return this.getChildren(Expression.class, ArrayLiteral.ITEM);
   }
 
-  public void addItem(Expression node) {
+  public void addItem(jetbrains.mps.baseLanguage.structure.Expression node) {
     this.addChild(ArrayLiteral.ITEM, node);
   }
 
-  public void insertItem(Expression prev, Expression node) {
+  public void insertItem(jetbrains.mps.baseLanguage.structure.Expression prev, jetbrains.mps.baseLanguage.structure.Expression node) {
     this.insertChild(prev, ArrayLiteral.ITEM, node);
   }
 

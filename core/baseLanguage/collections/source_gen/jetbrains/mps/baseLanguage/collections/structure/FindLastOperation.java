@@ -8,18 +8,18 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FindLastOperation extends InternalSequenceOperation {
+public class FindLastOperation extends jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.FindLastOperation";
 
   public FindLastOperation(SNode node) {
     super(node);
   }
 
-  public Expression getFilter() {
+  public jetbrains.mps.baseLanguage.structure.Expression getFilter() {
     return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
-  public void setFilter(Expression node) {
+  public void setFilter(jetbrains.mps.baseLanguage.structure.Expression node) {
     this.setClosure(node);
   }
 

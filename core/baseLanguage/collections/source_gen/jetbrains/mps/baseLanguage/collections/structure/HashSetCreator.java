@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class HashSetCreator extends AbstractContainerCreator {
+public class HashSetCreator extends jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator";
 
   public HashSetCreator(SNode node) {

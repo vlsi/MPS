@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.baseLanguage.constraints.InstanceMethodCall_InstanceMethodScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 

@@ -26,7 +26,7 @@ public class ForEachVariableReference_variable_ReferentConstraint extends BaseNo
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // cycle-variable of enclosing 'foreach' cycle
+    //     cycle-variable of enclosing 'foreach' cycle
     List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", false);
     return new NodeListChildrenSearchScope(forEachStatements);
   }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MinusExpression extends BinaryOperation {
+public class MinusExpression extends jetbrains.mps.baseLanguage.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.MinusExpression";
 
   public MinusExpression(SNode node) {

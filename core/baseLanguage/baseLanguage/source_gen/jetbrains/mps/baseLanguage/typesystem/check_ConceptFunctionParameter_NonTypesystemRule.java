@@ -40,7 +40,6 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
         public boolean accept(SNode it) {
           return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));
         }
-
       });
       if (Sequence.fromIterable(seq).isEmpty() && ConceptFunctionParameter_Behavior.call_needConceptFunction_1236687728308(parameter)) {
         {

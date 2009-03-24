@@ -8,18 +8,18 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class VisitAllOperation extends InternalSequenceOperation {
+public class VisitAllOperation extends jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation";
 
   public VisitAllOperation(SNode node) {
     super(node);
   }
 
-  public Expression getVisitor() {
+  public jetbrains.mps.baseLanguage.structure.Expression getVisitor() {
     return this.ensureAdapter(Expression.class, "closure", this.getClosure());
   }
 
-  public void setVisitor(Expression node) {
+  public void setVisitor(jetbrains.mps.baseLanguage.structure.Expression node) {
     this.setClosure(node);
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssignmentExpression extends BaseAssignmentExpression implements TypeDerivable {
+public class AssignmentExpression extends jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression implements jetbrains.mps.baseLanguage.structure.TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

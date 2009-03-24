@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TailOperation extends ChunkOperation {
+public class TailOperation extends jetbrains.mps.baseLanguage.collections.structure.ChunkOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.TailOperation";
 
   public TailOperation(SNode node) {

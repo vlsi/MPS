@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ChunkOperation extends SequenceOperation {
+public class ChunkOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation";
   public static final String LENGTH = "length";
 
@@ -16,11 +16,11 @@ public class ChunkOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getLength() {
-    return (Expression)this.getChild(Expression.class, ChunkOperation.LENGTH);
+  public jetbrains.mps.baseLanguage.structure.Expression getLength() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, ChunkOperation.LENGTH);
   }
 
-  public void setLength(Expression node) {
+  public void setLength(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(ChunkOperation.LENGTH, node);
   }
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.baseLanguage.typesystem._Patterns;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
@@ -66,7 +67,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                             }
                           }
                         }
-
                       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357880", false, false);
                     }
                   }
@@ -102,7 +102,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             }
           }
         }
-
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357849", false, true);
     }
   }

@@ -33,7 +33,6 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
         }
-
       });
     }
     _context.getBuilder().emitLabel("endOfTrue");

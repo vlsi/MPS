@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DisjunctOperation extends BinaryOperation {
+public class DisjunctOperation extends jetbrains.mps.baseLanguage.collections.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation";
 
   public DisjunctOperation(SNode node) {

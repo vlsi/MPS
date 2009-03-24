@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GreaterThanExpression extends BinaryOperation {
+public class GreaterThanExpression extends jetbrains.mps.baseLanguage.structure.BinaryOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.GreaterThanExpression";
 
   public GreaterThanExpression(SNode node) {

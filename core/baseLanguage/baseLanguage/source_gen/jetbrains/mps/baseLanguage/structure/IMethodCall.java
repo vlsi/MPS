@@ -5,23 +5,23 @@ package jetbrains.mps.baseLanguage.structure;
 import java.util.Iterator;
 import java.util.List;
 
-public interface IMethodCall extends TypeDerivable, TypeAnnotable {
+public interface IMethodCall extends jetbrains.mps.baseLanguage.structure.TypeDerivable, jetbrains.mps.baseLanguage.structure.TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IMethodCall";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
 
   public int getActualArgumentsCount();
 
-  public Iterator<Expression> actualArguments();
+  public Iterator<jetbrains.mps.baseLanguage.structure.Expression> actualArguments();
 
-  public List<Expression> getActualArguments();
+  public List<jetbrains.mps.baseLanguage.structure.Expression> getActualArguments();
 
-  public void addActualArgument(Expression node);
+  public void addActualArgument(jetbrains.mps.baseLanguage.structure.Expression node);
 
-  public void insertActualArgument(Expression prev, Expression node);
+  public void insertActualArgument(jetbrains.mps.baseLanguage.structure.Expression prev, jetbrains.mps.baseLanguage.structure.Expression node);
 
-  public BaseMethodDeclaration getBaseMethodDeclaration();
+  public jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration getBaseMethodDeclaration();
 
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node);
+  public void setBaseMethodDeclaration(jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration node);
 
 }

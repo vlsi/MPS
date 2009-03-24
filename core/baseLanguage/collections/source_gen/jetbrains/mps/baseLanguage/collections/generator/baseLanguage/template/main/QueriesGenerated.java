@@ -9,12 +9,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main._Patterns;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -88,7 +90,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1205836176910(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce skip statement to break statement
+    //     Reduce skip statement to break statement
     SNode cl = SNodeOperations.getParent(_context.getNode());
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.collections.structure.ClosureWithInputElement", false, false) == cl) {
@@ -160,7 +162,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207320953223(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce skip statement to break statement
+    //     Reduce skip statement to break statement
     SNode cl = SNodeOperations.getParent(_context.getNode());
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.collections.structure.ValueSupplierBlock", false, false) == cl) {
@@ -259,7 +261,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1224448596468(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce skip statement to break statement
+    //     Reduce skip statement to break statement
     SNode cl = SNodeOperations.getParent(_context.getNode());
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
@@ -272,7 +274,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1224452463389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce stop statement to break statement
+    //     Reduce stop statement to break statement
     SNode cl = SNodeOperations.getParent(_context.getNode());
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
@@ -881,12 +883,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1180967393869(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // 1
+    //     1
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1180967433812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // 2
+    //     2
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
 

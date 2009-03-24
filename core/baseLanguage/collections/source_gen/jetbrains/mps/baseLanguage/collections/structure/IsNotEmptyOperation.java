@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IsNotEmptyOperation extends SequenceOperation {
+public class IsNotEmptyOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation";
 
   public IsNotEmptyOperation(SNode node) {

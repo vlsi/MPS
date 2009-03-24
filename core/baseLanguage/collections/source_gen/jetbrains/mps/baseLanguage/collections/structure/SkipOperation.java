@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SkipOperation extends SequenceOperation {
+public class SkipOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.SkipOperation";
   public static final String ELEMENTS_TO_SKIP = "elementsToSkip";
 
@@ -16,11 +16,11 @@ public class SkipOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getElementsToSkip() {
-    return (Expression)this.getChild(Expression.class, SkipOperation.ELEMENTS_TO_SKIP);
+  public jetbrains.mps.baseLanguage.structure.Expression getElementsToSkip() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, SkipOperation.ELEMENTS_TO_SKIP);
   }
 
-  public void setElementsToSkip(Expression node) {
+  public void setElementsToSkip(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(SkipOperation.ELEMENTS_TO_SKIP, node);
   }
 

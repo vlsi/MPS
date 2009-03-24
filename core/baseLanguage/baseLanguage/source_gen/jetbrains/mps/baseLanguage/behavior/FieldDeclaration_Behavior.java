@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.behavior._Quotations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,7 +32,6 @@ public class FieldDeclaration_Behavior {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isGetter_1213877243833(fieldDeclaration, it);
       }
-
     }).isNotEmpty();
   }
 
@@ -50,7 +50,6 @@ public class FieldDeclaration_Behavior {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isSetter_1213877243896(fieldDeclaration, it);
       }
-
     }).isNotEmpty();
   }
 

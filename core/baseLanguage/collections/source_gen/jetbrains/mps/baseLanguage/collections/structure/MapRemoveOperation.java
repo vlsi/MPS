@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MapRemoveOperation extends MapOperation {
+public class MapRemoveOperation extends jetbrains.mps.baseLanguage.collections.structure.MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation";
   public static final String KEY = "key";
 
@@ -16,11 +16,11 @@ public class MapRemoveOperation extends MapOperation {
     super(node);
   }
 
-  public Expression getKey() {
-    return (Expression)this.getChild(Expression.class, MapRemoveOperation.KEY);
+  public jetbrains.mps.baseLanguage.structure.Expression getKey() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, MapRemoveOperation.KEY);
   }
 
-  public void setKey(Expression node) {
+  public void setKey(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(MapRemoveOperation.KEY, node);
   }
 

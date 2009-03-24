@@ -17,7 +17,6 @@ public class RemarkStatement_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitNop();
       }
-
     });
   }
 

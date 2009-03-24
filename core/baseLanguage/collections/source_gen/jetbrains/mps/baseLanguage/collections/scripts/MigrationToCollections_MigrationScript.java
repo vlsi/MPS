@@ -6,10 +6,12 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.collections.scripts.ParameterType;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -44,7 +46,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -71,7 +72,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -101,7 +101,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -128,7 +127,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -157,7 +155,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -187,7 +184,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -214,7 +210,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -244,7 +239,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -273,7 +267,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -302,7 +295,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -331,7 +323,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -360,7 +351,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -389,7 +379,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -418,7 +407,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -447,7 +435,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -476,7 +463,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -503,7 +489,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -532,7 +517,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -561,7 +545,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -590,7 +573,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -619,7 +601,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -648,7 +629,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -677,7 +657,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -706,7 +685,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -735,7 +713,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
   }
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IntegerConstant extends IntegerLiteral {
+public class IntegerConstant extends jetbrains.mps.baseLanguage.structure.IntegerLiteral {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerConstant";
   public static final String VALUE = "value";
 

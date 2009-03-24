@@ -4,6 +4,33 @@ package jetbrains.mps.baseLanguage.collections.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.WhereOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddAllElementsOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.MapElement_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.ContainsOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.BinaryOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.ForEachVariableReference_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.PageOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAllElementsOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.RemoveElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.SkipOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.TakeOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.GetElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.InternalSequenceOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddSetElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.RemoveSetElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddAllSetElementsOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAllSetElementsOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAtElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddLastElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AddFirstElementOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.DowncastExpression_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.SequenceCreator_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.SingletonSequenceCreator_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.AbstractContainerCreator_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

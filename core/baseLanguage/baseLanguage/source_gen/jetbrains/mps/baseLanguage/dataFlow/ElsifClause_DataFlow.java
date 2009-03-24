@@ -23,7 +23,6 @@ public class ElsifClause_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().after(ElsifClause_Behavior.call_getIfStatement_1213877360521(_context.getNode())));
       }
-
     });
   }
 

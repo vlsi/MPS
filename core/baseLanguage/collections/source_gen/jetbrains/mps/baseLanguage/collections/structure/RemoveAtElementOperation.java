@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveAtElementOperation extends AbstractListOperation {
+public class RemoveAtElementOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation";
   public static final String INDEX = "index";
 
@@ -16,11 +16,11 @@ public class RemoveAtElementOperation extends AbstractListOperation {
     super(node);
   }
 
-  public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, RemoveAtElementOperation.INDEX);
+  public jetbrains.mps.baseLanguage.structure.Expression getIndex() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, RemoveAtElementOperation.INDEX);
   }
 
-  public void setIndex(Expression node) {
+  public void setIndex(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(RemoveAtElementOperation.INDEX, node);
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClearSetOperation extends AbstractSetOperation {
+public class ClearSetOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation";
 
   public ClearSetOperation(SNode node) {

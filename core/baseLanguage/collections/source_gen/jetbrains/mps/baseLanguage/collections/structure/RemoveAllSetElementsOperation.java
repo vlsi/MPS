@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveAllSetElementsOperation extends AbstractSetOperation {
+public class RemoveAllSetElementsOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation";
   public static final String ARGUMENT = "argument";
 
@@ -16,11 +16,11 @@ public class RemoveAllSetElementsOperation extends AbstractSetOperation {
     super(node);
   }
 
-  public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, RemoveAllSetElementsOperation.ARGUMENT);
+  public jetbrains.mps.baseLanguage.structure.Expression getArgument() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, RemoveAllSetElementsOperation.ARGUMENT);
   }
 
-  public void setArgument(Expression node) {
+  public void setArgument(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(RemoveAllSetElementsOperation.ARGUMENT, node);
   }
 

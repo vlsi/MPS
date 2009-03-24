@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SetElementOperation extends AbstractListOperation {
+public class SetElementOperation extends jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation";
   public static final String INDEX = "index";
   public static final String ELEMENT = "element";
@@ -17,19 +17,19 @@ public class SetElementOperation extends AbstractListOperation {
     super(node);
   }
 
-  public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, SetElementOperation.INDEX);
+  public jetbrains.mps.baseLanguage.structure.Expression getIndex() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, SetElementOperation.INDEX);
   }
 
-  public void setIndex(Expression node) {
+  public void setIndex(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(SetElementOperation.INDEX, node);
   }
 
-  public Expression getElement() {
-    return (Expression)this.getChild(Expression.class, SetElementOperation.ELEMENT);
+  public jetbrains.mps.baseLanguage.structure.Expression getElement() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, SetElementOperation.ELEMENT);
   }
 
-  public void setElement(Expression node) {
+  public void setElement(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(SetElementOperation.ELEMENT, node);
   }
 

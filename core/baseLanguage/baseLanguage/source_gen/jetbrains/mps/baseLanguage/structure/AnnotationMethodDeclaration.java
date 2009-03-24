@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
+public class AnnotationMethodDeclaration extends jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration";
 
   public AnnotationMethodDeclaration(SNode node) {

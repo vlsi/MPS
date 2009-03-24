@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
-public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
+public abstract class GenericDeclarationTextGen2 extends jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen {
 
   public static void appendTypeDeclarations(SNode generic, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GetIndexOfOperation extends SequenceOperation {
+public class GetIndexOfOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation";
   public static final String ARGUMENT = "argument";
 
@@ -16,11 +16,11 @@ public class GetIndexOfOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, GetIndexOfOperation.ARGUMENT);
+  public jetbrains.mps.baseLanguage.structure.Expression getArgument() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, GetIndexOfOperation.ARGUMENT);
   }
 
-  public void setArgument(Expression node) {
+  public void setArgument(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(GetIndexOfOperation.ARGUMENT, node);
   }
 

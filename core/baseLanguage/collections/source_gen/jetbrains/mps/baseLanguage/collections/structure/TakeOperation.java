@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TakeOperation extends SequenceOperation {
+public class TakeOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.TakeOperation";
   public static final String ELEMENTS_TO_TAKE = "elementsToTake";
 
@@ -16,11 +16,11 @@ public class TakeOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getElementsToTake() {
-    return (Expression)this.getChild(Expression.class, TakeOperation.ELEMENTS_TO_TAKE);
+  public jetbrains.mps.baseLanguage.structure.Expression getElementsToTake() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, TakeOperation.ELEMENTS_TO_TAKE);
   }
 
-  public void setElementsToTake(Expression node) {
+  public void setElementsToTake(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(TakeOperation.ELEMENTS_TO_TAKE, node);
   }
 

@@ -7,6 +7,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.baseLanguage.typesystem._Quotations;
+import jetbrains.mps.baseLanguage.typesystem.Queries;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -89,11 +91,9 @@ public class RulesFunctions_BaseLanguage {
                   typeCheckingContext.createEquation(typeCheckingContext.typeOf(binOp, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203512296348", true), Queries.getBinaryOperationType(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203512296346", intentionProvider);
                 }
               }
-
             }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185963100352", false, false);
           }
         }
-
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185963072800", false, false);
     }
   }
@@ -165,10 +165,10 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 8:
-                      // don't look inside closures and other code-blocks
-                      // don't look inside commented statements
-                      // don't look inside anything that implements IStatementListContainer (for extensibility)
-                      // don't look inside anonymous classes
+                      //                       don't look inside closures and other code-blocks
+                      //                       don't look inside commented statements
+                      //                       don't look inside anything that implements IStatementListContainer (for extensibility)
+                      //                       don't look inside anonymous classes
                       this.__CP__ = 1;
                       break;
                     case 10:
@@ -186,13 +186,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     return returnStatements;
   }
@@ -270,7 +267,7 @@ __switch__:
               SNode componentType = SLinkOperations.getTarget(matchedNode_3, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
               if (SLinkOperations.getCount(mc, "actualArgument") == ListSequence.fromList(parameterDeclarations).count()) {
-                // the actual parameter may appear to be an array instead of vararg
+                //                 the actual parameter may appear to be an array instead of vararg
                 final SNode actual = actualIterator.next();
                 {
                   final SNode actualType = typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347108709", true);
@@ -296,12 +293,11 @@ __switch__:
                         typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(actualType), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347200873", false, 2, intentionProvider);
                       }
                     }
-
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347102532", false, false);
                 }
               } else
               {
-                // in this case the actual parameter is definitely a vararg
+                //                 in this case the actual parameter is definitely a vararg
                 while (actualIterator.hasNext()) {
                   SNode actual = actualIterator.next();
                   {
@@ -394,7 +390,6 @@ __switch__:
                 public void run() {
                   System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
                 }
-
               }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204114618006", false, false);
             }
           }

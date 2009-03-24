@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemarkStatement extends Statement {
+public class RemarkStatement extends jetbrains.mps.baseLanguage.structure.Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.RemarkStatement";
   public static final String VALUE = "value";
 

@@ -23,7 +23,6 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
       }
-
     });
     for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode)c);
@@ -32,7 +31,6 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
         }
-
       });
     }
   }

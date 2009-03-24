@@ -29,7 +29,6 @@ public class check_ContinueStatement_InferenceRule extends AbstractInferenceRule
         public boolean accept(SNode it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
-
       });
       if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
         BaseIntentionProvider intentionProvider = null;

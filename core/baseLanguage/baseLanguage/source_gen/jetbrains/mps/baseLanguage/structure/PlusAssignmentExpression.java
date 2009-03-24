@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PlusAssignmentExpression extends BaseAssignmentExpression {
+public class PlusAssignmentExpression extends jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression";
 
   public PlusAssignmentExpression(SNode node) {

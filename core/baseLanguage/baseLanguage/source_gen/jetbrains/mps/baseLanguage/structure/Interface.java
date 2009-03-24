@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Interface extends Classifier implements IBLDeprecatable {
+public class Interface extends jetbrains.mps.baseLanguage.structure.Classifier implements jetbrains.mps.baseLanguage.structure.IBLDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Interface";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -57,19 +58,19 @@ public class Interface extends Classifier implements IBLDeprecatable {
     return this.getChildCount(Interface.EXTENDED_INTERFACE);
   }
 
-  public Iterator<ClassifierType> extendedInterfaces() {
+  public Iterator<jetbrains.mps.baseLanguage.structure.ClassifierType> extendedInterfaces() {
     return this.children(ClassifierType.class, Interface.EXTENDED_INTERFACE);
   }
 
-  public List<ClassifierType> getExtendedInterfaces() {
+  public List<jetbrains.mps.baseLanguage.structure.ClassifierType> getExtendedInterfaces() {
     return this.getChildren(ClassifierType.class, Interface.EXTENDED_INTERFACE);
   }
 
-  public void addExtendedInterface(ClassifierType node) {
+  public void addExtendedInterface(jetbrains.mps.baseLanguage.structure.ClassifierType node) {
     this.addChild(Interface.EXTENDED_INTERFACE, node);
   }
 
-  public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
+  public void insertExtendedInterface(jetbrains.mps.baseLanguage.structure.ClassifierType prev, jetbrains.mps.baseLanguage.structure.ClassifierType node) {
     this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
   }
 

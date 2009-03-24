@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BinaryOperation extends SequenceOperation {
+public class BinaryOperation extends jetbrains.mps.baseLanguage.collections.structure.SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation";
   public static final String RIGHT_EXPRESSION = "rightExpression";
 
@@ -16,11 +16,11 @@ public class BinaryOperation extends SequenceOperation {
     super(node);
   }
 
-  public Expression getRightExpression() {
-    return (Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
+  public jetbrains.mps.baseLanguage.structure.Expression getRightExpression() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
   }
 
-  public void setRightExpression(Expression node) {
+  public void setRightExpression(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(BinaryOperation.RIGHT_EXPRESSION, node);
   }
 

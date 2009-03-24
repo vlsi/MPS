@@ -19,6 +19,19 @@ public enum TrimKind {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<TrimKind> getConstants() {
     List<TrimKind> list = new LinkedList<TrimKind>();
     ListOperations.addElement(list, TrimKind.both);
@@ -45,19 +58,6 @@ public enum TrimKind {
       return TrimKind.trailing;
     }
     return TrimKind.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
@@ -89,7 +90,6 @@ public class BaseMethodDeclaration_Behavior {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
-
     })).toGenericArray(Class.class);
   }
 

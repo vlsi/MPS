@@ -60,7 +60,6 @@ public class ExpandBoolean_Intention extends BaseIntention {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
-
     });
     Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
 
@@ -68,14 +67,12 @@ public class ExpandBoolean_Intention extends BaseIntention {
         SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (true));
       }
-
     });
     refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(it, "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
-
     });
     Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
 
@@ -83,7 +80,6 @@ public class ExpandBoolean_Intention extends BaseIntention {
         SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (false));
       }
-
     });
     // 
     SNodeOperations.deleteNode(statementNode);

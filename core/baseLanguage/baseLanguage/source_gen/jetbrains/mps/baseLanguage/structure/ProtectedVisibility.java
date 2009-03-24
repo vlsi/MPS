@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ProtectedVisibility extends Visibility {
+public class ProtectedVisibility extends jetbrains.mps.baseLanguage.structure.Visibility {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ProtectedVisibility";
 
   public ProtectedVisibility(SNode node) {
