@@ -44,7 +44,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           {
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 500, intentionProvider);
           }
           {
             SNode fpt;
@@ -63,7 +63,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", false, 0, intentionProvider);
+                typeCheckingContext.createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", false, 500, intentionProvider);
               }
             }
           }
