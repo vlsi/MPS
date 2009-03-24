@@ -360,6 +360,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230207860045" />
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230208019848">
     <property name="package" value="systemSpecific.windows" />
     <link role="concept" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
@@ -369,15 +370,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230208021946">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230208038940">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231692664918">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218300115">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230208042876">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230208048841" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230208042878">
-                  <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237889262651">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218300115">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230208042876">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230208048841" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230208042878">
+                    <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237889229387">
+                  <link role="link" targetNodeId="1.1234784278747" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292891005">
-                <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237889265835">
+                <link role="baseMethodDeclaration" targetNodeId="3v.1213877173054" resolveInfo="getValue" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231692668870">
@@ -461,15 +467,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292766210">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230292786057">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231692637768">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292793710">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292788710">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230292788257" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292792662">
-                  <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237889294492">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292793710">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230292788710">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1230292788257" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292792662">
+                    <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237889293201">
+                  <link role="link" targetNodeId="1.1234784278747" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230292868502">
-                <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237889297234">
+                <link role="baseMethodDeclaration" targetNodeId="3v.1213877173054" resolveInfo="getValue" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231692641347">
@@ -496,7 +507,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292751072" />
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230292819375">
     <link role="concept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />

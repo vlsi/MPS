@@ -44,14 +44,12 @@ public class DistribConfiguration_Behavior {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Folder") && (ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).contains(selectedConfiguration));
       }
-
     });
     return Sequence.fromIterable(seq).select(new ISelector <SNode, SNode>() {
 
       public SNode select(SNode it) {
         return it;
       }
-
     }).toListSequence();
   }
 

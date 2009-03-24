@@ -4,6 +4,8 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
+import jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -46,7 +48,6 @@ public class SystemSpecificConfig_Behavior {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "variable", false);
       }
-
     }).distinct().toListSequence();
   }
 

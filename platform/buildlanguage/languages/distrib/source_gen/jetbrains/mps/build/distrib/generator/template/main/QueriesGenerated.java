@@ -17,11 +17,11 @@ import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -121,10 +121,6 @@ public class QueriesGenerated {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230566774446(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + "-windows.zip";
-  }
-
   public static Object propertyMacro_GetPropertyValue_1230567611860(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
@@ -187,7 +183,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1231692592753(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(_context.getNode()).toLowerCase();
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "shortName", true)).toLowerCase();
   }
 
   public static Object propertyMacro_GetPropertyValue_1231748433201(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -278,7 +274,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234519371002(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234519414225(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -413,7 +409,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237301091044(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1237301752675(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -471,7 +467,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration");
       }
-
     })) {
       if (SPropertyOperations.getString(propertyDeclaration, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "antName"))) {
         return propertyDeclaration;
@@ -743,7 +738,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "icon", true) != null);
       }
-
     });
   }
 
