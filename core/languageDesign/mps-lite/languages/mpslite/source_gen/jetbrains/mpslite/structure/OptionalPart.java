@@ -4,12 +4,13 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mpslite.structure.LinePart;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class OptionalPart extends LinePart {
+public class OptionalPart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.OptionalPart";
   public static final String PART = "part";
 
@@ -21,19 +22,19 @@ public class OptionalPart extends LinePart {
     return this.getChildCount(OptionalPart.PART);
   }
 
-  public Iterator<LinePart> parts() {
+  public Iterator<jetbrains.mpslite.structure.LinePart> parts() {
     return this.children(LinePart.class, OptionalPart.PART);
   }
 
-  public List<LinePart> getParts() {
+  public List<jetbrains.mpslite.structure.LinePart> getParts() {
     return this.getChildren(LinePart.class, OptionalPart.PART);
   }
 
-  public void addPart(LinePart node) {
+  public void addPart(jetbrains.mpslite.structure.LinePart node) {
     this.addChild(OptionalPart.PART, node);
   }
 
-  public void insertPart(LinePart prev, LinePart node) {
+  public void insertPart(jetbrains.mpslite.structure.LinePart prev, jetbrains.mpslite.structure.LinePart node) {
     this.insertChild(prev, OptionalPart.PART, node);
   }
 

@@ -16,7 +16,6 @@ public class MPSLite_Style_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -26,7 +25,6 @@ public class MPSLite_Style_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -36,7 +34,6 @@ public class MPSLite_Style_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -46,7 +43,6 @@ public class MPSLite_Style_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
       }
-
     };
   }
 
@@ -56,7 +52,6 @@ public class MPSLite_Style_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
-
     };
   }
 
@@ -65,7 +60,6 @@ public class MPSLite_Style_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
       }
-
     };
   }
 

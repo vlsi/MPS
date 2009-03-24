@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PropertyPart extends LinePart {
+public class PropertyPart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.PropertyPart";
 
   public PropertyPart(SNode node) {

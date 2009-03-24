@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConstantLinePart extends LinePart {
+public class ConstantLinePart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ConstantLinePart";
   public static final String TEXT = "text";
 

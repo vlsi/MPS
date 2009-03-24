@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferencePart extends LinePart {
+public class ReferencePart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ReferencePart";
   public static final String OPTIONAL = "optional";
 

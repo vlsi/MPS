@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IndentLinePart extends LinePart {
+public class IndentLinePart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.IndentLinePart";
 
   public IndentLinePart(SNode node) {

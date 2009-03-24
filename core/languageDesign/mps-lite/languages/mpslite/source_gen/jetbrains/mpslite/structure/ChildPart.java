@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ChildPart extends LinePart {
+public class ChildPart extends jetbrains.mpslite.structure.LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ChildPart";
   public static final String SEPARATOR = "separator";
   public static final String MULTIPLE = "multiple";

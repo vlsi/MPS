@@ -18,6 +18,19 @@ public enum MPSLitePropertyType_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<MPSLitePropertyType_Enum> getConstants() {
     List<MPSLitePropertyType_Enum> list = new LinkedList<MPSLitePropertyType_Enum>();
     ListOperations.addElement(list, MPSLitePropertyType_Enum.string);
@@ -40,19 +53,6 @@ public enum MPSLitePropertyType_Enum {
       return MPSLitePropertyType_Enum.numeric;
     }
     return MPSLitePropertyType_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }
