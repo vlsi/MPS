@@ -44,8 +44,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(final IScope scope) {
-    ensureCachesAreUpToDate();
-
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
     final Set<SModelReference> hasToLoad = new HashSet<SModelReference>();
     final Set<SModelReference> changedModels = new HashSet<SModelReference>();
@@ -124,14 +122,5 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   public String getCheckBoxName() {
     return "Include non-project models";
-  }
-
-  //todo this is a workaround for IDEA's bug. Remove it as soon as IDEA will fix the bug.
-  private void ensureCachesAreUpToDate() {
-    ProjectManager projectManager = ProjectManager.getInstance();
-    FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
-    Project defaultProject = projectManager.getDefaultProject();
-    synchronizer.registerCacheUpdater(new UnindexedFilesUpdater(defaultProject, defaultProject.getComponent(ProjectRootManager.class), FileBasedIndex.getInstance()));
-    synchronizer.execute();
   }
 }
