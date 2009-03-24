@@ -11,9 +11,11 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceVariable_Action extends GeneratedAction {
@@ -91,7 +93,6 @@ public class IntroduceVariable_Action extends GeneratedAction {
           refactoring.value = new IntroduceLocalVariableRefactoring();
           error.value = refactoring.value.init(IntroduceVariable_Action.this.node, IntroduceVariable_Action.this.component);
         }
-
       });
       if (error.value == null) {
         IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.frame, refactoring.value, IntroduceVariable_Action.this.context);

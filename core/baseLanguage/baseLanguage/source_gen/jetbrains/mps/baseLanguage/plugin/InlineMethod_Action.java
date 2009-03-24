@@ -13,8 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.MethodCallAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.InlineMethodDialog;
 
 public class InlineMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -43,7 +45,6 @@ public class InlineMethod_Action extends GeneratedAction {
       public void run() {
         b.value = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.node) || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
-
     });
     return b.value;
   }

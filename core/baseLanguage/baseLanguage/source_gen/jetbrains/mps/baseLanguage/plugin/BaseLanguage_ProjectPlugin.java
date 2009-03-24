@@ -7,9 +7,13 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.plugin.RunClass_Tool;
+import jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.baseLanguage.plugin.Java_FileGenerator;
 
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
 

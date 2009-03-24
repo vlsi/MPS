@@ -13,8 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.IntroduceFieldRefactoring;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.IntroduceFieldDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceField_Action extends GeneratedAction {
@@ -91,7 +93,6 @@ public class IntroduceField_Action extends GeneratedAction {
         public void run() {
           error.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
         }
-
       });
       if (error.value == null) {
         IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer, IntroduceField_Action.this.context);

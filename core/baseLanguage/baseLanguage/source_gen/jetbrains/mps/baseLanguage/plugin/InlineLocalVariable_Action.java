@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.InlineVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
@@ -40,7 +41,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       public void run() {
         result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
       }
-
     });
     return result.value;
   }
@@ -91,7 +91,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
         public void run() {
           ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
         }
-
       });
       isAvailable = ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame);
       if (isAvailable) {
@@ -101,7 +100,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
             SNode result = ref.value.doRefactoring();
             InlineLocalVariable_Action.this.editorContext.select(result);
           }
-
         });
       }
     } catch (Throwable t) {

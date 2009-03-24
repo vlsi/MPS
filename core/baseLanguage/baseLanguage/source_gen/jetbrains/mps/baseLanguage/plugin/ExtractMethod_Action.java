@@ -10,8 +10,10 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.plugin.ExtractMethodDialog;
 
 public class ExtractMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;

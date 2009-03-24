@@ -13,6 +13,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.plugin.ToDoMessage;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
