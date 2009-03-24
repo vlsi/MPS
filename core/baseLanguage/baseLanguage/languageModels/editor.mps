@@ -15105,6 +15105,18 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237911635648">
+        <property name="text" value="tuple" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1237911642696">
+          <property name="color" value="gray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" id="1237911653152">
+          <property name="value" value="10" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1237911664748">
+          <property name="style" value="PLAIN" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237722582646" />
     </node>
   </node>
@@ -15130,6 +15142,18 @@
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1235147288737">
           <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237911676546">
+        <property name="text" value="tuple" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1237911676547">
+          <property name="color" value="gray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" id="1237911676548">
+          <property name="value" value="10" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1237911676549">
+          <property name="style" value="PLAIN" />
         </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237722566610" />
