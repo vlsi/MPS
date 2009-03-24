@@ -850,10 +850,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231749012628">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1231749032498">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231749039811">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231749038730">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1231749038731" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231749038732">
-                <link role="baseMethodDeclaration" targetNodeId="1230292821821" resolveInfo="getProjectName" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237909012842">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231749038730">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1231749038731" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237909011381">
+                  <link role="link" targetNodeId="1.1234784278747" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237909014914">
+                <link role="baseMethodDeclaration" targetNodeId="3v.1213877173054" resolveInfo="getValue" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1231749102321">

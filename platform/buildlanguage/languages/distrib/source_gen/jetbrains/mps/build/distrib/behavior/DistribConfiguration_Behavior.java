@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 
 public class DistribConfiguration_Behavior {
@@ -74,7 +75,7 @@ public class DistribConfiguration_Behavior {
   }
 
   public static String call_getVMOptionsFileName_1231749012626(SNode thisNode) {
-    return DistribConfiguration_Behavior.call_getProjectName_1230292821821(thisNode).toLowerCase();
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(thisNode, "shortName", true)).toLowerCase();
   }
 
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
