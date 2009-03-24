@@ -16,8 +16,11 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addBound;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addAuxBound;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -180,7 +183,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -203,7 +205,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

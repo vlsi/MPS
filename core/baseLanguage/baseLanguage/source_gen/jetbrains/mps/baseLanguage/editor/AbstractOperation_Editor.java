@@ -32,7 +32,6 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       public EditorCell createEditorCell(EditorContext context) {
         return new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
       }
-
     };
   }
 

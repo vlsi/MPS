@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class GetAccessor_Editor extends DefaultNodeEditor {
 
@@ -100,7 +101,6 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -114,7 +114,6 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -133,7 +132,6 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

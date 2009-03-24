@@ -83,7 +83,6 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -96,7 +95,6 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }

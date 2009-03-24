@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -243,7 +244,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -262,7 +262,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -275,7 +274,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -290,7 +288,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -305,7 +302,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -320,7 +316,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -335,7 +330,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -350,7 +344,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -365,7 +358,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -379,7 +371,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -393,7 +384,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -407,7 +397,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -421,7 +410,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -436,7 +424,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -449,7 +436,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -562,7 +548,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -634,7 +619,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -706,7 +690,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -778,7 +761,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -850,7 +832,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -922,7 +903,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

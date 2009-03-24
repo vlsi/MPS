@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
@@ -101,7 +102,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -114,7 +114,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -128,7 +127,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -142,7 +140,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

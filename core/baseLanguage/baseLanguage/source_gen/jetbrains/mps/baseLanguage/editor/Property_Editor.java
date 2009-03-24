@@ -15,6 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
@@ -76,7 +77,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8551_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility8551_0 == null) {
-      this.my_Component_Visibility8551_0 = new _Component_Visibility(node);
+      this.my_Component_Visibility8551_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility8551_0.createEditorCell(context);
     setupBasic_Component_8551_0(editorCell, node, context);
@@ -85,7 +86,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8551_1(EditorContext context, SNode node) {
     if (this.my_Component_Visibility8551_1 == null) {
-      this.my_Component_Visibility8551_1 = new _Component_Visibility(node);
+      this.my_Component_Visibility8551_1 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility8551_1.createEditorCell(context);
     setupBasic_Component_8551_1(editorCell, node, context);
@@ -353,7 +354,6 @@ public class Property_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -367,7 +367,6 @@ public class Property_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -380,7 +379,6 @@ public class Property_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

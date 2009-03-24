@@ -20,7 +20,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.baseLanguage.editor.IfStatement_LastBrace;
+import jetbrains.mps.baseLanguage.editor.IfStatement_elseDelete_action;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -256,7 +259,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -298,7 +300,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
                 cell.getSNode()
               ));
             }
-
           });
           this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
 
@@ -308,7 +309,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
                 cell.getSNode()
               ));
             }
-
           });
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
@@ -321,10 +321,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -339,7 +337,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -354,7 +351,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -381,7 +377,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
 
@@ -394,10 +389,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -414,7 +407,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

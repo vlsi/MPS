@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.RemarkStatement_KeyMap;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
@@ -130,7 +131,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -148,7 +148,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -162,7 +161,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

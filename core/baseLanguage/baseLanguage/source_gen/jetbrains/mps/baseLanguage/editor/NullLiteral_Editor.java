@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -35,7 +36,6 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

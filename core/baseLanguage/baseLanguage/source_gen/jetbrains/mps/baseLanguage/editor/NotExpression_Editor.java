@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.baseLanguage.editor.NotExpression_Parens_Actions;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class NotExpression_Editor extends DefaultNodeEditor {
 
@@ -102,7 +104,6 @@ public class NotExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -120,7 +121,6 @@ public class NotExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

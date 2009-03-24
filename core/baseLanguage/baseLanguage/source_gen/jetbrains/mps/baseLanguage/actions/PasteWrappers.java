@@ -29,7 +29,6 @@ public class PasteWrappers {
         SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
         return result;
       }
-
     });
     result.add(new PasteWrapper() {
 
@@ -44,7 +43,6 @@ public class PasteWrappers {
       public SNode wrap(PasteWrapperContext _context) {
         return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
-
     });
     result.add(new PasteWrapper() {
 
@@ -59,7 +57,6 @@ public class PasteWrappers {
       public SNode wrap(PasteWrapperContext _context) {
         return SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true);
       }
-
     });
     result.add(new PasteWrapper() {
 
@@ -76,7 +73,6 @@ public class PasteWrappers {
         SLinkOperations.setTarget(statement, "localVariableDeclaration", _context.getSourceNode(), true);
         return statement;
       }
-
     });
     return result;
   }

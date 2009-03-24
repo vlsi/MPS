@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -144,7 +145,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -156,7 +156,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -169,7 +168,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -192,7 +190,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

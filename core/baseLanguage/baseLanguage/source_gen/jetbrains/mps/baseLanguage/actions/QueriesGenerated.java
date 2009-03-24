@@ -22,7 +22,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
+import jetbrains.mps.baseLanguage.actions._Quotations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -33,6 +35,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.actions._PrecompiledPatterns;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
@@ -164,14 +167,12 @@ public class QueriesGenerated {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.hasValue(it, "label", null));
         }
-
       }).isNotEmpty();
       boolean sstmtsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return !(SPropertyOperations.hasValue(it, "label", null));
         }
-
       }).isNotEmpty();
       return loopsWithLabels || sstmtsWithLabels;
     }
@@ -220,13 +221,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).isNotEmpty();
   }
 
@@ -325,6 +323,15 @@ __switch__:
     return false;
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_TryCatchStatement_1237896443301(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).isEmpty();
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_CatchClause_1237896985300(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    SNode parent = SNodeOperations.getParent(_context.getSourceNode());
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && ListSequence.fromList(SLinkOperations.getTargets(parent, "catchClause", true)).last() == _context.getSourceNode();
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -391,10 +398,10 @@ __switch__:
   }
 
   public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetupContext _context) {
-    //  moved to substitute/expression/new
+    //      moved to substitute/expression/new
     /*
       if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-        // Looking for the original node is required because sampleNode is just a copy
+        //         Looking for the original node is required because sampleNode is just a copy
         SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
@@ -500,7 +507,6 @@ __switch__:
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -513,7 +519,6 @@ __switch__:
           public Object calculate() {
             return ListSequence.<Boolean>fromArray(Boolean.TRUE, Boolean.FALSE);
           }
-
         };
         Iterable<Boolean> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -533,7 +538,6 @@ __switch__:
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
               }
-
             });
           }
         }
@@ -566,7 +570,6 @@ __switch__:
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -603,7 +606,6 @@ __switch__:
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -622,7 +624,6 @@ __switch__:
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             return ((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD));
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -635,7 +636,6 @@ __switch__:
                 SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
                 return operationExpression;
               }
-
             });
           }
         }
@@ -648,7 +648,7 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            //  in anonymous classes
+            //              in anonymous classes
             SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
             if (anonymousClass == null) {
               return null;
@@ -660,7 +660,6 @@ __switch__:
             }
             return result;
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -673,7 +672,6 @@ __switch__:
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
                 return operationExpression;
               }
-
             });
           }
         }
@@ -701,7 +699,6 @@ __switch__:
             }
             return classifiers;
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -725,7 +722,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return "static access ^" + NodePresentationUtil.descriptionText((item));
               }
-
             });
           }
         }
@@ -741,13 +737,12 @@ __switch__:
 
         public Object calculate() {
           List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
-          // skip Closure
+          //           skip Closure
           SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Closure"));
             }
-
           }).first();
           if (parentFunction != null) {
             return ConceptFunction_Behavior.call_getParameters_1213877374450(parentFunction);
@@ -756,7 +751,6 @@ __switch__:
             return ListSequence.<SNode>fromArray();
           }
         }
-
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
@@ -778,7 +772,6 @@ __switch__:
           List<SNode> concepts = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
           return concepts;
         }
-
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
@@ -817,7 +810,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -852,7 +844,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -885,7 +876,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -918,7 +908,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -942,7 +931,6 @@ __switch__:
             SNode thisConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             return SLinkOperations.getTargets(thisConcept, "constructor", true);
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -971,7 +959,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "shortDescription");
               }
-
             });
           }
         }
@@ -991,7 +978,6 @@ __switch__:
             }
             return SLinkOperations.getTargets(superClass, "constructor", true);
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1020,7 +1006,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "shortDescription");
               }
-
             });
           }
         }
@@ -1055,7 +1040,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -1079,7 +1063,6 @@ __switch__:
               public void visit(SNode it) {
                 SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(it, "name"));
               }
-
             });
             for(SNode method : ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
               ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
@@ -1087,7 +1070,6 @@ __switch__:
                 public void visit(SNode it) {
                   SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(it, "name"));
                 }
-
               });
             }
             return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter <SNode>() {
@@ -1095,10 +1077,8 @@ __switch__:
               public boolean accept(SNode it) {
                 return !(SetSequence.fromSet(localNames).contains(SPropertyOperations.getString(it, "name")));
               }
-
             }).toListSequence();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1115,7 +1095,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return "this." + SPropertyOperations.getString((item), "name");
               }
-
             });
           }
         }
@@ -1133,16 +1112,14 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            //  'qualified this' - only in inner classes
+            //              'qualified this' - only in inner classes
             return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
 
               public boolean accept(SNode it) {
                 return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
               }
-
             }).toListSequence();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1166,7 +1143,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return "qualified 'this'";
               }
-
             });
           }
         }
@@ -1222,7 +1198,6 @@ __switch__:
           public Icon getIconFor(String pattern) {
             return IconManager.getIconFor(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           }
-
         });
       }
     }
@@ -1251,7 +1226,6 @@ __switch__:
           public Icon getIconFor(String pattern) {
             return IconManager.getIconFor(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           }
-
         });
       }
     }
@@ -1274,10 +1248,8 @@ __switch__:
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(it, "abstractClass"));
               }
-
             }).toListSequence();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1295,7 +1267,6 @@ __switch__:
                     public boolean accept(SNode it) {
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
-
                   }).toListSequence();
                 }
                 for(SNode method : ListSequence.fromList(methodsToImplement)) {
@@ -1304,7 +1275,7 @@ __switch__:
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                   SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
                 }
-                // replace all type vars with Object
+                //                 replace all type vars with Object
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
                 for(SNode typeVar : ListSequence.fromList(typeVarRefs)) {
                   SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
@@ -1319,7 +1290,6 @@ __switch__:
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
               }
-
             });
           }
         }
@@ -1354,7 +1324,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -1388,7 +1357,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -1421,7 +1389,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -1454,7 +1421,6 @@ __switch__:
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -1472,7 +1438,6 @@ __switch__:
           public Object calculate() {
             return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.NON_FINAL_CLASS, operationContext.getScope()).getNodes();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1484,7 +1449,6 @@ __switch__:
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
-
             });
           }
         }
@@ -1504,7 +1468,6 @@ __switch__:
           public Object calculate() {
             return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1516,7 +1479,6 @@ __switch__:
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
-
             });
           }
         }
@@ -1536,7 +1498,6 @@ __switch__:
           public Object calculate() {
             return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1548,7 +1509,6 @@ __switch__:
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
-
             });
           }
         }
@@ -1568,7 +1528,6 @@ __switch__:
           public Object calculate() {
             return ((List<SNode>)BaseAdapter.toNodes(new VisibleThrowablesScope(_context.getModel(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers()));
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1580,7 +1539,6 @@ __switch__:
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
-
             });
           }
         }
@@ -1599,9 +1557,9 @@ __switch__:
 
           public Object calculate() {
             SNode sampleNode = _context.getCurrentTargetNode();
-            //  copied from BL_nodeFactories
+            //              copied from BL_nodeFactories
             if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-              // Looking for the original node is required because sampleNode is just a copy
+              //               Looking for the original node is required because sampleNode is just a copy
               SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), sampleNode);
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
@@ -1612,7 +1570,6 @@ __switch__:
             }
             return null;
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -1636,7 +1593,6 @@ __switch__:
               public String getDescriptionText(String pattern) {
                 return "";
               }
-
             });
           }
         }
@@ -1681,7 +1637,6 @@ __switch__:
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -1715,7 +1670,6 @@ __switch__:
             }
             return result;
           }
-
         });
       }
     }
@@ -1746,7 +1700,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "";
         }
-
       });
     }
     return result;
@@ -1773,7 +1726,6 @@ __switch__:
             SLinkOperations.setTarget(result, "lValue", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -1804,7 +1756,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "array access";
         }
-
       });
     }
     return result;
@@ -1833,7 +1784,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "initializer";
         }
-
       });
     }
     return result;
@@ -1863,7 +1813,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "to array type";
         }
-
       });
     }
     return result;
@@ -1891,7 +1840,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "add type parameter";
         }
-
       });
     }
     return result;
@@ -1919,7 +1867,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "add type variable";
         }
-
       });
     }
     return result;
@@ -1943,7 +1890,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -1960,7 +1906,6 @@ __switch__:
           SNode body = SLinkOperations.getTarget(_context.getSourceNode(), "body", true);
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for(SNode catchClause : SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)) {
-            SNodeOperations.deleteNode(catchClause);
             SLinkOperations.addChild(tryStatement, "catchClause", catchClause);
           }
           SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -1975,7 +1920,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2009,7 +1953,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "ternary operator";
         }
-
       });
     }
     return result;
@@ -2034,7 +1977,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2048,7 +1990,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
@@ -2070,7 +2011,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2100,7 +2040,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "dot operation";
         }
-
       });
     }
     return result;
@@ -2114,7 +2053,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
@@ -2171,13 +2109,10 @@ __switch__:
                       } while(true);
                       return false;
                     }
-
                   };
                 }
-
               };
             }
-
           }));
           ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
@@ -2220,17 +2155,13 @@ __switch__:
                       } while(true);
                       return false;
                     }
-
                   };
                 }
-
               };
             }
-
           }));
           return labels;
         }
-
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
       assert parameterObjects != null;
@@ -2257,7 +2188,6 @@ __switch__:
           public String getDescriptionText(String text) {
             return "declared label";
           }
-
         });
       }
     }
@@ -2312,16 +2242,12 @@ __switch__:
                       } while(true);
                       return false;
                     }
-
                   };
                 }
-
               };
             }
-
           }).toListSequence();
         }
-
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
       assert parameterObjects != null;
@@ -2348,7 +2274,6 @@ __switch__:
           public String getDescriptionText(String text) {
             return "declared label";
           }
-
         });
       }
     }
@@ -2377,7 +2302,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "add type parameter";
         }
-
       });
     }
     return result;
@@ -2391,7 +2315,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
@@ -2425,7 +2348,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "static access";
         }
-
       });
     }
     return result;
@@ -2455,7 +2377,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "postfix increment";
         }
-
       });
     }
     {
@@ -2480,7 +2401,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "postfix decrement";
         }
-
       });
     }
     return result;
@@ -2495,7 +2415,6 @@ __switch__:
         public Object calculate() {
           return ListSequence.<String>fromArray("else{", "else {");
         }
-
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
       assert parameterObjects != null;
@@ -2510,7 +2429,6 @@ __switch__:
           public SNode getOutputConcept() {
             return concept;
           }
-
         });
       }
     }
@@ -2526,7 +2444,6 @@ __switch__:
         public Object calculate() {
           return ListSequence.<String>fromArray("else if", "elseif");
         }
-
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
       assert parameterObjects != null;
@@ -2549,7 +2466,6 @@ __switch__:
           public String getVisibleMatchingText(String text) {
             return this.getMatchingText(text);
           }
-
         });
       }
     }
@@ -2585,7 +2501,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "anonymous class";
         }
-
       });
     }
     return result;
@@ -2621,7 +2536,6 @@ __switch__:
               return result;
             }
           }
-
         });
       }
     }
@@ -2637,7 +2551,6 @@ __switch__:
         public Object calculate() {
           return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(_context.getSourceNode());
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -2662,7 +2575,6 @@ __switch__:
           public String getVisibleMatchingText(String text) {
             return this.getMatchingText(text);
           }
-
         });
       }
     }
@@ -2690,7 +2602,6 @@ __switch__:
             SLinkOperations.setTarget(result, "rValue", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -2716,7 +2627,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2741,7 +2651,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2766,7 +2675,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2782,7 +2690,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       assignment = (SNode)calculable.calculate();
     }
@@ -2792,7 +2699,6 @@ __switch__:
         public Object calculate() {
           return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true));
         }
-
       };
       type = (SNode)calculable.calculate();
     }
@@ -2811,7 +2717,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -2844,7 +2749,6 @@ __switch__:
               return result;
             }
           }
-
         });
       }
     }
@@ -2859,7 +2763,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
@@ -2890,7 +2793,6 @@ __switch__:
               return expression;
             }
           }
-
         });
       }
     }
@@ -2918,7 +2820,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     {
@@ -2940,7 +2841,6 @@ __switch__:
             SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -2955,7 +2855,6 @@ __switch__:
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
-
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.LEFT, _context.getTransformationTag(), operationContext));
@@ -2990,7 +2889,6 @@ __switch__:
               return result;
             }
           }
-
         });
       }
     }
@@ -3018,7 +2916,6 @@ __switch__:
             SLinkOperations.setTarget(result, "statement", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -3044,7 +2941,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -3069,7 +2965,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -3093,7 +2988,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -3127,7 +3021,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -3154,7 +3047,6 @@ __switch__:
         public String getDescriptionText(String pattern) {
           return "Surrond by parenthesis";
         }
-
       });
     }
     return result;
@@ -3177,7 +3069,6 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -3201,7 +3092,37 @@ __switch__:
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
+      });
+    }
+    return result;
+  }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CatchClause_1237896682568(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode node = SNodeOperations.getParent(_context.getSourceNode());
+          SNode tryStatement = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
+          SNode body = SLinkOperations.getTarget(node, "body", true);
+          SLinkOperations.setTarget(tryStatement, "body", body, true);
+          for(SNode catchClause : SLinkOperations.getTargets(node, "catchClause", true)) {
+            SLinkOperations.addChild(tryStatement, "catchClause", catchClause);
+          }
+          SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
+          SNodeOperations.replaceWithAnother(node, tryStatement);
+          return tryStatement;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "finally";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
       });
     }
     return result;
@@ -3220,7 +3141,6 @@ __switch__:
         public boolean met(Object p0) {
           return concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass");
         }
-
       };
       if (condition.met(null)) {
         actions.remove();

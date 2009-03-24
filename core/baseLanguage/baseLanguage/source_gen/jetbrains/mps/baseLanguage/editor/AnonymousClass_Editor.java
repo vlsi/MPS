@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -337,7 +338,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -351,7 +351,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -371,7 +370,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -384,7 +382,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -399,7 +396,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -412,7 +408,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -429,7 +424,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -459,7 +453,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -473,7 +466,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -486,7 +478,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -504,7 +495,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -518,7 +508,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -533,7 +522,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -552,7 +540,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -689,7 +676,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -762,7 +748,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -842,7 +827,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

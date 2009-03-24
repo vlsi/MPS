@@ -6124,6 +6124,13 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1237798986267">
               <property name="flag" value="true" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237898193302">
+              <property name="flag" value="true" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237898083974">
+            <property name="text" value="}" />
+            <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237798986269" />
         </node>
@@ -6138,6 +6145,10 @@
               <property name="flag" value="true" />
             </node>
           </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237898175542">
+            <property name="text" value="}" />
+            <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1164903740612">
             <property name="vertical" value="false" />
             <link role="relationDeclaration" targetNodeId="17.1164903700860" />
@@ -6149,13 +6160,6 @@
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237798986275" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237798986249">
-          <property name="flag" value="true" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1156760034198">
-        <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1156760036872">
         <property name="text" value="finally" />

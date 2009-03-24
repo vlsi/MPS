@@ -3,13 +3,7 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
-  <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -43,18 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <maxImportIndex value="19" />
-  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590398(jetbrains.mps.baseLanguage.sandbox.refactoringTest)" version="-1" />
-  <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <import index="14" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="15" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
-  <import index="17" modelUID="f:java_stub#jetbrains.mps.lang.plugin.structure(jetbrains.mps.lang.plugin.structure@java_stub)" version="-1" />
-  <import index="18" modelUID="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211992713279">
     <property name="name" value="A" />
@@ -200,33 +183,7 @@
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237542356467" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237542356468" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237542356469">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1237827819305">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237827803592">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237827803593">
-              <property name="name" value="r" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237827803594">
-                <link role="classifier" targetNodeId="10.~Runnable" resolveInfo="Runnable" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237827805405">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1237827809216">
-                  <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1237827809217">
-                    <link role="classifier" targetNodeId="10.~Runnable" resolveInfo="Runnable" />
-                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237827809218" />
-                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1237827809219">
-                      <property name="isAbstract" value="false" />
-                      <property name="name" value="run" />
-                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237827809220" />
-                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237827809221" />
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237827809222" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237542356469" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">

@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -86,7 +87,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -101,7 +101,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -119,7 +118,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

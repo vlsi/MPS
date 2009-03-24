@@ -19,6 +19,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete;
+import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Actions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -99,7 +102,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2231_0(EditorContext context, SNode node) {
     if (this.myVariableDeclaration_NameCellComponent2231_0 == null) {
-      this.myVariableDeclaration_NameCellComponent2231_0 = new VariableDeclaration_NameCellComponent(node);
+      this.myVariableDeclaration_NameCellComponent2231_0 = new jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myVariableDeclaration_NameCellComponent2231_0.createEditorCell(context);
     setupBasic_Component_2231_0(editorCell, node, context);
@@ -267,7 +270,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -296,7 +298,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -314,7 +315,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.AUTO_DELETABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -328,7 +328,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -342,7 +341,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -355,7 +353,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -368,7 +365,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

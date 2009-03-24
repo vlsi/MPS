@@ -16,7 +16,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -25,7 +24,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
       }
-
     };
   }
 
@@ -35,7 +33,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -46,7 +43,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
         this.set(StyleAttributes.UNDERLINED, true);
       }
-
     };
   }
 
@@ -56,7 +52,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -64,7 +59,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -72,7 +66,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -82,7 +75,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
       }
-
     };
   }
 
@@ -92,7 +84,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -101,7 +92,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
       }
-
     };
   }
 
@@ -110,7 +100,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
-
     };
   }
 
@@ -118,7 +107,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -127,7 +115,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
-
     };
   }
 
@@ -136,7 +123,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -145,7 +131,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
-
     };
   }
 
@@ -154,7 +139,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
-
     };
   }
 
@@ -165,7 +149,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
-
     };
   }
 
@@ -175,7 +158,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.putAll(BaseLanguageStyle_StyleSheet.getLeftParen(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
-
     };
   }
 
@@ -186,7 +168,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
-
     };
   }
 
@@ -195,7 +176,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
-
     };
   }
 
@@ -205,7 +185,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
-
     };
   }
 
@@ -215,7 +194,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
-
     };
   }
 
@@ -224,7 +202,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
-
     };
   }
 
@@ -234,7 +211,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
-
     };
   }
 
@@ -244,7 +220,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
-
     };
   }
 
@@ -252,7 +227,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -260,7 +234,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -268,7 +241,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
       }
-
     };
   }
 
@@ -278,7 +250,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.EDITABLE, false);
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
-
     };
   }
 
@@ -289,7 +260,6 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         this.set(StyleAttributes.SELECTABLE, false);
       }
-
     };
   }
 

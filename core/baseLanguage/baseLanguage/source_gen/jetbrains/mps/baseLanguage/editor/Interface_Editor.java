@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -98,7 +99,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8963_0(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component8963_0 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component8963_0 = new _GenericDeclaration_TypeVariables_Component(node);
+      this.my_GenericDeclaration_TypeVariables_Component8963_0 = new jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component8963_0.createEditorCell(context);
     setupBasic_Component_8963_0(editorCell, node, context);
@@ -107,7 +108,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8963_1(EditorContext context, SNode node) {
     if (this.my_Component_Visibility8963_0 == null) {
-      this.my_Component_Visibility8963_0 = new _Component_Visibility(node);
+      this.my_Component_Visibility8963_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility8963_0.createEditorCell(context);
     setupBasic_Component_8963_1(editorCell, node, context);
@@ -285,7 +286,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -299,7 +299,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -314,7 +313,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -328,7 +326,6 @@ public class Interface_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -342,7 +339,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -362,7 +358,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -378,7 +373,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -391,7 +385,6 @@ public class Interface_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -409,7 +402,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -426,7 +418,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -440,7 +431,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -457,7 +447,6 @@ public class Interface_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -471,7 +460,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -598,7 +586,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -670,7 +657,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -742,7 +728,6 @@ public class Interface_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -119,7 +120,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -221,7 +221,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -15,9 +15,11 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.ContinueStatement_Actions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
@@ -119,7 +121,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -137,7 +138,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -151,7 +151,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -218,13 +217,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       }).toListSequence();
     }
 

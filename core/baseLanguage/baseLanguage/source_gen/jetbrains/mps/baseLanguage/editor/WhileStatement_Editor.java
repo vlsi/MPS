@@ -14,8 +14,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.AbstractLoopStatement_Label_Actions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -276,7 +278,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -290,7 +291,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "statement");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -308,7 +308,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -327,7 +326,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -344,7 +342,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -358,7 +355,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -371,7 +367,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -386,7 +381,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.MATCHING_LABEL, "statement");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

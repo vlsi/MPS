@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
@@ -88,7 +89,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -111,10 +111,8 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }

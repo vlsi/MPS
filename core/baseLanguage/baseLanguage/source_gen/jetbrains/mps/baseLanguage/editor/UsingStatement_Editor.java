@@ -144,7 +144,6 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -169,7 +168,6 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -182,7 +180,6 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

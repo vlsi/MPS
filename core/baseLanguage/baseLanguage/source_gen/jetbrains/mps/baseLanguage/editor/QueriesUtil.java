@@ -26,7 +26,6 @@ public class QueriesUtil {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
-
     }).toListSequence();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
       ListSequence.fromList(result).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));

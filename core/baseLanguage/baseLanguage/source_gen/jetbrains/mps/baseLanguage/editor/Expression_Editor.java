@@ -58,7 +58,6 @@ public class Expression_Editor extends DefaultNodeEditor {
         result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
         return result;
       }
-
     };
   }
 

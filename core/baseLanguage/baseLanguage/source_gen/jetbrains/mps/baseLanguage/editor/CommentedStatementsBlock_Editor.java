@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.CommentedStatementsBlock_Actions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -83,7 +84,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -97,7 +97,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -112,7 +111,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -136,7 +136,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -150,7 +149,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -168,7 +166,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

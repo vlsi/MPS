@@ -13,9 +13,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.baseLanguage.editor.DeleteParenthesis_Actions;
+import jetbrains.mps.baseLanguage.editor.OpenParenthesis_KeyMap;
+import jetbrains.mps.baseLanguage.editor.CloseParenthesis_KeyMap;
 
 public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
 
@@ -93,7 +97,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -116,7 +119,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

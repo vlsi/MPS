@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -59,7 +60,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

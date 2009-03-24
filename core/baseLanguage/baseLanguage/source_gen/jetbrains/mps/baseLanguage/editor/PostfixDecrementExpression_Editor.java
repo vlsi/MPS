@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.baseLanguage.editor.PostfixDecrementActions;
 
 public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
 
@@ -86,7 +87,6 @@ public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

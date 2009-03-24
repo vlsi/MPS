@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
@@ -87,7 +88,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9459_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility9459_0 == null) {
-      this.my_Component_Visibility9459_0 = new _Component_Visibility(node);
+      this.my_Component_Visibility9459_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility9459_0.createEditorCell(context);
     setupBasic_Component_9459_0(editorCell, node, context);
@@ -96,7 +97,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9459_1(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component9459_0 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component9459_0 = new _GenericDeclaration_TypeVariables_Component(node);
+      this.my_GenericDeclaration_TypeVariables_Component9459_0 = new jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component9459_0.createEditorCell(context);
     setupBasic_Component_9459_1(editorCell, node, context);
@@ -219,7 +220,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -233,7 +233,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -251,7 +250,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -267,7 +265,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -282,7 +279,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -296,7 +292,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -310,7 +305,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -327,7 +321,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -341,7 +334,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -441,7 +433,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

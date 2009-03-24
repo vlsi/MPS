@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -203,7 +204,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -283,7 +283,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

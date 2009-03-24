@@ -127,7 +127,6 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
         public void run() {
           new OverrideMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
-
       });
     }
 
@@ -177,7 +176,6 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
         public void run() {
           new ImplementMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
-
       });
     }
 

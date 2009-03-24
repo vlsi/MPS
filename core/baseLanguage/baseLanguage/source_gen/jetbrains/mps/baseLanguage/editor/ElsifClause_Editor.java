@@ -18,7 +18,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.baseLanguage.editor.IfStatement_LastBrace;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -157,7 +159,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.POSITION, "next-line");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -171,7 +172,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -201,7 +201,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
                 cell.getSNode()
               ));
             }
-
           });
           this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
 
@@ -211,11 +210,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
                 cell.getSNode()
               ));
             }
-
           });
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -231,7 +228,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -246,7 +242,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -295,9 +290,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      // todo: this is quite a hackish stuff but we need it
-      // todo: but we need it since we can't enable/disable
-      // todo: menu items by condition
+      //       todo: this is quite a hackish stuff but we need it
+      //       todo: but we need it since we can't enable/disable
+      //       todo: menu items by condition
       SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
       List<String> result = ListSequence.<String>fromArray();
       if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {

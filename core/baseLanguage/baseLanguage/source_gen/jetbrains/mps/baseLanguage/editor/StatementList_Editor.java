@@ -82,7 +82,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -96,7 +95,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -109,7 +107,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -194,7 +191,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -269,7 +265,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

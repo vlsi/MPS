@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -197,7 +198,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -231,7 +231,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -66,7 +67,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9368_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments9368_0 == null) {
-      this.myIMethodCall_actualArguments9368_0 = new IMethodCall_actualArguments(node);
+      this.myIMethodCall_actualArguments9368_0 = new jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments9368_0.createEditorCell(context);
     setupBasic_Component_9368_0(editorCell, node, context);
@@ -146,7 +147,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -161,7 +161,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -179,7 +178,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -191,7 +189,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -265,7 +262,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
           }
-
         };
         inlineStyle.apply(editorCell);
       }

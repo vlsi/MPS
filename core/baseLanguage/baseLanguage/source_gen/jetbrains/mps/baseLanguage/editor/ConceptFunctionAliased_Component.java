@@ -23,6 +23,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -103,7 +104,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_7219_0(editorCell, node, context);
@@ -182,7 +182,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -195,7 +194,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -209,7 +207,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -224,7 +221,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -239,7 +235,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

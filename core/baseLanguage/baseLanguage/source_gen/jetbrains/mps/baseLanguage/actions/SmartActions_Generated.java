@@ -65,7 +65,6 @@ public class SmartActions_Generated {
                   }
                   return root;
                 }
-
               };
               this.myTree = tree;
               tree.addKeyListener(new KeyAdapter() {
@@ -75,7 +74,6 @@ public class SmartActions_Generated {
                     result[0].ok();
                   }
                 }
-
               });
               tree.rebuildNow();
               JScrollPane scrollPane = new JScrollPane(tree);
@@ -101,7 +99,6 @@ public class SmartActions_Generated {
                 }
               }
             }
-
           };
           return result[0];
         }
@@ -123,7 +120,6 @@ public class SmartActions_Generated {
       public String getDescriptionText() {
         return "Getter";
       }
-
     };
   }
 

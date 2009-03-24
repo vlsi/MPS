@@ -96,7 +96,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -112,7 +111,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -131,7 +129,6 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

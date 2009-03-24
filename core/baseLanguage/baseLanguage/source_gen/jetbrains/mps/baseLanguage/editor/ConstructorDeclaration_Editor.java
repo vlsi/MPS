@@ -19,7 +19,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -125,7 +127,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility5292_0 == null) {
-      this.my_Component_Visibility5292_0 = new _Component_Visibility(node);
+      this.my_Component_Visibility5292_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility5292_0.createEditorCell(context);
     setupBasic_Component_5292_0(editorCell, node, context);
@@ -134,7 +136,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_1(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component5292_0 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component5292_0 = new _GenericDeclaration_TypeVariables_Component(node);
+      this.my_GenericDeclaration_TypeVariables_Component5292_0 = new jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component5292_0.createEditorCell(context);
     setupBasic_Component_5292_1(editorCell, node, context);
@@ -143,7 +145,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_2(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart5292_0 == null) {
-      this.my_DeprecatedPart5292_0 = new _DeprecatedPart(node);
+      this.my_DeprecatedPart5292_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart5292_0.createEditorCell(context);
     setupBasic_Component_5292_2(editorCell, node, context);
@@ -332,7 +334,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -349,7 +350,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION, "next-line");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -362,7 +362,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -384,7 +383,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -399,7 +397,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -415,7 +412,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -433,7 +429,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -464,7 +459,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -477,7 +471,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -494,7 +487,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -508,7 +500,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -524,7 +515,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -536,7 +526,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -670,7 +659,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

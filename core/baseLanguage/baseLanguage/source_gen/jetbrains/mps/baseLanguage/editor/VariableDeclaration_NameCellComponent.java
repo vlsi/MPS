@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -76,7 +77,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -99,8 +99,8 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       {
         result = ListSequence.<String>fromArray();
       }
-      // we need this because of smart input
-      // DO NOT REMOVE IT
+      //       we need this because of smart input
+      //       DO NOT REMOVE IT
       if (SPropertyOperations.getString(node, "name") != null) {
         ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }

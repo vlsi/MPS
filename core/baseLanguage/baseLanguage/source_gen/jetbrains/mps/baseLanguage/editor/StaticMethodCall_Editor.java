@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -23,6 +25,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
@@ -59,7 +62,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_7119_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments7119_0 == null) {
-      this.myIMethodCall_actualArguments7119_0 = new IMethodCall_actualArguments(node);
+      this.myIMethodCall_actualArguments7119_0 = new jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments7119_0.createEditorCell(context);
     setupBasic_Component_7119_0(editorCell, node, context);
@@ -156,7 +159,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -170,7 +172,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -237,7 +238,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

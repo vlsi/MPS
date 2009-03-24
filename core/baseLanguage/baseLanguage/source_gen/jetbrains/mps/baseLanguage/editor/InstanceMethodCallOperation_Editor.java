@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
@@ -38,7 +39,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2215_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments2215_0 == null) {
-      this.myIMethodCall_actualArguments2215_0 = new IMethodCall_actualArguments(node);
+      this.myIMethodCall_actualArguments2215_0 = new jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments2215_0.createEditorCell(context);
     setupBasic_Component_2215_0(editorCell, node, context);
@@ -88,7 +89,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

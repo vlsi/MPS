@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -55,12 +56,11 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_8280_4(context, node, "try"));
-    editorCell.addEditorCell(this.createConstant_8280_5(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8280_3(context, node, "try"));
+    editorCell.addEditorCell(this.createConstant_8280_4(context, node, "{"));
     editorCell.addEditorCell(this.createAlternation_8280_0(context, node));
-    editorCell.addEditorCell(this.createConstant_8280_1(context, node, "}"));
-    editorCell.addEditorCell(this.createConstant_8280_2(context, node, "finally"));
-    editorCell.addEditorCell(this.createConstant_8280_3(context, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8280_1(context, node, "finally"));
+    editorCell.addEditorCell(this.createConstant_8280_2(context, node, "{"));
     editorCell.addEditorCell(this.createRefNode_8280_1(context, node));
     editorCell.addEditorCell(this.createConstant_8280_0(context, node, "}"));
     return editorCell;
@@ -73,6 +73,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_8280_3(context, node));
+    editorCell.addEditorCell(this.createConstant_8280_5(context, node, "}"));
     return editorCell;
   }
 
@@ -83,6 +84,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_8280_5(context, node));
+    editorCell.addEditorCell(this.createConstant_8280_6(context, node, "}"));
     editorCell.addEditorCell(this.createRefNodeList_8280_0(context, node));
     return editorCell;
   }
@@ -131,6 +133,14 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8280_5(editorCell, node, context);
     setupLabel_Constant_8280_5(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_8280_6(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_8280_6(editorCell, node, context);
+    setupLabel_Constant_8280_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -250,7 +260,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -263,7 +272,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -271,47 +279,31 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8280_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8280_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_8280_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8280_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
   }
 
-  private static void setupBasic_Constant_8280_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8280_3");
+  private static void setupBasic_Constant_8280_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8280_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
   }
 
   private static void setupBasic_Alternation_8280_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_8280_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -321,7 +313,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -332,8 +323,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -350,7 +341,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -364,29 +354,37 @@ public class TryStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
   }
 
-  private static void setupBasic_Constant_8280_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8280_4");
+  private static void setupBasic_Constant_8280_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8280_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Constant_8280_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8280_5");
+  private static void setupBasic_Constant_8280_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8280_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
+  }
+
+  private static void setupBasic_Constant_8280_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8280_5");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_8280_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_8280_6");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_8280_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -401,9 +399,6 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_8280_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_8280_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_RefNode_8280_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -413,10 +408,16 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_RefNodeList_8280_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_8280_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_8280_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_8280_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_8280_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition8280_0(SNode node, EditorContext editorContext, IScope scope) {

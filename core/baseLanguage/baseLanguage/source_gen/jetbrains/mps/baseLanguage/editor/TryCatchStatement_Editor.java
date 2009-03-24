@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -130,7 +131,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -143,7 +143,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -156,7 +155,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.POSITION, "next-line");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -171,7 +169,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
