@@ -6211,6 +6211,43 @@
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1215457441142">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215457441143">
+                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237887788105">
+                                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237887788106">
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237887831415">
+                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237887832717">
+                                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1237887831416" />
+                                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" id="1237887840718">
+                                          <node role="messageText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237887916428">
+                                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237887842435">
+                                              <property name="value" value="Method parameters count doesn't match closure parameters count: " />
+                                            </node>
+                                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237887978744">
+                                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237887977357">
+                                                <link role="variableDeclaration" targetNodeId="1215457441130" resolveInfo="imd" />
+                                              </node>
+                                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237887994232">
+                                                <link role="property" targetNodeId="19.1156234966388" resolveInfo="shortDescription" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237887878317" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1237888066033" />
+                                  </node>
+                                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1237887792947">
+                                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237887799375">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237887796935">
+                                        <link role="variableDeclaration" targetNodeId="1215458208409" resolveInfo="paramDecls" />
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1237887800197" />
+                                    </node>
+                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237887791221">
+                                      <link role="variableDeclaration" targetNodeId="1215458218600" resolveInfo="idx" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215457601338">
                                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215457601339">
                                     <property name="name" value="newpd" />
