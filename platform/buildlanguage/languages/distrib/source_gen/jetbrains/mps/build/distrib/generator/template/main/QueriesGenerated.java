@@ -24,6 +24,7 @@ import java.util.List;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
+import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -430,6 +431,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1237900800852(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getLicensePath_1237900615474(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1237910645659(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
