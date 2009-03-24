@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mpslite.generator.template.main._Quotations;
 import jetbrains.mpslite.generator.template.util.MPSLiteGenerationUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -63,11 +64,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1237456965999(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "target", false), _context);
+    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), _context);
   }
 
   public static Object referenceMacro_GetReferent_1237457689341(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "target", false), _context);
+    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), _context);
   }
 
   public static Iterable sourceNodesQuery_1237409957537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

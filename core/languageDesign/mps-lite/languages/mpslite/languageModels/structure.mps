@@ -272,10 +272,11 @@
     <property name="name" value="ConcreteReferencePart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1237207375100" resolveInfo="ReferencePart" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1182845809628">
-      <property name="role" value="target" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237914611837">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="conceptReference" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
+      <link role="target" targetNodeId="1237896192386" resolveInfo="AbstractConceptReference" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1182845701266">
       <property name="value" value="&lt; Referent.. &gt;" />

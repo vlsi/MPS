@@ -380,15 +380,8 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1182845720006">
         <property name="text" value="&lt;" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1237307070463">
-        <link role="relationDeclaration" targetNodeId="1.1182845809628" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1237307070464">
-          <link role="conceptDeclaration" targetNodeId="1.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237307077090">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1237914647032">
+        <link role="relationDeclaration" targetNodeId="1.1237914611837" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1182845727211">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
