@@ -94,13 +94,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
   }

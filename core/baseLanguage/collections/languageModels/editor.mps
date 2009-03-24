@@ -2437,5 +2437,38 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813181285" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237907180895">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1237907129112" resolveInfo="ContainsValueOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237907182473">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237907182474">
+        <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1237907182475">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237907182476">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1237907182477">
+        <link role="relationDeclaration" targetNodeId="1.1237907150183" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237907182478">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237907182479" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237909230709">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1237909114519" resolveInfo="GetValuesOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237909232368">
+      <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+    </node>
+  </node>
 </model>
 

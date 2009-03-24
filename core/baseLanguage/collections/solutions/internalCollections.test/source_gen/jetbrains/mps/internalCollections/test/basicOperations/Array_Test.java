@@ -72,13 +72,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.expect5(), test);
     Iterable<Integer> test2 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
@@ -127,13 +124,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.expect5(), test2);
     final String[] arr2 = new String[]{"A","B","C"};
@@ -183,13 +177,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.inputABC(), test3);
     Iterable<String> test4 = Sequence.fromClosure(new ISequenceClosure <String>() {
@@ -238,13 +229,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.inputABC(), test4);
   }

@@ -89,13 +89,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }.invoke();
     this.assertIterableEquals(this.expect5(), seq);
   }
@@ -150,13 +147,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.expect5(), seq);
   }
@@ -211,13 +205,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.expect5(), seq);
     Iterable<Integer> seq2 = Sequence.fromIterable(Collections.<Integer>emptyList());
@@ -290,13 +281,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     this.assertIterableEquals(this.expect5(), seq3);
   }
@@ -380,13 +368,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertEquals(3, Sequence.fromIterable(test).count());
     Iterable<Integer> TEST = test;
@@ -475,13 +460,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       });
       Assert.assertEquals("[bar]", String.valueOf(test));
       Assert.assertEquals("[foo, bar]", String.valueOf(test));

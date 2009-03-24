@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internalCollections.test.basicOperations.Foo;
+import jetbrains.mps.internalCollections.test.basicOperations.Bar;
 
 public class Map_Test extends Util_Test {
 
@@ -32,6 +34,7 @@ public class Map_Test extends Util_Test {
     List<String> values = Arrays.asList("a", "b", "c");
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
+      Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
@@ -40,6 +43,7 @@ public class Map_Test extends Util_Test {
     }
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertFalse(MapSequence.fromMap(map).containsKey(i));
+      Assert.assertFalse(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
     }
   }
 
@@ -54,17 +58,21 @@ public class Map_Test extends Util_Test {
     }
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
+      Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
+    this.assertIterableEqualsIgnoreOrder(Arrays.asList("a", "b", "c"), MapSequence.fromMap(map).values());
   }
 
   @Test()
   public void test_clear() throws Exception {
     Map<Integer, String> map1 = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
+    Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
     MapSequence.fromMap(map1).clear();
     Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
   }
 
   @Test()
@@ -93,6 +101,10 @@ public class Map_Test extends Util_Test {
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
     String[] array = MapSequence.fromMap(test).get("foo");
     Assert.assertSame(2, array.length);
+  }
+
+  @Test()
+  public void test_contains() throws Exception {
   }
 
   @Test()
