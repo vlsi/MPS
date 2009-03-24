@@ -555,6 +555,23 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     g.drawImage(image, x0 - 1, y0 - 1, null);
   }
 
+  public void paintBackground(Graphics g) {
+    if (getCellBackgroundColor() != null) {
+      g.setColor(getCellBackgroundColor());
+      List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+      for (Rectangle part : selection) {
+        g.fillRect(part.x, part.y, part.width, part.height);
+      }
+    }
+
+    List<EditorMessage> messages = getMessages();
+    for (EditorMessage message : messages) {
+      if (message != null && message.isBackGround()) {
+        message.paint(g, getEditor(), this);
+      }
+    }
+  }
+
   public void paintSelectionAsIfNotCollection(Graphics g, Color c) {
     super.paintSelection(g, c);
   }
