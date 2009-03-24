@@ -17,7 +17,6 @@ public class PackagingStyles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
-
     };
   }
 
@@ -26,7 +25,6 @@ public class PackagingStyles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
-
     };
   }
 
@@ -36,7 +34,6 @@ public class PackagingStyles_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -48,7 +45,6 @@ public class PackagingStyles_StyleSheet {
         this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
         this.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
       }
-
     };
   }
 
@@ -60,7 +56,6 @@ public class PackagingStyles_StyleSheet {
         this.set(StyleAttributes.PADDING_LEFT, new Padding(0.3, Measure.SPACES));
         this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
       }
-
     };
   }
 
@@ -70,7 +65,6 @@ public class PackagingStyles_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -79,7 +73,6 @@ public class PackagingStyles_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 

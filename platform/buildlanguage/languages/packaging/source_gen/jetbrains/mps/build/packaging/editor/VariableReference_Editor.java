@@ -15,8 +15,10 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.build.packaging.editor.CompositeString_RT;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 
 public class VariableReference_Editor extends DefaultNodeEditor {
 
@@ -61,7 +63,6 @@ public class VariableReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

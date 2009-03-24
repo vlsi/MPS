@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -93,7 +94,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5234_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent5234_0 == null) {
-      this.myConfigurationReferencesEditorComponent5234_0 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent5234_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent5234_0.createEditorCell(context);
     setupBasic_Component_5234_0(editorCell, node, context);
@@ -102,7 +103,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5234_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent5234_1 == null) {
-      this.myConfigurationReferencesEditorComponent5234_1 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent5234_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent5234_1.createEditorCell(context);
     setupBasic_Component_5234_1(editorCell, node, context);
@@ -111,7 +112,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5234_2(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector5234_0 == null) {
-      this.myIncludeExcludeInInspector5234_0 = new IncludeExcludeInInspector(node);
+      this.myIncludeExcludeInInspector5234_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector(node);
     }
     EditorCell editorCell = this.myIncludeExcludeInInspector5234_0.createEditorCell(context);
     setupBasic_Component_5234_2(editorCell, node, context);
@@ -120,7 +121,7 @@ public class Folder_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5234_3(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent5234_0 == null) {
-      this.myIncludeExcludeEditorComponent5234_0 = new IncludeExcludeEditorComponent(node);
+      this.myIncludeExcludeEditorComponent5234_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent(node);
     }
     EditorCell editorCell = this.myIncludeExcludeEditorComponent5234_0.createEditorCell(context);
     setupBasic_Component_5234_3(editorCell, node, context);
@@ -252,7 +253,6 @@ public class Folder_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -270,7 +270,6 @@ public class Folder_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -287,7 +286,6 @@ public class Folder_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

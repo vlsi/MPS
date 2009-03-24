@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
@@ -98,7 +99,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1697_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1697_0 == null) {
-      this.myConfigurationReferencesEditorComponent1697_0 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent1697_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent1697_0.createEditorCell(context);
     setupBasic_Component_1697_0(editorCell, node, context);
@@ -107,7 +108,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1697_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1697_1 == null) {
-      this.myConfigurationReferencesEditorComponent1697_1 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent1697_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent1697_1.createEditorCell(context);
     setupBasic_Component_1697_1(editorCell, node, context);
@@ -116,7 +117,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1697_2(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector1697_0 == null) {
-      this.myIncludeExcludeInInspector1697_0 = new IncludeExcludeInInspector(node);
+      this.myIncludeExcludeInInspector1697_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector(node);
     }
     EditorCell editorCell = this.myIncludeExcludeInInspector1697_0.createEditorCell(context);
     setupBasic_Component_1697_2(editorCell, node, context);
@@ -125,7 +126,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1697_3(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent1697_0 == null) {
-      this.myIncludeExcludeEditorComponent1697_0 = new IncludeExcludeEditorComponent(node);
+      this.myIncludeExcludeEditorComponent1697_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent(node);
     }
     EditorCell editorCell = this.myIncludeExcludeEditorComponent1697_0.createEditorCell(context);
     setupBasic_Component_1697_3(editorCell, node, context);
@@ -134,7 +135,7 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1697_4(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent1697_0 == null) {
-      this.myCompositecomponentEntriesEditorComponent1697_0 = new CompositecomponentEntriesEditorComponent(node);
+      this.myCompositecomponentEntriesEditorComponent1697_0 = new jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent(node);
     }
     EditorCell editorCell = this.myCompositecomponentEntriesEditorComponent1697_0.createEditorCell(context);
     setupBasic_Component_1697_4(editorCell, node, context);
@@ -285,7 +286,6 @@ public class Jar_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -312,7 +312,6 @@ public class Jar_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -328,7 +327,6 @@ public class Jar_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -350,7 +348,6 @@ public class Jar_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

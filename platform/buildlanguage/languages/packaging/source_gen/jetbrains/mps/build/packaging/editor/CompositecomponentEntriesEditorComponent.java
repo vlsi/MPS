@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 
 public class CompositecomponentEntriesEditorComponent extends AbstractCellProvider {
 
@@ -74,7 +75,6 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -91,7 +91,6 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

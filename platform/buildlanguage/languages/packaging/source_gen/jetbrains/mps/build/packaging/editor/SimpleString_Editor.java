@@ -11,10 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.build.packaging.editor.CompositeString_RT;
 
 public class SimpleString_Editor extends DefaultNodeEditor {
 
@@ -61,7 +63,6 @@ public class SimpleString_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

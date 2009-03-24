@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -89,7 +90,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1160_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1160_0 == null) {
-      this.myConfigurationReferencesEditorComponent1160_0 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent1160_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent1160_0.createEditorCell(context);
     setupBasic_Component_1160_0(editorCell, node, context);
@@ -98,7 +99,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1160_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1160_1 == null) {
-      this.myConfigurationReferencesEditorComponent1160_1 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent1160_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent1160_1.createEditorCell(context);
     setupBasic_Component_1160_1(editorCell, node, context);
@@ -252,7 +253,6 @@ public class Replace_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -269,7 +269,6 @@ public class Replace_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

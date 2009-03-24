@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.build.packaging.editor.Module_KeyMap;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -51,7 +53,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6816_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_0 == null) {
-      this.myConfigurationReferencesEditorComponent6816_0 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6816_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_0.createEditorCell(context);
     setupBasic_Component_6816_0(editorCell, node, context);
@@ -60,7 +62,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6816_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_1 == null) {
-      this.myConfigurationReferencesEditorComponent6816_1 = new ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6816_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_1.createEditorCell(context);
     setupBasic_Component_6816_1(editorCell, node, context);

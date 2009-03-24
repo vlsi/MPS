@@ -1427,8 +1427,8 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226514924188">
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1226514924189">
                       <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1226514924190">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1226514924191">
-                          <link role="conceptDeclaration" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237899294972">
+                          <link role="conceptDeclaration" targetNodeId="1.1234968728594" resolveInfo="IMacroHolder" />
                         </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1226514924192" />
