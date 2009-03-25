@@ -193,8 +193,9 @@ public class TextLine {
   }
 
   public int getPaddingBottom() {
-    Double value = myStyle.get(StyleAttributes.PADDING_BOTTOM).getValue();
-    Measure type = myStyle.get(StyleAttributes.PADDING_BOTTOM).getType();
+    Padding padding = myStyle.get(StyleAttributes.PADDING_BOTTOM);
+    Double value = padding.getValue();
+    Measure type = padding.getType();
     return getVerticalInternalInsert(value, type);
   }
 
