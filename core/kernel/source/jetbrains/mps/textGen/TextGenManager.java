@@ -87,7 +87,8 @@ public class TextGenManager {
   private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
 
-    while (cd != SModelUtil_new.getBaseConcept()) {
+    ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
+    while (cd != baseConcept) {
       Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
 
       String packageName = NameUtil.namespaceFromConcept(cd);
@@ -107,9 +108,7 @@ public class TextGenManager {
       }
 
       cd = cd.getExtends();
-      if (cd == null) {
-        cd = SModelUtil_new.getBaseConcept();
-      }
+      if (cd == null) cd = baseConcept;
     }
     DefaultTextGen result = new DefaultTextGen();
     result.setContext(context);

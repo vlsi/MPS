@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.smodel.util.SModelUtil;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -147,27 +147,10 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperConcepts(AbstractConceptDeclaration concept) {
-    List<AbstractConceptDeclaration> result = new ArrayList<AbstractConceptDeclaration>();
-    if (concept instanceof ConceptDeclaration) {
-      ConceptDeclaration extended = ((ConceptDeclaration) concept).getExtends();
-      if (extended != null) {
-        result.add(extended);
-      }
-      List<InterfaceConceptReference> refs = ((ConceptDeclaration) concept).getImplementses();
-      for (InterfaceConceptReference ref : refs) {
-        InterfaceConceptDeclaration interfaceConcept = ref.getIntfc();
-        if (interfaceConcept != null) {
-          result.add(interfaceConcept);
-        }
-      }
-    } else {
-      List<InterfaceConceptReference> refs = ((InterfaceConceptDeclaration) concept).getExtendses();
-      for (InterfaceConceptReference ref : refs) {
-        InterfaceConceptDeclaration interfaceConcept = ref.getIntfc();
-        if (interfaceConcept != null) {
-          result.add(interfaceConcept);
-        }
-      }
+    List<SNode> nodes = SModelUtil.getDirectSuperConcepts(concept.getNode());
+    List <AbstractConceptDeclaration> result = new ArrayList<AbstractConceptDeclaration>();
+    for (SNode node:nodes){
+      result.add((AbstractConceptDeclaration) node.getAdapter());
     }
     return result;
   }

@@ -120,9 +120,10 @@ public class ChildSubstituteActionsHelper {
       // pretend we are going to substitute more concrete concept
       childConcept = currentChild.getConceptDeclarationAdapter();
       if (childConcept instanceof ConceptDeclaration) {
+        ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
         while (((ConceptDeclaration) childConcept).getExtends() != null) {
           ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
-          if (extendedConcept == SModelUtil_new.getBaseConcept()) break;
+          if (extendedConcept == baseConcept) break;
           childConcept = extendedConcept;
         }
       }

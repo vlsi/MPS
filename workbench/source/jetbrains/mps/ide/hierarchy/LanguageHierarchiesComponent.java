@@ -193,11 +193,12 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     java.util.List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
+    ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
     outer:
     for (ConceptDeclaration concept : structureModel.getRootsAdapters(ConceptDeclaration.class)) {
       ConceptDeclaration parentConcept = concept;
       ConceptContainer prevConceptContainer = null;
-      while (parentConcept != null && parentConcept != SModelUtil_new.getBaseConcept() &&
+      while (parentConcept != null && parentConcept != baseConcept &&
         !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
         ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
