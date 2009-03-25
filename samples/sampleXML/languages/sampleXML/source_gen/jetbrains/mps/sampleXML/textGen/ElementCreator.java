@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class ElementCreator {
 
-  public static void appendByElement(SNode node, final SNodeTextGen textGen) {
+  public static void byElement(SNode node, final SNodeTextGen textGen) {
     SNode element = SLinkOperations.getTarget(node, "rootElement", true);
     Element result = ElementCreator.createElement(element, textGen);
     Document document = new Document();

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BufferParameter extends AbstractTextGenParameter {
+public class BufferParameter extends jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.BufferParameter";
 
   public BufferParameter(SNode node) {

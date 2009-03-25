@@ -4,11 +4,12 @@ package jetbrains.mps.lang.textGen.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration {
+public class ConceptTextGenDeclaration extends jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration";
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
   public static final String TEXT_GEN_BLOCK = "textGenBlock";
@@ -17,19 +18,19 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration {
     super(node);
   }
 
-  public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptTextGenDeclaration.CONCEPT_DECLARATION);
+  public jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration getConceptDeclaration() {
+    return (jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptTextGenDeclaration.CONCEPT_DECLARATION);
   }
 
-  public void setConceptDeclaration(AbstractConceptDeclaration node) {
+  public void setConceptDeclaration(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration node) {
     super.setReferent(ConceptTextGenDeclaration.CONCEPT_DECLARATION, node);
   }
 
-  public GenerateTextDeclaration getTextGenBlock() {
-    return (GenerateTextDeclaration)this.getChild(GenerateTextDeclaration.class, ConceptTextGenDeclaration.TEXT_GEN_BLOCK);
+  public jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration getTextGenBlock() {
+    return (jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration)this.getChild(GenerateTextDeclaration.class, ConceptTextGenDeclaration.TEXT_GEN_BLOCK);
   }
 
-  public void setTextGenBlock(GenerateTextDeclaration node) {
+  public void setTextGenBlock(jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration node) {
     super.setChild(ConceptTextGenDeclaration.TEXT_GEN_BLOCK, node);
   }
 

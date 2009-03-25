@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_name_PropertyConstraint;
 import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_operationName_PropertyConstraint;
 import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_DefaultSearchScope;
-import jetbrains.mps.lang.textGen.constraints.PrivateMethodDeclaration_DefaultSearchScope;
+import jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
@@ -19,7 +19,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ConceptTextGenDeclaration_name_PropertyConstraint());
     this.myConstraints.add(new OperationDeclaration_operationName_PropertyConstraint());
     this.myConstraints.add(new OperationDeclaration_DefaultSearchScope());
-    this.myConstraints.add(new PrivateMethodDeclaration_DefaultSearchScope());
+    this.myConstraints.add(new UtilityMethodDeclaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

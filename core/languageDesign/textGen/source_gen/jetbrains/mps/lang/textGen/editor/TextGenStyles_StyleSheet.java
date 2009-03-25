@@ -15,7 +15,6 @@ public class TextGenStyles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-
     };
   }
 
@@ -25,7 +24,14 @@ public class TextGenStyles_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
+    };
+  }
 
+  public static Style getAppendPart(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      }
     };
   }
 

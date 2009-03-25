@@ -94,7 +94,6 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -111,7 +110,6 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

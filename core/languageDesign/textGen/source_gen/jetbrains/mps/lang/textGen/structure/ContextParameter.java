@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ContextParameter extends AbstractTextGenParameter {
+public class ContextParameter extends jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.ContextParameter";
 
   public ContextParameter(SNode node) {

@@ -46,7 +46,7 @@ public class check_CallPrivateFunction_NonTypesystemRule extends AbstractNonType
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.textGen.structure.PrivateMethodCall";
+    return "jetbrains.mps.lang.textGen.structure.UtilityMethodCall";
   }
 
   public boolean isApplicable(SNode argument) {

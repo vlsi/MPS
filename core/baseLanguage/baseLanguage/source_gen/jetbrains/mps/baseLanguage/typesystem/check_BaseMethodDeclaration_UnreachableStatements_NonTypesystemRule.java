@@ -26,7 +26,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     }
     SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BaseMethodDeclaration_Behavior.call_isVoidReturn_1234359555698(nodeToCheck)) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null)) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(nodeToCheck)) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null)) {
         if (!(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(nodeToCheck))) {
           DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true));
         }

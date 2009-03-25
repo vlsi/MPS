@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DecreaseDepthOperation extends SimpleTextGenOperation {
+public class DecreaseDepthOperation extends jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation";
 
   public DecreaseDepthOperation(SNode node) {

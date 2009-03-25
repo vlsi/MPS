@@ -10,7 +10,7 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public abstract class GenericDeclarationTextGen2 extends jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen {
 
-  public static void appendTypeDeclarations(SNode generic, final SNodeTextGen textGen) {
+  public static void typeDeclarations(SNode generic, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {
       textGen.append(" <");
       if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {

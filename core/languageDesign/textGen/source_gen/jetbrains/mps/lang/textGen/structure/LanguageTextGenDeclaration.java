@@ -4,12 +4,14 @@ package jetbrains.mps.lang.textGen.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.textGen.structure.OperationDeclaration;
 import java.util.List;
+import jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
+public class LanguageTextGenDeclaration extends jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration";
   public static final String CLNK_ApplicableHiddenParameter = "applicableHiddenParameter";
   public static final String BASE_TEXT_GEN = "baseTextGen";
@@ -20,11 +22,11 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
     super(node);
   }
 
-  public LanguageTextGenDeclaration getBaseTextGen() {
-    return (LanguageTextGenDeclaration)this.getReferent(LanguageTextGenDeclaration.class, LanguageTextGenDeclaration.BASE_TEXT_GEN);
+  public jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration getBaseTextGen() {
+    return (jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration)this.getReferent(LanguageTextGenDeclaration.class, LanguageTextGenDeclaration.BASE_TEXT_GEN);
   }
 
-  public void setBaseTextGen(LanguageTextGenDeclaration node) {
+  public void setBaseTextGen(jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration node) {
     super.setReferent(LanguageTextGenDeclaration.BASE_TEXT_GEN, node);
   }
 
@@ -32,19 +34,19 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
     return this.getChildCount(LanguageTextGenDeclaration.OPERATION);
   }
 
-  public Iterator<OperationDeclaration> operations() {
+  public Iterator<jetbrains.mps.lang.textGen.structure.OperationDeclaration> operations() {
     return this.children(OperationDeclaration.class, LanguageTextGenDeclaration.OPERATION);
   }
 
-  public List<OperationDeclaration> getOperations() {
+  public List<jetbrains.mps.lang.textGen.structure.OperationDeclaration> getOperations() {
     return this.getChildren(OperationDeclaration.class, LanguageTextGenDeclaration.OPERATION);
   }
 
-  public void addOperation(OperationDeclaration node) {
+  public void addOperation(jetbrains.mps.lang.textGen.structure.OperationDeclaration node) {
     this.addChild(LanguageTextGenDeclaration.OPERATION, node);
   }
 
-  public void insertOperation(OperationDeclaration prev, OperationDeclaration node) {
+  public void insertOperation(jetbrains.mps.lang.textGen.structure.OperationDeclaration prev, jetbrains.mps.lang.textGen.structure.OperationDeclaration node) {
     this.insertChild(prev, LanguageTextGenDeclaration.OPERATION, node);
   }
 
@@ -52,19 +54,19 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
     return this.getChildCount(LanguageTextGenDeclaration.FUNCTION);
   }
 
-  public Iterator<PrivateMethodDeclaration> functions() {
-    return this.children(PrivateMethodDeclaration.class, LanguageTextGenDeclaration.FUNCTION);
+  public Iterator<jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration> functions() {
+    return this.children(UtilityMethodDeclaration.class, LanguageTextGenDeclaration.FUNCTION);
   }
 
-  public List<PrivateMethodDeclaration> getFunctions() {
-    return this.getChildren(PrivateMethodDeclaration.class, LanguageTextGenDeclaration.FUNCTION);
+  public List<jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration> getFunctions() {
+    return this.getChildren(UtilityMethodDeclaration.class, LanguageTextGenDeclaration.FUNCTION);
   }
 
-  public void addFunction(PrivateMethodDeclaration node) {
+  public void addFunction(jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration node) {
     this.addChild(LanguageTextGenDeclaration.FUNCTION, node);
   }
 
-  public void insertFunction(PrivateMethodDeclaration prev, PrivateMethodDeclaration node) {
+  public void insertFunction(jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration prev, jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration node) {
     this.insertChild(prev, LanguageTextGenDeclaration.FUNCTION, node);
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IndentBufferOperation extends SimpleTextGenOperation {
+public class IndentBufferOperation extends jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.IndentBufferOperation";
 
   public IndentBufferOperation(SNode node) {

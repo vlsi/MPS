@@ -6,7 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class StringTextGen {
 
-  public static void appendCompilableString(String s, final SNodeTextGen textGen) {
+  public static void compilableString(String s, final SNodeTextGen textGen) {
     String result = s;
     if (s.indexOf('"') >= 0 || s.indexOf('\n') >= 0 || s.indexOf('\r') >= 0) {
       boolean needsEscaping = false;

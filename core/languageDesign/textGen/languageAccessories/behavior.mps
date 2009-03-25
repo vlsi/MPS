@@ -34,10 +34,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="0" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="8" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="0" />
+  <import index="1" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="8" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -47,8 +47,8 @@
     <property name="package" value="operation" />
     <link role="concept" targetNodeId="1.1233922353619" resolveInfo="LanguageTextGen_ConceptFunction" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234265130010">
-      <property name="name" value="isVoidReturn" />
-      <link role="overriddenMethod" targetNodeId="2v.1234359555698" resolveInfo="isVoidReturn" />
+      <property name="name" value="isReturnsVoid" />
+      <link role="overriddenMethod" targetNodeId="2v.1234359555698" resolveInfo="isReturnsVoid" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234265130012">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234265138564">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234265140441">
@@ -56,8 +56,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1234265133982" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234265133983" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237977827750" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237977827751" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234265815770">
       <property name="name" value="getPresentation" />
@@ -1252,6 +1252,13 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237466334491">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237466334492" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237983962448">
+    <property name="package" value="operation.append.part" />
+    <link role="concept" targetNodeId="1.1237305491868" resolveInfo="CollectionAppendPart" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237983962449">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237983962450" />
     </node>
   </node>
 </model>

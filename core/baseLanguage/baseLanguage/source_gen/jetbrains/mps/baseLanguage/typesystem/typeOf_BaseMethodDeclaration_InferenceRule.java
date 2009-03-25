@@ -46,7 +46,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     }
     //     =============
     SNode expectedRetType = SLinkOperations.getTarget(bmd, "returnType", true);
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isVoidReturn_1234359555698(bmd)) {
+    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(bmd)) {
       //       actually - no return type
       expectedRetType = null;
     }

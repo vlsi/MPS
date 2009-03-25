@@ -22,7 +22,7 @@ public class ConstructorDeclaration_Behavior {
     return true;
   }
 
-  public static boolean virtual_isVoidReturn_1234359555698(SNode thisNode) {
+  public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return true;
   }
 

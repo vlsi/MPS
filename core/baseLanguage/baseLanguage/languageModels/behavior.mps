@@ -3618,7 +3618,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076448981" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234359555698">
-      <property name="name" value="isVoidReturn" />
+      <property name="name" value="isReturnsVoid" />
       <property name="isVirtual" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1234359596407" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234359555700">

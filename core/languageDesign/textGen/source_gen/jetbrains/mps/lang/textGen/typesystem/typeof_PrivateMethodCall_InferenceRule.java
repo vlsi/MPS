@@ -24,7 +24,7 @@ public class typeof_PrivateMethodCall_InferenceRule extends AbstractInferenceRul
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.textGen.structure.PrivateMethodCall";
+    return "jetbrains.mps.lang.textGen.structure.UtilityMethodCall";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -12,6 +12,86 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Append" conceptFQName="jetbrains.mps.lang.textGen.structure.Append" featureKind="CONCEPT" />
+          <value featureName="AppendOperation" conceptFQName="jetbrains.mps.lang.textGen.structure.AppendOperation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PrivateMethodDeclaration" conceptFQName="jetbrains.mps.lang.textGen.structure.PrivateMethodDeclaration" featureKind="CONCEPT" />
+          <value featureName="UtilityMethodDeclaration" conceptFQName="jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="PrivateMethodCall" conceptFQName="jetbrains.mps.lang.textGen.structure.PrivateMethodCall" featureKind="CONCEPT" />
+          <value featureName="UtilityMethodCall" conceptFQName="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="CollectionPart" conceptFQName="jetbrains.mps.lang.textGen.structure.CollectionPart" featureKind="CONCEPT" />
+          <value featureName="CollectionAppendPart" conceptFQName="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ConstantStringPart" conceptFQName="jetbrains.mps.lang.textGen.structure.ConstantStringPart" featureKind="CONCEPT" />
+          <value featureName="ConstantStringAppendPart" conceptFQName="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="InfoPart" conceptFQName="jetbrains.mps.lang.textGen.structure.InfoPart" featureKind="CONCEPT" />
+          <value featureName="InfoAppendPart" conceptFQName="jetbrains.mps.lang.textGen.structure.InfoAppendPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NewLinePart" conceptFQName="jetbrains.mps.lang.textGen.structure.NewLinePart" featureKind="CONCEPT" />
+          <value featureName="NewLineAppendPart" conceptFQName="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NodePart" conceptFQName="jetbrains.mps.lang.textGen.structure.NodePart" featureKind="CONCEPT" />
+          <value featureName="NodeAppendPart" conceptFQName="jetbrains.mps.lang.textGen.structure.NodeAppendPart" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -36,7 +116,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="0" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="8" />
   <language-engaged-on-generation namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
@@ -181,7 +261,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233924848298">
     <property name="name" value="OperationCall" />
     <property name="package" value="operation" />
-    <link role="extends" targetNodeId="3v.1068580123157" resolveInfo="Statement" />
+    <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234191323697">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="parameter" />
@@ -237,7 +317,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234524838116">
-    <property name="name" value="PrivateMethodDeclaration" />
+    <property name="name" value="UtilityMethodDeclaration" />
     <link role="extends" targetNodeId="3v.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1234527146544">
       <property name="value" value="new private function" />
@@ -245,7 +325,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234529062040">
-    <property name="name" value="PrivateMethodCall" />
+    <property name="name" value="UtilityMethodCall" />
     <link role="extends" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234529163244">
       <property name="metaClass" value="reference" />
@@ -314,7 +394,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305208784">
     <property name="package" value="operation.append.part" />
-    <property name="name" value="NewLinePart" />
+    <property name="name" value="NewLineAppendPart" />
     <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237305242082">
       <property name="value" value="\n" />
@@ -327,7 +407,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305275276">
     <property name="package" value="operation.append.part" />
-    <property name="name" value="InfoPart" />
+    <property name="name" value="InfoAppendPart" />
     <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237305885953">
       <property name="metaClass" value="aggregation" />
@@ -346,7 +426,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305334312">
     <property name="package" value="operation.append.part" />
-    <property name="name" value="NodePart" />
+    <property name="name" value="NodeAppendPart" />
     <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237305790512">
       <property name="metaClass" value="aggregation" />
@@ -369,7 +449,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305491868">
     <property name="package" value="operation.append.part" />
-    <property name="name" value="CollectionPart" />
+    <property name="name" value="CollectionAppendPart" />
     <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237305945551">
       <property name="metaClass" value="aggregation" />
@@ -389,10 +469,14 @@
       <property name="name" value="separator" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1237983969951">
+      <property name="name" value="withSeparator" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305557638">
     <property name="package" value="operation.append.part" />
-    <property name="name" value="ConstantStringPart" />
+    <property name="name" value="ConstantStringAppendPart" />
     <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1237305576108">
       <property name="name" value="value" />
@@ -412,8 +496,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237306079178">
-    <property name="package" value="operation.append.part" />
-    <property name="name" value="Append" />
+    <property name="package" value="operation.append" />
+    <property name="name" value="AppendOperation" />
     <link role="extends" targetNodeId="3v.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237306564424">
       <property name="value" value="append" />

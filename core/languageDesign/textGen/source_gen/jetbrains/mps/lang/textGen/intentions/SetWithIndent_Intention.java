@@ -33,12 +33,12 @@ public class SetWithIndent_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringPart") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.NodePart");
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     boolean indent = AbstractAppendPart_Behavior.call_withIndent_1237466287046(node);
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringPart")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) {
       SPropertyOperations.set(node, "withIndent", "" + !(indent));
     } else
     {
