@@ -135,30 +135,25 @@ public class LeftEditorHighlighter {
   }
 
   public void paint(Graphics g) {
+    Graphics2D g2d = (Graphics2D) g;
     g.setColor(Color.DARK_GRAY);
-    Stroke s = null;
-    if (g instanceof Graphics2D) {
-      Graphics2D g2d = (Graphics2D) g;
-      s = g2d.getStroke();
-      g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
-    }
+    Stroke s = g2d.getStroke();
+    g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
     g.drawLine(myWidth, 0, myWidth, myEditorComponent.getHeight());
-    if (g instanceof Graphics2D) {
-      ((Graphics2D)g).setStroke(s);
-    }
+    g2d.setStroke(s);
     for (FoldingButton button : myFoldingButtons.values()) {
       if (button.myMouseOver && !button.myIsFolded) {
         g.setColor(button.getBorderColor());
         g.drawLine(button.myX, button.myY1 + FoldingButton.WIDTH, button.myX, button.myY2 - FoldingButton.WIDTH);
       }
     }
-    for (HighlighterBracket bracket : new HashSet<HighlighterBracket>(myBrackets.values())) {
+    for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
     }
-    for (FoldingButton button : new HashSet<FoldingButton>(myFoldingButtons.values())) {
+    for (FoldingButton button : myFoldingButtons.values()) {
       button.paint(g);
     }
-    for (Bookmark bookmark : new HashSet<Bookmark>(myBookmarks.values())) {
+    for (Bookmark bookmark : myBookmarks.values()) {
       bookmark.paint(g);
     }
   }
