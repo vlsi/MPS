@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MPSLiteConceptDeclaration extends jetbrains.mps.lang.core.structure.BaseConcept implements jetbrains.mps.lang.core.structure.INamedConcept {
+public class MPSLiteConceptDeclaration extends jetbrains.mps.lang.core.structure.BaseConcept implements jetbrains.mpslite.structure.IMPSLiteConcept {
   public static final String concept = "jetbrains.mpslite.structure.MPSLiteConceptDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
