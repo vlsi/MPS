@@ -21,6 +21,19 @@ public enum RefactoringTargetKind_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<RefactoringTargetKind_Enum> getConstants() {
     List<RefactoringTargetKind_Enum> list = new LinkedList<RefactoringTargetKind_Enum>();
     ListOperations.addElement(list, RefactoringTargetKind_Enum.node);
@@ -55,19 +68,6 @@ public enum RefactoringTargetKind_Enum {
       return RefactoringTargetKind_Enum.devkit;
     }
     return RefactoringTargetKind_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

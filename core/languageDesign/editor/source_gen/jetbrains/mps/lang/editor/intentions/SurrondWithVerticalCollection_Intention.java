@@ -5,11 +5,11 @@ package jetbrains.mps.lang.editor.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SurrondWithVerticalCollection_Intention extends BaseIntention {
@@ -31,7 +31,7 @@ public class SurrondWithVerticalCollection_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return editorContext.getSelectedNodes().size() > 0;
+    return ListSequence.fromList(((List<SNode>)editorContext.getSelectedNodes())).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -226,8 +226,8 @@ __switch__:
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-      Iterator<SNode> formalIterator = ((List<SNode>)parameterDeclarations).iterator();
-      Iterator<SNode> actualIterator = SLinkOperations.getTargets(mc, "actualArgument", true).iterator();
+      Iterator<SNode> formalIterator = ListSequence.fromList(parameterDeclarations).iterator();
+      Iterator<SNode> actualIterator = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
       SNode formalParam = null;
       SNode actualParam = null;
       while (true) {

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.refactoring.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.refactoring.constraints.RequiredAdditionalArgumentReference_argument_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

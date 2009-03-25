@@ -146,21 +146,21 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1216916731256">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216916731257">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216916735133">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1216916748382">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216916748510">
-              <property name="value" value="0" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216916745753">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216916737886">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216916736838" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216916744642">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.getSelectedNodes():java.util.List" resolveInfo="getSelectedNodes" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237972397257">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1237972397258">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1237972397259">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237972397260">
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1237972397261" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237972397262">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.getSelectedNodes():java.util.List" resolveInfo="getSelectedNodes" />
+                  </node>
+                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237972397263">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237972397264" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216916746537">
-                <link role="baseMethodDeclaration" targetNodeId="3.~List.size():int" resolveInfo="size" />
-              </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1237972397265" />
           </node>
         </node>
       </node>
@@ -273,21 +273,21 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1216916774056">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216916774057">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216916774058">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1216916774059">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1216916774060">
-              <property name="value" value="0" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216916774061">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216916774062">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216916774063" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216916774064">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.getSelectedNodes():java.util.List" resolveInfo="getSelectedNodes" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237972365654">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1237972337559">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1237972337560">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237972337561">
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1237972337562" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237972337563">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.getSelectedNodes():java.util.List" resolveInfo="getSelectedNodes" />
+                  </node>
+                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237972340486">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237972346939" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216916774065">
-                <link role="baseMethodDeclaration" targetNodeId="3.~List.size():int" resolveInfo="size" />
-              </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1237972368251" />
           </node>
         </node>
       </node>

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
+public class MoveNodesToNodeExpression extends jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression";
   public static final String ROLE_IN_TARGET = "roleInTarget";
 
@@ -16,11 +16,11 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
     super(node);
   }
 
-  public Expression getRoleInTarget() {
-    return (Expression)this.getChild(Expression.class, MoveNodesToNodeExpression.ROLE_IN_TARGET);
+  public jetbrains.mps.baseLanguage.structure.Expression getRoleInTarget() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, MoveNodesToNodeExpression.ROLE_IN_TARGET);
   }
 
-  public void setRoleInTarget(Expression node) {
+  public void setRoleInTarget(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(MoveNodesToNodeExpression.ROLE_IN_TARGET, node);
   }
 

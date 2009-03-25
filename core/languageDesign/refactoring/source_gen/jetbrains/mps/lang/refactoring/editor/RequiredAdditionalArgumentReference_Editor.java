@@ -110,7 +110,6 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

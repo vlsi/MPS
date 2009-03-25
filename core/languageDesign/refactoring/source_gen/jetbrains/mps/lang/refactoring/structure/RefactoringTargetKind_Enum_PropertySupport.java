@@ -4,6 +4,7 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum;
 
 public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport {
 

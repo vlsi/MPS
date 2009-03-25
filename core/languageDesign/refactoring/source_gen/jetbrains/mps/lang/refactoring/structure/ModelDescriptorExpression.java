@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ModelDescriptorExpression extends AbstractUIArgumentExpression {
+public class ModelDescriptorExpression extends jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression";
 
   public ModelDescriptorExpression(SNode node) {

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractMoveNodesExpression extends AbstractMoveExpression {
+public class AbstractMoveNodesExpression extends jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression";
 
   public AbstractMoveNodesExpression(SNode node) {
