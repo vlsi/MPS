@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.actions.nodes.GoByReferenceGroup;
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
+  public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
@@ -42,6 +43,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction", "jetbrains.mps.ide");
+      this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_find_instances);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");

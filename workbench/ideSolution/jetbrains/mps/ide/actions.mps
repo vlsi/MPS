@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="162" />
+  <maxImportIndex value="163" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -116,6 +116,7 @@
   <import index="160" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.creation(jetbrains.mps.workbench.dialogs.project.creation@java_stub)" version="-1" />
   <import index="161" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.properties.solution(jetbrains.mps.workbench.dialogs.project.properties.solution@java_stub)" version="-1" />
   <import index="162" modelUID="f:java_stub#jetbrains.mps.datatransfer(jetbrains.mps.datatransfer@java_stub)" version="-1" />
+  <import index="163" modelUID="r:00000000-0000-4000-0000-011c8959050f(jetbrains.mps.quickQueryLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -181,6 +182,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716637">
         <link role="constructorDeclaration" targetNodeId="1.~FastFindUsagesNodeAction.&lt;init&gt;()" resolveInfo="FastFindUsagesNodeAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990522669">
+        <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207744603855" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216120312761">
@@ -386,6 +390,13 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1216226696605" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216128344327">
         <link role="action" targetNodeId="1216128015035" resolveInfo="SetModuleFolder" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1237990723878" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237991719437">
+        <property name="name" value="find_usages" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990726036">
+        <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222348083067" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1222348086225">
@@ -669,6 +680,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518716122">
         <link role="constructorDeclaration" targetNodeId="1.~FastFindUsagesNodeAction.&lt;init&gt;()" resolveInfo="FastFindUsagesNodeAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990503495">
+        <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1211230671274" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216119968582">

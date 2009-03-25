@@ -23,7 +23,7 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_instances);
   }
 
 }

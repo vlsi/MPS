@@ -24,8 +24,8 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find_instances);
+    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_find_instances);
   }
 
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import java.util.List;
+import jetbrains.mps.quickQueryLanguage.plugin.ReplacementView;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
@@ -16,6 +17,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.quickQueryLanguage.plugin.QueryFinder;
 
 public class RunReplacement_Tool extends GeneratedTool {
 
@@ -60,7 +62,6 @@ public class RunReplacement_Tool extends GeneratedTool {
         RunReplacement_Tool.this.openTool(true);
         RunReplacement_Tool.this.getContentManager().setSelectedContent(content);
       }
-
     });
   }
 

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool;
 
 public class QuickQueryLanguage_ProjectPlugin extends BaseProjectPlugin {
 

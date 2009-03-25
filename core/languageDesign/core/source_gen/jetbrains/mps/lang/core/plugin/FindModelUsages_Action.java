@@ -79,7 +79,6 @@ public class FindModelUsages_Action extends GeneratedAction {
           query[0] = new SearchQuery(model, scope);
           provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
         }
-
       });
       FindModelUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {

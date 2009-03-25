@@ -86,7 +86,6 @@ public class FindLanguageUsages_Action extends GeneratedAction {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
-
       });
       FindLanguageUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
     } catch (Throwable t) {

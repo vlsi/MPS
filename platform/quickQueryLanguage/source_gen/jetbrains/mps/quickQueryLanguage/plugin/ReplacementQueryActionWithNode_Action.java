@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog;
+import jetbrains.mps.quickQueryLanguage.plugin.FindInstancesContext;
 import jetbrains.mps.smodel.Language;
 
 public class ReplacementQueryActionWithNode_Action extends GeneratedAction {

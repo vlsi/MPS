@@ -98,7 +98,6 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
         }
-
       });
       FindLanguageConceptsUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "There are no usages of language's concepts");
     } catch (Throwable t) {

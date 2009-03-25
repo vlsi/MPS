@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 public class NodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NodeActions";
+  public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
 
   public NodeActions_ActionGroup() {
@@ -40,6 +41,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction", "jetbrains.mps.ide");
+      this.addAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
       this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);

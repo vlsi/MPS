@@ -472,6 +472,7 @@
     <property name="name" value="FindLanguageUsages" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1209825453636">
       <link role="modifiedGroup" targetNodeId="20.1204991224874" resolveInfo="LanguageActions" />
+      <link role="point" targetNodeId="20.1237991719437" resolveInfo="find_usages" />
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1209825453637">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1209825453638">

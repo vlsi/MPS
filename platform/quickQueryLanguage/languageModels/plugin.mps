@@ -194,6 +194,7 @@
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1219235857205">
       <link role="modifiedGroup" targetNodeId="46.1204991224874" resolveInfo="LanguageActions" />
+      <link role="point" targetNodeId="46.1237990726036" resolveInfo="find usages" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1219321230528">
@@ -285,9 +286,11 @@
     <property name="name" value="FindInstancesByConditionAndNodeGroup" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1219322583970">
       <link role="modifiedGroup" targetNodeId="46.1204991215587" resolveInfo="ProjectPaneNodeActions" />
+      <link role="point" targetNodeId="46.1237990522669" resolveInfo="find usages" />
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1220713863494">
       <link role="modifiedGroup" targetNodeId="46.1204991231476" resolveInfo="EditorPopup" />
+      <link role="point" targetNodeId="46.1237990503495" resolveInfo="find usages" />
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1219322512193">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1219322565280">
