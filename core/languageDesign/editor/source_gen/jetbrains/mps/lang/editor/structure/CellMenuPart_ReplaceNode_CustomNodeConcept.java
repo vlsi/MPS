@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abstract {
+public class CellMenuPart_ReplaceNode_CustomNodeConcept extends jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept";
   public static final String REPLACEMENT_CONCEPT = "replacementConcept";
 
@@ -16,11 +16,11 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
     super(node);
   }
 
-  public ConceptDeclaration getReplacementConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
+  public jetbrains.mps.lang.structure.structure.ConceptDeclaration getReplacementConcept() {
+    return (jetbrains.mps.lang.structure.structure.ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
   }
 
-  public void setReplacementConcept(ConceptDeclaration node) {
+  public void setReplacementConcept(jetbrains.mps.lang.structure.structure.ConceptDeclaration node) {
     super.setReferent(CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT, node);
   }
 

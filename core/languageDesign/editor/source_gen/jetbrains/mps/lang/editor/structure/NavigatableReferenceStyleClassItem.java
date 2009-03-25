@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NavigatableReferenceStyleClassItem extends StyleClassItem {
+public class NavigatableReferenceStyleClassItem extends jetbrains.mps.lang.editor.structure.StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem";
   public static final String LINK = "link";
 
@@ -16,11 +16,11 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
     super(node);
   }
 
-  public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, NavigatableReferenceStyleClassItem.LINK);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getLink() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, NavigatableReferenceStyleClassItem.LINK);
   }
 
-  public void setLink(LinkDeclaration node) {
+  public void setLink(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(NavigatableReferenceStyleClassItem.LINK, node);
   }
 

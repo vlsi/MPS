@@ -4,7 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.behavior._Quotations;
 
 public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
 

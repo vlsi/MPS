@@ -19,15 +19,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.IfStatement_LastBrace;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {
@@ -193,24 +191,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
-
-            public String calculate(EditorCell cell) {
-              return ElsifClause_Editor.matchingNode1596_1((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-          });
-          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
-
-            public SNode calculate(EditorCell cell) {
-              return ElsifClause_Editor.matchingNode1596_0((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-          });
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };
@@ -267,21 +247,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1596_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static SNode matchingNode1596_0(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
-    if (index == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).count() - 1) {
-      return SNodeOperations.getParent(node);
-    } else
-    {
-      return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).toListSequence()).getElement(index + 1);
-    }
-  }
-
-  public static String matchingNode1596_1(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(node), "elsifClauses", true)).indexOf(node);
-    return "trueStatement" + (index + 1);
   }
 
   public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

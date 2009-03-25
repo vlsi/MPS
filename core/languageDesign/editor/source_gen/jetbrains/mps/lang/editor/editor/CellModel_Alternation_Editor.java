@@ -15,12 +15,14 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.editor._EditorUtil;
 
 public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
@@ -167,7 +169,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_0(EditorContext context, SNode node) {
     if (this.my_OpenTag4233_0 == null) {
-      this.my_OpenTag4233_0 = new _OpenTag(node);
+      this.my_OpenTag4233_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag4233_0.createEditorCell(context);
     setupBasic_Component_4233_0(editorCell, node, context);
@@ -176,7 +178,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_1(EditorContext context, SNode node) {
     if (this.my_CloseTag4233_0 == null) {
-      this.my_CloseTag4233_0 = new _CloseTag(node);
+      this.my_CloseTag4233_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag4233_0.createEditorCell(context);
     setupBasic_Component_4233_1(editorCell, node, context);
@@ -185,7 +187,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common4233_0 == null) {
-      this.my_CellModel_Common4233_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common4233_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common4233_0.createEditorCell(context);
     setupBasic_Component_4233_2(editorCell, node, context);
@@ -439,7 +441,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -461,7 +462,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -485,10 +485,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -510,7 +508,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -534,10 +531,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -550,7 +545,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -564,7 +558,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -576,7 +569,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -589,7 +581,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -606,7 +597,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -619,7 +609,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -638,7 +627,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -656,7 +644,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -668,7 +655,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -680,7 +666,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -700,7 +685,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -714,7 +698,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -731,7 +714,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

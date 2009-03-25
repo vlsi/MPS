@@ -20,6 +20,19 @@ public enum FocusPolicy {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return "" + this.myValue;
+  }
+
+  public int getValue() {
+    return this.myValue;
+  }
+
+
   public static List<FocusPolicy> getConstants() {
     List<FocusPolicy> list = new LinkedList<FocusPolicy>();
     ListOperations.addElement(list, FocusPolicy.noAttraction);
@@ -50,19 +63,6 @@ public enum FocusPolicy {
       return FocusPolicy.attractsRecursively;
     }
     return FocusPolicy.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
 }

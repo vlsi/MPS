@@ -19,6 +19,19 @@ public enum _Layout_Constraints_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_Layout_Constraints_Enum> getConstants() {
     List<_Layout_Constraints_Enum> list = new LinkedList<_Layout_Constraints_Enum>();
     ListOperations.addElement(list, _Layout_Constraints_Enum.punctuation);
@@ -45,19 +58,6 @@ public enum _Layout_Constraints_Enum {
       return _Layout_Constraints_Enum.none;
     }
     return _Layout_Constraints_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

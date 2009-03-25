@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FloatStyleClassItem extends StyleClassItem {
+public class FloatStyleClassItem extends jetbrains.mps.lang.editor.structure.StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.FloatStyleClassItem";
   public static final String VALUE = "value";
 

@@ -110,7 +110,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -127,7 +126,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -143,7 +141,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

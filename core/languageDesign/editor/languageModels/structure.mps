@@ -4074,18 +4074,20 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="MatchingLabelStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237992758949">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="label" />
+      <link role="target" targetNodeId="1237984347892" resolveInfo="MatchingLabelDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236443321503">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="query" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1236443640684" resolveInfo="QueryFunction_String" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236263409818">
       <property name="value" value="matching-label" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1236262322952">
-      <property name="name" value="label" />
-      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1236266496796">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
@@ -4106,20 +4108,6 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1236263761754">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236426981771">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="MatchingNodeStyleCalssItem" />
-    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428256565">
-      <property name="value" value="matching-node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236427050944">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="query" />
-      <link role="target" targetNodeId="1236263696991" resolveInfo="QueryFunction_MatchingNode" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236443640684">
@@ -4206,6 +4194,18 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237385578945">
       <property name="value" value="indent-layout-on-new-line" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237984347892">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="MatchingLabelDeclaration" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237987850530">
+      <property name="value" value="label declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237988351835">
+      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

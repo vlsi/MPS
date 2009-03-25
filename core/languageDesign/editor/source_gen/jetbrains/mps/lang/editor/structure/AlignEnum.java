@@ -19,6 +19,19 @@ public enum AlignEnum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<AlignEnum> getConstants() {
     List<AlignEnum> list = new LinkedList<AlignEnum>();
     ListOperations.addElement(list, AlignEnum.left);
@@ -45,19 +58,6 @@ public enum AlignEnum {
       return AlignEnum.center;
     }
     return AlignEnum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

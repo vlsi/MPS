@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ForegroundColorStyleClassItem extends ColorStyleClassItem {
+public class ForegroundColorStyleClassItem extends jetbrains.mps.lang.editor.structure.ColorStyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem";
 
   public ForegroundColorStyleClassItem(SNode node) {

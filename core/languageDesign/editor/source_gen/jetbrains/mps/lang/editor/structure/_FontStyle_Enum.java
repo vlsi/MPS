@@ -22,6 +22,19 @@ public enum _FontStyle_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_FontStyle_Enum> getConstants() {
     List<_FontStyle_Enum> list = new LinkedList<_FontStyle_Enum>();
     ListOperations.addElement(list, _FontStyle_Enum.none);
@@ -60,19 +73,6 @@ public enum _FontStyle_Enum {
       return _FontStyle_Enum.query;
     }
     return _FontStyle_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

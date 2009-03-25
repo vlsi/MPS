@@ -12,12 +12,12 @@ public interface IStyleContainer extends INodeAdapter {
 
   public int getStyleItemsCount();
 
-  public Iterator<StyleClassItem> styleItems();
+  public Iterator<jetbrains.mps.lang.editor.structure.StyleClassItem> styleItems();
 
-  public List<StyleClassItem> getStyleItems();
+  public List<jetbrains.mps.lang.editor.structure.StyleClassItem> getStyleItems();
 
-  public void addStyleItem(StyleClassItem node);
+  public void addStyleItem(jetbrains.mps.lang.editor.structure.StyleClassItem node);
 
-  public void insertStyleItem(StyleClassItem prev, StyleClassItem node);
+  public void insertStyleItem(jetbrains.mps.lang.editor.structure.StyleClassItem prev, jetbrains.mps.lang.editor.structure.StyleClassItem node);
 
 }

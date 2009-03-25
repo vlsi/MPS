@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_WithRole extends CellModel_AbstractLabel {
+public class CellModel_WithRole extends jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_WithRole";
   public static final String NO_TARGET_TEXT = "noTargetText";
   public static final String EMPTY_NO_TARGET_TEXT = "emptyNoTargetText";
@@ -52,11 +52,11 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
     this.setBooleanProperty(CellModel_WithRole.ALLOW_EMPTY_TEXT, value);
   }
 
-  public BaseConcept getRelationDeclaration() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, CellModel_WithRole.RELATION_DECLARATION);
+  public jetbrains.mps.lang.core.structure.BaseConcept getRelationDeclaration() {
+    return (jetbrains.mps.lang.core.structure.BaseConcept)this.getReferent(BaseConcept.class, CellModel_WithRole.RELATION_DECLARATION);
   }
 
-  public void setRelationDeclaration(BaseConcept node) {
+  public void setRelationDeclaration(jetbrains.mps.lang.core.structure.BaseConcept node) {
     super.setReferent(CellModel_WithRole.RELATION_DECLARATION, node);
   }
 

@@ -4,11 +4,12 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
+public class CellModel_TransactionalProperty extends jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
   public static final String RUN_IN_COMMAND = "runInCommand";
   public static final String PROPERTY = "property";
@@ -26,19 +27,19 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
     this.setBooleanProperty(CellModel_TransactionalProperty.RUN_IN_COMMAND, value);
   }
 
-  public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, CellModel_TransactionalProperty.PROPERTY);
+  public jetbrains.mps.lang.structure.structure.PropertyDeclaration getProperty() {
+    return (jetbrains.mps.lang.structure.structure.PropertyDeclaration)this.getReferent(PropertyDeclaration.class, CellModel_TransactionalProperty.PROPERTY);
   }
 
-  public void setProperty(PropertyDeclaration node) {
+  public void setProperty(jetbrains.mps.lang.structure.structure.PropertyDeclaration node) {
     super.setReferent(CellModel_TransactionalProperty.PROPERTY, node);
   }
 
-  public TransactionalPropertyHandler getHandlerBlock() {
-    return (TransactionalPropertyHandler)this.getChild(TransactionalPropertyHandler.class, CellModel_TransactionalProperty.HANDLER_BLOCK);
+  public jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler getHandlerBlock() {
+    return (jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler)this.getChild(TransactionalPropertyHandler.class, CellModel_TransactionalProperty.HANDLER_BLOCK);
   }
 
-  public void setHandlerBlock(TransactionalPropertyHandler node) {
+  public void setHandlerBlock(jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler node) {
     super.setChild(CellModel_TransactionalProperty.HANDLER_BLOCK, node);
   }
 

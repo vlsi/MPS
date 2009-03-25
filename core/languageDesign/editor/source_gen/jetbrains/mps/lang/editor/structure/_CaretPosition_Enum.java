@@ -19,6 +19,19 @@ public enum _CaretPosition_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_CaretPosition_Enum> getConstants() {
     List<_CaretPosition_Enum> list = new LinkedList<_CaretPosition_Enum>();
     ListOperations.addElement(list, _CaretPosition_Enum.none);
@@ -45,19 +58,6 @@ public enum _CaretPosition_Enum {
       return _CaretPosition_Enum.last;
     }
     return _CaretPosition_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

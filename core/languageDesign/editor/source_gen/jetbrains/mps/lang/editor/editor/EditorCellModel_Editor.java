@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
@@ -57,7 +58,6 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -72,7 +72,6 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.editor.structure._NextLine_Enum;
 
 public class _NextLine_Enum_PropertySupport extends PropertySupport {
 

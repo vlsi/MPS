@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -508,7 +509,6 @@ public class _CellModel_Common extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -525,7 +525,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -539,7 +538,6 @@ public class _CellModel_Common extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -556,7 +554,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -569,7 +566,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -586,7 +582,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -600,7 +595,6 @@ public class _CellModel_Common extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -618,7 +612,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -631,7 +624,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -652,7 +644,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -677,7 +668,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -698,7 +688,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -724,7 +713,6 @@ public class _CellModel_Common extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -847,7 +835,6 @@ public class _CellModel_Common extends AbstractCellProvider {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -908,7 +895,6 @@ public class _CellModel_Common extends AbstractCellProvider {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_Constant extends CellModel_AbstractLabel {
+public class CellModel_Constant extends jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Constant";
   public static final String TEXT = "text";
   public static final String NULL_TEXT = "nullText";

@@ -19,6 +19,19 @@ public enum _NextLine_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_NextLine_Enum> getConstants() {
     List<_NextLine_Enum> list = new LinkedList<_NextLine_Enum>();
     ListOperations.addElement(list, _NextLine_Enum.right);
@@ -45,19 +58,6 @@ public enum _NextLine_Enum {
       return _NextLine_Enum.indented;
     }
     return _NextLine_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

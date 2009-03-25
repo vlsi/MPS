@@ -271,7 +271,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -288,7 +287,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -301,7 +299,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -314,7 +311,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -335,7 +331,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -348,7 +343,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -364,7 +358,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -377,7 +370,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -390,7 +382,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -492,7 +483,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.DRAW_BORDER, true);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

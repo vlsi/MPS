@@ -39,7 +39,7 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint extends BaseNo
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // singular links declared in concept hierarchy and not overridden
+    //     singular links declared in concept hierarchy and not overridden
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
@@ -48,7 +48,6 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint extends BaseNo
       public boolean accept(SNode it) {
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
-
     }).toListSequence());
   }
 

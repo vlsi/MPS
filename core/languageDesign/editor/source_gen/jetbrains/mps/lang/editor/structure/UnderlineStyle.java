@@ -19,6 +19,19 @@ public enum UnderlineStyle {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return "" + this.myValue;
+  }
+
+  public int getValue() {
+    return this.myValue;
+  }
+
+
   public static List<UnderlineStyle> getConstants() {
     List<UnderlineStyle> list = new LinkedList<UnderlineStyle>();
     ListOperations.addElement(list, UnderlineStyle.as_is);
@@ -45,19 +58,6 @@ public enum UnderlineStyle {
       return UnderlineStyle.underlined;
     }
     return UnderlineStyle.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
 }

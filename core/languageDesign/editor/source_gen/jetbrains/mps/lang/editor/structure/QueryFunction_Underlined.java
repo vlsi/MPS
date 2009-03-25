@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class QueryFunction_Underlined extends QueryFunction_StyleParameter {
+public class QueryFunction_Underlined extends jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined";
 
   public QueryFunction_Underlined(SNode node) {

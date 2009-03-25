@@ -447,7 +447,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -461,7 +460,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -474,7 +472,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -487,7 +484,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -500,7 +496,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -513,7 +508,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -530,7 +524,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -546,7 +539,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -563,7 +555,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -579,7 +570,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -596,7 +586,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -613,7 +602,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -630,7 +618,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -646,7 +633,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -663,7 +649,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -679,7 +664,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -696,7 +680,6 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

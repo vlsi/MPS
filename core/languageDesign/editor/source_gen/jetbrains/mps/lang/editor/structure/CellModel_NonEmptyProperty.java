@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_NonEmptyProperty extends CellModel_Property {
+public class CellModel_NonEmptyProperty extends jetbrains.mps.lang.editor.structure.CellModel_Property {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty";
 
   public CellModel_NonEmptyProperty(SNode node) {

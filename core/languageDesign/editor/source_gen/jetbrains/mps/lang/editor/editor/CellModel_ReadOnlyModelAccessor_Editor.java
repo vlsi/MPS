@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -71,7 +72,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0582_0(EditorContext context, SNode node) {
     if (this.my_OpenTag0582_0 == null) {
-      this.my_OpenTag0582_0 = new _OpenTag(node);
+      this.my_OpenTag0582_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag0582_0.createEditorCell(context);
     setupBasic_Component_0582_0(editorCell, node, context);
@@ -80,7 +81,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0582_1(EditorContext context, SNode node) {
     if (this.my_CloseTag0582_0 == null) {
-      this.my_CloseTag0582_0 = new _CloseTag(node);
+      this.my_CloseTag0582_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag0582_0.createEditorCell(context);
     setupBasic_Component_0582_1(editorCell, node, context);
@@ -89,7 +90,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0582_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common0582_0 == null) {
-      this.my_CellModel_Common0582_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common0582_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common0582_0.createEditorCell(context);
     setupBasic_Component_0582_2(editorCell, node, context);
@@ -172,7 +173,6 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
@@ -185,7 +185,6 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
@@ -198,7 +197,6 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
@@ -211,7 +209,6 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
@@ -224,10 +221,8 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -240,7 +235,6 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

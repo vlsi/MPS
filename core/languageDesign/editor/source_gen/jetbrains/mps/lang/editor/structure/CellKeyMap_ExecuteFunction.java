@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellKeyMap_ExecuteFunction extends CellKeyMap_AbstractFunction {
+public class CellKeyMap_ExecuteFunction extends jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction";
 
   public CellKeyMap_ExecuteFunction(SNode node) {

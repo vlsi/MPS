@@ -18,6 +18,19 @@ public enum _Enum_Measure {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_Enum_Measure> getConstants() {
     List<_Enum_Measure> list = new LinkedList<_Enum_Measure>();
     ListOperations.addElement(list, _Enum_Measure.pixels);
@@ -40,19 +53,6 @@ public enum _Enum_Measure {
       return _Enum_Measure.spaces;
     }
     return _Enum_Measure.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

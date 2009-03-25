@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InlineEditorComponent extends BaseEditorComponent {
+public class InlineEditorComponent extends jetbrains.mps.lang.editor.structure.BaseEditorComponent {
   public static final String concept = "jetbrains.mps.lang.editor.structure.InlineEditorComponent";
 
   public InlineEditorComponent(SNode node) {

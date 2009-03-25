@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_AttributedNodeCell extends EditorCellModel {
+public class CellModel_AttributedNodeCell extends jetbrains.mps.lang.editor.structure.EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell";
 
   public CellModel_AttributedNodeCell(SNode node) {

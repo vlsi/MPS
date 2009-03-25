@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AutoDeletableStyleClassItem extends BooleanStyleSheetItem {
+public class AutoDeletableStyleClassItem extends jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem";
 
   public AutoDeletableStyleClassItem(SNode node) {

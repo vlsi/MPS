@@ -353,7 +353,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -367,7 +366,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -381,7 +379,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -399,7 +396,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -412,7 +408,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -425,7 +420,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -439,7 +433,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -453,7 +446,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -471,7 +463,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -487,7 +478,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -501,7 +491,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -515,7 +504,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -528,7 +516,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -549,7 +536,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -563,7 +549,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -577,7 +562,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -590,7 +574,6 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

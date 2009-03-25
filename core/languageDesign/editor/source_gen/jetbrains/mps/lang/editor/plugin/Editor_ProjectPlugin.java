@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin;
 
 public class Editor_ProjectPlugin extends BaseProjectPlugin {
 

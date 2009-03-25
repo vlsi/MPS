@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.lang.editor.editor.EditorCellModel_KeyMap;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
@@ -276,7 +277,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -294,7 +294,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -307,7 +306,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -325,7 +323,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -339,7 +336,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -352,7 +348,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -365,7 +360,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -383,7 +377,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -403,7 +396,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -416,7 +408,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -34,6 +34,19 @@ public enum _Colors_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_Colors_Enum> getConstants() {
     List<_Colors_Enum> list = new LinkedList<_Colors_Enum>();
     ListOperations.addElement(list, _Colors_Enum.none);
@@ -120,19 +133,6 @@ public enum _Colors_Enum {
       return _Colors_Enum.query;
     }
     return _Colors_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

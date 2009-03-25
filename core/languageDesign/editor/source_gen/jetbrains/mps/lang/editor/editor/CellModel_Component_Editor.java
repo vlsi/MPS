@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.lang.editor.editor.CellModel_Component_KeyMap;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -55,7 +57,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6025_0(EditorContext context, SNode node) {
     if (this.my_OpenTag6025_0 == null) {
-      this.my_OpenTag6025_0 = new _OpenTag(node);
+      this.my_OpenTag6025_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag6025_0.createEditorCell(context);
     setupBasic_Component_6025_0(editorCell, node, context);
@@ -64,7 +66,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6025_1(EditorContext context, SNode node) {
     if (this.my_CloseTag6025_0 == null) {
-      this.my_CloseTag6025_0 = new _CloseTag(node);
+      this.my_CloseTag6025_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag6025_0.createEditorCell(context);
     setupBasic_Component_6025_1(editorCell, node, context);
@@ -73,7 +75,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6025_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common6025_0 == null) {
-      this.my_CellModel_Common6025_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common6025_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common6025_0.createEditorCell(context);
     setupBasic_Component_6025_2(editorCell, node, context);
@@ -123,7 +125,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -142,7 +143,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -205,7 +205,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

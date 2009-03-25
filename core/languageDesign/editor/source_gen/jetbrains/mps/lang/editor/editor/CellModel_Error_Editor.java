@@ -14,11 +14,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.editor._EditorUtil;
 
 public class CellModel_Error_Editor extends DefaultNodeEditor {
 
@@ -82,7 +84,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_0(EditorContext context, SNode node) {
     if (this.my_OpenTag6148_0 == null) {
-      this.my_OpenTag6148_0 = new _OpenTag(node);
+      this.my_OpenTag6148_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag6148_0.createEditorCell(context);
     setupBasic_Component_6148_0(editorCell, node, context);
@@ -91,7 +93,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_1(EditorContext context, SNode node) {
     if (this.my_CloseTag6148_0 == null) {
-      this.my_CloseTag6148_0 = new _CloseTag(node);
+      this.my_CloseTag6148_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag6148_0.createEditorCell(context);
     setupBasic_Component_6148_1(editorCell, node, context);
@@ -100,7 +102,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common6148_0 == null) {
-      this.my_CellModel_Common6148_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common6148_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common6148_0.createEditorCell(context);
     setupBasic_Component_6148_2(editorCell, node, context);
@@ -212,12 +214,10 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -230,7 +230,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -249,7 +248,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -263,7 +261,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -283,7 +280,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -298,7 +294,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -311,7 +306,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

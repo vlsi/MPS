@@ -12,11 +12,13 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.lang.editor.editor._EditorUtil;
 
 public class _OpenTag extends AbstractCellProvider {
 
@@ -45,7 +47,6 @@ public class _OpenTag extends AbstractCellProvider {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_4575_0(editorCell, node, context);
@@ -71,11 +72,9 @@ public class _OpenTag extends AbstractCellProvider {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

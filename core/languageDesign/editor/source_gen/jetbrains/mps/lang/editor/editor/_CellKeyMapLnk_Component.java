@@ -65,7 +65,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -125,7 +124,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
           {
             this.set(StyleAttributes.DRAW_BORDER, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

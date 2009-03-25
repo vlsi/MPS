@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_BlockStart extends EditorCellModel {
+public class CellModel_BlockStart extends jetbrains.mps.lang.editor.structure.EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_BlockStart";
   public static final String OPEN_BRACE = "openBrace";
 

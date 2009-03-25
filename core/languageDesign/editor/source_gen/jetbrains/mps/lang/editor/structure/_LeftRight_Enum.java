@@ -18,6 +18,19 @@ public enum _LeftRight_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return "" + this.myValue;
+  }
+
+  public boolean getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_LeftRight_Enum> getConstants() {
     List<_LeftRight_Enum> list = new LinkedList<_LeftRight_Enum>();
     ListOperations.addElement(list, _LeftRight_Enum.left);
@@ -40,19 +53,6 @@ public enum _LeftRight_Enum {
       return _LeftRight_Enum.right;
     }
     return _LeftRight_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return "" + this.myValue;
-  }
-
-  public boolean getValue() {
-    return this.myValue;
   }
 
 }

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CaretPositionParameter extends SelectParameter {
+public class CaretPositionParameter extends jetbrains.mps.lang.editor.structure.SelectParameter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CaretPositionParameter";
   public static final String POSITION = "position";
 
@@ -16,11 +16,11 @@ public class CaretPositionParameter extends SelectParameter {
     super(node);
   }
 
-  public Expression getPosition() {
-    return (Expression)this.getChild(Expression.class, CaretPositionParameter.POSITION);
+  public jetbrains.mps.baseLanguage.structure.Expression getPosition() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, CaretPositionParameter.POSITION);
   }
 
-  public void setPosition(Expression node) {
+  public void setPosition(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(CaretPositionParameter.POSITION, node);
   }
 

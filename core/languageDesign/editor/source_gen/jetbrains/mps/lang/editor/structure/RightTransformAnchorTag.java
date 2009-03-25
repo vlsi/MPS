@@ -23,6 +23,19 @@ public enum RightTransformAnchorTag {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<RightTransformAnchorTag> getConstants() {
     List<RightTransformAnchorTag> list = new LinkedList<RightTransformAnchorTag>();
     ListOperations.addElement(list, RightTransformAnchorTag.none);
@@ -65,19 +78,6 @@ public enum RightTransformAnchorTag {
       return RightTransformAnchorTag.ext_5;
     }
     return RightTransformAnchorTag.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

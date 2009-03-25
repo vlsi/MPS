@@ -8,18 +8,18 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_ConceptProperty extends CellModel_WithRole {
+public class CellModel_ConceptProperty extends jetbrains.mps.lang.editor.structure.CellModel_WithRole {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty";
 
   public CellModel_ConceptProperty(SNode node) {
     super(node);
   }
 
-  public ConceptPropertyDeclaration getPropertyDeclaration() {
+  public jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration getPropertyDeclaration() {
     return this.ensureAdapter(ConceptPropertyDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
-  public void setPropertyDeclaration(ConceptPropertyDeclaration node) {
+  public void setPropertyDeclaration(jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration node) {
     this.setRelationDeclaration(node);
   }
 

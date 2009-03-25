@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class QueryFunction_Color extends QueryFunction_StyleParameter implements IQueryFunction_Color {
+public class QueryFunction_Color extends jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter implements jetbrains.mps.lang.editor.structure.IQueryFunction_Color {
   public static final String concept = "jetbrains.mps.lang.editor.structure.QueryFunction_Color";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

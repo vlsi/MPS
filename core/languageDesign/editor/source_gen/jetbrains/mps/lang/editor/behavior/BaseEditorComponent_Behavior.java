@@ -26,7 +26,6 @@ public class BaseEditorComponent_Behavior {
       public boolean accept(SNode it) {
         return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(it, "conceptDeclaration", false), NameUtil.nodeFQName(conceptDeclaration));
       }
-
     }).toListSequence();
   }
 

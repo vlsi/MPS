@@ -113,7 +113,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -145,7 +144,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -168,7 +166,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -200,7 +197,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -223,7 +219,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -255,7 +250,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -292,7 +286,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -315,7 +308,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -347,7 +339,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -370,7 +361,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -402,7 +392,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -423,7 +412,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -444,7 +432,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -465,7 +452,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -487,7 +473,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -513,7 +498,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -548,7 +532,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -583,7 +566,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
           }
-
         });
       }
     }
@@ -597,7 +579,6 @@ public class QueriesGenerated {
             SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
             return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -617,7 +598,6 @@ public class QueriesGenerated {
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
               }
-
             });
           }
         }
@@ -637,7 +617,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), "member", true);
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -665,7 +644,6 @@ public class QueriesGenerated {
               public Icon getIconFor(String pattern) {
                 return null;
               }
-
             });
           }
         }

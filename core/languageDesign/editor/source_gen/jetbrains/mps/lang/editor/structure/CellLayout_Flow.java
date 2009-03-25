@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellLayout_Flow extends CellLayout {
+public class CellLayout_Flow extends jetbrains.mps.lang.editor.structure.CellLayout {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellLayout_Flow";
 
   public CellLayout_Flow(SNode node) {

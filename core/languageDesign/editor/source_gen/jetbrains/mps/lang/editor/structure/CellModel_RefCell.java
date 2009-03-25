@@ -4,11 +4,12 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.editor.structure.InlineEditorComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_RefCell extends CellModel_WithRole {
+public class CellModel_RefCell extends jetbrains.mps.lang.editor.structure.CellModel_WithRole {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_RefCell";
   public static final String EDITOR_COMPONENT = "editorComponent";
 
@@ -16,19 +17,19 @@ public class CellModel_RefCell extends CellModel_WithRole {
     super(node);
   }
 
-  public LinkDeclaration getLinkDeclaration() {
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getLinkDeclaration() {
     return this.ensureAdapter(LinkDeclaration.class, "relationDeclaration", this.getRelationDeclaration());
   }
 
-  public void setLinkDeclaration(LinkDeclaration node) {
+  public void setLinkDeclaration(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     this.setRelationDeclaration(node);
   }
 
-  public InlineEditorComponent getEditorComponent() {
-    return (InlineEditorComponent)this.getChild(InlineEditorComponent.class, CellModel_RefCell.EDITOR_COMPONENT);
+  public jetbrains.mps.lang.editor.structure.InlineEditorComponent getEditorComponent() {
+    return (jetbrains.mps.lang.editor.structure.InlineEditorComponent)this.getChild(InlineEditorComponent.class, CellModel_RefCell.EDITOR_COMPONENT);
   }
 
-  public void setEditorComponent(InlineEditorComponent node) {
+  public void setEditorComponent(jetbrains.mps.lang.editor.structure.InlineEditorComponent node) {
     super.setChild(CellModel_RefCell.EDITOR_COMPONENT, node);
   }
 

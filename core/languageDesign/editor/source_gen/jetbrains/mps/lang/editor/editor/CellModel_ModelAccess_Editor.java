@@ -15,6 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -97,7 +98,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0649_0(EditorContext context, SNode node) {
     if (this.my_OpenTag0649_0 == null) {
-      this.my_OpenTag0649_0 = new _OpenTag(node);
+      this.my_OpenTag0649_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag0649_0.createEditorCell(context);
     setupBasic_Component_0649_0(editorCell, node, context);
@@ -106,7 +107,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0649_1(EditorContext context, SNode node) {
     if (this.my_CloseTag0649_0 == null) {
-      this.my_CloseTag0649_0 = new _CloseTag(node);
+      this.my_CloseTag0649_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag0649_0.createEditorCell(context);
     setupBasic_Component_0649_1(editorCell, node, context);
@@ -115,7 +116,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_0649_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common0649_0 == null) {
-      this.my_CellModel_Common0649_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common0649_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common0649_0.createEditorCell(context);
     setupBasic_Component_0649_2(editorCell, node, context);
@@ -233,7 +234,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -252,7 +252,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -272,7 +271,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -287,7 +285,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -310,7 +307,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
@@ -323,7 +319,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
@@ -336,7 +331,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
@@ -349,7 +343,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
@@ -362,10 +355,8 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -378,7 +369,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -399,7 +389,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -416,7 +405,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

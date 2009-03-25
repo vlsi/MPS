@@ -18,6 +18,19 @@ public enum CellActionId {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<CellActionId> getConstants() {
     List<CellActionId> list = new LinkedList<CellActionId>();
     ListOperations.addElement(list, CellActionId.RIGHT_TRANSFORM);
@@ -40,19 +53,6 @@ public enum CellActionId {
       return CellActionId.DELETE;
     }
     return CellActionId.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

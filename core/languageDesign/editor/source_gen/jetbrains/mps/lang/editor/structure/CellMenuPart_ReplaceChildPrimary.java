@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellMenuPart_ReplaceChildPrimary extends CellMenuPart_Abstract {
+public class CellMenuPart_ReplaceChildPrimary extends jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary";
 
   public CellMenuPart_ReplaceChildPrimary(SNode node) {

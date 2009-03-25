@@ -292,24 +292,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, new AttributeCalculator <String>() {
-
-            public String calculate(EditorCell cell) {
-              return IfStatement_Editor.matchingNode1754_1((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-          });
-          this.set(StyleAttributes.MATCHING_NODE, new AttributeCalculator <SNode>() {
-
-            public SNode calculate(EditorCell cell) {
-              return IfStatement_Editor.matchingNode1754_0((cell == null ?
-                null :
-                cell.getSNode()
-              ));
-            }
-          });
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
@@ -460,24 +442,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1237575954801(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
-  }
-
-  public static SNode matchingNode1754_0(SNode node) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
-      return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
-    } else
-    {
-      return node;
-    }
-  }
-
-  public static String matchingNode1754_1(SNode node) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).count() > 0) {
-      return "trueStatement0";
-    } else
-    {
-      return "trueStatement";
-    }
   }
 
   public static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {

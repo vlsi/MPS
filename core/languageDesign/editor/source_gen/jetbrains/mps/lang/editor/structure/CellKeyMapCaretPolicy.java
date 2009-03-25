@@ -20,6 +20,19 @@ public enum CellKeyMapCaretPolicy {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<CellKeyMapCaretPolicy> getConstants() {
     List<CellKeyMapCaretPolicy> list = new LinkedList<CellKeyMapCaretPolicy>();
     ListOperations.addElement(list, CellKeyMapCaretPolicy.ANY_POSITION);
@@ -50,19 +63,6 @@ public enum CellKeyMapCaretPolicy {
       return CellKeyMapCaretPolicy.INTERMEDIATE_POSITION;
     }
     return CellKeyMapCaretPolicy.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

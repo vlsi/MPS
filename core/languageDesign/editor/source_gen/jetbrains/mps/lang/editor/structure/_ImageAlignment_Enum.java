@@ -19,6 +19,19 @@ public enum _ImageAlignment_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<_ImageAlignment_Enum> getConstants() {
     List<_ImageAlignment_Enum> list = new LinkedList<_ImageAlignment_Enum>();
     ListOperations.addElement(list, _ImageAlignment_Enum.alignmentJustify);
@@ -45,19 +58,6 @@ public enum _ImageAlignment_Enum {
       return _ImageAlignment_Enum.alignmentTile;
     }
     return _ImageAlignment_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

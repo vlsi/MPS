@@ -147,7 +147,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
     };
   }
@@ -166,7 +165,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
     };
   }

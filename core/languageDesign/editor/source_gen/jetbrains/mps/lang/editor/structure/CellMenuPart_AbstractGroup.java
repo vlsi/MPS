@@ -5,11 +5,13 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions;
 import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText;
+import jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
+public class CellMenuPart_AbstractGroup extends jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup";
   public static final String PRESENTATION = "presentation";
   public static final String PARAMETER_OBJECT_TYPE = "parameterObjectType";
@@ -29,27 +31,27 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
     super.setProperty(CellMenuPart_AbstractGroup.PRESENTATION, value.getValueAsString());
   }
 
-  public Type getParameterObjectType() {
-    return (Type)this.getChild(Type.class, CellMenuPart_AbstractGroup.PARAMETER_OBJECT_TYPE);
+  public jetbrains.mps.baseLanguage.structure.Type getParameterObjectType() {
+    return (jetbrains.mps.baseLanguage.structure.Type)this.getChild(Type.class, CellMenuPart_AbstractGroup.PARAMETER_OBJECT_TYPE);
   }
 
-  public void setParameterObjectType(Type node) {
+  public void setParameterObjectType(jetbrains.mps.baseLanguage.structure.Type node) {
     super.setChild(CellMenuPart_AbstractGroup.PARAMETER_OBJECT_TYPE, node);
   }
 
-  public CellMenuPart_AbstractGroup_MatchingText getMatchingTextFunction() {
-    return (CellMenuPart_AbstractGroup_MatchingText)this.getChild(CellMenuPart_AbstractGroup_MatchingText.class, CellMenuPart_AbstractGroup.MATCHING_TEXT_FUNCTION);
+  public jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText getMatchingTextFunction() {
+    return (jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText)this.getChild(CellMenuPart_AbstractGroup_MatchingText.class, CellMenuPart_AbstractGroup.MATCHING_TEXT_FUNCTION);
   }
 
-  public void setMatchingTextFunction(CellMenuPart_AbstractGroup_MatchingText node) {
+  public void setMatchingTextFunction(jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText node) {
     super.setChild(CellMenuPart_AbstractGroup.MATCHING_TEXT_FUNCTION, node);
   }
 
-  public CellMenuPart_AbstractGroup_DescriptionText getDescriptionTextFunction() {
-    return (CellMenuPart_AbstractGroup_DescriptionText)this.getChild(CellMenuPart_AbstractGroup_DescriptionText.class, CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION);
+  public jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText getDescriptionTextFunction() {
+    return (jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText)this.getChild(CellMenuPart_AbstractGroup_DescriptionText.class, CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION);
   }
 
-  public void setDescriptionTextFunction(CellMenuPart_AbstractGroup_DescriptionText node) {
+  public void setDescriptionTextFunction(jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText node) {
     super.setChild(CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION, node);
   }
 

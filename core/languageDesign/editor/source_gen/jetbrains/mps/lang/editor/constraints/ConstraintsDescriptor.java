@@ -5,6 +5,20 @@ package jetbrains.mps.lang.editor.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.editor.constraints.RGBColor_value_PropertyConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_Component_editorComponent_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_RefCell_linkDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_Property_propertyDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_WithRole_relationDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_linkDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_RefNode_linkDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_property_ReferentConstraint;
+import jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_link_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

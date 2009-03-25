@@ -321,7 +321,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -338,7 +337,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -370,7 +368,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -391,7 +388,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -404,7 +400,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -425,7 +420,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

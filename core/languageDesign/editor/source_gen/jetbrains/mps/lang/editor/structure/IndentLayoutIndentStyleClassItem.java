@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IndentLayoutIndentStyleClassItem extends BooleanStyleSheetItem {
+public class IndentLayoutIndentStyleClassItem extends jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem";
 
   public IndentLayoutIndentStyleClassItem(SNode node) {

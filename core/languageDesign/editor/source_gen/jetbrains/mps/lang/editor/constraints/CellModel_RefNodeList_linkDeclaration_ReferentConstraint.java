@@ -39,7 +39,6 @@ public class CellModel_RefNodeList_linkDeclaration_ReferentConstraint extends Ba
       public boolean accept(SNode it) {
         return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
       }
-
     }).toListSequence());
   }
 

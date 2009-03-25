@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
@@ -41,7 +42,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_3910_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common3910_0 == null) {
-      this.my_CellModel_Common3910_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common3910_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common3910_0.createEditorCell(context);
     setupBasic_Component_3910_0(editorCell, node, context);
@@ -85,7 +86,6 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -100,7 +100,6 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.blue);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

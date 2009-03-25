@@ -145,7 +145,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

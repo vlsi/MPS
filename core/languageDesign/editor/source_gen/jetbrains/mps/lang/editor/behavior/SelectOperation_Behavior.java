@@ -20,7 +20,6 @@ public class SelectOperation_Behavior {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.SelectPositionParameter");
       }
-
     }).first();
   }
 
@@ -30,7 +29,6 @@ public class SelectOperation_Behavior {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.CaretPositionParameter");
       }
-
     }).first();
   }
 

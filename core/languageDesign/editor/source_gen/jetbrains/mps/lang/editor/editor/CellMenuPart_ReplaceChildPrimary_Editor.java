@@ -88,7 +88,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -102,7 +101,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -115,7 +113,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -128,7 +125,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -142,7 +138,6 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DrawBracketsStyleClassItem extends BooleanStyleSheetItem {
+public class DrawBracketsStyleClassItem extends jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem";
 
   public DrawBracketsStyleClassItem(SNode node) {

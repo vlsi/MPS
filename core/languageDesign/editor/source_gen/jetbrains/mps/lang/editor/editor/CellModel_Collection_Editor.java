@@ -21,12 +21,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.lang.editor.editor.CellModel_Collection_Actions;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
+import jetbrains.mps.lang.editor.editor._EditorUtil;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -235,7 +238,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common2102_0 == null) {
-      this.my_CellModel_Common2102_0 = new _CellModel_Common(node);
+      this.my_CellModel_Common2102_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common2102_0.createEditorCell(context);
     setupBasic_Component_2102_0(editorCell, node, context);
@@ -244,7 +247,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_1(EditorContext context, SNode node) {
     if (this.my_OpenTag2102_0 == null) {
-      this.my_OpenTag2102_0 = new _OpenTag(node);
+      this.my_OpenTag2102_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag2102_0.createEditorCell(context);
     setupBasic_Component_2102_1(editorCell, node, context);
@@ -253,7 +256,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_2(EditorContext context, SNode node) {
     if (this.my_CloseTag2102_0 == null) {
-      this.my_CloseTag2102_0 = new _CloseTag(node);
+      this.my_CloseTag2102_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag2102_0.createEditorCell(context);
     setupBasic_Component_2102_2(editorCell, node, context);
@@ -262,7 +265,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_3(EditorContext context, SNode node) {
     if (this.my_OpenTag2102_1 == null) {
-      this.my_OpenTag2102_1 = new _OpenTag(node);
+      this.my_OpenTag2102_1 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag2102_1.createEditorCell(context);
     setupBasic_Component_2102_3(editorCell, node, context);
@@ -271,7 +274,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_4(EditorContext context, SNode node) {
     if (this.my_CloseTag2102_1 == null) {
-      this.my_CloseTag2102_1 = new _CloseTag(node);
+      this.my_CloseTag2102_1 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag2102_1.createEditorCell(context);
     setupBasic_Component_2102_4(editorCell, node, context);
@@ -280,7 +283,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_5(EditorContext context, SNode node) {
     if (this.my_OpenTag2102_2 == null) {
-      this.my_OpenTag2102_2 = new _OpenTag(node);
+      this.my_OpenTag2102_2 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag2102_2.createEditorCell(context);
     setupBasic_Component_2102_5(editorCell, node, context);
@@ -289,7 +292,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2102_6(EditorContext context, SNode node) {
     if (this.my_CloseTag2102_2 == null) {
-      this.my_CloseTag2102_2 = new _CloseTag(node);
+      this.my_CloseTag2102_2 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag2102_2.createEditorCell(context);
     setupBasic_Component_2102_6(editorCell, node, context);
@@ -552,7 +555,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -571,7 +573,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -585,7 +586,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -603,7 +603,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -617,7 +616,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -635,7 +633,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -649,7 +646,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -666,7 +662,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -680,7 +675,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -698,7 +692,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -711,7 +704,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -736,7 +728,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -757,7 +748,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -769,15 +759,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -794,7 +775,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -807,7 +787,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -830,25 +809,14 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
   }
 
   private static void setupBasic_Component_2102_2(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -858,15 +826,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_3(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -878,22 +837,12 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
   }
 
   private static void setupBasic_Component_2102_4(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -906,7 +855,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
@@ -918,10 +866,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -936,7 +882,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -946,7 +891,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "collection");
           this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
@@ -958,7 +902,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
@@ -971,10 +914,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }

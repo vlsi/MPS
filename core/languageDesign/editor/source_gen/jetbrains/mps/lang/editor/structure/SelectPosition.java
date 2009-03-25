@@ -18,6 +18,19 @@ public enum SelectPosition {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<SelectPosition> getConstants() {
     List<SelectPosition> list = new LinkedList<SelectPosition>();
     ListOperations.addElement(list, SelectPosition.before);
@@ -40,19 +53,6 @@ public enum SelectPosition {
       return SelectPosition.after;
     }
     return SelectPosition.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

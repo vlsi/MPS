@@ -286,14 +286,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8658_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8658_2");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "statement");
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_8658_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -378,7 +370,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "statement");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };

@@ -29,7 +29,6 @@ public class Styles_StyleSheet {
               cell.getEditorContext()
             ));
           }
-
         });
         this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
@@ -42,7 +41,6 @@ public class Styles_StyleSheet {
               cell.getEditorContext()
             ));
           }
-
         });
         this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
 
@@ -55,11 +53,9 @@ public class Styles_StyleSheet {
               cell.getEditorContext()
             ));
           }
-
         });
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
-
     };
   }
 
@@ -68,7 +64,6 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -78,7 +73,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
-
     };
   }
 
@@ -88,7 +82,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -100,7 +93,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -112,7 +104,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-
     };
   }
 
@@ -121,7 +112,6 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
-
     };
   }
 
@@ -130,7 +120,6 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.DRAW_BORDER, true);
       }
-
     };
   }
 

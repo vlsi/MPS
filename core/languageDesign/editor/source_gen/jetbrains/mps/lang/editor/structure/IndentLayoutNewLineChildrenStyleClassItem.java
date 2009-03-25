@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IndentLayoutNewLineChildrenStyleClassItem extends BooleanStyleSheetItem {
+public class IndentLayoutNewLineChildrenStyleClassItem extends jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem";
 
   public IndentLayoutNewLineChildrenStyleClassItem(SNode node) {

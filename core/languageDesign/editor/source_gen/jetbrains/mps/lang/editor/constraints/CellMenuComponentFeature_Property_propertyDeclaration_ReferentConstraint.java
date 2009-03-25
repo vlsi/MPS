@@ -27,7 +27,7 @@ public class CellMenuComponentFeature_Property_propertyDeclaration_ReferentConst
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // properties declared in edited concept' hierarchy and not overridden
+    //     properties declared in edited concept' hierarchy and not overridden
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellMenuComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
     return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(editedConcept));

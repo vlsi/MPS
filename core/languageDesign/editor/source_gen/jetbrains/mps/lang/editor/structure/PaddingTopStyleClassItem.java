@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PaddingTopStyleClassItem extends AbstractPaddingStyleClassItem {
+public class PaddingTopStyleClassItem extends jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem";
 
   public PaddingTopStyleClassItem(SNode node) {

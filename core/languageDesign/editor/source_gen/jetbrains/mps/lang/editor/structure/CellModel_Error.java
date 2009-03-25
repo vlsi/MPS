@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CellModel_Error extends CellModel_AbstractLabel {
+public class CellModel_Error extends jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Error";
   public static final String TEXT = "text";
 
