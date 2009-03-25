@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.ActionPlace;
@@ -51,6 +52,7 @@ public abstract class BaseAction extends AnAction {
    * Is caslled only by ancestors if getShortcut depends on constructor parameters
    */
   protected void updateShortcuts() {
+    setEnabledInModalContext(false);
     setShortcutSet(new ShortcutSet() {
       public Shortcut[] getShortcuts() {
         KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
@@ -87,6 +89,13 @@ public abstract class BaseAction extends AnAction {
 
   public final void update(final AnActionEvent e) {
     super.update(e);
+
+    //todo this is a workaround for IDEA-22415. Remove after they'll fix it
+    if (ProgressManager.getInstance().hasModalProgressIndicator()){
+      disable(e.getPresentation());
+      return;
+    }
+
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
 
     if (e.getInputEvent() instanceof KeyEvent) {
@@ -178,6 +187,7 @@ public abstract class BaseAction extends AnAction {
     e.getPresentation().setVisible(true);
     e.getPresentation().setEnabled(true);
   }
+
 
   protected abstract void doExecute(AnActionEvent e);
 
