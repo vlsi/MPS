@@ -2,8 +2,8 @@ package jetbrains.mps.uitests;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.common.PathField;
-import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
-import jetbrains.mps.project.DevKit;
+import jetbrains.mps.ide.newSolutionDialog.NewSolutionDialog;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 
@@ -12,12 +12,12 @@ import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
-public class NewDevkitUITests extends NewDialogsUITests{
-    public void testDevkitCreation() throws InvocationTargetException, InterruptedException {
+public class NewSolutionUITest extends NewDialogsUITestsBase {
+   public void testSolutionCreation() throws InvocationTargetException, InterruptedException {
     Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main frame not found", frame);
 
-    final NewDevKitDialog dialog = new NewDevKitDialog(frame);
+    final NewSolutionDialog dialog = new NewSolutionDialog(frame);
     dialog.setProject(myCreatedProject);
 
     SwingUtilities.invokeLater(new Runnable() {
@@ -28,19 +28,19 @@ public class NewDevkitUITests extends NewDialogsUITests{
     flushAWT();
 
     JTextField nameField = findTextField("Name");
-    getHelper().sendString(new StringEventData(this, nameField, "myDev"));
+    getHelper().sendString(new StringEventData(this, nameField, "mySol"));
     flushAWT();
     PathField pathField = findPathField("Path");
     boolean correctSuffix = pathField.getPath().endsWith(nameField.getText());
-    assertTrue("Devkit suffix is not added to path", correctSuffix);
+    assertTrue("Solution suffix is not added to path", correctSuffix);
 
     pressButton(dialog, "OK");
     flushAWT();
 
-    final DevKit devKit = dialog.getResult();
-    assertNotNull("Devkit is not created", devKit);
+    final Solution s = dialog.getResult();
+    assertNotNull("Solution is not created", s);
 
-    boolean isImported = myCreatedProject.getProjectDevKits().contains(devKit);
-    assertTrue("Devkit is not imported into project", isImported);
+    boolean isImported = myCreatedProject.getProjectSolutions().contains(s);
+    assertTrue("Solution is not imported into project", isImported);
   }
 }

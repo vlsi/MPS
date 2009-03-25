@@ -13,7 +13,7 @@ import java.awt.Component;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 
-public class NewProjectUITests extends NoProjectUITestsBase {
+public class NewProjectUITest extends NoProjectUITestsBase {
   public void testInitialValues() throws InvocationTargetException, InterruptedException {
     Component dialog = TestUtil.openNewProjectDialog(this);
 

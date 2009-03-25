@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
-public class NewLanguageUITests extends NewDialogsUITests{
+public class NewLanguageUITest extends NewDialogsUITestsBase {
    public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
     Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main frame not found", frame);

@@ -5,7 +5,7 @@ import jetbrains.mps.uitests.UITestsBase.NoProjectUITestsBase;
 
 import java.io.File;
 
-public class NewDialogsUITests extends NoProjectUITestsBase {
+public class NewDialogsUITestsBase extends NoProjectUITestsBase {
   protected MPSProject myCreatedProject = null;
 
   @Override
