@@ -416,8 +416,8 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1237380500632" resolveInfo="LineList" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237994755912">
-      <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238011810265">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1237216850308">
@@ -428,23 +428,11 @@
     <property name="name" value="MPSLiteConceptDeclaration" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1182956098221">
-      <property name="name" value="root" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1183028098253">
-      <property name="name" value="abstract" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237380549435">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="lineList" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1237380500632" resolveInfo="LineList" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1182510947692">
-      <property name="role" value="extends" />
-      <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237994765858">
       <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
@@ -605,8 +593,34 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1237993244422">
     <property name="name" value="IMPSLiteConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238011942373">
+      <property name="role" value="extends" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238011911208">
+      <property name="name" value="root" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238011911209">
+      <property name="name" value="abstract" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237994795771">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238011479276">
+    <property name="name" value="TemplateBasedConcept" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238011542646">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="template" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1237212367450" resolveInfo="MPSLiteConceptTemplate" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238011524931">
+      <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
     </node>
   </node>
 </model>

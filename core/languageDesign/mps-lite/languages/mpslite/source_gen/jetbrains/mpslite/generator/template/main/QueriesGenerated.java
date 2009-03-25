@@ -7,8 +7,8 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mpslite.generator.template.main._Quotations;
 import jetbrains.mpslite.generator.template.util.MPSLiteGenerationUtil;
@@ -32,7 +32,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1237993115201(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SLinkOperations.getCount(_context.getNode(), "line") == 0;
+    return SLinkOperations.getCount(_context.getNode(), "line") == 0 && SPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mpslite.structure.IMPSLiteConcept", false, false), "abstract");
   }
 
   public static boolean baseMappingRule_Condition_1237999282434(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -45,6 +45,14 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1237999311173(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "multiple") && !(SPropertyOperations.getBoolean(_context.getNode(), "vertical"));
+  }
+
+  public static boolean baseMappingRule_Condition_1238012600857(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SLinkOperations.getCount(_context.getNode(), "line") == 0 && !(SPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mpslite.structure.IMPSLiteConcept", false, false), "abstract"));
+  }
+
+  public static boolean baseMappingRule_Condition_1238012693197(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "abstract")) || SLinkOperations.getCount(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "line") != 0;
   }
 
   public static Object propertyMacro_GetPropertyValue_1237409796281(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -5,4 +5,20 @@ package jetbrains.mpslite.structure;
 
 public interface IMPSLiteConcept extends jetbrains.mps.lang.core.structure.INamedConcept {
   public static final String concept = "jetbrains.mpslite.structure.IMPSLiteConcept";
+  public static final String ROOT = "root";
+  public static final String ABSTRACT = "abstract";
+  public static final String EXTENDS = "extends";
+
+  public boolean getRoot();
+
+  public void setRoot(boolean value);
+
+  public boolean getAbstract();
+
+  public void setAbstract(boolean value);
+
+  public jetbrains.mpslite.structure.MPSLiteConceptDeclaration getExtends();
+
+  public void setExtends(jetbrains.mpslite.structure.MPSLiteConceptDeclaration node);
+
 }
