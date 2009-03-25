@@ -1,15 +1,12 @@
 package jetbrains.mps.uitests;
 
 import com.intellij.ide.GeneralSettings;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
@@ -31,6 +28,8 @@ public abstract class UITestsBase extends JFCTestCase {
 
   protected void setUp() throws Exception {
     super.setUp();
+
+    setAssertExit(true);
 
     setHelper(new JFCTestHelper());
 
@@ -63,13 +62,7 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        application.saveAll();
-        Disposer.dispose(application);
-      }
-    });
+    ApplicationManagerEx.getApplicationEx().exit(true);
 
     flushAWT();
 
