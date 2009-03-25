@@ -33,7 +33,6 @@ public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

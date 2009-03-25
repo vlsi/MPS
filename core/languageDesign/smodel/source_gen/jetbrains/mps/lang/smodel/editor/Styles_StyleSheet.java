@@ -19,7 +19,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
-
     };
   }
 
@@ -28,7 +27,6 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
-
     };
   }
 

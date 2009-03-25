@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.lang.smodel.editor.Styles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -146,7 +147,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -160,7 +160,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -177,7 +176,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -196,7 +194,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -290,7 +287,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
             this.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.FIRST);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

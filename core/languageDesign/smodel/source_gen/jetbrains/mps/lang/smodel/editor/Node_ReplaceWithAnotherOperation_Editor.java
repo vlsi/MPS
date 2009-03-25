@@ -39,7 +39,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2923_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp2923_0 == null) {
-      this.myReplaceableAlias_Comp2923_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp2923_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp2923_0.createEditorCell(context);
     setupBasic_Component_2923_0(editorCell, node, context);

@@ -39,7 +39,7 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5612_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp5612_0 == null) {
-      this.myReplaceableAlias_Comp5612_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp5612_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp5612_0.createEditorCell(context);
     setupBasic_Component_5612_0(editorCell, node, context);

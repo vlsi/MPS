@@ -103,7 +103,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -119,7 +118,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -187,7 +185,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

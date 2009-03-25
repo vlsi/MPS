@@ -98,7 +98,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -37,7 +37,6 @@ public class Node_GetModelOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

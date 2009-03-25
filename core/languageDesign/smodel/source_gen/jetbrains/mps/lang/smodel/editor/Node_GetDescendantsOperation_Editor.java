@@ -18,7 +18,7 @@ public class Node_GetDescendantsOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5586_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp5586_0 == null) {
-      this.myReplaceableAliasAndParms_Comp5586_0 = new ReplaceableAliasAndParms_Comp(node);
+      this.myReplaceableAliasAndParms_Comp5586_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp5586_0.createEditorCell(context);
     setupBasic_Component_5586_0(editorCell, node, context);

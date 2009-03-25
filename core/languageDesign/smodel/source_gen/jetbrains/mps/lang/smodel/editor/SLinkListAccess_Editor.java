@@ -115,7 +115,6 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

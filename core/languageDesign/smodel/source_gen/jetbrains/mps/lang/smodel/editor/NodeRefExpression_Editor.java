@@ -107,7 +107,6 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -129,7 +128,6 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

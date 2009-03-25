@@ -61,7 +61,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1569_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp1569_0 == null) {
-      this.myReplaceableAliasAndParms_Comp1569_0 = new ReplaceableAliasAndParms_Comp(node);
+      this.myReplaceableAliasAndParms_Comp1569_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp1569_0.createEditorCell(context);
     setupBasic_Component_1569_0(editorCell, node, context);
@@ -186,7 +186,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -199,7 +198,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -213,7 +211,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -226,7 +223,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -240,7 +236,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -254,7 +249,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -272,7 +266,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -290,7 +283,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -308,7 +300,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -326,7 +317,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

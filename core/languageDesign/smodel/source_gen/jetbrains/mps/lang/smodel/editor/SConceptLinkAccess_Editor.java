@@ -91,7 +91,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -155,7 +154,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

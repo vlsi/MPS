@@ -61,7 +61,6 @@ public class Node_GetIndexInParentOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

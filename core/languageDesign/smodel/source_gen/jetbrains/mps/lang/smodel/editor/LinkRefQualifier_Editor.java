@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.smodel.editor.Styles_StyleSheet;
 
 public class LinkRefQualifier_Editor extends DefaultNodeEditor {
 

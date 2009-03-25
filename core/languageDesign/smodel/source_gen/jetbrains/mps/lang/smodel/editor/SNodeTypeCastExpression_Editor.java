@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.editor.SNodeTypeCastExpression_Concept_Actions;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -121,7 +122,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -192,7 +192,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

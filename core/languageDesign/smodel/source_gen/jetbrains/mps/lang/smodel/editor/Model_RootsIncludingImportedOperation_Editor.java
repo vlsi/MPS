@@ -44,7 +44,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   public EditorCell createComponent_0707_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp0707_0 == null) {
-      this.myReplaceableAlias_Comp0707_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp0707_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp0707_0.createEditorCell(context);
     setupBasic_Component_0707_0(editorCell, node, context);

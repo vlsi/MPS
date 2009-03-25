@@ -131,7 +131,6 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -143,7 +142,6 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -157,8 +155,8 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -227,7 +225,6 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

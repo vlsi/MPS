@@ -41,7 +41,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6611_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp6611_0 == null) {
-      this.myReplaceableAlias_Comp6611_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp6611_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp6611_0.createEditorCell(context);
     setupBasic_Component_6611_0(editorCell, node, context);

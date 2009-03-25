@@ -18,7 +18,7 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2830_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp2830_0 == null) {
-      this.myReplaceableAliasAndParms_Comp2830_0 = new ReplaceableAliasAndParms_Comp(node);
+      this.myReplaceableAliasAndParms_Comp2830_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp2830_0.createEditorCell(context);
     setupBasic_Component_2830_0(editorCell, node, context);

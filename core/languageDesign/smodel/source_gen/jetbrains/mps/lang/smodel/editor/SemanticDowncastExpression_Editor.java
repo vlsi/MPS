@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.lang.smodel.editor.SemanticDowncastExpression_Symbol_Actions;
 
 public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
@@ -90,7 +91,6 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

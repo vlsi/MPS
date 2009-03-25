@@ -29,7 +29,7 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_3010_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp3010_0 == null) {
-      this.myReplaceableAliasAndParms_Comp3010_0 = new ReplaceableAliasAndParms_Comp(node);
+      this.myReplaceableAliasAndParms_Comp3010_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp3010_0.createEditorCell(context);
     setupBasic_Component_3010_0(editorCell, node, context);

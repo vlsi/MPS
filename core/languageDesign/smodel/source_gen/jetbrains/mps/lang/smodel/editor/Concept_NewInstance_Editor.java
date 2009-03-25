@@ -43,7 +43,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6270_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp6270_0 == null) {
-      this.myReplaceableAlias_Comp6270_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp6270_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp6270_0.createEditorCell(context);
     setupBasic_Component_6270_0(editorCell, node, context);
@@ -114,7 +114,6 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

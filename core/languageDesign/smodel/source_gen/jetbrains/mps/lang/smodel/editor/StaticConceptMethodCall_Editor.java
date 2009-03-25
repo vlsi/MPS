@@ -248,7 +248,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -310,7 +309,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -389,7 +387,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

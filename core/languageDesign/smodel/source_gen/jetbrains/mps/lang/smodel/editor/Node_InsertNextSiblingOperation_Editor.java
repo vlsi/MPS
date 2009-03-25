@@ -40,7 +40,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1266_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp1266_0 == null) {
-      this.myReplaceableAlias_Comp1266_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp1266_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp1266_0.createEditorCell(context);
     setupBasic_Component_1266_0(editorCell, node, context);

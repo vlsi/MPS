@@ -90,7 +90,6 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

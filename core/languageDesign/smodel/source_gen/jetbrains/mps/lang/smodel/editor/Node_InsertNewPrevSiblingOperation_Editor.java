@@ -43,7 +43,7 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
 
   public EditorCell createComponent_8454_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp8454_0 == null) {
-      this.myReplaceableAlias_Comp8454_0 = new ReplaceableAlias_Comp(node);
+      this.myReplaceableAlias_Comp8454_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp8454_0.createEditorCell(context);
     setupBasic_Component_8454_0(editorCell, node, context);
@@ -176,7 +176,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

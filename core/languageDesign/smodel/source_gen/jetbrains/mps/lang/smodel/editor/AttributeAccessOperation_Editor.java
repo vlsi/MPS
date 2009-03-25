@@ -85,7 +85,6 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
