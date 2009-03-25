@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
@@ -37,7 +38,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public static final String conceptBehavior = "conceptBehavior";
   public static final String conceptEditorDeclaration = "conceptEditorDeclaration";
 
-  private Set<String> myTransientParameters = new HashSet<String>();
+  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public SafeDeleteConcept() {
     this.myTransientParameters.add("sourceLanguage");
@@ -181,7 +182,6 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         public Boolean compute() {
           return SafeDeleteConcept.this.isApplicable(refactoringContext);
         }
-
       });
       return result;
     }

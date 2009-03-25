@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.typesystem._Quotations;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -38,7 +37,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.copyNode(supertype);
-      for(SNode typeParam : new ArrayList<SNode>(SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
+      for(SNode typeParam : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SLinkOperations.getTargets(supertypeCopy, "parameter", true)))) {
         if (SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
           int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));

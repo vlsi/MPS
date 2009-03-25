@@ -199,7 +199,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -213,7 +212,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -227,7 +225,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -242,7 +239,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -257,7 +253,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -270,7 +265,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -285,7 +279,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -300,7 +293,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

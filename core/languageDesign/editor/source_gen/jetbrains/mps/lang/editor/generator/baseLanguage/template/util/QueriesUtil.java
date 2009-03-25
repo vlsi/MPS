@@ -39,7 +39,7 @@ public class QueriesUtil {
         return genctx.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(inputCellModel), "nodeListHandler");
       }
     }
-    // otherwise get 'generatedClass' by enclosing 'editor component'
+    //     otherwise get 'generatedClass' by enclosing 'editor component'
     SNode ancestor = SNodeOperations.getAncestor(inputCellModel, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
     return genctx.getOutputNodeByInputNodeAndMappingLabel(ancestor, "generatedClass");
   }
@@ -101,13 +101,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     return Sequence.fromIterable(outputClasses).first();
   }

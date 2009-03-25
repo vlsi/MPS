@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureRefactoring;
 import java.util.List;
-import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -35,7 +34,7 @@ public class ChangeParametersOrder_Test extends BaseTransformationTest {
       SLinkOperations.addChild(params.getDeclaration(), "parameter", p0);
       SLinkOperations.addChild(params.getDeclaration(), "parameter", p1);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, this.getNodeById("1230052943949"));
-      List<SNode> ussages = new ArrayList<SNode>();
+      List<SNode> ussages = ListSequence.<SNode>fromArray();
       ListSequence.fromList(ussages).addElement(this.getNodeById("1230052943965"));
       ref.setUsages(ussages);
       ref.doRefactoring();

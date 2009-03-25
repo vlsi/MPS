@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
+public class ConstrainedDataTypeDeclaration extends jetbrains.mps.lang.structure.structure.DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";
   public static final String CONSTRAINT = "constraint";
 

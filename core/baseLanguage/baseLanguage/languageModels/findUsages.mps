@@ -1658,9 +1658,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034544036">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034544054">
-                <link role="baseMethodDeclaration" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1200503635926">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124787">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1200503635926">
                   <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
                 </node>
               </node>
@@ -2942,9 +2941,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216400634837">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216400640451">
-                <link role="baseMethodDeclaration" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216400644379">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124717">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216400644379">
                   <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
                 </node>
               </node>

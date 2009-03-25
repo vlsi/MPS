@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferenceConceptLinkDeclaration extends ConceptLinkDeclaration {
+public class ReferenceConceptLinkDeclaration extends jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration";
 
   public ReferenceConceptLinkDeclaration(SNode node) {

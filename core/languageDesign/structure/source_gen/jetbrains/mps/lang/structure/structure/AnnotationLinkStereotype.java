@@ -19,6 +19,19 @@ public enum AnnotationLinkStereotype {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<AnnotationLinkStereotype> getConstants() {
     List<AnnotationLinkStereotype> list = new LinkedList<AnnotationLinkStereotype>();
     ListOperations.addElement(list, AnnotationLinkStereotype.node);
@@ -45,19 +58,6 @@ public enum AnnotationLinkStereotype {
       return AnnotationLinkStereotype.property;
     }
     return AnnotationLinkStereotype.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

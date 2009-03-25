@@ -315,7 +315,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       public void doCommit(final String oldValue, final String newValue) {
         AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
       }
-
     };
   }
 
@@ -435,7 +434,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -452,7 +450,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -465,7 +462,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -478,7 +474,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -491,7 +486,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -504,7 +498,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -517,7 +510,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -530,7 +522,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -543,7 +534,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -556,7 +546,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -569,7 +558,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -582,7 +570,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -595,7 +582,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -608,7 +594,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -621,7 +606,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -634,7 +618,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -647,7 +630,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -660,7 +642,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -673,7 +654,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -686,7 +666,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -699,7 +678,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -720,7 +698,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -741,7 +718,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -754,7 +730,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -767,7 +742,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

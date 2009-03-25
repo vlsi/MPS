@@ -78,9 +78,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234799890683">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1234799901937">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234799903174">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234799908004">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234799911834">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124948">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234799911834">
                       <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                     </node>
                   </node>

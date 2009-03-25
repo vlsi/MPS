@@ -4,11 +4,12 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferenceConceptLink extends ConceptLink {
+public class ReferenceConceptLink extends jetbrains.mps.lang.structure.structure.ConceptLink {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ReferenceConceptLink";
   public static final String TARGET = "target";
 
@@ -16,19 +17,19 @@ public class ReferenceConceptLink extends ConceptLink {
     super(node);
   }
 
-  public BaseConcept getTarget() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, ReferenceConceptLink.TARGET);
+  public jetbrains.mps.lang.core.structure.BaseConcept getTarget() {
+    return (jetbrains.mps.lang.core.structure.BaseConcept)this.getReferent(BaseConcept.class, ReferenceConceptLink.TARGET);
   }
 
-  public void setTarget(BaseConcept node) {
+  public void setTarget(jetbrains.mps.lang.core.structure.BaseConcept node) {
     super.setReferent(ReferenceConceptLink.TARGET, node);
   }
 
-  public ReferenceConceptLinkDeclaration getReferenceConceptLinkDeclaration() {
+  public jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration getReferenceConceptLinkDeclaration() {
     return this.ensureAdapter(ReferenceConceptLinkDeclaration.class, "conceptLinkDeclaration", this.getConceptLinkDeclaration());
   }
 
-  public void setReferenceConceptLinkDeclaration(ReferenceConceptLinkDeclaration node) {
+  public void setReferenceConceptLinkDeclaration(jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration node) {
     this.setConceptLinkDeclaration(node);
   }
 

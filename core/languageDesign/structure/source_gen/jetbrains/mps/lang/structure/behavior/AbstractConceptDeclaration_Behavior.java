@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.structure.behavior._Quotations;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -194,7 +195,6 @@ public class AbstractConceptDeclaration_Behavior {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
-
     }).toListSequence();
   }
 
@@ -205,7 +205,6 @@ public class AbstractConceptDeclaration_Behavior {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
       }
-
     }).toListSequence();
   }
 
@@ -256,7 +255,6 @@ public class AbstractConceptDeclaration_Behavior {
       public void run() {
         SPropertyOperations.set(node, "name", newValue);
       }
-
     });
   }
 

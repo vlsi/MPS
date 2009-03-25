@@ -20,7 +20,6 @@ import java.util.List;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -422,7 +421,7 @@ __switch__:
       SNodeOperations.replaceWithAnother(type, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168));
     } else
     {
-      List<SNode> children = new ArrayList<SNode>(SNodeOperations.getChildren(type));
+      List<SNode> children = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SNodeOperations.getChildren(type)));
       for(SNode chld : children) {
         inference_mapTypeVariables(typeCheckingContext, chld, mmap);
       }

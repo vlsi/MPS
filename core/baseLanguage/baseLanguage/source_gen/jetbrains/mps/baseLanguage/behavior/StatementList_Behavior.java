@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -17,8 +16,8 @@ public class StatementList_Behavior {
   }
 
   public static Set<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
-    Set<SNode> declarations = new HashSet<SNode>();
-    Set<SNode> reference = new HashSet<SNode>();
+    Set<SNode> declarations = SetSequence.<SNode>fromArray();
+    Set<SNode> reference = SetSequence.<SNode>fromArray();
     reference.addAll(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false));
     reference.addAll(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false));
     for(SNode ref : reference) {

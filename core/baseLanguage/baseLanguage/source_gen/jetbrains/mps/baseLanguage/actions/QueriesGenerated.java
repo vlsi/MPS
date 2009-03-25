@@ -53,10 +53,9 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -1057,7 +1056,7 @@ __switch__:
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             List<SNode> fieldDeclarations = (List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
-            final Set<String> localNames = new HashSet<String>();
+            final Set<String> localNames = SetSequence.<String>fromArray();
             ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <SNode>() {
 
               public void visit(SNode it) {

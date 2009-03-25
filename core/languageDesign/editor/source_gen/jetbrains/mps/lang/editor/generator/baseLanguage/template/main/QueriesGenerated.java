@@ -27,6 +27,7 @@ import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -36,7 +37,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
@@ -873,14 +873,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197580078127(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
-    // no cell layout defined (obsolete)
+    //     no cell layout defined (obsolete)
     if (cellLayout == null) {
       if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "creator", true), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
-    // choose cell layout
+    //     choose cell layout
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
@@ -893,7 +893,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
-    // error
+    //     error
     return null;
   }
 
@@ -1056,13 +1056,13 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1229561240559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
     if (cellLayout == null) {
-      // no cell layout
+      //       no cell layout
       if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
         return SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);
     }
-    // cell layout is defined
+    //     cell layout is defined
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "baseMethodDeclaration", false);
     }
@@ -1075,7 +1075,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "baseMethodDeclaration", false);
     }
-    // default
+    //     default
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "baseMethodDeclaration", false);
   }
 
@@ -1253,7 +1253,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1187029422537(final IOperationContext operationContext, final IfMacroContext _context) {
-    // no 'is applicable' func, no 'applicable concept'
+    //     no 'is applicable' func, no 'applicable concept'
     if (SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) == null) {
       return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "applicableConcept", false) == null;
     }
@@ -1261,7 +1261,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1187029607011(final IOperationContext operationContext, final IfMacroContext _context) {
-    // has 'is applicable' func, but no 'applicable concept'
+    //     has 'is applicable' func, but no 'applicable concept'
     if (SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null) {
       return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "applicableConcept", false) == null;
     }
@@ -1755,7 +1755,7 @@ public class QueriesGenerated {
         SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(t, "classifier", false));
       }
     }
-    return new ArrayList<SNode>(classes);
+    return ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(classes));
   }
 
   public static Iterable sourceNodesQuery_1182976528704(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

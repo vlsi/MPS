@@ -142,7 +142,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_5916_0(editorCell, node, context);
@@ -305,7 +304,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -318,7 +316,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -331,7 +328,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -345,7 +341,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -359,7 +354,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -371,7 +365,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -383,7 +376,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -398,7 +390,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -411,7 +402,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -436,7 +426,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -597,7 +586,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

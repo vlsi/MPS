@@ -18,6 +18,19 @@ public enum AnnotationLinkCardinality {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<AnnotationLinkCardinality> getConstants() {
     List<AnnotationLinkCardinality> list = new LinkedList<AnnotationLinkCardinality>();
     ListOperations.addElement(list, AnnotationLinkCardinality._0__1);
@@ -40,19 +53,6 @@ public enum AnnotationLinkCardinality {
       return AnnotationLinkCardinality._0__n;
     }
     return AnnotationLinkCardinality.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

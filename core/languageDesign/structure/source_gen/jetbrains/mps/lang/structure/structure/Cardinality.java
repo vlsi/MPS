@@ -20,6 +20,19 @@ public enum Cardinality {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = new LinkedList<Cardinality>();
     ListOperations.addElement(list, Cardinality._0__1);
@@ -50,19 +63,6 @@ public enum Cardinality {
       return Cardinality._1__n;
     }
     return Cardinality.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

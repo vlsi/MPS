@@ -4,12 +4,13 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
+public class InterfaceConceptDeclaration extends jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
   public static final String EXTENDS = "extends";
 
@@ -21,19 +22,19 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
     return this.getChildCount(InterfaceConceptDeclaration.EXTENDS);
   }
 
-  public Iterator<InterfaceConceptReference> extendses() {
+  public Iterator<jetbrains.mps.lang.structure.structure.InterfaceConceptReference> extendses() {
     return this.children(InterfaceConceptReference.class, InterfaceConceptDeclaration.EXTENDS);
   }
 
-  public List<InterfaceConceptReference> getExtendses() {
+  public List<jetbrains.mps.lang.structure.structure.InterfaceConceptReference> getExtendses() {
     return this.getChildren(InterfaceConceptReference.class, InterfaceConceptDeclaration.EXTENDS);
   }
 
-  public void addExtends(InterfaceConceptReference node) {
+  public void addExtends(jetbrains.mps.lang.structure.structure.InterfaceConceptReference node) {
     this.addChild(InterfaceConceptDeclaration.EXTENDS, node);
   }
 
-  public void insertExtends(InterfaceConceptReference prev, InterfaceConceptReference node) {
+  public void insertExtends(jetbrains.mps.lang.structure.structure.InterfaceConceptReference prev, jetbrains.mps.lang.structure.structure.InterfaceConceptReference node) {
     this.insertChild(prev, InterfaceConceptDeclaration.EXTENDS, node);
   }
 

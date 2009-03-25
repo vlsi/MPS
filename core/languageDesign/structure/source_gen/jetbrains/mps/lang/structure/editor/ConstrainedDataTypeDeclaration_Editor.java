@@ -151,7 +151,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -165,7 +164,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -182,7 +180,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -195,7 +192,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -212,7 +208,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

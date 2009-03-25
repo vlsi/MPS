@@ -723,7 +723,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1169582607427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all string-type-properties from implemented interfaces
+    //     all string-type-properties from implemented interfaces
     final List<String> names = ListSequence.<String>fromArray();
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
@@ -792,19 +792,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169582607484(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all boolean-type-properties from implemented interfaces
+    //     all boolean-type-properties from implemented interfaces
     final List<String> names = ListSequence.<String>fromArray();
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
@@ -873,19 +870,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169582607556(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all integer-type-properties from implemented interfaces
+    //     all integer-type-properties from implemented interfaces
     final List<String> names = ListSequence.<String>fromArray();
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
@@ -954,19 +948,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169582607613(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all enum-type-properties from implemented interfaces
+    //     all enum-type-properties from implemented interfaces
     final List<String> names = ListSequence.<String>fromArray();
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
@@ -1035,19 +1026,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169582939001(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all reference links with cardinality=1 and no specialization
+    //     all reference links with cardinality=1 and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1104,19 +1092,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169583297000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all reference links with cardinality=1 and specialization
+    //     all reference links with cardinality=1 and specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1173,19 +1158,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169591070416(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all aggregation links with cardinality:1 and no specialization
+    //     all aggregation links with cardinality:1 and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1242,19 +1224,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all aggregation links with cardinality:1 and specialization
+    //     all aggregation links with cardinality:1 and specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1311,25 +1290,21 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "role").equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, "specializedLink", false), "role")));
       }
-
     });
   }
 
   public static Iterable sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    // all aggregation links with cardinality:n and no specialization
+    //     all aggregation links with cardinality:n and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1386,13 +1361,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
   }
 
@@ -1402,7 +1374,6 @@ __switch__:
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isString(p);
       }
-
     });
   }
 
@@ -1412,7 +1383,6 @@ __switch__:
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isBoolean(p);
       }
-
     });
   }
 
@@ -1422,7 +1392,6 @@ __switch__:
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isInteger(p);
       }
-
     });
   }
 
@@ -1432,7 +1401,6 @@ __switch__:
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isEnum(p);
       }
-
     });
   }
 
@@ -1442,7 +1410,6 @@ __switch__:
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_1_nospec(link);
       }
-
     });
   }
 
@@ -1452,7 +1419,6 @@ __switch__:
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_1_spec(link);
       }
-
     });
   }
 
@@ -1462,7 +1428,6 @@ __switch__:
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_n_nospec(link);
       }
-
     });
   }
 
@@ -1472,7 +1437,6 @@ __switch__:
       public boolean accept(SNode link) {
         return QueriesUtil.isRefLink_card_1_nospec(link);
       }
-
     });
   }
 
@@ -1482,7 +1446,6 @@ __switch__:
       public boolean accept(SNode link) {
         return QueriesUtil.isRefLink_card_1_spec(link);
       }
-
     });
   }
 

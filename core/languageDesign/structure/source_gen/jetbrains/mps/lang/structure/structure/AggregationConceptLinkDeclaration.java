@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
+public class AggregationConceptLinkDeclaration extends jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration";
 
   public AggregationConceptLinkDeclaration(SNode node) {

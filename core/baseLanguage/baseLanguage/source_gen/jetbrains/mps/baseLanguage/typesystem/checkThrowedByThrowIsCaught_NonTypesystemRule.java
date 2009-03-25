@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
@@ -26,7 +25,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
       return;
     }
     SNode throwableType = TypeChecker.getInstance().getTypeOf(throwable);
-    Set<SNode> throwables = new HashSet<SNode>();
+    Set<SNode> throwables = SetSequence.<SNode>fromArray();
     SetSequence.fromSet(throwables).addElement(throwableType);
     if (SNodeOperations.isInstanceOf(throwableType, "jetbrains.mps.baseLanguage.structure.Type")) {
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);

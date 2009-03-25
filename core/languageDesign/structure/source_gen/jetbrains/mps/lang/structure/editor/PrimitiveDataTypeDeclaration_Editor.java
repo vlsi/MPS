@@ -93,7 +93,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -107,7 +106,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -121,7 +119,6 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

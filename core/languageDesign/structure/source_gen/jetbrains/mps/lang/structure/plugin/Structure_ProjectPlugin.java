@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.lang.structure.plugin.StructureView_Tool;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
 

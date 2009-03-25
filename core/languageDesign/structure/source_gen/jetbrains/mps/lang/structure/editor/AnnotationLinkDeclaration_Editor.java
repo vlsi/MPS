@@ -329,7 +329,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -342,7 +341,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -363,7 +361,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -376,7 +373,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -389,7 +385,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -402,7 +397,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -423,7 +417,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -443,7 +436,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -463,7 +455,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -564,7 +555,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -625,7 +615,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

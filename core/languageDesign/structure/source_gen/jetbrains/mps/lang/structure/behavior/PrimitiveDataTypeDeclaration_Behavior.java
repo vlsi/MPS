@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.structure.behavior._Quotations;
 
 public class PrimitiveDataTypeDeclaration_Behavior {
 

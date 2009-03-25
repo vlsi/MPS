@@ -18,6 +18,19 @@ public enum LinkMetaclass {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<LinkMetaclass> getConstants() {
     List<LinkMetaclass> list = new LinkedList<LinkMetaclass>();
     ListOperations.addElement(list, LinkMetaclass.reference);
@@ -40,19 +53,6 @@ public enum LinkMetaclass {
       return LinkMetaclass.aggregation;
     }
     return LinkMetaclass.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

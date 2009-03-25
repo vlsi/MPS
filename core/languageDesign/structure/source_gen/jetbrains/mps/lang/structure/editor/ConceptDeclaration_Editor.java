@@ -37,6 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
+import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -433,7 +434,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       public void doCommit(final String oldValue, final String newValue) {
         AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
       }
-
     };
   }
 
@@ -645,7 +645,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -662,7 +661,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -675,7 +673,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -688,7 +685,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -709,7 +705,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -722,7 +717,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -735,7 +729,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -748,7 +741,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -761,7 +753,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -774,7 +765,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -787,7 +777,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -800,7 +789,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -813,7 +801,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -826,7 +813,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -839,7 +825,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -852,7 +837,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -865,7 +849,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -878,7 +861,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -891,7 +873,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -904,7 +885,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -917,7 +897,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -930,7 +909,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -947,7 +925,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -999,7 +976,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1012,7 +988,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1025,7 +1000,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1038,7 +1012,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1054,7 +1027,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1067,7 +1039,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1258,7 +1229,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1647,7 +1617,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

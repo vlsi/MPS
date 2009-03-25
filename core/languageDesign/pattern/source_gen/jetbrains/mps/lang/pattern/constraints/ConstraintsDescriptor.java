@@ -5,6 +5,12 @@ package jetbrains.mps.lang.pattern.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.pattern.constraints.PatternVariableReference_patternVariableDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableReference_propertyVariableDeclaration_ReferentConstraint;
+import jetbrains.mps.lang.pattern.constraints.LinkPatternVariableReference_linkVariableDeclaration_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

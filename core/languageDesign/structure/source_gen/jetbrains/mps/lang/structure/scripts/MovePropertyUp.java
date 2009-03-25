@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
@@ -35,7 +36,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 public class MovePropertyUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
 
-  private Set<String> myTransientParameters = new HashSet<String>();
+  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public MovePropertyUp() {
     this.myTransientParameters.add("targetConcept");
@@ -120,7 +121,6 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
           public SModel select(SModelDescriptor it) {
             return it.getSModel();
           }
-
         }).toListSequence();
         result.put(language, aspectList);
       }
@@ -130,7 +130,6 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
           public SModel select(SModelDescriptor it) {
             return it.getSModel();
           }
-
         }).toListSequence();
         result.put(targetLanguage, aspectList);
       }
@@ -176,7 +175,6 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
             ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
-
       });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
       dialog.showDialog();

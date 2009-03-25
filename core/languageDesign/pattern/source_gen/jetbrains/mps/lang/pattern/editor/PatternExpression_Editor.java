@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -98,7 +99,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.green);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -111,7 +111,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BRACKETS, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -125,7 +124,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.green);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -85,7 +85,6 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -99,7 +98,6 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

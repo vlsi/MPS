@@ -9989,12 +9989,11 @@
                                   </node>
                                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176797523822">
                                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036606002">
-                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036606005">
-                                        <link role="baseMethodDeclaration" targetNodeId="3.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
-                                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1176797536613">
+                                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237974932834">
+                                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1176797536613">
                                           <link role="concept" targetNodeId="10.1107461130800" />
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1176797550832">
+                                        <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237974932835">
                                           <link role="variableDeclaration" targetNodeId="1176797209646" resolveInfo="classes" />
                                         </node>
                                       </node>

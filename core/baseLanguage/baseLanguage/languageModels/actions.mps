@@ -1910,9 +1910,8 @@
                     <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237386036589" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219230301115">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219230326466">
-                      <link role="baseMethodDeclaration" targetNodeId="48.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190491668" />
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124820">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190491668" />
                     </node>
                   </node>
                 </node>

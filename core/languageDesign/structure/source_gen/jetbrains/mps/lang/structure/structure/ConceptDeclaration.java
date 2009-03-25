@@ -4,12 +4,13 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptDeclaration extends AbstractConceptDeclaration {
+public class ConceptDeclaration extends jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   public static final String ICON_PATH = "iconPath";
   public static final String ROOTABLE = "rootable";
@@ -36,11 +37,11 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     this.setBooleanProperty(ConceptDeclaration.ROOTABLE, value);
   }
 
-  public ConceptDeclaration getExtends() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptDeclaration.EXTENDS);
+  public jetbrains.mps.lang.structure.structure.ConceptDeclaration getExtends() {
+    return (jetbrains.mps.lang.structure.structure.ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptDeclaration.EXTENDS);
   }
 
-  public void setExtends(ConceptDeclaration node) {
+  public void setExtends(jetbrains.mps.lang.structure.structure.ConceptDeclaration node) {
     super.setReferent(ConceptDeclaration.EXTENDS, node);
   }
 
@@ -48,19 +49,19 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     return this.getChildCount(ConceptDeclaration.IMPLEMENTS);
   }
 
-  public Iterator<InterfaceConceptReference> implementses() {
+  public Iterator<jetbrains.mps.lang.structure.structure.InterfaceConceptReference> implementses() {
     return this.children(InterfaceConceptReference.class, ConceptDeclaration.IMPLEMENTS);
   }
 
-  public List<InterfaceConceptReference> getImplementses() {
+  public List<jetbrains.mps.lang.structure.structure.InterfaceConceptReference> getImplementses() {
     return this.getChildren(InterfaceConceptReference.class, ConceptDeclaration.IMPLEMENTS);
   }
 
-  public void addImplements(InterfaceConceptReference node) {
+  public void addImplements(jetbrains.mps.lang.structure.structure.InterfaceConceptReference node) {
     this.addChild(ConceptDeclaration.IMPLEMENTS, node);
   }
 
-  public void insertImplements(InterfaceConceptReference prev, InterfaceConceptReference node) {
+  public void insertImplements(jetbrains.mps.lang.structure.structure.InterfaceConceptReference prev, jetbrains.mps.lang.structure.structure.InterfaceConceptReference node) {
     this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
   }
 

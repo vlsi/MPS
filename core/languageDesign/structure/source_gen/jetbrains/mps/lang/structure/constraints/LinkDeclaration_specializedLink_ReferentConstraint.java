@@ -32,7 +32,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links declared in hierarchy of enclosing concept.
+    //     links declared in hierarchy of enclosing concept.
     if (_context.getReferenceNode() == null) {
       return null;
     }
@@ -50,7 +50,6 @@ public class LinkDeclaration_specializedLink_ReferentConstraint extends BaseNode
           }
           return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
         }
-
       }));
     }
     return new SimpleSearchScope(result);

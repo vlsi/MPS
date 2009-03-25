@@ -1731,9 +1731,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214502183903">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214502183904">
-                <link role="baseMethodDeclaration" targetNodeId="5.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214502236261">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974125108">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214502236261">
                   <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
                 </node>
               </node>

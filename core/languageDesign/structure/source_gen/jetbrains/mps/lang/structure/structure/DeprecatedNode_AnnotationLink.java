@@ -6,12 +6,12 @@ package jetbrains.mps.lang.structure.structure;
 public class DeprecatedNode_AnnotationLink {
   public static final String DEPRECATED_NODE = "deprecatedNode";
 
-  public static void setDeprecatedNode(IStructureDeprecatable source, DeprecatedNodeAnnotation target) {
+  public static void setDeprecatedNode(jetbrains.mps.lang.structure.structure.IStructureDeprecatable source, jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation target) {
     source.setAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE, target);
   }
 
-  public static DeprecatedNodeAnnotation getDeprecatedNode(IStructureDeprecatable source) {
-    return (DeprecatedNodeAnnotation)source.getAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE);
+  public static jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation getDeprecatedNode(jetbrains.mps.lang.structure.structure.IStructureDeprecatable source) {
+    return (jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation)source.getAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE);
   }
 
 }

@@ -19,6 +19,19 @@ public enum EnumerationMemberIdentifierPolicy {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = new LinkedList<EnumerationMemberIdentifierPolicy>();
     ListOperations.addElement(list, EnumerationMemberIdentifierPolicy.derive_from_presentation);
@@ -45,19 +58,6 @@ public enum EnumerationMemberIdentifierPolicy {
       return EnumerationMemberIdentifierPolicy.custom;
     }
     return EnumerationMemberIdentifierPolicy.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

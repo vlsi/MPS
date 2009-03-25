@@ -18,7 +18,6 @@ public class structure_StyleSheet {
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 

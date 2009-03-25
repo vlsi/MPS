@@ -94,7 +94,6 @@ public class ListPattern_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -108,7 +107,6 @@ public class ListPattern_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -120,7 +118,6 @@ public class ListPattern_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

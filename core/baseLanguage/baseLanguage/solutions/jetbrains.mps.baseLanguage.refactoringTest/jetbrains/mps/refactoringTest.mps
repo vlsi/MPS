@@ -5876,9 +5876,8 @@
               <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237045478278" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230052903206">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1230052903207">
-                <link role="baseMethodDeclaration" targetNodeId="10.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230052903208" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237974679798">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230052903208" />
               </node>
             </node>
           </node>
@@ -6629,9 +6628,8 @@
               <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237045478269" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230052944061">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1230052944062">
-                <link role="baseMethodDeclaration" targetNodeId="10.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230052944063" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237974679726">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1230052944063" />
               </node>
             </node>
           </node>

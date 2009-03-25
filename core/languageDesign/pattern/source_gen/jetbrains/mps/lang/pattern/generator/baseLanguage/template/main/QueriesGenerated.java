@@ -30,7 +30,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration;
@@ -344,7 +343,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SModel model = _context.getOutputModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
       if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
@@ -360,7 +359,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SModel model = _context.getOutputModel();
     for(String propertyName : _context.getNode().getPropertyNames()) {
       if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
@@ -374,7 +373,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SModel model = _context.getOutputModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
       if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
@@ -392,7 +391,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = ListSequence.<SNode>fromArray();
     SModel model = _context.getOutputModel();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
       if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {

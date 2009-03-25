@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
@@ -44,7 +45,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public static final String targetModel = "targetModel";
   public static final String sourceModel = "sourceModel";
 
-  private Set<String> myTransientParameters = new HashSet<String>();
+  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public MoveConcepts() {
     this.myTransientParameters.add("targetModel");
@@ -121,7 +122,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<SNode> behaviors = ListOperations.<SNode>createList();
       List<SNode> constraints = ListOperations.<SNode>createList();
       List<SNode> dataFlows = ListOperations.<SNode>createList();
-      // collecting editors:
+      //       collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -134,7 +135,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      // collecting behaviors:
+      //       collecting behaviors:
       SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
       if (behaviorModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -145,7 +146,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      // collecting constraints:
+      //       collecting constraints:
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
       if (constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -156,7 +157,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      // collecting data flow:
+      //       collecting data flow:
       SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
       if (dataflowModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -167,7 +168,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      // refactoring itself
+      //       refactoring itself
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
@@ -212,7 +213,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         refactoringContext.computeCaches();
         refactoringContext.updateModelWithMaps(dataFlowModel);
       }
-      // todo: move other concept-related aspect stuff
+      //       todo: move other concept-related aspect stuff
     }
   }
 
@@ -226,7 +227,6 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           public SModel select(SModelDescriptor it) {
             return it.getSModel();
           }
-
         }).toListSequence();
         result.put(sourceLanguage, aspectList);
       }
@@ -237,7 +237,6 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           public SModel select(SModelDescriptor it) {
             return it.getSModel();
           }
-
         }).toListSequence();
         result.put(targetLanguage, aspectList);
       }
@@ -278,7 +277,6 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
             ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
-
       });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
       dialog.showDialog();

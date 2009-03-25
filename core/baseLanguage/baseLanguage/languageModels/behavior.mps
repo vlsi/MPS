@@ -2421,9 +2421,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214501228162">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214501228163">
-                <link role="baseMethodDeclaration" targetNodeId="8.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214501228164">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974125173">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1214501228164">
                   <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
                 </node>
               </node>
@@ -2439,9 +2438,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222757266191">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1222757266192">
-                <link role="baseMethodDeclaration" targetNodeId="8.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222757266193">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124998">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222757266193">
                   <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
                 </node>
               </node>

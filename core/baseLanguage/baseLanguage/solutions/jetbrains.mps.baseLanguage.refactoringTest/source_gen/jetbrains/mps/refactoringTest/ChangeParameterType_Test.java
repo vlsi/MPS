@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.refactoringTest._Quotations;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureRefactoring;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
