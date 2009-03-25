@@ -69,7 +69,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheRight(editorCell.renderText(), !(editorCell.isPunctuationLayout()));
+      result = result.appendToTheRight(editorCell.renderText(), PunctuationUtil.hasLeftGap(editorCell));
     }
     return result;
   }

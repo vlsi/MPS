@@ -37,8 +37,7 @@ class PunctuationUtil {
       return;
     }
 
-    if ((!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-          && !hasPunctuationLeft(currentCell)) {
+    if (hasLeftGap(currentCell)) {
       currentCell.setLeftGap(gap / 2);
     } else {
       currentCell.setLeftGap(0);
@@ -53,7 +52,12 @@ class PunctuationUtil {
 
   }
 
-  private static boolean leftCellHasPunctuationRight(EditorCell currentCell) {
+  static boolean hasLeftGap(EditorCell currentCell) {
+    return (!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
+          && !hasPunctuationLeft(currentCell);
+  }
+
+  static boolean leftCellHasPunctuationRight(EditorCell currentCell) {
     EditorCell_Collection parent = currentCell.getParent();
     if (parent != null && hasPunctuableLayout(parent)) {
       if (parent.getCellLayout() instanceof CellLayout_Indent && CellLayout_Indent.isOnNewLine(parent, currentCell)) {        
@@ -102,7 +106,7 @@ class PunctuationUtil {
     return cell.getLastLeaf().getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
   }
 
-  private static Boolean hasPunctuationLeft(EditorCell cell) {
+  static Boolean hasPunctuationLeft(EditorCell cell) {
     if (cell == null) {
       return true;
     }

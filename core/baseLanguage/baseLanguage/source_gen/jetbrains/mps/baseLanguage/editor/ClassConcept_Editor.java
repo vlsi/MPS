@@ -783,7 +783,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -799,7 +799,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -815,7 +815,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -831,7 +831,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -931,7 +931,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -1026,7 +1026,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.POSITION_CHILDREN, "indented");
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);

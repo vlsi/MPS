@@ -17,12 +17,14 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
@@ -40,6 +42,24 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     return false;
+  }
+
+  private static int getIndent(EditorCell root, EditorCell cell, boolean overflow) {
+    int result = 0;
+
+    if (overflow) {
+      result++;
+    }
+
+    while (cell != root) {
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+        result++;
+      }
+
+      cell = cell.getParent();
+    }
+
+    return result;
   }
 
   static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
@@ -71,7 +91,28 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
-    return TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    Iterator<EditorCell> iterator = editorCells.iterator();
+    if (iterator.hasNext()) {
+      boolean newLineAfter = false;
+      EditorCell_Collection rootCell = iterator.next().getParent();
+      for (EditorCell current : getIndentLeafs(rootCell)) {
+        if (isOnNewLine(rootCell, current) || newLineAfter) {
+          newLineAfter = false;
+          result = result.appendToTheRight(TextBuilder.fromString("\n"));
+          for (int i = 0; i < getIndent(rootCell, current, false); i++) {
+            result = result.appendToTheRight(TextBuilder.fromString(EditorCell_Indent.getIndentText()), false);
+          }
+        }
+
+        result = result.appendToTheRight(current.renderText(), PunctuationUtil.hasLeftGap(current));
+
+        if (isNewLineAfter(rootCell, current)) {
+          newLineAfter = true;
+        }
+      }
+    }
+    return result;
   }
 
   @Override
@@ -159,7 +200,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myBottomInset = 0;
 
       EditorSettings settings = EditorSettings.getInstance();
-      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWith(); 
+      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWith();
     }
 
     public void layout() {
@@ -300,7 +341,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
         if (result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT) ||
           prevLeaf.getStyle().get(StyleAttributes.PUNCTUATION_RIGTH)) {
-          
+
           result = prevLeaf;
         } else {
           break;
@@ -312,7 +353,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private boolean cellRangeFitsOnOneLine(EditorCell firstCell, EditorCell lastCell) {
       return lastCell.getX() + lastCell.getWidth() - firstCell.getX() <
-          myMaxWidth - myX - (getIndent(firstCell) + 1) * getIndentWidth();
+        myMaxWidth - myX - (getIndent(firstCell) + 1) * getIndentWidth();
     }
 
     private boolean isOnRightSide(EditorCell cell) {
@@ -340,7 +381,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       resetLine();
 
       for (EditorCell cell : oldLine) {
-        appendCell(cell);        
+        appendCell(cell);
       }
 
       if (!oldLine.isEmpty()) {
@@ -358,21 +399,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private int getIndent(EditorCell cell) {
-      int result = 0;
-
-      if (myOverflow) {
-        result++;
-      }
-
-      while (cell != myCell) {
-        if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
-          result++;
-        }
-
-        cell = cell.getParent();
-      }
-
-      return result;
+      return CellLayout_Indent.getIndent(myCell, cell, myOverflow);
     }
+
   }
+
 }

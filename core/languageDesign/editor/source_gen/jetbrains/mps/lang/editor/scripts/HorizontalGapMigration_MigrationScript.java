@@ -43,7 +43,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -70,7 +69,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -99,7 +97,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -129,7 +126,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -164,7 +160,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -204,7 +199,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
   }
 }

@@ -44,6 +44,20 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1191327608581">
     <property name="name" value="C" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1237910047513">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1237910047514" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1237910047515" />
+    </node>
+    <node role="property" type="jetbrains.mps.baseLanguage.structure.Property" id="1237910045253">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237910045254" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1237910045255" />
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1237910045256">
+        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1237910045257" />
+        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1237910045258">
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1237910045259" />
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1192532450961">
       <property name="name" value="boo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1192532450962" />
@@ -103,6 +117,9 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224580297240">
         <link role="classifier" targetNodeId="1191327608581" resolveInfo="C" />
       </node>
+    </node>
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1237910040945">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237910040946" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1224580427854">

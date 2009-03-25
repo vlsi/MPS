@@ -35,7 +35,7 @@ public class EditorCell_Indent extends EditorCell_Label {
     getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 
-  private static String getIndentText() {
+  public static String getIndentText() {
     String result = "";
     for (int i = 0; i < EditorSettings.getInstance().getIndentSize(); i++) {
       result += " ";

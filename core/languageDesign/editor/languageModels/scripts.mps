@@ -935,13 +935,28 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237818564824">
                   <property name="name" value="indentStyle" />
                   <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237818564825">
-                    <link role="concept" targetNodeId="1.1237308012275" resolveInfo="IndentLayoutNewLineStyleClassItem" />
+                    <link role="concept" targetNodeId="1.1237375020029" resolveInfo="IndentLayoutNewLineChildrenStyleClassItem" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237818577491">
                     <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1237818581262">
                       <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237818581263">
-                        <link role="concept" targetNodeId="1.1237308012275" resolveInfo="IndentLayoutNewLineStyleClassItem" />
+                        <link role="concept" targetNodeId="1.1237375020029" resolveInfo="IndentLayoutNewLineChildrenStyleClassItem" />
                       </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237910181714">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1237910185482">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237910185929">
+                    <property name="value" value="true" />
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237910182701">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237910181715">
+                      <link role="variableDeclaration" targetNodeId="1237818564824" resolveInfo="indentStyle" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237910183929">
+                      <link role="property" targetNodeId="1.1186414551515" resolveInfo="flag" />
                     </node>
                   </node>
                 </node>

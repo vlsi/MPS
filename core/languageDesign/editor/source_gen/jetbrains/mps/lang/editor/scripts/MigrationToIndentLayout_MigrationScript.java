@@ -41,7 +41,6 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
@@ -65,7 +64,8 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
         SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
         if (SPropertyOperations.getBoolean(node, "vertical")) {
           SPropertyOperations.set(node, "vertical", "" + false);
-          SNode indentStyle = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
+          SNode indentStyle = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
+          SPropertyOperations.set(indentStyle, "flag", "" + true);
           SLinkOperations.addChild(node, "styleItem", indentStyle);
         }
       }
@@ -73,7 +73,6 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       public boolean isShowAsIntention() {
         return false;
       }
-
     });
   }
 }
