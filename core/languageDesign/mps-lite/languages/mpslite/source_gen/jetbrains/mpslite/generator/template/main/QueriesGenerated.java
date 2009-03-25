@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mpslite.generator.template.main._Quotations;
@@ -33,6 +33,18 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1237993115201(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SLinkOperations.getCount(_context.getNode(), "line") == 0;
+  }
+
+  public static boolean baseMappingRule_Condition_1237999282434(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "multiple"));
+  }
+
+  public static boolean baseMappingRule_Condition_1237999295417(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "multiple") && SPropertyOperations.getBoolean(_context.getNode(), "vertical");
+  }
+
+  public static boolean baseMappingRule_Condition_1237999311173(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "multiple") && !(SPropertyOperations.getBoolean(_context.getNode(), "vertical"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1237409796281(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -114,6 +126,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1237992145688(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generateConcept");
+  }
+
+  public static Object referenceMacro_GetReferent_1237999372930(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "childLinkByLinePart");
+  }
+
+  public static Object referenceMacro_GetReferent_1237999388980(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "childLinkByLinePart");
   }
 
   public static boolean ifMacro_Condition_1237986962931(final IOperationContext operationContext, final IfMacroContext _context) {

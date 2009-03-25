@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mpslite.editor.LinePart_Actions;
+import jetbrains.mpslite.editor.ChildPart_Actions;
 import jetbrains.mpslite.editor.MPSLite_Style_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -146,10 +147,12 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4338_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4338_1");
+    editorCell.addKeyMap(new ChildPart_Actions());
   }
 
   private static void setupBasic_Constant_4338_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4338_2");
+    editorCell.addKeyMap(new ChildPart_Actions());
   }
 
   private static void setupBasic_Constant_4338_3(EditorCell editorCell, SNode node, EditorContext context) {

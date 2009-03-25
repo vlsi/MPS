@@ -577,9 +577,11 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237212300509">
         <property name="text" value="]" />
+        <link role="keyMap" targetNodeId="1238000322813" resolveInfo="ChildPart_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237212300510">
         <property name="text" value="*" />
+        <link role="keyMap" targetNodeId="1238000322813" resolveInfo="ChildPart_Actions" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237212300511">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237212300512">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237212300513">
@@ -1206,6 +1208,69 @@
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237898528768">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1238000322813">
+    <property name="package" value="Parts" />
+    <property name="name" value="ChildPart_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1183015764815" resolveInfo="ChildPart" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1238000340517">
+      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1238000340518">
+        <property name="keycode" value="*" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1238000340519">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238000340520">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238000364469">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238000375254">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238000364550">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1238000364470" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238000372473">
+                  <link role="property" targetNodeId="1.1237207287769" resolveInfo="multiple" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1238000375939">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238000377828">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1238001087674">
+      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1238001087675">
+        <property name="keycode" value="V" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1238001087676">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238001087677">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238001093229">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238001095166">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1238001095082" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238001096389">
+                <link role="property" targetNodeId="1.1237207287769" resolveInfo="multiple" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238001093231">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238001098124">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238001100383">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238001098197">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1238001098125" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238001099946">
+                      <link role="property" targetNodeId="1.1237211128837" resolveInfo="vertical" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1238001100768">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238001103254">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

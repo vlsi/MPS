@@ -65,11 +65,17 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237900340409">
           <property name="text" value="if" />
         </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1238000924475">
+          <property name="text" value="(" />
+        </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1237900343996">
           <property name="name" value="condition" />
           <node role="conceptReference" type="jetbrains.mpslite.structure.MPSLiteConceptReference" id="1237900379029">
             <link role="conceptDeclaration" targetNodeId="1237900284655" resolveInfo="Expression" />
           </node>
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1238000928479">
+          <property name="text" value=")" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237900387930">
           <property name="text" value="{" />
@@ -77,11 +83,36 @@
       </node>
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1237900386249">
         <node role="linePart" type="jetbrains.mpslite.structure.IndentLinePart" id="1237900392411" />
-        <node role="linePart" type="jetbrains.mpslite.structure.LinePart" id="1237900393927" />
+        <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1238000911814">
+          <property name="name" value="body" />
+          <node role="conceptReference" type="jetbrains.mpslite.structure.MPSLiteConceptReference" id="1238000915324">
+            <link role="conceptDeclaration" targetNodeId="1238000182812" resolveInfo="StatementList" />
+          </node>
+        </node>
       </node>
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1237900396591">
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1237900398383">
           <property name="text" value="}" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1237999998157">
+    <property name="name" value="Statement" />
+    <property name="abstract" value="true" />
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1237999998158" />
+  </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" id="1238000182812">
+    <property name="name" value="StatementList" />
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1238000182813">
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1238000192765">
+        <node role="linePart" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1238000195011">
+          <property name="name" value="statement" />
+          <property name="multiple" value="true" />
+          <property name="vertical" value="true" />
+          <node role="conceptReference" type="jetbrains.mpslite.structure.MPSLiteConceptReference" id="1238000197106">
+            <link role="conceptDeclaration" targetNodeId="1237999998157" resolveInfo="Statement" />
+          </node>
         </node>
       </node>
     </node>
