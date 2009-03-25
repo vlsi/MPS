@@ -100,14 +100,23 @@ class Memento {
     }
   }
 
-  private void restoreErrors(EditorComponent editor) {
+  private void restoreErrors(EditorComponent editor) {    
+    boolean needRelayout = false;
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
       EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
       if (cell != null) {
-        cell.changeText(entry.getValue());
+        String text = cell.getText();
+        String oldText = entry.getValue();
+        if (!EqualUtil.equals(text, oldText)) {
+          cell.changeText(entry.getValue());
+          needRelayout = true;
+        }
       }
     }
-    editor.relayout();
+
+    if (needRelayout) {
+      editor.relayout();
+    }
   }
 
   CellInfo getSelectedCellInfo() {
