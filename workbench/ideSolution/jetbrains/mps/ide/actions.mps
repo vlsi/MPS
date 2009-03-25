@@ -8841,7 +8841,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229269468142">
     <property name="package" value="Menu.ProjectPane.Module.Language.Actions" />
     <property name="name" value="NewAspectModel" />
-    <property name="caption" value="updateable" />
+    <property name="caption" value="New Aspect Model" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229270196670">
       <property name="name" value="module" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
@@ -9422,7 +9422,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229274068395">
     <property name="package" value="Menu.ProjectPane.Module.Generator" />
     <property name="name" value="GenerateTemplateQueries" />
-    <property name="caption" value="updateable" />
+    <property name="caption" value="Generate Template Queries" />
     <property name="outsideCommandExecution" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229274266489">
       <property name="name" value="module" />
