@@ -33,7 +33,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
   protected DefaultFileGenerator() {
   }
 
-  public final boolean overridesDefault(SNode outputRootNode, SNode originalInputNode) {
+  public boolean overridesDefault(SNode outputRootNode, SNode originalInputNode) {
     return false;
   }
 
