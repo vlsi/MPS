@@ -18,8 +18,6 @@ package jetbrains.mps.generator;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -35,13 +33,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.util.*;
 
@@ -152,13 +145,6 @@ public class GeneratorManager {
     );
   }
 
-  private void showMessageView() {
-    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.openToolLater(false);
-    }
-  }
-
   /**
    * @return false if canceled
    */
@@ -246,7 +232,6 @@ public class GeneratorManager {
       }
     });
 
-    showMessageView();
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};

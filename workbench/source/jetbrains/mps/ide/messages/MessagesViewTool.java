@@ -383,6 +383,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         myModel.clear();
         myMessages.clear();
         myList.setFixedCellWidth(myList.getWidth());
+
+        
         updateActions();
       }
     });
@@ -420,6 +422,11 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (width > myList.getFixedCellWidth()) {
           myList.setFixedCellWidth(width);
         }
+
+        if (isVisible(message) && !toolIsOpened()){
+          openTool(false);
+        }
+
         updateActions();
       }
     });

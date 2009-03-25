@@ -1542,30 +1542,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211814329012">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211814354120">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211814333113">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211814329576">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1211814329013" />
-                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420646388">
-                  <link role="member" targetNodeId="1217420646387" resolveInfo="project" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211814341551">
-                <link role="baseMethodDeclaration" targetNodeId="14.~MPSProject.getComponentSafe(java.lang.Class):java.lang.Object" resolveInfo="getComponentSafe" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1211814351962">
-                  <link role="classifier" targetNodeId="27.~MessagesViewTool" resolveInfo="MessagesViewTool" />
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211814355155">
-              <link role="baseMethodDeclaration" targetNodeId="29.~BaseTool.openTool(boolean):void" resolveInfo="openTool" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1212503721527">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646387">

@@ -83,7 +83,6 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
-      messagesView.openToolLater(true);
       messagesView.add(new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, "Conflicting mapping priority rules encountered:"));
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {

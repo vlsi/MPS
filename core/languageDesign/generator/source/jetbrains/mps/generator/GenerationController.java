@@ -389,17 +389,14 @@ public class GenerationController {
   }
 
   private void info(String text) {
-    // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, text));
   }
 
   private void warning(String text) {
-    // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, text));
   }
 
   private void error(String text) {
-    // myProgress.addText(text);
     myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
   }
 
@@ -408,7 +405,7 @@ public class GenerationController {
     long elapsedTime = System.currentTimeMillis() - startJobTime;
     String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
     String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
-    myProgress.setText(/*"Generation: " +*/ myText2);
+    myProgress.setText(myText2);
     myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
   }
 
