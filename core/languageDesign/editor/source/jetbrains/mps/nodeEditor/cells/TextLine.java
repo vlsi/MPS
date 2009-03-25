@@ -54,7 +54,7 @@ public class TextLine {
 
   private boolean myNull;
   private Style myStyle;
-  public boolean myBraceSelected = false;
+  private boolean myBraceSelected = false;
 
   public TextLine(String text) {
     this(text, new Style(), false);
@@ -80,6 +80,14 @@ public class TextLine {
     myCaretPosition = Math.min(myText.length(), myCaretPosition);
     myStartTextSelectionPosition = myCaretPosition;
     myEndTextSelectionPosition = myCaretPosition;
+  }
+
+  public boolean isBraceSelected() {
+    return myBraceSelected;
+  }
+
+  public void setBraceSelected(boolean braceSelected) {
+    myBraceSelected = braceSelected;
   }
 
   public String getTextBeforeCaret() {

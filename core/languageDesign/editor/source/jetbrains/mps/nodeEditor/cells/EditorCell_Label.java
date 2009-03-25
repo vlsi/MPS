@@ -117,8 +117,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           }
         });
         if (editorCell != null) {
-          this.getTextLine().myBraceSelected = selected;
-          ((EditorCell_Label) editorCell).getTextLine().myBraceSelected = selected;
+          this.getTextLine().setBraceSelected(selected);
+          ((EditorCell_Label) editorCell).getTextLine().setBraceSelected(selected);
         }
       }
     }
