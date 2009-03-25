@@ -19,6 +19,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
 import java.awt.*;
@@ -171,20 +172,23 @@ public class TextLine {
   }
 
   public int getPaddingLeft() {
-    Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
-    Measure type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
+    Padding padding = myStyle.get(StyleAttributes.PADDING_LEFT);
+    Double value = padding.getValue();
+    Measure type = padding.getType();
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getPaddingRight() {
-    Double value = myStyle.get(StyleAttributes.PADDING_RIGHT).getValue();
-    Measure type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
+    Padding padding = myStyle.get(StyleAttributes.PADDING_RIGHT);
+    Double value = padding.getValue();
+    Measure type = padding.getType();
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getPaddingTop() {
-    Double value = myStyle.get(StyleAttributes.PADDING_TOP).getValue();
-    Measure type = myStyle.get(StyleAttributes.PADDING_TOP).getType();
+    Padding padding = myStyle.get(StyleAttributes.PADDING_TOP);
+    Double value = padding.getValue();
+    Measure type = padding.getType();
     return getVerticalInternalInsert(value, type);
   }
 
