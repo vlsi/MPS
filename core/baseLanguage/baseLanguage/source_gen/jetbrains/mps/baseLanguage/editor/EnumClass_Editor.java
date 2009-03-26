@@ -281,11 +281,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3195_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3195_2");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };
@@ -309,11 +308,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3195_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3195_4");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };

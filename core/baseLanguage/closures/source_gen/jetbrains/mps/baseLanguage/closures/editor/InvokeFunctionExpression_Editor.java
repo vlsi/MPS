@@ -146,7 +146,6 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.STRIKE_OUT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -253,7 +252,6 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

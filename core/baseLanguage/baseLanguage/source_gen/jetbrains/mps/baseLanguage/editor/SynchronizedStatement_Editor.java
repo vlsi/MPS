@@ -162,7 +162,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6927_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6927_3");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -175,7 +175,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6927_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6927_4");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_6927_1(EditorCell editorCell, SNode node, EditorContext context) {

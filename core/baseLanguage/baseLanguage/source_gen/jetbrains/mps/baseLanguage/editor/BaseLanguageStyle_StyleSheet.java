@@ -147,6 +147,7 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
     };
   }
@@ -186,11 +187,38 @@ public class BaseLanguageStyle_StyleSheet {
     };
   }
 
+  public static Style getLeftBraceAfterName(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+      }
+    };
+  }
+
   public static Style getRightBrace(final EditorCell cell) {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      }
+    };
+  }
+
+  public static Style getLeftBlockBrace(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+        this.set(StyleAttributes.MATCHING_LABEL, "brace");
+      }
+    };
+  }
+
+  public static Style getRightBlockBrace(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+        this.set(StyleAttributes.MATCHING_LABEL, "brace");
       }
     };
   }

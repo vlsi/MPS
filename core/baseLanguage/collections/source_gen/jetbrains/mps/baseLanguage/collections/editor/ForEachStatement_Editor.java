@@ -304,7 +304,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7497_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7497_2");
-    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -329,7 +329,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7497_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7497_3");
-    BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

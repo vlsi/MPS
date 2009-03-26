@@ -120,7 +120,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -274,7 +273,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -298,15 +298,7 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7023_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7023_2");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftBraceAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_7023_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -316,14 +308,6 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7023_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7023_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_7023_2(EditorCell editorCell, SNode node, EditorContext context) {

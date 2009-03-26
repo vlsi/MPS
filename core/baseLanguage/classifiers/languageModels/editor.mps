@@ -274,7 +274,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221310280172">
         <property name="text" value="{" />
-        <link role="styleClass" targetNodeId="4.1215091279307" resolveInfo="LeftBrace" />
+        <link role="styleClass" targetNodeId="4.1238057685212" resolveInfo="LeftBlockBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237725051658">
           <property name="flag" value="true" />
         </node>
@@ -290,10 +290,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221310280179">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="4.1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221310280180">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="4.1238057795118" resolveInfo="RightBlockBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1221310280181">
           <property name="flag" value="true" />
         </node>

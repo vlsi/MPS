@@ -1087,6 +1087,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6321_0(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1210,6 +1211,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6321_1(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_6321_7(EditorCell editorCell, SNode node, EditorContext context) {

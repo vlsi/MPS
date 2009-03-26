@@ -759,6 +759,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_1(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -817,6 +818,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_2(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -826,6 +828,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_3(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -843,6 +846,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_4(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     CellModel_Collection_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -852,6 +856,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_5(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -888,6 +893,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_2102_6(EditorCell editorCell, SNode node, EditorContext context) {
+    Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

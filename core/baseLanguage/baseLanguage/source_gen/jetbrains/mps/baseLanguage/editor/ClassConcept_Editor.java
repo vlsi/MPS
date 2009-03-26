@@ -763,7 +763,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8372_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8372_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -877,7 +877,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8372_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8372_8");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1225,7 +1225,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8372_27(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8372_27");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -1250,7 +1250,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8372_28(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8372_28");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -136,7 +136,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4227_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4227_0");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,7 +149,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4227_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4227_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

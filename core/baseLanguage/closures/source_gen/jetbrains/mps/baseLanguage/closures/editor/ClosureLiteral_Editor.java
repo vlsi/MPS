@@ -127,12 +127,12 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2648_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2648_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2648_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2648_1");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_2648_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -156,10 +156,8 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -171,7 +169,6 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -268,7 +265,6 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

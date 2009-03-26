@@ -127,7 +127,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1012_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1012_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_1012_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,10 +151,8 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -166,7 +164,6 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -177,7 +174,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1012_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1012_3");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1012_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -268,7 +265,6 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

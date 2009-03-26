@@ -252,11 +252,11 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8280_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8280_0");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.MATCHING_LABEL, "brace2");
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
@@ -292,10 +292,11 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8280_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8280_2");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "brace2");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };
@@ -366,7 +367,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8280_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8280_4");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -384,7 +385,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8280_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8280_6");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_8280_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

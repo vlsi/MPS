@@ -6780,7 +6780,7 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1237484037312">
-      <property name="transformTag" value="ext_1_RTransform" />
+      <property name="transformTag" value="default_RTransform" />
       <link role="applicableConcept" targetNodeId="1.1206060495898" resolveInfo="ElsifClause" />
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1237484105382">
         <link role="concept" targetNodeId="1.1082485599095" resolveInfo="BlockStatement" />

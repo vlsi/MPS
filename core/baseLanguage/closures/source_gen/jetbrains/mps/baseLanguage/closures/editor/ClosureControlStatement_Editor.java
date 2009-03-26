@@ -241,7 +241,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -255,7 +254,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -268,7 +266,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -291,7 +288,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -299,13 +295,12 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3967_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3967_3");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -316,13 +311,12 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3967_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3967_4");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -334,7 +328,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -430,7 +423,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -611,7 +603,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

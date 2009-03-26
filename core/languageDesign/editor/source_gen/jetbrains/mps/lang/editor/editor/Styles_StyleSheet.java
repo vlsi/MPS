@@ -123,6 +123,13 @@ public class Styles_StyleSheet {
     };
   }
 
+  public static Style getTag(final EditorCell cell) {
+    return new Style(cell) {
+      {
+      }
+    };
+  }
+
   public static boolean _StyleParameter_QueryFunction_1237383984781(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;

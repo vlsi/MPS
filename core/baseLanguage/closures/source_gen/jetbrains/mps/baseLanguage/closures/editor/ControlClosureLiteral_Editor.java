@@ -71,7 +71,6 @@ public class ControlClosureLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
