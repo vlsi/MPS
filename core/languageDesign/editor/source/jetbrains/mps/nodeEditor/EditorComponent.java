@@ -1243,7 +1243,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void leftHighlightCell(EditorCell cell, Color c) {
-    myLeftHighlighter.highlight(cell, c);
+    myLeftHighlighter.highlight(cell, cell, c);
+  }
+
+  public void leftHighlightCell(EditorCell cell, EditorCell cell2, Color c) {
+    myLeftHighlighter.highlight(cell, cell2, c);
   }
 
   public void leftUnhighlightCell(EditorCell cell) {

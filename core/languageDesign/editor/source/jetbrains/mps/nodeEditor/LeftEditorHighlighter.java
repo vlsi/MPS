@@ -163,9 +163,9 @@ public class LeftEditorHighlighter {
     myBrackets.remove(cell.getCellInfo());
   }
 
-  public void highlight(EditorCell cell, Color c) {
+  public void highlight(EditorCell cell, EditorCell cell2, Color c) {
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
-    myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, c, myEditorComponent));
+    myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, cell2, c, myEditorComponent));
   }
 
   public void markFoldable(EditorCell cell) {
@@ -267,7 +267,7 @@ public class LeftEditorHighlighter {
           HighlighterBracket poppedBracket = myBracketsLayoutStack.pop();
           while (poppedBracket != bracket) { // i.e. error
             myBracketEdges.remove(poppedBracket.getEndingEdge());
-            myBrackets.remove(poppedBracket.myEditorCellInfo);
+            myBrackets.remove(poppedBracket.myEditorCellInfo1);
             poppedBracket = myBracketsLayoutStack.pop();
           }
           int wasDepth = myBracketsLayoutStack.size() + 1;
@@ -295,7 +295,7 @@ public class LeftEditorHighlighter {
 
   private void deleteUnresolvedBrackets() {
     for (HighlighterBracket bracket : myUnresolvedBrackets) {
-      myBrackets.remove(bracket.myEditorCellInfo);
+      myBrackets.remove(bracket.myEditorCellInfo1);
     }
     myUnresolvedBrackets.clear();
   }
@@ -335,27 +335,35 @@ public class LeftEditorHighlighter {
     private int myX;//right edge
     private Color myColor;
     private int myCurrentWidth = getCurrentBracketsWidth() * 2;
-    private CellInfo myEditorCellInfo;
+    private CellInfo myEditorCellInfo1;
     private EditorComponent myEditor;
     private int myDepth;
+    private CellInfo myEditorCellInfo2;
 
-    public HighlighterBracket(EditorCell cell, Color c, EditorComponent editorComponent) {
-      this(cell.getCellInfo(), c, editorComponent);
+    public HighlighterBracket(EditorCell cell1, EditorCell cell2, Color c, EditorComponent editorComponent) {
+      this(cell1.getCellInfo(), cell2.getCellInfo(), c, editorComponent);
     }
 
-    public HighlighterBracket(CellInfo cellInfo, Color c, EditorComponent editorComponent) {
+    public HighlighterBracket(CellInfo cellInfo1, CellInfo cellInfo2, Color c, EditorComponent editorComponent) {
       myColor = c;
       myEditor = editorComponent;
-      myEditorCellInfo = cellInfo;
+      myEditorCellInfo1 = cellInfo1;
+      myEditorCellInfo2 = cellInfo2;
       relayout();
     }
 
     public void relayout() {
-      if (myEditorCellInfo == null) return;
-      EditorCell cell = getCell();
-      if (cell != null) {
-        setY1(cell.getY());
-        setY2(cell.getY() + cell.getHeight());
+      if (myEditorCellInfo1 == null) return;
+      EditorCell cell1 = myEditorCellInfo1.findCell(myEditor);
+      EditorCell cell2 = myEditorCellInfo2.findCell(myEditor);
+      if (cell1 != null) {
+        if (cell1.getY() <= cell2.getY()) {
+          setY1(cell1.getY());
+          setY2(cell2.getY() + cell2.getHeight());
+        } else {
+          setY1(cell2.getY());
+          setY2(cell1.getY() + cell1.getHeight());
+        }
       } else {
         LeftEditorHighlighter.this.myUnresolvedBrackets.add(this);
       }
@@ -367,10 +375,6 @@ public class LeftEditorHighlighter {
 
     public BracketEdge getEndingEdge() {
       return myEdge2;
-    }
-
-    private EditorCell getCell() {
-      return myEditorCellInfo.findCell(myEditor);
     }
 
     public void setX(int x) {

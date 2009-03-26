@@ -110,6 +110,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             return cell != EditorCell_Label.this && cell.getSNode() == EditorCell_Label.this.getSNode() && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
           }
         });
+        if (selected) {
+          getEditor().leftHighlightCell(this, editorCell, new Color(107, 142, 178));
+        } else {
+          getEditor().leftUnhighlightCell(this);
+        }
         if (editorCell != null) {
           this.getTextLine().setBraceSelected(selected);
           ((EditorCell_Label) editorCell).getTextLine().setBraceSelected(selected);
