@@ -29,7 +29,7 @@ public class OperationDeclaration_operationName_PropertyConstraint implements IM
     }
     StringBuilder result = new StringBuilder();
     for(int i = 0 ; i < name.length() ; i++ ) {
-      if (name.charAt(i) >= 'A' && name.charAt(i) <= 'Z') {
+      if (Character.isUpperCase(name.charAt(i))) {
         result.append(' ');
         result.append(name.toLowerCase().charAt(i));
       } else

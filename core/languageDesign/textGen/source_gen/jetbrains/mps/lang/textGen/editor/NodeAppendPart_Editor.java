@@ -14,11 +14,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet;
 
 public class NodeAppendPart_Editor extends DefaultNodeEditor {
 
@@ -43,8 +41,18 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_2499_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2499_1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_2499_2(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_2499_2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_2499_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -147,6 +155,14 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2499_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2499_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_2499_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -159,7 +175,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(-1.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -172,7 +188,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -181,6 +197,10 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_2499_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2499_1");
+  }
+
+  private static void setupBasic_Collection_2499_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_2499_2");
   }
 
   private static void setupBasic_Constant_2499_2(EditorCell editorCell, SNode node, EditorContext context) {

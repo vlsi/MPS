@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
 
@@ -335,7 +335,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_2829_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      TextGenStyles_StyleSheet.getReferenceOfConcept(editorCell).apply(editorCell);
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_2829_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

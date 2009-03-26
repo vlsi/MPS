@@ -14,6 +14,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
 
@@ -31,7 +34,9 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_5526_2(context, node, "{"));
     editorCell.addEditorCell(this.createProperty_5526_1(context, node));
+    editorCell.addEditorCell(this.createConstant_5526_3(context, node, "}"));
     return editorCell;
   }
 
@@ -59,6 +64,22 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5526_1(editorCell, node, context);
     setupLabel_Constant_5526_1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_5526_2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5526_2(editorCell, node, context);
+    setupLabel_Constant_5526_2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_5526_3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5526_3(editorCell, node, context);
+    setupLabel_Constant_5526_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -147,6 +168,32 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_withIndent");
   }
 
+  private static void setupBasic_Constant_5526_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5526_2");
+    TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_5526_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5526_3");
+    TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Property_5526_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -157,6 +204,12 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Property_5526_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_5526_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_5526_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

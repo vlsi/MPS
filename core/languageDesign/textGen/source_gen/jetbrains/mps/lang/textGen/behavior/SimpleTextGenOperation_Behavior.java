@@ -24,7 +24,7 @@ public class SimpleTextGenOperation_Behavior {
       2 :
       1
     )) {
-      space = name.charAt(i) == ' ';
+      space = Character.isWhitespace(name.charAt(i));
       if (!(space)) {
         result.append(name.charAt(i));
       } else if (i < name.length() - 1) {

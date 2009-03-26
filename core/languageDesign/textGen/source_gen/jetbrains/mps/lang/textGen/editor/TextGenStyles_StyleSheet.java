@@ -10,14 +10,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TextGenStyles_StyleSheet {
 
-  public static Style getReferenceOfConcept(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
-    };
-  }
-
   public static Style getTextGenOperation(final EditorCell cell) {
     return new Style(cell) {
       {
