@@ -5,6 +5,9 @@ package jetbrains.mps.lang.behavior.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint;
+import jetbrains.mps.lang.behavior.constraints.ConceptBehavior_defaultConcreteConcept_ReferentConstraint;
+import jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

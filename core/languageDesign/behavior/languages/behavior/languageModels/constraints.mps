@@ -167,9 +167,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227088888255">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227088888256">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227088888257">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227088888258">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1238082067033">
+              <link role="enumConstantDeclaration" targetNodeId="7.~LanguageAspect.BEHAVIOR" resolveInfo="BEHAVIOR" />
               <link role="enumClass" targetNodeId="7.~LanguageAspect" resolveInfo="LanguageAspect" />
-              <link role="enumConstantDeclaration" targetNodeId="7.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227088888259">
               <link role="baseMethodDeclaration" targetNodeId="7.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
