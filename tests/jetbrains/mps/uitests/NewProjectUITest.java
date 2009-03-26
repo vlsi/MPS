@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class NewProjectUITest extends NoProjectUITestsBase {
   public void testInitialValues() throws InvocationTargetException, InterruptedException {
-    Component dialog = TestUtil.openNewProjectDialog(this);
+    Component dialog = TestUtil.openNewProjectDialog(this,null);
 
     checkProjectStep();
     pressButton(dialog, "Next");

@@ -1,12 +1,15 @@
 package jetbrains.mps.uitests;
 
 import com.intellij.ide.GeneralSettings;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
@@ -24,12 +27,8 @@ import java.io.File;
 import java.util.List;
 
 public abstract class UITestsBase extends JFCTestCase {
-  private Project myProject;
-
   protected void setUp() throws Exception {
     super.setUp();
-
-    setAssertExit(true);
 
     setHelper(new JFCTestHelper());
 
@@ -46,8 +45,6 @@ public abstract class UITestsBase extends JFCTestCase {
 
     GeneralSettings.getInstance().setReopenLastProject(false);
 
-    myProject = initProject();
-
     flushAWT();
 
     doSetUp();
@@ -62,15 +59,18 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    ApplicationManagerEx.getApplicationEx().exit(true);
+    final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
+
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        application.saveAll();
+        Disposer.dispose(application);
+      }
+    });
 
     flushAWT();
 
     super.tearDown();
-  }
-
-  protected Project getProject() {
-    return myProject;
   }
 
   protected void doSetUp() {
@@ -79,19 +79,20 @@ public abstract class UITestsBase extends JFCTestCase {
   protected void doTearDown() {
   }
 
-  protected abstract Project initProject() throws Exception;
-
   public abstract static class NoProjectUITestsBase extends UITestsBase {
-    protected Project initProject() throws Exception {
-      return null;
-    }
   }
 
   public abstract static class ProjectUITestsBase extends UITestsBase {
     private String myProjectPath;
+    private Project myProject;
 
-    protected ProjectUITestsBase(String projectPath) {
+    protected ProjectUITestsBase(String projectPath) throws InterruptedException {
       myProjectPath = projectPath;
+      myProject = initProject();
+    }
+
+    public Project getProject() {
+      return myProject;
     }
 
     protected Project initProject() throws InterruptedException {

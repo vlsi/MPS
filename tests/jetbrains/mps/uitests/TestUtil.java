@@ -16,7 +16,7 @@ import java.io.File;
 
 public class TestUtil {
   public static MPSProject createNewProject(final UITestsBase test) {
-    Component dialog = openNewProjectDialog(test);
+    Component dialog = openNewProjectDialog(test, null);
 
     test.pressButton(dialog, "Next");
     test.flushAWT();
@@ -33,10 +33,10 @@ public class TestUtil {
     return project;
   }
 
-  public static Component openNewProjectDialog(final UITestsBase test) {
+  public static Component openNewProjectDialog(final UITestsBase test, final Project project) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        NewProjectWizard wizard = new NewProjectWizard("New Project", test.getProject());
+        NewProjectWizard wizard = new NewProjectWizard("New Project", project);
         wizard.show();
       }
     });
