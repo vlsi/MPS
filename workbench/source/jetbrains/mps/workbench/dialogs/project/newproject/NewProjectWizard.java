@@ -145,6 +145,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+
         if (myCreatedSolution != null && myCreatedLanguage != null) {
           addLanguageImportToSolution(myCreatedLanguage, myCreatedSolution);
         }
@@ -217,7 +218,6 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     return null;
   }
-
 
   private void addLanguageImportToSolution(final Language language, final Solution solution) {
     solution.addUsedLanguage(language.getNamespace());

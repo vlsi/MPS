@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.modelProperties;
+package sortedlist;
 
+import jetbrains.mps.workbench.dialogs.project.listsupport.SortedList;
 import junit.framework.TestCase;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.Collections;
 
 public class SortedListTest extends TestCase {
 
