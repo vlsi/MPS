@@ -519,17 +519,9 @@
                           <link role="variableDeclaration" targetNodeId="1224754223367" resolveInfo="i" />
                         </node>
                       </node>
-                      <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223376">
-                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223377">
+                      <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238075197303">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238075197304">
                           <link role="variableDeclaration" targetNodeId="1224754223367" resolveInfo="i" />
-                        </node>
-                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223378">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223379">
-                            <property name="value" value="1" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223380">
-                            <link role="variableDeclaration" targetNodeId="1224754223367" resolveInfo="i" />
-                          </node>
                         </node>
                       </node>
                     </node>
