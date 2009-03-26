@@ -1,4 +1,4 @@
-package dialogs;
+package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;

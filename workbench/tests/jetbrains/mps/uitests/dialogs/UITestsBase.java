@@ -1,4 +1,4 @@
-package dialogs;
+package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.application.ex.ApplicationEx;

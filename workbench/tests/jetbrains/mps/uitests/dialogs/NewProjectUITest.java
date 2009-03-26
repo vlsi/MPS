@@ -1,10 +1,10 @@
-package dialogs;
+package jetbrains.mps.uitests.dialogs;
 
-import dialogs.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.uitests.dialogs.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.LanguageStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectStep;

@@ -1,4 +1,4 @@
-package dialogs;
+package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.common.PathField;
