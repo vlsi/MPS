@@ -1,13 +1,16 @@
 package dialogs;
 
 import com.intellij.ide.GeneralSettings;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
@@ -29,8 +32,6 @@ public abstract class UITestsBase extends JFCTestCase {
     super.setUp();
 
     setHelper(new JFCTestHelper());
-
-    setAssertExit(true);
 
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.platform.prefix", "MPS");
@@ -59,7 +60,14 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    ApplicationManagerEx.getApplicationEx().exit(true);
+    final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
+
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        application.saveAll();
+        Disposer.dispose(application);
+      }
+    });
 
     flushAWT();
 
@@ -89,7 +97,7 @@ public abstract class UITestsBase extends JFCTestCase {
     }
 
     protected Project initProject() throws InterruptedException {
-      TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
+      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
         public Boolean compute() {
           return IdeMain.isUILoaded();
         }
@@ -102,7 +110,7 @@ public abstract class UITestsBase extends JFCTestCase {
         }
       });
 
-      TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
+      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
         public Boolean compute() {
           return project[0] != null && project[0].getComponent(Project.class) != null;
         }
