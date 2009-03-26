@@ -50,7 +50,6 @@ public class LazyTabbedPane extends JPanel {
       public void stateChanged(ChangeEvent e) {
         int selectionIndex = myTabbedPane.getSelectedIndex();
         initTab(myLazyTabs.get(selectionIndex));
-        myTabbedEditor.fireStateChanged();
       }
     });
   }

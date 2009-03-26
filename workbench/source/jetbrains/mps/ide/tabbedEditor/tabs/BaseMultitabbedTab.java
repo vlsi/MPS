@@ -31,15 +31,10 @@ import jetbrains.mps.util.Pair;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
-
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  private List<SNodePointer> myLoadableNodesList = new ArrayList<SNodePointer>();
   protected SModelListener myListener;
   private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
@@ -59,54 +54,100 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         if (myBaseNode.getNode() == null) return;
         if (myBaseNode.getNode() == event.getRoot()) return;
 
-        if (getLoadableNodes().contains(event.getRoot()) || getLoadableNodes().isEmpty()) {
-          reinit();
+        if (getLoadableNodes().contains(event.getRoot())) {
+          SNodePointer nodePointer = new SNodePointer(event.getRoot());
+          int index = getIndexOfTabFor(nodePointer);
+          closeTab(nodePointer, index);
         }
       }
 
       @Override
       public void rootAdded(SModelRootEvent event) {
-        if (!getLoadableNodes().contains(event.getRoot())) {
-          for (Pair<SNode,IOperationContext> p:tryToLoadNodes()){
-            if (p.o1==event.getRoot()){
-              reinit();
+        SNode root = event.getRoot();
+        if (!getLoadableNodes().contains(root)) {
+          IOperationContext context = null;
+          for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+            if (p.o1 == root) {
+              context = p.o2;
               break;
             }
+          }
+          if (context != null) {
+            addInnerTabChecked(event.getRoot(), context);
           }
         }
       }
 
+      @Override
       public void referenceAdded(SModelReferenceEvent event) {
         SReference reference = event.getReference();
-        INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
-        if (myClass.isInstance(sourceNode.getContainingRoot()) &&
-          reference.getTargetNode() == getBaseNode()) {
-          reinit();
+        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+        if (!myClass.isInstance(referentNode)) return;
+
+        Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
+        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+          nodesMap.put(p.o1, p.o2);
+        }
+
+        List<SNode> nodes = new ArrayList<SNode>(nodesMap.keySet());
+        nodes.removeAll(getLoadableNodes());
+        if (nodes.size() > 0) {
+          SNode node = nodes.get(0);
+          addInnerTabChecked(node, nodesMap.get(node));
         }
       }
 
+      @Override
+      public void referenceRemoved(SModelReferenceEvent event) {
+        SReference reference = event.getReference();
+        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+        if (!myClass.isInstance(referentNode)) return;
+
+        Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
+        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+          nodesMap.put(p.o1, p.o2);
+        }
+
+        List<SNode> nodes = getLoadableNodes();
+        nodes.removeAll(nodesMap.keySet());
+
+        if (nodes.size() > 0) {
+          SNodePointer nodePointer = new SNodePointer(nodes.get(0));
+          closeTab(nodePointer, getIndexOfTabFor(nodePointer));
+        }
+      }
+
+      @Override
       public void propertyChanged(SModelPropertyEvent event) {
         SNodePointer pointer = new SNodePointer(event.getNode());
-        if (event.getPropertyName().equals(INamedConcept.NAME)
-          && myLoadableNodes.contains(pointer)) {
-          myInnerTabbedPane.setTitleAt(myLoadableNodesList.indexOf(pointer), event.getNewPropertyValue());
+        if (event.getPropertyName().equals(INamedConcept.NAME) && myLoadableNodes.contains(pointer)) {
+          int index = getIndexOfTabFor(pointer);
+          assert index >= 0 : "tab for node not found";
+          myInnerTabbedPane.setTitleAt(index, event.getNewPropertyValue());
         }
       }
     };
   }
 
-  private void reinit() {
-    myTabbedEditor.getTabbedPane().removeTab(this);
-    myInnerTabbedPane = null;
-    myComponent = null;
-    myLoadableNodes.clear();
-    myLoadableNodesList.clear();
-    myEditors.clear();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myTabbedEditor.getTabbedPane().initTab(BaseMultitabbedTab.this);
+  private void closeTab(SNodePointer nodePointer, int index) {
+    myInnerTabbedPane.remove(index);
+    myEditors.remove(index);
+    myLoadableNodes.remove(nodePointer);
+    if (myLoadableNodes.size() == 0) {
+      myComponent = null;
+      myCurrentIndex = 0;
+      myTabbedEditor.getTabbedPane().removeTab(this);
+      myTabbedEditor.getTabbedPane().initTab(this);
+    }
+  }
+
+  private int getIndexOfTabFor(SNodePointer pointer) {
+    for (EditorComponent editorComponent : myEditors) {
+      if (editorComponent.getEditedNodePointer().equals(pointer)) {
+        return myEditors.indexOf(editorComponent);
       }
-    });
+    }
+    return -1;
   }
 
   protected abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
@@ -150,12 +191,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!loadableNodes.isEmpty()) {
       myComponent = new JPanel(new BorderLayout());
       myInnerTabbedPane = new JTabbedPane();
-      if (myCurrentIndex != 0) {
         try {
-          myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
+          myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex,0));
         } catch (IndexOutOfBoundsException e) {
         }
-      }
+
       for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
         addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
       }
@@ -172,10 +212,18 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         myComponent.add(panel, BorderLayout.NORTH);
       }
 
-
       return true;
     }
+
     return false;
+  }
+
+  private void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
+    if (getLoadableNodes().size()==0) {
+      tryToInitComponent();
+    } else {
+      addInnerTab(loadableNode, operationContext);
+    }
   }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
@@ -183,7 +231,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     component.editNode(loadableNode, operationContext);
     SNodePointer pointer = new SNodePointer(loadableNode);
     myLoadableNodes.add(pointer);
-    myLoadableNodesList.add(pointer);
     JComponent jComponent = component.getExternalComponent();
     myInnerTabbedPane.add(loadableNode.getName(), jComponent);
     myEditors.add(component);
@@ -210,8 +257,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(false);
         if (nodeAndContext != null) {
           nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-          JComponent component = addInnerTab(nodeAndContext.o1, nodeAndContext.o2);
-          myInnerTabbedPane.setSelectedComponent(component);
+          myInnerTabbedPane.setSelectedIndex(myInnerTabbedPane.getTabCount() - 1);
         }
       }
     });
@@ -220,22 +266,12 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   public void create() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        createEditor();
+        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true);
+        if (nodeAndContext != null) {
+          nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
+        }
       }
     });
-    myTabbedEditor.fireStateChanged();
-  }
-
-  private void createEditor() {
-    if (tryToInitComponent()) return;
-
-    Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true);
-
-    if (nodeAndContext != null) {
-      nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-    }
-
-    tryToInitComponent();
   }
 
   public int getCurrentTab() {

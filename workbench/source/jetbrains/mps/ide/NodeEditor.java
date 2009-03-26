@@ -37,7 +37,6 @@ import javax.swing.JPanel;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.Collections;
@@ -69,12 +68,6 @@ public class NodeEditor implements IEditor {
 
   public void relayout() {
     myEditorComponent.relayout();
-  }
-
-  public void addChangeListener(@NotNull ChangeListener listener) {
-  }
-
-  public void removeChangeListener(@NotNull ChangeListener listener) {
   }
 
   public boolean removeFromRecentEditorsOnClose() {

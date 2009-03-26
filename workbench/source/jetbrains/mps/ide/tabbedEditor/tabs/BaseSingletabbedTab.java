@@ -54,23 +54,34 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         if (myBaseNode.getNode() == null) return;
         if (myBaseNode.getNode() == event.getRoot()) return;
 
-        if ((getLoadableNode() == null) || (getLoadableNode() == event.getRoot())) {
+        if (getLoadableNode() == event.getRoot()) {
           reinit();
         }
       }
 
       @Override
       public void rootAdded(SModelRootEvent event) {
-        if (getLoadableNode() == null && tryToLoadNode() == event.getRoot()) {
+        if (getLoadableNode() == null && tryToLoadNode() != null) {
           reinit();
         }
       }
 
+      @Override
       public void referenceAdded(SModelReferenceEvent event) {
         SReference reference = event.getReference();
-        INodeAdapter sourceNode = BaseAdapter.fromNode(reference.getSourceNode());
-        if (myClass.isInstance(sourceNode.getContainingRoot()) &&
-          reference.getTargetNode() == getBaseNode()) {
+        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+        if (!myClass.isInstance(referentNode)) return;
+        if (getLoadableNode() == null && tryToLoadNode() != null) {
+          reinit();
+        }
+      }
+
+      @Override
+      public void referenceRemoved(SModelReferenceEvent event) {
+        SReference reference = event.getReference();
+        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+        if (!myClass.isInstance(referentNode)) return;
+        if (getLoadableNode()!=null && tryToLoadNode()==null) {
           reinit();
         }
       }
@@ -98,6 +109,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   private void reinit() {
     myTabbedEditor.getTabbedPane().removeTab(this);
     myComponent = null;
+    myLoadableNode = null;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
@@ -176,28 +188,17 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       return true;
     }
 
-
     return false;
   }
 
   public void create() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        createEditor();
+        SNode node = createLoadableNode();
+
+        if (node == null) return;
+        node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
-    myTabbedEditor.fireStateChanged();
-  }
-
-  private void createEditor() {
-    if (tryToInitComponent()) return;
-
-    SNode node = createLoadableNode();
-
-    if (node != null) {
-      node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-    }
-
-    tryToInitComponent();
   }
 }

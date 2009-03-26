@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
-import javax.swing.event.ChangeListener;
 import java.util.List;
 
 public interface IEditor {
@@ -40,10 +39,6 @@ public interface IEditor {
   void addCellSelectionListener(CellSelectionListener listener);
 
   void removeCellSelectionListener(CellSelectionListener listener);
-
-  void addChangeListener(ChangeListener listener);
-
-  void removeChangeListener(ChangeListener listener);
 
   IOperationContext getOperationContext();
 

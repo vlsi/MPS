@@ -39,8 +39,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -55,7 +53,6 @@ public class TabbedEditor implements IEditor {
   protected IOperationContext myOperationContext;
   private SNodePointer myNodePointer;
   List<CellSelectionListener> mySelectionListeners = new ArrayList<CellSelectionListener>();
-  private List<ChangeListener> myChangeListeners = new ArrayList<ChangeListener>();
 
   public TabbedEditor(IOperationContext context, SNode node) {
     myOperationContext = context;
@@ -108,12 +105,6 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  public void fireStateChanged() {
-    for (ChangeListener changeListener : myChangeListeners) {
-      changeListener.stateChanged(new ChangeEvent(this));
-    }
-  }
-
   @NotNull
   public Set<SNode> getAvailableNodes() {
     Set<SNode> result = new HashSet<SNode>();
@@ -124,14 +115,6 @@ public class TabbedEditor implements IEditor {
     }
 
     return result;
-  }
-
-  public void addChangeListener(@NotNull ChangeListener changeListener) {
-    myChangeListeners.add(changeListener);
-  }
-
-  public void removeChangeListener(@NotNull ChangeListener changeListener) {
-    myChangeListeners.remove(changeListener);
   }
 
   public JComponent getComponent() {
