@@ -4,11 +4,12 @@ package jetbrains.mps.build.distrib.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.IPath;
+import jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class WindowsConfig extends SystemSpecificConfig {
+public class WindowsConfig extends jetbrains.mps.build.distrib.structure.SystemSpecificConfig {
   public static final String concept = "jetbrains.mps.build.distrib.structure.WindowsConfig";
   public static final String LICENSE = "license";
   public static final String PATH_TO_NSIS_ZIP_FILE = "pathToNsisZipFile";
@@ -20,43 +21,43 @@ public class WindowsConfig extends SystemSpecificConfig {
     super(node);
   }
 
-  public IPath getLicense() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.LICENSE);
+  public jetbrains.mps.build.packaging.structure.IPath getLicense() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, WindowsConfig.LICENSE);
   }
 
-  public void setLicense(IPath node) {
+  public void setLicense(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(WindowsConfig.LICENSE, node);
   }
 
-  public IPath getPathToNsisZipFile() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.PATH_TO_NSIS_ZIP_FILE);
+  public jetbrains.mps.build.packaging.structure.IPath getPathToNsisZipFile() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, WindowsConfig.PATH_TO_NSIS_ZIP_FILE);
   }
 
-  public void setPathToNsisZipFile(IPath node) {
+  public void setPathToNsisZipFile(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(WindowsConfig.PATH_TO_NSIS_ZIP_FILE, node);
   }
 
-  public IPath getApplicationIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.APPLICATION_ICON);
+  public jetbrains.mps.build.packaging.structure.IPath getApplicationIcon() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, WindowsConfig.APPLICATION_ICON);
   }
 
-  public void setApplicationIcon(IPath node) {
+  public void setApplicationIcon(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(WindowsConfig.APPLICATION_ICON, node);
   }
 
-  public IPath getHomepageIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.HOMEPAGE_ICON);
+  public jetbrains.mps.build.packaging.structure.IPath getHomepageIcon() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, WindowsConfig.HOMEPAGE_ICON);
   }
 
-  public void setHomepageIcon(IPath node) {
+  public void setHomepageIcon(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(WindowsConfig.HOMEPAGE_ICON, node);
   }
 
-  public DigitalSignatureWindowsConfiguration getSignatureConfiguration() {
-    return (DigitalSignatureWindowsConfiguration)this.getChild(DigitalSignatureWindowsConfiguration.class, WindowsConfig.SIGNATURE_CONFIGURATION);
+  public jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration getSignatureConfiguration() {
+    return (jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration)this.getChild(DigitalSignatureWindowsConfiguration.class, WindowsConfig.SIGNATURE_CONFIGURATION);
   }
 
-  public void setSignatureConfiguration(DigitalSignatureWindowsConfiguration node) {
+  public void setSignatureConfiguration(jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration node) {
     super.setChild(WindowsConfig.SIGNATURE_CONFIGURATION, node);
   }
 

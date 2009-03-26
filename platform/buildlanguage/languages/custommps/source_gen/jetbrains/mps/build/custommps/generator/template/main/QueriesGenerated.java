@@ -18,6 +18,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.custommps.behavior.MPSModule_Behavior;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -229,6 +230,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1237901321779(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "licencePath", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_1238071255691(final IOperationContext operationContext, final IfMacroContext _context) {
+    return new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists();
   }
 
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

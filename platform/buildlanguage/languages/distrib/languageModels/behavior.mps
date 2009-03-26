@@ -1242,5 +1242,33 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234518005073" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238070873590">
+    <property name="package" value="systemSpecific.windows" />
+    <link role="concept" targetNodeId="1.1238070714613" resolveInfo="PathCommantLinePart" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238070875457">
+      <property name="name" value="getText" />
+      <link role="overriddenMethod" targetNodeId="1231864533228" resolveInfo="getText" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238070875459">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238070889124">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238070895759">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238070892088">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238070891429" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238070894677">
+                <link role="link" targetNodeId="1.1238070735094" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1238070917694">
+              <link role="baseMethodDeclaration" targetNodeId="3v.1226511495568" resolveInfo="getFullPathWithoutMacro" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238070884329" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238070884330" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238070873591">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238070873592" />
+    </node>
+  </node>
 </model>
 

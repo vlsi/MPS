@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ArtifactReferenceCommandLinePart extends AbstractCommandLinePart {
+public class ArtifactReferenceCommandLinePart extends jetbrains.mps.build.distrib.structure.AbstractCommandLinePart {
   public static final String concept = "jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart";
 
   public ArtifactReferenceCommandLinePart(SNode node) {

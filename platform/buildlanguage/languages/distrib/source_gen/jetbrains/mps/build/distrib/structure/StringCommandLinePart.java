@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StringCommandLinePart extends AbstractCommandLinePart {
+public class StringCommandLinePart extends jetbrains.mps.build.distrib.structure.AbstractCommandLinePart {
   public static final String concept = "jetbrains.mps.build.distrib.structure.StringCommandLinePart";
   public static final String TEXT = "text";
 

@@ -916,5 +916,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238070753702">
+    <property name="package" value="systemSpecific.windows" />
+    <link role="conceptDeclaration" targetNodeId="1.1238070714613" resolveInfo="PathCommantLinePart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238070756094">
+      <link role="relationDeclaration" targetNodeId="1.1238070735094" />
+    </node>
+  </node>
 </model>
 

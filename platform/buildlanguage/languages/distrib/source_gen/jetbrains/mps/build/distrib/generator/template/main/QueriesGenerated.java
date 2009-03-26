@@ -231,10 +231,6 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "vmOptionsDir", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1231864177374(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String commandLine = "";
     for(SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
@@ -700,6 +696,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1237900907410(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "license", true);
+  }
+
+  public static SNode sourceNodeQuery_1238069853816(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

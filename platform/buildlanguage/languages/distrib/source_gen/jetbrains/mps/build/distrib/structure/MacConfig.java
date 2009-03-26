@@ -5,12 +5,13 @@ package jetbrains.mps.build.distrib.structure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.IPath;
 import java.util.Iterator;
+import jetbrains.mps.build.distrib.structure.MacOsFileAssociation;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MacConfig extends SystemSpecificConfig {
+public class MacConfig extends jetbrains.mps.build.distrib.structure.SystemSpecificConfig {
   public static final String concept = "jetbrains.mps.build.distrib.structure.MacConfig";
   public static final String ICON_PATH = "iconPath";
   public static final String JAVA_APPLICATION_STUB_PATH = "javaApplicationStubPath";
@@ -20,19 +21,19 @@ public class MacConfig extends SystemSpecificConfig {
     super(node);
   }
 
-  public IPath getIconPath() {
-    return (IPath)this.getChild(IPath.class, MacConfig.ICON_PATH);
+  public jetbrains.mps.build.packaging.structure.IPath getIconPath() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, MacConfig.ICON_PATH);
   }
 
-  public void setIconPath(IPath node) {
+  public void setIconPath(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(MacConfig.ICON_PATH, node);
   }
 
-  public IPath getJavaApplicationStubPath() {
-    return (IPath)this.getChild(IPath.class, MacConfig.JAVA_APPLICATION_STUB_PATH);
+  public jetbrains.mps.build.packaging.structure.IPath getJavaApplicationStubPath() {
+    return (jetbrains.mps.build.packaging.structure.IPath)this.getChild(IPath.class, MacConfig.JAVA_APPLICATION_STUB_PATH);
   }
 
-  public void setJavaApplicationStubPath(IPath node) {
+  public void setJavaApplicationStubPath(jetbrains.mps.build.packaging.structure.IPath node) {
     super.setChild(MacConfig.JAVA_APPLICATION_STUB_PATH, node);
   }
 
@@ -40,19 +41,19 @@ public class MacConfig extends SystemSpecificConfig {
     return this.getChildCount(MacConfig.ASSOCIATION);
   }
 
-  public Iterator<MacOsFileAssociation> associations() {
+  public Iterator<jetbrains.mps.build.distrib.structure.MacOsFileAssociation> associations() {
     return this.children(MacOsFileAssociation.class, MacConfig.ASSOCIATION);
   }
 
-  public List<MacOsFileAssociation> getAssociations() {
+  public List<jetbrains.mps.build.distrib.structure.MacOsFileAssociation> getAssociations() {
     return this.getChildren(MacOsFileAssociation.class, MacConfig.ASSOCIATION);
   }
 
-  public void addAssociation(MacOsFileAssociation node) {
+  public void addAssociation(jetbrains.mps.build.distrib.structure.MacOsFileAssociation node) {
     this.addChild(MacConfig.ASSOCIATION, node);
   }
 
-  public void insertAssociation(MacOsFileAssociation prev, MacOsFileAssociation node) {
+  public void insertAssociation(jetbrains.mps.build.distrib.structure.MacOsFileAssociation prev, jetbrains.mps.build.distrib.structure.MacOsFileAssociation node) {
     this.insertChild(prev, MacConfig.ASSOCIATION, node);
   }
 

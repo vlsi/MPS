@@ -47,7 +47,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
@@ -56,6 +56,7 @@
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.lang.smodel.structure(jetbrains.mps.lang.smodel.structure@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <visible index="3" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
@@ -3920,6 +3921,103 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="signatureConfiguration" type="jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration" id="1238069370114">
+        <node role="pathToExecutable" type="jetbrains.mps.build.packaging.structure.Path" id="1238069957553">
+          <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238069957554">
+            <property name="name" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238069957555">
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238069969991">
+              <property name="path" value="build" />
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238070002314">
+              <property name="path" value="tools" />
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238070004675">
+              <property name="path" value="SignCode.exe" />
+            </node>
+          </node>
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="1238070302929">
+          <property name="text" value="/spc " />
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.PathCommantLinePart" id="1238071102567">
+          <node role="path" type="jetbrains.mps.build.packaging.structure.Path" id="1238071102568">
+            <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238071102569">
+              <property name="name" value="mps_home" />
+            </node>
+            <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238071102570">
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071116419">
+                <property name="path" value="build" />
+              </node>
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071242589">
+                <property name="path" value="sign" />
+              </node>
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071143555">
+                <property name="path" value="MASertificate.spc" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="1238071154195">
+          <property name="text" value=" /v " />
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.PathCommantLinePart" id="1238071194533">
+          <node role="path" type="jetbrains.mps.build.packaging.structure.Path" id="1238071194534">
+            <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238071194535">
+              <property name="name" value="mps_home" />
+            </node>
+            <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238071194536">
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071204351">
+                <property name="path" value="build" />
+              </node>
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071239067">
+                <property name="path" value="sign" />
+              </node>
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071213197">
+                <property name="path" value="test.pvk" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="1238071560546">
+          <property name="text" value=" /t http://timestamp.verisign.com/scripts/timstamp.dll " />
+        </node>
+        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart" id="1238071593385" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238071255690">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238071255691">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238071255692">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238071334935">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238071548915">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238071334936">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1238071348087">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238071512542">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238071510742">
+                          <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                          <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238071540760">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238071540841">
+                            <property name="value" value="lib/mps.jar" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238071537849">
+                            <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
+                            <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238071550468">
+                    <link role="baseMethodDeclaration" targetNodeId="6.~File.exists():boolean" resolveInfo="exists" />
                   </node>
                 </node>
               </node>

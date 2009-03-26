@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimplePath extends AbstractPath {
+public class SimplePath extends jetbrains.mps.build.distrib.structure.AbstractPath {
   public static final String concept = "jetbrains.mps.build.distrib.structure.SimplePath";
   public static final String PATH = "path";
 

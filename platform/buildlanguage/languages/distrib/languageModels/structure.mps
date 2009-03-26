@@ -258,7 +258,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToExecutable" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231859334762">
       <property name="metaClass" value="aggregation" />
@@ -388,6 +388,21 @@
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234544164749">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238070714613">
+    <property name="package" value="systemSpecific.windows" />
+    <property name="name" value="PathCommantLinePart" />
+    <link role="extends" targetNodeId="1231859852975" resolveInfo="AbstractCommandLinePart" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238070747265">
+      <property name="value" value="path" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238070735094">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="path" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
   </node>
 </model>
