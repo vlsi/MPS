@@ -117,5 +117,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1238065165891">
+    <property name="name" value="BinaryOperation" />
+    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238066144055">
+      <property name="name" value="left" />
+    </node>
+    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238066149168">
+      <property name="name" value="right" />
+    </node>
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1238065165892" />
+  </node>
 </model>
 

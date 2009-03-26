@@ -72,6 +72,9 @@
       <link role="template" targetNodeId="1237409567691" resolveInfo="concept" />
       <link role="labelDeclaration" targetNodeId="1237458045787" resolveInfo="generateConcept" />
     </node>
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1238066235183">
+      <link role="applicableConcept" targetNodeId="1.1237212367450" resolveInfo="MPSLiteConceptTemplate" />
+    </node>
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237409567691">
@@ -958,6 +961,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1238066228468">
+      <link role="applicableConcept" targetNodeId="1.1237212367450" resolveInfo="MPSLiteConceptTemplate" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237991243176">

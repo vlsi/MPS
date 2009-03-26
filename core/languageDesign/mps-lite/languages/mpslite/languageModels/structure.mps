@@ -358,10 +358,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237211167323">
     <property name="package" value="Parts" />
     <property name="name" value="ChildPlaceholder" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237211342447">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-    </node>
+    <link role="extends" targetNodeId="1238064133208" resolveInfo="Placeholder" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237211410612">
       <property name="value" value="child placeholder" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -386,29 +383,11 @@
     <property name="name" value="MPSLiteConceptTemplate" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237212436109">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238064233407">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="childPlaceholder" />
+      <property name="role" value="placeholder" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1237211167323" resolveInfo="ChildPlaceholder" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237379812798">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="referencePlaceholder" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1237378727230" resolveInfo="ReferencePlaceholder" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237381740398">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="constantPlaceholder" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1237381245992" resolveInfo="ConstantTextPlaceholder" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237383862743">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="propertyPlaceholder" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1237383638429" resolveInfo="PropertyPlaceholder" />
+      <link role="target" targetNodeId="1238064133208" resolveInfo="Placeholder" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237380637798">
       <property name="metaClass" value="aggregation" />
@@ -441,13 +420,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237378727230">
     <property name="package" value="Parts" />
     <property name="name" value="ReferencePlaceholder" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="1238064133208" resolveInfo="Placeholder" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237378762882">
       <property name="value" value="reference placeholder" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237379046409">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237379064611">
@@ -477,10 +453,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237381245992">
     <property name="name" value="ConstantTextPlaceholder" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237381290936">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-    </node>
+    <link role="extends" targetNodeId="1238064133208" resolveInfo="Placeholder" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237381310811">
       <property name="value" value="constant text placeholder" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -498,10 +471,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237383638429">
     <property name="name" value="PropertyPlaceholder" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237383646940">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-    </node>
+    <link role="extends" targetNodeId="1238064133208" resolveInfo="Placeholder" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237383650518">
       <property name="value" value="property placeholder" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -621,6 +591,29 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238011524931">
       <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238064014561">
+    <property name="name" value="PlaceholderAssignment" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238064118011">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="placeholder" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1238064133208" resolveInfo="Placeholder" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238064300347">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238064133208">
+    <property name="name" value="Placeholder" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238064144707">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238064147655">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
