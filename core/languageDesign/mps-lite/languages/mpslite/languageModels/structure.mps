@@ -289,6 +289,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1182845679857">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238074654835">
+      <link role="intfc" targetNodeId="1238074630254" resolveInfo="Concretization" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1183015764815">
     <property name="name" value="ChildPart" />
@@ -337,6 +340,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237212294470">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238074648819">
+      <link role="intfc" targetNodeId="1238074630254" resolveInfo="Concretization" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237213224742">
       <property name="value" value="[ Child.. ]" />
@@ -512,6 +518,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237383939681">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238074727006">
+      <link role="intfc" targetNodeId="1238074630254" resolveInfo="Concretization" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1237383987373">
     <property name="package" value="Parts" />
@@ -592,18 +601,27 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238011524931">
       <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238076520701">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="placeholderAssignment" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1238064014561" resolveInfo="PlaceholderAssignment" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238064014561">
     <property name="name" value="PlaceholderAssignment" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238074478035">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="concretization" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1238074630254" resolveInfo="Concretization" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238064118011">
       <property name="metaClass" value="reference" />
       <property name="role" value="placeholder" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1238064133208" resolveInfo="Placeholder" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238064300347">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238064133208">
@@ -615,6 +633,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238064147655">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238074630254">
+    <property name="name" value="Concretization" />
   </node>
 </model>
 

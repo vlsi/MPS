@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConcreteChildPart extends jetbrains.mpslite.structure.ChildPart implements jetbrains.mps.lang.core.structure.INamedConcept {
+public class ConcreteChildPart extends jetbrains.mpslite.structure.ChildPart implements jetbrains.mps.lang.core.structure.INamedConcept, jetbrains.mpslite.structure.Concretization {
   public static final String concept = "jetbrains.mpslite.structure.ConcreteChildPart";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
