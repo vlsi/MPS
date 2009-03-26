@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sortedlist;
+package jetbrains.mps.uitests.sortedlist;
 
 import jetbrains.mps.workbench.dialogs.project.listsupport.SortedList;
 import junit.framework.TestCase;
