@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CreateGreaterThanInequationStatement extends AbstractInequationStatement {
+public class CreateGreaterThanInequationStatement extends jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement";
 
   public CreateGreaterThanInequationStatement(SNode node) {

@@ -94,7 +94,6 @@ public class QueriesGenerated {
             return wrappedNode;
           }
         }
-
       };
       result.addAll(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext));
     }
@@ -125,10 +124,8 @@ public class QueriesGenerated {
             public boolean accept(SNode it) {
               return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), scope);
             }
-
           });
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -151,7 +148,6 @@ public class QueriesGenerated {
           public SNode getOutputConcept() {
             return concept;
           }
-
         });
       }
     }

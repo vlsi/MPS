@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractSubtypingRule extends AbstractRule {
+public class AbstractSubtypingRule extends jetbrains.mps.lang.typesystem.structure.AbstractRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule";
   public static final String IS_WEAK = "isWeak";
   public static final String BODY = "body";
@@ -25,11 +25,11 @@ public class AbstractSubtypingRule extends AbstractRule {
     this.setBooleanProperty(AbstractSubtypingRule.IS_WEAK, value);
   }
 
-  public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AbstractSubtypingRule.BODY);
+  public jetbrains.mps.baseLanguage.structure.StatementList getBody() {
+    return (jetbrains.mps.baseLanguage.structure.StatementList)this.getChild(StatementList.class, AbstractSubtypingRule.BODY);
   }
 
-  public void setBody(StatementList node) {
+  public void setBody(jetbrains.mps.baseLanguage.structure.StatementList node) {
     super.setChild(AbstractSubtypingRule.BODY, node);
   }
 

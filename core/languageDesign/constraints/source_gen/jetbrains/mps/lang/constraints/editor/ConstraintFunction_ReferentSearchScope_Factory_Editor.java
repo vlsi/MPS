@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -113,7 +112,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
 
   public EditorCell createComponent_2342_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component2342_0 == null) {
-      this.myConceptFunction_Component2342_0 = new ConceptFunction_Component(node);
+      this.myConceptFunction_Component2342_0 = new jetbrains.mps.baseLanguage.editor.ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component2342_0.createEditorCell(context);
     setupBasic_Component_2342_0(editorCell, node, context);
@@ -240,7 +239,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -254,7 +252,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -267,7 +264,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -280,7 +276,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -293,7 +288,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -306,7 +300,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -319,7 +312,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -332,7 +324,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -349,7 +340,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -362,7 +352,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -379,7 +368,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -392,7 +380,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -409,7 +396,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -422,7 +408,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -436,7 +421,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -449,7 +433,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -466,7 +449,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

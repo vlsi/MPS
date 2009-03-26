@@ -172,7 +172,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7686_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7686_0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_7686_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -180,7 +180,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7686_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7686_1");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefNodeList_7686_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

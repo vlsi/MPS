@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.unitTest.plugin.TestState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,7 +41,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
         TestMethodTreeNode.this.updatePresentation();
         TestMethodTreeNode.this.updateNodePresentationInTree();
       }
-
     });
   }
 
@@ -54,7 +54,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
           className.value = ITestCase_Behavior.call_getClassName_1216136193905(testCase);
         }
       }
-
     });
     return className.value;
   }
@@ -66,7 +65,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
       public void run() {
         methodName.value = ITestMethod_Behavior.call_getTestName_1216136419751(TestMethodTreeNode.this.testMethod);
       }
-
     });
     return methodName.value;
   }

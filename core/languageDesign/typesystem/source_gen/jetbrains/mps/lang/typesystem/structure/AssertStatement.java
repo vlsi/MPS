@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssertStatement extends ReportErrorStatement {
+public class AssertStatement extends jetbrains.mps.lang.typesystem.structure.ReportErrorStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AssertStatement";
   public static final String CONDITION = "condition";
 
@@ -16,11 +16,11 @@ public class AssertStatement extends ReportErrorStatement {
     super(node);
   }
 
-  public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
+  public jetbrains.mps.baseLanguage.structure.Expression getCondition() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
   }
 
-  public void setCondition(Expression node) {
+  public void setCondition(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(AssertStatement.CONDITION, node);
   }
 

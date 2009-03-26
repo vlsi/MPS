@@ -226,7 +226,6 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -249,7 +248,6 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -266,7 +264,6 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -288,7 +285,6 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

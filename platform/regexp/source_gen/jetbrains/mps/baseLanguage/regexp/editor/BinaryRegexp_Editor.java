@@ -13,6 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions;
+import jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Right_Actions;
 
 public class BinaryRegexp_Editor extends DefaultNodeEditor {
 

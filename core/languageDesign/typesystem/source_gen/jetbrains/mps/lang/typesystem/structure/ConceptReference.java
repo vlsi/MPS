@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptReference extends ApplicableNodeCondition {
+public class ConceptReference extends jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ConceptReference";
   public static final String CONCEPT = "concept";
 
@@ -16,11 +16,11 @@ public class ConceptReference extends ApplicableNodeCondition {
     super(node);
   }
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptReference.CONCEPT);
+  public jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration getConcept() {
+    return (jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptReference.CONCEPT);
   }
 
-  public void setConcept(AbstractConceptDeclaration node) {
+  public void setConcept(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration node) {
     super.setReferent(ConceptReference.CONCEPT, node);
   }
 

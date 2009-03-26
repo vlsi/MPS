@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NormalTypeClause extends TypeClause {
+public class NormalTypeClause extends jetbrains.mps.lang.typesystem.structure.TypeClause {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.NormalTypeClause";
   public static final String NORMAL_TYPE = "normalType";
 
@@ -16,11 +16,11 @@ public class NormalTypeClause extends TypeClause {
     super(node);
   }
 
-  public Expression getNormalType() {
-    return (Expression)this.getChild(Expression.class, NormalTypeClause.NORMAL_TYPE);
+  public jetbrains.mps.baseLanguage.structure.Expression getNormalType() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, NormalTypeClause.NORMAL_TYPE);
   }
 
-  public void setNormalType(Expression node) {
+  public void setNormalType(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(NormalTypeClause.NORMAL_TYPE, node);
   }
 

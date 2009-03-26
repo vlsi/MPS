@@ -18,6 +18,19 @@ public enum RestrictionKind {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<RestrictionKind> getConstants() {
     List<RestrictionKind> list = new LinkedList<RestrictionKind>();
     ListOperations.addElement(list, RestrictionKind.equals);
@@ -40,19 +53,6 @@ public enum RestrictionKind {
       return RestrictionKind.subtype;
     }
     return RestrictionKind.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

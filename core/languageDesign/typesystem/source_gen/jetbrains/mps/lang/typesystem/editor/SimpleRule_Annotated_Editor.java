@@ -135,7 +135,6 @@ public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }

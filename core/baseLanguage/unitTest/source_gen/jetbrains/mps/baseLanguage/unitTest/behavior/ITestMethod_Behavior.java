@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestMethod_Behavior {

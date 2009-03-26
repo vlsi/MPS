@@ -13,6 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Left_Actions;
+import jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Right_Actions;
 
 public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
 

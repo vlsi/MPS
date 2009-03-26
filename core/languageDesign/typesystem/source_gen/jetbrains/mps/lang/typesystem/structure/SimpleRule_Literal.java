@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimpleRule_Literal extends SimpleRule {
+public class SimpleRule_Literal extends jetbrains.mps.lang.typesystem.structure.SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_Literal";
   public static final String CONCEPT_REFERENCE = "conceptReference";
   public static final String TYPE = "type";
@@ -18,19 +18,19 @@ public class SimpleRule_Literal extends SimpleRule {
     super(node);
   }
 
-  public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_Literal.CONCEPT_REFERENCE);
+  public jetbrains.mps.lang.smodel.structure.ConceptReference getConceptReference() {
+    return (jetbrains.mps.lang.smodel.structure.ConceptReference)this.getChild(ConceptReference.class, SimpleRule_Literal.CONCEPT_REFERENCE);
   }
 
-  public void setConceptReference(ConceptReference node) {
+  public void setConceptReference(jetbrains.mps.lang.smodel.structure.ConceptReference node) {
     super.setChild(SimpleRule_Literal.CONCEPT_REFERENCE, node);
   }
 
-  public BaseConcept getType() {
-    return (BaseConcept)this.getChild(BaseConcept.class, SimpleRule_Literal.TYPE);
+  public jetbrains.mps.lang.core.structure.BaseConcept getType() {
+    return (jetbrains.mps.lang.core.structure.BaseConcept)this.getChild(BaseConcept.class, SimpleRule_Literal.TYPE);
   }
 
-  public void setType(BaseConcept node) {
+  public void setType(jetbrains.mps.lang.core.structure.BaseConcept node) {
     super.setChild(SimpleRule_Literal.TYPE, node);
   }
 

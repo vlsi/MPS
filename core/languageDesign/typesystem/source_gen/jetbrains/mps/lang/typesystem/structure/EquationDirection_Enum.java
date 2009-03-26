@@ -19,6 +19,19 @@ public enum EquationDirection_Enum {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return this.myValue;
+  }
+
+  public String getValue() {
+    return this.myValue;
+  }
+
+
   public static List<EquationDirection_Enum> getConstants() {
     List<EquationDirection_Enum> list = new LinkedList<EquationDirection_Enum>();
     ListOperations.addElement(list, EquationDirection_Enum.none);
@@ -45,19 +58,6 @@ public enum EquationDirection_Enum {
       return EquationDirection_Enum.right;
     }
     return EquationDirection_Enum.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
-    return this.myValue;
   }
 
 }

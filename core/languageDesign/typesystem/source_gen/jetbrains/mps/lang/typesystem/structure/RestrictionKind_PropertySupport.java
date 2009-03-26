@@ -4,6 +4,7 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.typesystem.structure.RestrictionKind;
 
 public class RestrictionKind_PropertySupport extends PropertySupport {
 

@@ -300,7 +300,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -314,7 +313,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -328,7 +326,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -345,7 +342,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -366,7 +362,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -383,7 +378,6 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

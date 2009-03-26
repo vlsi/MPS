@@ -68,7 +68,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9248_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector9248_0 == null) {
-      this.myAbstractEquationInspector9248_0 = new AbstractEquationInspector(node);
+      this.myAbstractEquationInspector9248_0 = new jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector(node);
     }
     EditorCell editorCell = this.myAbstractEquationInspector9248_0.createEditorCell(context);
     setupBasic_Component_9248_0(editorCell, node, context);
@@ -261,10 +261,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -285,7 +283,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_SIZE, 6);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -301,7 +298,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -314,7 +310,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

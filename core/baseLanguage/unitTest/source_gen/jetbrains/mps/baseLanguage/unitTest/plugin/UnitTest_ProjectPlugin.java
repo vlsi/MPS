@@ -7,7 +7,9 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTest_Tool;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_PreferencesComponent;
 
 public class UnitTest_ProjectPlugin extends BaseProjectPlugin {
 

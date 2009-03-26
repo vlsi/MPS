@@ -73,7 +73,6 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_MAGENTA);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

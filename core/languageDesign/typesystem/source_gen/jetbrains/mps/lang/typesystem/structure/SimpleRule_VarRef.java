@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimpleRule_VarRef extends SimpleRule {
+public class SimpleRule_VarRef extends jetbrains.mps.lang.typesystem.structure.SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef";
   public static final String LINK = "link";
   public static final String CONCEPT_REFERENCE = "conceptReference";
@@ -18,19 +18,19 @@ public class SimpleRule_VarRef extends SimpleRule {
     super(node);
   }
 
-  public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_VarRef.LINK);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getLink() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_VarRef.LINK);
   }
 
-  public void setLink(LinkDeclaration node) {
+  public void setLink(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(SimpleRule_VarRef.LINK, node);
   }
 
-  public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_VarRef.CONCEPT_REFERENCE);
+  public jetbrains.mps.lang.smodel.structure.ConceptReference getConceptReference() {
+    return (jetbrains.mps.lang.smodel.structure.ConceptReference)this.getChild(ConceptReference.class, SimpleRule_VarRef.CONCEPT_REFERENCE);
   }
 
-  public void setConceptReference(ConceptReference node) {
+  public void setConceptReference(jetbrains.mps.lang.smodel.structure.ConceptReference node) {
     super.setChild(SimpleRule_VarRef.CONCEPT_REFERENCE, node);
   }
 

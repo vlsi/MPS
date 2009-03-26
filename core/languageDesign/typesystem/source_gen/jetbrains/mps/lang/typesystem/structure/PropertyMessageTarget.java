@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PropertyMessageTarget extends MessageTarget {
+public class PropertyMessageTarget extends jetbrains.mps.lang.typesystem.structure.MessageTarget {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget";
   public static final String PROPERTY_DECLARATION = "propertyDeclaration";
 
@@ -16,11 +16,11 @@ public class PropertyMessageTarget extends MessageTarget {
     super(node);
   }
 
-  public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyMessageTarget.PROPERTY_DECLARATION);
+  public jetbrains.mps.lang.structure.structure.PropertyDeclaration getPropertyDeclaration() {
+    return (jetbrains.mps.lang.structure.structure.PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyMessageTarget.PROPERTY_DECLARATION);
   }
 
-  public void setPropertyDeclaration(PropertyDeclaration node) {
+  public void setPropertyDeclaration(jetbrains.mps.lang.structure.structure.PropertyDeclaration node) {
     super.setReferent(PropertyMessageTarget.PROPERTY_DECLARATION, node);
   }
 

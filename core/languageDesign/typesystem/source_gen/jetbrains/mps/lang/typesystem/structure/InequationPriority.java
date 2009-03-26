@@ -21,6 +21,19 @@ public enum InequationPriority {
     this.myValue = value;
   }
 
+  public String getName() {
+    return this.myName;
+  }
+
+  public String getValueAsString() {
+    return "" + this.myValue;
+  }
+
+  public int getValue() {
+    return this.myValue;
+  }
+
+
   public static List<InequationPriority> getConstants() {
     List<InequationPriority> list = new LinkedList<InequationPriority>();
     ListOperations.addElement(list, InequationPriority._0);
@@ -55,19 +68,6 @@ public enum InequationPriority {
       return InequationPriority.inf;
     }
     return InequationPriority.getDefault();
-  }
-
-
-  public String getName() {
-    return this.myName;
-  }
-
-  public String getValueAsString() {
-    return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
 }

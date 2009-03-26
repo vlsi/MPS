@@ -190,7 +190,6 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

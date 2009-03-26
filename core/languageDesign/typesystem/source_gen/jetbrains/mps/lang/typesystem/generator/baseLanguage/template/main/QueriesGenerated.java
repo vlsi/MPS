@@ -14,8 +14,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil;
+import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main._Patterns;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import java.util.List;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -1044,7 +1046,6 @@ public class QueriesGenerated {
         public boolean accept(SNode it) {
           return SearchScopeOperations.containsNode(varScope, it);
         }
-
       }).first();
     */
     return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(parent, "coercedNode", operationContext);
@@ -2468,7 +2469,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1224062580253(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode instanceMethodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       SNode baseMethodDeclaration = SNodeOperations.getAncestor(instanceMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-      // anonymous inner classes
+      //       anonymous inner classes
       SNode oldBMD = null;
       while (baseMethodDeclaration != null) {
         oldBMD = baseMethodDeclaration;
@@ -2525,7 +2526,7 @@ parametersLoop:
   public static void mappingScript_CodeBlock_1224237349196(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode instanceMethodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       SNode baseMethodDeclaration = SNodeOperations.getAncestor(instanceMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-      // anonymous inner classes
+      //       anonymous inner classes
       SNode oldBMD = null;
       while (baseMethodDeclaration != null) {
         oldBMD = baseMethodDeclaration;

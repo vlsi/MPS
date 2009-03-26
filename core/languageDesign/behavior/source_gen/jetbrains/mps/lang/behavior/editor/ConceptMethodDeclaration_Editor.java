@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -41,6 +40,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Menu;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -235,7 +235,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6299_0(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart6299_0 == null) {
-      this.my_DeprecatedPart6299_0 = new _DeprecatedPart(node);
+      this.my_DeprecatedPart6299_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart6299_0.createEditorCell(context);
     setupBasic_Component_6299_0(editorCell, node, context);
@@ -375,7 +375,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_6299_0(editorCell, node, context);
@@ -714,7 +713,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -762,7 +760,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -787,7 +784,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6299_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6299_7");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6299_8(EditorCell editorCell, SNode node, EditorContext context) {
@@ -802,7 +799,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -817,7 +813,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6299_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6299_9");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6299_10(EditorCell editorCell, SNode node, EditorContext context) {
@@ -827,7 +823,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -845,7 +840,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -867,7 +861,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -889,7 +882,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -911,7 +903,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -938,7 +929,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -955,7 +945,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -968,7 +957,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1279,7 +1267,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

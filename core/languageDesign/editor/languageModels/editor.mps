@@ -7613,7 +7613,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379745">
             <property name="text" value="{" />
-            <link role="styleClass" targetNodeId="26.1215087929380" resolveInfo="LeftParen" />
+            <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214478379746">
             <property name="flag" value="false" />
@@ -7632,7 +7632,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379751">
           <property name="text" value="}" />
-          <link role="styleClass" targetNodeId="26.1215088010675" resolveInfo="RightParen" />
+          <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379752">
@@ -8282,7 +8282,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233150817082">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="26.1215088010675" resolveInfo="RightParen" />
+          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233149003775">
@@ -8298,7 +8298,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233149003795">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="26.1215088010675" resolveInfo="RightParen" />
+        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
       </node>
     </node>
   </node>

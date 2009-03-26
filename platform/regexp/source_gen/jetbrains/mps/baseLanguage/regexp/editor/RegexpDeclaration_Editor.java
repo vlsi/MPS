@@ -192,7 +192,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -204,14 +203,13 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4843_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4843_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -219,13 +217,12 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4843_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4843_2");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -238,7 +235,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -250,7 +246,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -263,7 +258,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -276,7 +270,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -290,7 +283,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

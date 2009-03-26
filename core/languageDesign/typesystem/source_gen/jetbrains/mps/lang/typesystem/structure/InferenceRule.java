@@ -4,12 +4,14 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.typesystem.structure.Dependency;
 import java.util.List;
+import jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InferenceRule extends AbstractCheckingRule {
+public class InferenceRule extends jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InferenceRule";
   public static final String DEPENDENCY = "dependency";
   public static final String CHILD_TYPE_RESTRICTION = "childTypeRestriction";
@@ -22,19 +24,19 @@ public class InferenceRule extends AbstractCheckingRule {
     return this.getChildCount(InferenceRule.DEPENDENCY);
   }
 
-  public Iterator<Dependency> dependencies() {
+  public Iterator<jetbrains.mps.lang.typesystem.structure.Dependency> dependencies() {
     return this.children(Dependency.class, InferenceRule.DEPENDENCY);
   }
 
-  public List<Dependency> getDependencies() {
+  public List<jetbrains.mps.lang.typesystem.structure.Dependency> getDependencies() {
     return this.getChildren(Dependency.class, InferenceRule.DEPENDENCY);
   }
 
-  public void addDependency(Dependency node) {
+  public void addDependency(jetbrains.mps.lang.typesystem.structure.Dependency node) {
     this.addChild(InferenceRule.DEPENDENCY, node);
   }
 
-  public void insertDependency(Dependency prev, Dependency node) {
+  public void insertDependency(jetbrains.mps.lang.typesystem.structure.Dependency prev, jetbrains.mps.lang.typesystem.structure.Dependency node) {
     this.insertChild(prev, InferenceRule.DEPENDENCY, node);
   }
 
@@ -42,19 +44,19 @@ public class InferenceRule extends AbstractCheckingRule {
     return this.getChildCount(InferenceRule.CHILD_TYPE_RESTRICTION);
   }
 
-  public Iterator<ChildTypeRestriction> childTypeRestrictions() {
+  public Iterator<jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction> childTypeRestrictions() {
     return this.children(ChildTypeRestriction.class, InferenceRule.CHILD_TYPE_RESTRICTION);
   }
 
-  public List<ChildTypeRestriction> getChildTypeRestrictions() {
+  public List<jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction> getChildTypeRestrictions() {
     return this.getChildren(ChildTypeRestriction.class, InferenceRule.CHILD_TYPE_RESTRICTION);
   }
 
-  public void addChildTypeRestriction(ChildTypeRestriction node) {
+  public void addChildTypeRestriction(jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction node) {
     this.addChild(InferenceRule.CHILD_TYPE_RESTRICTION, node);
   }
 
-  public void insertChildTypeRestriction(ChildTypeRestriction prev, ChildTypeRestriction node) {
+  public void insertChildTypeRestriction(jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction prev, jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction node) {
     this.insertChild(prev, InferenceRule.CHILD_TYPE_RESTRICTION, node);
   }
 

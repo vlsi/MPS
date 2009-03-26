@@ -28,7 +28,6 @@ public class MultipleForeachLoop_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"));
       }
-
     });
   }
 

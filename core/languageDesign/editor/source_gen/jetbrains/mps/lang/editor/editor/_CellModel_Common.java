@@ -678,7 +678,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   private static void setupBasic_Constant_7442_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7442_7");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_7442_10(EditorCell editorCell, SNode node, EditorContext context) {
@@ -703,7 +703,7 @@ public class _CellModel_Common extends AbstractCellProvider {
 
   private static void setupBasic_Constant_7442_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7442_8");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7442_9(EditorCell editorCell, SNode node, EditorContext context) {

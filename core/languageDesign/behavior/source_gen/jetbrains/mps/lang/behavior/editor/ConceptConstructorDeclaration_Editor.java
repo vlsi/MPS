@@ -104,7 +104,6 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -112,13 +111,12 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6948_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6948_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -131,7 +129,6 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -139,13 +136,12 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6948_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6948_2");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

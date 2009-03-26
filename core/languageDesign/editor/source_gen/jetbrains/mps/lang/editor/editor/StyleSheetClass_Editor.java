@@ -220,12 +220,12 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9826_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9826_0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_9826_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9826_1");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_9826_2(EditorCell editorCell, SNode node, EditorContext context) {

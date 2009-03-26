@@ -10,6 +10,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.typesystem.dependencies._Quotations;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -126,7 +127,6 @@ public class DependenciesCollector {
                         public boolean met(Object p0) {
                           return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");
                         }
-
                       });
                       if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {
                         dependencies.put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));

@@ -126,6 +126,7 @@ public class Styles_StyleSheet {
   public static Style getTag(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.MATCHING_LABEL, "tag");
       }
     };
   }

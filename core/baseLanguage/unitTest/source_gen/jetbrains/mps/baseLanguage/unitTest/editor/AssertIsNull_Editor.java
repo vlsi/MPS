@@ -101,7 +101,6 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -121,7 +120,6 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

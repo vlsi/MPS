@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferenceMessageTarget extends MessageTarget {
+public class ReferenceMessageTarget extends jetbrains.mps.lang.typesystem.structure.MessageTarget {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget";
   public static final String LINK_DECLARATION = "linkDeclaration";
 
@@ -16,11 +16,11 @@ public class ReferenceMessageTarget extends MessageTarget {
     super(node);
   }
 
-  public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, ReferenceMessageTarget.LINK_DECLARATION);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getLinkDeclaration() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, ReferenceMessageTarget.LINK_DECLARATION);
   }
 
-  public void setLinkDeclaration(LinkDeclaration node) {
+  public void setLinkDeclaration(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(ReferenceMessageTarget.LINK_DECLARATION, node);
   }
 

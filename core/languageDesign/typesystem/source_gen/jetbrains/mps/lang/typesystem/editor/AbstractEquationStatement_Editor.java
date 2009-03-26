@@ -51,7 +51,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_7653_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector7653_0 == null) {
-      this.myAbstractEquationInspector7653_0 = new AbstractEquationInspector(node);
+      this.myAbstractEquationInspector7653_0 = new jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector(node);
     }
     EditorCell editorCell = this.myAbstractEquationInspector7653_0.createEditorCell(context);
     setupBasic_Component_7653_0(editorCell, node, context);
@@ -185,10 +185,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
                 cell.getEditorContext()
               ));
             }
-
           });
         }
-
       };
       inlineStyle.apply(editorCell);
     }

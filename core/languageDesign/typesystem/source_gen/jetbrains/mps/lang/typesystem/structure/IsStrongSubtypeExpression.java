@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IsStrongSubtypeExpression extends IsSubtypeExpression {
+public class IsStrongSubtypeExpression extends jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression";
 
   public IsStrongSubtypeExpression(SNode node) {

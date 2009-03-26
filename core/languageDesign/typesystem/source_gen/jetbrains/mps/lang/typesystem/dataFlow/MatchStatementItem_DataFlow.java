@@ -23,7 +23,6 @@ public class MatchStatementItem_DataFlow extends DataFlowBuilder {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().after(SNodeOperations.getParent(_context.getNode())));
       }
-
     });
   }
 

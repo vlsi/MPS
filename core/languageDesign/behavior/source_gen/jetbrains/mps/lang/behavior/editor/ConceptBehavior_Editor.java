@@ -650,7 +650,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1330_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1330_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_1330_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -672,7 +672,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -685,7 +684,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -698,7 +696,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -719,7 +716,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -732,7 +728,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -745,7 +740,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -769,7 +763,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -782,7 +775,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -795,7 +787,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -819,7 +810,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -835,7 +825,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -848,7 +837,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -865,7 +853,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -878,7 +865,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -895,7 +881,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -908,7 +893,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -929,7 +913,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -945,7 +928,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1330_18(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1330_18");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1330_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1236,7 +1219,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1308,7 +1290,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1380,7 +1361,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1452,7 +1432,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

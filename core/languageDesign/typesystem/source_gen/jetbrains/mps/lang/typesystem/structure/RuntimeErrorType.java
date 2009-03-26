@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RuntimeErrorType extends RuntimeTypeVariable {
+public class RuntimeErrorType extends jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType";
   public static final String ERROR_TEXT = "errorText";
   public static final String NODE_ID = "nodeId";

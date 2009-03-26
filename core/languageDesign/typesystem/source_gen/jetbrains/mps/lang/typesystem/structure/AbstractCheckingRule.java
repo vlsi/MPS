@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractCheckingRule extends AbstractRule {
+public class AbstractCheckingRule extends jetbrains.mps.lang.typesystem.structure.AbstractRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule";
   public static final String OVERRIDES = "overrides";
   public static final String BODY = "body";
@@ -25,11 +25,11 @@ public class AbstractCheckingRule extends AbstractRule {
     this.setBooleanProperty(AbstractCheckingRule.OVERRIDES, value);
   }
 
-  public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AbstractCheckingRule.BODY);
+  public jetbrains.mps.baseLanguage.structure.StatementList getBody() {
+    return (jetbrains.mps.baseLanguage.structure.StatementList)this.getChild(StatementList.class, AbstractCheckingRule.BODY);
   }
 
-  public void setBody(StatementList node) {
+  public void setBody(jetbrains.mps.baseLanguage.structure.StatementList node) {
     super.setChild(AbstractCheckingRule.BODY, node);
   }
 

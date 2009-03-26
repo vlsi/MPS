@@ -24,7 +24,6 @@ public class CoerceStatement_DataFlow extends DataFlowBuilder {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "elseClause", true)));
         }
-
       });
     }
     _context.getBuilder().emitLabel("endOfTrue");

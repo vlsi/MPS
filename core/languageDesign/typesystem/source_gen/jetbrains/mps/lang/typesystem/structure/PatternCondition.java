@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PatternCondition extends ApplicableNodeCondition {
+public class PatternCondition extends jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.PatternCondition";
   public static final String PATTERN = "pattern";
 
@@ -16,11 +16,11 @@ public class PatternCondition extends ApplicableNodeCondition {
     super(node);
   }
 
-  public PatternExpression getPattern() {
-    return (PatternExpression)this.getChild(PatternExpression.class, PatternCondition.PATTERN);
+  public jetbrains.mps.lang.pattern.structure.PatternExpression getPattern() {
+    return (jetbrains.mps.lang.pattern.structure.PatternExpression)this.getChild(PatternExpression.class, PatternCondition.PATTERN);
   }
 
-  public void setPattern(PatternExpression node) {
+  public void setPattern(jetbrains.mps.lang.pattern.structure.PatternExpression node) {
     super.setChild(PatternCondition.PATTERN, node);
   }
 

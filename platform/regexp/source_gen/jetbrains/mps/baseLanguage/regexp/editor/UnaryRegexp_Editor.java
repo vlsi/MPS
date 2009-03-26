@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
 

@@ -359,7 +359,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -376,7 +375,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -394,7 +392,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -410,7 +407,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -427,7 +423,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -443,7 +438,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -456,7 +450,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -498,7 +491,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -511,7 +503,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

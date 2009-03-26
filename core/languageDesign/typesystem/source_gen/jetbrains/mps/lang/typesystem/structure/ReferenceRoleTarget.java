@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferenceRoleTarget extends MessageTarget {
+public class ReferenceRoleTarget extends jetbrains.mps.lang.typesystem.structure.MessageTarget {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget";
   public static final String REFERENCE_ROLE = "referenceRole";
 
@@ -16,11 +16,11 @@ public class ReferenceRoleTarget extends MessageTarget {
     super(node);
   }
 
-  public Expression getReferenceRole() {
-    return (Expression)this.getChild(Expression.class, ReferenceRoleTarget.REFERENCE_ROLE);
+  public jetbrains.mps.baseLanguage.structure.Expression getReferenceRole() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, ReferenceRoleTarget.REFERENCE_ROLE);
   }
 
-  public void setReferenceRole(Expression node) {
+  public void setReferenceRole(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(ReferenceRoleTarget.REFERENCE_ROLE, node);
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimpleRule_ProcedureCall extends SimpleRule {
+public class SimpleRule_ProcedureCall extends jetbrains.mps.lang.typesystem.structure.SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall";
   public static final String ACTUAL_ARGUMENTS_LINK = "actualArgumentsLink";
   public static final String PROCEDURE_DECLARATION = "procedureDeclaration";
@@ -20,35 +20,35 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
     super(node);
   }
 
-  public LinkDeclaration getActualArgumentsLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.ACTUAL_ARGUMENTS_LINK);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getActualArgumentsLink() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.ACTUAL_ARGUMENTS_LINK);
   }
 
-  public void setActualArgumentsLink(LinkDeclaration node) {
+  public void setActualArgumentsLink(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(SimpleRule_ProcedureCall.ACTUAL_ARGUMENTS_LINK, node);
   }
 
-  public LinkDeclaration getProcedureDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PROCEDURE_DECLARATION);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getProcedureDeclaration() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PROCEDURE_DECLARATION);
   }
 
-  public void setProcedureDeclaration(LinkDeclaration node) {
+  public void setProcedureDeclaration(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(SimpleRule_ProcedureCall.PROCEDURE_DECLARATION, node);
   }
 
-  public LinkDeclaration getParametersLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PARAMETERS_LINK);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getParametersLink() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PARAMETERS_LINK);
   }
 
-  public void setParametersLink(LinkDeclaration node) {
+  public void setParametersLink(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(SimpleRule_ProcedureCall.PARAMETERS_LINK, node);
   }
 
-  public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_ProcedureCall.CONCEPT_REFERENCE);
+  public jetbrains.mps.lang.smodel.structure.ConceptReference getConceptReference() {
+    return (jetbrains.mps.lang.smodel.structure.ConceptReference)this.getChild(ConceptReference.class, SimpleRule_ProcedureCall.CONCEPT_REFERENCE);
   }
 
-  public void setConceptReference(ConceptReference node) {
+  public void setConceptReference(jetbrains.mps.lang.smodel.structure.ConceptReference node) {
     super.setChild(SimpleRule_ProcedureCall.CONCEPT_REFERENCE, node);
   }
 

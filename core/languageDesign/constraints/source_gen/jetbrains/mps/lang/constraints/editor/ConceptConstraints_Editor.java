@@ -620,7 +620,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -636,7 +635,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4286_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4286_1");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4286_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -646,7 +645,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -654,7 +652,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4286_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4286_2");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4286_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -664,7 +662,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -681,7 +678,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -694,7 +690,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -711,7 +706,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -728,7 +722,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -744,7 +737,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -757,7 +749,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -770,7 +761,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -794,7 +784,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -807,7 +796,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -831,7 +819,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -844,7 +831,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -857,7 +843,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -873,7 +858,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -887,7 +871,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -916,7 +899,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -1198,7 +1180,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1270,7 +1251,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -112,7 +112,6 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

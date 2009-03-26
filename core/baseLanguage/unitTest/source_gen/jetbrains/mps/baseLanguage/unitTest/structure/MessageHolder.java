@@ -8,8 +8,8 @@ public interface MessageHolder extends INodeAdapter {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder";
   public static final String MESSAGE = "message";
 
-  public Message getMessage();
+  public jetbrains.mps.baseLanguage.unitTest.structure.Message getMessage();
 
-  public void setMessage(Message node);
+  public void setMessage(jetbrains.mps.baseLanguage.unitTest.structure.Message node);
 
 }

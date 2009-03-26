@@ -14,7 +14,6 @@ public class DataFlow_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-
     };
   }
 
@@ -23,7 +22,6 @@ public class DataFlow_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
       }
-
     };
   }
 
@@ -32,7 +30,6 @@ public class DataFlow_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
-
     };
   }
 
@@ -41,7 +38,6 @@ public class DataFlow_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
