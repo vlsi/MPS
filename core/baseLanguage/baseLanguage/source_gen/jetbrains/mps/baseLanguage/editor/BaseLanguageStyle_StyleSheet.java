@@ -137,6 +137,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getParenthesis(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
     };
@@ -147,7 +148,6 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
       }
     };
   }
@@ -235,6 +235,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
     };
@@ -244,6 +245,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
     };

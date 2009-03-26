@@ -10125,6 +10125,9 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1237993509002">
         <property name="name" value="parenthesis" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238068039656">
+        <link role="label" targetNodeId="1237993509002" resolveInfo="parenthesis" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010896172">
         <property name="style" value="PLAIN" />
       </node>
@@ -10133,9 +10136,6 @@
       <property name="name" value="LeftParen" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1238055563687">
         <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1237998826233">
-        <link role="label" targetNodeId="1237993509002" resolveInfo="parenthesis" />
       </node>
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1215088009377">
         <link role="styleSheetClass" targetNodeId="1215010868182" resolveInfo="Paren" />
@@ -10218,12 +10218,18 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010871495">
       <property name="name" value="Bracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1238067892856">
+        <property name="name" value="bracket" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010897861">
         <property name="style" value="PLAIN" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923571622">
       <property name="name" value="LeftBracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238067905406">
+        <link role="label" targetNodeId="1238067892856" resolveInfo="bracket" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233923813536">
         <property name="flag" value="true" />
       </node>
@@ -10233,6 +10239,9 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923584313">
       <property name="name" value="RightBracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238067995995">
+        <link role="label" targetNodeId="1238067892856" resolveInfo="bracket" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233923822363">
         <property name="flag" value="true" />
       </node>
