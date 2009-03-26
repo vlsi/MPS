@@ -17,6 +17,7 @@ package jetbrains.mps.baseLanguage.dates.runtime;
 
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.*;
+import org.joda.time.field.FieldUtils;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -47,6 +48,21 @@ public class DateTimeOperations {
 
   public static Long convert(Calendar calendar) {
     return calendar != null ? calendar.getTimeInMillis() : null;
+  }
+
+  public static Long convert(Period period) {
+    long seconds = period.getMillis();
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getMinutes())
+      * ((long) DateTimeConstants.MILLIS_PER_SECOND));
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getMinutes())
+      * ((long) DateTimeConstants.MILLIS_PER_MINUTE));
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getHours())
+      * ((long) DateTimeConstants.MILLIS_PER_HOUR));
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getDays())
+      * ((long) DateTimeConstants.MILLIS_PER_DAY));
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getWeeks())
+      * ((long) DateTimeConstants.MILLIS_PER_WEEK));
+    return seconds;
   }
 
   public static boolean compare(Long op1, CompareType cmp, Long op2, DateTimeFieldType type) {
