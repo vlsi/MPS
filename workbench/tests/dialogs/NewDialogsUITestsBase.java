@@ -1,7 +1,7 @@
-package jetbrains.mps.uitests;
+package dialogs;
 
+import dialogs.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.uitests.UITestsBase.NoProjectUITestsBase;
 
 import java.io.File;
 

@@ -1,9 +1,10 @@
-package jetbrains.mps.uitests;
+package dialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
@@ -51,11 +52,11 @@ public class TestUtil {
   }
 
   public static MPSProject waitProjectLoaded(final UITestsBase test) {
-    Project ideaProject = null;
+    final Project[] ideaProject = new Project[]{null};
     Project[] projects = ProjectManager.getInstance().getOpenProjects();
 
     if (projects.length != 0) {
-      ideaProject = projects[0];
+      ideaProject[0] = projects[0];
     } else {
       final Project[] project = new Project[]{null};
       final ProjectManager manager = ProjectManager.getInstance();
@@ -66,21 +67,34 @@ public class TestUtil {
           project[0] = p;
         }
       });
-      while (project[0] == null) test.flushAWT();
-      ideaProject = project[0];
+
+      conditionalWaitAndFlush(test,new Computable<Boolean>() {
+        public Boolean compute() {
+          return project[0] != null;
+        }
+      });
+
+      ideaProject[0] = project[0];
     }
 
-    while (ideaProject.getComponent(MPSProjectHolder.class) == null) test.flushAWT();
+    conditionalWaitAndFlush(test,new Computable<Boolean>() {
+      public Boolean compute() {
+        return ideaProject[0].getComponent(MPSProjectHolder.class) != null;
+      }
+    });
 
     final boolean[] loaded = new boolean[]{false};
-    StartupManager.getInstance(ideaProject).registerPostStartupActivity(new Runnable() {
+    StartupManager.getInstance(ideaProject[0]).registerPostStartupActivity(new Runnable() {
       public void run() {
         loaded[0] = true;
       }
     });
 
-    while (!loaded[0]) test.flushAWT();
-    test.flushAWT();
+    conditionalWaitAndFlush(test,new Computable<Boolean>() {
+      public Boolean compute() {
+        return loaded[0];
+      }
+    });
 
     DialogFinder finder = new DialogFinder(".*Tip of the Day.*", true);
     finder.setWait(10);
@@ -89,7 +103,7 @@ public class TestUtil {
       test.pressButton(dialog, "Close");
     }
 
-    return ideaProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    return ideaProject[0].getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public static void deleteProject(UITestsBase tests, File projectFile) {
@@ -115,5 +129,17 @@ public class TestUtil {
         ProjectManager.getInstance().closeProject(createdProject.getComponent(Project.class));
       }
     });
+  }
+
+  public static void conditionalWaitAndFlush(UITestsBase test,Computable<Boolean> cond){
+    while (!cond.compute()) {
+      test.flushAWT();
+      try {
+        Thread.sleep(300);
+      } catch (InterruptedException e) {
+        
+      }
+    }
+    test.flushAWT();
   }
 }

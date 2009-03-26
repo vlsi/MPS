@@ -1,9 +1,11 @@
-package jetbrains.mps.uitests;
+package dialogs;
 
+import dialogs.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.uitests.UITestsBase.NoProjectUITestsBase;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.LanguageStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
@@ -12,6 +14,7 @@ import junit.extensions.jfcunit.finder.DialogFinder;
 import java.awt.Component;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 public class NewProjectUITest extends NoProjectUITestsBase {
   public void testInitialValues() throws InvocationTargetException, InterruptedException {
@@ -55,7 +58,14 @@ public class NewProjectUITest extends NoProjectUITestsBase {
 
     Solution solution = p.getProjectSolutions().get(0);
     Language language = p.getProjectLanguages().get(0);
-    assertTrue("Language is not imported into solution",solution.getSolutionDescriptor().getUsedLanguages().contains(language.getModuleReference()));
+    List<ModuleReference> languages = solution.getSolutionDescriptor().getUsedLanguages();
+    boolean imported = false;
+    for (ModuleReference langRef:languages){
+      if (EqualUtil.equals(langRef.getModuleFqName(),language.getModuleFqName())){
+        imported = true;
+      }
+    }
+    assertTrue("Language is not imported into solution", imported);
   }
 
   private void checkProjectStep() {

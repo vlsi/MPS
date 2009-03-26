@@ -1,6 +1,7 @@
-package jetbrains.mps.uitests;
+package dialogs;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.newLanguageDialog.NewLanguageDialog;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -45,7 +46,12 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
         loaded[0] = true;
       }
     });
-    while (!loaded[0]) flushAWT();
+
+     TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
+       public Boolean compute() {
+         return loaded[0];
+       }
+     });
 
     final Language l = dialog.getResult();
     assertNotNull("Language is not created", l);

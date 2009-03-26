@@ -1,15 +1,13 @@
-package jetbrains.mps.uitests;
+package dialogs;
 
 import com.intellij.ide.GeneralSettings;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import junit.extensions.jfcunit.JFCTestCase;
@@ -31,6 +29,8 @@ public abstract class UITestsBase extends JFCTestCase {
     super.setUp();
 
     setHelper(new JFCTestHelper());
+
+    setAssertExit(true);
 
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.platform.prefix", "MPS");
@@ -59,14 +59,7 @@ public abstract class UITestsBase extends JFCTestCase {
 
     flushAWT();
 
-    final ApplicationEx application = ApplicationManagerEx.getApplicationEx();
-
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        application.saveAll();
-        Disposer.dispose(application);
-      }
-    });
+    ApplicationManagerEx.getApplicationEx().exit(true);
 
     flushAWT();
 
@@ -96,11 +89,11 @@ public abstract class UITestsBase extends JFCTestCase {
     }
 
     protected Project initProject() throws InterruptedException {
-      while (!IdeMain.isUILoaded()) {
-        Thread.sleep(500);
-      }
-
-      flushAWT();
+      TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
+        public Boolean compute() {
+          return IdeMain.isUILoaded();
+        }
+      });
 
       final MPSProject[] project = new MPSProject[1];
       SwingUtilities.invokeLater(new Runnable() {
@@ -109,11 +102,11 @@ public abstract class UITestsBase extends JFCTestCase {
         }
       });
 
-      flushAWT();
-
-      while (project[0] == null || project[0].getComponent(Project.class) == null) {
-        Thread.sleep(500);
-      }
+      TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
+        public Boolean compute() {
+          return project[0] != null && project[0].getComponent(Project.class) != null;
+        }
+      });
 
       return project[0].getComponent(Project.class);
     }
