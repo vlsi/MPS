@@ -32,7 +32,7 @@ public class NodePresentationUtil {
 
   public static Icon getIcon(INodeAdapter nodeAdapter, boolean referent_presentation) {
     if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
-      return IconManager.getIconFor((ConceptDeclaration) nodeAdapter);
+      return IconManager.getIconFor(NameUtil.nodeFQName(nodeAdapter));
     }
     return IconManager.getIconFor(nodeAdapter.getNode());
   }

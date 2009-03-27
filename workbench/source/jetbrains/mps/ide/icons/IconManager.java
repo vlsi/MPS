@@ -63,24 +63,25 @@ public class IconManager {
   public static Icon getIconFor(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
-        if (node == null) return Icons.DEFAULT_ICON;
-
-        if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {
-          return Icons.DEFAULT_ICON;
+        Icon result = null;
+        if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
+          result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());  
         }
 
-        ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();
-        try {
-          return getIconFor(conceptDeclaration);
-        } catch (Throwable t) {
-          LOG.error("can't find an icon for concept declaration " + conceptDeclaration, t);
-          return Icons.DEFAULT_ICON;
+        if (result == null) {
+          if (node.isRoot()) {
+            return Icons.DEFAULT_ROOT_ICON;
+          } else {
+            return Icons.DEFAULT_ICON;
+          }
         }
+
+        return result;
       }
     });
   }
 
-  public static Icon getIconFor(ConceptDeclaration conceptDeclaration) {
+  private static Icon getIconFor(ConceptDeclaration conceptDeclaration) {
     GlobalScope scope = GlobalScope.getInstance();
     while (conceptDeclaration != null) {
       Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
@@ -96,12 +97,22 @@ public class IconManager {
       conceptDeclaration = conceptDeclaration.getExtends();
     }
 
-    return Icons.DEFAULT_ICON;
+    return null;
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
     ConceptDeclaration cd = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return getIconFor(cd);
+    Icon icon = getIconFor(cd);
+
+    if (icon == null) {
+      if (cd.isRoot()) {
+        return Icons.DEFAULT_ROOT_ICON;
+      } else {
+        return Icons.DEFAULT_ICON;
+      }
+    }
+
+    return icon;
   }
 
   public static Icon getIconFor(String namespace) {
