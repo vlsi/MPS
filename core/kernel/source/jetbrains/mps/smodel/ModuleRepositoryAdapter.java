@@ -33,4 +33,8 @@ public class ModuleRepositoryAdapter implements ModuleRepositoryListener {
   public void moduleInitialized(IModule module) {
 
   }
+
+  public void moduleChanged(IModule module) {
+
+  }
 }

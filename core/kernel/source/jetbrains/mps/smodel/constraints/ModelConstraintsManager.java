@@ -88,7 +88,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       public void moduleInitialized(IModule module) {
+      }
 
+      public void moduleChanged(IModule module) {
       }
     });
 

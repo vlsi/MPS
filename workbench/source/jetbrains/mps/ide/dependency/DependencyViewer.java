@@ -52,6 +52,9 @@ public class DependencyViewer extends BaseProjectTool {
 
     public void moduleInitialized(IModule module) {
     }
+
+    public void moduleChanged(IModule module) {
+    }
   };
 
   public DependencyViewer(Project project) {

@@ -154,6 +154,18 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
+  public void fireModuleChanged(IModule m) {    
+    if (!myModules.contains(m)) return;
+
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      try {
+        l.moduleChanged(m);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   public void fireModuleInitialized(IModule module) {
     assertCanRead();
 

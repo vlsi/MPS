@@ -101,8 +101,9 @@ public class DevKit extends AbstractModule {
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
-    MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
+    MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
+    moduleRepo.unRegisterModules(this);
+    moduleRepo.unRegisterModules(myGenerationOnlyModelsModelOwner);
 
     myDescriptor = descriptor;
 
@@ -112,6 +113,7 @@ public class DevKit extends AbstractModule {
     }
 
     reload();
+    moduleRepo.fireModuleChanged(this);
 
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());

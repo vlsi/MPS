@@ -188,5 +188,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
         unregisterLanguageKeyMaps((Language) module);
       }
     }
+
+    public void moduleChanged(IModule module) {
+    }
   }
 }

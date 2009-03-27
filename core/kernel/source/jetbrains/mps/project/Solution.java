@@ -109,6 +109,8 @@ public class Solution extends AbstractModule {
 
     reload();
 
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
+
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }

@@ -28,6 +28,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
@@ -44,7 +45,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private final MPSModuleRepository myModuleRepository;
-  private final CleanupManager myCleanupManager;
   private final Map<VirtualFile, ArrayList<IModule>> myClassPathIndex = new HashMap<VirtualFile, ArrayList<IModule>>();
   private final Set<VirtualFile> myExcludedClassPath = new HashSet<VirtualFile>();
   private boolean myIsChanged = false;
@@ -68,8 +68,9 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       GlobalClassPathIndex.this.moduleRemoved(module);
     }
   };
-  private final CleanupListener myCleanupListener = new CleanupListener() {
-    public void performCleanup() {
+  private final ModuleRepositoryListener myCleanupListener = new ModuleRepositoryAdapter() {
+    @Override
+    public void moduleChanged(IModule changedModule) {
       for (IModule module : myModuleRepository.getAllModules()) {
         if (module.isPackaged()) continue;
         GlobalClassPathIndex.this.moduleInitialized(module);
@@ -95,9 +96,8 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     myListeners.remove(l);
   }
 
-  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, CleanupManager cleanupManager) {
+  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
-    myCleanupManager = cleanupManager;
   }
 
   private void moduleInitialized(IModule module) {
@@ -270,12 +270,15 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
       }
     });
-    myCleanupManager.addCleanupListener(myCleanupListener);
+
+
+
+    myModuleRepository.addModuleRepositoryListener(myCleanupListener);
   }
 
   public void disposeComponent() {
     myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
-    myCleanupManager.removeCleanupListener(myCleanupListener);
+    myModuleRepository.removeModuleRepositoryListener(myCleanupListener);
   }
 
   public boolean isExcluded(VirtualFile file) {
