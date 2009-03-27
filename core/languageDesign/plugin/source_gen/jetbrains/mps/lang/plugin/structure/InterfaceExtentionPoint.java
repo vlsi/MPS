@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InterfaceExtentionPoint extends ExtentionPoint {
+public class InterfaceExtentionPoint extends jetbrains.mps.lang.plugin.structure.ExtentionPoint {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint";
   public static final String POINT_I_D = "pointID";
 
@@ -16,11 +16,11 @@ public class InterfaceExtentionPoint extends ExtentionPoint {
     super(node);
   }
 
-  public Expression getPointID() {
-    return (Expression)this.getChild(Expression.class, InterfaceExtentionPoint.POINT_I_D);
+  public jetbrains.mps.baseLanguage.structure.Expression getPointID() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, InterfaceExtentionPoint.POINT_I_D);
   }
 
-  public void setPointID(Expression node) {
+  public void setPointID(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(InterfaceExtentionPoint.POINT_I_D, node);
   }
 

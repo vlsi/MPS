@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -169,10 +170,12 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0628_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_0628_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_0628_0(EditorCell editorCell, SNode node, EditorContext context) {

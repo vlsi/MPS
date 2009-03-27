@@ -121,6 +121,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174491189175">
         <property name="text" value="(" />
         <link role="actionMap" targetNodeId="1174902509875" resolveInfo="ParensRegexp_Actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678519">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -131,6 +132,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174491196039">
         <property name="text" value=")" />
         <link role="actionMap" targetNodeId="1174902509875" resolveInfo="ParensRegexp_Actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678559">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -570,6 +572,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174564107521">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174564108851">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678746">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -591,6 +594,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174564111509">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678198">
           <property name="color" value="DARK_MAGENTA" />
         </node>

@@ -4,6 +4,9 @@ package jetbrains.mps.lang.plugin.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatement_DataFlow;
+import jetbrains.mps.lang.plugin.dataFlow.CommandClosureLiteral_DataFlow;
+import jetbrains.mps.lang.plugin.dataFlow.BaseExecuteCommandStatementSync_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

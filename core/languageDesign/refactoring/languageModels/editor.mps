@@ -88,6 +88,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1191237886331">
           <property name="text" value="(" />
+          <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1191237890551">
           <property name="noTargetText" value="no user friendly name" />
@@ -99,6 +100,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1191237897600">
           <property name="text" value=")" />
+          <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199457439182">
           <property name="text" value="applicable for" />
@@ -678,6 +680,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242776289">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1212242818597">
         <property name="vertical" value="true" />
@@ -699,6 +702,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242780620">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813123529" />
     </node>

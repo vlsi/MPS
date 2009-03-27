@@ -315,6 +315,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218984772590">
             <property name="text" value="(" />
+            <link role="styleClass" targetNodeId="17.1238143818889" resolveInfo="Matching" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218984772591">
               <property name="flag" value="false" />
             </node>
@@ -342,6 +343,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218984772597">
             <property name="text" value=")" />
+            <link role="styleClass" targetNodeId="17.1238143818889" resolveInfo="Matching" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218984772598">
               <property name="flag" value="false" />
             </node>
@@ -926,6 +928,9 @@
             <property name="vertical" value="false" />
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1208974887398">
               <property name="text" value="(" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238148874555">
+                <property name="labelName" value="parenthesis" />
+              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678490">
                 <property name="color" value="lightGray" />
               </node>
@@ -978,6 +983,9 @@
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1208975854394">
               <property name="text" value=")" />
               <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238148890756">
+                <property name="labelName" value="parenthesis" />
+              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678695">
                 <property name="color" value="lightGray" />
               </node>

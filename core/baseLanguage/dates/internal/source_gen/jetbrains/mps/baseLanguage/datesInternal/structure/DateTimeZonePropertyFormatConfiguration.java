@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DateTimeZonePropertyFormatConfiguration extends DateTimePropertyConfiguration {
+public class DateTimeZonePropertyFormatConfiguration extends jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZonePropertyFormatConfiguration";
 
   public DateTimeZonePropertyFormatConfiguration(SNode node) {

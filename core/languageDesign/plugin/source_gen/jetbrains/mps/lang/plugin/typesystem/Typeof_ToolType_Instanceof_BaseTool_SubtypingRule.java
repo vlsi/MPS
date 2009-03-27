@@ -5,6 +5,7 @@ package jetbrains.mps.lang.plugin.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.plugin.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Typeof_ToolType_Instanceof_BaseTool_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {

@@ -56,7 +56,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4570_0(EditorContext context, SNode node) {
     if (this.myModificationsEditor4570_0 == null) {
-      this.myModificationsEditor4570_0 = new ModificationsEditor(node);
+      this.myModificationsEditor4570_0 = new jetbrains.mps.lang.plugin.editor.ModificationsEditor(node);
     }
     EditorCell editorCell = this.myModificationsEditor4570_0.createEditorCell(context);
     setupBasic_Component_4570_0(editorCell, node, context);
@@ -194,7 +194,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -219,7 +218,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -238,7 +236,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

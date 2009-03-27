@@ -381,6 +381,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "brace");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
@@ -433,6 +434,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "brace");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
         }

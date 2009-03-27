@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExecuteWriteActionStatement extends BaseExecuteCommandStatementSync {
+public class ExecuteWriteActionStatement extends jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement";
 
   public ExecuteWriteActionStatement(SNode node) {

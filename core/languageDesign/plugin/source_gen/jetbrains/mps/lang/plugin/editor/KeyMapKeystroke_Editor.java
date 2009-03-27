@@ -162,7 +162,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -176,7 +175,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -190,7 +188,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -204,7 +201,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -219,7 +215,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -234,7 +229,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -248,7 +242,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

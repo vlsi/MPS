@@ -111,7 +111,6 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
           {
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
-
         };
         inlineStyle.apply(editorCell);
       }

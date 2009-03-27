@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DoUpdateBlock extends UpdateBlock {
+public class DoUpdateBlock extends jetbrains.mps.lang.plugin.structure.UpdateBlock {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.DoUpdateBlock";
 
   public DoUpdateBlock(SNode node) {

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.plugin.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
@@ -797,7 +798,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-
     }).isNotEmpty();
   }
 
@@ -863,7 +863,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-
     }).isNotEmpty();
   }
 
@@ -1193,7 +1192,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration");
       }
-
     }).toListSequence();
   }
 
@@ -1203,7 +1201,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration");
       }
-
     }).toListSequence();
   }
 
@@ -1229,7 +1226,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
       }
-
     });
   }
 
@@ -1243,7 +1239,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-
     });
   }
 

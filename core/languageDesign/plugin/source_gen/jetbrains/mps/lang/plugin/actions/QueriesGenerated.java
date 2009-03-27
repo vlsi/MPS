@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.plugin.actions._Quotations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -48,7 +49,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return ListSequence.<SNode>fromArray(new _Quotations.QuotationClass_0().createNode(), new _Quotations.QuotationClass_1().createNode(), new _Quotations.QuotationClass_2().createNode());
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -71,7 +71,6 @@ public class QueriesGenerated {
                 }
                 return "";
               }
-
             });
           }
         }
@@ -86,7 +85,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -105,7 +103,6 @@ public class QueriesGenerated {
                   public boolean accept(SNode it) {
                     return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "name"));
                   }
-
                 }).first();
                 if (annotation == null) {
                   return "";
@@ -115,14 +112,12 @@ public class QueriesGenerated {
                   public boolean accept(SNode it) {
                     return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("description");
                   }
-
                 }).first();
                 if (value == null) {
                   return "";
                 }
                 return SPropertyOperations.getString(SLinkOperations.getTarget(value, "value", true), "value");
               }
-
             });
           }
         }
@@ -152,7 +147,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -164,7 +158,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, "action", (item), false);
                 return result;
               }
-
             });
           }
         }
@@ -187,7 +180,6 @@ public class QueriesGenerated {
           boolean isModel = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SModelType");
           return !(isNode || isNList || isModel);
         }
-
       };
       if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();

@@ -144,7 +144,6 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

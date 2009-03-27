@@ -5036,6 +5036,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176795396042">
             <property name="text" value="(" />
+            <link role="styleClass" targetNodeId="26.1238143818889" resolveInfo="Matching" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1176795396043">
             <property name="separatorText" value="," />
@@ -5043,6 +5044,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176795396044">
             <property name="text" value=")" />
+            <link role="styleClass" targetNodeId="26.1238143818889" resolveInfo="Matching" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994275">
             <property name="flag" value="false" />

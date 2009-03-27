@@ -893,9 +893,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1145383245687">
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996114">
-          <property name="flag" value="false" />
-        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237817289958" />
     </node>

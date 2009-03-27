@@ -43,6 +43,7 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237811521778" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1187343582397">
     <link role="conceptDeclaration" targetNodeId="1.1187340310888" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1187343594899">
@@ -52,6 +53,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1187343622248">
         <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1187344116411">
         <link role="relationDeclaration" targetNodeId="1.1187344039345" />
@@ -64,6 +66,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1187343637158">
         <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237811521776" />
     </node>

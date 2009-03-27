@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExecuteCommandInEDTStatement extends BaseExecuteCommandStatement {
+public class ExecuteCommandInEDTStatement extends jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement";
 
   public ExecuteCommandInEDTStatement(SNode node) {

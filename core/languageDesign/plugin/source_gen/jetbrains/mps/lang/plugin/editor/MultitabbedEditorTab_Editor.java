@@ -318,7 +318,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -331,7 +330,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -352,7 +350,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -394,7 +391,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -407,7 +403,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -420,7 +415,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

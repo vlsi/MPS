@@ -152,6 +152,14 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4975_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "parensesis");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNodeList_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -160,6 +168,14 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4975_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "parensesis");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_4975_4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,14 +206,6 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4975_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_5");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "brace");
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupLabel_Constant_4975_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

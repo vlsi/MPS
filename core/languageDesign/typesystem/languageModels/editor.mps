@@ -2772,12 +2772,18 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215687143741">
         <property name="text" value="(" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150394662">
+          <property name="labelName" value="brace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1215687148978">
         <link role="relationDeclaration" targetNodeId="1.1215687039958" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215687151699">
         <property name="text" value=")" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150399655">
+          <property name="labelName" value="brace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215687614362">
         <property name="text" value="skipDepOnCurrent=" />
@@ -2787,6 +2793,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215687156341">
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150375548">
+          <property name="labelName" value="square-bracket" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215687162844">
         <link role="relationDeclaration" targetNodeId="1.1215687068337" resolveInfo="modelId" />
@@ -2799,6 +2808,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215687198337">
         <property name="text" value="]" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150378644">
+          <property name="labelName" value="square-bracket" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813583147" />
     </node>
@@ -2815,18 +2827,27 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215697557630">
         <property name="text" value="(" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150245242">
+          <property name="labelName" value="brace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215697557631">
         <link role="relationDeclaration" targetNodeId="1.1215689874440" resolveInfo="inequationPriority" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215697557632">
         <property name="text" value=")" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150252847">
+          <property name="labelName" value="brace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1215697557633">
         <link role="relationDeclaration" targetNodeId="1.1215689671057" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215697557634">
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150256488">
+          <property name="labelName" value="square-bracket" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215697557635">
         <link role="relationDeclaration" targetNodeId="1.1215689689546" resolveInfo="modelId" />
@@ -2839,6 +2860,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215697557638">
         <property name="text" value="];" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238150360846">
+          <property name="labelName" value="square-bracket" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237812032280">
           <property name="flag" value="true" />
         </node>

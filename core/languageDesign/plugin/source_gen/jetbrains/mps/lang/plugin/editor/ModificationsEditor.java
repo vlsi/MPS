@@ -99,7 +99,6 @@ public class ModificationsEditor extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -112,7 +111,6 @@ public class ModificationsEditor extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -125,7 +123,6 @@ public class ModificationsEditor extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InterfaceGroup extends ActionGroupDeclaration {
+public class InterfaceGroup extends jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceGroup";
   public static final String GROUP_I_D = "groupID";
 
@@ -16,11 +16,11 @@ public class InterfaceGroup extends ActionGroupDeclaration {
     super(node);
   }
 
-  public Expression getGroupID() {
-    return (Expression)this.getChild(Expression.class, InterfaceGroup.GROUP_I_D);
+  public jetbrains.mps.baseLanguage.structure.Expression getGroupID() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, InterfaceGroup.GROUP_I_D);
   }
 
-  public void setGroupID(Expression node) {
+  public void setGroupID(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(InterfaceGroup.GROUP_I_D, node);
   }
 

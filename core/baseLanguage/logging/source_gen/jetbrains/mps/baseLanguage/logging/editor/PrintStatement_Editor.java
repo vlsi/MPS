@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -99,10 +100,12 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8438_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8438_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8438_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8438_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8438_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,7 +119,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -206,7 +208,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

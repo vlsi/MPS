@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.plugin.editor._Quotations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -136,7 +137,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_6715_0(editorCell, node, context);
@@ -153,7 +153,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), "name"));
           }
-
         }).first();
         if (annotation == null) {
           return "";
@@ -163,7 +162,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("description");
           }
-
         }).first();
         if (description == null) {
           return "";
@@ -178,7 +176,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_6715_1(editorCell, node, context);
@@ -195,7 +192,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "name"));
           }
-
         }).first();
         if (annotation == null) {
           return "";
@@ -205,7 +201,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("longDescription");
           }
-
         }).last();
         if (longDescription == null) {
           return "";
@@ -220,7 +215,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_6715_2(editorCell, node, context);
@@ -359,7 +353,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -372,7 +365,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -385,7 +377,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -398,7 +389,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -411,7 +401,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

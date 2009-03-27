@@ -187,7 +187,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

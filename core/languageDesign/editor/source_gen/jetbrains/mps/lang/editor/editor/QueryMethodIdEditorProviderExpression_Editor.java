@@ -21,6 +21,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -351,6 +352,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_9522_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9522_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_9522_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -359,6 +361,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
   private static void setupBasic_Constant_9522_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9522_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_9522_3(EditorCell editorCell, SNode node, EditorContext context) {

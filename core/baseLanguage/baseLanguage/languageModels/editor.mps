@@ -14312,6 +14312,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180802">
         <property name="text" value="(" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238146606480">
+          <property name="labelName" value="parensesis" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1224071180803">
         <property name="vertical" value="false" />
@@ -14324,6 +14327,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180805">
         <property name="text" value=")" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238146629208">
+          <property name="labelName" value="parensesis" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180806">
         <property name="text" value="{" />
@@ -14344,9 +14350,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180811">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="1238143818889" resolveInfo="Matching" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238143597819">
-          <property name="labelName" value="brace" />
-        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237480441752" />
     </node>
