@@ -2069,10 +2069,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public boolean isValid(EditorCell cell) {
-    if (cell == myRootCell) return true;
-    if (cell == null) return false;
-    if (cell.getParent() == null) return false;
-    return isValid(cell.getParent());
+    return ((EditorCell_Basic) cell).isInTree() && cell.getEditor() == this;
   }
 
   public void setSelectedStackFromMemento(Stack<CellInfo> mementoSelectedStack) {

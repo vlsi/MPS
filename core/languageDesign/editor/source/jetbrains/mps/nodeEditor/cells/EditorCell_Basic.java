@@ -54,7 +54,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public static final int BRACKET_WIDTH = 7;
 
-
   private Map myUserObjects;
 
   protected int myX = 0;
@@ -1261,7 +1260,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return true;
   }
 
-  boolean isInTree() {
+  public boolean isInTree() {
     return myInTree;
   }
 
