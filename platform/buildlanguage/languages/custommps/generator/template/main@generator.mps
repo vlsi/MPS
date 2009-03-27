@@ -4025,6 +4025,22 @@
           </node>
         </node>
       </node>
+      <node role="embeddedJrePath" type="jetbrains.mps.build.packaging.structure.Path" id="1238075885041">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238075885042">
+          <property name="name" value="mps_home" />
+        </node>
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238075885043">
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238075896529">
+            <property name="path" value="build" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238075899156">
+            <property name="path" value="tools" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238075901189">
+            <property name="path" value="jre.zip" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UnixConfig" id="1234780843439" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">

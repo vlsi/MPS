@@ -31,7 +31,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return ListSequence.fromList(new LinkedList<String>()).addSequence(Sequence.fromArray("Editor", "Viewer", "Shell", "None"));
           }
-
         };
         Iterable<String> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -43,7 +42,6 @@ public class QueriesGenerated {
                 SPropertyOperations.set(role, "name", "" + ((item)));
                 return role;
               }
-
             });
           }
         }

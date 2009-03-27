@@ -35,10 +35,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
-  <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="11" />
-  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
+  <import index="1" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
@@ -472,6 +471,22 @@
                 </node>
                 <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1231854187154">
                   <link role="relationDeclaration" targetNodeId="1.1231848713325" />
+                </node>
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238075527281">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1238075527282">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1238075527283">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1238075527284">
+                  <property name="text" value="path to embedded jre zip file" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238075527285">
+                  <link role="relationDeclaration" targetNodeId="1.1238075486867" />
                 </node>
               </node>
               <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1234795229401">

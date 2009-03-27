@@ -666,6 +666,30 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1238075770695(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238076304842(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238076323202(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238076335983(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238076404825(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238076497643(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
   }
@@ -700,6 +724,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1238069853816(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true);
+  }
+
+  public static SNode sourceNodeQuery_1238076229521(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
