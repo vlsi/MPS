@@ -494,13 +494,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
-   public void updateMessages(Set<EditorMessage> messages) {
-    super.updateMessages(messages);
-    for (EditorCell child : myEditorCells) {
-      child.updateMessages(messages);
-    }
-  }
-
   public void moveTo(int x, int y) {
     if (x == myX && y == myY) {
       return;

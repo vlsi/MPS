@@ -44,9 +44,9 @@
               <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1170351924342">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170351924343">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216411056408">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216411048968">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1216411048969" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1216411048970">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238168932484">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238168932485" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1238168932486">
                         <link role="conceptProperty" targetNodeId="8.1137473891462" resolveInfo="alias" />
                       </node>
                     </node>

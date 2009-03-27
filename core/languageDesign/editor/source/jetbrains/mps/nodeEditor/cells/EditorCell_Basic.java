@@ -72,7 +72,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   private NodeSubstituteInfo mySubstitueInfo;
   private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();  
 
-  private List<EditorMessage> myMessages = new ArrayList<EditorMessage>();
   private Style myStyle = new Style(this);
 
   private EditorCellKeyMap myKeyMap;
@@ -664,10 +663,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public List<EditorMessage> getMessages() {
-    if (myMessages == null) {
-      return Collections.emptyList();
-    }
-    return new ArrayList<EditorMessage>(myMessages);
+    return getEditor().getHighlightManager().getMessages(this);
   }
 
   public <T extends EditorMessage> List<T> getMessages(Class<T> clazz) {
@@ -681,11 +677,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
-    if (myMessages == null) {
-      return Collections.emptyList();
-    }
     ArrayList<EditorMessage> result = new ArrayList<EditorMessage>(1);
-    for (EditorMessage message : myMessages) {
+    for (EditorMessage message : getMessages()) {
       if (message.getOwner() == owner) {
         result.add(message);
       }
@@ -965,26 +958,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setFocusPolicy(FocusPolicy fp) {
     getStyle().set(StyleAttributes.FOCUS_POLICY, fp);
-  }
-
-  public void updateMessages(Set<EditorMessage> messages) {
-    myMessages = null;
-    for (EditorMessage message : new ArrayList<EditorMessage>(messages)) {
-      if (message.acceptCell(this, getEditor())) {
-        messages.remove(message);
-        if (myMessages == null) {
-          myMessages = new ArrayList<EditorMessage>(1);
-        }
-        myMessages.add(message);
-      }
-    }
-  }
-
-  public void addMessage(EditorMessage message) {
-    if (myMessages == null) {
-      myMessages = new ArrayList<EditorMessage>(1);
-    }
-    myMessages.add(message);
   }
 
   public boolean isAbove(EditorCell cell) {

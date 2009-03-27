@@ -695,16 +695,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void updateMessages() {
-    Set<EditorMessage> messages = getMessages();
-    myRootCell.updateMessages(messages);
-    if (!messages.isEmpty()) { //messages without cells
-      for (EditorMessage message : messages) {
-        EditorCell cell = message.getCellForParentNodeInMainEditor(this);
-        if (cell != null) {
-          cell.addMessage(message);
-        }
-      }
-    }
+
+    //todo remove
     getExternalComponent().repaint();
   }
 

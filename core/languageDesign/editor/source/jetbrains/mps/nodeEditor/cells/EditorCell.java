@@ -198,9 +198,6 @@ public interface EditorCell extends Cloneable {
   FocusPolicy getFocusPolicy();
   void setFocusPolicy(FocusPolicy fp);
 
-  //don't use it from outside of editor, use EditorComponent.updateMessages instead
-  void updateMessages(Set<EditorMessage> messages);
-  void addMessage(EditorMessage message);
   List<EditorMessage> getMessages();
   <T extends EditorMessage> List<T> getMessages(Class<T> clazz);
   List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner);

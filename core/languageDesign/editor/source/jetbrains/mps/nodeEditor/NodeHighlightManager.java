@@ -18,8 +18,14 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinder;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.awt.Color;
 import java.util.*;
@@ -44,6 +50,39 @@ public class NodeHighlightManager implements EditorMessageOwner {
       }
     };
     ClassLoaderManager.getInstance().addReloadHandler(myHandler);
+  }
+
+  public List<EditorMessage> getMessages(EditorCell cell) {
+    final SNode node = cell.getSNode();
+    final List<EditorMessage> result = new ArrayList<EditorMessage>();
+    if (node == null) return result;
+    Set<EditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
+    for (EditorMessage message : messageSet) {
+      if (message.acceptCell(cell, myEditor)) {
+        result.add(message);
+      }
+    }
+    if (cell.isBigCell()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (SNode child : node.getChildren()) {
+            EditorCell cellForChild = myEditor.findNodeCell(child);
+            if (cellForChild == null) {
+              getMessagesFromDescendants(child, result);
+            }
+          }
+        }
+      });
+
+    }
+    return result;
+  }
+
+  private void getMessagesFromDescendants(SNode nodeWithoutCell, List<EditorMessage> messages) {
+    messages.addAll(myMessagesToNodes.getBySecond(nodeWithoutCell));
+    for (SNode descendant : nodeWithoutCell.getDescendants()) {
+      messages.addAll(myMessagesToNodes.getBySecond(descendant));
+    }
   }
 
   private void addMessage(EditorMessage m) {
