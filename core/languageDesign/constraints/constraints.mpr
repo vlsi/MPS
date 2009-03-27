@@ -16,27 +16,31 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\constraintLanguageSandbox\constraintLanguageSandbox.msd" />
+      <solutionPath path="${project}/solutions/constraintLanguageSandbox/constraintLanguageSandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\constraintsLanguage.mpl" />
-      <languagePath path="${mps_home}\core\languageDesign\actionsLanguage\languageDescriptor.mpl" />
-      <languagePath path="${mps_home}\core\baseLanguage\baseLanguage\baseLanguage.mpl" />
-      <languagePath path="${mps_home}\core\languageDesign\structureLanguage\languageDescriptor.mpl" />
+      <languagePath path="${project}/constraintsLanguage.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/actionsLanguage/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/structureLanguage/languageDescriptor.mpl" />
+      <languagePath path="${project}/constraints.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="Constraints language" language="jetbrains.mps.lang.constraints" />
+      <genConfModule name="Constraints language" moduleRef="jetbrains.mps.lang.constraints" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="constraintsLanguage" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

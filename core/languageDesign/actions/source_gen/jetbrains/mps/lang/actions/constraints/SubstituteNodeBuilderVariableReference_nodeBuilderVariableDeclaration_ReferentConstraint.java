@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -34,7 +33,7 @@ public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclarati
     if (builder != null) {
       ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "variable", true)));
     }
-    return new SimpleSearchScope(vars);
+    return vars;
   }
 
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -37,7 +36,7 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
     if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")) {
       ListSequence.fromList(matches).addElement(top);
     }
-    return new SimpleSearchScope(matches);
+    return matches;
   }
 
 }

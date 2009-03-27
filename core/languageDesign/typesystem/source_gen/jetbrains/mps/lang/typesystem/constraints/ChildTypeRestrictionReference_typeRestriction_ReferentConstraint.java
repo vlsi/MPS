@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ChildTypeRestrictionReference_typeRestriction_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -28,7 +27,7 @@ public class ChildTypeRestrictionReference_typeRestriction_ReferentConstraint ex
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> childTypeRestrictions = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false), "childTypeRestriction", true);
-    return new SimpleSearchScope(childTypeRestrictions);
+    return childTypeRestrictions;
   }
 
 }

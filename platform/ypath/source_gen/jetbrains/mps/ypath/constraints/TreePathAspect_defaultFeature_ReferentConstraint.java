@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TreePathAspect_defaultFeature_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -24,7 +23,7 @@ public class TreePathAspect_defaultFeature_ReferentConstraint extends BaseNodeRe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(SLinkOperations.getTargets(_context.getEnclosingNode(), "features", true));
+    return SLinkOperations.getTargets(_context.getEnclosingNode(), "features", true);
   }
 
 }

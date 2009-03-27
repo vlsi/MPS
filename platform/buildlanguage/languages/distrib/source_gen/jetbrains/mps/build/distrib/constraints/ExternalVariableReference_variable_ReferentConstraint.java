@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ExternalVariableReference_variable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -33,7 +32,7 @@ public class ExternalVariableReference_variable_ReferentConstraint extends BaseN
     List<SNode> availableVars = ListSequence.<SNode>fromArray();
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "builtInVariable", true)));
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));
-    return new SimpleSearchScope(availableVars);
+    return availableVars;
   }
 
 }

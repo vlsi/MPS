@@ -5,6 +5,16 @@ package jetbrains.mps.ypath.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.ypath.constraints.TreeNodeKindProperty_default_PropertyConstraint;
+import jetbrains.mps.ypath.constraints.IFeature_default_PropertyConstraint;
+import jetbrains.mps.ypath.constraints.MatchPropertyOperation_property_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.TreePathAspect_defaultFeature_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.IterateOperation_usedFeature_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.IFeature_opposite_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.TreePathAdapterExpression_treepathAspect_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.TreeNodeKindReference_treeNodeKind_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.TreeNodeKindOccurrence_nodeKind_ReferentConstraint;
+import jetbrains.mps.ypath.constraints.NodeKindSpecificCase_treeNodeKind_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

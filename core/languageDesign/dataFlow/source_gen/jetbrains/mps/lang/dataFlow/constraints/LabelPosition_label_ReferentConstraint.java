@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LabelPosition_label_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -31,7 +30,7 @@ public class LabelPosition_label_ReferentConstraint extends BaseNodeReferenceSea
     List<SNode> labels = ListOperations.<SNode>createList();
     SNode builder = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", true, false);
     ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", true)));
-    return new SimpleSearchScope(labels);
+    return labels;
   }
 
 }

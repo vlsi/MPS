@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -34,7 +33,7 @@ public class SideTransformVariableReference_rightTransformVariableDeclaration_Re
     if (builder != null) {
       ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "variable", true)));
     }
-    return new SimpleSearchScope(vars);
+    return vars;
   }
 
 }

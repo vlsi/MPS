@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class PropertyRefQualifier_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -40,7 +39,7 @@ public class PropertyRefQualifier_property_ReferentConstraint extends BaseNodeRe
     if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept));
+    return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept);
   }
 
 }

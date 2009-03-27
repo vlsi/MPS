@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -30,7 +29,7 @@ public class IFeature_opposite_ReferentConstraint extends BaseNodeReferenceSearc
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode feature = _context.getReferenceNode();
     final boolean isGeneric = SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-    return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature), "features", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != feature && ((isGeneric ?
@@ -38,8 +37,7 @@ public class IFeature_opposite_ReferentConstraint extends BaseNodeReferenceSearc
           !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"))
         ));
       }
-
-    }).toListSequence());
+    }).toListSequence();
   }
 
 }

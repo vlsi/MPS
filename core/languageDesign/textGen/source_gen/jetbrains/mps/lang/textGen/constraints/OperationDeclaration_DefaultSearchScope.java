@@ -5,6 +5,7 @@ package jetbrains.mps.lang.textGen.constraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
@@ -14,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class OperationDeclaration_DefaultSearchScope implements INodeReferentSearchScopeProvider {
 

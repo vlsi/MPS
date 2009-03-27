@@ -327,13 +327,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236703334581">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236703336552">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1236703338976">
-                <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236703340836">
-                  <link role="variableDeclaration" targetNodeId="1236703309945" resolveInfo="result" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236703340836">
+              <link role="variableDeclaration" targetNodeId="1236703309945" resolveInfo="result" />
             </node>
           </node>
         </node>
@@ -425,13 +420,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237206539838">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237206542137">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237206565796">
-                <link role="baseMethodDeclaration" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237206567985">
-                  <link role="variableDeclaration" targetNodeId="1237206517642" resolveInfo="method" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237206567985">
+              <link role="variableDeclaration" targetNodeId="1237206517642" resolveInfo="method" />
             </node>
           </node>
         </node>

@@ -12,5 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
   </component>
+  <component name="ProjectRunConfigurationManager" />
+  <component name="SvnBranchConfigurationManager" />
 </module>
 

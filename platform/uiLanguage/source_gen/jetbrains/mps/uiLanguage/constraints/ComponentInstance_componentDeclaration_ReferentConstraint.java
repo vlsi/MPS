@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ComponentInstance_componentDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -36,9 +35,8 @@ public class ComponentInstance_componentDeclaration_ReferentConstraint extends B
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "abstract"));
       }
-
     }));
-    return new SimpleSearchScope(components);
+    return components;
   }
 
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class SConceptPropertyAccess_conceptProperty_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -30,7 +29,7 @@ public class SConceptPropertyAccess_conceptProperty_ReferentConstraint extends B
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // concept properties from hierarchy
+    //     concept properties from hierarchy
     SNode operandConcept = SModelLanguageUtil.getConcept(SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true));
     if ((operandConcept == null)) {
       SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true));
@@ -41,7 +40,7 @@ public class SConceptPropertyAccess_conceptProperty_ReferentConstraint extends B
         operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
       }
     }
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getConceptPropertyDeclarations_1213877394562(operandConcept));
+    return AbstractConceptDeclaration_Behavior.call_getConceptPropertyDeclarations_1213877394562(operandConcept);
   }
 
 }

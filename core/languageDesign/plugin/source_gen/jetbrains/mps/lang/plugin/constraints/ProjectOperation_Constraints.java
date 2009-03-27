@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.plugin.constraints._Quotations;
 
 public class ProjectOperation_Constraints {
 

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class AnnotationInstanceValue_key_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -33,7 +32,7 @@ public class AnnotationInstanceValue_key_ReferentConstraint extends BaseNodeRefe
     if (SLinkOperations.getTarget(parent, "annotation", false) != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true)));
     }
-    return new SimpleSearchScope(result);
+    return result;
   }
 
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -45,15 +44,14 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
-    // reference only?
+    //     reference only?
     links = ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
-
     }).toListSequence();
-    return new SimpleSearchScope(links);
+    return links;
   }
 
 }

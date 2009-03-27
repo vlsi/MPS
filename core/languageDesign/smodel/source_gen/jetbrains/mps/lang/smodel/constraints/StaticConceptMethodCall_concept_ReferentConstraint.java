@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior;
 
 public class StaticConceptMethodCall_concept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -24,7 +23,7 @@ public class StaticConceptMethodCall_concept_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getEnclosingNode()));
+    return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getEnclosingNode());
   }
 
 }

@@ -188,13 +188,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104858815">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888398085">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888398087">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858817">
-                  <link role="variableDeclaration" targetNodeId="1222876888090" resolveInfo="matches" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858817">
+              <link role="variableDeclaration" targetNodeId="1222876888090" resolveInfo="matches" />
             </node>
           </node>
         </node>
@@ -319,13 +314,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104860414">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888329407">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888329409">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104860416">
-                  <link role="variableDeclaration" targetNodeId="1222876750635" resolveInfo="matches" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104860416">
+              <link role="variableDeclaration" targetNodeId="1222876750635" resolveInfo="matches" />
             </node>
           </node>
         </node>

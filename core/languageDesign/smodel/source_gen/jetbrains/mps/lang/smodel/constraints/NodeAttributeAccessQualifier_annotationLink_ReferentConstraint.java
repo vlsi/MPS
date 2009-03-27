@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class NodeAttributeAccessQualifier_annotationLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -36,9 +35,8 @@ public class NodeAttributeAccessQualifier_annotationLink_ReferentConstraint exte
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "stereotype", "node", "node");
       }
-
     }).toListSequence();
-    return new SimpleSearchScope(nodeAttrLinks);
+    return nodeAttrLinks;
   }
 
 }

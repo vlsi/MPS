@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class QuickFixArgumentReference_quickFixArgument_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -34,7 +33,7 @@ public class QuickFixArgumentReference_quickFixArgument_ReferentConstraint exten
     if ((quickFix != null)) {
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(quickFix, "quickFixArgument", true)));
     }
-    return new SimpleSearchScope(nodes);
+    return nodes;
   }
 
 }

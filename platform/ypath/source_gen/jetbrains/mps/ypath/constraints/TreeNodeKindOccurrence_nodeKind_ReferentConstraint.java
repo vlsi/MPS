@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -30,13 +29,12 @@ public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint extends BaseNode
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     SNode tpa = (SNode)ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
-    return new SimpleSearchScope(ListSequence.fromList(SNodeOperations.getDescendants(tpa, null, false)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(tpa, null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
       }
-
-    }).toListSequence());
+    }).toListSequence();
   }
 
 }

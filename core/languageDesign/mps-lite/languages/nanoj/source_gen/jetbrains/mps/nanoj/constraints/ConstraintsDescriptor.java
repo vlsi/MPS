@@ -5,6 +5,11 @@ package jetbrains.mps.nanoj.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.nanoj.constraints.Constructor_name_PropertyConstraint;
+import jetbrains.mps.nanoj.constraints.FieldAccess_declaration_ReferentConstraint;
+import jetbrains.mps.nanoj.constraints.ParameterReference_parameter_ReferentConstraint;
+import jetbrains.mps.nanoj.constraints.InstanceMethodCall_method_ReferentConstraint;
+import jetbrains.mps.nanoj.constraints.LocalVariableReference_variable_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

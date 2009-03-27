@@ -16,7 +16,6 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -52,7 +51,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
         }
       }
     }
-    return new SimpleSearchScope(resultProperties);
+    return resultProperties;
   }
 
 }

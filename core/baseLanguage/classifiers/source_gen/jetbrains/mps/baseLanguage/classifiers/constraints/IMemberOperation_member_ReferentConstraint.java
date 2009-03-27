@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavi
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -49,7 +48,7 @@ public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenc
       {
       }
     }
-    return new SimpleSearchScope(applicableMembers);
+    return applicableMembers;
   }
 
 }

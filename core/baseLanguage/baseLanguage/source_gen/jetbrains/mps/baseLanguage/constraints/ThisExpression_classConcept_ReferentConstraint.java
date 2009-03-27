@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 
 public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -24,7 +23,7 @@ public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(_context.getEnclosingNode()));
+    return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(_context.getEnclosingNode());
   }
 
 }

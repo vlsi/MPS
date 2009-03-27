@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
@@ -43,12 +42,12 @@ public class CellModel_RefCell_linkDeclaration_ReferentConstraint extends BaseNo
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
-    return new SimpleSearchScope(ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
-    }).toListSequence());
+    }).toListSequence();
   }
 
 }

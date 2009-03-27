@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -25,7 +24,7 @@ public class Variable_DefaultSearchScope implements INodeReferentSearchScopeProv
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new SimpleSearchScope(IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false)));
+    return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false));
   }
 
 }

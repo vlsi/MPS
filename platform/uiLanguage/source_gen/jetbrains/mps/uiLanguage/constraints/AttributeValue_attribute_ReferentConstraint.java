@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class AttributeValue_attribute_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -35,7 +34,7 @@ public class AttributeValue_attribute_ReferentConstraint extends BaseNodeReferen
     if (instance != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ComponentDeclaration_Behavior.call_getAttributes_1213877495417(SLinkOperations.getTarget(instance, "componentDeclaration", false))));
     }
-    return new SimpleSearchScope(result);
+    return result;
   }
 
 }

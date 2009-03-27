@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.ypath.actions.TreePathAspectUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -27,7 +26,7 @@ public class TreePathAdapterExpression_treepathAspect_ReferentConstraint extends
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode tpae = _context.getReferenceNode();
-    return new SimpleSearchScope(TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), operationContext.getScope()));
+    return TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), operationContext.getScope());
   }
 
 }

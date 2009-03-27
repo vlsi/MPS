@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -34,7 +33,7 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint ex
     for(SNode whenConcreteStatement : whenConcreteStatements) {
       ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
     }
-    return new SimpleSearchScope(declarations);
+    return declarations;
   }
 
 }

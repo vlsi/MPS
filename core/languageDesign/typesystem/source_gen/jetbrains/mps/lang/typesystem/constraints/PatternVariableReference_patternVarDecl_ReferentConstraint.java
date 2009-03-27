@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PatternVariableReference_patternVarDecl_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -60,7 +59,7 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint extends 
       }
       matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     }
-    return new SimpleSearchScope(result);
+    return result;
   }
 
 }

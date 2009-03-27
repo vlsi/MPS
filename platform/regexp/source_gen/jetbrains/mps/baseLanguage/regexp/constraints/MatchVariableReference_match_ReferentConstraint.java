@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class MatchVariableReference_match_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -42,7 +41,7 @@ public class MatchVariableReference_match_ReferentConstraint extends BaseNodeRef
         ListSequence.fromList(matches).addElement(mpe);
       }
     }
-    return new SimpleSearchScope(matches);
+    return matches;
   }
 
 }

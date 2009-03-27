@@ -30,7 +30,7 @@ public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeRefere
     if ((SLinkOperations.getTarget(_context.getReferenceNode(), "project", false) == null)) {
       return new SimpleSearchScope(ListOperations.<SNode>createList());
     }
-    return new SimpleSearchScope(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true)).toListSequence());
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true)).toListSequence();
   }
 
 }

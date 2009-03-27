@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_member_ReferentConstraint;
+import jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpresson_classifier_ReferentConstraint;
+import jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_classifier_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

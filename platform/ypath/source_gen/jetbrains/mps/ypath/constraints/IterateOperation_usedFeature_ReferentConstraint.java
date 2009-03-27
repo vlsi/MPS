@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
@@ -37,7 +36,7 @@ public class IterateOperation_usedFeature_ReferentConstraint extends BaseNodeRef
     {
       tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     }
-    return new SimpleSearchScope(Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))).toListSequence());
+    return Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))).toListSequence();
   }
 
 }

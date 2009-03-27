@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -30,7 +29,7 @@ public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint ex
     //     links declared in edited concept' hierarchy and not overridden
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellMenuComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept));
+    return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
   }
 
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior;
 
 public class CellModel_Component_editorComponent_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -27,7 +26,7 @@ public class CellModel_Component_editorComponent_ReferentConstraint extends Base
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
-    return new SimpleSearchScope(BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope()));
+    return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
   }
 
 }

@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -29,7 +28,7 @@ public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint 
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // all 'property' annotation links
+    //     all 'property' annotation links
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, operationContext.getScope());
     List<SNode> propertyAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter <SNode>() {
@@ -37,9 +36,8 @@ public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint 
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "stereotype", "property", "node");
       }
-
     }).toListSequence();
-    return new SimpleSearchScope(propertyAttrLinks);
+    return propertyAttrLinks;
   }
 
 }

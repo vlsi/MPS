@@ -208,16 +208,11 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104836701">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104836702">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104836703">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104836704">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104836705">
-                    <link role="variableDeclaration" targetNodeId="1213104836693" resolveInfo="enclosingClosure" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" id="1213104836706" />
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104836704">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104836705">
+                <link role="variableDeclaration" targetNodeId="1213104836693" resolveInfo="enclosingClosure" />
               </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" id="1213104836706" />
             </node>
           </node>
         </node>
@@ -403,13 +398,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104844567">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104844568">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104844569">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104844570">
-                  <link role="variableDeclaration" targetNodeId="1213104844546" resolveInfo="declarations" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104844570">
+              <link role="variableDeclaration" targetNodeId="1213104844546" resolveInfo="declarations" />
             </node>
           </node>
         </node>
@@ -568,18 +558,13 @@
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846936">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846937">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846938">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104846939">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104846940">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215682259266">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1215682254061">
-                    <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
-                    <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1215682243816" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215682263686">
-                    <link role="baseMethodDeclaration" targetNodeId="50.1215682129821" resolveInfo="getPossibleClassifiers" />
-                  </node>
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215682259266">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1215682254061">
+                <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1215682243816" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215682263686">
+                <link role="baseMethodDeclaration" targetNodeId="50.1215682129821" resolveInfo="getPossibleClassifiers" />
               </node>
             </node>
           </node>
@@ -690,17 +675,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104847275">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104847276">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104847277">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104847278">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104847279">
-                    <link role="variableDeclaration" targetNodeId="1213104847254" resolveInfo="superClass" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213104847280">
-                    <link role="link" targetNodeId="1.1068390468201" />
-                  </node>
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104847278">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104847279">
+                <link role="variableDeclaration" targetNodeId="1213104847254" resolveInfo="superClass" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213104847280">
+                <link role="link" targetNodeId="1.1068390468201" />
               </node>
             </node>
           </node>
@@ -913,17 +893,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104855801">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104855802">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104855803">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104855804">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104855805">
-                    <link role="variableDeclaration" targetNodeId="1213104855793" resolveInfo="thisConcept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213104855806">
-                    <link role="link" targetNodeId="1.1068390468201" />
-                  </node>
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104855804">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104855805">
+                <link role="variableDeclaration" targetNodeId="1213104855793" resolveInfo="thisConcept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213104855806">
+                <link role="link" targetNodeId="1.1068390468201" />
               </node>
             </node>
           </node>
@@ -1230,13 +1205,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104856731">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104856732">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104856733">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104856734">
-                  <link role="variableDeclaration" targetNodeId="1213104856713" resolveInfo="params" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104856734">
+              <link role="variableDeclaration" targetNodeId="1213104856713" resolveInfo="params" />
             </node>
           </node>
         </node>
@@ -1375,13 +1345,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104858510">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104858511">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104858512">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858513">
-                  <link role="variableDeclaration" targetNodeId="1213104858484" resolveInfo="result" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858513">
+              <link role="variableDeclaration" targetNodeId="1213104858484" resolveInfo="result" />
             </node>
           </node>
         </node>
@@ -1665,13 +1630,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104859491">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104859492">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104859493">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859494">
-                  <link role="variableDeclaration" targetNodeId="1213104859435" resolveInfo="resultProperties" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859494">
+              <link role="variableDeclaration" targetNodeId="1213104859435" resolveInfo="resultProperties" />
             </node>
           </node>
         </node>

@@ -119,13 +119,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104855867">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217377949601">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217377949603">
-                <link role="baseMethodDeclaration" targetNodeId="6.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104855869">
-                  <link role="variableDeclaration" targetNodeId="1213104855850" resolveInfo="vars" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104855869">
+              <link role="variableDeclaration" targetNodeId="1213104855850" resolveInfo="vars" />
             </node>
           </node>
         </node>
@@ -200,13 +195,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104859117">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217377949850">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217377949852">
-                <link role="baseMethodDeclaration" targetNodeId="6.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859119">
-                  <link role="variableDeclaration" targetNodeId="1213104859091" resolveInfo="vars" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859119">
+              <link role="variableDeclaration" targetNodeId="1213104859091" resolveInfo="vars" />
             </node>
           </node>
         </node>

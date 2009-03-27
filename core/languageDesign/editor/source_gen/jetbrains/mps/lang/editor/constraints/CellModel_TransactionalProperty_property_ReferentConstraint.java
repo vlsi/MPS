@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class CellModel_TransactionalProperty_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -29,7 +28,7 @@ public class CellModel_TransactionalProperty_property_ReferentConstraint extends
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     SNode editedConcept = SLinkOperations.getTarget(editorComponent, "conceptDeclaration", false);
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(editedConcept));
+    return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(editedConcept);
   }
 
 }

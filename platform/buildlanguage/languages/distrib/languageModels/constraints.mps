@@ -66,15 +66,10 @@
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1230295109355">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230295109356">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230295113464">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1230295115408">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1230295152230">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230295200900">
-                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="1230295199882" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230295202710">
-                    <link role="baseMethodDeclaration" targetNodeId="2v.1230293856288" resolveInfo="getAvailableFolders" />
-                  </node>
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230295200900">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="1230295199882" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230295202710">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1230293856288" resolveInfo="getAvailableFolders" />
               </node>
             </node>
           </node>
@@ -181,13 +176,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234515402474">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234515403675">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234515419687">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234515421527">
-                  <link role="variableDeclaration" targetNodeId="1234515309620" resolveInfo="availableVars" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234515421527">
+              <link role="variableDeclaration" targetNodeId="1234515309620" resolveInfo="availableVars" />
             </node>
           </node>
         </node>

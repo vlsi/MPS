@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -39,7 +38,7 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
         ListSequence.fromList(result).addElement(node);
       }
     }
-    return new SimpleSearchScope(result);
+    return result;
   }
 
 }

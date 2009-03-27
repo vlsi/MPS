@@ -29,7 +29,7 @@ public class SLinkAccess_link_ReferentConstraint extends BaseNodeReferenceSearch
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links with cardinality 1 or 0..1
+    //     links with cardinality 1 or 0..1
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
@@ -37,7 +37,6 @@ public class SLinkAccess_link_ReferentConstraint extends BaseNodeReferenceSearch
       public boolean accept(SNode it) {
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
-
     });
   }
 

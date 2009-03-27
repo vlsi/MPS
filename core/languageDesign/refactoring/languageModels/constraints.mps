@@ -114,13 +114,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214839153311">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214839153312">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214839153313">
-                <link role="baseMethodDeclaration" targetNodeId="2.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214839153314">
-                  <link role="variableDeclaration" targetNodeId="1214839153283" resolveInfo="nodes" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214839153314">
+              <link role="variableDeclaration" targetNodeId="1214839153283" resolveInfo="nodes" />
             </node>
           </node>
         </node>

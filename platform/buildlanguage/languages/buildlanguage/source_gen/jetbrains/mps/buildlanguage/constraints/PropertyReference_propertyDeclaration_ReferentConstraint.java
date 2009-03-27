@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildlanguage.behavior.IPropertyHolder_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -33,7 +32,7 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint extends Ba
     for(SNode holder : ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true))) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IPropertyHolder_Behavior.call_getProperties_1213877375726(holder)));
     }
-    return new SimpleSearchScope(result);
+    return result;
   }
 
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class NodeReferentConstraint_applicableLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -28,12 +27,12 @@ public class NodeReferentConstraint_applicableLink_ReferentConstraint extends Ba
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links declared in specified concept
+    //     links declared in specified concept
     SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getReferenceNode());
     if (applicableConcept == null) {
       applicableConcept = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "concept", false);
     }
-    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(applicableConcept));
+    return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(applicableConcept);
   }
 
 }

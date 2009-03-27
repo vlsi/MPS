@@ -138,13 +138,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104844377">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888398944">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888398946">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104844379">
-                  <link role="variableDeclaration" targetNodeId="1213104844346" resolveInfo="applicableMembers" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104844379">
+              <link role="variableDeclaration" targetNodeId="1213104844346" resolveInfo="applicableMembers" />
             </node>
           </node>
         </node>
@@ -261,13 +256,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216915363805">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216915366434">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216915374051">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216915375476">
-                  <link role="variableDeclaration" targetNodeId="1216915305633" resolveInfo="classifiers" />
-                </node>
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216915375476">
+              <link role="variableDeclaration" targetNodeId="1216915305633" resolveInfo="classifiers" />
             </node>
           </node>
         </node>

@@ -5,6 +5,11 @@ package jetbrains.mps.uiLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.uiLanguage.constraints.ComponentController_name_PropertyConstraint;
+import jetbrains.mps.uiLanguage.constraints.ComponentReference_component_ReferentConstraint;
+import jetbrains.mps.uiLanguage.constraints.ComponentInstance_componentDeclaration_ReferentConstraint;
+import jetbrains.mps.uiLanguage.constraints.AttributeValue_attribute_ReferentConstraint;
+import jetbrains.mps.uiLanguage.constraints.StubCellRendererInfo_cellRendererSetter_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

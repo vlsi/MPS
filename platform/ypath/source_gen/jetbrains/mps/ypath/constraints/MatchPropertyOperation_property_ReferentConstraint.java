@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,13 +28,12 @@ public class MatchPropertyOperation_property_ReferentConstraint extends BaseNode
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode nk = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "nodeKindOccurrence", true), "nodeKind", false);
-    return new SimpleSearchScope(ListSequence.fromList(SNodeOperations.getDescendants(nk, null, false)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(nk, null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
       }
-
-    }).toListSequence());
+    }).toListSequence();
   }
 
 }
