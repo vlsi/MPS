@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.baseLanguage.closures.actions._Quotations;
 
 public class QueriesGenerated {
 
@@ -45,8 +46,8 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1200829970134(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    // return statements must be allowed until we find a way to implement early returns
-    // http://www.javac.info
+    //     return statements must be allowed until we find a way to implement early returns
+    //     http://www.javac.info
     return false && (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false) != null);
   }
 
@@ -62,7 +63,6 @@ public class QueriesGenerated {
       public boolean met(SNode smd) {
         return ControlMethodUtil.isControlMethod(smd);
       }
-
     });
     return !(ListSequence.fromList(nodes).isEmpty());
   }
@@ -99,7 +99,6 @@ public class QueriesGenerated {
             SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
             return SLinkOperations.getTargets(cl, "parameter", true);
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -119,7 +118,6 @@ public class QueriesGenerated {
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
               }
-
             });
           }
         }
@@ -173,11 +171,9 @@ public class QueriesGenerated {
               public boolean met(SNode smd) {
                 return ControlMethodUtil.isControlMethod(smd);
               }
-
             });
             return nodes;
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -202,7 +198,6 @@ public class QueriesGenerated {
               public String getDescriptionText(String pattern) {
                 return "custom control statement using " + INamedConcept_Behavior.call_getFqName_1213877404258((item));
               }
-
             });
           }
         }
@@ -233,7 +228,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "add parameter";
         }
-
       });
     }
     return result;
@@ -260,7 +254,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "invoke function";
         }
-
       });
     }
     return result;
@@ -288,7 +281,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "add formal parameter";
         }
-
       });
     }
     return result;
@@ -316,7 +308,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "add parameter";
         }
-
       });
     }
     return result;

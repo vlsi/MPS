@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.LinkedList;
+import jetbrains.mps.baseLanguage.closures.typesystem._Quotations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -152,7 +153,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           }
           break;
         }
-        //  fall through
+        //          fall through
       default:
         yieldsValue = true;
         {

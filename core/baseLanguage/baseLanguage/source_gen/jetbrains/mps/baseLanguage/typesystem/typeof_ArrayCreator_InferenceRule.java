@@ -19,7 +19,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
 
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
-    for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i = i + 1) {
+    for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i++ ) {
       type = new _Quotations.QuotationClass_86().createNode(type, typeCheckingContext);
     }
     {

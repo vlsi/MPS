@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.typesystem._Quotations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
@@ -22,7 +23,6 @@ public class RulesUtil_Closures {
           RulesUtil_Closures.ourInterfaces = null;
           ClassLoaderManager.getInstance().removeReloadHandler(this);
         }
-
       });
     }
     return ourInterfaces;

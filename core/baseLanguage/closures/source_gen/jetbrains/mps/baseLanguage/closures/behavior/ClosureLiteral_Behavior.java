@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.closures.behavior._Quotations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClosureLiteral_Behavior {

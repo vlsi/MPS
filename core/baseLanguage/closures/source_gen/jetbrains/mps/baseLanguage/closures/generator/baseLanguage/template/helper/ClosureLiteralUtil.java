@@ -15,6 +15,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
+import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -86,7 +88,7 @@ public class ClosureLiteralUtil {
           return;
         }
         map = matchType(SLinkOperations.getTarget(pd, "type", true), ListSequence.fromList(ptypes).getElement(idx), map);
-        idx = idx + 1;
+        idx++ ;
       }
     }
     ((SNode)ctNoParams).putUserObject("typeMap", map);
@@ -138,7 +140,7 @@ public class ClosureLiteralUtil {
       {
         SLinkOperations.addChild(ctNoParams, "parameter", SNodeOperations.copyNode(p));
       }
-      idx = idx + 1;
+      idx++ ;
     }
   }
 
@@ -228,7 +230,7 @@ public class ClosureLiteralUtil {
         int idx = 0;
         List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(matched, "parameter", true);
-        for(int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i = i + 1) {
+        for(int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i++ ) {
           map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
         }
       }

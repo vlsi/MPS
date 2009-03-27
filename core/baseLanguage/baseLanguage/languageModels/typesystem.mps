@@ -9330,16 +9330,8 @@
             <link role="variableDeclaration" targetNodeId="1209402675806" resolveInfo="i" />
           </node>
         </node>
-        <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1209402701765">
-          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209402702987">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209402703536">
-              <property name="value" value="1" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209402702927">
-              <link role="variableDeclaration" targetNodeId="1209402675806" resolveInfo="i" />
-            </node>
-          </node>
-          <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209402699771">
+        <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145924699">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145924700">
             <link role="variableDeclaration" targetNodeId="1209402675806" resolveInfo="i" />
           </node>
         </node>

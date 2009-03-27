@@ -9766,17 +9766,9 @@
                                     </node>
                                   </node>
                                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1176797007719">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1176797008635">
-                                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1176797007720">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145919524">
+                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145919525">
                                         <link role="variableDeclaration" targetNodeId="1176796980124" resolveInfo="index" />
-                                      </node>
-                                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1176797010833">
-                                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1176797011977">
-                                          <property name="value" value="1" />
-                                        </node>
-                                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1176797009777">
-                                          <link role="variableDeclaration" targetNodeId="1176796980124" resolveInfo="index" />
-                                        </node>
                                       </node>
                                     </node>
                                   </node>

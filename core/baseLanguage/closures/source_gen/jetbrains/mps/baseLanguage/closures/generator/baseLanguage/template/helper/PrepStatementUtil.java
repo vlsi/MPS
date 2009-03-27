@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.help
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.StatementListUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -279,7 +280,7 @@ public class PrepStatementUtil {
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
       copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
-      idx = idx + 1;
+      idx++ ;
     }
   }
 

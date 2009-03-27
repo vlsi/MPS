@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.closures.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -12,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -99,7 +101,7 @@ public class FunctionType_Behavior {
     {
       buf.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(t), "name"));
     }
-    // TODO: sort children by role
+    //     TODO: sort children by role
     List<SNode> paramTypes = ListSequence.<SNode>fromArray();
     for(SNode c : SNodeOperations.getChildren(t)) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Type")) {
@@ -251,7 +253,7 @@ with_meet:
     for(SNode p : paramTypes) {
       SNode pct = ClassifierTypeUtil.getTypeCoercedToClassifierType(p);
       ListSequence.fromList(resList).addElement(ClassifierTypeUtil.copyTypeRecursively(pct));
-      idx = idx + 1;
+      idx++ ;
     }
     return resList;
   }

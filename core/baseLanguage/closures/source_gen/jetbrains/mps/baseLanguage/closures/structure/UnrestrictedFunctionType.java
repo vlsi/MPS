@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class UnrestrictedFunctionType extends FunctionType {
+public class UnrestrictedFunctionType extends jetbrains.mps.baseLanguage.closures.structure.FunctionType {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType";
   public static final String TERMINATE_TYPE = "terminateType";
 
@@ -16,11 +16,11 @@ public class UnrestrictedFunctionType extends FunctionType {
     super(node);
   }
 
-  public Type getTerminateType() {
-    return (Type)this.getChild(Type.class, UnrestrictedFunctionType.TERMINATE_TYPE);
+  public jetbrains.mps.baseLanguage.structure.Type getTerminateType() {
+    return (jetbrains.mps.baseLanguage.structure.Type)this.getChild(Type.class, UnrestrictedFunctionType.TERMINATE_TYPE);
   }
 
-  public void setTerminateType(Type node) {
+  public void setTerminateType(jetbrains.mps.baseLanguage.structure.Type node) {
     super.setChild(UnrestrictedFunctionType.TERMINATE_TYPE, node);
   }
 

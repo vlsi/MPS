@@ -52,7 +52,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
             }
           }
         }
-
       }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237813825558", false, false);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
@@ -69,7 +68,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
               }
             }
           }
-
         }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814165989", false, false);
       }
     }

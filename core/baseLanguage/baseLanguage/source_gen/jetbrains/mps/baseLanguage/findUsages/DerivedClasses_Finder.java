@@ -40,7 +40,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
       if (passingNode != node) {
         ListOperations.addElement(_results, passingNode);
       }
-      passed = passed + 1;
+      passed++ ;
     }
   }
 

@@ -96,7 +96,7 @@ public class BaseMethodDeclaration_Behavior {
   public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
     if (SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")) && SLinkOperations.getCount(thisNode, "parameter") == SLinkOperations.getCount(checked, "parameter")) {
       boolean same = true;
-      for(int i = 0 ; i < SLinkOperations.getCount(thisNode, "parameter") ; i = i + 1) {
+      for(int i = 0 ; i < SLinkOperations.getCount(thisNode, "parameter") ; i++ ) {
         String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
         String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
         if (!(foundParamType.equals(searchedParamType))) {

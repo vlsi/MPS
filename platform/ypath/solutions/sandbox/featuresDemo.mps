@@ -314,16 +314,8 @@
                               <link role="variableDeclaration" targetNodeId="1227876790255" resolveInfo="idx" />
                             </node>
                           </node>
-                          <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1227876790269">
-                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227876790270">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227876790271">
-                                <property name="value" value="1" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227876790272">
-                                <link role="variableDeclaration" targetNodeId="1227876790255" resolveInfo="idx" />
-                              </node>
-                            </node>
-                            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227876790273">
+                          <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145925480">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145925481">
                               <link role="variableDeclaration" targetNodeId="1227876790255" resolveInfo="idx" />
                             </node>
                           </node>

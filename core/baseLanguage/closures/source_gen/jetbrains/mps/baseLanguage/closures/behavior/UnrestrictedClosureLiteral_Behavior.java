@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.behavior._Quotations;
 
 public class UnrestrictedClosureLiteral_Behavior {
 

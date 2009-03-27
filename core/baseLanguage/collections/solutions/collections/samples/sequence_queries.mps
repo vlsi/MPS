@@ -58,17 +58,9 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223486">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223487">
-                            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223488">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145924427">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145924428">
                               <link role="variableDeclaration" targetNodeId="1224754223478" resolveInfo="num" />
-                            </node>
-                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223489">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223490">
-                                <property name="value" value="1" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223491">
-                                <link role="variableDeclaration" targetNodeId="1224754223478" resolveInfo="num" />
-                              </node>
                             </node>
                           </node>
                         </node>
@@ -212,17 +204,9 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223652">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223653">
-                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223654">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145924191">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145924192">
                           <link role="variableDeclaration" targetNodeId="1153940807244" resolveInfo="count" />
-                        </node>
-                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223655">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223656">
-                            <property name="value" value="1" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223657">
-                            <link role="variableDeclaration" targetNodeId="1153940807244" resolveInfo="count" />
-                          </node>
                         </node>
                       </node>
                     </node>
@@ -342,17 +326,9 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223340">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223341">
-                            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223342">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145921858">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145921859">
                               <link role="variableDeclaration" targetNodeId="1224754223332" resolveInfo="num" />
-                            </node>
-                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223343">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223344">
-                                <property name="value" value="1" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223345">
-                                <link role="variableDeclaration" targetNodeId="1224754223332" resolveInfo="num" />
-                              </node>
                             </node>
                           </node>
                         </node>
@@ -627,17 +603,9 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224754223679">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223680">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223681">
-                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223682">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145919276">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145919277">
                           <link role="variableDeclaration" targetNodeId="1153941284394" resolveInfo="count" />
-                        </node>
-                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223683">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223684">
-                            <property name="value" value="1" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223685">
-                            <link role="variableDeclaration" targetNodeId="1153941284394" resolveInfo="count" />
-                          </node>
                         </node>
                       </node>
                     </node>
@@ -767,17 +735,9 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224754223447">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224754223448">
-                            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223449">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1238145924496">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145924497">
                               <link role="variableDeclaration" targetNodeId="1224754223439" resolveInfo="num" />
-                            </node>
-                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224754223450">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224754223451">
-                                <property name="value" value="1" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224754223452">
-                                <link role="variableDeclaration" targetNodeId="1224754223439" resolveInfo="num" />
-                              </node>
                             </node>
                           </node>
                         </node>

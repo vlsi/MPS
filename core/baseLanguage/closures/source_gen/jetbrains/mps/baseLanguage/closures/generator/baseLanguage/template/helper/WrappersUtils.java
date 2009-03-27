@@ -40,7 +40,7 @@ with_decls:
           }
         }
       }
-      // didn't find any assignment with the var reference in the lvalue
+      //       didn't find any assignment with the var reference in the lvalue
       it.remove();
     }
     return vdecls;
@@ -66,7 +66,7 @@ with_decls:
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
       copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
-      idx = idx + 1;
+      idx++ ;
     }
   }
 

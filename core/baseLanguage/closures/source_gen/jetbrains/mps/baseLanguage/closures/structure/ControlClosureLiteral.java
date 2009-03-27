@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ControlClosureLiteral extends UnrestrictedClosureLiteral {
+public class ControlClosureLiteral extends jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral";
 
   public ControlClosureLiteral(SNode node) {

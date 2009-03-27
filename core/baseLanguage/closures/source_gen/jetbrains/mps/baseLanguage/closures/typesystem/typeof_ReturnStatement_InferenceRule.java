@@ -18,8 +18,8 @@ public class typeof_ReturnStatement_InferenceRule extends AbstractInferenceRule_
   }
 
   public void applyRule(final SNode returnStatement, final TypeCheckingContext typeCheckingContext) {
-    // returns must be allowed until we find a way to implement early returns
-    // http://www.javac.info
+    //     returns must be allowed until we find a way to implement early returns
+    //     http://www.javac.info
     if (false && (SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null)) {
       if (!(false)) {
         BaseIntentionProvider intentionProvider = null;
