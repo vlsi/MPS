@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
@@ -126,6 +128,14 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8666_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8666_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_8666_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -133,6 +143,14 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8666_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8666_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Property_8666_0(EditorCell editorCell, SNode node, EditorContext context) {

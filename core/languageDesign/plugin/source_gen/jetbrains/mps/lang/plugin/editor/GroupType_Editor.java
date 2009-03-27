@@ -101,6 +101,7 @@ public class GroupType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1859_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1859_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_1859_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -108,6 +109,7 @@ public class GroupType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1859_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1859_2");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1859_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

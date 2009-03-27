@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -99,10 +100,12 @@ public class ToolType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5914_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5914_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5914_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5914_2");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_5914_0(EditorCell editorCell, SNode node, EditorContext context) {

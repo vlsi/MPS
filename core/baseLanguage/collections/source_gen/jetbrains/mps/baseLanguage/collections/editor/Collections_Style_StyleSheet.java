@@ -20,6 +20,7 @@ public class Collections_Style_StyleSheet {
   public static Style getAngleBracket(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
         this.set(StyleAttributes.SELECTABLE, false);
       }
     };

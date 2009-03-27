@@ -227,6 +227,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
       };
@@ -239,6 +240,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
       };

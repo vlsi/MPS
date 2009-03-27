@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -162,10 +163,12 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5999_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5999_2");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5999_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5999_3");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_5999_0(EditorCell editorCell, SNode node, EditorContext context) {

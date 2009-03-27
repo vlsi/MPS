@@ -191,6 +191,9 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174294327983">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174313813205">
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238164932542">
+          <property name="labelName" value="SquareBrace" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233929931731">
           <property name="flag" value="true" />
         </node>
@@ -200,6 +203,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174313817175">
         <property name="text" value="]" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238164952729">
+          <property name="labelName" value="SquareBrace" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233929940028">
           <property name="flag" value="true" />
         </node>
@@ -336,6 +342,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1202148811476">
           <property name="text" value="&lt;" />
+          <link role="styleClass" targetNodeId="3.1238161779414" resolveInfo="BaseAngleBracket" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1202148817970">
           <property name="separatorText" value="," />
@@ -344,6 +351,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1202148814343">
           <property name="text" value="&gt;" />
+          <link role="styleClass" targetNodeId="3.1238161779414" resolveInfo="BaseAngleBracket" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820731256" />
       </node>
@@ -354,12 +362,18 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1176743257549">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176743259738">
         <property name="text" value="[" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238164960795">
+          <property name="labelName" value="SquareBrace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1176743262365">
         <link role="relationDeclaration" targetNodeId="1.1176743202636" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176743266070">
         <property name="text" value="]" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238164964244">
+          <property name="labelName" value="SquareBrace" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1176743304856">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />

@@ -14,6 +14,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
@@ -124,6 +125,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1192_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1192_0");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,6 +151,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1192_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1192_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

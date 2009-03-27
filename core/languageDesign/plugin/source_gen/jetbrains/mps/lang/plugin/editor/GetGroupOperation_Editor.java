@@ -101,10 +101,12 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4898_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4898_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_4898_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4898_2");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_4898_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -143,6 +144,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9185_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9185_0");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -160,10 +162,10 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9185_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9185_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
       };

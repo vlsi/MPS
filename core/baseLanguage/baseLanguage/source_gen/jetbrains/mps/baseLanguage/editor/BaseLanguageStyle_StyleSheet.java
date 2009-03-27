@@ -289,6 +289,14 @@ public class BaseLanguageStyle_StyleSheet {
     };
   }
 
+  public static Style getBaseAngleBracket(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
+      }
+    };
+  }
+
   public static Style getMatching(final EditorCell cell) {
     return new Style(cell) {
       {

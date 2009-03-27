@@ -116,7 +116,7 @@ __switch__:
       if (curItem == keyMapItem) {
         break;
       }
-      index = index + 1;
+      index++ ;
     }
     return SPropertyOperations.getString(keyMapDeclaration, "name") + "_Action" + index;
   }

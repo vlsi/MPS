@@ -201,7 +201,7 @@
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238143174014">
-                <property name="value" value="{" />
+                <property name="value" value="&lt;" />
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238143217854">

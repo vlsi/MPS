@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -95,6 +96,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9300_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9300_0");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -110,6 +112,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9300_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9300_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

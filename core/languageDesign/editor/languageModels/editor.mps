@@ -7349,6 +7349,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201266198736">
           <property name="text" value="&lt;" />
+          <link role="styleClass" targetNodeId="26.1238161779414" resolveInfo="BaseAngleBracket" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1201266206773">
           <property name="separatorText" value="," />
@@ -7356,6 +7357,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201266200332">
           <property name="text" value="&gt;" />
+          <link role="styleClass" targetNodeId="26.1238161779414" resolveInfo="BaseAngleBracket" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994810">
           <property name="flag" value="false" />

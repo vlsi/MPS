@@ -360,6 +360,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0500_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0500_4");
+    BaseLanguageStyle_StyleSheet.getAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -377,6 +378,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0500_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0500_5");
+    BaseLanguageStyle_StyleSheet.getAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

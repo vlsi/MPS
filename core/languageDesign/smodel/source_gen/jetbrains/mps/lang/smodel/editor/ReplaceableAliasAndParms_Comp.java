@@ -171,6 +171,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -191,6 +192,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }

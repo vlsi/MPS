@@ -1663,6 +1663,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207490893218">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1207490893219">
         <link role="relationDeclaration" targetNodeId="1.1207490810218" />
@@ -1676,6 +1677,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207490893222">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
     </node>
   </node>
@@ -1689,6 +1691,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1208529565963">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1208529573029">
         <link role="relationDeclaration" targetNodeId="1.1208529537963" />
@@ -1702,6 +1705,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1208529568496">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
     </node>
   </node>
@@ -1748,6 +1752,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1209911126431">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1209911130966">
         <link role="relationDeclaration" targetNodeId="1.1209911052601" />
@@ -1761,6 +1766,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1209911127335">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813142698" />
     </node>
@@ -1979,6 +1985,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210184247186">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1210184250191">
         <link role="relationDeclaration" targetNodeId="1.1210184138184" />
@@ -1992,6 +1999,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210184253606">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="17.1238161779414" resolveInfo="BaseAngleBracket" />
       </node>
     </node>
   </node>

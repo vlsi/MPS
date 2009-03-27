@@ -460,6 +460,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1871_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_6");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -473,6 +474,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1871_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_7");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
