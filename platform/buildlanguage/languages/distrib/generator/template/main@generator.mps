@@ -281,7 +281,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1238075741829">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1238075750426">
-        <property name="text" value="IF EXIST %PROJECT_HOME%jre set JAVA=%PROJECT_HOME%jre\bin\%JAVA%" />
+        <property name="text" value="IF EXIST &quot;%PROJECT_HOME%jre&quot; set JAVA=&quot;%PROJECT_HOME%jre\bin\%JAVA%&quot;" />
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238075770694">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238075770695">
@@ -612,7 +612,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231751263216">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231751265045">
-        <property name="text" value="start %JAVA% %JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS%" />
+        <property name="text" value="%JAVA% %JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS%" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231749805201">
@@ -1273,8 +1273,15 @@
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238076294681">
             <link role="attributeDeclaration" targetNodeId="4v.1199644186896" resolveInfo="dest" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238077377349">
-              <link role="propertyDeclaration" targetNodeId="1238076245420" resolveInfo="jre.unzipped.path" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1238167433243">
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1238167437042">
+                <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238167440498">
+                  <property name="value" value="/jre" />
+                </node>
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238167435839">
+                  <link role="propertyDeclaration" targetNodeId="1238076245420" resolveInfo="jre.unzipped.path" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238076304841">
@@ -1380,8 +1387,15 @@
             <link role="declaration" targetNodeId="4v.1229267104851" resolveInfo="arg" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238076440482">
               <link role="attributeDeclaration" targetNodeId="4v.1199644185605" resolveInfo="file" />
-              <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238076449327">
-                <link role="propertyDeclaration" targetNodeId="1238076245420" resolveInfo="jre.unzipped.path" />
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1238165925259">
+                <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1238165933122">
+                  <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238165934469">
+                    <property name="value" value="/jre" />
+                  </node>
+                  <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238165931762">
+                    <link role="propertyDeclaration" targetNodeId="1238076245420" resolveInfo="jre.unzipped.path" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238076497642">

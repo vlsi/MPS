@@ -36,7 +36,6 @@ public class GenerateNSI {
       myBaseDirs.add(new File(args[i]));
     }
     myCurrentDir = new File("");
-    System.out.println(myCurrentDir.getAbsolutePath());
     myInput = args[0];
     myOutput = args[1];
   }
