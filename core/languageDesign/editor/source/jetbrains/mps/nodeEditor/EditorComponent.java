@@ -2069,6 +2069,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public boolean isValid(EditorCell cell) {
+    if (cell == null) return false;
     return ((EditorCell_Basic) cell).isInTree() && cell.getEditor() == this;
   }
 
