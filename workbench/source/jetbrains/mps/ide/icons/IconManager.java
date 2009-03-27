@@ -115,7 +115,7 @@ public class IconManager {
     return icon;
   }
 
-  public static Icon getIconFor(String namespace) {
+  public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
       Language language = MPSModuleRepository.getInstance().getLanguage(namespace);

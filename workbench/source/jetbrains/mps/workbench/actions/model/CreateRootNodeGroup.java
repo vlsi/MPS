@@ -112,7 +112,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     for (final Language language : languagesWithRoots) {
       String name = language.getNamespace();
-      Icon icon = IconManager.getIconFor(language.getNamespace());
+      Icon icon = IconManager.getIconForNamespace(language.getNamespace());
       BaseGroup langRootsGroup;
 
       if (!plain) {
