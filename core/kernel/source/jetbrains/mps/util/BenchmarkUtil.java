@@ -15,14 +15,64 @@
  */
 package jetbrains.mps.util;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class BenchmarkUtil {
-  public static long measure(Runnable r) {
+  public static long measure(int ntimes, Runnable r) {
     long start = System.currentTimeMillis();
-    r.run();
+    for (int i = 0; i < ntimes; i++) {
+      r.run();
+    }
     return System.currentTimeMillis() - start;
   }
 
-  public static void printMeasure(String taskName, Runnable r) {
-    System.out.println(taskName + " took " + measure(r));
+  public static void printMeasure(String taskName, int ntimes, Runnable r) {
+    System.out.println(taskName + " took " + measure(ntimes, r));
+  }
+
+  public static void main(String[] args) {
+    final List<String> items = new ArrayList<String>();
+    for (int i = 0; i < 10; i++) {
+      items.add("abc" + Math.random());
+    }
+
+    int ntimes = 100000;
+
+    printMeasure("simple iteration", ntimes, new Runnable() {
+      public void run() {
+        for (String item : items) {
+          item.toUpperCase();
+        }
+      }
+    });
+
+    printMeasure("to array iteration", ntimes, new Runnable() {
+      public void run() {
+        for (String item : items.toArray(new String[items.size()])) {
+          item.toUpperCase();
+        }
+      }
+    });
+
+    printMeasure("to array with runnable", ntimes, new Runnable() {
+      public void run() {
+        abstract class Visitor {
+          abstract void visit(String s);
+        }
+
+        Visitor v = new Visitor() {
+          @Override
+          void visit(String s) {
+            s.toUpperCase();
+          }
+        };
+
+        for (String item : items.toArray(new String[items.size()])) {
+          v.visit(item);          
+        }
+      }
+    });
+
   }
 }
