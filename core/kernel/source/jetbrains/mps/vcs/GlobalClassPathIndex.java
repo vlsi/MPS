@@ -63,22 +63,19 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
-      if (module.isPackaged()) return;
-      GlobalClassPathIndex.this.moduleRemoved(module);
-    }
-  };
-  private final ModuleRepositoryListener myCleanupListener = new ModuleRepositoryAdapter() {
-    @Override
     public void moduleChanged(IModule changedModule) {
-      for (IModule module : myModuleRepository.getAllModules()) {
-        if (module.isPackaged()) continue;
-        GlobalClassPathIndex.this.moduleInitialized(module);
-      }
+      if (changedModule.isPackaged()) return;
+      GlobalClassPathIndex.this.moduleInitialized(changedModule);
       if (myIsChanged) {
         notifyListeners();
         myIsChanged = false;
       }
+    }
+
+    @Override
+    public void moduleRemoved(IModule module) {
+      if (module.isPackaged()) return;
+      GlobalClassPathIndex.this.moduleRemoved(module);
     }
   };
 
@@ -267,18 +264,13 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         for (IModule module : moduleList) {
           moduleAdded(module);
         }
-        myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
       }
     });
-
-
-
-    myModuleRepository.addModuleRepositoryListener(myCleanupListener);
+    myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
   }
 
   public void disposeComponent() {
     myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
-    myModuleRepository.removeModuleRepositoryListener(myCleanupListener);
   }
 
   public boolean isExcluded(VirtualFile file) {
