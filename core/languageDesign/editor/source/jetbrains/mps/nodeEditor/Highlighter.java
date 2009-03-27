@@ -315,15 +315,15 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
       EditorMessageOwner owner = owners[0];
       if (owner != null) {
-        highlightManager.clearForOwner(owner);
+        highlightManager.clearForOwner(owner, false);
         if (inspectorHighlightManager != null) {
-          inspectorHighlightManager.clearForOwner(owner);
+          inspectorHighlightManager.clearForOwner(owner, false);
         }
       }
       for (EditorMessage message : messages) {
-        highlightManager.mark(message);
+        highlightManager.mark(message, false);
         if (inspectorHighlightManager != null) {
-          inspectorHighlightManager.mark(message);
+          inspectorHighlightManager.mark(message, false);
         }
       }
     }
@@ -337,12 +337,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       };
       ModelAccess.instance().runReadAction(runnable);
-      highlightManager.clearForOwner(owners[0]);
+      highlightManager.clearForOwner(owners[0], false);
       if (inspectorHighlightManager != null) {
-        inspectorHighlightManager.clearForOwner(owners[0]);
+        inspectorHighlightManager.clearForOwner(owners[0], false);
       }
     }
 
+    highlightManager.repaintEditorMessages();
+    if (inspectorHighlightManager != null) {
+      inspectorHighlightManager.repaintEditorMessages();
+    }
+    
     editor.updateStatusBarMessage();
 
     return true;

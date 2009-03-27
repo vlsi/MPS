@@ -109,7 +109,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.clearFirst(m);
   }
 
-  private void mark(EditorMessage message, boolean needRepaint) {
+  public void mark(EditorMessage message, boolean needRepaint) {
     for (EditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -119,7 +119,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     myEditor.getMessagesGutter().add(message);
     if (needRepaint) {
-      myEditor.updateMessages();
+      repaintEditorMessages();
     }
   }
 
@@ -133,6 +133,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public boolean clearForOwner(EditorMessageOwner owner) {
+    return clearForOwner(owner, true);
+  }
+
+  public boolean clearForOwner(EditorMessageOwner owner, boolean repaintMessages) {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
@@ -141,8 +145,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
         }
       }
     }
-    myEditor.updateMessages();
+    if (repaintMessages) {
+      repaintEditorMessages();
+    }
     return result;
+  }
+
+  public void repaintEditorMessages() {
+    myEditor.getExternalComponent().repaint();
   }
 
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
@@ -151,8 +161,15 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(List<EditorMessage> messages) {
+    mark(messages, true);
+  }
+
+  public void mark(List<EditorMessage> messages, boolean repaintMessages) {
     for (int i = 0; i < messages.size(); i++) {
-      mark(messages.get(i), i == messages.size() - 1);
+      mark(messages.get(i), false);
+    }
+    if (repaintMessages) {
+      repaintEditorMessages();
     }
   }
 

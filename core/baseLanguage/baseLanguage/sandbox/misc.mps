@@ -122,11 +122,21 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236623623862">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1236623625616">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236623625695">
-              <link role="variableDeclaration" targetNodeId="1236623618956" resolveInfo="d" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238175496906">
+              <property name="value" value="d" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1236623623863">
               <property name="value" value="4" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238175488832">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238175491856">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238175493305">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238175488833">
+              <property name="value" value="1" />
             </node>
           </node>
         </node>
