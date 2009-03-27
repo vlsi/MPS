@@ -72,7 +72,7 @@ public class IconManager {
           if (node.isRoot()) {
             return Icons.DEFAULT_ROOT_ICON;
           } else {
-            return Icons.DEFAULT_ICON;
+            return Icons.DEFAULT_NODE_ICON;
           }
         }
 
@@ -108,7 +108,7 @@ public class IconManager {
       if (cd.isRoot()) {
         return Icons.DEFAULT_ROOT_ICON;
       } else {
-        return Icons.DEFAULT_ICON;
+        return Icons.DEFAULT_NODE_ICON;
       }
     }
 
@@ -177,7 +177,7 @@ public class IconManager {
   public static Icon getIconFor(IFile file) {
     Icon icon = null;
     if (file.exists()) {
-      byte[] image = new byte[(int) file.length()];
+      byte[] image = new byte[(int) file.length()];                                          
       InputStream is = null;
       try {
         is = file.openInputStream();
