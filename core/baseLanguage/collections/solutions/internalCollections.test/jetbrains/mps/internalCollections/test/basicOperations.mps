@@ -1920,16 +1920,8 @@
                       </node>
                     </node>
                     <node role="toElement" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206537596266">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206537599284">
-                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1206537600874">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206537602415">
-                            <property name="value" value="1" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206537600854">
-                            <link role="variableDeclaration" targetNodeId="1206537558361" resolveInfo="to" />
-                          </node>
-                        </node>
-                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206537596267">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression" id="1238146987764">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238146987765">
                           <link role="variableDeclaration" targetNodeId="1206537558361" resolveInfo="to" />
                         </node>
                       </node>
