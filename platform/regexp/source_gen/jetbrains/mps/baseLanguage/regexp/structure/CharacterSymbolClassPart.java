@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CharacterSymbolClassPart extends SymbolClassPart {
+public class CharacterSymbolClassPart extends jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart";
   public static final String CHARACTER = "character";
 

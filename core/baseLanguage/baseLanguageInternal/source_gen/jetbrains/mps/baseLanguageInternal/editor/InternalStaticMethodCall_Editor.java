@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -18,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -60,7 +60,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4702_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments4702_0 == null) {
-      this.myIMethodCall_actualArguments4702_0 = new IMethodCall_actualArguments(node);
+      this.myIMethodCall_actualArguments4702_0 = new jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments4702_0.createEditorCell(context);
     setupBasic_Component_4702_0(editorCell, node, context);
@@ -238,7 +238,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -253,7 +252,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -270,7 +268,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -284,7 +281,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

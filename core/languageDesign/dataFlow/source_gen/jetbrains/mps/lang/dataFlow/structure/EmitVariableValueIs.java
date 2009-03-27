@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EmitVariableValueIs extends EmitStatement {
+public class EmitVariableValueIs extends jetbrains.mps.lang.dataFlow.structure.EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitVariableValueIs";
   public static final String VARIABLE = "variable";
   public static final String VALUE = "value";
@@ -17,19 +17,19 @@ public class EmitVariableValueIs extends EmitStatement {
     super(node);
   }
 
-  public Expression getVariable() {
-    return (Expression)this.getChild(Expression.class, EmitVariableValueIs.VARIABLE);
+  public jetbrains.mps.baseLanguage.structure.Expression getVariable() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, EmitVariableValueIs.VARIABLE);
   }
 
-  public void setVariable(Expression node) {
+  public void setVariable(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(EmitVariableValueIs.VARIABLE, node);
   }
 
-  public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, EmitVariableValueIs.VALUE);
+  public jetbrains.mps.baseLanguage.structure.Expression getValue() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, EmitVariableValueIs.VALUE);
   }
 
-  public void setValue(Expression node) {
+  public void setValue(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(EmitVariableValueIs.VALUE, node);
   }
 

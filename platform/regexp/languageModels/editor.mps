@@ -366,6 +366,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174554456590">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800051009">
           <property name="flag" value="true" />
         </node>
@@ -387,6 +388,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174554459545">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800051012">
           <property name="flag" value="true" />
         </node>
@@ -409,6 +411,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174554568111">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800051060">
           <property name="flag" value="true" />
         </node>
@@ -427,6 +430,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174554572223">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237800051063">
           <property name="flag" value="true" />
         </node>
@@ -902,6 +906,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904218928">
         <property name="text" value="{" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678243">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -912,6 +917,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904224525">
         <property name="text" value="}" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678134">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -928,6 +934,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904497430">
         <property name="text" value="{" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678835">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -941,6 +948,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904497432">
         <property name="text" value="}" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678029">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -957,6 +965,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904641996">
         <property name="text" value="{" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678588">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -973,6 +982,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174904641999">
         <property name="text" value="}" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678398">
           <property name="color" value="DARK_MAGENTA" />
         </node>

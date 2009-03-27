@@ -8,8 +8,8 @@ public interface RegexpUsingConstruction extends INodeAdapter {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction";
   public static final String REGEXP = "regexp";
 
-  public RegexpExpression getRegexp();
+  public jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression getRegexp();
 
-  public void setRegexp(RegexpExpression node);
+  public void setRegexp(jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression node);
 
 }

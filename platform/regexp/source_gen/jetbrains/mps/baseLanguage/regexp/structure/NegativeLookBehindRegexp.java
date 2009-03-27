@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NegativeLookBehindRegexp extends LookRegexp {
+public class NegativeLookBehindRegexp extends jetbrains.mps.baseLanguage.regexp.structure.LookRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp";
 
   public NegativeLookBehindRegexp(SNode node) {

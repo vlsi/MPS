@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

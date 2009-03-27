@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class TypeHintExpression_Editor extends DefaultNodeEditor {
 
@@ -114,6 +115,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8675_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8675_0");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_8675_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -121,6 +123,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8675_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8675_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_8675_1(EditorCell editorCell, SNode node, EditorContext context) {

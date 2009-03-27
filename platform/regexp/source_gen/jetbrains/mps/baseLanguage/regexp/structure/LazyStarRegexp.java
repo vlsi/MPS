@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LazyStarRegexp extends UnaryRegexp {
+public class LazyStarRegexp extends jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp";
 
   public LazyStarRegexp(SNode node) {

@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.dates.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConditionalFormatToken extends FormatToken {
+public class ConditionalFormatToken extends jetbrains.mps.baseLanguage.dates.structure.FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ConditionalFormatToken";
   public static final String CONDITION_PAIR = "conditionPair";
 
@@ -21,19 +22,19 @@ public class ConditionalFormatToken extends FormatToken {
     return this.getChildCount(ConditionalFormatToken.CONDITION_PAIR);
   }
 
-  public Iterator<TokenConditionalPair> conditionPairs() {
+  public Iterator<jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair> conditionPairs() {
     return this.children(TokenConditionalPair.class, ConditionalFormatToken.CONDITION_PAIR);
   }
 
-  public List<TokenConditionalPair> getConditionPairs() {
+  public List<jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair> getConditionPairs() {
     return this.getChildren(TokenConditionalPair.class, ConditionalFormatToken.CONDITION_PAIR);
   }
 
-  public void addConditionPair(TokenConditionalPair node) {
+  public void addConditionPair(jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair node) {
     this.addChild(ConditionalFormatToken.CONDITION_PAIR, node);
   }
 
-  public void insertConditionPair(TokenConditionalPair prev, TokenConditionalPair node) {
+  public void insertConditionPair(jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair prev, jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair node) {
     this.insertChild(prev, ConditionalFormatToken.CONDITION_PAIR, node);
   }
 

@@ -174,6 +174,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        this.set(StyleAttributes.MATCHING_LABEL, "brace");
       }
     };
   }
@@ -209,7 +210,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.MATCHING_LABEL, "brace");
       }
     };
   }
@@ -218,7 +218,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.MATCHING_LABEL, "brace");
       }
     };
   }
@@ -226,6 +225,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getBracket(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
     };
@@ -235,7 +235,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
     };
@@ -245,7 +244,6 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
       }
     };
@@ -287,6 +285,14 @@ public class BaseLanguageStyle_StyleSheet {
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         this.set(StyleAttributes.SELECTABLE, false);
+      }
+    };
+  }
+
+  public static Style getMatching(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.MATCHING_LABEL, "matching");
       }
     };
   }

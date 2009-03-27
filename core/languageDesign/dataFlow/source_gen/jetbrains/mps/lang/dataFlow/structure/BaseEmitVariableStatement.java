@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BaseEmitVariableStatement extends EmitStatement {
+public class BaseEmitVariableStatement extends jetbrains.mps.lang.dataFlow.structure.EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement";
   public static final String VARIABLE = "variable";
 
@@ -16,11 +16,11 @@ public class BaseEmitVariableStatement extends EmitStatement {
     super(node);
   }
 
-  public Expression getVariable() {
-    return (Expression)this.getChild(Expression.class, BaseEmitVariableStatement.VARIABLE);
+  public jetbrains.mps.baseLanguage.structure.Expression getVariable() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, BaseEmitVariableStatement.VARIABLE);
   }
 
-  public void setVariable(Expression node) {
+  public void setVariable(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(BaseEmitVariableStatement.VARIABLE, node);
   }
 

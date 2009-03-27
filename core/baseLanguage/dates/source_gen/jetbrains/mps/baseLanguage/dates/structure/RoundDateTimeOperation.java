@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RoundDateTimeOperation extends UnaryDateTimeOperation {
+public class RoundDateTimeOperation extends jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation";
   public static final String PRECISION = "precision";
 
@@ -16,11 +16,11 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
     super(node);
   }
 
-  public DateTimeProperty getPrecision() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, RoundDateTimeOperation.PRECISION);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty getPrecision() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty)this.getReferent(DateTimeProperty.class, RoundDateTimeOperation.PRECISION);
   }
 
-  public void setPrecision(DateTimeProperty node) {
+  public void setPrecision(jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty node) {
     super.setReferent(RoundDateTimeOperation.PRECISION, node);
   }
 

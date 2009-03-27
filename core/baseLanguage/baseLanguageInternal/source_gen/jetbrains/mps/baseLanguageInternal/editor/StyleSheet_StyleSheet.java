@@ -17,7 +17,6 @@ public class StyleSheet_StyleSheet {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 
@@ -26,7 +25,6 @@ public class StyleSheet_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -37,7 +35,6 @@ public class StyleSheet_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         this.set(StyleAttributes.SELECTABLE, false);
       }
-
     };
   }
 

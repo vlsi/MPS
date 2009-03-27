@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_match_ReferentConstraint;
+import jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_match_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

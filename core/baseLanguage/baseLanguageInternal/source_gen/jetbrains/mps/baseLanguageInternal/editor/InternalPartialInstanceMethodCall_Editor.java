@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -206,7 +207,6 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -229,7 +229,6 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
         {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -242,7 +241,6 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

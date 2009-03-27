@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
 
@@ -164,6 +165,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9156_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9156_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -176,6 +178,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9156_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9156_3");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

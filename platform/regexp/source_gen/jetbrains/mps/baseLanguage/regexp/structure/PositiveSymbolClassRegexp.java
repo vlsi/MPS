@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PositiveSymbolClassRegexp extends SymbolClassRegexp {
+public class PositiveSymbolClassRegexp extends jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp";
 
   public PositiveSymbolClassRegexp(SNode node) {

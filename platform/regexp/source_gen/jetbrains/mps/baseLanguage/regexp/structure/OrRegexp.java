@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class OrRegexp extends BinaryRegexp {
+public class OrRegexp extends jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp";
 
   public OrRegexp(SNode node) {

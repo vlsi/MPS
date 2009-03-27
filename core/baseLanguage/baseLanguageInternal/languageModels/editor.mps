@@ -570,12 +570,14 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199964780437">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="3.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1199964788783">
         <link role="relationDeclaration" targetNodeId="1.1199964767385" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199964790160">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="3.1238143818889" resolveInfo="Matching" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1199964792662">
         <link role="relationDeclaration" targetNodeId="1.1199964762556" />

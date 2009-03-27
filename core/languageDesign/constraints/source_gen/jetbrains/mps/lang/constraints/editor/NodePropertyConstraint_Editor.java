@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Padding;
@@ -345,6 +346,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8504_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8504_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -362,6 +364,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8504_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8504_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -205,10 +206,12 @@ public class Style_Component extends AbstractCellProvider {
 
   private static void setupBasic_Constant_7233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7233_1");
+    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7233_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7233_2");
+    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7233_3(EditorCell editorCell, SNode node, EditorContext context) {

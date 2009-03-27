@@ -6882,11 +6882,9 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1238060245026">
       <property name="name" value="tag" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1238060263924">
-        <property name="name" value="tag" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238060273662">
-        <link role="label" targetNodeId="1238060263924" resolveInfo="tag" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094292941">
+        <property name="label" value="tag" />
+        <property name="labelName" value="tag" />
       </node>
     </node>
   </node>
@@ -7420,6 +7418,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306251240">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994182">
           <property name="flag" value="false" />
@@ -7438,6 +7437,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306254664">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306426285">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997649">
@@ -8343,23 +8343,16 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236262416839">
         <property name="text" value=":" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1237992797210">
-        <link role="relationDeclaration" targetNodeId="2.1237992758949" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1237992797211">
-          <link role="conceptDeclaration" targetNodeId="2.1237984347892" resolveInfo="MatchingLabelDeclaration" />
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237992803807">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237993419741">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237993419742">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237993481606">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237993486917">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237993489817" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237993483100">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1237993481607" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237993485097">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1238091831592">
+        <link role="relationDeclaration" targetNodeId="2.1238091709220" resolveInfo="label" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1238093682598">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238093682599">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238093721239">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238093724314">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238093725441" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238093722452">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1238093721240" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238093723178">
                     <link role="link" targetNodeId="2.1236443321503" />
                   </node>
                 </node>
@@ -8385,20 +8378,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237984441912">
-    <property name="package" value="Stylesheet" />
-    <link role="conceptDeclaration" targetNodeId="2.1237984347892" resolveInfo="MatchingLabelDeclaration" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237984481276">
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237984481278" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237984568273">
-        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1237984514863">
-        <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
       </node>
     </node>
   </node>

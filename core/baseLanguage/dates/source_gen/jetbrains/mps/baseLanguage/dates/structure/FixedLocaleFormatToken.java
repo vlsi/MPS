@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FixedLocaleFormatToken extends FormatToken {
+public class FixedLocaleFormatToken extends jetbrains.mps.baseLanguage.dates.structure.FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FixedLocaleFormatToken";
   public static final String LOCALE = "locale";
   public static final String DATE_FORMAT = "dateFormat";
@@ -18,19 +18,19 @@ public class FixedLocaleFormatToken extends FormatToken {
     super(node);
   }
 
-  public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, FixedLocaleFormatToken.LOCALE);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.Locale getLocale() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.Locale)this.getReferent(Locale.class, FixedLocaleFormatToken.LOCALE);
   }
 
-  public void setLocale(Locale node) {
+  public void setLocale(jetbrains.mps.baseLanguage.datesInternal.structure.Locale node) {
     super.setReferent(FixedLocaleFormatToken.LOCALE, node);
   }
 
-  public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, FixedLocaleFormatToken.DATE_FORMAT);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat getDateFormat() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat)this.getReferent(IDateFormat.class, FixedLocaleFormatToken.DATE_FORMAT);
   }
 
-  public void setDateFormat(IDateFormat node) {
+  public void setDateFormat(jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat node) {
     super.setReferent(FixedLocaleFormatToken.DATE_FORMAT, node);
   }
 

@@ -690,7 +690,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1238054639017(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+    return SPropertyOperations.getString(_context.getNode(), "labelName");
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {

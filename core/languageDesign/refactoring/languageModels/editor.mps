@@ -438,6 +438,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213020525259">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996583">
           <property name="flag" value="false" />
@@ -494,6 +495,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213020532683">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
       </node>
     </node>
   </node>

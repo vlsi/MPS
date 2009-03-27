@@ -256,7 +256,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "brace2");
+          this.set(StyleAttributes.MATCHING_LABEL, "finally");
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
@@ -296,7 +296,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.MATCHING_LABEL, "brace2");
+          this.set(StyleAttributes.MATCHING_LABEL, "finally");
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LineEndRegexp extends Regexp {
+public class LineEndRegexp extends jetbrains.mps.baseLanguage.regexp.structure.Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp";
 
   public LineEndRegexp(SNode node) {

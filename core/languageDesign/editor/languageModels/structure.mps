@@ -4074,10 +4074,9 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="MatchingLabelStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237992758949">
-      <property name="metaClass" value="reference" />
-      <property name="role" value="label" />
-      <link role="target" targetNodeId="1237984347892" resolveInfo="MatchingLabelDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238091709220">
+      <property name="name" value="labelName" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236443321503">
       <property name="metaClass" value="aggregation" />
@@ -4194,18 +4193,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237385578945">
       <property name="value" value="indent-layout-on-new-line" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237984347892">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="MatchingLabelDeclaration" />
-    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237987850530">
-      <property name="value" value="label declaration" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237988351835">
-      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

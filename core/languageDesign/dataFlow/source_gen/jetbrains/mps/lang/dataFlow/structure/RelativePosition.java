@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RelativePosition extends Position {
+public class RelativePosition extends jetbrains.mps.lang.dataFlow.structure.Position {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.RelativePosition";
   public static final String RELATIVE_TO = "relativeTo";
 
@@ -16,11 +16,11 @@ public class RelativePosition extends Position {
     super(node);
   }
 
-  public Expression getRelativeTo() {
-    return (Expression)this.getChild(Expression.class, RelativePosition.RELATIVE_TO);
+  public jetbrains.mps.baseLanguage.structure.Expression getRelativeTo() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, RelativePosition.RELATIVE_TO);
   }
 
-  public void setRelativeTo(Expression node) {
+  public void setRelativeTo(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(RelativePosition.RELATIVE_TO, node);
   }
 

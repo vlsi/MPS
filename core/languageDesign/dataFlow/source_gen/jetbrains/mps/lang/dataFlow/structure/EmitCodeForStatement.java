@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EmitCodeForStatement extends EmitStatement {
+public class EmitCodeForStatement extends jetbrains.mps.lang.dataFlow.structure.EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement";
   public static final String CODE_FOR = "codeFor";
 
@@ -16,11 +16,11 @@ public class EmitCodeForStatement extends EmitStatement {
     super(node);
   }
 
-  public Expression getCodeFor() {
-    return (Expression)this.getChild(Expression.class, EmitCodeForStatement.CODE_FOR);
+  public jetbrains.mps.baseLanguage.structure.Expression getCodeFor() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, EmitCodeForStatement.CODE_FOR);
   }
 
-  public void setCodeFor(Expression node) {
+  public void setCodeFor(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(EmitCodeForStatement.CODE_FOR, node);
   }
 

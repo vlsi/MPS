@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
+public class DateTimeWithPropertyOperation extends jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeWithPropertyOperation";
   public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
   public static final String EXPRESSION = "expression";
@@ -18,19 +18,19 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
     super(node);
   }
 
-  public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty getDateTimeProperty() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
   }
 
-  public void setDateTimeProperty(DateTimeProperty node) {
+  public void setDateTimeProperty(jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty node) {
     super.setReferent(DateTimeWithPropertyOperation.DATE_TIME_PROPERTY, node);
   }
 
-  public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, DateTimeWithPropertyOperation.EXPRESSION);
+  public jetbrains.mps.baseLanguage.structure.Expression getExpression() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, DateTimeWithPropertyOperation.EXPRESSION);
   }
 
-  public void setExpression(Expression node) {
+  public void setExpression(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(DateTimeWithPropertyOperation.EXPRESSION, node);
   }
 

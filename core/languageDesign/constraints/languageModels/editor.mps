@@ -56,6 +56,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1149010775547">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="11.1238143818889" resolveInfo="Matching" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998131">
             <property name="flag" value="false" />
           </node>
@@ -86,6 +87,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1149010775555">
           <property name="text" value="}" />
+          <link role="styleClass" targetNodeId="11.1238143818889" resolveInfo="Matching" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994681">
             <property name="flag" value="false" />
           </node>

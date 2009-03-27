@@ -73,7 +73,6 @@ public class QueriesGenerated {
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     {
@@ -94,7 +93,6 @@ public class QueriesGenerated {
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     {
@@ -114,7 +112,6 @@ public class QueriesGenerated {
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
         }
-
       });
     }
     return result;
@@ -141,7 +138,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -169,7 +165,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "regexp", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }
@@ -195,10 +190,8 @@ public class QueriesGenerated {
               }
               return true;
             }
-
           }).toListSequence();
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -217,7 +210,6 @@ public class QueriesGenerated {
           public SNode getOutputConcept() {
             return concept;
           }
-
         });
       }
     }
@@ -234,7 +226,6 @@ public class QueriesGenerated {
           SModel model = _context.getSourceNode().getModel();
           return BaseAdapter.toNodes(model.allAdaptersIncludingImported(operationContext.getScope(), PredefinedSymbolClassDeclaration.class));
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -266,7 +257,6 @@ public class QueriesGenerated {
           public String getDescriptionText(String text) {
             return SPropertyOperations.getString((item), "description");
           }
-
         });
       }
     }
@@ -282,7 +272,6 @@ public class QueriesGenerated {
         public Object calculate() {
           return BaseAdapter.toNodes(SNodeOperations.getModel(_context.getSourceNode()).allAdaptersIncludingImported(operationContext.getScope(), RegexpDeclaration.class));
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -314,7 +303,6 @@ public class QueriesGenerated {
           public String getDescriptionText(String text) {
             return SPropertyOperations.getString((item), "description");
           }
-
         });
       }
     }
@@ -331,7 +319,6 @@ public class QueriesGenerated {
           SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), ((ConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"))), "match", operationContext);
           return status.getSearchScope().getNodes();
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -363,7 +350,6 @@ public class QueriesGenerated {
           public String getDescriptionText(String text) {
             return "";
           }
-
         });
       }
     }

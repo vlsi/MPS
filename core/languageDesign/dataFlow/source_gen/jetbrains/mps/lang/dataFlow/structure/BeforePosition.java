@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BeforePosition extends RelativePosition {
+public class BeforePosition extends jetbrains.mps.lang.dataFlow.structure.RelativePosition {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.BeforePosition";
 
   public BeforePosition(SNode node) {

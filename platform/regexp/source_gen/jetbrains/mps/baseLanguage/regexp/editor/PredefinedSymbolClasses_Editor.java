@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -107,6 +108,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0524_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0524_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -119,6 +121,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0524_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0524_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

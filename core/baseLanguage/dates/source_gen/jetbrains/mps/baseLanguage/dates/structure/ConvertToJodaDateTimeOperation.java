@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConvertToJodaDateTimeOperation extends DateTimeOperation {
+public class ConvertToJodaDateTimeOperation extends jetbrains.mps.baseLanguage.dates.structure.DateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ConvertToJodaDateTimeOperation";
 
   public ConvertToJodaDateTimeOperation(SNode node) {

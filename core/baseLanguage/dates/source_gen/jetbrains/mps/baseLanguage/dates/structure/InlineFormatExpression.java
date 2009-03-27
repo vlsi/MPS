@@ -5,12 +5,13 @@ package jetbrains.mps.baseLanguage.dates.structure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.dates.structure.FormatToken;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InlineFormatExpression extends UnaryDateTimeOperation {
+public class InlineFormatExpression extends jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression";
   public static final String WITH_LOCALE = "withLocale";
   public static final String LOCALE = "locale";
@@ -28,11 +29,11 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
     this.setBooleanProperty(InlineFormatExpression.WITH_LOCALE, value);
   }
 
-  public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, InlineFormatExpression.LOCALE);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.Locale getLocale() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.Locale)this.getReferent(Locale.class, InlineFormatExpression.LOCALE);
   }
 
-  public void setLocale(Locale node) {
+  public void setLocale(jetbrains.mps.baseLanguage.datesInternal.structure.Locale node) {
     super.setReferent(InlineFormatExpression.LOCALE, node);
   }
 
@@ -40,19 +41,19 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
     return this.getChildCount(InlineFormatExpression.FORMAT_TOKEN);
   }
 
-  public Iterator<FormatToken> formatTokens() {
+  public Iterator<jetbrains.mps.baseLanguage.dates.structure.FormatToken> formatTokens() {
     return this.children(FormatToken.class, InlineFormatExpression.FORMAT_TOKEN);
   }
 
-  public List<FormatToken> getFormatTokens() {
+  public List<jetbrains.mps.baseLanguage.dates.structure.FormatToken> getFormatTokens() {
     return this.getChildren(FormatToken.class, InlineFormatExpression.FORMAT_TOKEN);
   }
 
-  public void addFormatToken(FormatToken node) {
+  public void addFormatToken(jetbrains.mps.baseLanguage.dates.structure.FormatToken node) {
     this.addChild(InlineFormatExpression.FORMAT_TOKEN, node);
   }
 
-  public void insertFormatToken(FormatToken prev, FormatToken node) {
+  public void insertFormatToken(jetbrains.mps.baseLanguage.dates.structure.FormatToken prev, jetbrains.mps.baseLanguage.dates.structure.FormatToken node) {
     this.insertChild(prev, InlineFormatExpression.FORMAT_TOKEN, node);
   }
 

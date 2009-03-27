@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class UnicodeCharacterRegexp extends Regexp {
+public class UnicodeCharacterRegexp extends jetbrains.mps.baseLanguage.regexp.structure.Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp";
   public static final String CODE = "code";
 

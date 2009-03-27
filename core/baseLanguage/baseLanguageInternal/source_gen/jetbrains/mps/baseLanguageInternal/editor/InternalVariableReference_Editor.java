@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -165,8 +166,8 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       {
         result = ListSequence.<String>fromArray();
       }
-      // we need this because of smart input
-      // DO NOT REMOVE IT
+      //       we need this because of smart input
+      //       DO NOT REMOVE IT
       if (SPropertyOperations.getString(node, "name") != null) {
         ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }

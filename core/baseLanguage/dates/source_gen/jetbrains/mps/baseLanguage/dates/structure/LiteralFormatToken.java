@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LiteralFormatToken extends FormatToken {
+public class LiteralFormatToken extends jetbrains.mps.baseLanguage.dates.structure.FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.LiteralFormatToken";
   public static final String VALUE = "value";
 

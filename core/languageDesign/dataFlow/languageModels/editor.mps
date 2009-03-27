@@ -113,6 +113,9 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1206534328233">
       <property name="name" value="MayBeUnreachable" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238144902596">
+        <property name="labelName" value="MayBeUnreachable" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1206534333421">
         <property name="color" value="lightGray" />
       </node>

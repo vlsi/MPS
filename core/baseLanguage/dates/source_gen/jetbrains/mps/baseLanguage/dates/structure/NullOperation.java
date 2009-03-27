@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NullOperation extends DateTimeOperation {
+public class NullOperation extends jetbrains.mps.baseLanguage.dates.structure.DateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.NullOperation";
 
   public NullOperation(SNode node) {

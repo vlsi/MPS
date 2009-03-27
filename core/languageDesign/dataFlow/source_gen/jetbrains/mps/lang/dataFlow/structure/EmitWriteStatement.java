@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EmitWriteStatement extends BaseEmitVariableStatement {
+public class EmitWriteStatement extends jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement";
   public static final String VALUE = "value";
 
@@ -16,11 +16,11 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
     super(node);
   }
 
-  public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, EmitWriteStatement.VALUE);
+  public jetbrains.mps.baseLanguage.structure.Expression getValue() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, EmitWriteStatement.VALUE);
   }
 
-  public void setValue(Expression node) {
+  public void setValue(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(EmitWriteStatement.VALUE, node);
   }
 

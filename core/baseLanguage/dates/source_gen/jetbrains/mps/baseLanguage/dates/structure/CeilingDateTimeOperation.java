@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CeilingDateTimeOperation extends RoundDateTimeOperation {
+public class CeilingDateTimeOperation extends jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.CeilingDateTimeOperation";
 
   public CeilingDateTimeOperation(SNode node) {

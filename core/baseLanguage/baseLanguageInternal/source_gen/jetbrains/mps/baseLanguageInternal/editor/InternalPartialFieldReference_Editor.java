@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -256,7 +257,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -284,7 +284,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -306,7 +305,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -321,7 +319,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

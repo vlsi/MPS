@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class QuestionRegexp extends UnaryRegexp {
+public class QuestionRegexp extends jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp";
 
   public QuestionRegexp(SNode node) {

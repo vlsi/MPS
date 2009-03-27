@@ -1861,6 +1861,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201607970985">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="27.1238143818889" resolveInfo="Matching" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031940">
             <property name="flag" value="false" />
           </node>
@@ -1879,6 +1880,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188813217750">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="27.1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032048">
           <property name="flag" value="false" />
         </node>

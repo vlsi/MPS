@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IntervalSymbolClassPart extends SymbolClassPart {
+public class IntervalSymbolClassPart extends jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart";
   public static final String START = "start";
   public static final String END = "end";

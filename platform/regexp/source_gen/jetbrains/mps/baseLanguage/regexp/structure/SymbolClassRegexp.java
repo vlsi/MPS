@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPart {
+public class SymbolClassRegexp extends jetbrains.mps.baseLanguage.regexp.structure.Regexp implements jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -48,19 +49,19 @@ public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPar
     return this.getChildCount(SymbolClassRegexp.PART);
   }
 
-  public Iterator<SymbolClassPart> parts() {
+  public Iterator<jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart> parts() {
     return this.children(SymbolClassPart.class, SymbolClassRegexp.PART);
   }
 
-  public List<SymbolClassPart> getParts() {
+  public List<jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart> getParts() {
     return this.getChildren(SymbolClassPart.class, SymbolClassRegexp.PART);
   }
 
-  public void addPart(SymbolClassPart node) {
+  public void addPart(jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart node) {
     this.addChild(SymbolClassRegexp.PART, node);
   }
 
-  public void insertPart(SymbolClassPart prev, SymbolClassPart node) {
+  public void insertPart(jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart prev, jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart node) {
     this.insertChild(prev, SymbolClassRegexp.PART, node);
   }
 

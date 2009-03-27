@@ -6080,8 +6080,8 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1156760040296">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="1238057685212" resolveInfo="LeftBlockBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238058761475">
-          <link role="label" targetNodeId="1238058750609" resolveInfo="brace2" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094818783">
+          <property name="labelName" value="finally" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237798986250">
           <property name="flag" value="true" />
@@ -6099,8 +6099,8 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1153952495829">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="1238057795118" resolveInfo="RightBlockBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238058775286">
-          <link role="label" targetNodeId="1238058750609" resolveInfo="brace2" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094829284">
+          <property name="labelName" value="finally" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032069">
           <property name="flag" value="true" />
@@ -10122,11 +10122,8 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010868182">
       <property name="name" value="Parenthesis" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1237993509002">
-        <property name="name" value="parenthesis" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238068039656">
-        <link role="label" targetNodeId="1237993509002" resolveInfo="parenthesis" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094796622">
+        <property name="labelName" value="parenthesis" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010896172">
         <property name="style" value="PLAIN" />
@@ -10164,11 +10161,8 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010897126">
         <property name="style" value="PLAIN" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1238057820707">
-        <property name="name" value="brace" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1238058750609">
-        <property name="name" value="brace2" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094870675">
+        <property name="labelName" value="brace" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215091279307">
@@ -10200,26 +10194,20 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1238057685212">
       <property name="name" value="LeftBlockBrace" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238057839037">
-        <link role="label" targetNodeId="1238057820707" resolveInfo="brace" />
-      </node>
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1238057791093">
         <link role="styleSheetClass" targetNodeId="1215010874200" resolveInfo="Brace" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1238057795118">
       <property name="name" value="RightBlockBrace" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238057845432">
-        <link role="label" targetNodeId="1238057820707" resolveInfo="brace" />
-      </node>
       <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="1238057809868">
         <link role="styleSheetClass" targetNodeId="1215010874200" resolveInfo="Brace" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010871495">
       <property name="name" value="Bracket" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelDeclaration" id="1238067892856">
-        <property name="name" value="bracket" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094882486">
+        <property name="labelName" value="bracket" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1215010897861">
         <property name="style" value="PLAIN" />
@@ -10227,9 +10215,6 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923571622">
       <property name="name" value="LeftBracket" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238067905406">
-        <link role="label" targetNodeId="1238067892856" resolveInfo="bracket" />
-      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233923813536">
         <property name="flag" value="true" />
       </node>
@@ -10239,9 +10224,6 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1233923584313">
       <property name="name" value="RightBracket" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238067995995">
-        <link role="label" targetNodeId="1238067892856" resolveInfo="bracket" />
-      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233923822363">
         <property name="flag" value="true" />
       </node>
@@ -10274,6 +10256,12 @@
         <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1215096046863" />
+    </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1238143818889">
+      <property name="name" value="Matching" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238143825925">
+        <property name="labelName" value="matching" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1188206419020">
@@ -14339,6 +14327,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180806">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="1238143818889" resolveInfo="Matching" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237481488102">
           <property name="flag" value="true" />
         </node>
@@ -14354,6 +14343,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071180811">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="1238143818889" resolveInfo="Matching" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238143597819">
+          <property name="labelName" value="brace" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237480441752" />
     </node>

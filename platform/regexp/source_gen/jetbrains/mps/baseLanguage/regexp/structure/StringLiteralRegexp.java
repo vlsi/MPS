@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StringLiteralRegexp extends Regexp {
+public class StringLiteralRegexp extends jetbrains.mps.baseLanguage.regexp.structure.Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp";
   public static final String TEXT = "text";
 

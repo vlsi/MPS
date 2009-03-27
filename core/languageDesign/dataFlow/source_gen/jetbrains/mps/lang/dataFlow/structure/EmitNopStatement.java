@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EmitNopStatement extends EmitStatement {
+public class EmitNopStatement extends jetbrains.mps.lang.dataFlow.structure.EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement";
 
   public EmitNopStatement(SNode node) {

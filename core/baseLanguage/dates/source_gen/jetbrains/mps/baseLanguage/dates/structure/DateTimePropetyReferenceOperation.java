@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DateTimePropetyReferenceOperation extends DateTimeOperation {
+public class DateTimePropetyReferenceOperation extends jetbrains.mps.baseLanguage.dates.structure.DateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimePropetyReferenceOperation";
   public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
 
@@ -16,11 +16,11 @@ public class DateTimePropetyReferenceOperation extends DateTimeOperation {
     super(node);
   }
 
-  public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty getDateTimeProperty() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY);
   }
 
-  public void setDateTimeProperty(DateTimeProperty node) {
+  public void setDateTimeProperty(jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty node) {
     super.setReferent(DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY, node);
   }
 

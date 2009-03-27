@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EmitJumpStatement extends BaseEmitJumpStatement {
+public class EmitJumpStatement extends jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement";
 
   public EmitJumpStatement(SNode node) {

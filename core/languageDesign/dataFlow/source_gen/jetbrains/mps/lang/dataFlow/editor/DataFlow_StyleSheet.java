@@ -28,6 +28,7 @@ public class DataFlow_StyleSheet {
   public static Style getMayBeUnreachable(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.MATCHING_LABEL, "MayBeUnreachable");
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
     };

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SeqRegexp extends BinaryRegexp {
+public class SeqRegexp extends jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp";
 
   public SeqRegexp(SNode node) {

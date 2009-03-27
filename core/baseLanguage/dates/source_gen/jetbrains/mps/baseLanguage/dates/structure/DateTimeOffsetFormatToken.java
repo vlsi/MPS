@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.dates.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DateTimeOffsetFormatToken extends FormatToken {
+public class DateTimeOffsetFormatToken extends jetbrains.mps.baseLanguage.dates.structure.FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeOffsetFormatToken";
   public static final String DURATION_TYPE_REFERENCE = "durationTypeReference";
 
@@ -21,19 +22,19 @@ public class DateTimeOffsetFormatToken extends FormatToken {
     return this.getChildCount(DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
   }
 
-  public Iterator<DurationTypeReference> durationTypeReferences() {
+  public Iterator<jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference> durationTypeReferences() {
     return this.children(DurationTypeReference.class, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
   }
 
-  public List<DurationTypeReference> getDurationTypeReferences() {
+  public List<jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference> getDurationTypeReferences() {
     return this.getChildren(DurationTypeReference.class, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE);
   }
 
-  public void addDurationTypeReference(DurationTypeReference node) {
+  public void addDurationTypeReference(jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference node) {
     this.addChild(DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE, node);
   }
 
-  public void insertDurationTypeReference(DurationTypeReference prev, DurationTypeReference node) {
+  public void insertDurationTypeReference(jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference prev, jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference node) {
     this.insertChild(prev, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE, node);
   }
 

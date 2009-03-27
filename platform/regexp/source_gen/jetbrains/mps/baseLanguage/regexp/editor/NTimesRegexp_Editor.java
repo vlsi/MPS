@@ -14,6 +14,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -122,6 +123,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3253_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3253_0");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,6 +141,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3253_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3253_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

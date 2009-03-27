@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 

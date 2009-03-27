@@ -422,10 +422,12 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2962_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2962_4");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2962_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2962_5");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_2962_5(EditorCell editorCell, SNode node, EditorContext context) {

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbsDateTimeMinusOperation extends DateTimeMinusOperation {
+public class AbsDateTimeMinusOperation extends jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.AbsDateTimeMinusOperation";
 
   public AbsDateTimeMinusOperation(SNode node) {

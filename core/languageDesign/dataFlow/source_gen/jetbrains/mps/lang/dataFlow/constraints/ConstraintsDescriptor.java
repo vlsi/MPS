@@ -5,6 +5,8 @@ package jetbrains.mps.lang.dataFlow.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.dataFlow.constraints.DataFlowBuilderDeclaration_name_PropertyConstraint;
+import jetbrains.mps.lang.dataFlow.constraints.LabelPosition_label_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

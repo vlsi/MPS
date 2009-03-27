@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FloorDateTimeOperation extends RoundDateTimeOperation {
+public class FloorDateTimeOperation extends jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FloorDateTimeOperation";
 
   public FloorDateTimeOperation(SNode node) {

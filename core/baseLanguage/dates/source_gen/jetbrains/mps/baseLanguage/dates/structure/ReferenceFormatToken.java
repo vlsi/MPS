@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReferenceFormatToken extends FormatToken {
+public class ReferenceFormatToken extends jetbrains.mps.baseLanguage.dates.structure.FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ReferenceFormatToken";
   public static final String DATE_FORMAT = "dateFormat";
 
@@ -16,11 +16,11 @@ public class ReferenceFormatToken extends FormatToken {
     super(node);
   }
 
-  public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, ReferenceFormatToken.DATE_FORMAT);
+  public jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat getDateFormat() {
+    return (jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat)this.getReferent(IDateFormat.class, ReferenceFormatToken.DATE_FORMAT);
   }
 
-  public void setDateFormat(IDateFormat node) {
+  public void setDateFormat(jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat node) {
     super.setReferent(ReferenceFormatToken.DATE_FORMAT, node);
   }
 
