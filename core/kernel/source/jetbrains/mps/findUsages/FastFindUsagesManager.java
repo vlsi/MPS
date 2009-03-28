@@ -209,8 +209,6 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<SNode> findInstancesOfNodeInCache(AbstractConceptDeclaration concept, final IScope scope, boolean isExact) {
-    ensureCachesAreUpToDate();
-
     Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
@@ -235,8 +233,6 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<SReference> findUsagesOfNodeInCache(SNode node, final IScope scope) {
-    ensureCachesAreUpToDate();
-
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     String nodeId = node.getId();
     final Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
@@ -248,14 +244,5 @@ class FastFindUsagesManager extends FindUsagesManager {
       result.addAll(sm.findUsages(node));
     }
     return result;
-  }
-
-  //todo this is a workaround for IDEA's bug. Remove it as soon as IDEA will fix the bug.
-  private void ensureCachesAreUpToDate() {
-    ProjectManager projectManager = ProjectManager.getInstance();
-    FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
-    Project defaultProject = projectManager.getDefaultProject();
-    synchronizer.registerCacheUpdater(new UnindexedFilesUpdater(defaultProject, defaultProject.getComponent(ProjectRootManager.class), FileBasedIndex.getInstance()));
-    synchronizer.execute();
   }
 }
