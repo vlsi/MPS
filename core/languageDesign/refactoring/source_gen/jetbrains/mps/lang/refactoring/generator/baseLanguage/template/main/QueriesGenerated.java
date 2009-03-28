@@ -98,14 +98,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199464161444(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
-    if (conceptDeclaration == null) {
-      return null;
-    }
-    return SNodeOperations.getModel(conceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1199466527696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
     if (conceptDeclaration == null) {
@@ -189,6 +181,10 @@ public class QueriesGenerated {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(0);
+  }
+
+  public static Object referenceMacro_GetReferent_1238252323266(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
   }
 
   public static boolean ifMacro_Condition_1190724916731(final IOperationContext operationContext, final IfMacroContext _context) {

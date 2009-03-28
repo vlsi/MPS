@@ -12,15 +12,14 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.constraints.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -101,13 +100,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609767181(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode applicableLink = SLinkOperations.getTarget(_context.getNode(), "applicableLink", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(applicableLink)));
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "applicableLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609822047(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode applicableLink = SLinkOperations.getTarget(_context.getNode(), "applicableLink", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(applicableLink)));
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "applicableLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184609972214(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -119,13 +116,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610007581(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode applicableLink = SLinkOperations.getTarget(_context.getNode(), "applicableLink", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(applicableLink)));
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "applicableLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610013893(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode applicableLink = SLinkOperations.getTarget(_context.getNode(), "applicableLink", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(applicableLink)));
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "applicableLink", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610547646(final IOperationContext operationContext, final PropertyMacroContext _context) {

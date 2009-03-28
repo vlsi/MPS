@@ -153,7 +153,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             ConceptDeclaration extendedConcept = cd.getExtends();
             if (extendedConcept != null) {
               String fqName = NameUtil.nodeFQName(extendedConcept);
-              Language declaringLanguage = SModelUtil.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage != null) {
                 parents.add(fqName);
                 result.addAll(getAncestorsNames(fqName));
@@ -164,7 +164,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
               if (interfaceConcept == null) continue;
               String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
               parents.add(fqName);
               result.addAll(getAncestorsNames(fqName));
@@ -177,7 +177,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
               if (interfaceConcept == null) continue;
               String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
               parents.add(fqName);
               result.addAll(getAncestorsNames(fqName));

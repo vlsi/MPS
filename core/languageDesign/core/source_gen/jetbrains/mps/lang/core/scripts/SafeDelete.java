@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -22,12 +23,12 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
 
-  private Set<String> myTransientParameters = new HashSet<String>();
+  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public SafeDelete() {
   }
@@ -119,7 +120,6 @@ public class SafeDelete extends AbstractLoggableRefactoring {
         public Boolean compute() {
           return SafeDelete.this.isApplicable(refactoringContext);
         }
-
       });
       return result;
     }
@@ -135,7 +135,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
       return true;
     } else
     {

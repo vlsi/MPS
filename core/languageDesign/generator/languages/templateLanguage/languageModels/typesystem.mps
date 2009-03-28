@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.lang.generator.structure(jetbrains.mps.lang.generator.structure@java_stub)" version="-1" />
+  <import index="26" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178562976720">
     <property name="name" value="typeof_TemplateFunctionParameter_sourceNode" />
     <property name="overrides" value="true" />
@@ -2345,20 +2346,14 @@
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226664097359">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226664097360">
-            <link role="baseMethodDeclaration" targetNodeId="6.~SModelUtil_new.isAssignableConcept(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):boolean" resolveInfo="isAssignableConcept" />
-            <link role="classConcept" targetNodeId="6.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226664097361">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226664097362">
-                <link role="variableDeclaration" targetNodeId="1226664097346" resolveInfo="nodeConcept" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1226664097363" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238252098828">
+            <link role="baseMethodDeclaration" targetNodeId="26.1238251253599" resolveInfo="isAssignableConcept" />
+            <link role="classConcept" targetNodeId="26.1237995590703" resolveInfo="SModelUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238252098830">
+              <link role="variableDeclaration" targetNodeId="1226664097346" resolveInfo="nodeConcept" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226664097364">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226664097365">
-                <link role="variableDeclaration" targetNodeId="1226664181605" resolveInfo="templateApplicableConcept" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1226664097366" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238252098833">
+              <link role="variableDeclaration" targetNodeId="1226664181605" resolveInfo="templateApplicableConcept" />
             </node>
           </node>
         </node>

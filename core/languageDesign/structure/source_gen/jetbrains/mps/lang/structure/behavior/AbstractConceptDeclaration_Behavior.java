@@ -5,25 +5,26 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior._Quotations;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
@@ -42,7 +43,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findBehaviour_1213877394029(SNode thisNode, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     if (language == null) {
       return null;
     }
@@ -60,7 +61,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findConstraints_1213877394086(SNode thisNode, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     if (language == null) {
       return null;
     }
@@ -78,7 +79,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findDataFlowBuilder_1213877394143(SNode thisNode, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     if (language == null) {
       return null;
     }

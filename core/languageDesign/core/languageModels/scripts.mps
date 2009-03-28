@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -57,6 +57,7 @@
   <import index="35" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
+  <import index="38" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
     <property name="userFriendlyName" value="Move Nodes" />
@@ -277,18 +278,10 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876794783">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876794784">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227876794785">
-                            <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                            <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.lang.structure.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227876794786">
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227876794787">
-                                <link role="classifier" targetNodeId="37.~LinkDeclaration" resolveInfo="LinkDeclaration" />
-                              </node>
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876794788">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876817611">
-                                  <link role="variableDeclaration" targetNodeId="1227876794781" resolveInfo="it" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1227876794790" />
-                              </node>
+                            <link role="classConcept" targetNodeId="38.1237995590703" resolveInfo="SModelUtil" />
+                            <link role="baseMethodDeclaration" targetNodeId="38.1238250357846" resolveInfo="getGenuineLinkRole" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876817611">
+                              <link role="variableDeclaration" targetNodeId="1227876794781" resolveInfo="it" />
                             </node>
                           </node>
                         </node>

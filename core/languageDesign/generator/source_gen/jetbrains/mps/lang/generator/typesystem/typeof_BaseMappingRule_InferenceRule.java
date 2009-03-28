@@ -12,6 +12,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.lang.generator.typesystem._Quotations;
 import jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 

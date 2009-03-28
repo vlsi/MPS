@@ -31,9 +31,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
@@ -45,6 +43,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
@@ -1163,7 +1162,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition0886_0(SNode node, EditorContext editorContext, IScope scope) {
-    Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
+    Language l = SModelUtil.getDeclaringLanguage(node, scope);
     if (l == null) {
       return false;
     }

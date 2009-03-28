@@ -29,7 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="16" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -41,6 +41,7 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
+  <import index="16" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1212181746947">
     <property name="name" value="check_LinkDeclaration" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181746948">
@@ -454,16 +455,13 @@
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235136293837">
             <link role="classifier" targetNodeId="12.~Language" resolveInfo="Language" />
           </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136293838">
-            <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.getDeclaringLanguage(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getDeclaringLanguage" />
-            <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235139308985">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235139308986">
-                <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235139308987" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238249738340">
+            <link role="baseMethodDeclaration" targetNodeId="16.1237995590835" resolveInfo="getDeclaringLanguage" />
+            <link role="classConcept" targetNodeId="16.1237995590703" resolveInfo="SModelUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238249738342">
+              <link role="applicableNode" targetNodeId="1235133155414" resolveInfo="cd" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136293842">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238249738344">
               <link role="baseMethodDeclaration" targetNodeId="13.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="13.~GlobalScope" resolveInfo="GlobalScope" />
             </node>
@@ -523,16 +521,13 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235136450725">
                 <link role="classifier" targetNodeId="12.~Language" resolveInfo="Language" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136462249">
-                <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.getDeclaringLanguage(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getDeclaringLanguage" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136462250">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136466609">
-                    <link role="variableDeclaration" targetNodeId="1235136403647" resolveInfo="superConcept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1235136462252" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238249706944">
+                <link role="baseMethodDeclaration" targetNodeId="16.1237995590835" resolveInfo="getDeclaringLanguage" />
+                <link role="classConcept" targetNodeId="16.1237995590703" resolveInfo="SModelUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238249706946">
+                  <link role="variableDeclaration" targetNodeId="1235136403647" resolveInfo="superConcept" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235136462253">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238249706948">
                   <link role="classConcept" targetNodeId="13.~GlobalScope" resolveInfo="GlobalScope" />
                   <link role="baseMethodDeclaration" targetNodeId="13.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
                 </node>

@@ -23,6 +23,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -106,16 +107,11 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static LinkDeclaration getGenuineLinkDeclaration(LinkDeclaration linkDeclaration) {
-    while (linkDeclaration != null && linkDeclaration.getSpecializedLink() != null) {
-      linkDeclaration = linkDeclaration.getSpecializedLink();
-    }
-    return linkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)));
   }
 
   public static String getGenuineLinkRole(LinkDeclaration linkDeclaration) {
-    LinkDeclaration genuinueLinkDeclaration = getGenuineLinkDeclaration(linkDeclaration);
-    if (genuinueLinkDeclaration == null) return null;
-    return genuinueLinkDeclaration.getRole();
+    return SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(linkDeclaration));
   }
 
   public static LinkMetaclass getGenuineLinkMetaclass(LinkDeclaration linkDeclaration) {
@@ -222,7 +218,8 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
-    return SModelUtil.getDeclaringLanguage(NameUtil.nodeFQName(concept), scope);
+    if (concept==null) return null;
+    return SModelUtil.getDeclaringLanguage(concept.getNode(), scope);
   }
 
   public static List<AbstractConceptDeclaration> getSubconcepts(String baseConceptFqName, SModel sourceModel, IScope scope) {
@@ -337,4 +334,14 @@ public class SModelUtil_new implements ApplicationComponent {
   public static ConceptDeclaration getBaseConcept() {
     return (ConceptDeclaration) SModelUtil.getBaseConcept().getAdapter();
   }
+
+  public static Language getDeclaringLanguage(String conceptFQName, @NotNull IScope scope) {
+    //todo this operation was performed with results caching
+      String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
+      if (languageNamespace == null) {
+        return null;
+      }
+      Language l = scope.getLanguage(languageNamespace);
+      return l;
+    }
 }

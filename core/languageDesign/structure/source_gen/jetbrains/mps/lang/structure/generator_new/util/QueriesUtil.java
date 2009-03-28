@@ -8,11 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -68,7 +68,7 @@ public class QueriesUtil {
 
   public static boolean isRefLink_card_1_spec(SNode link) {
     if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
-      SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
+      SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(link);
       if (SPropertyOperations.hasValue(genuineLink, "metaClass", "reference", "reference")) {
         if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;
@@ -98,7 +98,7 @@ public class QueriesUtil {
 
   public static boolean isAggLink_card_1_spec(SNode link) {
     if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
-      SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
+      SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(link);
       if (SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", "reference")) {
         if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;

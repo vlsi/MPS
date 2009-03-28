@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.generator.typesystem.QueriesUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
@@ -27,7 +27,7 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
     SNode query = SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
     SNode NT = QueriesUtil.getOutputNodeType_fromSourceQuery(query);
     SNode nodeConcept = SLinkOperations.getTarget(NT, "concept", false);
-    if (!(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(nodeConcept)), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(templateApplicableConcept))))) {
+    if (!(SModelUtil.isAssignableConcept(nodeConcept, templateApplicableConcept))) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

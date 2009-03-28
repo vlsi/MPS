@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -17,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -44,7 +45,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String role = "role";
   public static final String nodeToOpen = "nodeToOpen";
 
-  private Set<String> myTransientParameters = new HashSet<String>();
+  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public MoveNodes() {
     this.myTransientParameters.add("target");
@@ -90,20 +91,17 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         public boolean accept(LinkDeclaration it) {
           return SPropertyOperations.hasValue(((SNode)it.getNode()), "metaClass", "aggregation", "reference");
         }
-
       }).select(new ISelector <LinkDeclaration, SNode>() {
 
         public SNode select(LinkDeclaration it) {
           return (SNode)it.getNode();
         }
-
       });
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
-          return SModelUtil_new.getGenuineLinkRole((LinkDeclaration)((LinkDeclaration)SNodeOperations.getAdapter(it)));
+          return SModelUtil.getGenuineLinkRole(it);
         }
-
       });
       for(SNode node : refactoringContext.getSelectedNodes()) {
         String childRole = node.getRole_();
@@ -222,7 +220,6 @@ public class MoveNodes extends AbstractLoggableRefactoring {
             ListSequence.fromList(components).addElement(chooseComponent);
           }
         }
-
       });
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
       dialog.showDialog();
@@ -241,7 +238,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
       return true;
     } else
     {

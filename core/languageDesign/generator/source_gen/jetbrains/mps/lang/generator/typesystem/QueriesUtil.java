@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.generator.typesystem._Quotations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -26,7 +27,7 @@ public class QueriesUtil {
     SNode enclosingMacro = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.NodeMacro"}, false, false);
     if (enclosingMacro != null) {
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-        // inside mapper func or post-mapper function?
+        //         inside mapper func or post-mapper function?
         if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
           SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodeQuery", true);
           if (query != null) {
@@ -36,7 +37,7 @@ public class QueriesUtil {
         }
       }
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-        // inside mapper func or post-mapper function?
+        //         inside mapper func or post-mapper function?
         if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
           SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodesQuery", true);
           if (query != null) {
@@ -57,7 +58,7 @@ public class QueriesUtil {
         return;
       }
     }
-    // ===============
+    //     ===============
     SNode applicableConcept = QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
     {
       SNode _nodeToCheck_1029348928467 = null;
@@ -79,21 +80,21 @@ public class QueriesUtil {
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
         if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
           if (SLinkOperations.getTarget(attribute, "sourceNodeQuery", true) == null) {
-            // the query is optional - continue 'enclosing macro' look-up
+            //             the query is optional - continue 'enclosing macro' look-up
             continue;
           }
         }
         if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
           if (SLinkOperations.getTarget(attribute, "sourceNodeQuery", true) == null) {
-            // the query is optional - continue 'enclosing macro' look-up
+            //             the query is optional - continue 'enclosing macro' look-up
             continue;
           }
         }
-        // ========
+        //         ========
         prevMacro = attribute;
       }
     }
-    // ========
+    //     ========
     if (prevMacro != null) {
       return prevMacro;
     }
@@ -101,7 +102,7 @@ public class QueriesUtil {
   }
 
   public static SNode getEnclosing_TemplateFragment(SNode node) {
-    //  find first ancestor (inclusive) which has a template fragment attribute
+    //      find first ancestor (inclusive) which has a template fragment attribute
     Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -157,13 +158,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     return Sequence.fromIterable(TFs).first();
   }
@@ -251,7 +249,7 @@ __switch__:
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
       return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
     }
-    // ============
+    //     ============
     SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
     return SLinkOperations.getTarget(rootAnnotation, "applicableConcept", false);
   }

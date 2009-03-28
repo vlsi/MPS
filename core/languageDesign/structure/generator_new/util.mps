@@ -663,24 +663,11 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1167265071216">
                   <link role="concept" targetNodeId="1.1071489288298" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1167265071217">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740459405">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1167265071218">
-                      <link role="classConcept" targetNodeId="2.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                      <link role="baseMethodDeclaration" targetNodeId="2.~SModelUtil_new.getGenuineLinkDeclaration(jetbrains.mps.lang.structure.structure.LinkDeclaration):jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getGenuineLinkDeclaration" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721224">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1167265071220">
-                          <link role="variableDeclaration" targetNodeId="1167265071208" resolveInfo="link" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1171280149705" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459406">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                    </node>
-                  </node>
-                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1167265071222">
-                    <link role="concept" targetNodeId="1.1071489288298" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238249772941">
+                  <link role="baseMethodDeclaration" targetNodeId="20.1237995590890" resolveInfo="getGenuineLinkDeclaration" />
+                  <link role="classConcept" targetNodeId="20.1237995590703" resolveInfo="SModelUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238249772943">
+                    <link role="variableDeclaration" targetNodeId="1167265071208" resolveInfo="link" />
                   </node>
                 </node>
               </node>

@@ -11,9 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -132,7 +130,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
-        Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(((LinkDeclaration)SNodeOperations.getAdapter(node)));
+        Cardinality cardinality = SModelUtil.getGenuineLinkSourceCardinality(node);
         return cardinality.getName();
       }
 
@@ -474,8 +472,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return SPropertyOperations.getBoolean(node, "outer");
     } else
     {
-      LinkDeclaration linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(node)));
-      return linkDeclaration.getOuter();
+      return SPropertyOperations.getBoolean(SModelUtil.getGenuineLinkDeclaration(node), "outer");
     }
   }
 
