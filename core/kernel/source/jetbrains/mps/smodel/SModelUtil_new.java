@@ -79,8 +79,9 @@ public class SModelUtil_new implements ApplicationComponent {
       List<SNode> roots = model.getRoots();
       for (SNode node : roots) {
         if (name.equals(node.getName())) {
-          if (conceptClass.isAssignableFrom(node.getAdapter().getClass())) {
-            return (T) node.getAdapter();
+          INodeAdapter adapter = BaseAdapter.fromNode(node);
+          if (conceptClass.isAssignableFrom(adapter.getClass())) {
+            return (T) adapter;
           }
         }
       }
@@ -91,7 +92,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
 
   public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, AbstractConceptDeclaration toConcept) {
-    return isAssignableConcept(NameUtil.nodeFQName(fromConcept), NameUtil.nodeFQName(toConcept));
+    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(fromConcept),BaseAdapter.fromAdapter(toConcept));
   }
 
   public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, String toConceptFqName) {
@@ -123,7 +124,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static Cardinality getGenuineLinkSourceCardinality(LinkDeclaration linkDeclaration) {
-    return getGenuineLinkDeclaration(linkDeclaration).getSourceCardinality();
+    return SModelUtil.getGenuineLinkSourceCardinality(BaseAdapter.fromAdapter(linkDeclaration));
   }
 
   public static List<AbstractConceptDeclaration> getConceptAndSuperConcepts(AbstractConceptDeclaration topConcept) {
@@ -131,24 +132,11 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers(AbstractConceptDeclaration concept) {
-    Set<AbstractConceptDeclaration> result = new LinkedHashSet<AbstractConceptDeclaration>();
-    List<AbstractConceptDeclaration> list = getDirectSuperConcepts(concept);
-    for (AbstractConceptDeclaration superConcept : list) {
-      if (superConcept instanceof InterfaceConceptDeclaration && !result.contains(superConcept)) {
-        ConceptAndSuperConceptsScope supersScope = new ConceptAndSuperConceptsScope(superConcept);
-        result.addAll(supersScope.getConcepts());
-      }
-    }
-    return new ArrayList<AbstractConceptDeclaration>(result);
+   return BaseAdapter.toAdapters(SModelUtil.getDirectSuperInterfacesAndTheirSupers(BaseAdapter.fromAdapter(concept)));
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperConcepts(AbstractConceptDeclaration concept) {
-    List<SNode> nodes = SModelUtil.getDirectSuperConcepts(concept.getNode());
-    List <AbstractConceptDeclaration> result = new ArrayList<AbstractConceptDeclaration>();
-    for (SNode node:nodes){
-      result.add((AbstractConceptDeclaration) node.getAdapter());
-    }
-    return result;
+    return BaseAdapter.toAdapters(SModelUtil.getDirectSuperConcepts(BaseAdapter.fromAdapter(concept)));
   }
 
   public static SNode instantiateConceptDeclaration(String conceptFQName, SModel model, IScope scope) {
@@ -219,7 +207,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
     if (concept==null) return null;
-    return SModelUtil.getDeclaringLanguage(concept.getNode(), scope);
+    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
   }
 
   public static List<AbstractConceptDeclaration> getSubconcepts(String baseConceptFqName, SModel sourceModel, IScope scope) {
@@ -279,47 +267,19 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, AbstractConceptDeclaration conceptDeclaration) {
-    for (INodeAdapter root : editorModel.getRootsAdapters()) {
-      if (root instanceof ConceptEditorDeclaration) {
-        if (conceptDeclaration == ((ConceptEditorDeclaration) root).getConceptDeclaration()) {
-          return (ConceptEditorDeclaration) root;
-        }
-      }
-    }
-    return null;
+    return (ConceptEditorDeclaration) BaseAdapter.fromNode(SModelUtil.findEditorDeclaration(editorModel,BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
-  public static ConceptBehavior findBehaviorDeclaration(SModel constaintsModel, AbstractConceptDeclaration conceptDeclaration) {
-    for (INodeAdapter root : constaintsModel.getRootsAdapters()) {
-      if (root instanceof ConceptBehavior) {
-        if (conceptDeclaration == ((ConceptBehavior) root).getConcept()) {
-          return (ConceptBehavior) root;
-        }
-      }
-    }
-    return null;
+  public static ConceptBehavior findBehaviorDeclaration(SModel behaviorModel, AbstractConceptDeclaration conceptDeclaration) {
+    return (ConceptBehavior) BaseAdapter.fromNode(SModelUtil.findBehaviorDeclaration(behaviorModel,BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static ConceptConstraints findConstraintsDeclaration(SModel constaintsModel, AbstractConceptDeclaration conceptDeclaration) {
-    for (INodeAdapter root : constaintsModel.getRootsAdapters()) {
-      if (root instanceof ConceptConstraints) {
-        if (conceptDeclaration == ((ConceptConstraints) root).getConcept()) {
-          return (ConceptConstraints) root;
-        }
-      }
-    }
-    return null;
+    return (ConceptConstraints) BaseAdapter.fromNode(SModelUtil.findConstraintsDeclaration(constaintsModel,BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static DataFlowBuilderDeclaration findDataFlowDeclaration(SModel dataFlowModel, AbstractConceptDeclaration conceptDeclaration) {
-    for (INodeAdapter root : dataFlowModel.getRootsAdapters()) {
-      if (root instanceof DataFlowBuilderDeclaration) {
-        if (conceptDeclaration == ((DataFlowBuilderDeclaration) root).getConceptDeclaration()) {
-          return (DataFlowBuilderDeclaration) root;
-        }
-      }
-    }
-    return null;
+    return (DataFlowBuilderDeclaration) BaseAdapter.fromNode(SModelUtil.findDataFlowDeclaration(dataFlowModel,BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static boolean isEmptyPropertyValue(String s) {
@@ -327,12 +287,11 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static AbstractConceptDeclaration findConceptDeclaration(String conceptFqName, IScope scope) {
-    SNode node = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-    return node == null ? null : (AbstractConceptDeclaration) node.getAdapter();
+    return (AbstractConceptDeclaration) BaseAdapter.fromNode(SModelUtil.findConceptDeclaration(conceptFqName, scope));
   }
 
   public static ConceptDeclaration getBaseConcept() {
-    return (ConceptDeclaration) SModelUtil.getBaseConcept().getAdapter();
+    return (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
   }
 
   public static Language getDeclaringLanguage(String conceptFQName, @NotNull IScope scope) {
