@@ -638,5 +638,26 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1219064344852" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238251459193">
+    <link role="conceptDeclaration" targetNodeId="1.1238251434034" resolveInfo="ExtractToFieldExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238251467993">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1238251468745">
+        <property name="text" value="extract" />
+        <link role="styleClass" targetNodeId="1224158483340" resolveInfo="InternalName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238251474326">
+        <link role="relationDeclaration" targetNodeId="1.1238251454130" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1238251479079">
+        <property name="text" value="to constant" />
+        <link role="styleClass" targetNodeId="1224158483340" resolveInfo="InternalName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1238251482034">
+        <link role="relationDeclaration" targetNodeId="1.1238251449050" resolveInfo="fieldName" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238251518613" />
+    </node>
+  </node>
 </model>
 
