@@ -7,10 +7,9 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import org.joda.time.Period;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class DateTimeProperty_jodaPeriodType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -27,8 +26,7 @@ public class DateTimeProperty_jodaPeriodType_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    Classifier classifier = JavaModelUtil_new.findClassifier(Period.class);
-    return new ClassifierVisibleStaticMembersScope(classifier, _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
+    return new ClassifierVisibleStaticMembersScope(JavaModelUtil_new.findClassifier(Period.class), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
 
 }

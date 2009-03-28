@@ -13,11 +13,6 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -121,11 +116,9 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1196351887055(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode parentTargetNode = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "quotationClass");
-    ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
-    InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
-    StatementList statementList = methodDecl.getBody();
-    LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
-    return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(parentTargetNode, "method", true)).first();
+    SNode varDeclStmt = (SNode)ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first();
+    return SLinkOperations.getTarget(varDeclStmt, "localVariableDeclaration", true);
   }
 
   public static Object referenceMacro_GetReferent_1196351887115(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -172,11 +165,9 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1196860200838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode parentTargetNode = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "quotationClass");
-    ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
-    InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
-    StatementList statementList = methodDecl.getBody();
-    LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
-    return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(parentTargetNode, "method", true)).first();
+    SNode varDeclStmt = (SNode)ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first();
+    return SLinkOperations.getTarget(varDeclStmt, "localVariableDeclaration", true);
   }
 
   public static Object referenceMacro_GetReferent_1197034040799(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -45,12 +45,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197681322565(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String className = SPropertyOperations.getString(_context.getNode(), "targetClass");
-    ClassConcept clazz = SModelUtil_new.findNodeByFQName(className, ClassConcept.class, _context.getScope());
+    SNode clazz = SModelUtil.findNodeByFQName(className, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), _context.getScope());
     if (clazz == null) {
       _context.showErrorMessage(_context.getNode(), "couldn't find mapping target class fqName: " + className);
       return null;
     }
-    return ((SNode)clazz.getNode());
+    return clazz;
   }
 
   public static Iterable sourceNodesQuery_1197681023761(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
