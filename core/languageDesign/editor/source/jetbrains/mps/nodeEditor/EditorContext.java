@@ -270,8 +270,6 @@ public class EditorContext {
 
       myNodeEditorComponent.flushEvents();
 
-      myNodeEditorComponent.relayout();
-
       return true;
     }
     return false;
