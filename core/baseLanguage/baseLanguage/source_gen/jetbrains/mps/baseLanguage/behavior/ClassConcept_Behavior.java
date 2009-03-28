@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior;
@@ -33,29 +34,13 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean call_isDescendant_1213877355812(SNode thisNode, SNode classToCompare) {
-    boolean namesAreSame;
-    if (INamedConcept_Behavior.call_getFqName_1213877404258(thisNode) == null) {
-      if (INamedConcept_Behavior.call_getFqName_1213877404258(classToCompare) != null) {
-        namesAreSame = false;
-      } else
-      {
-        namesAreSame = true;
-      }
-    } else
-    {
-      namesAreSame = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode).equals(INamedConcept_Behavior.call_getFqName_1213877404258(classToCompare));
-    }
-    if (namesAreSame) {
+    if (EqualUtil.equals(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode), INamedConcept_Behavior.call_getFqName_1213877404258(classToCompare))) {
       return true;
-    } else
-    {
-      if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
-        return false;
-      } else
-      {
-        return ClassConcept_Behavior.call_isDescendant_1213877355812(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), classToCompare);
-      }
     }
+    if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
+      return false;
+    }
+    return ClassConcept_Behavior.call_isDescendant_1213877355812(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), classToCompare);
   }
 
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
