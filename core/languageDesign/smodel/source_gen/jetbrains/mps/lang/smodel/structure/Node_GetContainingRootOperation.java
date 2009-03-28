@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_GetContainingRootOperation extends SNodeOperation {
+public class Node_GetContainingRootOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation";
 
   public Node_GetContainingRootOperation(SNode node) {

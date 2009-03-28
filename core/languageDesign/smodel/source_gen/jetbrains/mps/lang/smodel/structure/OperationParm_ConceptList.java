@@ -4,12 +4,13 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.structure.ConceptReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class OperationParm_ConceptList extends AbstractOperationParameter {
+public class OperationParm_ConceptList extends jetbrains.mps.lang.smodel.structure.AbstractOperationParameter {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList";
   public static final String CONCEPT = "concept";
 
@@ -21,19 +22,19 @@ public class OperationParm_ConceptList extends AbstractOperationParameter {
     return this.getChildCount(OperationParm_ConceptList.CONCEPT);
   }
 
-  public Iterator<ConceptReference> concepts() {
+  public Iterator<jetbrains.mps.lang.smodel.structure.ConceptReference> concepts() {
     return this.children(ConceptReference.class, OperationParm_ConceptList.CONCEPT);
   }
 
-  public List<ConceptReference> getConcepts() {
+  public List<jetbrains.mps.lang.smodel.structure.ConceptReference> getConcepts() {
     return this.getChildren(ConceptReference.class, OperationParm_ConceptList.CONCEPT);
   }
 
-  public void addConcept(ConceptReference node) {
+  public void addConcept(jetbrains.mps.lang.smodel.structure.ConceptReference node) {
     this.addChild(OperationParm_ConceptList.CONCEPT, node);
   }
 
-  public void insertConcept(ConceptReference prev, ConceptReference node) {
+  public void insertConcept(jetbrains.mps.lang.smodel.structure.ConceptReference prev, jetbrains.mps.lang.smodel.structure.ConceptReference node) {
     this.insertChild(prev, OperationParm_ConceptList.CONCEPT, node);
   }
 

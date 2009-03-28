@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
+public class Node_GetReferentSearchScopeOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation";
   public static final String REFERENCE_LINK = "referenceLink";
   public static final String OPERATION_CONTEXT = "operationContext";
@@ -18,19 +18,19 @@ public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
     super(node);
   }
 
-  public LinkDeclaration getReferenceLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, Node_GetReferentSearchScopeOperation.REFERENCE_LINK);
+  public jetbrains.mps.lang.structure.structure.LinkDeclaration getReferenceLink() {
+    return (jetbrains.mps.lang.structure.structure.LinkDeclaration)this.getReferent(LinkDeclaration.class, Node_GetReferentSearchScopeOperation.REFERENCE_LINK);
   }
 
-  public void setReferenceLink(LinkDeclaration node) {
+  public void setReferenceLink(jetbrains.mps.lang.structure.structure.LinkDeclaration node) {
     super.setReferent(Node_GetReferentSearchScopeOperation.REFERENCE_LINK, node);
   }
 
-  public Expression getOperationContext() {
-    return (Expression)this.getChild(Expression.class, Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT);
+  public jetbrains.mps.baseLanguage.structure.Expression getOperationContext() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT);
   }
 
-  public void setOperationContext(Expression node) {
+  public void setOperationContext(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT, node);
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Model_CreateNewNodeOperation extends SNodeOperation {
+public class Model_CreateNewNodeOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
   public static final String CONCEPT = "concept";
   public static final String PROTOTYPE_NODE = "prototypeNode";
@@ -18,19 +18,19 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
     super(node);
   }
 
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Model_CreateNewNodeOperation.CONCEPT);
+  public jetbrains.mps.lang.structure.structure.ConceptDeclaration getConcept() {
+    return (jetbrains.mps.lang.structure.structure.ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Model_CreateNewNodeOperation.CONCEPT);
   }
 
-  public void setConcept(ConceptDeclaration node) {
+  public void setConcept(jetbrains.mps.lang.structure.structure.ConceptDeclaration node) {
     super.setReferent(Model_CreateNewNodeOperation.CONCEPT, node);
   }
 
-  public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Expression.class, Model_CreateNewNodeOperation.PROTOTYPE_NODE);
+  public jetbrains.mps.baseLanguage.structure.Expression getPrototypeNode() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Model_CreateNewNodeOperation.PROTOTYPE_NODE);
   }
 
-  public void setPrototypeNode(Expression node) {
+  public void setPrototypeNode(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Model_CreateNewNodeOperation.PROTOTYPE_NODE, node);
   }
 

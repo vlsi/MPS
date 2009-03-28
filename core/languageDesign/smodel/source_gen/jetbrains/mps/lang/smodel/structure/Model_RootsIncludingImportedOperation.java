@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Model_RootsIncludingImportedOperation extends SNodeOperation {
+public class Model_RootsIncludingImportedOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation";
   public static final String CONCEPT = "concept";
   public static final String SCOPE = "scope";
@@ -18,19 +18,19 @@ public class Model_RootsIncludingImportedOperation extends SNodeOperation {
     super(node);
   }
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_RootsIncludingImportedOperation.CONCEPT);
+  public jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration getConcept() {
+    return (jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_RootsIncludingImportedOperation.CONCEPT);
   }
 
-  public void setConcept(AbstractConceptDeclaration node) {
+  public void setConcept(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration node) {
     super.setReferent(Model_RootsIncludingImportedOperation.CONCEPT, node);
   }
 
-  public Expression getScope() {
-    return (Expression)this.getChild(Expression.class, Model_RootsIncludingImportedOperation.SCOPE);
+  public jetbrains.mps.baseLanguage.structure.Expression getScope() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Model_RootsIncludingImportedOperation.SCOPE);
   }
 
-  public void setScope(Expression node) {
+  public void setScope(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Model_RootsIncludingImportedOperation.SCOPE, node);
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LinkList_GetCountOperation extends SNodeOperation {
+public class LinkList_GetCountOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation";
 
   public LinkList_GetCountOperation(SNode node) {

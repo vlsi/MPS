@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_InsertPrevSiblingOperation extends SNodeOperation {
+public class Node_InsertPrevSiblingOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation";
   public static final String INSERTED_NODE = "insertedNode";
 
@@ -16,11 +16,11 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
     super(node);
   }
 
-  public Expression getInsertedNode() {
-    return (Expression)this.getChild(Expression.class, Node_InsertPrevSiblingOperation.INSERTED_NODE);
+  public jetbrains.mps.baseLanguage.structure.Expression getInsertedNode() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Node_InsertPrevSiblingOperation.INSERTED_NODE);
   }
 
-  public void setInsertedNode(Expression node) {
+  public void setInsertedNode(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Node_InsertPrevSiblingOperation.INSERTED_NODE, node);
   }
 

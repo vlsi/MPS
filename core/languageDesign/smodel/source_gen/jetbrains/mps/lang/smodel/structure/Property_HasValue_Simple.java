@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Property_HasValue_Simple extends SNodeOperation {
+public class Property_HasValue_Simple extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple";
   public static final String VALUE = "value";
 
@@ -16,11 +16,11 @@ public class Property_HasValue_Simple extends SNodeOperation {
     super(node);
   }
 
-  public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, Property_HasValue_Simple.VALUE);
+  public jetbrains.mps.baseLanguage.structure.Expression getValue() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Property_HasValue_Simple.VALUE);
   }
 
-  public void setValue(Expression node) {
+  public void setValue(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Property_HasValue_Simple.VALUE, node);
   }
 

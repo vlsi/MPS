@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
+public class Node_ReplaceWithAnotherOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
   public static final String REPLACEMENT_NODE = "replacementNode";
 
@@ -16,11 +16,11 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
     super(node);
   }
 
-  public Expression getReplacementNode() {
-    return (Expression)this.getChild(Expression.class, Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
+  public jetbrains.mps.baseLanguage.structure.Expression getReplacementNode() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
   }
 
-  public void setReplacementNode(Expression node) {
+  public void setReplacementNode(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE, node);
   }
 

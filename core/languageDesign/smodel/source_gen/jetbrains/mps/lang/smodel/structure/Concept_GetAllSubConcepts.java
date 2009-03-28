@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Concept_GetAllSubConcepts extends SNodeOperation {
+public class Concept_GetAllSubConcepts extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts";
   public static final String SMODEL = "smodel";
   public static final String SCOPE = "scope";
@@ -17,19 +17,19 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
     super(node);
   }
 
-  public Expression getSmodel() {
-    return (Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SMODEL);
+  public jetbrains.mps.baseLanguage.structure.Expression getSmodel() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SMODEL);
   }
 
-  public void setSmodel(Expression node) {
+  public void setSmodel(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Concept_GetAllSubConcepts.SMODEL, node);
   }
 
-  public Expression getScope() {
-    return (Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SCOPE);
+  public jetbrains.mps.baseLanguage.structure.Expression getScope() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Concept_GetAllSubConcepts.SCOPE);
   }
 
-  public void setScope(Expression node) {
+  public void setScope(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Concept_GetAllSubConcepts.SCOPE, node);
   }
 

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
 
@@ -19,9 +19,9 @@ public class StaticConceptMethodCall_Behavior {
 
   public static List<SNode> getClassifiersWithStaticMethods_1213877485028(SModel model, IScope scope, SNode enclosingNode) {
     List<SNode> result = ListOperations.<SNode>createList();
-    for(SNode concept : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
-      if (behavior != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {
+    for(SNode behavior : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
+      SNode concept = SLinkOperations.getTarget(behavior, "concept", false);
+      if (concept != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {
         ListSequence.fromList(result).addElement(concept);
       }
     }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_GetAdapterOperation extends SNodeOperation {
+public class Node_GetAdapterOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation";
 
   public Node_GetAdapterOperation(SNode node) {

@@ -4,6 +4,9 @@ package jetbrains.mps.lang.smodel.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.smodel.dataFlow.SNodeOperation_DataFlow;
+import jetbrains.mps.lang.smodel.dataFlow.SNodeTypeCastExpression_DataFlow;
+import jetbrains.mps.lang.smodel.dataFlow.SemanticDowncastExpression_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

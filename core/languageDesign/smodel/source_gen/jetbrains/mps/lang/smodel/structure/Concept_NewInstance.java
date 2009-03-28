@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Concept_NewInstance extends SNodeOperation {
+public class Concept_NewInstance extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_NewInstance";
   public static final String PROTOTYPE_NODE = "prototypeNode";
 
@@ -16,11 +16,11 @@ public class Concept_NewInstance extends SNodeOperation {
     super(node);
   }
 
-  public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Expression.class, Concept_NewInstance.PROTOTYPE_NODE);
+  public jetbrains.mps.baseLanguage.structure.Expression getPrototypeNode() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Concept_NewInstance.PROTOTYPE_NODE);
   }
 
-  public void setPrototypeNode(Expression node) {
+  public void setPrototypeNode(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Concept_NewInstance.PROTOTYPE_NODE, node);
   }
 

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Link_SetTargetOperation extends SNodeOperation {
+public class Link_SetTargetOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
   public static final String LINK_TARGET = "linkTarget";
 
@@ -16,11 +16,11 @@ public class Link_SetTargetOperation extends SNodeOperation {
     super(node);
   }
 
-  public Expression getLinkTarget() {
-    return (Expression)this.getChild(Expression.class, Link_SetTargetOperation.LINK_TARGET);
+  public jetbrains.mps.baseLanguage.structure.Expression getLinkTarget() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Link_SetTargetOperation.LINK_TARGET);
   }
 
-  public void setLinkTarget(Expression node) {
+  public void setLinkTarget(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Link_SetTargetOperation.LINK_TARGET, node);
   }
 

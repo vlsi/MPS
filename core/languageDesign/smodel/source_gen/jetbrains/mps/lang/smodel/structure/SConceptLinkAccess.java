@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SConceptLinkAccess extends SNodeOperation {
+public class SConceptLinkAccess extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess";
   public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
@@ -16,11 +16,11 @@ public class SConceptLinkAccess extends SNodeOperation {
     super(node);
   }
 
-  public ConceptLinkDeclaration getConceptLinkDeclaration() {
-    return (ConceptLinkDeclaration)this.getReferent(ConceptLinkDeclaration.class, SConceptLinkAccess.CONCEPT_LINK_DECLARATION);
+  public jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration getConceptLinkDeclaration() {
+    return (jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration)this.getReferent(ConceptLinkDeclaration.class, SConceptLinkAccess.CONCEPT_LINK_DECLARATION);
   }
 
-  public void setConceptLinkDeclaration(ConceptLinkDeclaration node) {
+  public void setConceptLinkDeclaration(jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration node) {
     super.setReferent(SConceptLinkAccess.CONCEPT_LINK_DECLARATION, node);
   }
 

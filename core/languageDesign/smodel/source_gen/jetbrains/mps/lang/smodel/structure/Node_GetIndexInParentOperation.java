@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_GetIndexInParentOperation extends SNodeOperation {
+public class Node_GetIndexInParentOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation";
 
   public Node_GetIndexInParentOperation(SNode node) {

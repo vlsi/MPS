@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Model_AddRootOperation extends SNodeOperation {
+public class Model_AddRootOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation";
   public static final String NODE_ARGUMENT = "nodeArgument";
 
@@ -16,11 +16,11 @@ public class Model_AddRootOperation extends SNodeOperation {
     super(node);
   }
 
-  public Expression getNodeArgument() {
-    return (Expression)this.getChild(Expression.class, Model_AddRootOperation.NODE_ARGUMENT);
+  public jetbrains.mps.baseLanguage.structure.Expression getNodeArgument() {
+    return (jetbrains.mps.baseLanguage.structure.Expression)this.getChild(Expression.class, Model_AddRootOperation.NODE_ARGUMENT);
   }
 
-  public void setNodeArgument(Expression node) {
+  public void setNodeArgument(jetbrains.mps.baseLanguage.structure.Expression node) {
     super.setChild(Model_AddRootOperation.NODE_ARGUMENT, node);
   }
 

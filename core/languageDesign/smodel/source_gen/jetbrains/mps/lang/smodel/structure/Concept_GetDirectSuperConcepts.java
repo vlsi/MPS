@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Concept_GetDirectSuperConcepts extends SNodeOperation {
+public class Concept_GetDirectSuperConcepts extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts";
 
   public Concept_GetDirectSuperConcepts(SNode node) {

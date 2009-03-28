@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SConceptPropertyAccess extends SNodeOperation {
+public class SConceptPropertyAccess extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess";
   public static final String CONCEPT_PROPERTY = "conceptProperty";
 
@@ -16,11 +16,11 @@ public class SConceptPropertyAccess extends SNodeOperation {
     super(node);
   }
 
-  public ConceptPropertyDeclaration getConceptProperty() {
-    return (ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, SConceptPropertyAccess.CONCEPT_PROPERTY);
+  public jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration getConceptProperty() {
+    return (jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, SConceptPropertyAccess.CONCEPT_PROPERTY);
   }
 
-  public void setConceptProperty(ConceptPropertyDeclaration node) {
+  public void setConceptProperty(jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration node) {
     super.setReferent(SConceptPropertyAccess.CONCEPT_PROPERTY, node);
   }
 

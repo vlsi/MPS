@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_InsertNewPrevSiblingOperation extends SNodeOperation {
+public class Node_InsertNewPrevSiblingOperation extends jetbrains.mps.lang.smodel.structure.SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation";
   public static final String CONCEPT = "concept";
 
@@ -16,11 +16,11 @@ public class Node_InsertNewPrevSiblingOperation extends SNodeOperation {
     super(node);
   }
 
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_InsertNewPrevSiblingOperation.CONCEPT);
+  public jetbrains.mps.lang.structure.structure.ConceptDeclaration getConcept() {
+    return (jetbrains.mps.lang.structure.structure.ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_InsertNewPrevSiblingOperation.CONCEPT);
   }
 
-  public void setConcept(ConceptDeclaration node) {
+  public void setConcept(jetbrains.mps.lang.structure.structure.ConceptDeclaration node) {
     super.setReferent(Node_InsertNewPrevSiblingOperation.CONCEPT, node);
   }
 
