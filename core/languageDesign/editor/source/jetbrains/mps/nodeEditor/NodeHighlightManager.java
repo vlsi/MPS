@@ -186,8 +186,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void repaintAndRebuildEditorMessages() {
-    rebuildMessages();
-    myEditor.getExternalComponent().repaint();
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        rebuildMessages();
+        myEditor.getExternalComponent().repaint();
+      }
+    });
   }
 
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
