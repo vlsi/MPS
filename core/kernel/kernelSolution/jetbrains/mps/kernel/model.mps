@@ -383,26 +383,16 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237995590777">
                     <property name="name" value="result" />
                     <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1237995590778" />
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1237995590779">
-                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237995590780" />
-                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1237995590781">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1237995590782">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237995590783">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237995590784">
-                              <link role="variableDeclaration" targetNodeId="1237995590770" resolveInfo="resultAdapter" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237995590785">
-                              <link role="baseMethodDeclaration" targetNodeId="11.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                            </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1238268848642">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1238268848643">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238268848644">
+                          <link role="baseMethodDeclaration" targetNodeId="11.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
+                          <link role="classConcept" targetNodeId="11.~BaseAdapter" resolveInfo="BaseAdapter" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238268848645">
+                            <link role="variableDeclaration" targetNodeId="1237995590770" resolveInfo="resultAdapter" />
                           </node>
-                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1237995590786" />
                         </node>
-                      </node>
-                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237995590787">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1237995590788" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237995590789">
-                          <link role="variableDeclaration" targetNodeId="1237995590770" resolveInfo="resultAdapter" />
-                        </node>
+                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238268848646" />
                       </node>
                     </node>
                   </node>

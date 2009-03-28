@@ -18,7 +18,7 @@ import jetbrains.mps.lang.editor.structure.CellActionMapItem;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -289,10 +289,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1187029799032(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "applicableConcept", false);
-    if (applicableConcept == null) {
-      applicableConcept = (SNode)SModelUtil_new.getBaseConcept().getNode();
-    }
-    return NameUtil.nodeFQName(applicableConcept);
+    return NameUtil.nodeFQName((applicableConcept != null ?
+      applicableConcept :
+      SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")
+    ));
   }
 
   public static Object propertyMacro_GetPropertyValue_1187030323123(final IOperationContext operationContext, final PropertyMacroContext _context) {

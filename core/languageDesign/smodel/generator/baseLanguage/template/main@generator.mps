@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="62" />
+  <maxImportIndex value="63" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -65,6 +65,7 @@
   <import index="59" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" version="-1" />
   <import index="61" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="62" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
+  <import index="63" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139186732963">
     <property name="name" value="mc_main" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168910896903">
@@ -2777,17 +2778,14 @@
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1170444136064">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170444136065">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170444137988">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170444150116">
-                  <link role="classConcept" targetNodeId="1.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                  <link role="baseMethodDeclaration" targetNodeId="1.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.lang.structure.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499966">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227833897">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170444186863" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1173904226729">
-                        <link role="link" targetNodeId="6.1144195396777" />
-                      </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238271300743">
+                  <link role="baseMethodDeclaration" targetNodeId="63.1238250357846" resolveInfo="getGenuineLinkRole" />
+                  <link role="classConcept" targetNodeId="63.1237995590703" resolveInfo="SModelUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238271300745">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238271300746" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238271300747">
+                      <link role="link" targetNodeId="6.1144195396777" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170814932270" />
                   </node>
                 </node>
               </node>

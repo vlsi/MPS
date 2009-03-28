@@ -31,7 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
@@ -47,6 +47,7 @@
   <import index="15" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
+  <import index="21" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178725704623">
     <property name="name" value="RulesFunctions_Collections" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184783863841">
@@ -3313,19 +3314,18 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1179161049689">
                   <link role="concept" targetNodeId="7.1107461130800" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049690">
-                  <link role="classConcept" targetNodeId="12.~BaseAdapter" resolveInfo="BaseAdapter" />
-                  <link role="baseMethodDeclaration" targetNodeId="12.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049691">
-                    <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.findNodeByFQName(java.lang.String,java.lang.Class,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.BaseAdapter" resolveInfo="findNodeByFQName" />
-                    <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179161049692">
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1238270597442">
+                  <link role="concept" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238270587982">
+                    <link role="classConcept" targetNodeId="21.1237995590703" resolveInfo="SModelUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="21.1238267513315" resolveInfo="findNodeByFQName" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238270587983">
                       <property name="value" value="com.jetbrains.teamsys.database.Entity" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1179161049693">
-                      <link role="classifier" targetNodeId="15.~Classifier" resolveInfo="Classifier" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1238270587984">
+                      <link role="conceptDeclaration" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179161332952">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238270587985">
                       <link role="variableDeclaration" targetNodeId="1179161332950" resolveInfo="scope" />
                     </node>
                   </node>
@@ -3384,19 +3384,18 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1179161049711">
                   <link role="concept" targetNodeId="7.1107461130800" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049712">
-                  <link role="classConcept" targetNodeId="12.~BaseAdapter" resolveInfo="BaseAdapter" />
-                  <link role="baseMethodDeclaration" targetNodeId="12.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049713">
-                    <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.findNodeByFQName(java.lang.String,java.lang.Class,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.BaseAdapter" resolveInfo="findNodeByFQName" />
-                    <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179161049714">
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1238270753387">
+                  <link role="concept" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238270739220">
+                    <link role="baseMethodDeclaration" targetNodeId="21.1238267513315" resolveInfo="findNodeByFQName" />
+                    <link role="classConcept" targetNodeId="21.1237995590703" resolveInfo="SModelUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238270739221">
                       <property name="value" value="java.lang.Iterable" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1179161049715">
-                      <link role="classifier" targetNodeId="15.~Classifier" resolveInfo="Classifier" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1238270745040">
+                      <link role="conceptDeclaration" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179161365760">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238270739223">
                       <link role="variableDeclaration" targetNodeId="1179161332950" resolveInfo="scope" />
                     </node>
                   </node>
@@ -3490,19 +3489,18 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1179161049750">
                   <link role="concept" targetNodeId="7.1107461130800" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049751">
-                  <link role="baseMethodDeclaration" targetNodeId="12.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
-                  <link role="classConcept" targetNodeId="12.~BaseAdapter" resolveInfo="BaseAdapter" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179161049752">
-                    <link role="baseMethodDeclaration" targetNodeId="12.~SModelUtil_new.findNodeByFQName(java.lang.String,java.lang.Class,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.BaseAdapter" resolveInfo="findNodeByFQName" />
-                    <link role="classConcept" targetNodeId="12.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179161049753">
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1238270781864">
+                  <link role="concept" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238270770697">
+                    <link role="baseMethodDeclaration" targetNodeId="21.1238267513315" resolveInfo="findNodeByFQName" />
+                    <link role="classConcept" targetNodeId="21.1237995590703" resolveInfo="SModelUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238270770698">
                       <property name="value" value="com.jetbrains.teamsys.database.EntityIterable" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1179161049754">
-                      <link role="classifier" targetNodeId="15.~Classifier" resolveInfo="Classifier" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1238270776423">
+                      <link role="conceptDeclaration" targetNodeId="7.1107461130800" resolveInfo="Classifier" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179161426540">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238270770700">
                       <link role="variableDeclaration" targetNodeId="1179161332950" resolveInfo="scope" />
                     </node>
                   </node>

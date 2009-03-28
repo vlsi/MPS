@@ -18,11 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior._Quotations;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -173,10 +170,9 @@ public class AbstractConceptDeclaration_Behavior {
       return new _Quotations.QuotationClass_5().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(thisNode);
-    Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
-    SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
+    SNode classifier = SModelUtil.findNodeByFQName(adapterClassFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
     SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new _Quotations.QuotationClass_6().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
+    SLinkOperations.setTarget(adapterClassType, "classifier", classifier, false);
     return adapterClassType;
   }
 

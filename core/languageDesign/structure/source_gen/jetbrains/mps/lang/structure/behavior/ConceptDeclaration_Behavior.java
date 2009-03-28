@@ -5,8 +5,7 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -21,7 +20,7 @@ public class ConceptDeclaration_Behavior {
   }
 
   public static SNode call_findEditor_1213877216527(SNode thisNode, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage((AbstractConceptDeclaration)thisNode.getAdapter(), scope);
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     SModelDescriptor constraints = language.getEditorModelDescriptor();
     if (constraints == null) {
       return null;
