@@ -300,6 +300,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     NodeHighlightManager highlightManager = editor.getHighlightManager();
     NodeHighlightManager inspectorHighlightManager = inspectorEditorComponent == null ? null : inspectorEditorComponent.getHighlightManager();
+        
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
@@ -343,9 +344,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
 
-    highlightManager.repaintEditorMessages();
+    highlightManager.repaintAndRebuildEditorMessages();
     if (inspectorHighlightManager != null) {
-      inspectorHighlightManager.repaintEditorMessages();
+      inspectorHighlightManager.repaintAndRebuildEditorMessages();
     }
     
     editor.updateStatusBarMessage();

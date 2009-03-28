@@ -165,6 +165,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
   private List<CellSelectionListener> mySelectionListeners = new LinkedList<CellSelectionListener>();
+  private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -175,7 +176,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   protected SNodePointer myNodePointer;
   private EditorContext myEditorContext;
-  private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
@@ -411,7 +411,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
 
-    myRebuildListeners = new ArrayList<RebuildListener>();
     myLeftHighlighter = new LeftEditorHighlighter(this);
 
     addFocusListener(new FocusListener() {

@@ -18,14 +18,11 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 
 import java.awt.Color;
 import java.util.*;
@@ -34,12 +31,14 @@ import java.util.HashMap;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
+  private final Object myMessagesLock = new Object();
+  
   private EditorComponent myEditor;
   private Set<EditorMessage> myMessages = new HashSet<EditorMessage>();
   private Map<EditorMessageOwner, Set<EditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
   private ManyToManyMap<EditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<EditorMessage, SNode>();
 
-  private final Object myMessagesLock = new Object();
+  private Map<EditorCell, List<EditorMessage>> myMessagesCache = new HashMap<EditorCell, List<EditorMessage>>();
   public ReloadAdapter myHandler;
 
   public NodeHighlightManager(EditorComponent edtitor) {
@@ -49,10 +48,45 @@ public class NodeHighlightManager implements EditorMessageOwner {
         clear();
       }
     };
+
+    edtitor.addRebuildListener(new RebuildListener() {
+      public void editorRebuilt(EditorComponent editor) {
+        rebuildMessages();
+      }
+    });
+
+
     ClassLoaderManager.getInstance().addReloadHandler(myHandler);
   }
 
+  private void rebuildMessages() {
+    myMessagesCache.clear();
+    rebuildMessages(myEditor.getRootCell());
+  }
+
+  private void rebuildMessages(EditorCell root) {
+    List<EditorMessage> messages = calculateMessages(root);
+    if (!messages.isEmpty()) {
+      myMessagesCache.put(root, messages);
+    }
+
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (EditorCell cell : collection.getCells()) {
+        rebuildMessages(cell);
+      }
+    }
+  }
+
   public List<EditorMessage> getMessages(EditorCell cell) {
+    List<EditorMessage> result = myMessagesCache.get(cell);
+    if (result != null) {
+      return new ArrayList<EditorMessage>(result);
+    }
+    return new ArrayList<EditorMessage>();
+  }
+
+  private List<EditorMessage> calculateMessages(EditorCell cell) {
     final SNode node = cell.getSNode();
     final List<EditorMessage> result = new ArrayList<EditorMessage>();
     if (node == null) return result;
@@ -109,7 +143,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.clearFirst(m);
   }
 
-  public void mark(EditorMessage message, boolean needRepaint) {
+  public void mark(EditorMessage message, boolean repaintAndRebuild) {
     for (EditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -118,8 +152,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
     }
     myEditor.getMessagesGutter().add(message);
-    if (needRepaint) {
-      repaintEditorMessages();
+    if (repaintAndRebuild) {
+      repaintAndRebuildEditorMessages();
     }
   }
 
@@ -136,7 +170,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return clearForOwner(owner, true);
   }
 
-  public boolean clearForOwner(EditorMessageOwner owner, boolean repaintMessages) {
+  public boolean clearForOwner(EditorMessageOwner owner, boolean repaintAndRebuild) {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
@@ -145,13 +179,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
         }
       }
     }
-    if (repaintMessages) {
-      repaintEditorMessages();
+    if (repaintAndRebuild) {
+      repaintAndRebuildEditorMessages();
     }
     return result;
   }
 
-  public void repaintEditorMessages() {
+  public void repaintAndRebuildEditorMessages() {
+    rebuildMessages();
     myEditor.getExternalComponent().repaint();
   }
 
@@ -164,12 +199,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
     mark(messages, true);
   }
 
-  public void mark(List<EditorMessage> messages, boolean repaintMessages) {
+  public void mark(List<EditorMessage> messages, boolean repaintAndRebuild) {
     for (int i = 0; i < messages.size(); i++) {
       mark(messages.get(i), false);
     }
-    if (repaintMessages) {
-      repaintEditorMessages();
+    if (repaintAndRebuild) {
+      repaintAndRebuildEditorMessages();
     }
   }
 
