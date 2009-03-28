@@ -83,10 +83,8 @@ public class MakeModule_Action extends GeneratedAction {
               maker.make(CollectionUtil.set(m), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

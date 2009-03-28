@@ -74,10 +74,8 @@ public class MakeAllModules_Action extends GeneratedAction {
               maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -81,7 +81,6 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
             report.value = OptimizeImportsHelper.optimizeLanguageImports(OptimizeModuleImports_Action.this.context, ((Language)OptimizeModuleImports_Action.this.module));
           }
         }
-
       });
       new MessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {

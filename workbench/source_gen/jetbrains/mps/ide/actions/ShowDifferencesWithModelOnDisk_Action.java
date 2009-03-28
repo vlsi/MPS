@@ -71,7 +71,6 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
         public void run() {
           new ModelDifferenceDialog(ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true).showDialog();
         }
-
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

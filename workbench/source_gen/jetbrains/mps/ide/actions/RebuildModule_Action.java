@@ -84,10 +84,8 @@ public class RebuildModule_Action extends GeneratedAction {
               maker.make(CollectionUtil.set(module), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

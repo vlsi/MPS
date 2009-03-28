@@ -41,7 +41,6 @@ public class NodeExplorer_Tool extends GeneratedTool {
         super.doExecute(e);
         myNodeExplorer.clear();
       }
-
     });
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
     this.myPanel.add(toolbar, BorderLayout.WEST);

@@ -72,10 +72,8 @@ public class CleanAllModules_Action extends GeneratedAction {
               maker.clean(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

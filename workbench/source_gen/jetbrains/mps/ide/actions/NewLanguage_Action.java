@@ -83,7 +83,6 @@ public class NewLanguage_Action extends GeneratedAction {
         public void run() {
           NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
         }
-
       });
       NewLanguage_Action.this.ideaProject.getComponent(ProjectPane.class).selectModule(l);
     } catch (Throwable t) {

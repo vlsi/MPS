@@ -84,7 +84,6 @@ public class NewGenerator_Action extends GeneratedAction {
         public void run() {
           dialog[0] = new NewGeneratorDialog(localFrame, ((Language)NewGenerator_Action.this.module));
         }
-
       });
       dialog[0].showDialog();
       Generator result = dialog[0].getResult();

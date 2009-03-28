@@ -83,7 +83,6 @@ public class NewSolution_Action extends GeneratedAction {
         public void run() {
           NewSolution_Action.this.project.setFolderFor(s, NewSolution_Action.this.folder);
         }
-
       });
       NewSolution_Action.this.ideaProject.getComponent(ProjectPane.class).selectModule(s);
     } catch (Throwable t) {

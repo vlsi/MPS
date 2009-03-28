@@ -84,10 +84,8 @@ public class CleanModule_Action extends GeneratedAction {
               ModuleMaker maker = new ModuleMaker();
               maker.clean(CollectionUtil.set(m), indicator);
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

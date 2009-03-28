@@ -75,7 +75,6 @@ public class LanguageProperties_Action extends GeneratedAction {
         public void run() {
           dialog[0] = new LanguagePropertiesDialog(language, localContext);
         }
-
       });
       dialog[0].showDialog();
     } catch (Throwable t) {

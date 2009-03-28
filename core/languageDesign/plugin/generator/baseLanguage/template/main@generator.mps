@@ -812,10 +812,10 @@
                     <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1237293495888">
                       <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1237293495889">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237293495890">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237293495891">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237293495892">
-                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237293495893" />
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237293495894">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238169900701">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238169902718">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238169900702" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238169905004">
                                 <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
                               </node>
                             </node>

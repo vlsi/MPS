@@ -10,6 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.ModelRepository_Tool;
 
 public class ShowModelRepository_Action extends GeneratedAction {
   private static final Icon ICON = null;

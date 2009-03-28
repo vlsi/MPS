@@ -75,7 +75,6 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
         public void run() {
           report.value = OptimizeImportsHelper.optimizeProjectImports(OptimizeProjectImports_Action.this.context, OptimizeProjectImports_Action.this.project);
         }
-
       });
       new MessageDialog(OptimizeProjectImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {

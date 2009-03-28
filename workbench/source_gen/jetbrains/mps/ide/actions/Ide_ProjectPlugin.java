@@ -7,6 +7,9 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.ide.actions.NodeExplorer_Tool;
+import jetbrains.mps.ide.actions.ModuleRepository_Tool;
+import jetbrains.mps.ide.actions.ModelRepository_Tool;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
 

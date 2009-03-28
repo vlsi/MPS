@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.NodeExplorer_Tool;
 
 public class ShowNodeInExplorer_Action extends GeneratedAction {
   private static final Icon ICON = null;

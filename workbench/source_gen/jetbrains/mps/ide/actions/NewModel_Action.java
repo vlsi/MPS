@@ -80,7 +80,6 @@ public class NewModel_Action extends GeneratedAction {
         public void run() {
           dialog[0] = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext);
         }
-
       });
       dialog[0].showDialog();
       SModelDescriptor result = dialog[0].getResult();

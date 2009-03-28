@@ -83,10 +83,8 @@ public class CheckModel_Action extends GeneratedAction {
             public void run() {
               ModelCheckerUtil.checkModels(context, CollectionUtil.set(model), new NullAdaptiveProgressMonitor());
             }
-
           });
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

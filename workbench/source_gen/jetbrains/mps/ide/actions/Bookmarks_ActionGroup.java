@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class Bookmarks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Bookmarks_ActionGroup.class);

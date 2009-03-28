@@ -90,7 +90,6 @@ public class DeleteNode_Action extends GeneratedAction {
             }
           }
         }
-
       });
       if (dialogNeeded.value) {
         DeleteDialog dialog = new DeleteDialog(DeleteNode_Action.this.project, "Delete Node", "Are you sure you want to delete selected node?");
@@ -106,7 +105,6 @@ public class DeleteNode_Action extends GeneratedAction {
         public void run() {
           new DeleteNodesHelper(DeleteNode_Action.this.nodes, DeleteNode_Action.this.context, safe.value).deleteNodes(true);
         }
-
       });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

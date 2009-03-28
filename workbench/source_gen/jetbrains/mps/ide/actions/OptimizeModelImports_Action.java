@@ -76,7 +76,6 @@ public class OptimizeModelImports_Action extends GeneratedAction {
         public void run() {
           report.value = OptimizeImportsHelper.optimizeModelsImports(OptimizeModelImports_Action.this.context, OptimizeModelImports_Action.this.models);
         }
-
       });
       new MessageDialog(OptimizeModelImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {

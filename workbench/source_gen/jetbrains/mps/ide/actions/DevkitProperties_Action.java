@@ -69,7 +69,6 @@ public class DevkitProperties_Action extends GeneratedAction {
         public void run() {
           dialog[0] = new DevKitPropertiesDialog(devkit, localContext);
         }
-
       });
       dialog[0].showDialog();
     } catch (Throwable t) {

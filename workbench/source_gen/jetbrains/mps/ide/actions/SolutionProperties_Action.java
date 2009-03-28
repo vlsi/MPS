@@ -75,7 +75,6 @@ public class SolutionProperties_Action extends GeneratedAction {
         public void run() {
           dialog[0] = new SolutionPropertiesDialog(solution, localContext);
         }
-
       });
       dialog[0].showDialog();
     } catch (Throwable t) {
