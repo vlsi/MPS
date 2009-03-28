@@ -545,7 +545,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
     if (modules != null) {
       for (IModule m : modules) {
-        if (cls.isInstance(m)) {
+        if (cls==null || cls.isInstance(m)) {
           list.add((MT) m);
         }
       }

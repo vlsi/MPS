@@ -239,7 +239,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
-        if (cls.isAssignableFrom(Generator.class)) {
+        if (cls==null || cls.isAssignableFrom(Generator.class)) {
           result.addAll((List<? extends M>) ((Language) m).getGenerators());
         }
       }
