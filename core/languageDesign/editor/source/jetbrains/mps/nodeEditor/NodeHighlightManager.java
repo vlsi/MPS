@@ -164,8 +164,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
       for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
         removeMessage(m);
       }
+      repaintAndRebuildEditorMessages();
     }
-    myEditor.getExternalComponent().repaint();
   }
 
   public boolean clearForOwner(EditorMessageOwner owner) {
