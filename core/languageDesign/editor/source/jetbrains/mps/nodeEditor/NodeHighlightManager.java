@@ -60,8 +60,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   private void rebuildMessages() {
-    myMessagesCache.clear();
-    rebuildMessages(myEditor.getRootCell());
+    synchronized (myMessagesLock) {
+      myMessagesCache.clear();
+      rebuildMessages(myEditor.getRootCell());
+    }
   }
 
   private void rebuildMessages(EditorCell root) {
