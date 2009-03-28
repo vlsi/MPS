@@ -11,7 +11,7 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedAction
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
   public BaseLanguageEditorPopupInternal_ActionGroup() {
-    super("", ID);
+    super("BaseLanguageEditorPopupInternal", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

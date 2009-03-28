@@ -11,7 +11,7 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition";
 
   public BaseLanguageToolsAddition_ActionGroup() {
-    super("", ID);
+    super("BaseLanguageToolsAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

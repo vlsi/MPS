@@ -11,7 +11,7 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.RefactoringAddition";
 
   public RefactoringAddition_ActionGroup() {
-    super("", ID);
+    super("RefactoringAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

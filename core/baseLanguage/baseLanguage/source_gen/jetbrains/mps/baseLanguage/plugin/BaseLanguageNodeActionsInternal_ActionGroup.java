@@ -11,7 +11,7 @@ public class BaseLanguageNodeActionsInternal_ActionGroup extends GeneratedAction
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal";
 
   public BaseLanguageNodeActionsInternal_ActionGroup() {
-    super("", ID);
+    super("BaseLanguageNodeActionsInternal", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

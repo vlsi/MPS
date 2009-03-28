@@ -2558,11 +2558,31 @@
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1215793639655">
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1215793639656">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215793639657">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215793639658">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215793639659">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215793639660" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215793639661">
-                        <link role="property" targetNodeId="1.1204991940915" resolveInfo="caption" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1238246643009">
+                    <property name="value" value="todo this is a workaround for IDEA bug with using names in schemes instead of IDs" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238246242655">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1238246245833">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238246252510">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238246251509" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238246254076">
+                          <link role="property" targetNodeId="1.1204991940915" resolveInfo="caption" />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238246258531">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238246258249" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238246264614">
+                          <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1238246242656">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238246242657" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238246242658">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238246242659" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238246242660">
+                            <link role="property" targetNodeId="1.1204991940915" resolveInfo="caption" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
