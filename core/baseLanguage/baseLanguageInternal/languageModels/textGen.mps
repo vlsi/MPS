@@ -345,8 +345,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992212">
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992214">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236702541530">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1238246275833">
+            <link role="function" targetNodeId="1236701346032" resolveInfo="className" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238246280724">
               <link role="variableDeclaration" targetNodeId="1236702522221" resolveInfo="fqClassName" />
             </node>
           </node>
@@ -393,10 +394,11 @@
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992249">
             <property name="value" value="new " />
           </node>
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992250">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236702665305">
-              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236702664726" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1236702667856">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1238246334775">
+            <link role="function" targetNodeId="1236701346032" resolveInfo="className" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238246335166">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1238246335167" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238246335168">
                 <link role="property" targetNodeId="1.1173996588177" resolveInfo="fqClassName" />
               </node>
             </node>
