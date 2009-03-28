@@ -13,6 +13,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -25,7 +26,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     if (annotationLink == null) {
       return;
     }
-    // assign type
+    //     assign type
     SNode T = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure._LinkAccessT", null);
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
     SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
@@ -35,7 +36,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204926978425", true), T, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204926978423", intentionProvider);
     }
-    // ---
+    //     ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -43,7 +44,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     }
     SNode linkQualifier = SLinkOperations.getTarget(nodeToCheck, "linkQualifier", true);
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      // link role expected
+      //       link role expected
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;

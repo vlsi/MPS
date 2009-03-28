@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.lang.smodel.typesystem.RulesUtil;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +23,7 @@ public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extend
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    // check link role argument
+    //     check link role argument
     final SNode linkDecl = SLinkOperations.getTarget(op, "referenceLink", false);
     if (linkDecl != null) {
       if (!(SPropertyOperations.hasValue(linkDecl, "metaClass", "reference", "reference"))) {

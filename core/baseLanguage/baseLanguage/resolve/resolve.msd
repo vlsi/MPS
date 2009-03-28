@@ -13,6 +13,7 @@
   <usedLanguages>
     <usedLanguages>ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)</usedLanguages>
     <usedLanguages>3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)</usedLanguages>
+    <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
   </usedLanguages>
 </solution>
 

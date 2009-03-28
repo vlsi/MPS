@@ -24,7 +24,7 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractI
     if (annotationLink == null) {
       return;
     }
-    // assign type
+    //     assign type
     SNode T = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure._LinkAccessT", null);
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
     SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
@@ -34,7 +34,7 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractI
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205266078203", true), T, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205266078201", intentionProvider);
     }
-    // ---
+    //     ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();

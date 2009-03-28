@@ -444,5 +444,35 @@
       <link role="concept" targetNodeId="1.1202838164916" resolveInfo="InternalThisExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1238253384653">
+    <property name="name" value="typeof_ExtractToConstantExpression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238253384654">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1238253423488">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238253425211">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238253425212">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238253426683">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238253426104">
+                <link role="applicableNode" targetNodeId="1238253384655" resolveInfo="expression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238253427078">
+                <link role="link" targetNodeId="1.1238251454130" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238253423491">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238253420219">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238253421456">
+              <link role="applicableNode" targetNodeId="1238253384655" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1238253384655">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.1238251434034" resolveInfo="ExtractToConstantExpression" />
+    </node>
+  </node>
 </model>
 

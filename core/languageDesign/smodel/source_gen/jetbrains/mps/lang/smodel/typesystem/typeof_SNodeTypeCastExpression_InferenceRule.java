@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,7 +24,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), typeCheckingContext.typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061673586", intentionProvider);
     }
-    //  this when concrete has a sense of overloading
+    //      this when concrete has a sense of overloading
     {
       final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
       typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
@@ -44,7 +45,6 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
             }
           }
         }
-
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061660362", true, false);
     }
   }

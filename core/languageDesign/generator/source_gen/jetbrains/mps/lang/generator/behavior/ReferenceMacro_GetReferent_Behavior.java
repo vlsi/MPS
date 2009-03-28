@@ -10,6 +10,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.generator.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ReferenceMacro_GetReferent_Behavior {
@@ -26,7 +27,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     SNode link = (SNode)BaseAdapter.fromAdapter(link_);
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
     SNode expectedNodeType = new _Quotations.QuotationClass_0().createNode(targetConcept);
-    // reference may be resolved dynamically?
+    //     reference may be resolved dynamically?
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.IResolveInfo")) {
       return new _Quotations.QuotationClass_1().createNode(targetConcept);
     }

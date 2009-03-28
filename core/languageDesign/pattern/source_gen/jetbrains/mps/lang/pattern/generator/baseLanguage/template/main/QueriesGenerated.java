@@ -88,14 +88,6 @@ public class QueriesGenerated {
     return "childVar_" + _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1190932035191(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("referentModel");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1190932077903(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("referentId");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getConceptFqName();
   }
@@ -131,6 +123,18 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224175601403(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("Pattern_", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238253770466(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("referentModel");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238253770475(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("referentId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238253780750(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("SNODE_POINTER", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object referenceMacro_GetReferent_1190931376965(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -19,22 +19,25 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\sandbox\sandbox.msd" />
+      <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\pattern.mpl" />
+      <languagePath path="${project}/pattern.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="pattern" language="jetbrains.mps.lang.pattern" />
+      <genConfModule name="pattern" moduleRef="jetbrains.mps.lang.pattern" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="patternLanguage.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
@@ -47,6 +50,7 @@
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

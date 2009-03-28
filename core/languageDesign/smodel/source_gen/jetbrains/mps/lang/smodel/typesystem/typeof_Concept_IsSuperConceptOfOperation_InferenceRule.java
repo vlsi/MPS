@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Concept_IsSuperConceptOfOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +20,7 @@ public class typeof_Concept_IsSuperConceptOfOperation_InferenceRule extends Abst
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     SNode conceptArg = SLinkOperations.getTarget(op, "conceptArgument", true);
     if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      // concept expected
+      //       concept expected
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;

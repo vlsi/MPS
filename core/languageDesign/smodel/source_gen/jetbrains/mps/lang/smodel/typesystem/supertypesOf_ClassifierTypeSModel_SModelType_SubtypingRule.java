@@ -4,7 +4,9 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.lang.smodel.typesystem._Patterns;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 
 public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 

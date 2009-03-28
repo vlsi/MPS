@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import jetbrains.mps.lang.generator.behavior._Quotations;
 
 public class PropertyMacro_GetPropertyValue_Behavior {
 

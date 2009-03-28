@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,7 +24,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     if (conceptPropertyDecl == null) {
       return;
     }
-    // ==========
+    //     ==========
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;

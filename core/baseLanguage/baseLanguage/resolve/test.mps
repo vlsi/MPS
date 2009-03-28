@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -16,6 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <maxImportIndex value="235" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.resolve(jetbrains.mps.resolve@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -29,12 +31,12 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237574003941" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237574003942" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574003943">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237574097431">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574097433">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237574101044" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237574238625">
-            <property name="value" value="true" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238252972981">
+          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression" id="1238252972982">
+            <property name="fieldName" value="ABC" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238252974078">
+              <property name="value" value="239" />
+            </node>
           </node>
         </node>
       </node>

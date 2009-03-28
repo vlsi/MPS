@@ -6,8 +6,10 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.typesystem.RulesUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -30,7 +32,6 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
             typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1213877394418(inputNodeConcept), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710468986", intentionProvider);
           }
         }
-
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057669142", false, false);
     }
     {

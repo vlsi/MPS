@@ -6,7 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.typesystem.RulesUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
