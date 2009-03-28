@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class SModelUtil {
   private static Logger LOG = Logger.getLogger(SModelUtil.class);
@@ -107,7 +109,7 @@ public class SModelUtil {
     return SPropertyOperations.getString(genLinkDecl, "role");
   }
 
-  public static List<SNode> getDirectInterfacesAndTheirSupers(SNode concept) {
+  public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.<SNode>fromArray();
     for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
@@ -116,7 +118,7 @@ public class SModelUtil {
         }
       }
     }
-    return ListSequence.<SNode>fromArray();
+    return ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(result));
   }
 
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
@@ -159,6 +161,42 @@ public class SModelUtil {
 
   public static Cardinality getGenuineLinkSourceCardinality(SNode linkDecl) {
     return ((LinkDeclaration)SNodeOperations.getAdapter(getGenuineLinkDeclaration(linkDecl))).getSourceCardinality();
+  }
+
+  public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {
+    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
+      if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
+        return root;
+      }
+    }
+    return null;
+  }
+
+  public static SNode findBehaviorDeclaration(SModel behaviorModel, SNode concept) {
+    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
+      if (concept == SLinkOperations.getTarget(root, "concept", false)) {
+        return root;
+      }
+    }
+    return null;
+  }
+
+  public static SNode findConstraintsDeclaration(SModel constraintsModel, SNode concept) {
+    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
+      if (concept == SLinkOperations.getTarget(root, "concept", false)) {
+        return root;
+      }
+    }
+    return null;
+  }
+
+  public static SNode findDataFlowDeclaration(SModel dataFlowModel, SNode concept) {
+    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
+      if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
+        return root;
+      }
+    }
+    return null;
   }
 
 }

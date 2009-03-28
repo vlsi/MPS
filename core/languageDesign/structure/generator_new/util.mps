@@ -775,49 +775,18 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188522188367">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188522188368">
-            <property name="name" value="list" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047901170">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047901171">
-                <link role="classifier" targetNodeId="17.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1188522160892">
-              <link role="classConcept" targetNodeId="2.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~SModelUtil_new.getDirectSuperInterfacesAndTheySupers(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getDirectSuperInterfacesAndTheySupers" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672722056">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1188522179034">
-                  <link role="variableDeclaration" targetNodeId="1169579397877" resolveInfo="concept" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1188522181788" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1169579427526">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1169579427527">
-            <property name="name" value="interfaces" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1169579427528">
-              <link role="elementConcept" targetNodeId="1.1169125787135" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171463262626">
-              <link role="classConcept" targetNodeId="2.~BaseAdapter" resolveInfo="BaseAdapter" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188522232918">
-                <link role="variableDeclaration" targetNodeId="1188522188368" resolveInfo="list" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1169579427535">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577009949">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169579427537">
               <link role="variableDeclaration" targetNodeId="1169579427518" resolveInfo="result" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1169579427538">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169579427539">
-                <link role="variableDeclaration" targetNodeId="1169579427527" resolveInfo="interfaces" />
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238255026559">
+                <link role="baseMethodDeclaration" targetNodeId="20.1238254781295" resolveInfo="getDirectSuperInterfacesAndTheirSupers" />
+                <link role="classConcept" targetNodeId="20.1237995590703" resolveInfo="SModelUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238255026560">
+                  <link role="variableDeclaration" targetNodeId="1169579397877" resolveInfo="concept" />
+                </node>
               </node>
             </node>
           </node>

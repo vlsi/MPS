@@ -21,13 +21,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
@@ -39,7 +33,6 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Condition;
 
@@ -129,9 +122,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
-            if (conceptEditorDeclaration != null) {
-              SNode editor = (SNode)conceptEditorDeclaration.getNode();
+            SNode editor = SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
+            if (editor != null) {
               ListSequence.fromList(editors).addElement(editor);
             }
           }
@@ -141,9 +133,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
       if (behaviorModelDescriptor != null) {
         for(SNode node : nodes) {
-          ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
-          if (conceptBehavior != null) {
-            SNode behavior = (SNode)conceptBehavior.getNode();
+          SNode behavior = SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
+          if (behavior != null) {
             ListSequence.fromList(behaviors).addElement(behavior);
           }
         }
@@ -152,10 +143,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
       if (constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
-          ConceptConstraints conceptConstraints = SModelUtil_new.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
-          if (conceptConstraints != null) {
-            SNode conceptConstraintsNodes = (SNode)conceptConstraints.getNode();
-            ListSequence.fromList(constraints).addElement(conceptConstraintsNodes);
+          SNode constraint = SModelUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
+          if (constraint != null) {
+            ListSequence.fromList(constraints).addElement(constraint);
           }
         }
       }
@@ -163,9 +153,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
       if (dataflowModelDescriptor != null) {
         for(SNode node : nodes) {
-          DataFlowBuilderDeclaration dataFlowBuilderDeclaration = SModelUtil_new.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
-          if (dataFlowBuilderDeclaration != null) {
-            SNode dataFlow = (SNode)dataFlowBuilderDeclaration.getNode();
+          SNode dataFlow = SModelUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
+          if (dataFlow != null) {
             ListSequence.fromList(dataFlows).addElement(dataFlow);
           }
         }
