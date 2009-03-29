@@ -30,6 +30,7 @@ import java.util.Set;
 public class CheckingRuleSet<T extends ICheckingRule_Runtime> extends RuleSet<T> {
 
   public void makeConsistent() {
+    /*
     for (AbstractConceptDeclaration conceptDeclaration : myRules.keySet()) {
       if (conceptDeclaration == null) {
         continue;
@@ -67,5 +68,6 @@ public class CheckingRuleSet<T extends ICheckingRule_Runtime> extends RuleSet<T>
         parent = parent.getExtends();
       }
     }
+    */
   }
 }

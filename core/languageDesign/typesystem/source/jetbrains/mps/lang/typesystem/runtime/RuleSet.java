@@ -38,6 +38,8 @@ import java.util.HashSet;
  */
 public class RuleSet<T extends IApplicableToConcept> {
   Map<AbstractConceptDeclaration, Set<T>> myRules = new HashMap<AbstractConceptDeclaration, Set<T>>();
+  Map<AbstractConceptDeclaration, Set<T>> myRulesCache = new HashMap<AbstractConceptDeclaration, Set<T>>();
+
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
@@ -45,8 +47,7 @@ public class RuleSet<T extends IApplicableToConcept> {
       Set<T> existingRules = myRules.get(concept);
       if (existingRules == null) {
         existingRules = new HashSet<T>(2);
-        myRules.put(concept,
-          existingRules);
+        myRules.put(concept, existingRules);
       }
       existingRules.add(rule);
     }
@@ -58,6 +59,11 @@ public class RuleSet<T extends IApplicableToConcept> {
   }
 
   protected Set<T> get(AbstractConceptDeclaration key) {
+    Set<T> cachedResult = myRulesCache.get(key);
+    if (cachedResult != null) {
+      return new HashSet<T>(cachedResult);
+    }
+
     Set<T> result = new HashSet<T>();
     Set<AbstractConceptDeclaration> frontier = new HashSet<AbstractConceptDeclaration>();
     Set<AbstractConceptDeclaration> newFrontier = new HashSet<AbstractConceptDeclaration>();
@@ -97,16 +103,12 @@ public class RuleSet<T extends IApplicableToConcept> {
       frontier = newFrontier;
       newFrontier = new HashSet<AbstractConceptDeclaration>();
     }
-    Set<T> rulesForKey = myRules.get(key);
-    if (rulesForKey == null) {
-      rulesForKey = new HashSet<T>();
-      myRules.put(key, rulesForKey);
-    }
-    rulesForKey.addAll(result);
+    myRulesCache.put(key, new HashSet<T>(result));
     return result;
   }
 
   public void makeConsistent() {
+    /*
     for (AbstractConceptDeclaration conceptDeclaration : myRules.keySet()) {
       if (conceptDeclaration == null) {
         continue;
@@ -123,9 +125,11 @@ public class RuleSet<T extends IApplicableToConcept> {
         parent = parent.getExtends();
       }
     }
+    */
   }
 
   public void clear() {
     myRules.clear();
+    myRulesCache.clear();
   }
 }
