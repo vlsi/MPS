@@ -117,10 +117,8 @@ public class SideTransformHintSubstituteActionsHelper {
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel != null && actionsModel.getSModel() != null) {
-        List<SNode> list = actionsModel.getSModel().allNodes(new Condition<SNode>() {
-          public boolean met(SNode node) {
-            if (BaseAdapter.fromNode(node) instanceof SideTransformHintSubstituteActionsBuilder) {
-              SideTransformHintSubstituteActionsBuilder actionsBuilder = (SideTransformHintSubstituteActionsBuilder) BaseAdapter.fromNode(node);
+        List<SideTransformHintSubstituteActionsBuilder> list = actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class, new Condition<SideTransformHintSubstituteActionsBuilder>() {
+          public boolean met(SideTransformHintSubstituteActionsBuilder actionsBuilder) {
               // same tag?
               if (actionsBuilder.getTransformTag() != tag) {
                 return false;
@@ -137,11 +135,9 @@ public class SideTransformHintSubstituteActionsHelper {
               // is applicable ?
               return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
                 satisfiesPrecondition(actionsBuilder);
-            }
-            return false;
           }
         });
-        actionsBuilders.addAll((List) BaseAdapter.toAdapters(list));
+        actionsBuilders.addAll(list);
       }
     }
     return actionsBuilders;

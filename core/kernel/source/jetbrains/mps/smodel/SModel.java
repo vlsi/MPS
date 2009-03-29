@@ -1331,11 +1331,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return cls.isInstance(BaseAdapter.fromNode(object));
-      }
-    }));
+    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
   public List<INodeAdapter> allAdapters(Condition<INodeAdapter> condition) {
