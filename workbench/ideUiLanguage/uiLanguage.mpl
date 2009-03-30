@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.ide.uiLanguage" uuid="a20a42c8-ea20-45de-bc60-acb92cc25c46" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.ide.uiLanguage" uuid="a20a42c8-ea20-45de-bc60-acb92cc25c46" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.ide.uiLanguage" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.ide.uiLanguage" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.ide.uiLanguage" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.ide.uiLanguage" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.ide.uiLanguage#1203519930689" uuid="a352feb7-4e4d-4e9a-a38d-0727e043a43d">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="d1415f93-6c9c-4200-81f9-9205ed57131a(jetbrains.mps.uiLanguage#1202393863737)" />
@@ -23,7 +23,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
+            <generator generatorUID="jetbrains.mps.ide.uiLanguage#1203519930689" />
+            <external-mapping>
+              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
+            </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="d1415f93-6c9c-4200-81f9-9205ed57131a(jetbrains.mps.uiLanguage#1202393863737)" />
@@ -36,7 +39,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
