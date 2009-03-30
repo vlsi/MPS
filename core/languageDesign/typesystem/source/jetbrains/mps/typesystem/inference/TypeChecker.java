@@ -61,6 +61,7 @@ public class TypeChecker implements ApplicationComponent {
   private RulesManager myRulesManager;
 
   private SubtypingCache mySubtypingCache = null;
+  private SubtypingCache myGlobalSubtypingCache = null;
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
@@ -107,6 +108,18 @@ public class TypeChecker implements ApplicationComponent {
 
   public SubtypingCache getSubtypingCache() {
     return mySubtypingCache;
+  }
+
+  public SubtypingCache getGlobalSubtypingCache() {
+    return mySubtypingCache;
+  }
+
+  public void enableGlobalSubtypingCache() {
+    myGlobalSubtypingCache = new SubtypingCache();
+  }
+
+  public void clearGlobalSubtypingCache() {
+    myGlobalSubtypingCache = null;
   }
 
   public RulesManager getRulesManager() {
