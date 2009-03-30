@@ -46,7 +46,22 @@ public class SideTransformHintSubstituteActionsHelper {
   public boolean canCreateActions() {
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     try {
-      return getActionBuilders().size() > 0;
+      IScope scope = myContext.getScope();
+      final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+      final SideTransformTag tag = SideTransformTag.parseValue(myTransformTag);
+
+      List<Language> languages = mySourceNode.getModel().getLanguages(scope);
+      for (Language language : languages) {
+        SModelDescriptor actionsModel = language.getActionsModelDescriptor();
+        if (actionsModel != null && actionsModel.getSModel() != null) {
+          for (SideTransformHintSubstituteActionsBuilder builder : actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class)) {
+            if (isApplicable(builder, tag, sourceConcept)) {
+              return true;
+            }
+          }
+        }
+      }
+      return false;
     } finally {
       TypeChecker.getInstance().clearTypesComputedForCompletion();
     }
@@ -126,30 +141,38 @@ public class SideTransformHintSubstituteActionsHelper {
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel != null && actionsModel.getSModel() != null) {
-        List<SideTransformHintSubstituteActionsBuilder> list = actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class, new Condition<SideTransformHintSubstituteActionsBuilder>() {
-          public boolean met(SideTransformHintSubstituteActionsBuilder actionsBuilder) {
-              // same tag?
-              if (actionsBuilder.getTransformTag() != tag) {
-                return false;
-              }
-
-              if (actionsBuilder.getSide() == Side.left && mySide != CellSide.LEFT) {
-                return false;
-              }
-
-              if (actionsBuilder.getSide() == Side.right && mySide != CellSide.RIGHT) {
-                return false;
-              }
-
-              // is applicable ?
-              return SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
-                satisfiesPrecondition(actionsBuilder);
+        for (SideTransformHintSubstituteActionsBuilder builder : actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class)) {
+          if (isApplicable(builder, tag, sourceConcept)) {
+            actionsBuilders.add(builder);
           }
-        });
-        actionsBuilders.addAll(list);
+        }
       }
     }
     return actionsBuilders;
+  }
+
+  private boolean isApplicable(SideTransformHintSubstituteActionsBuilder actionsBuilder,
+                               SideTransformTag tag,
+                               AbstractConceptDeclaration sourceConcept) {
+    // same tag?
+    if (actionsBuilder.getTransformTag() != tag) {
+      return false;
+    }
+
+    if (actionsBuilder.getSide() == Side.left && mySide != CellSide.LEFT) {
+      return false;
+    }
+
+    if (actionsBuilder.getSide() == Side.right && mySide != CellSide.RIGHT) {
+      return false;
+    }
+
+    if (!SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept())) {
+      return false;
+    }
+
+    // is applicable ?
+    return satisfiesPrecondition(actionsBuilder);
   }
 
   private void invokeRemoveByCondition(RemoveSTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
