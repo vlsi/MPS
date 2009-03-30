@@ -50,9 +50,6 @@
     <property name="name" value="ChooseModule" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1203607567791">
       <link role="applicableConcept" targetNodeId="1.1203599702327" resolveInfo="Module" />
-      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1237543560483">
-        <link role="conceptToRemove" targetNodeId="1.1203599702327" resolveInfo="Module" />
-      </node>
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1203607611171">
         <link role="concept" targetNodeId="1.1203599702327" resolveInfo="Module" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1203607624312">

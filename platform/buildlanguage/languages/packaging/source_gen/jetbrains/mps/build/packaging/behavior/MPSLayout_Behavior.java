@@ -12,12 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.io.File;
+import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import java.util.Arrays;
 import java.util.List;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.LinkedList;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.build.packaging.behavior.ICondition_Behavior;
 
 public class MPSLayout_Behavior {
 

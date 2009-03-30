@@ -8,6 +8,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent;
+import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
+import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
+import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -99,7 +103,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2334_0(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent2334_0 == null) {
-      this.myIncludeExcludeEditorComponent2334_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent(node);
+      this.myIncludeExcludeEditorComponent2334_0 = new IncludeExcludeEditorComponent(node);
     }
     EditorCell editorCell = this.myIncludeExcludeEditorComponent2334_0.createEditorCell(context);
     setupBasic_Component_2334_0(editorCell, node, context);
@@ -108,7 +112,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2334_1(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector2334_0 == null) {
-      this.myIncludeExcludeInInspector2334_0 = new jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector(node);
+      this.myIncludeExcludeInInspector2334_0 = new IncludeExcludeInInspector(node);
     }
     EditorCell editorCell = this.myIncludeExcludeInInspector2334_0.createEditorCell(context);
     setupBasic_Component_2334_1(editorCell, node, context);
@@ -117,7 +121,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2334_2(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent2334_0 == null) {
-      this.myConfigurationReferencesEditorComponent2334_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent2334_0 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent2334_0.createEditorCell(context);
     setupBasic_Component_2334_2(editorCell, node, context);
@@ -126,7 +130,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2334_3(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent2334_1 == null) {
-      this.myConfigurationReferencesEditorComponent2334_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent2334_1 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent2334_1.createEditorCell(context);
     setupBasic_Component_2334_3(editorCell, node, context);
@@ -135,7 +139,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_2334_4(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent2334_0 == null) {
-      this.myCompositecomponentEntriesEditorComponent2334_0 = new jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent(node);
+      this.myCompositecomponentEntriesEditorComponent2334_0 = new CompositecomponentEntriesEditorComponent(node);
     }
     EditorCell editorCell = this.myCompositecomponentEntriesEditorComponent2334_0.createEditorCell(context);
     setupBasic_Component_2334_4(editorCell, node, context);

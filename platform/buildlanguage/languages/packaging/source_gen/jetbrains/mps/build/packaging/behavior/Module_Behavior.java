@@ -8,9 +8,12 @@ import java.io.File;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.build.packaging.behavior.ModuleUtil;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -96,7 +99,7 @@ public class Module_Behavior {
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> classpath, boolean onlyUnderProjectBasedir) {
     List<SNode> result = ListOperations.<SNode>createList();
     String projectBasedir = "";
-    // search for project if needed
+    //     search for project if needed
     if (onlyUnderProjectBasedir) {
       projectBasedir = Module_Behavior.call_getProjectBasedir_1213877514893(thisNode);
       if (projectBasedir == null) {
@@ -104,7 +107,7 @@ public class Module_Behavior {
       }
       projectBasedir = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode) + File.separator + projectBasedir;
     }
-    // process classpath
+    //     process classpath
     for(String cp : ListSequence.fromList(classpath)) {
       if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
         SNode nodeCP = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);

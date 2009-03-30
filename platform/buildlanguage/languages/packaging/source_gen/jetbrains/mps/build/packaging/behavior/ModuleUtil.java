@@ -49,7 +49,7 @@ public class ModuleUtil {
       }
     } else
     {
-      // TODO how not to use instanceof here?
+      //       TODO how not to use instanceof here?
       if (cpitem instanceof FileClassPathItem) {
         ListSequence.fromList(result).addElement(((FileClassPathItem)cpitem).getClassPath());
       } else if (cpitem instanceof JarFileClassPathItem) {

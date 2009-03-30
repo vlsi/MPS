@@ -41,7 +41,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
-
         };
         Iterable<IModule> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -58,7 +57,6 @@ public class QueriesGenerated {
               public String getDescriptionText(String pattern) {
                 return "mps module";
               }
-
             });
           }
         }
@@ -108,7 +106,6 @@ public class QueriesGenerated {
             }
             return suggestStrings;
           }
-
         };
         Iterable<String> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -120,7 +117,6 @@ public class QueriesGenerated {
                 SPropertyOperations.set(pathComponent, "path", "" + ((item)));
                 return pathComponent;
               }
-
             });
           }
         }
@@ -138,7 +134,6 @@ public class QueriesGenerated {
         public Object calculate() {
           return "no macro";
         }
-
       };
       no_macro = (String)calc.calculate();
     }
@@ -153,7 +148,6 @@ public class QueriesGenerated {
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }
-
         };
         Iterable<String> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -170,7 +164,6 @@ public class QueriesGenerated {
                 }
                 return macro;
               }
-
             });
           }
         }
@@ -190,7 +183,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getParentNode(), "project", false), "target", true);
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -202,7 +194,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(reference, "targetDeclaration", (item), false);
                 return reference;
               }
-
             });
           }
         }

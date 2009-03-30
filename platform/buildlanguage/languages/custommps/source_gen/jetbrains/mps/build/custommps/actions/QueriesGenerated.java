@@ -4,9 +4,7 @@ package jetbrains.mps.build.custommps.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -24,12 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_MPSModule_1237557396432(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    Generator generator = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getGenerators().get(0);
-    ModuleId moduleId = operationContext.getModule().getModuleId();
-    if (moduleId == null) {
-      return false;
-    }
-    return moduleId.equals(generator.getModuleId());
+    return MPSBuild_Behavior.isInCustomMPSGenerator_1238403397946(operationContext);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MPSModule_1237542440695(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

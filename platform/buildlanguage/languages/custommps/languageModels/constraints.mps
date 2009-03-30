@@ -105,11 +105,11 @@
     <link role="concept" targetNodeId="1.1237468395076" resolveInfo="MPSModule" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1237471300182">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237471300183">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238403493373">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238403498341">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238424296050">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238424296051">
             <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
             <link role="baseMethodDeclaration" targetNodeId="4v.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1238403505835" />
+            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1238424304241" />
           </node>
         </node>
       </node>

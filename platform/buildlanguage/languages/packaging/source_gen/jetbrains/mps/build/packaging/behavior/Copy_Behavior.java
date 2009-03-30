@@ -8,8 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 
 public class Copy_Behavior {
 

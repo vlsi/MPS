@@ -4,6 +4,8 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior;
 
 public class MPSLayoutConfigurationReferencePropertyValueExpression_Behavior {

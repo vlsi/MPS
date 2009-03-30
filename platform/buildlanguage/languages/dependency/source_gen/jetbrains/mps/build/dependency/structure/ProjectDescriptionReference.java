@@ -4,6 +4,7 @@ package jetbrains.mps.build.dependency.structure;
 
 import jetbrains.mps.buildlanguage.structure.ImportProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.dependency.structure.ProjectDescription;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
