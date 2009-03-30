@@ -233,6 +233,7 @@
     <copy todir="${deploy.dir}/build-helpers.distrib/MPS/samples">
       <fileset dir="samples" excludes="**/*.iml, **/*.iws, " />
     </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.kernel0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design0" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/core/devkits" />

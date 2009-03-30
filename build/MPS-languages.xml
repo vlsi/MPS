@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="MPS-languages" default="pack.jetbrains.mps.devkit.general-purpose0">
+<project name="MPS-languages" default="pack.jetbrains.mps.kernel0">
   <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+  <target name="pack.jetbrains.mps.kernel0">
+    <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
+      <zipfileset dir="core/kernel/kernelSolution" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.devkit.general-purpose0">
     <jar destfile="${deploy.dir}/build-helpers.distrib/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/devkits/jetbrains.mps.devkit.general-purpose.devkit" prefix="module" />
