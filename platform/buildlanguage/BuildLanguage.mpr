@@ -43,6 +43,8 @@
       <genConfModule name="generate distrib" moduleRef="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
       <genConfModule name="generate packaging language" moduleRef="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
       <genConfModule name="generate property language" moduleRef="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)" />
+      <genConfModule name="mpsautobuild" moduleRef="jetbrains.mps.build.mpsautobuild" />
+      <genConfModule name="mpsbuild" moduleRef="jetbrains.mps.build.mpsbuild" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
