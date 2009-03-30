@@ -26,7 +26,7 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class TextLine {
-  private static final Color ERROR_COLOR = new Color(255, 220, 220);
+  private static final Color ERROR_COLOR = new Color(255, 220, 220);  
 
   private String myText;
   private int myDescent = 0;
@@ -126,20 +126,19 @@ public class TextLine {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
-    int minWidth = calculateMinWidth();
+    int minWidth = calculateMinWidth(metrics);
     int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getPaddingLeft() + getPaddingRight();
     myWidth = Math.max(minWidth, width);
     myDescent = metrics.getDescent();
   }
 
-  public int getEffectiveWidth() {
-    int minWidth = calculateMinWidth();
+  public int getEffectiveWidth(FontMetrics metrics) {
+    int minWidth = calculateMinWidth(metrics);
     int effectiveWidth = myWidth - getPaddingLeft() - getPaddingRight();
     return Math.max(minWidth, effectiveWidth);
   }
 
-  private int calculateMinWidth() {
-    FontMetrics metrics = getFontMetrics();
+  private int calculateMinWidth(FontMetrics metrics) {
     return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
   }
 
