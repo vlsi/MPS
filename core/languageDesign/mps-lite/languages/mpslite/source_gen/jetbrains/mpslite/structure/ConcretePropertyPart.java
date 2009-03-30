@@ -13,14 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConcretePropertyPart extends PropertyPart implements INamedConcept, Concretization {
   public static final String concept = "jetbrains.mpslite.structure.ConcretePropertyPart";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String PROPERTY_TYPE = "propertyType";
 
   public ConcretePropertyPart(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ConcretePropertyPart.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ConcretePropertyPart.NAME, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept,
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConcretePropertyPart.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ConcretePropertyPart.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ConcretePropertyPart.NAME, value);
   }
 
   public MPSLitePropertyType_Enum getPropertyType() {

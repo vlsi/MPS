@@ -13,14 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConcreteReferencePart extends ReferencePart implements INamedConcept, Concretization {
   public static final String concept = "jetbrains.mpslite.structure.ConcreteReferencePart";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String CONCEPT_REFERENCE = "conceptReference";
 
   public ConcreteReferencePart(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ConcreteReferencePart.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ConcreteReferencePart.NAME, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class ConcreteReferencePart extends ReferencePart implements INamedConcep
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConcreteReferencePart.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ConcreteReferencePart.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ConcreteReferencePart.NAME, value);
   }
 
   public AbstractConceptReference getConceptReference() {

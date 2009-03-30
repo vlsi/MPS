@@ -607,6 +607,11 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1238064014561" resolveInfo="PlaceholderAssignment" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238428142796">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="lineList" />
+      <link role="target" targetNodeId="1237380500632" resolveInfo="LineList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238064014561">
     <property name="name" value="PlaceholderAssignment" />

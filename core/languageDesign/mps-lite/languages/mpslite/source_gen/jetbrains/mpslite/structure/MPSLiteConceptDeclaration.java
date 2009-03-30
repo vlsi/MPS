@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteConcept {
   public static final String concept = "jetbrains.mpslite.structure.MPSLiteConceptDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String ROOT = "root";
   public static final String ABSTRACT = "abstract";
   public static final String EXTENDS = "extends";
@@ -23,6 +23,14 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
 
   public MPSLiteConceptDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(MPSLiteConceptDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(MPSLiteConceptDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -47,14 +55,6 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
 
   public void setVirtualPackage(String value) {
     this.setProperty(MPSLiteConceptDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(MPSLiteConceptDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(MPSLiteConceptDeclaration.NAME, value);
   }
 
   public boolean getRoot() {

@@ -17,7 +17,36 @@
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="5873eca3-8d9f-4d11-8ccd-c8b23f469216(jetbrains.mpslite#1237409422567)" />
+            <external-mapping>
+              <mapping-node modelUID="r:b1ca37f9-0ff0-401b-a23b-b567f7e9d523(jetbrains.mpslite.generator.template.main@generator)" nodeID="1238427024425" />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="5873eca3-8d9f-4d11-8ccd-c8b23f469216(jetbrains.mpslite#1237409422567)" />
+            <external-mapping>
+              <mapping-node modelUID="r:b1ca37f9-0ff0-401b-a23b-b567f7e9d523(jetbrains.mpslite.generator.template.main@generator)" nodeID="1237409425199" />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="5873eca3-8d9f-4d11-8ccd-c8b23f469216(jetbrains.mpslite#1237409422567)" />
+            <external-mapping>
+              <mapping-node modelUID="r:b1ca37f9-0ff0-401b-a23b-b567f7e9d523(jetbrains.mpslite.generator.template.main@generator)" nodeID="1238427024425" />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="5873eca3-8d9f-4d11-8ccd-c8b23f469216(jetbrains.mpslite#1237409422567)" />
+            <external-mapping>
+              <mapping-node modelUID="r:b1ca37f9-0ff0-401b-a23b-b567f7e9d523(jetbrains.mpslite.generator.template.main@generator)" nodeID="1237991174510" />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>

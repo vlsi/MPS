@@ -1343,6 +1343,24 @@
         <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1238076520701" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238428158247">
+        <link role="relationDeclaration" targetNodeId="1.1238428142796" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1238428166169">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238428166170">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238428170955">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238428174556">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238428172894">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1238428170956" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238428173461">
+                    <link role="link" targetNodeId="1.1238428142796" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1238428176841" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238074737486">

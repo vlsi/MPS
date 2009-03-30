@@ -16,8 +16,9 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -54,6 +55,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238012693197(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "abstract")) || SLinkOperations.getCount(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "line") != 0;
+  }
+
+  public static boolean baseMappingRule_Condition_1238429859692(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "abstract")) || SLinkOperations.getCount(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "line") != 0;
   }
 
@@ -141,36 +146,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1238415580004(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1238415580011(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (SPropertyOperations.getBoolean(_context.getNode(), "multiple")) {
-      return "0..n";
-    } else
-    {
-      return "0..1";
-    }
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1238416547553(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1238416749014(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1238416749021(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (SPropertyOperations.getBoolean(_context.getNode(), "optional")) {
-      return "0..1";
-    } else
-    {
-      return "1";
-    }
-  }
-
   public static Object referenceMacro_GetReferent_1237456181074(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(_context.getNode(), "propertyType", "string", "string")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "dataType", false);
@@ -233,25 +208,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static Object referenceMacro_GetReferent_1238415579995(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), _context);
-  }
-
-  public static Object referenceMacro_GetReferent_1238416547560(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    if (SPropertyOperations.hasValue(_context.getNode(), "propertyType", "string", "string")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "dataType", false);
-    } else if (SPropertyOperations.hasValue(_context.getNode(), "propertyType", "numeric", "string")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "dataType", false);
-    } else
-    {
-      return null;
-    }
-  }
-
-  public static Object referenceMacro_GetReferent_1238416749005(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return MPSLiteGenerationUtil.findStructureLanguageConcept(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), _context);
-  }
-
   public static Object referenceMacro_GetReferent_1238421522885(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generateConcept");
   }
@@ -280,18 +236,6 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1238415580025(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
-  }
-
-  public static boolean ifMacro_Condition_1238416547593(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
-  }
-
-  public static boolean ifMacro_Condition_1238416749035(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
-  }
-
   public static SNode sourceNodeQuery_1237991263721(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "lineList", true);
   }
@@ -301,7 +245,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1238421522877(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true);
+    return SLinkOperations.getTarget(_context.getNode(), "lineList", true);
   }
 
   public static Iterable sourceNodesQuery_1237409957537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -329,54 +273,80 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1238415404666(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.ConcreteReferencePart", false);
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "jetbrains.mpslite.structure.ConcreteReferencePart", false);
   }
 
   public static Iterable sourceNodesQuery_1238415404711(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.ConcreteChildPart", false);
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "jetbrains.mpslite.structure.ConcreteChildPart", false);
   }
 
   public static Iterable sourceNodesQuery_1238415404756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.ConcretePropertyPart", false);
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "lineList", true), "jetbrains.mpslite.structure.ConcretePropertyPart", false);
   }
 
-  public static Iterable sourceNodesQuery_1238415579982(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    List<SNode> placeholderReferences = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.ChildPlaceholderReference", false);
-    for(SNode placeholderReference : placeholderReferences) {
-      for(SNode placeholderAssignment : SLinkOperations.getTargets(_context.getNode(), "placeholderAssignment", true)) {
-        if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(placeholderAssignment, "concretization", true));
+  public static void mappingScript_CodeBlock_1238425563214(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for(SNode templateBasedConcept : SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.TemplateBasedConcept")) {
+      SLinkOperations.setTarget(templateBasedConcept, "lineList", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(templateBasedConcept, "template", false), "lineList", true)), true);
+      for(SNode line : SLinkOperations.getTargets(SLinkOperations.getTarget(templateBasedConcept, "lineList", true), "line", true)) {
+        for(SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
+          if (SNodeOperations.isInstanceOf(linePart, "jetbrains.mpslite.structure.ChildPlaceholderReference")) {
+            SNode concreteChildPart = SConceptOperations.createNewNode("jetbrains.mpslite.structure.ConcreteChildPart", null);
+            SNode placeholderReference = linePart;
+            SPropertyOperations.set(concreteChildPart, "multiple", "" + SPropertyOperations.getBoolean(placeholderReference, "multiple"));
+            SPropertyOperations.set(concreteChildPart, "vertical", "" + SPropertyOperations.getBoolean(placeholderReference, "vertical"));
+            SPropertyOperations.set(concreteChildPart, "separator", SPropertyOperations.getString(placeholderReference, "separator"));
+            for(SNode placeholderAssignment : SLinkOperations.getTargets(templateBasedConcept, "placeholderAssignment", true)) {
+              if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
+                SNode part = SLinkOperations.getTarget(placeholderAssignment, "concretization", true);
+                SLinkOperations.setTarget(concreteChildPart, "conceptReference", SNodeOperations.copyNode(SLinkOperations.getTarget(part, "conceptReference", true)), true);
+                SPropertyOperations.set(concreteChildPart, "name", SPropertyOperations.getString(part, "name"));
+                break;
+              }
+            }
+            SNodeOperations.replaceWithAnother(placeholderReference, concreteChildPart);
+          }
+          if (SNodeOperations.isInstanceOf(linePart, "jetbrains.mpslite.structure.ReferencePlaceholderReference")) {
+            SNode concreteReferencePart = SConceptOperations.createNewNode("jetbrains.mpslite.structure.ConcreteReferencePart", null);
+            SNode placeholderReference = linePart;
+            SPropertyOperations.set(concreteReferencePart, "optional", "" + SPropertyOperations.getBoolean(placeholderReference, "optional"));
+            for(SNode placeholderAssignment : SLinkOperations.getTargets(templateBasedConcept, "placeholderAssignment", true)) {
+              if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
+                SNode part = SLinkOperations.getTarget(placeholderAssignment, "concretization", true);
+                SLinkOperations.setTarget(concreteReferencePart, "conceptReference", SNodeOperations.copyNode(SLinkOperations.getTarget(part, "conceptReference", true)), true);
+                SPropertyOperations.set(concreteReferencePart, "name", SPropertyOperations.getString(part, "name"));
+                break;
+              }
+            }
+            SNodeOperations.replaceWithAnother(placeholderReference, concreteReferencePart);
+          }
+          if (SNodeOperations.isInstanceOf(linePart, "jetbrains.mpslite.structure.PropertyPlaceholderReference")) {
+            SNode concretePropertyPart = SConceptOperations.createNewNode("jetbrains.mpslite.structure.ConcretePropertyPart", null);
+            SNode placeholderReference = linePart;
+            for(SNode placeholderAssignment : SLinkOperations.getTargets(templateBasedConcept, "placeholderAssignment", true)) {
+              if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
+                SNode part = SLinkOperations.getTarget(placeholderAssignment, "concretization", true);
+                SPropertyOperations.set(concretePropertyPart, "name", SPropertyOperations.getString(part, "name"));
+                SPropertyOperations.set(concretePropertyPart, "propertyType", SPropertyOperations.getString_def(part, "propertyType", "string"));
+                break;
+              }
+            }
+            SNodeOperations.replaceWithAnother(placeholderReference, concretePropertyPart);
+          }
+          if (SNodeOperations.isInstanceOf(linePart, "jetbrains.mpslite.structure.ConstantPlaceholderReference")) {
+            SNode constantLinePart = SConceptOperations.createNewNode("jetbrains.mpslite.structure.ConstantLinePart", null);
+            SNode placeholderReference = linePart;
+            for(SNode placeholderAssignment : SLinkOperations.getTargets(templateBasedConcept, "placeholderAssignment", true)) {
+              if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
+                SNode part = SLinkOperations.getTarget(placeholderAssignment, "concretization", true);
+                SPropertyOperations.set(constantLinePart, "text", SPropertyOperations.getString(part, "text"));
+                break;
+              }
+            }
+            SNodeOperations.replaceWithAnother(placeholderReference, constantLinePart);
+          }
         }
       }
     }
-    return result;
-  }
-
-  public static Iterable sourceNodesQuery_1238416558662(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    List<SNode> placeholderReferences = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.PropertyPlaceholderReference", false);
-    for(SNode placeholderReference : placeholderReferences) {
-      for(SNode placeholderAssignment : SLinkOperations.getTargets(_context.getNode(), "placeholderAssignment", true)) {
-        if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(placeholderAssignment, "concretization", true));
-        }
-      }
-    }
-    return result;
-  }
-
-  public static Iterable sourceNodesQuery_1238416757604(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    List<SNode> placeholderReferences = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "template", false), "lineList", true), "jetbrains.mpslite.structure.ReferencePlaceholderReference", false);
-    for(SNode placeholderReference : placeholderReferences) {
-      for(SNode placeholderAssignment : SLinkOperations.getTargets(_context.getNode(), "placeholderAssignment", true)) {
-        if (SLinkOperations.getTarget(placeholderAssignment, "placeholder", false) == SLinkOperations.getTarget(placeholderReference, "placeholder", false)) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(placeholderAssignment, "concretization", true));
-        }
-      }
-    }
-    return result;
   }
 
 }
