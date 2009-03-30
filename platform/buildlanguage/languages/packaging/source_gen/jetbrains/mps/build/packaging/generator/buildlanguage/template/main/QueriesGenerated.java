@@ -49,6 +49,8 @@ import java.util.Set;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.smodel.Generator;
 
 public class QueriesGenerated {
 
@@ -550,7 +552,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.ICompositeComponent");
       }
-
     });
   }
 
@@ -612,7 +613,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
       }
-
     });
   }
 
@@ -640,7 +640,7 @@ public class QueriesGenerated {
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new HashMap<IModule, List<SNode>>());
-      // fill map
+      //       fill map
       for(SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
@@ -653,9 +653,9 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(modulesForIModule).addElement(module);
       }
-      // calculate module cycles
+      //       calculate module cycles
       List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
-      // say to all modules it's cycle
+      //       say to all modules it's cycle
       for(Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);
@@ -680,6 +680,29 @@ public class QueriesGenerated {
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
         SLinkOperations.addChild(holder, "macro", macro);
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1238426776124(final IOperationContext operationContext, final MappingScriptContext _context) {
+    if (!(operationContext.isTestMode())) {
+      return;
+    }
+    List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    for(SNode layout : ListSequence.fromList(layouts)) {
+      Set<IModule> modules = new HashSet<IModule>();
+      for(SNode m : ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228340(layout))) {
+        modules.add(Module_Behavior.call_getModule_1213877515148(m));
+      }
+      for(IModule module : SetSequence.fromSet(modules)) {
+        List<IModule> dependency = module.getAllDependOnModules();
+        for(IModule dependent : ListSequence.fromList(dependency)) {
+          if (!(dependent instanceof Generator) && !(modules.contains(dependent))) {
+            String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
+            System.err.println(errorText);
+            _context.showErrorMessage(null, errorText);
+          }
+        }
       }
     }
   }
