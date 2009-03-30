@@ -9,6 +9,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 
 public class MPSBuild_Behavior {
 
@@ -29,6 +33,15 @@ public class MPSBuild_Behavior {
 
   public static String getMPSBuildToolsZipName_1234294616845() {
     return "MPS-buildTools.zip";
+  }
+
+  public static boolean isInCustomMPSGenerator_1238403397946(IOperationContext operationContext) {
+    Generator generator = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getGenerators().get(0);
+    ModuleId moduleId = operationContext.getModule().getModuleId();
+    if (moduleId == null) {
+      return false;
+    }
+    return moduleId.equals(generator.getModuleId());
   }
 
 }

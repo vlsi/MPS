@@ -39,11 +39,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1234891502382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), null, true, true), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1234891560671(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), null, true, true), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
+    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", true, false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1236880935820(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -116,7 +116,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
-      return IVariableHolder_Behavior.call_findVariable_1234876428215(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false), SPropertyOperations.getString(_context.getNode(), "name"), SPropertyOperations.getString(_context.getNode(), "antName"));
+      output = IVariableHolder_Behavior.call_findVariable_1234876428215(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false), SPropertyOperations.getString(_context.getNode(), "name"), SPropertyOperations.getString(_context.getNode(), "antName"));
     }
     return output;
   }
