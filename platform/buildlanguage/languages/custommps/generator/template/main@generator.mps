@@ -1831,6 +1831,10 @@
               <property name="name" value="languageDesign" />
             </node>
           </node>
+          <node role="entry" type="jetbrains.mps.build.custommps.structure.MPSModule" id="1238431546028">
+            <property name="id" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
+            <property name="name" value="jetbrains.mps.kernel" />
+          </node>
           <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270518">
             <property name="name" value="core" />
           </node>
