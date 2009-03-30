@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -185,24 +186,29 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     boolean isUpdated = false;
     List<IEditor> allEditors = getAllEditors();
 
-    for (final IEditor editor : allEditors) {
-      final EditorComponent component[] = new EditorComponent[1];
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-            component[0] = editor.getCurrentEditorComponent();
-          }
-        });
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      } catch (InvocationTargetException e) {
-        e.printStackTrace();
-      }
-      if (component[0] != null) {
-        if (updateEditorComponent(component[0], events, checkers, checkersToRemove)) {
-          isUpdated = true;
+    try {
+      TypeChecker.getInstance().enableGlobalSubtypingCache();
+      for (final IEditor editor : allEditors) {
+        final EditorComponent component[] = new EditorComponent[1];
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              component[0] = editor.getCurrentEditorComponent();
+            }
+          });
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        } catch (InvocationTargetException e) {
+          e.printStackTrace();
         }
-      }      
+        if (component[0] != null) {
+          if (updateEditorComponent(component[0], events, checkers, checkersToRemove)) {
+            isUpdated = true;
+          }
+        }
+      }
+    } finally {
+      TypeChecker.getInstance().clearGlobalSubtypingCache();
     }
 
     if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
