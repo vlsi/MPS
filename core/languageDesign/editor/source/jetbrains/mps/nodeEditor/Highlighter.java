@@ -189,15 +189,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final EditorComponent component[] = new EditorComponent[1];
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
-
           public void run() {
             component[0] = editor.getCurrentEditorComponent();
           }
         });
       } catch (InterruptedException e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        e.printStackTrace();
       } catch (InvocationTargetException e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        e.printStackTrace();
       }
       if (component[0] != null) {
         if (updateEditorComponent(component[0], events, checkers, checkersToRemove)) {
@@ -296,11 +295,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return false;
     }
 
-    InspectorEditorComponent inspectorEditorComponent = null;
-
     NodeHighlightManager highlightManager = editor.getHighlightManager();
-    NodeHighlightManager inspectorHighlightManager = inspectorEditorComponent == null ? null : inspectorEditorComponent.getHighlightManager();
-        
+
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
@@ -317,15 +313,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       EditorMessageOwner owner = owners[0];
       if (owner != null) {
         highlightManager.clearForOwner(owner, false);
-        if (inspectorHighlightManager != null) {
-          inspectorHighlightManager.clearForOwner(owner, false);
-        }
       }
       for (EditorMessage message : messages) {
         highlightManager.mark(message, false);
-        if (inspectorHighlightManager != null) {
-          inspectorHighlightManager.mark(message, false);
-        }
       }
     }
     for (final IEditorChecker checker : checkersToRemove) {
@@ -339,16 +329,10 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       };
       ModelAccess.instance().runReadAction(runnable);
       highlightManager.clearForOwner(owners[0], false);
-      if (inspectorHighlightManager != null) {
-        inspectorHighlightManager.clearForOwner(owners[0], false);
-      }
     }
 
     highlightManager.repaintAndRebuildEditorMessages();
-    if (inspectorHighlightManager != null) {
-      inspectorHighlightManager.repaintAndRebuildEditorMessages();
-    }
-    
+
     editor.updateStatusBarMessage();
 
     return true;
