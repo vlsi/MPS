@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.*;
@@ -160,12 +161,16 @@ public abstract class AbstractCellListHandler implements KeyboardHandler {
     return separatorCell;
   }
 
-  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
+  public boolean processKeyPressed(final EditorContext editorContext, KeyEvent keyEvent) {
     EditorComponent editor = editorContext.getNodeEditorComponent();
-    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
+    final CellActionType actionType = editor.getActionType(keyEvent, editorContext);
     if (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) {
-      cancelInsertMode(editorContext);
-      myListEditorCell_Collection.getParent().executeAction(actionType);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          cancelInsertMode(editorContext);
+          myListEditorCell_Collection.getParent().executeAction(actionType);
+        }
+      });      
     } else {
       finishInsertMode(editorContext);
       editor.processKeyPressed(keyEvent);
