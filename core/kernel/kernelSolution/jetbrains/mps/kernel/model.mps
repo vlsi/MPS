@@ -1146,6 +1146,36 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416964687">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416964688">
+            <property name="name" value="fromFqName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238416964689">
+              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238416972567">
+              <link role="baseMethodDeclaration" targetNodeId="3.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+              <link role="classConcept" targetNodeId="3.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238416973193">
+                <link role="variableDeclaration" targetNodeId="1238251299214" resolveInfo="from" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416975414">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416975415">
+            <property name="name" value="toFqName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238416975416">
+              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238416988326">
+              <link role="baseMethodDeclaration" targetNodeId="3.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+              <link role="classConcept" targetNodeId="3.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238416990296">
+                <link role="variableDeclaration" targetNodeId="1238251304684" resolveInfo="to" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238251402031">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252054703">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252022185">
@@ -1155,25 +1185,15 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238252026330">
                 <link role="baseMethodDeclaration" targetNodeId="11.~LanguageHierarchyCache.getAncestorsNames(java.lang.String):java.util.Set" resolveInfo="getAncestorsNames" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252042896">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238252040567">
-                    <link role="variableDeclaration" targetNodeId="1238251299214" resolveInfo="from" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1238252051182">
-                    <link role="baseMethodDeclaration" targetNodeId="12.1213877404258" resolveInfo="getFqName" />
-                  </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416994703">
+                  <link role="variableDeclaration" targetNodeId="1238416964688" resolveInfo="fromFqName" />
                 </node>
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238252056488">
               <link role="baseMethodDeclaration" targetNodeId="9.~Set.contains(java.lang.Object):boolean" resolveInfo="contains" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252058584">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238252058130">
-                  <link role="variableDeclaration" targetNodeId="1238251304684" resolveInfo="to" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1238252066338">
-                  <link role="baseMethodDeclaration" targetNodeId="12.1213877404258" resolveInfo="getFqName" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416998938">
+                <link role="variableDeclaration" targetNodeId="1238416975415" resolveInfo="toFqName" />
               </node>
             </node>
           </node>

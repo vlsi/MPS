@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +28,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
@@ -79,10 +79,7 @@ public class SModelUtil {
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
-        SNode result = (resultAdapter == null ?
-          null :
-          ((SNode)resultAdapter.getNode())
-        );
+        SNode result = ((SNode)BaseAdapter.fromAdapter(resultAdapter));
         myFQNameToConcepDecl.put(conceptFQName, result);
         return result;
       }
@@ -178,7 +175,9 @@ public class SModelUtil {
     if (to == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
       return true;
     }
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(INamedConcept_Behavior.call_getFqName_1213877404258(from)).contains(INamedConcept_Behavior.call_getFqName_1213877404258(to));
+    String fromFqName = NameUtil.nodeFQName(from);
+    String toFqName = NameUtil.nodeFQName(to);
+    return LanguageHierarchyCache.getInstance().getAncestorsNames(fromFqName).contains(toFqName);
   }
 
   public static Cardinality getGenuineLinkSourceCardinality(SNode linkDecl) {
