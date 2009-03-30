@@ -97,7 +97,11 @@ public class Style {
     attributes.addAll(myAttributeValues.keySet());
 
     if (getParentStyle() != null) {
-      attributes.addAll(getParentStyle().myCachedAttributeValues.keySet());
+      for (StyleAttribute sa : getParentStyle().myCachedAttributeValues.keySet()) {
+        if (!(sa instanceof SimpleStyleAttribute)) {
+          attributes.add(sa);
+        }
+      }
     }
 
     boolean changed = false;
@@ -115,7 +119,9 @@ public class Style {
         changed = true;
       }
 
-      myCachedAttributeValues.put(attribute, newValue);
+      if (newValue != null) {
+        myCachedAttributeValues.put(attribute, newValue);
+      }
     }
 
     if (changed) {
