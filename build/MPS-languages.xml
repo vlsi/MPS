@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-languages" default="pack.jetbrains.mps.kernel0">
   <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
   <target name="pack.jetbrains.mps.kernel0">
@@ -615,4 +614,3 @@
     </jar>
   </target>
 </project>
-

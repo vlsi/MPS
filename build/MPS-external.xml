@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main" basedir="..">
   <property file="${ant.file}/../MPS.properties" />
   <fail unless="build.number" message="Property build.number unspecified." />
@@ -309,7 +308,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide0" />
     <mkdir dir="${deploy.dir}/build-helpers.distrib/MPS/workbench" />
-    <echo file="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
+    <echo file="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version/build.number">
+      build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}
+    </echo>
     <antcall target="build-helpers.append.idea.version" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/build-helpers.distrib/MPS/build-helpers.append.idea.version" />
@@ -350,4 +351,3 @@
     <replace file="${deploy.dir}/build-helpers.distrib/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__VERSION__" value="${version}" />
   </target>
 </project>
-

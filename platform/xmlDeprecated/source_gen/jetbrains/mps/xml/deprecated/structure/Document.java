@@ -5,6 +5,8 @@ package jetbrains.mps.xml.deprecated.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.xml.deprecated.structure.DocumentTypeDeclaration;
+import jetbrains.mps.xml.deprecated.structure.Element;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
