@@ -34,6 +34,10 @@ public class DateTimeOperations {
     return formatter.print(datetime != null ? new DateTime(datetime) : Constants.NULL_DATE_TIME);
   }
 
+  public static String print(Period period, DateTimeFormatter formatter) {
+    return print(convert(period), formatter);
+  }
+
   public static String print(Long datetime, DateTimeFormatter formatter, Locale locale) {
     return print(datetime, formatter.withLocale(locale));
   }
@@ -52,7 +56,7 @@ public class DateTimeOperations {
 
   public static Long convert(Period period) {
     long seconds = period.getMillis();
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getMinutes())
+    seconds = FieldUtils.safeAdd(seconds, ((long) period.getSeconds())
       * ((long) DateTimeConstants.MILLIS_PER_SECOND));
     seconds = FieldUtils.safeAdd(seconds, ((long) period.getMinutes())
       * ((long) DateTimeConstants.MILLIS_PER_MINUTE));
