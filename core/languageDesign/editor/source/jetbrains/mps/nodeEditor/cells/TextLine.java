@@ -435,7 +435,7 @@ public class TextLine {
     return shiftX + getPaddingLeft() + metrics.charsWidth(myText.toCharArray(), 0, caretPosition);
   }
 
-  private FontMetrics getFontMetrics() {
+  public FontMetrics getFontMetrics() {
     if (myFontMetrics == null) {
       myFontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(getFont());
     }
