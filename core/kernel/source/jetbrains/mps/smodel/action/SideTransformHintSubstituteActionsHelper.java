@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.*;
 
@@ -43,7 +44,12 @@ public class SideTransformHintSubstituteActionsHelper {
   }
 
   public boolean canCreateActions() {
-    return getActionBuilders().size() > 0;
+    TypeChecker.getInstance().enableTypesComputingForCompletion();
+    try {
+      return getActionBuilders().size() > 0;
+    } finally {
+      TypeChecker.getInstance().clearTypesComputedForCompletion();
+    }
   }
 
   public List<INodeSubstituteAction> createActions() {
@@ -51,11 +57,14 @@ public class SideTransformHintSubstituteActionsHelper {
     // enable R/O access
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        TypeChecker.getInstance().enableTypesComputingForCompletion();
         try {
           result[0] = createActions_internal();
         } catch (Throwable t) {
           LOG.error(t);
           result[0] = new ArrayList<INodeSubstituteAction>();
+        } finally {
+          TypeChecker.getInstance().clearTypesComputedForCompletion();
         }
       }
     });
