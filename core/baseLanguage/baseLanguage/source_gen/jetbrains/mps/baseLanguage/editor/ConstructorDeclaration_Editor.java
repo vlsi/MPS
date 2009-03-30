@@ -9,6 +9,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor._Component_Visibility;
+import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
+import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -127,7 +130,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility5292_0 == null) {
-      this.my_Component_Visibility5292_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
+      this.my_Component_Visibility5292_0 = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility5292_0.createEditorCell(context);
     setupBasic_Component_5292_0(editorCell, node, context);
@@ -136,7 +139,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_1(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component5292_0 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component5292_0 = new jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component(node);
+      this.my_GenericDeclaration_TypeVariables_Component5292_0 = new _GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component5292_0.createEditorCell(context);
     setupBasic_Component_5292_1(editorCell, node, context);
@@ -145,7 +148,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5292_2(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart5292_0 == null) {
-      this.my_DeprecatedPart5292_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
+      this.my_DeprecatedPart5292_0 = new _DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart5292_0.createEditorCell(context);
     setupBasic_Component_5292_2(editorCell, node, context);

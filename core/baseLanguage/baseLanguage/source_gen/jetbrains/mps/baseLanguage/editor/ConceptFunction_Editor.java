@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -28,7 +29,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_3364_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component3364_0 == null) {
-      this.myConceptFunction_Component3364_0 = new jetbrains.mps.baseLanguage.editor.ConceptFunction_Component(node);
+      this.myConceptFunction_Component3364_0 = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component3364_0.createEditorCell(context);
     setupBasic_Component_3364_0(editorCell, node, context);

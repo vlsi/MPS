@@ -9,6 +9,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent;
+import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
+import jetbrains.mps.baseLanguage.editor._Component_Visibility;
+import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -154,7 +158,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5704_0(EditorContext context, SNode node) {
     if (this.myBaseMethodDeclaration_NameCellComponent5704_0 == null) {
-      this.myBaseMethodDeclaration_NameCellComponent5704_0 = new jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent(node);
+      this.myBaseMethodDeclaration_NameCellComponent5704_0 = new BaseMethodDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent5704_0.createEditorCell(context);
     setupBasic_Component_5704_0(editorCell, node, context);
@@ -163,7 +167,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5704_1(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component5704_0 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component5704_0 = new jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component(node);
+      this.my_GenericDeclaration_TypeVariables_Component5704_0 = new _GenericDeclaration_TypeVariables_Component(node);
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component5704_0.createEditorCell(context);
     setupBasic_Component_5704_1(editorCell, node, context);
@@ -172,7 +176,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5704_2(EditorContext context, SNode node) {
     if (this.my_Component_Visibility5704_0 == null) {
-      this.my_Component_Visibility5704_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
+      this.my_Component_Visibility5704_0 = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility5704_0.createEditorCell(context);
     setupBasic_Component_5704_2(editorCell, node, context);
@@ -181,7 +185,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5704_3(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart5704_0 == null) {
-      this.my_DeprecatedPart5704_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
+      this.my_DeprecatedPart5704_0 = new _DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart5704_0.createEditorCell(context);
     setupBasic_Component_5704_3(editorCell, node, context);

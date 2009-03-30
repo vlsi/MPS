@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -97,7 +98,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4085_0(EditorContext context, SNode node) {
     if (this.myVariableDeclaration_NameCellComponent4085_0 == null) {
-      this.myVariableDeclaration_NameCellComponent4085_0 = new jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent(node);
+      this.myVariableDeclaration_NameCellComponent4085_0 = new VariableDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myVariableDeclaration_NameCellComponent4085_0.createEditorCell(context);
     setupBasic_Component_4085_0(editorCell, node, context);

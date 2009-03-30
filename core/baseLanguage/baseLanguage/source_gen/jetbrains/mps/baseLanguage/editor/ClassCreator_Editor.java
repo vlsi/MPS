@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -67,7 +68,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9368_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments9368_0 == null) {
-      this.myIMethodCall_actualArguments9368_0 = new jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments(node);
+      this.myIMethodCall_actualArguments9368_0 = new IMethodCall_actualArguments(node);
     }
     EditorCell editorCell = this.myIMethodCall_actualArguments9368_0.createEditorCell(context);
     setupBasic_Component_9368_0(editorCell, node, context);

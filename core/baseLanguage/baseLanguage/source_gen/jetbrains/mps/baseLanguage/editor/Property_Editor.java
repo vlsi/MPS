@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor._Component_Visibility;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -77,7 +78,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8551_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility8551_0 == null) {
-      this.my_Component_Visibility8551_0 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
+      this.my_Component_Visibility8551_0 = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility8551_0.createEditorCell(context);
     setupBasic_Component_8551_0(editorCell, node, context);
@@ -86,7 +87,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8551_1(EditorContext context, SNode node) {
     if (this.my_Component_Visibility8551_1 == null) {
-      this.my_Component_Visibility8551_1 = new jetbrains.mps.baseLanguage.editor._Component_Visibility(node);
+      this.my_Component_Visibility8551_1 = new _Component_Visibility(node);
     }
     EditorCell editorCell = this.my_Component_Visibility8551_1.createEditorCell(context);
     setupBasic_Component_8551_1(editorCell, node, context);
