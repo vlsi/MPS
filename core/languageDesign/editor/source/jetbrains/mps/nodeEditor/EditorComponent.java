@@ -1885,6 +1885,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  <T> T executeCommand(final Computable<T> c) {
+    myInsideOfCommand = true;
+    try {
+      return ModelAccess.instance().runWriteActionInCommand(c);
+    } finally {
+      myInsideOfCommand = false;
+    }
+  }
+
   boolean isForcedFocusChangeEnabled() {
     return myInsideOfCommand;
   }

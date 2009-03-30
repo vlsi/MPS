@@ -31,6 +31,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers._boolean;
 
 import java.util.List;
 
+import com.intellij.openapi.util.Computable;
+
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager() {
     @Override
@@ -43,28 +45,25 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return false;
     }
-
-    final _boolean result = new _boolean();
-    editorContext.executeCommand(new Runnable() {
-      public void run() {
+    
+    return editorContext.executeCommand(new Computable<Boolean>() {
+      public Boolean compute() {
         if (cell instanceof EditorCell_STHint) {
           EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
-          result.value = processSTHintCell(rtHintCell, editorContext, pattern);
-          return;
+          return processSTHintCell(rtHintCell, editorContext, pattern);
         }
 
         if (side == CellSide.LEFT) {
           String head = "" + pattern.charAt(0);
           String smallPattern = pattern.substring(1);
-          result.value = processCellAtStart(cell, editorContext, head, smallPattern);
+          return processCellAtStart(cell, editorContext, head, smallPattern);
         } else {
           String smallPattern = pattern.substring(0, pattern.length() - 1);
           String tail = pattern.substring(pattern.length() - 1, pattern.length());
-          result.value = processCellAtEnd(cell, editorContext, smallPattern, tail);
+          return processCellAtEnd(cell, editorContext, smallPattern, tail);
         }
       }
     });
-    return result.value;
   }
 
   private static boolean processSTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
