@@ -1376,5 +1376,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238419955812">
+    <link role="conceptDeclaration" targetNodeId="1.1238419912137" resolveInfo="ConstantConcretization" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1238419961830">
+      <link role="relationDeclaration" targetNodeId="1.1238419940123" resolveInfo="text" />
+      <link role="styleClass" targetNodeId="6.1186415563770" resolveInfo="StringLiteral" />
+    </node>
+  </node>
 </model>
 

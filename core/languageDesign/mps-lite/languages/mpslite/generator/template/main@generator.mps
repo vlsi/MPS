@@ -49,8 +49,8 @@
     <property name="name" value="structure" />
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1237458045787">
       <property name="name" value="generateConcept" />
-      <link role="sourceConcept" targetNodeId="1.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
       <link role="targetConcept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="sourceConcept" targetNodeId="1.1237993244422" resolveInfo="IMPSLiteConcept" />
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1237986995275">
       <property name="name" value="childLinkByLinePart" />
@@ -70,6 +70,11 @@
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1237457850087">
       <link role="applicableConcept" targetNodeId="1.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
       <link role="template" targetNodeId="1237409567691" resolveInfo="concept" />
+      <link role="labelDeclaration" targetNodeId="1237458045787" resolveInfo="generateConcept" />
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1238421254251">
+      <link role="applicableConcept" targetNodeId="1.1238011479276" resolveInfo="TemplateBasedConcept" />
+      <link role="template" targetNodeId="1238415404663" resolveInfo="templateBasedConcept" />
       <link role="labelDeclaration" targetNodeId="1237458045787" resolveInfo="generateConcept" />
     </node>
     <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1238066235183">
@@ -1122,6 +1127,1055 @@
       <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238012620119">
         <property name="text" value="no editor" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1238012620120" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238415404663">
+    <property name="name" value="templateBasedConcept" />
+    <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238415404664">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="link" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238415404665">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238415404666">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404667">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415559134">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415559135">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415559136">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415559137">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415559138" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415559139">
+                      <link role="link" targetNodeId="1.1238011542646" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415559140">
+                    <link role="link" targetNodeId="1.1237380637798" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238415559141">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238415559142">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238415561569">
+                      <link role="conceptDeclaration" targetNodeId="1.1182845659293" resolveInfo="ConcreteReferencePart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$target" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238415404674">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238415404675">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404676">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404677">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238415404678">
+                <link role="baseMethodDeclaration" targetNodeId="3.1237457936585" resolveInfo="findStructureLanguageConcept" />
+                <link role="classConcept" targetNodeId="3.1237457920533" resolveInfo="MPSLiteGenerationUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404679">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404680" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415404681">
+                    <link role="link" targetNodeId="1.1237914611837" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238415404682" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$role" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404683">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404684">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404685">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404686">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404687">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404688" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404689">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$sourceCardinality" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404690">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404691">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404692">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238415404693">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404694">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404695" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404696">
+                  <link role="property" targetNodeId="1.1237457103518" resolveInfo="optional" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404697">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404698">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415404699">
+                    <property name="value" value="0..1" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238415404700">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404701">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404702">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415404703">
+                      <property name="value" value="1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238415404704">
+        <link role="mappingLabel" targetNodeId="1237987507499" resolveInfo="referentLinkByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238415404705">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404706">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404707">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238415404708">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238416748990">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="link" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238416748991">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238416757604">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416757605">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416757606">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416757607">
+                <property name="name" value="result" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416757608">
+                  <link role="elementConcept" targetNodeId="1.1182845659293" resolveInfo="ConcreteReferencePart" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238416757609">
+                  <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1238416757610">
+                    <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416757611">
+                      <link role="elementConcept" targetNodeId="1.1182845659293" resolveInfo="ConcreteReferencePart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416757612">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416757613">
+                <property name="name" value="placeholderReferences" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416757614">
+                  <link role="elementConcept" targetNodeId="1.1237379064611" resolveInfo="ReferencePlaceholderReference" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757615">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757616">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757617">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416757618" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416757619">
+                        <link role="link" targetNodeId="1.1238011542646" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416757620">
+                      <link role="link" targetNodeId="1.1237380637798" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238416757621">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238416757622">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238416783944">
+                        <link role="conceptDeclaration" targetNodeId="1.1237379064611" resolveInfo="ReferencePlaceholderReference" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238416757624">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416757625">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238416757626">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416757627">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238416757628">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416757629">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416757630">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757631">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757632">
+                              <link role="variableDeclaration" targetNodeId="1238416757607" resolveInfo="result" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1238416757633">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757634">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757635">
+                                  <link role="variableDeclaration" targetNodeId="1238416757647" resolveInfo="placeholderAssignment" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416757636">
+                                  <link role="link" targetNodeId="1.1238074478035" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238416757637">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757638">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757639">
+                            <link role="variableDeclaration" targetNodeId="1238416757650" resolveInfo="placeholderReference" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238417308034">
+                            <link role="link" targetNodeId="1.1237379092643" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757641">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757642">
+                            <link role="variableDeclaration" targetNodeId="1238416757647" resolveInfo="placeholderAssignment" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416757643">
+                            <link role="link" targetNodeId="1.1238064118011" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416757644">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416757645" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1238416757646">
+                      <link role="link" targetNodeId="1.1238076520701" />
+                    </node>
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416757647">
+                    <property name="name" value="placeholderAssignment" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238416757648">
+                      <link role="concept" targetNodeId="1.1238064014561" resolveInfo="PlaceholderAssignment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757649">
+                <link role="variableDeclaration" targetNodeId="1238416757613" resolveInfo="placeholderReferences" />
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416757650">
+                <property name="name" value="placeholderReference" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238416757651">
+                  <link role="concept" targetNodeId="1.1237379064611" resolveInfo="ReferencePlaceholderReference" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416757652">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416757653">
+                <link role="variableDeclaration" targetNodeId="1238416757607" resolveInfo="result" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$target" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238416749004">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238416749005">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749006">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416749007">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238416749008">
+                <link role="baseMethodDeclaration" targetNodeId="3.1237457936585" resolveInfo="findStructureLanguageConcept" />
+                <link role="classConcept" targetNodeId="3.1237457920533" resolveInfo="MPSLiteGenerationUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416749009">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416749010" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416749011">
+                    <link role="link" targetNodeId="1.1237914611837" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238416749012" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$role" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238416749013">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238416749014">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749015">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416749016">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416749017">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416749018" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416749019">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$sourceCardinality" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238416749020">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238416749021">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749022">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238416749023">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416749024">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416749025" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416749026">
+                  <link role="property" targetNodeId="1.1237457103518" resolveInfo="optional" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749027">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416749028">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238416749029">
+                    <property name="value" value="0..1" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238416749030">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749031">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416749032">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238416749033">
+                      <property name="value" value="1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238416749034">
+        <link role="mappingLabel" targetNodeId="1237987507499" resolveInfo="referentLinkByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238416749035">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416749036">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416749037">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238416749038">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238415404709">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="child" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238415404710">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238415404711">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404712">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415549239">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415549240">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415549241">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415549242">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415549243" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415549244">
+                      <link role="link" targetNodeId="1.1238011542646" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415549245">
+                    <link role="link" targetNodeId="1.1237380637798" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238415549246">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238415549247">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238415552721">
+                      <link role="conceptDeclaration" targetNodeId="1.1237207272689" resolveInfo="ConcreteChildPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$target" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238415404719">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238415404720">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404721">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404722">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238415404723">
+                <link role="classConcept" targetNodeId="3.1237457920533" resolveInfo="MPSLiteGenerationUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="3.1237457936585" resolveInfo="findStructureLanguageConcept" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404724">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404725" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415404726">
+                    <link role="link" targetNodeId="1.1237898580818" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238415404727" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$role" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404728">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404729">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404730">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404731">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404732">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404733" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404734">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$sourceCardinality" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404735">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404736">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404737">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238415404738">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404739">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404740">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415404741">
+                    <property name="value" value="0..n" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404742">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404743" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404744">
+                  <link role="property" targetNodeId="1.1237207287769" resolveInfo="multiple" />
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238415404745">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404746">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404747">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415404748">
+                      <property name="value" value="0..1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238415404749">
+        <link role="mappingLabel" targetNodeId="1237986995275" resolveInfo="childLinkByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238415404750">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404751">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404752">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238415404753">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238415579980">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="child" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238415579981">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238415579982">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415579983">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416089210">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416089211">
+                <property name="name" value="result" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416089212">
+                  <link role="elementConcept" targetNodeId="1.1237207272689" resolveInfo="ConcreteChildPart" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238416096332">
+                  <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1238416096333">
+                    <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416096334">
+                      <link role="elementConcept" targetNodeId="1.1237207272689" resolveInfo="ConcreteChildPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238415962524">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238415962525">
+                <property name="name" value="placeholderReferences" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238415962526">
+                  <link role="elementConcept" targetNodeId="1.1237211207028" resolveInfo="ChildPlaceholderReference" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415962527">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415962528">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415962529">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415962530" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415962531">
+                        <link role="link" targetNodeId="1.1238011542646" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415962532">
+                      <link role="link" targetNodeId="1.1237380637798" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238415962533">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238415962534">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238415962535">
+                        <link role="conceptDeclaration" targetNodeId="1.1237211207028" resolveInfo="ChildPlaceholderReference" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238416050840">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416050841">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238415974972">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415974973">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238416101979">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416101980">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416393458">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416394979">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416393459">
+                              <link role="variableDeclaration" targetNodeId="1238416089211" resolveInfo="result" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1238416397017">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416399919">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416399335">
+                                  <link role="variableDeclaration" targetNodeId="1238415974976" resolveInfo="placeholderAssignment" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416401145">
+                                  <link role="link" targetNodeId="1.1238074478035" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238416105246">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416105247">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416105248">
+                            <link role="variableDeclaration" targetNodeId="1238416050844" resolveInfo="placeholderReference" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416105249">
+                            <link role="link" targetNodeId="1.1237211251029" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416105250">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416105251">
+                            <link role="variableDeclaration" targetNodeId="1238415974976" resolveInfo="placeholderAssignment" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416105252">
+                            <link role="link" targetNodeId="1.1238064118011" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415989109">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415988842" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1238415990321">
+                      <link role="link" targetNodeId="1.1238076520701" />
+                    </node>
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238415974976">
+                    <property name="name" value="placeholderAssignment" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238415997860">
+                      <link role="concept" targetNodeId="1.1238064014561" resolveInfo="PlaceholderAssignment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416063721">
+                <link role="variableDeclaration" targetNodeId="1238415962525" resolveInfo="placeholderReferences" />
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416050844">
+                <property name="name" value="placeholderReference" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238416053554">
+                  <link role="concept" targetNodeId="1.1237211207028" resolveInfo="ChildPlaceholderReference" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416404451">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416405662">
+                <link role="variableDeclaration" targetNodeId="1238416089211" resolveInfo="result" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$target" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238415579994">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238415579995">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415579996">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415579997">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238415579998">
+                <link role="classConcept" targetNodeId="3.1237457920533" resolveInfo="MPSLiteGenerationUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="3.1237457936585" resolveInfo="findStructureLanguageConcept" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415579999">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415580000" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416483391">
+                    <link role="link" targetNodeId="1.1237898580818" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238415580002" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$role" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415580003">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415580004">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415580005">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415580006">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415580007">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415580008" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416511861">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$sourceCardinality" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415580010">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415580011">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415580012">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238415580013">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415580014">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415580015">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415580016">
+                    <property name="value" value="0..n" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415580017">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415580018" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415580019">
+                  <link role="property" targetNodeId="1.1237207287769" resolveInfo="multiple" />
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238415580020">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415580021">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415580022">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238415580023">
+                      <property name="value" value="0..1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238415580024">
+        <link role="mappingLabel" targetNodeId="1237986995275" resolveInfo="childLinkByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238415580025">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415580026">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415580027">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238415580028">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238415404754">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238415404755">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238415404756">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404757">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404758">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415513046">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415503957">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404759">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404760" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415502156">
+                      <link role="link" targetNodeId="1.1238011542646" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415512073">
+                    <link role="link" targetNodeId="1.1237380637798" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238415514241">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238415514242">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238415531498">
+                      <link role="conceptDeclaration" targetNodeId="1.1237383915698" resolveInfo="ConcretePropertyPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404764">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404765">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404766">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404767">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404768">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404769" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404770">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$dataType" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238415404771">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238415404772">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404773">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238415404774">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404775">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404776">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404777">
+                    <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238415404778">
+                      <node role="quotedNode" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238415404779">
+                        <property name="name" value="dontcare1" />
+                        <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415404780">
+                      <link role="link" targetNodeId="2v.1082985295845" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404781">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404782">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404783" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404784">
+                    <link role="property" targetNodeId="1.1237384038504" resolveInfo="propertyType" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1238415404785">
+                  <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1238415404786">
+                    <link role="enumMember" targetNodeId="1.1237383987374" />
+                  </node>
+                </node>
+              </node>
+              <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1238415404787">
+                <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404788">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404789">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404790">
+                      <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238415404791">
+                        <node role="quotedNode" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238415404792">
+                          <property name="name" value="dontcare2" />
+                          <link role="dataType" targetNodeId="3v.1082983657062" resolveInfo="integer" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238415404793">
+                        <link role="link" targetNodeId="2v.1082985295845" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404794">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404795">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404796" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404797">
+                      <link role="property" targetNodeId="1.1237384038504" resolveInfo="propertyType" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1238415404798">
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1238415404799">
+                      <link role="enumMember" targetNodeId="1.1237384014591" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238415404800">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404801">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404802">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238415404803" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238415404804">
+        <link role="mappingLabel" targetNodeId="1237987591866" resolveInfo="propertyByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238415404805">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404806">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415404807">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238415404808">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238416547538">
+      <property name="name" value="name1" />
+      <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1238416547539">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1238416558662">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416558663">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416558664">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416558665">
+                <property name="name" value="result" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416558666">
+                  <link role="elementConcept" targetNodeId="1.1237383915698" resolveInfo="ConcretePropertyPart" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238416558667">
+                  <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1238416558668">
+                    <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416558669">
+                      <link role="elementConcept" targetNodeId="1.1237383915698" resolveInfo="ConcretePropertyPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238416558670">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416558671">
+                <property name="name" value="placeholderReferences" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238416558672">
+                  <link role="elementConcept" targetNodeId="1.1237383690770" resolveInfo="PropertyPlaceholderReference" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558673">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558674">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558675">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416558676" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416558677">
+                        <link role="link" targetNodeId="1.1238011542646" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416558678">
+                      <link role="link" targetNodeId="1.1237380637798" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1238416558679">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238416558680">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238416590159">
+                        <link role="conceptDeclaration" targetNodeId="1.1237383690770" resolveInfo="PropertyPlaceholderReference" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238416558682">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416558683">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238416558684">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416558685">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238416558686">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416558687">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416558688">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558689">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558690">
+                              <link role="variableDeclaration" targetNodeId="1238416558665" resolveInfo="result" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1238416558691">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558692">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558693">
+                                  <link role="variableDeclaration" targetNodeId="1238416558705" resolveInfo="placeholderAssignment" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416558694">
+                                  <link role="link" targetNodeId="1.1238074478035" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238416558695">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558696">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558697">
+                            <link role="variableDeclaration" targetNodeId="1238416558708" resolveInfo="placeholderReference" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238417314069">
+                            <link role="link" targetNodeId="1.1237383740507" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558699">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558700">
+                            <link role="variableDeclaration" targetNodeId="1238416558705" resolveInfo="placeholderAssignment" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416558701">
+                            <link role="link" targetNodeId="1.1238064118011" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416558702">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416558703" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1238416558704">
+                      <link role="link" targetNodeId="1.1238076520701" />
+                    </node>
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416558705">
+                    <property name="name" value="placeholderAssignment" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238416558706">
+                      <link role="concept" targetNodeId="1.1238064014561" resolveInfo="PlaceholderAssignment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558707">
+                <link role="variableDeclaration" targetNodeId="1238416558671" resolveInfo="placeholderReferences" />
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238416558708">
+                <property name="name" value="placeholderReference" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238416558709">
+                  <link role="concept" targetNodeId="1.1237383690770" resolveInfo="PropertyPlaceholderReference" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416558710">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238416558711">
+                <link role="variableDeclaration" targetNodeId="1238416558665" resolveInfo="result" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238416547552">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238416547553">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547554">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416547555">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547556">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416547557" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416547558">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="referenceMacro$link_attribute$dataType" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238416547559">
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238416547560">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547561">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238416547562">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547563">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416547564">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547565">
+                    <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238416547566">
+                      <node role="quotedNode" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238416547567">
+                        <property name="name" value="dontcare1" />
+                        <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416547568">
+                      <link role="link" targetNodeId="2v.1082985295845" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547569">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547570">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416547571" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416547572">
+                    <link role="property" targetNodeId="1.1237384038504" resolveInfo="propertyType" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1238416547573">
+                  <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1238416547574">
+                    <link role="enumMember" targetNodeId="1.1237383987374" />
+                  </node>
+                </node>
+              </node>
+              <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1238416547575">
+                <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547576">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416547577">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547578">
+                      <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238416547579">
+                        <node role="quotedNode" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238416547580">
+                          <property name="name" value="dontcare2" />
+                          <link role="dataType" targetNodeId="3v.1082983657062" resolveInfo="integer" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238416547581">
+                        <link role="link" targetNodeId="2v.1082985295845" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547582">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238416547583">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238416547584" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238416547585">
+                      <link role="property" targetNodeId="1.1237384038504" resolveInfo="propertyType" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1238416547586">
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1238416547587">
+                      <link role="enumMember" targetNodeId="1.1237384014591" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238416547588">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547589">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238416547590">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238416547591" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238416547592">
+        <link role="mappingLabel" targetNodeId="1237987591866" resolveInfo="propertyByLinePart" />
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238416547593">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238416547594">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238416547595">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238416547596">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1238415404809">
+      <link role="applicableConcept" targetNodeId="1.1238011479276" resolveInfo="TemplateBasedConcept" />
+    </node>
+    <node role="propertyMacro$property_attribute$rootable" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415404810">
+      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415404811">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415404812">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238415404813">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415404814">
+              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415404815" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415404816">
+                <link role="property" targetNodeId="1.1238011911208" resolveInfo="root" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238415479277">
+      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238415479278">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238415479279">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238415481445">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238415481729">
+              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238415481446" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238415482701">
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238421522874">
+    <link role="conceptDeclaration" targetNodeId="1238415404663" resolveInfo="templateBasedConcept" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.EditorCellModel" id="1238421522875">
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1238421522876">
+        <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1238421522877">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238421522878">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238421522879">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238421522880">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238421973436">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238421522881" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238421975049">
+                    <link role="link" targetNodeId="1.1238011542646" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238421977175">
+                  <link role="link" targetNodeId="1.1237380637798" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1238421522883">
+      <link role="applicableConcept" targetNodeId="1.1238011479276" resolveInfo="TemplateBasedConcept" />
+    </node>
+    <node role="referenceMacro$link_attribute$conceptDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1238421522884">
+      <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1238421522885">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238421522886">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238421522887">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238421522888">
+              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238421522889" />
+              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1238421522890">
+                <link role="label" targetNodeId="1237458045787" resolveInfo="generateConcept" />
+                <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238421522891" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

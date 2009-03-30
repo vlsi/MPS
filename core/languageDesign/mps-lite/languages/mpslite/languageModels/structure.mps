@@ -637,5 +637,16 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238074630254">
     <property name="name" value="Concretization" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238419912137">
+    <property name="name" value="ConstantConcretization" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1238419940123">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238419928903">
+      <link role="intfc" targetNodeId="1238074630254" resolveInfo="Concretization" />
+    </node>
+  </node>
 </model>
 

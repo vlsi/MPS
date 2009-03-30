@@ -117,15 +117,58 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1238065165891">
-    <property name="name" value="BinaryOperation" />
-    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238066144055">
+  <node type="jetbrains.mpslite.structure.MPSLiteConceptTemplate" id="1238419744118">
+    <property name="name" value="BinaryExpression" />
+    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238419771497">
       <property name="name" value="left" />
     </node>
-    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238066149168">
+    <node role="placeholder" type="jetbrains.mpslite.structure.ChildPlaceholder" id="1238419775390">
       <property name="name" value="right" />
     </node>
-    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1238065165892" />
+    <node role="placeholder" type="jetbrains.mpslite.structure.ConstantTextPlaceholder" id="1238419780298">
+      <property name="name" value="sign" />
+    </node>
+    <node role="lineList" type="jetbrains.mpslite.structure.LineList" id="1238419744119">
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1238419787956">
+        <node role="linePart" type="jetbrains.mpslite.structure.ChildPlaceholderReference" id="1238419790613">
+          <link role="placeholder" targetNodeId="1238419771497" resolveInfo="left" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantPlaceholderReference" id="1238419796210">
+          <link role="placeholder" targetNodeId="1238419780298" resolveInfo="sign" />
+        </node>
+        <node role="linePart" type="jetbrains.mpslite.structure.ChildPlaceholderReference" id="1238419799681">
+          <link role="placeholder" targetNodeId="1238419775390" resolveInfo="right" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mpslite.structure.TemplateBasedConcept" id="1238419811166">
+    <property name="name" value="PlusExpression" />
+    <link role="template" targetNodeId="1238419744118" resolveInfo="BinaryExpression" />
+    <node role="placeholderAssignment" type="jetbrains.mpslite.structure.PlaceholderAssignment" id="1238419822745">
+      <link role="placeholder" targetNodeId="1238419771497" resolveInfo="left" />
+      <node role="concretization" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1238419840841">
+        <property name="name" value="leftExpr" />
+        <node role="conceptReference" type="jetbrains.mpslite.structure.MPSLiteConceptReference" id="1238419846968">
+          <link role="conceptDeclaration" targetNodeId="1237900284655" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+    <node role="placeholderAssignment" type="jetbrains.mpslite.structure.PlaceholderAssignment" id="1238419878022">
+      <link role="placeholder" targetNodeId="1238419775390" resolveInfo="right" />
+      <node role="concretization" type="jetbrains.mpslite.structure.ConcreteChildPart" id="1238419879883">
+        <property name="name" value="rightExpr" />
+        <node role="conceptReference" type="jetbrains.mpslite.structure.MPSLiteConceptReference" id="1238419881479">
+          <link role="conceptDeclaration" targetNodeId="1237900284655" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+    <node role="placeholderAssignment" type="jetbrains.mpslite.structure.PlaceholderAssignment" id="1238419868316">
+      <link role="placeholder" targetNodeId="1238419780298" resolveInfo="sign" />
+      <node role="concretization" type="jetbrains.mpslite.structure.ConstantConcretization" id="1238421153018">
+        <property name="text" value="+" />
+      </node>
+    </node>
   </node>
 </model>
 

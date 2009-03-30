@@ -1182,7 +1182,6 @@ public final class SNode {
       LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + getDebugText());
     }
 
-    // moved to getTargetNode() in SReference
     NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, null);
     return result;
   }

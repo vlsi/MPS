@@ -27,6 +27,8 @@
     <projectLanguages>
       <languagePath path="${project}/languages/mpslite/mpslite.mpl" />
       <languagePath path="${project}/languages/nanoj/nanoj.mpl" />
+      <languagePath path="${project}/languages/langAlpha/langAlpha.mpl" folder="" />
+      <languagePath path="${project}/languages/langBeta/langBeta.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
