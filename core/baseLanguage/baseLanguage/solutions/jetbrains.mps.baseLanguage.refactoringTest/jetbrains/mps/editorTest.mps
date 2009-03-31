@@ -2365,5 +2365,85 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1238485466527">
+    <property name="package" value="bugTest" />
+    <property name="name" value="AssignLeftTransform" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238485500481">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238485500482" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238485500483" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238485500484">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238485528603">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238485528604">
+            <property name="name" value="z" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238485528605" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238485519841">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238485558622">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238485519842">
+              <property name="value" value="3" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1238485582316">
+                <property name="caretPosition" value="0" />
+                <property name="cellId" value="property_value" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238485559992">
+              <link role="variableDeclaration" targetNodeId="1238485548009" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1238485548009">
+        <property name="name" value="t" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238485548010" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238485524307">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238485524308" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238485524309" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238485524310">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238485541102">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238485541103">
+            <property name="name" value="z" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238485541104" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238485565069">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238485566040">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238485568930">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238485568976">
+                <link role="variableDeclaration" targetNodeId="1238485552699" resolveInfo="t" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238485567815">
+                <property name="value" value="3" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238485565070">
+              <link role="variableDeclaration" targetNodeId="1238485541103" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1238485552699">
+        <property name="name" value="t" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238485552700" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238485611464">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1238485611465">
+        <property name="keys" value="=" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1238485619874">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1238485619875">
+          <property name="keycode" value="VK_LEFT" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1238485631975">
+        <property name="keys" value="z" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -109,7 +109,6 @@ public class FooConcept_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -172,7 +171,6 @@ public class FooConcept_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

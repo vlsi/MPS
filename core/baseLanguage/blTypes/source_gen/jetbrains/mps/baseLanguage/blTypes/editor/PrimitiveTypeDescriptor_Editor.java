@@ -121,7 +121,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

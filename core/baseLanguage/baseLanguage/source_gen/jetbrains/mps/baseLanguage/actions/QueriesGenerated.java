@@ -2597,9 +2597,15 @@ __switch__:
 
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setTarget(result, "rValue", _context.getSourceNode(), true);
-            return result;
+            {
+              SNode source = _context.getSourceNode();
+              while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BinaryOperation") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.DotExpression") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+                source = SNodeOperations.getParent(source);
+              }
+              SNodeOperations.replaceWithAnother(source, result);
+              SLinkOperations.setTarget(result, "rValue", source, true);
+              return result;
+            }
           }
         });
       }

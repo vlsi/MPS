@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -47,7 +48,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4471_0(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart4471_0 == null) {
-      this.my_DeprecatedPart4471_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
+      this.my_DeprecatedPart4471_0 = new _DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart4471_0.createEditorCell(context);
     setupBasic_Component_4471_0(editorCell, node, context);
