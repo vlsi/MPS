@@ -24,10 +24,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public final class SConceptOperations {
 
@@ -114,23 +111,17 @@ public final class SConceptOperations {
 
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
-    AbstractConceptDeclaration concept = (AbstractConceptDeclaration) conceptDeclarationNode.getAdapter();
+    Set<String> descendants = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
 
-    ISearchScope ss = SModelSearchUtil.createConceptsFromModelLanguagesScope(model, scope);
-    List<AbstractConceptDeclaration> concepts = ss.getAdapters(AbstractConceptDeclaration.class);
+    Set<Language> availableLanguages = new HashSet<Language>(model.getLanguages(scope));
+    List<SNode> result = new ArrayList<SNode>();
+    for (String descendant : descendants) {
+      Language lang = SModelUtil_new.getDeclaringLanguage(descendant, scope);
+      if (availableLanguages.contains(lang)) {
+        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());         
+      }      
+    }
 
-    Set<AbstractConceptDeclaration> subConcepts = new HashSet<AbstractConceptDeclaration>();//FindUsagesManager.getInstance().findDescendants(concept, GlobalScope.getInstance());
-    for (AbstractConceptDeclaration acd : concepts) {
-      if (SModelUtil_new.isAssignableConcept(acd, concept)) {
-        subConcepts.add(acd);
-      }
-    }
-    // remove to be sure
-    subConcepts.remove(concept);
-    List<SNode> result = new ArrayList<SNode>(subConcepts.size());
-    for (AbstractConceptDeclaration subConcept : subConcepts) {
-      result.add(subConcept.getNode());
-    }
     return result;
   }
 
