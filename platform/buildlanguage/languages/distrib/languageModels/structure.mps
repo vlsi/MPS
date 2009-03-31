@@ -253,11 +253,11 @@
     <property name="name" value="UniversalConfig" />
     <link role="extends" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292394720">
-      <property name="value" value="unix" />
+      <property name="value" value="universal" />
       <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292555791">
-      <property name="value" value="unix" />
+      <property name="value" value="universal" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1231769761796">
