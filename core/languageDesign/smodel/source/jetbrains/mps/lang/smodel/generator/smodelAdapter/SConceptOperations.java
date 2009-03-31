@@ -111,7 +111,7 @@ public final class SConceptOperations {
 
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
-    Set<String> descendants = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
+    Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
 
     Set<Language> availableLanguages = new HashSet<Language>(model.getLanguages(scope));
     List<SNode> result = new ArrayList<SNode>();
