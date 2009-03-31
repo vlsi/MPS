@@ -12,6 +12,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="UnixConfig" conceptFQName="jetbrains.mps.build.distrib.structure.UnixConfig" featureKind="CONCEPT" />
+          <value featureName="UniversalConfig" conceptFQName="jetbrains.mps.build.distrib.structure.UniversalConfig" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -240,7 +250,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230292331281">
     <property name="package" value="systemSpecific" />
-    <property name="name" value="UnixConfig" />
+    <property name="name" value="UniversalConfig" />
     <link role="extends" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1230292394720">
       <property name="value" value="unix" />

@@ -13,7 +13,7 @@ import jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior;
+import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -91,11 +91,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230292998920(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
+    return UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1230293047562(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode());
+    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1230293101910(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -111,7 +111,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230296315989(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode()) + "." + UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
+    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode()) + "." + UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1230565019437(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -316,7 +316,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234542031178(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode unixConfig = MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode());
-    return UnixConfig_Behavior.call_getStartupScriptName_1230292766208(unixConfig) + "." + UnixConfig_Behavior.call_getStartupScriptExtension_1230292961412(unixConfig);
+    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(unixConfig) + "." + UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(unixConfig);
   }
 
   public static Object propertyMacro_GetPropertyValue_1234542667480(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -431,6 +431,15 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1237910645659(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238509216073(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238509216084(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode winConf = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false)).first();
+    return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(winConf) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(winConf);
   }
 
   public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -688,6 +697,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238076497643(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "embeddedJrePath", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1238509121939(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false)).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
