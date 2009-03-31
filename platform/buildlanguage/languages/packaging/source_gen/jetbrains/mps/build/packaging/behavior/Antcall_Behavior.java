@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
+import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -20,7 +21,11 @@ public class Antcall_Behavior {
 
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
-      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Antcall_Behavior.call_getName_1213877286263(thisNode);
+      String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode)));
+      if (StringUtils.isEmpty(parentTargetDir)) {
+        return Antcall_Behavior.call_getName_1213877286263(thisNode);
+      }
+      return parentTargetDir + File.separator + Antcall_Behavior.call_getName_1213877286263(thisNode);
     }
     return Antcall_Behavior.call_getName_1213877286263(thisNode);
   }
