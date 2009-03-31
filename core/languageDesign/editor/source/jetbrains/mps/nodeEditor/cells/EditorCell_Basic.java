@@ -773,15 +773,16 @@ public abstract class EditorCell_Basic implements EditorCell {
     return TextBuilder.getEmptyTextBuilder();
   }
 
-  public final void relayout() {    
-    if (isDrawBrackets()) {
+  public final void relayout() {
+    boolean drawBrackets = isDrawBrackets();
+    if (drawBrackets) {
       myX += BRACKET_WIDTH;
     }
     myX += myGapLeft;
 
     relayoutImpl();
 
-    if (isDrawBrackets()) {
+    if (drawBrackets) {
       myX -= BRACKET_WIDTH;
       myWidth += 2 * BRACKET_WIDTH;
     }
