@@ -635,7 +635,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4286_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4286_1");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4286_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -652,7 +652,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4286_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4286_2");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_4286_3(EditorCell editorCell, SNode node, EditorContext context) {

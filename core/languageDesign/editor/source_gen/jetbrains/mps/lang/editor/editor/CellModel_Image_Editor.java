@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.lang.editor.editor._CellModel_Common;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -107,7 +108,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_5161_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common5161_0 == null) {
-      this.my_CellModel_Common5161_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
+      this.my_CellModel_Common5161_0 = new _CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common5161_0.createEditorCell(context);
     setupBasic_Component_5161_0(editorCell, node, context);

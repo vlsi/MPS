@@ -206,12 +206,12 @@ public class Style_Component extends AbstractCellProvider {
 
   private static void setupBasic_Constant_7233_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7233_1");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7233_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7233_2");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_7233_3(EditorCell editorCell, SNode node, EditorContext context) {

@@ -399,7 +399,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5695_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5695_2");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -434,7 +434,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5695_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5695_5");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_5695_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -455,7 +455,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5695_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5695_6");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5695_7(EditorCell editorCell, SNode node, EditorContext context) {

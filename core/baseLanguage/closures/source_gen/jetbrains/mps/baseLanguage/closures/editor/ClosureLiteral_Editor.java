@@ -128,6 +128,14 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2648_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2648_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_2648_1(EditorCell editorCell, SNode node, EditorContext context) {

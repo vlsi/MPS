@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -68,7 +69,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_9248_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector9248_0 == null) {
-      this.myAbstractEquationInspector9248_0 = new jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector(node);
+      this.myAbstractEquationInspector9248_0 = new AbstractEquationInspector(node);
     }
     EditorCell editorCell = this.myAbstractEquationInspector9248_0.createEditorCell(context);
     setupBasic_Component_9248_0(editorCell, node, context);

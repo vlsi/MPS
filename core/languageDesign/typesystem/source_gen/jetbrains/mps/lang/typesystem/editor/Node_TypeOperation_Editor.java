@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.editor._NotInRules_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
@@ -24,7 +25,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4604_0(EditorContext context, SNode node) {
     if (this.my_NotInRules_Component4604_0 == null) {
-      this.my_NotInRules_Component4604_0 = new jetbrains.mps.lang.typesystem.editor._NotInRules_Component(node);
+      this.my_NotInRules_Component4604_0 = new _NotInRules_Component(node);
     }
     EditorCell editorCell = this.my_NotInRules_Component4604_0.createEditorCell(context);
     setupBasic_Component_4604_0(editorCell, node, context);

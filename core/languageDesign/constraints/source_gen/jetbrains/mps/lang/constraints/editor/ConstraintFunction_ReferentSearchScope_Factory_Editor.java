@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -112,7 +113,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
 
   public EditorCell createComponent_2342_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component2342_0 == null) {
-      this.myConceptFunction_Component2342_0 = new jetbrains.mps.baseLanguage.editor.ConceptFunction_Component(node);
+      this.myConceptFunction_Component2342_0 = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component2342_0.createEditorCell(context);
     setupBasic_Component_2342_0(editorCell, node, context);

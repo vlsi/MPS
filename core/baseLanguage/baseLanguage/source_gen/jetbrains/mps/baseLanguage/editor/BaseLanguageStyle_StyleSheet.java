@@ -183,38 +183,11 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-      }
-    };
-  }
-
-  public static Style getLeftBraceAfterName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
       }
     };
   }
 
   public static Style getRightBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
-  }
-
-  public static Style getLeftBlockBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-      }
-    };
-  }
-
-  public static Style getRightBlockBrace(final EditorCell cell) {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));

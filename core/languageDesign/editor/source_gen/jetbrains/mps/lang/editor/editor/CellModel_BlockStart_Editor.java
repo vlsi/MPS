@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.editor.editor._CellModel_Common;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -42,7 +43,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1215_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common1215_0 == null) {
-      this.my_CellModel_Common1215_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
+      this.my_CellModel_Common1215_0 = new _CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common1215_0.createEditorCell(context);
     setupBasic_Component_1215_0(editorCell, node, context);

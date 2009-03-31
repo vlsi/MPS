@@ -8,6 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.editor.editor._OpenTag;
+import jetbrains.mps.lang.editor.editor._CloseTag;
+import jetbrains.mps.lang.editor.editor._CellModel_Common;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -169,7 +172,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_0(EditorContext context, SNode node) {
     if (this.my_OpenTag4233_0 == null) {
-      this.my_OpenTag4233_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
+      this.my_OpenTag4233_0 = new _OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag4233_0.createEditorCell(context);
     setupBasic_Component_4233_0(editorCell, node, context);
@@ -178,7 +181,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_1(EditorContext context, SNode node) {
     if (this.my_CloseTag4233_0 == null) {
-      this.my_CloseTag4233_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
+      this.my_CloseTag4233_0 = new _CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag4233_0.createEditorCell(context);
     setupBasic_Component_4233_1(editorCell, node, context);
@@ -187,7 +190,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_4233_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common4233_0 == null) {
-      this.my_CellModel_Common4233_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
+      this.my_CellModel_Common4233_0 = new _CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common4233_0.createEditorCell(context);
     setupBasic_Component_4233_2(editorCell, node, context);

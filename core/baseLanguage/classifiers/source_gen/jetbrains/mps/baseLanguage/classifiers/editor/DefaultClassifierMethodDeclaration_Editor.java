@@ -411,7 +411,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_7205_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7205_4");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -436,7 +436,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_7205_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7205_5");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

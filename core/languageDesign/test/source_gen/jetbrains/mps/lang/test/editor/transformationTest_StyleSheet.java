@@ -14,7 +14,6 @@ public class transformationTest_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
       }
-
     };
   }
 
@@ -24,7 +23,6 @@ public class transformationTest_StyleSheet {
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -33,7 +31,6 @@ public class transformationTest_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
-
     };
   }
 
@@ -42,7 +39,6 @@ public class transformationTest_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-
     };
   }
 

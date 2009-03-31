@@ -240,7 +240,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -261,7 +260,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.UNDERLINED, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -274,7 +272,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.UNDERLINED, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -287,7 +284,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.UNDERLINED, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -313,7 +309,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -339,7 +334,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -365,7 +359,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

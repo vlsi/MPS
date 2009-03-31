@@ -117,7 +117,7 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3016_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3016_0");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -148,7 +148,7 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3016_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3016_3");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

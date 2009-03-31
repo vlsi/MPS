@@ -358,7 +358,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_0");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_1871_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -415,7 +415,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1871_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_3");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefCell_1871_0(EditorCell editorCell, SNode node, EditorContext context) {

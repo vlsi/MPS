@@ -8,6 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.editor.editor._OpenTag;
+import jetbrains.mps.lang.editor.editor._CloseTag;
+import jetbrains.mps.lang.editor.editor._CellModel_Common;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -84,7 +87,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_0(EditorContext context, SNode node) {
     if (this.my_OpenTag6148_0 == null) {
-      this.my_OpenTag6148_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
+      this.my_OpenTag6148_0 = new _OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag6148_0.createEditorCell(context);
     setupBasic_Component_6148_0(editorCell, node, context);
@@ -93,7 +96,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_1(EditorContext context, SNode node) {
     if (this.my_CloseTag6148_0 == null) {
-      this.my_CloseTag6148_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
+      this.my_CloseTag6148_0 = new _CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag6148_0.createEditorCell(context);
     setupBasic_Component_6148_1(editorCell, node, context);
@@ -102,7 +105,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6148_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common6148_0 == null) {
-      this.my_CellModel_Common6148_0 = new jetbrains.mps.lang.editor.editor._CellModel_Common(node);
+      this.my_CellModel_Common6148_0 = new _CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common6148_0.createEditorCell(context);
     setupBasic_Component_6148_2(editorCell, node, context);

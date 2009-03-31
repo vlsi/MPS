@@ -11,7 +11,7 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.dataFlow.plugin.DFAActions";
 
   public DFAActions_ActionGroup() {
-    super("", ID);
+    super("DFAActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

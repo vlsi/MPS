@@ -512,13 +512,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1209817310938">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="3.1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233928404013">
-          <property name="flag" value="true" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233928409197">
-          <property name="flag" value="true" />
-        </node>
+        <link role="styleClass" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1209817276511">
         <property name="vertical" value="false" />
@@ -573,7 +567,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177597955295">
         <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="3.1215091331565" resolveInfo="RightBrace" />
+        <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813197210" />
     </node>

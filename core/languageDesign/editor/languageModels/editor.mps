@@ -5932,7 +5932,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1186402327648">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
+          <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995807">
           <property name="flag" value="false" />
@@ -5951,7 +5951,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1186402330134">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
+        <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -6000,7 +6000,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1186402449906">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
+          <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996315">
           <property name="flag" value="false" />
@@ -6019,7 +6019,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1186402455065">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
+        <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>
@@ -7422,7 +7422,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306251240">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
+          <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994182">
           <property name="flag" value="false" />
@@ -7441,7 +7441,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306254664">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
+        <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214306426285">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997649">
@@ -7617,7 +7617,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379745">
             <property name="text" value="{" />
-            <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
+            <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214478379746">
             <property name="flag" value="false" />
@@ -7636,7 +7636,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379751">
           <property name="text" value="}" />
-          <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
+          <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214478379752">
@@ -8286,7 +8286,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233150817082">
           <property name="text" value="{" />
-          <link role="styleClass" targetNodeId="26.1238057685212" resolveInfo="LeftBlockBrace" />
+          <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233149003775">
@@ -8302,7 +8302,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1233149003795">
         <property name="text" value="}" />
-        <link role="styleClass" targetNodeId="26.1238057795118" resolveInfo="RightBlockBrace" />
+        <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
     </node>
   </node>

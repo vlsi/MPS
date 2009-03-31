@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.plugin.editor.ModificationsEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -143,7 +144,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_7595_0(EditorContext context, SNode node) {
     if (this.myModificationsEditor7595_0 == null) {
-      this.myModificationsEditor7595_0 = new jetbrains.mps.lang.plugin.editor.ModificationsEditor(node);
+      this.myModificationsEditor7595_0 = new ModificationsEditor(node);
     }
     EditorCell editorCell = this.myModificationsEditor7595_0.createEditorCell(context);
     setupBasic_Component_7595_0(editorCell, node, context);

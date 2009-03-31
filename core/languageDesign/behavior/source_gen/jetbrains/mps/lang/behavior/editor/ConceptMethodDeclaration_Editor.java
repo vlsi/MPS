@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -235,7 +236,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6299_0(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart6299_0 == null) {
-      this.my_DeprecatedPart6299_0 = new jetbrains.mps.baseLanguage.editor._DeprecatedPart(node);
+      this.my_DeprecatedPart6299_0 = new _DeprecatedPart(node);
     }
     EditorCell editorCell = this.my_DeprecatedPart6299_0.createEditorCell(context);
     setupBasic_Component_6299_0(editorCell, node, context);
@@ -784,7 +785,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6299_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6299_7");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6299_8(EditorCell editorCell, SNode node, EditorContext context) {
@@ -813,7 +814,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6299_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6299_9");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6299_10(EditorCell editorCell, SNode node, EditorContext context) {

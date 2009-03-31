@@ -322,6 +322,14 @@ public class Property_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8551_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8551_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_8551_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -330,6 +338,14 @@ public class Property_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8551_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8551_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_8551_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -349,7 +365,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8551_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8551_2");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -362,7 +378,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8551_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8551_3");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

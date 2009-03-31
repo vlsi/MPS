@@ -164,11 +164,27 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1642_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1642_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_1642_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1642_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_1642_2(EditorCell editorCell, SNode node, EditorContext context) {

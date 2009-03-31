@@ -8,6 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.editor.editor._OpenTag;
+import jetbrains.mps.lang.editor.editor._CloseTag;
+import jetbrains.mps.lang.editor.editor.Style_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -80,7 +83,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8637_0(EditorContext context, SNode node) {
     if (this.my_OpenTag8637_0 == null) {
-      this.my_OpenTag8637_0 = new jetbrains.mps.lang.editor.editor._OpenTag(node);
+      this.my_OpenTag8637_0 = new _OpenTag(node);
     }
     EditorCell editorCell = this.my_OpenTag8637_0.createEditorCell(context);
     setupBasic_Component_8637_0(editorCell, node, context);
@@ -89,7 +92,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8637_1(EditorContext context, SNode node) {
     if (this.my_CloseTag8637_0 == null) {
-      this.my_CloseTag8637_0 = new jetbrains.mps.lang.editor.editor._CloseTag(node);
+      this.my_CloseTag8637_0 = new _CloseTag(node);
     }
     EditorCell editorCell = this.my_CloseTag8637_0.createEditorCell(context);
     setupBasic_Component_8637_1(editorCell, node, context);
@@ -98,7 +101,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_8637_2(EditorContext context, SNode node) {
     if (this.myStyle_Component8637_0 == null) {
-      this.myStyle_Component8637_0 = new jetbrains.mps.lang.editor.editor.Style_Component(node);
+      this.myStyle_Component8637_0 = new Style_Component(node);
     }
     EditorCell editorCell = this.myStyle_Component8637_0.createEditorCell(context);
     setupBasic_Component_8637_2(editorCell, node, context);

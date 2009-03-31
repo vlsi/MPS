@@ -169,7 +169,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4471_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4471_1");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -194,7 +194,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4471_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4471_2");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

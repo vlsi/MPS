@@ -274,7 +274,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_3");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_7959_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -312,16 +312,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7959_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7959_6");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_7959_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -16,7 +16,6 @@ public class QueriesUtil {
       public boolean accept(SNode it) {
         return "registerSelf".equals(SPropertyOperations.getString(it, "name"));
       }
-
     }).first();
     return SLinkOperations.getTarget(regiserSelfMethod, "body", true);
   }
@@ -27,7 +26,6 @@ public class QueriesUtil {
       public boolean accept(SNode it) {
         return "unRegisterSelf".equals(SPropertyOperations.getString(it, "name"));
       }
-
     }).first();
     return SLinkOperations.getTarget(unRegiserSelfMethod, "body", true);
   }

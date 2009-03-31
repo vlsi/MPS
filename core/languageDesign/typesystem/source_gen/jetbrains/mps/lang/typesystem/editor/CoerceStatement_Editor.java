@@ -277,7 +277,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2216_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2216_4");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -290,7 +290,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2216_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2216_5");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_2216_6(EditorCell editorCell, SNode node, EditorContext context) {
@@ -300,7 +300,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2216_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2216_7");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -325,7 +325,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2216_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2216_8");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
