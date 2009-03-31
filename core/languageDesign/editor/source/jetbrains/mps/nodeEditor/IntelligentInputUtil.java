@@ -172,7 +172,7 @@ public class IntelligentInputUtil {
       EditorCell errorCell = cellForNewNode.findChild(CellFinders.FIRST_ERROR, true);
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
-        editorContext.flushEvents();                                                               
+        editorContext.flushEvents();
         EditorCell cellForNewNode1 = editorContext.getNodeEditorComponent().findNodeCell(newNode);
         EditorCell_Label errorCell1 = (EditorCell_Label) cellForNewNode1.findChild(CellFinders.FIRST_ERROR, true);
         ((EditorCell_Label) errorCell1).changeText(tail);
@@ -406,6 +406,6 @@ public class IntelligentInputUtil {
         return helper.createActions();
       }
     };
-    return !info.getMatchingActions(prefix, false).isEmpty();
+    return !info.hasExactlyNActions(prefix, false, 0);
   }
 }
