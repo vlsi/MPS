@@ -954,7 +954,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1231771167333">
-    <property name="package" value="bugTest" />
+    <property name="package" value="assignExpression" />
     <property name="name" value="AssignmentExpression" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231771186867">
       <property name="name" value="method" />
@@ -1124,7 +1124,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232031307006">
-    <property name="package" value="bugTest" />
+    <property name="package" value="assignExpression" />
     <property name="name" value="AssigningToField" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1232031357067">
       <property name="name" value="C" />
@@ -2366,7 +2366,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1238485466527">
-    <property name="package" value="bugTest" />
+    <property name="package" value="assignExpression" />
     <property name="name" value="AssignLeftTransform" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238485500481">
       <property name="name" value="method" />
@@ -2442,6 +2442,70 @@
       </node>
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1238485631975">
         <property name="keys" value="z" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1238501587602">
+    <property name="package" value="bugTest" />
+    <property name="name" value="DotExpression" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238501603819">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238501603820" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238501603821" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238501603822">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238501639275">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238501639276">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238501639277">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238503437649" />
+          </node>
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1238503708515">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_2192_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238501652125">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238501652126" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238501652127" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238501652128">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238501652129">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238501652130">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238501652131">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238503433638" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238501652132">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238501655112">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238501652133">
+              <link role="variableDeclaration" targetNodeId="1238501652130" resolveInfo="o" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238501657950">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Object.toString():java.lang.String" resolveInfo="toString" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1238503406227">
+                <property name="isLastPosition" value="true" />
+                <property name="cellId" value="Constant_4497_2" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238501662982">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1238503416213">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1238503416214">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1238501662983">
+        <property name="keys" value="o.toString" />
       </node>
     </node>
   </node>
