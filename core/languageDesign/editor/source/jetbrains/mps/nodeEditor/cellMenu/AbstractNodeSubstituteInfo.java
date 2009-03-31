@@ -83,8 +83,30 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return getMatchingActions(pattern, false).isEmpty();
   }
 
-  public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
-    return getMatchingActions(pattern, strictMatching).size() == n;
+  public boolean hasExactlyNActions(final String pattern, final boolean strictMatching, final int n) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
+        List<INodeSubstituteAction> result = pair.o2;
+
+        int count = 0;
+        for (INodeSubstituteAction action : result) {
+          if (strictMatching) {
+            if (action.canSubstituteStrictly(pattern)) {
+              count++;
+            }
+          } else {
+            if (action.canSubstitute(pattern)) {
+              count++;
+            }
+          }
+
+          if (count > n) return false;
+        }
+
+        return n == count; 
+      }
+    });
   }
 
   public InequationSystem getInequationSystem(EditorCell contextCell) {
@@ -114,25 +136,22 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
       public List<INodeSubstituteAction> compute() {
         Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
         List<INodeSubstituteAction> result = pair.o2;
+        Iterator<INodeSubstituteAction> iterator = result.iterator();
+
+        while (iterator.hasNext()) {
+          INodeSubstituteAction item = iterator.next();
+          if (strictMatching) {
+            if (item.canSubstituteStrictly(pattern)) continue;
+            iterator.remove();
+          } else {
+            if (item.canSubstitute(pattern)) continue;
+            iterator.remove();
+          }
+        }
 
         if (strictMatching) {
-          Iterator<INodeSubstituteAction> iterator1 = result.iterator();
-          while (iterator1.hasNext()) {
-            INodeSubstituteAction substituteItem = iterator1.next();
-            if (substituteItem.canSubstituteStrictly(pattern)) continue;
-            iterator1.remove();
-          }
-
           myStrictPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
         } else {
-          Iterator<INodeSubstituteAction> items = result.iterator();
-          while (items.hasNext()) {
-            INodeSubstituteAction item = items.next();
-            if (!item.canSubstitute(pattern)) {
-              items.remove();
-            }
-          }
-
           myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
         }
 
