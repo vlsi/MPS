@@ -460,7 +460,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();
 
-      getEditor().relayout();
+      getEditor().requestRelayout();
       return true;
     }
     return false;
@@ -485,7 +485,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
             getEditorContext().flushEvents();
 
-            getEditor().relayout();
+            getEditor().requestRelayout();
 
             if (isErrorState()) {
               if (allowsIntelligentInputKeyStroke(keyEvent)) {
@@ -702,7 +702,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine.setCaretPosition(stSel);
     editor.resetLastCaretX();
     ensureCaretVisible();
-    editor.relayout();
+    editor.requestRelayout();
   }
 
   public void changeText(final String text) {
@@ -810,7 +810,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
         cell.changeText(myOldText);
-        cell.getEditorContext().getNodeEditorComponent().relayout();
+        cell.getEditorContext().getNodeEditorComponent().requestRelayout();
       }
     }
 
@@ -821,7 +821,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
         cell.changeText(myText);
-        cell.getEditorContext().getNodeEditorComponent().relayout();
+        cell.getEditorContext().getNodeEditorComponent().requestRelayout();
       }
     }
   }
@@ -947,7 +947,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       cell.insertText(s);
       context.getNodeEditorComponent().resetLastCaretX();
       cell.ensureCaretVisible();
-      context.getNodeEditorComponent().relayout();
+      context.getNodeEditorComponent().requestRelayout();
     }
   }
 

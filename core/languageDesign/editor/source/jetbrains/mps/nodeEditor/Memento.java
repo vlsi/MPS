@@ -115,7 +115,7 @@ class Memento {
     }
 
     if (needRelayout) {
-      editor.relayout();
+      editor.requestRelayout();
     }
   }
 

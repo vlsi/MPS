@@ -81,10 +81,10 @@ public class EditorCell_Property extends EditorCell_Label {
       if (myModelAccessor instanceof TransactionalModelAccessor) {
         ((TransactionalModelAccessor) myModelAccessor).commit();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                synchronizeViewWithModel();
-                getEditorContext().getNodeEditorComponent().relayout();
-              }
+          public void run() {
+            synchronizeViewWithModel();
+            getEditorContext().getNodeEditorComponent().relayout();
+          }
         });
       }
     } finally {
