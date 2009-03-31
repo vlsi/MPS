@@ -70,6 +70,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
+  private Map<String, String> myConstraintClassNames = new HashMap<String, String>();
+
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
 
@@ -430,6 +432,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodeReferentSetEventHandlersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
 
+    myConstraintClassNames.clear();
+
     for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
       List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(languageNamespace);
       for (IModelConstraints constraints : loadedConstraints) {
@@ -709,9 +713,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private String constraintsClassByConceptFqName(String fqName) {
+    String cachedValue = myConstraintClassNames.get(fqName);
+
+    if (cachedValue != null) return cachedValue;
+
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
     if (m.matches()) {
-      return m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+      myConstraintClassNames.put(fqName, result);
+      return result;
     } else {
       throw new RuntimeException();
     }
