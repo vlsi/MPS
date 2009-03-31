@@ -2278,6 +2278,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         if (editorCells != null) {
           rebuildEditorContent(events);
+          relayoutIfNeeded();
           updateSelection(events, lastSelectedNode);
         } else if (editorCell_properties != null) {
           for (EditorCell_Property cell : editorCell_properties) {
@@ -2297,8 +2298,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return;
       }
 
-      updateSelection(events, lastSelectedNode);
       revertErrorCells(events);
+      relayoutIfNeeded();
+      updateSelection(events, lastSelectedNode);
     }
 
     if (!myInsideOfCommand) {
