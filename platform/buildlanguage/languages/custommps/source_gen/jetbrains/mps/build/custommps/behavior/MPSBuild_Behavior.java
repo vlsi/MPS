@@ -13,6 +13,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.io.File;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.project.IModule;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.build.packaging.behavior.Module_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MPSBuild_Behavior {
 
@@ -42,6 +55,42 @@ public class MPSBuild_Behavior {
       return false;
     }
     return moduleId.equals(generator.getModuleId());
+  }
+
+  public static Iterable<SNode> getClassPathModules_1238502072959(String prefix) {
+    List<SNode> paths = ListOperations.<SNode>createList();
+    File dir = new File(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
+    List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
+    Set<IModule> modulesInClasspath = new HashSet<IModule>();
+    for(IModule module : ListSequence.fromList(modulesList)) {
+      if (module instanceof Language) {
+        Language language = (Language)module;
+        modulesInClasspath.add(language);
+        modulesInClasspath.addAll(language.getRuntimeDependOnModules());
+      }
+    }
+    for(IModule module : SetSequence.fromSet(modulesInClasspath)) {
+      String moduleProperName = Module_Behavior.extractModuleProperName_1235487584035(module);
+      SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
+      SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.PACKAGE_SUFFIX);
+      ListSequence.fromList(paths).addElement(path);
+      if (module instanceof Language) {
+        Language language = (Language)module;
+        List<String> runtimeCP = language.getLanguageRuntimeClassPathItems();
+        runtimeCP.removeAll(language.getClassPath());
+        if (!(runtimeCP.isEmpty())) {
+          path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
+          SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.RUNTIME_JAR_SUFFIX);
+          ListSequence.fromList(paths).addElement(path);
+        }
+      }
+    }
+    return ListSequence.fromList(paths).sort(new ISelector <SNode, Comparable<?>>() {
+
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "path");
+      }
+    }, true);
   }
 
 }
