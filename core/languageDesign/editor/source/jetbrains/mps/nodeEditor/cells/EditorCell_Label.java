@@ -129,12 +129,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             return cell != EditorCell_Label.this && cell.getSNode() == EditorCell_Label.this.getSNode() && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
           }
         });
-        if (selected) {
-          getEditor().leftHighlightCell(this, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
-        } else {
-          getEditor().leftUnhighlightCell(this);
-        }
         if (editorCell != null) {
+          if (selected) {
+          getEditor().leftHighlightCells(this, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
+          } else {
+            getEditor().leftUnhighlightCell(this);
+          }
           this.getTextLine().setBraceSelected(selected);
           ((EditorCell_Label) editorCell).getTextLine().setBraceSelected(selected);
         }
