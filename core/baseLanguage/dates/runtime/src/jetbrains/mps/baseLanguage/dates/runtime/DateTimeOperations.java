@@ -43,7 +43,7 @@ public class DateTimeOperations {
   }
 
   public static Long convert(DateTime dateTime) {
-    return dateTime != null ? getLongIndependFromZone(dateTime) : null;
+    return dateTime != null ? dateTime.getMillis() : null;
   }
 
   public static Long convert(Date date) {
@@ -97,15 +97,15 @@ public class DateTimeOperations {
   }
 
   public static Long roundFloor(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? getLongIndependFromZone(new DateTime(datetime).property(type).roundFloorCopy()) : null;
+    return datetime != null ? new DateTime(datetime).property(type).roundFloorCopy().getMillis() : null;
   }
 
   public static Long roundCeiling(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? getLongIndependFromZone(new DateTime(datetime).property(type).roundCeilingCopy()) : null;
+    return datetime != null ? new DateTime(datetime).property(type).roundCeilingCopy().getMillis() : null;
   }
 
   public static Long round(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? getLongIndependFromZone(new DateTime(datetime).property(type).roundHalfCeilingCopy()) : null;
+    return datetime != null ? new DateTime(datetime).property(type).roundHalfCeilingCopy().getMillis() : null;
   }
 
   public static Integer get(Long datetime, DateTimeFieldType type) {
@@ -113,7 +113,7 @@ public class DateTimeOperations {
   }
 
   public static Long with(Long datetime, DateTimeFieldType type, int value) {
-    return datetime != null ? getLongIndependFromZone(new DateTime(datetime).property(type).setCopy(value)) : null;
+    return datetime != null ? new DateTime(datetime).property(type).setCopy(value).getMillis() : null;
   }
 
   public static Period plus(Period leftExpression, Period rightExpression) {
@@ -157,7 +157,7 @@ public class DateTimeOperations {
     if (leftExpression == null) {
       result = null;
     } else {
-      result = getLongIndependFromZone(new DateTime(leftExpression).plus(rightExpression));
+      result = new DateTime(leftExpression).plus(rightExpression).getMillis();
     }
     return result;
   }
@@ -167,7 +167,7 @@ public class DateTimeOperations {
     if (leftExpression == null) {
       result = null;
     } else {
-      result = getLongIndependFromZone(new DateTime(leftExpression).minus(rightExpression));
+      result = new DateTime(leftExpression).minus(rightExpression).getMillis();
     }
     return result;
   }
@@ -230,8 +230,5 @@ public class DateTimeOperations {
     return true;
   }
 
-  static long getLongIndependFromZone(DateTime dt) {
-    return dt.getChronology().getZone().getMillisKeepLocal(DateTimeZone.UTC, dt.getMillis());
-  }
 
 }
