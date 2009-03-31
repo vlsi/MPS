@@ -51,6 +51,17 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
     edtitor.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
+
+        boolean needRebuild = false;
+        for (EditorCell cell : myMessagesCache.keySet()) {
+          if (!myEditor.isValid(cell)) {
+            needRebuild = true;
+            break;
+          }
+        }
+
+        if (!needRebuild) return;
+
         rebuildMessages();
       }
     });
