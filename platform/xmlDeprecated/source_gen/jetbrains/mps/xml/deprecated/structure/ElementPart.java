@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ElementPart extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xml.deprecated.structure.ElementPart";
+  public static final String CPR_Indented = "indented";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
