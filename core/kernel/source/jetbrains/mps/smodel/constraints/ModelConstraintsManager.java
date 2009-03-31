@@ -504,12 +504,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
     IScope scope = context.getScope();
     String fqName = parentNode.getConceptFqName();
-    String behaviorClass = constraintsClassByConceptFqName(fqName);
+    String constraintsClass = constraintsClassByConceptFqName(fqName);
     String namespace = NameUtil.namespaceFromConceptFQName(fqName);
     Language language = scope.getLanguage(namespace);
 
     if (language != null) {
-      Class cls = language.getClass(behaviorClass);
+      Class cls = language.getClass(constraintsClass);
       if (cls != null) {
         try {
           Method m;
