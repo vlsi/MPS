@@ -131,7 +131,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         });
         if (editorCell != null) {
           if (selected) {
-          getEditor().leftHighlightCells(this, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
+            getEditor().leftHighlightCells(this, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
           } else {
             getEditor().leftUnhighlightCell(this);
           }
@@ -147,22 +147,24 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myCellWithSelectedBraces.setBracesSelected(false);
       myCellWithSelectedBraces = null;
     }
-    if (getCaretPosition() == 0) {
-      EditorCell cell = getPrevLeaf();
-      if (cell instanceof EditorCell_Label) {
-        EditorCell_Label label = (EditorCell_Label) cell;
-        if (label.getBounds().getMaxX() == getBounds().getMinX() && getLeftInset() == 0) {
-          myCellWithSelectedBraces = label;
-          label.setBracesSelected(true);
+    if (getStyle().get(StyleAttributes.MATCHING_LABEL) == null) {
+      if (getCaretPosition() == 0) {
+        EditorCell cell = getPrevLeaf();
+        if (cell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) cell;
+          if (label.getBounds().getMaxX() == getBounds().getMinX() && getLeftInset() == 0) {
+            myCellWithSelectedBraces = label;
+            label.setBracesSelected(true);
+          }
         }
-      }
-    } else if (getCaretPosition() == getText().length()) {
-       EditorCell cell = getNextLeaf();
-      if (cell instanceof EditorCell_Label) {
-        EditorCell_Label label = (EditorCell_Label) cell;
-        if (label.getBounds().getMinX() == getBounds().getMaxX() && getRightInset() == 0) {
-          myCellWithSelectedBraces = label;
-          label.setBracesSelected(true);
+      } else if (getCaretPosition() == getText().length()) {
+        EditorCell cell = getNextLeaf();
+        if (cell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) cell;
+          if (label.getBounds().getMinX() == getBounds().getMaxX() && getRightInset() == 0) {
+            myCellWithSelectedBraces = label;
+            label.setBracesSelected(true);
+          }
         }
       }
     }
