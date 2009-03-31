@@ -241,7 +241,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2168_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2168_5");
-    BaseLanguageStyle_StyleSheet.getLeftBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -254,7 +254,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2168_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2168_6");
-    BaseLanguageStyle_StyleSheet.getRightBlockBrace(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
