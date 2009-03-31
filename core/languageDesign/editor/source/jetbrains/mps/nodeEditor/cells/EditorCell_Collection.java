@@ -45,6 +45,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public static final String FOLDED_TEXT = "...";
 
   private EditorCell[] myEditorCells = EditorCell.EMPTY_ARRAY;
+  private List<EditorCell> myEditorCellsWrapper = new ArrayWrapper<EditorCell>() {
+    protected EditorCell[] getArray() {
+      return myEditorCells;
+    }
+
+    protected void setArray(EditorCell[] newArray) {
+      myEditorCells = newArray;
+    }
+
+    protected EditorCell[] newArray(int size) {
+      return new EditorCell[size];
+    }
+  };
 
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
@@ -99,23 +112,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return new EditorCell_Collection(editorContext, node, cellLayout, handler);
   }
 
-  private List<EditorCell> _editorCells() {
-    return new ArrayWrapper<EditorCell>() {
-      protected EditorCell[] getArray() {
-        return myEditorCells;
-      }
-
-      protected void setArray(EditorCell[] newArray) {
-        myEditorCells = newArray;
-      }
-
-      protected EditorCell[] newArray(int size) {
-        return new EditorCell[size];
-      }
-    };
-
-  }
-
   public boolean isFolded() {
     return myFolded;
   }
@@ -152,9 +148,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public int getCellNumber(EditorCell cell) {
     if (usesBraces()) {
-      return _editorCells().indexOf(cell) - 1;
+      return myEditorCellsWrapper.indexOf(cell) - 1;
     } else {
-      return _editorCells().indexOf(cell);
+      return myEditorCellsWrapper.indexOf(cell);
     }
   }
 
@@ -278,7 +274,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return new Iterable<EditorCell>() {
         public Iterator<EditorCell> iterator() {
           return new Iterator<EditorCell>() {//iterates from second to before last
-            private Iterator<EditorCell> myIterator = _editorCells().iterator();
+            private Iterator<EditorCell> myIterator = myEditorCellsWrapper.iterator();
             private EditorCell myNext;
 
             {
@@ -312,7 +308,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public Iterator<EditorCell> cells() {
     return new Iterator<EditorCell>() {
-      private Iterator<EditorCell> myIterator = _editorCells().iterator();
+      private Iterator<EditorCell> myIterator = myEditorCellsWrapper.iterator();
 
       public boolean hasNext() {
         return myIterator.hasNext();
@@ -330,7 +326,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   
   public EditorCell[] getContentCells() {
     if (usesBraces()) {
-      List<EditorCell> contentList = _editorCells().subList(1, myEditorCells.length - 1);
+      List<EditorCell> contentList = myEditorCellsWrapper.subList(1, myEditorCells.length - 1);
       return contentList.toArray(new EditorCell[contentList.size()]);
     } else {
       return getCells();
@@ -338,7 +334,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public EditorCell[] getCells() {
-    return _editorCells().toArray(new EditorCell[myEditorCells.length]);
+    return myEditorCellsWrapper.toArray(new EditorCell[myEditorCells.length]);
   }
 
   public List<EditorCell> dfsCells() {
@@ -380,7 +376,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public boolean containsCell(EditorCell editorCell) {
-    return _editorCells().contains(editorCell);
+    return myEditorCellsWrapper.contains(editorCell);
   }
 
   public int getCellsCount() {
@@ -593,7 +589,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public int indexOf(EditorCell cell) {
-    return _editorCells().indexOf(cell);
+    return myEditorCellsWrapper.indexOf(cell);
   }
 
   public void addCellAt(int i, EditorCell cellToAdd, boolean ignoreBraces) {
@@ -602,7 +598,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       j = i - 1;
     }
     ((EditorCell_Basic) cellToAdd).setParent(this);
-    _editorCells().add(j, cellToAdd);
+    myEditorCellsWrapper.add(j, cellToAdd);
     getStyle().add(cellToAdd.getStyle());
 
     if (isInTree()) {
@@ -612,7 +608,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void removeCell(EditorCell cellToRemove) {
     ((EditorCell_Basic) cellToRemove).setParent(null);
-    _editorCells().remove(cellToRemove);
+    myEditorCellsWrapper.remove(cellToRemove);
     getStyle().remove(cellToRemove.getStyle());
 
     if (isInTree()) {
@@ -654,7 +650,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public EditorCell lastCell() {
     if (myEditorCells.length > 0) {
-      return _editorCells().get(myEditorCells.length - 1);
+      return myEditorCellsWrapper.get(myEditorCells.length - 1);
     }
     return null;
   }

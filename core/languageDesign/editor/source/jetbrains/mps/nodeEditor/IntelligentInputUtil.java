@@ -106,7 +106,7 @@ public class IntelligentInputUtil {
         target.changeText(tail);
         target.end();
 
-        editorContext.getNodeEditorComponent().relayout();
+        editorContext.getNodeEditorComponent().requestRelayout();
 
         if (target.isErrorState()) {
           target.validate(true, false);
@@ -129,7 +129,7 @@ public class IntelligentInputUtil {
       label.changeText(pattern);
       label.end();
       editorContext.getNodeEditorComponent().changeSelection(label);
-      editorContext.getNodeEditorComponent().relayout();
+      editorContext.getNodeEditorComponent().requestRelayout();
     } else {
       if (isInOneStepAmbigousPosition(info, smallPattern + tail)) {
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
@@ -177,7 +177,7 @@ public class IntelligentInputUtil {
         EditorCell_Label errorCell1 = (EditorCell_Label) cellForNewNode1.findChild(CellFinders.FIRST_ERROR, true);
         ((EditorCell_Label) errorCell1).changeText(tail);
         errorCell1.setCaretPosition(tail.length());
-        editorContext.getNodeEditorComponent().relayout();
+        editorContext.getNodeEditorComponent().requestRelayout();
         return true;
       }
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
@@ -216,7 +216,7 @@ public class IntelligentInputUtil {
 
     if (sourceCellRemains) {
       cell.changeText(smallPattern);
-      editorContext.getNodeEditorComponent().relayout();
+      editorContext.getNodeEditorComponent().requestRelayout();
     }
 
     rtAction.execute(editorContext);
@@ -315,7 +315,7 @@ public class IntelligentInputUtil {
 
     if (sourceCellRemains) {
       cell.changeText(smallPattern);
-      editorContext.getNodeEditorComponent().relayout();
+      editorContext.getNodeEditorComponent().requestRelayout();
     }
 
     ltAction.execute(editorContext);
@@ -370,7 +370,7 @@ public class IntelligentInputUtil {
     rtCell.changeText(textToSet);
     rtCell.end();
 
-    nodeEditorComponent.relayout();
+    nodeEditorComponent.requestRelayout();
     return rtCell;
   }
 
@@ -392,7 +392,7 @@ public class IntelligentInputUtil {
         EditorCell_Label label = (EditorCell_Label) errorCell;
         if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
           label.changeText(textToSet);
-          component.relayout();
+          component.requestRelayout();
         }
         label.end();
       }

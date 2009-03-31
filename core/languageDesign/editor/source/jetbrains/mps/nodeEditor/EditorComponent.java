@@ -112,6 +112,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
+  private boolean myRelayoutRequested = false;
+
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -949,7 +951,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onAdd();
     }
 
-    doRelayout(false);
+    requestRelayout();
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
@@ -1223,6 +1225,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myMessagesGutter.repaint();
   }
 
+  public void requestRelayout() {
+    myRelayoutRequested = true;
+  }
+
+  public void relayoutIfNeeded() {
+    if (myRelayoutRequested) {
+      relayout();
+      myRelayoutRequested = false;
+    }
+  }
+
   public void revalidateAndRepaint(boolean updateFolding) {
     myLeftHighlighter.relayout(updateFolding);
     repaint();
@@ -1359,6 +1372,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     clearCaches();
     clearUserData();
     rebuildEditorContent(null);
+
+    relayoutIfNeeded();
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
@@ -1888,6 +1903,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     } finally {
       myInsideOfCommand = false;
     }
+
+    relayoutIfNeeded();
   }
 
   <T> T executeCommand(final Computable<T> c) {
@@ -2255,7 +2272,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 fireCellSynchronized(cell);
               }
             }
-            relayout();
+            requestRelayout();
           }
           return;
         }
@@ -2267,7 +2284,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             cell.synchronizeViewWithModel();
             fireCellSynchronized(cell);
           }
-          relayout();
+          requestRelayout();
           revertErrorCells(events);
         }
       } else {
@@ -2282,6 +2299,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       updateSelection(events, lastSelectedNode);
       revertErrorCells(events);
+    }
+
+    if (!myInsideOfCommand) {
+      relayoutIfNeeded();
     }
   }
 
@@ -2450,7 +2471,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (wereReverted[0]) {
-      relayout();
+      requestRelayout();
     }
   }
 
