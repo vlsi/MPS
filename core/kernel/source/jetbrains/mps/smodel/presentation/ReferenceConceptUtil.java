@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Igor Alshannikov
@@ -35,6 +36,9 @@ import java.util.List;
  */
 public class ReferenceConceptUtil {
   private static final Logger LOG = Logger.getLogger(ReferenceConceptUtil.class);
+
+  private static final Pattern SMART_ALIAS = Pattern.compile(".*<\\{.+\\}>.*");
+  private static final Pattern SMART_ALIAS_SEPARATOR = Pattern.compile("<\\{|\\}>");
 
   /**
    * Puprose of some concepts is only to hold refrence on something else.
@@ -87,13 +91,13 @@ public class ReferenceConceptUtil {
   public static boolean hasSmartAlias(AbstractConceptDeclaration concept) {
     String conceptAlias = concept.getConceptProperty("alias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
-    return conceptAlias != null && conceptAlias.matches(".*<\\{.+\\}>.*");
+    return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
   public static String getPresentationFromSmartAlias(AbstractConceptDeclaration concept, String referentPresentation) {
     String conceptAlias = concept.getConceptProperty("alias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
-    String[] matches = conceptAlias.split("<\\{|\\}>");
+    String[] matches = SMART_ALIAS_SEPARATOR.split(conceptAlias, 0);
     matches[1] = referentPresentation;
     StringBuilder sb = new StringBuilder();
     for (String segment : matches) {
