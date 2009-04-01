@@ -40,11 +40,9 @@ public class BuiltInLibrariesIO {
   public static void readBuiltInLibraries(Map<String, Library> libraryMap) {
     URL resource = LibraryManager.class.getResource(CONFIG_FILE_NAME);
     if (resource == null) return;
-    File configFile = new File(resource.getFile());
-    if (!configFile.exists()) return;
 
     try {
-      Document document = JDOMUtil.loadDocument(configFile);
+      Document document = JDOMUtil.loadDocument(resource.openStream());
       Element element = document.getRootElement();
       List children = element.getChildren(LIBRARY_TAG);
       for (Object childObj : children) {
