@@ -49,9 +49,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1228522914198" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228522980200">
         <property name="name" value="adapter" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228522980201">
-          <link role="classifier" targetNodeId="3.~INodeAdapter" resolveInfo="INodeAdapter" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238592580881" />
       </node>
     </node>
     <node role="isDefaultBlock" type="jetbrains.mps.lang.plugin.structure.IsDefaultBlock" id="1238591034193">
