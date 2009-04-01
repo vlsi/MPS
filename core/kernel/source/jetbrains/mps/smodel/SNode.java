@@ -66,6 +66,8 @@ public final class SNode {
   private SNode myParent;
 
   private SNode[] myChildren = EMPTY_ARRAY;
+  private List<SNode> myChildrenWrapper = new MyChildrenWrapper();
+
   private SReference[] myReferences = SReference.EMPTY_ARRAY;
 
   private Map<String, String> myProperties;
@@ -111,36 +113,8 @@ public final class SNode {
     }
   }
 
-  private List<SNode> _children() {
-    return new ArrayWrapper<SNode>() {
-      protected SNode[] getArray() {
-        return myChildren;
-      }
-
-      protected void setArray(SNode[] newArray) {
-        myChildren = newArray;
-      }
-
-      protected SNode[] newArray(int size) {
-        return new SNode[size];
-      }
-    };
-  }
-
   private List<SReference> _references() {
-    return new ArrayWrapper<SReference>() {
-      protected SReference[] getArray() {
-        return myReferences;
-      }
-
-      protected void setArray(SReference[] newArray) {
-        myReferences = newArray;
-      }
-
-      protected SReference[] newArray(int size) {
-        return new SReference[size];
-      }
-    };
+    return new MyReferencesWrapper();
   }
 
   public boolean isRoot() {
@@ -293,7 +267,7 @@ public final class SNode {
   }
 
   public void replaceChild(SNode oldChild, SNode newChild) {
-    int index = _children().indexOf(oldChild);
+    int index = myChildrenWrapper.indexOf(oldChild);
     assert index >= 0;
     String role = oldChild.getRole_();
     assert role != null;
@@ -304,7 +278,7 @@ public final class SNode {
   }
 
   public void replaceChild(SNode oldChild, List<SNode> newChildren) {
-    assert _children().contains(oldChild);
+    assert myChildrenWrapper.contains(oldChild);
     String oldChildRole = oldChild.getRole_();
     assert oldChildRole != null;
     SNode prevChild = oldChild;
@@ -804,7 +778,7 @@ public final class SNode {
   }
 
   public void removeChild(SNode child) {
-    List<SNode> children = _children();
+    List<SNode> children = myChildrenWrapper;
     if (!children.contains(child)) return;
     removeChildAt(children.indexOf(child));
   }
@@ -820,7 +794,7 @@ public final class SNode {
   public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
     int index = 0;
     if (anchorChild != null) {
-      int anchorIndex = _children().indexOf(anchorChild);
+      int anchorIndex = myChildrenWrapper.indexOf(anchorChild);
 
       if (!insertBefore) {
         index = anchorIndex + 1;
@@ -883,9 +857,9 @@ public final class SNode {
     fireNodeUnclassifiedReadAccess();
 
     if (includeAttributes) {
-      return Collections.unmodifiableList(_children());
+      return Collections.unmodifiableList(myChildrenWrapper);
     } else {
-      List<SNode> result = new ArrayList<SNode>(_children());
+      List<SNode> result = new ArrayList<SNode>(myChildrenWrapper);
       Iterator<SNode> it = result.iterator();
       while (it.hasNext()) {
         SNode child = it.next();
@@ -972,7 +946,7 @@ public final class SNode {
       getModel().fireBeforeChildRemovedEvent(this, wasRole, wasChild, index);
     }
 
-    _children().remove(index);
+    myChildrenWrapper.remove(index);
     wasChild.setParent(null);
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
@@ -1003,7 +977,7 @@ public final class SNode {
 
     ModelChange.assertLegalNodeChange(this);
 
-    _children().add(index, child);
+    myChildrenWrapper.add(index, child);
 
     child.myRoleInParent = InternUtil.intern(role);
     child.setParent(this);
@@ -1755,5 +1729,33 @@ public final class SNode {
       return children.get(index + 1);
     }
     return null;
+  }
+
+  private class MyChildrenWrapper extends ArrayWrapper<SNode> {
+    protected SNode[] getArray() {
+      return myChildren;
+    }
+
+    protected void setArray(SNode[] newArray) {
+      myChildren = newArray;
+    }
+
+    protected SNode[] newArray(int size) {
+      return new SNode[size];
+    }
+  }
+
+  private class MyReferencesWrapper extends ArrayWrapper<SReference> {
+    protected SReference[] getArray() {
+      return myReferences;
+    }
+
+    protected void setArray(SReference[] newArray) {
+      myReferences = newArray;
+    }
+
+    protected SReference[] newArray(int size) {
+      return new SReference[size];
+    }
   }
 }
