@@ -57,6 +57,5 @@ public class OverloadedOperationsManager {
   }
 
   public void makeConsistent() {
-    myOperationsToTypeProviders.makeConsistent();
   }
 }

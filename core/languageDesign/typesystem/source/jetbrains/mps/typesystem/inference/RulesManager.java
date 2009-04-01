@@ -115,9 +115,6 @@ public class RulesManager {
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
         myVariableConverters.addAll(helginsDescriptor.getVariableConverters());
         myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(helginsDescriptor.getOverloadedOperationsTypesProviders());
-        myInferenceRules.makeConsistent();
-        myNonTypesystemRules.makeConsistent();
-        mySubtypingRules.makeConsistent();
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
