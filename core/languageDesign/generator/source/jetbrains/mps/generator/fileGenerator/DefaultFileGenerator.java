@@ -37,12 +37,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     return false;
   }
 
-  public final boolean isDefault(SNode outputRootNode) {
-    INodeAdapter outputNode = BaseAdapter.fromNode(outputRootNode);
-    return isDefault(outputNode);
-  }
-
-  protected abstract boolean isDefault(INodeAdapter outputNode);
+  public abstract boolean isDefault(SNode outputRootNode);
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {

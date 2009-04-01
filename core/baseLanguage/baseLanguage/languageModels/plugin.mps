@@ -35826,36 +35826,27 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1228677006461">
-      <property name="name" value="isDefault" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1228677006462" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228677006463">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228677006464">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1228677040009">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1228677044938">
-              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228677048457">
-                <link role="classifier" targetNodeId="71.~Interface" resolveInfo="Interface" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228677043828">
-                <link role="variableDeclaration" targetNodeId="1228677006469" resolveInfo="n" />
+    <node role="isDefaultBlock" type="jetbrains.mps.lang.plugin.structure.IsDefaultBlock" id="1238590940009">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238590940010">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238590961194">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1238590968719">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590972676">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode" id="1238590971659" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1238590974555">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238590978729">
+                  <link role="conceptDeclaration" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+                </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1228677040996">
-              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228677040997">
-                <link role="classifier" targetNodeId="71.~ClassConcept" resolveInfo="ClassConcept" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228677040998">
-                <link role="variableDeclaration" targetNodeId="1228677006469" resolveInfo="n" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590961759">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode" id="1238590961195" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1238590962153">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238590966858">
+                  <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                </node>
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228677006468" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228677006469">
-        <property name="name" value="n" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228677006470">
-          <link role="classifier" targetNodeId="5.~INodeAdapter" resolveInfo="INodeAdapter" />
         </node>
       </node>
     </node>
