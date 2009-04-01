@@ -32,7 +32,12 @@ public class GlobalScope extends BaseScope {
     return myInstance;
   }
 
+  private MPSModuleRepository myMPSModuleRepository;
+  private SModelRepository myModelRepository;
+
   protected GlobalScope() {
+    myMPSModuleRepository = MPSModuleRepository.getInstance();
+    myModelRepository = SModelRepository.getInstance();
   }
 
   public String toString() {
@@ -40,39 +45,39 @@ public class GlobalScope extends BaseScope {
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
-    return MPSModuleRepository.getInstance().getLanguage(moduleReference);
+    return myMPSModuleRepository.getLanguage(moduleReference);
   }
 
   public DevKit getDevKit(ModuleReference ref) {
-    return MPSModuleRepository.getInstance().getDevKit(ref);
+    return myMPSModuleRepository.getDevKit(ref);
   }
 
   public List<Language> getVisibleLanguages() {
-    return MPSModuleRepository.getInstance().getAllLanguages();
+    return myMPSModuleRepository.getAllLanguages();
   }
 
   public List<DevKit> getVisibleDevkits() {
-    return MPSModuleRepository.getInstance().getAllModules(DevKit.class);
+    return myMPSModuleRepository.getAllModules(DevKit.class);
   }
 
   public List<Solution> getVisibleSolutions() {
-    return MPSModuleRepository.getInstance().getAllSolutions();
+    return myMPSModuleRepository.getAllSolutions();
   }
 
   public Set<IModule> getVisibleModules() {
-    return new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
+    return new HashSet<IModule>(myMPSModuleRepository.getAllModules());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModelDescriptor modelDescriptor = myModelRepository.getModelDescriptor(modelReference);
     return modelDescriptor;
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    return SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
+    return myModelRepository.getModelDescriptorsByModelName(modelName);
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
-    return SModelRepository.getInstance().getModelDescriptors();
+    return myModelRepository.getModelDescriptors();
   }
 }
