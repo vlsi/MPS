@@ -55,7 +55,15 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   @Deprecated
-  protected abstract void doGenerateText(BA ba);
+  protected void doGenerateText(BA adapter) {
+    this.doGenerateText(adapter.getNode());
+  }
+
+  //not to generate stub method in each MPS text gen
+  @Deprecated
+  protected void doGenerateText(SNode node) {
+
+  }
 
   @Deprecated
   protected final void appendNodeText(INodeAdapter ba) {

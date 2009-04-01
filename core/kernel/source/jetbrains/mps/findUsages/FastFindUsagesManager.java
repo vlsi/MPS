@@ -37,6 +37,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -129,10 +130,9 @@ class FastFindUsagesManager extends FindUsagesManager {
     Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     for (String fqName : fqNames) {
-      BaseAdapter adapter = SModelUtil_new.findNodeByFQName(fqName, node.getNode().getAdapter().getClass(), scope);
-      if (adapter == null) continue;
-      AbstractConceptDeclaration declaration = new AbstractConceptDeclaration(adapter.getNode());
-      result.add(declaration);
+      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node.getNode(), scope);
+      if (foundNode == null) continue;
+      result.add((AbstractConceptDeclaration) foundNode.getAdapter());
     }
     return result;
   }
