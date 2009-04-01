@@ -1300,16 +1300,13 @@
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235082156479">
           <property name="name" value="ice" />
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1235082156480" />
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235082156481">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235082156482">
+          <node role="initializer" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1238585613398">
+            <node role="key" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238585613399">
+              <link role="variableDeclaration" targetNodeId="1202756513376" resolveInfo="rtSig" />
+            </node>
+            <node role="map" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235082156482">
               <link role="classConcept" targetNodeId="26.1231426116476" resolveInfo="RuntimeUtils" />
               <link role="baseMethodDeclaration" targetNodeId="26.1231426266998" resolveInfo="getRuntimeClassifiersMap" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235082156483">
-              <link role="baseMethodDeclaration" targetNodeId="8.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235082163608">
-                <link role="variableDeclaration" targetNodeId="1202756513376" resolveInfo="rtSig" />
-              </node>
             </node>
           </node>
         </node>

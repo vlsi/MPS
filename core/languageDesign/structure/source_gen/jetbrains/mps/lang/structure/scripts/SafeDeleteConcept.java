@@ -27,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -142,7 +143,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         return result;
       }
       List<SModel> list = ListSequence.<SModel>fromArray();
-      result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
+      MapSequence.fromMap(result).put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
       ListSequence.fromList(list).addElement(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
       if (editorModelDescriptor != null) {

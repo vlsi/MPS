@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -115,7 +116,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
             return it.getSModel();
           }
         }).toListSequence();
-        result.put(language, aspectList);
+        MapSequence.fromMap(result).put(language, aspectList);
       }
       return result;
     }

@@ -11,7 +11,7 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup";
 
   public DateLangGroup_ActionGroup() {
-    super("", ID);
+    super("DateLangGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

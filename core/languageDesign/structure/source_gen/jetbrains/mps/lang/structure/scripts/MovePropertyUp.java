@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
@@ -121,7 +122,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
             return it.getSModel();
           }
         }).toListSequence();
-        result.put(language, aspectList);
+        MapSequence.fromMap(result).put(language, aspectList);
       }
       if (targetLanguage != null && targetLanguage != language) {
         List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
@@ -130,7 +131,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
             return it.getSModel();
           }
         }).toListSequence();
-        result.put(targetLanguage, aspectList);
+        MapSequence.fromMap(result).put(targetLanguage, aspectList);
       }
       return result;
     }

@@ -4,19 +4,21 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
-import java.util.HashMap;
+import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class BaseTestBody {
 
   public SModelDescriptor myModel;
   public MPSProject myProject;
-  public HashMap<SNode, SNode> myMap;
+  public Map<SNode, SNode> myMap;
   public List<SNode> myCopyes;
 
   public BaseTestBody() {
@@ -36,12 +38,11 @@ public class BaseTestBody {
         BaseTestBody.this.myModel.getSModel().addRoot(copy);
         ListSequence.fromList(BaseTestBody.this.myCopyes).addElement(copy);
       }
-
     });
   }
 
   public SNode getNodeById(String id) {
-    return this.myMap.get(this.myModel.getSModel().getNodeById(id));
+    return MapSequence.fromMap(this.myMap).get(this.myModel.getSModel().getNodeById(id));
   }
 
   public SNode getRealNodeById(String id) {

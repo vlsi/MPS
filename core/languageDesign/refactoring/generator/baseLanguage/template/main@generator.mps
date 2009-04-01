@@ -1914,13 +1914,12 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1191592317456">
       <property name="name" value="getModelsToGenerate" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356626377">
-        <link role="classifier" targetNodeId="9.~Map" resolveInfo="Map" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356677412">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238587324519">
+        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238587324520">
           <link role="classifier" targetNodeId="19.~IModule" resolveInfo="IModule" />
         </node>
-        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237971234325">
-          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237971234326">
+        <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238587324521">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238587324522">
             <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />
           </node>
         </node>

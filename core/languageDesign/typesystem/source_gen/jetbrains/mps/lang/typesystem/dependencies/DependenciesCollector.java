@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies._Quotations;
 import java.util.List;
@@ -31,12 +32,12 @@ public class DependenciesCollector {
     int prevSize = dependencies.size();
     int leavesSize = leaves.size();
     for(SNode root : roots) {
-      dependencies.put(root, null);
+      MapSequence.fromMap(dependencies).put(root, null);
     }
     while (dependencies.size() > prevSize || leaves.size() > leavesSize) {
       prevSize = dependencies.size();
       leavesSize = leaves.size();
-      for(SNode node : new HashSet<SNode>(dependencies.keySet())) {
+      for(SNode node : new HashSet<SNode>(MapSequence.fromMap(dependencies).keySet())) {
         SNode parent = SNodeOperations.getParent(node);
         do {
           SNode matchedNode_0 = parent;
@@ -65,7 +66,7 @@ public class DependenciesCollector {
             }
             if (matches_1) {
               if (SLinkOperations.getTarget(matchedNode_0, "rValue", true) == node) {
-                dependencies.put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_0().createNode()));
+                MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_0().createNode()));
               }
               break;
             }
@@ -80,7 +81,7 @@ public class DependenciesCollector {
             }
             if (matches_2) {
               if (SLinkOperations.getTarget(matchedNode_0, "initializer", true) == node) {
-                dependencies.put(matchedNode_0, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_1().createNode()));
+                MapSequence.fromMap(dependencies).put(matchedNode_0, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_1().createNode()));
               }
               break;
             }
@@ -98,7 +99,7 @@ public class DependenciesCollector {
               if (matches_3) {
                 for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
                   if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
-                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_2().createNode()));
+                    MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_2().createNode()));
                   }
                 }
                 break;
@@ -129,7 +130,7 @@ public class DependenciesCollector {
                         }
                       });
                       if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {
-                        dependencies.put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
+                        MapSequence.fromMap(dependencies).put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
                       }
                     }
                   }

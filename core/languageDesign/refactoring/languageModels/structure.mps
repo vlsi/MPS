@@ -384,13 +384,12 @@
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1191591414955">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356262645">
-        <link role="classifier" targetNodeId="4.~Map" resolveInfo="Map" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356509031">
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238586839521">
+        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238586844253">
           <link role="classifier" targetNodeId="9.~IModule" resolveInfo="IModule" />
         </node>
-        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237971234091">
-          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237971234092">
+        <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238586847327">
+          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238586847328">
             <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
           </node>
         </node>

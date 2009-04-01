@@ -23,6 +23,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -100,7 +101,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
         return result;
       }
       List<SModel> list = ListSequence.<SModel>fromArray();
-      result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
+      MapSequence.fromMap(result).put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
       ListSequence.fromList(list).addElement(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
       if (editorModelDescriptor != null) {

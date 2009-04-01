@@ -29,6 +29,7 @@ import jetbrains.mps.project.IModule;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
@@ -219,7 +220,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
             return it.getSModel();
           }
         }).toListSequence();
-        result.put(sourceLanguage, aspectList);
+        MapSequence.fromMap(result).put(sourceLanguage, aspectList);
       }
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
       if (targetLanguage != null) {
@@ -229,7 +230,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
             return it.getSModel();
           }
         }).toListSequence();
-        result.put(targetLanguage, aspectList);
+        MapSequence.fromMap(result).put(targetLanguage, aspectList);
       }
       return result;
     }

@@ -1518,15 +1518,12 @@
             <link role="enumConstantDeclaration" targetNodeId="44.1230466710001" resolveInfo="NULLABLE" />
             <link role="enumClass" targetNodeId="44.1230466569958" resolveInfo="NullableVariableState" />
           </node>
-          <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230544655825">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230544654652">
-              <link role="variableDeclaration" targetNodeId="1230544609653" resolveInfo="map" />
+          <node role="actual" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1238582947928">
+            <node role="key" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1238582947929">
+              <link role="declaration" targetNodeId="1230544223917" resolveInfo="declaration" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230544656968">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1230544660659">
-                <link role="declaration" targetNodeId="1230544223917" resolveInfo="declaration" />
-              </node>
+            <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230544654652">
+              <link role="variableDeclaration" targetNodeId="1230544609653" resolveInfo="map" />
             </node>
           </node>
         </node>
@@ -1702,15 +1699,12 @@
             <link role="enumClass" targetNodeId="44.1230466569958" resolveInfo="NullableVariableState" />
             <link role="enumConstantDeclaration" targetNodeId="44.1230466710001" resolveInfo="NULLABLE" />
           </node>
-          <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230558243521">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230558243522">
-              <link role="variableDeclaration" targetNodeId="1230558243505" resolveInfo="map" />
+          <node role="actual" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1238582947909">
+            <node role="key" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1238582947910">
+              <link role="declaration" targetNodeId="1230558468329" resolveInfo="declaration" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230558243523">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1230558571413">
-                <link role="declaration" targetNodeId="1230558468329" resolveInfo="definition" />
-              </node>
+            <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230558243522">
+              <link role="variableDeclaration" targetNodeId="1230558243505" resolveInfo="map" />
             </node>
           </node>
         </node>

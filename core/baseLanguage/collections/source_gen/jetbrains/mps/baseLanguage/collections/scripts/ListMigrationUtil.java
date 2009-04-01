@@ -42,12 +42,20 @@ public class ListMigrationUtil {
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
 
+  public static boolean isApplicableForMap(SNode node, String name, List<ParameterType> params) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
+      return false;
+    }
+    return ListMigrationUtil.isApplicableMethod(node, name, params);
+  }
+
   private static boolean isApplicableMethod(SNode node, String name, List<ParameterType> params) {
     SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
     if (!(ObjectUtils.equals(SPropertyOperations.getString(declaration, "name"), name))) {
       return false;
     }
-    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet")).contains(SPropertyOperations.getString(SNodeOperations.getParent(declaration), "name")))) {
+    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap")).contains(SPropertyOperations.getString(SNodeOperations.getParent(declaration), "name")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {

@@ -141,12 +141,11 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234278902212">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234278902213">
           <property name="name" value="mmap" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234278902214">
-            <link role="classifier" targetNodeId="4.~Map" resolveInfo="Map" />
-            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1234278902215">
+          <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238588773190">
+            <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238588773191">
               <link role="concept" targetNodeId="2v.1109279763828" resolveInfo="TypeVariableDeclaration" />
             </node>
-            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1234278902216" />
+            <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238588773192" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234278902217">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234278902218">

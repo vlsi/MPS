@@ -32,7 +32,6 @@ public class CellReference {
       public void run() {
         result.value = "(node " + CellReference.this.myNode.getId() + ", id " + CellReference.this.getCellId() + ")";
       }
-
     });
     return result.value;
   }
@@ -55,7 +54,6 @@ public class CellReference {
           throw new RuntimeException("No cell " + CellReference.this);
         }
       }
-
     });
     editorComponent.changeSelection(cellWithId.value);
   }

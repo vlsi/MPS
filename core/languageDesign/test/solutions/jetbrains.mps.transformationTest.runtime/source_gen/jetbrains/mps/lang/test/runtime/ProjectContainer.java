@@ -25,12 +25,11 @@ public class ProjectContainer {
       SwingUtilities.invokeAndWait(new Runnable() {
 
         public void run() {
-          for(MPSProject project : Sequence.fromIterable(projects.values())) {
+          for(MPSProject project : Sequence.fromIterable(MapSequence.fromMap(projects).values())) {
             project.dispose();
           }
           MapSequence.fromMap(projects).clear();
         }
-
       });
     } catch (Exception e) {
       e.printStackTrace();
@@ -40,12 +39,12 @@ public class ProjectContainer {
   public MPSProject getProject(String name) {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     if (MapSequence.fromMap(this.myProjects).containsKey(name)) {
-      return this.myProjects.get(name);
+      return MapSequence.fromMap(this.myProjects).get(name);
     } else
     {
       TestMain.configureMPS();
       MPSProject p = TestMain.loadProject(new File(name));
-      this.myProjects.put(name, p);
+      MapSequence.fromMap(this.myProjects).put(name, p);
       return p;
     }
   }
