@@ -12,14 +12,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class VarVariableDeclaration extends Statement implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String INIT = "init";
 
   public VarVariableDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(VarVariableDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(VarVariableDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -44,14 +52,6 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(VarVariableDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(VarVariableDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(VarVariableDeclaration.NAME, value);
   }
 
   public Expression getInit() {

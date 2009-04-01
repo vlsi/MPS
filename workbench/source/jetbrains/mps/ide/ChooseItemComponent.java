@@ -278,7 +278,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
           } else if (c == '?') {
             b.append(".");
           } else if (c == '.') {
-            b.append("[^\\.]*\\.");
+            b.append("\\.");
           } else if (c == '@') {
             b.append("[^\\@\\.]*\\@");
           } else if (Character.isLetterOrDigit(c) || c == '_') {
@@ -300,8 +300,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
             b.append(".");
             state = 0;
           } else if (c == '.') {
-            b.append("\\E");
-            b.append("[^\\.]*\\.");
+            b.append("\\.");
             state = 0;
           } else if (c == '@') {
             b.append("\\E");
@@ -323,7 +322,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
             b.append(".");
             state = 0;
           } else if (c == '.') {
-            b.append("[^\\.]*\\.");
+            b.append("\\.");
             state = 0;
           } else if (c == '@') {
             b.append("[^\\@\\.]*\\@");

@@ -13912,18 +13912,14 @@
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1215091402836">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215091402837">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215091415444">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215092134095">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215092131038">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215091416730">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1215091415445" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1215091417905">
-                    <link role="link" targetNodeId="17.1215091156086" />
-                  </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238595290123">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215091416730">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1215091415445" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1215091417905">
+                  <link role="link" targetNodeId="17.1215091156086" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215092139682">
-                <link role="baseMethodDeclaration" targetNodeId="67.~List.clear():void" resolveInfo="clear" />
-              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" id="1238595291353" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215091405551">

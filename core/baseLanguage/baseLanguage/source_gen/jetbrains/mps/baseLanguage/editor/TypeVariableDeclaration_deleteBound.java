@@ -28,7 +28,7 @@ public class TypeVariableDeclaration_deleteBound {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.getTargets(node, "auxBounds", true).clear();
+      SLinkOperations.removeAllChildren(node, "auxBounds");
       SLinkOperations.setTarget(node, "bound", null, true);
     }
 

@@ -16,10 +16,10 @@ import jetbrains.mps.project.GlobalScope;
 public class Property extends BaseConcept implements ClassifierMember, INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Property";
   public static final String PROPERTY_NAME = "propertyName";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String TYPE = "type";
   public static final String PROPERTY_IMPLEMENTATION = "propertyImplementation";
   public static final String VISIBILITY = "visibility";
@@ -34,6 +34,14 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
 
   public void setPropertyName(String value) {
     this.setProperty(Property.PROPERTY_NAME, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Property.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Property.NAME, value);
   }
 
   public String getShortDescription() {
@@ -58,14 +66,6 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(Property.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Property.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Property.NAME, value);
   }
 
   public Type getType() {
