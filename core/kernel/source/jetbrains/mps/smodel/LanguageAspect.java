@@ -32,6 +32,7 @@ import jetbrains.mps.lang.behavior.structure.Behavior_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mpslite.behavior.Mpslite_Language;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -159,7 +160,13 @@ public enum LanguageAspect {
     public ModuleReference getMainLanguage() {
       return TextGen_Language.MODULE_REFERENCE;
     }
-  };
+  },
+
+  MPSLITE("mpslite") {
+    public ModuleReference getMainLanguage() {
+      return Mpslite_Language.MODULE_REFERENCE;
+    }
+  },;
 
   private String myName;
 
