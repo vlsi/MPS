@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -227,7 +226,6 @@ public class GenerationController {
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
     //++ generation
-    Statistics.setEnabled(Statistics.TPL, mySettings.isDumpStatistics());
     String wasLoggingThreshold = null;
     IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMesssages);
     try {
@@ -253,9 +251,6 @@ public class GenerationController {
 
         GenerationStatus status = generationSession.generateModel(inputModel);
         currentGenerationOK = currentGenerationOK && status.isOk();
-        if (mySettings.isDumpStatistics()) {
-          Statistics.dumpAll();
-        }
 
         info("handling output...");
         checkMonitorCanceled();

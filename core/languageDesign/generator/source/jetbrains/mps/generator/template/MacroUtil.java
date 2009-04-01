@@ -126,8 +126,6 @@ public class MacroUtil {
       generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
     }
 
     return false;

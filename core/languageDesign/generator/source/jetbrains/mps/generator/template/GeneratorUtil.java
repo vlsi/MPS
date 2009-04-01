@@ -120,8 +120,6 @@ public class GeneratorUtil {
       generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
     return false;
   }
@@ -149,8 +147,6 @@ public class GeneratorUtil {
       generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
     }
     // in this case 'true' is better default
     return true;
@@ -178,9 +174,7 @@ public class GeneratorUtil {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
-    }
+    } 
   }
 
   /**
@@ -206,8 +200,6 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
       return new LinkedList<SNode>();
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
     }
   }
 
@@ -227,8 +219,6 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
       return null;
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
     }
   }
 

@@ -101,7 +101,6 @@ public class GenerationSession implements IGenerationSession {
 
   public GenerationStatus generateModel(SModelDescriptor inputModel,
                                         AbstractGenerationStepController stepController) throws Exception {
-    Statistics.clearAll();
     if (!checkGenerationStep(stepController)) {
 //      throw new GenerationCanceledException();
     }
