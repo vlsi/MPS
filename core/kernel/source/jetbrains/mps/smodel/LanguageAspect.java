@@ -28,6 +28,7 @@ import jetbrains.mps.lang.structure.structure.Structure_Language;
 import jetbrains.mps.lang.test.structure.Test_Language;
 import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
+import jetbrains.mps.lang.behavior.structure.Behavior_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
@@ -79,7 +80,7 @@ public enum LanguageAspect {
 
   BEHAVIOR("behavior") {
     public ModuleReference getMainLanguage() {
-      return Constraints_Language.MODULE_REFERENCE;
+      return Behavior_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
