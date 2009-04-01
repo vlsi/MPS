@@ -133,7 +133,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -240,7 +239,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

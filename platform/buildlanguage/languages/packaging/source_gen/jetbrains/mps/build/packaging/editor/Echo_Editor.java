@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -50,7 +51,7 @@ public class Echo_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_3881_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3881_0 == null) {
-      this.myConfigurationReferencesEditorComponent3881_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent3881_0 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent3881_0.createEditorCell(context);
     setupBasic_Component_3881_0(editorCell, node, context);
@@ -59,7 +60,7 @@ public class Echo_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_3881_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3881_1 == null) {
-      this.myConfigurationReferencesEditorComponent3881_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent3881_1 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent3881_1.createEditorCell(context);
     setupBasic_Component_3881_1(editorCell, node, context);

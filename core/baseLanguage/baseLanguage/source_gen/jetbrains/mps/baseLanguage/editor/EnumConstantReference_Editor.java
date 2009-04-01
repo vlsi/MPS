@@ -261,7 +261,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     public EnumConstantReference_customReplace_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
     }
 

@@ -29,7 +29,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
 
   public NamespaceInternalActions_ActionGroup() {
-    super("", ID);
+    super("NamespaceInternalActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

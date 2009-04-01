@@ -14,6 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -69,9 +71,9 @@ public class MakeProject_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Set<IModule> modules = new LinkedHashSet<IModule>();
-      modules.addAll(MakeProject_Action.this.project.getProjectSolutions());
-      modules.addAll(MakeProject_Action.this.project.getProjectLanguages());
-      modules.addAll(MakeProject_Action.this.project.getProjectDevKits());
+      SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectSolutions()));
+      SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectLanguages()));
+      SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectDevKits()));
       ProgressManager.getInstance().run(new Task.Modal(MakeProject_Action.this.ideaProject, "Making", true) {
 
         public void run(@NotNull() final ProgressIndicator indicator) {

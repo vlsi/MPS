@@ -12,21 +12,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
 
   public LocalVariableDeclaration(SNode node) {
     super(node);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(LocalVariableDeclaration.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(LocalVariableDeclaration.RESOLVE_INFO, value);
   }
 
   public String getShortDescription() {
@@ -51,6 +43,14 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
 
   public void setVirtualPackage(String value) {
     this.setProperty(LocalVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(LocalVariableDeclaration.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(LocalVariableDeclaration.RESOLVE_INFO, value);
   }
 
 

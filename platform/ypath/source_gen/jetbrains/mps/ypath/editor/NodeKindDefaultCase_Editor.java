@@ -163,7 +163,6 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -180,7 +179,6 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -194,7 +192,6 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -218,7 +215,6 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -231,7 +227,6 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }

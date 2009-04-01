@@ -11,7 +11,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_projectNew = ID + "projectNew";
 
   public ProjectActions_ActionGroup() {
-    super("", ID);
+    super("ProjectActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

@@ -12,7 +12,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewCustomPartActions";
 
   public LanguageNewCustomPartActions_ActionGroup() {
-    super("", ID);
+    super("LanguageNewCustomPartActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

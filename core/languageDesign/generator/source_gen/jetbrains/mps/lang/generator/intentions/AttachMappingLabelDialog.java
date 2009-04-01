@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.generator.intentions.MappingLabelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import java.awt.Insets;
@@ -56,7 +57,6 @@ public class AttachMappingLabelDialog extends BaseDialog {
       public void actionPerformed(ActionEvent p0) {
         AttachMappingLabelDialog.this.myResultLabelName = (String)nameCombo.getSelectedItem();
       }
-
     });
     if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
       nameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
@@ -101,11 +101,10 @@ public class AttachMappingLabelDialog extends BaseDialog {
           SLinkOperations.setTarget(templateFragment, "labelDeclaration", mappingLabel, false);
           return;
         }
-        // create new MAP_SRC macro
+        //         create new MAP_SRC macro
         SNode newMacro = SLinkOperations.addNewChild(AttachMappingLabelDialog.this.myTemplateNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro");
         SLinkOperations.setTarget(newMacro, "mappingLabel", mappingLabel, false);
       }
-
     });
   }
 

@@ -173,7 +173,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     public BreakStatement_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
         public Iterable<String> translate(final SNode it) {

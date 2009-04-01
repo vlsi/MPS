@@ -492,7 +492,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -505,7 +504,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -529,7 +527,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -542,7 +539,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -555,7 +551,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -568,7 +563,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -585,7 +579,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -602,7 +595,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -619,7 +611,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -635,7 +626,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -650,7 +640,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
           this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -663,7 +652,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -676,7 +664,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -693,7 +680,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -710,7 +696,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -724,7 +709,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -737,7 +721,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -750,7 +733,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -766,7 +748,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -898,7 +879,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -1020,7 +1000,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
           {
             this.set(StyleAttributes.EDITABLE, true);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

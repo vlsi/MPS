@@ -17,8 +17,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.ypath.editor.keymap_TreeNodeKindProperty;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.ypath.editor.TreeNodeKindProperty_default_DELETE;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
@@ -162,7 +164,6 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -184,7 +185,6 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -197,7 +197,6 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -227,7 +226,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     public TreeNodeKindProperty_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return ListSequence.<Boolean>fromArray(true, false);
     }
 

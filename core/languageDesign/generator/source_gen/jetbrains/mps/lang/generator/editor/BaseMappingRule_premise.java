@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class BaseMappingRule_premise extends AbstractCellProvider {
@@ -200,7 +201,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -213,7 +213,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -227,7 +226,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -246,7 +244,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -260,7 +257,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -277,7 +273,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -291,7 +286,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -369,7 +363,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

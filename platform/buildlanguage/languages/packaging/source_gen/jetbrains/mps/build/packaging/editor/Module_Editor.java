@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -53,7 +54,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6816_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_0 == null) {
-      this.myConfigurationReferencesEditorComponent6816_0 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6816_0 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_0.createEditorCell(context);
     setupBasic_Component_6816_0(editorCell, node, context);
@@ -62,7 +63,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_6816_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_1 == null) {
-      this.myConfigurationReferencesEditorComponent6816_1 = new jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent(node);
+      this.myConfigurationReferencesEditorComponent6816_1 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_1.createEditorCell(context);
     setupBasic_Component_6816_1(editorCell, node, context);
@@ -160,7 +161,7 @@ public class Module_Editor extends DefaultNodeEditor {
     public Module_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return Module_Behavior.getAllAvailableModules_1222444746697();
     }
 

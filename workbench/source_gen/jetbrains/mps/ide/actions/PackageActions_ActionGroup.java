@@ -11,7 +11,7 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.PackageActions";
 
   public PackageActions_ActionGroup() {
-    super("", ID);
+    super("PackageActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

@@ -33,7 +33,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     public IterateOperation_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<Pair> res = ListSequence.<Pair>fromArray();
       ListSequence.fromList(res).addElement(new Pair(null, null));
       TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));

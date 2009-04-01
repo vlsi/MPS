@@ -137,7 +137,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -150,7 +149,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -163,7 +161,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -176,7 +173,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -193,7 +189,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

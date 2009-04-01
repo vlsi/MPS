@@ -164,7 +164,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -188,7 +187,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -203,7 +201,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

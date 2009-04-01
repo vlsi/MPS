@@ -109,7 +109,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu0(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu1()}));
@@ -136,7 +135,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu2(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu3()}));
@@ -276,7 +274,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -289,7 +286,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -301,7 +297,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -326,7 +321,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -343,7 +337,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

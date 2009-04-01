@@ -17,7 +17,6 @@ public class Styles_StyleSheet {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
-
     };
   }
 

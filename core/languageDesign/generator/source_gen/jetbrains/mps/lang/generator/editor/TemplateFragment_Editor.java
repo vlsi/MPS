@@ -17,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.generator.editor.MacroSymbol_Actions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -261,7 +262,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -280,7 +280,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -294,7 +293,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.pink);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -309,7 +307,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -325,7 +322,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -338,7 +334,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -351,7 +346,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -364,7 +358,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -377,7 +370,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -390,7 +382,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -406,7 +397,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -423,7 +413,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -523,7 +512,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -584,7 +572,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

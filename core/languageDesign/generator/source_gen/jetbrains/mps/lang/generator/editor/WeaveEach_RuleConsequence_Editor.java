@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 
 public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
 
@@ -171,7 +172,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -191,7 +191,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -204,7 +203,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -221,7 +219,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -235,7 +232,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -248,7 +244,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

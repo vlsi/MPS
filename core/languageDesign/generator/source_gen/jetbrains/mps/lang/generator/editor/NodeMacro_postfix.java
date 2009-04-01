@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -89,7 +90,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, this.getText());
       }
-
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_9824_0(editorCell, node, context);
@@ -142,7 +142,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -170,7 +169,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -246,7 +244,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

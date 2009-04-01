@@ -34,6 +34,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
@@ -177,7 +178,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return new HashMap<IModule, List<SModel>>();
+    return MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {

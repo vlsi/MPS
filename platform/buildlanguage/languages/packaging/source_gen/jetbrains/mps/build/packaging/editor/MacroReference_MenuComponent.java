@@ -26,7 +26,7 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
     public MacroReference_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), SConceptPropertyOperations.getBoolean(SNodeOperations.getParent(node), "canStartFromBasedir"));
       ListSequence.fromList(allMacroNames).addElement("no macro");
       return allMacroNames;

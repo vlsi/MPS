@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.generator.editor.BaseMappingRule_premise;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -18,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -314,7 +316,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -329,7 +330,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -342,7 +342,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -359,7 +358,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -375,7 +373,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -390,7 +387,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -407,7 +403,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -420,7 +415,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -442,7 +436,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -455,7 +448,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -475,7 +467,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -579,7 +570,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -640,7 +630,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

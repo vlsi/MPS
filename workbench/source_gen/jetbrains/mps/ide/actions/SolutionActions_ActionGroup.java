@@ -12,7 +12,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_refactoring = ID + "refactoring";
 
   public SolutionActions_ActionGroup() {
-    super("", ID);
+    super("SolutionActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

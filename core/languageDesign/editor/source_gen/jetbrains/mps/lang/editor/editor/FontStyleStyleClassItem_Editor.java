@@ -186,7 +186,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public FontStyleStyleClassItem_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<_FontStyle_Enum> types = ListSequence.<_FontStyle_Enum>fromArray();
       for(_FontStyle_Enum color : _FontStyle_Enum.values()) {
         ListSequence.fromList(types).addElement(color);

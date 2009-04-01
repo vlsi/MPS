@@ -167,7 +167,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -191,7 +190,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

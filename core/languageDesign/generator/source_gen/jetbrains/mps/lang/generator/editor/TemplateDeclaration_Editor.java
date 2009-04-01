@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -302,7 +303,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -320,7 +320,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -336,7 +335,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -349,7 +347,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -362,7 +359,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -375,7 +371,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -388,7 +383,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -401,7 +395,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -414,7 +407,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -427,7 +419,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -440,7 +431,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -453,7 +443,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -466,7 +455,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -479,7 +467,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -493,7 +480,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -506,7 +492,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -519,7 +504,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -626,7 +610,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

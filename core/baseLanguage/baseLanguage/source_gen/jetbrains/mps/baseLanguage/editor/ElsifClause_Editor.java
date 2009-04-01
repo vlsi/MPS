@@ -253,7 +253,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     public ElsifClause_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       //       todo: this is quite a hackish stuff but we need it
       //       todo: but we need it since we can't enable/disable
       //       todo: menu items by condition

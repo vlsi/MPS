@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
@@ -53,7 +54,6 @@ public class NewDevKitDialogContentPane extends JPanel {
 
     public void initialize() {
     }
-
   };
 
   public NewDevKitDialogContentPane() {
@@ -227,10 +227,8 @@ public class NewDevKitDialogContentPane extends JPanel {
           public void run() {
             localResult[0] = myThis.createNewDevKit(new File(devkitPath));
           }
-
         });
       }
-
     });
     myThis.setResult(localResult[0]);
   }
@@ -265,7 +263,6 @@ public class NewDevKitDialogContentPane extends JPanel {
       public void run() {
         ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(devkitPath), false);
       }
-
     }, ModalityState.NON_MODAL);
     return devkit;
   }

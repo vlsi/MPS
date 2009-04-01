@@ -24,7 +24,7 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     public ConceptMethodDeclaration_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false), scope);
     }
 

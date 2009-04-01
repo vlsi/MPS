@@ -93,7 +93,6 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -107,7 +106,6 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
           this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

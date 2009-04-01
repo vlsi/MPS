@@ -10,7 +10,7 @@ public class PropertyNodeActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.PropertyNodeActions";
 
   public PropertyNodeActions_ActionGroup() {
-    super("", ID);
+    super("PropertyNodeActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

@@ -60,7 +60,6 @@ public class NewTemplateInRootMappingRule_Intention extends BaseIntention {
         }
         return true;
       }
-
     }, new Setter <SNode>() {
 
       public void set(SNode root) {
@@ -71,7 +70,6 @@ public class NewTemplateInRootMappingRule_Intention extends BaseIntention {
         SLinkOperations.setTarget(rule, "template", root, false);
         SLinkOperations.setTarget(SLinkOperations.getTarget(root, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", SLinkOperations.getTarget(rule, "applicableConcept", false), false);
       }
-
     });
   }
 

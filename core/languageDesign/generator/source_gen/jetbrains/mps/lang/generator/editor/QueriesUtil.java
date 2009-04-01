@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
@@ -29,8 +28,8 @@ public class QueriesUtil {
     if (!(isAnyMacroApplicable(node))) {
       return false;
     }
-    // -----
-    // it can be 'ref.cell->{name}'. in this case both are 'applicable'. but link has priority
+    //     -----
+    //     it can be 'ref.cell->{name}'. in this case both are 'applicable'. but link has priority
     String linkRole = QueriesUtil.getEditedLinkRole(cell);
     if (linkRole != null) {
       return false;
@@ -55,24 +54,24 @@ public class QueriesUtil {
   }
 
   private static boolean isAnyMacroApplicable(SNode node) {
-    // not inside 'root template annotation'
+    //     not inside 'root template annotation'
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", true, false) != null) {
       return false;
     }
-    //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself
+    //      not inside any kind of macro (code shown in inspector) but OK on a macro node itself
     SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro","jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false);
     if (ancestorMacro != null) {
-      //  exception: can be inside 'alternativeConsequence' in IF-macro
+      //        exception: can be inside 'alternativeConsequence' in IF-macro
       if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
         return true;
       }
       return false;
     }
-    // inside 'root template'
+    //     inside 'root template'
     if (SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null) {
       return true;
     }
-    //  inside template declaration 
+    //      inside template declaration 
     if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false) != null) {
       return true;
     }
@@ -80,15 +79,14 @@ public class QueriesUtil {
   }
 
   public static SNode addNodeMacro(SNode node) {
-    // do not hang $$ on other attributes
+    //     do not hang $$ on other attributes
     SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
-
     }).first();
-    // surround with <TF> if necessary
+    //     surround with <TF> if necessary
     if (SNodeOperations.getAncestor(applyToNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(applyToNode))) {
         QueriesUtil.createTemplateFragment(applyToNode);
@@ -107,7 +105,7 @@ public class QueriesUtil {
   }
 
   public static SNode addPropertyMacro(SNode node, EditorCell cell) {
-    // surround with <TF> if necessary
+    //     surround with <TF> if necessary
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(node))) {
         QueriesUtil.createTemplateFragment(node);
@@ -121,7 +119,7 @@ public class QueriesUtil {
   public static SNode addReferenceMacro(SNode node, EditorCell cell) {
     String linkRole = QueriesUtil.getEditedLinkRole(cell);
     SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
-    // surround with <TF> if necessary
+    //     surround with <TF> if necessary
     if (SNodeOperations.getAncestor(referentNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(referentNode))) {
         QueriesUtil.createTemplateFragment(referentNode);
@@ -137,20 +135,18 @@ public class QueriesUtil {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
       }
-
     });
     return Sequence.fromIterable(ancestorTFs).count() > 0;
   }
 
   public static void createTemplateFragment(final SNode node) {
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
-    // remove subordinate template fragments
+    //     remove subordinate template fragments
     Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
-
     });
     for(SNode child : Sequence.fromIterable(children)) {
       ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false)).visitAll(new IVisitor <SNode>() {
@@ -158,16 +154,14 @@ public class QueriesUtil {
         public void visit(SNode it) {
           SNodeOperations.deleteNode(it);
         }
-
       });
     }
-    // re append all macros to make them go 'after' the <TF>
+    //     re append all macros to make them go 'after' the <TF>
     ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).visitAll(new IVisitor <SNode>() {
 
       public void visit(SNode it) {
         SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), it);
       }
-
     });
   }
 
@@ -183,12 +177,11 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
+    SNode link = BaseAdapter.fromAdapter(cell.getLinkDeclaration());
     SNode referentNode = cell.getRefNode();
-    if (referentNode == null || linkDeclaration == null) {
+    if (referentNode == null || link == null) {
       return null;
     }
-    SNode link = (SNode)BaseAdapter.fromAdapter(linkDeclaration);
     return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(link);
   }
 

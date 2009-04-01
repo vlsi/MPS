@@ -102,7 +102,6 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
-
       };
       inlineStyle.apply(editorCell);
     }

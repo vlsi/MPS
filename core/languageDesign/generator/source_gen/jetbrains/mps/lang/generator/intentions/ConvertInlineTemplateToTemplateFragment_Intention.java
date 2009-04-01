@@ -48,7 +48,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     if (SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule")) {
       SNode templateRefNode = SLinkOperations.setNewChild(ruleNode, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
-      // context function creation
+      //       context function creation
       SNode contextFunction = SLinkOperations.setNewChild(ruleNode, "contextNodeQuery", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery");
       SLinkOperations.setNewChild(contextFunction, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       SNode exprStmt = SLinkOperations.addNewChild(SLinkOperations.getTarget(contextFunction, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");

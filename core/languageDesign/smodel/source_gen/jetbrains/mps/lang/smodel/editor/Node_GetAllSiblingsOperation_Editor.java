@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp;
 
 public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
 
@@ -18,7 +19,7 @@ public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createComponent_1730_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp1730_0 == null) {
-      this.myReplaceableAliasAndParms_Comp1730_0 = new jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp(node);
+      this.myReplaceableAliasAndParms_Comp1730_0 = new ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp1730_0.createEditorCell(context);
     setupBasic_Component_1730_0(editorCell, node, context);

@@ -15,7 +15,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public LanguageActions_ActionGroup() {
-    super("", ID);
+    super("LanguageActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

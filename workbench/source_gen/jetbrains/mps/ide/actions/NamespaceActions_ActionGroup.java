@@ -11,7 +11,7 @@ public class NamespaceActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_namespaceInternal = ID + "namespaceInternal";
 
   public NamespaceActions_ActionGroup() {
-    super("", ID);
+    super("NamespaceActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

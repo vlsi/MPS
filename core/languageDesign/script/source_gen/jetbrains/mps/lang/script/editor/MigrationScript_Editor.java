@@ -301,7 +301,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -322,7 +321,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -335,7 +333,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -348,7 +345,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -361,7 +357,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -378,7 +373,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -392,7 +386,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -406,7 +399,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -420,7 +412,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -434,7 +425,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -448,7 +438,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -462,7 +451,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -562,7 +550,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "category");
         }
-
       }).distinct().toListSequence();
     }
 
@@ -578,7 +565,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "migrationFromBuild");
         }
-
       }).toListSequence();
       ListSequence.fromList(list).addElement(VersionUtil.getVersionString());
       return ListSequence.fromList(list).distinct().toListSequence();

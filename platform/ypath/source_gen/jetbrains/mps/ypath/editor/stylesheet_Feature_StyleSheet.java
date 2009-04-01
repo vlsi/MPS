@@ -16,7 +16,6 @@ public class stylesheet_Feature_StyleSheet {
         this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
-
     };
   }
 

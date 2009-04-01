@@ -167,7 +167,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -192,7 +191,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -205,7 +203,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -293,7 +290,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

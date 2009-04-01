@@ -158,7 +158,6 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

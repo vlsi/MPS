@@ -41,7 +41,7 @@ public class NewTemplateInSwitchDefault_Intention extends BaseIntention {
     }
     SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
-    // make reference
+    //     make reference
     SNode tr = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
     SLinkOperations.setTarget(tr, "template", t, false);
     SLinkOperations.setTarget(node, "defaultConsequence", tr, true);

@@ -11,7 +11,7 @@ public class ModuleActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_abstractFileActions = ID + "abstractFileActions";
 
   public ModuleActions_ActionGroup() {
-    super("", ID);
+    super("ModuleActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

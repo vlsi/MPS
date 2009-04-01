@@ -202,7 +202,6 @@ public class Event_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -220,7 +219,6 @@ public class Event_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -238,7 +236,6 @@ public class Event_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -317,7 +314,6 @@ public class Event_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -390,7 +386,6 @@ public class Event_Editor extends DefaultNodeEditor {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

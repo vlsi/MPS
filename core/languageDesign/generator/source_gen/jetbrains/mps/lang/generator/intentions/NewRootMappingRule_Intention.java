@@ -32,8 +32,8 @@ public class NewRootMappingRule_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    //  Creates new 'root mapping rule' for a root tamplate
-    //  (if such rule is not exist yet)
+    //      Creates new 'root mapping rule' for a root tamplate
+    //      (if such rule is not exist yet)
     return "Create Root Mapping Rule";
   }
 
@@ -57,12 +57,10 @@ public class NewRootMappingRule_Intention extends BaseIntention {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "template", false) == node;
           }
-
         }) != null;
       }
-
     });
-    //  not used in rule yet?
+    //      not used in rule yet?
     return usage == null;
   }
 
@@ -74,21 +72,20 @@ public class NewRootMappingRule_Intention extends BaseIntention {
         public boolean accept(SNode it) {
           return Comparing.equal(SPropertyOperations.getString(it, "virtualPackage"), SPropertyOperations.getString(node, "virtualPackage"));
         }
-
       });
       if (Sequence.fromIterable(sameVPackConfigs).isNotEmpty()) {
         configs = Sequence.fromIterable(sameVPackConfigs).toListSequence();
       }
     }
     if (ListSequence.fromList(configs).count() > 1) {
-      // TODO: let user to choose mapping config?
+      //       TODO: let user to choose mapping config?
     }
     SNode config = ListSequence.fromList(configs).first();
-    //  add new rule
+    //      add new rule
     SNode rule = SLinkOperations.addNewChild(config, "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
     SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
-    //  open in editor
+    //      open in editor
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
     opener.openNode(rule);
   }

@@ -13192,8 +13192,8 @@
               <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144460409">
-            <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
+          <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238598770133">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1238599529615" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184144460410">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1184144460411">
@@ -13748,8 +13748,8 @@
               <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144928957">
-            <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
+          <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238598761180">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1238599789947" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184144928958">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1184144928959">
@@ -14657,8 +14657,8 @@
               <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184145254397">
-            <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
+          <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238598746684">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1238599780383" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184145254398">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1184145254399">

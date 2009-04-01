@@ -14,7 +14,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public EditorPopup_ActionGroup() {
-    super("", ID);
+    super("EditorPopup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

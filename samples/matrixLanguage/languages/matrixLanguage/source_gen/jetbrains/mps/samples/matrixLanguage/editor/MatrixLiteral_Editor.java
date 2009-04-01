@@ -117,7 +117,6 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.DRAW_BRACKETS, true);
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

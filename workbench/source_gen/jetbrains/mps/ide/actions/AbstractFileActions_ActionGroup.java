@@ -14,7 +14,7 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public AbstractFileActions_ActionGroup() {
-    super("", ID);
+    super("AbstractFileActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

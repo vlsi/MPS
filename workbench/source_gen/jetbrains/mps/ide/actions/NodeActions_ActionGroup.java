@@ -12,7 +12,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_structure = ID + "structure";
 
   public NodeActions_ActionGroup() {
-    super("", ID);
+    super("NodeActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

@@ -37,7 +37,6 @@ public class Date_Future_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

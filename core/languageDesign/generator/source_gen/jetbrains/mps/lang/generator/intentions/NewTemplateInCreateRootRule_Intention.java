@@ -59,7 +59,6 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
         }
         return true;
       }
-
     }, new Setter <SNode>() {
 
       public void set(SNode root) {
@@ -69,7 +68,6 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
         SPropertyOperations.set(root, "name", name.value);
         SLinkOperations.setTarget(rule, "templateNode", root, false);
       }
-
     });
   }
 

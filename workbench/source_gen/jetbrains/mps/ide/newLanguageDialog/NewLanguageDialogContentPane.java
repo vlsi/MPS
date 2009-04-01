@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.newLanguageDialog.NewLanguageDialog;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
@@ -58,7 +59,6 @@ public class NewLanguageDialogContentPane extends JPanel {
 
     public void initialize() {
     }
-
   };
 
   public NewLanguageDialogContentPane() {
@@ -243,10 +243,8 @@ public class NewLanguageDialogContentPane extends JPanel {
           public void run() {
             myThis.createNewLanguage();
           }
-
         });
       }
-
     });
   }
 
@@ -285,13 +283,12 @@ public class NewLanguageDialogContentPane extends JPanel {
     language.save();
     myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
-    // add to vcs
+    //     add to vcs
     ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {
         ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()), true);
       }
-
     }, ModalityState.NON_MODAL);
   }
 

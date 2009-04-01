@@ -22,10 +22,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer, TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String IS_FINAL = "isFinal";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String RETURN_TYPE = "returnType";
@@ -36,14 +36,6 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public BaseMethodDeclaration(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(BaseMethodDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(BaseMethodDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -68,6 +60,14 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseMethodDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(BaseMethodDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(BaseMethodDeclaration.NAME, value);
   }
 
   public boolean getIsFinal() {

@@ -13,7 +13,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public ModelActions_ActionGroup() {
-    super("", ID);
+    super("ModelActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

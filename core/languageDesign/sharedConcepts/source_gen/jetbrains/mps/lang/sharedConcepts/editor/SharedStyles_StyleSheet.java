@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SharedStyles_StyleSheet {
 
@@ -13,8 +14,8 @@ public class SharedStyles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
-
     };
   }
 
@@ -23,7 +24,6 @@ public class SharedStyles_StyleSheet {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-
     };
   }
 
@@ -31,8 +31,8 @@ public class SharedStyles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
-
     };
   }
 

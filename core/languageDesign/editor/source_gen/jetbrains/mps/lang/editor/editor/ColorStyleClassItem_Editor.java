@@ -207,7 +207,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
       for(_Colors_Enum color : _Colors_Enum.values()) {
         ListSequence.fromList(types).addElement(color);
@@ -234,7 +234,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu1() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
       for(_Colors_Enum color : _Colors_Enum.values()) {
         ListSequence.fromList(types).addElement(color);

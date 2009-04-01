@@ -16,8 +16,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.samples.formulaLanguage.editor.Operation_leftOperand_Actions;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.samples.formulaLanguage.editor.Operation_symbol_Actions;
+import jetbrains.mps.samples.formulaLanguage.editor.Operation_rightOperand_Actions;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class PlusOperation_Editor extends DefaultNodeEditor {
@@ -121,7 +124,6 @@ public class PlusOperation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }

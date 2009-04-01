@@ -10,7 +10,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
 
   public DevkitActions_ActionGroup() {
-    super("", ID);
+    super("DevkitActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

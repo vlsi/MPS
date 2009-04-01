@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.generator.editor.BaseMappingRule_premise;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -256,7 +257,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -271,7 +271,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -284,7 +283,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -301,7 +299,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -317,7 +314,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -330,7 +326,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -347,7 +342,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -360,7 +354,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -380,7 +373,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
         }
-
       };
       inlineStyle.apply(editorCell);
     }
@@ -475,7 +467,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }
@@ -536,7 +527,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
-
         };
         inlineStyle.apply(editorCell);
       }

@@ -28,7 +28,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     public IFeature_generic_cellMenu0() {
     }
 
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<Pair> res = ListSequence.<Pair>fromArray();
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
@@ -40,7 +40,6 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
             !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"))
           ));
         }
-
       })) {
         ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
         ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));

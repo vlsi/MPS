@@ -19,6 +19,7 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
@@ -93,7 +94,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return new HashMap<IModule, List<SModel>>();
+    return MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {

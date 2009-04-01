@@ -11,7 +11,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
 
   public GeneratorActions_ActionGroup() {
-    super("", ID);
+    super("GeneratorActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
