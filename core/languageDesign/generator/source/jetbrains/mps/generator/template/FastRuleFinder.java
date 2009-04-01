@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.GenerationFailureException;
@@ -112,12 +113,12 @@ public class FastRuleFinder {
 
   private static class BlockedReductionsData {
     public static final Object KEY = new Object();
-    private Map<String, Object> myInputReductionsData = new HashMap<String, Object>();
-    private Map<String, Object> myBlockedReductionData = new HashMap<String, Object>();
-    private Set<String> myBlockedInput = new HashSet<String>();
+    private Map<SNodeId, Object> myInputReductionsData = new HashMap<SNodeId, Object>();
+    private Map<SNodeId, Object> myBlockedReductionData = new HashMap<SNodeId, Object>();
+    private Set<SNodeId> myBlockedInput = new HashSet<SNodeId>();
 
     public void registerInputReduction(SNode inputNode, Reduction_MappingRule rule) {
-      String nodeId = inputNode.getSNodeId().toString();
+      SNodeId nodeId = inputNode.getSNodeId();
       Object o = myInputReductionsData.get(nodeId);
       if (o == rule) return;
 
@@ -134,7 +135,7 @@ public class FastRuleFinder {
     }
 
     public boolean isReductionBlocked(SNode node, Reduction_MappingRule rule) {
-      String nodeId = node.getSNodeId().toString();
+      SNodeId nodeId = node.getSNodeId();
       boolean b = isReductionBlocked(nodeId, rule, myBlockedReductionData);
       if (!b) {
         if (myBlockedInput.contains(nodeId)) {
@@ -144,7 +145,7 @@ public class FastRuleFinder {
       return b;
     }
 
-    private boolean isReductionBlocked(String nodeId, Reduction_MappingRule rule, Map<String, Object> reductionBlockingData) {
+    private boolean isReductionBlocked(SNodeId nodeId, Reduction_MappingRule rule, Map<SNodeId, Object> reductionBlockingData) {
       Object o = reductionBlockingData.get(nodeId);
       if (o == null) return false;
       if (o == rule) return true;
@@ -155,8 +156,8 @@ public class FastRuleFinder {
     }
 
     public void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
-      String inputNodeId = inputNode.getSNodeId().toString();
-      String outputNodeId = outputNode.getSNodeId().toString();
+      SNodeId inputNodeId = inputNode.getSNodeId();
+      SNodeId outputNodeId = outputNode.getSNodeId();
       Object o = myInputReductionsData.get(inputNodeId);
       if (o == null) return;
       myBlockedReductionData.put(outputNodeId, o);
@@ -166,11 +167,11 @@ public class FastRuleFinder {
      * @return true if the input wasn't already blocked
      */
     public boolean startReductionBlockingForInput(SNode inputNode) {
-      return myBlockedInput.add(inputNode.getSNodeId().toString());
+      return myBlockedInput.add(inputNode.getSNodeId());
     }
 
     public void stopReductionBlockingForInput(SNode inputNode) {
-      String id = inputNode.getSNodeId().toString();
+      SNodeId id = inputNode.getSNodeId();
       assert myBlockedInput.contains(id) : "input wasn't blocked";
       myBlockedInput.remove(id);
     }
