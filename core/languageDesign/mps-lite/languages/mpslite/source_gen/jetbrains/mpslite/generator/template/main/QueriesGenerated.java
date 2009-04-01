@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mpslite.behavior.LineList_Behavior;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
@@ -43,6 +44,9 @@ public class QueriesGenerated {
     }
     //     setting roots and deleting input roots
     structureModel.setLoading(true);
+    for(SNode root : new ArrayList<SNode>(SModelOperations.getRoots(structureModel, null))) {
+      structureModel.removeRoot(root);
+    }
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode concept = conceptsToTargets.get(conceptDeclaration);
       SModelOperations.addRootNode(structureModel, concept);

@@ -10084,5 +10084,29 @@
       <link role="concept" targetNodeId="1.1228341669568" resolveInfo="Node_DetachOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1238600305269">
+    <property name="name" value="typeof_Node_DeleteOperation" />
+    <property name="package" value="operation.node" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238600305270">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1238600319726">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238600325833">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238600325834">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238600327072" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238600319730">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238600313024">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238600332511">
+              <link role="applicableNode" targetNodeId="1238600305271" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1238600305271">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.1140133623887" resolveInfo="Node_DeleteOperation" />
+    </node>
+  </node>
 </model>
 
