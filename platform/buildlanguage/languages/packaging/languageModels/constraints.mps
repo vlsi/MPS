@@ -178,6 +178,24 @@
       <link role="applicableProperty" targetNodeId="5.1169194664001" resolveInfo="name" />
       <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1213104847637">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847638">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238602915154">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238602915155">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238602935758">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238602937929">
+                  <property name="value" value="" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238602930717">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238602932447" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238602928357">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1238602927773" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238602929689">
+                  <link role="property" targetNodeId="15.1222447189012" resolveInfo="id" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222448597594">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222448597595">
               <property name="name" value="module" />

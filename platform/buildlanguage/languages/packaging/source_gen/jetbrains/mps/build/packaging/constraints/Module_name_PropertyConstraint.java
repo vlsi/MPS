@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 
 public class Module_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
@@ -27,6 +27,9 @@ public class Module_name_PropertyConstraint implements IModelConstraints, INodeP
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
+    if (SPropertyOperations.getString(node, "id") == null) {
+      return "";
+    }
     IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(node, "id")));
     if (module == null) {
       return null;
