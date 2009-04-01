@@ -82,7 +82,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     List<SNode> list = cellNode.getDescendants();
     list.add(0, cellNode);
     for (SNode node : list) {
-      for (SReference ref : node.getReferences()) {
+      for (SReference ref : node.getReferencesArray()) {
         if (ref.getTargetNode() == null) {
           result.add(ref);
         }

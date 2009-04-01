@@ -840,9 +840,6 @@ public final class SNode {
    * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
    */
   public SNode[] getChildrenArray() {
-    if (myChildren == null) {
-      return SNode.EMPTY_ARRAY;
-    }
     SNode[] nodes = new SNode[myChildren.length];
     System.arraycopy(myChildren, 0, nodes, 0, myChildren.length);
     return nodes;
@@ -1068,6 +1065,12 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return new ArrayList<SReference>(myReferencesWrapper);
+  }
+
+  public SReference[] getReferencesArray() {
+    SReference[] references = new SReference[myReferences.length];
+    System.arraycopy(myReferences, 0, references, 0, myReferences.length);
+    return references;
   }
 
   public SReference setReferent(String role, SNode newReferent) {

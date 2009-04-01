@@ -48,7 +48,7 @@ public class CloneUtil {
     if (originalInput) {
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
     }
-    for (SReference reference : inputNode.getReferences()) {
+    for (SReference reference : inputNode.getReferencesArray()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (targetModelReference == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);

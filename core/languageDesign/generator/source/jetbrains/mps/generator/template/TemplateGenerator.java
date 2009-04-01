@@ -152,8 +152,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void invalidateReferencesInCopiedNode(SNode node) {
-    List<SReference> list = node.getReferences();
-    for (SReference reference : list) {
+    for (SReference reference : node.getReferencesArray()) {
       invalidateReferenceInCopiedNode(reference);
     }
     for (SNode childNode : node.getChildren()) {
@@ -200,8 +199,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
-    List<SReference> references = node.getReferences();
-    for (SReference reference : references) {
+    for (SReference reference : node.getReferencesArray()) {
       checkMonitorCanceled();
       if (reference instanceof PostponedReference) {
         ((PostponedReference) reference).validateAndReplace();

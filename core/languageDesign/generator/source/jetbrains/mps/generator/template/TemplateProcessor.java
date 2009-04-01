@@ -154,7 +154,7 @@ public class TemplateProcessor {
     outputNode.putProperties(templateNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferences()) {
+    for (SReference reference : templateNode.getReferencesArray()) {
       if (templateNode.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, reference.getRole()) != null) {
         continue;
       }
@@ -494,7 +494,7 @@ public class TemplateProcessor {
     }
 
     SModel inputModel = myGenerator.getInputModel();
-    for (SReference inputReference : inputNode.getReferences()) {
+    for (SReference inputReference : inputNode.getReferencesArray()) {
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
         myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' referent '" + inputReference.getRole() + "' is null in template model");

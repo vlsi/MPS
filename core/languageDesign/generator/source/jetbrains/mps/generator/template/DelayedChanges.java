@@ -103,7 +103,7 @@ public class DelayedChanges {
     }
 
     private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferences()) {
+      for (SReference reference : node.getReferencesArray()) {
         validateReference(reference);
       }
       for (SNode child : node.getChildren()) {
@@ -157,7 +157,7 @@ public class DelayedChanges {
     }
 
     private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferences()) {
+      for (SReference reference : node.getReferencesArray()) {
         validateReference(reference);
       }
       for (SNode child : node.getChildren()) {
