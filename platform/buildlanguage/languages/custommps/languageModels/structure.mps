@@ -69,7 +69,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233679274643">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="libraryName" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2v.1205339194346" resolveInfo="IStringExpression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233679617947">

@@ -24,22 +24,6 @@
         <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1237299829998" />
       </node>
     </node>
-    <node role="variable" type="jetbrains.mps.build.packaging.structure.Variable" id="1237299817372">
-      <property name="antName" value="build.number" />
-      <property name="name" value="build" />
-    </node>
-    <node role="variable" type="jetbrains.mps.build.packaging.structure.Variable" id="1237299817373">
-      <property name="antName" value="build.vcs.number" />
-      <property name="name" value="revision" />
-    </node>
-    <node role="variable" type="jetbrains.mps.build.packaging.structure.Variable" id="1237299817374">
-      <property name="antName" value="teamcity.buildConfName" />
-      <property name="name" value="configuration" />
-    </node>
-    <node role="variable" type="jetbrains.mps.build.packaging.structure.Variable" id="1237299817376">
-      <property name="name" value="version" />
-      <property name="antName" value="version" />
-    </node>
     <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1237299779834">
       <property name="name" value="external" />
     </node>

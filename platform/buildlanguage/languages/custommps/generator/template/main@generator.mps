@@ -2481,8 +2481,8 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1234971270742">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1234971270743">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234971270744">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234971270745">
-                  <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234971270746" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238607655760">
+                  <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238607655761" />
                 </node>
               </node>
             </node>
@@ -5249,55 +5249,78 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1238511936410">
     <property name="name" value="weave_MPSLayout_PackSrc" />
     <link role="applicableConcept" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
-    <node role="contentNode" type="jetbrains.mps.build.packaging.structure.MPSLayout" id="1238511979193">
+    <node role="contentNode" type="jetbrains.mps.build.packaging.structure.MPSLayout" id="1238589829515">
       <property name="name" value="some" />
-      <node role="component" type="jetbrains.mps.build.packaging.structure.IfProjectComponent" id="1238512724857">
-        <node role="condition" type="jetbrains.mps.build.packaging.structure.NotCondition" id="1238512727285">
-          <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition" id="1238512729841">
-            <node role="pathToCheck" type="jetbrains.mps.build.packaging.structure.NonExistingPath" id="1238512729842">
-              <property name="pathToCheck" value="lib/mps.jar" />
-              <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238512729843">
-                <property name="name" value="mps_home" />
+      <node role="component" type="jetbrains.mps.build.packaging.structure.Antcall" id="1238589835637">
+        <link role="project" targetNodeId="1233668931882" resolveInfo="help-build" />
+        <link role="targetDeclaration" targetNodeId="1238512027770" resolveInfo="pack.mps.src" />
+        <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="1238589835638" />
+        <node role="targetReference" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" id="1238589835639" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1238589857040" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1238589858623">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1238589858624">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238589858625">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238589860445">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1238589860446">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238589860447">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238589860448">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1238589860449">
+                        <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860450">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860451">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238589860452">
+                              <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
+                              <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238589860453">
+                              <property name="value" value="lib/mps.jar" />
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238589860454">
+                            <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                            <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238589860455">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~File.exists():boolean" resolveInfo="exists" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="ifTrue" type="jetbrains.mps.build.packaging.structure.Antcall" id="1238512745472">
-          <link role="project" targetNodeId="1233668931882" resolveInfo="help-build" />
-          <link role="targetDeclaration" targetNodeId="1238512027770" resolveInfo="pack.mps.src" />
-          <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="1238512745473" />
-          <node role="targetReference" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" id="1238512745474" />
-        </node>
-        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1238512758245" />
       </node>
-      <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1238511979194">
+      <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1238589829516">
         <property name="name" value="default" />
       </node>
-      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238511979195">
+      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238589829517">
         <property name="name" value=":" />
         <property name="antName" value="path.separator" />
       </node>
-      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238511979196">
+      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238589829518">
         <property name="name" value="basedir" />
         <property name="antName" value="basedir" />
       </node>
-      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238511979197">
+      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238589829519">
         <property name="name" value="date" />
         <property name="antName" value="DSTAMP" />
       </node>
-      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238511979198">
+      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238589829520">
         <property name="name" value="\n" />
         <property name="antName" value="line.separator" />
       </node>
-      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238511979199">
+      <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1238589829521">
         <property name="name" value="/" />
         <property name="antName" value="file.separator" />
       </node>
-      <node role="baseDirectory" type="jetbrains.mps.build.packaging.structure.BaseDirPath" id="1238511979200">
-        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238511979201">
+      <node role="baseDirectory" type="jetbrains.mps.build.packaging.structure.BaseDirPath" id="1238589829522">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1238589829523">
           <property name="name" value="mps_home" />
         </node>
-        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238511979202" />
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1238589829524" />
       </node>
     </node>
   </node>

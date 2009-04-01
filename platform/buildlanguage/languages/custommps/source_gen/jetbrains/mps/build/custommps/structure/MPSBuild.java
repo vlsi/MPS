@@ -16,10 +16,10 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   public static final String concept = "jetbrains.mps.build.custommps.structure.MPSBuild";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String PATH_TO_BUILD_TOOLS_ZIP = "pathToBuildToolsZip";
   public static final String LICENCE_PATH = "licencePath";
   public static final String ENTRY = "entry";
@@ -44,14 +44,6 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
     this.setProperty(MPSBuild.INCLUDES, value);
   }
 
-  public String getName() {
-    return this.getProperty(MPSBuild.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(MPSBuild.NAME, value);
-  }
-
   public String getShortDescription() {
     return this.getProperty(MPSBuild.SHORT_DESCRIPTION);
   }
@@ -74,6 +66,14 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
 
   public void setVirtualPackage(String value) {
     this.setProperty(MPSBuild.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(MPSBuild.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(MPSBuild.NAME, value);
   }
 
   public Path getPathToBuildToolsZip() {

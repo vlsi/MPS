@@ -132,5 +132,38 @@
       <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1238590578726">
+    <property name="name" value="NonEmptyLibraryName" />
+    <property name="overrides" value="false" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238590578727">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238590610876">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590635447">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590630330">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238590629363">
+              <link role="applicableNode" targetNodeId="1238590587795" resolveInfo="libraryFolder" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238590634406">
+              <link role="link" targetNodeId="1.1233679274643" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1238590641737" />
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238590610890">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1238590610891">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238590610892">
+              <property name="value" value="Library should have name." />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238590645673">
+              <link role="applicableNode" targetNodeId="1238590587795" resolveInfo="libraryFolder" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1238590587795">
+      <property name="name" value="libraryFolder" />
+      <link role="concept" targetNodeId="1.1233679247700" resolveInfo="LibraryFolder" />
+    </node>
+  </node>
 </model>
 

@@ -248,6 +248,10 @@ public class QueriesGenerated {
     return !(new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists());
   }
 
+  public static boolean ifMacro_Condition_1238589858624(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists());
+  }
+
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }

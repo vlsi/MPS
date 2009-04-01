@@ -984,5 +984,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237471384742" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238590347504">
+    <link role="concept" targetNodeId="1.1233679247700" resolveInfo="LibraryFolder" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238590347505">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238590347506">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238590354835">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590362913">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238590356022">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238590354836" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238590361805">
+                <link role="link" targetNodeId="3v.1220982054961" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1238590364227">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238590365828" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
