@@ -69,6 +69,7 @@ public final class SNode {
   private List<SNode> myChildrenWrapper = new MyChildrenWrapper();
 
   private SReference[] myReferences = SReference.EMPTY_ARRAY;
+  private List<SReference> myReferencesWrapper = new MyReferencesWrapper();
 
   private Map<String, String> myProperties;
 
@@ -111,10 +112,6 @@ public final class SNode {
         child.changeModel(newModel);
       }
     }
-  }
-
-  private List<SReference> _references() {
-    return new MyReferencesWrapper();
   }
 
   public boolean isRoot() {
@@ -1070,7 +1067,7 @@ public final class SNode {
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return Collections.unmodifiableList(_references());
+    return new ArrayList<SReference>(myReferencesWrapper);
   }
 
   public SReference setReferent(String role, SNode newReferent) {
@@ -1098,7 +1095,7 @@ public final class SNode {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
     }
     for (SReference reference : toDelete) {
-      int index = _references().indexOf(reference);
+      int index = myReferencesWrapper.indexOf(reference);
       removeReferenceAt(index);
     }
 
@@ -1171,7 +1168,7 @@ public final class SNode {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
         if (reference.getRole().equals(role)) {
-          int index = _references().indexOf(reference);
+          int index = myReferencesWrapper.indexOf(reference);
           removeReferenceAt(index);
           break;
         }
@@ -1183,7 +1180,7 @@ public final class SNode {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
         if (reference.equals(referenceToRemove)) {
-          int index = _references().indexOf(reference);
+          int index = myReferencesWrapper.indexOf(reference);
           removeReferenceAt(index);
           break;
         }
@@ -1208,7 +1205,7 @@ public final class SNode {
 
   void insertReferenceAt(final int i, final SReference reference) {
     ModelChange.assertLegalNodeChange(this);
-    _references().add(i, reference);
+    myReferencesWrapper.add(i, reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
@@ -1222,7 +1219,7 @@ public final class SNode {
   void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);
     final SReference reference = myReferences[i];
-    _references().remove(reference);
+    myReferencesWrapper.remove(reference);
 
     if (ModelChange.needRegisterUndo(getModel())) {
       UndoUtil.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
@@ -1261,14 +1258,14 @@ public final class SNode {
 
 
   private void removeAllReferences() {
-    while (_references().size() > 0) {
+    while (myReferencesWrapper.size() > 0) {
       removeReferenceAt(0);
     }
   }
 
 
   public boolean isDeleted() {
-    return (_references().size() == 0) && myParent == null && !getModel().isRoot(this);
+    return (myReferencesWrapper.size() == 0) && myParent == null && !getModel().isRoot(this);
   }
 
   //
