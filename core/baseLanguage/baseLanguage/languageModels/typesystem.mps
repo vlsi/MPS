@@ -7895,12 +7895,11 @@
             <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238517029511" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572049">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572051">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206554174366">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591638398">
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206554174366">
                 <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1206554174367" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1206554174367" />
             </node>
           </node>
         </node>
@@ -8825,12 +8824,11 @@
             <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238517028182" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1228174561645">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1228174561646">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228174561647">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591637951">
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228174561647">
                 <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228174561648" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1228174561648" />
             </node>
           </node>
         </node>
@@ -9573,12 +9571,11 @@
             <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238517030838" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034542924">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034542926">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1212689571931">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591637561">
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1212689571931">
                 <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1212689571932" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1212689571932" />
             </node>
           </node>
         </node>
@@ -9858,12 +9855,11 @@
             <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238517029599" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034571360">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034571362">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1212781606060">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591637731">
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1212781606060">
                 <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1212781606061" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1212781606061" />
             </node>
           </node>
         </node>

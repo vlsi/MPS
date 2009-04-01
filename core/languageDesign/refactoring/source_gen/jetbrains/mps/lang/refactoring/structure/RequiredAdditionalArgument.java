@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument";
   public static final String PRESENTATION = "presentation";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String ARGUMENT_TYPE = "argumentType";
 
   public RequiredAdditionalArgument(SNode node) {
@@ -29,14 +29,6 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
 
   public void setPresentation(String value) {
     this.setProperty(RequiredAdditionalArgument.PRESENTATION, value);
-  }
-
-  public String getName() {
-    return this.getProperty(RequiredAdditionalArgument.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(RequiredAdditionalArgument.NAME, value);
   }
 
   public String getShortDescription() {
@@ -61,6 +53,14 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(RequiredAdditionalArgument.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(RequiredAdditionalArgument.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(RequiredAdditionalArgument.NAME, value);
   }
 
   public Type getArgumentType() {

@@ -1969,12 +1969,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1191592451914">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213085181105">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213085181107">
-              <link role="baseMethodDeclaration" targetNodeId="9.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356749423">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238592840805">
+              <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356749423">
                 <link role="classifier" targetNodeId="19.~IModule" resolveInfo="IModule" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356752972">
+              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356752972">
                 <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356757177">
                   <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />

@@ -12,7 +12,7 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.structure.plugin.Structure";
 
   public Structure_ActionGroup() {
-    super("", ID);
+    super("Structure", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

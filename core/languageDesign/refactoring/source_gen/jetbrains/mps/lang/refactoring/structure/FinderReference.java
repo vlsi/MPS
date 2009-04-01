@@ -12,22 +12,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FinderReference extends BaseConcept implements IResolveInfo {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.FinderReference";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String FINDER_DECLARATION = "finderDeclaration";
 
   public FinderReference(SNode node) {
     super(node);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(FinderReference.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(FinderReference.RESOLVE_INFO, value);
   }
 
   public String getShortDescription() {
@@ -52,6 +44,14 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
 
   public void setVirtualPackage(String value) {
     this.setProperty(FinderReference.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(FinderReference.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(FinderReference.RESOLVE_INFO, value);
   }
 
   public FinderDeclaration getFinderDeclaration() {

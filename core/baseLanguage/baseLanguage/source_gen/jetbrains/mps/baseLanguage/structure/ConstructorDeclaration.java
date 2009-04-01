@@ -14,10 +14,10 @@ import jetbrains.mps.project.GlobalScope;
 public class ConstructorDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
   public static final String NESTED_NAME = "nestedName";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VISIBILITY = "visibility";
 
   public ConstructorDeclaration(SNode node) {
@@ -30,14 +30,6 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
 
   public void setNestedName(String value) {
     this.setProperty(ConstructorDeclaration.NESTED_NAME, value);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(ConstructorDeclaration.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(ConstructorDeclaration.RESOLVE_INFO, value);
   }
 
   public String getShortDescription() {
@@ -62,6 +54,14 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConstructorDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(ConstructorDeclaration.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(ConstructorDeclaration.RESOLVE_INFO, value);
   }
 
   public Visibility getVisibility() {

@@ -14,24 +14,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String RESTRICTION_KIND = "restrictionKind";
   public static final String CHILD_LINK_DECLARATION = "childLinkDeclaration";
   public static final String TYPE = "type";
 
   public ChildTypeRestriction(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(ChildTypeRestriction.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ChildTypeRestriction.NAME, value);
   }
 
   public String getShortDescription() {
@@ -56,6 +48,14 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ChildTypeRestriction.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(ChildTypeRestriction.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ChildTypeRestriction.NAME, value);
   }
 
   public RestrictionKind getRestrictionKind() {

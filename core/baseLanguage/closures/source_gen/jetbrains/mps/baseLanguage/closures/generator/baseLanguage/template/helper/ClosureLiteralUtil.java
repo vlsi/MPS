@@ -241,7 +241,7 @@ public class ClosureLiteralUtil {
 
   private static Map<String, SNode> getMap(Map<String, SNode> map) {
     if (map == null) {
-      map = new HashMap<String, SNode>();
+      map = MapSequence.fromMap(new HashMap<String, SNode>());
     }
     return map;
   }

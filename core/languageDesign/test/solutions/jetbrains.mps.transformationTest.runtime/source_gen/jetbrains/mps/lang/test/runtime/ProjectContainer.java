@@ -4,23 +4,23 @@ package jetbrains.mps.lang.test.runtime;
 
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import java.io.File;
 
 public class ProjectContainer {
 
-  private Map<String, MPSProject> myProjects = new HashMap<String, MPSProject>();
+  private Map<String, MPSProject> myProjects = MapSequence.fromMap(new HashMap<String, MPSProject>());
 
   public ProjectContainer() {
   }
 
   public void clear() {
-    final Map<String, MPSProject> projects = new HashMap<String, MPSProject>();
+    final Map<String, MPSProject> projects = MapSequence.fromMap(new HashMap<String, MPSProject>());
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
 

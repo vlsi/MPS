@@ -11,21 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractTextGenDeclaration extends BaseConcept implements IValidIdentifier {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
 
   public AbstractTextGenDeclaration(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(AbstractTextGenDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AbstractTextGenDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -50,6 +42,14 @@ public class AbstractTextGenDeclaration extends BaseConcept implements IValidIde
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractTextGenDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AbstractTextGenDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AbstractTextGenDeclaration.NAME, value);
   }
 
 

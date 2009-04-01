@@ -7,12 +7,12 @@ import jetbrains.mps.project.MPSProject;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class BaseTestBody {
 
@@ -22,7 +22,7 @@ public class BaseTestBody {
   public List<SNode> myCopyes;
 
   public BaseTestBody() {
-    this.myMap = new HashMap<SNode, SNode>();
+    this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     this.myCopyes = ListSequence.<SNode>fromArray();
   }
 

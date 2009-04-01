@@ -4011,12 +4011,11 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231426508378">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1231426603877">
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1231426604139">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1231429305706">
-                        <link role="baseMethodDeclaration" targetNodeId="5.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-                        <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231429309588">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238592459722">
+                        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231429309588">
                           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                         </node>
-                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1231429311670">
+                        <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1231429311670">
                           <link role="concept" targetNodeId="8.1107461130800" resolveInfo="Classifier" />
                         </node>
                       </node>

@@ -148,12 +148,11 @@
             <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238588773192" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234278902217">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234278902218">
-              <link role="baseMethodDeclaration" targetNodeId="4.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1234278902219">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238593801987">
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1234278902219">
                 <link role="concept" targetNodeId="2v.1109279763828" resolveInfo="TypeVariableDeclaration" />
               </node>
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1234278902220" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1234278902220" />
             </node>
           </node>
         </node>

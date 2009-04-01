@@ -8739,10 +8739,9 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203264696362">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1203264696363">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888387264">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888387266">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-                    <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193803969" />
-                    <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1203264696366" />
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238592459735">
+                    <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193803969" />
+                    <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1203264696366" />
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203264696411">

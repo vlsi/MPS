@@ -10968,10 +10968,9 @@
                       </node>
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472322">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930472324">
-                        <link role="baseMethodDeclaration" targetNodeId="11.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
-                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375251" />
-                        <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194972375252">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238594133673">
+                        <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375251" />
+                        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194972375252">
                           <link role="classifier" targetNodeId="30.~Pair" resolveInfo="Pair" />
                           <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375253" />
                           <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375254">

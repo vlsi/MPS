@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.behavior._Quotations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -28,7 +28,7 @@ public class RuntimeUtils {
   public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized(RuntimeUtils.class) {
       if (runtimeClassifiers == null) {
-        runtimeClassifiers = new HashMap<String, SNode>();
+        runtimeClassifiers = MapSequence.fromMap(new HashMap<String, SNode>());
         for(SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
           MapSequence.fromMap(runtimeClassifiers).put(SPropertyOperations.getString(cls, "name"), cls);
         }

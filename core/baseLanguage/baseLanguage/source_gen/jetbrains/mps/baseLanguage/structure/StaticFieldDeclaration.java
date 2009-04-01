@@ -14,23 +14,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IBLDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
 
   public StaticFieldDeclaration(SNode node) {
     super(node);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(StaticFieldDeclaration.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(StaticFieldDeclaration.RESOLVE_INFO, value);
   }
 
   public String getShortDescription() {
@@ -55,6 +47,14 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setVirtualPackage(String value) {
     this.setProperty(StaticFieldDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(StaticFieldDeclaration.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(StaticFieldDeclaration.RESOLVE_INFO, value);
   }
 
   public boolean getIsDeprecated() {
