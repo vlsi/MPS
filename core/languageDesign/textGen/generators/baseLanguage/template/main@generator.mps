@@ -286,7 +286,6 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <visible index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1233678545791">
     <property name="name" value="TextGenClass_TextGen" />
     <property name="abstractClass" value="false" />
@@ -340,35 +339,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1234258615915">
-      <property name="name" value="doGenerateText" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234258615916" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234258615917" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234258615918">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235571628396">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235571628397">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235571628398">
-              <link role="baseMethodDeclaration" targetNodeId="1234188717790" resolveInfo="doGenerateText" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235571633276">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235571632759">
-                  <link role="variableDeclaration" targetNodeId="1234258631567" resolveInfo="adapter" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235571640851">
-                  <link role="baseMethodDeclaration" targetNodeId="4v.~INodeAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                </node>
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1235571628399" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234258631567">
-        <property name="name" value="adapter" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234258631568">
-          <link role="classifier" targetNodeId="4v.~INodeAdapter" resolveInfo="INodeAdapter" />
         </node>
       </node>
     </node>
@@ -1436,6 +1406,7 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1235572099335">
     <property name="name" value="reduce_NodeParameter" />
     <link role="applicableConcept" targetNodeId="1.1233748055915" resolveInfo="NodeParameter" />
