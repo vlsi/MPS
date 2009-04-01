@@ -678,9 +678,8 @@
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1210941761901">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210941767454">
-        <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1210941773457" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238601826866">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1238601828532" />
       </node>
     </node>
   </node>
@@ -730,11 +729,8 @@
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1213091690352">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213091694229">
-        <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213091703216">
-          <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-        </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238601835461">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238601836791" />
       </node>
     </node>
   </node>

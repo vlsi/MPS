@@ -704,12 +704,15 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        }
         SNodeOperations.replaceWithAnother(node, result);
       }
 

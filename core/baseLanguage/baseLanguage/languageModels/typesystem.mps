@@ -4416,12 +4416,11 @@
             </node>
           </node>
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572669">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572671">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111371">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238603378467">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111371">
                 <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210182111581">
+              <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238603378468">
                 <link role="variableDeclaration" targetNodeId="1210182111348" resolveInfo="throwables" />
               </node>
             </node>
@@ -4545,12 +4544,11 @@
                         </node>
                       </node>
                       <node role="iterable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034571515">
-                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034571517">
-                          <link role="baseMethodDeclaration" targetNodeId="18.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111427">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238603378456">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111427">
                             <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210182111584">
+                          <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238603378457">
                             <link role="variableDeclaration" targetNodeId="1210182111348" resolveInfo="throwables" />
                           </node>
                         </node>
@@ -4686,12 +4684,11 @@
                         </node>
                       </node>
                       <node role="iterable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572448">
-                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572450">
-                          <link role="baseMethodDeclaration" targetNodeId="18.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111483">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238603378442">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111483">
                             <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210182111587">
+                          <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238603378443">
                             <link role="variableDeclaration" targetNodeId="1210182111348" resolveInfo="throwables" />
                           </node>
                         </node>
@@ -4806,12 +4803,11 @@
                         </node>
                       </node>
                       <node role="iterable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572414">
-                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572416">
-                          <link role="baseMethodDeclaration" targetNodeId="18.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111531">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238603378430">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210182111531">
                             <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210182111590">
+                          <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238603378431">
                             <link role="variableDeclaration" targetNodeId="1210182111348" resolveInfo="throwables" />
                           </node>
                         </node>
@@ -9397,16 +9393,15 @@
             </node>
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034570129">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034570131">
-              <link role="baseMethodDeclaration" targetNodeId="18.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210177583050">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238603378414">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1210177583050">
                 <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210177590849">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210177588395">
-                  <link role="variableDeclaration" targetNodeId="1210177424176" resolveInfo="baseMethodDeclaration" />
+              <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238603378415">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238603378416">
+                  <link role="variableDeclaration" targetNodeId="1210177424176" resolveInfo="method" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1210177592055">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1238603378417">
                   <link role="link" targetNodeId="1.1164879685961" />
                 </node>
               </node>

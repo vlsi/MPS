@@ -23,9 +23,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
@@ -475,7 +474,7 @@ __switch__:
 
   @CheckingMethod()
   /* package */static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
-    for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+    for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_29().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_28().createNode(typeCheckingContext))) {
         SetSequence.fromSet(throwables).removeElement(livingThrowable);
       }
@@ -490,7 +489,7 @@ __switch__:
         SNode tryStatement = parent;
         for(SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+          for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
@@ -504,7 +503,7 @@ __switch__:
         SNode tryCatchStatement = parent;
         for(SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+          for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
@@ -517,7 +516,7 @@ __switch__:
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
         SNode baseMethodDeclaration = parent;
         for(SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
-          for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
+          for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
