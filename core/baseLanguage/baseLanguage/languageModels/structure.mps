@@ -3145,7 +3145,7 @@
     <property name="name" value="TupleType" />
     <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233824750334">
-      <property name="value" value="(" />
+      <property name="value" value="(t" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233824763227">
@@ -3191,7 +3191,7 @@
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233829623924">
-      <property name="value" value="(" />
+      <property name="value" value="(t" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233829793553">
