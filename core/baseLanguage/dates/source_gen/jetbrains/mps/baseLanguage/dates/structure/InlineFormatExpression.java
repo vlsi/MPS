@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.dates.structure;
 import jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
+import jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZone;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.dates.structure.FormatToken;
 import java.util.List;
@@ -16,6 +17,7 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression";
   public static final String WITH_LOCALE = "withLocale";
   public static final String LOCALE = "locale";
+  public static final String ZONE = "zone";
   public static final String FORMAT_TOKEN = "formatToken";
 
   public InlineFormatExpression(SNode node) {
@@ -36,6 +38,14 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
 
   public void setLocale(Locale node) {
     super.setReferent(InlineFormatExpression.LOCALE, node);
+  }
+
+  public DateTimeZone getZone() {
+    return (DateTimeZone)this.getReferent(DateTimeZone.class, InlineFormatExpression.ZONE);
+  }
+
+  public void setZone(DateTimeZone node) {
+    super.setReferent(InlineFormatExpression.ZONE, node);
   }
 
   public int getFormatTokensCount() {
