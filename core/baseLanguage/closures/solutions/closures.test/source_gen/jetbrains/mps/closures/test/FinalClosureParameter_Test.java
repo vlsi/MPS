@@ -21,11 +21,9 @@ public class FinalClosureParameter_Test extends TestCase {
           public void run() {
             foo.value = s;
           }
-
         };
         r.run();
       }
-
     });
     Assert.assertEquals("BAR", foo.value);
   }

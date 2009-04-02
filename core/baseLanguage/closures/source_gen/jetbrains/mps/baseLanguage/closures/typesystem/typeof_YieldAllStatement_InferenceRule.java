@@ -21,7 +21,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = statement;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), new _Quotations.QuotationClass_15().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), new _Quotations.QuotationClass_16().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", false, 0, intentionProvider);
     }
   }
 

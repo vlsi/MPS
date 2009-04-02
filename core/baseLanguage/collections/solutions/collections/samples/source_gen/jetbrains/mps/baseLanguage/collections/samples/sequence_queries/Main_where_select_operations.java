@@ -42,7 +42,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -61,13 +61,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     System.out.println("from sequence of 10 numbers,");
     System.out.println("where num is even,");
@@ -78,14 +75,12 @@ __switch__:
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-
     }).select(new ISelector <Integer, String>() {
 
       public String select(Integer n) {
-        count.value = count.value + 1;
+        count.value++ ;
         return "num:" + n;
       }
-
     });
     System.out.println("count (before):" + count.value);
     for(String s : Sequence.fromIterable(strings)) {

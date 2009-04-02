@@ -24,9 +24,9 @@ public class InnerClosures_Test extends Util_Test {
     itr = SEQ;
     seq = itr;
     SEQ = itr;
-    seq.translate(new ITranslator <String, Integer>() {
+    seq.translate(new ITranslator <String>() {
 
-      public ISequence<Integer> translate(final String it) {
+      public ISequence<S> translate(final String it) {
         return new ISequenceIterableAdapter <Integer>() {
 
           public Iterator<Integer> iterator() {
@@ -55,17 +55,14 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
-    seq.translate(new ITranslator <String, Integer>() {
+    seq.translate(new ITranslator <String>() {
 
-      public ISequence<Integer> translate(String it) {
+      public ISequence<S> translate(String it) {
         return new _FunctionTypes._return_P1_E0 <Iterable<Integer>, String>() {
 
           public Iterable<Integer> invoke(final String it2) {
@@ -97,16 +94,12 @@ __switch__:
                     } while(true);
                     return false;
                   }
-
                 };
               }
-
             };
           }
-
         }.invoke(it);
       }
-
     });
   }
 

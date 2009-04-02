@@ -54,7 +54,7 @@ public class Map_Test extends Util_Test {
     Integer idx = 1;
     for(String val : values) {
       MapSequence.fromMap(map).put(idx, val);
-      idx = idx + 1;
+      idx++ ;
     }
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));

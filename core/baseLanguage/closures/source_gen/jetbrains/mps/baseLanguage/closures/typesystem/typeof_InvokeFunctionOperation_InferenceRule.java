@@ -32,12 +32,12 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = invoke;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374021867", true), new _Quotations.QuotationClass_12().createNode(typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374021865", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374021867", true), new _Quotations.QuotationClass_13().createNode(typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374021865", false, 0, intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = invoke;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_13().createNode(typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext), typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374026565", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374026556", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(new _Quotations.QuotationClass_14().createNode(typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext), typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374026565", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237374026556", false, 0, intentionProvider);
       }
     */
     {
@@ -48,7 +48,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = invoke;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(invoke), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048905737", true), new _Quotations.QuotationClass_14().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), ptypes2, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext.getEquationManager().getRepresentator(ret2_typevar_1230048995510), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048793938", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(invoke), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048905737", true), new _Quotations.QuotationClass_15().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), ptypes2, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext.getEquationManager().getRepresentator(ret2_typevar_1230048995510), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048793938", false, 0, intentionProvider);
     }
   }
 

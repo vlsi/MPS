@@ -43,7 +43,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -62,13 +62,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 10);
     Assert.assertSame(Sequence.fromIterable(s).first(), 0);
@@ -110,7 +107,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -129,13 +126,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 10);
     Assert.assertSame(Sequence.fromIterable(s).first(), 0);
@@ -177,7 +171,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -196,13 +190,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     s = Sequence.fromIterable(s).skip(5).take(3);
     Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 3);
@@ -241,7 +232,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -260,13 +251,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     s = Sequence.fromIterable(s).page(5, 8);
     Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 3);

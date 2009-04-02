@@ -27,7 +27,7 @@ public class List_Test extends Util_Test {
   @Test()
   public void test_add() throws Exception {
     List<Integer> test = ListSequence.<Integer>fromArray();
-    for(int i = 1 ; i <= 5 ; i = i + 1) {
+    for(int i = 1 ; i <= 5 ; i++ ) {
       ListSequence.fromList(test).addElement(i);
     }
     this.assertIterableEquals(this.expect5(), test);

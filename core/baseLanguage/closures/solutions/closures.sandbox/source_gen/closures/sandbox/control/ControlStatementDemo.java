@@ -18,9 +18,9 @@ public class ControlStatementDemo {
     for(Result<? extends Integer, ?> __result__ = cls.invokeUnrestricted() ;  ; ) {
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          //  fall through
+          //            fall through
         case RETURN_VOID:
-          //  fall through
+          //            fall through
         case BREAK:
           return;
         case TERMINATE_VALUE:
@@ -51,7 +51,6 @@ public class ControlStatementDemo {
         }
         return Result.TERMINATE(42);
       }
-
     }) ;  ; ) {
       bar(1, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
@@ -70,7 +69,6 @@ public class ControlStatementDemo {
       public Result<Integer, Integer> invokeUnrestricted() {
         return Result.TERMINATE(2);
       }
-
     }) ;  ; ) {
       bar(1, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
@@ -90,7 +88,6 @@ public class ControlStatementDemo {
       public Result<Object, Object> invokeUnrestricted(String bar, Integer foo) {
         return Result.TERMINATE_VOID();
       }
-
     }) ;  ; ) {
       eachEntry(map, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();

@@ -50,7 +50,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._3_num = this._3_num + 1;
+                      this._3_num++ ;
                       this.__CP__ = 4;
                       break;
                     default:
@@ -59,13 +59,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     System.out.println("from infinite sequence take first 10 numbers,");
     System.out.println("ignore odd numbers,");
@@ -84,7 +81,6 @@ __skip__:
           System.out.println(n);
         } while(false);
       }
-
     });
   }
 

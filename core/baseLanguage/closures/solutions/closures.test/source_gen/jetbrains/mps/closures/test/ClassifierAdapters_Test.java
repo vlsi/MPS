@@ -4,11 +4,16 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import jetbrains.mps.closures.test.Worker;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
+import jetbrains.mps.closures.test.NumberGenerator;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.closures.test.Generator;
+import jetbrains.mps.closures.test.Processor;
+import jetbrains.mps.closures.test.ProcessingException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +30,6 @@ public class ClassifierAdapters_Test extends TestCase {
       public String doWork(Integer d) {
         return "Done: " + Integer.valueOf(d);
       }
-
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       assert false : "Fix the test";
@@ -44,7 +48,6 @@ public class ClassifierAdapters_Test extends TestCase {
       public String invoke(Integer foo) {
         return "Done: " + foo;
       }
-
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       assert false : "Fix the test";
@@ -62,7 +65,6 @@ public class ClassifierAdapters_Test extends TestCase {
       public String doWork(Integer foo) {
         return "Done: " + foo;
       }
-
     };
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
@@ -108,19 +110,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     };
     Integer[] exp = new Integer[]{1,2,3};
     int i = 0;
     for(Integer in : ng.generate()) {
       Assert.assertEquals(exp[i], in);
-      i = i + 1;
+      i++ ;
     }
   }
 
@@ -165,18 +164,15 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     };
     Integer exp = 1;
     for(Integer i : g.generate()) {
       Assert.assertEquals(exp, i);
-      exp = exp + 1;
+      exp++ ;
     }
     Assert.assertEquals(exp, (Integer)4);
   }
@@ -188,14 +184,12 @@ __switch__:
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
-
     }, 1234));
     Assert.assertEquals("4321", this.makeWork(new Worker() {
 
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
-
     }, 4321));
   }
 
@@ -210,11 +204,10 @@ __switch__:
           }
           return 1;
         }
-
       }, "-1");
       Assert.fail();
     } catch (ProcessingException e) {
-      // expected exception
+      //       expected exception
     }
   }
 
@@ -222,19 +215,18 @@ __switch__:
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = new ArrayList<Integer>();
     list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
-    // ===================================================================
-    // The following is a hack!
-    // In reality we could only substitute an interface that has a single method.
-    // This example works only because java.util.Comparator defines compare() before equals()
-    // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
-    // Besides, overriding only equals() without overriding also hashCode() is simply plain wrong.
-    // ===================================================================
+    //     ===================================================================
+    //     The following is a hack!
+    //     In reality we could only substitute an interface that has a single method.
+    //     This example works only because java.util.Comparator defines compare() before equals()
+    //     Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
+    //     Besides, overriding only equals() without overriding also hashCode() is simply plain wrong.
+    //     ===================================================================
     Collections.sort(list, new Comparator <Object>() {
 
       public int compare(Object a, Object b) {
         return a.hashCode() - b.hashCode();
       }
-
     });
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
   }
@@ -247,7 +239,6 @@ __switch__:
       public void run() {
         foo.value = 42;
       }
-
     });
     trd.start();
     try {
@@ -264,7 +255,6 @@ __switch__:
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
-
     });
   }
 
@@ -280,7 +270,7 @@ __switch__:
       prc.process("foobar");
       Assert.fail();
     } catch (ProcessingException e) {
-      // expected exception
+      //       expected exception
     }
   }
 
@@ -304,7 +294,6 @@ __switch__:
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
-
     };
   }
 
@@ -314,7 +303,6 @@ __switch__:
       public int process(String str) throws ProcessingException {
         throw new ProcessingException(str);
       }
-
     };
   }
 

@@ -55,7 +55,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._3_num = this._3_num + 1;
+                      this._3_num++ ;
                       this.__CP__ = 4;
                       break;
                     default:
@@ -64,19 +64,16 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
-    // from infinite sequence take first 10 numbers,
-    // ignore odd numbers,
-    // map each even number to two strings:
-    // "num:<n>"
-    // "num:<n*100>"
+    //     from infinite sequence take first 10 numbers,
+    //     ignore odd numbers,
+    //     map each even number to two strings:
+    //     "num:<n>"
+    //     "num:<n*100>"
     final Wrappers._int count = new Wrappers._int(0);
     Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2 <Integer, String>() {
 
@@ -133,7 +130,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 13:
-                      count.value = count.value + 1;
+                      count.value++ ;
                       this.__CP__ = 3;
                       break;
                     case 5:
@@ -150,13 +147,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertEquals(0, count.value);
     int resultCount = 0;
@@ -166,7 +160,7 @@ __switch__:
         expected = "num:" + ((resultCount - 1) * 100);
       }
       Assert.assertEquals(expected, s);
-      resultCount = resultCount + 1;
+      resultCount++ ;
     }
     Assert.assertEquals(5, count.value);
   }
@@ -204,13 +198,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).toListSequence();
     Assert.assertEquals(0, ListSequence.fromList(strings2).count());
   }
@@ -248,13 +239,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertEquals(0, Sequence.fromIterable(s2).count());
   }

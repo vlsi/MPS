@@ -540,7 +540,7 @@ public class SNodeOperations {
 
     if (!SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo)) {
       if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+        throw new NodeCastException("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
       } else {
         LOG.warning("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
       }

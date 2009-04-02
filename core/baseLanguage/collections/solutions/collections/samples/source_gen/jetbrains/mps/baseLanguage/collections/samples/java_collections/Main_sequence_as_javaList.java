@@ -40,7 +40,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -59,13 +59,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     List<Integer> list = Sequence.fromIterable(sequence).toListSequence();
     System.out.println("list: type cast -> java-list");

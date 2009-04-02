@@ -12,7 +12,6 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Arrays;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ChainedOperations_Test extends Util_Test {
 
@@ -117,4 +116,5 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList("12", "15"), test);
   }
+
 }

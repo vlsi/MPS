@@ -16,7 +16,6 @@ public class Sort_Test extends Util_Test {
       public Comparable<?> select(String it) {
         return it.length();
       }
-
     });
   }
 

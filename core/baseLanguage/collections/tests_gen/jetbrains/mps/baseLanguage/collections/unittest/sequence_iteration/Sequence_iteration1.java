@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 public class Sequence_iteration1 extends TestCase {
 
   public void test_shortSequence1() {
-    // sequence with no memory
+    //     sequence with no memory
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
 
       public Iterable<String> iterable() {
@@ -61,29 +61,26 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     int count = 0;
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, 5);
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - 5), s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, 10);
   }
 
   public void test_shortSequence2() {
-    // sequence with memory
+    //     sequence with memory
     final Wrappers._int yield_count = new Wrappers._int(0);
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -114,7 +111,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -128,7 +125,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      yield_count.value = yield_count.value + 1;
+                      yield_count.value++ ;
                       this.__CP__ = 5;
                       break;
                     default:
@@ -137,31 +134,28 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     int count = 0;
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, 5);
     Assert.assertEquals(yield_count.value, 5);
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, 10);
     Assert.assertEquals(yield_count.value, 10);
   }
 
   public void test_longSequence1() {
-    // sequence with no memory
+    //     sequence with no memory
     final int sequence_size = 1234;
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -192,7 +186,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -211,29 +205,26 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     int count = 0;
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, sequence_size);
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - sequence_size), s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, sequence_size * 2);
   }
 
   public void test_longSequence2() {
-    // sequence with memory
+    //     sequence with memory
     final int sequence_size = 1234;
     final Wrappers._int yield_count = new Wrappers._int(0);
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
@@ -265,7 +256,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -279,7 +270,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      yield_count.value = yield_count.value + 1;
+                      yield_count.value++ ;
                       this.__CP__ = 5;
                       break;
                     default:
@@ -288,24 +279,21 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     int count = 0;
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, sequence_size);
     Assert.assertEquals(yield_count.value, sequence_size);
     for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
     }
     Assert.assertEquals(count, sequence_size * 2);
     Assert.assertEquals(yield_count.value, sequence_size * 2);

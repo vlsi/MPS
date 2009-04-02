@@ -46,7 +46,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -65,30 +65,25 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
-    // from sequence of 10 numbers
-    // take each even number and produce string: "num:<n>"
+    //     from sequence of 10 numbers
+    //     take each even number and produce string: "num:<n>"
     final Wrappers._int count = new Wrappers._int(0);
     Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter <Integer>() {
 
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-
     }).select(new ISelector <Integer, String>() {
 
       public String select(Integer n) {
-        count.value = count.value + 1;
+        count.value++ ;
         return "num:" + n;
       }
-
     });
     Assert.assertEquals(0, count.value);
     int expectedNum = 0;
@@ -101,34 +96,31 @@ __switch__:
   }
 
   public void test_2() {
-    // 'where' and 'select' tolerate 'null' operand 
+    //     'where' and 'select' tolerate 'null' operand 
     List<Integer> nums = null;
     Iterable<Integer> evenNums = ListSequence.fromList(nums).where(new IWhereFilter <Integer>() {
 
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-
     });
     Iterable<String> strings = Sequence.fromIterable(evenNums).select(new ISelector <Integer, String>() {
 
       public String select(Integer it) {
         return "" + it;
       }
-
     });
     Assert.assertEquals(0, Sequence.fromIterable(strings).count());
   }
 
   public void test_3() {
-    // 'select' skips all 'null'-s
+    //     'select' skips all 'null'-s
     List<String> list = ListSequence.<String>fromArray("1", "2", "3");
     Iterable<String> empty = ListSequence.fromList(list).select(new ISelector <String, String>() {
 
       public String select(String it) {
         return (String)null;
       }
-
     });
     Assert.assertTrue(Sequence.fromIterable(empty).isEmpty());
   }

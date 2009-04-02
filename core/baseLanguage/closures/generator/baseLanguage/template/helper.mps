@@ -8430,9 +8430,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203266288154">
         <property name="name" value="realType" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1203266289836">
-          <link role="concept" targetNodeId="14.1068431790189" resolveInfo="Type" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1203266289836" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203266295883">
         <property name="name" value="map" />
@@ -8587,6 +8585,7 @@
                       <property name="name" value="mptypes" />
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906074">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1203266455016">
+                          <property name="asCast" value="true" />
                           <link role="concept" targetNodeId="14.1107535904670" resolveInfo="ClassifierType" />
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203266455017">
                             <link role="variableDeclaration" targetNodeId="1203266275869" resolveInfo="matching" />
@@ -8608,6 +8607,7 @@
                       <property name="name" value="rptypes" />
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896075">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1203266533260">
+                          <property name="asCast" value="true" />
                           <link role="concept" targetNodeId="14.1107535904670" resolveInfo="ClassifierType" />
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222889148722">
                             <link role="variableDeclaration" targetNodeId="1222888980545" resolveInfo="matched" />

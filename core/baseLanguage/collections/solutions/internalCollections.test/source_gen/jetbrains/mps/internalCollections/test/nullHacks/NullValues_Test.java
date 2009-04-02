@@ -23,7 +23,6 @@ public class NullValues_Test extends Util_Test {
         public Integer select(Integer it) {
           return (Integer)null;
         }
-
       }));
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2 <Integer, Integer>() {
 
@@ -56,13 +55,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       }));
     }
   }

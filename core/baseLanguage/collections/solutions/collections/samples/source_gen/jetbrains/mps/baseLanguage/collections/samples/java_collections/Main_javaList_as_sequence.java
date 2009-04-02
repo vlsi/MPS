@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
   /* package */static void main(String[] args) {
     List<Integer> javaList = new LinkedList<Integer>();
-    for(int i = 0 ; i < 5 ; i = i + 1) {
+    for(int i = 0 ; i < 5 ; i++ ) {
       javaList.add(i);
     }
     System.out.println("java-list as sequence");

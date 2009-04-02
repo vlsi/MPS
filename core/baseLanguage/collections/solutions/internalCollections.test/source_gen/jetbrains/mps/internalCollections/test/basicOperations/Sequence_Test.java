@@ -70,7 +70,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -128,7 +128,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -312,7 +312,7 @@ __switch__:
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(input).toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
-    for(Iterator<Integer> it = input.iterator() ; it.hasNext() ; i = i + 1) {
+    for(Iterator<Integer> it = input.iterator() ; it.hasNext() ; i++ ) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);

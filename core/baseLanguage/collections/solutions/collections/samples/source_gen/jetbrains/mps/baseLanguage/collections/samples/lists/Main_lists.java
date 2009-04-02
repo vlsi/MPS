@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     for(String s : ListSequence.fromList(list)) {
       System.out.println(s);
     }
-    for(int i = 0 ; i < ListSequence.fromList(list).count() ; i = i + 1) {
+    for(int i = 0 ; i < ListSequence.fromList(list).count() ; i++ ) {
       System.out.println(ListSequence.fromList(list).getElement(i));
     }
   }

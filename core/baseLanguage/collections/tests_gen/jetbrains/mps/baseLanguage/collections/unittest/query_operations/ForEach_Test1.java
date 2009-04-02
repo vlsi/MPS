@@ -23,7 +23,6 @@ public class ForEach_Test1 extends TestCase {
       public void visit(Integer i) {
         sum.value = sum.value + i;
       }
-
     });
     Assert.assertEquals(15, sum.value);
   }
@@ -58,7 +57,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -77,13 +76,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     final Wrappers._int sum = new Wrappers._int(0);
     Sequence.fromIterable(seq).visitAll(new IVisitor <Integer>() {
@@ -91,7 +87,6 @@ __switch__:
       public void visit(Integer i) {
         sum.value = sum.value + i;
       }
-
     });
     Assert.assertEquals(15, sum.value);
   }
@@ -104,7 +99,6 @@ __switch__:
       public void visit(String s) {
         sum.value = sum.value + s.length();
       }
-
     });
     Assert.assertEquals(0, sum.value);
   }

@@ -41,7 +41,7 @@ public class Chunks_Test extends Util_Test {
     Iterable<Integer> input = this.input10();
     int from = 3;
     int to = 8;
-    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page((from = from + 1), (to = to - 1)));
+    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(from = from + 1, to = to - 1));
   }
 
   @Test()

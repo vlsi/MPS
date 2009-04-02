@@ -15,7 +15,6 @@ public class Functions {
       public String invoke(Integer i) {
         return String.valueOf(i);
       }
-
     };
   }
 
@@ -25,7 +24,6 @@ public class Functions {
       public String invoke(Integer i) {
         return "_" + i;
       }
-
     };
   }
 

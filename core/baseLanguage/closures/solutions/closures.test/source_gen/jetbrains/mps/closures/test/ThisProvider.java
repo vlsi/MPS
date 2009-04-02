@@ -19,7 +19,6 @@ public class ThisProvider {
       public Integer invoke() {
         return ThisProvider.this.bar = 1000;
       }
-
     }.invoke();
     Assert.assertEquals(1000, this.bar);
   }

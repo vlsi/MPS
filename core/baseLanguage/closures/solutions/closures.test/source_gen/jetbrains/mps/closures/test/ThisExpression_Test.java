@@ -6,6 +6,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
+import jetbrains.mps.closures.test.ThisProvider;
 
 public class ThisExpression_Test extends TestCase {
 
@@ -21,11 +22,9 @@ public class ThisExpression_Test extends TestCase {
           public Integer invoke() {
             return foo = 42;
           }
-
         }.invoke();
         Assert.assertSame(42, this.foo);
       }
-
     };
     run.run();
   }

@@ -9,6 +9,7 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.closures.test.Worker;
 
 public class ExternalReferences_Test extends TestCase {
 
@@ -20,7 +21,6 @@ public class ExternalReferences_Test extends TestCase {
       public Integer invoke() {
         return foo;
       }
-
     }.invoke();
     Assert.assertEquals(foo, bar);
   }
@@ -28,13 +28,12 @@ public class ExternalReferences_Test extends TestCase {
   @Test()
   public void test_alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for(int i = 1 ; i <= 5 ; i = i + 1) {
+    for(int i = 1 ; i <= 5 ; i++ ) {
       new _FunctionTypes._return_P0_E0 <Integer>() {
 
         public Integer invoke() {
-          return res.value = res.value + 1;
+          return res.value++ ;
         }
-
       }.invoke();
     }
     res.value = res.value - 5;
@@ -44,7 +43,7 @@ public class ExternalReferences_Test extends TestCase {
   @Test()
   public void test_alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for(int i = 1 ; i <= 5 ; i = i + 1) {
+    for(int i = 1 ; i <= 5 ; i++ ) {
       for(int j : new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
 
         public Iterable<Integer> invoke() {
@@ -68,7 +67,7 @@ __switch__:
                         this.yield(-1);
                         return true;
                       case 0:
-                        res.value = res.value + 1;
+                        res.value++ ;
                         this.__CP__ = 3;
                         break;
                       default:
@@ -77,13 +76,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       }.invoke()) {
       }
     }
@@ -98,9 +94,8 @@ __switch__:
 
       public void invoke() {
         bytes.value = new byte[3];
-        //  no return value
+        //          no return value
       }
-
     }.invoke();
     Assert.assertSame(3, bytes.value.length);
   }
@@ -115,10 +110,8 @@ __switch__:
           public String invoke() {
             return "Done: " + d;
           }
-
         }.invoke();
       }
-
     };
     Assert.assertEquals("Done: 1234", wrk.doWork(1234));
   }
@@ -134,11 +127,9 @@ __switch__:
           public Integer invoke() {
             return _d.value = _d.value * 2;
           }
-
         }.invoke();
         return "Done: " + _d.value;
       }
-
     };
     Assert.assertEquals("Done: 2468", wrk.doWork(1234));
   }
@@ -158,10 +149,8 @@ __switch__:
           public String invoke() {
             return "Done: " + field;
           }
-
         }.invoke();
       }
-
     };
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
@@ -175,7 +164,6 @@ __switch__:
         public Integer invoke() {
           return i.value;
         }
-
       }.invoke();
     }
   }

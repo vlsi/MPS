@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
   /* package */static void main(String[] args) {
     Iterable<Integer> javaIterable = new LinkedList<Integer>();
-    for(int i = 0 ; i < 5 ; i = i + 1) {
+    for(int i = 0 ; i < 5 ; i++ ) {
       ((List<Integer>)javaIterable).add(i);
     }
     System.out.println("java-iterable as sequence");

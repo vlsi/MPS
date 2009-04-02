@@ -18,7 +18,6 @@ public class FunctionTypes_Test extends TestCase {
       public Integer invoke() {
         return 1;
       }
-
     };
     _FunctionTypes._return_P0_E0<? extends Integer> fun2 = fun1;
     _FunctionTypes._return_P0_E0<? extends Number> fun3 = fun1;
@@ -32,21 +31,18 @@ public class FunctionTypes_Test extends TestCase {
       public Integer invoke() {
         return 1;
       }
-
     });
     this.accept_Integer(new _FunctionTypes._return_P0_E0 <Integer>() {
 
       public Integer invoke() {
         return (Integer)1;
       }
-
     });
     this.accept_Number(new _FunctionTypes._return_P0_E0 <Number>() {
 
       public Number invoke() {
         return (Integer)1;
       }
-
     });
   }
 
@@ -57,14 +53,12 @@ public class FunctionTypes_Test extends TestCase {
       public void invoke() throws Exception {
         throw new Exception();
       }
-
     };
     _FunctionTypes._void_P0_E1<? extends RuntimeException> throwsRuntimeException = new _FunctionTypes._void_P0_E1 <RuntimeException>() {
 
       public void invoke() throws RuntimeException {
         throw new RuntimeException();
       }
-
     };
     throwsException = throwsRuntimeException;
     _FunctionTypes._void_P0_E1<? extends IllegalArgumentException> throwsOne = new _FunctionTypes._void_P0_E1 <IllegalArgumentException>() {
@@ -72,7 +66,6 @@ public class FunctionTypes_Test extends TestCase {
       public void invoke() throws IllegalArgumentException {
         throw new IllegalArgumentException();
       }
-
     };
     _FunctionTypes._void_P0_E2<? extends NumberFormatException, ? extends IllegalThreadStateException> throwsTwo = new _FunctionTypes._void_P0_E2 <NumberFormatException, IllegalThreadStateException>() {
 
@@ -84,7 +77,6 @@ public class FunctionTypes_Test extends TestCase {
           throw new IllegalThreadStateException();
         }
       }
-
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
@@ -135,13 +127,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     };
     _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalArgumentException, ? extends NumberFormatException, ? extends IllegalThreadStateException> throwsThree = new _FunctionTypes._return_P0_E3 <Iterable<Integer>, IllegalArgumentException, NumberFormatException, IllegalThreadStateException>() {
 
@@ -172,7 +161,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i = this._2_i + 1;
+                      this._2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 7:
@@ -215,13 +204,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
@@ -237,14 +223,12 @@ __switch__:
       public Integer invoke(Integer i) {
         return i.intValue();
       }
-
     };
     _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun2 = new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
 
       public Integer invoke(Integer i) {
         return Integer.valueOf(i);
       }
-
     };
     fun1 = fun2;
     fun2 = fun1;
@@ -253,14 +237,12 @@ __switch__:
       public Integer invoke(Object o) {
         return o.hashCode();
       }
-
     };
     _FunctionTypes._return_P1_E0<? extends Integer, ? super String> fun4 = new _FunctionTypes._return_P1_E0 <Integer, String>() {
 
       public Integer invoke(String s) {
         return s.length();
       }
-
     };
     fun4 = fun3;
     this.accept_int_from_int(new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
@@ -268,7 +250,6 @@ __switch__:
       public Integer invoke(Integer i) {
         return i.intValue();
       }
-
     });
     this.accept_int_from_int(fun1);
     this.accept_int_from_int(fun2);
@@ -277,7 +258,6 @@ __switch__:
       public Integer invoke(Integer i) {
         return Integer.valueOf(i);
       }
-
     });
     this.accept_int_from_Integer(fun1);
     this.accept_int_from_Integer(fun2);
@@ -286,7 +266,6 @@ __switch__:
       public Integer invoke(Integer i) {
         return i.intValue();
       }
-
     });
     this.accept_Integer_from_int(fun1);
     this.accept_Integer_from_int(fun2);
@@ -295,7 +274,6 @@ __switch__:
       public Integer invoke(Object o) {
         return o.hashCode();
       }
-
     });
     this.accept_Integer_from_Object(fun3);
     this.accept_Number_from_String(new _FunctionTypes._return_P1_E0 <Number, String>() {
@@ -303,14 +281,12 @@ __switch__:
       public Number invoke(String s) {
         return s.length();
       }
-
     });
     this.accept_Number_from_String(new _FunctionTypes._return_P1_E0 <Number, Object>() {
 
       public Number invoke(Object o) {
         return o.hashCode();
       }
-
     });
     this.accept_Number_from_String(fun3);
     this.accept_Number_from_String(fun4);

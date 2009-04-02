@@ -51,7 +51,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._3_num = this._3_num + 1;
+                      this._3_num++ ;
                       this.__CP__ = 4;
                       break;
                     default:
@@ -60,13 +60,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     System.out.println("from infinite sequence take first 10 numbers,");
     System.out.println("ignore odd numbers,");
@@ -127,7 +124,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 13:
-                      count.value = count.value + 1;
+                      count.value++ ;
                       this.__CP__ = 3;
                       break;
                     case 5:
@@ -144,13 +141,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     System.out.println("count (before):" + count.value);
     for(String s : Sequence.fromIterable(strings)) {
