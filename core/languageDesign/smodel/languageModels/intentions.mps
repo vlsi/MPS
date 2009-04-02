@@ -1061,5 +1061,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1238684430905">
+    <property name="name" value="ChangeAsCast" />
+    <link role="forConcept" targetNodeId="1.1140137987495" resolveInfo="SNodeTypeCastExpression" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1238684430906">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238684430907">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238684438567">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238684439336">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1238684439242" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238684440559">
+              <link role="property" targetNodeId="1.1238684351431" resolveInfo="asCast" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238684438569">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238684441873">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238684442312">
+                <property name="value" value="Convert to Regular Cast" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1238684449204">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238684449205">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238684450300">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238684450677">
+                  <property name="value" value="Convert to As Cast" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1238684430908">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238684430909">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238684464944">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238684467045">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1238684469423">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238684470191">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1238684470128" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238684470727">
+                  <link role="property" targetNodeId="1.1238684351431" resolveInfo="asCast" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238684465008">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1238684464945" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238684466590">
+                <link role="property" targetNodeId="1.1238684351431" resolveInfo="asCast" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

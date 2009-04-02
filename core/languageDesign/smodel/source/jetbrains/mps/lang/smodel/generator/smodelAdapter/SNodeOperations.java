@@ -512,9 +512,23 @@ public class SNodeOperations {
   public static SNode cast(SNode node, String castTo) {
     if (node == null) return null;
     
-    if (ourCastsEnabled && !isInstanceOf(node, castTo)) {      
-      throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+    if (ourCastsEnabled && !isInstanceOf(node, castTo)) {
+//      
+      LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+//      throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
     }
+
     return node;
   }
+
+  public static SNode as(SNode node, String castTo) {
+    if (node == null) return null;
+
+    if (!isInstanceOf(node, castTo)) {
+      return null;
+    }
+
+    return node;
+  }
+
 }
