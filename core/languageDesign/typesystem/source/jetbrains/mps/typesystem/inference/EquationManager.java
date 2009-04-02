@@ -1063,7 +1063,9 @@ public class EquationManager {
         }
         IWrapper otherType = decideIfIsLineAndReturnInfimum(concreteSupertypes);
         if (slicer != null) {
-          slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
+          if (otherType != null) {
+            slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
+          }
         } else {
           LOG.error("slicer is null");
         }
