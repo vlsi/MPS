@@ -4,6 +4,8 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LinePart_Behavior {
@@ -13,6 +15,12 @@ public class LinePart_Behavior {
   }
 
   public static void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode templateBasedConcept, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
+  }
+
+  public static SNode call_createCellModel_1238614099938(SNode thisNode, SNode templateBasedConcept, Map<SNode, SNode> linePartsToLinks) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
+    SPropertyOperations.set(result, "text", "not implemented");
+    return result;
   }
 
   public static void call_fillConceptStructure_1238593834306(SNode thisNode, SNode templateBasedConcept, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {

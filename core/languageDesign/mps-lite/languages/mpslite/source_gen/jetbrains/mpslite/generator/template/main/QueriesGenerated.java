@@ -16,7 +16,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mpslite.behavior.LineList_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mpslite.behavior.LinePart_Behavior;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class QueriesGenerated {
 
@@ -42,6 +45,53 @@ public class QueriesGenerated {
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), null, (SNode)conceptsToTargets.get(conceptDeclaration), conceptsToTargets, linePartsToLinkDeclarations);
     }
+    //     editor
+    SModel editorModel = language.getEditorModelDescriptor().getSModel();
+    Map<SNode, SNode> conceptsToEditors = new HashMap<SNode, SNode>();
+    for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
+      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+      SNode contentCell;
+      List<SNode> lines = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), "line", true);
+      if (ListSequence.fromList(lines).count() == 0) {
+        if (SPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
+          SNode errorCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
+          SPropertyOperations.set(errorCell, "text", "abstract " + SPropertyOperations.getString(conceptDeclaration, "name"));
+          contentCell = errorCell;
+        } else
+        {
+          continue;
+        }
+      } else if (ListSequence.fromList(lines).count() == 1) {
+        List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
+        if (ListSequence.fromList(lineParts).count() == 1) {
+          contentCell = LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), null, linePartsToLinkDeclarations);
+        } else
+        {
+          SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+          SPropertyOperations.set(hCollection, "vertical", "" + (false));
+          contentCell = hCollection;
+          for(SNode linePart : lineParts) {
+            SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, null, linePartsToLinkDeclarations));
+          }
+        }
+      } else
+      {
+        SNode vCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+        SPropertyOperations.set(vCollection, "vertical", "" + (true));
+        contentCell = vCollection;
+        for(SNode line : lines) {
+          SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+          SPropertyOperations.set(hCollection, "vertical", "" + (false));
+          SLinkOperations.addChild(vCollection, "childCellModel", hCollection);
+          for(SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
+            SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, null, linePartsToLinkDeclarations));
+          }
+        }
+      }
+      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
+      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
+      conceptsToEditors.put(conceptDeclaration, editor);
+    }
     //     setting roots and deleting input roots
     structureModel.setLoading(true);
     for(SNode root : new ArrayList<SNode>(SModelOperations.getRoots(structureModel, null))) {
@@ -50,9 +100,22 @@ public class QueriesGenerated {
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode concept = conceptsToTargets.get(conceptDeclaration);
       SModelOperations.addRootNode(structureModel, concept);
-      SNodeOperations.deleteNode(conceptDeclaration);
     }
     structureModel.setLoading(false);
+    SModelRepository.getInstance().markChanged(structureModel);
+    editorModel.setLoading(true);
+    for(SNode root : new ArrayList<SNode>(SModelOperations.getRoots(editorModel, null))) {
+      editorModel.removeRoot(root);
+    }
+    for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
+      SNode editorDeclaration = conceptsToEditors.get(conceptDeclaration);
+      SModelOperations.addRootNode(editorModel, editorDeclaration);
+    }
+    editorModel.setLoading(false);
+    SModelRepository.getInstance().markChanged(editorModel);
+    for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
+      SNodeOperations.deleteNode(conceptDeclaration);
+    }
   }
 
 }

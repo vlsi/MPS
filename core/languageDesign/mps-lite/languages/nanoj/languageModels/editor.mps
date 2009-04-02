@@ -45,5 +45,38 @@
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238684987571">
+    <link role="conceptDeclaration" targetNodeId="1.1238684987565" resolveInfo="Expression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987572">
+      <property name="text" value="abstract Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238684987573">
+    <link role="conceptDeclaration" targetNodeId="1.1238684987566" resolveInfo="MinusExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238684987574">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987575">
+        <property name="text" value="not implemented" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987576">
+        <property name="text" value="not implemented" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238684987577">
+    <link role="conceptDeclaration" targetNodeId="1.1238684987568" resolveInfo="PlusExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238684987578">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987579">
+        <property name="text" value="not implemented" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987580">
+        <property name="text" value="not implemented" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1238684987581">
+        <property name="text" value="not implemented" />
+      </node>
+    </node>
+  </node>
 </model>
 
