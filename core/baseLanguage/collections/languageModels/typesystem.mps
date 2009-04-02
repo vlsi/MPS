@@ -184,6 +184,7 @@
                   <link role="variableDeclaration" targetNodeId="1193827288873" resolveInfo="input" />
                 </node>
                 <node role="rValue" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1203973679487">
+                  <property name="asCast" value="true" />
                   <link role="concept" targetNodeId="3.1151701983961" resolveInfo="SequenceOperation" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845282">
                     <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1193827288893">

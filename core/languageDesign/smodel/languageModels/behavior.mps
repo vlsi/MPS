@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -52,6 +52,7 @@
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="16" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="17" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" version="-1" />
+  <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877233274">
     <property name="package" value="operation.node" />
     <link role="concept" targetNodeId="1.1144195091934" resolveInfo="Node_IsRoleOperation" />
@@ -2305,6 +2306,35 @@
         <property name="name" value="expression" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223307126527">
           <link role="concept" targetNodeId="14.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238686292741">
+    <link role="concept" targetNodeId="1.1140137987495" resolveInfo="SNodeTypeCastExpression" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238686292742">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238686292743" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238686302573">
+      <property name="name" value="isSNodeCast" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238686302574" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1238686304757" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238686302576">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238686311409">
+          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression" id="1238686314224">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238686343692">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238686342327">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238686341811" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238686343003">
+                  <link role="link" targetNodeId="1.1140138123956" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1238686344587" />
+            </node>
+            <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238686314226">
+              <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238686314227" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

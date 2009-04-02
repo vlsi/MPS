@@ -11553,11 +11553,27 @@
                 <link role="concept" targetNodeId="8.1153509719989" resolveInfo="ClosureWithInputElement" />
               </node>
               <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1205836298253">
+                <property name="asCast" value="true" />
                 <link role="concept" targetNodeId="8.1153509719989" resolveInfo="ClosureWithInputElement" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205836295155">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1205836294627" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1205836295883" />
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238685658176">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238685658177">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238685662763">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238685665969">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238685659822">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238685661137" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238685659461">
+                <link role="variableDeclaration" targetNodeId="1205836283202" resolveInfo="cl" />
               </node>
             </node>
           </node>
@@ -11635,11 +11651,27 @@
                 <link role="concept" targetNodeId="14.1199569711397" resolveInfo="ClosureLiteral" />
               </node>
               <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224448597017">
+                <property name="asCast" value="true" />
                 <link role="concept" targetNodeId="14.1199569711397" resolveInfo="ClosureLiteral" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224448597018">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1224448597019" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224448597020" />
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238685674253">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238685674254">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238685676965">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238685677717">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238685675148">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238685675901" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238685674960">
+                <link role="variableDeclaration" targetNodeId="1224448597015" resolveInfo="cl" />
               </node>
             </node>
           </node>
@@ -11738,11 +11770,27 @@
                 <link role="concept" targetNodeId="14.1199569711397" resolveInfo="ClosureLiteral" />
               </node>
               <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224452464202">
+                <property name="asCast" value="true" />
                 <link role="concept" targetNodeId="14.1199569711397" resolveInfo="ClosureLiteral" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224452464203">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1224452464204" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224452464205" />
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238685696616">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238685696617">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238685700407">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1238685701065">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238685698746">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238685699515" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238685698527">
+                <link role="variableDeclaration" targetNodeId="1224452464200" resolveInfo="cl" />
               </node>
             </node>
           </node>

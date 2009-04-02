@@ -17,9 +17,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.editor.SNodeTypeCastExpression_Concept_Actions;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
@@ -36,7 +38,12 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_6410_1(context, node));
-    editorCell.addEditorCell(this.createConstant_6410_0(context, node, ":"));
+    if (renderingCondition6410_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6410_0(context, node, ":"));
+    }
+    if (renderingCondition6410_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6410_1(context, node, "as"));
+    }
     editorCell.addEditorCell(this.createRefCell_6410_1(context, node));
     return editorCell;
   }
@@ -45,6 +52,14 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6410_0(editorCell, node, context);
     setupLabel_Constant_6410_0(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_6410_1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_6410_1(editorCell, node, context);
+    setupLabel_Constant_6410_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -131,6 +146,18 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, context);
   }
 
+  private static void setupBasic_Constant_6410_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6410_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_RefNode_6410_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -138,6 +165,17 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefCell_6410_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_6410_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition6410_0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "asCast"));
+  }
+
+  public static boolean renderingCondition6410_1(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "asCast");
   }
 
   public static class _Inline6410_0 extends AbstractCellProvider {

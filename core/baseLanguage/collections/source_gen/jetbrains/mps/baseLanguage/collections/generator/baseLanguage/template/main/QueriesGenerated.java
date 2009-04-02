@@ -91,7 +91,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1205836176910(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     //     Reduce skip statement to break statement
-    SNode cl = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.collections.structure.ClosureWithInputElement");
+    SNode cl = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.collections.structure.ClosureWithInputElement");
+    if (cl == null) {
+      return false;
+    }
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.collections.structure.ClosureWithInputElement", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.TraversalSkipStatement")) {
@@ -262,7 +265,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1224448596468(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     //     Reduce skip statement to break statement
-    SNode cl = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    SNode cl = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (cl == null) {
+      return false;
+    }
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement")) {
@@ -275,7 +281,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1224452463389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     //     Reduce stop statement to break statement
-    SNode cl = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    SNode cl = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (cl == null) {
+      return false;
+    }
     for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.StopStatement")) {

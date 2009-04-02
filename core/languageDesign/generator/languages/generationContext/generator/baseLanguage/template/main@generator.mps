@@ -1318,6 +1318,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217893332586">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217893327035">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1217893323111">
+                  <property name="asCast" value="true" />
                   <link role="concept" targetNodeId="5.1197027756228" resolveInfo="DotExpression" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217893287919">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217893286340" />
