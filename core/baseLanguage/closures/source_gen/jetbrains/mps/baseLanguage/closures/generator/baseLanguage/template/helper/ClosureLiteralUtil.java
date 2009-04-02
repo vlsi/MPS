@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helpe
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
@@ -146,7 +146,7 @@ public class ClosureLiteralUtil {
   }
 
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
-    Set<String> visited = new HashSet<String>();
+    Set<String> visited = SetSequence.<String>fromArray();
     List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       for(SNode arg : SLinkOperations.getTargets(realType, "argument", true)) {
@@ -161,7 +161,7 @@ public class ClosureLiteralUtil {
     */
     while (!(queue.isEmpty())) {
       SNode candidate = ListSequence.fromList(queue).removeElementAt(0);
-      if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
+      if (!(SetSequence.fromSet(visited).contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
         /*
           SNode matched = null;
         */
@@ -182,7 +182,7 @@ public class ClosureLiteralUtil {
           map = matchType(absType, candidate, map);
           return map;
         }
-        visited.add(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));
+        SetSequence.fromSet(visited).addElement(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));
         for(SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
           ListSequence.fromList(queue).addElement(superType);
         }

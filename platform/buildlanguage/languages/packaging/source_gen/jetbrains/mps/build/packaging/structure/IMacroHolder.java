@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.structure;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Iterator;
+import jetbrains.mps.build.packaging.structure.Macro;
 import java.util.List;
 
 public interface IMacroHolder extends INodeAdapter {

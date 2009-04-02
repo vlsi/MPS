@@ -5,7 +5,9 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.packaging.structure.IStringExpression;
 import java.util.Iterator;
+import jetbrains.mps.build.packaging.structure.ConfigurationReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,23 +16,15 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractProjectComponent extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.AbstractProjectComponent";
   public static final String CPR_AcceptFiles = "acceptFiles";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String TITLE = "title";
   public static final String CONFIGURATION = "configuration";
 
   public AbstractProjectComponent(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(AbstractProjectComponent.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AbstractProjectComponent.NAME, value);
   }
 
   public String getShortDescription() {
@@ -55,6 +49,14 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractProjectComponent.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AbstractProjectComponent.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AbstractProjectComponent.NAME, value);
   }
 
   public IStringExpression getTitle() {

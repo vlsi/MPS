@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 public class Attribute extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xml.deprecated.structure.Attribute";
   public static final String VALUE = "value";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
 
   public Attribute(SNode node) {
     super(node);
@@ -27,14 +27,6 @@ public class Attribute extends BaseConcept implements INamedConcept {
 
   public void setValue(String value) {
     this.setProperty(Attribute.VALUE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Attribute.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Attribute.NAME, value);
   }
 
   public String getShortDescription() {
@@ -59,6 +51,14 @@ public class Attribute extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Attribute.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Attribute.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Attribute.NAME, value);
   }
 
 

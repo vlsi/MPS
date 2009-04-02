@@ -1722,9 +1722,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888356792">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888356794">
-                <link role="baseMethodDeclaration" targetNodeId="3.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1128379779682">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" id="1238666113090">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238666118613">
                   <link role="classifier" targetNodeId="1095695120718" resolveInfo="class_EnumerationDataTypeDeclaration_Enum" />
                 </node>
               </node>

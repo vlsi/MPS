@@ -12801,9 +12801,8 @@
                       <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540834">
                         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                       </node>
-                      <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540835">
-                        <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238585540836" />
+                      <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453071">
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453072" />
                       </node>
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1230634921051">
@@ -12811,9 +12810,8 @@
                         <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540931">
                           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                         </node>
-                        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540932">
-                          <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238585540933" />
+                        <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453093">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453094" />
                         </node>
                       </node>
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230634921056">
@@ -13693,9 +13691,8 @@
                     <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541147">
                       <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                     </node>
-                    <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541148">
-                      <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238585541149" />
+                    <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453121">
+                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453122" />
                     </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1230634816584">
@@ -13703,9 +13700,8 @@
                       <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541091">
                         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                       </node>
-                      <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541092">
-                        <link role="classifier" targetNodeId="6.~List" resolveInfo="List" />
-                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238585541093" />
+                      <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453035">
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453036" />
                       </node>
                     </node>
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230634816589">

@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
@@ -40,9 +41,8 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234294303464">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234294303465">
           <property name="name" value="bootstrapModules" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234294303466">
-            <link role="classifier" targetNodeId="4.~Set" resolveInfo="Set" />
-            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234294303467">
+          <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238669912014">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238669912015">
               <link role="classifier" targetNodeId="3.~Language" resolveInfo="Language" />
             </node>
           </node>
@@ -66,9 +66,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234294330663">
               <link role="variableDeclaration" targetNodeId="1234294303465" resolveInfo="bootstrapModules" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234294330664">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Set.isEmpty():boolean" resolveInfo="isEmpty" />
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1238669948302" />
           </node>
         </node>
       </node>

@@ -18,9 +18,8 @@ import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -61,12 +60,12 @@ public class MPSBuild_Behavior {
     List<SNode> paths = ListOperations.<SNode>createList();
     File dir = new File(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
     List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
-    Set<IModule> modulesInClasspath = new HashSet<IModule>();
+    Set<IModule> modulesInClasspath = SetSequence.<IModule>fromArray();
     for(IModule module : ListSequence.fromList(modulesList)) {
       if (module instanceof Language) {
         Language language = (Language)module;
-        modulesInClasspath.add(language);
-        modulesInClasspath.addAll(language.getRuntimeDependOnModules());
+        SetSequence.fromSet(modulesInClasspath).addElement(language);
+        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(language.getRuntimeDependOnModules()));
       }
     }
     for(IModule module : SetSequence.fromSet(modulesInClasspath)) {
@@ -77,8 +76,8 @@ public class MPSBuild_Behavior {
       if (module instanceof Language) {
         Language language = (Language)module;
         List<String> runtimeCP = language.getLanguageRuntimeClassPathItems();
-        runtimeCP.removeAll(language.getClassPath());
-        if (!(runtimeCP.isEmpty())) {
+        ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getClassPath()));
+        if (!(ListSequence.fromList(runtimeCP).isEmpty())) {
           path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
           SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.RUNTIME_JAR_SUFFIX);
           ListSequence.fromList(paths).addElement(path);

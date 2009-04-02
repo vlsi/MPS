@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import java.util.ArrayList;
 
 public class WrappersUtils {
 
@@ -61,8 +60,8 @@ with_decls:
 
   public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
     copyPrepDataNoRecursion(from, to, generator);
-    List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
-    List<SNode> fromDescendats = new ArrayList<SNode>(SNodeOperations.getDescendants(from, null, false));
+    List<SNode> toDescendants = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(to, null, false)));
+    List<SNode> fromDescendats = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(from, null, false)));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
       copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);

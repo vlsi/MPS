@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 public class Macro extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Macro";
   public static final String PATH = "path";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
 
   public Macro(SNode node) {
     super(node);
@@ -27,14 +27,6 @@ public class Macro extends BaseConcept implements INamedConcept {
 
   public void setPath(String value) {
     this.setProperty(Macro.PATH, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Macro.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Macro.NAME, value);
   }
 
   public String getShortDescription() {
@@ -59,6 +51,14 @@ public class Macro extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Macro.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Macro.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Macro.NAME, value);
   }
 
 

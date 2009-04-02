@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -23,7 +24,7 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
 
   public void applyRule(final SNode mPSBuild, final TypeCheckingContext typeCheckingContext) {
     Set<Language> bootstrapModules = LibraryManager.getInstance().getBootstrapModules(Language.class);
-    assert !(bootstrapModules.isEmpty());
+    assert !(SetSequence.fromSet(bootstrapModules).isEmpty());
     if (bootstrapModules.iterator().next().isPackaged() && (SLinkOperations.getTarget(mPSBuild, "pathToBuildToolsZip", true) == null)) {
       {
         BaseIntentionProvider intentionProvider = null;

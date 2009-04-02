@@ -12,8 +12,8 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -74,8 +74,8 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     {
       SNode paramType1;
       SNode paramType2;
-      Iterator<SNode> paramType1_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
-      Iterator<SNode> paramType2_iterator = SLinkOperations.getTargets(supertype, "parameterType", true).iterator();
+      Iterator<SNode> paramType1_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+      Iterator<SNode> paramType2_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).iterator();
       while (true) {
         if (!(paramType1_iterator.hasNext())) {
           break;
@@ -133,8 +133,8 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       {
         SNode paramType1;
         SNode paramType2;
-        Iterator<SNode> paramType1_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
-        Iterator<SNode> paramType2_iterator = SLinkOperations.getTargets(supertype, "parameterType", true).iterator();
+        Iterator<SNode> paramType1_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+        Iterator<SNode> paramType2_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).iterator();
         while (true) {
           if (!(paramType1_iterator.hasNext())) {
             break;

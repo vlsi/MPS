@@ -57,8 +57,8 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
       {
         SNode pt;
         SNode param;
-        Iterator<SNode> pt_iterator = fpts.iterator();
-        Iterator<SNode> param_iterator = params.iterator();
+        Iterator<SNode> pt_iterator = ListSequence.fromList(fpts).iterator();
+        Iterator<SNode> param_iterator = ListSequence.fromList(params).iterator();
         while (true) {
           if (!(pt_iterator.hasNext())) {
             break;

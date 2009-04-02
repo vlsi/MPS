@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class FileAssociation extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.distrib.structure.FileAssociation";
   public static final String EXTENSIONS = "extensions";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String ICON = "icon";
 
   public FileAssociation(SNode node) {
@@ -29,14 +29,6 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
 
   public void setExtensions(String value) {
     this.setProperty(FileAssociation.EXTENSIONS, value);
-  }
-
-  public String getName() {
-    return this.getProperty(FileAssociation.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(FileAssociation.NAME, value);
   }
 
   public String getShortDescription() {
@@ -61,6 +53,14 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(FileAssociation.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(FileAssociation.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(FileAssociation.NAME, value);
   }
 
   public AbstractPath getIcon() {
