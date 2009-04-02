@@ -346,10 +346,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "overrides");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1176549093254(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name") + "_iterator";
-  }
-
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String name = _context.createUniqueName("pattern_", null);
     _context.getNode().putUserObject("coercedPatternName", name);
@@ -945,6 +941,10 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "restrictionKind", "equals", "equals");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1238605633318(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name") + "_iterator";
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -1353,10 +1353,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1176545874689(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule");
-  }
-
-  public static boolean ifMacro_Condition_1176555418137(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
   }
 
   public static boolean ifMacro_Condition_1176556372659(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1785,6 +1781,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1238605633330(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1833,10 +1833,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1176545128119(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "supertypeExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1176548857586(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "iterable", true);
   }
 
   public static SNode sourceNodeQuery_1176549014721(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2161,10 +2157,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "infoText", true);
   }
 
-  public static SNode sourceNodeQuery_1225192811874(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "type", true);
-  }
-
   public static SNode sourceNodeQuery_1225969318228(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "warningText", true);
   }
@@ -2285,6 +2277,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rightOperandType", true);
   }
 
+  public static SNode sourceNodeQuery_1238605661613(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1238605742652(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "iterable", true);
+  }
+
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -2298,10 +2298,6 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1176548514510(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "loopVariable", true);
-  }
-
-  public static Iterable sourceNodesQuery_1176548865639(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "loopVariable", true);
   }
 
@@ -2433,6 +2429,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1236100937810(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule");
+  }
+
+  public static Iterable sourceNodesQuery_1238605633335(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "loopVariable", true);
   }
 
   public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {

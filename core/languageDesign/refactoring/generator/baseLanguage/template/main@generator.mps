@@ -285,17 +285,16 @@
                 <link role="fieldDeclaration" targetNodeId="1201176251472" resolveInfo="myTransientParameters" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213086574501">
-              <link role="baseMethodDeclaration" targetNodeId="9.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201177815291">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1238608564728">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238608564729">
                 <property name="value" value="parameterName" />
-                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1201178032542">
-                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1201178032543">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201178032544">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201178037701">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912278">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201178037702" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1201178039675">
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1238608564730">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1238608564731">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238608564732">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238608564733">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238608564734">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238608564735" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238608564736">
                             <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
                           </node>
                         </node>
@@ -1191,12 +1190,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201176844935">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201176865096">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213085165051">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213085165053">
-              <link role="baseMethodDeclaration" targetNodeId="9.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192947709" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213085168649">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201176887806" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1213085168650">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238608564817">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192947709" />
+              <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238608564818">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1238608564819" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1238608564820">
                   <link role="fieldDeclaration" targetNodeId="1201176251472" resolveInfo="myTransientParameters" />
                 </node>
               </node>

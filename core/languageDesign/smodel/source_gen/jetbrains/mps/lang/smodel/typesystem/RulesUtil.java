@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.Iterator;
@@ -279,10 +278,10 @@ public class RulesUtil {
 
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
     Map<SNode, Set<SNode>> subTypesToSuperTypes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-    Set<SNode> keyset = new HashSet<SNode>();
-    Set<SNode> allTypes = new HashSet<SNode>();
-    Set<SNode> frontier = new HashSet(concepts);
-    Set<SNode> newFrontier = new HashSet<SNode>();
+    Set<SNode> keyset = SetSequence.<SNode>fromArray();
+    Set<SNode> allTypes = SetSequence.<SNode>fromArray();
+    Set<SNode> frontier = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(concepts));
+    Set<SNode> newFrontier = SetSequence.<SNode>fromArray();
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for(SNode concept : frontier) {
         if (SetSequence.fromSet(keyset).contains(concept)) {
@@ -291,7 +290,7 @@ public class RulesUtil {
         List<SNode> supertypes = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(concept);
         Set<SNode> set = MapSequence.fromMap(subTypesToSuperTypes).get(concept);
         if (set == null) {
-          set = new HashSet<SNode>();
+          set = SetSequence.<SNode>fromArray();
           MapSequence.fromMap(subTypesToSuperTypes).put(concept, set);
         }
         SetSequence.fromSet(set).addSequence(ListSequence.fromList(supertypes));
@@ -301,7 +300,7 @@ public class RulesUtil {
         ListSequence.fromList(supertypes).addElement(concept);
       }
       frontier = newFrontier;
-      newFrontier = new HashSet<SNode>();
+      newFrontier = SetSequence.<SNode>fromArray();
     }
     //     transitive closure
     for(SNode node2 : allTypes) {
@@ -321,7 +320,7 @@ public class RulesUtil {
         }
       }
     }
-    Set<SNode> result = new HashSet<SNode>(concepts);
+    Set<SNode> result = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(concepts));
     while (SetSequence.fromSet(result).count() >= 2) {
       Iterator<SNode> iterator = result.iterator();
       SNode a = iterator.next();
@@ -342,17 +341,17 @@ public class RulesUtil {
     }
     Set<SNode> superTypesA = MapSequence.fromMap(subTypesToSuperTypes).get(a);
     superTypesA = (superTypesA == null ?
-      new HashSet<SNode>() :
+      SetSequence.<SNode>fromArray() :
       superTypesA
     );
     Set<SNode> superTypesB = MapSequence.fromMap(subTypesToSuperTypes).get(b);
     superTypesB = (superTypesB == null ?
-      new HashSet<SNode>() :
+      SetSequence.<SNode>fromArray() :
       superTypesB
     );
     SetSequence.fromSet(superTypesA).addElement(a);
     SetSequence.fromSet(superTypesB).addElement(b);
-    for(SNode superTypeA : new HashSet<SNode>(superTypesA)) {
+    for(SNode superTypeA : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(superTypesA))) {
       boolean matches = false;
       for(SNode superTypeB : superTypesB) {
         if (superTypeA == superTypeB) {
@@ -365,7 +364,7 @@ public class RulesUtil {
       }
     }
     Set<SNode> commonSupertypes = superTypesA;
-    for(SNode commonSupertype : new HashSet<SNode>(commonSupertypes)) {
+    for(SNode commonSupertype : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(commonSupertypes))) {
       if (!(SetSequence.fromSet(commonSupertypes).contains(commonSupertype))) {
         continue;
       }

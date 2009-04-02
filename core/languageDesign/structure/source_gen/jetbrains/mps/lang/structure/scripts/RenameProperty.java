@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.Rename;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -37,7 +36,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public RenameProperty() {
-    this.myTransientParameters.add("newName");
+    SetSequence.fromSet(this.myTransientParameters).addElement("newName");
   }
 
   public String getUserFriendlyName() {
@@ -45,7 +44,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return new HashSet<String>(this.myTransientParameters);
+    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
   }
 
   public String getKeyStroke() {

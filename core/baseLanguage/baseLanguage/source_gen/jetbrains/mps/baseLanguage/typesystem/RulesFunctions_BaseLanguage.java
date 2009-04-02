@@ -319,8 +319,8 @@ __switch__:
       {
         SNode arg;
         SNode param;
-        Iterator<SNode> arg_iterator = SLinkOperations.getTargets(mc, "actualArgument", true).iterator();
-        Iterator<SNode> param_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true).iterator();
+        Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
+        Iterator<SNode> param_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true)).iterator();
         while (true) {
           if (!(arg_iterator.hasNext())) {
             break;

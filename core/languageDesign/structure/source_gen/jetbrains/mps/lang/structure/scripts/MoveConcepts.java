@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -44,8 +43,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public MoveConcepts() {
-    this.myTransientParameters.add("targetModel");
-    this.myTransientParameters.add("sourceModel");
+    SetSequence.fromSet(this.myTransientParameters).addElement("targetModel");
+    SetSequence.fromSet(this.myTransientParameters).addElement("sourceModel");
   }
 
   public String getUserFriendlyName() {
@@ -53,7 +52,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return new HashSet<String>(this.myTransientParameters);
+    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
   }
 
   public String getKeyStroke() {

@@ -27930,8 +27930,10 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227281000326" />
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227281004847">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227281011802">
-                <link role="baseMethodDeclaration" targetNodeId="4.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238607530697">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238607543337">
+                  <link role="classifier" targetNodeId="28.~WriteInstruction" resolveInfo="WriteInstruction" />
+                </node>
               </node>
             </node>
           </node>

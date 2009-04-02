@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -40,9 +39,9 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public SafeDeleteConcept() {
-    this.myTransientParameters.add("sourceLanguage");
-    this.myTransientParameters.add("behaviorNode");
-    this.myTransientParameters.add("editorNode");
+    SetSequence.fromSet(this.myTransientParameters).addElement("sourceLanguage");
+    SetSequence.fromSet(this.myTransientParameters).addElement("behaviorNode");
+    SetSequence.fromSet(this.myTransientParameters).addElement("editorNode");
   }
 
   public String getUserFriendlyName() {
@@ -50,7 +49,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return new HashSet<String>(this.myTransientParameters);
+    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
   }
 
   public String getKeyStroke() {

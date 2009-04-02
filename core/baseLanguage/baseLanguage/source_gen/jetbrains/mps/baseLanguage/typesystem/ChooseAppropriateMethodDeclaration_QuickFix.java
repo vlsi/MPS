@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
@@ -37,8 +38,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
           {
             SNode parameter;
             SNode argument;
-            Iterator<SNode> parameter_iterator = parameterTypes.iterator();
-            Iterator<SNode> argument_iterator = SLinkOperations.getTargets(constructorCall, "actualArgument", true).iterator();
+            Iterator<SNode> parameter_iterator = ListSequence.fromList(parameterTypes).iterator();
+            Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(constructorCall, "actualArgument", true)).iterator();
             while (true) {
               if (!(parameter_iterator.hasNext())) {
                 break;
@@ -74,8 +75,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
           {
             SNode parameterType;
             SNode argument;
-            Iterator<SNode> parameterType_iterator = parameterTypes.iterator();
-            Iterator<SNode> argument_iterator = SLinkOperations.getTargets(((SNode)this.getField("methodCall")[0]), "actualArgument", true).iterator();
+            Iterator<SNode> parameterType_iterator = ListSequence.fromList(parameterTypes).iterator();
+            Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(((SNode)this.getField("methodCall")[0]), "actualArgument", true)).iterator();
             while (true) {
               if (!(parameterType_iterator.hasNext())) {
                 break;

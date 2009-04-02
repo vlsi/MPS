@@ -11,6 +11,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -34,8 +35,8 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
     {
       SNode arg;
       SNode parameter;
-      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true).iterator();
-      Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true).iterator();
+      Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).iterator();
       while (true) {
         if (!(arg_iterator.hasNext())) {
           break;

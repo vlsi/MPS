@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.typesystem._Patterns;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -36,8 +37,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = SLinkOperations.getTargets(coercedNode_0, "parameter", true).iterator();
-                Iterator<SNode> myParam_iterator = SLinkOperations.getTargets(supertype, "parameter", true).iterator();
+                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_0, "parameter", true)).iterator();
+                Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
                     break;
@@ -117,8 +118,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = SLinkOperations.getTargets(coercedNode_1, "parameter", true).iterator();
-            Iterator<SNode> myParam_iterator = SLinkOperations.getTargets(supertype, "parameter", true).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_1, "parameter", true)).iterator();
+            Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {
                 break;
