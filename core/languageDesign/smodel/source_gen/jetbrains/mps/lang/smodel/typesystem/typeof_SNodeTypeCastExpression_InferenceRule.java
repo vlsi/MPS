@@ -44,6 +44,11 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
               typeCheckingContext.createEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085350", true), new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085348", intentionProvider);
             }
           }
+          {
+            SNode _nodeToCheck_1029348928467 = expr;
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", intentionProvider);
+          }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061660362", true, false);
     }

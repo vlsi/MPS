@@ -145,6 +145,20 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement" id="1238686640332">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640333">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1238686640334">
+                <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640335">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238686640336">
+                <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238686640337">
+                  <link role="applicableNode" targetNodeId="1178287490184" resolveInfo="expr" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1186061707811">
           <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
