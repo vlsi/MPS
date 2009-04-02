@@ -44,37 +44,37 @@ public class PrepStatementUtil {
 
   private int prepStatement(SNode stmt, int label) {
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
-      return this.prepWhileStatement(stmt, label);
+      return this.prepWhileStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) {
-      return this.prepDoWhileStatement(stmt, label);
+      return this.prepDoWhileStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
-      return this.prepForStatement(stmt, label);
+      return this.prepForStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
-      return this.prepForeachStatement(stmt, label);
+      return this.prepForeachStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      return this.prepIfStatement(stmt, label);
+      return this.prepIfStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
-      return this.prepSwitchStatement(stmt, label);
+      return this.prepSwitchStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-      return this.prepLocalvariableDeclarationStatement(stmt, label);
+      return this.prepLocalvariableDeclarationStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
-      return this.prepYieldStatement(stmt, label);
+      return this.prepYieldStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"), label);
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
-      this.prepBreakStatement(stmt);
+      this.prepBreakStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.BreakStatement"));
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ContinueStatement")) {
-      this.prepContinueStatement(stmt);
+      this.prepContinueStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ContinueStatement"));
     } else
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      return this.prepBlockStatement(stmt, label);
+      return this.prepBlockStatement(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement"), label);
     }
     return label;
   }
@@ -146,8 +146,8 @@ public class PrepStatementUtil {
     }
     putPrepData(ifstmt, new Integer[]{beginLabel,ifTrueLabel,ifFalseLabel,nextLabel}, this.generator);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      putPrepData(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
-      this.prepStatementList(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true));
+      putPrepData(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
+      this.prepStatementList(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true));
     } else
     if ((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
       this.prepStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), ifFalseLabel);
@@ -194,8 +194,8 @@ public class PrepStatementUtil {
     SNode node = bstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
       if (lbl == (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
-        SPropertyOperations.getString(node, "label") :
-        SPropertyOperations.getString(node, "label")
+        SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") :
+        SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")
       )) {
         Integer[] labels = (Integer[])getPrepData(node, this.generator);
         brLabel = labels[labels.length - 1];
@@ -210,7 +210,7 @@ public class PrepStatementUtil {
     String lbl = SPropertyOperations.getString(cstmt, "label");
     SNode node = cstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
-      if (lbl == SPropertyOperations.getString(node, "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(node, "label")))) {
+      if (lbl == SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label")))) {
         Integer[] labels = (Integer[])getPrepData(node, this.generator);
         conLabel = labels[1];
         break;
@@ -242,9 +242,9 @@ public class PrepStatementUtil {
 
   private int calcNextLabel(SNode cstmt) {
     if (SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      SNode topIfStmt = SNodeOperations.getParent(cstmt);
+      SNode topIfStmt = SNodeOperations.cast(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.IfStatement");
       while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topIfStmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        topIfStmt = SNodeOperations.getParent(topIfStmt);
+        topIfStmt = SNodeOperations.cast(SNodeOperations.getParent(topIfStmt), "jetbrains.mps.baseLanguage.structure.IfStatement");
       }
       Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(topIfStmt, this.generator);
       if (parentLabels != null) {

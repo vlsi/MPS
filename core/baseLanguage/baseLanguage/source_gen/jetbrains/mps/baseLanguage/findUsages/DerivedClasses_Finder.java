@@ -11,6 +11,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
@@ -35,7 +36,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
-        ListSequence.fromList(derived).addElement(classNode);
+        ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       if (passingNode != node) {
         ListOperations.addElement(_results, passingNode);

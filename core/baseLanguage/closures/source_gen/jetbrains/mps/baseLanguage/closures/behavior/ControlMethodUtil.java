@@ -33,7 +33,7 @@ public class ControlMethodUtil {
           if (functionParams > 0) {
             return null;
           }
-          if (SNodeOperations.getConceptDeclaration(ptype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ptype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+          if (SNodeOperations.getConceptDeclaration(ptype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
             if (initClosures > 0) {
               return null;
             }
@@ -41,12 +41,12 @@ public class ControlMethodUtil {
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
               closureParamTypes = ListSequence.<SNode>fromArray();
-              for(SNode pt : SLinkOperations.getTargets(ptype, "parameterType", true)) {
+              for(SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
               }
-            } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == SLinkOperations.getCount(ptype, "parameterType")) {
+            } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == SLinkOperations.getCount(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType")) {
               int i = 0;
-              for(SNode pt : SLinkOperations.getTargets(ptype, "parameterType", true)) {
+              for(SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++ )))) {
                   return null;
                 }
@@ -55,13 +55,13 @@ public class ControlMethodUtil {
             {
               return null;
             }
-          } else if (SLinkOperations.getCount(ptype, "parameterType") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ptype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+          } else if (SLinkOperations.getCount(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             if (controlClosures == 0 || initClosures >= ListSequence.fromList(closureParamTypes).count()) {
               return null;
             }
             initClosures++ ;
             inf.addInitClosureType(SNodeOperations.copyNode(ptype));
-            SNode rt = SLinkOperations.getTarget(ptype, "resultType", true);
+            SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "resultType", true);
             if (!(MatchingUtil.matchNodes(rt, ListSequence.fromList(closureParamTypes).getElement(ListSequence.fromList(closureParamTypes).count() - initClosures)))) {
               return null;
             }

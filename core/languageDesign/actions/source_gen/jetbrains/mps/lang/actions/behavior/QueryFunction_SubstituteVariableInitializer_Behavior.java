@@ -16,7 +16,7 @@ public class QueryFunction_SubstituteVariableInitializer_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode varDecl = SNodeOperations.getParent(thisNode);
+    SNode varDecl = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
     return SLinkOperations.getTarget(varDecl, "type", true);
   }
 

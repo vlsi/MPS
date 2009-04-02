@@ -29,10 +29,10 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
     }
     SNode mapperFunc;
     if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      mapperFunc = SLinkOperations.getTarget(parentMacro, "mapperFunction", true);
+      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
     } else
     {
-      mapperFunc = SLinkOperations.getTarget(parentMacro, "mapperFunction", true);
+      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
     }
     //      ----
     if (mapperFunc != null) {

@@ -45,7 +45,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     // 
     Set<SNode> implementorsAndAncestorsNodes = SetSequence.<SNode>fromArray();
     for(SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
-      SetSequence.fromSet(implementorsAndAncestorsNodes).addElement(implementorOrAncestor);
+      SetSequence.fromSet(implementorsAndAncestorsNodes).addElement(SNodeOperations.cast(implementorOrAncestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
     // 
     for(SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {

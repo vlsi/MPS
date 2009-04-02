@@ -24,7 +24,7 @@ public class Property_Behavior {
   }
 
   public static SNode call_getCustomPropertyImplementation_1213877383154(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "propertyImplementation", true);
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
 
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
@@ -42,7 +42,7 @@ public class Property_Behavior {
   public static SNode call_getSetterVisibility_1213877383188(SNode thisNode) {
     SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
     if (Property_Behavior.call_isDefaultImplementation_1213877383134(thisNode)) {
-      SNode setterVisibility = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "defaultSetAccessor", true), "visibility", true);
+      SNode setterVisibility = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), "defaultSetAccessor", true), "visibility", true);
       if ((setterVisibility != null)) {
         visibility = setterVisibility;
       }

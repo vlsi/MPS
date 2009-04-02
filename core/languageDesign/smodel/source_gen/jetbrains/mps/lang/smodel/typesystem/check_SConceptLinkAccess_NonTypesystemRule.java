@@ -22,7 +22,7 @@ public class check_SConceptLinkAccess_NonTypesystemRule extends AbstractNonTypes
       return;
     }
     SNode concreteConcept = RulesUtil.get_inputNodeConcept(op, true);
-    SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl);
+    SNode declaringConcept = SNodeOperations.cast(SNodeOperations.getParent(conceptLinkDecl), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)concreteConcept, declaringConcept, op, "operation is applied to wrong concept");
   }
 

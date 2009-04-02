@@ -127,7 +127,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237468867867(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SNode)(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "value", true), "operation", true))).toString();
+    return ((SNode)(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkAccess"))).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1237469183268(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -139,7 +139,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237469632307(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SNode)(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "value", true), "operation", true))).toString();
+    return ((SNode)(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkAccess"))).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1237469665264(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -263,7 +263,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1237468867885(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "value", true), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1237469183208(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -279,7 +279,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1237469632325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "value", true), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1237470929159(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

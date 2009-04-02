@@ -29,7 +29,7 @@ public class QueriesUtil {
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
         //         inside mapper func or post-mapper function?
         if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
-          SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodeQuery", true);
+          SNode query = SLinkOperations.getTarget(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true);
           if (query != null) {
             QueriesUtil.equate_outputNodeType_fromSourceQuery(typeCheckingContext, query, InputNodeType);
             return;
@@ -39,7 +39,7 @@ public class QueriesUtil {
       if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
         //         inside mapper func or post-mapper function?
         if ((SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction","jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"}, true, false) != null)) {
-          SNode query = SLinkOperations.getTarget(enclosingMacro, "sourceNodesQuery", true);
+          SNode query = SLinkOperations.getTarget(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
           if (query != null) {
             QueriesUtil.equate_outputNodeType_fromSourceQuery(typeCheckingContext, query, InputNodeType);
             return;
@@ -79,19 +79,19 @@ public class QueriesUtil {
       }
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
         if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-          if (SLinkOperations.getTarget(attribute, "sourceNodeQuery", true) == null) {
+          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true) == null) {
             //             the query is optional - continue 'enclosing macro' look-up
             continue;
           }
         }
         if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
-          if (SLinkOperations.getTarget(attribute, "sourceNodeQuery", true) == null) {
+          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true) == null) {
             //             the query is optional - continue 'enclosing macro' look-up
             continue;
           }
         }
         //         ========
-        prevMacro = attribute;
+        prevMacro = SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro");
       }
     }
     //     ========
@@ -171,22 +171,22 @@ __switch__:
       return null;
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.LoopMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), "sourceNodesQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-      return SLinkOperations.getTarget(macro, "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
     }
     return null;
   }
@@ -220,7 +220,7 @@ __switch__:
     }
     SNode OutputType = TypeChecker.getInstance().getTypeOf(query);
     if (SNodeOperations.isInstanceOf(OutputType, "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
-      return new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(OutputType, "elementConcept", false));
+      return new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(SNodeOperations.cast(OutputType, "jetbrains.mps.lang.smodel.structure.SNodeListType"), "elementConcept", false));
     } else
     {
       SNode outputSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(OutputType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
@@ -244,14 +244,14 @@ __switch__:
   private static SNode getApplicableConcept_fromEnvironment(SNode node) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.BaseMappingRule"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false);
     }
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
-      return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false);
     }
     //     ============
     SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
-    return SLinkOperations.getTarget(rootAnnotation, "applicableConcept", false);
+    return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
 
 }

@@ -71,7 +71,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
-      List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
       for(SNode parm : ListSequence.fromList(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
@@ -84,34 +84,34 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_Concept_IsSuperConceptOfOperation_1203553726915(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(_context.getSampleNode(), "conceptArgument", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation"), "conceptArgument", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_Concept_IsSubConceptOfOperation_1203553739271(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(_context.getSampleNode(), "conceptArgument", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation"), "conceptArgument", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_SNodeListType_1205353787834(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
-      SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
+      SNode elementType = SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
       if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
+        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(SNodeOperations.cast(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), false);
       }
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.ListType")) {
-      SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
+      SNode elementType = SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.ListType"), "elementType", true);
       if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
+        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(SNodeOperations.cast(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), false);
       }
     }
   }
 
   public static void nodeFactory_NodeSetup_Node_GetDescendantsOperation_1207248813875(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
-      List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
       for(SNode parm : ListSequence.fromList(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
@@ -130,7 +130,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
@@ -207,7 +207,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return ((List<SNode>)SLinkOperations.getConceptLinkTargets(_context.getParentNode(), "applicableParameter"));
+          return ((List<SNode>)SLinkOperations.getConceptLinkTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "applicableParameter"));
         }
       };
       Iterable queryResult = (Iterable)calc.calculate();
@@ -326,7 +326,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
@@ -361,12 +361,12 @@ public class QueriesGenerated {
 
         public boolean met(Object object) {
           SNode parameterOp = (SNode)concept;
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
+          SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+          SNode leftOperation = SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
           //           ---
           if (leftOperation != null) {
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
-              SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "property", false), "dataType", false);
+              SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false), "dataType", false);
               if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnumProperty"));
               } else
@@ -418,7 +418,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;

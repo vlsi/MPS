@@ -23,51 +23,51 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1216861714162(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getParentNode(), "operand", true)), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType");
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType");
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabel_1216861604198(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"), "label", false), false);
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), "label", false), false);
     }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabelAndInput_1216861604216(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"), "label", false), false);
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), "label", false), false);
     }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_SessionObjectAccess_1217895102264(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_StepObjectAccess_1217895169605(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_TransientObjectAccess_1217895187935(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(_context.getSampleNode(), "userKey", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputListByLabelAndInput_1221157578226(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"), "label", false), false);
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(_context.getSampleNode(), "label", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"), "label", false), false);
     }
   }
 
@@ -82,10 +82,8 @@ public class QueriesGenerated {
             public boolean accept(SNode it) {
               return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
             }
-
           }).toListSequence();
         }
-
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {

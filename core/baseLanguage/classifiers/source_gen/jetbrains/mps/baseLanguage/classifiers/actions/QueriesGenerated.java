@@ -45,13 +45,12 @@ public class QueriesGenerated {
         public Object calculate() {
           SNode contextPart = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false);
           if (SNodeOperations.isInstanceOf(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
-            return contextPart;
+            return SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
           } else
           {
-            return IClassifierPart_Behavior.call_getMainClassifier_1213877255428(contextPart);
+            return IClassifierPart_Behavior.call_getMainClassifier_1213877255428(SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"));
           }
         }
-
       };
       contextClassifier = (SNode)calc.calculate();
     }
@@ -61,7 +60,6 @@ public class QueriesGenerated {
         public Object calculate() {
           return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart","jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
         }
-
       };
       multipleClassifiers = (Boolean)calc.calculate();
     }
@@ -74,7 +72,6 @@ public class QueriesGenerated {
           public Object calculate() {
             return IClassifier_Behavior.call_getMembers_1213877528020(contextClassifier, _context.getParentNode());
           }
-
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
@@ -85,12 +82,11 @@ public class QueriesGenerated {
                 SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
                 if (multipleClassifiers) {
-                  SLinkOperations.setTarget(SLinkOperations.getTarget(result, "operand", true), "classifier", contextClassifier, false);
+                  SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "operand", true), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"), "classifier", contextClassifier, false);
                 }
                 SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1213877353000((item)), true);
                 return result;
               }
-
             });
           }
         }
@@ -108,7 +104,6 @@ public class QueriesGenerated {
         public Object calculate() {
           return ThisClassifierExpresson_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
         }
-
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
@@ -133,7 +128,6 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String text) {
             return this.getMatchingText(text);
           }
-
         });
       }
     }

@@ -93,7 +93,7 @@ public class SmartActions_Generated {
                   if (node instanceof MPSTreeNodeEx) {
                     SNode snode = ((MPSTreeNodeEx)node).getSNode();
                     if (SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-                      ListSequence.fromList(((List<SNode>)(getSmartActionContext()).get("fields")[0])).addElement(snode);
+                      ListSequence.fromList(((List<SNode>)(getSmartActionContext()).get("fields")[0])).addElement(SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
                     }
                   }
                 }

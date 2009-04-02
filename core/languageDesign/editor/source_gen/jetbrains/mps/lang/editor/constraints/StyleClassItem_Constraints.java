@@ -14,8 +14,8 @@ public class StyleClassItem_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      SNode testInstance = SConceptOperations.createNewNode(NameUtil.nodeFQName(_context.getChildConcept()), null);
-      return StyleClassItem_Behavior.call_isApplicableTo_1214304723440(testInstance, _context.getParentNode());
+      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(_context.getChildConcept()), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
+      return StyleClassItem_Behavior.call_isApplicableTo_1214304723440(testInstance, SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
     return true;
   }

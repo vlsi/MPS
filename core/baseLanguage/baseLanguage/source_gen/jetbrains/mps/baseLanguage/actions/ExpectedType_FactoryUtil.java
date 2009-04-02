@@ -17,7 +17,7 @@ public class ExpectedType_FactoryUtil {
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
-      castType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getParent(contextNode), contextNode);
+      castType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), contextNode);
     }
     return castType;
   }
@@ -26,7 +26,7 @@ public class ExpectedType_FactoryUtil {
     SNode originalExpression = null;
     for(SNode child : ListSequence.fromList(SNodeOperations.getChildren(enclosingNode))) {
       if (MatchingUtil.matchNodes(copiedExpression, child)) {
-        originalExpression = child;
+        originalExpression = SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
     return originalExpression;

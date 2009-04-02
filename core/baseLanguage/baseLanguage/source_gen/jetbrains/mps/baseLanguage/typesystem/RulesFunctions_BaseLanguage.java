@@ -151,7 +151,7 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(it);
+                      this.yield(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
                       return true;
                     case 14:
                       this.__CP__ = 12;
@@ -203,7 +203,7 @@ __switch__:
         if (nodes != null) {
           SNode tvar = ListSequence.fromList(nodes).getElement(0);
           if (TRACE_METHOD_TYPES) {
-            System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1213877396640(tvar) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(ListSequence.fromList(nodes).getElement(0)));
+            System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(ListSequence.fromList(nodes).getElement(0), "jetbrains.mps.lang.core.structure.BaseConcept")));
           }
           {
             SNode _nodeToCheck_1029348928467 = null;
@@ -280,7 +280,7 @@ __switch__:
                           intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
                           intentionProvider.putArgument("methodCall", mc);
                           intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
-                          typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(actualType), "componentType", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", false, 2, intentionProvider);
+                          typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", false, 2, intentionProvider);
                         }
                       } else
                       {
@@ -363,7 +363,7 @@ __switch__:
         for(SNode tvar : nodes) {
           if (prev != null && prev != tvar) {
             if (TRACE_METHOD_TYPES) {
-              System.out.println("-3- " + BaseConcept_Behavior.call_getPresentation_1213877396640(prev) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(tvar));
+              System.out.println("-3- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(prev, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")));
             }
             {
               SNode _nodeToCheck_1029348928467 = null;
@@ -387,7 +387,7 @@ __switch__:
               typeCheckingContext.whenConcrete(_representatorVar2, new Runnable() {
 
                 public void run() {
-                  System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
+                  System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), "jetbrains.mps.lang.core.structure.BaseConcept")));
                 }
               }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204114618006", false, false);
             }
@@ -402,7 +402,7 @@ __switch__:
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = typeCheckingContext.createNewRuntimeTypesVariable();
-      SNode tvd = SLinkOperations.getTarget(resType, "typeVariableDeclaration", false);
+      SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
       resType = typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896);
     } else
@@ -416,7 +416,7 @@ __switch__:
   private static void inference_mapTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = typeCheckingContext.createNewRuntimeTypesVariable();
-      SNode tvd = SLinkOperations.getTarget(type, "typeVariableDeclaration", false);
+      SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
       SNodeOperations.replaceWithAnother(type, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168));
     } else
@@ -485,8 +485,8 @@ __switch__:
     List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
     for(SNode statementList : statementLists) {
       SNode parent = SNodeOperations.getParent(statementList);
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
-        SNode tryStatement = parent;
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) == statementList) {
+        SNode tryStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement");
         for(SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
           for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
@@ -499,8 +499,8 @@ __switch__:
       if (SetSequence.fromSet(throwables).isEmpty()) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
-        SNode tryCatchStatement = parent;
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true) == statementList) {
+        SNode tryCatchStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
         for(SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
           for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
@@ -513,8 +513,8 @@ __switch__:
       if (SetSequence.fromSet(throwables).isEmpty()) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(parent, "body", true) == statementList) {
-        SNode baseMethodDeclaration = parent;
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true) == statementList) {
+        SNode baseMethodDeclaration = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         for(SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
           for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {

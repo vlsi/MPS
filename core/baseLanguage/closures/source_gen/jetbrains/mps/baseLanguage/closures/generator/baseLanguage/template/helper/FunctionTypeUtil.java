@@ -10,6 +10,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -17,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import java.util.Iterator;
 import java.text.Collator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
@@ -50,7 +50,7 @@ public class FunctionTypeUtil {
   public static SNode getAdaptableTarget(SNode expr, ITemplateGenerator generator) {
     SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     assert ntype != null;
-    List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(ntype, generator);
+    List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), generator);
     String trgFQname = (String)FunctionTypeUtil.getPrepData(expr, generator);
     SNode trg = null;
     for(SNode ct : targets) {
@@ -89,7 +89,7 @@ public class FunctionTypeUtil {
     SNode tmp = possiblyMeet;
 with_meet:
     while (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      for(SNode arg : SLinkOperations.getTargets(tmp, "argument", true)) {
+      for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           tmp = arg;
           continue with_meet;
@@ -98,7 +98,7 @@ with_meet:
       return new _Quotations.QuotationClass_0().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      List<SNode> params = SLinkOperations.getTargets(tmp, "parameter", true);
+      List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
       for(SNode p : params) {
         SNode up = unmeet(p);
         if (up != p) {
@@ -120,11 +120,11 @@ with_meet:
 
   public static void prepAdaptations(SNode ltype, SNode rexpr, TemplateQueryContext genContext) {
     SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      ltype :
+      SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
       null
     );
     SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      ltype :
+      SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") :
       null
     );
     if ((lFType == null) && (lCType == null)) {
@@ -142,16 +142,16 @@ with_meet:
     }
     SNode rtype = TypeChecker.getInstance().getTypeOf(rexpr);
     SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      rtype :
+      SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") :
       null
     );
     SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      rtype :
+      SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
       null
     );
     if ((lCType != null) && (rFType != null)) {
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(rexpr, lCType, genContext);
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lCType, genContext);
       } else
       {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType, genContext);
@@ -164,7 +164,7 @@ with_meet:
     } else
     if ((lFType != null) && (rFType != null)) {
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(rexpr, ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), genContext);
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), genContext);
       } else if (SLinkOperations.getCount(lFType, "throwsType") != SLinkOperations.getCount(rFType, "throwsType")) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType), genContext);
         FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), genContext);

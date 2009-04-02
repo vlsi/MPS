@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.actions.behavior._Quotations;
 
 public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
 
@@ -12,7 +13,7 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode hostMenuPart = SNodeOperations.getParent(thisNode);
+    SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart");
     SNode parameterType = SLinkOperations.getTarget(hostMenuPart, "type", true);
     if (parameterType != null) {
       return new _Quotations.QuotationClass_8().createNode(parameterType);

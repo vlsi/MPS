@@ -33,7 +33,7 @@ public class InvertIfCondition_Intention extends BaseIntention {
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
     if ((condition != null)) {
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
-        condition = SLinkOperations.getTarget(condition, "expression", true);
+        condition = SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.NotExpression"), "expression", true);
       } else
       {
         SNode newCondition = null;
@@ -56,8 +56,8 @@ public class InvertIfCondition_Intention extends BaseIntention {
           newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
         }
         if (newCondition != null) {
-          SLinkOperations.setTarget(newCondition, "leftExpression", SLinkOperations.getTarget(condition, "leftExpression", true), true);
-          SLinkOperations.setTarget(newCondition, "rightExpression", SLinkOperations.getTarget(condition, "rightExpression", true), true);
+          SLinkOperations.setTarget(newCondition, "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), true);
+          SLinkOperations.setTarget(newCondition, "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), true);
           condition = newCondition;
         } else
         {
@@ -82,11 +82,11 @@ public class InvertIfCondition_Intention extends BaseIntention {
     } else
     {
       newIfFalse = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
-      SLinkOperations.setTarget(newIfFalse, "statements", ifTrue, true);
+      SLinkOperations.setTarget(SNodeOperations.cast(newIfFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", ifTrue, true);
     }
     //     Set new ifTrue
     if (SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      newIfTrue = SLinkOperations.getTarget(ifFalse, "statements", true);
+      newIfTrue = SLinkOperations.getTarget(SNodeOperations.cast(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
     } else
     {
       newIfTrue = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);

@@ -35,13 +35,13 @@ public class QueriesUtil {
 
   public static boolean isProperty_hasValueEnum_notNullDefaultValue(SNode op, ITemplateGenerator generator) {
     SNode dataTypeDeclaration = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
-    SNode defMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(dataTypeDeclaration);
+    SNode defMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(dataTypeDeclaration, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMember, "internalValue") != null;
   }
 
   public static boolean isProperty_hasValueEnum_nullDefaultValue(SNode op, ITemplateGenerator generator) {
     SNode datatype = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
-    SNode defMemberNode = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(datatype);
+    SNode defMemberNode = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMemberNode, "internalValue") == null;
   }
 

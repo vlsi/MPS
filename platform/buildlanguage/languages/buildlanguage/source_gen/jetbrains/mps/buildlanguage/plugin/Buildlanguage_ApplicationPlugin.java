@@ -5,13 +5,13 @@ package jetbrains.mps.buildlanguage.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
-    List<BaseGroup> groups = new ArrayList<BaseGroup>();
+    List<BaseGroup> groups = ListSequence.<BaseGroup>fromArray();
     String moduleName = "jetbrains.mps.buildlanguage";
     this.addGroup(groups, moduleName, "jetbrains.mps.buildlanguage.plugin.ProjectPaneLanguageAddition_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.buildlanguage.plugin.ProjectPaneNodeAddition_ActionGroup");
@@ -21,7 +21,7 @@ public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
   private void addGroup(List<BaseGroup> groups, String moduleName, String groupName) {
     BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
     if (group != null) {
-      groups.add(group);
+      ListSequence.fromList(groups).addElement(group);
     }
   }
 

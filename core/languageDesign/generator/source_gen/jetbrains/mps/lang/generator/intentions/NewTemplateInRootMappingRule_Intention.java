@@ -66,8 +66,8 @@ public class NewTemplateInRootMappingRule_Intention extends BaseIntention {
         if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return;
         }
-        SPropertyOperations.set(root, "name", name.value);
-        SLinkOperations.setTarget(rule, "template", root, false);
+        SPropertyOperations.set(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", name.value);
+        SLinkOperations.setTarget(rule, "template", SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
         SLinkOperations.setTarget(SLinkOperations.getTarget(root, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", SLinkOperations.getTarget(rule, "applicableConcept", false), false);
       }
     });

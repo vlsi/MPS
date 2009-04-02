@@ -64,7 +64,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     }
     String role = SPropertyOperations.getString(link, "role");
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
-      SNode attributedNode = SNodeOperations.getParent(contextNode);
+      SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
       assert attributedNode != null;
       SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
       attributedNode.setAttribute(null);

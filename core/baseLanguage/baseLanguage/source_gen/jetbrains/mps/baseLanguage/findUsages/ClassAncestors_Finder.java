@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
@@ -36,7 +37,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     }
     SNode current = node;
     while (current != null) {
-      current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
+      current = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (current != null) {
         ListOperations.addElement(_results, current);
       }

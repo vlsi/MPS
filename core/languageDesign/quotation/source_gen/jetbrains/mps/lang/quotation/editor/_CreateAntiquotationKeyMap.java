@@ -79,7 +79,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent((contextNode));
+        SNode attributedNode = SNodeOperations.getParent((SNodeOperations.cast(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")));
         attributedNode.setAttribute(null);
         return;
       }
@@ -210,7 +210,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       }
       String role = SPropertyOperations.getString(link, "role");
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode);
+        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;
         SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
         attributedNode.setAttribute(null);
@@ -279,7 +279,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
       String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode);
+        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;
         SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
         attributedNode.setAttribute(null);

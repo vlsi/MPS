@@ -31,7 +31,7 @@ public class SymbolClassRegexp_Behavior {
     StringBuilder result = new StringBuilder();
     for(SNode part : parts) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")) {
-        SNode cscp = part;
+        SNode cscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
         if (Regexp_Behavior.call_checkStringForUnicode_1222857160881(thisNode, SPropertyOperations.getString(cscp, "character"))) {
           result.append(SPropertyOperations.getString(cscp, "character"));
         } else
@@ -39,9 +39,9 @@ public class SymbolClassRegexp_Behavior {
           result.append(Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(cscp, "character").charAt(0)));
         }
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart")) {
-        result.append("\\").append(SPropertyOperations.getString(SLinkOperations.getTarget(part, "declaration", false), "name"));
+        result.append("\\").append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), "declaration", false), "name"));
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart")) {
-        SNode iscp = part;
+        SNode iscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
         String start;
         String end = "";
         if (Regexp_Behavior.call_checkStringForUnicode_1222857160881(thisNode, SPropertyOperations.getString(iscp, "start"))) {
@@ -56,13 +56,13 @@ public class SymbolClassRegexp_Behavior {
         }
         result.append(start).append("-").append(end);
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart")) {
-        SNode iscp = part;
+        SNode iscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart");
         SNode left = SLinkOperations.getTarget(iscp, "left", true);
         if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
-          SNode tmLeft = left;
+          SNode tmLeft = SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
           result.append(Regexp_Behavior.call_getString_1222432436326(tmLeft, ListOperations.<SNode>createList()));
         } else if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart")) {
-          SNode tmLeft = left;
+          SNode tmLeft = SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
           List<SNode> tr = ListOperations.<SNode>createList();
           ListSequence.fromList(tr).addElement(tmLeft);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
@@ -71,9 +71,9 @@ public class SymbolClassRegexp_Behavior {
           throw new RuntimeException("NOT SUPPORTED: " + part.getClass());
         }
         result.append("&&");
-        SNode right = SLinkOperations.getTarget(iscp, "left", true);
+        SNode right = SNodeOperations.cast(SLinkOperations.getTarget(iscp, "left", true), "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart");
         if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
-          SNode tmrRight = right;
+          SNode tmrRight = SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
           List<SNode> tr = ListOperations.<SNode>createList();
           ListSequence.fromList(tr).addElement(tmrRight);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));

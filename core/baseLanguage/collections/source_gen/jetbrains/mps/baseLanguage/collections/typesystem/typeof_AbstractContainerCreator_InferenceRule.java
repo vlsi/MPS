@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
@@ -21,7 +22,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext) {
     {
       SNode initValue;
-      Iterator<SNode> initValue_iterator = SLinkOperations.getTargets(creator, "initValue", true).iterator();
+      Iterator<SNode> initValue_iterator = ListSequence.fromList(SLinkOperations.getTargets(creator, "initValue", true)).iterator();
       while (true) {
         if (!(initValue_iterator.hasNext())) {
           break;

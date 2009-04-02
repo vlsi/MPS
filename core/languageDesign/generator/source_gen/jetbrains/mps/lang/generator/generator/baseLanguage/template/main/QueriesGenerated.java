@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    // method parameter
+    //     method parameter
     return "_context";
   }
 
@@ -185,19 +185,19 @@ public class QueriesGenerated {
     List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
     for(SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
-      SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), true);
+      SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
       SNodeOperations.replaceWithAnother(node, replacement);
       SLinkOperations.setTarget(replacement, "expression", node, true);
     }
   }
 
   public static void mappingScript_CodeBlock_1217270660171(final IOperationContext operationContext, final MappingScriptContext _context) {
-    // references on mapping label will be lost because
-    // TLBase generator executes first and doesn't copy
-    // mapping configs (where labels are declared) to output model
+    //     references on mapping label will be lost because
+    //     TLBase generator executes first and doesn't copy
+    //     mapping configs (where labels are declared) to output model
     // 
     {
-      // references in 'get by label'
+      //       references in 'get by label'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel");
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
@@ -210,7 +210,7 @@ public class QueriesGenerated {
       }
     }
     {
-      // references in 'get by label and node'
+      //       references in 'get by label and node'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput");
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
@@ -223,7 +223,7 @@ public class QueriesGenerated {
       }
     }
     {
-      // references in 'get by label and node and ref.scope'
+      //       references in 'get by label and node and ref.scope'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope");
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
@@ -236,7 +236,7 @@ public class QueriesGenerated {
       }
     }
     {
-      // references in 'get all by label and node'
+      //       references in 'get all by label and node'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput");
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
@@ -249,7 +249,7 @@ public class QueriesGenerated {
       }
     }
     {
-      // references in 'get prev input by label'
+      //       references in 'get prev input by label'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel");
       for(SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.actions.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
@@ -14,13 +15,13 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart","jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart")) {
-      return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
+      return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart"), "concept", false));
     }
     SNode expectedType = null;
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart")) {
-      expectedType = SLinkOperations.getTarget(ancestor, "type", true);
+      expectedType = SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), "type", true);
     }
-    // ==========
+    //     ==========
     if (expectedType == null) {
       return new _Quotations.QuotationClass_4().createNode();
     }

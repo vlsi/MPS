@@ -35,7 +35,6 @@ public class OperationsUtil {
         public boolean accept(SNode it) {
           return TraversalAxisUtil.isAcceptableFeatureForAxis(it, axis);
         }
-
       }).toListSequence() :
       ListSequence.<SNode>fromArray(SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
@@ -62,7 +61,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      this._6_po_it = ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(it, nodeType)).iterator();
+                      this._6_po_it = ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType)).iterator();
                     case 7:
                       if (!(this._6_po_it.hasNext())) {
                         this.__CP__ = 3;
@@ -137,26 +136,23 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).toListSequence();
   }
 
   public static SNode unwrapExpression(SNode wrappedExp) {
     SNode expression = wrappedExp;
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
-      expression = SLinkOperations.getTarget(expression, "expression", true);
+      expression = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true);
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
-      expression = SLinkOperations.getTarget(expression, "expression", true);
+      expression = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "expression", true);
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.CastExpression")) {
-      expression = SLinkOperations.getTarget(expression, "expression", true);
+      expression = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.CastExpression"), "expression", true);
     }
     return expression;
   }

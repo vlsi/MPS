@@ -280,43 +280,43 @@ public class QueriesGenerated {
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184605541559(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_registerSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_registerSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184606850811(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_registerSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_registerSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184606951866(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_unRegisterSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_unRegisterSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184607178268(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_unRegisterSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_unRegisterSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184607261276(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_registerSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_registerSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184607289879(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_unRegisterSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_unRegisterSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184607373557(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_registerSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_registerSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184607409488(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_unRegisterSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_unRegisterSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1212101471502(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_registerSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_registerSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode templateFragment_ContextNodeQuery_1212101471538(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return QueriesUtil.get_unRegisterSelf_body(_context.getMainContextNode());
+    return QueriesUtil.get_unRegisterSelf_body(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187042952593(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

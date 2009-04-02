@@ -311,7 +311,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.annotations.structure.AttributeConcept")) {
-        SNode attributedNode = SLinkOperations.getTarget((contextNode), "attributedNode", false);
+        SNode attributedNode = SLinkOperations.getTarget((SNodeOperations.cast(contextNode, "jetbrains.mps.lang.annotations.structure.AttributeConcept")), "attributedNode", false);
         attributedNode.setAttribute(null);
         return;
       }
@@ -436,7 +436,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       }
       String role = SPropertyOperations.getString(link, "role");
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode);
+        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;
         SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
         attributedNode.setAttribute(null);

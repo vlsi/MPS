@@ -33,11 +33,11 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     boolean isApplicable = false;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode dotExpression = SLinkOperations.getTarget(node, "condition", true);
+      SNode dotExpression = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation")) {
-        SNode iioo = SLinkOperations.getTarget(dotExpression, "operation", true);
+        SNode iioo = SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation");
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(iioo, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
-          SNode rc = SLinkOperations.getTarget(iioo, "conceptArgument", true);
+          SNode rc = SNodeOperations.cast(SLinkOperations.getTarget(iioo, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference");
           isApplicable = (SLinkOperations.getTarget(rc, "conceptDeclaration", false) != null);
         }
       }
@@ -47,8 +47,8 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode castVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-    SNode de = SLinkOperations.getTarget(node, "condition", true);
-    SNode conceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(de, "operation", true), "conceptArgument", true), "conceptDeclaration", false);
+    SNode de = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression");
+    SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false);
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(SLinkOperations.setNewChild(declaration, "type", "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", conceptDeclaration, false);
     SPropertyOperations.set(declaration, "name", NameUtil.decapitalize(SPropertyOperations.getString(conceptDeclaration, "name")));

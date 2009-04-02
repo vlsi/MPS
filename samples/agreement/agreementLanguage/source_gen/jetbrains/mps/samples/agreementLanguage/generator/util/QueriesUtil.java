@@ -11,24 +11,24 @@ public class QueriesUtil {
 
   public static boolean isMoney(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
-      return isMoney(SLinkOperations.getTarget(node, "leftOperand", true));
+      return isMoney(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "leftOperand", true));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")) {
-      SNode eventVariable = SLinkOperations.getTarget(node, "eventVariable", false);
+      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), "eventVariable", false);
       return SPropertyOperations.hasValue(eventVariable, "type", "Money", "Quantity");
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")) {
-      return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
+      return SPropertyOperations.hasValue(SNodeOperations.cast(node, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"), "unit", "USD", "USD_KWH");
     }
     return false;
   }
 
   public static boolean isQuantity(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
-      return isQuantity(SLinkOperations.getTarget(node, "leftOperand", true));
+      return isQuantity(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "leftOperand", true));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")) {
-      SNode eventVariable = SLinkOperations.getTarget(node, "eventVariable", false);
+      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), "eventVariable", false);
       return SPropertyOperations.hasValue(eventVariable, "type", "Quantity", "Quantity");
     }
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.Quantity");

@@ -9,7 +9,9 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -69,7 +71,7 @@ public class IClassifier_Behavior {
     List<SNode> result = ListOperations.<SNode>createList();
     for(SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
-        ListSequence.fromList(result).addElement(child);
+        ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
       }
     }
     for(SNode part : IClassifier_Behavior.call_getParts_1213877527988(thisNode)) {
@@ -94,7 +96,6 @@ public class IClassifier_Behavior {
         SLinkOperations.setTarget(result, "operation", call, true);
         return result;
       }
-
     };
   }
 

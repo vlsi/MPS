@@ -170,14 +170,14 @@ public class AbstractConceptDeclaration_Behavior {
       return new _Quotations.QuotationClass_5().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(thisNode);
-    SNode classifier = SModelUtil.findNodeByFQName(adapterClassFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
+    SNode classifier = SNodeOperations.cast(SModelUtil.findNodeByFQName(adapterClassFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
     SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new _Quotations.QuotationClass_6().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", classifier, false);
     return adapterClassType;
   }
 
   public static SNode call_findLinkDeclaration_1213877394467(SNode thisNode, String role) {
-    return BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), role));
+    return SNodeOperations.cast(BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {
@@ -212,7 +212,7 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
     PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), name);
-    return BaseAdapter.fromAdapter(p);
+    return SNodeOperations.cast(BaseAdapter.fromAdapter(p), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
   public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {

@@ -34,7 +34,7 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode conceptList = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", null);
-    SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(conceptList, "concept", true)).first(), "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptArgument", true), "conceptDeclaration", false), false);
+    SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(conceptList, "concept", true)).first(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), false);
     SNodeOperations.replaceWithAnother(node, conceptList);
   }
 

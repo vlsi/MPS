@@ -56,7 +56,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
       {
-        final SNode superTerminate = SLinkOperations.getTarget(supertype, "terminateType", true);
+        final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
         typeCheckingContext.whenConcrete(superTerminate, new Runnable() {
 
           public void run() {
@@ -64,7 +64,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "terminateType", true), typeCheckingContext.getEquationManager().getRepresentator(superTerminate), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", false, 0, intentionProvider);
+                typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), typeCheckingContext.getEquationManager().getRepresentator(superTerminate), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", false, 0, intentionProvider);
               }
             }
           }
@@ -124,9 +124,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
       if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         {
-          final SNode superTerminate = SLinkOperations.getTarget(supertype, "terminateType", true);
+          final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
           if (!(SNodeOperations.isInstanceOf(superTerminate, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "terminateType", true), superTerminate, true);
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), superTerminate, true);
           }
         }
       }

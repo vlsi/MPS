@@ -4,6 +4,8 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.behavior.TreePathAspect_Behavior;
 
 public class MatchDefaultPropertyOperation_Behavior {
 
@@ -14,7 +16,7 @@ public class MatchDefaultPropertyOperation_Behavior {
     SNode tpoe = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     assert (treePath != null);
-    return TreePathAspect_Behavior.call_getDefaultProperty_1213877241846(treePath);
+    return TreePathAspect_Behavior.call_getDefaultProperty_1213877241846(SNodeOperations.cast(treePath, "jetbrains.mps.ypath.structure.TreePathAspect"));
   }
 
 }

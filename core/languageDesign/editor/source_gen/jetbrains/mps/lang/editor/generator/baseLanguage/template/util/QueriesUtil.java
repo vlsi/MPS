@@ -110,7 +110,7 @@ __switch__:
   }
 
   public static String keyMapActionClassName(SNode keyMapItem) {
-    SNode keyMapDeclaration = SNodeOperations.getParent(keyMapItem);
+    SNode keyMapDeclaration = SNodeOperations.cast(SNodeOperations.getParent(keyMapItem), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration");
     int index = 0;
     for(SNode curItem : ListSequence.fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
       if (curItem == keyMapItem) {

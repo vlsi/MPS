@@ -93,7 +93,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNode access = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", null);
-        SLinkOperations.setTarget(access, "list", SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true), true);
+        SLinkOperations.setTarget(access, "list", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SLinkOperations.setTarget(access, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), access);
       }
@@ -505,7 +505,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "ArrayList") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1;
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "ArrayList") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -536,7 +536,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "LinkedList") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedList") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -704,7 +704,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {

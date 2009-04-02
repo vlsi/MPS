@@ -21,7 +21,7 @@ public class SystemSpecificConfig_Behavior {
   }
 
   public static SNode call_getDistribConfiguration_1230207861621(SNode thisNode) {
-    return SNodeOperations.getParent(thisNode);
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
   }
 
   public static String call_getVMOptionfFileName_1231748960223(SNode thisNode) {

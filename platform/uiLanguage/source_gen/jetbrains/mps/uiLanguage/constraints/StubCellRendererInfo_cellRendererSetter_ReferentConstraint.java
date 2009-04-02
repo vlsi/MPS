@@ -27,7 +27,7 @@ public class StubCellRendererInfo_cellRendererSetter_ReferentConstraint extends 
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getReferenceNode()), "mapTo", false))), IClassifiersSearchScope.INSTANCE_METHOD);
+    return new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), "mapTo", false))), IClassifiersSearchScope.INSTANCE_METHOD);
   }
 
 }

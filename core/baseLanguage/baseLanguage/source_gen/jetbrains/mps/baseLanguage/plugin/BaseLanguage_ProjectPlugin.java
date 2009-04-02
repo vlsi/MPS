@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.plugin.RunClass_Tool;
 import jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
@@ -18,25 +18,25 @@ import jetbrains.mps.baseLanguage.plugin.Java_FileGenerator;
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
-    tools.add(new RunClass_Tool(project));
-    tools.add(new TodoViewer_Tool(project));
+    List<GeneratedTool> tools = ListSequence.<GeneratedTool>fromArray();
+    ListSequence.fromList(tools).addElement(new RunClass_Tool(project));
+    ListSequence.fromList(tools).addElement(new TodoViewer_Tool(project));
     return tools;
   }
 
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
-    List<BaseCustomProjectPlugin> res = new ArrayList<BaseCustomProjectPlugin>();
+    List<BaseCustomProjectPlugin> res = ListSequence.<BaseCustomProjectPlugin>fromArray();
     {
       BaseCustomProjectPlugin plugin = new BaseLanguageCustomPlugin_CustomProjectPlugin();
-      res.add(plugin);
+      ListSequence.fromList(res).addElement(plugin);
       plugin.init(project);
     }
     return res;
   }
 
   public List<IFileGenerator> initFileGenerators() {
-    List<IFileGenerator> generators = new ArrayList<IFileGenerator>();
-    generators.add(new Java_FileGenerator());
+    List<IFileGenerator> generators = ListSequence.<IFileGenerator>fromArray();
+    ListSequence.fromList(generators).addElement(new Java_FileGenerator());
     return generators;
   }
 

@@ -72,7 +72,7 @@ outer:
           break outer;
         }
         if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          SNode classConcept = currentClassifier;
+          SNode classConcept = SNodeOperations.cast(currentClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
           SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
           if ((superclass != null)) {
             SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(superclass, currentType));
@@ -82,7 +82,7 @@ outer:
           }
         }
         if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-          SNode interfaceConcept = currentClassifier;
+          SNode interfaceConcept = SNodeOperations.cast(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface");
           for(SNode intfc : SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)) {
             SetSequence.fromSet(newFrontier).addElement(getConcreteClassifierType(intfc, currentType));
           }
@@ -99,7 +99,7 @@ outer:
     SNode result = SNodeOperations.copyNode(method);
     Set<SNode> initialClassifierTypes = SetSequence.<SNode>fromArray();
     if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = enclosingClassifier;
+      SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
       if ((superclass != null)) {
         SetSequence.fromSet(initialClassifierTypes).addElement(superclass);
@@ -109,7 +109,7 @@ outer:
       }
     }
     if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SNode interfaceConcept = enclosingClassifier;
+      SNode interfaceConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.Interface");
       for(SNode intfc : SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)) {
         SetSequence.fromSet(initialClassifierTypes).addElement(intfc);
       }

@@ -33,7 +33,7 @@ public class StyleSheetClass_Behavior {
   }
 
   public static SNode call_getStyleSheet_1213877260644(SNode thisNode) {
-    return SNodeOperations.getParent(thisNode);
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleSheet");
   }
 
   public static SNode virtual_getParent_1219419981626(SNode thisNode) {

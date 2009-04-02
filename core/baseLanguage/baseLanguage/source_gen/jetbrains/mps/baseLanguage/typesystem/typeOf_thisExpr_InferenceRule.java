@@ -29,7 +29,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
       SNode contextNode = thisExpr;
       SNode parent = SNodeOperations.getParent(thisExpr);
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        for(SNode param : SLinkOperations.getTargets(parent, "parameter", true)) {
+        for(SNode param : SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)) {
           if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true)).contains(thisExpr)) {
             contextNode = parent;
             break;

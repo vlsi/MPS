@@ -327,11 +327,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
-    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.getParent(node));
+    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 
   public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_presentation");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 
 }

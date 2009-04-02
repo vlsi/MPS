@@ -38,9 +38,9 @@ public class StatementListUtil {
   }
 
   public static SNode nextSibling(SNode stmt) {
-    SNode nextSibling = SNodeOperations.getNextSibling(stmt);
+    SNode nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(stmt), "jetbrains.mps.baseLanguage.structure.Statement");
     while ((nextSibling != null) && isIgnoredStatement(nextSibling)) {
-      nextSibling = SNodeOperations.getNextSibling(nextSibling);
+      nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(nextSibling), "jetbrains.mps.baseLanguage.structure.Statement");
     }
     return nextSibling;
   }

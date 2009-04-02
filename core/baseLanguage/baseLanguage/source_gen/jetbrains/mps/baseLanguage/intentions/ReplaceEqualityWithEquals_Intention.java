@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.intentions._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.intentions._Quotations;
 
 public class ReplaceEqualityWithEquals_Intention extends BaseIntention {
 
@@ -38,7 +38,7 @@ public class ReplaceEqualityWithEquals_Intention extends BaseIntention {
     SNode equalsExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
     SLinkOperations.setTarget(equalsExpression, "operand", leftExpr, true);
     SNode operation = SLinkOperations.setNewChild(equalsExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
-    SLinkOperations.setTarget(operation, "baseMethodDeclaration", SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "operation", true), "baseMethodDeclaration", false), false);
+    SLinkOperations.setTarget(operation, "baseMethodDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), false);
     SLinkOperations.insertChildFirst(operation, "actualArgument", rightExpression);
     SNodeOperations.replaceWithAnother(node, equalsExpression);
   }

@@ -15,7 +15,7 @@ public class ConceptMethodDeclaration_Behavior {
   }
 
   public static SNode call_findBehaviour_1225196403947(SNode thisNode) {
-    return SNodeOperations.getContainingRoot(thisNode);
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {

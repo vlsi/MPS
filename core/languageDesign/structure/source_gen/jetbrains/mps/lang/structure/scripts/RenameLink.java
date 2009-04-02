@@ -139,7 +139,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return "";
     }
-    return SPropertyOperations.getString(node, "role");
+    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {

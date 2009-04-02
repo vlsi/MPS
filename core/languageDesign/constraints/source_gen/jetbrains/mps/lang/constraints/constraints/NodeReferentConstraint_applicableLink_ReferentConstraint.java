@@ -30,7 +30,7 @@ public class NodeReferentConstraint_applicableLink_ReferentConstraint extends Ba
     //     links declared in specified concept
     SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getReferenceNode());
     if (applicableConcept == null) {
-      applicableConcept = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "concept", false);
+      applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
     }
     return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(applicableConcept);
   }

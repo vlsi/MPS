@@ -74,7 +74,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SNode classNode = SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false);
+      SNode classNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
       BaseLanguageHierarchyViewTool tool = ShowClassInHierarchy_Action.this.context.getComponent(BaseLanguageHierarchyViewTool.class);
       tool.showConceptInHierarchy(((Classifier)SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
       tool.openToolLater(true);

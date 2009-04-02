@@ -16,10 +16,10 @@ public class WrappersUtils {
     List<SNode> vdecls = ListSequence.<SNode>fromArray();
     for(SNode desc : SNodeOperations.getDescendants(closure, null, false)) {
       if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-        SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
+        SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-          if (!(ListSequence.fromList(vdecls).contains(SLinkOperations.getTarget(desc, "variableDeclaration", false)))) {
-            ListSequence.fromList(vdecls).addElement(SLinkOperations.getTarget(desc, "variableDeclaration", false));
+          if (!(ListSequence.fromList(vdecls).contains(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false)))) {
+            ListSequence.fromList(vdecls).addElement(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
           }
         }
       }
@@ -29,12 +29,12 @@ with_decls:
       SNode vd = it.next();
       SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
       for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
-        if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(desc, "variableDeclaration", false) == vd) {
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "lValue", true) == desc) {
+        if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true) == desc) {
             continue with_decls;
-          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "expression", true) == desc) {
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), "expression", true) == desc) {
             continue with_decls;
-          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "expression", true) == desc) {
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), "expression", true) == desc) {
             continue with_decls;
           }
         }

@@ -86,7 +86,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Set<SNode> tests = SetSequence.<SNode>fromArray();
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(RunTestInMPS_Action.this.node)).toListSequence());
+      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
       for(SNode test : SetSequence.fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test);
       }

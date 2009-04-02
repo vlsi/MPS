@@ -12,7 +12,7 @@ public class TreeNodeKindProperty_Behavior {
   }
 
   public static String call_getClassName_1213877513203(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getParent(thisNode), "name") + "_" + SPropertyOperations.getString(thisNode, "name") + "_Property";
+    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.ypath.structure.TreeNodeKind"), "name") + "_" + SPropertyOperations.getString(thisNode, "name") + "_Property";
   }
 
   public static String call_getFQClassName_1213877513221(SNode thisNode) {

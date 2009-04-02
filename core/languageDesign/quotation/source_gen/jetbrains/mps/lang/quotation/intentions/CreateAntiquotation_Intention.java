@@ -35,7 +35,7 @@ public class CreateAntiquotation_Intention extends BaseIntention {
       return;
     }
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
-      SNode attributedNode = SNodeOperations.getParent((contextNode));
+      SNode attributedNode = SNodeOperations.getParent((SNodeOperations.cast(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")));
       attributedNode.setAttribute(null);
       return;
     }

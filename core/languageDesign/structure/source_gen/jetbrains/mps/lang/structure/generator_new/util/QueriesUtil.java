@@ -21,7 +21,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isString(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isString(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
+      return PropertySupport.isString(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
     }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")) {
       return true;
@@ -32,7 +32,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isBoolean(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
+      return PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
     }
     return false;
   }
@@ -40,7 +40,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isInteger(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
+      return PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
     }
     return false;
   }

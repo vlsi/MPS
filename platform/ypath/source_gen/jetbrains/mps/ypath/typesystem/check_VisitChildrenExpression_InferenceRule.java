@@ -39,8 +39,8 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
     {
       SNode arg;
       SNode param;
-      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true).iterator();
-      Iterator<SNode> param_iterator = parameters.iterator();
+      Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true)).iterator();
+      Iterator<SNode> param_iterator = ListSequence.fromList(parameters).iterator();
       while (true) {
         if (!(arg_iterator.hasNext())) {
           break;

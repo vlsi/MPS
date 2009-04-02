@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.typesystem.RulesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.typesystem._Quotations;
@@ -25,7 +26,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
       typeCheckingContext.whenConcrete(C, new Runnable() {
 
         public void run() {
-          SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
+          SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           {
             SNode _nodeToCheck_1029348928467 = node;
             BaseIntentionProvider intentionProvider = null;

@@ -12,7 +12,7 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
   public static final String ID = "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup";
 
   public FindInstancesByConditionAndNodeGroup_ActionGroup() {
-    super("", ID);
+    super("FindInstancesByConditionAndNodeGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

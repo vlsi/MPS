@@ -19,7 +19,7 @@ public class Regexp_Behavior {
 
   public static SNode call_getTopLevelRegexp_1223362823237(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
-      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.getParent(thisNode));
+      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
     }
     return thisNode;
   }

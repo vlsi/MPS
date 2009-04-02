@@ -136,7 +136,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
       return "";
     }
-    return SPropertyOperations.getString(node, "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name");
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {

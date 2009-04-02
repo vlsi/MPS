@@ -95,7 +95,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
         List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
         if (editorModelDescriptor != null) {
-          refactoringContext.setParameter("editorNode", SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node));
+          refactoringContext.setParameter("editorNode", SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
           if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
             for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("editorNode"))) {
@@ -106,7 +106,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         }
         SModelDescriptor behaviorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getBehaviorModelDescriptor();
         if (behaviorModelDescriptor != null) {
-          refactoringContext.setParameter("behaviorNode", SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node));
+          refactoringContext.setParameter("behaviorNode", SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
           if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
             for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("behaviorNode"))) {

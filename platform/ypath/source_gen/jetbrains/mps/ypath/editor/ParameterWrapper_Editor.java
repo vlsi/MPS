@@ -69,7 +69,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
       public String getText() {
         SNodeOperations.getParent(node);
         return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.IterateOperation") ?
-          SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(node), "usedFeature", false), "name") :
+          SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false), "name") :
           "???"
         );
       }

@@ -29,7 +29,7 @@ public class FindSourceBlock_Behavior {
       SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(returnStatement, "expression", true));
     }
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(lastStatement, "expression", true));
+      SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
     }
     for(SNode expr : expressions) {
       SNode type = TypeChecker.getInstance().getTypeOf(expr);

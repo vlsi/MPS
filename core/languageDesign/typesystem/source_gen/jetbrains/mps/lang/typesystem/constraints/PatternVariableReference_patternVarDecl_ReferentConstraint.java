@@ -31,31 +31,31 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint extends 
     List<SNode> result = ListOperations.<SNode>createList();
     SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "applicableNode", true), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
     }
     if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")) {
-      SNode supertypeNode = SLinkOperations.getTarget(rule, "supertypeNode", true);
+      SNode supertypeNode = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "supertypeNode", true);
       if (SNodeOperations.isInstanceOf(supertypeNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(supertypeNode, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(supertypeNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
       }
     }
     if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
-      SNode anotherNode = SLinkOperations.getTarget(rule, "anotherNode", true);
+      SNode anotherNode = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "anotherNode", true);
       if (SNodeOperations.isInstanceOf(anotherNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(anotherNode, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(anotherNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
       }
     }
     SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
     while (coerceStatement != null) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(coerceStatement, "pattern", true), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
       }
       coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
     }
     SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     while (matchStatementItem != null) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchStatementItem, "condition", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(matchStatementItem, "condition", true), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(matchStatementItem, "condition", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false)));
       }
       matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     }

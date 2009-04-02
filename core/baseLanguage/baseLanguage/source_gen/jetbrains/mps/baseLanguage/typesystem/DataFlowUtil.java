@@ -87,7 +87,7 @@ public class DataFlowUtil {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(statementList);
     for(SNode read : uninitializedReads) {
       if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
-        SNode ref = read;
+        SNode ref = SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
         if (!(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(ref, "variableDeclaration", false)))) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -104,7 +104,7 @@ public class DataFlowUtil {
     Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(statementList);
     for(SNode write : unusedAssignments) {
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
-        SNode assignment = write;
+        SNode assignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -115,7 +115,7 @@ public class DataFlowUtil {
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-        SNode variableAssignment = write;
+        SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -125,7 +125,7 @@ public class DataFlowUtil {
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
-        SNode variableAssignment = write;
+        SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;

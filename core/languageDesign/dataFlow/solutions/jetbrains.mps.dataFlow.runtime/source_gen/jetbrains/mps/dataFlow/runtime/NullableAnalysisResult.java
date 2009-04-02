@@ -5,8 +5,10 @@ package jetbrains.mps.dataFlow.runtime;
 import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.dataFlow.runtime.NullableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
@@ -26,13 +28,13 @@ public class NullableAnalysisResult {
 
   private void checkNode(@NotNull() SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-      this.checkAssignment(node);
+      this.checkAssignment(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      this.checkMethodCall(node);
+      this.checkMethodCall(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      this.checkDotExpression(node);
+      this.checkDotExpression(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"));
     }
   }
 
@@ -71,8 +73,8 @@ public class NullableAnalysisResult {
 
   @NotNull()
   private NullableVariableState getNodeState(@NotNull() SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && MapSequence.fromMap(this.myResult).containsKey(node)) {
-      return MapSequence.fromMap(this.myResult).get(node);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && MapSequence.fromMap(this.myResult).containsKey(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+      return MapSequence.fromMap(this.myResult).get(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
     }
     return Expression_Behavior.call_getNullableState_1230540989695(node);
   }

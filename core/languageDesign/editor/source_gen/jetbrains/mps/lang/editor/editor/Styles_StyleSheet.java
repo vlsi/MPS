@@ -135,18 +135,18 @@ public class Styles_StyleSheet {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isIndented_1237383418148(node);
+    return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
   public static boolean _StyleParameter_QueryFunction_1237384018255(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
-    if (EditorCellModel_Behavior.call_isNewLine_1237383076236(node)) {
+    if (EditorCellModel_Behavior.call_isNewLine_1237383076236(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return true;
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.getParent(node));
+      return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
     return false;
   }
@@ -155,7 +155,7 @@ public class Styles_StyleSheet {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(node);
+    return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
 }

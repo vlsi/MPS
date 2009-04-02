@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ypath.behavior.IRange_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IGenericFeature_Behavior {
@@ -27,7 +28,6 @@ public class IGenericFeature_Behavior {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex") == SNodeOperations.isInstanceOf(range, "jetbrains.mps.ypath.structure.IndexRange");
       }
-
     }).first();
     if ((fh != null)) {
       if (IRange_Behavior.call_isInsertionPoint_1213877238219(range)) {
@@ -36,7 +36,6 @@ public class IGenericFeature_Behavior {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFInsertFunWrapper");
           }
-
         }).isNotEmpty()) {
           return true;
         }
@@ -44,36 +43,32 @@ public class IGenericFeature_Behavior {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (!(SPropertyOperations.getBoolean(range, "has_start") || SPropertyOperations.getBoolean(range, "has_end")) && SPropertyOperations.getBoolean(range, "includes_end")) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (SPropertyOperations.getBoolean(range, "has_start")) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         }
       } else
@@ -83,7 +78,6 @@ public class IGenericFeature_Behavior {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper");
           }
-
         }).isNotEmpty()) {
           return true;
         }
@@ -91,27 +85,24 @@ public class IGenericFeature_Behavior {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (IRange_Behavior.call_isLeftOpenSelection_1213877238312(range) || IRange_Behavior.call_isRightOpenSelection_1213877238328(range) || IRange_Behavior.call_isDoubleSelection_1213877238301(range)) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (IRange_Behavior.call_isAll_1213877238199(range)) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         }
       } else
@@ -121,7 +112,6 @@ public class IGenericFeature_Behavior {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper");
           }
-
         }).isNotEmpty()) {
           return true;
         }
@@ -129,27 +119,24 @@ public class IGenericFeature_Behavior {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (IRange_Behavior.call_isLeftOpenSelection_1213877238312(range) || IRange_Behavior.call_isRightOpenSelection_1213877238328(range) || IRange_Behavior.call_isDoubleSelection_1213877238301(range)) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         } else
         if (IRange_Behavior.call_isAll_1213877238199(range)) {
           return ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
             }
-
           }).isNotEmpty();
         }
       }

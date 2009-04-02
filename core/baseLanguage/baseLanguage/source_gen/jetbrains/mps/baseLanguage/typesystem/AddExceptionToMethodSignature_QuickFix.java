@@ -21,7 +21,7 @@ public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
       return;
     }
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    SLinkOperations.addChild(methodDecl, "throwsItem", SNodeOperations.copyNode(((SNode)this.getField("throwableType")[0])));
+    SLinkOperations.addChild(methodDecl, "throwsItem", SNodeOperations.cast(SNodeOperations.copyNode(((SNode)this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 
 }

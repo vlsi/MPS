@@ -1499,7 +1499,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public boolean filter(SNode childNode, IScope scope) {
-      return SPropertyOperations.hasValue(childNode, "metaClass", "aggregation", "reference");
+      return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
     }
 
 }
@@ -1550,7 +1550,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public boolean filter(SNode childNode, IScope scope) {
-      return SPropertyOperations.hasValue(childNode, "metaClass", "reference", "reference");
+      return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
     }
 
 }

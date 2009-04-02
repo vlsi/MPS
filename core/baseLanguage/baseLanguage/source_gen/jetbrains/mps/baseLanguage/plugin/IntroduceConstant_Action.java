@@ -92,7 +92,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
 
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
-          error.value = refactoring.value.init(IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.component);
+          error.value = refactoring.value.init(SNodeOperations.cast(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceConstant_Action.this.component);
         }
       });
       if (error.value == null) {

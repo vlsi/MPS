@@ -29,7 +29,7 @@ public class IFeature_opposite_ReferentConstraint extends BaseNodeReferenceSearc
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode feature = _context.getReferenceNode();
     final boolean isGeneric = SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(feature), "features", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(feature), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != feature && ((isGeneric ?

@@ -65,7 +65,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
           String textBC = label.getTextBeforeCaret();
           String textAC = label.getTextAfterCaret();
           SNode nextLinePart = SNodeOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart");
-          SPropertyOperations.set(selectedNode, "text", textBC);
+          SPropertyOperations.set(SNodeOperations.cast(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart"), "text", textBC);
           SPropertyOperations.set(nextLinePart, "text", textAC);
         }
       }

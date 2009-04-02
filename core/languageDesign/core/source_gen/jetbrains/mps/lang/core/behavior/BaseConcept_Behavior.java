@@ -23,23 +23,23 @@ public class BaseConcept_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      String name = SPropertyOperations.getString(thisNode, "name");
+      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       if (name != null) {
         return name;
       }
       return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name") + "]";
     }
-    // --
+    //     --
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
     if (smartRefPresentation != null) {
       return smartRefPresentation;
     }
-    // --
+    //     --
     String conceptAlias = SConceptPropertyOperations.getString(thisNode, "alias");
     if (conceptAlias != null) {
       return conceptAlias;
     }
-    // --
+    //     --
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
   }
 

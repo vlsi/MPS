@@ -13,7 +13,7 @@ public class NodeReferentConstraint_Behavior {
 
   public static SNode call_getApplicableConcept_1213877399322(SNode thisNode) {
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false) != null) {
-      return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
     }
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false) != null) {
       return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), "concept", false);

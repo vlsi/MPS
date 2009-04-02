@@ -113,7 +113,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        List<SNode> paddingRight = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.getParent(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        List<SNode> paddingRight = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.IStyleContainer"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
         return SPropertyOperations.getBoolean(node, "flag") == false && ListSequence.fromList(paddingRight).isNotEmpty();
       }
 
@@ -146,7 +146,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.getParent(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.IStyleContainer"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
         if (ListSequence.fromList(paddingRigth).isNotEmpty()) {
           SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
           SPropertyOperations.set(newNode, "flag", "" + true);
@@ -178,11 +178,11 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public boolean isApplicableInstanceNode(SNode node) {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
           SNode prev = SNodeOperations.getPrevSibling(node);
-          if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(prev, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
+          if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(prev, "jetbrains.mps.lang.editor.structure.EditorCellModel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
             return true;
           }
           if (SNodeOperations.isInstanceOf(prev, "jetbrains.mps.lang.editor.structure.CellModel_RefCell")) {
-            if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(SLinkOperations.getTarget(SLinkOperations.getTarget(prev, "editorComponent", true), "cellModel", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
+            if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(prev, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), "editorComponent", true), "cellModel", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"))).isNotEmpty()) {
               return true;
             }
           }

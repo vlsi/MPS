@@ -27,7 +27,7 @@ public class ElsifSwapWithMain_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode ifStatement = SNodeOperations.getParent(node);
+    SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode statementList = SLinkOperations.getTarget(ifStatement, "ifTrue", true);
     SLinkOperations.setTarget(ifStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);

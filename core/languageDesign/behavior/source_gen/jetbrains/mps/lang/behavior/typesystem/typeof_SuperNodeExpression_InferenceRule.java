@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.behavior.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -22,12 +23,12 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
     SNode result = null;
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode cd = concept;
+      SNode cd = SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       result = SLinkOperations.getTarget(cd, "extends", false);
     } else
     {
-      SNode icd = concept;
-      result = ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first();
+      SNode icd = SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+      result = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;

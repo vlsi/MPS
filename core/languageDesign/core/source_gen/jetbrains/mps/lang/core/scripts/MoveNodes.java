@@ -5,7 +5,6 @@ package jetbrains.mps.lang.core.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,9 +48,9 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   private Set<String> myTransientParameters = SetSequence.<String>fromArray();
 
   public MoveNodes() {
-    this.myTransientParameters.add("target");
-    this.myTransientParameters.add("role");
-    this.myTransientParameters.add("nodeToOpen");
+    SetSequence.fromSet(this.myTransientParameters).addElement("target");
+    SetSequence.fromSet(this.myTransientParameters).addElement("role");
+    SetSequence.fromSet(this.myTransientParameters).addElement("nodeToOpen");
   }
 
   public String getUserFriendlyName() {
@@ -59,7 +58,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return new HashSet<String>(this.myTransientParameters);
+    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
   }
 
   public String getKeyStroke() {
@@ -121,7 +120,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
       for(SNode node : refactoringContext.getSelectedNodes()) {
-        if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
+        if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable"))) {
           return false;
         }
       }

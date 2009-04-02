@@ -55,7 +55,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(it, "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);
       }
     }).isNotEmpty()) {
       return false;

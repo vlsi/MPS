@@ -26,7 +26,7 @@ public class check_PropertyAttributeAccessQualifier_NonTypesystemRule extends Ab
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier")) {
-      final SNode property = SLinkOperations.getTarget(propQ, "property", false);
+      final SNode property = SLinkOperations.getTarget(SNodeOperations.cast(propQ, "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier"), "property", false);
       SNode conceptDeclaration = RulesUtil.get_inputNodeConcept(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), false);
       SNode inputNodeConcept = conceptDeclaration;
       List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);

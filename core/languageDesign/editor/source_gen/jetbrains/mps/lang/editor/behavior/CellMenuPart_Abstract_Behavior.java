@@ -13,13 +13,13 @@ public class CellMenuPart_Abstract_Behavior {
   }
 
   public static SNode call_getEditedFeature_1219409924597(SNode thisNode) {
-    return CellMenuUtil.getEditedFeature(SNodeOperations.getParent(thisNode));
+    return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
   }
 
   public static SNode call_getEditedLink_1219409839992(SNode thisNode) {
     SNode editedFeature = CellMenuPart_Abstract_Behavior.call_getEditedFeature_1219409924597(thisNode);
     if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      return editedFeature;
+      return SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     }
     return null;
   }

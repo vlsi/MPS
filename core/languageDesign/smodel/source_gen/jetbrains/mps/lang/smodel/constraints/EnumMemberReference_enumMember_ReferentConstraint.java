@@ -29,9 +29,9 @@ public class EnumMemberReference_enumMember_ReferentConstraint extends BaseNodeR
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum")) {
-      SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(_context.getEnclosingNode());
+      SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
       if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(datatype)) {
-        return new SimpleSearchScope(SLinkOperations.getTargets(datatype, "member", true));
+        return new SimpleSearchScope(SLinkOperations.getTargets(SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "member", true));
       }
     }
     return null;

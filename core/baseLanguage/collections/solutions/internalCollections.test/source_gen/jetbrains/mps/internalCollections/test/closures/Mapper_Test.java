@@ -16,6 +16,7 @@ import jetbrains.mps.internalCollections.test.closures.B;
 import java.util.Collections;
 import jetbrains.mps.internalCollections.test.closures.A;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Mapper_Test extends Util_Test {
 
@@ -634,7 +635,7 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 1;
-                        this.yield(it);
+                        this.yield(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.IType"));
                         return true;
                       case 0:
                         this.__CP__ = 2;

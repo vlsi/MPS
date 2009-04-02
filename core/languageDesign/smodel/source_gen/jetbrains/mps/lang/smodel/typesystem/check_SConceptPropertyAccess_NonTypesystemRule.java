@@ -23,7 +23,7 @@ public class check_SConceptPropertyAccess_NonTypesystemRule extends AbstractNonT
     }
     final SNode Concept_typevar_1226071804497 = typeCheckingContext.createNewRuntimeTypesVariable();
     SNode concreteConcept = RulesUtil.get_inputNodeConcept(op, true);
-    SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl);
+    SNode declaringConcept = SNodeOperations.cast(SNodeOperations.getParent(conceptPropertyDecl), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)concreteConcept, declaringConcept, op, "operation is applied to wrong concept");
   }
 

@@ -20,25 +20,22 @@ public class ITreePathExpression_Behavior {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
-
     });
-    SNode exp = thisNode;
+    SNode exp = SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression");
     while (Sequence.fromIterable(nodes).isEmpty()) {
       Iterable<SNode> varRefs = ListSequence.fromList(SNodeOperations.getDescendants(exp, null, false)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
         }
-
       });
       if (Sequence.fromIterable(varRefs).isNotEmpty()) {
-        SNode varDecl = SLinkOperations.getTarget(Sequence.fromIterable(varRefs).first(), "variableDeclaration", false);
+        SNode varDecl = SLinkOperations.getTarget(SNodeOperations.cast(Sequence.fromIterable(varRefs).first(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         nodes = ListSequence.fromList(SNodeOperations.getDescendants(varDecl, null, false)).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
           }
-
         });
         exp = SLinkOperations.getTarget(varDecl, "initializer", true);
       } else
@@ -47,7 +44,7 @@ public class ITreePathExpression_Behavior {
       }
     }
     SNode tpae = Sequence.fromIterable(nodes).first();
-    return SLinkOperations.getTarget(tpae, "treepathAspect", false);
+    return SLinkOperations.getTarget(SNodeOperations.cast(tpae, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "treepathAspect", false);
   }
 
 }

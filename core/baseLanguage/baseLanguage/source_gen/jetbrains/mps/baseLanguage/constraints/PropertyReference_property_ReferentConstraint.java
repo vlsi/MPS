@@ -34,7 +34,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
     if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return null;
     }
-    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(_context.getEnclosingNode());
+    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
     if (opClassifier == null) {
       return null;
     }
@@ -42,7 +42,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
     List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes();
     for(SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        SNode classConcept = classifier;
+        SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
         List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
         for(SNode property : ListSequence.fromList(properties)) {
           if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {

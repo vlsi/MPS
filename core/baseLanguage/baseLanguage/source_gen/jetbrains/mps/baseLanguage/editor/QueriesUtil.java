@@ -38,10 +38,10 @@ public class QueriesUtil {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
-      SLinkOperations.setTarget(newNode, "classConcept", classifier, false);
+      SLinkOperations.setTarget(newNode, "baseMethodDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+      SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-        SNode call = oldNode;
+        SNode call = SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         for(SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
           SLinkOperations.addChild(newNode, "actualArgument", SNodeOperations.copyNode(arg));
         }
@@ -54,24 +54,24 @@ public class QueriesUtil {
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-      SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
+      SLinkOperations.setTarget(newNode, "variableDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);
       SLinkOperations.setTarget(newNode, "classifier", classifier, false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(newNode, "enumConstantDeclaration", parameterObject, false);
-      SLinkOperations.setTarget(newNode, "enumClass", classifier, false);
+      SLinkOperations.setTarget(newNode, "enumConstantDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), false);
+      SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
-      SLinkOperations.setTarget(newNode, "enumClass", classifier, false);
+      SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
-      SLinkOperations.setTarget(newNode, "enumClass", classifier, false);
+      SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }
     throw new RuntimeException("Bad parameter object " + parameterObject);

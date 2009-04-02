@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -24,12 +25,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177465342820(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode affectedConcept = SLinkOperations.getTarget(_context.getNode(), "affectedInstanceConcept", false);
+    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "affectedInstanceConcept", false);
     return NameUtil.nodeFQName(affectedConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177555396906(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String title = SPropertyOperations.getString(_context.getNode(), "description");
+    String title = SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "description");
     return (title != null ?
       title :
       ""
@@ -37,7 +38,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177555562762(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String title = SPropertyOperations.getString(_context.getNode(), "description");
+    String title = SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "description");
     return (title != null ?
       title :
       ""
@@ -57,7 +58,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1177466489905(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "affectedInstanceUpdater", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "affectedInstanceUpdater", true), "body", true);
   }
 
   public static Iterable sourceNodesQuery_1177464931683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

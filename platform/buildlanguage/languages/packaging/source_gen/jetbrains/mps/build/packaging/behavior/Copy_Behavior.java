@@ -58,7 +58,7 @@ public class Copy_Behavior {
     if (!(SNodeOperations.isInstanceOf(snode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
       return false;
     }
-    return EqualUtil.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(snode, "sourcePath", true)));
+    return EqualUtil.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SNodeOperations.cast(snode, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true)));
   }
 
 }

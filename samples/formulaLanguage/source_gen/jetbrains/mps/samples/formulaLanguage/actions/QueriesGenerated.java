@@ -18,10 +18,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
+import jetbrains.mps.samples.formulaLanguage.actions._PrecompiledPatterns;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.SequenceOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
@@ -29,8 +30,8 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_Operation_1162840292119(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "leftOperand", SLinkOperations.getTarget(_context.getSampleNode(), "leftOperand", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "rightOperand", SLinkOperations.getTarget(_context.getSampleNode(), "rightOperand", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "leftOperand", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "leftOperand", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "rightOperand", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "rightOperand", true), true);
     }
   }
 
@@ -43,7 +44,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", null);
+            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", null);
             SPropertyOperations.set(res, "value", "" + (Integer.parseInt(pattern)));
             return res;
           }
@@ -66,7 +67,6 @@ public class QueriesGenerated {
           public String getDescriptionText(String pattern) {
             return "integer constant (formula language)";
           }
-
         });
       }
     }
@@ -77,7 +77,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(res, "value", "" + (Float.parseFloat(pattern + "0")));
             } else
@@ -101,7 +101,6 @@ public class QueriesGenerated {
             }
             return false;
           }
-
         });
       }
     }
@@ -112,8 +111,8 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Operation");
-      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
-      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
@@ -129,7 +128,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "leftOperand", _context.getSourceNode(), true);
             return result;
           }
-
         });
       }
     }

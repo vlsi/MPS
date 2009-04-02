@@ -12,7 +12,7 @@ public class InitialValueClause_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(thisNode), "argumentType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"), "argumentType", true);
   }
 
 }

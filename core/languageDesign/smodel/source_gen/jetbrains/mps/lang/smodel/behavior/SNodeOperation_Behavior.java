@@ -21,17 +21,17 @@ public class SNodeOperation_Behavior {
 
   public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
     SNode parent = SNodeOperations.getParent(thisNode);
-    return SLinkOperations.getTarget(parent, "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    return SLinkOperations.getTarget(leftExpression, "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    return SLinkOperations.getTarget(leftExpression, "operation", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
   }
 
   public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
@@ -56,7 +56,7 @@ public class SNodeOperation_Behavior {
     }
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
-      return SLinkOperations.getTarget(operandType, "targetConcept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false);
     } else
     {
       SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);

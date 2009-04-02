@@ -37,7 +37,7 @@ public class MPSBuild_Behavior {
 
   public static List<SNode> call_getPathToLibrary_1233680013340(SNode thisNode, SNode folder) {
     List<SNode> path = ListSequence.fromList(new LinkedList<SNode>());
-    for(SNode currentComponent = folder ; !(SNodeOperations.isInstanceOf(currentComponent, "jetbrains.mps.build.custommps.structure.MPSBuild")) ; currentComponent = SNodeOperations.getParent(currentComponent)) {
+    for(SNode currentComponent = folder ; !(SNodeOperations.isInstanceOf(currentComponent, "jetbrains.mps.build.custommps.structure.MPSBuild")) ; currentComponent = SNodeOperations.cast(SNodeOperations.getParent(currentComponent), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent")) {
       ListSequence.fromList(path).insertElement(0, SLinkOperations.getTarget(folder, "title", true));
     }
     return path;

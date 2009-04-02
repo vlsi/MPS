@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.math.generator.template.sums._Quotations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +32,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1235732062949(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "sumVariable", false)), "SumVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "sumVariable", false)), "jetbrains.mps.baseLanguage.math.structure.SumExpression"), "SumVar");
   }
 
   public static SNode sourceNodeQuery_1235731923383(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

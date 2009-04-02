@@ -69,7 +69,7 @@ public class QueriesUtil {
   }
 
   private static SNode getJavaLangObject() {
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false);
+    return SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
 }

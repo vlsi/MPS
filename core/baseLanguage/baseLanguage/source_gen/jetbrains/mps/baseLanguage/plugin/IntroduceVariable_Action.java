@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableDialog;
 import javax.swing.JOptionPane;
 
@@ -91,7 +92,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
 
         public void run() {
           refactoring.value = new IntroduceLocalVariableRefactoring();
-          error.value = refactoring.value.init(IntroduceVariable_Action.this.node, IntroduceVariable_Action.this.component);
+          error.value = refactoring.value.init(SNodeOperations.cast(IntroduceVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceVariable_Action.this.component);
         }
       });
       if (error.value == null) {

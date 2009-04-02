@@ -26,7 +26,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1202097921504(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode lValue = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
-    return SNodeOperations.isInstanceOf(lValue, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lValue, "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference");
+    return SNodeOperations.isInstanceOf(lValue, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(lValue, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201570306027(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -42,12 +42,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206153259009(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false);
+    SNode property = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference"), "property", false);
     return Property_Behavior.call_getSetterMethodName_1213877383179(property);
   }
 
   public static Object propertyMacro_GetPropertyValue_1206154728906(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "property", false);
+    SNode property = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference"), "property", false);
     return Property_Behavior.call_getGetterMethodName_1213877383170(property);
   }
 
@@ -104,7 +104,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1206153202718(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1206154706538(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -112,7 +112,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1206154777294(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "property", false);
+    SNode property = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference"), "property", false);
     return SLinkOperations.getTarget(property, "type", true);
   }
 

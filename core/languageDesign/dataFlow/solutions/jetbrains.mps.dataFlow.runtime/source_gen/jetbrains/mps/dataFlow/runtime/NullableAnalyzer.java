@@ -4,6 +4,7 @@ package jetbrains.mps.dataFlow.runtime;
 
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import java.util.Map;
+import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.internal.collections.runtime.MapSequence;

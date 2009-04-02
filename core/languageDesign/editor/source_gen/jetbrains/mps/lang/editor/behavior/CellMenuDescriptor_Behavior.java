@@ -14,9 +14,9 @@ public class CellMenuDescriptor_Behavior {
   public static SNode call_getEditedFeature_1220342015727(SNode thisNode) {
     SNode owner = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel","jetbrains.mps.lang.editor.structure.CellMenuComponent"}, false, false);
     if (SNodeOperations.isInstanceOf(owner, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")) {
-      return SLinkOperations.getTarget(owner, "relationDeclaration", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(owner, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "relationDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(owner, "jetbrains.mps.lang.editor.structure.CellMenuComponent")) {
-      SNode component = owner;
+      SNode component = SNodeOperations.cast(owner, "jetbrains.mps.lang.editor.structure.CellMenuComponent");
       SNode feature = SLinkOperations.getTarget(component, "applicableFeature", true);
       if ((feature != null)) {
         return SLinkOperations.getTarget(feature, "relationDeclaration", false);

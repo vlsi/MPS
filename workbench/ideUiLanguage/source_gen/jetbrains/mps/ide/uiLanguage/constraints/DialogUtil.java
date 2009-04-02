@@ -15,10 +15,10 @@ public class DialogUtil {
     }
     SNode declaration;
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
-      declaration = SLinkOperations.getTarget(container, "component", false);
+      declaration = SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentController"), "component", false);
     } else
     {
-      declaration = container;
+      declaration = SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration");
     }
     return declaration;
   }

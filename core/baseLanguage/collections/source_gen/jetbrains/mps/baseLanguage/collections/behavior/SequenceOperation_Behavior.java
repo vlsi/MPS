@@ -12,7 +12,7 @@ public class SequenceOperation_Behavior {
   }
 
   public static SNode call_getLeft_1213877497463(SNode thisNode) {
-    SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(thisNode), "operand", true);
+    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     return operand;
   }
 

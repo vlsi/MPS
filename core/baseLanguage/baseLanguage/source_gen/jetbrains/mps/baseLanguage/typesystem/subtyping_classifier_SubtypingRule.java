@@ -22,24 +22,24 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     List<SNode> result = ListSequence.<SNode>fromArray();
     List<SNode> supertypes = ListSequence.<SNode>fromArray();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = classifier;
+      SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
         ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(classConcept, "superclass", true));
       }
       ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "implementedInterface", true)));
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SNode interfaceConcept = classifier;
+      SNode interfaceConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface");
       ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode());
     }
     for(SNode supertype : supertypes) {
-      SNode supertypeCopy = SNodeOperations.copyNode(supertype);
+      SNode supertypeCopy = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       for(SNode typeParam : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SLinkOperations.getTargets(supertypeCopy, "parameter", true)))) {
         if (SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          SNode tvr = typeParam;
+          SNode tvr = SNodeOperations.cast(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
           int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
           if (i < 0 || i >= SLinkOperations.getCount(clt, "parameter")) {
             ((SNode)supertypeCopy).removeChild(typeParam);
@@ -53,7 +53,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     ListSequence.fromList(supertypes).addElement(clt);
     for(SNode supertype : supertypes) {
-      SNode erasure = SNodeOperations.copyNode(supertype);
+      SNode erasure = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       if (SLinkOperations.getCount(erasure, "parameter") > 0) {
         for(SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);

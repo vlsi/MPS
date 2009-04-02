@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -74,7 +75,7 @@ public class ReplaceDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", declaration, false);
+        SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
     });
   }
@@ -87,7 +88,7 @@ public class ReplaceDialog extends BaseDialog {
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      this.execute(this.myContext.getMPSProject(), query, result.getSNode(), scope);
+      this.execute(this.myContext.getMPSProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       this.myEditor.disposeEditor();
       this.dispose();
     } catch (Throwable t) {

@@ -101,7 +101,7 @@ public class QueriesGenerated {
                 SNode annotation = ListSequence.fromList(SLinkOperations.getTargets((item), "annotation", true)).where(new IWhereFilter <SNode>() {
 
                   public boolean accept(SNode it) {
-                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "name"));
+                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
                   }
                 }).first();
                 if (annotation == null) {
@@ -116,7 +116,7 @@ public class QueriesGenerated {
                 if (value == null) {
                   return "";
                 }
-                return SPropertyOperations.getString(SLinkOperations.getTarget(value, "value", true), "value");
+                return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(value, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
               }
             });
           }

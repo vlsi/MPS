@@ -16,18 +16,17 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.samples.agreementLanguage.generator.baseLanguage._Quotations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1197658386740(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    // apply rule if at least one Plan exists in input model
+    //     apply rule if at least one Plan exists in input model
     List<SNode> plans = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
     return ListSequence.fromList(plans).isNotEmpty();
   }
@@ -115,7 +114,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197663461983(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode value = SNodeOperations.getParent(_context.getNode());
+    SNode value = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Value");
     return SPropertyOperations.getString(value, "name");
   }
 
@@ -165,33 +164,33 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1197659829378(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode event = SNodeOperations.getParent(_context.getNode());
+    SNode event = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Event");
     SNode eventType = SLinkOperations.getTarget(event, "type", false);
     if ("SERVICE CALL".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_0().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "variableDeclaration", false);
     }
     if ("USAGE".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_1().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "variableDeclaration", false);
     }
     if ("TAX".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_2().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "variableDeclaration", false);
     }
     return null;
   }
 
   public static Object referenceMacro_GetReferent_1197661270681(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode postingRule = SLinkOperations.getTarget(_context.getNode(), "value", true);
+    SNode postingRule = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), "value", true);
     SNode accountType = SLinkOperations.getTarget(postingRule, "account", false);
     if ("base-usage".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_3().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "enumConstantDeclaration", false);
     }
     if ("service".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_4().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "enumConstantDeclaration", false);
     }
     if ("tax".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "enumConstantDeclaration", false);
     }
-    // error
+    //     error
     return null;
   }
 
@@ -253,13 +252,13 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1197659602870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> events = SLinkOperations.getTargets(_context.getNode(), "event", true);
-    return ListSequence.fromList(events).translate(new ITranslator <SNode, SNode>() {
+    return ListSequence.fromList(events).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode event) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode event) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
-            return new YieldingIterator<SNode>() {
+            return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
               private SNode _2_postingRule;
@@ -274,7 +273,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_postingRule_it = SLinkOperations.getTargets(event, "postingRule", true).iterator();
+                      this._2_postingRule_it = ListSequence.fromList(SLinkOperations.getTargets(event, "postingRule", true)).iterator();
                     case 3:
                       if (!(this._2_postingRule_it.hasNext())) {
                         this.__CP__ = 1;
@@ -299,13 +298,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).toListSequence();
   }
 
@@ -319,10 +315,10 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1197663295186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> values = SLinkOperations.getTargets(_context.getNode(), "value", true);
-    return ListSequence.fromList(values).translate(new ITranslator <SNode, SNode>() {
+    return ListSequence.fromList(values).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode value) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode value) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -340,7 +336,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_quantity_it = SLinkOperations.getTargets(value, "quantity", true).iterator();
+                      this._2_quantity_it = ListSequence.fromList(SLinkOperations.getTargets(value, "quantity", true)).iterator();
                     case 3:
                       if (!(this._2_quantity_it.hasNext())) {
                         this.__CP__ = 1;
@@ -365,13 +361,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).toListSequence();
   }
 

@@ -16,7 +16,7 @@ public class typeof_GenerationContextOp_GetCopiedOutputByInput_InferenceRule ext
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    // type the same as input ?
+    //     type the same as input ?
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

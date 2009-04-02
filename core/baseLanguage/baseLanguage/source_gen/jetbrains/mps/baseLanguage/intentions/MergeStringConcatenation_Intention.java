@@ -33,8 +33,8 @@ public class MergeStringConcatenation_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode stringLiteral = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringLiteral");
-    String left = SPropertyOperations.getString(SLinkOperations.getTarget(node, "leftExpression", true), "value");
-    String right = SPropertyOperations.getString(SLinkOperations.getTarget(node, "rightExpression", true), "value");
+    String left = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+    String right = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
     SPropertyOperations.set(stringLiteral, "value", left + right);
     editorContext.selectAndSetCaret(stringLiteral, left.length() + 1);
   }

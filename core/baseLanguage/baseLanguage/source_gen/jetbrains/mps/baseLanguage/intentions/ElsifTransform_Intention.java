@@ -34,7 +34,7 @@ public class ElsifTransform_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     while (true) {
-      SNode ifStatement = ifFalseStatement;
+      SNode ifStatement = SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
       SNode elsifClause = SLinkOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
       SLinkOperations.setTarget(elsifClause, "condition", SLinkOperations.getTarget(ifStatement, "condition", true), true);
       SLinkOperations.setTarget(elsifClause, "statementList", SLinkOperations.getTarget(ifStatement, "ifTrue", true), true);

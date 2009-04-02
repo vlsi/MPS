@@ -32,7 +32,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       List<Pair> res = ListSequence.<Pair>fromArray();
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(srcNode), "features", true)).where(new IWhereFilter <SNode>() {
+      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return it != srcNode && ((isGeneric ?

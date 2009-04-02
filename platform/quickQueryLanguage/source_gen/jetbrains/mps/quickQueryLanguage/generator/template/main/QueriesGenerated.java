@@ -25,7 +25,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1219760682963(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "replace", true), "body", true);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"), "replace", true), "body", true);
     }
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
   }

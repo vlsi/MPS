@@ -132,7 +132,7 @@ public class QueriesGenerated {
       result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(SNodeOperations.getParent(_context.getSourceNode()), "withSeparator", "" + true);
+          SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "withSeparator", "" + true);
           return _context.getSourceNode();
         }
 

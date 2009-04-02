@@ -34,7 +34,7 @@ public class ParameterDeclaration_Name_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-        SLinkOperations.addNewChild(SNodeOperations.getParent(node), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+        SLinkOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       }
     }
 

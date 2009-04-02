@@ -6,14 +6,14 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildlanguage.plugin.BuildLanguageTool_Tool;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
-    tools.add(new BuildLanguageTool_Tool(project));
+    List<GeneratedTool> tools = ListSequence.<GeneratedTool>fromArray();
+    ListSequence.fromList(tools).addElement(new BuildLanguageTool_Tool(project));
     return tools;
   }
 

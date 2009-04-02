@@ -4,8 +4,8 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
@@ -19,11 +19,11 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     SNode snode = node;
-    SNode blCast = snode;
+    SNode blCast = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.CastExpression");
     SNode expr = SLinkOperations.getTarget(blCast, "expression", true);
     SNodeOperations.detachNode(SLinkOperations.getTarget(blCast, "expression", true));
     SNode cast = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
-    SLinkOperations.setTarget(cast, "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(blCast, "type", true), "concept", false), false);
+    SLinkOperations.setTarget(cast, "concept", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(blCast, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), false);
     SNodeOperations.replaceWithAnother(snode, cast);
     SLinkOperations.setTarget(cast, "leftExpression", expr, true);
   }

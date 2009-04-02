@@ -65,8 +65,8 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
         if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return;
         }
-        SPropertyOperations.set(root, "name", name.value);
-        SLinkOperations.setTarget(rule, "templateNode", root, false);
+        SPropertyOperations.set(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", name.value);
+        SLinkOperations.setTarget(rule, "templateNode", SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
       }
     });
   }

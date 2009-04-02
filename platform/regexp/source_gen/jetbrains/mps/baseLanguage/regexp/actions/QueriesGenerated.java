@@ -41,7 +41,7 @@ public class QueriesGenerated {
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return false;
     }
-    if ("String".equals(SPropertyOperations.getString(SLinkOperations.getTarget(type, "classifier", false), "name")) && SModelOperations.getModelName(SNodeOperations.getModel(SLinkOperations.getTarget(type, "classifier", false))).equals("java.lang")) {
+    if ("String".equals(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name")) && SModelOperations.getModelName(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))).equals("java.lang")) {
       return true;
     }
     return false;
@@ -49,7 +49,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_MatchParensRegexp_1202218039385(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "regexp", _context.getSampleNode(), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "regexp", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), true);
     }
   }
 

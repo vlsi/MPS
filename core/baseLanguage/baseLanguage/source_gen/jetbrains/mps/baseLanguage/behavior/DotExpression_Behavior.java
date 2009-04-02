@@ -36,7 +36,7 @@ public class DotExpression_Behavior {
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       Object instance = Expression_Behavior.call_eval_1213877519769(SLinkOperations.getTarget(thisNode, "operand", true), module);
-      SNode methodCall = SLinkOperations.getTarget(thisNode, "operation", true);
+      SNode methodCall = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), module);
       Object[] actualArguments = IMethodCall_Behavior.call_getActualArguments_1219275428261(methodCall, module);
       return ReflectionUtil.invoke(method, instance, actualArguments);

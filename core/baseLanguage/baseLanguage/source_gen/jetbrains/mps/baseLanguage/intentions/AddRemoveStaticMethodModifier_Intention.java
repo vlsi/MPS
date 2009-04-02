@@ -45,7 +45,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
       }
     })) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableReference, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         return false;
       }
     }
@@ -65,7 +65,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
     SLinkOperations.addAll(method, "parameter", SLinkOperations.getTargets(node, "parameter", true));
     SLinkOperations.setTarget(method, "body", SLinkOperations.getTarget(node, "body", true), true);
     SLinkOperations.addAll(method, "throwsItem", SLinkOperations.getTargets(node, "throwsItem", true));
-    SLinkOperations.setTarget(method, "visibility", SLinkOperations.getTarget(node, "visibility", true), true);
+    SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", true), true);
     SPropertyOperations.set(method, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(method, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
     SLinkOperations.addAll(method, "annotation", SLinkOperations.getTargets(node, "annotation", true));

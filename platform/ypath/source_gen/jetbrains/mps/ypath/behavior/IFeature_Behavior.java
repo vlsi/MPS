@@ -46,12 +46,11 @@ public class IFeature_Behavior {
 
   public static void call_removePartialOpposites_1213877499703(SNode thisNode) {
     final SNode thisNodeLoc = thisNode;
-    for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(thisNode), "features", true)).where(new IWhereFilter <SNode>() {
+    for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != thisNodeLoc && SLinkOperations.getTarget(it, "opposite", false) == thisNodeLoc;
       }
-
     })) {
       SLinkOperations.setTarget(foo, "opposite", null, false);
     }
@@ -66,12 +65,11 @@ public class IFeature_Behavior {
       return false;
     }
     final SNode thisNodeLoc = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(thisNode), "features", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != thisNodeLoc && SLinkOperations.getTarget(it, "opposite", false) == thisNodeLoc;
       }
-
     }).isNotEmpty();
   }
 
@@ -80,12 +78,11 @@ public class IFeature_Behavior {
       return ListSequence.<SNode>fromArray();
     }
     final SNode thisNodeLoc = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(thisNode), "features", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != thisNodeLoc && SLinkOperations.getTarget(it, "opposite", false) == thisNodeLoc;
       }
-
     });
   }
 

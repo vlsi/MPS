@@ -20,31 +20,31 @@ public class SModelLanguageUtil {
   }
 
   private static SNode getPropertyDeclarationFromLeft_SPropertyAccess(SNode operation) {
-    SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(operation), "operand", true);
-    SNode leftOp = SLinkOperations.getTarget(leftExpression, "operation", true);
+    SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    SNode leftOp = SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
     if (SNodeOperations.isInstanceOf(leftOp, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
-      return SLinkOperations.getTarget(leftOp, "property", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(leftOp, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false);
     }
     return null;
   }
 
   public static SNode getConcept(SNode expression) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode operation = SLinkOperations.getTarget(expression, "operation", true);
+      SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "link", false), "target", false);
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), "link", false), "target", false);
       }
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "link", false), "target", false);
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false);
       }
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(expression, "variableDeclaration", false), "type", true);
+      SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", true);
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-        return SLinkOperations.getTarget(type, "concept", false);
+        return SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       }
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType")) {
-        return SLinkOperations.getTarget(type, "conceptDeclaraton", false);
+        return SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false);
       }
     }
     return null;

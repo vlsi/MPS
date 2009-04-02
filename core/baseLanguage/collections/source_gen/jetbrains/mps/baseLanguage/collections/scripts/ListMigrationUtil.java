@@ -19,7 +19,7 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForLists(SNode node, String name, List<ParameterType> params) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType"))) {
       return false;
     }
@@ -27,7 +27,7 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForSet(SNode node, String name, List<ParameterType> params) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
       return false;
     }
@@ -35,7 +35,7 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
       return false;
     }
@@ -43,7 +43,7 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForMap(SNode node, String name, List<ParameterType> params) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
       return false;
     }
@@ -55,7 +55,7 @@ public class ListMigrationUtil {
     if (!(ObjectUtils.equals(SPropertyOperations.getString(declaration, "name"), name))) {
       return false;
     }
-    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap")).contains(SPropertyOperations.getString(SNodeOperations.getParent(declaration), "name")))) {
+    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap")).contains(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.lang.core.structure.INamedConcept"), "name")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {

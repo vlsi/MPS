@@ -27,7 +27,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_NodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.NodeMacro")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "mappingLabel", SLinkOperations.getTarget(_context.getSampleNode(), "mappingLabel", false), false);
+      SLinkOperations.setTarget(_context.getNewNode(), "mappingLabel", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.NodeMacro"), "mappingLabel", false), false);
     }
   }
 

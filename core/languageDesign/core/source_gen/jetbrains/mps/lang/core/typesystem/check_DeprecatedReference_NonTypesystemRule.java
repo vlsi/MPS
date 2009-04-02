@@ -23,12 +23,12 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
   public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext) {
     for(SReference ref : baseConcept.getReferences()) {
       SNode node = ref.getTargetNode();
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable"))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(ref.getRole());
-          typeCheckingContext.reportWarning(baseConcept, IDeprecatable_Behavior.call_getMessage_1225207468592(node), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1225207423729", intentionProvider, errorTarget);
+          typeCheckingContext.reportWarning(baseConcept, IDeprecatable_Behavior.call_getMessage_1225207468592(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable")), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1225207423729", intentionProvider, errorTarget);
         }
       }
     }

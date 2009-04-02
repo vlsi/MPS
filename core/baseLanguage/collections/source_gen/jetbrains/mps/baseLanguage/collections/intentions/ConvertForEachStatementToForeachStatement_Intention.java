@@ -36,7 +36,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
 
   public void execute(final SNode node, final EditorContext editorContext) {
     final SNode oldVariable = SLinkOperations.getTarget(node, "variable", true);
-    SNode variableType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(oldVariable));
+    SNode variableType = SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(oldVariable)), "jetbrains.mps.baseLanguage.structure.Type");
     SNode foreachStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
     SLinkOperations.setTarget(foreachStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     SLinkOperations.setTarget(foreachStatement, "iterable", SLinkOperations.getTarget(node, "inputSequence", true), true);

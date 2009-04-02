@@ -54,7 +54,7 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention {
     EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
     String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")) {
-      SNode attributedNode = SNodeOperations.getParent(contextNode);
+      SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
       assert attributedNode != null;
       SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
       attributedNode.setAttribute(null);

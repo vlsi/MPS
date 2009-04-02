@@ -18,7 +18,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op), "operand", true);
+    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     final SNode C_typevar_1225294414283 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = op;

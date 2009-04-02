@@ -37,33 +37,33 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_AbstractEquationStatement_1174664649251(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "leftExpression", SLinkOperations.getTarget(_context.getSampleNode(), "leftExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "rightExpression", SLinkOperations.getTarget(_context.getSampleNode(), "rightExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCheck", SLinkOperations.getTarget(_context.getSampleNode(), "nodeToCheck", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "leftExpression", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "rightExpression", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCheck", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "nodeToCheck", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_IsSubtypeExpression_1177408248540(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "subtypeExpression", SLinkOperations.getTarget(_context.getSampleNode(), "subtypeExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "supertypeExpression", SLinkOperations.getTarget(_context.getSampleNode(), "supertypeExpression", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "subtypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "subtypeExpression", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "supertypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "supertypeExpression", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_CoerceExpression_1178879020941(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCoerce", SLinkOperations.getTarget(_context.getSampleNode(), "nodeToCoerce", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "pattern", SLinkOperations.getTarget(_context.getSampleNode(), "pattern", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCoerce", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "nodeToCoerce", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "pattern", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "pattern", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_TypeOfExpression_1179476271704(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       if (!(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"))) {
-        SLinkOperations.setTarget(_context.getNewNode(), "term", _context.getSampleNode(), true);
+        SLinkOperations.setTarget(_context.getNewNode(), "term", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
       } else
       {
-        SLinkOperations.setTarget(_context.getNewNode(), "term", SLinkOperations.getTarget(_context.getSampleNode(), "term", true), true);
+        SLinkOperations.setTarget(_context.getNewNode(), "term", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), "term", true), true);
       }
     }
   }

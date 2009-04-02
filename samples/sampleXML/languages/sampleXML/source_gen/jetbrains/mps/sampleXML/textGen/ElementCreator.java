@@ -44,10 +44,10 @@ public abstract class ElementCreator {
         if (!(first)) {
           result.addContent("\n");
         }
-        result.addContent(SPropertyOperations.getString(part, "text"));
+        result.addContent(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Text"), "text"));
       }
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Element")) {
-        result.addContent(ElementCreator.createElement(part, textGen));
+        result.addContent(ElementCreator.createElement(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Element"), textGen));
       }
       first = false;
     }

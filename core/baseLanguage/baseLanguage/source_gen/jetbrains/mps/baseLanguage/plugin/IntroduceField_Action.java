@@ -91,7 +91,7 @@ public class IntroduceField_Action extends GeneratedAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
 
         public void run() {
-          error.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
+          error.value = introducer.init(SNodeOperations.cast(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceField_Action.this.component);
         }
       });
       if (error.value == null) {

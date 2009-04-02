@@ -32,12 +32,12 @@ public class AddCastStatement_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression") && (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "classType", true) != null);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression") && (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), "classType", true) != null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode castVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-    SNode instanceOfExpression = SLinkOperations.getTarget(node, "condition", true);
+    SNode instanceOfExpression = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
     List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(instanceOfExpression, "classType", true));

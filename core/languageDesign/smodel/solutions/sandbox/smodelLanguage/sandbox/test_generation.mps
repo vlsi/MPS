@@ -595,8 +595,10 @@
                   <link role="annotationLink" targetNodeId="2.1149694500506" resolveInfo="nodeMacro" />
                 </node>
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205530454355">
-                <link role="variableDeclaration" targetNodeId="1205530364668" resolveInfo="node" />
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1238672822556">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205530454355">
+                  <link role="variableDeclaration" targetNodeId="1205530364668" resolveInfo="node" />
+                </node>
               </node>
             </node>
           </node>

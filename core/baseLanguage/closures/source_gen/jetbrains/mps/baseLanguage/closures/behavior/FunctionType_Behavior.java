@@ -84,7 +84,7 @@ public class FunctionType_Behavior {
   public static void call_fillTypeSignature_1213877405099(SNode thisNode, SNode t, StringBuffer buf) {
     buf.append("_");
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
-      buf.append(FunctionType_Behavior.call_getSignature_1213877405047(t));
+      buf.append(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
       return;
     }
     SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
@@ -130,7 +130,7 @@ public class FunctionType_Behavior {
     SNode tmp = possiblyMeet;
 with_meet:
     while (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      for(SNode arg : SLinkOperations.getTargets(tmp, "argument", true)) {
+      for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           tmp = arg;
           continue with_meet;
@@ -139,7 +139,7 @@ with_meet:
       return new _Quotations.QuotationClass_2().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      List<SNode> params = SLinkOperations.getTargets(tmp, "parameter", true);
+      List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
       for(SNode p : params) {
         SNode up = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, p);
         if (up != p) {

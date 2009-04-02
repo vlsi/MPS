@@ -9,7 +9,7 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
@@ -19,14 +19,13 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.actions.NamespaceActions_ActionGroup;
 
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromArray();
 
   public NamespaceInternalActions_ActionGroup() {
     super("NamespaceInternalActions", ID);

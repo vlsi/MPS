@@ -13,6 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
+import jetbrains.mps.lang.behavior.behavior._Quotations;
 
 public class ConceptBehavior_Behavior {
 
@@ -76,7 +77,6 @@ public class ConceptBehavior_Behavior {
         }
         return null;
       }
-
     };
     return result;
   }
@@ -91,7 +91,6 @@ public class ConceptBehavior_Behavior {
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
         return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(((SNode)this.myStaticContainer), "concept", false), method, arguments);
       }
-
     };
   }
 

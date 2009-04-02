@@ -41,7 +41,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
+      SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
       for(SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
         ListOperations.addElement(_results, parameterUsage);
       }
@@ -55,7 +55,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      ListOperations.addElement(_results, ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
+      ListOperations.addElement(_results, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
 

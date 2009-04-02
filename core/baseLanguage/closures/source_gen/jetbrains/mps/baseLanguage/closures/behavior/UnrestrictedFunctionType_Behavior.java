@@ -56,7 +56,7 @@ public class UnrestrictedFunctionType_Behavior {
   public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
     SNode tt = SLinkOperations.getTarget(thisNode, "terminateType", true);
     if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      List<SNode> args = SLinkOperations.getTargets(tt, "argument", true);
+      List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       tt = ListSequence.fromList(args).getElement(0);
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?

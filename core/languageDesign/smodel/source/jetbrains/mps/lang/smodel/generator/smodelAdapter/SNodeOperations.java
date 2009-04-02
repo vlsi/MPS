@@ -37,6 +37,8 @@ import java.util.List;
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
 
+  private static boolean ourCastsEnabled = false;
+
   public static INodeAdapter getAdapter(SNode node) {
     if (node == null) return null;
     return node.getAdapter();
@@ -505,5 +507,14 @@ public class SNodeOperations {
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, context);
     if (status.isOk()) return status.getSearchScope();
     return null;
+  }
+
+  public static SNode cast(SNode node, String castTo) {
+    if (node == null) return null;
+    
+    if (ourCastsEnabled && !isInstanceOf(node, castTo)) {      
+      throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+    }
+    return node;
   }
 }

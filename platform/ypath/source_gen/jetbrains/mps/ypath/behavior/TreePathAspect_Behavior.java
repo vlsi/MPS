@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TreePathAspect_Behavior {
@@ -37,7 +38,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_prop_it = SLinkOperations.getTargets(it, "properties", true).iterator();
+                      this._2_prop_it = SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.TreeNodeKind"), "properties", true).iterator();
                     case 3:
                       if (!(this._2_prop_it.hasNext())) {
                         this.__CP__ = 1;
@@ -47,7 +48,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (SPropertyOperations.getBoolean(this._2_prop, "default")) {
+                      if (SPropertyOperations.getBoolean(SNodeOperations.cast(this._2_prop, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default")) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -72,13 +73,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     }).first();
   }
 

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ypath.behavior.TreePathAdapterExpression_Behavior;
 
 public class TreePathOperationExpression_Behavior {
 
@@ -18,9 +19,8 @@ public class TreePathOperationExpression_Behavior {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
-
     }).first();
-    return (tpae != null) && TreePathAdapterExpression_Behavior.call_isGeneric_1213877411663(tpae);
+    return (tpae != null) && TreePathAdapterExpression_Behavior.call_isGeneric_1213877411663(SNodeOperations.cast(tpae, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
   }
 
 }

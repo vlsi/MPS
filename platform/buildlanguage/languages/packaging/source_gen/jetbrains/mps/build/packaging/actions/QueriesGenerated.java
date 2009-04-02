@@ -27,7 +27,7 @@ import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_TargetDeclaration_1224177706747(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Antcall") && (SLinkOperations.getTarget(_context.getParentNode(), "project", false) != null);
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Antcall") && (SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Antcall"), "project", false) != null);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Module_1203607567791(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -74,8 +74,8 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            SNode compositePathComponent = _context.getParentNode();
-            String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(compositePathComponent), "macro", true), "path");
+            SNode compositePathComponent = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.CompositePathComponent");
+            String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(compositePathComponent), "jetbrains.mps.build.packaging.structure.Path"), "macro", true), "path");
             if (base == null) {
               base = "";
             }
@@ -144,7 +144,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
+            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath"), "canStartFromBasedir"));
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }
@@ -181,7 +181,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getParentNode(), "project", false), "target", true);
+            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Antcall"), "project", false), "target", true);
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();

@@ -9,6 +9,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -50,7 +51,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "couldn't find mapping target class fqName: " + className);
       return null;
     }
-    return clazz;
+    return SNodeOperations.cast(clazz, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Iterable sourceNodesQuery_1197681023761(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -117,5 +117,4 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList("12", "15"), test);
   }
-
 }

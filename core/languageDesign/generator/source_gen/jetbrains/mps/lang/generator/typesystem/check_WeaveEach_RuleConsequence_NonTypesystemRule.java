@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.generator.typesystem.QueriesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -26,7 +27,7 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
     }
     SNode query = SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
     SNode NT = QueriesUtil.getOutputNodeType_fromSourceQuery(query);
-    SNode nodeConcept = SLinkOperations.getTarget(NT, "concept", false);
+    SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
     if (!(SModelUtil.isAssignableConcept(nodeConcept, templateApplicableConcept))) {
       {
         BaseIntentionProvider intentionProvider = null;

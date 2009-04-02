@@ -24,7 +24,7 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     SNode hostMenuPart = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, false);
     SNode editedFeature = CellMenuUtil.getEditedFeature(hostMenuPart);
     if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      SNode conceptOfChild = SLinkOperations.getTarget(editedFeature, "target", false);
+      SNode conceptOfChild = SLinkOperations.getTarget(SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "target", false);
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;

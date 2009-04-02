@@ -24,7 +24,7 @@ public class ConstructorDeclaration_resolveInfo_PropertyConstraint implements IM
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.getParent(node), "resolveInfo");
+    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
   }
 
 }

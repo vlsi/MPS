@@ -33,10 +33,10 @@ public class ComponentReference_component_ReferentConstraint extends BaseNodeRef
     SNode container = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.uiLanguage.structure.ComponentController","jetbrains.mps.uiLanguage.structure.ComponentDeclaration"}, true, false);
     SNode componentDeclaration = null;
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
-      componentDeclaration = SLinkOperations.getTarget(container, "component", false);
+      componentDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentController"), "component", false);
     }
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")) {
-      componentDeclaration = container;
+      componentDeclaration = SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration");
     }
     List<SNode> result = ListOperations.<SNode>createList();
     if (componentDeclaration != null) {

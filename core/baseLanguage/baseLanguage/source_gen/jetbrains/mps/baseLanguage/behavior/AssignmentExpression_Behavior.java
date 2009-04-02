@@ -17,7 +17,7 @@ public class AssignmentExpression_Behavior {
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
-      type = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "lValue", true)));
+      type = SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "lValue", true))), "jetbrains.mps.baseLanguage.structure.Type");
     }
     return type;
   }
@@ -32,8 +32,8 @@ public class AssignmentExpression_Behavior {
 
   public static SNode call_convertToLocalVariableDeclaration_1221573391693(SNode thisNode) {
     assert SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-    SNode exprStatement = SNodeOperations.getParent(thisNode);
-    SNode varType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true));
+    SNode exprStatement = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    SNode varType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true)), "jetbrains.mps.baseLanguage.structure.Type");
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", "var");
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "type", SNodeOperations.copyNode(varType), true);

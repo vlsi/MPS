@@ -100,9 +100,9 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pda = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pda = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pda, "name", "a");
-    SNode pdb = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pdb = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pdb, "name", "b");
   }
 
@@ -111,7 +111,7 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -120,7 +120,7 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -129,7 +129,7 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -138,7 +138,7 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -147,7 +147,7 @@ public class QueriesGenerated {
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -166,7 +166,7 @@ public class QueriesGenerated {
     if ((filter == null)) {
       filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -175,7 +175,7 @@ public class QueriesGenerated {
     if ((filter == null)) {
       filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -184,7 +184,7 @@ public class QueriesGenerated {
     if ((filter == null)) {
       filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -193,7 +193,7 @@ public class QueriesGenerated {
     if ((filter == null)) {
       filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "it");
   }
 
@@ -254,7 +254,7 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = null;
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+            leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           }
           if ((leftExpression != null)) {
             SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
@@ -529,7 +529,7 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = null;
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+            leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           }
           if ((leftExpression != null)) {
             SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);

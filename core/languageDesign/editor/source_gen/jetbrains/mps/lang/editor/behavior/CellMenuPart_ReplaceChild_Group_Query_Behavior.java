@@ -13,7 +13,7 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode hostMenuPart = SNodeOperations.getParent(thisNode);
+    SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group");
     SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
     if (parameterObjectType == null) {
       return new _Quotations.QuotationClass_1().createNode();

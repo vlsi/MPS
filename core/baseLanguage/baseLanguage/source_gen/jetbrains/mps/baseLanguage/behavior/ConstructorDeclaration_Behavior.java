@@ -15,7 +15,7 @@ public class ConstructorDeclaration_Behavior {
   }
 
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IDeprecatable_Behavior.callSuper_isDeprecated_1224609060727(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(thisNode)));
+    return IDeprecatable_Behavior.callSuper_isDeprecated_1224609060727(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable")));
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {

@@ -18,7 +18,7 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-      SNode assignmentExpression = node;
+      SNode assignmentExpression = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
       SNode lValue = SLinkOperations.getTarget(assignmentExpression, "lValue", true);
       SNodeOperations.replaceWithAnother(assignmentExpression, lValue);
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(lValue), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
@@ -26,7 +26,7 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
       }
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true));
     }
   }
 

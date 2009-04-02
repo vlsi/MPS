@@ -19,11 +19,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1233837397113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "member", false));
+    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false));
   }
 
   public static SNode sourceNodeQuery_1233837345550(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "member", false), "type", true));
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false), "type", true));
   }
 
   public static SNode sourceNodeQuery_1233837387040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

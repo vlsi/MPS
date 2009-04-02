@@ -38,7 +38,7 @@ public class NodeMacro_Behavior {
         if (currentAttribute == currentMacro) {
           break;
         }
-        result = currentAttribute;
+        result = SNodeOperations.cast(currentAttribute, "jetbrains.mps.lang.generator.structure.NodeMacro");
       }
     }
     if (result != null) {
@@ -50,13 +50,13 @@ public class NodeMacro_Behavior {
   public static SNode call_getInputNodeTypeFromEnvironment_1213877290892(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.BaseMappingRule"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false);
     }
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
-      return SLinkOperations.getTarget(ancestor, "applicableConcept", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false);
     }
     SNode rootAnnotation = SNodeOperations.getContainingRoot(thisNode).getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION);
-    return SLinkOperations.getTarget(rootAnnotation, "applicableConcept", false);
+    return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
 
   public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {

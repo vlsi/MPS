@@ -34,12 +34,12 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199894948366(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
-    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", "reference", "reference");
+    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199895015796(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
-    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(editedFeature, "metaClass", "aggregation", "reference");
+    return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
   }
 
   public static void nodeFactory_NodeSetup_CellModel_Property_1158947460473(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -56,7 +56,7 @@ public class QueriesGenerated {
       SLinkOperations.addChild(_context.getNewNode(), "styleItem", item);
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      SNode innerNode = SNodeOperations.copyNode(_context.getSampleNode());
+      SNode innerNode = SNodeOperations.copyNode(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
       SLinkOperations.addChild(_context.getNewNode(), "childCellModel", innerNode);
       if (SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
         SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
@@ -69,26 +69,26 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_CellModel_Alternation_1165441265076(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "vertical", "" + (true));
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "ifTrueCellModel", SNodeOperations.copyNode(_context.getSampleNode()), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "ifTrueCellModel", SNodeOperations.copyNode(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_ColorStyleClassItem_1222177342205(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem")) {
-      SPropertyOperations.set(_context.getNewNode(), "color", SPropertyOperations.getString_def(_context.getSampleNode(), "color", null));
-      SLinkOperations.setTarget(_context.getNewNode(), "query", SLinkOperations.getTarget(_context.getSampleNode(), "query", true), true);
+      SPropertyOperations.set(_context.getNewNode(), "color", SPropertyOperations.getString_def(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), "color", null));
+      SLinkOperations.setTarget(_context.getNewNode(), "query", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), "query", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_BooleanStyleSheetItem_1222178769289(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem")) {
-      SPropertyOperations.set(_context.getNewNode(), "flag", "" + SPropertyOperations.getBoolean(_context.getSampleNode(), "flag"));
+      SPropertyOperations.set(_context.getNewNode(), "flag", "" + SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "flag"));
     }
   }
 
   public static void nodeFactory_NodeSetup_FloatStyleClassItem_1222178992988(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem")) {
-      SPropertyOperations.set(_context.getNewNode(), "value", SPropertyOperations.getString(_context.getSampleNode(), "value"));
+      SPropertyOperations.set(_context.getNewNode(), "value", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), "value"));
     }
   }
 

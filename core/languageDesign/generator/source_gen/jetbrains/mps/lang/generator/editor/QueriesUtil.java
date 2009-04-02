@@ -177,7 +177,7 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    SNode link = BaseAdapter.fromAdapter(cell.getLinkDeclaration());
+    SNode link = SNodeOperations.cast(BaseAdapter.fromAdapter(cell.getLinkDeclaration()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode referentNode = cell.getRefNode();
     if (referentNode == null || link == null) {
       return null;

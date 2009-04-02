@@ -18,7 +18,7 @@ public class TreePathAdapterExpression_Behavior {
     SNode tpoe = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     if ((tpoe != null)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tpoe, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation")) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tpoe, "operation", true), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoe, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature");
       }
     }
     List<SNode> features = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "treepathAspect", false), "features", true);
@@ -27,7 +27,6 @@ public class TreePathAdapterExpression_Behavior {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"));
       }
-
     }).isEmpty() && ListSequence.fromList(features).isNotEmpty();
   }
 

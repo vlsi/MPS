@@ -42,7 +42,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
-
     }).isNotEmpty();
   }
 
@@ -68,24 +67,23 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"));
       }
-
     }).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1194863856918(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "writable"));
+    return !(SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable"));
   }
 
   public static boolean baseMappingRule_Condition_1194863928045(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "writable");
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
   public static boolean baseMappingRule_Condition_1198141795377(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "writable"));
+    return !(SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable"));
   }
 
   public static boolean baseMappingRule_Condition_1198141795397(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "writable");
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
   public static Object propertyMacro_GetPropertyValue_1172243407762(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -125,7 +123,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1179332034252(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TreeNodeKind_Behavior.call_getTriggerClassName_1213877375194(SNodeOperations.getParent(_context.getNode()));
+    return TreeNodeKind_Behavior.call_getTriggerClassName_1213877375194(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreeNodeKind"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1179332193000(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -229,7 +227,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1184762184639(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
+    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1185026993008(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -247,7 +245,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1196881635656(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(_context.getNode());
+    return "Design_" + IFeature_Behavior.call_getFullName_1213877499608(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198197077821(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -274,7 +272,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       }
-
     }).first();
   }
 
@@ -327,7 +324,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("idx");
       }
-
     }).first();
   }
 
@@ -340,19 +336,17 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("value");
       }
-
     }).first();
   }
 
   public static Object referenceMacro_GetReferent_1184059521295(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_class");
-    return ListSequence.fromList(SLinkOperations.getTargets(featureClass, "field", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(featureClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("thisNode");
       }
-
     }).first();
   }
 
@@ -369,18 +363,17 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1184674316408(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_class");
-    return ListSequence.fromList(SLinkOperations.getTargets(featureClass, "field", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(featureClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("param");
       }
-
     }).first();
   }
 
   public static Object referenceMacro_GetReferent_1184680030750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
-    return ListSequence.fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(descClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184763478621(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -392,27 +385,24 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(SConceptPropertyOperations.getString(fun, "alias"));
       }
-
     }).first();
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return "nodeType".equals(SPropertyOperations.getString(it, "name"));
       }
-
     }).first();
   }
 
   public static Object referenceMacro_GetReferent_1184771402282(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode df = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
-    SNode stmts = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(df, "body", true), "body");
+    SNode stmts = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(df, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "body", true), "body");
     final String paramAlias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(paramAlias);
       }
-
     }).first();
   }
 
@@ -517,456 +507,404 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1195424433852(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_context.getNode(), "writable");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
   public static boolean ifMacro_Condition_1195424511234(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_context.getNode(), "writable");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
   public static boolean ifMacro_Condition_1196434617040(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_context.getNode(), "writable");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
   public static boolean ifMacro_Condition_1196435508014(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196436037113(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196441959084(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196442175260(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196442565655(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196442565756(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196442565872(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196442565981(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910322(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910425(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910543(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910653(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910753(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910853(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462910969(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196462911078(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196463629409(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFInsertFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196463773120(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196463934763(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196463986584(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464033298(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464276234(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFInsertFunWrapper");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464276338(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464276451(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464276563(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1196464276675(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     return (fh != null) && ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
       }
-
     }).isNotEmpty();
   }
 
@@ -995,7 +933,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172245483666(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getNode());
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
     return SLinkOperations.getTarget(parent, "expression", true);
   }
 
@@ -1022,7 +960,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
-
     }).first();
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
@@ -1032,11 +969,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172655307749(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1172655368334(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1172656439990(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1048,7 +985,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1174932215509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1174933130150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1056,12 +993,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1175172300640(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getNode());
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
     return SLinkOperations.getTarget(parent, "expression", true);
   }
 
   public static SNode sourceNodeQuery_1175879812600(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getNode());
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
     return SLinkOperations.getTarget(parent, "expression", true);
   }
 
@@ -1168,7 +1105,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
-
     }).first();
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
@@ -1230,7 +1166,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1180087663597(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "nodeExpression", true), "expression", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.SwitchNodeKindStatement"), "nodeExpression", true), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1180088768491(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1362,27 +1298,27 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1184673941910(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184674029953(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184674099551(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184674113449(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184678704675(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184678720204(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184679920759(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1390,31 +1326,31 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1184679966257(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184762368321(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameterQueryFunction", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterQueryFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1184762418271(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toStringFunction", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "toStringFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1184762461203(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "targetTypeFunction", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "targetTypeFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1184764392657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184769796063(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184769801555(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1184849691168(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1424,13 +1360,12 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
-
     }).first();
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1185026992996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1185030514117(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1448,527 +1383,475 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1192793393648(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1192793648146(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1192793676557(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getter", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "getter", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1192887473913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1193058105157(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1193058124500(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cardinal", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "cardinal", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1194864092496(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1195424413398(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1195424497113(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1196434617028(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1196435366125(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196436349439(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442030564(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442175205(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442565609(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442565702(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442565807(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196442565927(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_ALL", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910275(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910370(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910598(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910799(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SINGLE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462910904(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_SELECTION", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196462911024(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REMOVE_ALL", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196463629363(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFInsertFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFInsertFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196463773066(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196463934709(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196463986530(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464033244(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "byIndex");
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464276188(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fw = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.GFInsertFunWrapper");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fw, "jetbrains.mps.ypath.structure.GFInsertFunWrapper"), "fun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464276284(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_START", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464276396(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AT_END", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464276509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_AFTER", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196464276621(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "funHolders", true)).where(new IWhereFilter <SNode>() {
+    SNode fh = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "funHolders", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "byIndex"));
       }
-
     }).first();
     SNode fun = ListSequence.fromList(SLinkOperations.getTargets(fh, "functions", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(it, "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment") && SPropertyOperations.hasValue(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "INSERT_BEFORE", "REPLACE_SINGLE");
       }
-
     }).first();
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(fun, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1196881785386(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getter", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature"), "getter", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1198141795370(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1198141795390(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1198141795408(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature"), "parameterType", true);
   }
 
   public static SNode sourceNodeQuery_1198142581216(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1992,7 +1875,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1225193265996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "nodeExpression", true), "expression", true));
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.SwitchNodeKindStatement"), "nodeExpression", true), "expression", true));
   }
 
   public static SNode sourceNodeQuery_1225193269561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2055,7 +1938,6 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "initializer", true);
       }
-
     }).toListSequence();
   }
 
@@ -2077,7 +1959,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature"));
       }
-
     }).toListSequence();
   }
 
@@ -2087,7 +1968,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
-
     }).toListSequence();
   }
 
@@ -2097,7 +1977,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
-
     }).toListSequence();
   }
 
@@ -2107,7 +1986,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature"));
       }
-
     }).toListSequence();
   }
 

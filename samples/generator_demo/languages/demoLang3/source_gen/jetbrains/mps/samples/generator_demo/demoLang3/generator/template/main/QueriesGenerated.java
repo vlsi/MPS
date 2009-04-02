@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
@@ -32,7 +33,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
-
     }), "value");
   }
 
@@ -42,7 +42,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
-
     }), "value");
   }
 
@@ -68,7 +67,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
-
     }) != null);
   }
 
@@ -78,7 +76,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
-
     }) != null);
   }
 
@@ -88,7 +85,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("enabled");
       }
-
     });
   }
 
@@ -98,30 +94,27 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("background");
       }
-
     });
   }
 
   public static SNode templateFragment_ContextNodeQuery_1228531534788(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    SNode demoApp = _context.getMainContextNode();
+    SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("addContent");
       }
-
     });
     return SLinkOperations.getTarget(method, "body", true);
   }
 
   public static SNode templateFragment_ContextNodeQuery_1228531789982(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    SNode demoApp = _context.getMainContextNode();
+    SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("addContent");
       }
-
     });
     return SLinkOperations.getTarget(method, "body", true);
   }

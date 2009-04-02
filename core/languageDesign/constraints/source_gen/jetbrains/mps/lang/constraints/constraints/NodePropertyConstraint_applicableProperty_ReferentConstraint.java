@@ -30,7 +30,7 @@ public class NodePropertyConstraint_applicableProperty_ReferentConstraint extend
     //     properties declared in specified concept
     SNode applicableConcept = NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getReferenceNode());
     if (applicableConcept == null) {
-      applicableConcept = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "concept", false);
+      applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(applicableConcept);
   }

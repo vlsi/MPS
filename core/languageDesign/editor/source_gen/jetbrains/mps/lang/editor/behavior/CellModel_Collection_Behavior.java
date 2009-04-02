@@ -58,7 +58,7 @@ public class CellModel_Collection_Behavior {
       if (EditorCellModel_Behavior.call_isNewLine_1237383076236(model) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(model) || EditorCellModel_Behavior.call_isOnNewLine_1237385424172(model)) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(model)) {
+      if (SNodeOperations.isInstanceOf(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(SNodeOperations.cast(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))) {
         return true;
       }
     }

@@ -142,11 +142,11 @@ public class MPSLayout_Behavior {
       }
     } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
       SNode toDo;
-      if (ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(component, "condition", true))) {
-        toDo = SLinkOperations.getTarget(component, "ifTrue", true);
+      if (ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "condition", true))) {
+        toDo = SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "ifTrue", true);
       } else
       {
-        toDo = SLinkOperations.getTarget(component, "ifFaulse", true);
+        toDo = SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "ifFaulse", true);
       }
       if (toDo != null) {
         MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(toDo, list);

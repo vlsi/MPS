@@ -7,6 +7,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Interface_Behavior {
 
@@ -18,7 +19,7 @@ public class Interface_Behavior {
       return true;
     }
     for(SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
-      if (Interface_Behavior.call_isDescendant_1238269307226(SLinkOperations.getTarget(extended, "classifier", false), interfaceToCompare)) {
+      if (Interface_Behavior.call_isDescendant_1238269307226(SNodeOperations.cast(SLinkOperations.getTarget(extended, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), interfaceToCompare)) {
         return true;
       }
     }

@@ -28,11 +28,11 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(vabs, "lValue", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111371042", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111366159", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111371042", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111366159", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.getParent(SNodeOperations.getParent(scpd)) == vabs) {
-      List<SNode> paramDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(vabs, "baseMethodDeclaration", false), "parameter", true);
+      List<SNode> paramDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true);
       SNode pd = ListSequence.fromList(paramDecls).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(scpd)));
       SNode ptype = SLinkOperations.getTarget(pd, "type", true);
       if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -47,7 +47,7 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(vabs, "operand", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111474860", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111479241", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111474860", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111479241", intentionProvider);
       }
     }
   }
@@ -59,7 +59,7 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(bmc), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1204110524611", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111787726", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1204110524611", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111787726", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {

@@ -11,7 +11,7 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
   public static final String ID = "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup";
 
   public FindInstancesByConditionGroup_ActionGroup() {
-    super("", ID);
+    super("FindInstancesByConditionGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

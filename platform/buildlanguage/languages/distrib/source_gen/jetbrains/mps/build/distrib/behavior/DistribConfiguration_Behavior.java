@@ -49,7 +49,7 @@ public class DistribConfiguration_Behavior {
     return Sequence.fromIterable(seq).select(new ISelector <SNode, SNode>() {
 
       public SNode select(SNode it) {
-        return it;
+        return SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Folder");
       }
     }).toListSequence();
   }

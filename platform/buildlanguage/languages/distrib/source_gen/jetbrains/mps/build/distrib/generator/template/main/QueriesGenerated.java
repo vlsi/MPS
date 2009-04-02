@@ -328,7 +328,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234545826028(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode macConf = SNodeOperations.getParent(_context.getNode());
+    SNode macConf = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.MacConfig");
     String path = SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(macConf, SLinkOperations.getTarget(_context.getNode(), "icon", true));
     int index = path.lastIndexOf(SConceptPropertyOperations.getString(macConf, "pathSeparator"));
     return path.substring(index + 1);
@@ -343,7 +343,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234550553125(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(SNodeOperations.getParent(_context.getNode()), SLinkOperations.getTarget(_context.getNode(), "icon", true));
+    return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.MacConfig"), SLinkOperations.getTarget(_context.getNode(), "icon", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1234786852122(final IOperationContext operationContext, final PropertyMacroContext _context) {

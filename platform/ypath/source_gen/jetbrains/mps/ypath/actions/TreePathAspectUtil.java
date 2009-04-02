@@ -40,7 +40,6 @@ public class TreePathAspectUtil {
           }
           return result;
         }
-
       }));
     }
     return treePathAspects;

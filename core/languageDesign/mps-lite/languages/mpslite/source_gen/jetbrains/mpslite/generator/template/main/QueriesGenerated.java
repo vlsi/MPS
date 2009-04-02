@@ -14,9 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mpslite.behavior.LineList_Behavior;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
 
@@ -36,7 +36,7 @@ public class QueriesGenerated {
     }
     //     extends
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      SLinkOperations.setTarget((conceptsToTargets.get(conceptDeclaration)), "extends", (SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), false);
+      SLinkOperations.setTarget((SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "extends", SNodeOperations.cast((SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
     }
     //     structure
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {

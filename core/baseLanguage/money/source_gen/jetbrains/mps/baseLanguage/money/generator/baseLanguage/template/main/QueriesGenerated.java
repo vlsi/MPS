@@ -47,11 +47,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1187347370038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "currency", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), "currency", true);
   }
 
   public static SNode sourceNodeQuery_1187347392064(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "amount", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), "amount", true);
   }
 
   public static SNode sourceNodeQuery_1187350349293(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

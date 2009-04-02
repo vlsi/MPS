@@ -34,11 +34,11 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint extends B
       SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
       ListSequence.fromList(result).addElement(appNode);
       if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
-        SNode appNode2 = SLinkOperations.getTarget(rule, "anotherNode", true);
+        SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "anotherNode", true);
         ListSequence.fromList(result).addElement(appNode2);
       }
       if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")) {
-        SNode appNode2 = SLinkOperations.getTarget(rule, "supertypeNode", true);
+        SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "supertypeNode", true);
         ListSequence.fromList(result).addElement(appNode2);
       }
     }

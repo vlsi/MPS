@@ -76,7 +76,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       //       last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(func, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
+        SNode expression = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
         {
           SNode _nodeToCheck_1029348928467 = func;
           BaseIntentionProvider intentionProvider = null;

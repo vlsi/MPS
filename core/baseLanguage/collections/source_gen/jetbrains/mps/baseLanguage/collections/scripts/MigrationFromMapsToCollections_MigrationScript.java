@@ -69,7 +69,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
         SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true), true);
+        SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), operation);
       }
 
@@ -99,7 +99,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
         SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
         SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.getParent(node), "operand", true), true);
+        SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SLinkOperations.setTarget(assignment, "lValue", operation, true);
         SLinkOperations.setTarget(assignment, "rValue", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), assignment);
@@ -151,7 +151,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "name"), "HashMap") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
       }
 
       public void doUpdateInstanceNode(SNode node) {

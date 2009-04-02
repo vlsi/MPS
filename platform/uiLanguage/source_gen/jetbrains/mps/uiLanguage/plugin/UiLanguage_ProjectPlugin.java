@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.uiLanguage.plugin.ComponentEditor_TabbedEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
 
@@ -20,7 +21,7 @@ public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
 
       public SNode getBaseNode(IOperationContext context, SNode node) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
-          return SLinkOperations.getTarget(node, "component", false);
+          return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.uiLanguage.structure.ComponentController"), "component", false);
         }
         return null;
       }
@@ -32,7 +33,6 @@ public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
       public IEditor open(IOperationContext context, SNode node) {
         return new ComponentEditor_TabbedEditor(context, node);
       }
-
     }, this);
   }
 

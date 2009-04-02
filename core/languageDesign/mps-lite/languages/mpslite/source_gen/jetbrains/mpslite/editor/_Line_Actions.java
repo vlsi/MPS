@@ -145,12 +145,12 @@ public class _Line_Actions extends EditorCellKeyMap {
         linePart = SNodeOperations.getAncestor(linePart, "jetbrains.mpslite.structure.LinePart", false, false);
       }
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(prevLinePart), "jetbrains.mpslite.structure.Line")) {
-        SNode line = SNodeOperations.getParent(prevLinePart);
+        SNode line = SNodeOperations.cast(SNodeOperations.getParent(prevLinePart), "jetbrains.mpslite.structure.Line");
         SNode nextLine = SNodeOperations.insertNextSiblingChild(line, SConceptOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
-        SNode sibling = SNodeOperations.getNextSibling(prevLinePart);
+        SNode sibling = SNodeOperations.cast(SNodeOperations.getNextSibling(prevLinePart), "jetbrains.mpslite.structure.LinePart");
         while (sibling != null) {
           SNode currentSibling = sibling;
-          sibling = SNodeOperations.getNextSibling(sibling);
+          sibling = SNodeOperations.cast(SNodeOperations.getNextSibling(sibling), "jetbrains.mpslite.structure.LinePart");
           line.removeChild(currentSibling);
           SLinkOperations.addChild(nextLine, "linePart", currentSibling);
         }
