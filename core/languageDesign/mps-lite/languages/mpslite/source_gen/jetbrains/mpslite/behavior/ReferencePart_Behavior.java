@@ -20,8 +20,11 @@ public class ReferencePart_Behavior {
     SLinkOperations.setTarget(refCell, "relationDeclaration", linkDeclaration, false);
     SNode component = SLinkOperations.setNewChild(refCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
     SNode propertyCell = SLinkOperations.setNewChild(component, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");
-    if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+    SNode targetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
+    if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), false);
+    } else if (SLinkOperations.getCount(targetConcept, "propertyDeclaration") == 1) {
+      SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).first(), false);
     }
     return refCell;
   }
