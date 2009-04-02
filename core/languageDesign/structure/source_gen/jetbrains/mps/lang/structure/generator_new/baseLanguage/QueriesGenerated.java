@@ -1450,7 +1450,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1170173405399(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "conceptPropertyDeclaration", true);
+    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "conceptPropertyDeclaration", true);
   }
 
   public static Iterable sourceNodesQuery_1170173405428(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

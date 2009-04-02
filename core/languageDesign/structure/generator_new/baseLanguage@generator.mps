@@ -5836,7 +5836,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189815328389">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721759655">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1170173405404">
-                  <link role="concept" targetNodeId="18.1071489090640" />
+                  <link role="concept" targetNodeId="18.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
                   <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170173405405" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1170173405406">
