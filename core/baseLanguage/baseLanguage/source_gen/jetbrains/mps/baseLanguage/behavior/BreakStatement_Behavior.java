@@ -14,7 +14,7 @@ public class BreakStatement_Behavior {
   public static SNode call_getLoop_1213877377001(SNode thisNode) {
     SNode loopOrSwitch = BreakStatement_Behavior.call_getLoopOrSwitch_1213877377041(thisNode);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
-      return SNodeOperations.cast(loopOrSwitch, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
+      return loopOrSwitch;
     }
     return null;
   }
@@ -22,7 +22,7 @@ public class BreakStatement_Behavior {
   public static SNode call_getSwitch_1213877377021(SNode thisNode) {
     SNode loopOrSwitch = BreakStatement_Behavior.call_getLoopOrSwitch_1213877377041(thisNode);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
-      return SNodeOperations.cast(loopOrSwitch, "jetbrains.mps.baseLanguage.structure.SwitchStatement");
+      return loopOrSwitch;
     }
     return null;
   }
@@ -33,7 +33,7 @@ public class BreakStatement_Behavior {
         return item;
       }
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
-        SNode loop = SNodeOperations.cast(item, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
+        SNode loop = item;
         if (SPropertyOperations.getString(thisNode, "label") == null) {
           if (SPropertyOperations.getString(loop, "label") == null) {
             return loop;

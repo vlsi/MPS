@@ -38,7 +38,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_ConceptMethodDeclaration_1238617792579(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode behaviour = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+    SNode behaviour = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
     SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(behaviour, "concept", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));

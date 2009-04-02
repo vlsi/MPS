@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration;
 import jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope;
 import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild;
 import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent;
@@ -17,16 +18,18 @@ import java.util.Iterator;
 import jetbrains.mps.lang.constraints.structure.NodePropertyConstraint;
 import java.util.List;
 import jetbrains.mps.lang.constraints.structure.NodeReferentConstraint;
+import jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration;
+import jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer, IExtractMethodAvailable, IStaticContainerForMethods {
   public static final String concept = "jetbrains.mps.lang.behavior.structure.ConceptBehavior";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String CONCEPT = "concept";
   public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static final String CONSTRUCTOR = "constructor";
@@ -40,14 +43,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public ConceptBehavior(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(ConceptBehavior.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ConceptBehavior.NAME, value);
   }
 
   public String getShortDescription() {
@@ -72,6 +67,14 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(ConceptBehavior.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ConceptBehavior.NAME, value);
   }
 
   public AbstractConceptDeclaration getConcept() {

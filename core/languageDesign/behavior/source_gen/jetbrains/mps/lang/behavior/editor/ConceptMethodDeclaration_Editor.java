@@ -17,8 +17,7 @@ import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -387,7 +386,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_6299_0 == null) {
       this.myListHandler_6299_0 = new ConceptMethodDeclaration_Editor.parameterListHandler_6299_0(node, "parameter", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_6299_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_6299_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6299_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -400,7 +399,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_6299_1 == null) {
       this.myListHandler_6299_1 = new ConceptMethodDeclaration_Editor.annotationListHandler_6299_0(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_6299_1.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_6299_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6299_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -413,7 +412,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     if (this.myListHandler_6299_2 == null) {
       this.myListHandler_6299_2 = new ConceptMethodDeclaration_Editor.annotationListHandler_6299_1(node, "annotation", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_6299_2.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_6299_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6299_2(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -937,6 +936,14 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_6299_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_annotation");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_6299_15(EditorCell editorCell, SNode node, EditorContext context) {
@@ -957,6 +964,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         }
       };
       inlineStyle.apply(editorCell);

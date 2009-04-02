@@ -6,9 +6,9 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.intentions.IndentLayoutUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.intentions.IndentLayoutUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -31,7 +31,7 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
+        return IndentLayoutUtil.isExtendsBaseLanguage(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -57,7 +57,7 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "cellLayout", true) == null;
+        return IndentLayoutUtil.isExtendsBaseLanguage(node) && SLinkOperations.getTarget(node, "cellLayout", true) == null;
       }
 
       public void doUpdateInstanceNode(SNode node) {

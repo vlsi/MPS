@@ -199,7 +199,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1174698110415(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode enumerationType = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    SNode enumerationType = SNodeOperations.getParent(_context.getNode());
     if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "internalValue"));
     }
@@ -630,15 +630,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234209804321(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return QueriesUtil.getEnumClassResolveInfo(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
   }
 
   public static Object referenceMacro_GetReferent_1234210854396(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return QueriesUtil.getEnumClassResolveInfo(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
   }
 
   public static Object referenceMacro_GetReferent_1234210973468(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return QueriesUtil.getEnumClassResolveInfo(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
+    return QueriesUtil.getEnumClassResolveInfo(SLinkOperations.getTarget(_context.getNode(), "dataType", false));
   }
 
   public static boolean ifMacro_Condition_1169755885217(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1478,7 +1478,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode enumDataType = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    SNode enumDataType = SNodeOperations.getParent(_context.getNode());
     String internalValue = SPropertyOperations.getString(_context.getNode(), "internalValue");
     SNode memberDataType = SLinkOperations.getTarget(enumDataType, "memberDataType", false);
     SNode targetInternalValueExpression = null;
@@ -1489,25 +1489,25 @@ __switch__:
       } else
       {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", internalValue);
+        SPropertyOperations.set(targetInternalValueExpression, "value", internalValue);
       }
     } else
     if (SPropertyOperations.hasValue(memberDataType, "name", "boolean")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       if (internalValue == null) {
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (true));
+        SPropertyOperations.set(targetInternalValueExpression, "value", "" + (true));
       } else
       {
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (Boolean.parseBoolean(internalValue)));
+        SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Boolean.parseBoolean(internalValue)));
       }
     } else
     if (SPropertyOperations.hasValue(memberDataType, "name", "integer")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       if (internalValue == null) {
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
+        SPropertyOperations.set(targetInternalValueExpression, "value", "" + (0));
       } else
       {
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (Integer.parseInt(internalValue)));
+        SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Integer.parseInt(internalValue)));
       }
     }
     if ((targetInternalValueExpression == null)) {
@@ -1517,7 +1517,7 @@ __switch__:
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
     for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
@@ -1527,7 +1527,7 @@ __switch__:
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
     for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
@@ -1537,7 +1537,7 @@ __switch__:
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    List<SNode> methods = SLinkOperations.getTargets(_context.getMainContextNode(), "method", true);
     for(SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);

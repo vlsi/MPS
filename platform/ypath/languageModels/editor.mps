@@ -1550,6 +1550,7 @@
               <property name="color" value="lightGray" />
             </node>
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692718830" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1180014195577">
           <property name="text" value=")" />

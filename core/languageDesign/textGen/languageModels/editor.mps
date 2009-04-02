@@ -343,6 +343,7 @@
             <property name="value" value="0.0" />
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692741633" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1234261657015">
         <property name="text" value=")" />
@@ -433,6 +434,7 @@
             </node>
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238693136993" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237808969873" />
     </node>
@@ -610,6 +612,7 @@
             <property name="flag" value="true" />
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692727967" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1234525744002">
         <property name="text" value=")" />
@@ -704,6 +707,7 @@
             </node>
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692734696" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1234532456580">
         <property name="text" value=")" />
@@ -1038,6 +1042,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1237479636049">
         <link role="relationDeclaration" targetNodeId="1.1237306115446" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692505816" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237306464498">
         <property name="text" value=";" />

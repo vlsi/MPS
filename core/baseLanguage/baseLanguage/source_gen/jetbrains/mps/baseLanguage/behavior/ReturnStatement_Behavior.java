@@ -21,7 +21,7 @@ public class ReturnStatement_Behavior {
     SNode current = thisNode;
     while (true) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TryStatement")) {
-        SNode tryStatement = SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.TryStatement");
+        SNode tryStatement = current;
         if ((SLinkOperations.getTarget(tryStatement, "finallyBody", true) != null) && SLinkOperations.getTarget(tryStatement, "finallyBody", true) != SNodeOperations.getParent(thisNode)) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(tryStatement, "finallyBody", true));
         }
@@ -39,12 +39,12 @@ public class ReturnStatement_Behavior {
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
       SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-        type = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
+        type = SNodeOperations.copyNode(SLinkOperations.getTarget(ancestor, "returnType", true));
       } else
       {
-        SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
+        SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(ancestor);
         if (SNodeOperations.isInstanceOf(expectedReturnType, "jetbrains.mps.baseLanguage.structure.Type")) {
-          type = SNodeOperations.cast(SNodeOperations.copyNode(expectedReturnType), "jetbrains.mps.baseLanguage.structure.Type");
+          type = SNodeOperations.copyNode(expectedReturnType);
         }
       }
     }
@@ -54,7 +54,7 @@ public class ReturnStatement_Behavior {
   public static SNode call_getReturnJumpTarget_1229351767970(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(container)) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true);
+      return SLinkOperations.getTarget(container, "body", true);
     }
     return null;
   }

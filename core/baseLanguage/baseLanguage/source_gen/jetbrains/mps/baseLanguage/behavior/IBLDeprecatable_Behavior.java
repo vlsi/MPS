@@ -18,7 +18,7 @@ public class IBLDeprecatable_Behavior {
       return true;
     }
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation")) {
-      for(SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
+      for(SNode annotation : SLinkOperations.getTargets(thisNode, "annotation", true)) {
         if ((annotation == null) || (SLinkOperations.getTarget(annotation, "annotation", false) == null) || SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name") == null) {
           continue;
         }

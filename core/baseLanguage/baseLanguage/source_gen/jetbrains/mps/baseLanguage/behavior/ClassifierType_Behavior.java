@@ -65,9 +65,9 @@ public class ClassifierType_Behavior {
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).isNotEmpty()) {
+      if (!(SPropertyOperations.getBoolean(classifier, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).isNotEmpty()) {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
-        SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
+        SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).first(), false);
         for(SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
           SLinkOperations.addChild(creator, "typeParameter", SNodeOperations.copyNode(typeParm));
         }

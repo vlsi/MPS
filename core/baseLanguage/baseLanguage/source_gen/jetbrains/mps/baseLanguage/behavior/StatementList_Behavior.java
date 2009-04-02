@@ -38,7 +38,7 @@ public class StatementList_Behavior {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))) {
       return false;
     }
-    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.IContainsStatementList");
+    SNode parent = SNodeOperations.getParent(thisNode);
     if (!(IContainsStatementList_Behavior.call_isStatementListCompactable_1237546012856(parent))) {
       return false;
     }

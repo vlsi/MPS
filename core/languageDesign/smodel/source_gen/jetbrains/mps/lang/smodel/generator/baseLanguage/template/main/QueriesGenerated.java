@@ -222,10 +222,6 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "asCast")) && SNodeTypeCastExpression_Behavior.call_isSNodeCast_1238686302573(_context.getNode());
   }
 
-  public static boolean baseMappingRule_Condition_1238686448380(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeTypeCastExpression_Behavior.call_isSNodeCast_1238686302573(_context.getNode()));
-  }
-
   public static boolean baseMappingRule_Condition_1238690757888(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "asCast") && !(SNodeTypeCastExpression_Behavior.call_isSNodeCast_1238686302573(_context.getNode()));
   }
@@ -1300,10 +1296,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1238684669076(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1238686276837(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
 

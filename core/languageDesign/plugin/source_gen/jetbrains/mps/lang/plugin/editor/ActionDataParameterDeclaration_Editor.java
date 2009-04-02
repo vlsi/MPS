@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.plugin.editor._Quotations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -152,7 +151,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "key", false), "annotation", true)).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -167,7 +166,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         if (description == null) {
           return "";
         }
-        String descriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(description, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+        String descriptionString = SPropertyOperations.getString(SLinkOperations.getTarget(description, "value", true), "value");
         return descriptionString;
       }
 
@@ -191,7 +190,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "key", false), "annotation", true)).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -206,7 +205,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         if (longDescription == null) {
           return "";
         }
-        String longDescriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(longDescription, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+        String longDescriptionString = SPropertyOperations.getString(SLinkOperations.getTarget(longDescription, "value", true), "value");
         return longDescriptionString;
       }
 

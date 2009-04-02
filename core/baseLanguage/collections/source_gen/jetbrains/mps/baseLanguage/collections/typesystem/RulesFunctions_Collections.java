@@ -25,7 +25,7 @@ public class RulesFunctions_Collections {
     SNode input = null;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      input = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+      input = SLinkOperations.getTarget(parent, "operand", true);
     } else
     {
       {
@@ -41,7 +41,7 @@ public class RulesFunctions_Collections {
     SNode output = null;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      output = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation");
+      output = SLinkOperations.getTarget(parent, "operation", true);
       return output;
     } else
     {
@@ -166,7 +166,7 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement"));
+                      this.yield(it);
                       return true;
                     case 14:
                       this.__CP__ = 12;

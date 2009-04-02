@@ -2275,6 +2275,7 @@
             <property name="flag" value="true" />
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692462926" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206019920053">
         <property name="text" value=")" />

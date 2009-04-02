@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -92,7 +92,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     if (this.myListHandler_0628_0 == null) {
       this.myListHandler_0628_0 = new ExecuteFindersExpression_Editor.findersListHandler_0628_0(node, "finders", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_0628_0.createCells(context, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = this.myListHandler_0628_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_0628_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

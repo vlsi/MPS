@@ -18,7 +18,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule extends 
 
   public void applyRule(final SNode conceptFunctionParameter_UserArgument, final TypeCheckingContext typeCheckingContext) {
     SNode filterArgumentClause = SNodeOperations.getAncestor(conceptFunctionParameter_UserArgument, "jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", false, false);
-    SNode requiredUserEnteredArgument = SNodeOperations.cast(SNodeOperations.getParent(filterArgumentClause), "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument");
+    SNode requiredUserEnteredArgument = SNodeOperations.getParent(filterArgumentClause);
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_UserArgument;
       BaseIntentionProvider intentionProvider = null;

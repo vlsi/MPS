@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -63,7 +63,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     if (this.myListHandler_7985_0 == null) {
       this.myListHandler_7985_0 = new AppendOperation_Editor.partListHandler_7985_0(node, "part", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_7985_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_7985_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_7985_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

@@ -58,13 +58,13 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
         if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem")) {
           leftPaddingSet = true;
           if (i != 0) {
-            SPropertyOperations.set(SNodeOperations.cast(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), "value", "0.5");
+            SPropertyOperations.set(styleClassItem, "value", "0.5");
           }
         }
         if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem")) {
           rightPaddingSet = true;
           if (i != strings.length - 1) {
-            SPropertyOperations.set(SNodeOperations.cast(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), "value", "0.5");
+            SPropertyOperations.set(styleClassItem, "value", "0.5");
           }
         }
       }

@@ -40,7 +40,7 @@ public class SurrondWithHorizontalCollection_Intention extends BaseIntention {
     List<SNode> nodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
     for(SNode sn : nodes) {
-      SLinkOperations.addChild(result, "childCellModel", SNodeOperations.cast(sn, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+      SLinkOperations.addChild(result, "childCellModel", sn);
     }
   }
 

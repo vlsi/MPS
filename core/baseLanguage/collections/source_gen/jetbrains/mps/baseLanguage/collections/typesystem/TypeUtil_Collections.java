@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -31,7 +31,7 @@ public class TypeUtil_Collections {
     //     ==========
     //     TEMP FIX FOR DNQ 1
     if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
-      SNode classifierType = SNodeOperations.cast(type.getChild("classifierType"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode classifierType = type.getChild("classifierType");
       return new _Quotations.QuotationClass_39().createNode(SNodeOperations.copyNode(classifierType));
     }
     //     END TEMP FIX
@@ -42,13 +42,13 @@ public class TypeUtil_Collections {
     if (type != null) {
       SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
       GlobalScope scope = GlobalScope.getInstance();
-      SNode entity = SNodeOperations.cast(SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.Entity", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode entity = SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.Entity", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope);
       if (entity == null) {
         return null;
       }
       SNode entityType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityType, "classifier", entity, false);
-      SNode javaIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("java.lang.Iterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode javaIterable = SModelUtil.findNodeByFQName("java.lang.Iterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope);
       SNode javaIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
       SLinkOperations.addChild(javaIterableType, "parameter", entityType);
@@ -56,7 +56,7 @@ public class TypeUtil_Collections {
         return new _Quotations.QuotationClass_40().createNode(SNodeOperations.copyNode(entity));
       }
       //       ==========
-      SNode entityIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode entityIterable = SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope);
       SNode entityIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, entityIterableType)) {

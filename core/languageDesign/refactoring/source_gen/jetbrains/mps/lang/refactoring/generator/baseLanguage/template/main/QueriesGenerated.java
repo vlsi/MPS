@@ -33,7 +33,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1189763520881(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode());
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-      return !(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode());
+      return !(SLinkOperations.getTarget(parent, "lValue", true) == _context.getNode());
     }
     return true;
   }
@@ -59,7 +59,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1190733623863(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference"), "argument", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "argument", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1191238748328(final IOperationContext operationContext, final PropertyMacroContext _context) {

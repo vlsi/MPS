@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -62,7 +62,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     if (this.myListHandler_3031_0 == null) {
       this.myListHandler_3031_0 = new PressKeyStatement_Editor.keyStrokesListHandler_3031_0(node, "keyStrokes", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_3031_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_3031_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3031_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

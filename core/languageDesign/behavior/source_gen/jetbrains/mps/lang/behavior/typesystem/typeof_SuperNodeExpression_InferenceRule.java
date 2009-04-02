@@ -28,7 +28,7 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     } else
     {
       SNode icd = SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-      result = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+      result = ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first();
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;

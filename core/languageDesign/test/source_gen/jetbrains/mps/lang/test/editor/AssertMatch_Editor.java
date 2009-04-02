@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -109,7 +109,7 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     if (this.myListHandler_9939_0 == null) {
       this.myListHandler_9939_0 = new AssertMatch_Editor.beforeListHandler_9939_0(node, "before", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_9939_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9939_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9939_0(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
@@ -122,7 +122,7 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     if (this.myListHandler_9939_1 == null) {
       this.myListHandler_9939_1 = new AssertMatch_Editor.afterListHandler_9939_0(node, "after", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_9939_1.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_9939_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9939_1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);

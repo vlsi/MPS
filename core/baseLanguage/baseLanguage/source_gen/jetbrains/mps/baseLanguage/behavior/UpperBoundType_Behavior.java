@@ -24,7 +24,7 @@ public class UpperBoundType_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-      return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
+      return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), SLinkOperations.getTarget(t, "bound", true));
     }
     return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), t);
   }
