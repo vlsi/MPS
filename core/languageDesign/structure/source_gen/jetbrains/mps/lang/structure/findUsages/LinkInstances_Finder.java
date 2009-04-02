@@ -10,12 +10,11 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class LinkInstances_Finder extends GeneratedFinder {
@@ -39,7 +38,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     //     collect roles
-    Set<String> roles = new HashSet<String>();
+    Set<String> roles = SetSequence.<String>fromArray();
     SNode curNode = node;
     do {
       roles.add(SPropertyOperations.getString(curNode, "role"));

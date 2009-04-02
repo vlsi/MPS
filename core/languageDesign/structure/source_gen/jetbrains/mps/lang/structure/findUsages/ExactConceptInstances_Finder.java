@@ -8,7 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -31,7 +32,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = new ArrayList<SNode>(FindUsagesManager.getInstance().findExactInstances((AbstractConceptDeclaration)((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope, new FindUsagesManager.ProgressAdapter(indicator), false));
+    List<SNode> resNodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findExactInstances((AbstractConceptDeclaration)((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope, new FindUsagesManager.ProgressAdapter(indicator), false)));
     for(SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }

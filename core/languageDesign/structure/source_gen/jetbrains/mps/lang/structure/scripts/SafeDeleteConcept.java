@@ -17,16 +17,14 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import java.util.ArrayList;
-import java.util.Collection;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -95,11 +93,11 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
       if (((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-        List<SNode> searchResultsList = searchResults.getSearchResults();
+        List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
         if (editorModelDescriptor != null) {
           refactoringContext.setParameter("editorNode", SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node));
           if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
-            for(SearchResult<SNode> searchResult : new ArrayList<SearchResult<SNode>>((Collection)searchResultsList)) {
+            for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("editorNode"))) {
                 searchResults.remove(searchResult);
               }
@@ -110,7 +108,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         if (behaviorModelDescriptor != null) {
           refactoringContext.setParameter("behaviorNode", SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node));
           if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
-            for(SearchResult<SNode> searchResult : new ArrayList<SearchResult<SNode>>((Collection)searchResultsList)) {
+            for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("behaviorNode"))) {
                 searchResults.remove(searchResult);
               }
@@ -126,10 +124,10 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     {
       SNode node = refactoringContext.getSelectedNode();
       if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
-        ((SNode)refactoringContext.getParameter("behaviorNode")).delete();
+        SNodeOperations.deleteNode(((SNode)refactoringContext.getParameter("behaviorNode")));
       }
       if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
-        ((SNode)refactoringContext.getParameter("editorNode")).delete();
+        SNodeOperations.deleteNode(((SNode)refactoringContext.getParameter("editorNode")));
       }
       SNodeOperations.deleteNode(node);
     }

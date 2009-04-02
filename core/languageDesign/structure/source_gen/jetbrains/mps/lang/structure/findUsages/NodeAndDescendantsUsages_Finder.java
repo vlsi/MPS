@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
@@ -32,7 +32,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    Set<SNode> nodes = new HashSet<SNode>();
+    Set<SNode> nodes = SetSequence.<SNode>fromArray();
     nodes.add(node);
     for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false))) {
       nodes.add(child);

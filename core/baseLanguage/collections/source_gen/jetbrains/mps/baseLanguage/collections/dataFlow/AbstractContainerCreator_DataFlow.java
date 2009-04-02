@@ -17,6 +17,9 @@ public class AbstractContainerCreator_DataFlow extends DataFlowBuilder {
     for(SNode expression : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
       _context.getBuilder().build((SNode)expression);
     }
+    if (SLinkOperations.getTarget(_context.getNode(), "copyFrom", true) != null) {
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "copyFrom", true));
+    }
   }
 
 }

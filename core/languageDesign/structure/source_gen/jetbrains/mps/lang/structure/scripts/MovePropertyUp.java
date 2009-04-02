@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
@@ -115,7 +114,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       Language targetLanguage = Language.getLanguageFor(targetModel.getModelDescriptor());
       if (language != null) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
+        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(language.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
 
           public SModel select(SModelDescriptor it) {
             return it.getSModel();
@@ -124,7 +123,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
         MapSequence.fromMap(result).put(language, aspectList);
       }
       if (targetLanguage != null && targetLanguage != language) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
+        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(targetLanguage.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
 
           public SModel select(SModelDescriptor it) {
             return it.getSModel();

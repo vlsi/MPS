@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -107,7 +106,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
       SModel model = refactoringContext.getSelectedNode().getModel();
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       if (language != null) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors()))).select(new ISelector <SModelDescriptor, SModel>() {
+        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(language.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
 
           public SModel select(SModelDescriptor it) {
             return it.getSModel();

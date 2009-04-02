@@ -520,6 +520,27 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238663477804">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238663477805">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1238663491832">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238663502020">
+                <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1238663502021" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238663502022">
+                  <link role="link" targetNodeId="1.1237731803878" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1238663488403">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238663489698" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238663482563">
+              <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1238663482238" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238663487004">
+                <link role="link" targetNodeId="1.1237731803878" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
