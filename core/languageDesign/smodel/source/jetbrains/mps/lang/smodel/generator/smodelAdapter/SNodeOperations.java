@@ -25,7 +25,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -512,10 +514,12 @@ public class SNodeOperations {
   public static SNode cast(SNode node, String castTo) {
     if (node == null) return null;
     
-    if (ourCastsEnabled && !isInstanceOf(node, castTo)) {
-//      
-      LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
-//      throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+    if (!isInstanceOf(node, castTo)) {
+      if (ourCastsEnabled) {
+        throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+      } else {
+        LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+      }
     }
 
     return node;
@@ -525,6 +529,30 @@ public class SNodeOperations {
     if (node == null) return null;
 
     if (!isInstanceOf(node, castTo)) {
+      return null;
+    }
+
+    return node;
+  }
+
+  public static SNode castConcept(SNode node, String castTo) {
+    if (node == null) return null;
+
+    if (!SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo)) {
+      if (ourCastsEnabled) {
+        throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+      } else {
+        LOG.warning("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
+      }
+    }
+
+    return node;
+  }
+
+  public static SNode asConcept(SNode node, String castTo) {
+    if (node == null) return null;
+
+    if (!SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo)) {
       return null;
     }
 

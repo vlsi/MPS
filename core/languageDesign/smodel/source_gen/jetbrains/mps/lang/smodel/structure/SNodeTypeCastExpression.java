@@ -11,11 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SNodeTypeCastExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression";
+  public static final String AS_CAST = "asCast";
   public static final String CONCEPT = "concept";
   public static final String LEFT_EXPRESSION = "leftExpression";
 
   public SNodeTypeCastExpression(SNode node) {
     super(node);
+  }
+
+  public boolean getAsCast() {
+    return this.getBooleanProperty(SNodeTypeCastExpression.AS_CAST);
+  }
+
+  public void setAsCast(boolean value) {
+    this.setBooleanProperty(SNodeTypeCastExpression.AS_CAST, value);
   }
 
   public AbstractConceptDeclaration getConcept() {

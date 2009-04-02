@@ -13,7 +13,7 @@ public class SNodeTypeCastExpression_Behavior {
   }
 
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true)), new _Quotations.QuotationClass_4().createNode(), false);
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true)), new _Quotations.QuotationClass_4().createNode(), false));
   }
 
 }
