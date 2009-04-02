@@ -207,14 +207,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
         }
       }
+
+      if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
+        if (updateEditorComponent(myInspectorTool.getInspector(), events, checkers, checkersToRemove)) {
+          isUpdated = true;
+        }
+      }
     } finally {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
-    }
-
-    if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
-      if (updateEditorComponent(myInspectorTool.getInspector(), events, checkers, checkersToRemove)) {
-        isUpdated = true;
-      }
     }
 
     if (isUpdated) { //why do we need this code? it's looks like a hack.
