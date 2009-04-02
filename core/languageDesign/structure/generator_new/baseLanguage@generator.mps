@@ -5898,7 +5898,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189815336938">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721759164">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1170173405433">
-                  <link role="concept" targetNodeId="18.1071489090640" />
+                  <link role="concept" targetNodeId="18.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
                   <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170173405434" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1170173405435">
