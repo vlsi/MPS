@@ -30,16 +30,15 @@ public class DateTimeOperations {
   private DateTimeOperations() {
   }
 
-  public static String print(Long datetime, DateTimeFormatter formatter) {
-    return formatter.print(datetime != null ? new DateTime(datetime) : Constants.NULL_DATE_TIME);
+  public static String print(Long value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
+    DateTime dateTime = (value != null)?
+      ((zone != null)? new DateTime(value, zone) : new DateTime(value)) : Constants.NULL_DATE_TIME;
+    DateTimeFormatter dateTimeFormatter = (locale == null)? formatter : formatter.withLocale(locale);
+    return dateTimeFormatter.print(dateTime);
   }
 
-  public static String print(Period period, DateTimeFormatter formatter) {
-    return print(convert(period), formatter);
-  }
-
-  public static String print(Long datetime, DateTimeFormatter formatter, Locale locale) {
-    return print(datetime, formatter.withLocale(locale));
+  public static String print(Period period, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
+    return print(convert(period), formatter, locale, zone);
   }
 
   public static Long convert(DateTime dateTime) {

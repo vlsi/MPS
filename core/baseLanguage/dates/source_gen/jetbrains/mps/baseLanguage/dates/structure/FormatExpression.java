@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.dates.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat;
+import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -12,7 +13,9 @@ import jetbrains.mps.project.GlobalScope;
 public class FormatExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FormatExpression";
   public static final String DATE_FORMAT = "dateFormat";
+  public static final String LOCALE = "locale";
   public static final String DATE_EXPRESSION = "dateExpression";
+  public static final String ZONE = "zone";
 
   public FormatExpression(SNode node) {
     super(node);
@@ -26,12 +29,28 @@ public class FormatExpression extends Expression {
     super.setReferent(FormatExpression.DATE_FORMAT, node);
   }
 
+  public Locale getLocale() {
+    return (Locale)this.getReferent(Locale.class, FormatExpression.LOCALE);
+  }
+
+  public void setLocale(Locale node) {
+    super.setReferent(FormatExpression.LOCALE, node);
+  }
+
   public Expression getDateExpression() {
     return (Expression)this.getChild(Expression.class, FormatExpression.DATE_EXPRESSION);
   }
 
   public void setDateExpression(Expression node) {
     super.setChild(FormatExpression.DATE_EXPRESSION, node);
+  }
+
+  public Expression getZone() {
+    return (Expression)this.getChild(Expression.class, FormatExpression.ZONE);
+  }
+
+  public void setZone(Expression node) {
+    super.setChild(FormatExpression.ZONE, node);
   }
 
 
