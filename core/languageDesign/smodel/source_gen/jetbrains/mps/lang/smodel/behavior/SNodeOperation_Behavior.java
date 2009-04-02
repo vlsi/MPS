@@ -26,11 +26,17 @@ public class SNodeOperation_Behavior {
 
   public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
+    if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return null;
+    }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
+    if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return null;
+    }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
   }
 
