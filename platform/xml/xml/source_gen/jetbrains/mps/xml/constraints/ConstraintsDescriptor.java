@@ -5,6 +5,9 @@ package jetbrains.mps.xml.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.xml.constraints.Element_alias_PropertyConstraint;
+import jetbrains.mps.xml.constraints.Element_elementDeclaration_ReferentConstraint;
+import jetbrains.mps.xml.constraints.Attribute_attributeDeclaration_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

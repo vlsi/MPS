@@ -18,24 +18,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodesTestCase extends BaseConcept implements ITestCase, INamedConcept, IClassifier {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodesTestCase";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String NODES_TO_CHECK = "nodesToCheck";
   public static final String TEST_METHODS = "testMethods";
   public static final String METHODS = "methods";
 
   public NodesTestCase(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(NodesTestCase.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(NodesTestCase.NAME, value);
   }
 
   public String getShortDescription() {
@@ -60,6 +52,14 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
 
   public void setVirtualPackage(String value) {
     this.setProperty(NodesTestCase.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(NodesTestCase.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(NodesTestCase.NAME, value);
   }
 
   public int getNodesToChecksCount() {

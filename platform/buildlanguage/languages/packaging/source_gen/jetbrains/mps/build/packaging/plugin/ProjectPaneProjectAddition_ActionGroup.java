@@ -11,7 +11,7 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
   public static final String ID = "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition";
 
   public ProjectPaneProjectAddition_ActionGroup() {
-    super("", ID);
+    super("ProjectPaneProjectAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

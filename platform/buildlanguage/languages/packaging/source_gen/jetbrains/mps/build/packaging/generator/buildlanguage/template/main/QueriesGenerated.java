@@ -49,7 +49,6 @@ import java.util.Set;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
 
 public class QueriesGenerated {
@@ -690,14 +689,14 @@ public class QueriesGenerated {
     }
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
     for(SNode layout : ListSequence.fromList(layouts)) {
-      Set<IModule> modules = new HashSet<IModule>();
+      Set<IModule> modules = SetSequence.<IModule>fromArray();
       for(SNode m : ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228340(layout))) {
-        modules.add(Module_Behavior.call_getModule_1213877515148(m));
+        SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }
       for(IModule module : SetSequence.fromSet(modules)) {
         List<IModule> dependency = module.getAllDependOnModules();
         for(IModule dependent : ListSequence.fromList(dependency)) {
-          if (!(dependent instanceof Generator) && !(modules.contains(dependent))) {
+          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent))) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
             System.err.println(errorText);
             _context.showErrorMessage(null, errorText);

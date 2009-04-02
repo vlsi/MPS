@@ -560,28 +560,12 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ProjectPluginConstructor");
   }
 
-  public static Object referenceMacro_GetReferent_1217679346470(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_PageClass");
-  }
-
   public static Object referenceMacro_GetReferent_1217690597852(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false), "map_PreferenceComponentClass");
   }
 
   public static Object referenceMacro_GetReferent_1217691172312(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "map_PreferenceComponentClass");
-  }
-
-  public static Object referenceMacro_GetReferent_1218025374506(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_GenerationListenerConstructor");
-  }
-
-  public static Object referenceMacro_GetReferent_1218028766823(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_PreferenceComponentClass");
-  }
-
-  public static Object referenceMacro_GetReferent_1218030866850(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ToolConstructor");
   }
 
   public static Object referenceMacro_GetReferent_1218031031889(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -632,8 +616,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "constructorDeclaration", false);
   }
 
-  public static Object referenceMacro_GetReferent_1228847767142(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1238672255049(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_FileGeneratorConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1238672255068(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ToolConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1238672255087(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_PageClass");
+  }
+
+  public static Object referenceMacro_GetReferent_1238672255109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_GenerationListenerConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1238672255144(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_PreferenceComponentClass");
   }
 
   public static boolean ifMacro_Condition_1204048094902(final IOperationContext operationContext, final IfMacroContext _context) {

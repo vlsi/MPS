@@ -43,7 +43,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.typesystem.structure.NonTypesystemRule;
 import jetbrains.mps.lang.typesystem.structure.InequationReplacementRule;
@@ -2348,7 +2348,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1194972375237(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     DependenciesCollector dependenciesCollector = new DependenciesCollector();
     Map<SNode, Pair<SNode, SNode>> dependencies = MapSequence.fromMap(new HashMap<SNode, Pair<SNode, SNode>>());
-    Set<SNode> leaves = new HashSet<SNode>();
+    Set<SNode> leaves = SetSequence.<SNode>fromArray();
     for(SNode inferenceRule : SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
       dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
     }

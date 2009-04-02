@@ -10,6 +10,8 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.build.packaging.plugin.GenerateBuildWizard;
+import jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -64,7 +66,6 @@ public class GenerateBuildForProjectAction_Action extends GeneratedAction {
         public void run() {
           wizard.show();
         }
-
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateBuildForProjectAction");

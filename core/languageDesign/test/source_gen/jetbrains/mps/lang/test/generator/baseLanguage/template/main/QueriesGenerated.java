@@ -25,7 +25,6 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.ArrayList;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
@@ -229,7 +228,7 @@ public class QueriesGenerated {
     for(SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false))) {
       SetSequence.fromSet(set).addElement(SLinkOperations.getTarget(ref, "declaration", false));
     }
-    return new ArrayList<SNode>(set);
+    return ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(set));
   }
 
   public static Iterable sourceNodesQuery_1221567898723(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

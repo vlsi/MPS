@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
 import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -23,21 +23,21 @@ public class DependenciesCollector {
   }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
-    Set<SNode> roots = new HashSet<SNode>();
+    Set<SNode> roots = SetSequence.<SNode>fromArray();
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false)) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
-        roots.add(applicableNodeReference);
+        SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
     }
     int prevSize = dependencies.size();
-    int leavesSize = leaves.size();
+    int leavesSize = SetSequence.fromSet(leaves).count();
     for(SNode root : roots) {
       MapSequence.fromMap(dependencies).put(root, null);
     }
-    while (dependencies.size() > prevSize || leaves.size() > leavesSize) {
+    while (dependencies.size() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
       prevSize = dependencies.size();
-      leavesSize = leaves.size();
-      for(SNode node : new HashSet<SNode>(MapSequence.fromMap(dependencies).keySet())) {
+      leavesSize = SetSequence.fromSet(leaves).count();
+      for(SNode node : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()))) {
         SNode parent = SNodeOperations.getParent(node);
         do {
           SNode matchedNode_0 = parent;
@@ -50,8 +50,8 @@ public class DependenciesCollector {
               }
             }
             if (matches_0) {
-              if (!(roots.contains(node))) {
-                leaves.add(node);
+              if (!(SetSequence.fromSet(roots).contains(node))) {
+                SetSequence.fromSet(leaves).addElement(node);
               }
               break;
             }

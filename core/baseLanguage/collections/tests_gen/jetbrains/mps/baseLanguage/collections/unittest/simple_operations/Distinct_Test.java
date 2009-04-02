@@ -25,14 +25,12 @@ public class Distinct_Test extends TestCase {
       public boolean accept(Integer it) {
         return it == 2;
       }
-
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter <Integer>() {
 
       public boolean accept(Integer it) {
         return it == 4;
       }
-
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
     source = Sequence.fromIterable(source).sort(new ISelector <Integer, Comparable<?>>() {
@@ -40,12 +38,11 @@ public class Distinct_Test extends TestCase {
       public Comparable<?> select(Integer it) {
         return it;
       }
-
     }, true);
     Integer c = 1;
     for(Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
-      c = c + 1;
+      c++ ;
     }
   }
 
@@ -107,13 +104,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     source = Sequence.fromIterable(source).distinct();
     Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter <Integer>() {
@@ -121,14 +115,12 @@ __switch__:
       public boolean accept(Integer it) {
         return it == 2;
       }
-
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter <Integer>() {
 
       public boolean accept(Integer it) {
         return it == 4;
       }
-
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
     source = Sequence.fromIterable(source).sort(new ISelector <Integer, Comparable<?>>() {
@@ -136,12 +128,11 @@ __switch__:
       public Comparable<?> select(Integer it) {
         return it;
       }
-
     }, true);
     Integer c = 1;
     for(Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
-      c = c + 1;
+      c++ ;
     }
   }
 

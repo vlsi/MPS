@@ -55,13 +55,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertTrue(Sequence.fromIterable(intS).contains(10));
     Assert.assertFalse(Sequence.fromIterable(intS).contains(15));
@@ -72,7 +69,7 @@ __switch__:
     List<Integer> intL = ListSequence.<Integer>fromArray(10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
-    // null test
+    //     null test
     intL = null;
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
   }

@@ -64,13 +64,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> aabbc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -119,13 +116,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> aabbcccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -194,13 +188,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> ccaabbcc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -261,13 +252,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> abc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -308,13 +296,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> cccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -367,13 +352,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> abcde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -422,13 +404,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> aabb = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -473,13 +452,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> c = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -512,13 +488,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> cc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -555,13 +528,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
   private static Iterable<String> ccc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
@@ -602,13 +572,10 @@ __switch__:
               } while(true);
               return false;
             }
-
           };
         }
-
       };
     }
-
   });
 
   @Test()

@@ -1166,12 +1166,11 @@
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221567898715">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221567898716">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221567898717">
-                        <link role="baseMethodDeclaration" targetNodeId="10.~ArrayList.&lt;init&gt;(java.util.Collection)" resolveInfo="ArrayList" />
-                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221567898718">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1238672568790">
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221567898718">
                           <link role="concept" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221567898719">
+                        <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238672568791">
                           <link role="variableDeclaration" targetNodeId="1221567898692" resolveInfo="set" />
                         </node>
                       </node>

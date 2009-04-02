@@ -4,6 +4,8 @@ package jetbrains.mps.lang.test.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.test.dataFlow.AssertMatch_DataFlow;
+import jetbrains.mps.lang.test.dataFlow.EditorOperation_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

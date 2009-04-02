@@ -11,6 +11,7 @@ import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PackagingLanguageGenerator {
 
@@ -46,7 +47,7 @@ public class PackagingLanguageGenerator {
         if (StringUtils.isEmpty(pathComponentName)) {
           continue;
         }
-        pathComponentNodes.add(PackagingLanguageGenerator.createPathComponent(pathComponentName));
+        ListSequence.fromList(pathComponentNodes).addElement(PackagingLanguageGenerator.createPathComponent(pathComponentName));
       }
       SNode compositePathComponent = createCompositePathComponent(pathComponentNodes);
       SLinkOperations.setTarget(basedirPath, "compositePathComponent", compositePathComponent, true);

@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.test.typesystem._Quotations;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -35,8 +36,8 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode nodeBefore;
       SNode nodeAfter;
-      Iterator<SNode> nodeBefore_iterator = SLinkOperations.getTargets(nodeToCheck, "before", true).iterator();
-      Iterator<SNode> nodeAfter_iterator = SLinkOperations.getTargets(nodeToCheck, "after", true).iterator();
+      Iterator<SNode> nodeBefore_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true)).iterator();
+      Iterator<SNode> nodeAfter_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true)).iterator();
       while (true) {
         if (!(nodeBefore_iterator.hasNext())) {
           break;

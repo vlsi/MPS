@@ -64,13 +64,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Assert.assertEquals("0", Sequence.fromIterable(S).first());
     Assert.assertEquals("0", Sequence.fromIterable(S).first());
@@ -123,18 +120,15 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     int count = 0;
     for(String s : Sequence.fromIterable(S)) {
       Assert.assertEquals("" + count, s);
-      count = count + 1;
+      count++ ;
       Assert.assertEquals("0", Sequence.fromIterable(S).first());
       Assert.assertEquals("2", Sequence.fromIterable(S).last());
       Assert.assertEquals(false, Sequence.fromIterable(S).isEmpty());

@@ -4,7 +4,12 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.build.packaging.plugin.AbstractBuildGenerator;
+import jetbrains.mps.build.packaging.plugin.IErrorHandler;
 import com.intellij.ide.wizard.Step;
+import jetbrains.mps.build.packaging.plugin.SolutionStep;
+import jetbrains.mps.build.packaging.plugin.ModelStep;
+import jetbrains.mps.build.packaging.plugin.LanguagesStep;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -24,7 +29,6 @@ public class GenerateBuildWizard extends AbstractWizard {
       public void setErrorText(String text) {
         GenerateBuildWizard.this.setErrorText(text);
       }
-
     };
     Step moduleStep = new SolutionStep(this.myProject, this.myGenerator, handler);
     Step modelStep = new ModelStep(this.myProject, this.myGenerator, handler);
@@ -58,7 +62,6 @@ public class GenerateBuildWizard extends AbstractWizard {
       public void run() {
         GenerateBuildWizard.this.myGenerator.generate();
       }
-
     });
   }
 

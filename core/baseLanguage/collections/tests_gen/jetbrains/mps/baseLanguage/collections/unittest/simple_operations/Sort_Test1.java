@@ -18,12 +18,11 @@ public class Sort_Test1 extends TestCase {
       public Comparable<?> select(Integer it) {
         return it;
       }
-
     }, true).toListSequence();
     int index = 0;
     for(Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
-      index = index + 1;
+      index++ ;
     }
   }
 
@@ -35,12 +34,11 @@ public class Sort_Test1 extends TestCase {
       public Comparable<?> select(Integer it) {
         return it;
       }
-
     }, false).toListSequence();
     int index = 0;
     for(Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
-      index = index + 1;
+      index++ ;
     }
   }
 

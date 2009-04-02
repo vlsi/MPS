@@ -64,8 +64,8 @@ public class ListMigrationUtil {
     {
       SNode argument;
       ParameterType param;
-      Iterator<SNode> argument_iterator = SLinkOperations.getTargets(node, "actualArgument", true).iterator();
-      Iterator<ParameterType> param_iterator = params.iterator();
+      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).iterator();
+      Iterator<ParameterType> param_iterator = ListSequence.fromList(params).iterator();
       while (true) {
         if (!(argument_iterator.hasNext())) {
           break;

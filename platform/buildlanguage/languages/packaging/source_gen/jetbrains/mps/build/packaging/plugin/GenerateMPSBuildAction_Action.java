@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 
@@ -70,7 +71,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      // calculate output path
+      //       calculate output path
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
       GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project);
     } catch (Throwable t) {

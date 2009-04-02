@@ -5069,9 +5069,8 @@
                       </node>
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207650869045">
                         <property name="name" value="getSourceNodes" />
-                        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207650887682">
-                          <link role="classifier" targetNodeId="11.~Set" resolveInfo="Set" />
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207650932856">
+                        <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238673076325">
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238673076326">
                             <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
                           </node>
                         </node>
@@ -10977,14 +10976,12 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1194972375255">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194972375256">
                     <property name="name" value="leaves" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194972375257">
-                      <link role="classifier" targetNodeId="11.~Set" resolveInfo="Set" />
-                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375258" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238673076315">
+                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238673076316" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930473325">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473327">
-                        <link role="baseMethodDeclaration" targetNodeId="11.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375260" />
+                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238673076450">
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194972375260" />
                       </node>
                     </node>
                   </node>

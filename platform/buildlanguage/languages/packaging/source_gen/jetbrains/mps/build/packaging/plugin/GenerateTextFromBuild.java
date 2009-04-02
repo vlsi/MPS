@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuildGenerationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -29,9 +30,8 @@ public class GenerateTextFromBuild {
       public String compute() {
         return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(mpsLayout);
       }
-
     });
-    // generate files
+    //     generate files
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, mpsLayout);
     generatorManager.generateModelsWithProgressWindow(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, true);
@@ -51,7 +51,6 @@ public class GenerateTextFromBuild {
           }
         }
       }
-
     });
     return layout.value;
   }

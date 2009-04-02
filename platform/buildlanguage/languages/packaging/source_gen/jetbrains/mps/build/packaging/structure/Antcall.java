@@ -17,12 +17,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Antcall extends AbstractProjectComponent implements ICompositeComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Antcall";
-  public static final String EXCLUDES = "excludes";
-  public static final String INCLUDES = "includes";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
+  public static final String EXCLUDES = "excludes";
+  public static final String INCLUDES = "includes";
   public static final String PROJECT = "project";
   public static final String TARGET_DECLARATION = "targetDeclaration";
   public static final String TARGET_REFERENCE = "targetReference";
@@ -31,22 +31,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public Antcall(SNode node) {
     super(node);
-  }
-
-  public String getExcludes() {
-    return this.getProperty(Antcall.EXCLUDES);
-  }
-
-  public void setExcludes(String value) {
-    this.setProperty(Antcall.EXCLUDES, value);
-  }
-
-  public String getIncludes() {
-    return this.getProperty(Antcall.INCLUDES);
-  }
-
-  public void setIncludes(String value) {
-    this.setProperty(Antcall.INCLUDES, value);
   }
 
   public String getShortDescription() {
@@ -79,6 +63,22 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public void setName(String value) {
     this.setProperty(Antcall.NAME, value);
+  }
+
+  public String getExcludes() {
+    return this.getProperty(Antcall.EXCLUDES);
+  }
+
+  public void setExcludes(String value) {
+    this.setProperty(Antcall.EXCLUDES, value);
+  }
+
+  public String getIncludes() {
+    return this.getProperty(Antcall.INCLUDES);
+  }
+
+  public void setIncludes(String value) {
+    this.setProperty(Antcall.INCLUDES, value);
   }
 
   public Project getProject() {

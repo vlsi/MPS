@@ -363,9 +363,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224594909881">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1224594913601">
-                <link role="baseMethodDeclaration" targetNodeId="3.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224594918119">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238672568841">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224594918119">
                   <link role="concept" targetNodeId="3v.1216134482493" resolveInfo="ITestMethod" />
                 </node>
               </node>

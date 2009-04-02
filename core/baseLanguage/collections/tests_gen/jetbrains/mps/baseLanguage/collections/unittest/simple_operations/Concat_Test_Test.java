@@ -55,13 +55,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     Iterable<Integer> s2 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
 
@@ -102,13 +99,10 @@ __switch__:
                 } while(true);
                 return false;
               }
-
             };
           }
-
         };
       }
-
     });
     List<Integer> s3 = Sequence.fromIterable(s1).concat(Sequence.fromIterable(s2)).toListSequence();
     Assert.assertTrue(ListSequence.fromList(s3).getElement(0) == 1);
@@ -117,7 +111,7 @@ __switch__:
     Assert.assertTrue(ListSequence.fromList(s3).getElement(3) == 3);
     Assert.assertTrue(ListSequence.fromList(s3).getElement(4) == 4);
     Assert.assertTrue(ListSequence.fromList(s3).getElement(5) == 5);
-    // null test
+    //     null test
     s1 = null;
     Iterable<Integer> s2_ = Sequence.fromIterable(s1).concat(Sequence.fromIterable(s2));
     Assert.assertEquals(3, Sequence.fromIterable(s2_).count());
