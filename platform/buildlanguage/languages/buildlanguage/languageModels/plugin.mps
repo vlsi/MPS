@@ -484,10 +484,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225567254105">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225567254106">
             <property name="name" value="macroNames" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225567254107">
-              <link role="classifier" targetNodeId="30.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225567254108" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254109">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254110">
                 <link role="variableDeclaration" targetNodeId="1225567254102" resolveInfo="pathMacros" />
@@ -495,6 +491,9 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236877210992">
                 <link role="baseMethodDeclaration" targetNodeId="23.~PathMacros.getUserMacroNames():java.util.Set" resolveInfo="getUserMacroNames" />
               </node>
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238771349595">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238771351131" />
             </node>
           </node>
         </node>

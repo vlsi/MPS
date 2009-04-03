@@ -6,30 +6,24 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.actions.structure.SurroundWithAction;
 import java.util.List;
+import jetbrains.mps.lang.actions.structure.GenerateCodeAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SmartEditorActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SmartEditorActions";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String SURROUND_WITH = "surroundWith";
   public static final String GENERATE_CODE = "generateCode";
 
   public SmartEditorActions(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(SmartEditorActions.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(SmartEditorActions.NAME, value);
   }
 
   public String getShortDescription() {
@@ -54,6 +48,14 @@ public class SmartEditorActions extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(SmartEditorActions.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(SmartEditorActions.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(SmartEditorActions.NAME, value);
   }
 
   public int getSurroundWithsCount() {

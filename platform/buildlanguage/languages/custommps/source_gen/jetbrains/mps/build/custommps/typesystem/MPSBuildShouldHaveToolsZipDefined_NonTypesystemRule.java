@@ -25,11 +25,11 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
   public void applyRule(final SNode mPSBuild, final TypeCheckingContext typeCheckingContext) {
     Set<Language> bootstrapModules = LibraryManager.getInstance().getBootstrapModules(Language.class);
     assert !(SetSequence.fromSet(bootstrapModules).isEmpty());
-    if (bootstrapModules.iterator().next().isPackaged() && (SLinkOperations.getTarget(mPSBuild, "pathToBuildToolsZip", true) == null)) {
+    if (SetSequence.fromSet(bootstrapModules).first().isPackaged() && (SLinkOperations.getTarget(mPSBuild, "pathToBuildToolsZip", true) == null)) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(mPSBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1234294570097", intentionProvider, errorTarget);
+        typeCheckingContext.reportTypeError(mPSBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
       }
     }
   }

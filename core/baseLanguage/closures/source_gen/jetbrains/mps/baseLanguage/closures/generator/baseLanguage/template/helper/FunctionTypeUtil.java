@@ -72,7 +72,7 @@ public class FunctionTypeUtil {
     ListSequence.fromList(typesList).addSequence(ListSequence.fromList(funTypes));
     Collections.sort(typesList, new FunctionTypeUtil.FunctionTypeComparator());
     SNode prev = null;
-    for(Iterator it = typesList.iterator() ; it.hasNext() ; ) {
+    for(Iterator<SNode> it = ListSequence.fromList(typesList).iterator() ; it.hasNext() ; ) {
       SNode next = ((SNode)it.next());
       if (prev != null) {
         if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(((SNode)prev)), FunctionType_Behavior.call_getSignature_1213877405047(((SNode)next))) == 0) {

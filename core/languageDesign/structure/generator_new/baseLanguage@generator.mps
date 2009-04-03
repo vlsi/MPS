@@ -1988,9 +1988,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1095702666388">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1095702661871">
             <property name="name" value="constants" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095702672983">
-              <link role="classifier" targetNodeId="3.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095702690687">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238773885877">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238773890387">
                 <link role="classifier" targetNodeId="1095695120718" resolveInfo="class_EnumerationDataTypeDeclaration_Enum" />
               </node>
             </node>
@@ -2017,9 +2016,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1095702900863">
                     <link role="variableDeclaration" targetNodeId="1095702661871" resolveInfo="constants" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459631">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Iterator.next():java.lang.Object" resolveInfo="next" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetNextOperation" id="1238773933276" />
                 </node>
               </node>
             </node>
@@ -2053,9 +2050,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1095702854684">
               <link role="variableDeclaration" targetNodeId="1095702661871" resolveInfo="constants" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459453">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Iterator.hasNext():boolean" resolveInfo="hasNext" />
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.HasNextOperation" id="1238773933048" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1096048051549">
@@ -2090,12 +2085,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1095703369682">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1095703205360">
             <property name="name" value="constants" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095703203015">
-              <link role="classifier" targetNodeId="3.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095703197710">
-                <link role="classifier" targetNodeId="1095695120718" resolveInfo="class_EnumerationDataTypeDeclaration_Enum" />
-              </node>
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740459791">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1095703197712">
                 <link role="baseMethodDeclaration" targetNodeId="1095702417646" resolveInfo="getConstants" />
@@ -2103,6 +2092,11 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459792">
                 <link role="baseMethodDeclaration" targetNodeId="3.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
+              </node>
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238773900490">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238773905312">
+                <link role="classifier" targetNodeId="1095695120718" resolveInfo="class_EnumerationDataTypeDeclaration_Enum" />
               </node>
             </node>
           </node>
@@ -2119,9 +2113,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1095703218303">
                     <link role="variableDeclaration" targetNodeId="1095703205360" resolveInfo="constants" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459408">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Iterator.next():java.lang.Object" resolveInfo="next" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetNextOperation" id="1238773933243" />
                 </node>
               </node>
             </node>
@@ -2160,9 +2152,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1095703232977">
               <link role="variableDeclaration" targetNodeId="1095703205360" resolveInfo="constants" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740459769">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Iterator.hasNext():boolean" resolveInfo="hasNext" />
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.HasNextOperation" id="1238773933084" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1096048078395">

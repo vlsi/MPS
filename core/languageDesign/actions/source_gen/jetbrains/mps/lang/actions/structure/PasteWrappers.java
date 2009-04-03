@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.actions.structure.PasteWrapper;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -13,22 +14,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PasteWrappers extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.PasteWrappers";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String WRAPPER = "wrapper";
 
   public PasteWrappers(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(PasteWrappers.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(PasteWrappers.NAME, value);
   }
 
   public String getShortDescription() {
@@ -53,6 +46,14 @@ public class PasteWrappers extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PasteWrappers.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(PasteWrappers.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(PasteWrappers.NAME, value);
   }
 
   public int getWrappersCount() {

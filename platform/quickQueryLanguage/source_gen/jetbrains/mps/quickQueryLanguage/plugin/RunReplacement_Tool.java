@@ -5,7 +5,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import java.util.List;
 import jetbrains.mps.quickQueryLanguage.plugin.ReplacementView;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
@@ -21,7 +21,7 @@ import jetbrains.mps.quickQueryLanguage.plugin.QueryFinder;
 
 public class RunReplacement_Tool extends GeneratedTool {
 
-  private List<ReplacementView> myViews = new ArrayList<ReplacementView>();
+  private List<ReplacementView> myViews = ListSequence.<ReplacementView>fromArray();
 
   public RunReplacement_Tool(Project project) {
     super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
@@ -36,7 +36,7 @@ public class RunReplacement_Tool extends GeneratedTool {
   }
 
   public void closeTab(ReplacementView view) {
-    int index = this.myViews.indexOf(view);
+    int index = ListSequence.fromList(this.myViews).indexOf(view);
     this.closeTab(index);
   }
 
@@ -52,10 +52,10 @@ public class RunReplacement_Tool extends GeneratedTool {
 
       public void run() {
         ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
-        RunReplacement_Tool.this.myViews.add(view);
+        ListSequence.fromList(RunReplacement_Tool.this.myViews).addElement(view);
         String name = "Query ";
-        if (RunReplacement_Tool.this.myViews.size() > 1) {
-          name += String.valueOf(RunReplacement_Tool.this.myViews.size());
+        if (ListSequence.fromList(RunReplacement_Tool.this.myViews).count() > 1) {
+          name += String.valueOf(ListSequence.fromList(RunReplacement_Tool.this.myViews).count());
         }
         Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, searchQuery.getIcon(), false);
         RunReplacement_Tool.this.setAvailable(true);

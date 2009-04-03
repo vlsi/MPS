@@ -4,9 +4,15 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.actions.structure.SideTransformTag;
+import jetbrains.mps.lang.actions.structure.Side;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction;
+import jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer;
 import java.util.Iterator;
+import jetbrains.mps.lang.actions.structure.MenuBuilderPart;
 import java.util.List;
+import jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

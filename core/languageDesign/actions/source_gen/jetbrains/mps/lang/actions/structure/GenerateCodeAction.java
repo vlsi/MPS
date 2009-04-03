@@ -4,7 +4,11 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction;
+import jetbrains.mps.lang.actions.structure.GetActionUIFunction;
+import jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction;
 import java.util.Iterator;
+import jetbrains.mps.lang.actions.structure.SmartActionParameter;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

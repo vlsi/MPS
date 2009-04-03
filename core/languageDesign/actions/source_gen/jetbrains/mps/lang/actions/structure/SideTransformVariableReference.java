@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.baseLanguage.structure.VariableReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

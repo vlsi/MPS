@@ -13,14 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VISIBILITY = "visibility";
 
   public StaticMethodDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(StaticMethodDeclaration.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(StaticMethodDeclaration.RESOLVE_INFO, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
 
   public void setVirtualPackage(String value) {
     this.setProperty(StaticMethodDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(StaticMethodDeclaration.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(StaticMethodDeclaration.RESOLVE_INFO, value);
   }
 
   public Visibility getVisibility() {

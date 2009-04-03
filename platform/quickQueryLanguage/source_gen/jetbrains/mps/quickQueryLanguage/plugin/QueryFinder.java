@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueryFinder implements IFinder {
 
@@ -26,7 +27,7 @@ public class QueryFinder implements IFinder {
     SearchResults instances = FindUtils.getSearchResults(indicator, searchQuery, new ConceptInstances_Finder());
     List<SearchResult<SNode>> instancesList;
     instancesList = instances.getSearchResults();
-    Iterator<SearchResult<SNode>> it = instancesList.iterator();
+    Iterator<SearchResult<SNode>> it = ListSequence.fromList(instancesList).iterator();
     while (it.hasNext()) {
       SearchResult<SNode> current = it.next();
       try {

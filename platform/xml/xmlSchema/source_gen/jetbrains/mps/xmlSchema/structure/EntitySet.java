@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.xmlSchema.structure.EntityBlock;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,10 +16,10 @@ public class EntitySet extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntitySet";
   public static final String ENTITY_SET_NAME = "entitySetName";
   public static final String URL = "url";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String ENTITY_BLOCK = "entityBlock";
 
   public EntitySet(SNode node) {
@@ -39,14 +40,6 @@ public class EntitySet extends BaseConcept implements INamedConcept {
 
   public void setUrl(String value) {
     this.setProperty(EntitySet.URL, value);
-  }
-
-  public String getName() {
-    return this.getProperty(EntitySet.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EntitySet.NAME, value);
   }
 
   public String getShortDescription() {
@@ -71,6 +64,14 @@ public class EntitySet extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(EntitySet.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(EntitySet.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EntitySet.NAME, value);
   }
 
   public int getEntityBlocksCount() {

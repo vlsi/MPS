@@ -720,5 +720,59 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "hasNext";
+      }
+
+      public String getAdditionalInfo() {
+        return "hasNext";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.<ParameterType>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", null);
+        SNodeOperations.replaceWithAnother(node, opration);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "next";
+      }
+
+      public String getAdditionalInfo() {
+        return "next";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.<ParameterType>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation", null);
+        SNodeOperations.replaceWithAnother(node, opration);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }

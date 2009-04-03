@@ -530,7 +530,7 @@ __switch__:
           {
             BaseIntentionProvider intentionProvider = null;
             intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", throwables.iterator().next());
+            intentionProvider.putArgument("throwableType", SetSequence.fromSet(throwables).first());
             IErrorTarget errorTarget = new NodeErrorTarget();
             typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1210182111558", intentionProvider, errorTarget);
           }

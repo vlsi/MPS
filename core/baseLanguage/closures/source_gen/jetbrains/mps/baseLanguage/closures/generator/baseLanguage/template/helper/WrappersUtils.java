@@ -25,7 +25,7 @@ public class WrappersUtils {
       }
     }
 with_decls:
-    for(Iterator<SNode> it = vdecls.iterator() ; it.hasNext() ; ) {
+    for(Iterator<SNode> it = ListSequence.fromList(vdecls).iterator() ; it.hasNext() ; ) {
       SNode vd = it.next();
       SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
       for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {

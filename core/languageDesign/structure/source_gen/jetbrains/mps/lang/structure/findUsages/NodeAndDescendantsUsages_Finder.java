@@ -33,14 +33,14 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     Set<SNode> nodes = SetSequence.<SNode>fromArray();
-    nodes.add(node);
+    SetSequence.fromSet(nodes).addElement(node);
     for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false))) {
-      nodes.add(child);
+      SetSequence.fromSet(nodes).addElement(child);
     }
     // 
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new FindUsagesManager.ProgressAdapter(indicator), false);
     for(SReference reference : resRefs) {
-      if (!(nodes.contains(reference.getSourceNode()))) {
+      if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
         ListOperations.addElement(_results, reference.getSourceNode());
       }
     }

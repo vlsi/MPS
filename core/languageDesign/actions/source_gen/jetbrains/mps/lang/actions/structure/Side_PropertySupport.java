@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.actions.structure.Side;
 
 public class Side_PropertySupport extends PropertySupport {
 

@@ -34,6 +34,14 @@ public class ListMigrationUtil {
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
 
+  public static boolean isApplicableForIterator(SNode node, String name, List<ParameterType> params) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.IteratorType"))) {
+      return false;
+    }
+    return ListMigrationUtil.isApplicableMethod(node, name, params);
+  }
+
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
@@ -55,7 +63,7 @@ public class ListMigrationUtil {
     if (!(ObjectUtils.equals(SPropertyOperations.getString(declaration, "name"), name))) {
       return false;
     }
-    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap")).contains(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.lang.core.structure.INamedConcept"), "name")))) {
+    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap", "Iterator")).contains(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.lang.core.structure.INamedConcept"), "name")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {

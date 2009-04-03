@@ -322,7 +322,7 @@ public class RulesUtil {
     }
     Set<SNode> result = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(concepts));
     while (SetSequence.fromSet(result).count() >= 2) {
-      Iterator<SNode> iterator = result.iterator();
+      Iterator<SNode> iterator = SetSequence.fromSet(result).iterator();
       SNode a = iterator.next();
       SNode b = iterator.next();
       SetSequence.fromSet(result).removeElement(a);
@@ -332,7 +332,7 @@ public class RulesUtil {
     if (SetSequence.fromSet(result).isEmpty()) {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    return result.iterator().next();
+    return SetSequence.fromSet(result).first();
   }
 
   private static SNode leastCommonSuperconcept(SNode a, SNode b, Map<SNode, Set<SNode>> subTypesToSuperTypes) {
@@ -380,7 +380,7 @@ public class RulesUtil {
     if (SetSequence.fromSet(commonSupertypes).count() != 1) {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    return commonSupertypes.iterator().next();
+    return SetSequence.fromSet(commonSupertypes).first();
   }
 
 }

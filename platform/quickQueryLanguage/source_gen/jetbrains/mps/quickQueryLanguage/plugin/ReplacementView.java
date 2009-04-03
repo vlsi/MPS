@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplacementView {
 
@@ -87,9 +87,9 @@ public class ReplacementView {
   }
 
   public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
-    List<SNode> results = new ArrayList<SNode>();
+    List<SNode> results = ListSequence.<SNode>fromArray();
     for(SNodePointer nodePointer : nodes) {
-      results.add(nodePointer.getNode());
+      ListSequence.fromList(results).addElement(nodePointer.getNode());
     }
     return results;
   }

@@ -41,7 +41,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
     Set<String> roles = SetSequence.<String>fromArray();
     SNode curNode = node;
     do {
-      roles.add(SPropertyOperations.getString(curNode, "role"));
+      SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
       curNode = SLinkOperations.getTarget(curNode, "specializedLink", false);
     } while(curNode != null);
     //     find concept

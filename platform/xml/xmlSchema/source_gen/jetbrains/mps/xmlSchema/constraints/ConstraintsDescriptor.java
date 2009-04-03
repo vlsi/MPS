@@ -5,6 +5,16 @@ package jetbrains.mps.xmlSchema.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.xmlSchema.constraints.AttributeDeclaration_name_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.EntityDeclaration_alias_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.ElementDeclaration_alias_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.ComplexType_alias_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.EntitySet_name_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.GroupDeclaration_alias_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.Declaration_name_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.Schema_name_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.AttributeGroup_alias_PropertyConstraint;
+import jetbrains.mps.xmlSchema.constraints.Declaration_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
