@@ -14,11 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mpslite.behavior.LineList_Behavior;
 import jetbrains.mpslite.generator.template.util.EditorGenerationUtils;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
 
@@ -31,18 +31,30 @@ public class QueriesGenerated {
     Map<SNode, SNode> conceptsToTargets = new HashMap<SNode, SNode>();
     Map<SNode, SNode> linePartsToLinkDeclarations = new HashMap<SNode, SNode>();
     List<SNode> mpsliteConceptDeclarations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
+    List<SNode> templateBasedConceptDeclarations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.TemplateBasedConcept");
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
       conceptsToTargets.put(conceptDeclaration, concept);
     }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
+      SPropertyOperations.set(concept, "name", SPropertyOperations.getString(templateBasedConcept, "name"));
+      conceptsToTargets.put(templateBasedConcept, concept);
+    }
     //     extends
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      SLinkOperations.setTarget((SNodeOperations.castConcept(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "extends", SNodeOperations.castConcept((SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
+      SLinkOperations.setTarget(((SNode)conceptsToTargets.get(conceptDeclaration)), "extends", (SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), false);
+    }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      SLinkOperations.setTarget(((SNode)conceptsToTargets.get(templateBasedConcept)), "extends", (SNode)conceptsToTargets.get(SLinkOperations.getTarget(templateBasedConcept, "extends", false)), false);
     }
     //     structure
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), null, (SNode)conceptsToTargets.get(conceptDeclaration), conceptsToTargets, linePartsToLinkDeclarations);
+    }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(SLinkOperations.getTarget(templateBasedConcept, "template", false), "lineList", true), templateBasedConcept, (SNode)conceptsToTargets.get(templateBasedConcept), conceptsToTargets, linePartsToLinkDeclarations);
     }
     //     editor
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
@@ -58,6 +70,17 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
       conceptsToEditors.put(conceptDeclaration, editor);
     }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+      SNode lineList = SLinkOperations.getTarget(SLinkOperations.getTarget(templateBasedConcept, "template", false), "lineList", true);
+      SNode contentCell = EditorGenerationUtils.generateEditorCellModel(lineList, templateBasedConcept, templateBasedConcept, linePartsToLinkDeclarations);
+      if (contentCell == null) {
+        continue;
+      }
+      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
+      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(templateBasedConcept), false);
+      conceptsToEditors.put(templateBasedConcept, editor);
+    }
     //     setting roots and deleting input roots
     structureModel.setLoading(true);
     for(SNode root : new ArrayList<SNode>(SModelOperations.getRoots(structureModel, null))) {
@@ -65,6 +88,10 @@ public class QueriesGenerated {
     }
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode concept = conceptsToTargets.get(conceptDeclaration);
+      SModelOperations.addRootNode(structureModel, concept);
+    }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      SNode concept = conceptsToTargets.get(templateBasedConcept);
       SModelOperations.addRootNode(structureModel, concept);
     }
     structureModel.setLoading(false);
@@ -77,9 +104,16 @@ public class QueriesGenerated {
       SNode editorDeclaration = conceptsToEditors.get(conceptDeclaration);
       SModelOperations.addRootNode(editorModel, editorDeclaration);
     }
+    for(SNode templateBasedConcept : templateBasedConceptDeclarations) {
+      SNode editorDeclaration = conceptsToEditors.get(templateBasedConcept);
+      SModelOperations.addRootNode(editorModel, editorDeclaration);
+    }
     editorModel.setLoading(false);
     SModelRepository.getInstance().markChanged(editorModel);
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
+      SNodeOperations.deleteNode(conceptDeclaration);
+    }
+    for(SNode conceptDeclaration : templateBasedConceptDeclarations) {
       SNodeOperations.deleteNode(conceptDeclaration);
     }
   }
