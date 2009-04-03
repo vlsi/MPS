@@ -2212,7 +2212,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1184953288404">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="expression" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </node>

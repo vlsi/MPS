@@ -64,7 +64,7 @@ public class DimensionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createRefNode_8142_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
-    provider.setNoTargetText("<no expression>");
+    provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_8142_0_internal(context, node, provider);

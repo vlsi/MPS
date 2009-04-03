@@ -6122,6 +6122,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1154543021847">
         <property name="text" value="[]" />
         <link role="styleClass" targetNodeId="1215010871495" resolveInfo="Bracket" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1238767796747">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1154543041458">
         <property name="text" value="{" />
@@ -9896,6 +9899,7 @@
         <link role="styleClass" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1184953300484">
+        <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="17.1184953288404" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1184952958056">

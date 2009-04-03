@@ -42,6 +42,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1112058030570" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177583946052">
       <property name="vertical" value="true" />
+      <property name="usesBraces" value="true" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177583946053">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177583946054">
           <property name="text" value="substituted node:" />
@@ -611,6 +612,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1177323996388" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177324036611">
       <property name="vertical" value="true" />
+      <property name="usesBraces" value="true" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177324036612">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177324036613">
           <property name="text" value="add custom items " />
@@ -662,6 +664,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1177324036619">
           <property name="vertical" value="true" />
           <property name="separatorText" value="=============" />
+          <property name="usesBraces" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1177333559040" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994677">

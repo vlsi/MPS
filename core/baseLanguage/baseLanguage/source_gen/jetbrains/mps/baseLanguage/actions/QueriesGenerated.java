@@ -1294,6 +1294,52 @@ __switch__:
         }
       }
     }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            VisibleClassifiersScope serchScope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
+            List<SNode> list = (List<SNode>)serchScope.getClassifierNodes();
+            List<SNode> types = ListOperations.<SNode>createList();
+            for(SNode classifier : ListSequence.fromList(list)) {
+              SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+              SLinkOperations.setTarget(type, "classifier", classifier, false);
+              ListSequence.fromList(types).addElement(type);
+            }
+            for(SNode typeConcept : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), _context.getModel(), operationContext.getScope()))) {
+              if (!(SConceptPropertyOperations.getBoolean(typeConcept, "abstract"))) {
+                ListSequence.fromList(types).addElement(SConceptOperations.createNewNode(NameUtil.nodeFQName(typeConcept), null));
+              }
+            }
+            return types;
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
+                SLinkOperations.setTarget(creator, "componentType", (item), true);
+                return creator;
+              }
+
+              public String getMatchingText(String pattern) {
+                return (item) + "[]";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
     return result;
   }
 

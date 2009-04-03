@@ -43,7 +43,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2014_0(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
+    editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2014_1(context, node));
     editorCell.addEditorCell(this.createCollection_2014_2(context, node));

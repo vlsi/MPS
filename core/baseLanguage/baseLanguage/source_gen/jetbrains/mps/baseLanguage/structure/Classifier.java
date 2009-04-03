@@ -23,11 +23,11 @@ import jetbrains.mps.project.GlobalScope;
 public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier, IVisible, IContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
   public static final String NESTED_NAME = "nestedName";
-  public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
   public static final String STATIC_FIELD = "staticField";
@@ -44,22 +44,6 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void setNestedName(String value) {
     this.setProperty(Classifier.NESTED_NAME, value);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(Classifier.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(Classifier.RESOLVE_INFO, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Classifier.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Classifier.NAME, value);
   }
 
   public String getShortDescription() {
@@ -84,6 +68,22 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void setVirtualPackage(String value) {
     this.setProperty(Classifier.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Classifier.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Classifier.NAME, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(Classifier.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(Classifier.RESOLVE_INFO, value);
   }
 
   public boolean getIsDeprecated() {
