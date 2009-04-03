@@ -1119,11 +1119,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1234462598476" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234532180434">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234532180435">
-            <link role="variableDeclaration" targetNodeId="1234462598475" resolveInfo="a" />
-          </node>
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1238778572915" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228322990975" />

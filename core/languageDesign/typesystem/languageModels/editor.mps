@@ -3991,5 +3991,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238776731172">
+    <link role="conceptDeclaration" targetNodeId="1.1238776677112" resolveInfo="MeetCons" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238776757322">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1238776768728" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238776794857">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238776799178">
+        <link role="relationDeclaration" targetNodeId="1.1238776691632" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1238776851772">
+    <link role="conceptDeclaration" targetNodeId="1.1238776816380" resolveInfo="JoinCons" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238776853645">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1238776857812" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238776860611">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238776863176">
+        <link role="relationDeclaration" targetNodeId="1.1238776828104" />
+      </node>
+    </node>
+  </node>
 </model>
 

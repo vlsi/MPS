@@ -2379,5 +2379,43 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238776677112">
+    <property name="name" value="MeetCons" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238776691632">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cons" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238776787153">
+      <property name="value" value=":&amp;:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238776816380">
+    <property name="name" value="JoinCons" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238776828104">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cons" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238776837262">
+      <property name="value" value=":|:" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1238776879044">
+    <property name="role" value="MeetAnnotation" />
+    <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1238776677112" resolveInfo="MeetCons" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1238776969002">
+    <property name="role" value="JoinAnnotation" />
+    <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1238776816380" resolveInfo="JoinCons" />
+  </node>
 </model>
 
