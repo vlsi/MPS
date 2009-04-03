@@ -39,7 +39,7 @@ import java.util.List;
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
 
-  private static boolean ourCastsEnabled = false;
+  private static boolean ourCastsEnabled = "true".equals(System.getProperty("mps.disableNodeCastExceptions"));
 
   public static INodeAdapter getAdapter(SNode node) {
     if (node == null) return null;
