@@ -12250,17 +12250,6 @@
             </node>
           </node>
         </node>
-        <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062526533">
-          <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062526534">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062526535" />
-          </node>
-          <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062526536">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062526537" />
-          </node>
-          <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062526538">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062526539" />
-          </node>
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1226320395648">
           <property name="flag" value="true" />
         </node>
