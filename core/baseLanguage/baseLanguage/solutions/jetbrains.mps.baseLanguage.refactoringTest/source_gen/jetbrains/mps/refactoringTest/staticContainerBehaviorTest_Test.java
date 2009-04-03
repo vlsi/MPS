@@ -32,18 +32,18 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
       this.addNodeById("1230052684583");
       this.addNodeById("1230052684588");
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
-      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230052684590"), false);
+      SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684590"), "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"), false);
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-      SLinkOperations.setTarget(var, "variableDeclaration", this.getNodeById("1230052684575"), false);
+      SLinkOperations.setTarget(var, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052684575"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
       SLinkOperations.addChild(call, "actualArgument", var);
-      SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(this.getNodeById("1230052684589"), "concept", false), false);
-      SNodeOperations.replaceWithAnother(this.getNodeById("1230052684580"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052684562")));
+      SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);
+      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684580"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), call);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684562"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
-      ref.setStaticContainer(this.getNodeById("1230052684584"));
+      ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052684555"), this.getNodeById("1230052684584")), ListSequence.<SNode>fromArray(this.getNodeById("1230052684571"), this.getNodeById("1230052684589"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684555"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684571"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }
 
 }

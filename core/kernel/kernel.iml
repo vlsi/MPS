@@ -17,5 +17,6 @@
     <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntry type="module" module-name="mps-lite" />
   </component>
+  <component name="ProjectRunConfigurationManager" />
 </module>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
@@ -27,16 +28,16 @@ public class ConceptMethod_Test extends BaseTransformationTest {
     public void test_conceptMethod() throws Exception {
       this.addNodeById("1230052406798");
       this.addNodeById("1230052406829");
-      SLinkOperations.setTarget(this.getNodeById("1230052406839"), "baseMethodDeclaration", this.getNodeById("1230052406844"), false);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052406805")));
+      SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052406839"), "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052406844"), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052406805"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       this.fff(ref);
-      params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052406818")));
+      params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052406818"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("bar");
       ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052406799")), ListSequence.<SNode>fromArray(this.getNodeById("1230052406830"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052406799"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052406830"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }
 
     public void fff(ExtractMethodRefactoring ref) {

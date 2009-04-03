@@ -32,15 +32,15 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
       this.addNodeById("1230052684705");
       this.addNodeById("1230052684709");
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(call, "baseMethodDeclaration", this.getNodeById("1230052684711"), false);
-      SLinkOperations.setTarget(call, "classConcept", this.getNodeById("1230052684710"), false);
-      SNodeOperations.replaceWithAnother(this.getNodeById("1230052684702"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052684691")));
+      SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684711"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+      SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684702"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), call);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
-      ref.setStaticContainer(this.getNodeById("1230052684706"));
+      ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052684688"), this.getNodeById("1230052684706")), ListSequence.<SNode>fromArray(this.getNodeById("1230052684698"), this.getNodeById("1230052684710"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684688"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684698"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

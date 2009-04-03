@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureParameters;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureRefactoring;
 import junit.framework.Assert;
@@ -26,11 +27,11 @@ public class RemoveParameter_Test extends BaseTransformationTest {
     public void test_RemoveParameter() throws Exception {
       this.addNodeById("1230052944082");
       this.addNodeById("1230052944093");
-      ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(this.getNodeById("1230052944084"));
+      ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052944084"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       SLinkOperations.removeAllChildren(params.getDeclaration(), "parameter");
-      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, this.getNodeById("1230052944084"));
+      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052944084"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052944083")), ListSequence.<SNode>fromArray(this.getNodeById("1230052944094"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052944083"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052944094"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

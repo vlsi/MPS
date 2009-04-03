@@ -18,7 +18,7 @@ public class IfStatement_Behavior {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
     SNode ifFalseStatement = SLinkOperations.getTarget(thisNode, "ifFalseStatement", true);
     if (SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "statements", true)), true);
+      SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true)), true);
     } else
     {
       SLinkOperations.addChild(SLinkOperations.getTarget(result, "statementList", true), "statement", SNodeOperations.copyNode(ifFalseStatement));

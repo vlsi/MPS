@@ -150,7 +150,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     // first char must be the same
     if (matchingText.charAt(0) != pattern.charAt(0)) return false;
 
-    if (matchingText.matches(ChooseItemComponent.getExactItemPatternBuilder(pattern).toString() + ".*")) {
+    if (matchingText.matches(ChooseItemComponent.getExactItemPatternBuilder(pattern, false).toString() + ".*")) {
       return true;
     }
 

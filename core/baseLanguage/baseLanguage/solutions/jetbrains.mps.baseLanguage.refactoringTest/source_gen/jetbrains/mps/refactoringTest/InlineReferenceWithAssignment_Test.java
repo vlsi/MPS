@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.InlineVariableRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,9 +25,9 @@ public class InlineReferenceWithAssignment_Test extends BaseTransformationTest {
     public void test_InlineReferenceWithAssignment() throws Exception {
       this.addNodeById("1230053266542");
       this.addNodeById("1230053266566");
-      InlineVariableRefactoring ref = InlineVariableRefactoring.createRefactoring(this.getNodeById("1230053266560"));
+      InlineVariableRefactoring ref = InlineVariableRefactoring.createRefactoring(SNodeOperations.cast(this.getNodeById("1230053266560"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230053266543")), ListSequence.<SNode>fromArray(this.getNodeById("1230053266567"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053266543"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053266567"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

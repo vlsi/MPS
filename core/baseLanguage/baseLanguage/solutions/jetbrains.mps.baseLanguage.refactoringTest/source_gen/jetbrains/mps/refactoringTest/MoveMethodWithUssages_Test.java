@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.MoveMethodRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import junit.framework.Assert;
@@ -26,10 +27,10 @@ public class MoveMethodWithUssages_Test extends BaseTransformationTest {
       this.addNodeById("1230053302662");
       this.addNodeById("1230053302673");
       this.addNodeById("1230053302677");
-      MoveMethodRefactoring ref = new MoveMethodRefactoring(this.getNodeById("1230053302655"), this.getNodeById("1230053302663"));
-      ref.setUssages(ListSequence.<SNode>fromArray(this.getNodeById("1230053302669")));
+      MoveMethodRefactoring ref = new MoveMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053302655"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("1230053302663"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      ref.setUssages(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053302669"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230053302654"), this.getNodeById("1230053302663")), ListSequence.<SNode>fromArray(this.getNodeById("1230053302674"), this.getNodeById("1230053302678"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053302654"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302663"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053302674"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302678"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

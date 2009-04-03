@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringAnalyzer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.plugin.MethodParameter;
 import junit.framework.Assert;
@@ -24,10 +25,10 @@ public class FindInputVariables_Test extends BaseTransformationTest {
 
     public void test_inputVariablesTest() throws Exception {
       this.addNodeById("1230052444310");
-      ExtractMethodRefactoringAnalyzer a = new ExtractMethodRefactoringAnalyzer(ListSequence.<SNode>fromArray(this.getNodeById("1230052444319"), this.getNodeById("1230052444324"), this.getNodeById("1230052444331")));
+      ExtractMethodRefactoringAnalyzer a = new ExtractMethodRefactoringAnalyzer(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052444319"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("1230052444324"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052444331"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       List<MethodParameter> vars = a.getInputVariables();
       Assert.assertEquals(1, ListSequence.fromList(vars).count());
-      Assert.assertEquals(this.getNodeById("1230052444315"), ListSequence.fromList(vars).getElement(0).getDeclaration());
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("1230052444315"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), ListSequence.fromList(vars).getElement(0).getDeclaration());
     }
 
 }

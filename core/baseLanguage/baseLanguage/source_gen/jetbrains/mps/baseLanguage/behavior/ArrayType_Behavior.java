@@ -38,7 +38,7 @@ public class ArrayType_Behavior {
     SNode arrayCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
     SNode type = SLinkOperations.getTarget(thisNode, "componentType", true);
     while (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-      type = SLinkOperations.getTarget(type, "componentType", true);
+      type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
       SLinkOperations.addNewChild(arrayCreator, "dimensionExpression", "jetbrains.mps.baseLanguage.structure.DimensionExpression");
     }
     SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(type), true);

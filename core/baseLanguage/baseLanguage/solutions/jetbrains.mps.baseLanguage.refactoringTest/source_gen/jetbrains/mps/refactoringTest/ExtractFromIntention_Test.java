@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
@@ -30,15 +31,15 @@ public class ExtractFromIntention_Test extends BaseTransformationTest {
       this.addNodeById("1230052684520");
       this.addNodeById("1230052684528");
       this.addNodeById("1230052684538");
-      SLinkOperations.setTarget(this.getNodeById("1230052684533"), "classConcept", this.getNodeById("1230052684539"), false);
-      SLinkOperations.setTarget(this.getNodeById("1230052684533"), "baseMethodDeclaration", this.getNodeById("1230052684540"), false);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052684515")));
+      SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052684533"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", SNodeOperations.cast(this.getNodeById("1230052684539"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+      SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052684533"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684540"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684515"), "jetbrains.mps.baseLanguage.structure.StringLiteral")));
       params.setName("foo");
       params.setVisibilityLevel(VisibilityLevel.PUBLIC);
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
-      ref.setStaticContainer(this.getNodeById("1230052684521"));
+      ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684521"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052684511"), this.getNodeById("1230052684521")), ListSequence.<SNode>fromArray(this.getNodeById("1230052684529"), this.getNodeById("1230052684539"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684511"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684521"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684529"), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), SNodeOperations.cast(this.getNodeById("1230052684539"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

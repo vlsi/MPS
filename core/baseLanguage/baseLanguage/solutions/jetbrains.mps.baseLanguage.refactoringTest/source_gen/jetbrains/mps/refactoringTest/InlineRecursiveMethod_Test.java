@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.plugin.InlineMethodRefactoringAnalyzer;
 import jetbrains.mps.baseLanguage.plugin.InlineMethodDialogModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InlineRecursiveMethod_Test extends BaseTransformationTest {
 
@@ -21,7 +22,7 @@ public class InlineRecursiveMethod_Test extends BaseTransformationTest {
 
     public void test_InlineRecursiveMethod() throws Exception {
       this.addNodeById("1230052989283");
-      Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(this.getNodeById("1230052989285"), null)) != null);
+      Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230052989285"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null)) != null);
     }
 
 }

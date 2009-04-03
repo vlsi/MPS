@@ -31,7 +31,7 @@ public class DefaultCompletionTextField extends CompletionTextField {
 
   public List<String> getProposals(String text) {
     List<String> result = new ArrayList<String>();
-    Pattern pattern = Pattern.compile(ChooseItemComponent.getExactItemPatternBuilder(text) + ".*");
+    Pattern pattern = Pattern.compile(ChooseItemComponent.getExactItemPatternBuilder(text, true) + ".*");
     for (String possibleValue : myPossibleValues) {
       if (pattern.matcher(possibleValue).matches()) {
         result.add(possibleValue);

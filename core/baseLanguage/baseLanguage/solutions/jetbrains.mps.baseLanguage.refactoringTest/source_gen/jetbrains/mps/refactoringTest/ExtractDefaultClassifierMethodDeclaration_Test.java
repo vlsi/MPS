@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoring;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import junit.framework.Assert;
@@ -33,22 +34,22 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");
       this.addNodeById("1230052509301");
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052509264")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509264"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("bar");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052509260")), ListSequence.<SNode>fromArray(this.getNodeById("1230052509278"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
     }
 
     public void test_extractFromExecute() throws Exception {
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");
       this.addNodeById("1230052509301");
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(this.getNodeById("1230052509271")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509271"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("boo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052509260")), ListSequence.<SNode>fromArray(this.getNodeById("1230052509302"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
     }
 
 }

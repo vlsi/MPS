@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.MoveMethodRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,9 +27,9 @@ public class MoveMethodWithMethods_Test extends BaseTransformationTest {
       this.addNodeById("1230053302601");
       this.addNodeById("1230053302605");
       this.addNodeById("1230053302613");
-      MoveMethodRefactoring ref = new MoveMethodRefactoring(this.getNodeById("1230053302586"), this.getNodeById("1230053302602"));
+      MoveMethodRefactoring ref = new MoveMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053302586"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("1230053302602"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230053302585"), this.getNodeById("1230053302602")), ListSequence.<SNode>fromArray(this.getNodeById("1230053302606"), this.getNodeById("1230053302614"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053302585"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302602"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053302606"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302614"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

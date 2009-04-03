@@ -9,6 +9,7 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BreakStatement_Test extends BaseTransformationTest {
 
@@ -40,22 +41,22 @@ public class BreakStatement_Test extends BaseTransformationTest {
 
     public void test_noBreaks() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052480270"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052480270"), "jetbrains.mps.baseLanguage.structure.WhileStatement"))));
     }
 
     public void test_oneBreak() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052480275"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
 
     public void test_oneContionue() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052480282"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
 
     public void test_breakAndContinue() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052480275"), this.getNodeById("1230052480282"))) != null);
+      Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
     }
 
 }

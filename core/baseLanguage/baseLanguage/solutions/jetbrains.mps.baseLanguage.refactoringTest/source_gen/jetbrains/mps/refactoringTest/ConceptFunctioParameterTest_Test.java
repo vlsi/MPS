@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringAnalyzer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 
 public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
@@ -22,7 +23,7 @@ public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
 
     public void test_ConceptFunctioParameterTest() throws Exception {
       this.addNodeById("1230052406742");
-      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.<SNode>fromArray(this.getNodeById("1230052406746"), this.getNodeById("1230052406751")));
+      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052406746"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052406751"), "jetbrains.mps.baseLanguage.structure.IfStatement")));
       Assert.assertEquals(1, ListSequence.fromList(analyzer.getInputVariables()).count());
     }
 

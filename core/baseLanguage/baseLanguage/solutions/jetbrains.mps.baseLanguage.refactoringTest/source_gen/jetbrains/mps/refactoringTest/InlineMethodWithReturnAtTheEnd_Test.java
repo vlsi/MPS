@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.InlineMethodRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,9 +25,9 @@ public class InlineMethodWithReturnAtTheEnd_Test extends BaseTransformationTest 
     public void test_InlineMethodWithReturnAtTheEnd() throws Exception {
       this.addNodeById("1230053187648");
       this.addNodeById("1230053187688");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(this.getNodeById("1230053187664"));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053187664"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230053187649")), ListSequence.<SNode>fromArray(this.getNodeById("1230053187689"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053187649"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230053187689"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

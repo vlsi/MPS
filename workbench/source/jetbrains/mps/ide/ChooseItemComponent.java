@@ -210,11 +210,11 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
 
   public Pattern getItemPattern() {
     final String text = myTextField.getText();
-    return getItemPattern(text);
+    return getItemPattern(text, true);
   }
 
-  protected Pattern getItemPattern(String text) {
-    StringBuilder b = getExactItemPatternBuilder(text);
+  protected Pattern getItemPattern(String text, boolean useDots) {
+    StringBuilder b = getExactItemPatternBuilder(text, useDots);
     b.append(".*");
     Pattern p = Pattern.compile(b.toString());
     return p;
@@ -265,7 +265,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myList.setSelectedValue(oldSelection, true);
   }
 
-  public static StringBuilder getExactItemPatternBuilder(String text) {
+  public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots) {
     StringBuilder b = new StringBuilder();
     int state = 0;
     for (int i = 0; i < text.length(); i++) {
@@ -278,7 +278,11 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
           } else if (c == '?') {
             b.append(".");
           } else if (c == '.') {
-            b.append("[^\\.]*\\.");
+            if (useDots) {
+              b.append("[^\\.]*\\.");
+            } else {
+              b.append("\\.");
+            }
           } else if (c == '@') {
             b.append("[^\\@\\.]*\\@");
           } else if (Character.isLetterOrDigit(c) || c == '_') {
@@ -300,8 +304,12 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
             b.append(".");
             state = 0;
           } else if (c == '.') {
-            b.append("\\E");
-            b.append("[^\\.]*\\.");
+            if (useDots) {
+              b.append("\\E");
+              b.append("[^\\.]*\\.");
+            } else {
+              b.append("\\.");
+            }
             state = 0;
           } else if (c == '@') {
             b.append("\\E");
@@ -323,7 +331,11 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
             b.append(".");
             state = 0;
           } else if (c == '.') {
-            b.append("[^\\.]*\\.");
+            if (useDots) {
+              b.append("[^\\.]*\\.");
+            } else {
+              b.append("\\.");
+            }
             state = 0;
           } else if (c == '@') {
             b.append("[^\\@\\.]*\\@");

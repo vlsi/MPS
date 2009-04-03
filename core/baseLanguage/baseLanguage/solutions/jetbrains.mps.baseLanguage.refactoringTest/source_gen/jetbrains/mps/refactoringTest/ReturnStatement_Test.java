@@ -9,6 +9,7 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReturnStatement_Test extends BaseTransformationTest {
 
@@ -34,18 +35,18 @@ public class ReturnStatement_Test extends BaseTransformationTest {
 
     public void test_alwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052642367"))));
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052642367"), this.getNodeById("1230052642388"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052642388"), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))));
     }
 
     public void test_retunInAnonymousClass() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052642353"))));
+      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052642353"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
 
     public void test_notAlwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(this.getNodeById("1230052642395"))) != null);
+      Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052642395"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
     }
 
 }

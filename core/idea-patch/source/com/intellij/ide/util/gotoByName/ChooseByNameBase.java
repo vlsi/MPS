@@ -1269,7 +1269,7 @@ public abstract class ChooseByNameBase {
       }
 
       private StringBuilder getExactItemPatternBuilder(String text) {
-        return ChooseItemComponent.getExactItemPatternBuilder(text);
+        return ChooseItemComponent.getExactItemPatternBuilder(text, true);
       }
     }
 

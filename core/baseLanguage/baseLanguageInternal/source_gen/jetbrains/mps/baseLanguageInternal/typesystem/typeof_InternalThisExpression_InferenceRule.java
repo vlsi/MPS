@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -25,7 +26,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
     SLinkOperations.getTargets(c, "typeVariableDeclaration", true);
     {
       SNode tvd;
-      Iterator<SNode> tvd_iterator = SLinkOperations.getTargets(c, "typeVariableDeclaration", true).iterator();
+      Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getTargets(c, "typeVariableDeclaration", true)).iterator();
       while (true) {
         if (!(tvd_iterator.hasNext())) {
           break;

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureParameters;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.refactoringTest._Quotations;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureRefactoring;
@@ -27,11 +28,11 @@ public class AddParameter_Test extends BaseTransformationTest {
     public void test_AddParameter() throws Exception {
       this.addNodeById("1230052943764");
       this.addNodeById("1230052943773");
-      ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(this.getNodeById("1230052943766"));
+      ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       SLinkOperations.addChild(params.getDeclaration(), "parameter", new _Quotations.QuotationClass_1().createNode());
-      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, this.getNodeById("1230052943766"));
+      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(this.getNodeById("1230052943765")), ListSequence.<SNode>fromArray(this.getNodeById("1230052943774"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052943765"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052943774"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }
