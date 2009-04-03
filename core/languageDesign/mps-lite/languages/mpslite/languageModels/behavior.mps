@@ -1526,5 +1526,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238691351909" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238764031344">
+    <property name="package" value="Parts" />
+    <link role="concept" targetNodeId="1.1237211207028" resolveInfo="ChildPlaceholderReference" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238764031345">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238764031346" />
+    </node>
+  </node>
 </model>
 

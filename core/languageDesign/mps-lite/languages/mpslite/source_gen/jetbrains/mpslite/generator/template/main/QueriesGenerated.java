@@ -16,8 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mpslite.behavior.LineList_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mpslite.behavior.LinePart_Behavior;
+import jetbrains.mpslite.generator.template.util.EditorGenerationUtils;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 
@@ -39,7 +38,7 @@ public class QueriesGenerated {
     }
     //     extends
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      SLinkOperations.setTarget((SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "extends", SNodeOperations.cast((SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
+      SLinkOperations.setTarget((SNodeOperations.castConcept(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "extends", SNodeOperations.castConcept((SNode)conceptsToTargets.get(SLinkOperations.getTarget(conceptDeclaration, "extends", false)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
     }
     //     structure
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
@@ -50,43 +49,10 @@ public class QueriesGenerated {
     Map<SNode, SNode> conceptsToEditors = new HashMap<SNode, SNode>();
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-      SNode contentCell;
-      List<SNode> lines = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), "line", true);
-      if (ListSequence.fromList(lines).count() == 0) {
-        if (SPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
-          SNode errorCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
-          SPropertyOperations.set(errorCell, "text", "abstract " + SPropertyOperations.getString(conceptDeclaration, "name"));
-          contentCell = errorCell;
-        } else
-        {
-          continue;
-        }
-      } else if (ListSequence.fromList(lines).count() == 1) {
-        List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
-        if (ListSequence.fromList(lineParts).count() == 1) {
-          contentCell = LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), null, linePartsToLinkDeclarations);
-        } else
-        {
-          SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-          SPropertyOperations.set(hCollection, "vertical", "" + (false));
-          contentCell = hCollection;
-          for(SNode linePart : lineParts) {
-            SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, null, linePartsToLinkDeclarations));
-          }
-        }
-      } else
-      {
-        SNode vCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-        SPropertyOperations.set(vCollection, "vertical", "" + (true));
-        contentCell = vCollection;
-        for(SNode line : lines) {
-          SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-          SPropertyOperations.set(hCollection, "vertical", "" + (false));
-          SLinkOperations.addChild(vCollection, "childCellModel", hCollection);
-          for(SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-            SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, null, linePartsToLinkDeclarations));
-          }
-        }
+      SNode lineList = SLinkOperations.getTarget(conceptDeclaration, "lineList", true);
+      SNode contentCell = EditorGenerationUtils.generateEditorCellModel(lineList, null, conceptDeclaration, linePartsToLinkDeclarations);
+      if (contentCell == null) {
+        continue;
       }
       SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
       SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
