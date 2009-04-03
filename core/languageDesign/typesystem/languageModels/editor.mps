@@ -1470,9 +1470,6 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1178870987809">
     <link role="conceptDeclaration" targetNodeId="1.1178870617262" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1178870989473">
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994632">
-        <property name="flag" value="false" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178870989474">
         <property name="text" value="coerce" />
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1178879252450">
