@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.intentions._Patterns;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -38,15 +37,21 @@ public class IterateOverIterable_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new _Patterns.Pattern_0(), true);
-    SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
-    SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    SNode elem = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).first();
-    SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(elem), true);
-    SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(elem)));
-    SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
-    SNodeOperations.insertNextSiblingChild(node, foreachStatement);
-    SNodeOperations.deleteNode(node);
+    {
+      _Patterns.Pattern_0 pattern_0 = new _Patterns.Pattern_0();
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_0);
+      if (coercedNode_0 != null) {
+        SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
+        SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(pattern_0.PatternVar0), true);
+        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(pattern_0.PatternVar0)));
+        SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
+        SNodeOperations.insertNextSiblingChild(node, foreachStatement);
+        SNodeOperations.deleteNode(node);
+      } else
+      {
+      }
+    }
   }
 
   public String getLocationString() {

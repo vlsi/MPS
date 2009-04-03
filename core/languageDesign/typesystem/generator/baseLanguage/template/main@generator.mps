@@ -7345,16 +7345,17 @@
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221215519221">
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221215519222">
-                            <property name="name" value="baseMethodDeclaration" />
-                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221215519223">
-                              <link role="concept" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
-                            </node>
+                            <property name="name" value="method" />
+                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221215519223" />
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221215519224">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1221215519225" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1221215519226">
-                                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1221215519227">
-                                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1221215519228">
-                                    <link role="conceptDeclaration" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1238771610717">
+                                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1238771629902">
+                                    <link role="concept" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                                  </node>
+                                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1238771636672">
+                                    <link role="concept" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
                                   </node>
                                 </node>
                               </node>
@@ -7540,18 +7541,19 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227100856148">
-                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227100856149">
-                        <property name="name" value="baseMethodDeclaration" />
-                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227100856150">
-                          <link role="concept" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
-                        </node>
-                        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227100856151">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1227100856152" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1227100856153">
-                            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1227100856154">
-                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227100856155">
-                                <link role="conceptDeclaration" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238771676419">
+                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238771676420">
+                        <property name="name" value="method" />
+                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238771676421" />
+                        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238771676422">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1238771676423" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1238771676424">
+                            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1238771676425">
+                              <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1238771676426">
+                                <link role="concept" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                              </node>
+                              <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1238771676427">
+                                <link role="concept" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
                               </node>
                             </node>
                           </node>
@@ -7570,8 +7572,8 @@
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227100856162">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227100856163">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227100856164">
-                                <link role="variableDeclaration" targetNodeId="1227100856149" resolveInfo="baseMethodDeclaration" />
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238771696805">
+                                <link role="variableDeclaration" targetNodeId="1238771676420" resolveInfo="method" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1227100856165">
                                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1227100856166">
