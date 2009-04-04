@@ -395,6 +395,9 @@
       <property name="value" value="&lt;statement&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238803482827">
+      <link role="intfc" targetNodeId="1238803202705" resolveInfo="ILocalVariableElement" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123159">
     <property name="name" value="IfStatement" />
