@@ -10837,5 +10837,29 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238803669566" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238804177207">
+    <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238804179132">
+      <property name="name" value="getLocalVariableDeclaration" />
+      <link role="overriddenMethod" targetNodeId="1238803857389" resolveInfo="getLocalVariableDeclaration" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238804179133" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238804179135">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238804226048">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238804227566">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238804226049" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238804229335">
+              <link role="link" targetNodeId="1.1068581242865" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238804185277">
+        <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238804177208">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238804177209" />
+    </node>
+  </node>
 </model>
 
