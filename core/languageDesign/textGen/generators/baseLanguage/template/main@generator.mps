@@ -350,15 +350,10 @@
       <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233679994384">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233679994385">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233758602511">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237812686778">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237812689607">
-                <property name="value" value="2" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233758603513">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233758602512" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233758604985">
-                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233758603513">
+              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233758602512" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1233758604985">
+                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>

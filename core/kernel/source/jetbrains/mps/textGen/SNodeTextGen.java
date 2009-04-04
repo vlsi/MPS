@@ -54,25 +54,8 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     mySNode = contextNode;
   }
 
-  @Deprecated
-  protected void doGenerateText(BA adapter) {
-    this.doGenerateText(adapter.getNode());
-  }
-
   //not to generate stub method in each MPS text gen
-  @Deprecated
   protected void doGenerateText(SNode node) {
-
-  }
-
-  @Deprecated
-  protected final void appendNodeText(INodeAdapter ba) {
-    try {
-      TextGenManager.instance().appendNodeText(
-        myContext, myBuffer, BaseAdapter.fromAdapter(ba), getSNode());
-    } catch (Exception e) {
-      LOG.error(e);
-    }
   }
 
   public void increaseDepth() {

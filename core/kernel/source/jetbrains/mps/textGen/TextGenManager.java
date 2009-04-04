@@ -29,8 +29,6 @@ import jetbrains.mps.util.NameUtil;
  * Date: Dec 22, 2003
  */
 public class TextGenManager {
-  public static final boolean TEST_TEXT_GEN = true;
-
   private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
 
@@ -76,7 +74,7 @@ public class TextGenManager {
     nodeTextGen.setBuffer(buffer);
     try {
       nodeTextGen.setSNode(node);
-      nodeTextGen.doGenerateText(node.getAdapter());
+      nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
     } catch (Exception e) {
       buffer.foundError();
@@ -93,7 +91,7 @@ public class TextGenManager {
 
       String packageName = NameUtil.namespaceFromConcept(cd);
       String className = cd.getName();
-      String textgenClassname = packageName + ".textGen." + className + "_TextGen" + (TEST_TEXT_GEN ? "2": "");
+      String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {
         Class textgenClass = l.getClass(textgenClassname);
         if (textgenClass != null) {
