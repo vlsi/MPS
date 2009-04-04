@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IDeprecatable;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -32,6 +33,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.IBLDeprecatable;
@@ -68,10 +70,12 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     } else {
       editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
       if (effectiveNode.getAdapter() instanceof IDeprecatable) {
+        final SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(node);
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.STRIKE_OUT,
               IDeprecatable_Behavior.call_isDeprecated_1224609060727(effectiveNode)
+               || IDeprecatable_Behavior.call_isDeprecated_1224609060727(conceptDeclaration)
             );
           }
 
