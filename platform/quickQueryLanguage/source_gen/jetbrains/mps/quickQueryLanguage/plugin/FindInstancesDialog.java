@@ -98,12 +98,17 @@ public class FindInstancesDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Find", defaultButton = true)
   public void buttonFind() {
     try {
-      GenerationResult result = this.myEditor.generate();
+      final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
+      final Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      this.execute(this.myContext.getProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        }
+      });
     } catch (Throwable t) {
       t.printStackTrace();
     }
@@ -129,7 +134,7 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
-    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, false, false, "No usages for that node");
+    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, true, false, "No usages for that node");
   }
 
 }

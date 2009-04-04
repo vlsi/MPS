@@ -86,9 +86,14 @@ public class ReplaceDialog extends BaseDialog {
       final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      Query query = (Query)Class.forName(fqName, true, loader).newInstance();
+      final Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
-      this.execute(this.myContext.getMPSProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getMPSProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        }
+      });
       this.myEditor.disposeEditor();
       this.dispose();
     } catch (Throwable t) {
