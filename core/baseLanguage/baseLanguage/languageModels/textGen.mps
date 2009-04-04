@@ -4658,7 +4658,10 @@
           </node>
           <node role="part" type="jetbrains.mps.lang.textGen.structure.InfoAppendPart" id="1237463992356">
             <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235568268307">
-              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235568272251" />
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1238246384561">
+                <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+                <node role="leftExpression" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235568272251" />
+              </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235568268312">
                 <link role="link" targetNodeId="1.1068581517664" />
               </node>
