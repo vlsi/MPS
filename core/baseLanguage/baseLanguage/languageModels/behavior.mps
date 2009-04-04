@@ -10820,6 +10820,19 @@
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238803669564">
     <link role="concept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238803857389">
+      <property name="name" value="getLocalVariableDeclaration" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238803857390" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238803897075">
+        <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238803857392">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238803917608">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238803917609" />
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238803669565">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238803669566" />
     </node>
