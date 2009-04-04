@@ -10818,5 +10818,11 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237548599420" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238803669564">
+    <link role="concept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238803669565">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238803669566" />
+    </node>
+  </node>
 </model>
 
