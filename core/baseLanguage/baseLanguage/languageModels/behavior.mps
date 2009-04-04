@@ -2827,6 +2827,24 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237538813298" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238805914102">
+      <property name="name" value="getLocalVariableElements" />
+      <link role="overriddenMethod" targetNodeId="1238805763253" resolveInfo="getLocalVariableElements" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238805914103" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238805914105">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238805924857">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238805926047">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238805924858" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1238805928879">
+              <link role="link" targetNodeId="1.1068581517665" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238805920294">
+        <link role="elementConcept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877327630">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877327631" />
     </node>
@@ -10860,6 +10878,23 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238804177208">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238804177209" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238805747062">
+    <property name="package" value="localVariableElement" />
+    <link role="concept" targetNodeId="1.1238805530342" resolveInfo="ILocalVariableElementList" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238805763253">
+      <property name="name" value="getLocalVariableElements" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238805763254" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1238805900722">
+        <link role="elementConcept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238805763256" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1238805747063">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238805747064" />
     </node>
   </node>
 </model>

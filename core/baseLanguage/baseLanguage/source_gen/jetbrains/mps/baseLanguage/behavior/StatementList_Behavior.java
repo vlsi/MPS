@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 
 public class StatementList_Behavior {
 
@@ -53,6 +54,10 @@ public class StatementList_Behavior {
       return false;
     }
     return true;
+  }
+
+  public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "statement", true);
   }
 
 }
