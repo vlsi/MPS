@@ -3250,5 +3250,8 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1237545921771">
     <property name="name" value="IContainsStatementList" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238803202705">
+    <property name="name" value="ILocalVariableElement" />
+  </node>
 </model>
 
