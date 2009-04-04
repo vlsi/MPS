@@ -12,22 +12,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractRule extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractRule";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String APPLICABLE_NODE = "applicableNode";
 
   public AbstractRule(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(AbstractRule.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AbstractRule.NAME, value);
   }
 
   public String getShortDescription() {
@@ -52,6 +44,14 @@ public class AbstractRule extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractRule.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AbstractRule.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AbstractRule.NAME, value);
   }
 
   public ApplicableNodeCondition getApplicableNode() {

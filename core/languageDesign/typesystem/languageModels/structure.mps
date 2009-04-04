@@ -2417,5 +2417,53 @@
     <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1238776816380" resolveInfo="JoinCons" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238845718629">
+    <property name="name" value="MeetOperation" />
+    <link role="extends" targetNodeId="5.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1238847855665">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238847858372" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238845885663">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="meetWith" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238845907737">
+      <property name="value" value="meetWith" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238848820276">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763325919" resolveInfo="applicableToLink" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238848824326">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238846201744">
+    <property name="name" value="JoinOperation" />
+    <link role="extends" targetNodeId="5.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238846210901">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="joinWith" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238846225824">
+      <property name="value" value="joinWith" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238848873515">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763325919" resolveInfo="applicableToLink" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238848879475">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1238847866038">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1238847868630" />
+    </node>
+  </node>
 </model>
 

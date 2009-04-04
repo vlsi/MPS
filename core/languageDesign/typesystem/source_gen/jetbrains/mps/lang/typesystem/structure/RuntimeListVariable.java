@@ -11,21 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeListVariable extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
 
   public RuntimeListVariable(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(RuntimeListVariable.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(RuntimeListVariable.NAME, value);
   }
 
   public String getShortDescription() {
@@ -50,6 +42,14 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(RuntimeListVariable.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(RuntimeListVariable.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(RuntimeListVariable.NAME, value);
   }
 
 
