@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IContainer;
+import jetbrains.mps.baseLanguage.structure.ILocalVariableElementList;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Statement;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StatementList extends BaseConcept implements IContainer {
+public class StatementList extends BaseConcept implements IContainer, ILocalVariableElementList {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StatementList";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

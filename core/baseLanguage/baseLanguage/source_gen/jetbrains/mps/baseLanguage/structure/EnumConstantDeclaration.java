@@ -20,11 +20,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
-  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String VISIBILITY = "visibility";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
@@ -33,12 +33,12 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
     super(node);
   }
 
-  public String getResolveInfo() {
-    return this.getProperty(EnumConstantDeclaration.RESOLVE_INFO);
+  public String getName() {
+    return this.getProperty(EnumConstantDeclaration.NAME);
   }
 
-  public void setResolveInfo(String value) {
-    this.setProperty(EnumConstantDeclaration.RESOLVE_INFO, value);
+  public void setName(String value) {
+    this.setProperty(EnumConstantDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -65,12 +65,12 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
     this.setProperty(EnumConstantDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public String getName() {
-    return this.getProperty(EnumConstantDeclaration.NAME);
+  public String getResolveInfo() {
+    return this.getProperty(EnumConstantDeclaration.RESOLVE_INFO);
   }
 
-  public void setName(String value) {
-    this.setProperty(EnumConstantDeclaration.NAME, value);
+  public void setResolveInfo(String value) {
+    this.setProperty(EnumConstantDeclaration.RESOLVE_INFO, value);
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {

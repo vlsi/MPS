@@ -317,6 +317,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160344371">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1238805553547">
+      <link role="intfc" targetNodeId="1238805530342" resolveInfo="ILocalVariableElementList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123137">
     <property name="name" value="BooleanConstant" />
@@ -3255,6 +3258,11 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238803202705">
     <property name="name" value="ILocalVariableElement" />
+    <property name="package" value="localVariableElement" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238805530342">
+    <property name="package" value="localVariableElement" />
+    <property name="name" value="ILocalVariableElementList" />
   </node>
 </model>
 

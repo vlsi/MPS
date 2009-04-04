@@ -12,22 +12,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ClosureParameter extends BaseConcept implements INamedConcept, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameter";
-  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
+  public static final String RESOLVE_INFO = "resolveInfo";
 
   public ClosureParameter(SNode node) {
     super(node);
   }
 
-  public String getResolveInfo() {
-    return this.getProperty(ClosureParameter.RESOLVE_INFO);
+  public String getName() {
+    return this.getProperty(ClosureParameter.NAME);
   }
 
-  public void setResolveInfo(String value) {
-    this.setProperty(ClosureParameter.RESOLVE_INFO, value);
+  public void setName(String value) {
+    this.setProperty(ClosureParameter.NAME, value);
   }
 
   public String getShortDescription() {
@@ -54,12 +54,12 @@ public class ClosureParameter extends BaseConcept implements INamedConcept, IRes
     this.setProperty(ClosureParameter.VIRTUAL_PACKAGE, value);
   }
 
-  public String getName() {
-    return this.getProperty(ClosureParameter.NAME);
+  public String getResolveInfo() {
+    return this.getProperty(ClosureParameter.RESOLVE_INFO);
   }
 
-  public void setName(String value) {
-    this.setProperty(ClosureParameter.NAME, value);
+  public void setResolveInfo(String value) {
+    this.setProperty(ClosureParameter.RESOLVE_INFO, value);
   }
 
 

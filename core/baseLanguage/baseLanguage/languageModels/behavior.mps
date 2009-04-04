@@ -10819,6 +10819,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238803669564">
+    <property name="package" value="localVariableElement" />
     <link role="concept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238803857389">
       <property name="name" value="getLocalVariableDeclaration" />
