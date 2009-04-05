@@ -6,10 +6,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.generator.java.closures.ClosuresUtil;
+import jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.generator.java.closures._QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -39,7 +38,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if (contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
     }
     return false;
   }
@@ -48,7 +47,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if (contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
     }
     return false;
   }
@@ -58,7 +57,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(var, "initializer", true) != null) {
       SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
       if (contextOwner != null) {
-        return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), ((TemplateQueryContext)_context).getGenerator());
+        return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
       }
     }
     return false;
