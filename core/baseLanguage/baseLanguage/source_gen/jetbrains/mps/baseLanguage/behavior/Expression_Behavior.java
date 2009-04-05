@@ -13,6 +13,8 @@ public class Expression_Behavior {
   private static Class[] PARAMETERS_1213877519781 = {SNode.class};
   private static Class[] PARAMETERS_1213877519786 = {SNode.class};
   private static Class[] PARAMETERS_1230540989695 = {SNode.class};
+  private static Class[] PARAMETERS_1238860258777 = {SNode.class};
+  private static Class[] PARAMETERS_1238860310638 = {SNode.class ,IModule.class};
 
   public static void init(SNode thisNode) {
   }
@@ -33,6 +35,14 @@ public class Expression_Behavior {
     return NullableVariableState.UNKNOWN;
   }
 
+  public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return SConceptPropertyOperations.getBoolean(thisNode, "constant");
+  }
+
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+    throw new UnsupportedOperationException();
+  }
+
   public static Object call_eval_1213877519769(SNode thisNode, IModule module) {
     return (Object)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_eval_1213877519769", PARAMETERS_1213877519769, module);
   }
@@ -49,6 +59,14 @@ public class Expression_Behavior {
     return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
   }
 
+  public static boolean call_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isCompileTimeConstant_1238860258777", PARAMETERS_1238860258777);
+  }
+
+  public static Object call_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+    return (Object)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, module);
+  }
+
   public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_eval_1213877519769", PARAMETERS_1213877519769, module);
   }
@@ -63,6 +81,14 @@ public class Expression_Behavior {
 
   public static NullableVariableState callSuper_getNullableState_1230540989695(SNode thisNode, String callerConceptFqName) {
     return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
+  }
+
+  public static boolean callSuper_isCompileTimeConstant_1238860258777(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isCompileTimeConstant_1238860258777", PARAMETERS_1238860258777);
+  }
+
+  public static Object callSuper_getCompileTimeConstantValue_1238860310638(SNode thisNode, String callerConceptFqName, IModule module) {
+    return (Object)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, module);
   }
 
 }

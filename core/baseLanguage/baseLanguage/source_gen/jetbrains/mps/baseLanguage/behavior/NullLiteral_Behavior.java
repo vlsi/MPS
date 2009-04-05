@@ -19,4 +19,8 @@ public class NullLiteral_Behavior {
     return NullableVariableState.NULL;
   }
 
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+    return null;
+  }
+
 }

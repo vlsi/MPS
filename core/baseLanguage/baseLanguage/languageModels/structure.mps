@@ -61,6 +61,9 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1146528679895">
       <property name="name" value="lvalue" />
     </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1238860354371">
+      <property name="name" value="constant" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1107216504832">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
@@ -335,6 +338,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1180108463525">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238860692010">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1068580123138">
       <property name="name" value="value" />
       <property name="propertyType" value="boolean" />
@@ -466,6 +472,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1180108482734">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238860884088">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1068580320021">
       <property name="name" value="value" />
@@ -726,6 +735,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217345087">
       <property name="value" value="null" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238861077441">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1070534370425">
@@ -1397,6 +1409,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1180108427124">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238861031974">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1113006251687">
@@ -2390,6 +2405,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1200398625594">
       <property name="value" value="char constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238860717563">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1200397540847">
       <property name="name" value="charConstant" />
