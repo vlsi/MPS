@@ -2320,20 +2320,41 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238686302574" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1238686304757" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238686302576">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238686311409">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1238691457632">
-            <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression" id="1238691457633">
-              <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238691457634">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238691457635">
-                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238691457636" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238691457637">
-                    <link role="link" targetNodeId="1.1140138123956" />
-                  </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239015290033">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239015290034">
+            <property name="name" value="leftType" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239015290035" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239015290036">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239015290037">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239015290038" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239015290039">
+                  <link role="link" targetNodeId="1.1140138123956" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1238691457638" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238691457639">
-                <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238691457640" />
+              <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1239015290040" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238686311409">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1239015281639">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239015295082">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239015294674">
+                <link role="variableDeclaration" targetNodeId="1239015290034" resolveInfo="leftType" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239015301273">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239015304041">
+                  <link role="conceptDeclaration" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1238691457632">
+              <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression" id="1238691457633">
+                <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239015290041">
+                  <link role="variableDeclaration" targetNodeId="1239015290034" resolveInfo="leftType" />
+                </node>
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238691457639">
+                  <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238691457640" />
+                </node>
               </node>
             </node>
           </node>
