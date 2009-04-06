@@ -4,7 +4,7 @@ package jetbrains.mps.buildlanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.buildlanguage.constraints.GenericCall_name_PropertyConstraint;
 import jetbrains.mps.buildlanguage.constraints.TargetReferencePropertyValueExpression_fullName_PropertyConstraint;
 import jetbrains.mps.buildlanguage.constraints.StringLiteral_name_PropertyConstraint;
@@ -20,20 +20,20 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new GenericCall_name_PropertyConstraint());
-    this.myConstraints.add(new TargetReferencePropertyValueExpression_fullName_PropertyConstraint());
-    this.myConstraints.add(new StringLiteral_name_PropertyConstraint());
-    this.myConstraints.add(new MultiLineString_name_PropertyConstraint());
-    this.myConstraints.add(new TargetReference_targetDeclaration_ReferentConstraint());
-    this.myConstraints.add(new GenericCall_declaration_ReferentConstraint());
-    this.myConstraints.add(new PathReference_call_ReferentConstraint());
-    this.myConstraints.add(new Reference_declaration_ReferentConstraint());
-    this.myConstraints.add(new GenericAttribute_attributeDeclaration_ReferentConstraint());
-    this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
-    this.myConstraints.add(new GenericCall_DefaultSearchScope());
+    ListOperations.addElement(this.myConstraints, new GenericCall_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new TargetReferencePropertyValueExpression_fullName_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new StringLiteral_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new MultiLineString_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new TargetReference_targetDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new GenericCall_declaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new PathReference_call_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new Reference_declaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new GenericAttribute_attributeDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new PropertyReference_propertyDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new GenericCall_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

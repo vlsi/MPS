@@ -28,7 +28,7 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extend
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode inferenceRule = SNodeOperations.getParent(_context.getReferenceNode());
+    SNode inferenceRule = SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.lang.typesystem.structure.InferenceRule");
     SNode abstractConceptDeclaration = ApplicableNodeCondition_Behavior.call_getApplicableConcept_1213877307633(SLinkOperations.getTarget(inferenceRule, "applicableNode", true));
     ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(abstractConceptDeclaration)));
     return conceptScope;
