@@ -6,9 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_WhenConcreteVariableDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -17,10 +17,18 @@ public class typeof_WhenConcreteVariableDeclaration_InferenceRule extends Abstra
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    {
-      SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1205768025013", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), "argument", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1205768025018", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1205768025011", intentionProvider);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement")) {
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014818557", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), "argument", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014818560", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014818555", intentionProvider);
+      }
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement_internal")) {
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014830913", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement_internal"), "argument", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014830916", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239014830911", intentionProvider);
+      }
     }
   }
 
