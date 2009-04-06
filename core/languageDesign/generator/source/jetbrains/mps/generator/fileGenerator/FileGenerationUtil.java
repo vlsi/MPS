@@ -25,10 +25,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.vfs.VirtualFile;
 
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
@@ -60,11 +65,25 @@ public class FileGenerationUtil {
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false);
 
+    refreshGeneratedFiles(generatedFiles);
+
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
     cleanUp(context, generatedFiles, directories);
 
     return ok;
+  }
+
+  private static void refreshGeneratedFiles(final Set<File> generatedFiles) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        for (File f : generatedFiles) {
+          VirtualFile file = VFileSystem.refreshAndGetFile(f);
+          if (file == null) continue;
+          file.refresh(true, true);
+        }
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
