@@ -4279,51 +4279,18 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237031381513">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237031381514">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237031381515">
-                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237031381516">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237035498841" />
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237035507431">
-                    <property name="value" value="List" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" id="1239010167679">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239010161648">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239010160306">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239010153330">
+                    <link role="variableDeclaration" targetNodeId="1237030149911" resolveInfo="declaration" />
                   </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237035511857">
-                    <property name="value" value="ArrayList" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237035530475">
-                    <property name="value" value="LinkedList" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237035538492">
-                    <property name="value" value="Set" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237035541680">
-                    <property name="value" value="HashSet" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238582648640">
-                    <property name="value" value="Map" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238582657844">
-                    <property name="value" value="HashMap" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238772509364">
-                    <property name="value" value="Iterator" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239010160703" />
                 </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="1239010164344" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1237031381518">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237035489386">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237035482733">
-                    <link role="concept" targetNodeId="15.1169194658468" resolveInfo="INamedConcept" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237032873834">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237032872997">
-                        <link role="variableDeclaration" targetNodeId="1237030149911" resolveInfo="declaration" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1237032876109" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237035491978">
-                    <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
-                  </node>
-                </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239010190966">
+                <property name="value" value="java.util" />
               </node>
             </node>
           </node>

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 
@@ -63,7 +64,7 @@ public class ListMigrationUtil {
     if (!(ObjectUtils.equals(SPropertyOperations.getString(declaration, "name"), name))) {
       return false;
     }
-    if (!(ListSequence.fromList(ListSequence.<String>fromArray("List", "ArrayList", "LinkedList", "Set", "HashSet", "Map", "HashMap", "Iterator")).contains(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.lang.core.structure.INamedConcept"), "name")))) {
+    if (!(ObjectUtils.equals(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {
