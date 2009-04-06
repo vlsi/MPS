@@ -98,9 +98,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
-    SModel newModel;
-    newModel = new StubModel(modelDescriptor.getSModelReference());
+    SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
+    exception.printStackTrace();
     return newModel;
   }
 

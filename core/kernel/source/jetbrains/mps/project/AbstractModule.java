@@ -776,9 +776,6 @@ public abstract class AbstractModule implements IModule {
 
   public final void reloadFromDisk() {
     // TODO listeners?
-    if (ApplicationLevelVcsManager.instance().isInConflict(myDescriptorFile, true)) {
-      handleReadProblem(new ConflictException(myDescriptorFile), true);
-    }
     try {
       ModuleDescriptor descriptor = loadDescriptor();
       setModuleDescriptor(descriptor);
@@ -789,7 +786,8 @@ public abstract class AbstractModule implements IModule {
 
   private void handleReadProblem(Exception e, boolean isInConflict) {
     SuspiciousModelIndex.instance().addModule(this, isInConflict);
-    LOG.error(e);
+    LOG.error(e.getMessage());
+    e.printStackTrace();
   }
 
   public boolean updateSModelReferences() {
