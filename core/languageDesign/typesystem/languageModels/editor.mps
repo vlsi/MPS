@@ -3995,9 +3995,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1238776677112" resolveInfo="MeetCons" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238776757322">
       <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239028202720">
+        <property name="text" value="meet&lt;" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1238776768728" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238776794857">
-        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239028205941">
+        <property name="text" value="&gt;" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238776799178">
         <link role="relationDeclaration" targetNodeId="1.1238776691632" />
@@ -4008,9 +4011,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1238776816380" resolveInfo="JoinCons" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1238776853645">
       <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239028109589">
+        <property name="text" value="join&lt;" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1238776857812" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238776860611">
-        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239028094571">
+        <property name="text" value="&gt;" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1238776863176">
         <link role="relationDeclaration" targetNodeId="1.1238776828104" />

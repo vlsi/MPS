@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class QueriesGenerated {
 
@@ -150,53 +149,6 @@ public class QueriesGenerated {
           }
         });
       }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BaseConcept_1238777064800(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), AttributesRolesUtil.childRoleFromAttributeRole("MeetAnnotation"), "jetbrains.mps.lang.typesystem.structure.MeetCons");
-        }
-
-        public String getMatchingText(String pattern) {
-          return ":&:";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "meet with node";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), AttributesRolesUtil.childRoleFromAttributeRole("JoinAnnotation"), "jetbrains.mps.lang.typesystem.structure.JoinCons");
-        }
-
-        public String getMatchingText(String pattern) {
-          return ":|:";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "join with node";
-        }
-      });
     }
     return result;
   }

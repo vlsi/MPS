@@ -2380,31 +2380,29 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238776677112">
-    <property name="name" value="MeetCons" />
+    <property name="name" value="MeetContainer" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238776691632">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="cons" />
+      <property name="role" value="meetType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" targetNodeId="1188473524530" resolveInfo="MeetType" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238776787153">
-      <property name="value" value=":&amp;:" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239028196359">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238776816380">
-    <property name="name" value="JoinCons" />
+    <property name="name" value="JoinContainer" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238776828104">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="cons" />
+      <property name="role" value="joinType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" targetNodeId="1179479408386" resolveInfo="JoinType" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238776837262">
-      <property name="value" value=":|:" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239028160950">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1238776879044">
