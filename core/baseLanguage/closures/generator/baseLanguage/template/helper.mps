@@ -7932,9 +7932,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203612806004">
                 <link role="variableDeclaration" targetNodeId="1203612751491" resolveInfo="queue" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209072003519">
-                <link role="baseMethodDeclaration" targetNodeId="21.~AbstractCollection.isEmpty():boolean" resolveInfo="isEmpty" />
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1239015500160" />
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203612792850">

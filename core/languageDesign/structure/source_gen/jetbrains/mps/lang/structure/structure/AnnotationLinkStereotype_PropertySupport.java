@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
+    Iterator<AnnotationLinkStereotype> constants = ListSequence.fromList(AnnotationLinkStereotype.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
+    Iterator<AnnotationLinkStereotype> constants = ListSequence.fromList(AnnotationLinkStereotype.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -75,7 +75,7 @@ public class QueriesGenerated {
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = ListOperations.<SNode>createList();
     Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
-    return 1 + parensList.indexOf(parens);
+    return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {

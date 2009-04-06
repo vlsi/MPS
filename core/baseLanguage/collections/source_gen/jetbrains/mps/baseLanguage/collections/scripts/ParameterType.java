@@ -5,7 +5,8 @@ package jetbrains.mps.baseLanguage.collections.scripts;
 
 public enum ParameterType {
   INT(),
-  NOT_INT();
+  NOT_INT(),
+  ANY();
 
   ParameterType() {
   }

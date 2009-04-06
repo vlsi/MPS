@@ -15,7 +15,7 @@ import jetbrains.mps.closures.test.Generator;
 import jetbrains.mps.closures.test.Processor;
 import jetbrains.mps.closures.test.ProcessingException;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -213,8 +213,8 @@ __switch__:
 
   @Test()
   public void test_closureLiteralAsComparator() throws Exception {
-    List<Integer> list = new ArrayList<Integer>();
-    list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
+    List<Integer> list = ListSequence.<Integer>fromArray();
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4,3,5,1,2})));
     //     ===================================================================
     //     The following is a hack!
     //     In reality we could only substitute an interface that has a single method.

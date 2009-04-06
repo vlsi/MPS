@@ -12,13 +12,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TestNodeAnnotation extends BaseConcept implements INamedConcept, INodeAnnotattion {
   public static final String concept = "jetbrains.mps.lang.test.structure.TestNodeAnnotation";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public TestNodeAnnotation(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(TestNodeAnnotation.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TestNodeAnnotation.NAME, value);
   }
 
   public String getShortDescription() {
@@ -43,14 +51,6 @@ public class TestNodeAnnotation extends BaseConcept implements INamedConcept, IN
 
   public void setVirtualPackage(String value) {
     this.setProperty(TestNodeAnnotation.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(TestNodeAnnotation.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TestNodeAnnotation.NAME, value);
   }
 
 

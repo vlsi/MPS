@@ -14,16 +14,24 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EditorTestCase extends BaseConcept implements INamedConcept, ITestMethod, ITestCase {
   public static final String concept = "jetbrains.mps.lang.test.structure.EditorTestCase";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String NODE_TO_EDIT = "nodeToEdit";
   public static final String RESULT = "result";
   public static final String CODE = "code";
 
   public EditorTestCase(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(EditorTestCase.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EditorTestCase.NAME, value);
   }
 
   public String getShortDescription() {
@@ -48,14 +56,6 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
 
   public void setVirtualPackage(String value) {
     this.setProperty(EditorTestCase.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(EditorTestCase.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EditorTestCase.NAME, value);
   }
 
   public BaseConcept getNodeToEdit() {

@@ -143,7 +143,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.ANY));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -768,6 +768,61 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation", null);
         SNodeOperations.replaceWithAnother(node, opration);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "getIterator";
+      }
+
+      public String getAdditionalInfo() {
+        return "getIterator";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.<ParameterType>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation", null);
+        SNodeOperations.replaceWithAnother(node, opration);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "Iterator";
+      }
+
+      public String getAdditionalInfo() {
+        return "Iterator";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Iterator")));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null);
+        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SNodeOperations.replaceWithAnother(node, result);
       }
 
       public boolean isShowAsIntention() {

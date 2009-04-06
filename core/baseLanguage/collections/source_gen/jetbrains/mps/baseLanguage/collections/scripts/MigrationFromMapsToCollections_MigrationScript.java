@@ -139,6 +139,60 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
+        return "keys ";
+      }
+
+      public String getAdditionalInfo() {
+        return "keys ";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.<ParameterType>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", null);
+        SNodeOperations.replaceWithAnother(node, values);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "clear";
+      }
+
+      public String getAdditionalInfo() {
+        return "clear";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.<ParameterType>fromArray());
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", null);
+        SNodeOperations.replaceWithAnother(node, values);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
         return "HashMap";
       }
 

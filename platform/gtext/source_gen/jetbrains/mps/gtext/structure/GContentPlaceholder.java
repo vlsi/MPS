@@ -11,13 +11,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GContentPlaceholder extends GItem implements INamedConcept {
   public static final String concept = "jetbrains.mps.gtext.structure.GContentPlaceholder";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public GContentPlaceholder(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(GContentPlaceholder.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(GContentPlaceholder.NAME, value);
   }
 
   public String getShortDescription() {
@@ -42,14 +50,6 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GContentPlaceholder.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(GContentPlaceholder.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(GContentPlaceholder.NAME, value);
   }
 
 

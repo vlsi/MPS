@@ -142,7 +142,7 @@ public abstract class BaseLanguageTextGen {
       importedFqName = importedShortName;
     }
     Set<String> importedNames = BaseLanguageTextGen.getImportedNames(textGen);
-    if (importedNames.contains(importedFqName)) {
+    if (SetSequence.fromSet(importedNames).contains(importedFqName)) {
       textGen.append(className);
       return;
     }
@@ -159,7 +159,7 @@ public abstract class BaseLanguageTextGen {
         return;
       }
     }
-    importedNames.add(importedFqName);
+    SetSequence.fromSet(importedNames).addElement(importedFqName);
     if (!(packageName.equals("java.lang")) || packageName.equals(textGen.getBuffer().getUserObject("PACKAGE_NAME"))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.appendNewLine();

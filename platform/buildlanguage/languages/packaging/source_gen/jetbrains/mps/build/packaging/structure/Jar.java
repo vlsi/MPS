@@ -19,9 +19,9 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
+  public static final String NAME = "name";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
 
@@ -69,14 +69,6 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
     this.setProperty(Jar.VIRTUAL_PACKAGE, value);
   }
 
-  public String getName() {
-    return this.getProperty(Jar.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Jar.NAME, value);
-  }
-
   public String getExcludes() {
     return this.getProperty(Jar.EXCLUDES);
   }
@@ -91,6 +83,14 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
 
   public void setIncludes(String value) {
     this.setProperty(Jar.INCLUDES, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Jar.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Jar.NAME, value);
   }
 
   public Delete getDelete() {

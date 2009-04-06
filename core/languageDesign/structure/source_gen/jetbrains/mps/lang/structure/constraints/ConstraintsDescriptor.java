@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint;
 import jetbrains.mps.lang.structure.constraints.AnnotationLinkDeclaration_name_PropertyConstraint;
 import jetbrains.mps.lang.structure.constraints.ConceptDeclaration_extends_ReferentConstraint;
@@ -17,17 +17,17 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint());
-    this.myConstraints.add(new AnnotationLinkDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new ConceptDeclaration_extends_ReferentConstraint());
-    this.myConstraints.add(new LinkDeclaration_specializedLink_ReferentConstraint());
-    this.myConstraints.add(new EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint());
-    this.myConstraints.add(new ReferenceConceptLink_target_ReferentConstraint());
-    this.myConstraints.add(new ConceptLink_conceptLinkDeclaration_ReferentConstraint());
-    this.myConstraints.add(new ConceptProperty_conceptPropertyDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new AnnotationLinkDeclaration_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptDeclaration_extends_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new LinkDeclaration_specializedLink_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ReferenceConceptLink_target_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptLink_conceptLinkDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptProperty_conceptPropertyDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

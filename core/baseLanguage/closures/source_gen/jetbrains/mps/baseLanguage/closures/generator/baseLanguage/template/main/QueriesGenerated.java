@@ -3762,12 +3762,12 @@ public class QueriesGenerated {
       List<SNode> allYs = ListSequence.<SNode>fromArray();
       ListSequence.fromList(allYas).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false)));
       ListSequence.fromList(allYs).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false)));
-      for(Iterator<SNode> it = allYas.iterator() ; it.hasNext() ; ) {
+      for(Iterator<SNode> it = ListSequence.fromList(allYas).iterator() ; it.hasNext() ; ) {
         if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
           it.remove();
         }
       }
-      for(Iterator<SNode> it = allYs.iterator() ; it.hasNext() ; ) {
+      for(Iterator<SNode> it = ListSequence.fromList(allYs).iterator() ; it.hasNext() ; ) {
         if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
           it.remove();
         }

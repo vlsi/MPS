@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AnnotationLinkCardinality_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class AnnotationLinkCardinality_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<AnnotationLinkCardinality> constants = AnnotationLinkCardinality.getConstants().iterator();
+    Iterator<AnnotationLinkCardinality> constants = ListSequence.fromList(AnnotationLinkCardinality.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkCardinality constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class AnnotationLinkCardinality_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<AnnotationLinkCardinality> constants = AnnotationLinkCardinality.getConstants().iterator();
+    Iterator<AnnotationLinkCardinality> constants = ListSequence.fromList(AnnotationLinkCardinality.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkCardinality constant = constants.next();
       if (value.equals(constant.getName())) {

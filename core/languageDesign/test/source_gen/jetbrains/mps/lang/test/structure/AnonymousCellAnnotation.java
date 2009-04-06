@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class AnonymousCellAnnotation extends BaseConcept implements INamedConcept, INodeAnnotattion {
   public static final String concept = "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation";
   public static final String CELL_ID = "cellId";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String IS_LAST_POSITION = "isLastPosition";
   public static final String CARET_POSITION = "caretPosition";
 
@@ -30,6 +30,14 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setCellId(String value) {
     this.setProperty(AnonymousCellAnnotation.CELL_ID, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AnonymousCellAnnotation.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AnonymousCellAnnotation.NAME, value);
   }
 
   public String getShortDescription() {
@@ -54,14 +62,6 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setVirtualPackage(String value) {
     this.setProperty(AnonymousCellAnnotation.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(AnonymousCellAnnotation.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AnonymousCellAnnotation.NAME, value);
   }
 
   public boolean getIsLastPosition() {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.dates.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.dates.constraints.DateFormat_isPublic_PropertyConstraint;
 import jetbrains.mps.baseLanguage.dates.constraints.TokenConditionalPair_format_ReferentConstraint;
 import jetbrains.mps.baseLanguage.dates.constraints.FormatExpression_dateFormat_ReferentConstraint;
@@ -16,16 +16,16 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new DateFormat_isPublic_PropertyConstraint());
-    this.myConstraints.add(new TokenConditionalPair_format_ReferentConstraint());
-    this.myConstraints.add(new FormatExpression_dateFormat_ReferentConstraint());
-    this.myConstraints.add(new DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_ReferentConstraint());
-    this.myConstraints.add(new DateTimePropertyFormatToken_dateTimePropertyFormatType_ReferentConstraint());
-    this.myConstraints.add(new FixedLocaleFormatToken_dateFormat_ReferentConstraint());
-    this.myConstraints.add(new ReferenceFormatToken_dateFormat_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new DateFormat_isPublic_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new TokenConditionalPair_format_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new FormatExpression_dateFormat_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new DateTimePropertyFormatToken_dateTimePropertyFormatType_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new FixedLocaleFormatToken_dateFormat_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ReferenceFormatToken_dateFormat_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

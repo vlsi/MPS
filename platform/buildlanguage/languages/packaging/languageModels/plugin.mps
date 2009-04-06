@@ -11633,9 +11633,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1229172864764">
               <link role="variableDeclaration" targetNodeId="1229172851559" resolveInfo="state" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229091373625">
-              <link role="baseMethodDeclaration" targetNodeId="9.~Map.keySet():java.util.Set" resolveInfo="keySet" />
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" id="1239021750767" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229091373626">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229091373627">
@@ -11664,15 +11662,12 @@
                         <link role="variableDeclaration" targetNodeId="1229091382482" resolveInfo="result" />
                       </node>
                     </node>
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235492128139">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235492128140">
-                        <link role="variableDeclaration" targetNodeId="1229172851559" resolveInfo="state" />
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239020322042">
+                      <node role="key" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1239020322043">
+                        <link role="variable" targetNodeId="1229091373622" resolveInfo="name" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235492128141">
-                        <link role="baseMethodDeclaration" targetNodeId="9.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235492128142">
-                          <link role="variable" targetNodeId="1229091373622" resolveInfo="name" />
-                        </node>
+                      <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1235492128140">
+                        <link role="variableDeclaration" targetNodeId="1229172851559" resolveInfo="state" />
                       </node>
                     </node>
                   </node>

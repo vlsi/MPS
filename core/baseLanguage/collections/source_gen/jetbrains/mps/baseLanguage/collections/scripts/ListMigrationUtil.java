@@ -21,7 +21,7 @@ public class ListMigrationUtil {
 
   public static boolean isApplicableForLists(SNode node, String name, List<ParameterType> params) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
-    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType"))) {
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType"))) {
       return false;
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
@@ -45,7 +45,7 @@ public class ListMigrationUtil {
 
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
-    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
       return false;
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);

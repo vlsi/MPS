@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.Assert;
 import java.util.Iterator;
 
@@ -18,11 +18,11 @@ public class ClosuresBase_Test extends TestCase {
   }
 
   public void assertResultsEqual(_FunctionTypes._void_P1_E0<? super List<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
-    List<Integer> expectedList = new ArrayList<Integer>();
+    List<Integer> expectedList = ListSequence.<Integer>fromArray();
     expected.invoke(expectedList);
-    List<Integer> testList = new ArrayList<Integer>();
+    List<Integer> testList = ListSequence.<Integer>fromArray();
     for(Integer i : test.invoke()) {
-      testList.add(i);
+      ListSequence.fromList(testList).addElement(i);
     }
     Assert.assertEquals(expectedList, testList);
   }

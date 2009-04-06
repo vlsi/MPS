@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.TrimKind;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TrimKind_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class TrimKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<TrimKind> constants = TrimKind.getConstants().iterator();
+    Iterator<TrimKind> constants = ListSequence.fromList(TrimKind.getConstants()).iterator();
     while (constants.hasNext()) {
       TrimKind constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class TrimKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TrimKind> constants = TrimKind.getConstants().iterator();
+    Iterator<TrimKind> constants = ListSequence.fromList(TrimKind.getConstants()).iterator();
     while (constants.hasNext()) {
       TrimKind constant = constants.next();
       if (value.equals(constant.getName())) {

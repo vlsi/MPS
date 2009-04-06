@@ -159,7 +159,7 @@ public class ClosureLiteralUtil {
     /*
       ListSequence.fromList(queue).addElement(absType);
     */
-    while (!(queue.isEmpty())) {
+    while (!(ListSequence.fromList(queue).isEmpty())) {
       SNode candidate = ListSequence.fromList(queue).removeElementAt(0);
       if (!(SetSequence.fromSet(visited).contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
         /*

@@ -6,14 +6,14 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.plugin.StructureView_Tool;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
-    tools.add(new StructureView_Tool(project));
+    List<GeneratedTool> tools = ListSequence.<GeneratedTool>fromArray();
+    ListSequence.fromList(tools).addElement(new StructureView_Tool(project));
     return tools;
   }
 

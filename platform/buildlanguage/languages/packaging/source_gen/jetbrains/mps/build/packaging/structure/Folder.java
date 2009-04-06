@@ -17,9 +17,9 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
+  public static final String NAME = "name";
   public static final String SOURCE_PATH = "sourcePath";
   public static final String ENTRY = "entry";
 
@@ -51,14 +51,6 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
     this.setProperty(Folder.VIRTUAL_PACKAGE, value);
   }
 
-  public String getName() {
-    return this.getProperty(Folder.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Folder.NAME, value);
-  }
-
   public String getExcludes() {
     return this.getProperty(Folder.EXCLUDES);
   }
@@ -73,6 +65,14 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
 
   public void setIncludes(String value) {
     this.setProperty(Folder.INCLUDES, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Folder.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Folder.NAME, value);
   }
 
   public Path getSourcePath() {

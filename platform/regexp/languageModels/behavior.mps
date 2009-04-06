@@ -242,13 +242,12 @@
       <link role="overriddenMethod" targetNodeId="1222432436326" resolveInfo="getString" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222435297324">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222856845886">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222856846986">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239019104902">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222856845887">
               <link role="variableDeclaration" targetNodeId="1222866421155" resolveInfo="vars" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222856848464">
-              <link role="baseMethodDeclaration" targetNodeId="4.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1222856850018" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1239019106549">
+              <node role="argument" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239019111061" />
             </node>
           </node>
         </node>
@@ -341,9 +340,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223362558394">
                 <link role="variableDeclaration" targetNodeId="1223362558376" resolveInfo="parensList" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223362558395">
-                <link role="baseMethodDeclaration" targetNodeId="4.~List.indexOf(java.lang.Object):int" resolveInfo="indexOf" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223362558396">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" id="1239019775960">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239019775961">
                   <link role="variableDeclaration" targetNodeId="1223362558350" resolveInfo="parens" />
                 </node>
               </node>
@@ -381,13 +379,12 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222610438195">
                         <link role="variableDeclaration" targetNodeId="1222866497877" resolveInfo="vars" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222610442715">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~List.indexOf(java.lang.Object):int" resolveInfo="indexOf" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222610459473">
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1222610460960">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" id="1239019776217">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239019776218">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239019776219">
                             <link role="link" targetNodeId="1.1174909113141" />
                           </node>
-                          <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1222857059659" />
+                          <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239019776220" />
                         </node>
                       </node>
                     </node>

@@ -4,6 +4,7 @@ package jetbrains.mps.kernel.model;
 
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import org.apache.commons.logging.Log;
@@ -32,8 +33,8 @@ import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 public class SModelUtil {
-  private static Map<String, SNode> myFQNameToConcepDecl = new HashMap<String, SNode>();
-  private static Map<SNode, Language> myConceptToLanguage = new HashMap<SNode, Language>();
+  private static Map<String, SNode> myFQNameToConcepDecl = MapSequence.fromMap(new HashMap<String, SNode>());
+  private static Map<SNode, Language> myConceptToLanguage = MapSequence.fromMap(new HashMap<SNode, Language>());
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
   public static void invalidateCaches() {
@@ -62,7 +63,7 @@ public class SModelUtil {
   }
 
   public static SNode findConceptDeclaration(final String conceptFQName, final IScope scope) {
-    SNode cd = myFQNameToConcepDecl.get(conceptFQName);
+    SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
     }
@@ -80,7 +81,7 @@ public class SModelUtil {
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
         SNode result = ((SNode)BaseAdapter.fromAdapter(resultAdapter));
-        myFQNameToConcepDecl.put(conceptFQName, result);
+        MapSequence.fromMap(myFQNameToConcepDecl).put(conceptFQName, result);
         return result;
       }
     });
@@ -98,7 +99,7 @@ public class SModelUtil {
   }
 
   public static Language getDeclaringLanguage(SNode concept, @NotNull() IScope scope) {
-    Language l = myConceptToLanguage.get(concept);
+    Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
     }
@@ -108,7 +109,7 @@ public class SModelUtil {
     }
     l = scope.getLanguage(languageNamespace);
     if (l != null) {
-      myConceptToLanguage.put(concept, l);
+      MapSequence.fromMap(myConceptToLanguage).put(concept, l);
     }
     return l;
   }

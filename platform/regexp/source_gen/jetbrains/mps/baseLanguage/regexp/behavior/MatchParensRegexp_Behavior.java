@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
@@ -16,7 +17,7 @@ public class MatchParensRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    vars.add(thisNode);
+    ListSequence.fromList(vars).addElement(thisNode);
     return "(" + Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars) + ")";
   }
 
@@ -24,7 +25,7 @@ public class MatchParensRegexp_Behavior {
     SNode parens = thisNode;
     List<SNode> parensList = ListOperations.<SNode>createList();
     Regexp_Behavior.call_getString_1222432436326(Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), parensList);
-    return 1 + parensList.indexOf(parens);
+    return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
   public static String call_getString_1222435297321(SNode thisNode, List<SNode> vars) {

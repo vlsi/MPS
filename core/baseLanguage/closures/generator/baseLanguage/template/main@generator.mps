@@ -18520,9 +18520,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229013055995">
                     <link role="variableDeclaration" targetNodeId="1229012864050" resolveInfo="yasList" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229013061302">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation" id="1239015974206" />
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238773262724">
                   <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238773264954" />
@@ -18580,13 +18578,11 @@
               </node>
               <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229018074211">
                 <property name="name" value="it" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229018074214">
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239015588572">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229018078172">
                     <link role="variableDeclaration" targetNodeId="1229018039846" resolveInfo="allYs" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229018074216">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~List.iterator():java.util.Iterator" resolveInfo="iterator" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation" id="1239015591515" />
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238773272872">
                   <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238773274770" />

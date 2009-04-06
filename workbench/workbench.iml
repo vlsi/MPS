@@ -19,6 +19,5 @@
     <orderEntry type="library" name="httpclient" level="project" />
     <orderEntry type="library" name="Commons-codec" level="project" />
   </component>
-  <component name="ProjectRunConfigurationManager" />
 </module>
 

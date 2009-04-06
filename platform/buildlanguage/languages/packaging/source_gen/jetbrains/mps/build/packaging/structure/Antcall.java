@@ -20,9 +20,9 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
+  public static final String NAME = "name";
   public static final String PROJECT = "project";
   public static final String TARGET_DECLARATION = "targetDeclaration";
   public static final String TARGET_REFERENCE = "targetReference";
@@ -57,14 +57,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
     this.setProperty(Antcall.VIRTUAL_PACKAGE, value);
   }
 
-  public String getName() {
-    return this.getProperty(Antcall.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Antcall.NAME, value);
-  }
-
   public String getExcludes() {
     return this.getProperty(Antcall.EXCLUDES);
   }
@@ -79,6 +71,14 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public void setIncludes(String value) {
     this.setProperty(Antcall.INCLUDES, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Antcall.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Antcall.NAME, value);
   }
 
   public Project getProject() {
