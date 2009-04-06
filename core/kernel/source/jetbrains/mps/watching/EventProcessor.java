@@ -21,10 +21,6 @@ import jetbrains.mps.smodel.ModelAccess;
 
 abstract class EventProcessor {
   public final void process(VFileEvent event, ReloadSession reloadSession) {
-    assert !(ModelAccess.instance().canRead()) : "You can't call this method inside a read action" +
-      " (MPS-4288; syncronous file refresh can't be done in read action)." +
-      " Please, use read action specificly where it is needed.";
-
 //      System.out.println("processing event " + event);
     if (event instanceof VFileContentChangeEvent) {
       processContentChanged(event, reloadSession);
