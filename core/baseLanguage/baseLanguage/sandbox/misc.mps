@@ -102,18 +102,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238849917588">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238849917612">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238849917589">
-              <link role="variableDeclaration" targetNodeId="1238849869392" resolveInfo="n" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.MeetOperation" id="1238849920518">
-              <node role="meetWith" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238849925724">
-                <link role="variableDeclaration" targetNodeId="1238849890177" resolveInfo="m" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />

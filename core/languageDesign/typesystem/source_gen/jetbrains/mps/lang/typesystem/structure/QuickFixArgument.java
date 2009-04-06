@@ -12,22 +12,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QuickFixArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.QuickFixArgument";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String ARGUMENT_TYPE = "argumentType";
 
   public QuickFixArgument(SNode node) {
     super(node);
-  }
-
-  public String getName() {
-    return this.getProperty(QuickFixArgument.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(QuickFixArgument.NAME, value);
   }
 
   public String getShortDescription() {
@@ -52,6 +44,14 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(QuickFixArgument.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(QuickFixArgument.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(QuickFixArgument.NAME, value);
   }
 
   public Type getArgumentType() {
