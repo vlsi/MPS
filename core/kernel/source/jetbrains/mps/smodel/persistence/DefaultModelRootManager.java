@@ -62,10 +62,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
-    if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())) {
-      return handleExceptionDuringModelRead(modelDescriptor, new ConflictException(modelDescriptor), true);
-    }
-
     SModel model;
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
@@ -102,20 +98,19 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
-    if (modelDescriptor.isInitialized()) {
-      SModel newModel = new SModel(modelDescriptor.getSModelReference());
-      LOG.error(exception.getMessage(), newModel);
-      return newModel;
-    }
-    throw exception;
+    SModel newModel;
+    newModel = new StubModel(modelDescriptor.getSModelReference());
+    LOG.error(exception.getMessage(), newModel);
+    return newModel;
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
-    if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile == null || !modelFile.exists()) return true;
     BufferedReader r = null;
     try {
-      r = new BufferedReader(modelDescriptor.getModelFile().openReader());
+      r = new BufferedReader(modelFile.openReader());
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -146,7 +141,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return modelDescriptor.getSModel().getRoots().isEmpty();
     }
     IFile modelFile = modelDescriptor.getModelFile();
-    if (!modelFile.exists()) {
+    if (modelFile == null || !modelFile.exists()) {
       return true;
     }
     Reader reader = null;
@@ -179,7 +174,15 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
+    SModel smodel = modelDescriptor.getSModel();
+    if (smodel instanceof StubModel) {
+      // we do not save stub model to do not owerwrite the real model
+      return;
+    }
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile != null) {
+      ModelPersistence.saveModel(smodel, modelFile);
+    }
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, SModelRoot modelRoot, ModelOwner owner) {
