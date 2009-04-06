@@ -1854,7 +1854,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1176545793491">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227930724">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1176545840634">
-                        <link role="concept" targetNodeId="1.1174643105530" />
+                        <link role="concept" targetNodeId="1.1195213580585" resolveInfo="AbstractCheckingRule" />
                         <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176545793492" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1195213712970">

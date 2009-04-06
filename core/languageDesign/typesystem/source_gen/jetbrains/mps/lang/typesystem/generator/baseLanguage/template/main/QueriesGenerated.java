@@ -343,7 +343,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176545770677(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "overrides");
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"), "overrides");
   }
 
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
