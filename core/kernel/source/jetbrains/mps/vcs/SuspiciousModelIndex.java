@@ -28,6 +28,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -79,6 +80,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   public void disposeComponent() {
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
+  }
+
+  public void addModelFile(VirtualFile file) {
+    if (file == null) return;
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
+    if (modelDescriptor != null) {
+      this.addModel(modelDescriptor, false);
+    }
   }
 
   private class ProjectOpenedListener implements ProjectManagerListener {
