@@ -17,8 +17,10 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.io.File;
 
@@ -31,7 +33,7 @@ class ModuleFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+    IModule module = getModuleByEvent(event);
     if ((module != null) && (module.needReloading())) {
       reloadSession.addChangedModule(module);
     }
@@ -49,7 +51,7 @@ class ModuleFileProcessor extends EventProcessor {
 
   @Override
   protected void processCreate(VFileEvent event, ReloadSession reloadSession) {
-    IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+    IModule module = getModuleByEvent(event);
     if (module == null) {
       VirtualFile vfile = refreshAndGetVFile(event);
       if (vfile == null) return;
@@ -59,9 +61,17 @@ class ModuleFileProcessor extends EventProcessor {
 
   @Override
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
-    IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+    IModule module = getModuleByEvent(event);
     if (module != null) {
       reloadSession.addDeletedModule(module);
     }
+  }
+
+  private IModule getModuleByEvent(final VFileEvent event) {
+    return ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      public IModule compute() {
+        return MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+      }
+    });
   }
 }

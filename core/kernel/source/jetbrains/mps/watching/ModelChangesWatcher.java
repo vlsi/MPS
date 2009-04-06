@@ -105,31 +105,27 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
       final ReloadSession reloadSession = new ReloadSession();
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          // collecting changed models, modules etc.
-          for (final VFileEvent event : events) {
-            String path = event.getPath();
-            File file = new File(path);
-            FileUtil.processFilesRecursively(file, new Processor<File>() {
-              public boolean process(File file) {
-                String filePath = file.getAbsolutePath();
-                if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-                  ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-                } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-                  ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-                }
-                return true;
-              }
-            });
-            if (MPSFileTypesManager.instance().isModelFile(path)) {
-              ModelFileProcessor.getInstance().process(event, reloadSession);
-            } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
-              ModuleFileProcessor.getInstance().process(event, reloadSession);
+      // collecting changed models, modules etc.
+      for (final VFileEvent event : events) {
+        String path = event.getPath();
+        File file = new File(path);
+        FileUtil.processFilesRecursively(file, new Processor<File>() {
+          public boolean process(File file) {
+            String filePath = file.getAbsolutePath();
+            if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+              ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+            } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+              ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
             }
+            return true;
           }
+        });
+        if (MPSFileTypesManager.instance().isModelFile(path)) {
+          ModelFileProcessor.getInstance().process(event, reloadSession);
+        } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
+          ModuleFileProcessor.getInstance().process(event, reloadSession);
         }
-      });
+      }
 
       // reloading
       application.invokeLater(new Runnable() {
