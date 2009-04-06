@@ -768,7 +768,7 @@ public class SModel implements Iterable<SNode> {
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getExportedLanguages()) {
-          if (!result.contains(l.getNamespace())) {
+          if (!result.contains(l.getModuleReference())) {
             result.add(l.getModuleReference());
           }
         }
