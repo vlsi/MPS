@@ -1746,18 +1746,17 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214502248595">
                   <link role="variableDeclaration" targetNodeId="1214502174630" resolveInfo="vars" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214502280612">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~AbstractCollection.addAll(java.util.Collection):boolean" resolveInfo="addAll" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214502292098">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214502284932">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214502284506">
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" id="1239010902000">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239010902001">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239010902002">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239010902003">
                         <link role="variableDeclaration" targetNodeId="1214502101972" resolveInfo="method" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1214502291437">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239010902004">
                         <link role="link" targetNodeId="1.1068580123135" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1214502294635">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239010902005">
                       <link role="baseMethodDeclaration" targetNodeId="6.1214501165480" resolveInfo="getExternalVariablesDeclarations" />
                     </node>
                   </node>

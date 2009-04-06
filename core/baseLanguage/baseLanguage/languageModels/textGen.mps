@@ -328,9 +328,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236686502903">
               <link role="variableDeclaration" targetNodeId="1236686502893" resolveInfo="importedNames" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236686502904">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Collection.contains(java.lang.Object):boolean" resolveInfo="contains" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236686502905">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1239010899764">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239010899765">
                 <link role="variableDeclaration" targetNodeId="1236686502860" resolveInfo="importedFqName" />
               </node>
             </node>
@@ -440,9 +439,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236686502947">
               <link role="variableDeclaration" targetNodeId="1236686502893" resolveInfo="importedNames" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236686502948">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Collection.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236686502949">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" id="1239010900877">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239010900878">
                 <link role="variableDeclaration" targetNodeId="1236686502860" resolveInfo="importedFqName" />
               </node>
             </node>

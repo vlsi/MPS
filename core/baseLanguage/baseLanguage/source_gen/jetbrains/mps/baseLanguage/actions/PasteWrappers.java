@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.actions;
 import java.util.List;
 import jetbrains.mps.datatransfer.PasteWrapper;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -14,7 +15,7 @@ public class PasteWrappers {
 
   public static List<PasteWrapper> createPasteWrappers() {
     List<PasteWrapper> result = new ArrayList();
-    result.add(new PasteWrapper() {
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
 
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
@@ -30,7 +31,7 @@ public class PasteWrappers {
         return result;
       }
     });
-    result.add(new PasteWrapper() {
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
 
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
@@ -44,7 +45,7 @@ public class PasteWrappers {
         return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
     });
-    result.add(new PasteWrapper() {
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
 
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
@@ -58,7 +59,7 @@ public class PasteWrappers {
         return SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true);
       }
     });
-    result.add(new PasteWrapper() {
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
 
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
