@@ -17,11 +17,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -198,7 +198,7 @@ __switch__:
     if ((genericClassifier != null) && mmap != null && !(mmap.isEmpty())) {
       List<SNode> params = ListSequence.<SNode>fromArray();
       for(SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
-        List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+        List<SNode> nodes = mmap.get(tvd);
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();
         if (nodes != null) {
           SNode tvar = ListSequence.fromList(nodes).getElement(0);
@@ -433,7 +433,7 @@ __switch__:
   }
 
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
-    List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+    List<SNode> nodes = mmap.get(tvd);
     if (nodes == null) {
       nodes = ListOperations.<SNode>createList();
       MapSequence.fromMap(mmap).put(tvd, nodes);

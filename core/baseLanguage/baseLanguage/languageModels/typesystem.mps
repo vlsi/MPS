@@ -17177,5 +17177,55 @@
       <link role="concept" targetNodeId="1.1233828326825" resolveInfo="TupleMemberAccessOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1239122804127">
+    <property name="name" value="NonFinalVariablesInAnonymousClass" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239122804128">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239122874861">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239123285130">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239122889947">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239122879135">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239122878498">
+                <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239122889597">
+                <link role="link" targetNodeId="1.1070568296581" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239123927304">
+              <link role="property" targetNodeId="1.1176718929932" resolveInfo="isFinal" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239122874863">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239122905632">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239122992242">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239122911897">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239122910791">
+                  <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239122956747">
+                  <link role="baseMethodDeclaration" targetNodeId="37.1225456272518" resolveInfo="isVariableDefinedInThisMethod" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239122905634">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1239123004897">
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239123006289">
+                  <property name="value" value="Variable must be final" />
+                </node>
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239123019456">
+                  <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1239122857487">
+      <property name="name" value="localVariableReference" />
+      <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
+    </node>
+  </node>
 </model>
 
