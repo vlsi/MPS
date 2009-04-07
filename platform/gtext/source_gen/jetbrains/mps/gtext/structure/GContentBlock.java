@@ -4,6 +4,7 @@ package jetbrains.mps.gtext.structure;
 
 import jetbrains.mps.gtext.structure.GItem;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.gtext.structure.GCompositeItem;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GContentBlock extends GItem implements INamedConcept {
+public class GContentBlock extends GItem implements INamedConcept, GCompositeItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GContentBlock";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
