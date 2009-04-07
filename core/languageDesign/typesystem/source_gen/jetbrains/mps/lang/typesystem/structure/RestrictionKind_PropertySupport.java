@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.typesystem.structure.RestrictionKind;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class RestrictionKind_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
+    Iterator<RestrictionKind> constants = ListSequence.fromList(RestrictionKind.getConstants()).iterator();
     while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RestrictionKind> constants = RestrictionKind.getConstants().iterator();
+    Iterator<RestrictionKind> constants = ListSequence.fromList(RestrictionKind.getConstants()).iterator();
     while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {

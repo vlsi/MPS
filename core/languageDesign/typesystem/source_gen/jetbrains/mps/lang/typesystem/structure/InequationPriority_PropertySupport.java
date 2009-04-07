@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.typesystem.structure.InequationPriority;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InequationPriority_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class InequationPriority_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<InequationPriority> constants = InequationPriority.getConstants().iterator();
+    Iterator<InequationPriority> constants = ListSequence.fromList(InequationPriority.getConstants()).iterator();
     while (constants.hasNext()) {
       InequationPriority constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class InequationPriority_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<InequationPriority> constants = InequationPriority.getConstants().iterator();
+    Iterator<InequationPriority> constants = ListSequence.fromList(InequationPriority.getConstants()).iterator();
     while (constants.hasNext()) {
       InequationPriority constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -14084,28 +14084,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222171521175">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1222171521176">
-                    <link role="baseMethodDeclaration" targetNodeId="1222171538525" resolveInfo="optimizeVariableFollowedByReturn" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222171521177">
-                      <link role="variableDeclaration" targetNodeId="1222168535456" resolveInfo="body" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222171521178">
-                      <link role="variableDeclaration" targetNodeId="1222171315285" resolveInfo="lastReturn" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224772603700">
-                      <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224772593303">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224772593304">
-                          <link role="variableDeclaration" targetNodeId="1222171315285" resolveInfo="lastReturn" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224772593305">
-                          <link role="link" targetNodeId="1.1068581517676" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222171361759">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222171339615">
@@ -14118,6 +14096,47 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1222171366746">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1222171387556">
+                    <link role="conceptDeclaration" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239099695290">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239099695291">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239099695300">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1239099695301">
+                    <link role="baseMethodDeclaration" targetNodeId="1222171538525" resolveInfo="optimizeVariableFollowedByReturn" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239099695302">
+                      <link role="variableDeclaration" targetNodeId="1222168535456" resolveInfo="body" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239099695303">
+                      <link role="variableDeclaration" targetNodeId="1222171315285" resolveInfo="lastReturn" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239099695304">
+                      <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239099695305">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239099695306">
+                          <link role="variableDeclaration" targetNodeId="1222171315285" resolveInfo="lastReturn" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239099695307">
+                          <link role="link" targetNodeId="1.1068581517676" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239099695308">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239099695309">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239099695310">
+                    <link role="variableDeclaration" targetNodeId="1222171315285" resolveInfo="lastReturn" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239099695311">
+                    <link role="link" targetNodeId="1.1068581517676" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239099695312">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239099695313">
                     <link role="conceptDeclaration" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
                   </node>
                 </node>

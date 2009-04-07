@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EquationDirection_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<EquationDirection_Enum> constants = EquationDirection_Enum.getConstants().iterator();
+    Iterator<EquationDirection_Enum> constants = ListSequence.fromList(EquationDirection_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       EquationDirection_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<EquationDirection_Enum> constants = EquationDirection_Enum.getConstants().iterator();
+    Iterator<EquationDirection_Enum> constants = ListSequence.fromList(EquationDirection_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       EquationDirection_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
