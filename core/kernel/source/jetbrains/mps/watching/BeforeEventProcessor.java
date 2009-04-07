@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 
 import java.util.Collections;
 
@@ -40,9 +41,11 @@ class BeforeEventProcessor extends EventProcessor {
       // if model is null, then it was removed by user
       VirtualFile vfile = getVFile(event);
       if (vfile == null) return;
-      Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
-      if (project != null) {
-        MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile));
+      if (MPSFileTypesManager.instance().isModelFile(vfile)) {
+        Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
+        if (project != null) {
+          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile));
+        }
       }
     } else {
       // if model is not null, than file was deleted externally
