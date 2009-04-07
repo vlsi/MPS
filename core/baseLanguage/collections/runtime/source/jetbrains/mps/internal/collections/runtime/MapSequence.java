@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -28,9 +29,14 @@ import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
 /**
  * @author fyodor
  */
-public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSequence<U,V>, Map<U,V> {
+public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSequence<U,V>, Map<U,V>, Serializable {
     
-    private Map<U, V> map;
+    /**
+	 * Auto-computed serialVersionUID
+	 */
+	private static final long serialVersionUID = 4362668497945620393L;
+	
+	private Map<U, V> map;
     
     public static class MapSequenceInitializer<P,Q> {
         
@@ -63,7 +69,8 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
         return new MapSequence<P, Q> (map);
     }
     
-    public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
+    @SuppressWarnings("unchecked")
+	public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
         if (iterable instanceof IMapSequence) {
             return (IMapSequence<P, Q>) iterable;
         }
