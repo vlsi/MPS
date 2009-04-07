@@ -1334,6 +1334,10 @@ __switch__:
               public String getVisibleMatchingText(String pattern) {
                 return this.getMatchingText(pattern);
               }
+
+              public String getDescriptionText(String pattern) {
+                return "array of " + (item);
+              }
             });
           }
         }

@@ -6493,6 +6493,18 @@
               </node>
             </node>
           </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1239118975247">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239118975248">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239119055835">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239119067771">
+                  <node role="rightExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1239119075580" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239119055836">
+                    <property name="value" value="array of " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
