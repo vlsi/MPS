@@ -218,4 +218,12 @@ public class List_Test extends Util_Test {
     Assert.assertSame(3, array.length);
   }
 
+  @Test()
+  public void test_toString() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    Assert.assertEquals("[1, 2, 3, 4, 5]", String.valueOf(test));
+    List<List<Integer>> test2 = ListSequence.<List<Integer>>fromArray(ListSequence.<Integer>fromArray(1), ListSequence.fromList(new LinkedList<Integer>()).addSequence(Sequence.fromArray(2)));
+    Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
+  }
+
 }

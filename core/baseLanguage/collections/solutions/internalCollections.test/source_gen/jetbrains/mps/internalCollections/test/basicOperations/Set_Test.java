@@ -95,4 +95,10 @@ public class Set_Test extends Util_Test {
     Assert.assertTrue(SetSequence.fromSet(test).contains(3));
   }
 
+  @Test()
+  public void test_toString() throws Exception {
+    Set<Integer> test = SetSequence.<Integer>fromArray(9);
+    Assert.assertEquals("[9]", String.valueOf(test));
+  }
+
 }

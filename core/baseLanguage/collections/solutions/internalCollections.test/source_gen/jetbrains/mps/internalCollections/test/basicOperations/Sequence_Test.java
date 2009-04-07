@@ -17,8 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class Sequence_Test extends Util_Test {
 
@@ -392,87 +390,81 @@ __switch__:
 
   @Test()
   public void test_toString() throws Exception {
-    /*
-      final Wrappers._int count = new Wrappers._int(1);
-      Iterable<String> test = Sequence.fromClosure(new ISequenceClosure <String>() {
+    final Wrappers._int count = new Wrappers._int(1);
+    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure <String>() {
 
-        public Iterable<String> iterable() {
-          return new Iterable <String>() {
+      public Iterable<String> iterable() {
+        return new Iterable <String>() {
 
-            public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
+          public Iterator<String> iterator() {
+            return new YieldingIterator <String>() {
 
-                private int __CP__ = 0;
+              private int __CP__ = 0;
 
-                protected boolean moveToNext() {
+              protected boolean moveToNext() {
 __loop__:
-                  do {
+                do {
 __switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        switch (count.value++ ) {
-                          case 3:
-                            this.__CP__ = 3;
-                            break __switch__;
-                          case 2:
-                            this.__CP__ = 4;
-                            break __switch__;
-                          case 1:
-                            this.__CP__ = 6;
-                            break __switch__;
-                          default:
-                            this.__CP__ = 10;
-                            break __switch__;
-                        }
-                      case 5:
-                        this.__CP__ = 4;
-                        this.yield("duh");
-                        return true;
-                      case 7:
-                        this.__CP__ = 6;
-                        this.yield("foo");
-                        return true;
-                      case 9:
-                        this.__CP__ = 8;
-                        this.yield("bar");
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      case 10:
-                        this.__CP__ = 1;
-                        break;
-                      case 3:
-                        this.__CP__ = 5;
-                        break;
-                      case 4:
-                        this.__CP__ = 7;
-                        break;
-                      case 6:
-                        this.__CP__ = 9;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while(true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      });
-      Assert.assertEquals("[bar]", String.valueOf(test));
-      Assert.assertEquals("[foo, bar]", String.valueOf(test));
-      Assert.assertEquals("[duh, foo, bar]", String.valueOf(test));
-      List<Integer> ltest = ListSequence.<Integer>fromArray(1, 2, 3);
-      Assert.assertEquals("[1, 2, 3]", String.valueOf(ltest));
-      Set<Integer> stest = SetSequence.<Integer>fromArray(3, 2, 1);
-      Assert.assertEquals("[1, 2, 3]", String.valueOf(stest));
-    */
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      switch (count.value++ ) {
+                        case 3:
+                          this.__CP__ = 3;
+                          break __switch__;
+                        case 2:
+                          this.__CP__ = 4;
+                          break __switch__;
+                        case 1:
+                          this.__CP__ = 6;
+                          break __switch__;
+                        default:
+                          this.__CP__ = 10;
+                          break __switch__;
+                      }
+                    case 5:
+                      this.__CP__ = 4;
+                      this.yield("duh");
+                      return true;
+                    case 7:
+                      this.__CP__ = 6;
+                      this.yield("foo");
+                      return true;
+                    case 9:
+                      this.__CP__ = 8;
+                      this.yield("bar");
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 10:
+                      this.__CP__ = 1;
+                      break;
+                    case 3:
+                      this.__CP__ = 5;
+                      break;
+                    case 4:
+                      this.__CP__ = 7;
+                      break;
+                    case 6:
+                      this.__CP__ = 9;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    Assert.assertEquals("[bar]", String.valueOf(test));
+    Assert.assertEquals("[foo, bar]", String.valueOf(test));
+    Assert.assertEquals("[duh, foo, bar]", String.valueOf(test));
   }
 
 }

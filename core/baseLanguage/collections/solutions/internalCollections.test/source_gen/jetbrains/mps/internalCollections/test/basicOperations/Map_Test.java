@@ -112,9 +112,15 @@ public class Map_Test extends Util_Test {
     /*
       Map<Foo, List<Bar>> mmap = MapSequence.fromMap(new HashMap<Foo, List<Bar>>());
       for(List<Bar> lst : Sequence.fromIterable(mmap.values())) {
-        lst.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
+        lst.;
       }
     */
+  }
+
+  @Test()
+  public void test_toString() throws Exception {
+    Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1).withValues("a");
+    Assert.assertEquals("[1=a]", String.valueOf(test));
   }
 
 }

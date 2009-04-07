@@ -362,6 +362,11 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
             return eq(this.key, that.key) && eq(this.value, that.value);
         }
         
+        @Override
+        public String toString() {
+        	return key() + "=" + value();
+        }
+        
         private boolean eq(Object a, Object b) {
             return (a == b) || ((a != null) ? a.equals(b) : false);
         }
