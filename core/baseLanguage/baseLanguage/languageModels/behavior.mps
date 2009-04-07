@@ -8648,6 +8648,28 @@
       <property name="name" value="isGuardClauseStatement" />
       <link role="overriddenMethod" targetNodeId="1237547327995" resolveInfo="isGuardClauseStatement" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548005176">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239126373018">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239126373019">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239126398353">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239126401713">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239126388403">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239126379072">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239126378013" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239126380912">
+                <link role="link" targetNodeId="1.1068581517676" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239126392835">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239126396534">
+                <link role="conceptDeclaration" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237548047212">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237548047964">
             <property name="value" value="true" />

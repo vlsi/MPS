@@ -60,6 +60,9 @@ public class ReturnStatement_Behavior {
   }
 
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "expression", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      return false;
+    }
     return true;
   }
 
