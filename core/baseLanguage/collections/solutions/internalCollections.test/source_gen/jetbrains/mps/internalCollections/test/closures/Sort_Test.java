@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Sort_Test extends Util_Test {
 
@@ -67,6 +69,28 @@ public class Sort_Test extends Util_Test {
 
       public Comparable<?> select(String it) {
         return it.length();
+      }
+    }, true));
+  }
+
+  @Test()
+  public void test_caseSensitive() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
+    this.assertIterableEquals(Arrays.asList("ABC", "ABCD", "Abc", "aBC", "abc", "abcD", "abcd"), ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true));
+  }
+
+  @Test()
+  public void test_caseInsensitive() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
+    this.assertIterableEquals(test, ListSequence.fromList(test).sort(new Comparator <String>() {
+
+      public int compare(String a, String b) {
+        return String.CASE_INSENSITIVE_ORDER.compare(a, b);
       }
     }, true));
   }
