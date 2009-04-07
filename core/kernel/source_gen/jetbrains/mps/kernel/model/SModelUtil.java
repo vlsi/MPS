@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
+import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -38,8 +39,8 @@ public class SModelUtil {
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
   public static void invalidateCaches() {
-    myFQNameToConcepDecl.clear();
-    myConceptToLanguage.clear();
+    MapSequence.fromMap(myFQNameToConcepDecl).clear();
+    MapSequence.fromMap(myConceptToLanguage).clear();
   }
 
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
@@ -130,7 +131,7 @@ public class SModelUtil {
   }
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
-    Set<SNode> result = SetSequence.<SNode>fromArray();
+    Set<SNode> result = new LinkedHashSet<SNode>();
     for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for(AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {

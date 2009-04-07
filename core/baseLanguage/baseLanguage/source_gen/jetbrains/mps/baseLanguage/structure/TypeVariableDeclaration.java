@@ -16,25 +16,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
-  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String EXTENDS = "extends";
   public static final String BOUND = "bound";
   public static final String AUX_BOUNDS = "auxBounds";
 
   public TypeVariableDeclaration(SNode node) {
     super(node);
-  }
-
-  public String getResolveInfo() {
-    return this.getProperty(TypeVariableDeclaration.RESOLVE_INFO);
-  }
-
-  public void setResolveInfo(String value) {
-    this.setProperty(TypeVariableDeclaration.RESOLVE_INFO, value);
   }
 
   public String getName() {
@@ -67,6 +59,14 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
 
   public void setVirtualPackage(String value) {
     this.setProperty(TypeVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(TypeVariableDeclaration.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(TypeVariableDeclaration.RESOLVE_INFO, value);
   }
 
   public boolean getExtends() {

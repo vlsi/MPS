@@ -756,8 +756,9 @@
               <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238254781302" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238254781303">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238254781304">
-                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1238254781305" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239106700887">
+                <link role="baseMethodDeclaration" targetNodeId="9.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
+                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1239106705859" />
               </node>
             </node>
           </node>
