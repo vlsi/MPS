@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,8 +28,8 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
     {
       SNode parameter;
       SNode argument;
-      Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true).iterator();
-      Iterator<SNode> argument_iterator = SLinkOperations.getTargets(nodeToCheck, "actualArgument", true).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).iterator();
+      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).iterator();
       while (true) {
         if (!(parameter_iterator.hasNext())) {
           break;

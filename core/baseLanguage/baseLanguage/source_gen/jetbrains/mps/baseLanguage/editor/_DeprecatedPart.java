@@ -109,7 +109,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };
       inlineStyle.apply(editorCell);

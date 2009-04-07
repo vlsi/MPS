@@ -16,10 +16,10 @@ public class GDocument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.gtext.structure.GDocument";
   public static final String DOCUMENT_NAME = "documentName";
   public static final String EXTENSION = "extension";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String ITEM = "item";
 
   public GDocument(SNode node) {
@@ -40,6 +40,14 @@ public class GDocument extends BaseConcept implements INamedConcept {
 
   public void setExtension(String value) {
     this.setProperty(GDocument.EXTENSION, value);
+  }
+
+  public String getName() {
+    return this.getProperty(GDocument.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(GDocument.NAME, value);
   }
 
   public String getShortDescription() {
@@ -64,14 +72,6 @@ public class GDocument extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GDocument.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(GDocument.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(GDocument.NAME, value);
   }
 
   public int getItemsCount() {
