@@ -273,39 +273,7 @@
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239014025257" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239014025258" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239014025259">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239014083356">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239014083357">
-            <property name="name" value="inttuple" />
-            <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239014083358">
-              <node role="memberType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239014087203" />
-              <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239014088933" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239014095938">
-              <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239014098499">
-                <property name="value" value="1" />
-              </node>
-              <node role="member" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239014100413">
-                <property name="value" value="2" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239014139093">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239014139094">
-            <property name="name" value="numtuple" />
-            <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239014139095">
-              <node role="memberType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239014147128">
-                <link role="classifier" targetNodeId="10.~Number" resolveInfo="Number" />
-              </node>
-              <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239014149058" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239014159052">
-              <link role="variableDeclaration" targetNodeId="1239014083357" resolveInfo="inttuple" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239014025259" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">

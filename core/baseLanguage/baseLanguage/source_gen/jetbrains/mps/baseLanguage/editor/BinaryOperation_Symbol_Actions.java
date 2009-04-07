@@ -36,11 +36,14 @@ public class BinaryOperation_Symbol_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
-      SNodeOperations.replaceWithAnother(node, rightExpression);
+      SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+      if (newExpression == null) {
+        newExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+      }
+      SNodeOperations.replaceWithAnother(node, newExpression);
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getNodeEditorComponent();
-      EditorCell cell = editor.findNodeCell(rightExpression);
+      EditorCell cell = editor.findNodeCell(newExpression);
       if (cell != null) {
         EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(firstLeaf);
