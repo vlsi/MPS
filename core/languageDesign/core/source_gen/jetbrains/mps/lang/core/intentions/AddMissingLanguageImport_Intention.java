@@ -5,6 +5,8 @@ package jetbrains.mps.lang.core.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.GlobalScope;
 
 public class AddMissingLanguageImport_Intention extends BaseIntention {
 
@@ -29,7 +31,11 @@ public class AddMissingLanguageImport_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    editorContext.getOperationContext().getModule().addUsedLangauge(node.getLanguage(editorContext.getScope()).getModuleReference());
+    ModuleReference moduleRef = node.getLanguage(GlobalScope.getInstance()).getModuleReference();
+    if (moduleRef == null) {
+      return;
+    }
+    editorContext.getOperationContext().getModule().addUsedLangauge(moduleRef);
   }
 
   public String getLocationString() {
