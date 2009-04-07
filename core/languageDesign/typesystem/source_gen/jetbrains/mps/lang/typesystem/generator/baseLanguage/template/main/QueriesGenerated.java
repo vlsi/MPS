@@ -945,6 +945,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"), "variable", true), "name") + "_iterator";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1239115605985(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "conceptOfInstance", false);
+    return INamedConcept_Behavior.call_getFqName_1213877404258(conceptDeclaration);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1239118482951(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "conceptOfInstance", false);
+    return INamedConcept_Behavior.call_getFqName_1213877404258(conceptDeclaration);
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -2285,6 +2295,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"), "iterable", true);
   }
 
+  public static SNode sourceNodeQuery_1239115686289(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1239118482972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -2433,6 +2451,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238605633335(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "loopVariable", true);
+  }
+
+  public static Iterable sourceNodesQuery_1239115667760(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
+  }
+
+  public static Iterable sourceNodesQuery_1239118482965(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
   }
 
   public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {

@@ -124,8 +124,8 @@ public class SubtypingManager {
     //joins
     if (superRepresentator instanceof NodeWrapper) {
       SNode node = superRepresentator.getNode();
-      if (BaseAdapter.isInstance(node, JoinType.class)) {
-        for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
+      if (LatticeUtil.isJoin(node)) {
+        for (SNode argument : LatticeUtil.getJoinArguments(node)) {
           if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager))) {
             if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
               return true;
@@ -143,9 +143,9 @@ public class SubtypingManager {
       SNode node = subRepresentator.getNode();
 
       //meets
-      if (BaseAdapter.isInstance(node, MeetType.class)) {
+      if (LatticeUtil.isMeet(node)) {
         boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
-        for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
+        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
           if (replacementAllowed) {
             if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
               return true;
@@ -319,8 +319,8 @@ public class SubtypingManager {
     if (term.isConcrete()) {
       SNode node = term.getNode();
 
-      if (BaseAdapter.isInstance(node, MeetType.class)) {
-        for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
+      if (LatticeUtil.isMeet(node)) {
+        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
           result.addStructurally(NodeWrapper.createWrapperFromNode(argument, null));
         }
         return result;

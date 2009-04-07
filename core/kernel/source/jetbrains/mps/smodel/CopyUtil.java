@@ -63,6 +63,10 @@ public final class CopyUtil {
     return result;
   }
 
+  public static SNode copy(SNode node, boolean copyAttributes) {
+    return copy(node, new HashMap<SNode, SNode>(), copyAttributes);
+  }
+
   public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, mapping, copyAttributes);
     List<SNode> nodes = new ArrayList<SNode>();

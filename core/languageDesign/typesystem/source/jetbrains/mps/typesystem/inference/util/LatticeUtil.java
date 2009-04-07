@@ -16,15 +16,18 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.lang.typesystem.structure.MeetType;
-import jetbrains.mps.lang.typesystem.structure.JoinType;
+import jetbrains.mps.lang.typesystem.structure.*;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -160,5 +163,61 @@ public class LatticeUtil {
     result.remove(wrapper2);
     result.add(meet(wrapper1, wrapper2));
     return meet(result);
+  }
+
+  public static SNode createMeet(String conceptFQName, SNode... arguments) {
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    MeetType meetType = MeetType.newInstance(auxModel);
+    MeetContainer meetContainer = MeetContainer.newInstance(auxModel);
+    meetContainer.setMeetType(meetType);
+    for (SNode argument : arguments) {
+      meetType.addArgument((BaseConcept) argument.getAdapter());
+    }
+    SNode result = SConceptOperations.createNewNode(conceptFQName, null);
+    MeetAnnotation_AnnotationLink.setMeetAnnotation((BaseConcept) result.getAdapter(), meetContainer);
+    return result;
+  }
+
+   public static SNode createJoin(String conceptFQName, SNode... arguments) {
+    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    JoinType joinType = JoinType.newInstance(auxModel);
+    JoinContainer joinContainer = JoinContainer.newInstance(auxModel);
+    joinContainer.setJoinType(joinType);
+    for (SNode argument : arguments) {
+      joinType.addArgument((BaseConcept) argument.getAdapter());
+    }
+    SNode result = SConceptOperations.createNewNode(conceptFQName, null);
+    JoinAnnotation_AnnotationLink.setJoinAnnotation((BaseConcept) result.getAdapter(), joinContainer);
+    return result;
+  }
+
+  public static boolean isMeet(SNode node) {
+    return BaseAdapter.isInstance(node, MeetType.class) ||
+      MeetAnnotation_AnnotationLink.getMeetAnnotation((BaseConcept) node.getAdapter()) != null;
+  }
+
+   public static boolean isJoin(SNode node) {
+    return BaseAdapter.isInstance(node, JoinType.class) ||
+      JoinAnnotation_AnnotationLink.getJoinAnnotation((BaseConcept) node.getAdapter()) != null;
+  }
+
+  public static List<SNode> getMeetArguments(SNode meet) {
+    if (BaseAdapter.isInstance(meet, MeetType.class)) {
+      return meet.getChildren(MeetType.ARGUMENT);
+    } else {
+      MeetContainer meetContainer = MeetAnnotation_AnnotationLink.getMeetAnnotation((BaseConcept) meet.getAdapter());
+      MeetType meetType = meetContainer.getMeetType();
+      return meetType.getNode().getChildren(MeetType.ARGUMENT);
+    }
+  }
+
+  public static List<SNode> getJoinArguments(SNode join) {
+    if (BaseAdapter.isInstance(join, JoinType.class)) {
+      return join.getChildren(JoinType.ARGUMENT);
+    } else {
+      JoinContainer joinContainer = JoinAnnotation_AnnotationLink.getJoinAnnotation((BaseConcept) join.getAdapter());
+      JoinType joinType = joinContainer.getJoinType();
+      return joinType.getNode().getChildren(JoinType.ARGUMENT);
+    }
   }
 }
