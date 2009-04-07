@@ -34,7 +34,7 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
     for (SNode child : getSourceNode().getChildren()) {
       if (child.isAttribute()) continue;
       LinkDeclaration link = getSourceNode().getLinkDeclaration(child.getRole_());
-      if (link.getSourceCardinality() != Cardinality._1) return false; 
+      if (link != null && link.getSourceCardinality() != Cardinality._1) return false;
     }
 
     return true;
