@@ -4,16 +4,18 @@ package jetbrains.mps.lang.core.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.lang.core.constraints.BaseConcept_virtualPackage_PropertyConstraint;
+import jetbrains.mps.lang.core.constraints.IResolveInfo_resolveInfo_PropertyConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new BaseConcept_virtualPackage_PropertyConstraint());
-    this.myConstraints.add(new IResolveInfo_resolveInfo_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new BaseConcept_virtualPackage_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new IResolveInfo_resolveInfo_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

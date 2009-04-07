@@ -120,7 +120,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
       for(SNode node : refactoringContext.getSelectedNodes()) {
-        if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable"))) {
+        if (!(SPropertyOperations.getBoolean(SNodeOperations.castConcept(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable"))) {
           return false;
         }
       }

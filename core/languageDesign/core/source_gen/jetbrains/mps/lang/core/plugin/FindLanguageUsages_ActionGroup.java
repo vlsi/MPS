@@ -11,7 +11,7 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.core.plugin.FindLanguageUsages";
 
   public FindLanguageUsages_ActionGroup() {
-    super("", ID);
+    super("FindLanguageUsages", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

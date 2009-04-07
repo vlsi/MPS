@@ -11,7 +11,7 @@ public class CoreActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.core.plugin.CoreActions";
 
   public CoreActions_ActionGroup() {
-    super("", ID);
+    super("CoreActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

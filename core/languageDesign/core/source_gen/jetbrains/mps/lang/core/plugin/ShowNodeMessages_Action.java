@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 
 public class ShowNodeMessages_Action extends GeneratedAction {
@@ -33,7 +34,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node).isEmpty());
+    return !(ListSequence.fromList(((List<EditorMessage>)ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node))).isEmpty());
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {

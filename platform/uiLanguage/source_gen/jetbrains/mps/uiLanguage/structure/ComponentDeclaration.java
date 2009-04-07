@@ -6,6 +6,8 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.uiLanguage.structure.IComponentInstance;
+import jetbrains.mps.uiLanguage.structure.StubCellRendererInfo;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

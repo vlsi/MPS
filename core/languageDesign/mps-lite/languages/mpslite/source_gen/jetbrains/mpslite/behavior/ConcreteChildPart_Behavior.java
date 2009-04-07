@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcreteChildPart_Behavior {
 
@@ -24,7 +25,7 @@ public class ConcreteChildPart_Behavior {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "0..1");
     }
     SLinkOperations.setTarget(linkDeclaration, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "conceptReference", true), conceptsToTargets), false);
-    linePartsToLinks.put(thisNode, linkDeclaration);
+    MapSequence.fromMap(linePartsToLinks).put(thisNode, linkDeclaration);
   }
 
 }

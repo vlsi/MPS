@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mpslite.behavior._Quotations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcretePropertyPart_Behavior {
 
@@ -21,7 +22,7 @@ public class ConcretePropertyPart_Behavior {
     } else if (SPropertyOperations.hasValue(thisNode, "propertyType", "string", "string")) {
       SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "dataType", false), false);
     }
-    linePartsToLinks.put(thisNode, propertyDeclaration);
+    MapSequence.fromMap(linePartsToLinks).put(thisNode, propertyDeclaration);
   }
 
 }

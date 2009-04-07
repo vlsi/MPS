@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -19,12 +19,12 @@ import jetbrains.mpslite.actions._PrecompiledPatterns;
 public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinePart_1237218108602(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mpslite.structure.ConstantLinePart");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode constant = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.ConstantLinePart", null);
@@ -54,12 +54,12 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Concretization_1238420749919(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mpslite.structure.ConstantConcretization");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode constant = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.ConstantConcretization", null);

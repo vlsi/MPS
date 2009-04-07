@@ -463,12 +463,11 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1238762631235">
         <property name="name" value="linePartsToLinks" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238762631236">
-          <link role="classifier" targetNodeId="4.~Map" resolveInfo="Map" />
-          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238762631237">
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1239118043394">
+          <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239118043395">
             <link role="concept" targetNodeId="2v.1182511214735" resolveInfo="LinePart" />
           </node>
-          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238762631238" />
+          <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239118043396" />
         </node>
       </node>
     </node>

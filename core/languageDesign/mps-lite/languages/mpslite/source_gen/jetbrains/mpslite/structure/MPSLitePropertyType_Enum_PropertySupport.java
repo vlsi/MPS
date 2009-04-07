@@ -5,6 +5,7 @@ package jetbrains.mpslite.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mpslite.structure.MPSLitePropertyType_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<MPSLitePropertyType_Enum> constants = MPSLitePropertyType_Enum.getConstants().iterator();
+    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       MPSLitePropertyType_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<MPSLitePropertyType_Enum> constants = MPSLitePropertyType_Enum.getConstants().iterator();
+    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       MPSLitePropertyType_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
