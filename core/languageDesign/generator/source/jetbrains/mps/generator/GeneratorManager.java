@@ -42,11 +42,11 @@ import java.util.*;
 @State(
   name = "GenerationManager",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class GeneratorManager {
   public static final int AMOUNT_PER_MODEL = 100;
@@ -111,7 +111,7 @@ public class GeneratorManager {
         ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
         if (moduleContext == null) {
           MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
-          messagesTool.add(new Message(MessageKind.WARNING,GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
+          messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
           continue;
         }
         modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
@@ -208,16 +208,16 @@ public class GeneratorManager {
 
         if (!requirements.isEmpty()) {
           String message = "The following models might be required for generation\n" +
-                            "but aren't generated. Do you want to generate them?\n";
+            "but aren't generated. Do you want to generate them?\n";
           for (SModelDescriptor sm : requirements) {
             message += "\n" + sm.getSModelFqName();
           }
 
           int result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
-          if (result==2){
+          if (result == 2) {
             return false;
-          }else if (result == 0) { //idea don't have constants for YES/NO
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);            
+          } else if (result == 0) { //idea don't have constants for YES/NO
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);
           }
         }
       } finally {
@@ -232,6 +232,7 @@ public class GeneratorManager {
       }
     });
 
+    showMessageView();
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};
@@ -241,6 +242,13 @@ public class GeneratorManager {
       }
     });
     return result[0];
+  }
+
+  private void showMessageView() {
+    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
+    if (messagesView != null) {
+      messagesView.openToolLater(false);
+    }
   }
 
   protected boolean generateRequirements() {
