@@ -17,10 +17,15 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 
 public class IsInstanceCondition implements Condition<SNode> {
   private AbstractConceptDeclaration myConceptDeclaration;
+
+  public IsInstanceCondition(SNode node) {
+    this((AbstractConceptDeclaration)node.getAdapter());
+  }
 
   public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {
     myConceptDeclaration = conceptDeclaration;

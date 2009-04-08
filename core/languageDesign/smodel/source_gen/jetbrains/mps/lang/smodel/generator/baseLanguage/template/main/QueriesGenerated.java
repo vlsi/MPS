@@ -27,17 +27,11 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.structure.SPropertyAccess;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.List;
-import jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation;
-import jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation;
-import jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior;
 
@@ -349,7 +343,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415960036(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415960045(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -620,7 +614,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getScope());
+    return QueriesUtil.get_SConceptPropertyAccess_GetMethod(_context.getNode(), _context.getScope());
   }
 
   public static Object referenceMacro_GetReferent_1170386916206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -640,11 +634,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170457360268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getScope());
+    return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode(), _context.getScope());
   }
 
   public static Object referenceMacro_GetReferent_1170461142999(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getScope());
+    return QueriesUtil.get_SPropertyAccess_enum_getterMethod(_context.getNode(), _context.getScope());
   }
 
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1316,15 +1310,15 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203118690610(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())));
+    return QueriesUtil.getNodeOperation_ConceptList_concepts(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1203119702930(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorsOperation)SNodeOperations.getAdapter(_context.getNode())));
+    return QueriesUtil.getNodeOperation_ConceptList_concepts(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1203457991461(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetDescendantsOperation)SNodeOperations.getAdapter(_context.getNode())));
+    return QueriesUtil.getNodeOperation_ConceptList_concepts(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -1268,16 +1268,13 @@
         <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1170457360268">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170457360269">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221816550">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170457398698">
-                <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_simple_getterMethod(jetbrains.mps.lang.smodel.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_simple_getterMethod" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499964">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170457427626" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170816518132" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218221788362">
-                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218221788379" />
-                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1218221788380" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208995672">
+                <link role="baseMethodDeclaration" targetNodeId="15.1239207076969" resolveInfo="get_SPropertyAccess_simple_getterMethod" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208995674" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239208995676">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239208995677" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1239208995678" />
                 </node>
               </node>
             </node>
@@ -3564,16 +3561,13 @@
         <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1170461142999">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170461143000">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221811345">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170461143002">
-                <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_enum_getterMethod(jetbrains.mps.lang.smodel.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_enum_getterMethod" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499968">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170461143004" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170793397514" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218221788381">
-                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218221788383" />
-                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1218221788384" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208876316">
+                <link role="baseMethodDeclaration" targetNodeId="15.1239207301822" resolveInfo="get_SPropertyAccess_enum_getterMethod" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208876318" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239208876320">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239208876321" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1239208876322" />
                 </node>
               </node>
             </node>
@@ -4316,16 +4310,13 @@
         <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1168984233974">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168984233975">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221807780">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168985030645">
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SConceptPropertyAccess_GetMethod(jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SConceptPropertyAccess_GetMethod" />
-                <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499915">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1168985043967" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170815882927" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218221788385">
-                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218221788387" />
-                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1218221788388" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208864415">
+                <link role="baseMethodDeclaration" targetNodeId="15.1239206506014" resolveInfo="get_SConceptPropertyAccess_GetMethod" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208864417" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239208864419">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239208864420" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" id="1239208864421" />
                 </node>
               </node>
             </node>
@@ -4891,18 +4882,10 @@
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1203118690610">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203118690611">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203118699856">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203118699857">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203118699858">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
-                        <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499944">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1203118727796" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1203118699860" />
-                        </node>
-                      </node>
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1203118699862">
-                        <link role="elementConcept" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-                      </node>
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239207815254">
+                      <link role="baseMethodDeclaration" targetNodeId="15.1239205674051" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239207815256" />
                     </node>
                   </node>
                 </node>
@@ -4931,10 +4914,10 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1171415960038">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1171415960039">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415960040" />
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171415960041">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1171415960042" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208003108">
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208003109" />
                   </node>
                 </node>
               </node>
@@ -5462,19 +5445,11 @@
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203457991460">
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1203457991461">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203457991462">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203457995020">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203457995021">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203457995022">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
-                        <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499942">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1203458012606" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1203457995024" />
-                        </node>
-                      </node>
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1203457995026">
-                        <link role="elementConcept" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
-                      </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239208855051">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208852138">
+                      <link role="baseMethodDeclaration" targetNodeId="15.1239205674051" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208852140" />
                     </node>
                   </node>
                 </node>
@@ -5599,18 +5574,10 @@
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1203119702930">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203119702931">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203119743708">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203119709459">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203119709460">
-                        <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499972">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1203119732095" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1203119709462" />
-                        </node>
-                      </node>
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1203119709464">
-                        <link role="elementConcept" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
-                      </node>
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239208833968">
+                      <link role="baseMethodDeclaration" targetNodeId="15.1239205674051" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239208833970" />
                     </node>
                   </node>
                 </node>
