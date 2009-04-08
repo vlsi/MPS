@@ -19,7 +19,6 @@ import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.baseLanguage.template.main._QueriesUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
@@ -243,15 +242,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170442611639(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170442795984(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170443045607(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170443135014(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -283,7 +282,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170461506307(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(_context.getNode());
+    return QueriesUtil.get_SPropertyAccess_enum_defaultValue(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170635425166(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -305,7 +304,7 @@ public class QueriesGenerated {
     //     <expr>.<property-access>.<operation>
     //     <operation> : our input node
     SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
-    return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"));
+    return QueriesUtil.get_SPropertyAccess_enum_defaultValue(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1170700859294(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -331,11 +330,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415812330(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415812339(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Root(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Root(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415960029(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -347,7 +346,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1171415960045(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Root(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Root(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1173119412100(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -355,7 +354,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1173123251549(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1173123284761(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -363,7 +362,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1173123508505(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1176109882207(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -372,11 +371,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176946951445(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1176946990349(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "" + _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return "" + QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1177115336225(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -539,11 +538,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206991997681(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1206992455419(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+    return QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1215467512339(final IOperationContext operationContext, final PropertyMacroContext _context) {
