@@ -15,6 +15,10 @@ public class BaseAssignmentExpression_Behavior {
     return true;
   }
 
+  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return true;
+  }
+
   public static boolean call_isReadAsignment_1215696236033(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
   }

@@ -15,6 +15,7 @@ public class Expression_Behavior {
   private static Class[] PARAMETERS_1230540989695 = {SNode.class};
   private static Class[] PARAMETERS_1238860258777 = {SNode.class};
   private static Class[] PARAMETERS_1238860310638 = {SNode.class ,IModule.class};
+  private static Class[] PARAMETERS_1239211900844 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -43,6 +44,10 @@ public class Expression_Behavior {
     throw new UnsupportedOperationException();
   }
 
+  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return false;
+  }
+
   public static Object call_eval_1213877519769(SNode thisNode, IModule module) {
     return (Object)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_eval_1213877519769", PARAMETERS_1213877519769, module);
   }
@@ -67,6 +72,10 @@ public class Expression_Behavior {
     return (Object)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, module);
   }
 
+  public static boolean call_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844);
+  }
+
   public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_eval_1213877519769", PARAMETERS_1213877519769, module);
   }
@@ -89,6 +98,10 @@ public class Expression_Behavior {
 
   public static Object callSuper_getCompileTimeConstantValue_1238860310638(SNode thisNode, String callerConceptFqName, IModule module) {
     return (Object)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCompileTimeConstantValue_1238860310638", PARAMETERS_1238860310638, module);
+  }
+
+  public static boolean callSuper_isLegalAsStatement_1239211900844(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844);
   }
 
 }

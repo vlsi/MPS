@@ -25,4 +25,8 @@ public class FieldReferenceOperation_Behavior {
     return NullableUtil.getVariableStateByAnnotation(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "annotation", true));
   }
 
+  public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
+    return false;
+  }
+
 }

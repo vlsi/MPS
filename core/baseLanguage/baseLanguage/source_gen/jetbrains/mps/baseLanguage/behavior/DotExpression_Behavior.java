@@ -48,4 +48,8 @@ public class DotExpression_Behavior {
     return IOperation_Behavior.call_getNullableState_1230555106620(SLinkOperations.getTarget(thisNode, "operation", true));
   }
 
+  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return IOperation_Behavior.call_isDotExpressionLegalAsStatement_1239212437413(SLinkOperations.getTarget(thisNode, "operation", true));
+  }
+
 }

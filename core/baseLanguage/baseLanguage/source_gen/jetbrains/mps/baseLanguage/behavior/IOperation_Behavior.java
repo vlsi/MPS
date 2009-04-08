@@ -13,6 +13,7 @@ public class IOperation_Behavior {
   private static Class[] PARAMETERS_1213877410080 = {SNode.class};
   private static Class[] PARAMETERS_1213877410087 = {SNode.class};
   private static Class[] PARAMETERS_1230555106620 = {SNode.class};
+  private static Class[] PARAMETERS_1239212437413 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -37,6 +38,10 @@ public class IOperation_Behavior {
     return NullableVariableState.UNKNOWN;
   }
 
+  public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
+    return true;
+  }
+
   public static boolean call_isLValue_1213877410080(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
@@ -49,6 +54,10 @@ public class IOperation_Behavior {
     return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
   }
 
+  public static boolean call_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
+  }
+
   public static boolean callSuper_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
@@ -59,6 +68,10 @@ public class IOperation_Behavior {
 
   public static NullableVariableState callSuper_getNullableState_1230555106620(SNode thisNode, String callerConceptFqName) {
     return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
+  }
+
+  public static boolean callSuper_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
   }
 
 }

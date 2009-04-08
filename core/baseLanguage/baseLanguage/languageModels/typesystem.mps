@@ -17204,5 +17204,35 @@
       <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1239212909416">
+    <property name="name" value="check_ExpressionStatement" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239212909417">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1239212949442">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239212957541">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239212954080">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239212952838">
+              <link role="applicableNode" targetNodeId="1239212938774" resolveInfo="expressionStatement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239212956811">
+              <link role="link" targetNodeId="1.1068580123156" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239212959541">
+            <link role="baseMethodDeclaration" targetNodeId="37.1239211900844" resolveInfo="isLegalAsStatement" />
+          </node>
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239212962705">
+          <property name="value" value="not a legal statement" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239212971832">
+          <link role="applicableNode" targetNodeId="1239212938774" resolveInfo="expressionStatement" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1239212938774">
+      <property name="name" value="expressionStatement" />
+      <link role="concept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+    </node>
+  </node>
 </model>
 

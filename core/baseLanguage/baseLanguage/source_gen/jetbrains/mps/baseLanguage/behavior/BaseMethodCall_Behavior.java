@@ -48,4 +48,8 @@ public class BaseMethodCall_Behavior {
     return NullableUtil.getVariableStateByAnnotation(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "annotation", true));
   }
 
+  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return true;
+  }
+
 }
