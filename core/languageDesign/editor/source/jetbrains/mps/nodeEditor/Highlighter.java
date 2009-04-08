@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -164,6 +165,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   protected void doUpdate() {
+    if ( ApplicationManager.getApplication().isDisposed()) {
+      return;
+    }
     // SwingUtilities.invokeLater(new Runnable() {
     //   public void run() {
 
