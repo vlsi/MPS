@@ -529,6 +529,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "do-block");
           this.set(StyleAttributes.EDITABLE, false);
         }
       };
@@ -559,6 +560,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.MATCHING_LABEL, "do-block");
           this.set(StyleAttributes.EDITABLE, false);
         }
       };

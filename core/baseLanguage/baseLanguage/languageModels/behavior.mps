@@ -11457,5 +11457,19 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238861034426" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239198125822">
+    <property name="package" value="assignments" />
+    <link role="concept" targetNodeId="1.1215695201514" resolveInfo="MinusAssignmentExpression" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239198125823">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239198125824" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239198188111">
+    <property name="package" value="assignments" />
+    <link role="concept" targetNodeId="1.1215695189714" resolveInfo="PlusAssignmentExpression" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239198188112">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239198188113" />
+    </node>
+  </node>
 </model>
 
