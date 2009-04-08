@@ -300,6 +300,14 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236186621805" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239187811274">
+      <property name="name" value="method" />
+      <property name="isFinal" value="false" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239187774921" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239187763906" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239187763905" />
+    </node>
   </node>
 </model>
 

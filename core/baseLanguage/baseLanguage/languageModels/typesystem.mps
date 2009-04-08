@@ -12181,6 +12181,17 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223640221747" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223640221748" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223640221749">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239189004490">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239189004491">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239189012299" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1239189008517">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239189010017" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239189007423">
+              <link role="variableDeclaration" targetNodeId="1223640228656" resolveInfo="statementList" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1235758305779">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235758305780">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235758310810">
@@ -12284,9 +12295,6 @@
         <property name="name" value="statementList" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223640228657">
           <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
-        </node>
-        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1235663707536">
-          <link role="annotation" targetNodeId="48.~NotNull" resolveInfo="NotNull" />
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223640291896">
@@ -12919,6 +12927,9 @@
         <property name="name" value="statementList" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223642429045">
           <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
+        </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1239188589215">
+          <link role="annotation" targetNodeId="48.~NotNull" resolveInfo="NotNull" />
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642640010">

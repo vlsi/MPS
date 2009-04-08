@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import java.util.Set;
@@ -17,6 +16,7 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
 public class DataFlowUtil {
@@ -25,7 +25,10 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod()
-  public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, @NotNull() SNode statementList) {
+  public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
+    if (statementList == null) {
+      return;
+    }
     try {
       checkUnreachable(typeCheckingContext, statementList);
       checkUninitializedReads(typeCheckingContext, statementList);
@@ -138,7 +141,7 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod()
-  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, SNode statementList) {
+  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull() SNode statementList) {
     Set<SNode> unusedVariables = DataFlow.getUnusedVariables(statementList);
     for(SNode var : unusedVariables) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
