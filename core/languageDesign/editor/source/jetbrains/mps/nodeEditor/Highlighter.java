@@ -351,7 +351,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     public void run() {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
 
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {
