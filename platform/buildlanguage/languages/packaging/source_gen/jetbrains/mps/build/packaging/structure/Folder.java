@@ -14,41 +14,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Folder extends AbstractProjectComponent implements ICompositeComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Folder";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
   public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SOURCE_PATH = "sourcePath";
   public static final String ENTRY = "entry";
 
   public Folder(SNode node) {
     super(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Folder.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Folder.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Folder.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Folder.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Folder.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Folder.VIRTUAL_PACKAGE, value);
   }
 
   public String getExcludes() {
@@ -73,6 +49,30 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
 
   public void setName(String value) {
     this.setProperty(Folder.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Folder.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Folder.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Folder.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Folder.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Folder.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Folder.VIRTUAL_PACKAGE, value);
   }
 
   public Path getSourcePath() {

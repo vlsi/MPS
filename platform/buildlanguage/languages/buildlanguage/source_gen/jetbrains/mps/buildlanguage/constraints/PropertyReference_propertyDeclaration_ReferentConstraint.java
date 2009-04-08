@@ -7,12 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.buildlanguage.behavior.IPropertyHolder_Behavior;
+import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 
 public class PropertyReference_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -28,11 +23,7 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint extends Ba
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    for(SNode holder : ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true))) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IPropertyHolder_Behavior.call_getProperties_1213877375726(holder)));
-    }
-    return result;
+    return PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getEnclosingNode());
   }
 
 }

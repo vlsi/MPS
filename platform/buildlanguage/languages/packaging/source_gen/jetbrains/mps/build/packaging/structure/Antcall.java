@@ -17,12 +17,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Antcall extends AbstractProjectComponent implements ICompositeComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Antcall";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
   public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROJECT = "project";
   public static final String TARGET_DECLARATION = "targetDeclaration";
   public static final String TARGET_REFERENCE = "targetReference";
@@ -31,30 +31,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public Antcall(SNode node) {
     super(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Antcall.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Antcall.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Antcall.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Antcall.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Antcall.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Antcall.VIRTUAL_PACKAGE, value);
   }
 
   public String getExcludes() {
@@ -79,6 +55,30 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public void setName(String value) {
     this.setProperty(Antcall.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Antcall.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Antcall.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Antcall.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Antcall.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Antcall.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Antcall.VIRTUAL_PACKAGE, value);
   }
 
   public Project getProject() {

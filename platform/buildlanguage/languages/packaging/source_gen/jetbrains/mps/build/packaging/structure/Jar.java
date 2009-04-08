@@ -16,12 +16,12 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
   public static final String concept = "jetbrains.mps.build.packaging.structure.Jar";
   public static final String FILEMODE = "filemode";
   public static final String DIRMODE = "dirmode";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";
   public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
 
@@ -43,30 +43,6 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
 
   public void setDirmode(String value) {
     this.setProperty(Jar.DIRMODE, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Jar.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Jar.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Jar.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Jar.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Jar.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Jar.VIRTUAL_PACKAGE, value);
   }
 
   public String getExcludes() {
@@ -91,6 +67,30 @@ public class Jar extends AbstractProjectComponent implements ICompositeComponent
 
   public void setName(String value) {
     this.setProperty(Jar.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Jar.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Jar.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Jar.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Jar.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Jar.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Jar.VIRTUAL_PACKAGE, value);
   }
 
   public Delete getDelete() {

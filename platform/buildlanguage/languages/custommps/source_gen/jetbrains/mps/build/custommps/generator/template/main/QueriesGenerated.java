@@ -105,20 +105,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1236880321584(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "mps_home";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1236883977630(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1236883992586(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1236885168266(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("unpack.buildtools.zip", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1239129898181(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1239130486816(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
   }
 
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -208,11 +204,11 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1237295667574(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1239129956195(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
-  public static Object referenceMacro_GetReferent_1237565469061(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1239130486844(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
@@ -250,6 +246,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238589858624(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists());
+  }
+
+  public static boolean ifMacro_Condition_1239129903106(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists());
+  }
+
+  public static boolean ifMacro_Condition_1239130486822(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists());
   }
 
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

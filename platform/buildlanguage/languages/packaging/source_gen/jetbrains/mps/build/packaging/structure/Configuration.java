@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 public class Configuration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Configuration";
   public static final String FULL_NAME = "fullName";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public Configuration(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class Configuration extends BaseConcept implements INamedConcept {
 
   public void setFullName(String value) {
     this.setProperty(Configuration.FULL_NAME, value);
+  }
+
+  public String getName() {
+    return this.getProperty(Configuration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Configuration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -51,14 +59,6 @@ public class Configuration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Configuration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Configuration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Configuration.NAME, value);
   }
 
 

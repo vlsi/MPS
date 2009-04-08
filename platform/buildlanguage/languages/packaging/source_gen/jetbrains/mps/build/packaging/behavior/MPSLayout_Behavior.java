@@ -11,9 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.io.File;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import java.util.Arrays;
@@ -40,16 +40,20 @@ public class MPSLayout_Behavior {
     for(String s : Sequence.fromIterable(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
-      SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
+      SPropertyOperations.set(var, "antName", vars.get(s));
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "scriptsFolder"))) {
-      return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
+    String path = ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
+    if (path.endsWith(File.separator)) {
+      path = path.substring(0, path.length() - 1);
     }
-    return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode) + File.separator + SPropertyOperations.getString(thisNode, "scriptsFolder");
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "scriptsFolder"))) {
+      return path;
+    }
+    return path + File.separator + SPropertyOperations.getString(thisNode, "scriptsFolder");
   }
 
   public static String virtual_getPath_1213877230696(SNode thisNode) {
