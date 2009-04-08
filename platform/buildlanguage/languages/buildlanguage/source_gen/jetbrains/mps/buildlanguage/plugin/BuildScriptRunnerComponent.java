@@ -17,7 +17,7 @@ public class BuildScriptRunnerComponent extends JPanel {
   public BuildScriptRunnerComponent(Project project) {
     super(new BorderLayout());
     this.setLayout(new BorderLayout());
-    this.myConsoleView = new ConsoleViewImpl(project);
+    this.myConsoleView = new ConsoleViewImpl(project, false);
     this.add(this.myConsoleView.getComponent(), BorderLayout.CENTER);
   }
 

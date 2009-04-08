@@ -1345,9 +1345,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225567254183">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225567254184">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225567254185">
-                <link role="baseMethodDeclaration" targetNodeId="25.~ConsoleViewImpl.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ConsoleViewImpl" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~ConsoleViewImpl.&lt;init&gt;(com.intellij.openapi.project.Project,boolean)" resolveInfo="ConsoleViewImpl" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225567254186">
                   <link role="variableDeclaration" targetNodeId="1225567254200" resolveInfo="project" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239210769212">
+                  <property name="value" value="false" />
                 </node>
               </node>
             </node>

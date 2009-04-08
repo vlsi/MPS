@@ -24,7 +24,7 @@ public class TestOutputComponent {
 
   public TestOutputComponent(Project project, JComponent parentComponent) {
     this.messages = ListSequence.<TestOutputComponent.Message>fromArray();
-    this.consoleView = new ConsoleViewImpl(project);
+    this.consoleView = new ConsoleViewImpl(project, false);
     this.component = this.consoleView.getComponent();
   }
 

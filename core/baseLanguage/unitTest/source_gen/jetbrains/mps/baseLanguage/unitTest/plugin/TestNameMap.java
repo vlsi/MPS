@@ -24,12 +24,12 @@ public class TestNameMap <C, M> {
   }
 
   public C get(String testCaseName) {
-    return MapSequence.fromMap(this.classToTestCase).get(testCaseName);
+    return this.classToTestCase.get(testCaseName);
   }
 
   public void put(SNode testCaseNode, SNode testMethodNode, M testMethod) {
     String testCaseName = ITestCase_Behavior.call_getClassName_1216136193905(testCaseNode);
-    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = this.classToMethodToMethodTest.get(testCaseName);
     if (testMethods == null) {
       testMethods = MapSequence.fromMap(new HashMap<String, M>());
       MapSequence.fromMap(this.classToMethodToMethodTest).put(testCaseName, testMethods);
@@ -39,7 +39,7 @@ public class TestNameMap <C, M> {
 
   public M get(String testCaseName, String testMethodName) {
     M testMethod = null;
-    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = this.classToMethodToMethodTest.get(testCaseName);
     if (testMethods != null) {
       testMethod = testMethods.get(testMethodName);
     }

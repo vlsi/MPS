@@ -196,8 +196,9 @@ class FastFindUsagesManager extends FindUsagesManager {
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
       new FileBasedIndex.ValueProcessor<Integer>() {
-        public void process(final VirtualFile file, final Integer value) {
+        public boolean process(final VirtualFile file, final Integer value) {
           candidates.add(file);
+          return true;
         }
       }, new VirtualFileFilter() {
 

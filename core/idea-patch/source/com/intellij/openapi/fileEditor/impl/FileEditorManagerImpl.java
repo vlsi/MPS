@@ -220,7 +220,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
   public void unsplitWindow() {
     final EditorWindow currentWindow = mySplitters.getCurrentWindow();
     if (currentWindow != null) {
-      currentWindow.unsplit();
+      currentWindow.unsplit(true);
     }
   }
 
@@ -395,7 +395,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
               continue;
             }
             if (window.getTabCount() == 0) {
-              window.unsplit();
+              window.unsplit(true);
             }
           }
         }
