@@ -60,26 +60,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(getNodeToDelete());
-    if (nodes.size() == 1) {
-      SNode node = nodes.get(0);
-      if (node.getAllAttributes().size() > 0) {
-        String role = node.getRole_();
-        for (LinkDeclaration link: node.getParent().getConceptDeclarationAdapter().getLinkDeclarations()) {
-          if (link.getRole().equals(role)) {
-            SNode newNode = NodeFactoryManager.createNode(NameUtil.nodeFQName(link.getTarget()), null, null, null);
-            for (SNode attribute: node.getAllAttributes()) {
-              String attributeRole = attribute.getRole_();
-              node.removeChild(attribute);
-              newNode.addChild(attributeRole, attribute);
-            }
-            node.getParent().replaceChild(node, newNode);
-          }
-
-        }
-        return;
-      }
-    }
+    nodes.add(getNodeToDelete());    
     new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
   }
 }
