@@ -15,7 +15,7 @@ public class ConceptMethodDeclaration_Behavior {
   }
 
   public static SNode call_findBehaviour_1225196403947(SNode thisNode) {
-    return SNodeOperations.getContainingRoot(thisNode);
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
@@ -44,7 +44,7 @@ public class ConceptMethodDeclaration_Behavior {
       return false;
     }
     for(int i = 0 ; i < parameterCount ; i++ ) {
-      if (!(MatchingUtil.matchNodes(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i)))) {
+      if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i), "type", true)))) {
         return false;
       }
     }

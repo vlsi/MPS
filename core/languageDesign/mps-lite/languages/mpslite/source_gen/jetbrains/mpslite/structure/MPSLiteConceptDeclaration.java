@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mpslite.structure.IMPSLiteConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mpslite.structure.LineList;
+import jetbrains.mpslite.structure.AbstractConceptReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,8 +19,8 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ROOT = "root";
   public static final String ABSTRACT = "abstract";
-  public static final String EXTENDS = "extends";
   public static final String LINE_LIST = "lineList";
+  public static final String EXTENDS = "extends";
 
   public MPSLiteConceptDeclaration(SNode node) {
     super(node);
@@ -73,20 +74,20 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
     this.setBooleanProperty(MPSLiteConceptDeclaration.ABSTRACT, value);
   }
 
-  public MPSLiteConceptDeclaration getExtends() {
-    return (MPSLiteConceptDeclaration)this.getReferent(MPSLiteConceptDeclaration.class, MPSLiteConceptDeclaration.EXTENDS);
-  }
-
-  public void setExtends(MPSLiteConceptDeclaration node) {
-    super.setReferent(MPSLiteConceptDeclaration.EXTENDS, node);
-  }
-
   public LineList getLineList() {
     return (LineList)this.getChild(LineList.class, MPSLiteConceptDeclaration.LINE_LIST);
   }
 
   public void setLineList(LineList node) {
     super.setChild(MPSLiteConceptDeclaration.LINE_LIST, node);
+  }
+
+  public AbstractConceptReference getExtends() {
+    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, MPSLiteConceptDeclaration.EXTENDS);
+  }
+
+  public void setExtends(AbstractConceptReference node) {
+    super.setChild(MPSLiteConceptDeclaration.EXTENDS, node);
   }
 
 

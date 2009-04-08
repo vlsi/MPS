@@ -4,14 +4,13 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mpslite.structure.ReferencePart;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mpslite.structure.Concretization;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mpslite.structure.AbstractConceptReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConcreteReferencePart extends ReferencePart implements INamedConcept, Concretization {
+public class ConcreteReferencePart extends ReferencePart implements INamedConcept {
   public static final String concept = "jetbrains.mpslite.structure.ConcreteReferencePart";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

@@ -14,16 +14,16 @@ public class ChildPart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, SNode templateBasedConcept, Map<SNode, SNode> linePartsToLinks) {
+  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     if (SPropertyOperations.getBoolean(thisNode, "multiple")) {
       SNode refNodeList = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
       SPropertyOperations.set(refNodeList, "vertical", "" + (SPropertyOperations.getBoolean(thisNode, "vertical")));
-      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(linePartsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNodeList;
     } else
     {
       SNode refNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
-      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(linePartsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNode;
     }
   }

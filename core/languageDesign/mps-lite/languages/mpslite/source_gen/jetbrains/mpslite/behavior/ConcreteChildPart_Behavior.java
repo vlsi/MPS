@@ -14,7 +14,7 @@ public class ConcreteChildPart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode templateBasedConcept, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
+  public static void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     SNode linkDeclaration = SLinkOperations.addNewChild(concept, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(linkDeclaration, "metaClass", "aggregation");
     SPropertyOperations.set(linkDeclaration, "role", SPropertyOperations.getString(thisNode, "name"));
@@ -25,7 +25,7 @@ public class ConcreteChildPart_Behavior {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "0..1");
     }
     SLinkOperations.setTarget(linkDeclaration, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "conceptReference", true), conceptsToTargets), false);
-    MapSequence.fromMap(linePartsToLinks).put(thisNode, linkDeclaration);
+    MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }
 
 }

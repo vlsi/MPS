@@ -12,7 +12,7 @@ public class ConstantLinePart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, SNode templateBasedConcept, Map<SNode, SNode> linePartsToLinks) {
+  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     SNode constantCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
     SPropertyOperations.set(constantCell, "text", SPropertyOperations.getString(thisNode, "text"));
     return constantCell;

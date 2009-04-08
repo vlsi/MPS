@@ -4,7 +4,7 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mpslite.structure.AbstractConceptReference;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mpslite.structure.MPSLiteConceptDeclaration;
+import jetbrains.mpslite.structure.IMPSLiteConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,11 +16,11 @@ public class MPSLiteConceptReference extends AbstractConceptReference {
     super(node);
   }
 
-  public MPSLiteConceptDeclaration getMpsLiteConceptDeclaration() {
-    return this.ensureAdapter(MPSLiteConceptDeclaration.class, "conceptDeclaration", this.getConceptDeclaration());
+  public IMPSLiteConcept getMpsLiteConceptDeclaration() {
+    return this.ensureAdapter(IMPSLiteConcept.class, "conceptDeclaration", this.getConceptDeclaration());
   }
 
-  public void setMpsLiteConceptDeclaration(MPSLiteConceptDeclaration node) {
+  public void setMpsLiteConceptDeclaration(IMPSLiteConcept node) {
     this.setConceptDeclaration(node);
   }
 

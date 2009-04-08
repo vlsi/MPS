@@ -12,10 +12,10 @@ public class LineList_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void call_fillConceptStructure_1238593666753(SNode thisNode, SNode templateBasedConcept, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
+  public static void call_fillConceptStructure_1238593666753(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     for(SNode line : SLinkOperations.getTargets(thisNode, "line", true)) {
       for(SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-        LinePart_Behavior.call_fillConceptStructure_1238593834306(linePart, templateBasedConcept, concept, conceptsToTargets, linePartsToLinks);
+        LinePart_Behavior.call_fillConceptStructure_1238593834306(linePart, concept, conceptsToTargets, partsToLinks);
       }
     }
   }

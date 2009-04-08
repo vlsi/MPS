@@ -14,9 +14,9 @@ public class ReferencePart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, SNode templateBasedConcept, Map<SNode, SNode> linePartsToLinks) {
+  public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     SNode refCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
-    SNode linkDeclaration = SNodeOperations.cast(linePartsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SNode linkDeclaration = SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SLinkOperations.setTarget(refCell, "relationDeclaration", linkDeclaration, false);
     SNode component = SLinkOperations.setNewChild(refCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
     SNode propertyCell = SLinkOperations.setNewChild(component, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");

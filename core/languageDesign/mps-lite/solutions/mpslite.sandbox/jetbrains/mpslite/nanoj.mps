@@ -221,5 +221,25 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1239206019553">
+    <property name="name" value="Donkey" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239206019554" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1239206019555">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239206019556" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239206019557" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239206019558">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239206054239">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1239206055577">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239206054240">
+              <property name="value" value="2" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239206056815">
+              <property name="value" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

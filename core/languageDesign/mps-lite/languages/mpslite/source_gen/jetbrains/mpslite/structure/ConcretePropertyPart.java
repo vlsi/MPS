@@ -4,14 +4,13 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mpslite.structure.PropertyPart;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mpslite.structure.Concretization;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mpslite.structure.MPSLitePropertyType_Enum;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConcretePropertyPart extends PropertyPart implements INamedConcept, Concretization {
+public class ConcretePropertyPart extends PropertyPart implements INamedConcept {
   public static final String concept = "jetbrains.mpslite.structure.ConcretePropertyPart";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

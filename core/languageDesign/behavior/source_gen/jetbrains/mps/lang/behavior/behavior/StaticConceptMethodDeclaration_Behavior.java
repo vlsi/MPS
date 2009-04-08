@@ -20,7 +20,7 @@ public class StaticConceptMethodDeclaration_Behavior {
   }
 
   public static SNode call_getBehavior_1225196403935(SNode thisNode) {
-    return SNodeOperations.getParent(thisNode);
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
 
 }

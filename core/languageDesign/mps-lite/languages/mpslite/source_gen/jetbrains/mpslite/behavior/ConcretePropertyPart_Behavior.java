@@ -14,7 +14,7 @@ public class ConcretePropertyPart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode templateBasedConcept, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
+  public static void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     SNode propertyDeclaration = SLinkOperations.addNewChild(concept, "propertyDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     SPropertyOperations.set(propertyDeclaration, "name", SPropertyOperations.getString(thisNode, "name"));
     if (SPropertyOperations.hasValue(thisNode, "propertyType", "numeric", "string")) {
@@ -22,7 +22,7 @@ public class ConcretePropertyPart_Behavior {
     } else if (SPropertyOperations.hasValue(thisNode, "propertyType", "string", "string")) {
       SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "dataType", false), false);
     }
-    MapSequence.fromMap(linePartsToLinks).put(thisNode, propertyDeclaration);
+    MapSequence.fromMap(partsToLinks).put(thisNode, propertyDeclaration);
   }
 
 }
