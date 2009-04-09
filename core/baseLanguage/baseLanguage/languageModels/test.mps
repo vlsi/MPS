@@ -1336,15 +1336,26 @@
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1226936085126" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226936071522" />
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226936071523">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239288457693">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239288457694">
+                <property name="name" value="a" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239288457695" />
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226936086674">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226936088239">
                 <property name="value" value="0" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1226936098446">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226936092022">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226936092023">
-                  <property name="value" value="50" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288461164">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239288462790">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239288463069">
+                    <property name="value" value="3" />
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239288461165">
+                    <link role="variableDeclaration" targetNodeId="1239288457694" resolveInfo="a" />
+                  </node>
                 </node>
               </node>
             </node>
