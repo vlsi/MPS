@@ -35,10 +35,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1227886714745">
     <property name="name" value="ClosureDataFlow" />
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1227886714746">
@@ -146,19 +147,31 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886714795">
-              <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227886714796">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227886714797">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886714798">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227886714799">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227886714800">
-                        <property name="value" value="10" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227886714801">
-                        <link role="variableDeclaration" targetNodeId="1227886714792" resolveInfo="a" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239289483464">
+                <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227886714796">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227886714797">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227886714798">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239289298014">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239289280695">
+                          <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+                          <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239289303252">
+                          <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(int):void" resolveInfo="println" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239289305308">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239289305104">
+                              <link role="variableDeclaration" targetNodeId="1227886714792" resolveInfo="a" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239289306525">
+                              <property name="value" value="1" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1239289487642" />
               </node>
             </node>
           </node>

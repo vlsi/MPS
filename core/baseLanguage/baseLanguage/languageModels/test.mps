@@ -420,9 +420,18 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216551951822">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216551951823">
-                <link role="variableDeclaration" targetNodeId="1216549168626" resolveInfo="x" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288916740">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288920036">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239288916741">
+                  <link role="classifier" targetNodeId="5.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="5.~System.out" resolveInfo="out" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239288922667">
+                  <link role="baseMethodDeclaration" targetNodeId="32.~PrintStream.println(int):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239288926911">
+                    <link role="variableDeclaration" targetNodeId="1216549168626" resolveInfo="x" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -810,15 +819,20 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215444237473">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215522463860">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215522465471">
-                  <property name="value" value="1" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288773734">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239288775818">
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239288773735">
+                  <link role="variableDeclaration" targetNodeId="1215444237461" resolveInfo="b" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215522460456">
-                  <link role="variableDeclaration" targetNodeId="1215444237458" resolveInfo="a" />
-                  <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="1215522476121">
-                    <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="1215522483725" />
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239288781066">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239288781067">
+                    <property name="value" value="1" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239288781068">
+                    <link role="variableDeclaration" targetNodeId="1215444237458" resolveInfo="a" />
+                    <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="1239288781069">
+                      <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="1239288781070" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1076,13 +1090,22 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217866205108">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217866205282">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217866205410">
-                  <property name="value" value="1" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239289140218">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239289144742">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239289140219">
+                  <link role="classifier" targetNodeId="5.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="5.~System.out" resolveInfo="out" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217866205109">
-                  <link role="variableDeclaration" targetNodeId="1217866151399" resolveInfo="a" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239289151632">
+                  <link role="baseMethodDeclaration" targetNodeId="32.~PrintStream.println(int):void" resolveInfo="println" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239289157059">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239289157060">
+                      <property name="value" value="1" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239289157061">
+                      <link role="variableDeclaration" targetNodeId="1217866151399" resolveInfo="a" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
