@@ -3077,8 +3077,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170442615020">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1170442620851">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170442643933">
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170442652621" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170442617803" />
@@ -3120,8 +3120,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170442795986">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1170442795987">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170442795988">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170442795989" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170442795990" />
@@ -3163,8 +3163,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170443045609">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1170443045610">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170443045611">
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170443045612" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170443045613" />
@@ -3316,8 +3316,8 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170698820274">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170698871624">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_enum_defaultValue(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="get_SPropertyAccess_enum_defaultValue" />
-                  <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                  <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.1239207582084" resolveInfo="get_SPropertyAccess_enum_defaultValue" />
                   <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1203459674234">
                     <link role="concept" targetNodeId="6.1138056022639" resolveInfo="SPropertyAccess" />
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203459658171">
@@ -3485,8 +3485,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170461506308">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170461533941">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170461545413">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_enum_defaultValue(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="get_SPropertyAccess_enum_defaultValue" />
-                  <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                  <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.1239207582084" resolveInfo="get_SPropertyAccess_enum_defaultValue" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1170461547617" />
                 </node>
               </node>
@@ -4520,8 +4520,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176946951447">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1176946951448">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176946951449">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176946951450" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176946951451" />
@@ -4817,8 +4817,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1171415812332">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1171415812333">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171415812334">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1171415812335" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415812336" />
@@ -4835,8 +4835,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1171415812341">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1171415812342">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171415812343">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Root(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Root" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207960142" resolveInfo="operationHasParm_Root" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1171415812344" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415812345" />
@@ -4933,8 +4933,8 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1171415960048">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415960049" />
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171415960050">
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Root(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Root" />
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207960142" resolveInfo="operationHasParm_Root" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1171415960051" />
                   </node>
                 </node>
@@ -5210,8 +5210,8 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206991997682">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206992031480">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206992038766">
-                      <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                      <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206992114970" />
                     </node>
                   </node>
@@ -5251,8 +5251,8 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206992455420">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206992455421">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206992455422">
-                      <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                      <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206992455423" />
                     </node>
                   </node>
@@ -5478,8 +5478,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176946990351">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1176946990352">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176946990353">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176946990354" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176946990355" />
@@ -5527,8 +5527,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1173123251551">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1173123251552">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173123251553">
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1173123251554" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173123251555" />
@@ -5606,8 +5606,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1173123508507">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1173123508508">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173123508509">
-                    <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.operationHasParm_Inclusion(jetbrains.mps.smodel.SNode):boolean" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1239207857544" resolveInfo="operationHasParm_Inclusion" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1173123508510" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173123508511" />
