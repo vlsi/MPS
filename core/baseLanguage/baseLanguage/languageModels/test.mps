@@ -1374,6 +1374,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229349885890">
                 <link role="classifier" targetNodeId="5.~Object" resolveInfo="Object" />
               </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239272307469" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1229349879556">
