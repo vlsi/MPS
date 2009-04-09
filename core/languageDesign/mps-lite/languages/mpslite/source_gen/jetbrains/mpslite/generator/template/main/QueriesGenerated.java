@@ -37,6 +37,7 @@ public class QueriesGenerated {
     for(SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
+      SPropertyOperations.set(concept, "rootable", "" + SPropertyOperations.getBoolean(conceptDeclaration, "root"));
       MapSequence.fromMap(conceptsToTargets).put(conceptDeclaration, concept);
     }
     //     extends

@@ -224,6 +224,26 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239298916280">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239298924044">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239298929401">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239298928508">
+                    <link role="variableDeclaration" targetNodeId="1238589750909" resolveInfo="conceptDeclaration" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239298930812">
+                    <link role="property" targetNodeId="1.1238011911208" resolveInfo="root" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239298919791">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239298916281">
+                    <link role="variableDeclaration" targetNodeId="1238590201109" resolveInfo="concept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239298921760">
+                    <link role="property" targetNodeId="2v.1096454100552" resolveInfo="rootable" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238596070754">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239118056369">
                 <node role="lValue" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239118056370">
