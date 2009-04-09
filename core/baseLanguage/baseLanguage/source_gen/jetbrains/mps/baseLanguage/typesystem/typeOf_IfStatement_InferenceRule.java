@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +18,7 @@ public class typeOf_IfStatement_InferenceRule extends AbstractInferenceRule_Runt
 
   public void applyRule(final SNode ifStatement, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = ifStatement;
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ifStatement, "condition", true);
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176898833121", true), new _Quotations.QuotationClass_32().createNode(typeCheckingContext), _nodeToCheck_1029348928467, "condition should be boolean", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176898861472", false, 0, intentionProvider);
     }

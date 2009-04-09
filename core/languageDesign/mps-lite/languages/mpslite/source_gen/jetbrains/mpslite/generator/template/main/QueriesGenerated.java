@@ -53,6 +53,7 @@ public class QueriesGenerated {
     }
     //     editor
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
+    SModel actionsModel = language.getActionsModelDescriptor().getSModel();
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
@@ -65,12 +66,15 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
       MapSequence.fromMap(conceptsToEditors).put(conceptDeclaration, editor);
     }
+    SNode actions = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", null);
+    SPropertyOperations.set(actions, "name", "_BinaryOperations_SideTransform");
     for(SNode binaryOperationConcept : binaryOperations) {
       SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
       SNode contentCell = EditorGenerationUtils.generateBinaryOperationCellModel(binaryOperationConcept, partsToLinkDeclarations);
       SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
       SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(binaryOperationConcept), false);
       MapSequence.fromMap(conceptsToEditors).put(binaryOperationConcept, editor);
+      EditorGenerationUtils.fillBinarySideTransformActions(binaryOperationConcept, actions, conceptsToTargets, partsToLinkDeclarations);
     }
     //     setting roots and deleting input roots
     structureModel.setLoading(true);
@@ -92,7 +96,14 @@ public class QueriesGenerated {
       SModelOperations.addRootNode(editorModel, editorDeclaration);
     }
     editorModel.setLoading(false);
+    actionsModel.setLoading(true);
+    for(SNode root : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SModelOperations.getRoots(actionsModel, null)))) {
+      actionsModel.removeRoot(root);
+    }
+    SModelOperations.addRootNode(actionsModel, actions);
+    actionsModel.setLoading(false);
     SModelRepository.getInstance().markChanged(editorModel);
+    SModelRepository.getInstance().markChanged(actionsModel);
     for(SNode conceptDeclaration : allConcepts) {
       SNodeOperations.deleteNode(conceptDeclaration);
     }

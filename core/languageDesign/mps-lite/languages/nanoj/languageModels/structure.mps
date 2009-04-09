@@ -41,52 +41,75 @@
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239205584798">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077525">
     <property name="name" value="Expression" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239205584799">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077526">
     <property name="name" value="MinusExpression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239205584800">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077527">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="expr" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1239205584798" resolveInfo="Expression" />
+      <link role="target" targetNodeId="1239288077525" resolveInfo="Expression" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239205584791">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077495">
     <property name="name" value="Variable" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1239205584801">
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1239288077528">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239205584802">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077529">
     <property name="name" value="VariableReference" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239205584803">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077530">
       <property name="metaClass" value="reference" />
       <property name="role" value="varDecl" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1239205584791" resolveInfo="Variable" />
+      <link role="target" targetNodeId="1239288077495" resolveInfo="Variable" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239205584804">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077531">
     <property name="name" value="DivExpression" />
-    <link role="extends" targetNodeId="1239205584798" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239205584805">
+    <link role="extends" targetNodeId="1239288077525" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077532">
       <property name="role" value="leftExpr" />
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1239205584798" resolveInfo="Expression" />
+      <link role="target" targetNodeId="1239288077525" resolveInfo="Expression" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239205584806">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077533">
       <property name="role" value="rightExpr" />
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1239205584798" resolveInfo="Expression" />
+      <link role="target" targetNodeId="1239288077525" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239205584807">
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239288077534">
       <property name="value" value="/" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077535">
+    <property name="name" value="NanoClass" />
+    <property name="rootable" value="true" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077536">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statement" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1239288077537" resolveInfo="Statement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077537">
+    <property name="name" value="Statement" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239288077538">
+    <property name="name" value="ExpressionStatement" />
+    <link role="extends" targetNodeId="1239288077537" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239288077539">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expr" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1239288077525" resolveInfo="Expression" />
     </node>
   </node>
 </model>

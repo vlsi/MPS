@@ -47,5 +47,77 @@
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895905da(jetbrains.mps.nanoj.actions)" version="-1" />
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1239288077576">
+    <property name="name" value="_BinaryOperations_SideTransform" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1239288077577">
+      <link role="applicableConcept" targetNodeId="1.1239288077525" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" id="1239288077578">
+        <link role="concept" targetNodeId="1.1239288077531" resolveInfo="DivExpression" />
+        <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" id="1239288077579">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239288077580">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288077581">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077582">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1239288077583" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1239288077584">
+                  <node role="replacementNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077585" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288077586">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077587">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077588">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077589" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239288077590">
+                    <link role="link" targetNodeId="1.1239288077532" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1239288077591">
+                  <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1239288077592" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239288077593">
+              <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077594" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1239288077595">
+      <property name="side" value="left" />
+      <link role="applicableConcept" targetNodeId="1.1239288077525" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" id="1239288077596">
+        <link role="concept" targetNodeId="1.1239288077531" resolveInfo="DivExpression" />
+        <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" id="1239288077597">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239288077598">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288077599">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077600">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1239288077601" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1239288077602">
+                  <node role="replacementNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077603" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239288077604">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077605">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239288077606">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077607" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239288077608">
+                    <link role="link" targetNodeId="1.1239288077533" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1239288077609">
+                  <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1239288077610" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239288077611">
+              <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1239288077612" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

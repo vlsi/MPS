@@ -490,6 +490,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1237896192386" resolveInfo="AbstractConceptReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239278703708">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expressionConcept" />
+      <link role="target" targetNodeId="1237896192386" resolveInfo="AbstractConceptReference" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239193374736">
       <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
     </node>

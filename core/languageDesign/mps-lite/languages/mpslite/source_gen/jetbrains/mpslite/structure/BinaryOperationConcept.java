@@ -23,6 +23,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   public static final String ABSTRACT = "abstract";
   public static final String LEFT_TARGET = "leftTarget";
   public static final String RIGHT_TARGET = "rightTarget";
+  public static final String EXPRESSION_CONCEPT = "expressionConcept";
   public static final String EXTENDS = "extends";
 
   public BinaryOperationConcept(SNode node) {
@@ -115,6 +116,14 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
 
   public void setRightTarget(AbstractConceptReference node) {
     super.setChild(BinaryOperationConcept.RIGHT_TARGET, node);
+  }
+
+  public AbstractConceptReference getExpressionConcept() {
+    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BinaryOperationConcept.EXPRESSION_CONCEPT);
+  }
+
+  public void setExpressionConcept(AbstractConceptReference node) {
+    super.setChild(BinaryOperationConcept.EXPRESSION_CONCEPT, node);
   }
 
   public AbstractConceptReference getExtends() {

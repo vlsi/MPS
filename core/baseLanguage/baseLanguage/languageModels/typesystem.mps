@@ -5537,6 +5537,14 @@
         <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1180521108414">
           <property name="value" value="condition should be boolean" />
         </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239280553230">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239280551484">
+            <link role="applicableNode" targetNodeId="1176898844264" resolveInfo="ifStatement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239280554743">
+            <link role="link" targetNodeId="1.1068580123160" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1176898844264">

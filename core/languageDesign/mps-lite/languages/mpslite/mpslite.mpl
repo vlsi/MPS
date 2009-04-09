@@ -17,6 +17,9 @@
         <generator generatorUID="jetbrains.mps.lang.editor#1129914002149" />
         <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" />
       </external-templates>
+      <dependencies>
+        <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
+      </dependencies>
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>
