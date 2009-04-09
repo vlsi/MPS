@@ -580,9 +580,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213184188887">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213184189530">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213184221290">
-                <link role="baseMethodDeclaration" targetNodeId="44.~ConsoleViewImpl.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ConsoleViewImpl" />
+                <link role="baseMethodDeclaration" targetNodeId="44.~ConsoleViewImpl.&lt;init&gt;(com.intellij.openapi.project.Project,boolean)" resolveInfo="ConsoleViewImpl" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1213184229806">
                   <link role="variableDeclaration" targetNodeId="1213184178486" resolveInfo="project" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239286037763">
+                  <property name="value" value="false" />
                 </node>
               </node>
             </node>

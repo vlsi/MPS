@@ -156,7 +156,7 @@ public class ClosuresUtil {
     if (closureContexts == null) {
       return null;
     }
-    return MapSequence.fromMap(closureContexts).get(contextOwner);
+    return closureContexts.get(contextOwner);
   }
 
   public static class ClosureContextData {
@@ -176,7 +176,7 @@ public class ClosuresUtil {
     }
 
     public String getVariableName(SNode var) {
-      return MapSequence.fromMap(this.myVar2Name).get(var);
+      return this.myVar2Name.get(var);
     }
 
     public boolean isEmpty() {
