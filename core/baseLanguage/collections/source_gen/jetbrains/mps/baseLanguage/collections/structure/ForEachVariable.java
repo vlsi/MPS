@@ -12,13 +12,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ForEachVariable extends BaseConcept implements INamedConcept, IValidIdentifier {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public ForEachVariable(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ForEachVariable.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ForEachVariable.NAME, value);
   }
 
   public String getShortDescription() {
@@ -43,14 +51,6 @@ public class ForEachVariable extends BaseConcept implements INamedConcept, IVali
 
   public void setVirtualPackage(String value) {
     this.setProperty(ForEachVariable.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ForEachVariable.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ForEachVariable.NAME, value);
   }
 
 

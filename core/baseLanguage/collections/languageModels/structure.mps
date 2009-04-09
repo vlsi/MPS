@@ -361,7 +361,7 @@
     <property name="package" value="list" />
     <link role="extends" targetNodeId="2.1068431790189" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1151689702213">
-      <property name="value" value="list" />
+      <property name="value" value="list&lt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1151688676805">
