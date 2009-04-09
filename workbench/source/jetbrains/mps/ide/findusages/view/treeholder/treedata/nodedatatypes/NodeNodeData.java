@@ -138,6 +138,7 @@ public class NodeNodeData extends BaseNodeData {
 
   private static String textStringToHtml(String text) {
     StringBuffer buffer = new StringBuffer();
+    if (text == null) return "";
     for (char c : text.toCharArray()) {
       if (c == '<') buffer.append("&lt;");
       else if (c == '>') buffer.append("&gt;");
