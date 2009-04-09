@@ -105,7 +105,7 @@ public class IconManager {
     Icon icon = getIconFor(cd);
 
     if (icon == null) {
-      if (cd.isRoot()) {
+      if (cd != null && cd.isRoot()) {
         return Icons.DEFAULT_ROOT_ICON;
       } else {
         return Icons.DEFAULT_NODE_ICON;
