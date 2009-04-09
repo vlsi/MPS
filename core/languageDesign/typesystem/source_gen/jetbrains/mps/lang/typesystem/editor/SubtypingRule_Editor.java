@@ -488,8 +488,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.MATCHING_LABEL, "rule-block");
         }
       };
       inlineStyle.apply(editorCell);
@@ -550,6 +549,14 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2905_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2905_10");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.MATCHING_LABEL, "rule-block");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_2905_11(EditorCell editorCell, SNode node, EditorContext context) {

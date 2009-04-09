@@ -1820,13 +1820,8 @@
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643101983">
           <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
           <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643105781">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643105782">
-              <link role="applicableNode" targetNodeId="1207314899253" resolveInfo="abstractSubtypingRule" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223643105783">
-              <link role="link" targetNodeId="1.1175147624276" />
-            </node>
+          <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643105782">
+            <link role="applicableNode" targetNodeId="1207314899253" resolveInfo="abstractSubtypingRule" />
           </node>
         </node>
       </node>

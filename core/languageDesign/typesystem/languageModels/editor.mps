@@ -855,6 +855,9 @@
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198243911030">
               <property name="text" value="{" />
               <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1239282327888">
+                <property name="labelName" value="rule-block" />
+              </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997859">
               <property name="flag" value="false" />
@@ -872,11 +875,8 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198243875825">
             <property name="text" value="}" />
             <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997196">
-              <property name="flag" value="false" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031972">
-              <property name="flag" value="false" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1239282348068">
+              <property name="labelName" value="rule-block" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993666">
