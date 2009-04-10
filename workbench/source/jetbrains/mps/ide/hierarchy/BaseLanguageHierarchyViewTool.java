@@ -17,10 +17,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.icons.Icons;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -96,8 +93,8 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
       Set<SReference> usages = myUsagesManager.findUsages(node.getNode(), GlobalScope.getInstance(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
       Set<Classifier> result = new HashSet<Classifier>();
       for (SReference usage : usages) {
+        SNode sourceNode = usage.getSourceNode();
         if (ClassifierType.CLASSIFIER.equals(usage.getRole())) {
-          SNode sourceNode = usage.getSourceNode();
           if (BaseAdapter.isInstance(sourceNode, ClassifierType.class)) {
             ClassifierType classifierType = (ClassifierType) sourceNode.getAdapter();
             if (classifierType.getParent() instanceof ClassConcept && ClassConcept.SUPERCLASS.equals(classifierType.getRole_())) {
@@ -109,6 +106,13 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
             if (classifierType.getParent() instanceof Interface && Interface.EXTENDED_INTERFACE.equals(classifierType.getRole_())) {
               result.add((Classifier) classifierType.getParent());
             }
+          }
+        }
+
+        if (AnonymousClass.CLASSIFIER.equals(usage.getRole())) {
+          if (BaseAdapter.isInstance(sourceNode, AnonymousClass.class)) {
+            AnonymousClass anonymousClass = (AnonymousClass) sourceNode.getAdapter();
+            result.add(anonymousClass);
           }
         }
       }
