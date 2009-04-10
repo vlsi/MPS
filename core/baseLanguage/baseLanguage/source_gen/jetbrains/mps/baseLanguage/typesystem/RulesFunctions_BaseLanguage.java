@@ -8,7 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.typesystem._Quotations;
-import jetbrains.mps.baseLanguage.typesystem.Queries;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -25,8 +26,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class RulesFunctions_BaseLanguage {
   private static boolean TRACE_METHOD_TYPES = false;
@@ -84,10 +83,20 @@ public class RulesFunctions_BaseLanguage {
             typeCheckingContext.whenConcrete(_representatorVar1, new Runnable() {
 
               public void run() {
+                SNode opType = typeCheckingContext.getOverloadedOperationType(binOp, typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265));
+                if ((opType != null)) {
+                  {
+                    SNode _nodeToCheck_1029348928467 = null;
+                    BaseIntentionProvider intentionProvider = null;
+                    typeCheckingContext.createEquation(typeCheckingContext.typeOf(binOp, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239362683636", true), opType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239362683634", intentionProvider);
+                  }
+                } else
                 {
-                  SNode _nodeToCheck_1029348928467 = null;
-                  BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createEquation(typeCheckingContext.typeOf(binOp, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203512296348", true), Queries.getBinaryOperationType(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203512296346", intentionProvider);
+                  {
+                    BaseIntentionProvider intentionProvider = null;
+                    IErrorTarget errorTarget = new NodeErrorTarget();
+                    typeCheckingContext.reportTypeError(binOp, "operation can't be applied to these operands", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239362764595", intentionProvider, errorTarget);
+                  }
                 }
               }
             }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185963100352", false, false);
