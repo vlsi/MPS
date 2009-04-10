@@ -20,6 +20,8 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.vfs.VirtualFileFilter;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
@@ -54,26 +56,32 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
     }
 
-    ID<SNodeDescriptor, Void> indexName;
+    final ID<SNodeDescriptor, Void> indexName;
     if (myIndex instanceof RootNodeNameIndex) {
       indexName = RootNodeNameIndex.NAME;
     } else if (myIndex instanceof NamedNodeIndex) {
       indexName = NamedNodeIndex.NAME;
     } else return null;
 
-    FileBasedIndex.getInstance().processAllKeys(indexName, new Processor<SNodeDescriptor>() {
+
+    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
+    fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
         if (scope.getModelDescriptor(s.getModelReference()) != null) {
           if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
             s.setInvalid(false);
             hasToLoad.add(s.getModelReference());
           } else {
-            keys.add(s);
+            if (!fileBasedIndex.getContainingFiles(indexName, s, VirtualFileFilter.ALL).isEmpty()) {
+              keys.add(s);
+            }
           }
         }
         return true;
       }
     });
+
+
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
