@@ -27,6 +27,14 @@ public class ConceptFunction_Behavior {
     return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionReturnType")).first();
   }
 
+  public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+    return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public static SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "body", true);
+  }
+
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (thisNode == null) {
       return ListSequence.<SNode>fromArray();

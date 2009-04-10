@@ -223,6 +223,18 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1239206019553">
     <property name="name" value="Donkey" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239356674660">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239356685751" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239356674662" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239356674663">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239356690488">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239356690489">
+            <property name="value" value="3" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239206019554" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1239206019555">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239206019556" />
@@ -427,6 +439,16 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239213855259">
             <property name="name" value="b" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239213856786" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239356707122">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239356707123">
+            <property name="value" value="3" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239356698484">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239356698485">
+            <property name="value" value="3" />
           </node>
         </node>
       </node>

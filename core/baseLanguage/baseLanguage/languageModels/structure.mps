@@ -304,6 +304,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160363482">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239354639098">
+      <link role="intfc" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233921171124">
       <link role="intfc" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
     </node>
@@ -1471,6 +1474,9 @@
     <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration" id="1161119487665">
       <property name="name" value="applicableConceptFunctionParameter" />
       <link role="targetType" targetNodeId="37.1071489090640" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239354708927">
+      <link role="intfc" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1144226303539">
@@ -3281,6 +3287,10 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1238805530342">
     <property name="package" value="localVariableElement" />
     <property name="name" value="ILocalVariableElementList" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1239354281271">
+    <property name="name" value="IMethodLike" />
+    <property name="package" value="method" />
   </node>
 </model>
 

@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
@@ -29,6 +30,19 @@ public class BaseMethodDeclaration_Behavior {
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return false;
+  }
+
+  public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+    SNode expectedRetType = SLinkOperations.getTarget(thisNode, "returnType", true);
+    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(thisNode)) {
+      //       actually - no return type
+      expectedRetType = null;
+    }
+    return expectedRetType;
+  }
+
+  public static SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "body", true);
   }
 
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {

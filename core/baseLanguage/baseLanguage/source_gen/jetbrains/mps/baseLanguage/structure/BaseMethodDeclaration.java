@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.HasAnnotation;
 import jetbrains.mps.baseLanguage.structure.IBLDeprecatable;
 import jetbrains.mps.baseLanguage.structure.IStatementListContainer;
 import jetbrains.mps.lang.core.structure.IContainer;
+import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.baseLanguage.structure.TypeAnnotable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
@@ -20,7 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer, TypeAnnotable {
+public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer, IMethodLike, TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

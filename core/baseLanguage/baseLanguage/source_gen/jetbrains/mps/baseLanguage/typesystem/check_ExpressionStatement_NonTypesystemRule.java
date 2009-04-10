@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -19,7 +20,7 @@ public class check_ExpressionStatement_NonTypesystemRule extends AbstractNonType
   }
 
   public void applyRule(final SNode expressionStatement, final TypeCheckingContext typeCheckingContext) {
-    if (!(Expression_Behavior.call_isLegalAsStatement_1239211900844(SLinkOperations.getTarget(expressionStatement, "expression", true)))) {
+    if (!(Expression_Behavior.call_isLegalAsStatement_1239211900844(SLinkOperations.getTarget(expressionStatement, "expression", true)) || ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(expressionStatement))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       typeCheckingContext.reportTypeError(expressionStatement, "not a legal statement", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239212949442", intentionProvider, errorTarget);
