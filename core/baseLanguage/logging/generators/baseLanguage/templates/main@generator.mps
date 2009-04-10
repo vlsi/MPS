@@ -950,7 +950,7 @@
                 <link role="variableDeclaration" targetNodeId="1232620786310" resolveInfo="LOG" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232620804597">
-                <link role="baseMethodDeclaration" targetNodeId="21.~Logger.error(java.lang.String):void" resolveInfo="error" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~Logger.error(java.lang.String,java.lang.Throwable):void" resolveInfo="error" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232620806598">
                   <property name="value" value="message" />
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1232620844722">
@@ -966,6 +966,25 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239355688292">
+                  <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1239355688293">
+                    <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1239355688294">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239355688295">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239355688296">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239355688297">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239355688298" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239355688299">
+                              <link role="link" targetNodeId="4.1167227561449" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239355688300">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
                   </node>
                 </node>
                 <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1232620814928">

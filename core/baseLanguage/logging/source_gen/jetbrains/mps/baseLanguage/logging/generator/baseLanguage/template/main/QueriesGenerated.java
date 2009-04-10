@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main._Quotations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -114,6 +115,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1232620844723(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "logExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1239355688294(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "exception", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187224198430(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
