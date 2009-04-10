@@ -15,19 +15,19 @@ public class ReturnStatement_Test extends BaseTransformationTest {
 
   @Test()
   public void test_alwaysReturn() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/findUsages/findUsages.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_alwaysReturn", true);
   }
 
   @Test()
   public void test_retunInAnonymousClass() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/findUsages/findUsages.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_retunInAnonymousClass", true);
   }
 
   @Test()
   public void test_notAlwaysReturn() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/findUsages/findUsages.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_notAlwaysReturn", true);
   }
 
