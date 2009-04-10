@@ -30,6 +30,16 @@ public class DateTimeOperations {
   private DateTimeOperations() {
   }
 
+  @Deprecated
+  public static String print(Long datetime, DateTimeFormatter formatter) {
+    return formatter.print(datetime != null ? new DateTime(datetime) : Constants.NULL_DATE_TIME);
+  }
+
+  @Deprecated
+  public static String print(Long datetime, DateTimeFormatter formatter, Locale locale) {
+    return print(datetime, formatter.withLocale(locale));
+  }
+
   public static String print(Long value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
     DateTime dateTime = (value != null)?
       ((zone != null)? new DateTime(value, zone) : new DateTime(value)) : Constants.NULL_DATE_TIME;
@@ -161,6 +171,18 @@ public class DateTimeOperations {
     return result;
   }
 
+  public static Long plus(Period left, Long right) {
+    return plus(right, left);
+  }
+
+  public static Long plus(Long left, Long right) {
+    return left + right;
+  }
+
+  public static Long minus(Long left, Long right) {
+    return left.longValue() - right.longValue();
+  }
+
   public static Long minus(Long leftExpression, Period rightExpression) {
     Long result;
     if (leftExpression == null) {
@@ -171,6 +193,7 @@ public class DateTimeOperations {
     return result;
   }
 
+  @Deprecated
   public static Period minus(Long leftExpression, Long rightExpression, PeriodType periodType) {
     Period result;
     if (leftExpression == null || rightExpression == null) {
@@ -181,6 +204,7 @@ public class DateTimeOperations {
     return result;
   }
 
+  @Deprecated
   public static Period absMinus(Long leftExpression, Long rightExpression, PeriodType periodType) {
     Period result;
     if (leftExpression == null || rightExpression == null) {
