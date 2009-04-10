@@ -45,7 +45,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class FastFindUsagesManager extends FindUsagesManager {
-  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+\\.v?)?([0-9]+)\"");
+  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+v?\\.)?([0-9]+)\"");
   private static final Pattern INSTANCE_PATTERN = Pattern.compile(" type=\"([A-Za-z0-9_.]+)\" id=\"[.0-9]+");
 
   @NotNull
