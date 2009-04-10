@@ -411,7 +411,27 @@ public class EquationManager {
           }
         },
         oldEntity.getNodeModel(),
-        oldEntity.getNodeId());
+        oldEntity.getNodeId()) {
+        public boolean skipsError() {
+          return entity.skipsError() && oldEntity.skipsError();
+        }
+
+        public String getNodeModel() {
+          if (oldEntity.skipsError()) {
+            return entity.getNodeModel();
+          } else {
+            return oldEntity.getNodeModel();
+          }
+        }
+
+        public String getNodeId() {
+          if (oldEntity.skipsError()) {
+            return entity.getNodeId();
+          } else {
+            return oldEntity.getNodeId();
+          }
+        }
+      };
     }
 
     myWhenConcreteEntities.put(representator, entityToPut);
