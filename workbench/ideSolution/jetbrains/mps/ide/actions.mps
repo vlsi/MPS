@@ -1469,15 +1469,10 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215871905662">
                 <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
               </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215871905663">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215871905664">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215871905665" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647432">
-                    <link role="member" targetNodeId="1217420647431" resolveInfo="operationContext" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215871905667">
-                  <link role="baseMethodDeclaration" targetNodeId="40.~IOperationContext.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239371836951">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239371835791" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1239371890586">
+                  <link role="member" targetNodeId="1239371735155" resolveInfo="module" />
                 </node>
               </node>
             </node>
@@ -1590,6 +1585,27 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649624">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1239371735155">
+      <property name="name" value="module" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1239371804458">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239371804459">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239371805086">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1239371805087">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239371805088">
+              <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239371805089">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239371805090" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1239371805091">
+                <link role="member" targetNodeId="1239371735155" resolveInfo="module" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215873138429">
@@ -3099,6 +3115,14 @@
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215887277548">
               <link role="variableDeclaration" targetNodeId="1215886986014" resolveInfo="dialog" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239373305625">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239373305626">
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239373305627" />
+            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1239373305628">
+              <link role="member" targetNodeId="1239369058926" resolveInfo="module" />
             </node>
           </node>
         </node>

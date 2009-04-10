@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -24,7 +24,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "operationConcept")).first(), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation");
+    SNode memberOperationConcept = ((SNode)ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "operationConcept")).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }

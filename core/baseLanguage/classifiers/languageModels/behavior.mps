@@ -204,15 +204,19 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1213877352977">
               <link role="conceptDeclaraton" targetNodeId="1.1205756064662" resolveInfo="IMemberOperation" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1213877352978">
-              <link role="concept" targetNodeId="1.1205756064662" resolveInfo="IMemberOperation" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877352979">
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1213877352980" />
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877352981">
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="1213877352982">
-                    <link role="conceptLinkDeclaration" targetNodeId="1.1205921683134" resolveInfo="operationConcept" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239373159547">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239373159548">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239373159549">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239373159550" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239373159551">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="1239373159552">
+                      <link role="conceptLinkDeclaration" targetNodeId="1.1205921683134" resolveInfo="operationConcept" />
+                    </node>
+                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239373159553" />
                   </node>
-                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877352983" />
+                </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1239373159554">
+                  <link role="conceptDeclaraton" targetNodeId="1.1205756064662" resolveInfo="IMemberOperation" />
                 </node>
               </node>
             </node>
