@@ -129,7 +129,7 @@ public final class CopyUtil {
             StaticReference staticReference = (StaticReference) ref;
             outputNode.addReference(new StaticReference(
               staticReference.getRole(),
-              staticReference.getSourceNode(),
+              outputNode,
               staticReference.getTargetSModelReference(),
               staticReference.getTargetNodeId(),
               staticReference.getResolveInfo()));

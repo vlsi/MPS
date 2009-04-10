@@ -1160,7 +1160,8 @@ public final class SNode {
     return result;
   }
 
-  public void addReference(SReference reference) {
+  public void addReference(SReference reference) {    
+    assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
   }
 
