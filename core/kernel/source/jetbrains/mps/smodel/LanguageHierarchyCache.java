@@ -26,6 +26,8 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -80,6 +82,16 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         }
 
         mySModelRepository.addModelRepositoryListener(myRepositoryListener);
+      }
+    });
+
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
+        for (SModelEvent e : events) {
+          if (Language.getModelAspect(e.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
+            invalidateCache();
+          }
+        }
       }
     });
   }
