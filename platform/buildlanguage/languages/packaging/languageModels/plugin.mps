@@ -13542,13 +13542,12 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229428596932">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229428596933">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229428596934">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239372943784">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239372945811">
+            <link role="baseMethodDeclaration" targetNodeId="55.~FileUtil.delete(java.io.File):boolean" resolveInfo="delete" />
+            <link role="classConcept" targetNodeId="55.~FileUtil" resolveInfo="FileUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239372948018">
               <link role="variableDeclaration" targetNodeId="1229428596805" resolveInfo="tmpDir" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229428596935">
-              <link role="baseMethodDeclaration" targetNodeId="16.~File.delete():boolean" resolveInfo="delete" />
             </node>
           </node>
         </node>

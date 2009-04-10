@@ -23,10 +23,10 @@ import jetbrains.mps.project.GlobalScope;
 public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept, IVariableHolder, IMacroHolder {
   public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
   public static final String SCRIPTS_FOLDER = "scriptsFolder";
-  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
   public static final String COMPILE = "compile";
   public static final String BASE_DIRECTORY = "baseDirectory";
   public static final String CONFIGURATION = "configuration";
@@ -46,14 +46,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public void setScriptsFolder(String value) {
     this.setProperty(MPSLayout.SCRIPTS_FOLDER, value);
-  }
-
-  public String getName() {
-    return this.getProperty(MPSLayout.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(MPSLayout.NAME, value);
   }
 
   public String getShortDescription() {
@@ -78,6 +70,14 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public void setVirtualPackage(String value) {
     this.setProperty(MPSLayout.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(MPSLayout.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(MPSLayout.NAME, value);
   }
 
   public boolean getCompile() {
