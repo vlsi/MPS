@@ -3118,14 +3118,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239373305625">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239373305626">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239373305627" />
-            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1239373305628">
-              <link role="member" targetNodeId="1239369058926" resolveInfo="module" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1215886986040">
