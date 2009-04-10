@@ -20,9 +20,9 @@ public class IndentLayoutUtil {
   public static List<SNode> moveToIndentLayoutChildren(SNode node, boolean isLast) {
     List<SNode> result = ListOperations.<SNode>createList();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
-      SNode collection = node;
+      SNode collection = SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection");
       if (SLinkOperations.getTarget(collection, "renderingCondition", true) != null || EditorCellModel_Behavior.call_isIndented_1237383418148(node) || SPropertyOperations.getBoolean(collection, "vertical") || SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last(), "renderingCondition", true) != null) {
-        moveToIndentLayout(node);
+        moveToIndentLayout(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection"));
         if (isLast) {
           SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
           SPropertyOperations.set(classItem, "flag", "" + true);
@@ -31,13 +31,13 @@ public class IndentLayoutUtil {
         ListSequence.fromList(result).addElement(node);
       } else
       {
-        List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
+        List<SNode> children = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "childCellModel", true);
         for(int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
           ListSequence.fromList(result).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(ListSequence.fromList(children).getElement(i), isLast && (i == ListSequence.fromList(children).count() - 1))));
         }
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Indent")) {
-      IndentLayoutUtil.makeIndent(SNodeOperations.getNextSibling(node));
+      IndentLayoutUtil.makeIndent(SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     } else
     {
       ListSequence.fromList(result).addElement(node);
@@ -73,7 +73,7 @@ public class IndentLayoutUtil {
     if (editor == null) {
       return false;
     }
-    if (SNodeOperations.getModel(SLinkOperations.getTarget(SLinkOperations.getTarget(editor, "conceptDeclaration", false), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(editor, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
       return false;
     }
     return true;
