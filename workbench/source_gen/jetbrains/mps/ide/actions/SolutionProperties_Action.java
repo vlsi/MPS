@@ -9,11 +9,12 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.properties.solution.SolutionPropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -22,6 +23,7 @@ public class SolutionProperties_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(SolutionProperties_Action.class);
 
   public IOperationContext context;
+  public IModule module;
 
   public SolutionProperties_Action() {
     super("Solution Properties", "", ICON);
@@ -35,8 +37,7 @@ public class SolutionProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule module = SolutionProperties_Action.this.context.getModule();
-    return module instanceof Solution;
+    return SolutionProperties_Action.this.module instanceof Solution;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -62,21 +63,24 @@ public class SolutionProperties_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final IOperationContext localContext = SolutionProperties_Action.this.context;
-      final Solution solution = (Solution)SolutionProperties_Action.this.context.getModule();
-      final SolutionPropertiesDialog[] dialog = new SolutionPropertiesDialog[1];
+      final Solution solution = (Solution)SolutionProperties_Action.this.module;
+      final Wrappers._T<SolutionPropertiesDialog> dialog = new Wrappers._T<SolutionPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new SolutionPropertiesDialog(solution, localContext);
+          dialog.value = new SolutionPropertiesDialog(solution, SolutionProperties_Action.this.context);
         }
       });
-      dialog[0].showDialog();
+      dialog.value.showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SolutionProperties", t);

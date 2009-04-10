@@ -18,6 +18,7 @@ package jetbrains.mps.ide.dependency;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
@@ -33,10 +34,13 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
+import java.awt.LayoutManager;
+
+import org.jetbrains.annotations.NonNls;
 
 public class DependencyViewer extends BaseProjectTool {
   private DependencyTree myTree;
-  private JPanel myExternalComponent;
+  private MyPanel myExternalComponent;
 
   private ModuleRepositoryListener myListener = new ModuleRepositoryListener() {
     public void moduleAdded(IModule module) {
@@ -85,15 +89,11 @@ public class DependencyViewer extends BaseProjectTool {
     DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
 
-    myExternalComponent = new JPanel(new BorderLayout());
+    myExternalComponent = new MyPanel(new BorderLayout());
     myExternalComponent.add(scrollPane, BorderLayout.CENTER);
     myExternalComponent.add(toolbar, BorderLayout.WEST);
 
     myTree.rebuildLater();
-  }
-
-  public String getName() {
-    return "Dependency explorer";
   }
 
   public Icon getIcon() {
@@ -110,6 +110,16 @@ public class DependencyViewer extends BaseProjectTool {
 
   private void removeListeners() {
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
+  }
+
+  public class MyPanel extends JPanel  implements DataProvider {
+    public MyPanel(LayoutManager layout) {
+      super(layout);
+    }
+
+    public Object getData(@NonNls String dataId) {
+      return myTree.getData(dataId);
+    }
   }
 }
 

@@ -99,6 +99,10 @@ public class ModuleTreeNode extends MPSTreeNode {
     myInitialized = true;
   }
 
+  public IModule getModule() {
+    return myModule;
+  }
+
   protected void updatePresentation() {
     super.updatePresentation();
     String uid = myModule.getModuleUID();

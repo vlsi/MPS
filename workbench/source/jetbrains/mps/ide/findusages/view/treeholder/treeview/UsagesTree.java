@@ -681,6 +681,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected boolean isUnstableWindow() {
+    //todo this is a workaround for IDEA bug. Remove the method when they'll fix isAutoHide()
     return getToolWindow().isAutoHide() || getToolWindow().getType() == ToolWindowType.SLIDING;
   }
 

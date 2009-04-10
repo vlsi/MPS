@@ -9,11 +9,12 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.properties.language.LanguagePropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -22,6 +23,7 @@ public class LanguageProperties_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(LanguageProperties_Action.class);
 
   public IOperationContext context;
+  public IModule module;
 
   public LanguageProperties_Action() {
     super("Language Properties", "", ICON);
@@ -35,7 +37,7 @@ public class LanguageProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return new ActionEventData(event).getModule() instanceof Language;
+    return LanguageProperties_Action.this.module instanceof Language;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -61,22 +63,24 @@ public class LanguageProperties_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ActionEventData data = new ActionEventData(event);
-      final Language language = (Language)data.getModule();
-      final IOperationContext localContext = LanguageProperties_Action.this.context;
-      final LanguagePropertiesDialog[] dialog = new LanguagePropertiesDialog[1];
+      final Language language = (Language)LanguageProperties_Action.this.module;
+      final Wrappers._T<LanguagePropertiesDialog> dialog = new Wrappers._T<LanguagePropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new LanguagePropertiesDialog(language, localContext);
+          dialog.value = new LanguagePropertiesDialog(language, LanguageProperties_Action.this.context);
         }
       });
-      dialog[0].showDialog();
+      dialog.value.showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "LanguageProperties", t);

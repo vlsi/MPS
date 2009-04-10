@@ -9,9 +9,9 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.properties.generator.GeneratorPropertiesDialog;
@@ -21,6 +21,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GeneratorProperties_Action.class);
 
   public MPSProject project;
+  public IModule module;
 
   public GeneratorProperties_Action() {
     super("Generator Properties", "", ICON);
@@ -34,7 +35,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return new ActionEventData(event).getModule() instanceof Generator;
+    return GeneratorProperties_Action.this.module instanceof Generator;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -60,13 +61,16 @@ public class GeneratorProperties_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ActionEventData data = new ActionEventData(event);
-      final Generator generator = (Generator)data.getModule();
+      final Generator generator = (Generator)GeneratorProperties_Action.this.module;
       GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
       dialog.showDialog();
     } catch (Throwable t) {

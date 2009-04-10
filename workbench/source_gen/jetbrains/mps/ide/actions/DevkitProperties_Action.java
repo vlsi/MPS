@@ -9,20 +9,21 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.properties.devkit.DevKitPropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
 
 public class DevkitProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(DevkitProperties_Action.class);
 
   public IOperationContext context;
+  public IModule module;
 
   public DevkitProperties_Action() {
     super("DevKit Properties", "", ICON);
@@ -35,9 +36,16 @@ public class DevkitProperties_Action extends GeneratedAction {
     return "alt ENTER";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return DevkitProperties_Action.this.module instanceof DevKit;
+  }
+
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "DevkitProperties", t);
@@ -55,35 +63,29 @@ public class DevkitProperties_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ActionEventData data = new ActionEventData(event);
-      final DevKit devkit = DevkitProperties_Action.this.getDevKit(data);
-      final IOperationContext localContext = DevkitProperties_Action.this.context;
-      final DevKitPropertiesDialog[] dialog = new DevKitPropertiesDialog[1];
+      final DevKit devkit = ((DevKit)DevkitProperties_Action.this.module);
+      final Wrappers._T<DevKitPropertiesDialog> dialog = new Wrappers._T<DevKitPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          dialog[0] = new DevKitPropertiesDialog(devkit, localContext);
+          dialog.value = new DevKitPropertiesDialog(devkit, DevkitProperties_Action.this.context);
         }
       });
-      dialog[0].showDialog();
+      dialog.value.showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DevkitProperties", t);
       }
     }
-  }
-
-  private DevKit getDevKit(ActionEventData data) {
-    IModule module = data.getModule();
-    if (module instanceof DevKit) {
-      return (DevKit)module;
-    }
-    return null;
   }
 
 }
