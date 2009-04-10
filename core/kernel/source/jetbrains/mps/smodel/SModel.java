@@ -988,6 +988,10 @@ public class SModel implements Iterable<SNode> {
     return myImports.iterator();
   }
 
+  public List<ImportElement> getImportElements() {
+    return new ArrayList<ImportElement>(myImports);
+  }
+
   public boolean isImported(@NotNull SModel model) {
     return getImportElement(model.getSModelReference()) != null;
   }

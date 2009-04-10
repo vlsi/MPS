@@ -83,9 +83,7 @@ public class ModelWriter3 implements IModelWriter {
     maxRefID.setAttribute(ModelPersistence.VALUE, "" + sourceModel.getMaxImportIndex());
     rootElement.addContent(maxRefID);
 
-    Iterator<ImportElement> imports = sourceModel.importElements();
-    while (imports.hasNext()) {
-      ImportElement importElement = imports.next();
+    for (ImportElement importElement : sourceModel.getImportElements()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelReference modelReference = importElement.getModelReference();
@@ -105,10 +103,8 @@ public class ModelWriter3 implements IModelWriter {
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
 
-    Iterator<SNode> iterator = sourceModel.roots();
-    while (iterator.hasNext()) {
-      SNode semanticNode = iterator.next();
-      saveNode(rootElement, semanticNode, visibleModelElements);
+    for (SNode root : sourceModel.getRoots()) {
+      saveNode(rootElement, root, visibleModelElements);
     }
 
     Document document = new Document();
