@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
@@ -88,11 +89,18 @@ public class DataFlowUtil {
   private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(statementList);
     for(SNode read : uninitializedReads) {
-      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && !(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false)))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239367345204", intentionProvider, errorTarget);
+        }
+      }
+      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239368356133", intentionProvider, errorTarget);
         }
       }
     }
