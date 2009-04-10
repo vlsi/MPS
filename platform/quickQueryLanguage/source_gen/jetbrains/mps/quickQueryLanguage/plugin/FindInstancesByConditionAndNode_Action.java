@@ -39,7 +39,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByConditionAndNode");
+      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByConditionAndNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,7 +78,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
       testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
       testDialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode");
+      LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode", t);
     }
   }
 

@@ -36,7 +36,7 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition");
+      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition", t);
       this.disable(event.getPresentation());
     }
   }
@@ -63,7 +63,7 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
       FindInstancesDialog dialog = new FindInstancesDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition");
+      LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
     }
   }
 

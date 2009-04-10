@@ -56,7 +56,7 @@ public class InlineMethod_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "InlineMethod");
+      LOG.error("User's action doUpdate method failed. Action:" + "InlineMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,7 +96,7 @@ public class InlineMethod_Action extends GeneratedAction {
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "InlineMethod");
+      LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
     }
   }
 

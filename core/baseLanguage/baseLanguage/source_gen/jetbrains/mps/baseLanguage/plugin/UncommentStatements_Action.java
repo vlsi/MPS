@@ -41,7 +41,7 @@ public class UncommentStatements_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements");
+      LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
       this.disable(event.getPresentation());
     }
   }
@@ -74,7 +74,7 @@ public class UncommentStatements_Action extends GeneratedAction {
       }
       SNodeOperations.deleteNode(commentedStatementsBlock);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "UncommentStatements");
+      LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
   }
 

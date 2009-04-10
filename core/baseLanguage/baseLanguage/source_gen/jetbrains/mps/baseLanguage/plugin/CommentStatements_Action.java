@@ -42,7 +42,7 @@ public class CommentStatements_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CommentStatements");
+      LOG.error("User's action doUpdate method failed. Action:" + "CommentStatements", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,7 +81,7 @@ public class CommentStatements_Action extends GeneratedAction {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       SLinkOperations.addAll(commentedStatementsBlock, "statement", CommentStatements_Action.this.nodes);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CommentStatements");
+      LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);
     }
   }
 

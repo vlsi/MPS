@@ -37,7 +37,7 @@ public class PrintReachingDefinintionsInformation_Action extends GeneratedAction
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintReachingDefinintionsInformation");
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintReachingDefinintionsInformation", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,7 +65,7 @@ public class PrintReachingDefinintionsInformation_Action extends GeneratedAction
       AnalysisResult<Set<WriteInstruction>> result = program.analyze(new ReachingDefinitionsAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintReachingDefinintionsInformation");
+      LOG.error("User's action execute method failed. Action:" + "PrintReachingDefinintionsInformation", t);
     }
   }
 

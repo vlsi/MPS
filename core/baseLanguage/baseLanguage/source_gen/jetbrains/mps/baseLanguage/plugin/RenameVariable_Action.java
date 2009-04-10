@@ -42,7 +42,7 @@ public class RenameVariable_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RenameVariable");
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameVariable", t);
       this.disable(event.getPresentation());
     }
   }
@@ -73,7 +73,7 @@ public class RenameVariable_Action extends GeneratedAction {
       RenameRafactoringDialog dialog = new RenameRafactoringDialog(RenameVariable_Action.this.frame, RenameVariable_Action.this.node);
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RenameVariable");
+      LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);
     }
   }
 

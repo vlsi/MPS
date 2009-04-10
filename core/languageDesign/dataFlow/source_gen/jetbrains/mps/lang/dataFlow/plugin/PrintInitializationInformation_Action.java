@@ -36,7 +36,7 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation");
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
       this.disable(event.getPresentation());
     }
   }
@@ -64,7 +64,7 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
       AnalysisResult<Set<Object>> result = program.analyze(new InitializedVariablesAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation");
+      LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
     }
   }
 

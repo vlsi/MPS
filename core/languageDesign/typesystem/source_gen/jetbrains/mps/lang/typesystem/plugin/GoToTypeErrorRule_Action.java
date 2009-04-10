@@ -46,7 +46,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule");
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -76,7 +76,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
       IErrorReporter error = TypeChecker.getInstance().getTypeErrorDontCheck(GoToTypeErrorRule_Action.this.node);
       GoToTypeErrorRuleUtil.goToTypeErrorRule(GoToTypeErrorRule_Action.this.operationContext, error);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule");
+      LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }
   }
 

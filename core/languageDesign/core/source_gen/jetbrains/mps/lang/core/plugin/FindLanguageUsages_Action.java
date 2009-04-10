@@ -49,7 +49,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages");
+      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -89,7 +89,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
       });
       FindLanguageUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages");
+      LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }
   }
 

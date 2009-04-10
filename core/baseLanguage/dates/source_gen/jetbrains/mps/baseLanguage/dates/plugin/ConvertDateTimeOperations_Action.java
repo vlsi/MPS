@@ -36,7 +36,7 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ConvertDateTimeOperations");
+      LOG.error("User's action doUpdate method failed. Action:" + "ConvertDateTimeOperations", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,7 +71,7 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
         SLinkOperations.setTarget(plusExpression, "rightExpression", SLinkOperations.getTarget(operation, "rightValue", true), true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ConvertDateTimeOperations");
+      LOG.error("User's action execute method failed. Action:" + "ConvertDateTimeOperations", t);
     }
   }
 

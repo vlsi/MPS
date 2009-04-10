@@ -64,7 +64,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageConceptsUsages");
+      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageConceptsUsages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -104,7 +104,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
       });
       FindLanguageConceptsUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "There are no usages of language's concepts");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages");
+      LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
     }
   }
 

@@ -33,7 +33,7 @@ public class PrintDFAResult_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult");
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
       this.disable(event.getPresentation());
     }
   }
@@ -60,7 +60,7 @@ public class PrintDFAResult_Action extends GeneratedAction {
       Program program = DataFlowManager.getInstance().buildProgramFor(PrintDFAResult_Action.this.node);
       System.out.println(program.toString(true));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintDFAResult");
+      LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
     }
   }
 

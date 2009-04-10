@@ -44,7 +44,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateMPSBuildAction");
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateMPSBuildAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -75,7 +75,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
       GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction");
+      LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
   }
 

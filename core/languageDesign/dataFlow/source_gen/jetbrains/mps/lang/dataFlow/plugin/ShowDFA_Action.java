@@ -38,7 +38,7 @@ public class ShowDFA_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
       this.disable(event.getPresentation());
     }
   }
@@ -73,7 +73,7 @@ public class ShowDFA_Action extends GeneratedAction {
       Program program = DataFlowManager.getInstance().buildProgramFor(ShowDFA_Action.this.node);
       new ShowCFGDialog(program, ShowDFA_Action.this.context, ShowDFA_Action.this.frame);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowDFA");
+      LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }
   }
 

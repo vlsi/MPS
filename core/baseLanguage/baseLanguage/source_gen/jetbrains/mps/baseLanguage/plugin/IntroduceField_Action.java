@@ -50,7 +50,7 @@ public class IntroduceField_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceField");
+      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceField", t);
       this.disable(event.getPresentation());
     }
   }
@@ -102,7 +102,7 @@ public class IntroduceField_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(IntroduceField_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "IntroduceField");
+      LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);
     }
   }
 

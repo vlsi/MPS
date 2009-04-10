@@ -42,7 +42,7 @@ public class RefactorModel_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RefactorModel");
+      LOG.error("User's action doUpdate method failed. Action:" + "RefactorModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -63,7 +63,7 @@ public class RefactorModel_Action extends GeneratedAction {
     try {
       RefactorModelUtil.refactorModel(RefactorModel_Action.this.model);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RefactorModel");
+      LOG.error("User's action execute method failed. Action:" + "RefactorModel", t);
     }
   }
 

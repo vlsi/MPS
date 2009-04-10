@@ -32,7 +32,7 @@ public class ShowTypechekerDebugger_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypechekerDebugger");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypechekerDebugger", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,7 +53,7 @@ public class ShowTypechekerDebugger_Action extends GeneratedAction {
     try {
       ShowTypechekerDebugger_Action.this.project.getComponent(TypecheckerStateView.class).openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowTypechekerDebugger");
+      LOG.error("User's action execute method failed. Action:" + "ShowTypechekerDebugger", t);
     }
   }
 

@@ -34,7 +34,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowInequationsForCell");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowInequationsForCell", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,7 +62,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(null, inequationSystem.getPresentation());
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowInequationsForCell");
+      LOG.error("User's action execute method failed. Action:" + "ShowInequationsForCell", t);
     }
   }
 

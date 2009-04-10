@@ -35,7 +35,7 @@ public class SliceWithNode_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SliceWithNode");
+      LOG.error("User's action doUpdate method failed. Action:" + "SliceWithNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -68,7 +68,7 @@ public class SliceWithNode_Action extends GeneratedAction {
       component.sliceWithNode(SliceWithNode_Action.this.n);
       view.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SliceWithNode");
+      LOG.error("User's action execute method failed. Action:" + "SliceWithNode", t);
     }
   }
 

@@ -5831,6 +5831,30 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1206099400140">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206099400141">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239356694291">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239356694292">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239356714998">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239356717375">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239356698842">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239356706194">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239356701861">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239356700953" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239356704833">
+                    <link role="link" targetNodeId="4.1068431790188" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239356707838">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239356712544">
+                    <link role="conceptDeclaration" targetNodeId="4.1107535904670" resolveInfo="ClassifierType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206099414462">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206099414463">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206099414464">

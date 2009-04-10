@@ -34,7 +34,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowTodoViewer");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowTodoViewer", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,7 +55,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     try {
       ShowTodoViewer_Action.this.project.getPluginManager().getTool(TodoViewer_Tool.class).openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer");
+      LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer", t);
     }
   }
 

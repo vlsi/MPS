@@ -41,7 +41,7 @@ public class PrintNullableInformation_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintNullableInformation");
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintNullableInformation", t);
       this.disable(event.getPresentation());
     }
   }
@@ -70,11 +70,11 @@ public class PrintNullableInformation_Action extends GeneratedAction {
       for(Instruction instruction : ListSequence.fromList(program.getInstructions())) {
         System.out.println(instruction.toString());
         for(SNode key : Sequence.fromIterable(MapSequence.fromMap(result.get(instruction)).keySet())) {
-          System.out.println("\t" + key + " -> " + MapSequence.fromMap(result.get(instruction)).get(key));
+          System.out.println("\t" + key + " -> " + result.get(instruction).get(key));
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintNullableInformation");
+      LOG.error("User's action execute method failed. Action:" + "PrintNullableInformation", t);
     }
   }
 

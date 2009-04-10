@@ -50,7 +50,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RunTestInMPS");
+      LOG.error("User's action doUpdate method failed. Action:" + "RunTestInMPS", t);
       this.disable(event.getPresentation());
     }
   }
@@ -91,7 +91,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
         RunTestInMPS_Action.this.runTest(test);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RunTestInMPS");
+      LOG.error("User's action execute method failed. Action:" + "RunTestInMPS", t);
     }
   }
 

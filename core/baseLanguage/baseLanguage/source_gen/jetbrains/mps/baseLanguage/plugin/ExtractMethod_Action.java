@@ -44,7 +44,7 @@ public class ExtractMethod_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod");
+      LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -82,7 +82,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ExtractMethod");
+      LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
   }
 

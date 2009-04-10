@@ -50,7 +50,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceVariable");
+      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceVariable", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,7 +103,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(IntroduceVariable_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "IntroduceVariable");
+      LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
     }
   }
 

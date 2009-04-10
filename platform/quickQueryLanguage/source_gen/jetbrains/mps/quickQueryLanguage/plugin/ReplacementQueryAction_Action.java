@@ -36,7 +36,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction");
+      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,7 +62,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
       ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language)ReplacementQueryAction_Action.this.langModule);
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction");
+      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
     }
   }
 

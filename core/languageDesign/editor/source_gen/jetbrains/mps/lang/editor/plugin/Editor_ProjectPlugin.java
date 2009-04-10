@@ -6,16 +6,16 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin;
 
 public class Editor_ProjectPlugin extends BaseProjectPlugin {
 
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
-    List<BaseCustomProjectPlugin> res = new ArrayList<BaseCustomProjectPlugin>();
+    List<BaseCustomProjectPlugin> res = ListSequence.<BaseCustomProjectPlugin>fromArray();
     {
       BaseCustomProjectPlugin plugin = new EditorLangPlugin_CustomProjectPlugin();
-      res.add(plugin);
+      ListSequence.fromList(res).addElement(plugin);
       plugin.init(project);
     }
     return res;

@@ -52,7 +52,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
       this.disable(event.getPresentation());
     }
   }
@@ -126,7 +126,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       }
       m.show(ShowRulesWhichAffectNodeType_Action.this.frame, x, y);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType");
+      LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }
   }
 

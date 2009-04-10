@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
@@ -49,7 +48,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown");
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
       this.disable(event.getPresentation());
     }
   }
@@ -68,7 +67,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         this.inputNodes = null;
       } else
       {
-        this.inputNodes = new ArrayList<SNode>(nodes);
+        this.inputNodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
       }
     }
     if (this.inputNodes == null) {
@@ -117,7 +116,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         CopyThisDown_Action.this.editor.getEditorContext().selectRange(firstNode, lastNode);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyThisDown");
+      LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
     }
   }
 

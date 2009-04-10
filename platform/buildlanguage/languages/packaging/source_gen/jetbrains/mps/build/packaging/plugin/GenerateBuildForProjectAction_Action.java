@@ -37,7 +37,7 @@ public class GenerateBuildForProjectAction_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildForProjectAction");
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildForProjectAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -68,7 +68,7 @@ public class GenerateBuildForProjectAction_Action extends GeneratedAction {
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateBuildForProjectAction");
+      LOG.error("User's action execute method failed. Action:" + "GenerateBuildForProjectAction", t);
     }
   }
 

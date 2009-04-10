@@ -12,7 +12,7 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.editor.plugin.EditorActions";
 
   public EditorActions_ActionGroup() {
-    super("", ID);
+    super("EditorActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {

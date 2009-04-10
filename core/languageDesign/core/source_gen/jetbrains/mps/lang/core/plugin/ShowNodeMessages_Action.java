@@ -44,7 +44,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeMessages");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeMessages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,7 +77,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
       }
       JOptionPane.showMessageDialog(ShowNodeMessages_Action.this.editorComponent, sb, "node messages", JOptionPane.INFORMATION_MESSAGE);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages");
+      LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
     }
   }
 

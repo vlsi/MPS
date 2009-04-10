@@ -37,7 +37,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowConceptStructure");
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowConceptStructure", t);
       this.disable(event.getPresentation());
     }
   }
@@ -72,7 +72,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
       tool.getStructureView().inspect((AbstractConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptStructure_Action.this.node)), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure");
+      LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);
     }
   }
 

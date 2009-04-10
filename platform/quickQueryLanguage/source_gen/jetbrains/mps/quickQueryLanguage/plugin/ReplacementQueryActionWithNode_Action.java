@@ -39,7 +39,7 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryActionWithNode");
+      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryActionWithNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,7 +78,7 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
       dialog.setConceptDeclaration(ReplacementQueryActionWithNode_Action.this.node);
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryActionWithNode");
+      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryActionWithNode", t);
     }
   }
 

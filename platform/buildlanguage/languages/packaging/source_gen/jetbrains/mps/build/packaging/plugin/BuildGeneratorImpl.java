@@ -150,7 +150,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         List<NodeData> children = data.getChildren();
         for(NodeData child : ListSequence.fromList(children)) {
           if (MapSequence.fromMap(createdComponent).containsKey(child)) {
-            SNode childComponent = MapSequence.fromMap(createdComponent).get(child);
+            SNode childComponent = createdComponent.get(child);
             SLinkOperations.addChild(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", childComponent);
             if (SetSequence.fromSet(topLevel).contains(childComponent)) {
               SetSequence.fromSet(topLevel).removeElement(childComponent);
@@ -164,7 +164,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         break;
       }
       if (MapSequence.fromMap(createdComponent).containsKey(parent)) {
-        SLinkOperations.addChild(SNodeOperations.cast(MapSequence.fromMap(createdComponent).get(parent), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", component);
+        SLinkOperations.addChild(SNodeOperations.cast(createdComponent.get(parent), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", component);
         SetSequence.fromSet(topLevel).removeElement(component);
       }
     }
