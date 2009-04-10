@@ -52,6 +52,10 @@ public class QueriesGenerated {
     for(SNode binaryOperationConcept : binaryOperations) {
       EditorGenerationUtils.fillBinaryOperationStructure(binaryOperationConcept, conceptsToTargets, partsToLinkDeclarations);
     }
+    List<SNode> variableConcepts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.VariableConcept");
+    for(SNode variableConcept : variableConcepts) {
+      EditorGenerationUtils.fillVariableConceptStruncture(variableConcept, conceptsToTargets, partsToLinkDeclarations);
+    }
     //     editor
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
     SModel actionsModel = language.getActionsModelDescriptor().getSModel();
@@ -66,6 +70,17 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
       SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
       MapSequence.fromMap(conceptsToEditors).put(conceptDeclaration, editor);
+    }
+    for(SNode variableConcept : variableConcepts) {
+      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+      SNode lineList = SLinkOperations.getTarget(variableConcept, "concreteSyntax", true);
+      SNode contentCell = EditorGenerationUtils.generateEditorCellModel(lineList, variableConcept, partsToLinkDeclarations);
+      if (contentCell == null) {
+        continue;
+      }
+      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
+      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(variableConcept), false);
+      MapSequence.fromMap(conceptsToEditors).put(variableConcept, editor);
     }
     SNode actions = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", null);
     SPropertyOperations.set(actions, "name", "_BinaryOperations_SideTransform");
