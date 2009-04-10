@@ -326,15 +326,29 @@ public class EquationManager {
     if (NodeWrapper.fromWrapper(representator1) == NodeWrapper.fromWrapper(representator2)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = representator1 == null ? null : representator1.getVariable();
-    RuntimeTypeVariable varSupertype = representator2 == null ? null : representator2.getVariable();
-    if (varSubtype != null || varSupertype != null) {
+    boolean hasNonConcreteVars1 = !isConcrete(representator1);
+    boolean hasNonConcreteVars2 = !isConcrete(representator2);
+    if (hasNonConcreteVars1 || hasNonConcreteVars2) {
       if (isWeak) {
         addComparable(representator1, representator2, errorInfo);
       } else {
         addStrongComparable(representator1, representator2, errorInfo);
       }
       return;
+    }
+
+    //expand, if contains some vars.
+    if (representator1 instanceof NodeWrapper) {
+      NodeWrapper subtypeNodeWrapper = (NodeWrapper) representator1;
+      SModel typesModel = myTypeChecker.getRuntimeTypesModel();
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(subtypeNodeWrapper.getNode()), this);
+      representator1 = expandWrapper(null, representatorCopy, typesModel);
+    }
+    if (representator2 instanceof NodeWrapper) {
+      NodeWrapper supertypeNodeWrapper = (NodeWrapper) representator2;
+      SModel typesModel = myTypeChecker.getRuntimeTypesModel();
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode()), this);
+      representator2 = expandWrapper(null, representatorCopy, typesModel);
     }
 
     // if subtype or supertype

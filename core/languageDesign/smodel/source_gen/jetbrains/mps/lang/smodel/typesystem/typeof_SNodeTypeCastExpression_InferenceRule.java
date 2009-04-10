@@ -26,8 +26,8 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
     }
     //      this when concrete has a sense of overloading
     {
-      final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
-      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
+      final SNode ignore1 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
+      typeCheckingContext.whenConcrete(ignore1, new Runnable() {
 
         public void run() {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false)) {
@@ -45,9 +45,17 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
             }
           }
           {
-            SNode _nodeToCheck_1029348928467 = expr;
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", intentionProvider);
+            final SNode ignore2 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
+            typeCheckingContext.whenConcrete(ignore2, new Runnable() {
+
+              public void run() {
+                {
+                  SNode _nodeToCheck_1029348928467 = expr;
+                  BaseIntentionProvider intentionProvider = null;
+                  typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", intentionProvider);
+                }
+              }
+            }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1239380067971", false, true);
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061660362", true, false);

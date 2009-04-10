@@ -145,23 +145,39 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement" id="1238686640332">
-            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640333">
-              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1238686640334">
-                <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640335">
-              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238686640336">
-                <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238686640337">
-                  <link role="applicableNode" targetNodeId="1178287490184" resolveInfo="expr" />
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1239380067971">
+            <property name="skipsError" value="true" />
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239380067972">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement" id="1238686640332">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640333">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1238686640334">
+                    <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238686640335">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1238686640336">
+                    <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238686640337">
+                      <link role="applicableNode" targetNodeId="1178287490184" resolveInfo="expr" />
+                    </node>
+                  </node>
                 </node>
               </node>
+            </node>
+            <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1239380093021">
+              <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
+            </node>
+            <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="1239380301396">
+              <property name="name" value="ignore2" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1239380301397" />
             </node>
           </node>
         </node>
         <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1186061707811">
           <link role="typeVarDeclaration" targetNodeId="1186061665928" resolveInfo="LeftType" />
+        </node>
+        <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="1239380310925">
+          <property name="name" value="ignore1" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1239380310926" />
         </node>
       </node>
     </node>
