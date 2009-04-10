@@ -19,6 +19,7 @@ import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.custommps.behavior.MPSModule_Behavior;
 import jetbrains.mps.util.PathManager;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -115,6 +116,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1239130486816(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1239372488254(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "scriptsFolder");
   }
 
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -254,6 +259,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1239130486822(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists());
+  }
+
+  public static boolean ifMacro_Condition_1239370889223(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "scriptsFolder"));
   }
 
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

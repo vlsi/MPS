@@ -1019,6 +1019,27 @@
               </node>
             </node>
           </node>
+          <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1239368703787">
+            <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1239368703788">
+              <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239368703789">
+                <property name="name" value="mps_home" />
+              </node>
+              <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239368703790">
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239368712698">
+                  <property name="path" value="core" />
+                </node>
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239368722614">
+                  <property name="path" value="runtime" />
+                </node>
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239368725855">
+                  <property name="path" value="lib" />
+                </node>
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239368753911">
+                  <property name="path" value="jmock2.4" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="entry" type="jetbrains.mps.build.custommps.structure.CreateIfNotExists" id="1234971270220">
             <property name="artifactName" value="lib/idea-patch.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.Jar" id="1234971270221">
@@ -3219,12 +3240,73 @@
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1236885242173">
           <link role="attributeDeclaration" targetNodeId="6v.1199644186896" resolveInfo="dest" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1236885248245">
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1236885265532">
-              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1236885266817">
-                <property name="value" value="/build" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1236885264431">
+              <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1239370889222">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1239370889223">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239370889224">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239370898242">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372382266">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372378197">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239370898429">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239370898243" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239372359962">
+                            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239372359963">
+                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239372376099">
+                                <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239372380932">
+                          <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" id="1239372384452" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1236885264431">
-                <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
+              <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1239372390267">
+                <node role="templateNode" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239372460935">
+                  <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239372467958">
+                    <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239372471382">
+                      <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372475002">
+                        <property name="value" value="scripts folder" />
+                        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239372488253">
+                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239372488254">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239372488255">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239372494188">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372503398">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372494334">
+                                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239372494189" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239372496469">
+                                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239372496470">
+                                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239372501880">
+                                          <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239372508646">
+                                    <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372469122">
+                        <property name="value" value="/" />
+                      </node>
+                    </node>
+                    <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239372466965">
+                      <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4575,6 +4657,9 @@
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786113">
         <property name="path" value="lib/yjp/yjp-controller-api-redist.jar" />
+      </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1239368785363">
+        <property name="path" value="lib/jmock2.4/cglib-nodep-2.1_3.jar" />
       </node>
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1234779587499">
