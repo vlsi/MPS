@@ -152,7 +152,7 @@ public class NodeNodeData extends BaseNodeData {
   public static String nodeAdditionalInfo(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        if (node == node.getContainingRoot()) return "";
+        if (node.getParent() == null) return "";
         return "role: " +
           "<i>" +
           textStringToHtml(node.getRole_()) +
