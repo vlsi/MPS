@@ -242,6 +242,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8935_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8935_2");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_8935_1(EditorCell editorCell, SNode node, EditorContext context) {

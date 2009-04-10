@@ -442,6 +442,9 @@
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198243759899">
               <property name="text" value="{" />
               <link role="styleClass" targetNodeId="27.1215091279307" resolveInfo="LeftBrace" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1239360601969">
+                <property name="labelName" value="do-block" />
+              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1215446470136" />
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995394">
@@ -457,6 +460,9 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198243759903">
             <property name="text" value="}" />
             <link role="styleClass" targetNodeId="27.1215091331565" resolveInfo="RightBrace" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1239360615135">
+              <property name="labelName" value="do-block" />
+            </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032132">
               <property name="flag" value="false" />
             </node>
@@ -2450,6 +2456,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207055587768">
         <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="27.1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812552229" />
     </node>
