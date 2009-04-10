@@ -430,16 +430,13 @@
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198081463443">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227831659">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1198081463445">
-                        <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920540">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198081463447">
-                            <link role="variableDeclaration" targetNodeId="1198077826667" resolveInfo="node" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1198081463448" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920540">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198081463447">
+                          <link role="variableDeclaration" targetNodeId="1198077826667" resolveInfo="node" />
                         </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1198081463448" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1199048485531">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239344013293">
                         <link role="property" targetNodeId="6.1096454100552" resolveInfo="rootable" />
                       </node>
                     </node>
