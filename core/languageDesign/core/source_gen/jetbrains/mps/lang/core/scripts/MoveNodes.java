@@ -123,7 +123,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
         }
-      }                         
+      }
       return true;
     }
     return false;
@@ -146,7 +146,13 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    {
+      SearchResults searchResults = new SearchResults();
+      for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+        searchResults.addAll(FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+      }
+      return searchResults;
+    }
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {

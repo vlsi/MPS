@@ -8,8 +8,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -17,7 +17,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
+import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -72,12 +72,15 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
     {
-      List<SNode> nodes = refactoringContext.getSelectedNodes();
-      if (ListSequence.fromList(nodes).isEmpty()) {
+      if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
         return false;
       }
-      for(SNode node : nodes) {
+      SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
+      for(SNode node : refactoringContext.getSelectedNodes()) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+          return false;
+        }
+        if (SNodeOperations.getModel(node) != model) {
           return false;
         }
       }
@@ -102,14 +105,19 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    {
+      SearchResults searchResults = new SearchResults();
+      for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+        searchResults.addAll(FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+      }
+      return searchResults;
+    }
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
-      SModel model = refactoringContext.getSelectedNode().getModel();
-      refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
+      refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
       List<SNode> editors = ListOperations.<SNode>createList();

@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +60,7 @@ public class FindUtils {
     return results[0];
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SNode node, final IScope scope, final String... finderClassNames) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
       GeneratedFinder finder = getFinderByClassName(finderClassName);
@@ -69,7 +70,7 @@ public class FindUtils {
     return getSearchResults(indicator, node, scope, finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SNode node, final IScope scope, final IFinder... finders) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final IFinder... finders) {
     return getSearchResults(indicator, new SearchQuery(node, scope), makeProvider(finders));
   }
 

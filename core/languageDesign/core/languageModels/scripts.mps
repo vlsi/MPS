@@ -723,11 +723,48 @@
     </node>
     <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1201528947033">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201528947034">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201529692995">
-          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1212246488331">
-            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1212246503239">
-              <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239347290441">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239347290442">
+            <property name="name" value="searchResults" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239347290443">
+              <link role="classifier" targetNodeId="26.~SearchResults" resolveInfo="SearchResults" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239347290444">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239347290445">
+                <link role="baseMethodDeclaration" targetNodeId="26.~SearchResults.&lt;init&gt;()" resolveInfo="SearchResults" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1239347290446">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1239347290447">
+            <property name="name" value="selNode" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239347290448">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239347327999">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239347329720">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239347328000">
+                  <link role="variableDeclaration" targetNodeId="1239347290442" resolveInfo="searchResults" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239347331755">
+                  <link role="baseMethodDeclaration" targetNodeId="26.~SearchResults.addAll(jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="addAll" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1239347332397">
+                    <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1239347332398">
+                      <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
+                    </node>
+                    <node role="searchNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1239347357073">
+                      <link role="variable" targetNodeId="1239347290447" resolveInfo="node" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.lang.refactoring.structure.NodesExpression" id="1239347290449" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239347290471">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239347290472">
+            <link role="variableDeclaration" targetNodeId="1239347290442" resolveInfo="searchResults" />
           </node>
         </node>
       </node>
@@ -847,8 +884,8 @@
     <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1201529733849">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201529733850">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201529734873">
-          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1212246515069">
-            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1212246521462">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1239347312684">
+            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1239347312685">
               <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
             </node>
           </node>
