@@ -42,7 +42,7 @@ public class OverloadedOperationsManager {
     }
     SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
     for (OverloadedOperationsTypesProvider provider : operationsTypesProviderSet) {
-      if (provider.isApplicable(subtypingManager, rightOperandType, leftOperandType)) {
+      if (provider.isApplicable(subtypingManager, leftOperandType, rightOperandType)) {
         SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
         if (result != null) {
           return result;

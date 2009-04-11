@@ -1111,7 +1111,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205761991995">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="argumentRepresentator" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1185963081006">

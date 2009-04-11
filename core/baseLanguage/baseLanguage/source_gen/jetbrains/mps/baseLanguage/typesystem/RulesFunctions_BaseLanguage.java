@@ -64,26 +64,16 @@ public class RulesFunctions_BaseLanguage {
       typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), typeCheckingContext.typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185963005725", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185963003424", intentionProvider);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "rightExpression", true);
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new _Quotations.QuotationClass_25().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176908856117", true, 0, intentionProvider);
-    }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "leftExpression", true);
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new _Quotations.QuotationClass_26().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176908902743", true, 0, intentionProvider);
-    }
-    {
-      final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
-      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
+      final SNode leftType = typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
+      typeCheckingContext.whenConcrete(leftType, new Runnable() {
 
         public void run() {
           {
-            final SNode _representatorVar1 = typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
-            typeCheckingContext.whenConcrete(_representatorVar1, new Runnable() {
+            final SNode rightType = typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
+            typeCheckingContext.whenConcrete(rightType, new Runnable() {
 
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(binOp, typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(binOp, typeCheckingContext.getEquationManager().getRepresentator(leftType), typeCheckingContext.getEquationManager().getRepresentator(rightType));
                 if ((opType != null)) {
                   {
                     SNode _nodeToCheck_1029348928467 = null;
@@ -225,7 +215,7 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(instanceType, new _Quotations.QuotationClass_27().createNode(params, genericClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228174029908", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(instanceType, new _Quotations.QuotationClass_25().createNode(params, genericClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228174029908", false, 0, intentionProvider);
       }
     }
   }
@@ -392,8 +382,8 @@ __switch__:
               typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), prev, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204114618001", intentionProvider);
             }
             {
-              final SNode _representatorVar2 = typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
-              typeCheckingContext.whenConcrete(_representatorVar2, new Runnable() {
+              final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
+              typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
                 public void run() {
                   System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), "jetbrains.mps.lang.core.structure.BaseConcept")));
@@ -484,7 +474,7 @@ __switch__:
   @CheckingMethod()
   /* package */static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(throwables))) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_29().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_28().createNode(typeCheckingContext))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_27().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_26().createNode(typeCheckingContext))) {
         SetSequence.fromSet(throwables).removeElement(livingThrowable);
       }
     }

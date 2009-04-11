@@ -2685,8 +2685,8 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1225124052039">
               <property name="color" value="DARK_GREEN" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225124516647">
-              <property name="value" value="0.0" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1239027605588">
+              <property name="flag" value="true" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225124040085">
@@ -2710,8 +2710,8 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1225124057307">
               <property name="color" value="DARK_GREEN" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225122814187">
-              <property name="value" value="0.0" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1239027614292">
+              <property name="flag" value="true" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225124003391">
@@ -2752,9 +2752,6 @@
             <link role="relationDeclaration" targetNodeId="1.1225118929411" resolveInfo="build" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1225124018262">
               <property name="color" value="blue" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225124018263">
-              <property name="value" value="1.0" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225124018264">

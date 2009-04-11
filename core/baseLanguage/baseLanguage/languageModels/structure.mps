@@ -994,7 +994,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1081506762703">
     <property name="name" value="GreaterThanExpression" />
-    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <link role="extends" targetNodeId="1239448985469" resolveInfo="BinaryCompareOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107216644516">
       <property name="value" value="&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -1010,7 +1010,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1081506773034">
     <property name="name" value="LessThanExpression" />
-    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <link role="extends" targetNodeId="1239448985469" resolveInfo="BinaryCompareOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107216825577">
       <property name="value" value="&lt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -1628,7 +1628,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153417849900">
     <property name="name" value="GreaterThanOrEqualsExpression" />
-    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <link role="extends" targetNodeId="1239448985469" resolveInfo="BinaryCompareOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1153417849901">
       <property name="value" value="&gt;=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -1660,7 +1660,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153422305557">
     <property name="name" value="LessThanOrEqualsExpression" />
-    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <link role="extends" targetNodeId="1239448985469" resolveInfo="BinaryCompareOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1153422305558">
       <property name="value" value="&lt;=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
@@ -3291,6 +3291,13 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1239354281271">
     <property name="name" value="IMethodLike" />
     <property name="package" value="method" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239448985469">
+    <property name="name" value="BinaryCompareOperation" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239449014252">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
   </node>
 </model>
 

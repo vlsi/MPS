@@ -19,7 +19,7 @@ public class typeOf_FloatingPointConstant_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = floatConst;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(floatConst, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485031", true), new _Quotations.QuotationClass_44().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485026", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(floatConst, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485031", true), new _Quotations.QuotationClass_42().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485026", intentionProvider);
     }
   }
 

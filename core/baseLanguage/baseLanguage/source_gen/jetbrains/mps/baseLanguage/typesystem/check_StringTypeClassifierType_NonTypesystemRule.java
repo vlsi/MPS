@@ -19,7 +19,7 @@ public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_97().createNode(typeCheckingContext), "classifier", false)) {
+    if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_95().createNode(typeCheckingContext), "classifier", false)) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

@@ -383,7 +383,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "brace");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
         }
       };
       inlineStyle.apply(editorCell);
@@ -422,7 +422,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
         }
       };
       inlineStyle.apply(editorCell);
@@ -436,7 +435,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "brace");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
       };
       inlineStyle.apply(editorCell);

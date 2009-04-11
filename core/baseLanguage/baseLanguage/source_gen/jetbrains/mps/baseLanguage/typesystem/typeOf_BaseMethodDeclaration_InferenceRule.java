@@ -29,7 +29,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(throwsItem, new _Quotations.QuotationClass_31().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(throwsItem, new _Quotations.QuotationClass_29().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", false, 0, intentionProvider);
       }
     }
     //     ==========

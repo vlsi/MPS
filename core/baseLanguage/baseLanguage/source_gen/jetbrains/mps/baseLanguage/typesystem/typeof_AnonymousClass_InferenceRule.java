@@ -20,7 +20,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1194623855703", true), new _Quotations.QuotationClass_72().createNode(SLinkOperations.getTargets(nodeToCheck, "typeParameter", true), SLinkOperations.getTarget(nodeToCheck, "classifier", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1194623862628", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1194623855703", true), new _Quotations.QuotationClass_70().createNode(SLinkOperations.getTargets(nodeToCheck, "typeParameter", true), SLinkOperations.getTarget(nodeToCheck, "classifier", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1194623862628", intentionProvider);
     }
   }
 

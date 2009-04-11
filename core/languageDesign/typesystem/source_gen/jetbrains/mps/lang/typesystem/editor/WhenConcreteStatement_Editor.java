@@ -198,7 +198,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   public EditorCell createRefNode_1140_5(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argumentRepresentator");
-    provider.setNoTargetText("<no argumentRepresentator>");
+    provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_1140_4_internal(context, node, provider);
