@@ -97,7 +97,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     {
-      SNode node = (SNode)refactoringContext.getSelectedNode();
+      SNode node = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
     }
   }

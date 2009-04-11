@@ -161,11 +161,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198088578300">
               <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198088882299">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198088882300">
-                <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002390195" />
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473105957">
+              <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002390195" />
             </node>
           </node>
         </node>
@@ -1787,11 +1785,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198588355680">
               <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198588366417">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198588366418">
-                <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002305559" />
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473106556">
+              <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002305559" />
             </node>
           </node>
         </node>
@@ -2187,11 +2183,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198593775160">
               <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198593892893">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198593892894">
-                <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002548693" />
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473107889">
+              <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002548693" />
             </node>
           </node>
         </node>
@@ -2647,11 +2641,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198764893482">
               <link role="concept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198764893483">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198764893484">
-                <link role="concept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002225505" />
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473108192">
+              <link role="concept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002225505" />
             </node>
           </node>
         </node>
@@ -3033,11 +3025,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198777116386">
               <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198777116387">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198777116388">
-                <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002473529" />
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473112395">
+              <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002473529" />
             </node>
           </node>
         </node>

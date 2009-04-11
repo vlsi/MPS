@@ -42,7 +42,7 @@ public class BaseTestBody {
   }
 
   public SNode getNodeById(String id) {
-    return MapSequence.fromMap(this.myMap).get(this.myModel.getSModel().getNodeById(id));
+    return this.myMap.get(this.myModel.getSModel().getNodeById(id));
   }
 
   public SNode getRealNodeById(String id) {

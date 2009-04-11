@@ -10531,18 +10531,14 @@
                       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239133820078">
                         <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
                       </node>
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239133820079">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239133820080">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820081">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820082">
-                              <link role="variableDeclaration" targetNodeId="1239133820147" resolveInfo="adapter" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239133820083">
-                              <link role="baseMethodDeclaration" targetNodeId="19.~INodeAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                            </node>
+                      <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473114576">
+                        <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820081">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820082">
+                            <link role="variableDeclaration" targetNodeId="1239133820147" resolveInfo="adapter" />
                           </node>
-                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239133820084">
-                            <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239133820083">
+                            <link role="baseMethodDeclaration" targetNodeId="19.~INodeAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
                           </node>
                         </node>
                       </node>

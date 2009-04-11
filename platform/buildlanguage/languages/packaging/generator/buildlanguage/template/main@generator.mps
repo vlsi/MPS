@@ -2604,15 +2604,11 @@
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204125002268">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210762081112">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204125025564">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204125011838">
-                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1204125013824">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204125039317">
-                                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204125024172" />
-                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1204125042257" />
-                                    </node>
-                                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1204125018531">
-                                      <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
-                                    </node>
+                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473111196">
+                                  <link role="concept" targetNodeId="1.1203617883391" resolveInfo="ICompositeComponent" />
+                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204125039317">
+                                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204125024172" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1204125042257" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204125028535">

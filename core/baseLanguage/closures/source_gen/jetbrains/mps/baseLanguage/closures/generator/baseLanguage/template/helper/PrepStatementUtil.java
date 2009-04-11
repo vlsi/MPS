@@ -192,7 +192,7 @@ public class PrepStatementUtil {
     int brLabel = -1;
     String lbl = SPropertyOperations.getString(bstmt, "label");
     SNode node = bstmt;
-    while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
+    while (((node = SNodeOperations.getAncestor(node, null, false, false)) != null)) {
       if (lbl == (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") :
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")
@@ -209,7 +209,7 @@ public class PrepStatementUtil {
     int conLabel = -1;
     String lbl = SPropertyOperations.getString(cstmt, "label");
     SNode node = cstmt;
-    while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
+    while (((node = SNodeOperations.getAncestor(node, null, false, false)) != null)) {
       if (lbl == SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label")))) {
         Integer[] labels = (Integer[])getPrepData(node, this.generator);
         conLabel = labels[1];

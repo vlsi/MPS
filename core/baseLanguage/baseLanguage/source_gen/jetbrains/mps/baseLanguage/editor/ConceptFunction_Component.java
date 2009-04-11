@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -92,7 +93,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
-        SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node);
+        SNode expectedReturnType = SNodeOperations.cast(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node), "jetbrains.mps.baseLanguage.structure.Type");
         if (expectedReturnType == null) {
           result.append("void");
         } else

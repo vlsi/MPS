@@ -478,11 +478,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239198918237">
               <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239198933407">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239198933408">
-                <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239198933409">
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473113181">
+              <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239198933409">
                 <node role="key" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239198933410">
                   <link role="variableDeclaration" targetNodeId="1239198696944" resolveInfo="binaryOperationConcept" />
                 </node>
@@ -1371,11 +1369,9 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239375785184">
               <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239375785185">
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239375785186">
-                <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
-              </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239375785187">
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473114078">
+              <link role="concept" targetNodeId="4v.1071489090640" resolveInfo="ConceptDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239375785187">
                 <node role="key" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239375792506">
                   <link role="variableDeclaration" targetNodeId="1239375751791" resolveInfo="variableConcept" />
                 </node>

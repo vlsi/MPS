@@ -18,18 +18,18 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 
 public class ClosureLiteralUtil {
 
   public static boolean hasYieldStatement(SNode cl) {
     for(SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false)) {
-      if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
+      if (cl == SNodeOperations.getAncestor(desc, null, false, false)) {
         return true;
       }
     }
@@ -107,7 +107,7 @@ public class ClosureLiteralUtil {
           SLinkOperations.setTarget(newRetCT, "classifier", cls, false);
           /*
             for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(absRetCT, "classifier", false), "typeVariableDeclaration", true)) {
-              SLinkOperations.addChild(newRetCT, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
+              SLinkOperations.addChild(newRetCT, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
             }
           */
           ((SNode)ctNoParams).putUserObject("returnType", newRetCT);
@@ -117,7 +117,7 @@ public class ClosureLiteralUtil {
     }
     /*
       for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
-        SLinkOperations.addChild(ctNoParams, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
+        SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
       }
     */
     List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
@@ -133,7 +133,7 @@ public class ClosureLiteralUtil {
         if (idx < ListSequence.fromList(varDecls).count()) {
           SNode tvd = ListSequence.fromList(varDecls).getElement(idx);
           SLinkOperations.addChild(ctNoParams, "parameter", (map != null ?
-            MapSequence.fromMap(map).get(SPropertyOperations.getString(tvd, "name")) :
+            map.get(SPropertyOperations.getString(tvd, "name")) :
             null
           ));
         }

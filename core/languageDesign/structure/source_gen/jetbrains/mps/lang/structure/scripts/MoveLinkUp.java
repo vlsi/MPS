@@ -103,7 +103,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     {
-      SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
+      SNode linkDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
     }

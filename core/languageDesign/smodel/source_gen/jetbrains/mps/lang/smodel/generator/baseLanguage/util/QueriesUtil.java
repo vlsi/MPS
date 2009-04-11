@@ -4,13 +4,13 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.util;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.SModelLanguageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
@@ -22,7 +22,7 @@ import jetbrains.mps.util.NameUtil;
 public class QueriesUtil {
 
   public static List<SNode> getNodeOperation_ConceptList_concepts(SNode operation) {
-    SNode parm_ConceptList = ((SNode)SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")));
+    SNode parm_ConceptList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList");
     List<SNode> result = ListOperations.<SNode>createList();
     for(SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_ConceptList, "concept", true))) {
       if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
@@ -47,7 +47,7 @@ public class QueriesUtil {
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       methodName = "getBoolean";
     }
-    SNode operationClass = ((SNode)SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope));
+    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
@@ -67,7 +67,7 @@ public class QueriesUtil {
         methodName = "getBoolean";
       }
     }
-    SNode operationClass = ((SNode)SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope));
+    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
@@ -78,14 +78,14 @@ public class QueriesUtil {
 
   public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation, IScope scope) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
-    SNode primitiveDatatype = SLinkOperations.getTarget((((SNode)datatype)), "memberDataType", false);
+    SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "memberDataType", false);
     String methodName = "getString_def";
     if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(primitiveDatatype)) {
       methodName = "getInteger_def";
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(primitiveDatatype)) {
       methodName = "getBoolean_def";
     }
-    SNode operationClass = ((SNode)SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope));
+    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;

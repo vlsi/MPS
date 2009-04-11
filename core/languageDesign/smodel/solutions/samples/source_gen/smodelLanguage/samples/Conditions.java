@@ -10,7 +10,7 @@ public class Conditions {
 
   public void checkTypeOfNode(SNode node) {
     boolean b = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+    boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
   }
 
   public void checkRoleAndTypeOfDirectParent(SNode node) {

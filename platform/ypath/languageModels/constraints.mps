@@ -1860,11 +1860,9 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213104859294">
                 <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213104859295">
-                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213104859296">
-                  <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
-                </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104859297">
+              <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473109305">
+                <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104859297">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859298">
                     <link role="variableDeclaration" targetNodeId="1213104859286" resolveInfo="tpoe" />
                   </node>

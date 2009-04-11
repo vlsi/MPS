@@ -179,13 +179,11 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877321564">
               <link role="concept" targetNodeId="10.1133920641626" resolveInfo="BaseConcept" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213877321565">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877321566">
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473107064">
+              <link role="concept" targetNodeId="10.1133920641626" resolveInfo="BaseConcept" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877321566">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877321567" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1213877321568" />
-              </node>
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877321569">
-                <link role="concept" targetNodeId="10.1133920641626" resolveInfo="BaseConcept" />
               </node>
             </node>
           </node>

@@ -20,8 +20,8 @@ public class ParameterDeclaration_Behavior {
   }
 
   public static boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
-    SNode method = ((SNode)SNodeOperations.getParent(thisNode));
-    if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.IVisible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode)method), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    SNode method = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.IVisible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       return true;
     }
     return false;

@@ -94,10 +94,10 @@ public class MPSLayout_Behavior {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, ((SNode)component))));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));
       } else
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.Module")) {
-        ListSequence.fromList(result).addElement((SNode)component);
+        ListSequence.fromList(result).addElement(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.Module"));
       }
     }
     return result;
@@ -107,10 +107,10 @@ public class MPSLayout_Behavior {
     List<SNode> result = ListSequence.<SNode>fromArray();
     for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(component, "entry", true))) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, ((SNode)entry))));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));
       } else
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
-        ListSequence.fromList(result).addElement((SNode)entry);
+        ListSequence.fromList(result).addElement(SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.Module"));
       }
     }
     return result;
@@ -141,7 +141,7 @@ public class MPSLayout_Behavior {
 
   public static void proceesAbstractProjectComponent_1233317260545(SNode component, List<SNode> list) {
     if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(((SNode)component), "entry", true))) {
+      for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true))) {
         MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
       }
     } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {

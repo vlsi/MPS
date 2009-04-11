@@ -71,7 +71,7 @@ public class Module_Behavior {
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
-      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))) + File.separator + Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
+      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) + File.separator + Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
     }
     return Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
   }

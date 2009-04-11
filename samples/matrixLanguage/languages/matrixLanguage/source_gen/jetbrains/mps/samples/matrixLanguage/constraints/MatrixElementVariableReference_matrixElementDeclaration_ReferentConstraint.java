@@ -33,7 +33,7 @@ public class MatrixElementVariableReference_matrixElementDeclaration_ReferentCon
     List<SNode> vars = ListOperations.<SNode>createList();
     for(SNode node : nodes) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement")) {
-        ListSequence.fromList(vars).addElement(SLinkOperations.getTarget(((SNode)node), "element", true));
+        ListSequence.fromList(vars).addElement(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"), "element", true));
       }
     }
     SimpleSearchScope result = new SimpleSearchScope(vars);
