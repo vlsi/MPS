@@ -12,14 +12,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Locale extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.Locale";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String JAVA_LOCALE = "javaLocale";
 
   public Locale(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(Locale.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Locale.NAME, value);
   }
 
   public String getShortDescription() {
@@ -44,14 +52,6 @@ public class Locale extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Locale.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Locale.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Locale.NAME, value);
   }
 
   public Expression getJavaLocale() {

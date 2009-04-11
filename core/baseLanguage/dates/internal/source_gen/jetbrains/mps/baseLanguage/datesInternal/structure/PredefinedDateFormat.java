@@ -12,15 +12,23 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String IS_PUBLIC = "isPublic";
   public static final String FORMATTER = "formatter";
 
   public PredefinedDateFormat(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(PredefinedDateFormat.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(PredefinedDateFormat.NAME, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PredefinedDateFormat.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(PredefinedDateFormat.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(PredefinedDateFormat.NAME, value);
   }
 
   public boolean getIsPublic() {

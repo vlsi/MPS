@@ -15,10 +15,10 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   public static final String LETTER = "letter";
   public static final String MEANING = "meaning";
   public static final String EXAMPLES = "examples";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
 
   public DateTimePropertyFormatType(SNode node) {
@@ -49,6 +49,14 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
     this.setProperty(DateTimePropertyFormatType.EXAMPLES, value);
   }
 
+  public String getName() {
+    return this.getProperty(DateTimePropertyFormatType.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(DateTimePropertyFormatType.NAME, value);
+  }
+
   public String getShortDescription() {
     return this.getProperty(DateTimePropertyFormatType.SHORT_DESCRIPTION);
   }
@@ -71,14 +79,6 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(DateTimePropertyFormatType.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(DateTimePropertyFormatType.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(DateTimePropertyFormatType.NAME, value);
   }
 
   public DateTimePropertyCardinality getDateTimePropertyCardinality() {

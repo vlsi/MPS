@@ -11,40 +11,39 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeZone extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZone";
-  public static final String SIGN = "sign";
-  public static final String HOUR = "hour";
-  public static final String MINUTE = "minute";
+  public static final String COUNTRY = "country";
+  public static final String CONTINENT_OF_COUNTRY = "continentOfCountry";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public DateTimeZone(SNode node) {
     super(node);
   }
 
-  public String getSign() {
-    return this.getProperty(DateTimeZone.SIGN);
+  public String getCountry() {
+    return this.getProperty(DateTimeZone.COUNTRY);
   }
 
-  public void setSign(String value) {
-    this.setProperty(DateTimeZone.SIGN, value);
+  public void setCountry(String value) {
+    this.setProperty(DateTimeZone.COUNTRY, value);
   }
 
-  public String getHour() {
-    return this.getProperty(DateTimeZone.HOUR);
+  public String getContinentOfCountry() {
+    return this.getProperty(DateTimeZone.CONTINENT_OF_COUNTRY);
   }
 
-  public void setHour(String value) {
-    this.setProperty(DateTimeZone.HOUR, value);
+  public void setContinentOfCountry(String value) {
+    this.setProperty(DateTimeZone.CONTINENT_OF_COUNTRY, value);
   }
 
-  public String getMinute() {
-    return this.getProperty(DateTimeZone.MINUTE);
+  public String getName() {
+    return this.getProperty(DateTimeZone.NAME);
   }
 
-  public void setMinute(String value) {
-    this.setProperty(DateTimeZone.MINUTE, value);
+  public void setName(String value) {
+    this.setProperty(DateTimeZone.NAME, value);
   }
 
   public String getShortDescription() {
@@ -69,14 +68,6 @@ public class DateTimeZone extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(DateTimeZone.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(DateTimeZone.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(DateTimeZone.NAME, value);
   }
 
 

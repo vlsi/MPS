@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty";
   public static final String PLURAL_FORM = "pluralForm";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String JODA_DATE_TIME_FIELD_TYPE = "jodaDateTimeFieldType";
   public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
 
@@ -30,6 +30,14 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
   public void setPluralForm(String value) {
     this.setProperty(DateTimeProperty.PLURAL_FORM, value);
+  }
+
+  public String getName() {
+    return this.getProperty(DateTimeProperty.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(DateTimeProperty.NAME, value);
   }
 
   public String getShortDescription() {
@@ -54,14 +62,6 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(DateTimeProperty.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(DateTimeProperty.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(DateTimeProperty.NAME, value);
   }
 
   public StaticMethodDeclaration getJodaDateTimeFieldType() {

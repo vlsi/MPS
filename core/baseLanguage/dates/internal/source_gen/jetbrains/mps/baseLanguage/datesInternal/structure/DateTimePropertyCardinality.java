@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 public class DateTimePropertyCardinality extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyCardinality";
   public static final String MEANING = "meaning";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String NUMBER_OF_SYMBOLS = "numberOfSymbols";
 
   public DateTimePropertyCardinality(SNode node) {
@@ -28,6 +28,14 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
 
   public void setMeaning(String value) {
     this.setProperty(DateTimePropertyCardinality.MEANING, value);
+  }
+
+  public String getName() {
+    return this.getProperty(DateTimePropertyCardinality.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(DateTimePropertyCardinality.NAME, value);
   }
 
   public String getShortDescription() {
@@ -52,14 +60,6 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
 
   public void setVirtualPackage(String value) {
     this.setProperty(DateTimePropertyCardinality.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(DateTimePropertyCardinality.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(DateTimePropertyCardinality.NAME, value);
   }
 
   public int getNumberOfSymbols() {
