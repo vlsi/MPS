@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
@@ -64,7 +65,7 @@ public class SModelUtil {
   }
 
   public static SNode findConceptDeclaration(final String conceptFQName, final IScope scope) {
-    SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
+    SNode cd = myFQNameToConcepDecl.get(conceptFQName);
     if (cd != null) {
       return cd;
     }
@@ -90,9 +91,9 @@ public class SModelUtil {
 
   public static SNode getConceptLinkTarget(SNode link) {
     if (SNodeOperations.isInstanceOf(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
-      return SLinkOperations.getTarget(((SNode)link), "target", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
     }
-    return SLinkOperations.getTarget(((SNode)link), "target", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
   }
 
   public static SNode getBaseConcept() {
@@ -100,7 +101,7 @@ public class SModelUtil {
   }
 
   public static Language getDeclaringLanguage(SNode concept, @NotNull() IScope scope) {
-    Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
+    Language l = myConceptToLanguage.get(concept);
     if (l != null) {
       return l;
     }
