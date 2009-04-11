@@ -136,19 +136,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216650722269">
               <link role="baseMethodDeclaration" targetNodeId="15.~StructureViewComponent.inspect(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="inspect" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1216920396691">
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216920396692">
-                  <link role="classifier" targetNodeId="14.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-                </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216920397459">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216920397460">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216920397459">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239466582785">
+                  <link role="concept" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216920397460">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216920397461" />
                     <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1216920397462">
                       <link role="member" targetNodeId="1216650700696" resolveInfo="node" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1216920397463" />
                 </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1216920397463" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216650728478">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216650728479">

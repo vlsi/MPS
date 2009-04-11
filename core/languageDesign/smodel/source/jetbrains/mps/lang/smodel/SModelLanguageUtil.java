@@ -24,8 +24,9 @@ import java.util.Iterator;
  * Igor Alshannikov
  * Apr 4, 2006
  */
+@Deprecated
+//todo remove this class (see jetbrains.mps.lang.smodel.generator.baseLanguage.util)
 public class SModelLanguageUtil {
-
   public static <T> T findNodeOperationParameter(SNodeOperation nodeOperation, Class<T> parameterClazz) {
     if (nodeOperation.getParametersCount() > 0) {
       Iterator<AbstractOperationParameter> iterator = nodeOperation.parameters();

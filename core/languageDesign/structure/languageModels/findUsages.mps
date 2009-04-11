@@ -70,14 +70,12 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238662721682">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findInstances(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor,boolean):java.util.Set" resolveInfo="findInstances" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1238662721683">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721684">
-                        <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721685" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238662721686" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721684">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239466534429">
+                        <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721685" />
                       </node>
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238662721687">
-                        <link role="classifier" targetNodeId="18.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238662721686" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1238662721688" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238662721689">
@@ -119,8 +117,8 @@
                   </node>
                 </node>
               </node>
-              <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200306749512">
-                <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="node" />
+              <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239466547787">
+                <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="resNode" />
               </node>
             </node>
           </node>
@@ -686,14 +684,12 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238662721561">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findExactInstances(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor,boolean):java.util.Set" resolveInfo="findExactInstances" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1238662721562">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721563">
-                        <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721564" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238662721565" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721563">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239466563295">
+                        <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721564" />
                       </node>
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238662721566">
-                        <link role="classifier" targetNodeId="18.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238662721565" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1238662721567" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238662721568">

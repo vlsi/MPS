@@ -13,15 +13,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
-import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
-import jetbrains.mps.smodel.PropertySupportUtil;
-import jetbrains.mps.smodel.DataTypeUtil;
-import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
-import jetbrains.mps.lang.smodel.structure.SNodeOperation;
-import jetbrains.mps.lang.smodel.structure.OperationParm_Concept;
-import jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList;
+import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.baseLanguage.util.DataTypeUtil;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
@@ -67,9 +60,10 @@ public class QueriesUtil {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     String methodName = "getString";
     if (SNodeOperations.isInstanceOf(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      if (PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)((DataTypeDeclaration)SNodeOperations.getAdapter(datatype))))) {
+      SNode primitiveDatatype = SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(primitiveDatatype)) {
         methodName = "getInteger";
-      } else if (PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)((DataTypeDeclaration)SNodeOperations.getAdapter(datatype))))) {
+      } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(primitiveDatatype)) {
         methodName = "getBoolean";
       }
     }
@@ -86,9 +80,9 @@ public class QueriesUtil {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     SNode primitiveDatatype = SLinkOperations.getTarget((((SNode)datatype)), "memberDataType", false);
     String methodName = "getString_def";
-    if (PropertySupportUtil.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(primitiveDatatype)))) {
+    if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(primitiveDatatype)) {
       methodName = "getInteger_def";
-    } else if (PropertySupportUtil.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(primitiveDatatype)))) {
+    } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(primitiveDatatype)) {
       methodName = "getBoolean_def";
     }
     SNode operationClass = ((SNode)SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope));
@@ -101,24 +95,24 @@ public class QueriesUtil {
   }
 
   public static String get_SPropertyAccess_enum_defaultValue(SNode operation) {
-    return DataTypeUtil.getDefaultMember((EnumerationDataTypeDeclaration)((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false)))).getInternalValue();
+    return SPropertyOperations.getString(DataTypeUtil.getDefaultMember(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "internalValue");
   }
 
   public static boolean nodeOp_noParm_conceptList(SNode op) {
-    Object parm = jetbrains.mps.lang.smodel.SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_Concept.class);
+    SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
     if (parm != null) {
       return true;
     }
-    parm = jetbrains.mps.lang.smodel.SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_ConceptList.class);
+    parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
     return parm == null;
   }
 
   public static boolean nodeOp_hasParm_conceptList(SNode op) {
-    Object parm = jetbrains.mps.lang.smodel.SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_Concept.class);
+    SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
     if (parm != null) {
       return false;
     }
-    parm = jetbrains.mps.lang.smodel.SModelLanguageUtil.findNodeOperationParameter(((SNodeOperation)SNodeOperations.getAdapter(op)), OperationParm_ConceptList.class);
+    parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
     return parm != null;
   }
 
