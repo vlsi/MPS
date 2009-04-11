@@ -30,10 +30,16 @@ public enum RuleType {
     return myType;
   }
 
+  public String getPresentation() {
+    return myPresentation;
+  }
+
+/*
   @Override
   public String toString() {
     return myPresentation;
   }
+*/
 
   public static RuleType parse(String s) {
     for (RuleType rt : RuleType.values()) {
