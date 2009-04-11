@@ -33,7 +33,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.IBLDeprecatable;
