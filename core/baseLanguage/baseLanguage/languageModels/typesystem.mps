@@ -10499,7 +10499,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239133820056">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239133820057">
-                  <property name="name" value="list" />
+                  <property name="name" value="adapters" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1239133820058">
                     <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239133820059">
                       <link role="classifier" targetNodeId="36.~BaseMethodDeclaration" resolveInfo="BaseMethodDeclaration" />
@@ -10530,22 +10530,6 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1239133820068">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239133820069">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239133820070">
-                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239133820071">
-                      <property name="name" value="adapter" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239133820072">
-                        <link role="classifier" targetNodeId="19.~INodeAdapter" resolveInfo="INodeAdapter" />
-                      </node>
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239133820073">
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239133820074">
-                          <link role="classifier" targetNodeId="19.~INodeAdapter" resolveInfo="INodeAdapter" />
-                        </node>
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820075">
-                          <link role="variableDeclaration" targetNodeId="1239133820147" resolveInfo="object" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239133820076">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239133820077">
                       <property name="name" value="baseMethodDeclaration" />
@@ -10556,7 +10540,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239133820080">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820081">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820082">
-                              <link role="variableDeclaration" targetNodeId="1239133820071" resolveInfo="adapter" />
+                              <link role="variableDeclaration" targetNodeId="1239133820147" resolveInfo="adapter" />
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239133820083">
                               <link role="baseMethodDeclaration" targetNodeId="19.~INodeAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
@@ -10714,9 +10698,9 @@
                   <link role="variableDeclaration" targetNodeId="1239133820057" resolveInfo="list" />
                 </node>
                 <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239133820147">
-                  <property name="name" value="object" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239133820148">
-                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                  <property name="name" value="adapter" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239460728247">
+                    <link role="classifier" targetNodeId="19.~INodeAdapter" resolveInfo="INodeAdapter" />
                   </node>
                 </node>
               </node>

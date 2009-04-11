@@ -22,8 +22,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.editor.editor.SelectImageFileButton;
-import jetbrains.mps.lang.editor.structure.CellModel_Image;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_Image_Editor extends DefaultNodeEditor {
 
@@ -442,7 +440,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   public static JComponent _QueryFunction_JComponent_1214480452884(SNode node, EditorContext editorContext) {
-    return new SelectImageFileButton(((CellModel_Image)SNodeOperations.getAdapter(node)));
+    return new SelectImageFileButton(node);
   }
 
 }
