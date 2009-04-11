@@ -10477,21 +10477,16 @@
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239133820047">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239133820048">
                       <link role="baseMethodDeclaration" targetNodeId="35.~ClassifierAndSuperClassifiersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier)" resolveInfo="ClassifierAndSuperClassifiersScope" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239133820049">
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239133820050">
-                          <link role="classifier" targetNodeId="36.~Classifier" resolveInfo="Classifier" />
-                        </node>
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820051">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820052">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820053">
-                              <link role="variableDeclaration" targetNodeId="1239133820033" resolveInfo="instanceType" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239133820054">
-                              <link role="link" targetNodeId="1.1107535924139" />
-                            </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820051">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239133820052">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239133820053">
+                            <link role="variableDeclaration" targetNodeId="1239133820033" resolveInfo="instanceType" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1239133820055" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239133820054">
+                            <link role="link" targetNodeId="1.1107535924139" />
+                          </node>
                         </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1239133820055" />
                       </node>
                     </node>
                   </node>

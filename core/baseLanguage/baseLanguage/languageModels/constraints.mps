@@ -1516,20 +1516,27 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104859448">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104859449">
               <property name="name" value="classifiers" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215735940896">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215735899137">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215735934138">
-                    <link role="baseMethodDeclaration" targetNodeId="10.~ClassifierAndSuperClassifiersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier)" resolveInfo="ClassifierAndSuperClassifiersScope" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215736155964">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215735938704">
-                        <link role="variableDeclaration" targetNodeId="1213104859442" resolveInfo="opClassifier" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239467101576">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239467101577">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239467101578">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239467101579">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239467101580">
+                        <link role="baseMethodDeclaration" targetNodeId="10.~ClassifierAndSuperClassifiersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier)" resolveInfo="ClassifierAndSuperClassifiersScope" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239467101581">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239467101582">
+                            <link role="variableDeclaration" targetNodeId="1213104859442" resolveInfo="opClassifier" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1239467101583" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1215736157189" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239467101584">
+                      <link role="baseMethodDeclaration" targetNodeId="10.~AbstractClassifiersScope.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
                     </node>
                   </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215735943277">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~AbstractClassifiersScope.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239467101585">
+                    <link role="elementConcept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                  </node>
                 </node>
               </node>
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239460578532">

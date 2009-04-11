@@ -15,7 +15,9 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideMethodDialog;
@@ -74,9 +76,10 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       if ((declClassifier != null)) {
         ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(declClassifier)), IClassifiersSearchScope.INSTANCE_METHOD);
         List<BaseMethodDeclaration> list = scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method)));
-        if (ListSequence.fromList(list).count() > 0) {
-          SNode overriden = ((SNode)ListSequence.fromList(list).getElement(0).getNode());
-          editorContext.getOperationContext().getComponent(MPSEditorOpener.class).openNode(overriden);
+        SNode overriden = ((SNode)BaseAdapter.fromAdapter(ListSequence.fromList(list).first()));
+        if (overriden != null) {
+          IOperationContext context = editorContext.getOperationContext();
+          context.getComponent(MPSEditorOpener.class).editNode(overriden, context);
         }
       }
     }
