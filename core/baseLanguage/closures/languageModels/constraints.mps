@@ -2745,10 +2745,12 @@
               <link role="concept" targetNodeId="6.1107535904670" resolveInfo="ClassifierType" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1228170259157">
-              <node role="ifTrue" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473110571">
-                <link role="concept" targetNodeId="6.1107535904670" resolveInfo="ClassifierType" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228170259196">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1228170259158">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228170259196">
                   <link role="variableDeclaration" targetNodeId="1228170259151" resolveInfo="type" />
+                </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1228170259160">
+                  <link role="concept" targetNodeId="6.1107535904670" resolveInfo="ClassifierType" />
                 </node>
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1228170259161" />

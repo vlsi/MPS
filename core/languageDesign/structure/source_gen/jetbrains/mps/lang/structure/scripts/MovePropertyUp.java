@@ -100,7 +100,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     {
-      SNode linkDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
     }

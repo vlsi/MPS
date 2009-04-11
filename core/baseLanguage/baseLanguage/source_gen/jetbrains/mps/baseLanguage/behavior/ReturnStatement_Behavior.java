@@ -37,7 +37,7 @@ public class ReturnStatement_Behavior {
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
-      SNode ancestor = SNodeOperations.getAncestor(thisNode, null, false, false);
+      SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
       } else

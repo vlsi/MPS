@@ -28,7 +28,7 @@ public class BreakStatement_Behavior {
   }
 
   public static SNode call_getLoopOrSwitch_1213877377041(SNode thisNode) {
-    for(SNode item : SNodeOperations.getAncestors(thisNode, null, false)) {
+    for(SNode item : SNodeOperations.getAncestorsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && SPropertyOperations.getString(thisNode, "label") == null) {
         return item;
       }

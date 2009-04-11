@@ -61,7 +61,7 @@ public class ConceptBehavior_Behavior {
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
-          SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
+          SLinkOperations.setTarget(call, "baseMethodDeclaration", (SNode)declaration, false);
           SLinkOperations.addAll(call, "actualArgument", arguments);
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
           SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", null), true);
@@ -70,9 +70,9 @@ public class ConceptBehavior_Behavior {
         }
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
-          SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"), false);
+          SLinkOperations.setTarget(call, "baseMethodDeclaration", (SNode)declaration, false);
           SLinkOperations.addAll(call, "actualArgument", arguments);
-          SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.myNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);
+          SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(((SNode)this.myNode), "concept", false), false);
           return call;
         }
         return null;
@@ -89,7 +89,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
+        return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(((SNode)this.myStaticContainer), "concept", false), method, arguments);
       }
     };
   }

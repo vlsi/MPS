@@ -24,7 +24,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(referenceMacro.getRole_());
     ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))));
     LinkDeclaration link_ = linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole);
-    SNode link = SNodeOperations.cast(BaseAdapter.fromAdapter(link_), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SNode link = (SNode)BaseAdapter.fromAdapter(link_);
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
     SNode expectedNodeType = new _Quotations.QuotationClass_0().createNode(targetConcept);
     //     reference may be resolved dynamically?

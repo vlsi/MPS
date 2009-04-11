@@ -4,7 +4,6 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 
 public class TypeCast {
@@ -13,17 +12,17 @@ public class TypeCast {
     SNode nodeObject1 = ifStatement;
     SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
-    SNode expression = SNodeOperations.cast(nodeObject3, "jetbrains.mps.baseLanguage.structure.Expression");
+    SNode expression = nodeObject3;
   }
 
   public void cast_SNode_to_node(SNode node) {
     SNode node1 = node;
-    SNode node2 = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode node2 = (SNode)node;
   }
 
   public void upcast_snode(SNode snode) {
-    SNode ifStatement = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNode ifStatement1 = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode ifStatement = (SNode)snode;
+    SNode ifStatement1 = snode;
   }
 
   public void cast_children_to_nlist(SNode statementList) {

@@ -215,10 +215,14 @@
                             <property name="name" value="type2" />
                             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215607026416" />
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026417">
-                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473113246">
-                                <link role="concept" targetNodeId="2.1215526290564" resolveInfo="NodeTypeProperty" />
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026420">
-                                  <link role="variableDeclaration" targetNodeId="1215607026398" resolveInfo="property" />
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1215607026418">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215607026419">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026420">
+                                    <link role="variableDeclaration" targetNodeId="1215607026398" resolveInfo="property" />
+                                  </node>
+                                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215607026421">
+                                    <link role="concept" targetNodeId="2.1215526290564" resolveInfo="NodeTypeProperty" />
+                                  </node>
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215607026422">
@@ -810,10 +814,14 @@
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215615437102">
                             <property name="name" value="var" />
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215615447234">
-                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473107891">
-                                <link role="concept" targetNodeId="2.1215614394933" resolveInfo="VariableInialized" />
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215615447238">
-                                  <link role="variableDeclaration" targetNodeId="1215611983719" resolveInfo="property" />
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1215615447235">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215615447236">
+                                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215615447237">
+                                    <link role="concept" targetNodeId="2.1215614394933" resolveInfo="VaribaleInialized" />
+                                  </node>
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215615447238">
+                                    <link role="variableDeclaration" targetNodeId="1215611983719" resolveInfo="property" />
+                                  </node>
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215615447239">
@@ -881,10 +889,14 @@
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215617277226">
                             <property name="name" value="var" />
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215617277227">
-                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473109210">
-                                <link role="concept" targetNodeId="2.1215614394933" resolveInfo="VariableInialized" />
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215617277231">
-                                  <link role="variableDeclaration" targetNodeId="1215611983719" resolveInfo="property" />
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1215617277228">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215617277229">
+                                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215617277230">
+                                    <link role="concept" targetNodeId="2.1215614394933" resolveInfo="VaribaleInialized" />
+                                  </node>
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215617277231">
+                                    <link role="variableDeclaration" targetNodeId="1215611983719" resolveInfo="property" />
+                                  </node>
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215617277232">

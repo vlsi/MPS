@@ -32,7 +32,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true));
+    Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(SLinkOperations.getTarget(((SNode)SNodeOperations.getParent(node)), "body", true));
     return SetSequence.fromSet(unusedAssignments).contains(node);
   }
 
@@ -54,7 +54,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention {
     SNode paramRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(paramRef, "variableDeclaration", node, false);
     SLinkOperations.setTarget(expr, "rValue", paramRef, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", newStatement);
+    SLinkOperations.addChild(SLinkOperations.getTarget(((SNode)SNodeOperations.getParent(node)), "body", true), "statement", newStatement);
   }
 
   public String getLocationString() {

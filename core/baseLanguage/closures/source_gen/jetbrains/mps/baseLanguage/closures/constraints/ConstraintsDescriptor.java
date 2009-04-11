@@ -4,16 +4,16 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ControlAbstractionContainer_DefaultSearchScope());
+    this.myConstraints.add(new ControlAbstractionContainer_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

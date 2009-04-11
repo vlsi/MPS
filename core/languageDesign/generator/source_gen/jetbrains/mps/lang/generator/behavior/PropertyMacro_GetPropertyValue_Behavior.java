@@ -23,7 +23,7 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(propertyMacro.getRole_());
     PropertyDeclaration property_ = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))), propertyName);
     if (property_ != null) {
-      SNode property = SNodeOperations.cast(property_.getNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+      SNode property = (SNode)property_.getNode();
       SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
       if (dataType != null) {
         return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);

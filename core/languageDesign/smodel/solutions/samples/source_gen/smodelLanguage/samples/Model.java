@@ -40,6 +40,7 @@ public class Model {
       public boolean accept(SNode c) {
         return SPropertyOperations.hasValue(c, "name", "Utils");
       }
+
     });
   }
 
@@ -55,6 +56,7 @@ public class Model {
       public boolean accept(SNode c) {
         return SPropertyOperations.hasValue(c, "name", "Utils");
       }
+
     });
   }
 

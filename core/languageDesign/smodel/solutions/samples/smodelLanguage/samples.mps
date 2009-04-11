@@ -1075,9 +1075,11 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1145579796828">
               <link role="concept" targetNodeId="1.1068580123159" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473107493">
-              <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145579839902">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1145579829069">
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1145579834338">
+                <link role="concept" targetNodeId="1.1068580123159" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145579839902">
                 <link role="variableDeclaration" targetNodeId="1145579627416" />
               </node>
             </node>
@@ -1102,10 +1104,12 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1145579911192">
               <link role="concept" targetNodeId="1.1068580123159" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473111499">
-              <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145579942762">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1145579931319">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145579942762">
                 <link role="variableDeclaration" targetNodeId="1145579900985" />
+              </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1145579938949">
+                <link role="concept" targetNodeId="1.1068580123159" />
               </node>
             </node>
           </node>

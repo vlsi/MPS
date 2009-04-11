@@ -51,6 +51,7 @@ public class Children {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "value") == true;
       }
+
     });
     SNode abcdef;
     SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);
@@ -63,8 +64,8 @@ public class Children {
   }
 
   public void accessToChildren_4(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false);
-    List<SNode> children2 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, true);
+    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false);
+    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true);
   }
 
 }

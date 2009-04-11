@@ -49,16 +49,20 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239205751280">
               <link role="concept" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473108194">
-              <link role="concept" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239206491742">
-                <link role="baseMethodDeclaration" targetNodeId="1239206111476" resolveInfo="findNodeOperationParameter" />
-                <link role="classConcept" targetNodeId="1239206083907" resolveInfo="SModelLanguageUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239206491743">
-                  <link role="variableDeclaration" targetNodeId="1239205702291" resolveInfo="operation" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239206491740">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239206491741">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239206491742">
+                  <link role="baseMethodDeclaration" targetNodeId="1239206111476" resolveInfo="findNodeOperationParameter" />
+                  <link role="classConcept" targetNodeId="1239206083907" resolveInfo="SModelLanguageUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239206491743">
+                    <link role="variableDeclaration" targetNodeId="1239205702291" resolveInfo="operation" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239206491744">
+                    <link role="conceptDeclaration" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239206491744">
-                  <link role="conceptDeclaration" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239206491745">
+                  <link role="concept" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
                 </node>
               </node>
             </node>
@@ -273,19 +277,23 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239206931283">
               <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473110144">
-              <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239206956131">
-                <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239206956132">
-                  <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239206956129">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239206956130">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239206956131">
+                  <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
+                  <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239206956132">
+                    <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239206956133">
+                    <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239206956134">
+                    <link role="variableDeclaration" targetNodeId="1239206587647" resolveInfo="scope" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239206956133">
-                  <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239206956134">
-                  <link role="variableDeclaration" targetNodeId="1239206587647" resolveInfo="scope" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239206956135">
+                  <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
                 </node>
               </node>
             </node>
@@ -465,19 +473,23 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239207077003">
               <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473112652">
-              <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239207077006">
-                <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239207077007">
-                  <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239207077004">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239207077005">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239207077006">
+                  <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
+                  <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239207077007">
+                    <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239207077008">
+                    <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239207077009">
+                    <link role="variableDeclaration" targetNodeId="1239207077031" resolveInfo="scope" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239207077008">
-                  <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239207077009">
-                  <link role="variableDeclaration" targetNodeId="1239207077031" resolveInfo="scope" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239207077010">
+                  <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
                 </node>
               </node>
             </node>
@@ -576,10 +588,14 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239207498454">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239207493838">
-                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473108193">
-                  <link role="concept" targetNodeId="5.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239207493841">
-                    <link role="variableDeclaration" targetNodeId="1239207394967" resolveInfo="datatype" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239207493839">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239207493840">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239207493841">
+                      <link role="variableDeclaration" targetNodeId="1239207394967" resolveInfo="datatype" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239207493842">
+                      <link role="concept" targetNodeId="5.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -650,19 +666,23 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239207395012">
               <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473113019">
-              <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239207395015">
-                <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
-                <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239207395016">
-                  <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1239207395013">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1239207395014">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239207395015">
+                  <link role="baseMethodDeclaration" targetNodeId="29.1238267513315" resolveInfo="findNodeByFQName" />
+                  <link role="classConcept" targetNodeId="29.1237995590703" resolveInfo="SModelUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239207395016">
+                    <property name="value" value="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239207395017">
+                    <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239207395018">
+                    <link role="variableDeclaration" targetNodeId="1239207345674" resolveInfo="scope" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239207395017">
-                  <link role="conceptDeclaration" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239207395018">
-                  <link role="variableDeclaration" targetNodeId="1239207345674" resolveInfo="scope" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239207395019">
+                  <link role="concept" targetNodeId="2v.1068390468198" resolveInfo="ClassConcept" />
                 </node>
               </node>
             </node>

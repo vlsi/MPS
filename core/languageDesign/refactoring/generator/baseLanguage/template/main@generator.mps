@@ -2782,9 +2782,11 @@
                                                         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215507182446">
                                                           <link role="concept" targetNodeId="22.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                                                         </node>
-                                                        <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473114797">
-                                                          <link role="concept" targetNodeId="22.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-                                                          <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference" id="1215507182449">
+                                                        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215507182447">
+                                                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215507182448">
+                                                            <link role="concept" targetNodeId="22.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                                                          </node>
+                                                          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference" id="1215507182449">
                                                             <link role="patternVarDecl" targetNodeId="1215507182439" resolveInfo="#concept" />
                                                           </node>
                                                         </node>
@@ -4266,9 +4268,11 @@
                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1217265384060">
                             <link role="concept" targetNodeId="5.1068580123132" resolveInfo="BaseMethodDeclaration" />
                           </node>
-                          <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239473113631">
-                            <link role="concept" targetNodeId="5.1068580123132" resolveInfo="BaseMethodDeclaration" />
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217265384063">
+                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1217265384061">
+                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1217265384062">
+                              <link role="concept" targetNodeId="5.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                            </node>
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217265384063">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217265384064">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217265384065">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217265384066">

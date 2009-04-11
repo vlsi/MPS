@@ -36,7 +36,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
     boolean applicable = false;
     if ((SNodeOperations.getParent(node) != null)) {
       String role = node.getRole_();
-      SNode linkDeclaration = SNodeOperations.cast(BaseAdapter.fromAdapter(SNodeOperations.getParent(node).getLinkDeclaration(role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      SNode linkDeclaration = ((SNode)BaseAdapter.fromAdapter(SNodeOperations.getParent(node).getLinkDeclaration(role)));
       if (SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"), NameUtil.nodeFQName(SLinkOperations.getTarget(linkDeclaration, "target", false)))) {
         int statementsCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).count();
         if (SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..1", "0..1")) {

@@ -441,7 +441,7 @@ __switch__:
   }
 
   public static boolean isWithinStatic(SNode node) {
-    SNode staticAncestor = SNodeOperations.getAncestor(node, null, false, false);
+    SNode staticAncestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
     if (staticAncestor != null) {
       return true;
     }

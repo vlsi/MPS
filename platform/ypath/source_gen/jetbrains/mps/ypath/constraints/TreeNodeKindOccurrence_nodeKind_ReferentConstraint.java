@@ -28,7 +28,7 @@ public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint extends BaseNode
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpa = SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect");
+    SNode tpa = (SNode)ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     return ListSequence.fromList(SNodeOperations.getDescendants(tpa, null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {

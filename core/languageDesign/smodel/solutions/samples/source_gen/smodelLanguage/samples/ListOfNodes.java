@@ -22,6 +22,7 @@ public class ListOfNodes {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IfStatement");
       }
+
     });
   }
 

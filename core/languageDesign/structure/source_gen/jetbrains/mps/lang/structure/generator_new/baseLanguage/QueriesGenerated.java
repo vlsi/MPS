@@ -626,7 +626,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabel(defaultMember, "outputEnumConstant");
-    return SNodeOperations.cast(outputEnumConstant, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+    return (SNode)outputEnumConstant;
   }
 
   public static Object referenceMacro_GetReferent_1234209804321(final IOperationContext operationContext, final ReferenceMacroContext _context) {

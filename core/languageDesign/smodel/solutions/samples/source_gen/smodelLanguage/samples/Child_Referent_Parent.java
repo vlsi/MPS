@@ -57,7 +57,7 @@ public class Child_Referent_Parent {
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression);
     while (mayBe_IfStatement != null) {
       if (SNodeOperations.isInstanceOf(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        parent_IfStatement = SNodeOperations.cast(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
+        parent_IfStatement = mayBe_IfStatement;
         break;
       }
       mayBe_IfStatement = SNodeOperations.getParent(mayBe_IfStatement);
@@ -65,7 +65,7 @@ public class Child_Referent_Parent {
   }
 
   public void accessToParentNode_2(SNode methodCall) {
-    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false));
   }
 
   public void accessToParentNode_3(SNode node) {
@@ -77,7 +77,7 @@ public class Child_Referent_Parent {
   }
 
   public void accessToAncestorNode_2(SNode expression) {
-    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestor(expression, null, false, false);
+    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
 
   public void accessToAncestorNodes_1(SNode expression) {
@@ -85,7 +85,7 @@ public class Child_Referent_Parent {
   }
 
   public void accessToAncestorNodes_2(SNode expression) {
-    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestors(expression, null, true);
+    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }
 
 }

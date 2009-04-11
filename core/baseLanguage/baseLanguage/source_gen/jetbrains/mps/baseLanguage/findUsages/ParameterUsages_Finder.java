@@ -31,11 +31,11 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    return (SNodeOperations.getAncestor(node, null, false, false) != null);
+    return (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false) != null);
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    SNode nodeParentMethod = SNodeOperations.getAncestor(node, null, false, false);
+    SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
     // 
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, indicator);
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
@@ -49,7 +49,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    SNode nodeParentMethod = SNodeOperations.getAncestor(node, null, false, false);
+    SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
     // 
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressIndicator());
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
