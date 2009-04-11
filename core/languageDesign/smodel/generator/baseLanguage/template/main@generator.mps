@@ -1810,10 +1810,12 @@
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1171416050083">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171416050084">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173119961113">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171416050086">
-              <link role="baseMethodDeclaration" targetNodeId="15.1168969209239" />
-              <link role="classConcept" targetNodeId="15.1168968323635" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1171416050087" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239490148325">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239490148326">
+                <link role="baseMethodDeclaration" targetNodeId="15.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239490148327" />
+              </node>
             </node>
           </node>
         </node>
@@ -1844,10 +1846,12 @@
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1173123556626">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1173123556627">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173123556628">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173123556629">
-              <link role="baseMethodDeclaration" targetNodeId="15.1168969209239" />
-              <link role="classConcept" targetNodeId="15.1168968323635" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1173123556630" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239490139039">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239490139040">
+                <link role="baseMethodDeclaration" targetNodeId="15.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239490139041" />
+              </node>
             </node>
           </node>
         </node>
@@ -1881,10 +1885,12 @@
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1173119975662">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1173119975663">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173119975664">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173119975665">
-              <link role="classConcept" targetNodeId="15.1168968323635" />
-              <link role="baseMethodDeclaration" targetNodeId="15.1168969209239" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1173119975666" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239490157643">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239490157644">
+                <link role="baseMethodDeclaration" targetNodeId="15.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239490157645" />
+              </node>
             </node>
           </node>
         </node>

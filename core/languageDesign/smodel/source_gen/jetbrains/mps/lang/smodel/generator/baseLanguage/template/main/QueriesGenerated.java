@@ -89,7 +89,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1171416050083(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.nodeOp_hasParm_conceptList(_context.getNode());
+    return !(QueriesUtil.nodeOp_noParm_conceptList(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1173119900048(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -97,7 +97,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1173119975662(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.nodeOp_hasParm_conceptList(_context.getNode());
+    return !(QueriesUtil.nodeOp_noParm_conceptList(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1173123556619(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -105,7 +105,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1173123556626(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.nodeOp_hasParm_conceptList(_context.getNode());
+    return !(QueriesUtil.nodeOp_noParm_conceptList(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1176109848810(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

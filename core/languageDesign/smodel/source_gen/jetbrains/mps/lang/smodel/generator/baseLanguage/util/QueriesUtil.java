@@ -99,21 +99,12 @@ public class QueriesUtil {
   }
 
   public static boolean nodeOp_noParm_conceptList(SNode op) {
-    SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
+    SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
     if (parm != null) {
       return true;
     }
     parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
     return parm == null;
-  }
-
-  public static boolean nodeOp_hasParm_conceptList(SNode op) {
-    SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
-    if (parm != null) {
-      return false;
-    }
-    parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
-    return parm != null;
   }
 
   public static boolean isProperty_hasValueEnum_notNullDefaultValue(SNode op, ITemplateGenerator generator) {

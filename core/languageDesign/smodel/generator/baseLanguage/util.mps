@@ -801,7 +801,7 @@
                 <link role="variableDeclaration" targetNodeId="1168968445647" resolveInfo="op" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239464753888">
-                <link role="conceptDeclaration" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
+                <link role="conceptDeclaration" targetNodeId="1.1144101972840" resolveInfo="OperationParm_Concept" />
               </node>
             </node>
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239464763280" />
@@ -855,73 +855,6 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096892" />
-    </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1168969209239">
-      <property name="name" value="nodeOp_hasParm_conceptList" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1168969209240" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168969209241">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1168969209242">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1168969209243">
-            <property name="name" value="parm" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239466018030">
-              <link role="baseMethodDeclaration" targetNodeId="1239206111476" resolveInfo="findNodeOperationParameter" />
-              <link role="classConcept" targetNodeId="1239206083907" resolveInfo="SModelLanguageUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239466018032">
-                <link role="variableDeclaration" targetNodeId="1168969209269" resolveInfo="op" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239466027026">
-                <link role="conceptDeclaration" targetNodeId="1.1144101972840" resolveInfo="OperationParm_Concept" />
-              </node>
-            </node>
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239466066159" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1168969209250">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1168969209251">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1168969209252">
-              <link role="variableDeclaration" targetNodeId="1168969209243" resolveInfo="parm" />
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1168969209253" />
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168969209254">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168969209255">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1168969227538" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1168969209257">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1168969209258">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1168969209259">
-              <link role="variableDeclaration" targetNodeId="1168969209243" resolveInfo="parm" />
-            </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239466045646">
-              <link role="baseMethodDeclaration" targetNodeId="1239206111476" resolveInfo="findNodeOperationParameter" />
-              <link role="classConcept" targetNodeId="1239206083907" resolveInfo="SModelLanguageUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239466051169">
-                <link role="variableDeclaration" targetNodeId="1168969209269" resolveInfo="op" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1239466055875">
-                <link role="conceptDeclaration" targetNodeId="1.1154546920561" resolveInfo="OperationParm_ConceptList" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168969209265">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1168969229697">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1168969209268">
-              <link role="variableDeclaration" targetNodeId="1168969209243" resolveInfo="parm" />
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1168969209267" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1168969209269">
-        <property name="name" value="op" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1168969209270">
-          <link role="concept" targetNodeId="1.1138411891628" />
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096893" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1168979165563">
       <property name="name" value="isProperty_hasValueEnum_notNullDefaultValue" />
