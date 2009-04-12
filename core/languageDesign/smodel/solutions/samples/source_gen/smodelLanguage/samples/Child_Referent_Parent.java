@@ -57,7 +57,7 @@ public class Child_Referent_Parent {
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression);
     while (mayBe_IfStatement != null) {
       if (SNodeOperations.isInstanceOf(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        parent_IfStatement = mayBe_IfStatement;
+        parent_IfStatement = SNodeOperations.cast(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
         break;
       }
       mayBe_IfStatement = SNodeOperations.getParent(mayBe_IfStatement);
@@ -65,7 +65,7 @@ public class Child_Referent_Parent {
   }
 
   public void accessToParentNode_2(SNode methodCall) {
-    SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false));
+    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
   public void accessToParentNode_3(SNode node) {

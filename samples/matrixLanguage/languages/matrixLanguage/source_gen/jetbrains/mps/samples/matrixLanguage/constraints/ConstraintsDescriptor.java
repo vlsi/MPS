@@ -4,16 +4,18 @@ package jetbrains.mps.samples.matrixLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint;
+import jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint());
-    this.myConstraints.add(new MatrixIndexVariableRefirence_DefaultSearchScope());
+    ListOperations.addElement(this.myConstraints, new MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new MatrixIndexVariableRefirence_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

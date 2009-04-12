@@ -140,14 +140,10 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213107435753">
                         <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107435754">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213107435755">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213107435756">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107435757">
-                                <link role="variableDeclaration" targetNodeId="1213107435765" resolveInfo="node" />
-                              </node>
-                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213107435758">
-                                <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
-                              </node>
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490687576">
+                            <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107435757">
+                              <link role="variableDeclaration" targetNodeId="1213107435765" resolveInfo="node" />
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107435759">
@@ -248,14 +244,10 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213107436060">
                         <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107436061">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213107436062">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213107436063">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436064">
-                                <link role="variableDeclaration" targetNodeId="1213107436082" resolveInfo="node" />
-                              </node>
-                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213107436065">
-                                <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
-                              </node>
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490685455">
+                            <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436064">
+                              <link role="variableDeclaration" targetNodeId="1213107436082" resolveInfo="node" />
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107436066">
@@ -272,14 +264,10 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213107436070">
                         <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107436071">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213107436072">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213107436073">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436074">
-                                <link role="variableDeclaration" targetNodeId="1213107436082" resolveInfo="node" />
-                              </node>
-                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213107436075">
-                                <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
-                              </node>
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490685039">
+                            <link role="concept" targetNodeId="1.1210234754876" resolveInfo="ForEachMatrixElement" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213107436074">
+                              <link role="variableDeclaration" targetNodeId="1213107436082" resolveInfo="node" />
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107436076">

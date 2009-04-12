@@ -5437,11 +5437,9 @@
                   <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198015881056">
                     <link role="concept" targetNodeId="4.1068431790189" resolveInfo="Type" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198017506664">
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198017506665">
-                      <link role="concept" targetNodeId="4.1068431790189" resolveInfo="Type" />
-                    </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899373">
+                  <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490687831">
+                    <link role="concept" targetNodeId="4.1068431790189" resolveInfo="Type" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899373">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1198017506667" />
                       <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1198017506668" />
                     </node>

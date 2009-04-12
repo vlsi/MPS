@@ -1812,12 +1812,10 @@
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197509829401">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1197509911429">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197509879194">
+                    <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490689820">
+                      <link role="concept" targetNodeId="10.1083245299891" resolveInfo="EnumConstantDeclaration" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197509879194">
                         <link role="variableDeclaration" targetNodeId="1197509879192" resolveInfo="outputEnumConstant" />
-                      </node>
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1197509937152">
-                        <link role="concept" targetNodeId="10.1083245299891" resolveInfo="EnumConstantDeclaration" />
                       </node>
                     </node>
                   </node>
