@@ -179,13 +179,15 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1228398644853">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1228398644854">
             <property name="name" value="model" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228398644855">
+              <link role="classifier" targetNodeId="2.~SModel" resolveInfo="SModel" />
+            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228398644857">
               <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1228398644858" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228398644859">
                 <link role="baseMethodDeclaration" targetNodeId="3.~EditorContext.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017280" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228398649394">

@@ -5634,6 +5634,9 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216124446130">
             <property name="name" value="memory" />
             <property name="isFinal" value="true" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216124446131">
+              <link role="classifier" targetNodeId="40.~SModel" resolveInfo="SModel" />
+            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216124461855">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216124460837">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216124460838" />
@@ -5645,13 +5648,15 @@
                 <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
               </node>
             </node>
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017371" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216124473032">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216124473033">
             <property name="name" value="disk" />
             <property name="isFinal" value="true" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216124473034">
+              <link role="classifier" targetNodeId="40.~SModel" resolveInfo="SModel" />
+            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216124505843">
               <link role="baseMethodDeclaration" targetNodeId="97.~ModelPersistence.readModel(jetbrains.mps.vfs.IFile):jetbrains.mps.smodel.SModel" resolveInfo="readModel" />
               <link role="classConcept" targetNodeId="97.~ModelPersistence" resolveInfo="ModelPersistence" />
@@ -5667,7 +5672,6 @@
                 </node>
               </node>
             </node>
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017240" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234281889091">
