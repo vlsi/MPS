@@ -3723,9 +3723,7 @@
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1224175601204">
           <property name="name" value="nodeToMatch" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224175601205">
-            <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-          </node>
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568459731" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1224175601206">
             <link role="mappingLabel" targetNodeId="1215479245462" resolveInfo="matchMethodParameter" />
             <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1224175601207">
