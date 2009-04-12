@@ -9847,7 +9847,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218039518145">
         <property name="name" value="inputModel" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017261" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218039518146">
+          <link role="classifier" targetNodeId="24.~SModel" resolveInfo="SModel" />
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218039518147">
         <property name="name" value="contents" />

@@ -483,8 +483,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199555206075">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199555206076">
             <property name="name" value="targetModel" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199555212391">
+              <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199555218034" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017281" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199625160585">
