@@ -617,13 +617,11 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190931377104">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190931377105">
                               <property name="name" value="model" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377106">
-                                <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218220899131">
                                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218220899133" />
                                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" id="1218220899134" />
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017354" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1190931377109">
@@ -869,13 +867,11 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190931377199">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190931377200">
                               <property name="name" value="model" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377201">
-                                <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218220899878">
                                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218220899880" />
                                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" id="1218220899896" />
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017431" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1190931377204">
@@ -1350,13 +1346,11 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190931377395">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190931377396">
                               <property name="name" value="model" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377397">
-                                <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218220899870">
                                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218220899872" />
                                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" id="1218220899873" />
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017432" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1190931377400">
@@ -1654,13 +1648,11 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190931377542">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190931377543">
                               <property name="name" value="model" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377544">
-                                <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218220899127">
                                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218220899129" />
                                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" id="1218220899130" />
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017316" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1190931377547">
@@ -2858,13 +2850,11 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190931378028">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190931378029">
                               <property name="name" value="model" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931378030">
-                                <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218220899866">
                                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218220899868" />
                                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" id="1218220899869" />
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239499017430" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1190931378038">
