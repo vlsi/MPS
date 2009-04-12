@@ -475,7 +475,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194972375205(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SNodeOperations.cast((_context.getNode().getReferent("leaf").getConceptDeclarationAdapter().getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    SNode conceptDeclaration = (SNode)(_context.getNode().getReferent("leaf").getConceptDeclarationAdapter().getNode());
     return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
@@ -974,7 +974,7 @@ public class QueriesGenerated {
     if (patternClass == null) {
       return null;
     }
-    return SNodeOperations.cast((patternClass.getChild("constructor")), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    return (SNode)(patternClass.getChild("constructor"));
   }
 
   public static Object referenceMacro_GetReferent_1174999318513(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1088,7 +1088,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1185876297648(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode statement = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+    SNode statement = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration");
     return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
 
@@ -1278,7 +1278,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1223922569732(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode statement = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+    SNode statement = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration");
     return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
 

@@ -138,10 +138,14 @@
                     <property name="value" value="ROOT INPUT: " />
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924584">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490688059">
-                      <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202327770743">
-                        <link role="variableDeclaration" targetNodeId="1202327335094" resolveInfo="node" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1202327770741">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202327770742">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202327770743">
+                          <link role="variableDeclaration" targetNodeId="1202327335094" resolveInfo="node" />
+                        </node>
+                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1202327770744">
+                          <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
+                        </node>
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1202327770740">
@@ -427,10 +431,14 @@
                       <property name="value" value="ROOT INPUT: " />
                     </node>
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914647">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490687512">
-                        <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338614980">
-                          <link role="variableDeclaration" targetNodeId="1202338601567" resolveInfo="node" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1202338614978">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202338614979">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338614980">
+                            <link role="variableDeclaration" targetNodeId="1202338601567" resolveInfo="node" />
+                          </node>
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1202338614981">
+                            <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
+                          </node>
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1202338614982">
@@ -535,10 +543,14 @@
                       <property name="value" value="LEVEL 1: " />
                     </node>
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227941442">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490687445">
-                        <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338683306">
-                          <link role="variableDeclaration" targetNodeId="1202338683293" resolveInfo="node" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1202338683304">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202338683305">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338683306">
+                            <link role="variableDeclaration" targetNodeId="1202338683293" resolveInfo="node" />
+                          </node>
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1202338683307">
+                            <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
+                          </node>
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1202338683308">
@@ -617,10 +629,14 @@
                       <property name="value" value="LEVEL 2: " />
                     </node>
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227915708">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490690128">
-                        <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338740221">
-                          <link role="variableDeclaration" targetNodeId="1202338740208" resolveInfo="node" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1202338740219">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202338740220">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202338740221">
+                            <link role="variableDeclaration" targetNodeId="1202338740208" resolveInfo="node" />
+                          </node>
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1202338740222">
+                            <link role="concept" targetNodeId="7.1169194658468" resolveInfo="INamedConcept" />
+                          </node>
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1202338740223">

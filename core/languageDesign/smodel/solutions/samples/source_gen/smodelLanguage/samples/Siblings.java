@@ -10,7 +10,7 @@ public class Siblings {
 
   public void nextSibling(SNode statement) {
     SNode next1 = SNodeOperations.getNextSibling(statement);
-    SNode next2 = SNodeOperations.cast(SNodeOperations.getNextSibling(statement), "jetbrains.mps.baseLanguage.structure.Statement");
+    SNode next2 = SNodeOperations.getNextSibling(statement);
     SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
   }

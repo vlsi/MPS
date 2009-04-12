@@ -32,7 +32,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    SNode queryNode = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    SNode queryNode = (SNode)node;
     return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
@@ -52,7 +52,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
           }
         })) {
           boolean thisConstructor = true;
-          SNode invocationNode = SNodeOperations.cast(invocation, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
+          SNode invocationNode = (SNode)invocation;
           if (ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
             for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() ; i++ ) {
               SNode actualArgument = ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).getElement(i);

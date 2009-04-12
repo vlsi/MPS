@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,6 +22,7 @@ public class ConceptRef {
     }
     boolean b2 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b3 = SConceptOperations.isExactly(concept1, NameUtil.nodeFQName(concept2));
+    AbstractConceptDeclaration adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }
 
   public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
@@ -44,33 +46,33 @@ public class ConceptRef {
     SNode exprConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
     SNode c1 = exprConcept;
     SNode c2 = (SNode)c1;
-    //     ====== to node
-    //     - ok -
+    // ====== to node
+    // - ok -
     SNode n1 = exprConcept;
     SNode n2 = exprConcept;
-    //     -- not ok --
+    // -- not ok --
     SNode n3 = exprConcept;
     exprConcept = n1;
     exprConcept = n2;
-    //     ====== to concept
-    //     - ok -
-    SNode exprConc = SNodeOperations.castConcept(c1, "jetbrains.mps.baseLanguage.structure.Expression");
-    SNode bExprConc = SNodeOperations.castConcept(exprConcept, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    // ====== to concept
+    // - ok -
+    SNode exprConc = c1;
+    SNode bExprConc = exprConcept;
     exprConc = bExprConc;
-    //     -- not ok --
+    // -- not ok --
     bExprConc = exprConc;
   }
 
   public void concept_hierarchy1(SNode concept) {
-    //     concept and all its supers
+    // concept and all its supers
     List<SNode> hierarchy = SConceptOperations.getConceptHierarchy(concept);
-    //     supers
+    // supers
     List<SNode> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
     List<SNode> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);
-    //     direct supers
+    // direct supers
     List<SNode> supers_direct = SConceptOperations.getDirectSuperConcepts(concept, false);
     List<SNode> supers_direct_inclusive = SConceptOperations.getDirectSuperConcepts(concept, true);
-    //     ======
+    // ======
     boolean yes1 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     boolean yes2 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")));
     boolean yes3 = SConceptOperations.isSubConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), "jetbrains.mps.baseLanguage.structure.Expression");

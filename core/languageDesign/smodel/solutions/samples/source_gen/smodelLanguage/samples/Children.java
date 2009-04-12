@@ -51,6 +51,7 @@ public class Children {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "value") == true;
       }
+
     });
     SNode abcdef;
     SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);

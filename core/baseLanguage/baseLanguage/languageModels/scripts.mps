@@ -219,9 +219,11 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1209831247775">
               <link role="concept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490688822">
-              <link role="concept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215091285794" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1209831247776">
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1209831247777">
+                <link role="concept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
+              </node>
+              <node role="expression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215091285794" />
             </node>
           </node>
         </node>

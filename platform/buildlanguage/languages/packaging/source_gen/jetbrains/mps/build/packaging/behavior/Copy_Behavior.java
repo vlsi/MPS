@@ -23,7 +23,7 @@ public class Copy_Behavior {
 
   public static File virtual_getPath_1213877333777(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
-      return new File(IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")));
+      return new File(IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)SNodeOperations.getParent(thisNode))));
     }
     return new File("");
   }
@@ -33,7 +33,7 @@ public class Copy_Behavior {
       return ((SPropertyOperations.getString(thisNode, "excludes") != null) && (!(SPropertyOperations.getString(thisNode, "excludes").equals(""))) ?
         (SPropertyOperations.getString(thisNode, "excludes") + ", ") :
         ""
-      ) + Copy_Behavior.call_getExcludes_1213877251358(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent"));
+      ) + Copy_Behavior.call_getExcludes_1213877251358(((SNode)SNodeOperations.getParent(thisNode)));
     }
     return ((SPropertyOperations.getString(thisNode, "excludes") != null) ?
       (SPropertyOperations.getString(thisNode, "excludes")) :
@@ -46,7 +46,7 @@ public class Copy_Behavior {
       return ((SPropertyOperations.getString(thisNode, "includes") != null) && (!(SPropertyOperations.getString(thisNode, "includes").equals(""))) ?
         (SPropertyOperations.getString(thisNode, "includes") + ", ") :
         ""
-      ) + Copy_Behavior.call_getIncludes_1213877251415(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent"));
+      ) + Copy_Behavior.call_getIncludes_1213877251415(((SNode)SNodeOperations.getParent(thisNode)));
     }
     return ((SPropertyOperations.getString(thisNode, "includes") != null) ?
       (SPropertyOperations.getString(thisNode, "includes")) :

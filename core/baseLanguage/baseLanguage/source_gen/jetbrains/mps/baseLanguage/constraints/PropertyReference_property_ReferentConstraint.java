@@ -11,10 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 
@@ -39,8 +38,8 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
     if (opClassifier == null) {
       return null;
     }
-    List<SNode> resultProperties = ListOperations.<SNode>createList();
-    List<SNode> classifiers = ((List<SNode>)new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes());
+    List<SNode> resultProperties = ListSequence.<SNode>fromArray();
+    List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes();
     for(SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");

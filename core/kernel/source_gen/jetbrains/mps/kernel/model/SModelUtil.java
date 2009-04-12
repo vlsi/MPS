@@ -105,7 +105,7 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageNamespace = NameUtil.namespaceFromConcept((AbstractConceptDeclaration) concept.getAdapter());
+    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
     if (languageNamespace == null) {
       return null;
     }

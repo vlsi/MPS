@@ -281,7 +281,7 @@ public class ClassifierTypeUtil {
 
   private static SNode coerceToClassifierTypeIgnoreParameters(SNode type) {
     SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
+      (SNode)type :
       null
     );
     if ((cType == null)) {

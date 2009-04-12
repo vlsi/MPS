@@ -46,7 +46,7 @@ public class GenerateTextFromBuild {
       public void run() {
         for(SNode root : ListSequence.fromList(roots)) {
           if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.packaging.structure.MPSLayout")) {
-            layout.value = SNodeOperations.cast(root, "jetbrains.mps.build.packaging.structure.MPSLayout");
+            layout.value = (SNode)root;
             return;
           }
         }

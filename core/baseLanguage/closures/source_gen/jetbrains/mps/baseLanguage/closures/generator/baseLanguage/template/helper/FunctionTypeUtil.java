@@ -75,7 +75,7 @@ public class FunctionTypeUtil {
     for(Iterator<SNode> it = ListSequence.fromList(typesList).iterator() ; it.hasNext() ; ) {
       SNode next = ((SNode)it.next());
       if (prev != null) {
-        if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(next, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) == 0) {
+        if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(((SNode)prev)), FunctionType_Behavior.call_getSignature_1213877405047(((SNode)next))) == 0) {
           it.remove();
           continue;
         }
@@ -230,7 +230,7 @@ with_meet:
     }
 
     public int compare(SNode x, SNode y) {
-      return Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(x, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(y, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
+      return Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(((SNode)x)), FunctionType_Behavior.call_getSignature_1213877405047(((SNode)y)));
     }
 
 }

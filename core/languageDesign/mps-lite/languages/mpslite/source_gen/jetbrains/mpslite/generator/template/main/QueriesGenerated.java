@@ -15,12 +15,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
 import jetbrains.mpslite.behavior.LineList_Behavior;
 import jetbrains.mpslite.generator.template.util.EditorGenerationUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
 
@@ -42,11 +42,11 @@ public class QueriesGenerated {
     }
     //     extends
     for(SNode conceptDeclaration : allConcepts) {
-      SLinkOperations.setTarget(SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", SNodeOperations.cast(AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
+      SLinkOperations.setTarget(((SNode)conceptsToTargets.get(conceptDeclaration)), "extends", (SNode)AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets), false);
     }
     //     structure
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), conceptsToTargets, partsToLinkDeclarations);
+      LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), (SNode)conceptsToTargets.get(conceptDeclaration), conceptsToTargets, partsToLinkDeclarations);
     }
     List<SNode> binaryOperations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.BinaryOperationConcept");
     for(SNode binaryOperationConcept : binaryOperations) {

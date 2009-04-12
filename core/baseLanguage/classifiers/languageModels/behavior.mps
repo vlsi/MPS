@@ -1117,10 +1117,14 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221662040655">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1221662071509">
-                        <node role="rValue" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490683374">
-                          <link role="concept" targetNodeId="1.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221662083080">
-                            <link role="variableDeclaration" targetNodeId="1221661897771" resolveInfo="methodDeclaration" />
+                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1221662083078">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1221662083079">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221662083080">
+                              <link role="variableDeclaration" targetNodeId="1221661897771" resolveInfo="methodDeclaration" />
+                            </node>
+                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221662089756">
+                              <link role="concept" targetNodeId="1.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+                            </node>
                           </node>
                         </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221662041815">

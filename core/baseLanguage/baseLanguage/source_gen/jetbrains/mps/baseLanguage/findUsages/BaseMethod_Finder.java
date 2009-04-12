@@ -61,15 +61,15 @@ public class BaseMethod_Finder extends GeneratedFinder {
       List<SNode> classMethods = null;
       if (isStatic) {
         if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
+          classMethods = SLinkOperations.getTargets(((SNode)ancestor), "staticMethod", true);
         }
       } else
       {
         if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+          classMethods = SLinkOperations.getTargets(((SNode)ancestor), "method", true);
         } else
         {
-          classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"), "method", true);
+          classMethods = SLinkOperations.getTargets(((SNode)ancestor), "method", true);
         }
       }
       for(SNode classMethod : ListSequence.fromList(classMethods)) {

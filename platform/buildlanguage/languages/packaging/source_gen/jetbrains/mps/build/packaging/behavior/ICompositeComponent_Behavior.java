@@ -17,7 +17,7 @@ public class ICompositeComponent_Behavior {
       return ((SPropertyOperations.getString(thisNode, "excludes") != null) && (!(SPropertyOperations.getString(thisNode, "excludes").equals(""))) ?
         (SPropertyOperations.getString(thisNode, "excludes") + ", ") :
         ""
-      ) + ICompositeComponent_Behavior.call_getExcludes_1213877279373(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent"));
+      ) + ICompositeComponent_Behavior.call_getExcludes_1213877279373(((SNode)SNodeOperations.getParent(thisNode)));
     }
     return ((SPropertyOperations.getString(thisNode, "excludes") != null) ?
       (SPropertyOperations.getString(thisNode, "excludes")) :
@@ -30,7 +30,7 @@ public class ICompositeComponent_Behavior {
       return ((SPropertyOperations.getString(thisNode, "includes") != null) && (!(SPropertyOperations.getString(thisNode, "includes").equals(""))) ?
         (SPropertyOperations.getString(thisNode, "includes") + ", ") :
         ""
-      ) + ICompositeComponent_Behavior.call_getIncludes_1213877279430(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.ICompositeComponent"));
+      ) + ICompositeComponent_Behavior.call_getIncludes_1213877279430(((SNode)SNodeOperations.getParent(thisNode)));
     }
     return ((SPropertyOperations.getString(thisNode, "includes") != null) ?
       (SPropertyOperations.getString(thisNode, "includes")) :
