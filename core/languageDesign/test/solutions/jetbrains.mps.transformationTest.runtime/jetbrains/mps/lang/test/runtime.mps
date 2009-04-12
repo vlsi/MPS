@@ -2882,11 +2882,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229267348444">
                             <link role="variableDeclaration" targetNodeId="1229267128018" resolveInfo="annotations" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1229267348445">
-                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229267348446">
-                              <property name="value" value="0" />
-                            </node>
-                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932601" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1229267348447" />
                       </node>
@@ -2902,11 +2898,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229267294043">
                   <link role="variableDeclaration" targetNodeId="1229267128018" resolveInfo="annotations" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1229267298860">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1229267300238">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932474" />
               </node>
             </node>
           </node>

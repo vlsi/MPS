@@ -354,11 +354,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1164651355583">
               <link role="variableDeclaration" targetNodeId="1164651211231" resolveInfo="matchedUsers" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1164651359273">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1164651362697">
-                <property name="value" value="0" />
-              </node>
-            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932538" />
           </node>
         </node>
       </node>

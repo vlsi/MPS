@@ -4306,11 +4306,7 @@
                               <link role="link" targetNodeId="5.1068580123134" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1217265384080">
-                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217265384081">
-                              <property name="value" value="0" />
-                            </node>
-                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933263" />
                         </node>
                       </node>
                     </node>

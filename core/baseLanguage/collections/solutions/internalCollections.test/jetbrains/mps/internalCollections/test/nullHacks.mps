@@ -455,11 +455,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207743049395">
                     <link role="variableDeclaration" targetNodeId="1207742923616" resolveInfo="input" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1207743052367">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207743053554">
-                      <property name="value" value="0" />
-                    </node>
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933802" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" id="1207743059286">
@@ -1074,11 +1070,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207745867195">
                     <link role="variableDeclaration" targetNodeId="1207745768909" resolveInfo="emptyList" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1207745869840">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207745871206">
-                      <property name="value" value="0" />
-                    </node>
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499931433" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" id="1207745875427">

@@ -3549,11 +3549,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1181074094442">
                   <link role="variableDeclaration" targetNodeId="1181072957067" resolveInfo="s3" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1181074096252">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1181074098876">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932963" />
               </node>
             </node>
           </node>
@@ -3947,11 +3943,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205789487538">
                 <link role="variableDeclaration" targetNodeId="1205789273098" resolveInfo="l" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1205789487539">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205789487540">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499931559" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1205789545493">

@@ -224,11 +224,7 @@
                     <link role="member" targetNodeId="1206096366578" resolveInfo="nodes" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1208269639708">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208269642633">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499934116" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1208269568563">
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1208269568564">
@@ -5117,11 +5113,7 @@
                                         <link role="baseMethodDeclaration" targetNodeId="1220526423797" resolveInfo="getNodesToRefactor" />
                                       </node>
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1220969729634">
-                                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220969730920">
-                                        <property name="value" value="0" />
-                                      </node>
-                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933501" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1220969762332" />
                                 </node>
@@ -5560,11 +5552,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="1220526423797" resolveInfo="getNodesToRefactor" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1224769054784">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224769054785">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499934321" />
               </node>
             </node>
           </node>
@@ -6193,11 +6181,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222357685503">
                 <link role="variableDeclaration" targetNodeId="1220353402674" resolveInfo="nodes" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1222357688913">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222357690510">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499931733" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1222357694625">
               <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1222357701361">
@@ -7659,11 +7643,7 @@
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220976894684" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1220976897360">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220976898097">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932728" />
             </node>
           </node>
         </node>
@@ -7698,11 +7678,7 @@
             <property name="name" value="first" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222361088399" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222361088400">
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1222361088401">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222361088402">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933707" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222361088403">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1222361088404" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1222361088405">
@@ -11113,11 +11089,7 @@
               </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221233818627">
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221233818628">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221233818629">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932331" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221233818630">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221233818631" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221233818632">
@@ -12652,11 +12624,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="1221229610457" resolveInfo="getIntenalExitPoints" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221229946745">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221229948076">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933184" />
               </node>
             </node>
           </node>
@@ -12669,11 +12637,7 @@
               </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221227919198">
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221227919199">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221227919200">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932680" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221227919201">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221227919202" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221227919203">
@@ -13098,11 +13062,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224769456021">
                       <link role="variableDeclaration" targetNodeId="1221233584420" resolveInfo="output" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1224769456022">
-                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224769456023">
-                        <property name="value" value="0" />
-                      </node>
-                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933564" />
                   </node>
                 </node>
               </node>
@@ -13295,11 +13255,7 @@
               </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238447684">
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221238447685">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221238447686">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499933865" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221238447687">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221238447688" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221238447689">
@@ -13891,11 +13847,7 @@
                   <link role="fieldDeclaration" targetNodeId="1221668159892" resolveInfo="myNodesToRefactor" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221671593942">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221671593943">
-                  <property name="value" value="0" />
-                </node>
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499932411" />
             </node>
           </node>
         </node>
@@ -14033,11 +13985,7 @@
                     <link role="conceptLinkDeclaration" targetNodeId="1.1137545148427" resolveInfo="conceptFunctionReturnType" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1221671841800">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221671843258">
-                    <property name="value" value="0" />
-                  </node>
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499931654" />
               </node>
             </node>
           </node>
