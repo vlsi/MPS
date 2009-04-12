@@ -1070,9 +1070,6 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196350915889">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196350915890">
               <property name="name" value="linkNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196350915891">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225546903333">
                 <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                 <link role="classConcept" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -1085,6 +1082,7 @@
                   </node>
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049947" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196350915897">

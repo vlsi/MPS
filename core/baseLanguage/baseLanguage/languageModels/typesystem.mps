@@ -800,9 +800,6 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237041846280">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237041846281">
                       <property name="name" value="newNode" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237041846282">
-                        <link role="classifier" targetNodeId="19.~SNode" resolveInfo="SNode" />
-                      </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237041907374">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237041901554">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1237041886522">
@@ -828,6 +825,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="1237041909266" />
                       </node>
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049284" />
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175527404830">
@@ -13363,15 +13361,11 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226494397526">
         <property name="name" value="subtype" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226494397527">
-          <link role="classifier" targetNodeId="19.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049926" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226494397528">
         <property name="name" value="supertype" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226494397529">
-          <link role="classifier" targetNodeId="19.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049777" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226494397530">
         <property name="name" value="isStrong" />

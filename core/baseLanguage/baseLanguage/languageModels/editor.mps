@@ -11870,9 +11870,6 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235246343470">
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235246343471">
                             <property name="name" value="snode" />
-                            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235246343472">
-                              <link role="classifier" targetNodeId="20.~SNode" resolveInfo="SNode" />
-                            </node>
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235246397329">
                               <link role="baseMethodDeclaration" targetNodeId="83.~CommonChoosers.showDialogNodeChooser(java.awt.Component,java.util.List):jetbrains.mps.smodel.SNode" resolveInfo="showDialogNodeChooser" />
                               <link role="classConcept" targetNodeId="83.~CommonChoosers" resolveInfo="CommonChoosers" />
@@ -11883,6 +11880,7 @@
                                 <link role="variableDeclaration" targetNodeId="1235246224003" resolveInfo="members" />
                               </node>
                             </node>
+                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049596" />
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235247841461">

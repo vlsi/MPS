@@ -2731,9 +2731,7 @@
                                     </node>
                                     <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220015646516">
                                       <property name="name" value="node" />
-                                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220015646517">
-                                        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                                      </node>
+                                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049223" />
                                     </node>
                                   </node>
                                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220267402279">

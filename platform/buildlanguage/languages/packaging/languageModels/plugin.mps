@@ -13271,9 +13271,6 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229428596835">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229428596836">
                 <property name="name" value="input" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229428596837">
-                  <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
-                </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229428596838">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229428596839">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1229428596840">
@@ -13290,6 +13287,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049800" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229428596844">

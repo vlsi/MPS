@@ -2930,9 +2930,6 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229434316079">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229434316080">
                 <property name="name" value="editedNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229434316081">
-                  <link role="classifier" targetNodeId="17.~SNode" resolveInfo="SNode" />
-                </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316082">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316083">
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1229434316084">
@@ -2944,14 +2941,12 @@
                     <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.getEditedNode():jetbrains.mps.smodel.SNode" resolveInfo="getEditedNode" />
                   </node>
                 </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049177" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229434316087">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229434316088">
                 <property name="name" value="selectedNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229434316089">
-                  <link role="classifier" targetNodeId="17.~SNode" resolveInfo="SNode" />
-                </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316090">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316091">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229434316092">
@@ -2968,6 +2963,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="35.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
                   </node>
                 </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498050289" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="1229434316097">

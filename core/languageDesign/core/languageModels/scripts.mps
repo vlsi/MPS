@@ -854,10 +854,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199458037888">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199458037889">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199458037890">
-              <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-            </node>
             <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215001214598" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049923" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199458047098">

@@ -271,9 +271,6 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170198998839">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170198998840">
               <property name="name" value="contextOwner" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170198998841">
-                <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170198998842">
                 <link role="classConcept" targetNodeId="24.1238940012773" resolveInfo="ClosuresUtil" />
                 <link role="baseMethodDeclaration" targetNodeId="24.1238940536000" resolveInfo="findEnclosingClosureContextOwner" />
@@ -281,6 +278,7 @@
                   <link role="variableDeclaration" targetNodeId="1170198722578" resolveInfo="var" />
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049283" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1170198998844">
@@ -348,9 +346,6 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1170199013096">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170199013097">
               <property name="name" value="contextOwner" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170199013098">
-                <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170199013099">
                 <link role="classConcept" targetNodeId="24.1238940012773" resolveInfo="ClosuresUtil" />
                 <link role="baseMethodDeclaration" targetNodeId="24.1238940536000" resolveInfo="findEnclosingClosureContextOwner" />
@@ -358,6 +353,7 @@
                   <link role="variableDeclaration" targetNodeId="1170198858693" resolveInfo="var" />
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049441" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1170199013101">
@@ -438,9 +434,6 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180555936309">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180555936310">
                   <property name="name" value="contextOwner" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1180555936311">
-                    <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-                  </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1180555936312">
                     <link role="classConcept" targetNodeId="24.1238940012773" resolveInfo="ClosuresUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="24.1238940536000" resolveInfo="findEnclosingClosureContextOwner" />
@@ -448,6 +441,7 @@
                       <link role="variableDeclaration" targetNodeId="1170199131316" resolveInfo="var" />
                     </node>
                   </node>
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049001" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1170199226424">

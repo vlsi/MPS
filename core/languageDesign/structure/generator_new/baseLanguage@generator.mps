@@ -608,9 +608,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1095433426218">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1170228562797">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170228565182">
-          <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049736" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1095433426219">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1095434764468">
@@ -1797,9 +1795,6 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197509879191">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197509879192">
                       <property name="name" value="outputEnumConstant" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197509879193">
-                        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                      </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216848431611">
                         <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867025322" />
                         <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867021386">
@@ -1809,6 +1804,7 @@
                           </node>
                         </node>
                       </node>
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498050033" />
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197509829401">

@@ -448,15 +448,13 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206101444148">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206101444149">
             <property name="name" value="current" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206101444150">
-              <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206101456467">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206101455263" />
               <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1206101457250">
                 <link role="member" targetNodeId="1206101064420" resolveInfo="node" />
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498050269" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1206101430582">
@@ -797,9 +795,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206108441270">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206108441271">
             <property name="name" value="rule" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206108441272">
-              <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108441273">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108441274">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206108441275">
@@ -816,6 +811,7 @@
                 </node>
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049943" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206108441279">
@@ -1093,9 +1089,6 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206184473044">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206184473045">
                 <property name="name" value="rule" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206184473046">
-                  <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-                </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184483302">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184479455">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206184477954">
@@ -1117,6 +1110,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049547" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206184501827">

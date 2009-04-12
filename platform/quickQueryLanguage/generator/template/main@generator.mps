@@ -51,9 +51,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219751344082">
         <property name="name" value="node" />
         <property name="isFinal" value="false" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219751344083">
-          <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049570" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219760682961">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1219760682962">
@@ -139,9 +137,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218800425037" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218800629478">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218800629479">
-          <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049508" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220269203622">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1220269203623">

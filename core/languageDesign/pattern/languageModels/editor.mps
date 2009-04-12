@@ -833,9 +833,6 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1176736750436">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1176736750437">
               <property name="name" value="linkNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176736750438">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225546763005">
                 <link role="baseMethodDeclaration" targetNodeId="7.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                 <link role="classConcept" targetNodeId="7.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -848,6 +845,7 @@
                   </node>
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239498049462" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1176736750444">
