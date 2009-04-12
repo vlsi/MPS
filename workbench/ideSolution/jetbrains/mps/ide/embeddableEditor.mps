@@ -589,9 +589,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219412432036">
-        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575040463" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219415849704">
       <property name="name" value="getOperationContext" />

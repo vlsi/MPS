@@ -322,9 +322,6 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206456861937">
               <link role="baseMethodDeclaration" targetNodeId="12.~StructuralProgramBuilder.build(java.lang.Object):void" resolveInfo="build" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1215195642587">
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215195642588">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215195642589">
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1215195642590">
                     <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1215195642591">
@@ -341,6 +338,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575215616" />
               </node>
             </node>
           </node>

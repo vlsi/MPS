@@ -733,9 +733,6 @@
       <property name="name" value="_class_" />
       <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1168025033010">
         <property name="name" value="_query_method_" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1168025054562">
-          <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
-        </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168025033012">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1168025033013">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1168025330833">
@@ -784,6 +781,7 @@
           </node>
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546097107" />
+        <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575274438" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550080915" />
     </node>
@@ -855,9 +853,6 @@
       <property name="name" value="_class_" />
       <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184374857689">
         <property name="name" value="_query_method_" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184374857690">
-          <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
-        </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184374857691">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1184374857692">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1184374857693">
@@ -906,6 +901,7 @@
             <link role="classifier" targetNodeId="3.~TemplateFragmentContext" resolveInfo="TemplateFragmentContext" />
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575276767" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184374857727" />
     </node>
@@ -930,9 +926,6 @@
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199975999606">
             <link role="classifier" targetNodeId="3.~WeavingMappingRuleContext" resolveInfo="WeavingMappingRuleContext" />
           </node>
-        </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184617630751">
-          <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184617630752">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1184617630753">
@@ -968,6 +961,7 @@
           </node>
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184617630783" />
+        <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575278471" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184617630784" />
     </node>

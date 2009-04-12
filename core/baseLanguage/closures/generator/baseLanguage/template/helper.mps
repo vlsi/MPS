@@ -7810,15 +7810,13 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203612751490">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203612751491">
             <property name="name" value="queue" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237042835010">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237042835011">
-                <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
-              </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239574809244">
+              <link role="elementConcept" targetNodeId="14.1068431790189" resolveInfo="Type" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888363846">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" id="1237205990603">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203612771398">
-                  <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239574820949">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1239574820950">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239574820951">
+                  <link role="elementConcept" targetNodeId="14.1068431790189" resolveInfo="Type" />
                 </node>
               </node>
             </node>

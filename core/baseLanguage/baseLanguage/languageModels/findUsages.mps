@@ -2884,15 +2884,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216400588562">
             <property name="name" value="results" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386036462">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237386036463">
-                <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
-              </node>
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574373194" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216400634837">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1237974124717">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216400644379">
-                  <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574376886" />
               </node>
             </node>
           </node>

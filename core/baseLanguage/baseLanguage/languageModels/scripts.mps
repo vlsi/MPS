@@ -515,9 +515,7 @@
                       <link role="baseMethodDeclaration" targetNodeId="18.~SearchResult.getObject():java.lang.Object" resolveInfo="getObject" />
                     </node>
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1209832080654">
-                    <link role="classifier" targetNodeId="2.~SNode" resolveInfo="SNode" />
-                  </node>
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574608874" />
                 </node>
               </node>
             </node>

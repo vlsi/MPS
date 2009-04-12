@@ -178,23 +178,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206467680041">
-    <property name="name" value="ConceptFunctionParameter_SNode" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1206467680042">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206467688500">
-        <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206467680044">
-      <property name="value" value="node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1206467680045">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206467714548">
     <property name="name" value="ConceptFunctionParameter_node" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />

@@ -53,16 +53,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197634574462">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197634574463">
             <property name="name" value="resNodes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900932">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900933">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
-            </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239576019120" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398113391">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1238662721679">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210514514506">
-                  <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576024048" />
                 <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721680">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238662721681">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.getInstance():jetbrains.mps.findUsages.FindUsagesManager" resolveInfo="getInstance" />
@@ -234,15 +228,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198431665993">
             <property name="name" value="nodes" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238662721949">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238662721950">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576046155" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398136645">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238662722077">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198431665997">
-                  <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576043961" />
               </node>
             </node>
           </node>
@@ -663,16 +653,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211301915938">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211301915939">
             <property name="name" value="resNodes" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047900789">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047900790">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
-            </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239576030472" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398123525">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1238662721558">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211301915955">
-                  <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576034464" />
                 <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721559">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238662721560">
                     <link role="classConcept" targetNodeId="5.~FindUsagesManager" resolveInfo="FindUsagesManager" />

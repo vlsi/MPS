@@ -2145,11 +2145,7 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1213094115402">
       <property name="name" value="getNodesToOpen" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213094115403" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047773099">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047773100">
-          <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-        </node>
-      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239575937242" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213094115406">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1213094455497">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213094455498">
@@ -2194,10 +2190,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213100396499">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213100396500">
-            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206920538">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213100396502">
-                <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-              </node>
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1239575943875">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239575943876" />
             </node>
           </node>
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1213100396503">

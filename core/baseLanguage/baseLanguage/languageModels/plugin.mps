@@ -5599,21 +5599,13 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221838111493">
             <property name="name" value="mapping" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238517030480">
-              <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517030481">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
-              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517030482">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574464630" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574466788" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221838111497">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591638146">
-                <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221838111499">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
-                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221838111500">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574453458" />
+                <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574421043" />
               </node>
             </node>
           </node>
@@ -9411,12 +9403,8 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221837369556">
         <property name="name" value="mapping" />
         <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238517030059">
-          <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517030060">
-            <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-          </node>
-          <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517030061">
-            <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-          </node>
+          <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574521931" />
+          <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574529514" />
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220536327346">
@@ -10828,21 +10816,13 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221837261546">
             <property name="name" value="mapping" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238517028345">
-              <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517028346">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
-              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238517028347">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
+              <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574485262" />
+              <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574492750" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221837278062">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1238591638290">
-                <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221837334436">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
-                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221837341291">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
+                <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574488170" />
+                <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574490655" />
               </node>
             </node>
           </node>
@@ -17040,9 +17020,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1238595826232">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1238595826233">
                       <link role="classifier" targetNodeId="61.~Condition" resolveInfo="Condition" />
-                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238595826234">
-                        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                      </node>
+                      <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574537053" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238595826235" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1238595826236">
                         <property name="isAbstract" value="false" />

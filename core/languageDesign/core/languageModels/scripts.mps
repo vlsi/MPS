@@ -68,9 +68,7 @@
     </node>
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1213099173577">
       <property name="name" value="nodeToOpen" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213099184774">
-        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-      </node>
+      <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575191097" />
     </node>
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198076162946">
       <property name="name" value="target" />
@@ -758,16 +756,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213099253017">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213099253018">
             <property name="name" value="result" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047119257">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047119258">
-                <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213099253020">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237206717650">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237206721080">
-                  <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-                </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239575128617" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239575133764">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1239575133765">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239575133766" />
               </node>
             </node>
           </node>

@@ -266,9 +266,6 @@
       <property name="isVirtual" value="true" />
       <property name="name" value="toBaseLanguageType" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877229719">
-        <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877229720">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877229721">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877229722">
@@ -277,6 +274,7 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724555" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576001457" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1220268671473">
       <property name="name" value="isSimple" />
@@ -765,10 +763,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877301673">
-        <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724649" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239575998862" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877301674">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877301675" />
@@ -876,10 +872,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877323910">
-        <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724122" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576007288" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1220268752134">
       <property name="name" value="isString" />
@@ -2713,10 +2707,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877397784">
-        <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724609" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239576004850" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877397785">
       <property name="name" value="getDefaultMember" />

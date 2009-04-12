@@ -776,9 +776,7 @@
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1170295378837">
                               <property name="name" value="list" />
                               <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236867090780">
-                                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236867090781">
-                                  <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-                                </node>
+                                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239574718080" />
                               </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170295305702">
                                 <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):java.util.List" resolveInfo="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
