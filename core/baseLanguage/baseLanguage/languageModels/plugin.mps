@@ -10292,16 +10292,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225370384292">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225370384293">
             <property name="name" value="found" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1236867090878">
-              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1236867090879">
-                <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225370403064">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1237205264572">
-                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225370403066">
-                  <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
-                </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239571253785" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239571259786">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1239571259787">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239571259788" />
               </node>
             </node>
           </node>
@@ -10386,11 +10380,8 @@
                       <link role="variableDeclaration" targetNodeId="1225370384293" resolveInfo="found" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1237041589280">
-                      <node role="argument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490686080">
-                        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237041589283">
-                          <link role="variable" targetNodeId="1225370478253" resolveInfo="node" />
-                        </node>
+                      <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1237041589283">
+                        <link role="variable" targetNodeId="1225370478253" resolveInfo="node" />
                       </node>
                     </node>
                   </node>

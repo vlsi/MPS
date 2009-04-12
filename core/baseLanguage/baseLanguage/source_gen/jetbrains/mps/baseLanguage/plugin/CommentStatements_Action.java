@@ -32,7 +32,7 @@ public class CommentStatements_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(ListSequence.fromList(CommentStatements_Action.this.nodes).getElement(0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
+    return (SNodeOperations.getAncestor(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
