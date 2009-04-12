@@ -2140,9 +2140,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1189765833485">
         <property name="name" value="model" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1189765833486">
-          <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239568349920" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1189765850456">
         <property name="name" value="refactoringContext" />
@@ -3746,9 +3744,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197382761104">
         <property name="name" value="model" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197382761105">
-          <link role="classifier" targetNodeId="10.~SModel" resolveInfo="SModel" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239568349793" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197382763121">
         <property name="name" value="refactoringContext" />

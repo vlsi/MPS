@@ -313,9 +313,7 @@
       <property name="name" value="newInstance" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1170238920326">
         <property name="name" value="sm" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170238922381">
-          <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239568349854" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171889473135">
         <property name="name" value="init" />
@@ -374,9 +372,7 @@
       <property name="name" value="newInstance" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171889526394">
         <property name="name" value="sm" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171889526395">
-          <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239568349833" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171889526398">
         <link role="classifier" targetNodeId="1095424864671" resolveInfo="class_ConceptAdapterDeclaration" />

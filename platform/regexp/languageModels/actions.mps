@@ -625,15 +625,13 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1177531619242">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1177531619243">
                   <property name="name" value="model" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177531619244">
-                    <link role="classifier" targetNodeId="6.~SModel" resolveInfo="SModel" />
-                  </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210020851016">
                     <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1177531622531" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210020851017">
                       <link role="baseMethodDeclaration" targetNodeId="6.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
                     </node>
                   </node>
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239568349918" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177531619247">
