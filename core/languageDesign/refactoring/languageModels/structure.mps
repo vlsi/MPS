@@ -389,9 +389,7 @@
           <link role="classifier" targetNodeId="9.~IModule" resolveInfo="IModule" />
         </node>
         <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238586847327">
-          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238586847328">
-            <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
-          </node>
+          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239574004549" />
         </node>
       </node>
     </node>
