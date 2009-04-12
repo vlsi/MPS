@@ -570,9 +570,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220272668087">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220272670293">
-          <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232624" />
       </node>
     </node>
   </node>
@@ -680,9 +678,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1219669234496">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219669245703">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219669245704">
-          <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232785" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219669245705">
         <property name="name" value="context" />
@@ -761,9 +757,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1219744797298">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219744816042">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219744816043">
-          <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232756" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219744816044">
         <property name="name" value="context" />
@@ -804,9 +798,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1219412374874">
       <property name="name" value="myNode" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1219412374875" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219412380549">
-        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-      </node>
+      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232758" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1219740857516">
       <property name="name" value="myType" />

@@ -91,15 +91,13 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187224257845">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187224257846">
               <property name="name" value="outputNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187224257847">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217887652629">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217887652631" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" id="1217887652632">
                   <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1187224245282" />
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232753" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1187224263927">
@@ -170,15 +168,13 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232620727263">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232620727264">
               <property name="name" value="outputNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232620727265">
-                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232620727266">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1232620727267" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" id="1232620727268">
                   <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1232620727269" />
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232671" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232620727270">

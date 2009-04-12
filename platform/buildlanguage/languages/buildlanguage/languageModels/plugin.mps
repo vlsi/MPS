@@ -1924,9 +1924,6 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225570043582">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225570043583">
                               <property name="name" value="input" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225570043584">
-                                <link role="classifier" targetNodeId="36.~SNode" resolveInfo="SNode" />
-                              </node>
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225570043585">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225570043586">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225570043587">
@@ -1943,6 +1940,7 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232747" />
                             </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225570941784">

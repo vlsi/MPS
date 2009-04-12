@@ -408,9 +408,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227886737979">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227886737980">
             <property name="name" value="linkNode" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227886737981">
-              <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227886737982">
               <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
               <link role="classConcept" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -423,6 +420,7 @@
                 </node>
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232674" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227886737986">
@@ -686,9 +684,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227887446122">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227887446123">
             <property name="name" value="linkNode" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227887446124">
-              <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227887446125">
               <link role="classConcept" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
               <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
@@ -701,6 +696,7 @@
                 </node>
               </node>
             </node>
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232783" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227887446129">

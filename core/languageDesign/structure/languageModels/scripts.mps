@@ -236,12 +236,8 @@
               <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202267">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002415235">
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002412000" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758534308">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002412000" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239568134066" />
             </node>
           </node>
         </node>
@@ -1885,12 +1881,8 @@
               <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201570">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002293168">
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002289840" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758540512">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002289840" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239568123713" />
             </node>
           </node>
         </node>
@@ -2293,12 +2285,8 @@
               <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201696">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002564786">
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002561145" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758526806">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002561145" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239568150859" />
             </node>
           </node>
         </node>
@@ -2741,12 +2729,8 @@
               <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202196">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002258185">
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002249779" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758544341">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002249779" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239568117424" />
             </node>
           </node>
         </node>
@@ -3135,12 +3119,8 @@
               <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202074">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002485235">
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002482703" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758530432">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002482703" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239568143282" />
             </node>
           </node>
         </node>
