@@ -6,10 +6,10 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
@@ -33,7 +33,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    SNode contextNode = (SNode)selectedCell.getSNode();
+    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
     if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
       return false;
@@ -41,7 +41,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     if (contextNode == null) {
       return false;
     }
-    SNode link = (SNode)linkNode;
+    SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
       return false;
     }
@@ -50,7 +50,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    SNode contextNode = (SNode)selectedCell.getSNode();
+    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
     if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
       return;
@@ -58,7 +58,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     if (contextNode == null) {
       return;
     }
-    SNode link = (SNode)linkNode;
+    SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
       return;
     }

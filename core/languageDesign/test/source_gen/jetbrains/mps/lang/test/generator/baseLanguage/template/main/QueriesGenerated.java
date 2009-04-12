@@ -254,7 +254,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1225976113129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = ListOperations.<SNode>createList();
     for(SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
-      ListSequence.fromList(nodes).addElement(((SNode)nodeTocheck));
+      ListSequence.fromList(nodes).addElement(SNodeOperations.cast(nodeTocheck, "jetbrains.mps.lang.test.structure.TestNode"));
     }
     return nodes;
   }

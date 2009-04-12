@@ -39,7 +39,7 @@ public class ProjectContainer {
   public MPSProject getProject(String name) {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     if (MapSequence.fromMap(this.myProjects).containsKey(name)) {
-      return MapSequence.fromMap(this.myProjects).get(name);
+      return this.myProjects.get(name);
     } else
     {
       TestMain.configureMPS();

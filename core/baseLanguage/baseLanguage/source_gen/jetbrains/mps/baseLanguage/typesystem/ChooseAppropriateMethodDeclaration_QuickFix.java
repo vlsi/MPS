@@ -63,11 +63,10 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode instanceType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
-      List<BaseMethodDeclaration> list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
-      for(Object object : list) {
-        INodeAdapter adapter = (INodeAdapter)object;
-        SNode baseMethodDeclaration = ((SNode)adapter.getNode());
+      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
+      List<BaseMethodDeclaration> adapters = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
+      for(INodeAdapter adapter : adapters) {
+        SNode baseMethodDeclaration = SNodeOperations.cast(adapter.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         if (SLinkOperations.getCount(baseMethodDeclaration, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {
           boolean good = true;
           List<SNode> parameterTypes = ResolveUtil.parameterTypes(baseMethodDeclaration, instanceType, ((SNode)this.getField("classifier")[0]));

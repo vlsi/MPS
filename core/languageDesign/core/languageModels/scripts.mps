@@ -201,18 +201,14 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876803956">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876803957">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876803958">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227876803959">
-                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227876803960">
-                                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227876803961">
-                                      <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />
+                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490687657">
+                                  <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />
+                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876803962">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876817690">
+                                      <link role="variableDeclaration" targetNodeId="1227876803953" resolveInfo="it" />
                                     </node>
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876803962">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876817690">
-                                        <link role="variableDeclaration" targetNodeId="1227876803953" resolveInfo="it" />
-                                      </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876803964">
-                                        <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                                      </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876803964">
+                                      <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
                                     </node>
                                   </node>
                                 </node>
@@ -239,17 +235,15 @@
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876795126">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227876795127">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227876795128">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876795129">
+                          <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490689950">
+                            <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227876795129">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227876815423">
                                 <link role="variableDeclaration" targetNodeId="1227876795124" resolveInfo="it" />
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227876795131">
                                 <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
                               </node>
-                            </node>
-                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227876795132">
-                              <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />
                             </node>
                           </node>
                         </node>

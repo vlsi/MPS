@@ -11437,11 +11437,9 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224851995333">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224851995334">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224851995335">
-                          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1224851995336">
-                            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224851995337">
-                              <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
-                            </node>
-                            <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1224851995338">
+                          <node role="rValue" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490688532">
+                            <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1224851995338">
                               <link role="variable" targetNodeId="1224851995329" resolveInfo="root" />
                             </node>
                           </node>

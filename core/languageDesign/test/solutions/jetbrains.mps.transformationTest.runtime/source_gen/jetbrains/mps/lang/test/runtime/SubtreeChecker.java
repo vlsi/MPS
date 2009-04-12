@@ -34,7 +34,7 @@ public class SubtreeChecker {
         for(SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = checker.getTypeOf(child);
-            SNode type2 = SLinkOperations.getTarget(((SNode)property), "type", true);
+            SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(type1), ListSequence.<SNode>fromArray(type2)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
@@ -90,12 +90,12 @@ public class SubtreeChecker {
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
             Set<Object> vars = initialyzed.get(instruction);
-            SNode var = SLinkOperations.getTarget(((SNode)property), "var", true);
+            SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
             Set<Object> vars = live.get(instruction);
-            SNode var = SLinkOperations.getTarget(((SNode)property), "var", true);
+            SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
         }

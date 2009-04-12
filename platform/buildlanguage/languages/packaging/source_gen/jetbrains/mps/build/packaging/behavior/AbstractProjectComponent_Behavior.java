@@ -30,7 +30,7 @@ public class AbstractProjectComponent_Behavior {
 
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
-      String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(((SNode)parentNode));
+      String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
       if (StringUtils.isEmpty(parentTargetDir)) {
         return new File(SPropertyOperations.getString(thisNode, "name"));
       }
@@ -46,7 +46,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static boolean call_included_1213877333807(SNode thisNode, SNode config) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent") && !(AbstractProjectComponent_Behavior.call_included_1213877333807(((SNode)SNodeOperations.getParent(thisNode)), config))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent") && !(AbstractProjectComponent_Behavior.call_included_1213877333807(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), config))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {

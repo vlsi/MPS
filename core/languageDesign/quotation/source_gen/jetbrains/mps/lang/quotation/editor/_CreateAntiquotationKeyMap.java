@@ -196,7 +196,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      SNode contextNode = (SNode)selectedCell.getSNode();
+      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
       SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
       if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
         return;
@@ -204,7 +204,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return;
       }
-      SNode link = (SNode)linkNode;
+      SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
         return;
       }
@@ -269,7 +269,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      SNode contextNode = (SNode)selectedCell.getSNode();
+      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
       if (contextNode == null) {
         return;
       }

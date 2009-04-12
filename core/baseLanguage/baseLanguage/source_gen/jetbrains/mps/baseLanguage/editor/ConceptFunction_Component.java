@@ -92,7 +92,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
-        SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node);
+        SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node);
         if (expectedReturnType == null) {
           result.append("void");
         } else

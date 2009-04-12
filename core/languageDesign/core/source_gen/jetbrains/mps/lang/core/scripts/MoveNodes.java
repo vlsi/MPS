@@ -89,12 +89,12 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter <LinkDeclaration>() {
 
         public boolean accept(LinkDeclaration it) {
-          return SPropertyOperations.hasValue(((SNode)it.getNode()), "metaClass", "aggregation", "reference");
+          return SPropertyOperations.hasValue(SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
         }
       }).select(new ISelector <LinkDeclaration, SNode>() {
 
         public SNode select(LinkDeclaration it) {
-          return (SNode)it.getNode();
+          return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
         }
       });
       Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
