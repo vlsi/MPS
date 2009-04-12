@@ -32,8 +32,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    SNode queryNode = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {

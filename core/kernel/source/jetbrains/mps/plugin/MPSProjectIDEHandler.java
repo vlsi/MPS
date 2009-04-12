@@ -35,6 +35,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -189,16 +190,17 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
         SNode node = m.getNode();
 
-
         GeneratedFinder finder = new ConstructorUsages_Finder();
-        if (!finder.isApplicable(node)) finder = null;
+        boolean suits = SNodeOperations.isInstanceOf(node, finder.getConcept()) && finder.isApplicable(node);
+        if (!suits) finder = null;
 
-        if (finder==null){
+        if (finder == null) {
           finder = new BaseMethodUsages_Finder();
-          if (!finder.isApplicable(node)) finder = null;
+          suits = SNodeOperations.isInstanceOf(node, finder.getConcept()) && finder.isApplicable(node);
+          if (!suits) finder = null;
         }
 
-        assert finder!=null : "method type not supported (supported: instance/static/constructor)";
+        assert finder != null : "method type not supported (supported: instance/static/constructor)";
 
         findUsages(node, GlobalScope.getInstance(), finder);
       }

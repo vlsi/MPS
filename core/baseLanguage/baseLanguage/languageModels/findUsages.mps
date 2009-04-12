@@ -2062,25 +2062,11 @@
     <link role="forConcept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
     <node role="isApplicableFunction" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" id="1204121124764">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204121124765">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204126977654">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204126977655">
-            <property name="name" value="queryNode" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1204126977656">
-              <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490689545">
-              <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1204126997923" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204126965664">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1204126982520">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204126987346" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204126969306">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204126980707">
-                <link role="variableDeclaration" targetNodeId="1204126977655" resolveInfo="queryNode" />
-              </node>
+              <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1239570487612" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1204126969308">
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1204126969309">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1207781905994">
