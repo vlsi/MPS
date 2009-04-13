@@ -52,6 +52,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   public boolean updateModuleRefs() {
     return RefUpdateUtil.composeUpdates(
       super.updateModuleRefs(),
-      RefUpdateUtil.updateModuleRefs(myDepGenerators));
+      RefUpdateUtil.updateModuleRefs(myDepGenerators),
+      RefUpdateUtil.updateMappingPriorityRules(myPriorityRules));
   }
 }

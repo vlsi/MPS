@@ -60,6 +60,13 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean updateModuleReferences() {
+
+    System.out.println("myGenerator = " + myGenerator);
+
+    if (myGenerator.toString().contains("custommps")) {
+      System.out.println("!!!");
+    }
+
     List<ModuleReference> list = new ArrayList<ModuleReference>();
     list.add(myGenerator);
     boolean result = RefUpdateUtil.updateModuleRefs(list);
