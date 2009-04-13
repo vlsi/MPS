@@ -60,6 +60,8 @@
     <delete file="${homepage.icon}" />
     <delete file="${license.path}" />
     <delete dir="${jre.unzipped.path}/jre" />
+    <delete file="${nsis.script.path.tmp}/../install.nsh" />
+    <delete file="${nsis.script.path.tmp}/../uninstall.nsh" />
     <delete dir="${deploy.dir}/nsis" />
   </target>
   <target name="universal.dist">

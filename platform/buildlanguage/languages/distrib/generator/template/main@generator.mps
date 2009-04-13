@@ -1950,6 +1950,58 @@
             </node>
           </node>
         </node>
+        <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1239635946246">
+          <link role="declaration" targetNodeId="4v.1199644186566" resolveInfo="delete" />
+          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239635957686">
+            <link role="attributeDeclaration" targetNodeId="4v.1199644186596" resolveInfo="file" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239635958672">
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635958673">
+                <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635958674">
+                  <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635958675">
+                    <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635958676">
+                      <property name="value" value="install" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635958677">
+                      <property name="value" value=".nsh" />
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635958678">
+                    <property name="value" value="/../" />
+                  </node>
+                </node>
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239635958679">
+                  <link role="propertyDeclaration" targetNodeId="1230577576742" resolveInfo="nsis.script.path.tmp" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1239635960695">
+          <link role="declaration" targetNodeId="4v.1199644186566" resolveInfo="delete" />
+          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239635960696">
+            <link role="attributeDeclaration" targetNodeId="4v.1199644186596" resolveInfo="file" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239635960697">
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635960698">
+                <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635960699">
+                  <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239635960700">
+                    <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635960701">
+                      <property name="value" value="uninstall" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635960702">
+                      <property name="value" value=".nsh" />
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239635960703">
+                    <property name="value" value="/../" />
+                  </node>
+                </node>
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239635960704">
+                  <link role="propertyDeclaration" targetNodeId="1230577576742" resolveInfo="nsis.script.path.tmp" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1230579974067">
           <link role="declaration" targetNodeId="4v.1199644186566" resolveInfo="delete" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1230579983904">
