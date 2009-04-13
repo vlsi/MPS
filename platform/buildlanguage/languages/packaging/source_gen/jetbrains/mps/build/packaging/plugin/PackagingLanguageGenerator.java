@@ -40,7 +40,7 @@ public class PackagingLanguageGenerator {
   public static SNode createBasedirPath(String macro, String path) {
     SNode basedirPath = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.BaseDirPath", null);
     SPropertyOperations.set(SLinkOperations.getTarget(basedirPath, "macro", true), "name", macro);
-    String[] pathComponents = path.split(File.separator);
+    String[] pathComponents = path.split(File.separator.replace("\\", "\\\\"));
     if (pathComponents.length > 0) {
       List<SNode> pathComponentNodes = new ArrayList();
       for(String pathComponentName : pathComponents) {

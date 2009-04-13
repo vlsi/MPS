@@ -5,12 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
-import jetbrains.mps.build.packaging.plugin.NodeData;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
-import java.util.regex.Pattern;
-import jetbrains.mps.build.packaging.plugin._PrecompiledPatterns;
-import java.util.regex.Matcher;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -26,7 +21,7 @@ public abstract class AbstractBuildGenerator {
   private String myModelName;
   private SModelDescriptor myModelDescriptor;
   private boolean myCreateModel = true;
-  private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
+  private final List<NodeData> myModules = new LinkedList<NodeData>();
 
   public AbstractBuildGenerator() {
   }
@@ -49,13 +44,6 @@ public abstract class AbstractBuildGenerator {
     if (this.myModelName == null && this.mySolutionName != null) {
       String modelNamePrefix = this.mySolutionName;
       int count = 0;
-      {
-        Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
-        Matcher _matcher_0 = _pattern_0.matcher(modelNamePrefix);
-        if (_matcher_0.find()) {
-          modelNamePrefix = _matcher_0.group(1) + _matcher_0.group(2);
-        }
-      }
       this.myModelName = modelNamePrefix;
       while (!(this.isValidModelName(this.myModelName))) {
         this.myModelName = modelNamePrefix + count;
@@ -94,8 +82,8 @@ public abstract class AbstractBuildGenerator {
   }
 
   public void setModules(List<NodeData> modules) {
-    ListSequence.fromList(this.myModules).clear();
-    ListSequence.fromList(this.myModules).addSequence(ListSequence.fromList(modules));
+    this.myModules.clear();
+    this.myModules.addAll(modules);
   }
 
   public void setCreateModel(boolean createModel) {
