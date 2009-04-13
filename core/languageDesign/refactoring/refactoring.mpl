@@ -29,7 +29,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="before_or_together">
           <greater-priority-mapping>
-            <generator generatorUID="jetbrains.mps.lang.refactoring#1189697379687" />
+            <generator generatorUID="071dc6d3-9172-49bc-9ecd-8487bb9112a4(jetbrains.mps.lang.refactoring#1189697379687)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)" nodeID="*" />
             </external-mapping>

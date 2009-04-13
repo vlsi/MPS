@@ -26,7 +26,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <generator generatorUID="jetbrains.mps.lang.constraints#1147476727047" />
+            <generator generatorUID="e00b808b-8cda-4cba-becc-a390490358b1(jetbrains.mps.lang.constraints#1147476727047)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" nodeID="1147476728864" />
             </external-mapping>
