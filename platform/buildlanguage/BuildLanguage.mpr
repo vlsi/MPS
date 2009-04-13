@@ -34,7 +34,6 @@
     <projectDevkits />
     <genConfs>
       <genConfModule name="generate buildLanguage" moduleRef="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
-      <genConfModule name="generate classpath" moduleRef="b126f74b-c145-4de1-ab16-0245ebfcf04a(jetbrains.mps.build.classpath)" />
       <genConfModule name="generate custommps" moduleRef="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
       <genConfModule name="generate dependency language" moduleRef="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
       <genConfModule name="generate distrib" moduleRef="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
