@@ -15,7 +15,7 @@
         <dependency reexport="false">d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities />
     </generator>

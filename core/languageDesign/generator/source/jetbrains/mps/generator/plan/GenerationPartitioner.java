@@ -19,7 +19,6 @@ import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
@@ -255,16 +254,14 @@ public class GenerationPartitioner {
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {
-      GeneratorReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
-        if (genRef != null) {
-          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
-          if (newRefGenerator != null) {
-            return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
-          } else {
-            LOG.error("couldn't get generator by uid: '" + genRef + "'");
-          }
+        ModuleReference genRef = generatorRef;
+        Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
+        if (newRefGenerator != null) {
+          return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
+        } else {
+          LOG.error("couldn't get generator by uid: '" + genRef + "'");
         }
       }
       return new ArrayList();

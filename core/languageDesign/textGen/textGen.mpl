@@ -13,8 +13,8 @@
         <modelRoot path="${language_descriptor}/generators/baseLanguage/template" namespacePrefix="jetbrains.mps.lang.textGen.generator.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
-        <generator generatorUID="jetbrains.mps.lang.smodel#1139186730696" />
+        <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
+        <generator generatorUID="2bdcefec-ba49-4b32-ab50-ebc7a41d5090(jetbrains.mps.lang.smodel#1139186730696)" />
       </external-templates>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">

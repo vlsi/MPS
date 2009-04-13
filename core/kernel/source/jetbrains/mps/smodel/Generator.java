@@ -234,11 +234,7 @@ public class Generator extends AbstractModule {
   }
 
   public List<ModuleReference> getReferencedGeneratorUIDs() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (GeneratorReference generatorReference : myGeneratorDescriptor.getDepGenerators()) {
-      result.add(ModuleReference.fromString(generatorReference.getGeneratorUID()));
-    }
-    return result;
+    return new ArrayList<ModuleReference>(myGeneratorDescriptor.getDepGenerators());
 
   }
 
@@ -274,9 +270,6 @@ public class Generator extends AbstractModule {
       }
     }
     return result;
-  }
-
-  public void onModuleLoad() {
   }
 
   public String getGeneratorOutputPath() {

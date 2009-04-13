@@ -14,8 +14,8 @@
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mpslite.generator.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.lang.editor#1129914002149" />
-        <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" />
+        <generator generatorUID="0647eca7-da98-422a-8a8b-6ebc0bd014ea(jetbrains.mps.lang.editor#1129914002149)" />
+        <generator generatorUID="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc(jetbrains.mps.lang.structure#1170324972255)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>

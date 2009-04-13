@@ -23,4 +23,8 @@ public class MappingConfig_AbstractRef {
   public boolean isIncomplete() {
     return true;
   }
+
+  public boolean updateModuleReferences() {
+    return false;
+  }
 }

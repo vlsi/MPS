@@ -14,11 +14,11 @@
         <generator generatorUID="ab777ef3-cd35-47a2-8db1-108b4d67986f(jetbrains.mps.build.packaging###1203014923802)" />
       </external-templates>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.gtext</usedLanguages>
-        <usedLanguages>jetbrains.mps.xml.deprecated</usedLanguages>
+        <usedLanguages>a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</usedLanguages>
+        <usedLanguages>823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)</usedLanguages>
       </usedLanguages>
       <usedDevKits>
-        <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
+        <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">

@@ -23,12 +23,12 @@ import java.util.List;
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;
 
-  private List<GeneratorReference> myDepGenerators;
+  private List<ModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
 
   public GeneratorDescriptor() {
     super();
-    myDepGenerators = new ArrayList<GeneratorReference>();
+    myDepGenerators = new ArrayList<ModuleReference>();
     myPriorityRules = new ArrayList<MappingPriorityRule>();
   }
 
@@ -40,11 +40,18 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myGeneratorUID = generatorUID;
   }
 
-  public List<GeneratorReference> getDepGenerators() {
+  public List<ModuleReference> getDepGenerators() {
     return myDepGenerators;
   }
 
   public List<MappingPriorityRule> getPriorityRules() {
     return myPriorityRules;
+  }
+
+  @Override
+  public boolean updateModuleRefs() {
+    return RefUpdateUtil.composeUpdates(
+      super.updateModuleRefs(),
+      RefUpdateUtil.updateModuleRefs(myDepGenerators));
   }
 }

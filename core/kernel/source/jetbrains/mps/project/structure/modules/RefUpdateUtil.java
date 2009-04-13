@@ -16,11 +16,12 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
 import java.util.List;
 
-class RefUpdateUtil {
-  static boolean updateModelRefs(List<SModelReference> refs) {
+public class RefUpdateUtil {
+  public static boolean updateModelRefs(List<SModelReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       SModelReference ref = refs.get(i);
@@ -34,7 +35,7 @@ class RefUpdateUtil {
     return changed;
   }
 
-  static boolean updateModuleRefs(List<ModuleReference> refs) {
+  public static boolean updateModuleRefs(List<ModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       ModuleReference ref = refs.get(i);
@@ -48,7 +49,7 @@ class RefUpdateUtil {
     return changed;
   }
 
-  static boolean updateDependencies(List<Dependency> deps) {
+  public static boolean updateDependencies(List<Dependency> deps) {
     boolean changed = false;
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();
@@ -62,7 +63,16 @@ class RefUpdateUtil {
     return changed;
   }
 
-  static boolean composeUpdates(boolean... values) {
+  public static boolean updateMappingPriorityRules(List<MappingPriorityRule> rules) {
+    boolean changed = false;
+    for (MappingPriorityRule rule : rules) {
+      boolean result = rule.updateModuleReferences();
+      changed = changed || result;
+    }
+    return changed;
+  }
+
+  public static boolean composeUpdates(boolean... values) {
     boolean changed = false;
     for (boolean v : values) {
       if (v) changed = true;

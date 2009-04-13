@@ -15,21 +15,25 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.project.structure.modules.GeneratorReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
-  private GeneratorReference myGenerator;
+  private ModuleReference myGenerator;
   private MappingConfig_AbstractRef myMappingConfig;
 
   public MappingConfig_ExternalRef() {
     myMappingConfig = new MappingConfig_AbstractRef();
   }
 
-  public GeneratorReference getGenerator() {
+  public ModuleReference getGenerator() {
     return myGenerator;
   }
 
-  public void setGenerator(GeneratorReference generator) {
+  public void setGenerator(ModuleReference generator) {
     myGenerator = generator;
   }
 
@@ -43,7 +47,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   public MappingConfig_ExternalRef getCopy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
-    result.myGenerator = myGenerator != null ? myGenerator.getCopy() : null;
+    result.myGenerator = myGenerator;
     result.myMappingConfig = myMappingConfig != null ? myMappingConfig.getCopy() : null;
     return result;
   }
@@ -52,5 +56,14 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   public boolean isIncomplete() {
     if (myGenerator == null) return false;
     return myMappingConfig.isIncomplete();
+  }
+
+  @Override
+  public boolean updateModuleReferences() {
+    List<ModuleReference> list = new ArrayList<ModuleReference>();
+    list.add(myGenerator);
+    boolean result = RefUpdateUtil.updateModuleRefs(list);
+    myGenerator = list.get(0);
+    return result;
   }
 }

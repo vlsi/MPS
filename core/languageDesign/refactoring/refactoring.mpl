@@ -13,7 +13,7 @@
         <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.lang.refactoring.generator.baseLanguage.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage.collections#1151699677197" />
+        <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
         <generator generatorUID="2bdcefec-ba49-4b32-ab50-ebc7a41d5090(jetbrains.mps.lang.smodel#1139186730696)" />
       </external-templates>
       <dependencies>

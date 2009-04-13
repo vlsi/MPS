@@ -22,7 +22,7 @@ import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -43,9 +43,9 @@ public class GenerationPartitioningUtil {
     // generator edited in 'property dialog'
     Generator editedGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(descriptorWorkingCopy.getGeneratorUID());
     collectedGenerators.add(editedGenerator);
-    List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getDepGenerators();
-    for (GeneratorReference generatorRef : generatorRefs) {
-      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID()));
+    List<ModuleReference> generatorRefs = descriptorWorkingCopy.getDepGenerators();
+    for (ModuleReference generatorRef : generatorRefs) {
+      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorRef);
       collectGenerators(refGenerator, true, collectedGenerators, processedLanguages);
     }
     for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
@@ -271,7 +271,7 @@ public class GenerationPartitioningUtil {
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {
-      GeneratorReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExternalRef) mappingRef).getMappingConfig();
       return "[" + asString(generatorRef) + ":" + asString(extMappingRef, moreDetails) + "]";
     }
@@ -279,9 +279,8 @@ public class GenerationPartitioningUtil {
     return "???";
   }
 
-  private static String asString(GeneratorReference generatorRef) {
-    jetbrains.mps.project.structure.modules.ModuleReference genRef = jetbrains.mps.project.structure.modules.ModuleReference.fromString(generatorRef.getGeneratorUID());
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
+  private static String asString(ModuleReference generatorRef) {
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(generatorRef);
     return generator.getAlias();
   }
 }

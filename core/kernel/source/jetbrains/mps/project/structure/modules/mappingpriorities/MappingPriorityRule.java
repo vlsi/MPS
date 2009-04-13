@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+
 public class MappingPriorityRule {
   public static final String LEFT = "left";
   public static final String TYPE = "type";
@@ -61,5 +63,12 @@ public class MappingPriorityRule {
     result.myType = myType;
 
     return result;
+  }
+
+  public boolean updateModuleReferences() {
+    return RefUpdateUtil.composeUpdates(
+      myRight.updateModuleReferences(),
+      myLeft.updateModuleReferences()
+    );
   }
 }

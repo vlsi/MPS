@@ -12,7 +12,7 @@
       </models>
       <external-templates />
       <usedDevKits>
-        <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
+        <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>
       <mapping-priorities />
     </generator>

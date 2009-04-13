@@ -43,7 +43,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private Map<String, IModule> myFileToModuleMap = new ConcurrentHashMap<String, IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
-  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
+  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();    
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
 
