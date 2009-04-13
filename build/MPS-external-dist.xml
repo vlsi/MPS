@@ -35,6 +35,8 @@
     <property name="installer" value="string-$build$-windows.exe" />
     <property name="mps_home" value="${basedir}" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
+    <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
+    <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
     <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
     <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
     <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
@@ -69,13 +71,19 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="root.folder" value="MPS" />
     <property name="zip.file" value="MPS-${build.number}.zip" />
+    <property name="unix.startup.file" value="build/mps.sh" />
+    <property name="windows.startup.file" value="build/mps.bat" />
+    <property name="vmoptions.file" value="build/mps.vmoptions" />
+    <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
+    <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
+    <fixcrlf file="${vmoptions.file}" eof="asis" eol="dos" />
     <zip destfile="${deploy.dir}/${zip.file}">
       <zipfileset dir="${deploy.dir}">
         <include name="${root.folder}/**" />
       </zipfileset>
-      <zipfileset file="build/mps.sh" prefix="${root.folder}" filemode="755" />
-      <zipfileset file="build/mps.bat" prefix="${root.folder}" />
-      <zipfileset file="build/mps.vmoptions" prefix="${root.folder}/bin" />
+      <zipfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
+      <zipfileset file="${windows.startup.file}" prefix="${root.folder}" />
+      <zipfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
     </zip>
   </target>
   <target name="macos.dist">
@@ -95,6 +103,9 @@
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
+    <fixcrlf file="${info.plist.tmp}" eol="mac" eof="remove" />
+    <fixcrlf file="${unix.startup.script}" eol="mac" eof="remove" />
+    <fixcrlf file="${scripts.folder}/mps.vmoptions" eol="mac" eof="remove" />
     <zip destfile="${deploy.dir}/${zip.file}" duplicate="preserve">
       <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" />
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />

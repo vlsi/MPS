@@ -9,9 +9,9 @@
     <key>CFBundleVersion</key>
     <string>$build$</string>
     <key>CFBundleExecutable</key>
-    <string>C:\mps.new\build\resources\mps</string>
+    <string>mps</string>
     <key>CFBundleIconFile</key>
-    <string>C:\mps.new\build\resources\mps.icns</string>
+    <string>mps.icns</string>
     <key>WorkingDirectory</key>
     <string>$APP_PACKAGE/bin</string>
      <key>CFBundleDevelopmentRegion</key>

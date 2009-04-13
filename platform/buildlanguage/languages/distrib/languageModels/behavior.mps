@@ -515,6 +515,33 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230292963627" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239641827577">
+      <property name="name" value="addWindowsStartupScript" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239641827578" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239641830716" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239641827581">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239641842564">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641842565">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641842566">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641842567">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239641872763" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239641842569">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Root" id="1239641842570" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1239641842571">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239641842572">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239641842573">
+                    <link role="conceptDeclaration" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1239641842574" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292751071">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292751072" />
     </node>
@@ -1237,6 +1264,37 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234542112208" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239641445163">
+      <property name="name" value="addVmoptionsToArchive" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239641445164" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239641448466" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239641445166">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239641455464">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1239641455465">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641455466">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641455467">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239641464953" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239641455469">
+                  <link role="baseMethodDeclaration" targetNodeId="1234542090729" resolveInfo="getUnixConfig" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1239641455470" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641455471">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239641455472">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239641460075" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239641455474">
+                  <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239641455475">
+                <link role="property" targetNodeId="1.1231691563959" resolveInfo="useVMOptionsFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1234518005072">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234518005073" />

@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UniversalConfig_Behavior {
 
@@ -18,6 +20,10 @@ public class UniversalConfig_Behavior {
 
   public static String call_getStartupScriptExtension_1230292961412(SNode thisNode) {
     return "sh";
+  }
+
+  public static boolean call_addWindowsStartupScript_1239641827577(SNode thisNode) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(thisNode, null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false)).isNotEmpty();
   }
 
 }

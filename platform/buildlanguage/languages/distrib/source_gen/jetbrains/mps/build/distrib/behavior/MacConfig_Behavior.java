@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacConfig_Behavior {
 
@@ -30,6 +31,10 @@ public class MacConfig_Behavior {
       }
     }
     return null;
+  }
+
+  public static boolean call_addVmoptionsToArchive_1239641445163(SNode thisNode) {
+    return (MacConfig_Behavior.call_getUnixConfig_1234542090729(thisNode) != null) && SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "useVMOptionsFile");
   }
 
 }
