@@ -39,14 +39,15 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
+import org.apache.commons.lang.StringEscapeUtils;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class FastFindUsagesManager extends FindUsagesManager {
-  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+v?\\.)?([0-9]+)\"");
-  private static final Pattern INSTANCE_PATTERN = Pattern.compile(" type=\"([A-Za-z0-9_.]+)\" id=\"[.0-9]+");
+  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\"");
+  private static final Pattern INSTANCE_PATTERN = Pattern.compile(" type=\"(.+?)\" id=\".+?\"");
 
   @NotNull
   public String getComponentName() {
@@ -62,15 +63,19 @@ class FastFindUsagesManager extends FindUsagesManager {
         Matcher matcherInstance = INSTANCE_PATTERN.matcher(content);
         HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
         while (matcherNode.find()) {
-          String node = matcherNode.group(1);
+          String node = unescape(matcherNode.group(1));
           result.put(new IdIndexEntry(node, true), matcherNode.start(1));
         }
         while (matcherInstance.find()) {
-          String instance = matcherInstance.group(1);
+          String instance = unescape(matcherInstance.group(1));
           result.put(new IdIndexEntry(instance, true), matcherInstance.start(1));
         }
 
         return result;
+      }
+
+      private String unescape(String s) {
+        return StringEscapeUtils.unescapeXml(s);
       }
     });
   }
