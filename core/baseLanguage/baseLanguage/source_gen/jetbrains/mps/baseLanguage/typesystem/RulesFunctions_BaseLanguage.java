@@ -200,9 +200,9 @@ __switch__:
         List<SNode> nodes = mmap.get(tvd);
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();
         if (nodes != null) {
-          SNode tvar = ListSequence.fromList(nodes).getElement(0);
+          SNode tvar = ListSequence.fromList(nodes).first();
           if (TRACE_METHOD_TYPES) {
-            System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(ListSequence.fromList(nodes).getElement(0), "jetbrains.mps.lang.core.structure.BaseConcept")));
+            System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(ListSequence.fromList(nodes).first(), "jetbrains.mps.lang.core.structure.BaseConcept")));
           }
           {
             SNode _nodeToCheck_1029348928467 = null;
