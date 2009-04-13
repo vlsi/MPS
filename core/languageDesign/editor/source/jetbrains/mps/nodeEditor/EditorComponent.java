@@ -73,6 +73,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -236,6 +238,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
+    myScrollPane.getViewport().addChangeListener(new ChangeListener() {
+
+      public void stateChanged(ChangeEvent e) {
+        myNodeSubstituteChooser.setVisible(false);
+      }
+    });
 
     myContainer = new JPanel();
     myContainer.setMinimumSize(new Dimension(0, 0));
