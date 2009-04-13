@@ -511,17 +511,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (Generator) getModule(ref);
   }
 
-  public Generator getGenerator(String alias) {
-    assertCanRead();
-
-    for (Generator g : getAllGenerators()) {
-      if (g.getAlias().equals(alias)) {
-        return g;
-      }
-    }
-    return null;
-  }
-
   public DevKit getDevKit(String namespace) {
     return (DevKit) myFqNameToModulesMap.get(namespace);
   }
