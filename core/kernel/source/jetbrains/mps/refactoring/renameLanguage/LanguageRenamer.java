@@ -108,7 +108,7 @@ public class LanguageRenamer {
       GeneratorDescriptor genDesc = g.getGeneratorDescriptor();
       String uid = genDesc.getGeneratorUID();
       int sharpIndex = uid.indexOf('#');
-      genDesc.setGeneratorUID(myNewName + "#" + uid.substring(sharpIndex));
+      genDesc.setGeneratorUID(myNewName + "#" + uid.substring(sharpIndex + 1));
 
       for (SModelRoot root : g.getSModelRoots()) {
         String oldPrefix = root.getPrefix();
