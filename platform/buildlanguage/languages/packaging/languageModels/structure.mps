@@ -576,12 +576,11 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203598417283">
     <property name="name" value="Jar" />
     <property name="package" value="projectComponents" />
-    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1204123547263">
+    <link role="extends" targetNodeId="1204018553150" resolveInfo="Zip" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239622015207">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="delete" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1204122781510" resolveInfo="Delete" />
+      <property name="role" value="manifest" />
+      <link role="target" targetNodeId="1239621723881" resolveInfo="Manifest" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203598789102">
       <property name="value" value="jar" />
@@ -592,17 +591,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309117576">
       <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203617962317">
-      <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositComponent" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1209915648551">
-      <property name="name" value="filemode" />
-      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1209915648552">
-      <property name="name" value="dirmode" />
-      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203598512427">
@@ -692,13 +680,33 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204018553150">
     <property name="name" value="Zip" />
     <property name="package" value="projectComponents" />
-    <link role="extends" targetNodeId="1203598417283" resolveInfo="Jar" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1239622421791">
+      <property name="name" value="filemode" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1239622421808">
+      <property name="name" value="dirmode" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239622410040">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="delete" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204122781510" resolveInfo="Delete" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204018566542">
       <property name="value" value="zip" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1204019333901">
       <link role="conceptPropertyDeclaration" targetNodeId="1203619938976" resolveInfo="cleanAfterTheJob" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239622430654">
+      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239622394820">
+      <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204115658627">
@@ -1172,6 +1180,31 @@
     <property name="package" value="projectComponents" />
     <property name="name" value="IAbstractCompositeComponent" />
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389160321">
+      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239621723881">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="Manifest" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239621801146">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="manifestAttribute" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1239621743648" resolveInfo="Attribute" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239621743648">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="ManifestAttribute" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239621768698">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239621756947">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>

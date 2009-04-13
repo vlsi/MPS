@@ -17,18 +17,18 @@ public class NonEmptyArchiveName_NonTypesystemRule extends AbstractNonTypesystem
   public NonEmptyArchiveName_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode jar, final TypeCheckingContext typeCheckingContext) {
-    if ((SLinkOperations.getTarget(jar, "title", true) == null)) {
+  public void applyRule(final SNode zip, final TypeCheckingContext typeCheckingContext) {
+    if ((SLinkOperations.getTarget(zip, "title", true) == null)) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(jar, "Archive name should be non-empty", "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1205349830527", intentionProvider, errorTarget);
+        typeCheckingContext.reportTypeError(zip, "Archive name should be non-empty", "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1205349830527", intentionProvider, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.build.packaging.structure.Jar";
+    return "jetbrains.mps.build.packaging.structure.Zip";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -67,8 +67,8 @@
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1205349786375">
-      <property name="name" value="jar" />
-      <link role="concept" targetNodeId="1.1203598417283" resolveInfo="Jar" />
+      <property name="name" value="zip" />
+      <link role="concept" targetNodeId="1.1204018553150" resolveInfo="Zip" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1205350407971">
