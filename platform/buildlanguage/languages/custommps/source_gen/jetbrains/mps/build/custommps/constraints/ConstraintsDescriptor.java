@@ -4,16 +4,16 @@ package jetbrains.mps.build.custommps.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.build.custommps.constraints.MPSBuild_name_PropertyConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new MPSBuild_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new MPSBuild_name_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

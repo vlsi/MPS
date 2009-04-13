@@ -350,14 +350,6 @@ public class QueriesGenerated {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false);
   }
 
-  public static Iterable sourceNodesQuery_1238500000247(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MPSBuild_Behavior.getClassPathModules_1238502072959("core/languageDesign");
-  }
-
-  public static Iterable sourceNodesQuery_1238503084667(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MPSBuild_Behavior.getClassPathModules_1238502072959("core/baseLanguage");
-  }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_1234876993397(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }

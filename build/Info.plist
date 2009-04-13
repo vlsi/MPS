@@ -1,0 +1,61 @@
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>     <key>CFBundleName</key>
+    <string>MPS</string>
+    <key>CFBundleGetInfoString</key>
+    <string>JetBrains MPS $version$ (build $build$)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>$version$</string>
+    <key>CFBundleVersion</key>
+    <string>$build$</string>
+    <key>CFBundleExecutable</key>
+    <string>C:\mps.new\build\resources\mps</string>
+    <key>CFBundleIconFile</key>
+    <string>C:\mps.new\build\resources\mps.icns</string>
+    <key>WorkingDirectory</key>
+    <string>$APP_PACKAGE/bin</string>
+     <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+     <key>CFBundleDocumentTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeExtensions</key>
+        <array>
+          <string>mpr</string>
+        </array>
+        <key>CFBundleTypeIconFile</key>
+        <string>mps.icns</string>
+        <key>CFBundleTypeName</key>
+        <string>JetBrains MPS Project</string>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+      </dict>
+    </array>
+     <key>Java</key>
+    <dict>
+      <key>ClassPath</key>
+      <string>$APP_PACKAGE/lib/idea-patch.jar:$APP_PACKAGE/lib/mps.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.actions.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.annotations.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.behavior.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.constraints.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.core.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.dataFlow.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.dataFlow.runtime.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.editor.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.findUsages.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.generator.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.intentions.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.pattern.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.plugin.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.quotation.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.refactoring.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.script.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.sharedConcepts.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.smodel.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.structure.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.test.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar:$APP_PACKAGE/core/languageDesign/jetbrains.mps.lang.typesystem.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.closures.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.collections.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar:$APP_PACKAGE/core/baseLanguage/jetbrains.mps.internal.collections.mpsarch.jar:$APP_PACKAGE/platform/jetbrains.mps.uiLanguage.mpsarch.jar:$APP_PACKAGE/platform/jetbrains.mps.uiLanguage.runtime.mpsarch.jar:$APP_PACKAGE/lib/alloy/alloy.jar:$APP_PACKAGE/lib/asm/asm.jar:$APP_PACKAGE/lib/beansbinding/beansbinding-1.2.1.jar:$APP_PACKAGE/lib/commons-codec/commons-codec-1.3.jar:$APP_PACKAGE/lib/commons-collections/commons-collections.jar:$APP_PACKAGE/lib/commons-lang/commons-lang-2.1.jar:$APP_PACKAGE/lib/commons-logging/commons-logging-1.1.jar:$APP_PACKAGE/lib/commons-net/commons-net-1.4.1.jar:$APP_PACKAGE/lib/eclipse-compiler/ecj.jar:$APP_PACKAGE/lib/httpclient/httpclient.jar:$APP_PACKAGE/lib/javahelp/jh.jar:$APP_PACKAGE/lib/jdom/jdom.jar:$APP_PACKAGE/lib/jetbrains-ideframework/annotations.jar:$APP_PACKAGE/lib/jetbrains-ideframework/boot.jar:$APP_PACKAGE/lib/jetbrains-ideframework/bootstrap.jar:$APP_PACKAGE/lib/jetbrains-ideframework/extensions.jar:$APP_PACKAGE/lib/jetbrains-ideframework/forms_rt.jar:$APP_PACKAGE/lib/jetbrains-ideframework/icons.jar:$APP_PACKAGE/lib/jetbrains-ideframework/platform-api.jar:$APP_PACKAGE/lib/jetbrains-ideframework/platform.jar:$APP_PACKAGE/lib/jetbrains-ideframework/resources.jar:$APP_PACKAGE/lib/jetbrains-ideframework/resources_en.jar:$APP_PACKAGE/lib/jetbrains-ideframework/util.jar:$APP_PACKAGE/lib/jgoodies/jgoodies-forms.jar:$APP_PACKAGE/lib/jna/jna-utils.jar:$APP_PACKAGE/lib/jna/jna.jar:$APP_PACKAGE/lib/junit4/junit-4.1.jar:$APP_PACKAGE/lib/log4j/log4j.jar:$APP_PACKAGE/lib/microba/microba.jar:$APP_PACKAGE/lib/nanoxml/nanoxml-2.2.3.jar:$APP_PACKAGE/lib/oromatcher/oromatcher.jar:$APP_PACKAGE/lib/picocontainer/picocontainer.jar:$APP_PACKAGE/lib/trove4j/trove4j.jar:$APP_PACKAGE/lib/trove4j/trove4j_src.jar:$APP_PACKAGE/lib/xmlrpc/xmlrpc-2.0.jar:$APP_PACKAGE/lib/xstream/xstream.jar:$APP_PACKAGE/lib/yjp/yjp-controller-api-redist.jar:$APP_PACKAGE/lib/jmock2.4/cglib-nodep-2.1_3.jar</string>
+      <key>JVMVersion</key>
+      <string>1.5+</string>
+      <key>MainClass</key>
+      <string>jetbrains.mps.Launcher</string>
+      <key>Properties</key>
+      <dict>
+        <key>apple.laf.useScreenMenuBar</key>
+        <string>true</string>
+        <key>com.apple.mrj.application.live-resize</key>
+        <string>false</string>
+        <key>file.encoding</key>
+        <string>windows-1251</string>
+      </dict>
+      <key>VMOptions</key>
+      <string>-Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=windows-1251</string>
+    </dict>
+  </dict>
+</plist>

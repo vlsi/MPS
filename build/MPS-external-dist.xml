@@ -1,0 +1,107 @@
+<project name="MPS-external-dist" default="default" basedir="..">
+  <import file="${ant.file}/../MPS-external-dist.xml" />
+  <import file="${ant.file}/../MPS-external.xml" />
+  <condition property="windows">
+    <os family="windows" />
+  </condition>
+  <target name="default">
+    <tstamp />
+    <antcall target="MPS-external.main" />
+    <copy file="build/mps.vmoptions" todir="${deploy.dir}/MPS/bin" />
+    <antcall target="windows.dist" />
+    <antcall target="universal.dist" />
+    <antcall target="macos.dist" />
+    <delete dir="${deploy.dir}/MPS" />
+  </target>
+  <target name="windows.dist" if="windows">
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="scripts.folder" value="build" />
+    <property name="startup.bat.name" value="mps.bat" />
+    <property name="startup.bat" value="${scripts.folder}/${startup.bat.name}" />
+    <property name="vmoptions.file.name" value="mps.vmoptions" />
+    <property name="vmoptions.file" value="${scripts.folder}/${vmoptions.file.name}" />
+    <property name="root.folder.name" value="MPS" />
+    <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
+    <property name="nsis.script.name" value="installer.nsi" />
+    <property name="nsis.script.path" value="${basedir}/${scripts.folder}/${nsis.script.name}" />
+    <property name="nsis.script.path.tmp" value="${basedir}/${deploy.dir}/installation.script${DSTAMP}.nsi" />
+    <property name="application.icon" value="${basedir}/${deploy.dir}/application.ico" />
+    <property name="homepage.icon" value="${basedir}/${deploy.dir}/homepage.ico" />
+    <property name="license.path" value="${basedir}/${deploy.dir}/license.txt" />
+    <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
+    <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
+    <property name="jre.unzipped.path" value="${basedir}/${deploy.dir}" />
+    <property name="installer" value="string-$build$-windows.exe" />
+    <property name="mps_home" value="${basedir}" />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
+    <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
+    <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
+    <copy file="${license.src.path}" tofile="${license.path}" />
+    <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
+    <java classpath="${mps_home}/platform/buildlanguage/languages/distrib/classes" classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
+      <arg file="${nsis.script.path.tmp}/../install.nsh" />
+      <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
+      <arg file="${root.folder}" />
+      <arg file="${startup.bat}" />
+      <arg file="${application.icon}" />
+      <arg file="${jre.unzipped.path}/jre" />
+      <arg file="${homepage.icon}" />
+    </java>
+    <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
+    <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
+    <unzip src="${mps_home}/build/tools/nsis.zip" dest="${deploy.dir}" />
+    <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true" output="nsis.out">
+      <arg file="${nsis.script.path.tmp}" />
+    </exec>
+    <delete file="${nsis.script.path.tmp}" />
+    <delete file="${application.icon}" />
+    <delete file="${homepage.icon}" />
+    <delete file="${license.path}" />
+    <delete dir="${jre.unzipped.path}/jre" />
+    <delete dir="${deploy.dir}/nsis" />
+  </target>
+  <target name="universal.dist">
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="root.folder" value="MPS" />
+    <property name="zip.file" value="MPS-${build.number}.zip" />
+    <zip destfile="${deploy.dir}/${zip.file}">
+      <zipfileset dir="${deploy.dir}">
+        <include name="${root.folder}/**" />
+      </zipfileset>
+      <zipfileset file="build/mps.sh" prefix="${root.folder}" filemode="755" />
+      <zipfileset file="build/mps.bat" prefix="${root.folder}" />
+      <zipfileset file="build/mps.vmoptions" prefix="${root.folder}/bin" />
+    </zip>
+  </target>
+  <target name="macos.dist">
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="scripts.folder" value="build" />
+    <property name="info.plist.name" value="Info.plist" />
+    <property name="info.plist" value="${scripts.folder}/${info.plist.name}" />
+    <property name="info.plist.tmp" value="${basedir}/${deploy.dir}/Info.plist" />
+    <property name="icon.file" value="${mps_home}/build/resources/mps.icns" />
+    <property name="java.application.stub" value="${mps_home}/build/resources/mps" />
+    <property name="unix.startup.script" value="${scripts.folder}/mps.sh" />
+    <property name="zip.file" value="MPS-${build.number}-macos.zip" />
+    <property name="root.folder" value="MPS" />
+    <property name="root.folder.dest" value="${root.folder}.app" />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <copy file="${info.plist}" tofile="${info.plist.tmp}" />
+    <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
+    <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
+    <zip destfile="${deploy.dir}/${zip.file}" duplicate="preserve">
+      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" />
+      <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
+      <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
+      <zipfileset file="${scripts.folder}/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
+      <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOs" filemode="755" />
+      <zipfileset file="${unix.startup.script}" prefix="${root.folder.dest}" filemode="755" />
+      <zipfileset file="${scripts.folder}/mps.vmoptions" prefix="${root.folder.dest}/bin" />
+    </zip>
+    <delete file="${info.plist.tmp}" />
+  </target>
+</project>

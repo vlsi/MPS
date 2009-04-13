@@ -1,0 +1,7 @@
+-Xss1024k
+-ea
+-Xmx1200m
+-XX:MaxPermSize=92m
+-XX:+HeapDumpOnOutOfMemoryError
+-Dfile.encoding=windows-1251
+

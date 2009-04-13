@@ -1,0 +1,86 @@
+<project name="help-build" default="nothing">
+  <property name="executable.dir" value="/executable" />
+  <property name="data.dir" value="/data" />
+  <property name="mps.vmoptions.suffix" value="/bin/mps.vmoptions" />
+  <condition property="devel">
+    <equals arg1="${version}" arg2="EAP" casesensitive="false" />
+  </condition>
+  <target name="nothing">
+    <echo>Doing nothing...</echo>
+  </target>
+  <target name="repack.sources">
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <copy todir="${output.dir}">
+      <mapper type="regexp" from="(.*)(/|\\)(src|sources|source|source_gen|tests)(/|\\)(.*)" to="\5" />
+      <fileset dir="${input.dir}" />
+    </copy>
+  </target>
+  <target name="append.mps.version">
+    <property name="build.number.file" value="${input.dir}/build.number" />
+    <property name="prefix" value="jetbrains.mps." />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <loadfile srcfile="${mps_home}/build.number" property="mps.buildinfo">
+      <filterchain>
+        <prefixlines prefix="${prefix}" />
+      </filterchain>
+    </loadfile>
+    <echo file="${build.number.file}">${mps.buildinfo}</echo>
+    <copy file="${build.number.file}" todir="${output.dir}" />
+  </target>
+  <target name="append.idea.version">
+    <property name="build.number.file" value="${input.dir}/build.number" />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <property file="${mps_home}/build.number" prefix="repo" />
+    <echo file="${build.number.file}" append="true">${line.separator}idea.platform.build.number=${repo.idea.platform.build.number}</echo>
+    <copy file="${build.number.file}" todir="${output.dir}" />
+  </target>
+  <target name="tweak.nondev.version" unless="devel">
+    <property name="mps.vmoptions" value="${input.dir}${mps.vmoptions.suffix}" />
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <replaceregexp file="${mps.vmoptions}" match="(.*)Xmx(\d+)m" replace="\1Xmx512m" byline="true" />
+  </target>
+  <target name="add.profiling.in.eap" if="devel">
+    <property name="mps.vmoptions" value="${input.dir}${mps.vmoptions.suffix}" />
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <echo file="${mps.vmoptions}" append="true">${line.separator}-agentlib:yjpagent</echo>
+  </target>
+  <target name="add.final.touches" depends="add.profiling.in.eap,tweak.nondev.version">
+    <fail unless="input.dir" message="Property input.dir unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <copy todir="${output.dir}">
+      <fileset dir="${input.dir}" />
+    </copy>
+  </target>
+  <target name="pack.mps.src">
+    <property name="tmpdir" value="${java.io.tmpdir}/MPS" />
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <fail unless="output.dir" message="Property output.dir unspecified." />
+    <mkdir dir="${tmpdir}" />
+    <zip destfile="${output.dir}/MPS-${build.number}-src.zip" filesonly="true">
+      <zipfileset dir="${basedir}" prefix="MPS">
+        <exclude name="${deploy.dir}/**" />
+        <exclude name="lib/jetbrains-ideframework/idea-platform-src.zip" />
+        <exclude name="lib/jetbrains-ideframework/idea-external-src.zip" />
+        <exclude name="**/*.class" />
+        <exclude name="**/*.bdp" />
+        <exclude name="**/*.pvk" />
+        <exclude name="**/*.spc" />
+        <exclude name="**/sign/**" />
+        <exclude name="system/**" />
+        <exclude name="integrationBuild*" />
+      </zipfileset>
+      <zipfileset file="lib/jetbrains-ideframework/idea-external-src.zip" prefix="MPS/lib/jetbrains-ideframework" />
+    </zip>
+    <delete dir="${tmpdir}" />
+  </target>
+  <target name="unpack.buildtools.zip0">
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <unzip src="" dest="${mps_home}/build" />
+  </target>
+</project>
