@@ -2932,42 +2932,6 @@
         </node>
       </node>
     </node>
-    <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234966217698">
-      <property name="name" value="add.profiling.in.eap" />
-      <property name="if" value="devel" />
-      <node role="propertyList" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration" id="1234967137419">
-        <property name="name" value="mps.vmoptions" />
-        <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1234967137420" />
-        <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.FileName" id="1234967137421">
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1234971409914">
-            <node role="right" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234971413514">
-              <link role="propertyDeclaration" targetNodeId="1234971375101" resolveInfo="mps.vmoptions.suffix" />
-            </node>
-            <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234967137424">
-              <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234966217699">
-        <link role="declaration" targetNodeId="6v.1199644186802" resolveInfo="echo" />
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234966217700">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186812" resolveInfo="file" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234966268012">
-            <link role="propertyDeclaration" targetNodeId="1234967137419" resolveInfo="mps.vmoptions" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234966217702">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186804" resolveInfo="append" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1234966217703">
-            <property name="value" value="true" />
-          </node>
-        </node>
-        <node role="internalText" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1234966217704">
-          <property name="value" value="${line.separator}-agentlib:yjpagent" />
-        </node>
-      </node>
-    </node>
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234967229679">
       <property name="name" value="add.final.touches" />
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1237305165070">
@@ -2987,9 +2951,6 @@
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
         </node>
-      </node>
-      <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1234967261032">
-        <link role="targetDeclaration" targetNodeId="1234966217698" resolveInfo="add.profiling.in.eap" />
       </node>
       <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1234967267151">
         <link role="targetDeclaration" targetNodeId="1234274853794" resolveInfo="tweak.nondev.version" />

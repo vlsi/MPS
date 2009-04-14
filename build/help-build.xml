@@ -44,12 +44,7 @@
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <replaceregexp file="${mps.vmoptions}" match="(.*)Xmx(\d+)m" replace="\1Xmx512m" byline="true" />
   </target>
-  <target name="add.profiling.in.eap" if="devel">
-    <property name="mps.vmoptions" value="${input.dir}${mps.vmoptions.suffix}" />
-    <fail unless="input.dir" message="Property input.dir unspecified." />
-    <echo file="${mps.vmoptions}" append="true">${line.separator}-agentlib:yjpagent</echo>
-  </target>
-  <target name="add.final.touches" depends="add.profiling.in.eap,tweak.nondev.version">
+  <target name="add.final.touches" depends="tweak.nondev.version">
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <copy todir="${output.dir}">
