@@ -116,6 +116,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239360506533">
     <property name="name" value="NamedTupleDeclaration" />
+    <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/namedTuple.png" />
     <link role="extends" targetNodeId="2v.1107461130800" resolveInfo="Classifier" />
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239546091267">
       <property name="name" value="leftBracket" />

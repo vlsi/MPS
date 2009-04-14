@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
@@ -43,6 +43,7 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1238919387774">
@@ -5246,6 +5247,29 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1239631258436">
         <link role="template" targetNodeId="1239631208111" resolveInfo="namedTuple_class" />
       </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1239719118967">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239719118968">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239719124667">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239719127438">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239719124668">
+                <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+                <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239719133943">
+                <link role="baseMethodDeclaration" targetNodeId="11.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239719136161">
+                  <property name="value" value="Sooo?..." />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239719174265">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239719174516">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1239639746839">
       <link role="applicableConcept" targetNodeId="1.1239531918181" resolveInfo="NamedTupleType" />
@@ -5825,6 +5849,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1239719735178">
+      <link role="applicableConcept" targetNodeId="1.1239360506533" resolveInfo="NamedTupleDeclaration" />
+      <link role="template" targetNodeId="1239719777467" resolveInfo="NamedTuple" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1239631208111">
@@ -6415,6 +6443,22 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1239719777467">
+    <property name="name" value="NamedTuple" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239719777468" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1239719777469">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239719777470" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239719777471" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239719777472" />
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1239719777473">
+      <link role="applicableConcept" targetNodeId="1.1239360506533" resolveInfo="NamedTupleDeclaration" />
+    </node>
+    <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IncludeMacro" id="1239719797054">
+      <link role="includeTemplate" targetNodeId="1239631208111" resolveInfo="namedTuple_class" />
+      <link role="mappingLabel" targetNodeId="1239631263645" resolveInfo="namedTupleDecl2class" />
     </node>
   </node>
 </model>

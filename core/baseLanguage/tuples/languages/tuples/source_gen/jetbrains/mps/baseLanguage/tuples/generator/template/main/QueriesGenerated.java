@@ -81,6 +81,11 @@ public class QueriesGenerated {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
   }
 
+  public static boolean baseMappingRule_Condition_1239719118967(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    System.out.println("Sooo?...");
+    return true;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1238920211186(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "_" + SPropertyOperations.getInteger(_context.getNode(), "value");
   }
