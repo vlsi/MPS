@@ -36,6 +36,15 @@ public class IdeMain {
     ourTestMode = testMode;
   }
 
+  @Deprecated
+  public static void setTestMode(boolean test) {
+    if (test) {
+      setTestMode(TestMode.CORE_TEST);
+    } else {
+      setTestMode(TestMode.NO_TEST);
+    }
+  }
+
   public static void setUILoaded(boolean value) {
     ourUILoaded = value;
   }
