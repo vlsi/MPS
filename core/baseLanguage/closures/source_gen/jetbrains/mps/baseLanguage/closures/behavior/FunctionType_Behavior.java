@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -40,7 +39,7 @@ public class FunctionType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_1().createNode();
+    return new _Quotations.QuotationClass_2().createNode();
   }
 
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
@@ -136,7 +135,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new _Quotations.QuotationClass_2().createNode();
+      return new _Quotations.QuotationClass_3().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -156,11 +155,11 @@ with_meet:
 
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_3().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)), true));
     }
@@ -178,11 +177,11 @@ with_meet:
 
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -200,11 +199,11 @@ with_meet:
 
   public static SNode call_getRuntimeType_1230320203983(SNode thisNode, List<SNode> parameterType) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_6().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -223,14 +222,14 @@ with_meet:
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
     return ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)) :
-      new _Quotations.QuotationClass_6().createNode()
+      new _Quotations.QuotationClass_7().createNode()
     );
   }
 
   public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
     return ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)) :
-      new _Quotations.QuotationClass_7().createNode()
+      new _Quotations.QuotationClass_8().createNode()
     );
   }
 

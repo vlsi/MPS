@@ -37,6 +37,16 @@ public class ClosureLiteral_Behavior {
     return true;
   }
 
+  public static SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "body", true);
+  }
+
+  public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+    //     everything which is not void and null is good,
+    //     look at ExpressionStatement.canServeAsReturn
+    return new _Quotations.QuotationClass_1().createNode();
+  }
+
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getType_1229718192182", PARAMETERS_1229718192182, paramTypes, resultType, returnType, termType, throwsTypes);
   }

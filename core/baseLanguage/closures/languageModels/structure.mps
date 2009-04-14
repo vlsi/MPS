@@ -168,6 +168,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237546034993">
       <link role="intfc" targetNodeId="2.1237545921771" resolveInfo="IContainsStatementList" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239707713724">
+      <link role="intfc" targetNodeId="2.1239354281271" resolveInfo="IMethodLike" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1199711271002">
     <property name="name" value="InvokeExpression" />

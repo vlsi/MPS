@@ -264,6 +264,45 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237540579915" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237540579916" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239707739902">
+      <property name="name" value="getBody" />
+      <link role="overriddenMethod" targetNodeId="9.1239354440022" resolveInfo="getBody" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239707739903" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239707739905">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239707798336">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239707804868">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239707804058" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239707805414">
+              <link role="link" targetNodeId="1.1199569916463" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239707788434">
+        <link role="concept" targetNodeId="8.1068580123136" resolveInfo="StatementList" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239707822363">
+      <property name="name" value="getExpectedRetType" />
+      <link role="overriddenMethod" targetNodeId="9.1239354342632" resolveInfo="getExpectedRetType" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239707822364" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239707822366">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239708059225">
+          <property name="value" value="everything which is not void and null is good," />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239708102930">
+          <property name="value" value="look at ExpressionStatement.canServeAsReturn" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239707831830">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1239708048982">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239708055900">
+              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239707828190" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877338556">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877338557" />
     </node>
