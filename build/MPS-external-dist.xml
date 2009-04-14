@@ -7,7 +7,6 @@
   <target name="default">
     <tstamp />
     <antcall target="MPS-external.main" />
-    <copy file="build/mps.vmoptions" todir="${deploy.dir}/MPS/bin" />
     <antcall target="windows.dist" />
     <antcall target="universal.dist" />
     <antcall target="macos.dist" />

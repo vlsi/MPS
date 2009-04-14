@@ -14,8 +14,7 @@
   </target>
   <target name="folders.create" depends="clean.before">
     <mkdir dir="${deploy.dir}" />
-    <mkdir dir="${deploy.dir}/MPS/help-build.add.final.touches/bin" />
-    <mkdir dir="${deploy.dir}/MPS/help-build.add.final.touches" />
+    <mkdir dir="${deploy.dir}/MPS/bin" />
     <mkdir dir="${deploy.dir}/MPS/lib/beansbinding" />
     <mkdir dir="${deploy.dir}/MPS/lib/alloy" />
     <mkdir dir="${deploy.dir}/MPS/lib/ant-1.7.0" />
@@ -74,16 +73,9 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <fail unless="mps_home" message="Property mps_home unspecified." />
-    <copy todir="${deploy.dir}/MPS/help-build.add.final.touches/bin">
+    <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.iml, **/*.iws" />
     </copy>
-    <antcall target="help-build.add.final.touches" inheritall="true">
-      <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/MPS/help-build.add.final.touches" />
-      <param name="output.dir" value="${deploy.dir}/MPS" />
-      <param name="basedir" value="${basedir}" />
-    </antcall>
-    <delete dir="${deploy.dir}/MPS/help-build.add.final.touches" />
     <copy todir="${deploy.dir}/MPS/lib/beansbinding">
       <fileset dir="${mps_home}/lib/beansbinding" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>

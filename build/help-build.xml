@@ -1,10 +1,6 @@
 <project name="help-build" default="nothing">
   <property name="executable.dir" value="/executable" />
   <property name="data.dir" value="/data" />
-  <property name="mps.vmoptions.suffix" value="/bin/mps.vmoptions" />
-  <condition property="devel">
-    <equals arg1="${version}" arg2="EAP" casesensitive="false" />
-  </condition>
   <target name="nothing">
     <echo>Doing nothing...</echo>
   </target>
@@ -38,18 +34,6 @@
     <property file="${mps_home}/build.number" prefix="repo" />
     <echo file="${build.number.file}" append="true">${line.separator}idea.platform.build.number=${repo.idea.platform.build.number}</echo>
     <copy file="${build.number.file}" todir="${output.dir}" />
-  </target>
-  <target name="tweak.nondev.version" unless="devel">
-    <property name="mps.vmoptions" value="${input.dir}${mps.vmoptions.suffix}" />
-    <fail unless="input.dir" message="Property input.dir unspecified." />
-    <replaceregexp file="${mps.vmoptions}" match="(.*)Xmx(\d+)m" replace="\1Xmx512m" byline="true" />
-  </target>
-  <target name="add.final.touches" depends="tweak.nondev.version">
-    <fail unless="input.dir" message="Property input.dir unspecified." />
-    <fail unless="output.dir" message="Property output.dir unspecified." />
-    <copy todir="${output.dir}">
-      <fileset dir="${input.dir}" />
-    </copy>
   </target>
   <target name="pack.mps.src">
     <property name="tmpdir" value="${java.io.tmpdir}/MPS" />

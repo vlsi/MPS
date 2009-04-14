@@ -203,18 +203,6 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true)).replace("\\", "/");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1231782294388(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(_context.getNode()) + "/" + DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(_context.getNode()) + "." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1231782344957(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1231782395899(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "vmOptionsDir", true));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String commandLine = "";
     for(SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
