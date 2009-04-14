@@ -4035,5 +4035,39 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1239735706419">
+    <property name="name" value="AddExtendsClause" />
+    <link role="forConcept" targetNodeId="1.1186402373407" resolveInfo="StyleSheetClass" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1239735706420">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239735706421">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239735906186">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239735906187">
+            <property name="value" value="Add extends clause" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1239735706422">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239735706423">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239735904489">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239735904490">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239735904491">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1239735904492">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239735904493">
+                  <link role="concept" targetNodeId="1.1198252130653" resolveInfo="StyleSheetClassReference" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239735904494">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1239735904495" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239735904496">
+                <link role="link" targetNodeId="1.1198252369256" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
