@@ -81,9 +81,12 @@ public class QueriesGenerated {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
   }
 
-  public static boolean baseMappingRule_Condition_1239719118967(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    System.out.println("Sooo?...");
-    return true;
+  public static boolean baseMappingRule_Condition_1239723380635(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), true) != null);
+  }
+
+  public static boolean baseMappingRule_Condition_1239724368601(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), true) != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1238920211186(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -474,6 +477,22 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static SNode sourceNodeQuery_1239723591680(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1239723607755(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1239724391703(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1239724391711(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+  }
+
   public static Iterable sourceNodesQuery_1238919851689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = ListOperations.<SNode>createList();
     for(int i = 0 ; i < 10 ; i++ ) {
@@ -763,7 +782,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1239640003307(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true)).select(new ISelector <SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true)).sort(new ISelector <SNode, Comparable<?>>() {
+
+      public Comparable<?> select(SNode cmpRef) {
+        return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false));
+      }
+    }, true).select(new ISelector <SNode, SNode>() {
 
       public SNode select(SNode cmpRef) {
         return SLinkOperations.getTarget(cmpRef, "value", true);

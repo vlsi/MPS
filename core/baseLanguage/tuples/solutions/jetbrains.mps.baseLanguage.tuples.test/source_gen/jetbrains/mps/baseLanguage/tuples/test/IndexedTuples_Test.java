@@ -23,7 +23,8 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertSame(1, pair._0());
     Assert.assertEquals("a", pair._1());
     Tuples._2<Integer, String> anotherPair = MultiTuple.<Integer, String>empty2().assign(pair);
-    Assert.assertFalse(anotherPair == pair);
+    Assert.assertFalse(((Object)anotherPair) == ((Object)pair));
+    Assert.assertTrue(MultiTuple.eq(anotherPair, pair));
     Assert.assertEquals(pair, anotherPair);
     Assert.assertSame(1, anotherPair._0());
     Assert.assertEquals("a", anotherPair._1());
@@ -74,6 +75,18 @@ public class IndexedTuples_Test extends TestCase {
     Tuples._2<String, Character> pair = MultiTuple.<String, Character>empty2().assign(this.toTuple("abc", 'd'));
     Assert.assertEquals("abc", pair._0());
     Assert.assertSame('d', pair._1());
+  }
+
+  @Test()
+  public void test_equalsOperator() throws Exception {
+    Tuples._2<Integer, Character> tpl1 = MultiTuple.from(1, 'a');
+    Tuples._2<Integer, Character> tpl2 = MultiTuple.from(1, 'a');
+    Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
+    Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
+    tpl2._0(2);
+    tpl1._1('b');
+    Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
+    Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {

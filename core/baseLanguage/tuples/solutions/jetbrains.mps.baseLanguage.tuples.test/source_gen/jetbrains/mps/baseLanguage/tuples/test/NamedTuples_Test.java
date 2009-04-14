@@ -7,6 +7,8 @@ import org.junit.Test;
 import jetbrains.mps.baseLanguage.tuples.test.Data;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -33,6 +35,9 @@ public class NamedTuples_Test extends TestCase {
     tpl.assignFrom(new Data(tpl.bar(), tpl.foo()));
     Assert.assertEquals("abc", tpl.bar());
     Assert.assertEquals("xyz", tpl.foo());
+    tpl2.assignFrom(new Data("abc", "xyz"));
+    Assert.assertEquals("abc", tpl2.foo());
+    Assert.assertEquals("xyz", tpl2.bar());
   }
 
   @Test()
@@ -49,6 +54,39 @@ public class NamedTuples_Test extends TestCase {
       Assert.assertTrue("abc".equalsIgnoreCase(tpl.foo()));
       Assert.assertTrue("xyz".equalsIgnoreCase(tpl.bar()));
     }
+  }
+
+  @Test()
+  public void test_assignToIndexedTupleType() throws Exception {
+    Tuples._2<String, String> itpl = new Data().assignFrom(this.getData());
+    Assert.assertEquals("ABC", itpl._0());
+    Assert.assertEquals("XYZ", itpl._1());
+  }
+
+  @Test()
+  public void test_patternMatching() throws Exception {
+    String foo;
+    String bar;
+    
+    {
+      Tuples._2<String, String> _tmp6211_0 = this.getData();
+      foo = _tmp6211_0._0();
+      bar = _tmp6211_0._1();
+    };
+    Assert.assertEquals("ABC", foo);
+    Assert.assertEquals("XYZ", bar);
+  }
+
+  @Test()
+  public void test_equalsOperator() throws Exception {
+    Data tpl1 = new Data().assignFrom(this.getData());
+    Data tpl2 = new Data().assignFrom(this.getData());
+    Assert.assertFalse(((Object)tpl1) == ((Object)tpl2));
+    Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
+    Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
+    tpl2.assignFrom(new Data(tpl2.bar(), tpl2.foo()));
+    Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
+    Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
   }
 
   public Data getData() {
