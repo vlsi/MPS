@@ -10,16 +10,18 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
 import jetbrains.mpslite.behavior.LineList_Behavior;
 import jetbrains.mpslite.generator.template.util.EditorGenerationUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class QueriesGenerated {
@@ -32,27 +34,38 @@ public class QueriesGenerated {
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
     Map<SNode, SNode> conceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> partsToLinkDeclarations = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    List<SNode> mpsliteConceptDeclarations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
-    List<SNode> allConcepts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.IMPSLiteConcept");
+    SNode conceptContainer = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.ConceptContainer")).first();
+    List<SNode> mpsliteConceptDeclarations = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", false);
+    List<SNode> allConcepts = SLinkOperations.getTargets(conceptContainer, "mpsLiteConcept", true);
     for(SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
-      SPropertyOperations.set(concept, "rootable", "" + SPropertyOperations.getBoolean(conceptDeclaration, "root"));
+      SPropertyOperations.set(concept, "rootable", "" + IMPSLiteConcept_Behavior.call_isRootable_1239714833738(conceptDeclaration));
+      if (IMPSLiteConcept_Behavior.call_isAbstract_1239715026284(conceptDeclaration)) {
+        SNode booleanConceptProperty = SLinkOperations.addNewChild(concept, "conceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
+        SNode conceptProperty_Abstract = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "conceptPropertyDeclaration", true)).where(new IWhereFilter <SNode>() {
+
+          public boolean accept(SNode it) {
+            return "abstract".equals(SPropertyOperations.getString(it, "name"));
+          }
+        }).first(), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration");
+        SLinkOperations.setTarget(booleanConceptProperty, "conceptPropertyDeclaration", conceptProperty_Abstract, false);
+      }
       MapSequence.fromMap(conceptsToTargets).put(conceptDeclaration, concept);
     }
     //     extends
     for(SNode conceptDeclaration : allConcepts) {
-      SLinkOperations.setTarget(SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", SNodeOperations.cast(AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
+      SLinkOperations.setTarget(((SNode)conceptsToTargets.get(conceptDeclaration)), "extends", SNodeOperations.cast(AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
     }
     //     structure
     for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
       LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), conceptsToTargets, partsToLinkDeclarations);
     }
-    List<SNode> binaryOperations = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.BinaryOperationConcept");
+    List<SNode> binaryOperations = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.BinaryOperationConcept", false);
     for(SNode binaryOperationConcept : binaryOperations) {
       EditorGenerationUtils.fillBinaryOperationStructure(binaryOperationConcept, conceptsToTargets, partsToLinkDeclarations);
     }
-    List<SNode> variableConcepts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.VariableConcept");
+    List<SNode> variableConcepts = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.VariableConcept", false);
     for(SNode variableConcept : variableConcepts) {
       EditorGenerationUtils.fillVariableConceptStruncture(variableConcept, conceptsToTargets, partsToLinkDeclarations);
     }
@@ -120,9 +133,7 @@ public class QueriesGenerated {
     actionsModel.setLoading(false);
     SModelRepository.getInstance().markChanged(editorModel);
     SModelRepository.getInstance().markChanged(actionsModel);
-    for(SNode conceptDeclaration : allConcepts) {
-      SNodeOperations.deleteNode(conceptDeclaration);
-    }
+    SNodeOperations.deleteNode(conceptContainer);
   }
 
 }

@@ -556,5 +556,42 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239714446829">
+    <property name="name" value="ConceptContainer" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239714457096">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239714568512" resolveInfo="StatementConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239714921166">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expressionConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239714642032" resolveInfo="ExpressionConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239714458094">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="mpsLiteConcept" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239714568512">
+    <property name="name" value="StatementConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239714577797">
+      <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239714642032">
+    <property name="name" value="ExpressionConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239714649020">
+      <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    </node>
+  </node>
 </model>
 
