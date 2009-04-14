@@ -57,7 +57,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238952304221">
               <property name="name" value="empty" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238952304222" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1238952308751" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239701859089" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238952312754">

@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.tuples.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.baseLanguage.tuples.dataFlow.IndexedTupleLiteral_DataFlow;
+import jetbrains.mps.baseLanguage.tuples.dataFlow.NamedTupleLiteral_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", new IndexedTupleLiteral_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", new NamedTupleLiteral_DataFlow());
   }
 
 }

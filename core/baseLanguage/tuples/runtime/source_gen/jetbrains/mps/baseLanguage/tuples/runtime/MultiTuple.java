@@ -167,12 +167,12 @@ public class MultiTuple {
     return new MultiTuple._9<T0, T1, T2, T3, T4, T5, T6, T7, T8>();
   }
 
-  /* package */static class _0 extends MultiTuple implements Tuples._0 {
+  public static class _0 extends MultiTuple implements Tuples._0 {
 
-    /* package */_0(Object... objs) {
+    protected _0(Object... objs) {
       super(objs);
     }
-    /* package */_0() {
+    protected _0() {
       super(0);
     }
 
@@ -182,12 +182,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _1 <T0> extends MultiTuple implements Tuples._1<T0> {
+  public static class _1 <T0> extends MultiTuple implements Tuples._1<T0> {
 
-    /* package */_1(Object... objs) {
+    protected _1(Object... objs) {
       super(objs);
     }
-    /* package */_1() {
+    protected _1() {
       super(1);
     }
 
@@ -207,12 +207,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _2 <T0, T1> extends MultiTuple implements Tuples._2<T0, T1> {
+  public static class _2 <T0, T1> extends MultiTuple implements Tuples._2<T0, T1> {
 
-    /* package */_2(Object... objs) {
+    protected _2(Object... objs) {
       super(objs);
     }
-    /* package */_2() {
+    protected _2() {
       super(2);
     }
 
@@ -242,12 +242,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _3 <T0, T1, T2> extends MultiTuple implements Tuples._3<T0, T1, T2> {
+  public static class _3 <T0, T1, T2> extends MultiTuple implements Tuples._3<T0, T1, T2> {
 
-    /* package */_3(Object... objs) {
+    protected _3(Object... objs) {
       super(objs);
     }
-    /* package */_3() {
+    protected _3() {
       super(3);
     }
 
@@ -287,12 +287,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _4 <T0, T1, T2, T3> extends MultiTuple implements Tuples._4<T0, T1, T2, T3> {
+  public static class _4 <T0, T1, T2, T3> extends MultiTuple implements Tuples._4<T0, T1, T2, T3> {
 
-    /* package */_4(Object... objs) {
+    protected _4(Object... objs) {
       super(objs);
     }
-    /* package */_4() {
+    protected _4() {
       super(4);
     }
 
@@ -342,12 +342,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _5 <T0, T1, T2, T3, T4> extends MultiTuple implements Tuples._5<T0, T1, T2, T3, T4> {
+  public static class _5 <T0, T1, T2, T3, T4> extends MultiTuple implements Tuples._5<T0, T1, T2, T3, T4> {
 
-    /* package */_5(Object... objs) {
+    protected _5(Object... objs) {
       super(objs);
     }
-    /* package */_5() {
+    protected _5() {
       super(5);
     }
 
@@ -407,12 +407,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _6 <T0, T1, T2, T3, T4, T5> extends MultiTuple implements Tuples._6<T0, T1, T2, T3, T4, T5> {
+  public static class _6 <T0, T1, T2, T3, T4, T5> extends MultiTuple implements Tuples._6<T0, T1, T2, T3, T4, T5> {
 
-    /* package */_6(Object... objs) {
+    protected _6(Object... objs) {
       super(objs);
     }
-    /* package */_6() {
+    protected _6() {
       super(6);
     }
 
@@ -482,12 +482,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _7 <T0, T1, T2, T3, T4, T5, T6> extends MultiTuple implements Tuples._7<T0, T1, T2, T3, T4, T5, T6> {
+  public static class _7 <T0, T1, T2, T3, T4, T5, T6> extends MultiTuple implements Tuples._7<T0, T1, T2, T3, T4, T5, T6> {
 
-    /* package */_7(Object... objs) {
+    protected _7(Object... objs) {
       super(objs);
     }
-    /* package */_7() {
+    protected _7() {
       super(7);
     }
 
@@ -567,12 +567,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _8 <T0, T1, T2, T3, T4, T5, T6, T7> extends MultiTuple implements Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> {
+  public static class _8 <T0, T1, T2, T3, T4, T5, T6, T7> extends MultiTuple implements Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> {
 
-    /* package */_8(Object... objs) {
+    protected _8(Object... objs) {
       super(objs);
     }
-    /* package */_8() {
+    protected _8() {
       super(8);
     }
 
@@ -662,12 +662,12 @@ public class MultiTuple {
     }
 
 }
-  /* package */static class _9 <T0, T1, T2, T3, T4, T5, T6, T7, T8> extends MultiTuple implements Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
+  public static class _9 <T0, T1, T2, T3, T4, T5, T6, T7, T8> extends MultiTuple implements Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
 
-    /* package */_9(Object... objs) {
+    protected _9(Object... objs) {
       super(objs);
     }
-    /* package */_9() {
+    protected _9() {
       super(9);
     }
 

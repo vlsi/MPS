@@ -113,8 +113,168 @@
       <property name="value" value="access tuple member by index" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238938113748">
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1146528679895" resolveInfo="lvalue" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239360506533">
+    <property name="name" value="NamedTupleDeclaration" />
+    <link role="extends" targetNodeId="2v.1107461130800" resolveInfo="Classifier" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239546091267">
+      <property name="name" value="leftBracket" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239546098880">
+      <property name="name" value="rightBracket" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239529553065">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="component" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239567350755">
+      <property name="value" value="named tuple" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239546105109">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239546091267" resolveInfo="leftBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239546108279">
+      <property name="value" value=")" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239546098880" resolveInfo="rightBracket" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239462176079">
+    <property name="name" value="NamedTupleComponentDeclaration" />
+    <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239462974287">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239462414586">
+      <link role="intfc" targetNodeId="2v.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239462414587">
+      <link role="intfc" targetNodeId="2v.1188208481402" resolveInfo="HasAnnotation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239462414588">
+      <link role="intfc" targetNodeId="2v.1201183863028" resolveInfo="TypeDerivable" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239462414589">
+      <link role="intfc" targetNodeId="2v.1233920926773" resolveInfo="TypeAnnotable" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239462445302">
+      <link role="intfc" targetNodeId="3v.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239531918181">
+    <property name="name" value="NamedTupleType" />
+    <link role="extends" targetNodeId="2v.1107535904670" resolveInfo="ClassifierType" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239548562987">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameterType" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+      <link role="specializedLink" targetNodeId="2v.1109201940907" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239547086058">
+      <property name="name" value="leftBracket" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239547093673">
+      <property name="name" value="rightBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239536476017">
+      <property name="value" value="&lt;{tupleDeclaration}&gt; type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239536476018">
+      <property name="value" value="reference to named tuple declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239547102360">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239547086058" resolveInfo="leftBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239547105650">
+      <property name="value" value=")" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239547093673" resolveInfo="rightBracket" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239531948650">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="tupleDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239360506533" resolveInfo="NamedTupleDeclaration" />
+      <link role="specializedLink" targetNodeId="2v.1107535924139" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239559992092">
+    <property name="name" value="NamedTupleLiteral" />
+    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239560910577">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="componentRef" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1239560581441" resolveInfo="NamedTupleComponentReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239560008022">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="tupleDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239360506533" resolveInfo="NamedTupleDeclaration" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239560950602">
+      <property name="name" value="leftBracket" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239560957517">
+      <property name="name" value="rightBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239567234546">
+      <property name="value" value="&lt;{tupleDeclaration}&gt; literal" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239567234547">
+      <property name="value" value="tuple literal" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239560963789">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239560950602" resolveInfo="leftBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239560966567">
+      <property name="value" value=")" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1239560957517" resolveInfo="rightBracket" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239560581441">
+    <property name="name" value="NamedTupleComponentReference" />
+    <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239560837729">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239560595302">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="componentDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239576519914">
+    <property name="name" value="NamedTupleComponentAccessOperation" />
+    <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239576533734">
+      <link role="intfc" targetNodeId="2v.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239576542472">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="component" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239578317604">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1197029536315" resolveInfo="lvalue" />
     </node>
   </node>
 </model>
