@@ -1660,8 +1660,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238145338131">
                   <link role="variableDeclaration" targetNodeId="1238145327951" resolveInfo="inc" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238145349839">
-                  <link role="link" targetNodeId="1.1214918834761" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239731477091">
+                  <link role="link" targetNodeId="1.1239714902950" />
                 </node>
               </node>
             </node>
@@ -1969,8 +1969,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238146720622">
                   <link role="variableDeclaration" targetNodeId="1238146720613" resolveInfo="inc" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238146720623">
-                  <link role="link" targetNodeId="1.1214918834761" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239731483742">
+                  <link role="link" targetNodeId="1.1239714902950" />
                 </node>
               </node>
             </node>
