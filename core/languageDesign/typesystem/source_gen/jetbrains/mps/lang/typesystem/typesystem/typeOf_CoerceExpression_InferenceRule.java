@@ -22,9 +22,11 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
     SNode pattern = SLinkOperations.getTarget(coerceExpression, "pattern", true);
     if (SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
       concept = SLinkOperations.getTarget(SNodeOperations.cast(pattern, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
+    } else if (SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
+      concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(pattern, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "patternNode", true));
     } else
     {
-      concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(pattern, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "patternNode", true));
+      return;
     }
     {
       SNode _nodeToCheck_1029348928467 = coerceExpression;
