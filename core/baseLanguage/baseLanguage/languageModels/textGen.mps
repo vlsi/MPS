@@ -7842,5 +7842,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1239710466732">
+    <link role="conceptDeclaration" targetNodeId="1.1239709577448" resolveInfo="PrefixDecrementExpression" />
+    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1239710466733">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239710466734">
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1239710517374">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1239710526634">
+            <property name="value" value="--" />
+          </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1239710544193">
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239710548102">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1239710547802" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239710951458">
+                <link role="link" targetNodeId="1.1239709606897" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1239710558961">
+    <link role="conceptDeclaration" targetNodeId="1.1239709250944" resolveInfo="PrefixIncrementExpression" />
+    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1239710558962">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239710558963">
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1239710626965">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1239710632598">
+            <property name="value" value="++" />
+          </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1239710639641">
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239710642368">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1239710641978" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239710644432">
+                <link role="link" targetNodeId="1.1239709418308" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

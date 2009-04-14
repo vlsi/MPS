@@ -2717,13 +2717,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214918800624">
     <property name="name" value="PostfixIncrementExpression" />
     <property name="package" value="prefix/postfix" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1214918834761">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
+    <link role="extends" targetNodeId="1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1214918817061">
       <property name="value" value="postfix increment" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
@@ -2732,13 +2726,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214918975462">
     <property name="name" value="PostfixDecrementExpression" />
     <property name="package" value="prefix/postfix" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1214918975463">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
+    <link role="extends" targetNodeId="1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1214918975464">
       <property name="value" value="postfix decrement" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
@@ -3297,6 +3285,35 @@
     <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239449014252">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239709250944">
+    <property name="package" value="prefix/postfix" />
+    <property name="name" value="PrefixIncrementExpression" />
+    <link role="extends" targetNodeId="1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239709434549">
+      <property name="value" value="++" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239709577448">
+    <property name="package" value="prefix/postfix" />
+    <property name="name" value="PrefixDecrementExpression" />
+    <link role="extends" targetNodeId="1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239709613131">
+      <property name="value" value="--" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239714755177">
+    <property name="package" value="prefix/postfix" />
+    <property name="name" value="AbstractUnaryNumberOperation" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239714902950">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </node>
 </model>

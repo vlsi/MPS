@@ -50,8 +50,6 @@ import jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow;
-import jetbrains.mps.baseLanguage.dataFlow.PostfixIncrementExpression_DataFlow;
-import jetbrains.mps.baseLanguage.dataFlow.PostfixDecrementExpression_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.BaseAssignmentExpression_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.BaseMethodCall_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow;
@@ -65,6 +63,7 @@ import jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.CommentedStatementsBlock_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.SuperConstructorInvocation_DataFlow;
 import jetbrains.mps.baseLanguage.dataFlow.TupleExpression_DataFlow;
+import jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 
@@ -115,8 +114,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.GenericNewExpression", new GenericNewExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.RemarkStatement", new RemarkStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", new AnonymousClassCreator_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", new PostfixIncrementExpression_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", new PostfixDecrementExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", new BaseAssignmentExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BaseMethodCall", new BaseMethodCall_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new ParameterDeclaration_DataFlow());
@@ -130,6 +127,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", new CommentedStatementsBlock_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", new SuperConstructorInvocation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TupleExpression", new TupleExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", new AbstractUnaryNumberOperation_DataFlow());
   }
 
 }

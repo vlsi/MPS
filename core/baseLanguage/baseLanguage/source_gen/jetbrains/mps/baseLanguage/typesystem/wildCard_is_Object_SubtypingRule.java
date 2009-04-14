@@ -14,7 +14,7 @@ public class wildCard_is_Object_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode wildCardType) {
-    return new _Quotations.QuotationClass_91().createNode();
+    return new _Quotations.QuotationClass_89().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.baseLanguage.editor.PostfixIncrement_Actions;
+import jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions;
 
 public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
 
@@ -93,7 +93,7 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
-    PostfixIncrement_Actions.setCellActions(editorCell, node, context);
+    AbstractUnariOperationActions.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNode_2042_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

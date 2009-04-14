@@ -3182,6 +3182,56 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1239713315270(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
+          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "--";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1239714323555(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", null);
+          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "++";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
   public static void removeSideTransformActionsByCondition_1228923203001(final IOperationContext operationContext, final RemoveSideTransformActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {

@@ -250,6 +250,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1138079221458" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177442307241">
       <property name="vertical" value="true" />
+      <property name="usesBraces" value="true" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177442307242">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1215605268751">

@@ -11694,46 +11694,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239212874130" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239213954291">
-    <property name="package" value="prefix/postfix" />
-    <link role="concept" targetNodeId="1.1214918975462" resolveInfo="PostfixDecrementExpression" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239213957428">
-      <property name="name" value="isLegalAsStatement" />
-      <link role="overriddenMethod" targetNodeId="1239211900844" resolveInfo="isLegalAsStatement" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239213957429" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239213957431">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239213999600">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239214001514">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239213965989" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239213954292">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239213954293" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239214024938">
-    <property name="package" value="prefix/postfix" />
-    <link role="concept" targetNodeId="1.1214918800624" resolveInfo="PostfixIncrementExpression" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239214032422">
-      <property name="name" value="isLegalAsStatement" />
-      <link role="overriddenMethod" targetNodeId="1239211900844" resolveInfo="isLegalAsStatement" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239214032423" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239214032425">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239214045026">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239214046663">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239214039719" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239214024939">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239214024940" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239354340297">
     <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1239354281271" resolveInfo="IMethodLike" />
@@ -11863,6 +11823,26 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239355135683">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239355135684" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239714994837">
+    <property name="package" value="prefix/postfix" />
+    <link role="concept" targetNodeId="1.1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239714999026">
+      <property name="name" value="isLegalAsStatement" />
+      <link role="overriddenMethod" targetNodeId="1239211900844" resolveInfo="isLegalAsStatement" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239714999027" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714999028">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239714999029">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239714999030">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239714999031" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239714994838">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714994839" />
     </node>
   </node>
 </model>

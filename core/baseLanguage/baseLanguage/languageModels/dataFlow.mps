@@ -1821,38 +1821,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1214920010744">
-    <property name="package" value="prefix/postfix" />
-    <link role="conceptDeclaration" targetNodeId="1.1214918800624" resolveInfo="PostfixIncrementExpression" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1214920010745">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214920010746">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1214920014854">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214920017686">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1214920017404" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1214920022347">
-              <link role="link" targetNodeId="1.1214918834761" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1214920065447">
-    <property name="package" value="prefix/postfix" />
-    <link role="conceptDeclaration" targetNodeId="1.1214918975462" resolveInfo="PostfixDecrementExpression" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1214920065448">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214920065449">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1214920067342">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214920068095">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1214920067906" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1214920068661">
-              <link role="link" targetNodeId="1.1214918975463" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1215696302779">
     <property name="package" value="assignments" />
     <link role="conceptDeclaration" targetNodeId="1.1215693861676" resolveInfo="BaseAssignmentExpression" />
@@ -2209,6 +2177,23 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1239714962884">
+    <property name="package" value="prefix/postfix" />
+    <link role="conceptDeclaration" targetNodeId="1.1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1239714962885">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714962886">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1239714975448">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239714978477">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1239714977231" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239714978816">
+              <link role="link" targetNodeId="1.1239714902950" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1239714982018" />
       </node>
     </node>
   </node>

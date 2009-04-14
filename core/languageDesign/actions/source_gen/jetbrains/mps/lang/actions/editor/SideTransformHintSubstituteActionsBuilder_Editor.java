@@ -44,7 +44,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_3064_0(editorCell, node, context);
     editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
+    editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_3064_1(context, node));
     editorCell.addEditorCell(this.createCollection_3064_2(context, node));
