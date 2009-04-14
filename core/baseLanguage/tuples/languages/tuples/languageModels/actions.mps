@@ -42,14 +42,14 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238884718192">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238884731275">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238884761935">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1238884731276">
-                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1238884751699">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1239725636037">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239725636038">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1239725636039" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1239725636040" />
+                </node>
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1239725636041">
                   <property name="name" value="indexedTupleType" />
                   <link role="concept" targetNodeId="1.1238852151516" resolveInfo="IndexedTupleType" />
-                </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238884749287">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1238884749288" />
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1238884749289" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1238884764784" />
