@@ -143,7 +143,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.addLink(m, m.getNode());
   }
 
-  private void removeMessage(EditorMessage m) {
+  public void removeMessage(EditorMessage m) {
     EditorMessageOwner owner = m.getOwner();
     Set<EditorMessage> messages = myOwnerToMessages.get(owner);
     messages.remove(m);
@@ -153,7 +153,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessages.remove(m);
     myEditor.getMessagesGutter().remove(m);
 
-    myMessagesToNodes.clearFirst(m);
+    myMessagesToNodes.clearFirst(m);    
   }
 
   public void mark(EditorMessage message, boolean repaintAndRebuild) {
