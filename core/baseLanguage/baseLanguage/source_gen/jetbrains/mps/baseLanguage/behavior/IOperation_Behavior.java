@@ -19,11 +19,11 @@ public class IOperation_Behavior {
   }
 
   public static SNode call_getOperand_1213877410070(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static SNode call_getDotExpression_1224687669172(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
   }
 
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {

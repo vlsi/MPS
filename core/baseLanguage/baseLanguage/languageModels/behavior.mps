@@ -6461,6 +6461,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877410073">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877410074">
             <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1213877410075">
+              <property name="asCast" value="true" />
               <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877410076">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877410077" />
@@ -6484,6 +6485,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224687669175">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224687686738">
           <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224687688510">
+            <property name="asCast" value="true" />
             <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224687686818">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1224687686739" />
