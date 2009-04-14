@@ -1367,8 +1367,7 @@ public final class SNode {
       LOG.error(t, this);
     }
     if (s == null) {
-      LOG.error("no presentation for node: " + this.getDebugText());
-      return super.toString();
+      return "???";
     }
     return s;
   }
