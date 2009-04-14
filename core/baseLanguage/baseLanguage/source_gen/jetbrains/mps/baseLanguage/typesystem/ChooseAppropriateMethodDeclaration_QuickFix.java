@@ -62,7 +62,11 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         }
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode instanceType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode operandType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(((SNode)this.getField("methodCall")[0])), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
+      if (!(SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+        return;
+      }
+      SNode instanceType = SNodeOperations.cast(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
       List<BaseMethodDeclaration> adapters = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
       for(INodeAdapter adapter : adapters) {
