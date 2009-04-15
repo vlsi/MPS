@@ -265,6 +265,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+      if (!(cell instanceof EditorCell_Label)) return;
       EditorCell_Label editorCell = (EditorCell_Label) cell;
       if (editorCell != null && editorCell.getRenderedText().length() >= myEndPosition) {
         FontMetrics metrics = g.getFontMetrics();
