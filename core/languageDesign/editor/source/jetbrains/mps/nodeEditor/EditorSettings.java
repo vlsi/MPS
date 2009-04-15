@@ -512,9 +512,9 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
           myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
           myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
-          fireEditorSettingsChanged();
-
           updateCachedValue();
+
+          fireEditorSettingsChanged();
         }
       });
     }
