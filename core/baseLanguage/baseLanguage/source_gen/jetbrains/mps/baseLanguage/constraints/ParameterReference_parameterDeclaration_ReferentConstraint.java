@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParameterReference_parameterDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -28,10 +27,14 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint extends 
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     //     parameters declared in enclosing method
-    List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
+    List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
     List<SNode> params = ListSequence.<SNode>fromArray();
     for(SNode bmd : methods) {
-      ListSequence.fromList(params).addSequence(ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true)));
+      for(SNode child : SNodeOperations.getChildren(bmd)) {
+        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+          ListSequence.fromList(params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+        }
+      }
     }
     return params;
   }
