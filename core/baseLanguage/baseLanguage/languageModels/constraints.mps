@@ -557,6 +557,27 @@
       <link role="applicableLink" targetNodeId="1.1182955020723" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846936">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846937">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239781732066">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239781732067">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239781741940">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239781747225">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1239781765929">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239781772868" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239781735195">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239781737886">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1239781737166" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239781738718">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239781740454">
+                    <link role="conceptDeclaration" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846938">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215682259266">
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1215682254061">
