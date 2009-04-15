@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _Enum_Measure_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class _Enum_Measure_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_Enum_Measure> constants = _Enum_Measure.getConstants().iterator();
+    Iterator<_Enum_Measure> constants = ListSequence.fromList(_Enum_Measure.getConstants()).iterator();
     while (constants.hasNext()) {
       _Enum_Measure constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class _Enum_Measure_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_Enum_Measure> constants = _Enum_Measure.getConstants().iterator();
+    Iterator<_Enum_Measure> constants = ListSequence.fromList(_Enum_Measure.getConstants()).iterator();
     while (constants.hasNext()) {
       _Enum_Measure constant = constants.next();
       if (value.equals(constant.getName())) {

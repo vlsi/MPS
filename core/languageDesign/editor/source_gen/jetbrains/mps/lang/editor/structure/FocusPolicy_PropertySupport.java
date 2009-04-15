@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure.FocusPolicy;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class FocusPolicy_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class FocusPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<FocusPolicy> constants = FocusPolicy.getConstants().iterator();
+    Iterator<FocusPolicy> constants = ListSequence.fromList(FocusPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       FocusPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class FocusPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<FocusPolicy> constants = FocusPolicy.getConstants().iterator();
+    Iterator<FocusPolicy> constants = ListSequence.fromList(FocusPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       FocusPolicy constant = constants.next();
       if (value.equals(constant.getName())) {

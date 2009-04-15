@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure._YesNoDefault_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _YesNoDefault_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class _YesNoDefault_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_YesNoDefault_Enum> constants = _YesNoDefault_Enum.getConstants().iterator();
+    Iterator<_YesNoDefault_Enum> constants = ListSequence.fromList(_YesNoDefault_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _YesNoDefault_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class _YesNoDefault_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_YesNoDefault_Enum> constants = _YesNoDefault_Enum.getConstants().iterator();
+    Iterator<_YesNoDefault_Enum> constants = ListSequence.fromList(_YesNoDefault_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _YesNoDefault_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

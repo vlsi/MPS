@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Iterator;
+import jetbrains.mps.lang.editor.structure.StyleClassItem;
 import java.util.List;
 
 public interface IStyleContainer extends INodeAdapter {
@@ -12,12 +13,12 @@ public interface IStyleContainer extends INodeAdapter {
 
   public int getStyleItemsCount();
 
-  public Iterator<jetbrains.mps.lang.editor.structure.StyleClassItem> styleItems();
+  public Iterator<StyleClassItem> styleItems();
 
-  public List<jetbrains.mps.lang.editor.structure.StyleClassItem> getStyleItems();
+  public List<StyleClassItem> getStyleItems();
 
-  public void addStyleItem(jetbrains.mps.lang.editor.structure.StyleClassItem node);
+  public void addStyleItem(StyleClassItem node);
 
-  public void insertStyleItem(jetbrains.mps.lang.editor.structure.StyleClassItem prev, jetbrains.mps.lang.editor.structure.StyleClassItem node);
+  public void insertStyleItem(StyleClassItem prev, StyleClassItem node);
 
 }

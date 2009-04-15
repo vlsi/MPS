@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class RightTransformAnchorTag_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class RightTransformAnchorTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RightTransformAnchorTag> constants = RightTransformAnchorTag.getConstants().iterator();
+    Iterator<RightTransformAnchorTag> constants = ListSequence.fromList(RightTransformAnchorTag.getConstants()).iterator();
     while (constants.hasNext()) {
       RightTransformAnchorTag constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class RightTransformAnchorTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RightTransformAnchorTag> constants = RightTransformAnchorTag.getConstants().iterator();
+    Iterator<RightTransformAnchorTag> constants = ListSequence.fromList(RightTransformAnchorTag.getConstants()).iterator();
     while (constants.hasNext()) {
       RightTransformAnchorTag constant = constants.next();
       if (value.equals(constant.getName())) {

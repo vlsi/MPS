@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _FontStyle_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class _FontStyle_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_FontStyle_Enum> constants = _FontStyle_Enum.getConstants().iterator();
+    Iterator<_FontStyle_Enum> constants = ListSequence.fromList(_FontStyle_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _FontStyle_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class _FontStyle_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_FontStyle_Enum> constants = _FontStyle_Enum.getConstants().iterator();
+    Iterator<_FontStyle_Enum> constants = ListSequence.fromList(_FontStyle_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _FontStyle_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

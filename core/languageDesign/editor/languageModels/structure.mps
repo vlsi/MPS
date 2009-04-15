@@ -3510,7 +3510,7 @@
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1215007802031">
       <property name="name" value="value" />
-      <link role="dataType" targetNodeId="4.1113006251687" resolveInfo="_FPNumber_String" />
+      <link role="dataType" targetNodeId="1239805001815" resolveInfo="_FloatOrInteger" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1215007873046">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
@@ -4194,6 +4194,11 @@
       <property name="value" value="indent-layout-on-new-line" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1239805001815">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="_FloatOrInteger_String" />
+    <property name="constraint" value="-?[0-9]+\\.?[0-9]*" />
   </node>
 </model>
 

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure.CellActionId;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CellActionId_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class CellActionId_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<CellActionId> constants = CellActionId.getConstants().iterator();
+    Iterator<CellActionId> constants = ListSequence.fromList(CellActionId.getConstants()).iterator();
     while (constants.hasNext()) {
       CellActionId constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class CellActionId_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<CellActionId> constants = CellActionId.getConstants().iterator();
+    Iterator<CellActionId> constants = ListSequence.fromList(CellActionId.getConstants()).iterator();
     while (constants.hasNext()) {
       CellActionId constant = constants.next();
       if (value.equals(constant.getName())) {

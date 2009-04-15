@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure.UnderlineStyle;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class UnderlineStyle_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class UnderlineStyle_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<UnderlineStyle> constants = UnderlineStyle.getConstants().iterator();
+    Iterator<UnderlineStyle> constants = ListSequence.fromList(UnderlineStyle.getConstants()).iterator();
     while (constants.hasNext()) {
       UnderlineStyle constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class UnderlineStyle_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<UnderlineStyle> constants = UnderlineStyle.getConstants().iterator();
+    Iterator<UnderlineStyle> constants = ListSequence.fromList(UnderlineStyle.getConstants()).iterator();
     while (constants.hasNext()) {
       UnderlineStyle constant = constants.next();
       if (value.equals(constant.getName())) {

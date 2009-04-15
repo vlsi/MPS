@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.editor.structure._CaretPosition_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _CaretPosition_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class _CaretPosition_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_CaretPosition_Enum> constants = _CaretPosition_Enum.getConstants().iterator();
+    Iterator<_CaretPosition_Enum> constants = ListSequence.fromList(_CaretPosition_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _CaretPosition_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class _CaretPosition_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_CaretPosition_Enum> constants = _CaretPosition_Enum.getConstants().iterator();
+    Iterator<_CaretPosition_Enum> constants = ListSequence.fromList(_CaretPosition_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _CaretPosition_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
