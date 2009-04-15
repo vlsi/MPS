@@ -27,6 +27,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
@@ -112,7 +113,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-      SModel model = refactoringContext.getSelectedNode().getModel();
+      SModel model = SNodeOperations.getModel(refactoringContext.getSelectedNode());
       SModel targetModel = SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept")));
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       Language targetLanguage = Language.getLanguageFor(targetModel.getModelDescriptor());
@@ -147,7 +148,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.<SNode>fromArray();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -198,7 +199,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       return true;
     } else
     {
-      return MoveNodes.isApplicableWRTConcept_static(node);
+      return false;
     }
   }
 

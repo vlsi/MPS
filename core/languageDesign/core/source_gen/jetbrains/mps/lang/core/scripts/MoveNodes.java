@@ -35,6 +35,7 @@ import jetbrains.mps.project.ModuleContext;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -166,8 +167,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
         SNode targetNode = (SNode)((Object)refactoringContext.getParameter("target"));
-        movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).getElement(0).getRole_(), targetNode);
-        targetModel = targetNode.getModel();
+        movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
+        targetModel = SNodeOperations.getModel(targetNode);
       }
       if (targetModel != null) {
         IModule module = targetModel.getModelDescriptor().getModule();
@@ -196,7 +197,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     {
-      List<SNode> result = ListSequence.<SNode>fromArray();
+      List<SNode> result = ListOperations.<SNode>createList();
       ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
       return result;
     }

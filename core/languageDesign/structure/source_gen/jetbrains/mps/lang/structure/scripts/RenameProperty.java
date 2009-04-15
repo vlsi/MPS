@@ -22,6 +22,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
@@ -100,7 +101,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-      SModel model = refactoringContext.getSelectedNode().getModel();
+      SModel model = SNodeOperations.getModel(refactoringContext.getSelectedNode());
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       if (language != null) {
         List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(language.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
@@ -124,7 +125,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.<SNode>fromArray();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -178,7 +179,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
       return true;
     } else
     {
-      return Rename.isApplicableWRTConcept_static(node);
+      return false;
     }
   }
 

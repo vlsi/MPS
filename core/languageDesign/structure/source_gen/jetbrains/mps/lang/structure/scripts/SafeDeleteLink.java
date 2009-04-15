@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -123,7 +124,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.<SNode>fromArray();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -156,7 +157,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
       return true;
     } else
     {
-      return SafeDelete.isApplicableWRTConcept_static(node);
+      return false;
     }
   }
 

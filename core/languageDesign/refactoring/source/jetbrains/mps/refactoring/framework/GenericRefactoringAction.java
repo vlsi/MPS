@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.refactoring.plugin.RefactoringActionGroup;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -71,36 +71,22 @@ public class GenericRefactoringAction extends BaseAction {
     return myRefactoring.getKeyStroke();
   }
 
-   private SNode getNode(ActionEventData data) {
+  private List<SNode> getNodes(ActionEventData data) {
     if (data.getNode() != null) {
-      return data.getNode();
+      return CollectionUtil.list(data.getNode());
     }
     List<SNode> list = data.getNodes();
-    if (list.isEmpty()) return null;
-
-    String conceptFQName = null;
-    for (SNode node : list) {
-      String anotherConceptFqName = node.getConceptFqName();
-      if (conceptFQName == null) {
-        conceptFQName = anotherConceptFqName;
-      } else {
-        if (!conceptFQName.equals(anotherConceptFqName)) {
-          return null;
-        }
-      }
-    }
-    return list.get(0);
+    if (list.isEmpty()) return new ArrayList<SNode>();
+    return list;
   }
 
   protected void doUpdate(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     boolean enabled = true;
-    SNode node = getNode(data);
+    List<SNode> nodes = getNodes(data);
 
     if (myRefactoring.getRefactoringTarget() == RefactoringTarget.NODE) {
-      if (node != null) {
-        enabled = myRefactoring.isApplicableWRTConcept(node);
-      }
+      enabled = RefactoringUtil.isApplicableInContext(myRefactoring, nodes);
     } else if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
       SModelDescriptor modelDescriptor = data.getModelDescriptor();
       if (modelDescriptor != null) {
@@ -108,16 +94,6 @@ public class GenericRefactoringAction extends BaseAction {
       }
     }
 
-    RefactoringTarget refactoringTarget = myRefactoring.getRefactoringTarget();
-
-    Map<Class, ILoggableRefactoring> allRefactorings = RefactoringActionGroup.getAvailableRefactorings(node, refactoringTarget);
-
-    if (!allRefactorings.containsKey(myRefactoring.getClass())) {
-      enabled = false;
-    }
-
     setEnabledState(e.getPresentation(), enabled);
   }
-
-
 }

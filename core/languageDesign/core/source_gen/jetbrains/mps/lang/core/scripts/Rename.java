@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
@@ -104,7 +105,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.<SNode>fromArray();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {

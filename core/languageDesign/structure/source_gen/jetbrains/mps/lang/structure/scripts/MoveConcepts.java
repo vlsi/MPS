@@ -251,7 +251,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.<SNode>fromArray();
+    return ListOperations.<SNode>createList();
   }
 
   public boolean doesUpdateModel() {
@@ -297,7 +297,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       return true;
     } else
     {
-      return MoveNodes.isApplicableWRTConcept_static(node);
+      return false;
     }
   }
 
