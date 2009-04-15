@@ -5,8 +5,7 @@ package jetbrains.mps.lang.structure.generator_new.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
@@ -21,7 +20,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isString(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isString(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
     }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")) {
       return true;
@@ -32,7 +31,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isBoolean(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
     }
     return false;
   }
@@ -40,7 +39,7 @@ public class QueriesUtil {
   public static boolean propertyDataType_isInteger(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
     }
     return false;
   }

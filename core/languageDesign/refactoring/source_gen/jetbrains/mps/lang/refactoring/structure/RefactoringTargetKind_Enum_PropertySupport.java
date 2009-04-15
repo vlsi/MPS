@@ -5,6 +5,7 @@ package jetbrains.mps.lang.refactoring.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport 
     if (value == null) {
       return true;
     }
-    Iterator<RefactoringTargetKind_Enum> constants = RefactoringTargetKind_Enum.getConstants().iterator();
+    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       RefactoringTargetKind_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport 
     if (value == null) {
       return null;
     }
-    Iterator<RefactoringTargetKind_Enum> constants = RefactoringTargetKind_Enum.getConstants().iterator();
+    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       RefactoringTargetKind_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -90,14 +90,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199464123907(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    if (overriden == null) {
-      return null;
-    }
-    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1199466527696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
     if (conceptDeclaration == null) {
@@ -180,7 +172,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1217265352992(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(0);
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1238252323266(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -233,14 +225,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1199462382860(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_context.getNode(), "keystroke", true) == null);
-  }
-
-  public static boolean ifMacro_Condition_1199464602796(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null);
-  }
-
-  public static boolean ifMacro_Condition_1199464637201(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
   }
 
   public static boolean ifMacro_Condition_1199467946000(final IOperationContext operationContext, final IfMacroContext _context) {

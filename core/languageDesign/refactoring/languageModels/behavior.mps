@@ -245,5 +245,24 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724026" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239805638160">
+    <link role="concept" targetNodeId="1.1199619425400" resolveInfo="AbstractMoveExpression" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239805638161">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239805638162" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239805640220">
+      <property name="name" value="isLegalAsStatement" />
+      <link role="overriddenMethod" targetNodeId="4.1239211900844" resolveInfo="isLegalAsStatement" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239805640223">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239805647641">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239805647792">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239805645980" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239805645981" />
+    </node>
+  </node>
 </model>
 
