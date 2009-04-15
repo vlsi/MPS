@@ -1338,10 +1338,6 @@ public class SModel implements Iterable<SNode> {
     return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
-  public List<INodeAdapter> allAdapters(Condition<INodeAdapter> condition) {
-    return allAdapters(INodeAdapter.class, condition);
-  }
-
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
     List<E> result = allAdapters(cls);
     Iterator<E> it = result.iterator();
@@ -1352,14 +1348,6 @@ public class SModel implements Iterable<SNode> {
       }
     }
     return result;
-  }
-
-  public <SN extends INodeAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
-    return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return snodeClass.isInstance(BaseAdapter.fromNode(object));
-      }
-    }));
   }
 
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {

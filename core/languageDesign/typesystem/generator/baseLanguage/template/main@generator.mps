@@ -4038,21 +4038,14 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1175249249127">
             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1175249249128">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175249249129">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175249265356">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175249339086">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                    <link role="classConcept" targetNodeId="4.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929830690">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019437262">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437264" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437265" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929830691">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getRootsAdapters():java.util.List" resolveInfo="getRootsAdapters" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1175249340247">
-                          <link role="classifier" targetNodeId="46.~InferenceRule" resolveInfo="InferenceRule" />
-                        </node>
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239808042385">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808042386">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808042387">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239808042388" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1239808042389" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1239808042390">
+                      <link role="concept" targetNodeId="1.1174643105530" resolveInfo="InferenceRule" />
                     </node>
                   </node>
                 </node>
@@ -4118,21 +4111,14 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1195214710293">
             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1195214710294">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195214710295">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195214710296">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195214710297">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                    <link role="classConcept" targetNodeId="4.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929834440">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019436992">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019436994" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019436995" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929834441">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getRootsAdapters():java.util.List" resolveInfo="getRootsAdapters" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1195214710300">
-                          <link role="classifier" targetNodeId="46.~NonTypesystemRule" resolveInfo="NonTypesystemRule" />
-                        </node>
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239808027947">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808027948">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808027949">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239808027950" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1239808027951" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1239808027952">
+                      <link role="concept" targetNodeId="1.1195214364922" resolveInfo="NonTypesystemRule" />
                     </node>
                   </node>
                 </node>
@@ -4198,21 +4184,14 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1175440294396">
             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1175440294397">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175440294398">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175440294399">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175440294400">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                    <link role="classConcept" targetNodeId="4.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837255">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019437481">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437483" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437484" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837256">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getRootsAdapters():java.util.List" resolveInfo="getRootsAdapters" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1175440294403">
-                          <link role="classifier" targetNodeId="46.~SubtypingRule" resolveInfo="SubtypingRule" />
-                        </node>
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239807992271">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239807992272">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239807992273">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239807992274" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1239807992275" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1239807992276">
+                      <link role="concept" targetNodeId="1.1175147670730" resolveInfo="SubtypingRule" />
                     </node>
                   </node>
                 </node>
@@ -4278,21 +4257,14 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1188816571778">
             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1188816571779">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188816571780">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188816571781">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1188816571782">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                    <link role="classConcept" targetNodeId="4.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837517">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019436773">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019436775" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019436776" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837518">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getRootsAdapters():java.util.List" resolveInfo="getRootsAdapters" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1188816571785">
-                          <link role="classifier" targetNodeId="46.~ComparisonRule" resolveInfo="ComparisonRule" />
-                        </node>
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239808060558">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808060559">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808060560">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239808060561" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1239808060562" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1239808060563">
+                      <link role="concept" targetNodeId="1.1188811367543" resolveInfo="ComparisonRule" />
                     </node>
                   </node>
                 </node>
@@ -4358,21 +4330,14 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1201610301764">
             <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1201610301765">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201610301766">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201610301767">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201610301768">
-                    <link role="classConcept" targetNodeId="4.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835896">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019436941">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019436943" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019436944" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835897">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getRootsAdapters():java.util.List" resolveInfo="getRootsAdapters" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201610301771">
-                          <link role="classifier" targetNodeId="46.~InequationReplacementRule" resolveInfo="InequationReplacementRule" />
-                        </node>
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239808010712">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808010713">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239808010714">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239808010715" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1239808010716" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1239808010717">
+                      <link role="concept" targetNodeId="1.1201607707634" resolveInfo="InequationReplacementRule" />
                     </node>
                   </node>
                 </node>

@@ -1090,14 +1090,14 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196350915899" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1196350915900">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196350915901">
-                <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.isInstance(jetbrains.mps.smodel.SNode,java.lang.Class):boolean" resolveInfo="isInstance" />
-                <link role="classConcept" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196350915902">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239807828715">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239807828716">
                   <link role="variableDeclaration" targetNodeId="1196350915890" resolveInfo="linkNode" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1223471691918">
-                  <link role="classifier" targetNodeId="38.~LinkDeclaration" resolveInfo="LinkDeclaration" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239807828717">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239807828718">
+                    <link role="conceptDeclaration" targetNodeId="17.1071489288298" resolveInfo="LinkDeclaration" />
+                  </node>
                 </node>
               </node>
             </node>

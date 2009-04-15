@@ -22,10 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration;
-import jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -222,8 +218,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SModel model = _context.getSourceNode().getModel();
-          return BaseAdapter.toNodes(model.allAdaptersIncludingImported(operationContext.getScope(), PredefinedSymbolClassDeclaration.class));
+          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration");
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
@@ -269,7 +264,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return BaseAdapter.toNodes(SNodeOperations.getModel(_context.getSourceNode()).allAdaptersIncludingImported(operationContext.getScope(), RegexpDeclaration.class));
+          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration");
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();

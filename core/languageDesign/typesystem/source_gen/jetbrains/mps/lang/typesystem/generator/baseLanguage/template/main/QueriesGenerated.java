@@ -33,10 +33,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.typesystem.structure.InferenceRule;
-import jetbrains.mps.lang.typesystem.structure.SubtypingRule;
-import jetbrains.mps.lang.typesystem.structure.ComparisonRule;
 import jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
@@ -45,8 +41,6 @@ import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.typesystem.structure.NonTypesystemRule;
-import jetbrains.mps.lang.typesystem.structure.InequationReplacementRule;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
@@ -2308,11 +2302,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1175249249128(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(InferenceRule.class));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InferenceRule");
   }
 
   public static Iterable sourceNodesQuery_1175440294397(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(SubtypingRule.class));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule");
   }
 
   public static Iterable sourceNodesQuery_1176548514510(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2352,7 +2346,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1188816571779(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(ComparisonRule.class));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.ComparisonRule");
   }
 
   public static Iterable sourceNodesQuery_1193740670223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2388,11 +2382,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1195214710294(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(NonTypesystemRule.class));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule");
   }
 
   public static Iterable sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getInputModel().getRootsAdapters(InequationReplacementRule.class));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule");
   }
 
   public static Iterable sourceNodesQuery_1206451286909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

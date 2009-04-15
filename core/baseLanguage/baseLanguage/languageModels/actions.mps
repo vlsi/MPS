@@ -8380,10 +8380,8 @@
                         </node>
                       </node>
                     </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1221733296277">
-                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221733296278">
-                        <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                      </node>
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239806213190">
+                      <link role="elementConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
                     </node>
                   </node>
                 </node>
