@@ -61,7 +61,25 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   public void doUpdate(AnActionEvent event) {
     removeAll();
+
     ActionEventData data = new ActionEventData(event);
+    SModelDescriptor modelDescriptor = data.getModelDescriptor();
+    if (modelDescriptor==null){
+      setEnabledState(event.getPresentation(), false);
+      return;
+    }
+
+    IScope scope = data.getScope();
+    IOperationContext context = data.getOperationContext();
+    Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
+    boolean isJavaStubModel = SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype());
+    boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
+    if (scope == null || context == null  || isJavaStubModel || !singleItemSelected) {
+      setEnabledState(event.getPresentation(), false);
+      return;
+    }
+
+    setEnabledState(event.getPresentation(), true);
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
     TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(dataContext);
@@ -72,7 +90,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       myPackage = node.getPackage();
     }
 
-    List<Language> modelLanguages = data.getModelDescriptor() == null ? new ArrayList<Language>() : data.getModelDescriptor().getSModel().getLanguages(data.getOperationContext().getScope());
+    List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(scope);
     if (modelLanguages.size() == 0) {
       add(new BaseAction("<NO LANGUAGES>") {
         protected void doExecute(AnActionEvent e) {
@@ -80,15 +98,15 @@ public class CreateRootNodeGroup extends BaseGroup {
       });
     }
 
-    LanguageAspect aspect = Language.getModelAspect(data.getModelDescriptor());
+    LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
       ModuleReference ref = aspect.getMainLanguage();
-      Language lang = data.getScope().getLanguage(ref);
+      Language lang = scope.getLanguage(ref);
       modelLanguages.remove(lang);
 
       for (ConceptDeclaration conceptDeclaration : lang.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
-          add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
+        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+          add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
 
@@ -101,7 +119,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           languagesWithRoots.add(language);
           break;
         }
@@ -123,8 +141,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
-          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
+        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
       if (!plain) {
@@ -133,12 +151,6 @@ public class CreateRootNodeGroup extends BaseGroup {
         this.addSeparator();
       }
     }
-
-
-    Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
-    boolean enabled = selectedItemsCount != null && selectedItemsCount == 1;
-
-    setEnabledState(event.getPresentation(), enabled);
   }
 
   private BaseAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
