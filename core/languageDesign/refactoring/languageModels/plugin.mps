@@ -6,6 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -31,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="17" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.ide.projectPane(jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.refactoring.plugin(jetbrains.mps.refactoring.plugin@java_stub)" version="-1" />
@@ -39,6 +40,8 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.workbench.actions.language(jetbrains.mps.workbench.actions.language@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="17" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1229259662341">
     <property name="name" value="Refactoring" />
@@ -51,16 +54,113 @@
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1229259773023">
       <link role="modifiedGroup" targetNodeId="2v.1204991231476" resolveInfo="EditorPopup" />
     </node>
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" id="1229259783759">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229259783760">
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1229259890711">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1229259890712">
-            <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1229259890713">
-              <link role="constructorDeclaration" targetNodeId="10.~RefactoringActionGroup.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringTarget)" resolveInfo="RefactoringActionGroup" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1229259978984">
-                <link role="enumConstantDeclaration" targetNodeId="2.~RefactoringTarget.NODE" resolveInfo="NODE" />
-                <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" id="1239801940202">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239801940203">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239802057559">
+          <property name="value" value="todo remove update code when IDEA will fix their bug (in next platform build, after 15.04.2009)" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239802629305">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239802629306">
+            <property name="name" value="children" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1239802629307">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239802629308">
+                <link role="classifier" targetNodeId="14.~AnAction" resolveInfo="AnAction" />
               </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239802629309">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239802629310" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239802629311">
+                <link role="baseMethodDeclaration" targetNodeId="14.~DefaultActionGroup.getChildren(com.intellij.openapi.actionSystem.AnActionEvent):com.intellij.openapi.actionSystem.AnAction[]" resolveInfo="getChildren" />
+                <node role="actualArgument" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="1239802629312" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239803118358">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239803118359">
+            <property name="name" value="ragAdded" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239803118360" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239803126675">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1239802763971">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239802763972">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239803133599">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239803133600">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239803143248">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239803144469">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239803144785">
+                      <property name="value" value="true" />
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239803143249">
+                      <link role="variableDeclaration" targetNodeId="1239803118359" resolveInfo="ragAdded" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1239803137729">
+                <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239803139857">
+                  <link role="classifier" targetNodeId="10.~RefactoringActionGroup" resolveInfo="RefactoringActionGroup" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239803136196">
+                  <link role="variableDeclaration" targetNodeId="1239802763979" resolveInfo="child" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239802763978">
+            <link role="variableDeclaration" targetNodeId="1239802629306" resolveInfo="children" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239802763979">
+            <property name="name" value="child" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239802763980">
+              <link role="classifier" targetNodeId="14.~AnAction" resolveInfo="AnAction" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239801998362">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239801998363">
+            <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1239802046381">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239802046382">
+                <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1239802046383">
+                  <link role="constructorDeclaration" targetNodeId="10.~RefactoringActionGroup.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringTarget)" resolveInfo="RefactoringActionGroup" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1239802046384">
+                    <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+                    <link role="enumConstantDeclaration" targetNodeId="2.~RefactoringTarget.NODE" resolveInfo="NODE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239803150849">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239803152164">
+              <link role="variableDeclaration" targetNodeId="1239803118359" resolveInfo="ragAdded" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1239802363350">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239802363351">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239802638366">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239802638759">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239802638367">
+                  <link role="variableDeclaration" targetNodeId="1239802363354" resolveInfo="child" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239802641372">
+                  <link role="baseMethodDeclaration" targetNodeId="14.~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolveInfo="update" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="1239802643201" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239802635298">
+            <link role="variableDeclaration" targetNodeId="1239802629306" resolveInfo="children" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239802363354">
+            <property name="name" value="child" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239802612317">
+              <link role="classifier" targetNodeId="14.~AnAction" resolveInfo="AnAction" />
             </node>
           </node>
         </node>
