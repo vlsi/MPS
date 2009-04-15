@@ -4200,5 +4200,14 @@
     <property name="name" value="_FloatOrInteger_String" />
     <property name="constraint" value="-?[0-9]+\\.?[0-9]*" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239814640496">
+    <property name="package" value="CellLayout" />
+    <property name="name" value="CellLayout_VerticalGrid" />
+    <link role="extends" targetNodeId="1106270571710" resolveInfo="CellLayout_Vertical" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239814668280">
+      <property name="value" value="vertical grid" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
