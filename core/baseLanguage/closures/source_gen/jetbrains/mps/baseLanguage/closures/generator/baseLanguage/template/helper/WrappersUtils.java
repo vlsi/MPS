@@ -27,7 +27,7 @@ public class WrappersUtils {
 with_decls:
     for(Iterator<SNode> it = ListSequence.fromList(vdecls).iterator() ; it.hasNext() ; ) {
       SNode vd = it.next();
-      SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+      SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
       for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
         if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true) == desc) {
