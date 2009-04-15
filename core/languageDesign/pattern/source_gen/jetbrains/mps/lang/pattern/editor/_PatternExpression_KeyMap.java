@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.quotation.structure.ListAntiquotation;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _PatternExpression_KeyMap extends EditorCellKeyMap {
@@ -374,7 +372,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if (BaseAdapter.isInstance(contextNode.getAttribute(), ListAntiquotation.class)) {
+      if (SNodeOperations.isInstanceOf(((SNode)contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
@@ -424,13 +422,13 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
       SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
-      if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
+      if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
         return;
       }
       if (contextNode == null) {
         return;
       }
-      SNode link = linkNode;
+      SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
         return;
       }

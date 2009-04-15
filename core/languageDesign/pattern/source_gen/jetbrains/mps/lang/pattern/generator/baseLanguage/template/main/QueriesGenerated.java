@@ -20,21 +20,13 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.pattern.structure.AsPattern;
 import jetbrains.mps.lang.pattern.structure.Pattern;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration;
 import java.util.List;
-import jetbrains.mps.lang.pattern.structure.AsPattern_AnnotationLink;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.pattern.structure.ListPattern;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration;
-import jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
 
@@ -271,15 +263,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377744(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BaseAdapter.isInstance(_context.getNode().getAttribute(), PatternVariableDeclaration.class);
+    return SNodeOperations.isInstanceOf(((SNode)_context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
   }
 
   public static boolean ifMacro_Condition_1190931377771(final IOperationContext operationContext, final IfMacroContext _context) {
     String childRole_ = _context.getNode().getProperty("childRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)ListSequence.fromList(children).getElement(0).getAdapter()));
-    return !(BaseAdapter.isInstance(attribute, ListPattern.class));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(children).first(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true), "jetbrains.mps.lang.pattern.structure.ListPattern"));
   }
 
   public static boolean ifMacro_Condition_1190931377858(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -292,15 +283,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377908(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BaseAdapter.isInstance(_context.getNode().getAttribute(), PatternVariableDeclaration.class);
+    return SNodeOperations.isInstanceOf(((SNode)_context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
   }
 
   public static boolean ifMacro_Condition_1190931377983(final IOperationContext operationContext, final IfMacroContext _context) {
     String childRole_ = _context.getNode().getProperty("childRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)ListSequence.fromList(children).getElement(0).getAdapter()));
-    return BaseAdapter.isInstance(attribute, ListPattern.class);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(children).first(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true), "jetbrains.mps.lang.pattern.structure.ListPattern");
   }
 
   public static boolean ifMacro_Condition_1190931378075(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -347,14 +337,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    SModel model = _context.getOutputModel();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(String propertyName : _context.getNode().getPropertyNames()) {
-      if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
+      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
         continue;
       }
       String propertyValue = _context.getNode().getProperty(propertyName);
-      SNode propertyNode = BaseConcept.newInstance(model).getNode();
+      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       propertyNode.setProperty("propertyName", propertyName);
       propertyNode.setProperty("propertyValue", propertyValue);
       ListSequence.fromList(result).addElement(propertyNode);
@@ -363,11 +352,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    SModel model = _context.getOutputModel();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(String propertyName : _context.getNode().getPropertyNames()) {
-      if (BaseAdapter.isInstance(_context.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
-        SNode propertyNode = BaseConcept.newInstance(model).getNode();
+      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
+        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         propertyNode.setProperty("propertyName", propertyName);
         propertyNode.setReferent("mainNode", _context.getNode());
         ListSequence.fromList(result).addElement(propertyNode);
@@ -377,13 +365,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    SModel model = _context.getOutputModel();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
-      if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
+      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
         continue;
       }
-      SNode referenceNode = BaseConcept.newInstance(model).getNode();
+      SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       SNode referent = _context.getNode().getReferent(referentRole);
       referenceNode.setProperty("referentRole", referentRole);
       referenceNode.setProperty("referentModel", referent.getModel().getSModelReference().toString());
@@ -395,11 +382,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    SModel model = _context.getOutputModel();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(String referentRole : _context.getNode().getReferenceRoles()) {
-      if (BaseAdapter.isInstance(_context.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
-        SNode linkNode = BaseConcept.newInstance(model).getNode();
+      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
+        SNode linkNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         linkNode.setProperty("referentRole", referentRole);
         linkNode.setReferent("mainNode", _context.getNode());
         ListSequence.fromList(result).addElement(linkNode);
@@ -415,7 +401,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931377952(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListOperations.<SNode>createList();
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
     ListSequence.fromList(result).addElement(mainNode.getChildren(role).get(0));
@@ -423,10 +409,9 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    SModel model = _context.getOutputModel();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(String childRole : _context.getNode().getChildRoles()) {
-      SNode childRoleNode = BaseConcept.newInstance(model).getNode();
+      SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       childRoleNode.setProperty("childRole", childRole);
       childRoleNode.setReferent("childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), childRole));
       childRoleNode.setReferent("mainNode", _context.getNode());
@@ -440,7 +425,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
@@ -450,7 +435,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
@@ -468,7 +453,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601150(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListOperations.<SNode>createList();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));

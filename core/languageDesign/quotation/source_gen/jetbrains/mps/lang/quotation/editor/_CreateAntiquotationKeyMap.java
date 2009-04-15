@@ -15,8 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.quotation.structure.ListAntiquotation;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
@@ -145,7 +143,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if (BaseAdapter.isInstance(contextNode.getAttribute(), ListAntiquotation.class)) {
+      if (SNodeOperations.isInstanceOf(((SNode)contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
@@ -198,7 +196,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
       SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
-      if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
+      if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
         return;
       }
       if (contextNode == null) {

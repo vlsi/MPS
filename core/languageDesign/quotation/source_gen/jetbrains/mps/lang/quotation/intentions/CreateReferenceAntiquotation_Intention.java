@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -35,7 +34,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     EditorCell selectedCell = editorContext.getSelectedCell();
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
-    if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
+    if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return false;
     }
     if (contextNode == null) {
@@ -52,7 +51,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     EditorCell selectedCell = editorContext.getSelectedCell();
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
-    if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
+    if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return;
     }
     if (contextNode == null) {
