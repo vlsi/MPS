@@ -18,11 +18,11 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
@@ -290,7 +290,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
             } else {
               result = myNodePropertyGettersMap.get(builder.toString());
             }
-            if (result != null) {                                                                                     
+            if (result != null) {
               if (isSetter) {
                 myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
               } else {
@@ -718,12 +718,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (cachedValue != null) return cachedValue;
 
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-      myConstraintClassNames.put(fqName, result);
-      return result;
-    } else {
-      throw new RuntimeException();
-    }
+    assert m.matches() : fqName + " is not a constraint aspect node";
+    String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+    myConstraintClassNames.put(fqName, result);
+    return result;
   }
 }
