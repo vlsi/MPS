@@ -36,4 +36,32 @@ public class ConceptContainer_Behavior {
     return result;
   }
 
+  public static List<SNode> call_getBinaryOperationConcepts_1239806149720(SNode thisNode) {
+    Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.BinaryOperationConcept");
+      }
+    });
+    List<SNode> result = ListOperations.<SNode>createList();
+    for(SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
+      ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.BinaryOperationConcept"));
+    }
+    return result;
+  }
+
+  public static List<SNode> call_getVariableConcepts_1239806150736(SNode thisNode) {
+    Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
+      }
+    });
+    List<SNode> result = ListOperations.<SNode>createList();
+    for(SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
+      ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.VariableConcept"));
+    }
+    return result;
+  }
+
 }
