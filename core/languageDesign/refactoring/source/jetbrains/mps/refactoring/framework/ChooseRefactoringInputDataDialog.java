@@ -42,7 +42,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   public JCheckBox myGenerateModelsCheckBox;
 
   public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, final RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
-    super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for Refactoring");
+    super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for " + refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
