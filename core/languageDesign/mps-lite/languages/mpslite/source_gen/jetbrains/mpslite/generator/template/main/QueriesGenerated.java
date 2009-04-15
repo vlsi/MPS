@@ -33,6 +33,7 @@ public class QueriesGenerated {
     }
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
     Map<SNode, SNode> conceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    Map<SNode, SNode> additionalConceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> partsToLinkDeclarations = MapSequence.fromMap(new HashMap<SNode, SNode>());
     SNode conceptContainer = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.ConceptContainer")).first();
     List<SNode> mpsliteConceptDeclarations = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", false);
@@ -52,6 +53,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(booleanConceptProperty, "conceptPropertyDeclaration", conceptProperty_Abstract, false);
       }
       MapSequence.fromMap(conceptsToTargets).put(conceptDeclaration, concept);
+    }
+    for(SNode conceptDeclaration : allConcepts) {
+      SNode concept = IMPSLiteConcept_Behavior.call_createAdditionalConcept_1239817368042(conceptDeclaration, conceptsToTargets);
+      if (concept != null) {
+        MapSequence.fromMap(additionalConceptsToTargets).put(conceptDeclaration, concept);
+      }
     }
     //     extends
     for(SNode conceptDeclaration : allConcepts) {
