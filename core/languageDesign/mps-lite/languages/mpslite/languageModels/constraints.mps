@@ -101,5 +101,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1239801505755">
+    <link role="concept" targetNodeId="1.1239714446829" resolveInfo="ConceptContainer" />
+  </node>
 </model>
 

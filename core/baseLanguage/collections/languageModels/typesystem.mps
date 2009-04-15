@@ -482,6 +482,9 @@
                   <link role="typeVarDeclaration" targetNodeId="1184850451264" resolveInfo="elementType" />
                 </node>
               </node>
+              <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239805856853">
+                <link role="variableDeclaration" targetNodeId="1184850432548" resolveInfo="target" />
+              </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227893692">

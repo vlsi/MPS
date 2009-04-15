@@ -25,7 +25,7 @@ public class RulesFunctions_Collections {
     SNode input = null;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      input = SLinkOperations.getTarget(parent, "operand", true);
+      input = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     } else
     {
       {
@@ -41,7 +41,7 @@ public class RulesFunctions_Collections {
     SNode output = null;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      output = SLinkOperations.getTarget(parent, "operation", true);
+      output = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation");
       return output;
     } else
     {
@@ -105,7 +105,7 @@ public class RulesFunctions_Collections {
         typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(input, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850451271", true), new _Quotations.QuotationClass_3().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184850451264), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850451265", false, 0, intentionProvider);
       }
       {
-        SNode _nodeToCheck_1029348928467 = null;
+        SNode _nodeToCheck_1029348928467 = target;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(target, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850492037", true), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184850451264), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850492036", false, 0, intentionProvider);
       }
@@ -166,7 +166,7 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(it);
+                      this.yield(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement"));
                       return true;
                     case 14:
                       this.__CP__ = 12;
