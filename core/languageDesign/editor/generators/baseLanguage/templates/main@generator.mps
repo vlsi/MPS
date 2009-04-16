@@ -763,8 +763,8 @@
                             </node>
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229561240579">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1229561240580" />
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1229561240581">
-                                <link role="property" targetNodeId="38.1073389446425" resolveInfo="vertical" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239870296887">
+                                <link role="baseMethodDeclaration" targetNodeId="62.1237380214915" resolveInfo="isVertical" />
                               </node>
                             </node>
                           </node>
@@ -993,8 +993,8 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182971329521">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932532">
                             <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1182971329522" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1182971334158">
-                              <link role="property" targetNodeId="38.1073389446426" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239873015383">
+                              <link role="baseMethodDeclaration" targetNodeId="62.1239872947848" resolveInfo="isVerticalGrid" />
                             </node>
                           </node>
                         </node>
@@ -3165,8 +3165,8 @@
                                   </node>
                                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898346">
                                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197580240825" />
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1197580243813">
-                                      <link role="property" targetNodeId="38.1140524450554" resolveInfo="vertical" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239875533357">
+                                      <link role="baseMethodDeclaration" targetNodeId="62.1239873472748" resolveInfo="isVertical" />
                                     </node>
                                   </node>
                                 </node>
@@ -3410,8 +3410,8 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183061683097">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906914">
                             <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183061683098" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1183061686706">
-                              <link role="property" targetNodeId="38.1140524450555" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239876117563">
+                              <link role="baseMethodDeclaration" targetNodeId="62.1239873867713" resolveInfo="isVerticalGrid" />
                             </node>
                           </node>
                         </node>

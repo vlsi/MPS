@@ -774,11 +774,17 @@
       <property name="name" value="vertical" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" targetNodeId="3.1082983657063" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1239869892471">
+        <property name="comment" value="Use isVertical()" />
+      </node>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1073389446426">
       <property name="name" value="gridLayout" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" targetNodeId="3.1082983657063" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1239869894921">
+        <property name="comment" value="Use isVerticalGrid()" />
+      </node>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1139416841293">
       <property name="name" value="usesBraces" />
@@ -1738,11 +1744,13 @@
       <property name="name" value="vertical" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" targetNodeId="3.1082983657063" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1239873962700" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1140524450555">
       <property name="name" value="gridLayout" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" targetNodeId="3.1082983657063" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1239873964974" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1140524450556">
       <property name="name" value="usesBraces" />

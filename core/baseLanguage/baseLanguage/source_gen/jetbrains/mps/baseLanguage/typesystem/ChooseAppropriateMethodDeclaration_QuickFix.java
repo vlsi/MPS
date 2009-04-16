@@ -13,9 +13,8 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.INodeAdapter;
 
 public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtime {
 
@@ -68,12 +67,11 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       }
       SNode instanceType = SNodeOperations.cast(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
-      List<BaseMethodDeclaration> adapters = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
-      for(INodeAdapter adapter : adapters) {
-        SNode baseMethodDeclaration = SNodeOperations.cast(adapter.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-        if (SLinkOperations.getCount(baseMethodDeclaration, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {
+      List<SNode> mDecls = ((List<SNode>)BaseAdapter.toNodes(scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"))));
+      for(SNode methodDecl : mDecls) {
+        if (SLinkOperations.getCount(methodDecl, "parameter") == SLinkOperations.getCount(((SNode)this.getField("methodCall")[0]), "actualArgument")) {
           boolean good = true;
-          List<SNode> parameterTypes = ResolveUtil.parameterTypes(baseMethodDeclaration, instanceType, ((SNode)this.getField("classifier")[0]));
+          List<SNode> parameterTypes = ResolveUtil.parameterTypes(methodDecl, instanceType, ((SNode)this.getField("classifier")[0]));
           {
             SNode parameterType;
             SNode argument;
@@ -95,7 +93,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
             }
           }
           if (good) {
-            SLinkOperations.setTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", baseMethodDeclaration, false);
+            SLinkOperations.setTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", methodDecl, false);
             return;
           }
         }

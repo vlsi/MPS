@@ -17,7 +17,12 @@ public class ChildPart_Behavior {
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     if (SPropertyOperations.getBoolean(thisNode, "multiple")) {
       SNode refNodeList = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
-      SPropertyOperations.set(refNodeList, "vertical", "" + (SPropertyOperations.getBoolean(thisNode, "vertical")));
+      if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
+        SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+      } else
+      {
+        SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+      }
       SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNodeList;
     } else

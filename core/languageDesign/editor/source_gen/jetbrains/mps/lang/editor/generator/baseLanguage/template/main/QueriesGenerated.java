@@ -13,6 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.lang.editor.structure.CellActionMapItem;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
@@ -28,6 +29,7 @@ import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.main._Quotations;
+import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -153,7 +155,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1182971324502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "gridLayout");
+    return CellModel_Collection_Behavior.call_isVerticalGrid_1239872947848(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182971356740(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -875,7 +877,7 @@ public class QueriesGenerated {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
     //     no cell layout defined (obsolete)
     if (cellLayout == null) {
-      if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
+      if (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(_context.getNode())) {
         return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
@@ -1057,7 +1059,7 @@ public class QueriesGenerated {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
     if (cellLayout == null) {
       //       no cell layout
-      if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
+      if (CellModel_Collection_Behavior.call_isVertical_1237380214915(_context.getNode())) {
         return SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);

@@ -8,9 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SurrondWithHorizontalCollection_Intention extends BaseIntention {
 
@@ -36,7 +35,7 @@ public class SurrondWithHorizontalCollection_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-    SPropertyOperations.set(result, "vertical", "" + false);
+    SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
     List<SNode> nodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
     for(SNode sn : nodes) {

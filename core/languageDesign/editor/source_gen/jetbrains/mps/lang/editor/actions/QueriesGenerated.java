@@ -113,7 +113,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
 
@@ -135,7 +135,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
               SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
               SPropertyOperations.set(item, "flag", "" + (false));
@@ -166,7 +166,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
 
@@ -188,7 +188,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
               SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
               SPropertyOperations.set(item, "flag", "" + (false));
@@ -272,7 +272,6 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
             SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Indent", null);
             SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
             SPropertyOperations.set(item, "flag", "" + (false));
@@ -308,7 +307,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
 
@@ -330,7 +329,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
               SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
               SPropertyOperations.set(item, "flag", "" + (false));
@@ -361,7 +360,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
 
@@ -383,7 +382,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
               SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
               SPropertyOperations.set(item, "flag", "" + (false));

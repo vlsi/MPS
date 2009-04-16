@@ -36,11 +36,15 @@ public class CellModel_Collection_Behavior {
   }
 
   public static boolean call_isVertical_1237380214915(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "vertical") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null);
+    return (SPropertyOperations.getBoolean(thisNode, "vertical") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
+  }
+
+  public static boolean call_isVerticalGrid_1239872947848(SNode thisNode) {
+    return (SPropertyOperations.getBoolean(thisNode, "gridLayout") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid");
   }
 
   public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null);
+    return (!(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
   }
 
   public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
