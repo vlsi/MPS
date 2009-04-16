@@ -20,7 +20,7 @@ public class ContinueStatement_Behavior {
         return loop;
       }
     }
-    return ContinueStatement_Behavior.call_getLoop_1213877346346(thisNode);
+    return null;
   }
 
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {

@@ -3759,13 +3759,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877346379">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877346380">
-            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877346381" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877346382">
-              <link role="baseMethodDeclaration" targetNodeId="1213877346346" resolveInfo="getLoop" />
-            </node>
-          </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239896498774">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239896504089" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724683" />
