@@ -60,10 +60,12 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1233150041951">
           <property name="flag" value="false" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966130" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233159047869">
         <link role="editorComponent" targetNodeId="3v.1233152376761" resolveInfo="CompositecomponentEntriesEditorComponent" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879966133" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233152499286">
       <property name="vertical" value="true" />
@@ -105,6 +107,7 @@
             </node>
           </node>
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966141" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237897978463">
         <property name="vertical" value="false" />
@@ -121,6 +124,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1237897978466">
           <property name="flag" value="false" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966132" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233152500147">
         <link role="editorComponent" targetNodeId="3v.1206440283018" resolveInfo="IncludeExcludeInInspector" />
@@ -128,6 +132,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233152503503">
         <link role="editorComponent" targetNodeId="3v.1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879966135" />
     </node>
   </node>
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
@@ -167,10 +172,12 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233679524799">
           <link role="editorComponent" targetNodeId="3v.1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966144" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233679563489">
         <link role="editorComponent" targetNodeId="3v.1233152376761" resolveInfo="CompositecomponentEntriesEditorComponent" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879966142" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233679535592">
       <property name="vertical" value="true" />
@@ -180,6 +187,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1233679550428">
         <link role="editorComponent" targetNodeId="3v.1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879966136" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233749483256">
@@ -200,6 +208,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1233749521847">
         <link role="relationDeclaration" targetNodeId="1.1233749406641" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966138" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1233929575709">
@@ -210,6 +219,7 @@
         <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
         <link role="styleClass" targetNodeId="1233937712403" resolveInfo="keyword" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966139" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1233938132917">
       <property name="vertical" value="false" />
@@ -220,6 +230,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1233938142725">
         <link role="relationDeclaration" targetNodeId="1.1233937527188" resolveInfo="antName" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879966145" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1233937590204">

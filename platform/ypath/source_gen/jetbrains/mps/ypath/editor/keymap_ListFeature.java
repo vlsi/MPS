@@ -57,7 +57,7 @@ public class keymap_ListFeature extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode tp = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false);
-      boolean isDefault = SPropertyOperations.getBoolean(node, "default");
+      boolean isDefault = SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.ypath.structure.IFeature"), "default");
       for(SNode fe : SLinkOperations.getTargets(tp, "features", true)) {
         SPropertyOperations.set(fe, "default", "" + (!(isDefault) && fe == node));
       }

@@ -50,6 +50,7 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218984204530">
             <property name="flag" value="false" />
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313744" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225199670502">
           <property name="vertical" value="false" />
@@ -63,6 +64,7 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225199785681">
             <link role="relationDeclaration" targetNodeId="1.1225199239732" resolveInfo="isAvailableInChildNodes" />
           </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313746" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218984204535">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218984204536">
@@ -89,6 +91,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1218984204543">
           <link role="relationDeclaration" targetNodeId="1.1192795699931" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239880313741" />
       </node>
       <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1218984204544">
         <property name="vertical" value="false" />
@@ -120,6 +123,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218984204553">
           <property name="flag" value="false" />
         </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313743" />
       </node>
     </node>
   </node>

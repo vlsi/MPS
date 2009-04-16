@@ -104,6 +104,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1111785715841">
         <property name="text" value=")" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133681" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1111785760998">
@@ -134,6 +135,7 @@
           </node>
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133688" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1111786320571">
@@ -160,6 +162,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133674" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1111786419670">
@@ -186,6 +189,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133677" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1112037647500">
@@ -212,6 +216,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133670" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1112384321590">
@@ -238,6 +243,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133693" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1112406934674">
@@ -264,6 +270,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133676" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1133954712311">
@@ -288,6 +295,7 @@
           <property name="color" value="DARK_GREEN" />
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133682" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1133956004355">
@@ -314,6 +322,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133689" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1133956014438">
@@ -340,6 +349,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133668" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1134035392491">
@@ -366,6 +376,7 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133672" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1134036128378">
@@ -381,6 +392,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1134036144700">
         <property name="text" value=")" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133686" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1142518758832">
@@ -421,6 +433,7 @@
           <property name="color" value="DARK_MAGENTA" />
         </node>
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133679" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1142529738959">
@@ -438,6 +451,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1142531443964">
         <property name="text" value=")" />
       </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884133691" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1154452994236">

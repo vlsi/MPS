@@ -173,7 +173,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2102_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2102_8(editorCell, node, context);
-    editorCell.setGridLayout(true);
+    editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2102_5(context, node, ""));

@@ -37,7 +37,7 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       List<Triplet> res = ListSequence.<Triplet>fromArray();
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
-        SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
+        SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
         for(TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {
           ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
           for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
@@ -46,7 +46,7 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
                 ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
               } else
               if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
+                for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
                   ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                 }
               } else

@@ -1018,10 +1018,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1239814822884">
-    <property name="migrationFromBuild" value="1193" />
-    <property name="name" value="IllimanationOfVerticalProperty" />
+    <property name="migrationFromBuild" value="2175" />
+    <property name="name" value="ReplacingOfVerticalProperty" />
     <property name="category" value="editor language" />
-    <property name="title" value="IllimanationOfVerticalProperty" />
+    <property name="title" value="Replacing of vertical property with style" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1239814907755">
       <property name="description" value="Set layout property for collection" />
       <link role="affectedInstanceConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
@@ -1217,25 +1217,12 @@
       <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1239815229065">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239815229066">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239815229383">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1239871706786">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1239871716868">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239871718680" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239871709603">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239871709325" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239871715803">
-                    <link role="link" targetNodeId="1.1140524464360" />
-                  </node>
-                </node>
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1239815229384">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239815229385">
-                  <property name="value" value="true" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239815229386">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239815229387" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239815229388">
-                    <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
-                  </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1239871716868">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239871718680" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239871709603">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239871709325" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239871715803">
+                  <link role="link" targetNodeId="1.1140524464360" />
                 </node>
               </node>
             </node>
