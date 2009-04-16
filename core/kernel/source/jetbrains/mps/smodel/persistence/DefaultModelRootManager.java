@@ -267,7 +267,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     SModelDescriptor result = getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
 
-    renameFile(modelFile, newFile);
+    fileRenamed(modelFile, newFile);
 
     return result;
   }
@@ -286,7 +286,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       if (fireModelCreated) {
         modelRepository.createNewModel(modelDescriptor, owner);
       } else {
-        modelRepository.registerModelDescriptor(modelDescriptor, owner);
+        modelRepository.regi1sterModelDescriptor(modelDescriptor, owner);
       }
       return modelDescriptor;
     }
@@ -347,7 +347,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     if (oldFile != null) {
       oldFile.delete();
     }
-    renameFile(oldFile, newFile);
+    fileRenamed(oldFile, newFile);
   }
 
   public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
@@ -358,12 +358,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     if (oldFile != null) {
       oldFile.delete();
     }
-    renameFile(oldFile, newFile);
+    fileRenamed(oldFile, newFile);
   }
 
-  private void renameFile(IFile modelFile, IFile newFile) {
+  private void fileRenamed(IFile modelFile, IFile newFile) {
     // todo use listeners
     ApplicationLevelVcsManager.instance().addToVcsLater(newFile.toFile());
     ApplicationLevelVcsManager.instance().removeFromVcsLater(modelFile.toFile());
   }
 }
+

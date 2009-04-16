@@ -32,7 +32,9 @@ public class ModelRenamer {
 
   public void rename() {
     myModelDescriptor.rename(myModelFqName, true);
+  }
 
+  public void updateReferencesIfNeeded() {
     if (!myLazy) {
       SModelRepository.getInstance().updateReferences();
     }

@@ -25,16 +25,26 @@ import jetbrains.mps.smodel.SModelFqName;
 import javax.swing.*;
 import java.awt.*;
 
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+
 public class RenameModelDialog extends BaseDialog {
   private JPanel myMainPanel;
   private JTextField myModelNameField;
   private JCheckBox myUpdateAllReferences;
 
+  private Project myProject;
   private SModelDescriptor myModelDescriptor;
   private SModelRoot myModelRoot;
 
-  public RenameModelDialog(Frame frame, SModelRoot root, SModelDescriptor sm) throws HeadlessException {
+  public RenameModelDialog(Project project, Frame frame, SModelRoot root, SModelDescriptor sm) throws HeadlessException {
     super(frame);
+
+    myProject = project;
+
     myModelDescriptor = sm;
     myModelRoot = root;
 
@@ -64,20 +74,38 @@ public class RenameModelDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
+    final SModelFqName fqName = SModelFqName.fromString(myModelNameField.getText());
 
+    if (!myModelRoot.isCorrectModelFqName(fqName)) {
+      setErrorText("Incorrect model name for the model root (should start with prefix " + myModelRoot.getPrefix() + ")");
+      return;
+    }
+
+    final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        final SModelFqName fqName = SModelFqName.fromString(myModelNameField.getText());
-
-        if (!myModelRoot.isCorrectModelFqName(fqName)) {
-          setErrorText("Incorrect model name for the model root (should start with prefix " + myModelRoot.getPrefix() + ")");
-          return;
-        }
-
-        new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected()).rename();
-        dispose();
+        renamer.rename();
       }
     });
+
+    ProgressManager.getInstance().run(new Modal(myProject, "Updating model usages...", false) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.pushState();
+        indicator.setIndeterminate(true);
+        try {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              renamer.updateReferencesIfNeeded();
+            }
+          });
+        } finally {
+          indicator.popState();
+        }
+      }
+    });
+
+    dispose();
   }
 
 
