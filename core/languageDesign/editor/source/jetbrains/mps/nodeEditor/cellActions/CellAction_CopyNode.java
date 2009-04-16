@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -54,11 +55,17 @@ public class CellAction_CopyNode extends EditorCellAction {
         LOG.debug("    " + aNodeList.getDebugText());
       }
     } else {
-      SNode sNode = editorComponent.getSelectedCell().getSNode();
-      if (sNode != null) {
-        nodeList.add(sNode);
-        LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
+      EditorCell selectedCell = editorComponent.getSelectedCell();
+      if (!(selectedCell instanceof EditorCell_Label)) {
+        SNode sNode = selectedCell.getSNode();
+        if (sNode != null) {
+          nodeList.add(sNode);
+          LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
+        }
       }
+    }
+    if (nodeList.size() == 0) {
+      return;
     }
     List<SNode> copyNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
