@@ -81,7 +81,6 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       }
 
       return new GenParameters(inputModels, lang);
-
     }
 
     throw new IllegalGeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleFqName());

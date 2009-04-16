@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.renameLanguage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
@@ -33,6 +34,8 @@ import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -97,32 +100,45 @@ public class RenameLanguageDialog extends BaseDialog {
       return;
     }
 
-    if (needToRegenerate) {
-      final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-      GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
-        public GenParameters compute() {
-          ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-          languageConfig.setModuleRef(myLanguage.getModuleReference());
-          languageConfig.setName("tmp");
 
-          try {
-            return languageConfig.getGenParams(mpsProject, true);
-          } catch (IllegalGeneratorConfigurationException e) {
-            return null;
-          }
+    if (needToRegenerate) {
+
+      final Set<Language> langs = new LinkedHashSet<Language>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          langs.add(myLanguage);
+          langs.addAll(MPSModuleRepository.getInstance().getAllExtendingLanguages(myLanguage));
         }
       });
 
-      if (params == null) {
-        setErrorText("Generator configuration is invalid");
-        return;
-      }
+      for (final Language l : langs) {
+        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+        GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
+          public GenParameters compute() {
+            ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
 
-      myProject.getComponent(GeneratorManager.class)
-        .generateModelsFromDifferentModules(
-          new ModuleContext(myLanguage, mpsProject),
-          params.getModels(),
-          IGenerationType.FILES);
+            languageConfig.setModuleRef(l.getModuleReference());
+            languageConfig.setName("tmp");
+
+            try {
+              return languageConfig.getGenParams(mpsProject, true);
+            } catch (IllegalGeneratorConfigurationException e) {
+              return null;
+            }
+          }
+        });
+
+        if (params == null) {
+          setErrorText("Generator configuration is invalid");
+          return;
+        }
+
+        myProject.getComponent(GeneratorManager.class)
+          .generateModelsFromDifferentModules(
+            new ModuleContext(myLanguage, mpsProject),
+            params.getModels(),
+            IGenerationType.FILES);
+      }
     }
 
     dispose();

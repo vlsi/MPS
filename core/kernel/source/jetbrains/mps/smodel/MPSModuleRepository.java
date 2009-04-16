@@ -604,6 +604,16 @@ public class MPSModuleRepository implements ApplicationComponent {
     return result;
   }
 
+  public Set<Language> getAllExtendingLanguages(Language l) {
+    Set<Language> result = new HashSet<Language>();
+    for (Language lang : getAllLanguages()) {
+      if (lang.getExtendedLanguages().contains(l)) {
+        result.add(lang);
+      }
+    }
+    return result;   
+  }
+
   public IModule getModuleForModelFile(String path) {
     assertCanRead();
 
