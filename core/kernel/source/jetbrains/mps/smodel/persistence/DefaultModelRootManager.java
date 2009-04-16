@@ -286,7 +286,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       if (fireModelCreated) {
         modelRepository.createNewModel(modelDescriptor, owner);
       } else {
-        modelRepository.regi1sterModelDescriptor(modelDescriptor, owner);
+        modelRepository.registerModelDescriptor(modelDescriptor, owner);
       }
       return modelDescriptor;
     }
