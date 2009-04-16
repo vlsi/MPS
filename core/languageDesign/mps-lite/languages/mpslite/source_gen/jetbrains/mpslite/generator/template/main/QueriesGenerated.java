@@ -13,15 +13,15 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
-import jetbrains.mpslite.behavior.LineList_Behavior;
-import jetbrains.mpslite.generator.template.util.EditorGenerationUtils;
+import jetbrains.mpslite.behavior.ConceptContainer_Behavior;
+import jetbrains.mpslite.behavior.GenerationUtils;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class QueriesGenerated {
@@ -36,7 +36,6 @@ public class QueriesGenerated {
     Map<SNode, SNode> additionalConceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> partsToLinkDeclarations = MapSequence.fromMap(new HashMap<SNode, SNode>());
     SNode conceptContainer = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.ConceptContainer")).first();
-    List<SNode> mpsliteConceptDeclarations = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", false);
     List<SNode> allConcepts = SLinkOperations.getTargets(conceptContainer, "mpsLiteConcept", true);
     for(SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
@@ -54,8 +53,9 @@ public class QueriesGenerated {
       }
       MapSequence.fromMap(conceptsToTargets).put(conceptDeclaration, concept);
     }
+    //     additional concepts
     for(SNode conceptDeclaration : allConcepts) {
-      SNode concept = IMPSLiteConcept_Behavior.call_createAdditionalConcept_1239817368042(conceptDeclaration, conceptsToTargets);
+      SNode concept = IMPSLiteConcept_Behavior.call_createAdditionalConcept_1239817368042(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
       if (concept != null) {
         MapSequence.fromMap(additionalConceptsToTargets).put(conceptDeclaration, concept);
       }
@@ -64,54 +64,38 @@ public class QueriesGenerated {
     for(SNode conceptDeclaration : allConcepts) {
       SLinkOperations.setTarget(((SNode)conceptsToTargets.get(conceptDeclaration)), "extends", SNodeOperations.cast(AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
     }
-    //     structure
-    for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(conceptDeclaration, "lineList", true), SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), conceptsToTargets, partsToLinkDeclarations);
-    }
-    List<SNode> binaryOperations = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.BinaryOperationConcept", false);
-    for(SNode binaryOperationConcept : binaryOperations) {
-      EditorGenerationUtils.fillBinaryOperationStructure(binaryOperationConcept, conceptsToTargets, partsToLinkDeclarations);
-    }
-    List<SNode> variableConcepts = SNodeOperations.getDescendants(conceptContainer, "jetbrains.mpslite.structure.VariableConcept", false);
-    for(SNode variableConcept : variableConcepts) {
-      EditorGenerationUtils.fillVariableConceptStruncture(variableConcept, conceptsToTargets, partsToLinkDeclarations);
+    //     inner concept structure
+    for(SNode conceptDeclaration : allConcepts) {
+      IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, SNodeOperations.cast(conceptsToTargets.get(conceptDeclaration), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), conceptsToTargets, partsToLinkDeclarations);
     }
     //     editor
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
     SModel actionsModel = language.getActionsModelDescriptor().getSModel();
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for(SNode conceptDeclaration : mpsliteConceptDeclarations) {
-      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-      SNode lineList = SLinkOperations.getTarget(conceptDeclaration, "lineList", true);
-      SNode contentCell = EditorGenerationUtils.generateEditorCellModel(lineList, conceptDeclaration, partsToLinkDeclarations);
-      if (contentCell == null) {
+    for(SNode conceptDeclaration : allConcepts) {
+      SNode editor = IMPSLiteConcept_Behavior.call_createEditor_1239890004879(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
+      if (editor == null) {
         continue;
       }
-      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
-      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(conceptDeclaration), false);
-      MapSequence.fromMap(conceptsToEditors).put(conceptDeclaration, editor);
+      SNode mpsConcept = conceptsToTargets.get(conceptDeclaration);
+      SLinkOperations.setTarget(editor, "conceptDeclaration", mpsConcept, false);
+      MapSequence.fromMap(conceptsToEditors).put(mpsConcept, editor);
     }
-    for(SNode variableConcept : variableConcepts) {
-      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-      SNode lineList = SLinkOperations.getTarget(variableConcept, "concreteSyntax", true);
-      SNode contentCell = EditorGenerationUtils.generateEditorCellModel(lineList, variableConcept, partsToLinkDeclarations);
-      if (contentCell == null) {
+    for(SNode additionalConcept : MapSequence.fromMap(additionalConceptsToTargets).keySet()) {
+      SNode editor = IMPSLiteConcept_Behavior.call_createAdditionalEditor_1239891670850(additionalConcept, conceptsToTargets, partsToLinkDeclarations);
+      if (editor == null) {
         continue;
       }
-      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
-      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(variableConcept), false);
-      MapSequence.fromMap(conceptsToEditors).put(variableConcept, editor);
+      SNode mpsConcept = additionalConceptsToTargets.get(additionalConcept);
+      SLinkOperations.setTarget(editor, "conceptDeclaration", mpsConcept, false);
+      MapSequence.fromMap(conceptsToEditors).put(mpsConcept, editor);
     }
     SNode actions = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", null);
     SPropertyOperations.set(actions, "name", "_BinaryOperations_SideTransform");
-    for(SNode binaryOperationConcept : binaryOperations) {
-      SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-      SNode contentCell = EditorGenerationUtils.generateBinaryOperationCellModel(binaryOperationConcept, partsToLinkDeclarations);
-      SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
-      SLinkOperations.setTarget(editor, "conceptDeclaration", conceptsToTargets.get(binaryOperationConcept), false);
-      MapSequence.fromMap(conceptsToEditors).put(binaryOperationConcept, editor);
-      EditorGenerationUtils.fillBinarySideTransformActions(binaryOperationConcept, actions, conceptsToTargets, partsToLinkDeclarations);
+    for(SNode binaryOperationConcept : ConceptContainer_Behavior.call_getBinaryOperationConcepts_1239806149720(conceptContainer)) {
+      GenerationUtils.fillBinarySideTransformActions(binaryOperationConcept, actions, conceptsToTargets, partsToLinkDeclarations);
     }
+    // 
     //     setting roots and deleting input roots
     structureModel.setLoading(true);
     for(SNode root : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SModelOperations.getRoots(structureModel, null)))) {
@@ -121,6 +105,10 @@ public class QueriesGenerated {
       SNode concept = conceptsToTargets.get(conceptDeclaration);
       SModelOperations.addRootNode(structureModel, concept);
     }
+    for(SNode conceptDeclaration : MapSequence.fromMap(additionalConceptsToTargets).keySet()) {
+      SNode concept = additionalConceptsToTargets.get(conceptDeclaration);
+      SModelOperations.addRootNode(structureModel, concept);
+    }
     structureModel.setLoading(false);
     SModelRepository.getInstance().markChanged(structureModel);
     editorModel.setLoading(true);
@@ -128,7 +116,11 @@ public class QueriesGenerated {
       editorModel.removeRoot(root);
     }
     for(SNode conceptDeclaration : allConcepts) {
-      SNode editorDeclaration = conceptsToEditors.get(conceptDeclaration);
+      SNode editorDeclaration = conceptsToEditors.get(conceptsToTargets.get(conceptDeclaration));
+      SModelOperations.addRootNode(editorModel, editorDeclaration);
+    }
+    for(SNode conceptDeclaration : MapSequence.fromMap(additionalConceptsToTargets).keySet()) {
+      SNode editorDeclaration = conceptsToEditors.get(additionalConceptsToTargets.get(conceptDeclaration));
       SModelOperations.addRootNode(editorModel, editorDeclaration);
     }
     editorModel.setLoading(false);

@@ -22,7 +22,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   public static final String ROOT = "root";
   public static final String ABSTRACT = "abstract";
   public static final String TYPE_CONCEPT = "typeConcept";
-  public static final String EXPRESSION_CONCEPT = "expressionConcept";
+  public static final String REFERENCE = "reference";
   public static final String CONCRETE_SYNTAX = "concreteSyntax";
   public static final String EXTENDS = "extends";
 
@@ -102,12 +102,12 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
     super.setChild(VariableConcept.TYPE_CONCEPT, node);
   }
 
-  public AbstractConceptReference getExpressionConcept() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, VariableConcept.EXPRESSION_CONCEPT);
+  public BaseConcept getReference() {
+    return (BaseConcept)this.getChild(BaseConcept.class, VariableConcept.REFERENCE);
   }
 
-  public void setExpressionConcept(AbstractConceptReference node) {
-    super.setChild(VariableConcept.EXPRESSION_CONCEPT, node);
+  public void setReference(BaseConcept node) {
+    super.setChild(VariableConcept.REFERENCE, node);
   }
 
   public LineList getConcreteSyntax() {

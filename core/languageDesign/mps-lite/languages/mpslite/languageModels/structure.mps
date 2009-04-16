@@ -516,11 +516,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1237896192386" resolveInfo="AbstractConceptReference" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239373366974">
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239891441835">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="expressionConcept" />
+      <property name="role" value="reference" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1237896192386" resolveInfo="AbstractConceptReference" />
+      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239372630266">
       <property name="metaClass" value="aggregation" />

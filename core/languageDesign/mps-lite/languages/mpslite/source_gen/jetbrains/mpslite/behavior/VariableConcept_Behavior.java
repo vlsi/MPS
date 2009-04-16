@@ -4,9 +4,14 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
+import jetbrains.mpslite.behavior._Quotations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mpslite.behavior.GenerationUtils;
 
 public class VariableConcept_Behavior {
 
@@ -21,14 +26,53 @@ public class VariableConcept_Behavior {
     return false;
   }
 
-  public static SNode virtual_createAdditionalConcept_1239817368042(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
+  public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    SNode conceptDeclaration = SNodeOperations.cast(conceptsToTargets.get(thisNode), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    SNode typeLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SPropertyOperations.set(typeLink, "metaClass", "aggregation");
+    SPropertyOperations.set(typeLink, "sourceCardinality", "1");
+    SPropertyOperations.set(typeLink, "role", SPropertyOperations.getString(thisNode, "typeRole"));
+    SLinkOperations.setTarget(typeLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "typeConcept", true), conceptsToTargets), false);
+    SNode propertyDecl = SLinkOperations.addNewChild(conceptDeclaration, "propertyDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    SLinkOperations.setTarget(propertyDecl, "dataType", SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "dataType", false), false);
+    SPropertyOperations.set(propertyDecl, "name", SPropertyOperations.getString(thisNode, "namePropertyName"));
+    MapSequence.fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "typeConcept", true), typeLink);
+    MapSequence.fromMap(partsToLinks).put(thisNode, propertyDecl);
+  }
+
+  public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    SNode lineList = SLinkOperations.getTarget(thisNode, "concreteSyntax", true);
+    SNode contentCell = GenerationUtils.generateEditorCellModel(lineList, thisNode, partsToLinks);
+    if (contentCell == null) {
+      return null;
+    }
+    SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
+    return editor;
+  }
+
+  public static SNode virtual_createAdditionalConcept_1239817368042(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     SNode additionalConcept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
     SPropertyOperations.set(additionalConcept, "name", SPropertyOperations.getString(thisNode, "name") + "Reference");
     SNode referenceDeclaration = SLinkOperations.addNewChild(additionalConcept, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(referenceDeclaration, "metaClass", "reference");
     SPropertyOperations.set(referenceDeclaration, "sourceCardinality", "1");
+    SPropertyOperations.set(referenceDeclaration, "role", "declaration");
     SLinkOperations.setTarget(referenceDeclaration, "target", conceptsToTargets.get(thisNode), false);
+    SLinkOperations.setTarget(additionalConcept, "extends", (SNode)conceptsToTargets.get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true)), false);
+    MapSequence.fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "reference", true), referenceDeclaration);
     return additionalConcept;
+  }
+
+  public static SNode virtual_createAdditionalEditor_1239891670850(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
+    SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
+    SLinkOperations.setTarget(contentCell, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SNode editorComponent = SLinkOperations.setNewChild(contentCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
+    SNode propertyCell = SLinkOperations.setNewChild(editorComponent, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");
+    SLinkOperations.setTarget(propertyCell, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
+    return editor;
   }
 
 }
