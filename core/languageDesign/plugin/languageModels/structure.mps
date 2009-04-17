@@ -1316,7 +1316,7 @@
     <link role="extends" targetNodeId="2.1068580123155" resolveInfo="ExpressionStatement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207145494930">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="element" />
+      <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
       <link role="specializedLink" targetNodeId="2.1068580123156" />
