@@ -167,5 +167,38 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" id="1239969476955">
+    <property name="name" value="RefactoringActionGroupFirstUpdate" />
+    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock" id="1239969500565">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239969500566">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239969823688">
+          <property name="value" value="todo remove update code when IDEA will fix their bug (in next platform build, after 15.04.2009)" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1239969773410">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239969773411">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239969791789">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239969791790">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239969791791">
+                  <link role="baseMethodDeclaration" targetNodeId="10.~RefactoringActionGroup.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringTarget)" resolveInfo="RefactoringActionGroup" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239969798409">
+                    <link role="variableDeclaration" targetNodeId="1239969773414" resolveInfo="value" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1239969788361">
+            <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239969773414">
+            <property name="name" value="value" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239969781293">
+              <link role="classifier" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
