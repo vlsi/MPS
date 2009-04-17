@@ -188,9 +188,13 @@ public abstract class BaseAction extends AnAction {
     e.getPresentation().setEnabled(true);
   }
 
+  public String getIdent(){
+    return getClass().getName();
+  }
 
   protected abstract void doExecute(AnActionEvent e);
 
+  //todo remove
   public static String getIdMethodName() {
     return "getActionId";
   }

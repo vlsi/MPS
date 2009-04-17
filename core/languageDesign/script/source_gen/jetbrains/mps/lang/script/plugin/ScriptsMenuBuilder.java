@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import java.util.Comparator;
+import jetbrains.mps.lang.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.lang.script.plugin.RunMigrationScriptsAction;
 
 public class ScriptsMenuBuilder {
 
@@ -27,7 +29,6 @@ public class ScriptsMenuBuilder {
       public int compare(Language l1, Language l2) {
         return l1.getNamespace().compareTo(l2.getNamespace());
       }
-
     });
     this.allScripts = ScriptsActionGroupHelper.getMigrationScripts(this.allLanguages);
   }

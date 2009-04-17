@@ -9,12 +9,12 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.script.plugin.ScriptsMenuBuilder;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
@@ -24,7 +24,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsForSelection";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromArray();
 
   public ScriptsForSelection_ActionGroup() {
     super("Scripts", ID);

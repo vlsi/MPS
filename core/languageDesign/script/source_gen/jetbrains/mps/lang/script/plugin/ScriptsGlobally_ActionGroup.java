@@ -9,19 +9,19 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.script.plugin.ScriptsMenuBuilder;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsGlobally_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsGlobally";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = new HashSet<Pair<ActionPlace, Condition<BaseAction>>>();
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromArray();
 
   public ScriptsGlobally_ActionGroup() {
     super("Scripts", ID);
