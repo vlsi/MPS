@@ -56,7 +56,7 @@ public class ConceptContainer_Behavior {
     Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.VariableConcept");
       }
     });
     List<SNode> result = ListOperations.<SNode>createList();

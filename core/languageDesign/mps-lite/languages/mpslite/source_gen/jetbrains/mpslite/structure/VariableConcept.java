@@ -7,6 +7,9 @@ import jetbrains.mpslite.structure.IMPSLiteConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mpslite.structure.AbstractConceptReference;
 import jetbrains.mpslite.structure.LineList;
+import java.util.Iterator;
+import jetbrains.mpslite.structure.BlockReference;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +28,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   public static final String REFERENCE = "reference";
   public static final String CONCRETE_SYNTAX = "concreteSyntax";
   public static final String EXTENDS = "extends";
+  public static final String SCOPE_BLOCK = "scopeBlock";
 
   public VariableConcept(SNode node) {
     super(node);
@@ -124,6 +128,26 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
 
   public void setExtends(AbstractConceptReference node) {
     super.setChild(VariableConcept.EXTENDS, node);
+  }
+
+  public int getScopeBlocksCount() {
+    return this.getChildCount(VariableConcept.SCOPE_BLOCK);
+  }
+
+  public Iterator<BlockReference> scopeBlocks() {
+    return this.children(BlockReference.class, VariableConcept.SCOPE_BLOCK);
+  }
+
+  public List<BlockReference> getScopeBlocks() {
+    return this.getChildren(BlockReference.class, VariableConcept.SCOPE_BLOCK);
+  }
+
+  public void addScopeBlock(BlockReference node) {
+    this.addChild(VariableConcept.SCOPE_BLOCK, node);
+  }
+
+  public void insertScopeBlock(BlockReference prev, BlockReference node) {
+    this.insertChild(prev, VariableConcept.SCOPE_BLOCK, node);
   }
 
 

@@ -1195,6 +1195,23 @@
             </node>
             <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884376273" />
           </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1239944519854">
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1239944519855">
+              <property name="flag" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239944521761">
+              <property name="text" value="scope blocks:" />
+              <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="KeyWord" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1239944534181">
+              <link role="relationDeclaration" targetNodeId="1.1239944476754" />
+              <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239944534182" />
+            </node>
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239944519857" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1239944519858">
+              <property name="flag" value="false" />
+            </node>
+          </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239377187085">
             <property name="text" value=" " />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1239377191330" />

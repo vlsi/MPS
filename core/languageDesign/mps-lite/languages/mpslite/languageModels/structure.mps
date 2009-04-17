@@ -528,6 +528,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1237380500632" resolveInfo="LineList" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239944476754">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="scopeBlock" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1239944428553" resolveInfo="BlockReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1239372506309">
       <property name="name" value="namePropertyName" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
@@ -612,6 +618,16 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239939882149">
       <property name="value" value="[BODY]" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239944428553">
+    <property name="name" value="BlockReference" />
+    <link role="extends" targetNodeId="1237897531822" resolveInfo="MPSLiteConceptReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239944442738">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="blockConcept" />
+      <link role="specializedLink" targetNodeId="1237897551735" />
+      <link role="target" targetNodeId="1239939522701" resolveInfo="BlockConcept" />
     </node>
   </node>
 </model>
