@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
@@ -31,6 +32,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.LoggableRefactoringViewAction;
 import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
@@ -44,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.util.*;
+
+import smodelLanguage.samples.Model;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
@@ -130,12 +134,17 @@ public class RefactoringProcessor {
     System.err.println("current thread is " + t);
 
     final ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
+    final Map<IModule, List<SModel>> moduleToModelsMap = ModelAccess.instance().runReadAction(new Computable<Map<IModule, List<SModel>>>() {
+      public Map<IModule, List<SModel>> compute() {
+        return refactoring.getModelsToGenerate(refactoringContext);
+      }
+    });
+    final SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
+    final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-            SModelReference initialModelReference = modelDescriptor.getSModelReference();
             refactoring.doRefactor(refactoringContext);
             final List<SNode> nodesToOpen = refactoring.getNodesToOpen(refactoringContext);
             if (!nodesToOpen.isEmpty()) {
@@ -148,42 +157,61 @@ public class RefactoringProcessor {
                 }
               });
             }
-            SModel model = modelDescriptor.getSModel();
-            refactoringContext.computeCaches();
-            SearchResults usages = refactoringContext.getUsages();
-            final Map<IModule, List<SModel>> moduleToModelsMap = refactoring.getModelsToGenerate(refactoringContext);
-            List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(refactoringContext);
-            if (!refactoringContext.isLocal()) {
-              if (refactoring.doesUpdateModel()) {
-                writeInLogAndUpdateModels(initialModelReference, model, refactoringContext);
-              }
-            } else {
-              if (refactoring.doesUpdateModel()) {
-                Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
-                if (usages != null) {
-                  modelsToProcess.addAll(usages.getModelsWithResults());
-                }
-                modelsToProcess.addAll(modelsToUpdate);
+          }
+        });
 
-                for (SModel anotherModel : modelsToProcess) {
-                  processModel(anotherModel, model, refactoringContext);
-                }
-              }
-            }
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                if (moduleToModelsMap != null && !moduleToModelsMap.isEmpty()) {
-                  ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Generation", true) {
-                    public void run(@NotNull ProgressIndicator progress) {
-                      generateModels(moduleToModelsMap, refactoringContext, progress);
+        MPSProject mpsProject = refactoringContext.getSelectedMPSProject();
+        ProgressManager.getInstance().run(new Modal(mpsProject.getComponent(Project.class), "Updating models...", false) {
+          @Override
+          public void run(@NotNull ProgressIndicator indicator) {
+            indicator.pushState();
+            try {
+              indicator.setIndeterminate(true);
+
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  SModel model = modelDescriptor.getSModel();
+                  refactoringContext.computeCaches();
+                  SearchResults usages = refactoringContext.getUsages();
+                  List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(refactoringContext);
+                  if (!refactoringContext.isLocal()) {
+                    if (refactoring.doesUpdateModel()) {
+                      writeInLogAndUpdateModels(initialModelReference, model, refactoringContext);
                     }
-                  });
-                  if (continuation != null) {
-                    continuation.run();
+                  } else {
+                    if (refactoring.doesUpdateModel()) {
+                      Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
+                      if (usages != null) {
+                        modelsToProcess.addAll(usages.getModelsWithResults());
+                      }
+                      modelsToProcess.addAll(modelsToUpdate);
+
+                      for (SModel anotherModel : modelsToProcess) {
+                        processModel(anotherModel, model, refactoringContext);
+                      }
+                    }
                   }
                 }
+              });
+
+            } finally {
+              indicator.popState();
+            }
+          }
+        });
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            if (moduleToModelsMap != null && !moduleToModelsMap.isEmpty()) {
+              ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Generation", true) {
+                public void run(@NotNull ProgressIndicator progress) {
+                  generateModels(moduleToModelsMap, refactoringContext, progress);
+                }
+              });
+              if (continuation != null) {
+                continuation.run();
               }
-            });
+            }
           }
         });
       }
