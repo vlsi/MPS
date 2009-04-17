@@ -54,8 +54,13 @@ public class ActionFactory {
       return null;
     }
 
-    BaseAction newAction = (BaseAction) createAction(actionClass, params);
-    String actionId=newAction.getActionId();
+    AnAction newAction = createAction(actionClass, params);
+    String actionId;
+    if (newAction instanceof BaseAction){
+      actionId = ((BaseAction) newAction).getActionId();
+    }else{
+      actionId = newAction.getClass().getName();
+    }
     String id = getFullId(actionId, moduleNamespace, actionClass);
 
     AnAction registeredAction = ActionManager.getInstance().getAction(id);
