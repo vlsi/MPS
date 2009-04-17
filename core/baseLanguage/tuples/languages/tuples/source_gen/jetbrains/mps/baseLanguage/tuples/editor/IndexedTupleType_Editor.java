@@ -50,7 +50,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList_8965_0(EditorContext context, SNode node) {
     if (this.myListHandler_8965_0 == null) {
-      this.myListHandler_8965_0 = new IndexedTupleType_Editor.memberTypeListHandler_8965_0(node, "memberType", context);
+      this.myListHandler_8965_0 = new IndexedTupleType_Editor.componentTypeListHandler_8965_0(node, "componentType", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_8965_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_RefNodeList_8965_0(editorCell, node, context);
@@ -139,7 +139,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_8965_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_memberType");
+    editorCell.setCellId("refNodeList_componentType");
   }
 
   private static void setupBasic_ConceptProperty_8965_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -165,9 +165,9 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConceptProperty_8965_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class memberTypeListHandler_8965_0 extends RefNodeListHandler {
+  public static class componentTypeListHandler_8965_0 extends RefNodeListHandler {
 
-    public memberTypeListHandler_8965_0(SNode ownerNode, String childRole, EditorContext context) {
+    public componentTypeListHandler_8965_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

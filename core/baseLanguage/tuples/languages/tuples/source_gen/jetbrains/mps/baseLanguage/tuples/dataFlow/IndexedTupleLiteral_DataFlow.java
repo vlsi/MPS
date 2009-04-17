@@ -16,12 +16,12 @@ public class IndexedTupleLiteral_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (_context.getNode() == SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true)) {
-      for(SNode mbr : SLinkOperations.getTargets(_context.getNode(), "member", true)) {
+      for(SNode mbr : SLinkOperations.getTargets(_context.getNode(), "component", true)) {
         _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.as(mbr, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
       }
     } else
     {
-      for(SNode mbr : SLinkOperations.getTargets(_context.getNode(), "member", true)) {
+      for(SNode mbr : SLinkOperations.getTargets(_context.getNode(), "component", true)) {
         _context.getBuilder().build((SNode)mbr);
       }
     }

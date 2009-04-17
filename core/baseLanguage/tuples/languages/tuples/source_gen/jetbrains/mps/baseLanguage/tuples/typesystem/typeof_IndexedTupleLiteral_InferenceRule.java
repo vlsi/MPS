@@ -20,7 +20,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
 
   public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext) {
     List<SNode> memberTypes = ListSequence.<SNode>fromArray();
-    for(SNode mbr : SLinkOperations.getTargets(tuple, "member", true)) {
+    for(SNode mbr : SLinkOperations.getTargets(tuple, "component", true)) {
       final SNode mt_typevar_1238854189111 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = tuple;

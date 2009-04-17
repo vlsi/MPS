@@ -44,13 +44,13 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
         typeCheckingContext.whenConcrete(tupleType, new Runnable() {
 
           public void run() {
-            if (!(index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "memberType"))) {
+            if (!(index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType"))) {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
               typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", intentionProvider, errorTarget);
             }
-            if (index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "memberType")) {
-              List<SNode> mtypes = SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "memberType", true);
+            if (index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType")) {
+              List<SNode> mtypes = SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
               {
                 SNode _nodeToCheck_1029348928467 = mae;
                 BaseIntentionProvider intentionProvider = null;

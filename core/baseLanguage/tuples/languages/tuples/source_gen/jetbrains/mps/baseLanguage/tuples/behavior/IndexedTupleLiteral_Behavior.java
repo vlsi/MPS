@@ -12,7 +12,7 @@ public class IndexedTupleLiteral_Behavior {
   }
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    for(SNode mexp : SLinkOperations.getTargets(thisNode, "member", true)) {
+    for(SNode mexp : SLinkOperations.getTargets(thisNode, "component", true)) {
       if (!(Expression_Behavior.call_isLValue_1213877519786(mexp))) {
         return false;
       }

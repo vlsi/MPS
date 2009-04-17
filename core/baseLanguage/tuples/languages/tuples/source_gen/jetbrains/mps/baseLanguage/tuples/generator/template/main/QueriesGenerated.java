@@ -172,7 +172,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1239699675924(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "empty" + SLinkOperations.getCount(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "memberType");
+    return "empty" + SLinkOperations.getCount(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType");
   }
 
   public static Object referenceMacro_GetReferent_1238920386864(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -250,7 +250,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1238933287426(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
     for(SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + SLinkOperations.getCount(_context.getNode(), "memberType"))) {
+      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + SLinkOperations.getCount(_context.getNode(), "componentType"))) {
         return ifc;
       }
     }
@@ -656,7 +656,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1238936146023(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = ListOperations.<SNode>createList();
     int i = 0;
-    for(SNode exp : SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"), "member", true)) {
+    for(SNode exp : SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"), "component", true)) {
       exp.putUserObject("number", i);
       exp.putUserObject("rvalue", _context.getNode().getUserObject("rvalue"));
       ListSequence.fromList(nodes).addElement(exp);
@@ -676,7 +676,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1238939241168(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "memberType", true);
+    return SLinkOperations.getTargets(_context.getNode(), "componentType", true);
   }
 
   public static Iterable sourceNodesQuery_1238943843686(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -730,7 +730,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1238946771114(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "member", true);
+    return SLinkOperations.getTargets(_context.getNode(), "component", true);
   }
 
   public static Iterable sourceNodesQuery_1238949913818(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -813,7 +813,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1239699675895(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "memberType", true);
+    return SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
   }
 
   public static Iterable sourceNodesQuery_1239703578255(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

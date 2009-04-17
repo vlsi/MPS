@@ -26,10 +26,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="0" />
+  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="6" />
-  <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="0" />
+  <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -100,7 +100,7 @@
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1238854059793">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1238854059794">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238854080187">
-              <node role="memberType" type="jetbrains.mps.baseLanguage.structure.Type" id="1238854082290">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.Type" id="1238854082290">
                 <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="1238854095543">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238854309286">
                     <link role="variableDeclaration" targetNodeId="1238854144245" resolveInfo="memberTypes" />
@@ -1261,7 +1261,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239722401063">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1239722403690">
           <node role="quotedNode" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239722405209">
-            <node role="memberType" type="jetbrains.mps.baseLanguage.structure.Type" id="1239722407121">
+            <node role="componentType" type="jetbrains.mps.baseLanguage.structure.Type" id="1239722407121">
               <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="1239722423570">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239722451901">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239722440219">

@@ -18,7 +18,7 @@ public class IndexedTupleType_Behavior {
     StringBuilder sb = new StringBuilder();
     sb.append(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for(SNode mt : SLinkOperations.getTargets(thisNode, "memberType", true)) {
+    for(SNode mt : SLinkOperations.getTargets(thisNode, "componentType", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(mt));
       sep = ", ";
     }
@@ -28,7 +28,7 @@ public class IndexedTupleType_Behavior {
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> suffixes = ListSequence.<String>fromArray();
-    switch (SLinkOperations.getCount(thisNode, "memberType")) {
+    switch (SLinkOperations.getCount(thisNode, "componentType")) {
       case 0:
         ListSequence.fromList(suffixes).addElement("unit");
         break;
@@ -45,7 +45,7 @@ public class IndexedTupleType_Behavior {
         ListSequence.fromList(suffixes).addElement("quadruple");
         break;
       default:
-        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(SLinkOperations.getCount(thisNode, "memberType")) + "tuple");
+        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(SLinkOperations.getCount(thisNode, "componentType")) + "tuple");
     }
     return suffixes;
   }

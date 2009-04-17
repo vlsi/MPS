@@ -17,7 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="0" />
+  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1238952260515">
@@ -36,18 +36,18 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238953768406">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238953797570">
           <node role="expression" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953797571">
-            <node role="member" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238953800991">
+            <node role="component" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238953800991">
               <link role="variableDeclaration" targetNodeId="1238953789187" resolveInfo="s" />
             </node>
-            <node role="member" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238953802659">
+            <node role="component" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238953802659">
               <link role="variableDeclaration" targetNodeId="1238953791942" resolveInfo="c" />
             </node>
           </node>
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238953770657">
-        <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238953774665" />
-        <node role="memberType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1238953779157" />
+        <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238953774665" />
+        <node role="componentType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1238953779157" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238952260516" />
@@ -95,14 +95,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238952487460">
               <property name="name" value="pair" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238952487461">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238952487462" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238952487463" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238952487462" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238952487463" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238952487464">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238952487465">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238952487465">
                   <property name="value" value="1" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238952487466">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238952487466">
                   <property name="value" value="a" />
                 </node>
               </node>
@@ -138,8 +138,8 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238952528966">
               <property name="name" value="anotherPair" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238952528967">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238952532030" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238952533584" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1238952532030" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238952533584" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238952540131">
                 <link role="variableDeclaration" targetNodeId="1238952487460" resolveInfo="pair" />
@@ -311,12 +311,12 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238953073445">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238953083669">
               <node role="rValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953089218">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238953091887">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238953091887">
                   <property name="value" value="1" />
                 </node>
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953073446">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953081035">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953081035">
                   <link role="variableDeclaration" targetNodeId="1238953067658" resolveInfo="a" />
                 </node>
               </node>
@@ -342,18 +342,18 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238953654863">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238953665447">
               <node role="rValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953669213">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238953679232">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238953679232">
                   <property name="value" value="2" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1238953680586">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1238953680586">
                   <property name="charConstant" value="b" />
                 </node>
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953654864">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953658642">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953658642">
                   <link role="variableDeclaration" targetNodeId="1238953067658" resolveInfo="a" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953662353">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953662353">
                   <link role="variableDeclaration" targetNodeId="1238953640417" resolveInfo="c" />
                 </node>
               </node>
@@ -402,18 +402,18 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238953142591">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238953147858">
               <node role="rValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953149631">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953151198">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953151198">
                   <link role="variableDeclaration" targetNodeId="1238953134825" resolveInfo="bar" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953152231">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953152231">
                   <link role="variableDeclaration" targetNodeId="1238953125635" resolveInfo="foo" />
                 </node>
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1238953142592">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953144450">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953144450">
                   <link role="variableDeclaration" targetNodeId="1238953125635" resolveInfo="foo" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953145511">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238953145511">
                   <link role="variableDeclaration" targetNodeId="1238953134825" resolveInfo="bar" />
                 </node>
               </node>
@@ -445,8 +445,8 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238953836182">
               <property name="name" value="pair" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1238953836183">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238953836184" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1238953836185" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238953836184" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1238953836185" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238953836186">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1238953836187" />
@@ -498,14 +498,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239723098725">
               <property name="name" value="tpl1" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239723098726">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239723101339" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1239723107386" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239723101339" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1239723107386" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239723255896">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239723263531">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239723263531">
                   <property name="value" value="1" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1239723265264">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1239723265264">
                   <property name="charConstant" value="a" />
                 </node>
               </node>
@@ -515,14 +515,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239723272182">
               <property name="name" value="tpl2" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239723272183">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239723272184" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1239723272185" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239723272184" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1239723272185" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239723272186">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239723272187">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239723272187">
                   <property name="value" value="1" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1239723272188">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1239723272188">
                   <property name="charConstant" value="a" />
                 </node>
               </node>
@@ -1133,8 +1133,8 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239722554918">
               <property name="name" value="itpl" />
               <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="1239722554919">
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239722558447" />
-                <node role="memberType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239722559862" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239722558447" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1239722559862" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239722577522">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1239722577454" />
@@ -1197,10 +1197,10 @@
                 </node>
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239722643440">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239722646819">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239722646819">
                   <link role="variableDeclaration" targetNodeId="1239722632312" resolveInfo="foo" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239722648048">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239722648048">
                   <link role="variableDeclaration" targetNodeId="1239722636203" resolveInfo="bar" />
                 </node>
               </node>
@@ -1529,10 +1529,10 @@
                 <link role="variableDeclaration" targetNodeId="1239977223489" resolveInfo="pair" />
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="1239977231413">
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239977246173">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239977246173">
                   <link role="variableDeclaration" targetNodeId="1239977238562" resolveInfo="x" />
                 </node>
-                <node role="member" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239977247272">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239977247272">
                   <link role="variableDeclaration" targetNodeId="1239977244349" resolveInfo="y" />
                 </node>
               </node>

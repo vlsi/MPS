@@ -49,7 +49,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList_2140_0(EditorContext context, SNode node) {
     if (this.myListHandler_2140_0 == null) {
-      this.myListHandler_2140_0 = new IndexedTupleLiteral_Editor.memberListHandler_2140_0(node, "member", context);
+      this.myListHandler_2140_0 = new IndexedTupleLiteral_Editor.componentListHandler_2140_0(node, "component", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_2140_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_RefNodeList_2140_0(editorCell, node, context);
@@ -137,7 +137,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNodeList_2140_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_member");
+    editorCell.setCellId("refNodeList_component");
   }
 
   private static void setupBasic_ConceptProperty_2140_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -162,9 +162,9 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConceptProperty_2140_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class memberListHandler_2140_0 extends RefNodeListHandler {
+  public static class componentListHandler_2140_0 extends RefNodeListHandler {
 
-    public memberListHandler_2140_0(SNode ownerNode, String childRole, EditorContext context) {
+    public componentListHandler_2140_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

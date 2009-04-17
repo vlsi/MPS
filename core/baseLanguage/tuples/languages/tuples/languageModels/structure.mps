@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="member" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" featureKind="CHILD" />
+          <value featureName="component" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="memberType" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" featureKind="CHILD" />
+          <value featureName="componentType" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -21,9 +42,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="-1" />
+  <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238852151516">
@@ -37,7 +59,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238852204892">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="memberType" />
+      <property name="role" value="componentType" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
     </node>
@@ -63,7 +85,7 @@
     <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238853845806">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="member" />
+      <property name="role" value="component" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     </node>
