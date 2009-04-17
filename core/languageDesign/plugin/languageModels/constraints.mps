@@ -653,8 +653,8 @@
                   <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1227013118725">
                     <link role="concept" targetNodeId="7.1207145360364" resolveInfo="BuildGroupBlock" />
                   </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1227013118726">
-                    <link role="concept" targetNodeId="7.1207489456631" resolveInfo="DoUpdateGroupBlock" />
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1239987119888">
+                    <link role="concept" targetNodeId="7.1239975436002" resolveInfo="UpdateGroupFunction" />
                   </node>
                 </node>
               </node>

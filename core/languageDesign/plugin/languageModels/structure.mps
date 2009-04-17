@@ -1315,13 +1315,12 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207145475354">
     <property name="package" value="Actions.Groups.GroupContents" />
     <property name="name" value="AddElementStatement" />
-    <link role="extends" targetNodeId="2.1068580123155" resolveInfo="ExpressionStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207145494930">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="element" />
+      <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-      <link role="specializedLink" targetNodeId="2.1068580123156" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207145771679">
       <property name="value" value="add" />

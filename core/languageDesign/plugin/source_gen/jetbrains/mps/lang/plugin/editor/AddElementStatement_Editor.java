@@ -64,8 +64,8 @@ public class AddElementStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_3560_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("element");
-    provider.setNoTargetText("<no element>");
+    provider.setRole("expression");
+    provider.setNoTargetText("<no expression>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_3560_0_internal(context, node, provider);
