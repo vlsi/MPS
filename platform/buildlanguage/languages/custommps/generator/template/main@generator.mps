@@ -3087,6 +3087,78 @@
         <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression" id="1236885260508" />
         <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1236885260509" />
       </node>
+      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1239974200488">
+        <link role="declaration" targetNodeId="6v.1199644187982" resolveInfo="mkdir" />
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239974207422">
+          <link role="attributeDeclaration" targetNodeId="6v.1199644187984" resolveInfo="dir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239974227872">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239974227873">
+              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239974227874">
+                <property name="value" value="scripts folder" />
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239974227875">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239974227876">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239974227877">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239974227878">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239974227879">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239974227880">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239974227881" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239974227882">
+                              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239974227883">
+                                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239974227884">
+                                  <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239974227885">
+                            <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="left" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239974227886">
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239974227887">
+                  <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
+                </node>
+                <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239974227888">
+                  <property name="value" value="/" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1239974232398">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1239974232399">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239974232400">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239974244113">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239974277950">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239974279513">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239974279514">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239974279515">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239974279516" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239974279517">
+                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239974279518">
+                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239974279519">
+                              <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239974279521">
+                        <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" id="1239974279522" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1236885039844">
         <link role="declaration" targetNodeId="6v.1199644186894" resolveInfo="unzip" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1236885049170">
@@ -3114,9 +3186,6 @@
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1236885242173">
           <link role="attributeDeclaration" targetNodeId="6v.1199644186896" resolveInfo="dest" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1236885248245">
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1236885264431">
-              <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
-            </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1239370889222">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1239370889223">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239370889224">
@@ -3144,44 +3213,47 @@
               </node>
               <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1239372390267">
                 <node role="templateNode" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239372460935">
-                  <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239372467958">
-                    <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239372471382">
-                      <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372475002">
-                        <property name="value" value="scripts folder" />
-                        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239372488253">
-                          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239372488254">
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239372488255">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239372494188">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372503398">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372494334">
-                                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239372494189" />
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239372496469">
-                                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239372496470">
-                                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239372501880">
-                                          <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
-                                        </node>
+                  <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239372471382">
+                    <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372475002">
+                      <property name="value" value="scripts folder" />
+                      <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239372488253">
+                        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239372488254">
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239372488255">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239372494188">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372503398">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239372494334">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239372494189" />
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239372496469">
+                                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239372496470">
+                                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239372501880">
+                                        <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239372508646">
-                                    <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
-                                  </node>
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239372508646">
+                                  <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
                                 </node>
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372469122">
+                    </node>
+                    <node role="left" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239974189592">
+                      <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239974190987">
+                        <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
+                      </node>
+                      <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239372469122">
                         <property name="value" value="/" />
                       </node>
-                    </node>
-                    <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239372466965">
-                      <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239974182881">
+              <link role="propertyDeclaration" targetNodeId="1236885260507" resolveInfo="mps_home" />
             </node>
           </node>
         </node>
@@ -4493,8 +4565,44 @@
         <node role="role" type="jetbrains.mps.build.distrib.structure.Role" id="1234780843467">
           <property name="name" value="Editor" />
         </node>
-        <node role="icon" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780843468">
-          <property name="path" value="resources/mps.icns" />
+        <node role="icon" type="jetbrains.mps.build.packaging.structure.Path" id="1239975455644">
+          <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239975455645">
+            <property name="name" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239975455646">
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975462892">
+              <property name="path" value="build" />
+              <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239975476521">
+                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239975476522">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239975476523">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239975491169">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239975491170">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239975491171">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1239975491172" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1239975491173">
+                            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1239975491174">
+                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239975491175">
+                                <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1239975491176">
+                          <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975465441">
+              <property name="path" value="resources" />
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975469534">
+              <property name="path" value="mps.icns" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="javaApplicationStubPath" type="jetbrains.mps.build.packaging.structure.Path" id="1234894088288">

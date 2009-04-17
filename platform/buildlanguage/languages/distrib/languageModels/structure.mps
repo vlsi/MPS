@@ -372,7 +372,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234543961966">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="icon" />
-      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234543956343">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />

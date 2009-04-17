@@ -5,7 +5,7 @@ package jetbrains.mps.build.distrib.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.build.distrib.structure.AbstractPath;
+import jetbrains.mps.build.packaging.structure.IPath;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -63,11 +63,11 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
     this.setProperty(FileAssociation.VIRTUAL_PACKAGE, value);
   }
 
-  public AbstractPath getIcon() {
-    return (AbstractPath)this.getChild(AbstractPath.class, FileAssociation.ICON);
+  public IPath getIcon() {
+    return (IPath)this.getChild(IPath.class, FileAssociation.ICON);
   }
 
-  public void setIcon(AbstractPath node) {
+  public void setIcon(IPath node) {
     super.setChild(FileAssociation.ICON, node);
   }
 

@@ -358,7 +358,12 @@ public class QueriesGenerated {
           return m;
         }
       }
-      return null;
+      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter <SNode>() {
+
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"));
+        }
+      });
     }
     SNode macro = IMacroHolder_Behavior.call_findMacroForReference_1234972707641(holder, SLinkOperations.getTarget(_context.getNode(), "macro", true));
     return _context.getOutputNodeByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration");
