@@ -200,8 +200,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239715549877">
                 <link role="variableDeclaration" targetNodeId="1239715447307" resolveInfo="conceptContainer" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1239715560337">
-                <link role="link" targetNodeId="1.1239714458094" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239940770882">
+                <link role="baseMethodDeclaration" targetNodeId="6.1239801518275" resolveInfo="getAllConcepts" />
               </node>
             </node>
           </node>

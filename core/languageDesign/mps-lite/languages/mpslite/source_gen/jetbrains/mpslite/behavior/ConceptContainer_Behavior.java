@@ -19,6 +19,8 @@ public class ConceptContainer_Behavior {
   public static List<SNode> call_getAllConcepts_1239801518275(SNode thisNode) {
     List<SNode> result = ListOperations.<SNode>createList();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "expressionConcept", true));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "statementConcept", true));
     return result;
   }
 

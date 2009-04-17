@@ -13,14 +13,14 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mpslite.behavior.ConceptContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
-import jetbrains.mpslite.behavior.ConceptContainer_Behavior;
 import jetbrains.mpslite.behavior.GenerationUtils;
 import jetbrains.mps.smodel.SModelRepository;
 
@@ -36,7 +36,7 @@ public class QueriesGenerated {
     Map<SNode, SNode> additionalConceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> partsToLinkDeclarations = MapSequence.fromMap(new HashMap<SNode, SNode>());
     SNode conceptContainer = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.ConceptContainer")).first();
-    List<SNode> allConcepts = SLinkOperations.getTargets(conceptContainer, "mpsLiteConcept", true);
+    List<SNode> allConcepts = ConceptContainer_Behavior.call_getAllConcepts_1239801518275(conceptContainer);
     for(SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));

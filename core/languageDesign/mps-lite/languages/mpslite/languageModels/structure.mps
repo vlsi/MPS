@@ -593,5 +593,26 @@
       <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239939522701">
+    <property name="name" value="BlockConcept" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239939536432">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="concreteSyntax" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1237380500632" resolveInfo="LineList" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239939531377">
+      <link role="intfc" targetNodeId="1237993244422" resolveInfo="IMPSLiteConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239939853119">
+    <property name="name" value="BlockBodyPart" />
+    <link role="extends" targetNodeId="1183015764815" resolveInfo="ChildPart" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239939882149">
+      <property name="value" value="[BODY]" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
