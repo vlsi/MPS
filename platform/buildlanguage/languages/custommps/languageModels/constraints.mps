@@ -86,6 +86,20 @@
         </node>
       </node>
     </node>
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1239989584660">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239989584661">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239989597544">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239989600666">
+            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1239989597545" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239989605232">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239989608957">
+                <link role="conceptDeclaration" targetNodeId="3v.1202916958754" resolveInfo="MPSLayout" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <visible index="4" modelUID="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1233928961311">
