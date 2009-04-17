@@ -78,8 +78,8 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
+          readCustomBuiltInLibraries();
           updatePredefinedLibraries();
-          updateCustomBuiltInLibraries();
           update();
         }
       });
@@ -184,7 +184,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     fireOnLoad(myPredefinedLibrariesOwner);
   }
 
-  private void updateCustomBuiltInLibraries() {
+  private void readCustomBuiltInLibraries() {
     BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
   }
 
