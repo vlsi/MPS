@@ -16,10 +16,10 @@ import jetbrains.mps.project.GlobalScope;
 public class PreferencePage extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePage";
   public static final String ICON = "icon";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String COMPONENT = "component";
   public static final String IS_MODIFIED_BLOCK = "isModifiedBlock";
   public static final String RESET_BLOCK = "resetBlock";
@@ -35,6 +35,14 @@ public class PreferencePage extends BaseConcept implements INamedConcept {
 
   public void setIcon(String value) {
     this.setProperty(PreferencePage.ICON, value);
+  }
+
+  public String getName() {
+    return this.getProperty(PreferencePage.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(PreferencePage.NAME, value);
   }
 
   public String getShortDescription() {
@@ -59,14 +67,6 @@ public class PreferencePage extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PreferencePage.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(PreferencePage.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(PreferencePage.NAME, value);
   }
 
   public Expression getComponent() {

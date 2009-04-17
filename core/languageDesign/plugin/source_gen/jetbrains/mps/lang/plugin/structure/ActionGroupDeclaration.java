@@ -19,10 +19,10 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration";
   public static final String CAPTION = "caption";
   public static final String MNEMONIC = "mnemonic";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String IS_INTERNAL = "isInternal";
   public static final String IS_POPUP = "isPopup";
   public static final String IS_INVISIBLE_WHEN_DISABLED = "isInvisibleWhenDisabled";
@@ -49,6 +49,14 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
     this.setProperty(ActionGroupDeclaration.MNEMONIC, value);
   }
 
+  public String getName() {
+    return this.getProperty(ActionGroupDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ActionGroupDeclaration.NAME, value);
+  }
+
   public String getShortDescription() {
     return this.getProperty(ActionGroupDeclaration.SHORT_DESCRIPTION);
   }
@@ -71,14 +79,6 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
 
   public void setVirtualPackage(String value) {
     this.setProperty(ActionGroupDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ActionGroupDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ActionGroupDeclaration.NAME, value);
   }
 
   public boolean getIsInternal() {

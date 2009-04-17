@@ -19,10 +19,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FileGeneratorDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String EXTENDED_CLASS = "extendedClass";
   public static final String GENERATE_BLOCK = "generateBlock";
   public static final String IS_DEFAULT_BLOCK = "isDefaultBlock";
@@ -32,6 +32,14 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
 
   public FileGeneratorDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(FileGeneratorDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(FileGeneratorDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -56,14 +64,6 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
 
   public void setVirtualPackage(String value) {
     this.setProperty(FileGeneratorDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(FileGeneratorDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(FileGeneratorDeclaration.NAME, value);
   }
 
   public ClassConcept getExtendedClass() {

@@ -21,10 +21,10 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
   public static final String CAPTION = "caption";
   public static final String NUMBER = "number";
   public static final String ICON = "icon";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String INIT_BLOCK = "initBlock";
   public static final String DISPOSE_BLOCK = "disposeBlock";
   public static final String GET_COMPONENT_BLOCK = "getComponentBlock";
@@ -59,6 +59,14 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
     this.setProperty(ToolDeclaration.ICON, value);
   }
 
+  public String getName() {
+    return this.getProperty(ToolDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ToolDeclaration.NAME, value);
+  }
+
   public String getShortDescription() {
     return this.getProperty(ToolDeclaration.SHORT_DESCRIPTION);
   }
@@ -81,14 +89,6 @@ public class ToolDeclaration extends BaseConcept implements IClassifier {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ToolDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ToolDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ToolDeclaration.NAME, value);
   }
 
   public ProjectPluginInitBlock getInitBlock() {

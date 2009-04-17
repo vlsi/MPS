@@ -16,16 +16,24 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ProjectPluginDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String INIT_BLOCK = "initBlock";
   public static final String DISPOSE_BLOCK = "disposeBlock";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
 
   public ProjectPluginDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ProjectPluginDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ProjectPluginDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -50,14 +58,6 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
 
   public void setVirtualPackage(String value) {
     this.setProperty(ProjectPluginDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ProjectPluginDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ProjectPluginDeclaration.NAME, value);
   }
 
   public ProjectPluginInitBlock getInitBlock() {

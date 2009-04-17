@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractEditorTab extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.AbstractEditorTab";
   public static final String EMPTY_CAPTION = "emptyCaption";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String CREATE_BLOCK = "createBlock";
 
   public AbstractEditorTab(SNode node) {
@@ -29,6 +29,14 @@ public class AbstractEditorTab extends BaseConcept implements INamedConcept {
 
   public void setEmptyCaption(String value) {
     this.setProperty(AbstractEditorTab.EMPTY_CAPTION, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AbstractEditorTab.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AbstractEditorTab.NAME, value);
   }
 
   public String getShortDescription() {
@@ -53,14 +61,6 @@ public class AbstractEditorTab extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractEditorTab.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(AbstractEditorTab.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AbstractEditorTab.NAME, value);
   }
 
   public CreateBlock getCreateBlock() {

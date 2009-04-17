@@ -16,16 +16,24 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TabbedEditorDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String MAIN_CONCEPT = "mainConcept";
   public static final String GET_MAIN_CONCEPT_BLOCK = "getMainConceptBlock";
   public static final String TABS = "tabs";
 
   public TabbedEditorDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(TabbedEditorDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TabbedEditorDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -50,14 +58,6 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
 
   public void setVirtualPackage(String value) {
     this.setProperty(TabbedEditorDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(TabbedEditorDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TabbedEditorDeclaration.NAME, value);
   }
 
   public AbstractConceptDeclaration getMainConcept() {

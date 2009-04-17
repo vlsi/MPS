@@ -938,7 +938,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1209134926486">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209134926487">
             <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1229269768284">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1229269768285" />
               <node role="item" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229269770989">
                 <link role="action" targetNodeId="1229269468142" resolveInfo="NewAspectModel" />
                 <node role="actualParameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229269773834">
@@ -7852,7 +7851,6 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1228318065358">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1228318065359" />
               <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1228318065360" />
             </node>
           </node>
@@ -7871,7 +7869,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="1228318039213">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1228318039214" />
           <node role="item" type="jetbrains.mps.lang.plugin.structure.Separator" id="1228318059434" />
         </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1228318072537">

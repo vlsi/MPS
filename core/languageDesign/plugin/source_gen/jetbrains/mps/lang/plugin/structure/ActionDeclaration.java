@@ -23,10 +23,10 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   public static final String CAPTION = "caption";
   public static final String DESCRIPTION = "description";
   public static final String MNEMONIC = "mnemonic";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String IS_ALWAYS_VISIBLE = "isAlwaysVisible";
   public static final String OUTSIDE_COMMAND_EXECUTION = "outsideCommandExecution";
   public static final String UPDATE_BLOCK = "updateBlock";
@@ -72,6 +72,14 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
     this.setProperty(ActionDeclaration.MNEMONIC, value);
   }
 
+  public String getName() {
+    return this.getProperty(ActionDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ActionDeclaration.NAME, value);
+  }
+
   public String getShortDescription() {
     return this.getProperty(ActionDeclaration.SHORT_DESCRIPTION);
   }
@@ -94,14 +102,6 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ActionDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ActionDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ActionDeclaration.NAME, value);
   }
 
   public boolean getIsAlwaysVisible() {

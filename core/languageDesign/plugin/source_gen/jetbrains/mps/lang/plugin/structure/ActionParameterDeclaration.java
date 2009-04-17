@@ -12,14 +12,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionParameterDeclaration extends FieldDeclaration implements IMember, ActionParameter {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String IS_OPTIONAL = "isOptional";
 
   public ActionParameterDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ActionParameterDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ActionParameterDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -44,14 +52,6 @@ public class ActionParameterDeclaration extends FieldDeclaration implements IMem
 
   public void setVirtualPackage(String value) {
     this.setProperty(ActionParameterDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ActionParameterDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ActionParameterDeclaration.NAME, value);
   }
 
   public boolean getIsOptional() {

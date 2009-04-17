@@ -1317,6 +1317,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207145494930">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="element" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
       <link role="specializedLink" targetNodeId="2.1068580123156" />
     </node>
@@ -2390,7 +2391,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227013049127">
     <property name="package" value="Actions.Groups.GroupContents" />
     <property name="name" value="AddStatement" />
-    <link role="extends" targetNodeId="2.1068580123155" resolveInfo="ExpressionStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227013166210">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="item" />
