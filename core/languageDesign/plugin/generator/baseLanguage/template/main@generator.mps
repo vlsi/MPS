@@ -1875,8 +1875,8 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227366698311">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227366698312">
-                    <link role="conceptDeclaration" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239977098654">
+                    <link role="conceptDeclaration" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
                   </node>
                 </node>
               </node>
@@ -2120,13 +2120,18 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207490121825">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207490132599">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207490132601">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1207490132602">
-                        <link role="concept" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207490132603">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207490132604" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207490132605">
-                            <link role="link" targetNodeId="1.1207145245948" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239977033148">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1207490132602">
+                          <link role="concept" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207490132603">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207490132604" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207490132605">
+                              <link role="link" targetNodeId="1.1207145245948" />
+                            </node>
                           </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239977038183">
+                          <link role="link" targetNodeId="1.1239975488603" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207490132606">
@@ -2224,8 +2229,8 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207489805588">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1207489857755">
-                    <link role="conceptDeclaration" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239977020143">
+                    <link role="conceptDeclaration" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
                   </node>
                 </node>
               </node>
@@ -2319,8 +2324,8 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227366616390">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227366616391">
-                    <link role="conceptDeclaration" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239977051887">
+                    <link role="conceptDeclaration" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
                   </node>
                 </node>
               </node>

@@ -28,9 +28,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1217592749201">
     <property name="name" value="DeleteOldLinks" />
     <property name="title" value="Delete Old Links" />
@@ -238,6 +239,71 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1239973979147" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239973979148">
                 <link role="variableDeclaration" targetNodeId="1239973799521" resolveInfo="child" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1239976380271">
+    <property name="migrationFromBuild" value="3076" />
+    <property name="name" value="ConvertUpdateMethod" />
+    <property name="title" value="Convert Update Method" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1239976431843">
+      <property name="description" value="Convert DoUpdateGroupBlock to UpdateGroupBlock" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1239976431844">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239976431845">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239976508272">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239976508273">
+              <property name="name" value="newNode" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239976508274">
+                <link role="concept" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976508275">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976508276">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239976508277" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1239976508278" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="1239976508279">
+                  <link role="concept" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239976518423">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976528044">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976525758">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976520581">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239976518424">
+                    <link role="variableDeclaration" targetNodeId="1239976508273" resolveInfo="newNode" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239976524804">
+                    <link role="link" targetNodeId="1.1239975488603" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239976527231">
+                  <link role="link" targetNodeId="5.1137022507850" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1239976529439">
+                <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976539770">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239976539771" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239976539772">
+                    <link role="link" targetNodeId="5.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239976550681">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239976551777">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1239976550682" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1239976553047">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239976554674">
+                  <link role="variableDeclaration" targetNodeId="1239976508273" resolveInfo="newNode" />
+                </node>
               </node>
             </node>
           </node>

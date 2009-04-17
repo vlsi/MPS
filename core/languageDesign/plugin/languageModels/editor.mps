@@ -3248,5 +3248,20 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812262686" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1239975683158">
+    <property name="package" value="Actions.Groups.GroupContents" />
+    <link role="conceptDeclaration" targetNodeId="1.1239975356883" resolveInfo="UpdateGroupBlock" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1239975698901">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239975702654">
+        <link role="relationDeclaration" targetNodeId="1.1239975488603" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239975706000" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239975713408">
+        <property name="noTargetText" value="&lt;no enumerate function&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1239975503745" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239975698903" />
+    </node>
+  </node>
 </model>
 

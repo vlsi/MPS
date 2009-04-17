@@ -700,7 +700,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1207489799217(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock");
   }
 
   public static boolean ifMacro_Condition_1207497626313(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -845,11 +845,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1227366613930(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock");
   }
 
   public static boolean ifMacro_Condition_1227366696257(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock");
   }
 
   public static boolean ifMacro_Condition_1227461281216(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -938,7 +938,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207490121824(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock"), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"), "updateFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1209910468340(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

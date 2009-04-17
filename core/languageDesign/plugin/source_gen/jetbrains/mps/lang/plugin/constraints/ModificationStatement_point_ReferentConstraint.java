@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ModificationStatement_point_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -29,15 +29,15 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ModificationStatement"), "modifiedGroup", false), "contents", true);
-    if (!(SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"))) {
-      return ListOperations.<SNode>createList();
-    }
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter <SNode>() {
+    if (SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents")) {
+      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter <SNode>() {
 
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ExtentionPoint");
-      }
-    }).toListSequence();
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ExtentionPoint");
+        }
+      }).toListSequence();
+    }
+    return ListOperations.<SNode>createList();
   }
 
 }

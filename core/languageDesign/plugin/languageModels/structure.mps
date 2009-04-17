@@ -443,7 +443,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="29" />
+  <maxImportIndex value="31" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -457,6 +457,8 @@
   <import index="23" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.workbench.actions(jetbrains.mps.workbench.actions@java_stub)" version="-1" />
+  <import index="31" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -1385,6 +1387,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1239975353851" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207490810216">
     <property name="package" value="Actions.Groups" />
@@ -2445,6 +2448,69 @@
     <property name="package" value="Command" />
     <property name="name" value="BaseExecuteCommandStatementSync" />
     <link role="extends" targetNodeId="1225441160166" resolveInfo="BaseExecuteCommandStatement" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239975356883">
+    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="name" value="UpdateGroupBlock" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239975862177">
+      <property name="value" value="update" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239975488603">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="updateFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1239975436002" resolveInfo="UpdateGroupMethod" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239975503745">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="enumerateFunction" />
+      <link role="target" targetNodeId="1239975563668" resolveInfo="EnumerateActionsMethod" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239975399235">
+      <link role="intfc" targetNodeId="1207145102141" resolveInfo="GroupContents" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239975436002">
+    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="name" value="UpdateGroupFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239975436004">
+      <property name="value" value="update" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239975436005">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1239975436006">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239975436007" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1239975436008">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_AnActionEvent" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239975563668">
+    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="name" value="EnumerateChildrenFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239975563669">
+      <property name="value" value="enumerateChildren" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239975563670">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1239975563671">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1239976806302">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239976867257">
+          <link role="classifier" targetNodeId="31.~BaseAction" resolveInfo="BaseAction" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
