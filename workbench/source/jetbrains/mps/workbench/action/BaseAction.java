@@ -90,12 +90,6 @@ public abstract class BaseAction extends AnAction {
   public final void update(final AnActionEvent e) {
     super.update(e);
 
-    //todo this is a workaround for IDEA-22415. Remove after they'll fix it
-    if (ProgressManager.getInstance().hasModalProgressIndicator()){
-      disable(e.getPresentation());
-      return;
-    }
-
     ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
 
     if (e.getInputEvent() instanceof KeyEvent) {
