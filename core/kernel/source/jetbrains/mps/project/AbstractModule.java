@@ -341,9 +341,7 @@ public abstract class AbstractModule implements IModule {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ModuleReference lr : descriptor.getUsedLanguages()) {
-        result.add(ModuleReference.fromString(lr.getModuleFqName()));
-      }
+      result.addAll(descriptor.getUsedLanguages());
     }
     return result;
   }
@@ -380,9 +378,7 @@ public abstract class AbstractModule implements IModule {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ModuleReference dr : descriptor.getUsedDevkits()) {
-        result.add(ModuleReference.fromString(dr.getModuleFqName()));
-      }
+      result.addAll(descriptor.getUsedDevkits());
     }
     return result;
   }

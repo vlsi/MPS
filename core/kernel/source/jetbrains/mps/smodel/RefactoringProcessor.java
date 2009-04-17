@@ -193,6 +193,10 @@ public class RefactoringProcessor {
 
   public void writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
+    updateModels(initialModelReference, model, refactoringContext);
+  }
+
+  public void updateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) {
         continue;
@@ -241,12 +245,17 @@ public class RefactoringProcessor {
     }
   }
 
-  private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
-    refactoringContext.getRefactoring().updateModel(model, refactoringContext);
-    model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
+  private void processModel(final SModel model, final SModel usedModel, final RefactoringContext refactoringContext) {
+    model.runLoadingAction(new Runnable() {
+      public void run() {
+        refactoringContext.getRefactoring().updateModel(model, refactoringContext);
+        model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
+        SModelRepository.getInstance().markChanged(model);
+      }
+    });
   }
 
-  private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
+  public void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
     if (refactoringContext.isLocal()) return;
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);

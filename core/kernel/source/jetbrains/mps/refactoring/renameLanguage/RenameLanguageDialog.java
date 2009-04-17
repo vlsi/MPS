@@ -17,6 +17,9 @@ package jetbrains.mps.refactoring.renameLanguage;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.generator.GeneratorManager;
@@ -36,6 +39,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Set;
 import java.util.LinkedHashSet;
+
+import org.jetbrains.annotations.NotNull;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -82,27 +87,38 @@ public class RenameLanguageDialog extends BaseDialog {
   public void buttonOk() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
-    boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
-      public Boolean compute() {
-        final String fqName = myLanguageNameField.getText();
 
-        if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
-          setErrorText("Duplicate language name");
-          return false;
-        }
-
-        new LanguageRenamer(myProject, myLanguage, fqName).rename(needToRegenerate);
-        return true;
-      }
-    });
-
-    if (!renamed) {
+    final String fqName = myLanguageNameField.getText();
+    if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
+      setErrorText("Duplicate language name");
       return;
     }
 
+    final LanguageRenamer renamer = new LanguageRenamer(myProject, myLanguage, fqName);
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        renamer.rename(needToRegenerate);
+      }
+    });
+
+    ProgressManager.getInstance().run(new Modal(myProject, "Updating langauge references...", false) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.pushState();
+        try {
+          indicator.setIndeterminate(true);
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              renamer.update();
+            }
+          });
+        } finally {          
+          indicator.popState();
+        }
+      }
+    });
 
     if (needToRegenerate) {
-
       final Set<Language> langs = new LinkedHashSet<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

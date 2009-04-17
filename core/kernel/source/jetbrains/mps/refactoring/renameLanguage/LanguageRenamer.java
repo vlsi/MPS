@@ -40,11 +40,14 @@ public class LanguageRenamer {
   private Project myProject;
   private Language myLanguage;
   private String myNewName;
+  private RefactoringProcessor myProcessor;
+  private RefactoringContext myContext = new RefactoringContext(new MyRefactoring());
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myProject = project;
     myLanguage = language;
     myNewName = newName;
+    myProcessor = new RefactoringProcessor();
   }
 
   public void rename(boolean deleteOldFiles) {
@@ -62,8 +65,6 @@ public class LanguageRenamer {
     if (deleteOldFiles) {
       deleteOldFiles(oldFiles);
     }
-
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   private void deleteOldFiles(List<File> oldModelRoots) {
@@ -77,11 +78,10 @@ public class LanguageRenamer {
     }
 
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    RefactoringContext context = new RefactoringContext(new MyRefactoring());
     for (AbstractConceptDeclaration concept : structure.getSModel().allAdapters(AbstractConceptDeclaration.class)) {
-      context.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
+      myContext.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
     }
-    context.computeCaches();
+    myContext.computeCaches();
 
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
@@ -97,9 +97,9 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    updateReferences();
+    myProcessor.writeIntoLog(structure.getSModel(), myContext);
 
-    new RefactoringProcessor().writeInLogAndUpdateModels(structure.getSModelReference(), structure.getSModel(), context);
+    SModelRepository.getInstance().saveAll(); 
   }
 
   private void renameGenerators(String oldFqName) {
@@ -119,9 +119,13 @@ public class LanguageRenamer {
       }
     }
 
-    updateReferences();
-
     myLanguage.save();
+  }
+
+  public void update() {
+    updateReferences();
+    SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    myProcessor.updateModels(structure.getSModelReference(), structure.getSModel(), myContext);
   }
 
   private void updateReferences() {
