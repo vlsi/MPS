@@ -61,8 +61,8 @@ public class GenerationUtils {
   public static void fillBinarySideTransformActions(SNode binaryOperationConcept, SNode actions, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
     SNode expressionConcept = (SNode)conceptsToTargets.get(SLinkOperations.getTarget(SNodeOperations.getAncestor(binaryOperationConcept, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true));
     if ((expressionConcept != null)) {
-      SNode rtBuilder = new _Quotations.QuotationClass_3().createNode(SNodeOperations.cast(linePartsToLinks.get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), conceptsToTargets.get(binaryOperationConcept), expressionConcept);
-      SNode ltBuilder = new _Quotations.QuotationClass_4().createNode(SNodeOperations.cast(linePartsToLinks.get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), conceptsToTargets.get(binaryOperationConcept), expressionConcept);
+      SNode rtBuilder = new _Quotations.QuotationClass_4().createNode(SNodeOperations.cast(linePartsToLinks.get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), conceptsToTargets.get(binaryOperationConcept), expressionConcept);
+      SNode ltBuilder = new _Quotations.QuotationClass_5().createNode(SNodeOperations.cast(linePartsToLinks.get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), conceptsToTargets.get(binaryOperationConcept), expressionConcept);
       SLinkOperations.addChild(actions, "actionsBuilder", rtBuilder);
       SLinkOperations.addChild(actions, "actionsBuilder", ltBuilder);
     }

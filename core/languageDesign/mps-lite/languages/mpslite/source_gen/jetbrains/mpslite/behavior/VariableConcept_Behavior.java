@@ -75,4 +75,10 @@ public class VariableConcept_Behavior {
     return editor;
   }
 
+  public static SNode call_createVariableScope_1239942296621(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    SNode statementConcept = conceptsToTargets.get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true));
+    SNode result = new _Quotations.QuotationClass_3().createNode(SNodeOperations.cast(partsToLinks.get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), conceptsToTargets.get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true)));
+    return result;
+  }
+
 }
