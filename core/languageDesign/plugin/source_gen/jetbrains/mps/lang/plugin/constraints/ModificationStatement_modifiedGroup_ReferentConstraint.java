@@ -30,12 +30,12 @@ public class ModificationStatement_modifiedGroup_ReferentConstraint extends Base
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
     SNode groupDeclaration = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
-    List<SNode> thisGroupChildGroups = ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false)).where(new IWhereFilter <SNode>() {
+    List<SNode> thisGroupChildGroups = ((List<SNode>)ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-    }).toListSequence();
+    }).toListSequence());
     ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
     return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
   }

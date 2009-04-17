@@ -106,6 +106,14 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7672_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7672_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_7672_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.plugin.constraints.ParameterizedActionCreator_constructorDeclaration_ReferentConstraint;
 import jetbrains.mps.lang.plugin.constraints.ModificationStatement_point_ReferentConstraint;
 import jetbrains.mps.lang.plugin.constraints.ModificationStatement_modifiedGroup_ReferentConstraint;
@@ -13,13 +13,13 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new ParameterizedActionCreator_constructorDeclaration_ReferentConstraint());
-    this.myConstraints.add(new ModificationStatement_point_ReferentConstraint());
-    this.myConstraints.add(new ModificationStatement_modifiedGroup_ReferentConstraint());
-    this.myConstraints.add(new ActionDataParameterDeclaration_key_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ParameterizedActionCreator_constructorDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ModificationStatement_point_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ModificationStatement_modifiedGroup_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ActionDataParameterDeclaration_key_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

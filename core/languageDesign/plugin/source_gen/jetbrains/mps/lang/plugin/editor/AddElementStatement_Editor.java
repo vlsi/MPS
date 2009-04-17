@@ -86,14 +86,6 @@ public class AddElementStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_3560_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3560_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_RefNode_3560_0(EditorCell editorCell, SNode node, EditorContext context) {

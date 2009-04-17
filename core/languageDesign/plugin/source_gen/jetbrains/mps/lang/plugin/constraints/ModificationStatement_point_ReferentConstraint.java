@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,11 +28,11 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "modifiedGroup", false), "contents", true);
-    if (SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.BuildGroupBlock")) {
-      return new SimpleSearchScope(ListOperations.<SNode>createList());
+    SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ModificationStatement"), "modifiedGroup", false), "contents", true);
+    if (!(SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"))) {
+      return ListOperations.<SNode>createList();
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(contents, "reference", true)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ExtentionPoint");
