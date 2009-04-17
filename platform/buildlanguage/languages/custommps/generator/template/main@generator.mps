@@ -4314,15 +4314,12 @@
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1237901321778">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1237901321779">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237901321780">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237901329621">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237901332837">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237901329851">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237901329622" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237901331164">
-                      <link role="link" targetNodeId="1.1237897943794" />
-                    </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239988946703">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239988962138">
+                  <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1239988963084">
+                    <link role="baseMethodDeclaration" targetNodeId="4.1239989216852" resolveInfo="isInMPSBuild" />
+                    <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1237901336401" />
                 </node>
               </node>
             </node>
