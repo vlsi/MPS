@@ -59,11 +59,11 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   @NotNull()
-  public static String getActionId(Object... args) {
+  public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(GenericRefactoringAction.class.getName());
     res.append("#");
-    res.append(args[0].getClass().getName());
+    res.append(myRefactoring.getClass().getName());
     return res.toString();
   }
 

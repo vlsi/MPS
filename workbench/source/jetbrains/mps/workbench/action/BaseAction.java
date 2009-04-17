@@ -193,9 +193,4 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected abstract void doExecute(AnActionEvent e);
-
-  //todo remove
-  public static String getIdMethodName() {
-    return "getActionId";
-  }
 }
