@@ -89,18 +89,16 @@ public class NewAspectModel_Action extends GeneratedAction {
     }
   }
 
-
   @NotNull()
-  public static String getActionId(Object... args) {
+  public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(NewAspectModel_Action.class.getName());
     res.append("#");
-    int i = 0;
-    res.append(aspect_State((LanguageAspect)args[i]));
+    res.append(aspect_State((LanguageAspect)this.aspect));
     res.append("!");
-    i++ ;
     return res.toString();
   }
+
 
   public static String aspect_State(LanguageAspect object) {
     return object.getName();

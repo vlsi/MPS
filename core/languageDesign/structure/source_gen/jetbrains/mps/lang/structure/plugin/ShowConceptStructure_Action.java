@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.plugin.StructureView_Tool;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class ShowConceptStructure_Action extends GeneratedAction {
@@ -69,7 +69,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       StructureView_Tool tool = ShowConceptStructure_Action.this.project.getPluginManager().getTool(StructureView_Tool.class);
-      tool.getStructureView().inspect((AbstractConceptDeclaration)((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptStructure_Action.this.node)), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
+      tool.getStructureView().inspect(((ConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(ShowConceptStructure_Action.this.node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);

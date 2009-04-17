@@ -20,7 +20,6 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -28,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,55 +49,39 @@ public class ActionFactory {
     if (module == null) return null;
     Class actionClass = module.getClass(actionClassName);
 
-    Method idMethod = null;
     if (actionClass == null) {
       LOG.warning("Action " + actionClassName + " is not found in module " + moduleNamespace);
       return null;
     }
 
-    for (Method m : actionClass.getMethods()) {
-      if (m.getName().equals(GeneratedAction.getIdMethodName())) {
-        idMethod = m;
-        break;
-      }
-    }
+    BaseAction newAction = (BaseAction) createAction(actionClass, params);
+    String actionId=newAction.getActionId();
+    String id = getFullId(actionId, moduleNamespace, actionClass);
 
-    String id;
-    //todo - this is a support for java actions. When all java actions are rewritten,remove this
-    if (idMethod == null) {
-      id = actionClass.getName();
+    AnAction registeredAction = ActionManager.getInstance().getAction(id);
+    if (registeredAction == null) {
+      registerAction(newAction, id, moduleNamespace);
+      return newAction;
     } else {
-      try {
-        String actionId = (String) idMethod.invoke(null, new Object[]{params});
-        id = getFullId(actionId, moduleNamespace, actionClass);
-      } catch (IllegalAccessException e) {
-        LOG.error("This can't happen", e);
-        return null;
-      } catch (InvocationTargetException e) {
-        LOG.error("User's " + BaseAction.getIdMethodName() + "() method failed", e);
-        return null;
-      }
+      return registeredAction;
     }
+  }
 
-    AnAction action = ActionManager.getInstance().getAction(id);
-    if (action == null) {
-      try {
-        AnAction newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
-        registerAction(newAction, id, moduleNamespace);
-        return newAction;
-      } catch (InstantiationException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      } catch (IllegalAccessException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      } catch (InvocationTargetException e) {
-        LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-        return null;
-      }
-    } else {
-      return action;
+  private AnAction createAction(Class actionClass, Object... params) {
+    AnAction newAction;
+    try {
+      newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
+    } catch (InstantiationException e) {
+      LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+      newAction= null;
+    } catch (IllegalAccessException e) {
+      LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+      newAction= null;
+    } catch (InvocationTargetException e) {
+      LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
+      newAction= null;
     }
+    return newAction;
   }
 
   @Nullable

@@ -92,18 +92,16 @@ public class NewLanguage_Action extends GeneratedAction {
     }
   }
 
-
   @NotNull()
-  public static String getActionId(Object... args) {
+  public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(NewLanguage_Action.class.getName());
     res.append("#");
-    int i = 0;
-    res.append(folder_State((String)args[i]));
+    res.append(folder_State((String)this.folder));
     res.append("!");
-    i++ ;
     return res.toString();
   }
+
 
   public static String folder_State(String object) {
     return object;

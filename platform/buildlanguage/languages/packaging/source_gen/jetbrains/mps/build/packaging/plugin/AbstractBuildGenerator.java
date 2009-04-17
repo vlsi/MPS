@@ -5,6 +5,8 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
+import jetbrains.mps.build.packaging.plugin.NodeData;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelRepository;
@@ -21,7 +23,7 @@ public abstract class AbstractBuildGenerator {
   private String myModelName;
   private SModelDescriptor myModelDescriptor;
   private boolean myCreateModel = true;
-  private final List<NodeData> myModules = new LinkedList<NodeData>();
+  private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
 
   public AbstractBuildGenerator() {
   }
@@ -82,8 +84,8 @@ public abstract class AbstractBuildGenerator {
   }
 
   public void setModules(List<NodeData> modules) {
-    this.myModules.clear();
-    this.myModules.addAll(modules);
+    ListSequence.fromList(this.myModules).clear();
+    ListSequence.fromList(this.myModules).addSequence(ListSequence.fromList(modules));
   }
 
   public void setCreateModel(boolean createModel) {

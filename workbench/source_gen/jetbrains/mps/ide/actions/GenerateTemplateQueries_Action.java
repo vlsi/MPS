@@ -104,16 +104,13 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     }
   }
 
-
   @NotNull()
-  public static String getActionId(Object... args) {
+  public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateTemplateQueries_Action.class.getName());
     res.append("#");
-    int i = 0;
-    res.append(args[i].toString());
+    res.append(((Object)this.regenerate).toString());
     res.append("!");
-    i++ ;
     return res.toString();
   }
 

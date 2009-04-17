@@ -188,7 +188,7 @@ public abstract class BaseAction extends AnAction {
     e.getPresentation().setEnabled(true);
   }
 
-  public String getIdent(){
+  public String getActionId(){
     return getClass().getName();
   }
 
