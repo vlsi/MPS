@@ -712,6 +712,51 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1239995424995">
+      <property name="name" value="isInMPSBuild" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239995424996" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239995429224" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239995424998">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239995437916">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239995498812">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239995439518">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239995445973">
+                <link role="baseMethodDeclaration" targetNodeId="2.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239995458808">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239995461976">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239995464476">
+                      <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
+                      <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239995469959">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239995459051">
+                        <property name="value" value="lib" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239995478381">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239995490750">
+                          <property name="value" value="mps.jar" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239995474396">
+                          <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
+                          <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239995454275">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                    <link role="classConcept" targetNodeId="4.~PathManager" resolveInfo="PathManager" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1239995500107">
+              <link role="baseMethodDeclaration" targetNodeId="2.~File.exists():boolean" resolveInfo="exists" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234799067089">
     <link role="concept" targetNodeId="1.1233925934806" resolveInfo="UndeclaredVariableReference" />

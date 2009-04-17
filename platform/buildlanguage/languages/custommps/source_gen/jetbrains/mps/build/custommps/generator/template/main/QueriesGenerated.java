@@ -282,7 +282,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237901321779(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(MPSBuild_Behavior.isInMPSBuild_1239989216852());
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean ifMacro_Condition_1238071255691(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -4317,8 +4317,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239988946703">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239988962138">
                   <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1239988963084">
-                    <link role="baseMethodDeclaration" targetNodeId="4.1239989216852" resolveInfo="isInMPSBuild" />
                     <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1239995424995" resolveInfo="isInMPSBuild" />
                   </node>
                 </node>
               </node>
