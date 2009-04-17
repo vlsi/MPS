@@ -271,15 +271,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538966072(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String path = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true)).getAbsolutePath();
-    int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
-    return path.substring(index + 1);
+    return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "javaApplicationStubPath", true)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234538966123(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String path = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "iconPath", true)).getAbsolutePath();
-    int index = path.lastIndexOf(SConceptPropertyOperations.getString(_context.getNode(), "pathSeparator"));
-    return path.substring(index + 1);
+    return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "iconPath", true)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234539002555(final IOperationContext operationContext, final PropertyMacroContext _context) {
