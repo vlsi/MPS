@@ -825,6 +825,28 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_1239975886561(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "typeVariableDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_1239975910640(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).select(new ISelector <SNode, SNode>() {
+
+      public SNode select(SNode t) {
+        return ClassifierTypeUtil.getTypeCoercedToClassifierType(t);
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_1239976179309(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "parameter", true)).select(new ISelector <SNode, SNode>() {
+
+      public SNode select(SNode t) {
+        return ClassifierTypeUtil.getTypeCoercedToClassifierType(t);
+      }
+    });
+  }
+
   public static SNode mapSrcMacro_mapper_1238928328546(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
     SPropertyOperations.set(ic, "value", "" + (SPropertyOperations.getInteger(_context.getNode(), "value") & 65535));

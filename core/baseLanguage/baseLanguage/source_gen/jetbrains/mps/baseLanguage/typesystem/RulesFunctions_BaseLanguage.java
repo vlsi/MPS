@@ -397,7 +397,7 @@ __switch__:
   }
 
   @CheckingMethod()
-  /* package */static SNode inference_matchTypeWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
+  public static SNode inference_matchTypeWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = typeCheckingContext.createNewRuntimeTypesVariable();

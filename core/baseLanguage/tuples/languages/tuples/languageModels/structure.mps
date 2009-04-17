@@ -135,8 +135,12 @@
       <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239567350755">
-      <property name="value" value="named tuple" />
+      <property name="value" value="tuple" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239878181172">
+      <property name="value" value="named tuple declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1239546105109">
       <property name="value" value="(" />

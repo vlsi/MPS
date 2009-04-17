@@ -20,7 +20,15 @@ public class NamedTupleType_Behavior {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(ntcd, "type", true))).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
       sep = ", ";
     }
-    return sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name")).toString();
+    sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name"));
+    sep = "<";
+    String suffix = "";
+    for(SNode t : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+      sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(t));
+      sep = ", ";
+      suffix = ">";
+    }
+    return sb.append(suffix).toString();
   }
 
 }

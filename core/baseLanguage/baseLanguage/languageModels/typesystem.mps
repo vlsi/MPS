@@ -2147,7 +2147,7 @@
       <property name="name" value="TRACE_METHOD_TYPES" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1204113905325" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1204113911679" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1222855829944">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239971965177">
         <property name="value" value="false" />
       </node>
     </node>
@@ -3901,6 +3901,7 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223926069052">
         <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239900276476" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1203431515739">
       <property name="name" value="inference_mapTypeVariables" />

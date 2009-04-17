@@ -26,7 +26,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
     if (!(Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", intentionProvider, errorTarget);
+      typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", intentionProvider, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = mae;
