@@ -31,11 +31,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237574003941" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237574003942" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574003943">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238252972981">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression" id="1238252972982">
-            <property name="fieldName" value="ABC" />
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1238252974078">
-              <property name="value" value="239" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239964502906">
+          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" id="1239964502907">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239964506091">
+              <link role="classifier" targetNodeId="2.~Boolean" resolveInfo="Boolean" />
             </node>
           </node>
         </node>

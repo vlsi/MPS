@@ -23,7 +23,7 @@ public class InternalClassExpression_TextGen extends SNodeTextGen {
         BaseLanguageTextGen.clsName(pack, name, this);
       } else
       {
-        BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "type", true), this);
+        BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), this);
       }
     } else
     {

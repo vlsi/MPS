@@ -286,10 +286,15 @@
                   <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237981196780">
                     <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237981202204">
                       <link role="function" targetNodeId="2v.1234802562412" resolveInfo="classifierName" />
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237981205596">
-                        <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237981204908" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237981209397">
-                          <link role="link" targetNodeId="1.1174478663778" />
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239964688218">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239964685810">
+                          <link role="concept" targetNodeId="3v.1107535904670" resolveInfo="ClassifierType" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239964682071">
+                            <link role="variableDeclaration" targetNodeId="1236701763532" resolveInfo="type" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239964688910">
+                          <link role="link" targetNodeId="3v.1107535924139" />
                         </node>
                       </node>
                     </node>
