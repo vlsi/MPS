@@ -1991,6 +1991,10 @@
             <property name="id" value="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a" />
             <property name="name" value="jetbrains.mps.build.custommps" />
           </node>
+          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1240096589683">
+            <property name="id" value="8d09fa8b-0d65-4c2f-aae6-d4847a49d862" />
+            <property name="name" value="jetbrains.mps.build.custommpsInternal" />
+          </node>
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557014966">
             <property name="id" value="02824ec0-c6a4-4517-a484-12d85172bbaa" />
             <property name="name" value="jetbrains.mps.build.distrib" />

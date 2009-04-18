@@ -497,6 +497,14 @@
       <zipfileset dir="platform/buildlanguage/languages/custommps/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.build.custommpsInternal0">
+    <mkdir dir="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.custommpsInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/buildlanguage/languages/custommpsInternal/custommpsInternal.mpl" prefix="module" />
+      <zipfileset dir="platform/buildlanguage/languages/custommpsInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.build.distrib0">
     <mkdir dir="platform/buildlanguage/languages/distrib/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.distrib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">

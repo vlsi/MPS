@@ -292,6 +292,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ypath0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.custommpsInternal0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.distrib0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency0" />
