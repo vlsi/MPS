@@ -4779,19 +4779,14 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216120033411">
               <link role="baseMethodDeclaration" targetNodeId="9.~AbstractHierarchyView.showConceptInHierarchy(jetbrains.mps.smodel.INodeAdapter,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showConceptInHierarchy" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1216819571568">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216819575038">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216819575039">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216819575040" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1216819575041">
-                      <link role="member" targetNodeId="1216120033424" resolveInfo="node" />
-                    </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216819575038">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216819575039">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216819575040" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1216819575041">
+                    <link role="member" targetNodeId="1216120033424" resolveInfo="node" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1216819575042" />
                 </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216819580864">
-                  <link role="classifier" targetNodeId="122.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
-                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1216819575042" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216120279412">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216120280742">

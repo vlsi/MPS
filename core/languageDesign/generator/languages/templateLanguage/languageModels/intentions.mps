@@ -3429,31 +3429,6 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227315142198">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227315142199">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227315323680">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227315323681">
-                <property name="name" value="ownMappings" />
-                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237047237730">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237047237731">
-                    <link role="classifier" targetNodeId="25.~MappingConfiguration" resolveInfo="MappingConfiguration" />
-                  </node>
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227315323684">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1227315323685">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1227315323686">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227315323687">
-                        <link role="variableDeclaration" targetNodeId="1227315137583" resolveInfo="module" />
-                      </node>
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227315323688">
-                        <link role="classifier" targetNodeId="6.~Generator" resolveInfo="Generator" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227315323689">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~Generator.getOwnMappings():java.util.List" resolveInfo="getOwnMappings" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227315376409">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1227315383320">
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227315376410">
@@ -3466,8 +3441,20 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227315411750">
                     <link role="baseMethodDeclaration" targetNodeId="6.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
                     <link role="classConcept" targetNodeId="6.~BaseAdapter" resolveInfo="BaseAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227315411751">
-                      <link role="variableDeclaration" targetNodeId="1227315323681" resolveInfo="ownMappings" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240074028397">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240074028398">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1240074028399">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240074028400">
+                            <link role="variableDeclaration" targetNodeId="1227315137583" resolveInfo="module" />
+                          </node>
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240074028401">
+                            <link role="classifier" targetNodeId="6.~Generator" resolveInfo="Generator" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240074028402">
+                        <link role="baseMethodDeclaration" targetNodeId="6.~Generator.getOwnMappings():java.util.List" resolveInfo="getOwnMappings" />
+                      </node>
                     </node>
                   </node>
                 </node>
