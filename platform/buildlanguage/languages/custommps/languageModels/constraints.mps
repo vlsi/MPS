@@ -32,10 +32,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="2" />
+  <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.lang.smodel(jetbrains.mps.lang.smodel@java_stub)" version="-1" />
@@ -96,49 +95,6 @@
                 <link role="conceptDeclaration" targetNodeId="3v.1202916958754" resolveInfo="MPSLayout" />
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <visible index="4" modelUID="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1233928961311">
-    <link role="concept" targetNodeId="1.1233925934806" resolveInfo="UndeclaredVariableReference" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1233929497819">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233929497820">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238404120563">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238404120564">
-            <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-            <link role="baseMethodDeclaration" targetNodeId="4v.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1238404120565" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1237471283364">
-    <link role="concept" targetNodeId="1.1237468395076" resolveInfo="MPSModule" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1237471300182">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237471300183">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238424296050">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238424296051">
-            <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-            <link role="baseMethodDeclaration" targetNodeId="4v.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1238424304241" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1238404092558">
-    <link role="concept" targetNodeId="1.1233749388045" resolveInfo="CreateIfNotExists" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1238404101308">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238404101309">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238404102528">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238404102529">
-            <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-            <link role="baseMethodDeclaration" targetNodeId="4v.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1238404102530" />
           </node>
         </node>
       </node>

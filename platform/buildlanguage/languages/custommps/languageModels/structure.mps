@@ -77,49 +77,5 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233749388045">
-    <property name="name" value="CreateIfNotExists" />
-    <link role="extends" targetNodeId="2v.1203598300291" resolveInfo="AbstractProjectComponent" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233749406641">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="create" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1203598300291" resolveInfo="AbstractProjectComponent" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1233749468718">
-      <property name="name" value="artifactName" />
-      <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233749554740">
-      <property name="value" value="create if not exists" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233925934806">
-    <property name="name" value="UndeclaredVariableReference" />
-    <property name="rootable" value="false" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233929858483">
-      <link role="intfc" targetNodeId="2v.1205339194346" resolveInfo="IStringExpression" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233929467438">
-      <link role="intfc" targetNodeId="3v.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233929477272">
-      <property name="value" value="undeclared variable" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1233937527188">
-      <property name="name" value="antName" />
-      <link role="dataType" targetNodeId="3v.1082983041843" resolveInfo="string" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237468395076">
-    <property name="name" value="MPSModule" />
-    <link role="extends" targetNodeId="2v.1203599702327" resolveInfo="Module" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471788419">
-      <property name="value" value="mpsmodule" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
 </model>
 

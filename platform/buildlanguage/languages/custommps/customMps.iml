@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="packaging" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="distrib" />
+    <orderEntry type="module" module-name="custommpsInternal" />
   </component>
 </module>
 

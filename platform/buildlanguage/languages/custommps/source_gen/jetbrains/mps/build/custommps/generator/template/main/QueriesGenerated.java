@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.build.custommps.behavior.MPSModule_Behavior;
+import jetbrains.mps.build.custommpsInternal.behavior.MPSModule_Behavior;
 import jetbrains.mps.util.PathManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -32,11 +32,11 @@ import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1234878205127(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false)).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false)).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1234878220298(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false)).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false)).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1234891502382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -274,7 +274,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237471365276(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(MPSModule_Behavior.call_isPackaged_1237471386679(_context.getNode()));
+    return !(MPSModule_Behavior.call_isPackaged_1240033962874(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1237898505805(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -335,7 +335,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1237563071849(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return MPSModule_Behavior.call_createPathFromMPSHome_1237471745588(_context.getNode());
+    return MPSModule_Behavior.call_createPathFromMPSHome_1240033962895(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1237898470384(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -367,7 +367,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234877027528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false)).distinct();
+    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false)).distinct();
     return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
@@ -377,7 +377,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234877165687(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false)).distinct();
+    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false)).distinct();
     return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
