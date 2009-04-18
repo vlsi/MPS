@@ -255,6 +255,8 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime0" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations0" />

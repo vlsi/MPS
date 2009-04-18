@@ -170,6 +170,29 @@
       <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.baseLanguage.tuples0">
+    <mkdir dir="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <mkdir dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tuples.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/tuples/languages/tuples/tuples.mpl" prefix="module" />
+      <zipfileset dir="core/baseLanguage/tuples/languages/tuples" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+      <zipfileset dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.tuples.runtime0">
+    <mkdir dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    <mkdir dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/tuples/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/baseLanguage/tuples/runtime/classes_gen" />
+      <zipfileset dir="core/baseLanguage/tuples/runtime/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.actions0">
     <mkdir dir="core/languageDesign/actions/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.actions.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">

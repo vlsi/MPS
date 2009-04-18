@@ -955,6 +955,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/devkits/core-devkits.iml" filepath="$PROJECT_DIR$/core/devkits/core-devkits.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/custommps/customMps.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/custommps/customMps.iml" group="platform/build" />
+      <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/custommpsInternal/custommpsInternal.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/custommpsInternal/custommpsInternal.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />

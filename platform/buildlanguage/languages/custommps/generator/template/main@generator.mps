@@ -1837,6 +1837,14 @@
               <property name="id" value="9c8b4b95-5d89-4201-ad78-0b2db3a22768" />
               <property name="name" value="jetbrains.mps.baseLanguage.test" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1240088095365">
+              <property name="id" value="a247e09e-2435-45ba-b8d2-07e93feba96a" />
+              <property name="name" value="jetbrains.mps.baseLanguage.tuples" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1240088118104">
+              <property name="id" value="d44dab97-aaac-44cb-9745-8a14db674c03" />
+              <property name="name" value="jetbrains.mps.baseLanguage.tuples.runtime" />
+            </node>
             <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270490">
               <property name="name" value="baseLanguage" />
             </node>
