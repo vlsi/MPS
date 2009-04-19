@@ -10375,5 +10375,29 @@
       <link role="concept" targetNodeId="1.1240171359678" resolveInfo="EnumMember_ValueOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240173355660">
+    <property name="name" value="typeof_EnumMember_NameOperation" />
+    <property name="package" value="operation.enum" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240173355661">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240173368280">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240173371909">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240173371910">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240173379366" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240173368283">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240173363183">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240173365936">
+              <link role="applicableNode" targetNodeId="1240173355662" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240173355662">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.1240173327827" resolveInfo="EnumMember_NameOperation" />
+    </node>
+  </node>
 </model>
 

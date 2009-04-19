@@ -2827,5 +2827,12 @@
       <property name="text" value="value" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240173384882">
+    <property name="package" value="operation.enum" />
+    <link role="conceptDeclaration" targetNodeId="1.1240173327827" resolveInfo="EnumMember_NameOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240173388509">
+      <property name="text" value="name" />
+    </node>
+  </node>
 </model>
 

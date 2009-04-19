@@ -3032,7 +3032,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240171359678">
     <property name="package" value="operation.enum" />
     <property name="name" value="EnumMember_ValueOperation" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240171382804">
       <property name="value" value="value" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -3040,6 +3040,25 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240171403028">
       <property name="value" value="enum member value" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240173080765">
+      <link role="conceptPropertyDeclaration" targetNodeId="1240170360781" resolveInfo="applicableToEnumMember" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240173327827">
+    <property name="package" value="operation.enum" />
+    <property name="name" value="EnumMember_NameOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240173327828">
+      <property name="value" value="name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240173327829">
+      <property name="value" value="enum member name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240173327830">
+      <link role="conceptPropertyDeclaration" targetNodeId="1240170360781" resolveInfo="applicableToEnumMember" />
     </node>
   </node>
 </model>
