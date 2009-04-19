@@ -2425,6 +2425,42 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240147056756">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240147056757">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240147068297">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240147068298">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240147068299">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240147068300">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240147068301">
+                      <property name="value" value="true" />
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240147068302">
+                      <link role="variableDeclaration" targetNodeId="1186067103529" resolveInfo="isGood" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression" id="1240147068303">
+                <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240147068304">
+                  <link role="variableDeclaration" targetNodeId="1226075028894" resolveInfo="LeftType" />
+                </node>
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240147068305">
+                  <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240147068306">
+                    <link role="concept" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240147059167">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240147058963">
+              <link role="variableDeclaration" targetNodeId="1178292801475" resolveInfo="op" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1240147063109">
+              <link role="conceptProperty" targetNodeId="1.1240145981670" resolveInfo="applicableToEnum" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205265592172">
           <property name="value" value="===========" />
         </node>

@@ -1001,6 +1001,9 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763241883">
       <property name="name" value="applicableToNode" />
     </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1240145981670">
+      <property name="name" value="applicableToEnum" />
+    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763303089">
       <property name="name" value="applicableToSimpleProperty" />
     </node>
