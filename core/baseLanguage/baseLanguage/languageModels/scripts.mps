@@ -1,742 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
   <persistence version="3" />
-  <refactoringHistory>
-    <refactoringContext modelVersion="0">
-      <refactoring refactoringClass="jetbrains.mps.lang.core.scripts.MoveNodes" />
-      <moveMap>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330584579" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054282" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330596298" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054283" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330596299" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054284" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330596300" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054285" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330603889" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054286" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330603890" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054287" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330615095" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054297" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330615096" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054298" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330620318" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054288" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330620319" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054289" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330644463" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054294" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330645714" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054293" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330646873" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054295" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330647437" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054292" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330649533" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054296" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330650347" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054290" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330658990" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054300" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330661303" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054302" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330661585" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054301" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330663542" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054291" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330667700" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054303" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330674397" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054304" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330674398" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054305" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330682808" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054307" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330684684" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054308" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330690375" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054309" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330691330" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054311" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330691753" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054310" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330694988" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054312" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1219330695270" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054313" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1220341442318" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054314" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1220341442319" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054315" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1220341442320" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054316" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1225190474014" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054306" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1225190483132" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054299" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163981" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054232" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163982" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054233" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163983" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054234" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163984" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054235" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163985" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054236" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163986" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054237" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163987" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054238" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163988" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054239" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163989" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054240" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163990" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054241" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163991" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054242" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163992" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054243" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163993" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054244" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163994" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054245" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163995" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054246" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163996" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054247" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163997" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054248" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163998" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054249" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069163999" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054250" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164000" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054251" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164001" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054252" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164002" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054253" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164007" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054258" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164008" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054259" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164009" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054260" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164010" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054261" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164011" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054262" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164012" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054263" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164013" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054264" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069164014" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054265" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069197737" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054255" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069199879" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054254" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069203695" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054256" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240069204759" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054257" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765699" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054119" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765700" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054120" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765701" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054121" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765702" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054122" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765703" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054123" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765704" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054124" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765705" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054125" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765706" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054126" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765707" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054127" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765708" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054128" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765709" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054129" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765710" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054130" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765711" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054131" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765712" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054132" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765713" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054133" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765714" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054134" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765715" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054135" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765716" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054136" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765717" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054137" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765718" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054138" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765719" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054139" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765720" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054140" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765721" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054141" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765722" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054142" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765723" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054143" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765724" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054144" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765725" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054145" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765726" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054146" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765727" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054147" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765728" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054148" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765729" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054149" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765730" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054150" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765731" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054151" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765732" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054152" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765733" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054153" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765734" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054154" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765735" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054155" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765736" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054156" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765737" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054157" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765738" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054158" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765739" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054159" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765740" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054160" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765741" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054161" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765742" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054162" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765743" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054163" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765744" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054164" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765745" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054165" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765746" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054166" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765747" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054167" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765748" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054168" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765749" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054169" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765750" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054170" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765751" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054171" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765752" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054172" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765753" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054173" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765754" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054174" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765755" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054175" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765756" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054176" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765757" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054177" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765758" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054178" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765759" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054179" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765760" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054180" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765761" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054181" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765762" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054182" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765763" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054183" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765764" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054184" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765765" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054185" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765766" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054186" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765767" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054187" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765768" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054188" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765769" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054189" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765770" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054190" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765771" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054191" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765772" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054192" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765773" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054193" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765774" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054194" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765775" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054195" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765776" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054196" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765777" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054197" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765778" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054198" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765779" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054199" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765780" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054200" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765781" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054201" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765782" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054202" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765783" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054203" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765784" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054204" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765785" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054205" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765786" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054206" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765787" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054207" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765788" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054208" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765789" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054209" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765790" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054210" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765791" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054211" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765792" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054212" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765793" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054213" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765794" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054214" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765795" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054215" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765796" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054216" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765797" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054217" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765798" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054218" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765799" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054219" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765800" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054220" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765801" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054221" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765802" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054222" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765803" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054223" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765804" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054224" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765805" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054225" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765806" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054226" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765807" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054227" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765808" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054228" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765809" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054229" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765810" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054230" />
-        </entry>
-        <entry>
-          <key modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" nodeId="1240140765811" />
-          <value modelUID="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)" nodeId="1240141054231" />
-        </entry>
-      </moveMap>
-      <conceptFeatureMap />
-    </refactoringContext>
-  </refactoringHistory>
+  <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -785,7 +50,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" version="0" />
   <maxImportIndex value="31" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -2067,6 +1331,90 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1219330584579">
+    <property name="migrationFromBuild" value="944" />
+    <property name="name" value="FindAdapters" />
+    <property name="category" value="adapters" />
+    <property name="title" value="FindAdapters" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1219330596298">
+      <property name="description" value="find adapters" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1219330596299">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219330596300" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1219330603889">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219330603890">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219330620318">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219330620319">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219330650347">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219330663542">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219330647437">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219330645714">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1219330644463" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219330646873">
+                  <link role="link" targetNodeId="1.1107535924139" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1219330649533" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219330615095">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219330615096">
+              <property name="name" value="className" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190483132" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219330658990">
+                <link role="classConcept" targetNodeId="9.~NameUtil" resolveInfo="NameUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219330661585">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1219330661303" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219330667700">
+                    <link role="link" targetNodeId="1.1107535924139" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219330674397">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219330674398">
+              <property name="name" value="namespace" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190474014" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219330682808">
+                <link role="baseMethodDeclaration" targetNodeId="9.~NameUtil.namespaceFromLongName(java.lang.String):java.lang.String" resolveInfo="namespaceFromLongName" />
+                <link role="classConcept" targetNodeId="9.~NameUtil" resolveInfo="NameUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219330684684">
+                  <link role="variableDeclaration" targetNodeId="1219330615096" resolveInfo="className" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219330690375">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219330691753">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219330691330">
+                <link role="variableDeclaration" targetNodeId="1219330674398" resolveInfo="namespace" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219330694988">
+                <link role="baseMethodDeclaration" targetNodeId="8.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219330695270">
+                  <property name="value" value=".structure" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1220341442318">
+      <property name="description" value="find adapters" />
+      <link role="affectedInstanceConcept" targetNodeId="23.1170384605257" resolveInfo="Node_GetAdapterOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1220341442319">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220341442320" />
+      </node>
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1221227494971">
     <property name="migrationFromBuild" value="944" />
     <property name="name" value="GetRidOfQueryEnumValue" />
@@ -2928,6 +2276,92 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240068587799">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240068588379">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1240069163981">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="AdapterReferences" />
+    <property name="category" value="find adapter references" />
+    <property name="title" value="find adapter references" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1240069163982">
+      <property name="description" value="find java util refrences" />
+      <link role="affectedInstanceConcept" targetNodeId="31.1133920641626" resolveInfo="BaseConcept" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1240069163983">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240069163984" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1240069163985">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240069163986">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1240069163987">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240069163988">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240069163989">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240069163990">
+                  <property name="name" value="targetModelFQName" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240069163991">
+                    <link role="classifier" targetNodeId="8.~String" resolveInfo="String" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240069163992">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240069163993">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240069163994">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240069163995">
+                          <link role="variableDeclaration" targetNodeId="1240069164011" resolveInfo="ref" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240069163996">
+                          <link role="baseMethodDeclaration" targetNodeId="2.~SReference.getTargetSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getTargetSModelReference" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240069163997">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240069163998">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~SModelFqName.toString():java.lang.String" resolveInfo="toString" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240069163999">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240069164000">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240069164001">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240069164002">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240069199879">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240069197737">
+                    <link role="variableDeclaration" targetNodeId="1240069163990" resolveInfo="targetModelFQName" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240069203695">
+                    <link role="baseMethodDeclaration" targetNodeId="8.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240069204759">
+                      <property name="value" value=".structure@java_stub" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240069164007">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1240069164008">
+                <node role="leftExpression" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1240069164009" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240069164010">
+                <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getReferences():java.util.List" resolveInfo="getReferences" />
+              </node>
+            </node>
+            <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240069164011">
+              <property name="name" value="ref" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240069164012">
+                <link role="classifier" targetNodeId="2.~SReference" resolveInfo="SReference" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240069164013">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240069164014">
               <property name="value" value="false" />
             </node>
           </node>
