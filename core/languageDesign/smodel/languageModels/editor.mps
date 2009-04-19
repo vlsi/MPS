@@ -2771,5 +2771,12 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240151940708" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240156038496">
+    <property name="package" value="operation.enum" />
+    <link role="conceptDeclaration" targetNodeId="1.1240155989288" resolveInfo="Enum_MembersOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240156041358">
+      <property name="text" value="members" />
+    </node>
+  </node>
 </model>
 

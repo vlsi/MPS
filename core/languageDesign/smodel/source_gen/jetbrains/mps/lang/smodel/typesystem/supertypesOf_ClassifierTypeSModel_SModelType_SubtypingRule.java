@@ -10,13 +10,13 @@ import jetbrains.mps.lang.smodel.typesystem._Quotations;
 
 public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */_Patterns.Pattern_1 myMatchingPattern;
+  /* package */_Patterns.Pattern_2 myMatchingPattern;
 
   public supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new _Quotations.QuotationClass_69().createNode();
+    return new _Quotations.QuotationClass_68().createNode();
   }
 
   public String getApplicableConceptFQName() {
@@ -24,7 +24,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_1();
+    this.myMatchingPattern = new _Patterns.Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
 
