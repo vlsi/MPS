@@ -9,6 +9,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.NoSuchElementException;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IEnumerator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class Iterator_Test extends Util_Test {
 
@@ -71,6 +75,22 @@ public class Iterator_Test extends Util_Test {
       res = res + enm.current();
     }
     Assert.assertEquals("AABBCC", res);
+  }
+
+  @Test()
+  public void test_containerIterator() throws Exception {
+    List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3);
+    for(Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
+      cit.next();
+      cit.remove();
+    }
+    Assert.assertTrue(ListSequence.fromList(list).isEmpty());
+    Set<Integer> set = SetSequence.<Integer>fromArray(1, 2, 3);
+    for(Iterator<Integer> cit = SetSequence.fromSet(set).iterator() ; cit.hasNext() ; ) {
+      cit.next();
+      cit.remove();
+    }
+    Assert.assertTrue(SetSequence.fromSet(set).isEmpty());
   }
 
 }

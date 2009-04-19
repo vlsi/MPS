@@ -21,7 +21,7 @@ public class typeof_GetCurrentOperation_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = current;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(current), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471109742", true), new _Quotations.QuotationClass_134().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237471109733), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471109734", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(current), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471109742", true), new _Quotations.QuotationClass_136().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237471109733), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471109734", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = current;

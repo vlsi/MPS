@@ -8591,6 +8591,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1237481502736">
+      <property name="applyToConceptInheritors" value="false" />
       <link role="applicableConcept" targetNodeId="8.1237467705688" resolveInfo="IteratorType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1237481524573">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237481532526">
@@ -8606,6 +8607,34 @@
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237481557932">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1237481557933" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237481562708">
+                          <link role="link" targetNodeId="8.1237467730343" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240153106689">
+      <link role="applicableConcept" targetNodeId="8.1240151247486" resolveInfo="ContainerIteratorType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240153126471">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240153126472">
+          <link role="classifier" targetNodeId="1.~Iterator" resolveInfo="Iterator" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240153126473">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1240153126474">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1240153126475">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240153126476">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240153126477">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240153126478">
+                      <link role="classConcept" targetNodeId="2v.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="2v.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240153126479">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240153126480" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240153126481">
                           <link role="link" targetNodeId="8.1237467730343" />
                         </node>
                       </node>
@@ -10655,6 +10684,14 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1237484363307">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237489858060">
           <link role="baseMethodDeclaration" targetNodeId="1.~Iterator.next():java.lang.Object" resolveInfo="next" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240152020245">
+      <link role="applicableConcept" targetNodeId="8.1240151544672" resolveInfo="RemoveOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240152032591">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240152070312">
+          <link role="baseMethodDeclaration" targetNodeId="1.~Iterator.remove():void" resolveInfo="remove" />
         </node>
       </node>
     </node>

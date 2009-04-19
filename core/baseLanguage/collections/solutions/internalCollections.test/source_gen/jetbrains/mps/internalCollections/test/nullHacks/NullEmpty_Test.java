@@ -21,7 +21,7 @@ public class NullEmpty_Test extends Util_Test {
       List<Integer> emptyList = ListSequence.<Integer>fromArray();
       Assert.assertNull(ListSequence.fromList(emptyList).first());
       Assert.assertNull(ListSequence.fromList(emptyList).last());
-      Assert.assertNull(ListSequence.fromList(emptyList).getElement(0));
+      Assert.assertNull(ListSequence.fromList(emptyList).first());
       Assert.assertNull(ListSequence.fromList(emptyList).getElement(-1));
     }
   }

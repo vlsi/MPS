@@ -9,17 +9,17 @@ import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public supertypesOf_EnumeratorType_SubtypingRule() {
+  public supertypesOf_ContainerIteratorType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode enumeratorType) {
-    return new _Quotations.QuotationClass_139().createNode(SLinkOperations.getTarget(enumeratorType, "elementType", true));
+  public SNode getSubOrSuperType(SNode cit) {
+    return new _Quotations.QuotationClass_149().createNode(SLinkOperations.getTarget(cit, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType";
+    return "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType";
   }
 
   public boolean isApplicable(SNode argument) {
@@ -27,7 +27,7 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
   }
 
   public boolean isWeak() {
-    return true;
+    return false;
   }
 
 }

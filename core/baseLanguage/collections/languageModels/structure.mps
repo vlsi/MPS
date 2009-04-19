@@ -2104,5 +2104,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240151247486">
+    <property name="name" value="ContainerIteratorType" />
+    <link role="extends" targetNodeId="1237467705688" resolveInfo="IteratorType" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240151247488">
+      <property name="value" value="modifying_iterator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240151544672">
+    <property name="name" value="RemoveOperation" />
+    <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240151544673">
+      <property name="value" value="remove" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -781,5 +781,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240151875003">
+    <link role="concept" targetNodeId="1.1240151544672" resolveInfo="RemoveOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240151878200">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240151878201">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240151937789">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240151962590">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1240151937790">
+              <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240151951212">
+                <property name="name" value="ignored" />
+                <link role="concept" targetNodeId="1.1240151247486" resolveInfo="ContainerIteratorType" />
+              </node>
+              <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240152767521">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240151949633">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240151949634">
+                    <property name="asCast" value="true" />
+                    <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
+                    <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240151949635" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240151949636">
+                    <link role="link" targetNodeId="4.1197027771414" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1240152768067" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240151964756" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

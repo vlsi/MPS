@@ -64,7 +64,7 @@ public class NullSequence_Test extends Util_Test {
       Assert.assertNull(nullList);
       Assert.assertNull(ListSequence.fromList(nullList).first());
       Assert.assertNull(ListSequence.fromList(nullList).last());
-      Assert.assertNull(ListSequence.fromList(nullList).getElement(0));
+      Assert.assertNull(ListSequence.fromList(nullList).first());
       Assert.assertNull(ListSequence.fromList(nullList).getElement(-1));
       Assert.assertEquals(0, ListSequence.fromList(nullList).count());
       Assert.assertEquals(0, ListSequence.fromList(nullList).count());
