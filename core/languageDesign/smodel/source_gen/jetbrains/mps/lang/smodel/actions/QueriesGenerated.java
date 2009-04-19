@@ -145,11 +145,10 @@ public class QueriesGenerated {
           //           is node ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
-            //             is enum ?
-            SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
-            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(type, "concept", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-              result.myToEnum = true;
-            }
+          }
+          //           is enum ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
+            result.myToEnum = true;
           }
           //           is smodel ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
@@ -346,11 +345,10 @@ public class QueriesGenerated {
           //           is node ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
-            //             is enum ?
-            SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
-            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(type, "concept", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-              result.myToEnum = true;
-            }
+          }
+          //           is enum ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
+            result.myToEnum = true;
           }
           //           is smodel ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
@@ -406,6 +404,10 @@ public class QueriesGenerated {
           if (appTypesInfo.myToConcept) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept"));
           }
+          //           is enum ?
+          if (appTypesInfo.myToEnum) {
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnum"));
+          }
           //           is node ?
           if (appTypesInfo.myToNode) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"));
@@ -413,10 +415,6 @@ public class QueriesGenerated {
           //           is smodel ?
           if (appTypesInfo.myToModel) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToModel"));
-          }
-          //           is enum ?
-          if (appTypesInfo.myToEnum) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnum"));
           }
           return true;
         }
@@ -450,11 +448,10 @@ public class QueriesGenerated {
           //           is node ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
-            //             is enum ?
-            SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
-            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(type, "concept", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-              result.myToEnum = true;
-            }
+          }
+          //           is enum ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
+            result.myToEnum = true;
           }
           //           is smodel ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {

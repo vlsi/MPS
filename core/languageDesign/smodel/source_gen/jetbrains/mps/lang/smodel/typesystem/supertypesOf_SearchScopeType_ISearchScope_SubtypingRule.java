@@ -14,7 +14,7 @@ public class supertypesOf_SearchScopeType_ISearchScope_SubtypingRule extends Sub
   }
 
   public SNode getSubOrSuperType(SNode node) {
-    return new _Quotations.QuotationClass_105().createNode();
+    return new _Quotations.QuotationClass_106().createNode();
   }
 
   public String getApplicableConceptFQName() {
