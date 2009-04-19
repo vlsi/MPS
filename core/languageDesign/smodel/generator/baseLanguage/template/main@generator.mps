@@ -79,16 +79,24 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172422264799">
       <link role="applicableConcept" targetNodeId="6.1172420572800" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1177112541419">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177112565049">
-          <link role="classifier" targetNodeId="1.~SNode" resolveInfo="SNode" />
+        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240170235945">
+          <link role="concept" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         </node>
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240160526996">
       <link role="applicableConcept" targetNodeId="6.1240151383243" resolveInfo="SEnumType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240160686532">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240160686533">
-          <link role="classifier" targetNodeId="1.~SNode" resolveInfo="SNode" />
+        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240170210490">
+          <link role="concept" targetNodeId="8.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240170276556">
+      <link role="applicableConcept" targetNodeId="6.1240170042401" resolveInfo="SEnumMemberType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240170289699">
+        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240170293638">
+          <link role="concept" targetNodeId="8.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
         </node>
       </node>
     </node>

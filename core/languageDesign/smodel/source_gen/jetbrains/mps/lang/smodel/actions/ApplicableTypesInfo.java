@@ -10,6 +10,7 @@ public class ApplicableTypesInfo {
   public boolean myToNode = false;
   public boolean myToModel = false;
   public boolean myToEnum = false;
+  public boolean myToEnumMember = false;
   public SNode myLinkAccessT = null;
   public boolean myLinkToConcept = false;
 

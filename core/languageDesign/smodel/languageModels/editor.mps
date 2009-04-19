@@ -2778,5 +2778,54 @@
       <property name="text" value="members" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240170088998">
+    <property name="package" value="type" />
+    <link role="conceptDeclaration" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240170866778">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240170866779">
+        <property name="text" value="enummember" />
+        <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1240170866780">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240170866781">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1240170866782">
+        <property name="attractsFocus" value="1" />
+        <property name="emptyNoTargetText" value="true" />
+        <link role="styleClass" targetNodeId="10.1203541385314" resolveInfo="ReferenceOnConcept" />
+        <link role="relationDeclaration" targetNodeId="1.1240170836027" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1240170866783">
+          <link role="conceptDeclaration" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240170866784">
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1240170866785">
+              <property name="value" value="0.0" />
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1240170866786">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240170866787">
+        <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240170866788" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240171387899">
+    <property name="package" value="operation.enum" />
+    <link role="conceptDeclaration" targetNodeId="1.1240171359678" resolveInfo="EnumMember_ValueOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240171391370">
+      <property name="text" value="value" />
+    </node>
+  </node>
 </model>
 

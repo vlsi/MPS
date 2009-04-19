@@ -1005,6 +1005,9 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1240145981670">
       <property name="name" value="applicableToEnum" />
     </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1240170360781">
+      <property name="name" value="applicableToEnumMember" />
+    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1138763303089">
       <property name="name" value="applicableToSimpleProperty" />
     </node>
@@ -3005,6 +3008,38 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240155989292">
       <link role="conceptPropertyDeclaration" targetNodeId="1240145981670" resolveInfo="applicableToEnum" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240170042401">
+    <property name="package" value="type" />
+    <property name="name" value="SEnumMemberType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240170836027">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="enum" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240170070012">
+      <property name="value" value="enummember&lt; &gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240170070013">
+      <property name="value" value="enum member type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240171359678">
+    <property name="package" value="operation.enum" />
+    <property name="name" value="EnumMember_ValueOperation" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240171382804">
+      <property name="value" value="value" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240171403028">
+      <property name="value" value="enum member value" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>

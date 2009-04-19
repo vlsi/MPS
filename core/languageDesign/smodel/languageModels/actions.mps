@@ -273,8 +273,42 @@
                     <link role="variableDeclaration" targetNodeId="1206377950230" resolveInfo="leftType" />
                   </node>
                   <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240152120982">
-                    <property name="name" value="enumType" />
+                    <property name="name" value="v" />
                     <link role="concept" targetNodeId="1.1240151383243" resolveInfo="EnumType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1240170410716">
+              <property name="value" value="is enum member ?" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240170410703">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240170410704">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240170410705">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240170410706">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240170410707">
+                      <property name="value" value="true" />
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240170410708">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240170410709">
+                        <link role="variableDeclaration" targetNodeId="1206377976331" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240170435639">
+                        <link role="fieldDeclaration" targetNodeId="1240170392511" resolveInfo="myToEnumMember" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240170410711">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240170410712" />
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1240170410713">
+                  <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240170410714">
+                    <link role="variableDeclaration" targetNodeId="1206377950230" resolveInfo="leftType" />
+                  </node>
+                  <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240170410715">
+                    <property name="name" value="v" />
+                    <link role="concept" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
                   </node>
                 </node>
               </node>
@@ -683,6 +717,33 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240150271203">
                   <link role="fieldDeclaration" targetNodeId="1240146370519" resolveInfo="myToEnum" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1240170450759">
+              <property name="value" value="is enum member ?" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240170450749">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240170450750">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240170450751">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240170450752">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240170450753">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240170450754">
+                        <link role="variableDeclaration" targetNodeId="1180539443585" resolveInfo="parameterOp" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1240170461121">
+                        <link role="conceptProperty" targetNodeId="1.1240170360781" resolveInfo="applicableToEnumMember" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240170450756">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference" id="1240170450757">
+                  <link role="variableDeclaration" targetNodeId="1206377916680" resolveInfo="appTypesInfo" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240170458807">
+                  <link role="fieldDeclaration" targetNodeId="1240170392511" resolveInfo="myToEnumMember" />
                 </node>
               </node>
             </node>
@@ -1786,6 +1847,14 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240146375865" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240146378642" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240146385285">
+        <property name="value" value="false" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1240170392511">
+      <property name="name" value="myToEnumMember" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240170392512" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240170392513" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240170392514">
         <property name="value" value="false" />
       </node>
     </node>
