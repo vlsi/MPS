@@ -21,8 +21,8 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/lib/jdom/jdom.jar" />
-    <entry path="${language_descriptor}/classes" />
+    <entry path="${mps_home}/lib/jdom/jdom.jar" include="false" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
