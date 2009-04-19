@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class EnumerationMemberDeclaration_Behavior {
 
@@ -15,6 +17,17 @@ public class EnumerationMemberDeclaration_Behavior {
       return SPropertyOperations.getString(thisNode, "externalValue");
     }
     return "<no external value>";
+  }
+
+  public static String call_getConstantName_1240164579791(SNode thisNode) {
+    SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    if (SPropertyOperations.hasValue(enumType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
+      return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "internalValue"));
+    }
+    if (SPropertyOperations.hasValue(enumType, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation")) {
+      return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "externalValue"));
+    }
+    return SPropertyOperations.getString(thisNode, "javaIdentifier");
   }
 
 }

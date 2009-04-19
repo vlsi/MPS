@@ -25,6 +25,7 @@ import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -610,6 +611,22 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238690834144(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240159995911(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "enumDeclaration", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240159995926(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "enumDeclaration", false).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240164157881(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "member", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", false, false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240164166790(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(SLinkOperations.getTarget(_context.getNode(), "member", false));
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1298,6 +1315,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1238690834136(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1240162978082(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
   public static Iterable sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

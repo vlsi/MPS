@@ -1546,7 +1546,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172424081571">
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.1172424058054" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172424084370">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1172424087044">
@@ -2468,7 +2468,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1219353197091">
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.1219352745532" resolveInfo="NodeRefExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1219353219749">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219353219750">
@@ -2565,7 +2565,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226359214779">
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.1226359078165" resolveInfo="LinkRefExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226359219140">
       <property name="vertical" value="false" />
@@ -2734,7 +2734,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240151938993">
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.1240151888333" resolveInfo="EnumRefExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240151940699">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240151940700">

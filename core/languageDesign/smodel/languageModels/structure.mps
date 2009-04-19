@@ -2117,7 +2117,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172424058054">
     <property name="name" value="ConceptRefExpression" />
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172424100906">
       <property name="sourceCardinality" value="1" />
@@ -2791,7 +2791,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1219352745532">
     <property name="name" value="NodeRefExpression" />
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1219352800908">
       <property name="metaClass" value="reference" />
@@ -2876,7 +2876,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226359078165">
     <property name="name" value="LinkRefExpression" />
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226359078166">
       <property name="sourceCardinality" value="1" />
@@ -2975,7 +2975,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240151888333">
     <property name="name" value="EnumRefExpression" />
-    <property name="package" value="ref" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240151888334">
       <property name="sourceCardinality" value="1" />
