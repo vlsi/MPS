@@ -955,7 +955,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1219228952036">
     <property name="name" value="Macro" />
     <property name="package" value="generate" />
-    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="4.1196851107341" resolveInfo="PropertyDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1219230127826">
       <property name="name" value="path" />
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
@@ -967,7 +967,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1220973916698">
     <property name="name" value="Path" />
     <property name="package" value="sourcePaths" />
-    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="4.1196851952934" resolveInfo="PropertyValueExpression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220976095387">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="macro" />

@@ -5281,6 +5281,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220977682599">
     <property name="package" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
@@ -5512,6 +5513,71 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233322765770">
         <link role="classifier" targetNodeId="5.~File" resolveInfo="File" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240253516907">
+      <property name="name" value="toString" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877472569" resolveInfo="toString" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240253516908" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240253516910">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240253536719">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240253544537">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240253539819">
+              <property name="value" value="${" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240253586429">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240253594497">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240253586743">
+                  <property name="value" value="}" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240253604808">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253606349">
+                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240253606075" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240253609091">
+                      <link role="baseMethodDeclaration" targetNodeId="1226511495568" resolveInfo="getFullPathWithoutMacro" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240253597437">
+                    <property name="value" value="/" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253576961">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253573550">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240253570981" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240253575113">
+                    <link role="link" targetNodeId="1.1220976095387" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240253582586">
+                  <link role="property" targetNodeId="1.1220976068141" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240253524450" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240253504626">
+      <property name="name" value="getActualValue" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877472572" resolveInfo="getActualValue" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240253504627" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240253504629">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240253614340">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253620310">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253619416">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240253619417" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240253619418">
+                <link role="baseMethodDeclaration" targetNodeId="1233322718999" resolveInfo="getFile" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240253627976">
+              <link role="baseMethodDeclaration" targetNodeId="5.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240253513852" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220977682600">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220977682601">
@@ -5920,7 +5986,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230220438989">
     <property name="package" value="buildlanguageExtension" />
     <link role="concept" targetNodeId="1.1230220313182" resolveInfo="MPSLayoutConfigurationReferencePropertyValueExpression" />

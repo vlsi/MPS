@@ -351,10 +351,11 @@
       <link role="target" targetNodeId="1234544102398" resolveInfo="MacOsFileAssociation" />
     </node>
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1234515156408">
     <property name="package" value="systemSpecific" />
     <property name="name" value="ExternalVariableReference" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="4v.1196851952934" resolveInfo="PropertyValueExpression" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234515167308">
       <link role="intfc" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
     </node>

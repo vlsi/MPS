@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
+import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Path_Behavior {
@@ -39,6 +40,14 @@ public class Path_Behavior {
 
   public static File virtual_getFile_1233322718999(SNode thisNode) {
     return new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path") + File.separator + Path_Behavior.call_getFullPathWithoutMacro_1226511495568(thisNode));
+  }
+
+  public static String virtual_toString_1213877472569(SNode thisNode) {
+    return "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name") + "}" + "/" + Path_Behavior.call_getFullPathWithoutMacro_1226511495568(thisNode);
+  }
+
+  public static String virtual_getActualValue_1213877472572(SNode thisNode) {
+    return IPath_Behavior.call_getFile_1233322718999(thisNode).getAbsolutePath();
   }
 
   public static String call_getName_1221141245424(SNode thisNode) {
