@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.plugin.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
-import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.util.PathManager;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.application.PathMacros;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class BuildScriptRunner extends BaseRunner {
 
@@ -30,8 +30,8 @@ public class BuildScriptRunner extends BaseRunner {
 
   public void run(File file, String commandLine) {
     List<String> parameters = ListSequence.<String>fromArray();
-    this.addBasicParameters(parameters, file);
-    this.addMacroValues(parameters);
+    BuildScriptRunner.addBasicParameters(parameters, file);
+    BuildScriptRunner.addMacroValues(parameters);
     if (commandLine != null && StringUtils.isNotEmpty(commandLine)) {
       List<String> commandLineList = Arrays.asList(commandLine.split("\\s+"));
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(commandLineList));
@@ -68,48 +68,22 @@ public class BuildScriptRunner extends BaseRunner {
     }
   }
 
-  private void addMacroValues(List<String> parameters) {
-    PathMacros pathMacros = PathMacros.getInstance();
-    ListSequence.fromList(parameters).addElement("-D" + "mps_home" + "=" + PathManager.getHomePath());
-    Set<String> macroNames = pathMacros.getUserMacroNames();
-    for(String macro : SetSequence.fromSet(macroNames)) {
-      ListSequence.fromList(parameters).addElement("-D" + macro + "=" + pathMacros.getValue(macro));
+
+  public static List<String> getJavaHomes() {
+    String systemJavaHome = System.getProperty("java.home");
+    List<String> homes = ListSequence.fromList(new LinkedList<String>()).addSequence(Sequence.fromArray(systemJavaHome));
+    String systemJdkHome = systemJavaHome.substring(0, systemJavaHome.length() - "/jre".length());
+    if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
+      ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-  }
-
-  private void addBasicParameters(List<String> parameters, File file) {
-    ListSequence.fromList(parameters).addElement(this.getJava());
-    String jdkHome = this.getJdkHome();
-    ListSequence.fromList(parameters).addElement("-Djava.home=" + jdkHome);
-    String antHome = com.intellij.openapi.application.PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
-    ListSequence.fromList(parameters).addElement("-Dant.home=" + antHome);
-    ListSequence.fromList(parameters).addElement("-cp");
-    String antLib = antHome + File.separator + "lib" + File.separator;
-    String pathSeparator = System.getProperty("path.separator");
-    String classpath = antLib + "ant-launcher.jar" + pathSeparator + antLib + "ant.jar" + pathSeparator + antLib + "ant-nodeps.jar";
-    classpath += pathSeparator + jdkHome + File.separator + "lib" + File.separator + "tools.jar";
-    ListSequence.fromList(parameters).addElement(classpath);
-    ListSequence.fromList(parameters).addElement("org.apache.tools.ant.launch.Launcher");
-    ListSequence.fromList(parameters).addElement("-f");
-    ListSequence.fromList(parameters).addElement(file.getAbsolutePath());
-  }
-
-  public String getJava() {
-    String javaBinHome = this.getJdkHome() + File.separator + "bin" + File.separator;
-    String osName = System.getProperty("os.name");
-    if (osName.startsWith("Mac OS")) {
-      return javaBinHome + "java";
-    } else
-    if (osName.startsWith("Windows")) {
-      return javaBinHome + "java.exe";
-    } else
-    {
-      return javaBinHome + "java";
+    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
+      ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
+    return homes;
   }
 
-  public String getJdkHome() {
-    for(String javaHome : ListSequence.fromList(this.getJavaHomes())) {
+  public static String getJdkHome() {
+    for(String javaHome : ListSequence.fromList(BuildScriptRunner.getJavaHomes())) {
       String javaBinHome = javaHome + File.separator + "bin" + File.separator;
       String osName = System.getProperty("os.name");
       if (osName.startsWith("Mac OS")) {
@@ -128,20 +102,47 @@ public class BuildScriptRunner extends BaseRunner {
         }
       }
     }
-    return ListSequence.fromList(this.getJavaHomes()).first();
+    return ListSequence.fromList(BuildScriptRunner.getJavaHomes()).first();
   }
 
-  public List<String> getJavaHomes() {
-    String systemJavaHome = System.getProperty("java.home");
-    List<String> homes = ListSequence.fromList(new LinkedList<String>()).addSequence(Sequence.fromArray(systemJavaHome));
-    String systemJdkHome = systemJavaHome.substring(0, systemJavaHome.length() - "/jre".length());
-    if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
-      ListSequence.fromList(homes).addElement(systemJdkHome);
+  public static String getJava() {
+    String javaBinHome = BuildScriptRunner.getJdkHome() + File.separator + "bin" + File.separator;
+    String osName = System.getProperty("os.name");
+    if (osName.startsWith("Mac OS")) {
+      return javaBinHome + "java";
+    } else
+    if (osName.startsWith("Windows")) {
+      return javaBinHome + "java.exe";
+    } else
+    {
+      return javaBinHome + "java";
     }
-    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
-      ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
+  }
+
+  public static void addBasicParameters(List<String> parameters, File file) {
+    ListSequence.fromList(parameters).addElement(BuildScriptRunner.getJava());
+    String jdkHome = BuildScriptRunner.getJdkHome();
+    ListSequence.fromList(parameters).addElement("-Djava.home=" + jdkHome);
+    String antHome = PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
+    ListSequence.fromList(parameters).addElement("-Dant.home=" + antHome);
+    ListSequence.fromList(parameters).addElement("-cp");
+    String antLib = antHome + File.separator + "lib" + File.separator;
+    String pathSeparator = System.getProperty("path.separator");
+    String classpath = antLib + "ant-launcher.jar" + pathSeparator + antLib + "ant.jar" + pathSeparator + antLib + "ant-nodeps.jar";
+    classpath += pathSeparator + jdkHome + File.separator + "lib" + File.separator + "tools.jar";
+    ListSequence.fromList(parameters).addElement(classpath);
+    ListSequence.fromList(parameters).addElement("org.apache.tools.ant.launch.Launcher");
+    ListSequence.fromList(parameters).addElement("-f");
+    ListSequence.fromList(parameters).addElement(file.getAbsolutePath());
+  }
+
+  public static void addMacroValues(List<String> parameters) {
+    PathMacros pathMacros = PathMacros.getInstance();
+    ListSequence.fromList(parameters).addElement("-D" + "mps_home" + "=" + jetbrains.mps.util.PathManager.getHomePath());
+    Set<String> macroNames = pathMacros.getUserMacroNames();
+    for(String macro : SetSequence.fromSet(macroNames)) {
+      ListSequence.fromList(parameters).addElement("-D" + macro + "=" + pathMacros.getValue(macro));
     }
-    return homes;
   }
 
 }

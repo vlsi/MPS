@@ -549,6 +549,18 @@
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230292819375">
     <link role="concept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
+    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1240229578757">
+      <property name="name" value="getSuffix" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240229578758" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240229585794" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240229578760">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240229592181">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240229602848">
+            <property name="value" value="-dist" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230292821821">
       <property name="name" value="getProjectName" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1230292824520" />

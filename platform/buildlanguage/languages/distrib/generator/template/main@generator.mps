@@ -932,10 +932,7 @@
       <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1230209186063">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230209186064">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230209188642">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230218184724">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230218184807">
-                <property name="value" value="-dist" />
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240229615551">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218171125">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230218162745">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230209188643" />
@@ -946,6 +943,10 @@
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230218180482">
                   <link role="baseMethodDeclaration" targetNodeId="9.1230217425313" resolveInfo="getBuildFileName" />
                 </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1240229621525">
+                <link role="concept" targetNodeId="1.1230056066379" resolveInfo="DistribConfiguration" />
+                <link role="baseMethodDeclaration" targetNodeId="8.1240229578757" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>

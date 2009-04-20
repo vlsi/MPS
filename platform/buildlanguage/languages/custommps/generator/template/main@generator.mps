@@ -1983,6 +1983,10 @@
             <property name="id" value="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c" />
             <property name="name" value="jetbrains.mps.ypath" />
           </node>
+          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1240221295268">
+            <property name="id" value="136605f0-c7f8-4c7e-991d-604f5f3cdbd6" />
+            <property name="name" value="jetbrains.mps.samples.complex.build" />
+          </node>
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557005374">
             <property name="id" value="0b608d44-1308-418d-8715-22d040c3b3cc" />
             <property name="name" value="jetbrains.mps.buildlanguage" />

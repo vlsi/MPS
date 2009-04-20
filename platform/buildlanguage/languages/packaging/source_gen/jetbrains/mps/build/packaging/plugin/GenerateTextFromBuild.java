@@ -14,6 +14,9 @@ import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuildGenerationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.Message;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +27,7 @@ public class GenerateTextFromBuild {
   public GenerateTextFromBuild() {
   }
 
-  public static File generate(final SNode mpsLayout, SModelDescriptor descriptor, IOperationContext context, MPSProject project) {
+  public static File generate(final SNode mpsLayout, SModelDescriptor descriptor, IOperationContext context, MPSProject project, boolean showWindow) {
     String basedir = ModelAccess.instance().runReadAction(new Computable <String>() {
 
       public String compute() {
@@ -34,7 +37,25 @@ public class GenerateTextFromBuild {
     //     generate files
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, mpsLayout);
-    generatorManager.generateModelsWithProgressWindow(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, true);
+    if (showWindow) {
+      generatorManager.generateModelsWithProgressWindow(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, true);
+    } else
+    {
+      generatorManager.generateModels(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, new EmptyProgressIndicator(), new IMessageHandler() {
+
+        public void handle(Message message) {
+          switch (message.getKind()) {
+            case ERROR:
+              System.err.println("error: " + message.getText());
+            case WARNING:
+              System.out.println("warning: " + message.getText());
+            case INFORMATION:
+              System.out.println("info: " + message.getText());
+            default:
+          }
+        }
+      });
+    }
     return generationType.getLayoutFile();
   }
 

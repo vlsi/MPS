@@ -93,4 +93,8 @@ public class DistribConfiguration_Behavior {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(thisNode, "projectFolder", false)).getAbsolutePath();
   }
 
+  public static String getSuffix_1240229578757() {
+    return "-dist";
+  }
+
 }

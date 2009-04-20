@@ -73,7 +73,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     try {
       //       calculate output path
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
-      GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project);
+      GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
