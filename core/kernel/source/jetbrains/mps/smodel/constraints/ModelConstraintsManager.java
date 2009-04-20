@@ -718,7 +718,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (cachedValue != null) return cachedValue;
 
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    assert m.matches() : fqName + " is not a constraint aspect node";
+    boolean matches = m.matches();
+    assert matches : fqName + " is not a constraint aspect node";
 
     String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
     myConstraintClassNames.put(fqName, result);
