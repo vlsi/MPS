@@ -20,66 +20,40 @@ import com.intellij.util.indexing.*;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.io.KeyDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.vcs.SuspiciousModelIndex;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jdom.JDOMException;
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.IOException;
 
-public class NamedNodeIndex extends ScalarIndexExtension<SNodeDescriptor> {
+public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
   @NonNls
   public static final ID<SNodeDescriptor, Void> NAME = ID.create("NamedNodeIndex");
-  private final MyInputFilter myInputFilter = new MyInputFilter();
-  private final EnumeratorSNodeDescriptor myKeyDescriptor = new EnumeratorSNodeDescriptor();
 
   public ID<SNodeDescriptor, Void> getName() {
     return NAME;
   }
 
-  public DataIndexer<SNodeDescriptor, Void, FileContent> getIndexer() {
-    return new BaseSNodeDescriptorIndexer() {
-      public List<SNode> getNodes(SModel model) {
-        return model.allNodes(new Condition<SNode>() {
-          public boolean met(SNode node) {
-            String name = null;
-            try {
-              name = node.getName();
-            } catch (Throwable t) {
-              Logger.getLogger(NamedNodeIndex.class);
-            }
-            if (name == null) return false;
-            return name.length() > 0;
-          }
-        });
+  public List<SNode> getNodesToIterate(SModel model) {
+    return model.allNodes(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        if (node.isRoot()) return true;
+        if (node.getProperty(INamedConcept.NAME) != null) return true;
+        return false;
       }
-    };
-  }
-
-  public KeyDescriptor<SNodeDescriptor> getKeyDescriptor() {
-    return myKeyDescriptor;
-  }
-
-  public InputFilter getInputFilter() {
-    return myInputFilter;
-  }
-
-  public boolean dependsOnFileContent() {
-    return true;
-  }
-
-  public int getVersion() {
-    return 1;
-  }
-
-  public int getCacheSize() {
-    return DEFAULT_CACHE_SIZE;
-  }
-
-  private static class MyInputFilter implements FileBasedIndex.InputFilter {
-    public boolean acceptInput(VirtualFile file) {
-      return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
-    }
+    });
   }
 }

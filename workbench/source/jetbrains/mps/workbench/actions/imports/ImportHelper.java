@@ -215,7 +215,7 @@ public class ImportHelper {
             public void navigate(boolean requestFocus) {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               SModel modelDescriptor = descriptor.getSModel();
-              List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(modelDescriptor);
+              List<SNode> roots = myIndex.getNodesToIterate(modelDescriptor);
               SNode node = roots.get(object.getNumberInModel());
               new AddModelItem(model, node.getModel().getModelDescriptor(), contextModule) {
                 public MPSProject getMPSProject() {

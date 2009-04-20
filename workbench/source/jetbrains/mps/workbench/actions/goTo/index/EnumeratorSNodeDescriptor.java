@@ -46,14 +46,6 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
       (((long) b[off + 0]) << 56);
   }
 
-  private void putBoolean(byte[] b, int off, boolean val) {
-    b[off] = (byte) (val ? 1 : 0);
-  }
-
-  private boolean getBoolean(byte[] b, int off) {
-    return b[off] != 0;
-  }
-
   private void putString(byte[] b, int off, String str) {
     byte[] val = str.getBytes();
     int i = 0;
@@ -91,9 +83,6 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     off++;
     putString(result, off, node.getNodeName());
     off += nodeNameLength;
-    putBoolean(result, off, node.isDependOnOtherModel());
-    off++;
-    putBoolean(result, off, node.isInvalid());
     return result;
   }
 
@@ -113,10 +102,7 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     off++;
     String nodeName = getString(bytes, off, nodeNameLength);
     off += nodeNameLength;
-    boolean isDependOnOtherModel = getBoolean(bytes, off);
-    off++;
-    boolean isInvalid = getBoolean(bytes, off);
-    return new SNodeDescriptor(nodeName, conceptFqName, mostSignificantBits, leastSignificantBits, isInvalid, isDependOnOtherModel, numberInModel);
+    return new SNodeDescriptor(nodeName, conceptFqName, mostSignificantBits, leastSignificantBits, numberInModel);
   }
 
   public int getHashCode(SNodeDescriptor value) {

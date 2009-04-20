@@ -26,47 +26,15 @@ import org.jetbrains.annotations.NonNls;
 
 import java.util.List;
 
-public class RootNodeNameIndex extends ScalarIndexExtension<SNodeDescriptor> {
+public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
   @NonNls
   public static final ID<SNodeDescriptor, Void> NAME = ID.create("RootNodeNameIndex");
-  private final MyInputFilter myInputFilter = new MyInputFilter();
-  private final EnumeratorSNodeDescriptor myKeyDescriptor = new EnumeratorSNodeDescriptor();
 
   public ID<SNodeDescriptor, Void> getName() {
     return NAME;
   }
 
-  public DataIndexer<SNodeDescriptor, Void, FileContent> getIndexer() {
-    return new BaseSNodeDescriptorIndexer() {
-      public List<SNode> getNodes(SModel model) {
-        return model.getRoots();
-      }
-    };
-  }
-
-  public KeyDescriptor<SNodeDescriptor> getKeyDescriptor() {
-    return myKeyDescriptor;
-  }
-
-  public InputFilter getInputFilter() {
-    return myInputFilter;
-  }
-
-  public boolean dependsOnFileContent() {
-    return true;
-  }
-
-  public int getVersion() {
-    return 1;
-  }
-
-  public int getCacheSize() {
-    return DEFAULT_CACHE_SIZE;
-  }
-
-  private static class MyInputFilter implements FileBasedIndex.InputFilter {
-    public boolean acceptInput(VirtualFile file) {
-      return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
-    }
+  public List<SNode> getNodesToIterate(SModel model) {
+    return model.getRoots();
   }
 }

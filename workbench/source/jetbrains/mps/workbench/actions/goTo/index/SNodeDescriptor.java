@@ -25,23 +25,19 @@ public class SNodeDescriptor {
   private String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
-  private Boolean myIsDependOnOtherModel;
-  private Boolean myIsInvalid;
   private int myNumberInModel;
 
-  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, Boolean dependOnOtherModel, Boolean invalid, int number) {
+  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, int number) {
     myNodeName = nodeName;
     myConceptFqName = fqName;
     myMostSignificantBits = mostSignificantBits;
     myLeastSignificantBits = leastSignificantBits;
-    myIsDependOnOtherModel = dependOnOtherModel;
-    myIsInvalid = invalid;
     myNumberInModel = number;
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, Boolean dependOnOtherModel, Boolean invalid, int number) {
+  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, int number) {
     UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
-    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), dependOnOtherModel, invalid, number);
+    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), number);
   }
 
   public String getConceptFqName() {
@@ -54,22 +50,6 @@ public class SNodeDescriptor {
 
   public SModelReference getModelReference() {
     return new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits))).update();
-  }
-
-  public Boolean isDependOnOtherModel() {
-    return myIsDependOnOtherModel;
-  }
-
-  public Boolean isInvalid() {
-    return myIsInvalid;
-  }
-
-  public void setInvalid(boolean invalid) {
-    myIsInvalid = invalid;
-  }
-
-  public void setDependOnOtherModel(boolean dependONOtherModel) {
-    myIsDependOnOtherModel = dependONOtherModel;
   }
 
   public int getNumberInModel() {

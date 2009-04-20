@@ -15,32 +15,28 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import com.intellij.ide.startup.FileSystemSynchronizer;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFileFilter;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import com.intellij.util.indexing.ScalarIndexExtension;
-import com.intellij.util.indexing.UnindexedFilesUpdater;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
-  public ScalarIndexExtension<SNodeDescriptor> myIndex;
+  public BaseSNodeDescriptorIndex myIndex;
 
-  public MPSChooseSNodeDescriptor(MPSProject project, ScalarIndexExtension<SNodeDescriptor> index) {
+  public MPSChooseSNodeDescriptor(MPSProject project, BaseSNodeDescriptorIndex index) {
     super(project, "node");
     myIndex = index;
   }
@@ -56,20 +52,13 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
     }
 
-    final ID<SNodeDescriptor, Void> indexName;
-    if (myIndex instanceof RootNodeNameIndex) {
-      indexName = RootNodeNameIndex.NAME;
-    } else if (myIndex instanceof NamedNodeIndex) {
-      indexName = NamedNodeIndex.NAME;
-    } else return null;
-
-
+    final ID<SNodeDescriptor, Void> indexName = myIndex.getName();
+    final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
         if (scope.getModelDescriptor(s.getModelReference()) != null) {
-          if (s.isDependOnOtherModel() || s.isInvalid() || changedModels.contains(s.getModelReference())) {
-            s.setInvalid(false);
+          if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
             hasToLoad.add(s.getModelReference());
           } else {
             if (!fileBasedIndex.getContainingFiles(indexName, s, VirtualFileFilter.ALL).isEmpty()) {
@@ -81,17 +70,16 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
     });
 
-
-
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
       if (sm == null) continue;
-      List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(sm.getSModel());
-      for (SNode root : roots) {
-        int number = roots.indexOf(root);
+      List<SNode> nodes = myIndex.getNodesToIterate(sm.getSModel());
+
+      for (SNode root : nodes) {
+        int number = nodes.indexOf(root);
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         SNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), true, false, number);
+          nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), number);
         if (!keys.contains(nodeDescriptor)) {
           keys.add(nodeDescriptor);
         }
@@ -109,7 +97,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
           public void run() {
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
             SModel model = descriptor.getSModel();
-            List<SNode> roots = ((BaseSNodeDescriptorIndexer) myIndex.getIndexer()).getNodes(model);
+            List<SNode> roots = myIndex.getNodesToIterate(model);
             SNode node = roots.get(object.getNumberInModel());
             myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
           }
