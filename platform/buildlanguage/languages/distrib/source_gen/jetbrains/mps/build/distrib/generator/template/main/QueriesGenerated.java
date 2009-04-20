@@ -393,10 +393,6 @@ public class QueriesGenerated {
     return WindowsConfig_Behavior.call_getLicensePath_1237900615474(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1237910645659(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1239641369459(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
   }
@@ -434,8 +430,12 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true));
   }
 
-  public static Object referenceMacro_GetReferent_1230221358801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
+  public static Object propertyMacro_GetPropertyValue_1240245240113(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".single";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240245813995(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -483,6 +483,14 @@ public class QueriesGenerated {
       }
     }
     return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1240245753912(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1240246843004(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -856,6 +864,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1237303596875(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_1240245207752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
   }
 
   public static void mappingScript_CodeBlock_1234975234874(final IOperationContext operationContext, final MappingScriptContext _context) {

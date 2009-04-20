@@ -4,13 +4,30 @@
   <condition property="windows">
     <os family="windows" />
   </condition>
-  <target name="default">
+  <target name="base">
     <tstamp />
     <antcall target="MPS-external.main" />
+  </target>
+  <target name="default" depends="base">
     <antcall target="windows.dist" />
     <antcall target="universal.dist" />
     <antcall target="macos.dist" />
+    <antcall target="clean" />
+  </target>
+  <target name="clean">
     <delete dir="${deploy.dir}/MPS" />
+  </target>
+  <target name="windows.single" depends="base">
+    <antcall target="windows.dist" />
+    <antcall target="clean" />
+  </target>
+  <target name="universal.single" depends="base">
+    <antcall target="universal.dist" />
+    <antcall target="clean" />
+  </target>
+  <target name="macos.single" depends="base">
+    <antcall target="macos.dist" />
+    <antcall target="clean" />
   </target>
   <target name="windows.dist" if="windows">
     <fail unless="version" message="Property version unspecified." />
