@@ -87,7 +87,7 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
             if (model == null) return;
             List<SNode> nodes = getNodesToIterate(model);
             for (final SNode node : nodes) {
-              String persistentName = node.getProperty(INamedConcept.NAME);
+              String persistentName = node.getPersistentProperty(INamedConcept.NAME);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConceptFqName();
               SModelReference modelRef = model.getSModelReference();
