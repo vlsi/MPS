@@ -1340,6 +1340,12 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237818796542" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240249778006">
+        <property name="text" value="final" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240249815817">
+        <link role="relationDeclaration" targetNodeId="17.1181808852946" resolveInfo="isFinal" />
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237718456940" />
     </node>
   </node>
@@ -1613,6 +1619,22 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1188210576814">
         <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240250480369">
+        <property name="text" value="volatile" />
+        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1240250493811">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240250493812">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240250500572">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240250519417">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240250500573" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240250523283">
+                  <link role="property" targetNodeId="17.1240249534625" resolveInfo="isVolatile" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1217351603902">
         <property name="text" value="final" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
@@ -1693,6 +1715,12 @@
           <property name="flag" value="true" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237818796511" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240250542255">
+        <property name="text" value="volatile" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240250554802">
+        <link role="relationDeclaration" targetNodeId="17.1240249534625" resolveInfo="isVolatile" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237647667569" />
     </node>

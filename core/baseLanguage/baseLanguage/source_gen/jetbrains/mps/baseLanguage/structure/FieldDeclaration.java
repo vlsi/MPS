@@ -18,6 +18,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String IS_VOLATILE = "isVolatile";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
 
@@ -55,6 +56,14 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
 
   public void setResolveInfo(String value) {
     this.setProperty(FieldDeclaration.RESOLVE_INFO, value);
+  }
+
+  public boolean getIsVolatile() {
+    return this.getBooleanProperty(FieldDeclaration.IS_VOLATILE);
+  }
+
+  public void setIsVolatile(boolean value) {
+    this.setBooleanProperty(FieldDeclaration.IS_VOLATILE, value);
   }
 
   public boolean getIsDeprecated() {

@@ -72,6 +72,10 @@
     <property name="iconPath" value="${language_descriptor}/icons/fieldNew.png" />
     <property name="name" value="FieldDeclaration" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240249534625">
+      <property name="name" value="isVolatile" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1178285346338">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>

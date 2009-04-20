@@ -183,9 +183,16 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="true" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1240250925877">
+      <property name="name" value="a" />
+      <property name="isVolatile" value="false" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1240250925878" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240250927973" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240244838911">
       <property name="isFinal" value="false" />
+      <property name="name" value="F" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240244838912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240244838913" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914" />

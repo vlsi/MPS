@@ -7957,5 +7957,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1240251547040">
+    <property name="name" value="MakeFieldVolatile" />
+    <link role="forConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1240251547041">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251547042">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240251621723">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240251626667">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240251628121">
+              <property name="value" value="Make field not volatile" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251622421">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240251621724" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240251625336">
+                <link role="property" targetNodeId="1.1240249534625" resolveInfo="isVolatile" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240251641033">
+              <property name="value" value="Make field volatile" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1240251547043">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251547044">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240251647263">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240251654386">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240251662288">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251666518">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240251665964" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240251669024">
+                  <link role="property" targetNodeId="1.1240249534625" resolveInfo="isVolatile" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251648196">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240251647264" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240251651749">
+                <link role="property" targetNodeId="1.1240249534625" resolveInfo="isVolatile" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
