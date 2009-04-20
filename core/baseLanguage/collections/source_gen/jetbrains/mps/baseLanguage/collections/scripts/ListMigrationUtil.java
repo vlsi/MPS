@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.collections.scripts;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.scripts.ParameterType;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -20,6 +20,9 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForLists(SNode node, String name, List<ParameterType> params) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType"))) {
       return false;
@@ -28,6 +31,9 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForSet(SNode node, String name, List<ParameterType> params) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
       return false;
@@ -36,6 +42,9 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForIterator(SNode node, String name, List<ParameterType> params) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.IteratorType"))) {
       return false;
@@ -44,6 +53,9 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
       return false;
@@ -52,6 +64,9 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForMap(SNode node, String name, List<ParameterType> params) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
       return false;
