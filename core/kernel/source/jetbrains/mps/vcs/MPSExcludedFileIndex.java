@@ -22,16 +22,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 
 public class MPSExcludedFileIndex extends ExcludedFileIndex {
   private final Project myProject;
+  private final VirtualFile myProjectBasedir;
 
   public MPSExcludedFileIndex(Project project) {
     super(project);
     myProject = project;
+    myProjectBasedir = project.getBaseDir();
   }
 
   public boolean isInContent(VirtualFile file) {
-    VirtualFile baseDir = myProject.getBaseDir();
-    if (baseDir != null) {
-      return VfsUtil.isAncestor(baseDir, file, false);
+    if (myProjectBasedir != null) {
+      return VfsUtil.isAncestor(myProjectBasedir, file, false);
     }
     return false;
   }
