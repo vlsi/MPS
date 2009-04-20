@@ -184,6 +184,16 @@
     <property name="name" value="Test" />
     <property name="abstractClass" value="true" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240244838911">
+      <property name="isFinal" value="false" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240244838912" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240244838913" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240248149204">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240248149205" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239187811274">
       <property name="name" value="method" />
       <property name="isFinal" value="false" />

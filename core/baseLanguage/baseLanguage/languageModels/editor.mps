@@ -1070,6 +1070,22 @@
           <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
           <link role="actionMap" targetNodeId="1178609533048" resolveInfo="_InstanceMethodDeclaration_AddAbstract" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240248770435">
+          <property name="text" value="final" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1240248787572">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240248787573">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240248794284">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240248795385">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240248794285" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240248800085">
+                    <link role="property" targetNodeId="17.1181808852946" resolveInfo="isFinal" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1217333745852">
           <property name="text" value="abstract" />
           <link role="actionMap" targetNodeId="1178609859861" resolveInfo="_InstanceMethodDeclaration_RemoveAbstract" />

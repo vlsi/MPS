@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.actions;
 
 import java.util.List;
 import jetbrains.mps.datatransfer.PasteWrapper;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
@@ -14,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PasteWrappers {
 
   public static List<PasteWrapper> createPasteWrappers() {
-    List<PasteWrapper> result = new ArrayList();
+    List<PasteWrapper> result = ListSequence.<PasteWrapper>fromArray();
     ListSequence.fromList(result).addElement(new PasteWrapper() {
 
       public String getSourceConceptFqName() {

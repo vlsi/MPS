@@ -7910,5 +7910,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1240248297859">
+    <property name="package" value="method" />
+    <property name="name" value="MakeMethodFinal" />
+    <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1240248297860">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240248297861">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240248371782">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240248374871">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240248371783">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240248371784" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240248371785">
+                <link role="property" targetNodeId="1.1181808852946" resolveInfo="isFinal" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240248378710">
+              <property name="value" value="Make method final" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240248382430">
+              <property name="value" value="Make method not final" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1240248297862">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240248297863">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240248350514">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240248350515">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240248350517">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240248350518" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240248350519">
+                <link role="property" targetNodeId="1.1181808852946" resolveInfo="isFinal" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240248395321">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240248393103">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240248393104" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240248393105">
+                  <link role="property" targetNodeId="1.1181808852946" resolveInfo="isFinal" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

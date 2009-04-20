@@ -150,6 +150,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_5704_2(context, node));
+    if (renderingCondition5704_10(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_5704_10(context, node, "final"));
+    }
     if (renderingCondition5704_8(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_5704_9(context, node, "abstract"));
     }
@@ -260,6 +263,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5704_9(editorCell, node, context);
     setupLabel_Constant_5704_9(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_5704_10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5704_10(editorCell, node, context);
+    setupLabel_Constant_5704_10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -616,6 +627,11 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Constant_5704_10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5704_10");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_Constant_5704_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -661,6 +677,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_5704_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_5704_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition5704_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
@@ -699,6 +718,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition5704_9(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
+  }
+
+  public static boolean renderingCondition5704_10(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   public static class parameterListHandler_5704_0 extends RefNodeListHandler {

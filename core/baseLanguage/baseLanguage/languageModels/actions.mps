@@ -9138,39 +9138,6 @@
         </node>
       </node>
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1232116858842">
-      <property name="side" value="left" />
-      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
-      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1232116925193">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232116925194">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232116928429">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232116929337">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232117331010">
-                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1232116928430" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1232117332341" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1232116932371">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1232116935872">
-                  <link role="conceptDeclaration" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart" id="1232116943122">
-        <node role="nodeBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" id="1232116943123">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232116943124">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232116950796">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232116951813">
-                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1232116950797" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1232116952144" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1232118173212">
     <property name="package" value="sideTransforms.expression" />

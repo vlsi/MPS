@@ -281,10 +281,6 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1232116925193(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression");
-  }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1232120040898(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
@@ -2897,21 +2893,6 @@ __switch__:
           }
         });
       }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1232116858842(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return SNodeOperations.getParent(_context.getSourceNode());
-        }
-      };
-      SNode node = (SNode)calc.calculate();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.LEFT, _context.getTransformationTag(), operationContext)));
     }
     return result;
   }
