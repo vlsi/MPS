@@ -31,6 +31,7 @@ set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mps.lang.
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mps.lang.test.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mps.lang.textGen.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mps.lang.typesystem.mpsarch.jar"
+set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mpslite.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\baseLanguage\jetbrains.mps.baseLanguage.classifiers.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\baseLanguage\jetbrains.mps.baseLanguage.closures.mpsarch.jar"

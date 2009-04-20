@@ -31,6 +31,7 @@ CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/languageDesign/jetbrain
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/languageDesign/jetbrains.mps.lang.test.mpsarch.jar
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/languageDesign/jetbrains.mps.lang.typesystem.mpsarch.jar
+CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/languageDesign/jetbrains.mpslite.mpsarch.jar
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/core/baseLanguage/jetbrains.mps.baseLanguage.closures.mpsarch.jar
