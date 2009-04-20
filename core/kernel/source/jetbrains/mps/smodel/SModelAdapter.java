@@ -108,6 +108,9 @@ public class SModelAdapter implements SModelListener {
   }
 
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
+    if (!isLoading) {
+      modelChangedDramatically(model.getSModel());
+    }
   }
 
   public void modelInitialized(SModelDescriptor sm) {
