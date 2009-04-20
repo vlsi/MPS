@@ -128,9 +128,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1236105891877">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236105891878">
                 <property name="name" value="commandLineList" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236105891879">
-                  <link role="classifier" targetNodeId="30.~List" resolveInfo="List" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236105891880">
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1240241777885">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240241777886">
                     <link role="classifier" targetNodeId="22.~String" resolveInfo="String" />
                   </node>
                 </node>
@@ -189,9 +188,9 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225567254001">
                 <link role="baseMethodDeclaration" targetNodeId="22.~ProcessBuilder.&lt;init&gt;(java.util.List)" resolveInfo="ProcessBuilder" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236107426716">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1236107430412">
-                    <link role="baseMethodDeclaration" targetNodeId="30.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236107433369">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240241894231">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240241911249" />
+                    <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240241904691">
                       <link role="variableDeclaration" targetNodeId="1225567253980" resolveInfo="parameters" />
                     </node>
                   </node>
@@ -2088,13 +2087,16 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225569284049">
               <link role="baseMethodDeclaration" targetNodeId="35.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225569298464">
-                <link role="baseMethodDeclaration" targetNodeId="30.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
-                <link role="classConcept" targetNodeId="30.~Collections" resolveInfo="Collections" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225570376087">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1225570376088" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1225570376089">
-                    <link role="member" targetNodeId="1225570364479" resolveInfo="modelDescriptor" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240241944011">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240241946554">
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240241954199">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1240241954200" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1240241954201">
+                      <link role="member" targetNodeId="1225570364479" resolveInfo="modelDescriptor" />
+                    </node>
+                  </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240241977069">
+                    <link role="classifier" targetNodeId="36.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                   </node>
                 </node>
               </node>

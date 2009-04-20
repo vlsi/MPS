@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.actions.structure.Side;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Side_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class Side_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Side> constants = Side.getConstants().iterator();
+    Iterator<Side> constants = ListSequence.fromList(Side.getConstants()).iterator();
     while (constants.hasNext()) {
       Side constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class Side_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Side> constants = Side.getConstants().iterator();
+    Iterator<Side> constants = ListSequence.fromList(Side.getConstants()).iterator();
     while (constants.hasNext()) {
       Side constant = constants.next();
       if (value.equals(constant.getName())) {

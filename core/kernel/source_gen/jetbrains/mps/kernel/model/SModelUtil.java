@@ -23,12 +23,11 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.structure.structure.Cardinality;
@@ -105,7 +104,7 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageNamespace = NameUtil.namespaceFromConcept((AbstractConceptDeclaration) concept.getAdapter());
+    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
     if (languageNamespace == null) {
       return null;
     }
@@ -132,7 +131,7 @@ public class SModelUtil {
   }
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
-    Set<SNode> result = new LinkedHashSet<SNode>();
+    Set<SNode> result = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet());
     for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for(AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {

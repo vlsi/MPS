@@ -14,17 +14,16 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.build.packaging.plugin.ModulesListData;
 import jetbrains.mps.build.packaging.plugin.ModuleData;
-import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Comparator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.plugin.CheckBoxNode;
 import jetbrains.mps.build.packaging.plugin.NodeData;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import jetbrains.mps.build.packaging.plugin.NamespaceData;
 import javax.swing.JPanel;
@@ -69,7 +68,7 @@ public class LanguagesStep extends AbstractStep {
     List<IModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
-    Collections.sort(children, new Comparator <ModuleData>() {
+    ListSequence.fromList(children).sort(new Comparator <ModuleData>() {
 
       public int compare(ModuleData data1, ModuleData data2) {
         IModule module1 = data1.getModule();
@@ -85,7 +84,7 @@ public class LanguagesStep extends AbstractStep {
         }
         return 1;
       }
-    });
+    }, true);
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
     for(ModuleData moduleData : ListSequence.fromList(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
@@ -114,22 +113,22 @@ public class LanguagesStep extends AbstractStep {
 
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
-    Set<NodeData> modules = new LinkedHashSet<NodeData>();
+    Set<NodeData> modules = SetSequence.<NodeData>fromSetAndArray(new LinkedHashSet());
     for(NodeData item : SetSequence.fromSet(selectedItems)) {
       this.fillWithParents(item, modules);
     }
-    List<NodeData> toSort = new LinkedList<NodeData>(modules);
-    Collections.sort(toSort, new Comparator <NodeData>() {
+    List<NodeData> toSort = ListSequence.fromList(new LinkedList<NodeData>());
+    ListSequence.fromList(toSort).sort(new Comparator <NodeData>() {
 
-      public int compare(NodeData p0, NodeData p1) {
-        if ((p0 instanceof NamespaceData) && (p1 instanceof ModuleData)) {
+      public int compare(NodeData a, NodeData b) {
+        if ((a instanceof NamespaceData) && (b instanceof ModuleData)) {
           return -1;
-        } else if ((p0 instanceof ModuleData) && (p1 instanceof NamespaceData)) {
+        } else if ((a instanceof ModuleData) && (b instanceof NamespaceData)) {
           return 1;
         }
-        return p0.getText().compareToIgnoreCase(p1.getText());
+        return a.getText().compareToIgnoreCase(b.getText());
       }
-    });
+    }, true);
     this.myGenerator.setModules(toSort);
   }
 

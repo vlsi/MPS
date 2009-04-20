@@ -3025,8 +3025,8 @@
                   <link role="baseMethodDeclaration" targetNodeId="5.~RemoveSubstituteActionByConditionContext.getActions():java.util.Iterator" resolveInfo="getActions" />
                 </node>
               </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238774125568">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238774151170">
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType" id="1240242953824">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242972388">
                   <link role="classifier" targetNodeId="5.~INodeSubstituteAction" resolveInfo="INodeSubstituteAction" />
                 </node>
               </node>
@@ -3153,13 +3153,11 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1181736326351">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1181736326352">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1181736334980">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208997306732">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242978687">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199890604707">
                         <link role="variableDeclaration" targetNodeId="1199890586325" resolveInfo="actions" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208997306733">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~Iterator.remove():void" resolveInfo="remove" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveOperation" id="1240242979109" />
                     </node>
                   </node>
                 </node>
@@ -5222,8 +5220,8 @@
                   <link role="baseMethodDeclaration" targetNodeId="5.~RemoveSideTransformActionByConditionContext.getActions():java.util.Iterator" resolveInfo="getActions" />
                 </node>
               </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238774168100">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238774173549">
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType" id="1240242994804">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240243064315">
                   <link role="classifier" targetNodeId="5.~INodeSubstituteAction" resolveInfo="INodeSubstituteAction" />
                 </node>
               </node>
@@ -5345,13 +5343,11 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197457265696">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197457265697">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197457274520">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208997307109">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243080166">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199893791468">
                         <link role="variableDeclaration" targetNodeId="1199893733350" resolveInfo="actions" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208997307110">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~Iterator.remove():void" resolveInfo="remove" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveOperation" id="1240243080977" />
                     </node>
                   </node>
                 </node>
@@ -5583,8 +5579,10 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221137979623">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221138032720">
-                <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240242930327">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242935626">
+                  <link role="classifier" targetNodeId="30.~PasteWrapper" resolveInfo="PasteWrapper" />
+                </node>
               </node>
             </node>
           </node>

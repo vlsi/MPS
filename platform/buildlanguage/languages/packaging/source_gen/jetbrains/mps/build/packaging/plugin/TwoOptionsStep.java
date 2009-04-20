@@ -154,7 +154,7 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
     for(M variant : this.myVariantsArray) {
       ListSequence.fromList(items).addElement(TwoOptionsStep.this.getVariantName(variant));
     }
-    return new DefaultComboBoxModel(items.toArray());
+    return new DefaultComboBoxModel(ListSequence.fromList(items).toGenericArray(String.class));
   }
 
 }

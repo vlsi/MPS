@@ -2252,7 +2252,9 @@
               <property name="name" value="accepted" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228384227005">
                 <link role="classifier" targetNodeId="11.~Collection" resolveInfo="Collection" />
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1228384230013" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1228384230013">
+                  <link role="conceptDeclaraton" targetNodeId="2.1068431790189" resolveInfo="Type" />
+                </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1228384243759">
                 <link role="baseMethodDeclaration" targetNodeId="11.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />

@@ -20,9 +20,9 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -356,8 +356,7 @@ __switch__:
   @InferenceMethod()
   public static void inference_equateMatchingTypeVariables(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
-      for(Map.Entry<SNode, List<SNode>> e : mmap.entrySet()) {
-        List<SNode> nodes = e.getValue();
+      for(List<SNode> nodes : MapSequence.fromMap(mmap).values()) {
         SNode prev = null;
         for(SNode tvar : nodes) {
           if (prev != null && prev != tvar) {

@@ -3525,39 +3525,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203454932000">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203454932001">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1203452801447">
-              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446435">
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240233354592">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203452816314">
                   <link role="variableDeclaration" targetNodeId="1203452785576" resolveInfo="mmap" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332446436">
-                  <link role="baseMethodDeclaration" targetNodeId="18.~Map.entrySet():java.util.Set" resolveInfo="entrySet" />
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" id="1240233355387" />
               </node>
               <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203452801449">
-                <property name="name" value="e" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203452808881">
-                  <link role="classifier" targetNodeId="18.~Map$Entry" resolveInfo="Map.Entry" />
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1203453940653">
-                    <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1203453944465" />
-                </node>
+                <property name="name" value="nodes" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1240233365911" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203452801451">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203452833883">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203452833884">
-                    <property name="name" value="nodes" />
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444257">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203452833887">
-                        <link role="variableDeclaration" targetNodeId="1203452801449" resolveInfo="e" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444258">
-                        <link role="baseMethodDeclaration" targetNodeId="18.~Map$Entry.getValue():java.lang.Object" resolveInfo="getValue" />
-                      </node>
-                    </node>
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1203452838641" />
-                  </node>
-                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203452861429">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203452861430">
                     <property name="name" value="prev" />
@@ -3663,7 +3641,7 @@
                     </node>
                   </node>
                   <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203452850745">
-                    <link role="variableDeclaration" targetNodeId="1203452833884" resolveInfo="nodes" />
+                    <link role="variableDeclaration" targetNodeId="1203452801449" resolveInfo="nodes" />
                   </node>
                   <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203452844813">
                     <property name="name" value="tvar" />

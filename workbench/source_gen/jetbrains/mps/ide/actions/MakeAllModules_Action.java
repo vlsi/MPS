@@ -17,8 +17,10 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.IModule;
+import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
@@ -71,7 +73,7 @@ public class MakeAllModules_Action extends GeneratedAction {
 
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+              maker.make(SetSequence.fromSet(SetSequence.<IModule>fromSetAndArray(new LinkedHashSet())).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())), indicator);
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
           });

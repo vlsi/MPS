@@ -92,7 +92,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
           });
         }
       });
-      return filteredDescriptors.toArray(new SModelDescriptor[ListSequence.fromList(filteredDescriptors).count()]);
+      return ListSequence.fromList(filteredDescriptors).toGenericArray(SModelDescriptor.class);
     }
   }
 

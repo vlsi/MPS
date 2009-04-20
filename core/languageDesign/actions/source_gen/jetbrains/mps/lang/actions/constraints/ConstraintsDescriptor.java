@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.actions.constraints.NodeFactory_alias_PropertyConstraint;
 import jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint;
 import jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint;
@@ -14,14 +14,14 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new NodeFactory_alias_PropertyConstraint());
-    this.myConstraints.add(new SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint());
-    this.myConstraints.add(new SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint());
-    this.myConstraints.add(new NodeFactory_applicableConcept_ReferentConstraint());
-    this.myConstraints.add(new SmartActionParameterReference_smartActionParameter_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new NodeFactory_alias_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new NodeFactory_applicableConcept_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new SmartActionParameterReference_smartActionParameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

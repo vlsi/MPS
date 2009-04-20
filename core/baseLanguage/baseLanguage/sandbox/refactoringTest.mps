@@ -184,39 +184,6 @@
     <property name="name" value="Test" />
     <property name="abstractClass" value="true" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236186559197">
-      <property name="name" value="m" />
-      <property name="isFinal" value="false" />
-      <property name="isAbstract" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239009398598" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233740127321">
-        <property name="name" value="a" />
-        <property name="isFinal" value="true" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239278374324">
-          <link role="classifier" targetNodeId="23.~SConceptReference" resolveInfo="SConceptReference" />
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1233740454244">
-        <property name="name" value="b" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239295292397" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240229695492">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240229695493">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1240229741594">
-              <link role="baseMethodDeclaration" targetNodeId="27.~LinkedHashSet.&lt;init&gt;(int,float)" resolveInfo="LinkedHashSet" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240229751590">
-                <property name="value" value="16" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1240229803513">
-                <property name="value" value="0.75" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236186621805" />
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239187811274">
       <property name="name" value="method" />
       <property name="isFinal" value="false" />

@@ -35,8 +35,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Collections;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
@@ -2462,7 +2460,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
     if (true || ct == null || ((SNode)ct).getUserObject("returnType") == null) {
-      return Collections.singletonList(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
+      return ListSequence.<SNode>fromArray(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
     } else
     {
       Object retClassifier = ((SNode)ct).getUserObject("returnType");
@@ -2480,7 +2478,7 @@ public class QueriesGenerated {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
         SNode imd = ListSequence.fromList(imds).getElement(0);
-        List<SNode> res = new ArrayList();
+        List<SNode> res = ListSequence.<SNode>fromArray();
         for(SNode tt : SLinkOperations.getTargets(imd, "throwsItem", true)) {
           ListSequence.fromList(res).addElement(ClassifierTypeUtil.resolveType(tt, ct));
         }
@@ -2522,7 +2520,7 @@ public class QueriesGenerated {
         return res;
       }
     }
-    return Collections.emptyList();
+    return ListSequence.<SNode>fromArray();
   }
 
   public static Iterable sourceNodesQuery_1215604254028(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -3682,7 +3680,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1207161784299(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> telist = new ArrayList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
+    List<SNode> telist = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression")));
     for(SNode te : telist) {
       if ((SLinkOperations.getTarget(te, "classConcept", false) == null)) {
         SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);

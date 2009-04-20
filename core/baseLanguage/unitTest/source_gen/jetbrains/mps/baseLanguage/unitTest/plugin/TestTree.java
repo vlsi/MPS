@@ -10,11 +10,11 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.plugin.TestNameMap;
 import jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseTreeNode;
 import jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestTree extends MPSTree {
@@ -24,7 +24,7 @@ public class TestTree extends MPSTree {
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
 
   public TestTree() {
-    this.tests = new LinkedHashMap<SNode, List<SNode>>();
+    this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     this.rebuildLater();
   }

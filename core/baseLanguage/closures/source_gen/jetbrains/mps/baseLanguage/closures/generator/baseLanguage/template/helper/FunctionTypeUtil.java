@@ -15,15 +15,14 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.Comparator;
 import java.text.Collator;
+import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
-import java.util.Comparator;
 
 public class FunctionTypeUtil {
 
@@ -70,7 +69,12 @@ public class FunctionTypeUtil {
     }
     List<SNode> funTypes = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
     ListSequence.fromList(typesList).addSequence(ListSequence.fromList(funTypes));
-    Collections.sort(typesList, new FunctionTypeUtil.FunctionTypeComparator());
+    ListSequence.fromList(typesList).sort(new Comparator <SNode>() {
+
+      public int compare(SNode a, SNode b) {
+        return Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(a, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(b, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
+      }
+    }, true);
     SNode prev = null;
     for(Iterator<SNode> it = ListSequence.fromList(typesList).iterator() ; it.hasNext() ; ) {
       SNode next = it.next();
@@ -223,16 +227,5 @@ with_meet:
   public static Object getPostData(SNode sn, ITemplateGenerator generator) {
     return generator.getGeneratorSessionContext().getStepObject("classifierType_postData_" + ((SNode)sn).getId());
   }
-
-  public static class FunctionTypeComparator implements Comparator<SNode> {
-
-    public FunctionTypeComparator() {
-    }
-
-    public int compare(SNode x, SNode y) {
-      return Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(x, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(y, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
-    }
-
-}
 
 }

@@ -16,5 +16,7 @@
     <orderEntry type="module" module-name="custommpsInternal" />
     <orderEntry type="module" module-name="buildLanguage" />
   </component>
+  <component name="ProjectModuleManager" />
+  <component name="ProjectRunConfigurationManager" />
 </module>
 

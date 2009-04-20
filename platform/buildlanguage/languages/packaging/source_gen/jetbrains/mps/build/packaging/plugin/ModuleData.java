@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.project.IModule;
 import java.util.List;
-import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.Icon;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
@@ -27,7 +27,7 @@ public class ModuleData implements NodeData {
   }
 
   public List<NodeData> getChildren() {
-    return Collections.EMPTY_LIST;
+    return ListSequence.<NodeData>fromArray();
   }
 
   public Icon getIcon(boolean expanded) {

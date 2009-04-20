@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.structure;
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.lang.actions.structure.SideTransformTag;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SideTransformTag_PropertySupport extends PropertySupport {
 
@@ -12,7 +13,7 @@ public class SideTransformTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<SideTransformTag> constants = SideTransformTag.getConstants().iterator();
+    Iterator<SideTransformTag> constants = ListSequence.fromList(SideTransformTag.getConstants()).iterator();
     while (constants.hasNext()) {
       SideTransformTag constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -26,7 +27,7 @@ public class SideTransformTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<SideTransformTag> constants = SideTransformTag.getConstants().iterator();
+    Iterator<SideTransformTag> constants = ListSequence.fromList(SideTransformTag.getConstants()).iterator();
     while (constants.hasNext()) {
       SideTransformTag constant = constants.next();
       if (value.equals(constant.getName())) {

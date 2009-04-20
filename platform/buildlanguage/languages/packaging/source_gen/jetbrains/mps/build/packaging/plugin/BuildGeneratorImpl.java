@@ -30,8 +30,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
@@ -136,7 +136,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   private static void createContent(List<NodeData> selectedData, SNode folder, SModel targetSModel) {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
-    Set<SNode> topLevel = new LinkedHashSet<SNode>();
+    Set<SNode> topLevel = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet());
     for(NodeData data : ListSequence.fromList(selectedData)) {
       //       creating component
       SNode component = createComponent(data, targetSModel);

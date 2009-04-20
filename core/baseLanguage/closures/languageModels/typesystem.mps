@@ -678,9 +678,10 @@
           <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237042837086">
             <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237042837087" />
           </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202745743856">
-            <link role="baseMethodDeclaration" targetNodeId="8.~Collections.emptyList():java.util.List" resolveInfo="emptyList" />
-            <link role="classConcept" targetNodeId="8.~Collections" resolveInfo="Collections" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240235250879">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240235253860">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240235257607" />
+            </node>
           </node>
         </node>
       </node>
@@ -820,32 +821,33 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202745749903">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202745751279">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202745755601">
-                    <link role="baseMethodDeclaration" targetNodeId="8.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
-                    <link role="classConcept" targetNodeId="8.~Collections" resolveInfo="Collections" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1202745758940">
-                      <node role="quotedNode" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType" id="1202745758941">
-                        <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.Type" id="1202745758942">
-                          <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="1202745758943">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202745758944">
-                              <link role="variableDeclaration" targetNodeId="1202741469356" resolveInfo="paramTypes" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240235274483">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240235276057">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240235274484">
+                    <link role="variableDeclaration" targetNodeId="1202745678706" resolveInfo="supertypes" />
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240235279995">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240235283003">
+                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240235288614" />
+                      <node role="initValue" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240235300016">
+                        <node role="quotedNode" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType" id="1240235300017">
+                          <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240235300018">
+                            <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="1240235300019">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240235300020">
+                                <link role="variableDeclaration" targetNodeId="1202741469356" resolveInfo="paramTypes" />
+                              </node>
                             </node>
                           </node>
-                        </node>
-                        <node role="resultType" type="jetbrains.mps.baseLanguage.structure.Type" id="1202745758945">
-                          <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1202745758946">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202745758947">
-                              <link role="variableDeclaration" targetNodeId="1202741535644" resolveInfo="resType" />
+                          <node role="resultType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240235300021">
+                            <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240235300022">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240235300023">
+                                <link role="variableDeclaration" targetNodeId="1202741535644" resolveInfo="resType" />
+                              </node>
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202745749904">
-                    <link role="variableDeclaration" targetNodeId="1202745678706" resolveInfo="supertypes" />
                   </node>
                 </node>
               </node>
@@ -1261,9 +1263,10 @@
           <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237042839463">
             <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237042839464" />
           </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202757050494">
-            <link role="baseMethodDeclaration" targetNodeId="8.~Collections.emptyList():java.util.List" resolveInfo="emptyList" />
-            <link role="classConcept" targetNodeId="8.~Collections" resolveInfo="Collections" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240235333547">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240235335900">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240235337975" />
+            </node>
           </node>
         </node>
       </node>
@@ -1409,12 +1412,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235082202342">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1235082202343">
-              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235082202344">
-                <link role="baseMethodDeclaration" targetNodeId="8.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
-                <link role="classConcept" targetNodeId="8.~Collections" resolveInfo="Collections" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235082202345">
-                  <link role="variableDeclaration" targetNodeId="1235082202301" resolveInfo="ct" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240235311446">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240235312391">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240235324022">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240235325976" />
                 </node>
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235082202346">

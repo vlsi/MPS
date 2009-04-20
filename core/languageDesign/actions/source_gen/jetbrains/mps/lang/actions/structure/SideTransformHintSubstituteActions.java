@@ -14,14 +14,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SideTransformHintSubstituteActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String ACTIONS_BUILDER = "actionsBuilder";
 
   public SideTransformHintSubstituteActions(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(SideTransformHintSubstituteActions.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(SideTransformHintSubstituteActions.NAME, value);
   }
 
   public String getShortDescription() {
@@ -46,14 +54,6 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
 
   public void setVirtualPackage(String value) {
     this.setProperty(SideTransformHintSubstituteActions.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(SideTransformHintSubstituteActions.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(SideTransformHintSubstituteActions.NAME, value);
   }
 
   public int getActionsBuildersCount() {

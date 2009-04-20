@@ -564,7 +564,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashSet")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedHashSet")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -709,6 +709,37 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        }
+        SNodeOperations.replaceWithAnother(node, result);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+
+      public String getName() {
+        return "LinkedHashSet migration";
+      }
+
+      public String getAdditionalInfo() {
+        return "LinkedHashSet migration";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedHashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
           SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);

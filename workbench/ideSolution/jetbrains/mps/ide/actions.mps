@@ -1940,31 +1940,30 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215874426364">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215874426365">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215874426366">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240242055688">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242055689">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240242055690">
                                     <link role="variableDeclaration" targetNodeId="1215874426360" resolveInfo="maker" />
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215874426367">
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240242055691">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.clean(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="clean" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215874426368">
-                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215874426369">
-                                        <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="LinkedHashSet" />
-                                        <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215874426370">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240242071545">
+                                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242075560">
+                                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242080261">
                                           <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215874426371">
-                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215874426372">
-                                            <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
+                                        <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242085371">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240242085372">
                                             <link role="classConcept" targetNodeId="40.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                                            <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215874426373">
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240242085373">
                                             <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getAllModules():java.util.List" resolveInfo="getAllModules" />
                                           </node>
                                         </node>
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215874426374">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240242055698">
                                       <link role="variableDeclaration" targetNodeId="1215873654645" resolveInfo="indicator" />
                                     </node>
                                   </node>
@@ -2198,9 +2197,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215874274154">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215874278218">
-                <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215874290377">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242102436">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242107528">
                   <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                 </node>
               </node>
@@ -4441,9 +4439,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215909992242">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215909997529">
-                <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215910013531">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242172936">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242176869">
                   <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                 </node>
               </node>
@@ -5146,31 +5143,30 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216123153519">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216123153944">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216123153520">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240242141429">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242141430">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240242141431">
                                     <link role="variableDeclaration" targetNodeId="1216123146857" resolveInfo="maker" />
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123154745">
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240242141432">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.plugin.CompilationResult" resolveInfo="make" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216123159591">
-                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216123165829">
-                                        <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="LinkedHashSet" />
-                                        <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216123169380">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240242141433">
+                                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242148248">
+                                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242152298">
                                           <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                                         </node>
-                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216123187420">
-                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216123186495">
-                                            <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
+                                        <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242157340">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240242157341">
                                             <link role="classConcept" targetNodeId="40.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                                            <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123191691">
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240242157342">
                                             <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getAllModules():java.util.List" resolveInfo="getAllModules" />
                                           </node>
                                         </node>
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216123327962">
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240242141439">
                                       <link role="variableDeclaration" targetNodeId="1216123135739" resolveInfo="indicator" />
                                     </node>
                                   </node>
@@ -5258,30 +5254,28 @@
                         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1216123548880">
                           <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1216123548881">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123548882">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216123649500">
-                                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216123649501">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240242213834">
+                                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240242213835">
                                   <property name="name" value="modules" />
-                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216123649502">
-                                    <link role="classifier" targetNodeId="78.~LinkedHashSet" resolveInfo="LinkedHashSet" />
-                                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216123649503">
-                                      <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
-                                    </node>
-                                  </node>
-                                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216123649504">
-                                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216123649505">
-                                      <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="LinkedHashSet" />
-                                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216123649506">
+                                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240242213836">
+                                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242220716">
+                                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242224446">
                                         <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                                       </node>
-                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216123649507">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216123649508">
+                                      <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242229759">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240242229760">
                                           <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
                                           <link role="classConcept" targetNodeId="40.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
                                         </node>
-                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123649509">
+                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240242229761">
                                           <link role="baseMethodDeclaration" targetNodeId="40.~MPSModuleRepository.getAllModules():java.util.List" resolveInfo="getAllModules" />
                                         </node>
                                       </node>
+                                    </node>
+                                  </node>
+                                  <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1240242213842">
+                                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242213843">
+                                      <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                                     </node>
                                   </node>
                                 </node>
@@ -5307,7 +5301,7 @@
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123623873">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.clean(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="clean" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216123655810">
-                                      <link role="variableDeclaration" targetNodeId="1216123649501" resolveInfo="modules" />
+                                      <link role="variableDeclaration" targetNodeId="1240242213835" resolveInfo="modules" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216123659267">
                                       <link role="variableDeclaration" targetNodeId="1216123548876" resolveInfo="indicator" />
@@ -5323,7 +5317,7 @@
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216123548891">
                                     <link role="baseMethodDeclaration" targetNodeId="77.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.plugin.CompilationResult" resolveInfo="make" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216123639541">
-                                      <link role="variableDeclaration" targetNodeId="1216123649501" resolveInfo="modules" />
+                                      <link role="variableDeclaration" targetNodeId="1240242213835" resolveInfo="modules" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216123548898">
                                       <link role="variableDeclaration" targetNodeId="1216123548876" resolveInfo="indicator" />
@@ -5374,15 +5368,15 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216123732574">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216123732575">
             <property name="name" value="modules" />
+            <property name="isFinal" value="true" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238598149091">
               <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238598149092">
                 <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216123732578">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216123732579">
-                <link role="baseMethodDeclaration" targetNodeId="78.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216123732580">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242244917">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242248481">
                   <link role="classifier" targetNodeId="63.~IModule" resolveInfo="IModule" />
                 </node>
               </node>

@@ -9,7 +9,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import java.util.Collections;
 
 public class ControlMethodUtil {
 
@@ -121,7 +120,7 @@ public class ControlMethodUtil {
 
     public List<SNode> ensureNotNull(List<SNode> list) {
       if (list == null) {
-        return Collections.emptyList();
+        return ListSequence.<SNode>fromArray();
       }
       return list;
     }

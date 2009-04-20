@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import jetbrains.mps.build.packaging.plugin.ModuleData;
 import jetbrains.mps.project.IModule;
-import java.util.Collections;
 import java.util.Comparator;
 import javax.swing.Icon;
 
@@ -22,12 +21,12 @@ public class ModulesListData implements NodeData {
       ModuleData moduleData = new ModuleData(m);
       ListSequence.fromList(this.myModules).addElement(moduleData);
     }
-    Collections.sort(this.myModules, new Comparator <ModuleData>() {
+    ListSequence.fromList(this.myModules).sort(new Comparator <ModuleData>() {
 
       public int compare(ModuleData p0, ModuleData p1) {
         return p0.getText().compareToIgnoreCase(p1.getText());
       }
-    });
+    }, true);
   }
 
   public String getText() {

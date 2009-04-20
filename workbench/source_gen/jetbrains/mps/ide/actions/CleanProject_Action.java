@@ -14,8 +14,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -75,7 +75,7 @@ public class CleanProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Set<IModule> modulesToBuild = new LinkedHashSet<IModule>();
+      final Set<IModule> modulesToBuild = SetSequence.<IModule>fromSetAndArray(new LinkedHashSet());
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectDevKits()));

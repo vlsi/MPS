@@ -2224,9 +2224,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572993">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572995">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208787104241">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233158500">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208787104241">
                   <link role="classifier" targetNodeId="35.~EditorMessage" resolveInfo="EditorMessage" />
                 </node>
               </node>
@@ -6642,9 +6641,8 @@
               <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1237386036995" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220371109836">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220371109837">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220371109838" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233158381">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220371109838" />
               </node>
             </node>
           </node>
@@ -6761,9 +6759,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220366137409">
             <property name="name" value="result" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220366162870">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220366172232">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220366175375" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233159221">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220366175375" />
               </node>
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386037503">
@@ -6845,9 +6842,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220370366754">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220370373535">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220370379051">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233158739">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220370379051">
                   <link role="classifier" targetNodeId="28.~Instruction" resolveInfo="Instruction" />
                 </node>
               </node>
@@ -6929,9 +6925,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220371240904">
             <property name="name" value="result" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220371240907">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220371240908">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220371240909">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233158932">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220371240909">
                   <link role="classifier" targetNodeId="28.~Instruction" resolveInfo="Instruction" />
                 </node>
               </node>
@@ -7292,9 +7287,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220359506446">
             <property name="name" value="result" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220359547561">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221843573661">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221843583942">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240233159124">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221843583942">
                   <link role="classifier" targetNodeId="28.~Instruction" resolveInfo="Instruction" />
                 </node>
               </node>
@@ -7470,11 +7464,11 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220535026405">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221831538783">
-                <link role="baseMethodDeclaration" targetNodeId="4.~LinkedHashMap.&lt;init&gt;()" resolveInfo="LinkedHashMap" />
-                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221831550563" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221831565204">
-                  <link role="classifier" targetNodeId="1220534739186" resolveInfo="_MethodParameter" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" id="1240233290117">
+                <property name="order" value="false" />
+                <node role="keyType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240233293436" />
+                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240233302180">
+                  <link role="classifier" targetNodeId="1220534739186" resolveInfo="MethodParameter" />
                 </node>
               </node>
             </node>

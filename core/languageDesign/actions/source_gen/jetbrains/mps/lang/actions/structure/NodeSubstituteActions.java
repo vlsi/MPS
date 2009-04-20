@@ -14,14 +14,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.NodeSubstituteActions";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String ACTIONS_BUILDER = "actionsBuilder";
 
   public NodeSubstituteActions(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(NodeSubstituteActions.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(NodeSubstituteActions.NAME, value);
   }
 
   public String getShortDescription() {
@@ -46,14 +54,6 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
 
   public void setVirtualPackage(String value) {
     this.setProperty(NodeSubstituteActions.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(NodeSubstituteActions.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(NodeSubstituteActions.NAME, value);
   }
 
   public int getActionsBuildersCount() {
