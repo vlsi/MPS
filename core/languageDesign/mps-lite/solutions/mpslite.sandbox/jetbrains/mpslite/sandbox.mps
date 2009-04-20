@@ -25,8 +25,6 @@
   <maxImportIndex value="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905e1(jetbrains.mpslite.nanoj)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895905e2(jetbrains.mpslite.sandbox)" version="-1" />
-  <node type="jetbrains.mps.nanoj.structure.NanoClass" id="1239288734638">
-    <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1239288746058" />
-  </node>
+  <node type="jetbrains.mps.nanoj.structure.NanoClass" id="1239288734638" />
 </model>
 
