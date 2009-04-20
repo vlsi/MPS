@@ -147,6 +147,16 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
 		return getSet().comparator();
 	}
 	
+	@Override
+	public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
+		return (ISortedSetSequence<T>) super.addSequence(seq);
+	}
+	
+	@Override
+	public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
+		return (ISortedSetSequence<T>) super.removeSequence(seq);
+	}
+	
 	protected SortedSetSequence(SortedSet<T> set) {
 		super (set);
 	}

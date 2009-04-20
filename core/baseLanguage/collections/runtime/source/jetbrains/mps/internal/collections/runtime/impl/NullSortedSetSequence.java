@@ -18,6 +18,7 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import java.util.Comparator;
 import java.util.SortedSet;
 
+import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISortedSetSequence;
 
 public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISortedSetSequence<T>, SortedSet<T> {
@@ -44,6 +45,16 @@ public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISor
 		return this;
 	}
 
+	@Override
+	public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
+		return this;
+	}
+	
+	@Override
+	public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
+		return this;
+	}
+	
 	public Comparator<? super T> comparator() {
 		return null;
 	}

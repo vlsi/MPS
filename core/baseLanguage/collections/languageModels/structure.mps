@@ -2236,5 +2236,86 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240247491866">
+    <property name="package" value="set" />
+    <property name="name" value="SortedSetType" />
+    <link role="extends" targetNodeId="1226511727824" resolveInfo="SetType" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240247507974">
+      <property name="value" value="sorted_set" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240247536947">
+    <property name="package" value="set" />
+    <property name="name" value="TreeSetCreator" />
+    <link role="extends" targetNodeId="1226516258405" resolveInfo="HashSetCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240247577250">
+      <property name="value" value="treeset" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240247581643">
+      <property name="value" value="create new treeset" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240251169236">
+    <property name="package" value="set" />
+    <property name="name" value="SortedSetOperation" />
+    <link role="extends" targetNodeId="1226566831166" resolveInfo="AbstractSetOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240251181111">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240251356173">
+    <property name="package" value="set" />
+    <property name="name" value="HeadSetOperation" />
+    <link role="extends" targetNodeId="1240251169236" resolveInfo="SortedSetOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240251368364">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toElement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240251593120">
+      <property name="value" value="headSet" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240251565326">
+    <property name="package" value="set" />
+    <property name="name" value="TailSetOperation" />
+    <link role="extends" targetNodeId="1240251169236" resolveInfo="SortedSetOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240251577131">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromElement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240251586500">
+      <property name="value" value="tailSet" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240251665173">
+    <property name="package" value="set" />
+    <property name="name" value="SubSetOperation" />
+    <link role="extends" targetNodeId="1240251169236" resolveInfo="SortedSetOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240251672874">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromElement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240251680059">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toElement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240251689069">
+      <property name="value" value="subSet" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

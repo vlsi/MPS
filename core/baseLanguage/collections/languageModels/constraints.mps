@@ -844,5 +844,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240251188203">
+    <property name="package" value="set" />
+    <link role="concept" targetNodeId="1.1240251169236" resolveInfo="SortedSetOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240251191244">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251191245">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240251202707">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251240634">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1240251202708">
+              <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240251216269">
+                <property name="name" value="ignored" />
+                <link role="concept" targetNodeId="1.1240247491866" resolveInfo="SortedSetType" />
+              </node>
+              <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251227544">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251211174">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240251207182">
+                    <property name="asCast" value="true" />
+                    <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
+                    <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240251204683" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240251214549">
+                    <link role="link" targetNodeId="4.1197027771414" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1240251228539" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240251241441" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

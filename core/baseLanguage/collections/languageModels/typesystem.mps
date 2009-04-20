@@ -6350,6 +6350,35 @@
     <property name="name" value="set_covariant_by_elementType" />
     <property name="package" value="set" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226598928540">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1240249913658">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240249923041">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240249921650">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240249920074">
+              <link role="applicableNode" targetNodeId="1226676140001" resolveInfo="lSetType" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1240249922752" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" id="1240249925552">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="1240249927794">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240249929992">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240249929461">
+                  <link role="applicableNode" targetNodeId="1226676148201" resolveInfo="rSetType" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1240249931092" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240249932249">
+          <property name="value" value="Incompatible types" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240249936196">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression" id="1240249935754" />
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240249943394">
+            <link role="baseMethodDeclaration" targetNodeId="14.~EquationInfo.getNodeWithError():jetbrains.mps.smodel.SNode" resolveInfo="getNodeWithError" />
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1226676200291">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226676202027">
           <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226676203258">
@@ -8607,6 +8636,446 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240240356585">
       <property name="name" value="operation" />
       <link role="concept" targetNodeId="3.1240240201186" resolveInfo="SubMapOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240251380238">
+    <property name="name" value="typeof_HeadSetOperation" />
+    <property name="package" value="set" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251380239">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1240251421675">
+        <property name="name" value="ELEMENT_TYPE" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251434080">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251437349">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251437350">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251441767">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251441768">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251442952">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251445835">
+                    <link role="typeVarDeclaration" targetNodeId="1240251421675" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251434084">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251426560">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251429556">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251429280">
+                <link role="applicableNode" targetNodeId="1240251380240" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240251430756">
+                <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251465113">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251467977">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251467978">
+            <link role="typeVarDeclaration" targetNodeId="1240251421675" resolveInfo="ELEMENT_TYPE" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251465116">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251453798">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251456244">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251455959">
+                <link role="applicableNode" targetNodeId="1240251380240" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240251461067">
+                <link role="link" targetNodeId="3.1240251368364" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240251476016">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251481145">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251481146">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251483276">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251483277">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251484566">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251491056">
+                    <link role="typeVarDeclaration" targetNodeId="1240251421675" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251476019">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251470578">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251473247">
+              <link role="applicableNode" targetNodeId="1240251380240" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240251380240">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="3.1240251356173" resolveInfo="HeadSetOperatopn" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240251624474">
+    <property name="name" value="typeof_TailSetOperation" />
+    <property name="package" value="set" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251624475">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1240251634178">
+        <property name="name" value="ELEMENT_TYPE" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251634179">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634180">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251634181">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251634182">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251634183">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251634184">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251634185">
+                    <link role="typeVarDeclaration" targetNodeId="1240251634178" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634186">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251634187">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251634188">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251634189">
+                <link role="applicableNode" targetNodeId="1240251624476" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240251634190">
+                <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251634191">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634192">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251634193">
+            <link role="typeVarDeclaration" targetNodeId="1240251634178" resolveInfo="ELEMENT_TYPE" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634194">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251634195">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251637913">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251634197">
+                <link role="applicableNode" targetNodeId="1240251624476" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240251638866">
+                <link role="link" targetNodeId="3.1240251577131" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240251634199">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634200">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251634201">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251634202">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251634203">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251634204">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251634205">
+                    <link role="typeVarDeclaration" targetNodeId="1240251634178" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251634206">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251634207">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251634208">
+              <link role="applicableNode" targetNodeId="1240251624476" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240251624476">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="3.1240251565326" resolveInfo="TailSetOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240251724629">
+    <property name="name" value="typeof_SubSetOperation" />
+    <property name="package" value="set" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240251724630">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1240251732387">
+        <property name="name" value="ELEMENT_TYPE" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251732389">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732390">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251732391">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251732392">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251732393">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251732394">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251732395">
+                    <link role="typeVarDeclaration" targetNodeId="1240251732387" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732396">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251732397">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251732398">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251732399">
+                <link role="applicableNode" targetNodeId="1240251724631" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240251732400">
+                <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251732401">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732402">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251732403">
+            <link role="typeVarDeclaration" targetNodeId="1240251732387" resolveInfo="ELEMENT_TYPE" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732404">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251732405">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251732406">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251732407">
+                <link role="applicableNode" targetNodeId="1240251724631" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240251737168">
+                <link role="link" targetNodeId="3.1240251672874" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240251740453">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251740454">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251740455">
+            <link role="typeVarDeclaration" targetNodeId="1240251732387" resolveInfo="ELEMENT_TYPE" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251740456">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251740457">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251740458">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251740459">
+                <link role="applicableNode" targetNodeId="1240251724631" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240251748294">
+                <link role="link" targetNodeId="3.1240251680059" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240251732409">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732410">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240251732411">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240251732412">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240251732413">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240251732414">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240251732415">
+                    <link role="typeVarDeclaration" targetNodeId="1240251732387" resolveInfo="ELEMENT_TYPE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240251732416">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240251732417">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240251732418">
+              <link role="applicableNode" targetNodeId="1240251724631" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240251724631">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="3.1240251665173" resolveInfo="SubSetOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240252125253">
+    <property name="package" value="mapType" />
+    <property name="name" value="SortedMap_comparableTo_sorted_map" />
+    <property name="isWeak" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240252125254">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240253050698">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240253050699">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedMapType" id="1240253050700">
+            <node role="valueType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240253050701">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240253050702">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1240253050703">
+                  <link role="patternVarDecl" targetNodeId="1240252202989" resolveInfo="#VALUE" />
+                </node>
+              </node>
+            </node>
+            <node role="keyType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240253050704">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240253050705">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1240253050706">
+                  <link role="patternVarDecl" targetNodeId="1240252197807" resolveInfo="#KEY" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240252165893">
+      <property name="name" value="sortedMap" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240252165894">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240252185631">
+          <link role="classifier" targetNodeId="8.~SortedMap" resolveInfo="SortedMap" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240252193880">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1240252197807">
+              <property name="varName" value="KEY" />
+            </node>
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240252201714">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1240252202989">
+              <property name="varName" value="VALUE" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240252246637">
+    <property name="package" value="mapType" />
+    <property name="name" value="sorted_map_comparableTo_SortedMap" />
+    <property name="isWeak" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240252246638">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240253065222">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240253065223">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240253065224">
+            <link role="classifier" targetNodeId="8.~SortedMap" resolveInfo="SortedMap" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240253065225">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240253065226">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253065227">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240253065228">
+                    <link role="applicableNode" targetNodeId="1240252264172" resolveInfo="sortedMapType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240253065229">
+                    <link role="link" targetNodeId="3.1197683466920" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240253065230">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240253065231">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240253065232">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240253065233">
+                    <link role="applicableNode" targetNodeId="1240252264172" resolveInfo="sortedMapType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240253065234">
+                    <link role="link" targetNodeId="3.1197683475734" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240252264172">
+      <property name="name" value="sortedMapType" />
+      <link role="concept" targetNodeId="3.1240239337991" resolveInfo="SortedMapType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240252404452">
+    <property name="package" value="set" />
+    <property name="name" value="SortedSet_comparableTo_sorted_set" />
+    <property name="isWeak" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240252404453">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240253019884">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240253019885">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" id="1240253019886">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240253019887">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240253019888">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" id="1240253019889">
+                  <link role="patternVarDecl" targetNodeId="1240252430810" resolveInfo="#ELEMENT" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240252419228">
+      <property name="name" value="sortedSet" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240252419229">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240252427207">
+          <link role="classifier" targetNodeId="8.~SortedSet" resolveInfo="SortedSet" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240252428183">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1240252430810">
+              <property name="varName" value="ELEMENT" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240252457931">
+    <property name="package" value="set" />
+    <property name="name" value="sorted_set_comparableTo_SortedSet" />
+    <property name="isWeak" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240252457932">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240252789516">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240252789517">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240252789518">
+            <link role="classifier" targetNodeId="8.~SortedSet" resolveInfo="SortedSet" />
+            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1240252789519">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240252789520">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240252789521">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240252789522">
+                    <link role="applicableNode" targetNodeId="1240252479585" resolveInfo="sortedSetType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240252789523">
+                    <link role="link" targetNodeId="3.1226511765987" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240252479585">
+      <property name="name" value="sortedSetType" />
+      <link role="concept" targetNodeId="3.1240247491866" resolveInfo="SortedSetType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240252516761">
+    <property name="package" value="set" />
+    <property name="name" value="sorted_set_subtypeOf_set" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240252516762">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240252778651">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240252778652">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1240252778653">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240252778654">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240252778655">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240252778656">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240252778657">
+                    <link role="applicableNode" targetNodeId="1240252529144" resolveInfo="sortedSetType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240252778658">
+                    <link role="link" targetNodeId="3.1226511765987" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240252529144">
+      <property name="name" value="sortedSetType" />
+      <link role="concept" targetNodeId="3.1240247491866" resolveInfo="SortedSetType" />
     </node>
   </node>
 </model>

@@ -31,6 +31,12 @@ import jetbrains.mps.baseLanguage.collections.dataFlow.DowncastExpression_DataFl
 import jetbrains.mps.baseLanguage.collections.dataFlow.SequenceCreator_DataFlow;
 import jetbrains.mps.baseLanguage.collections.dataFlow.SingletonSequenceCreator_DataFlow;
 import jetbrains.mps.baseLanguage.collections.dataFlow.AbstractContainerCreator_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.HeadSetOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.TailSetOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.SubSetOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.HeadMapOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.SubMapOperation_DataFlow;
+import jetbrains.mps.baseLanguage.collections.dataFlow.TailMapOperation_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 
@@ -62,6 +68,12 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", new SequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", new SingletonSequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", new AbstractContainerCreator_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", new HeadSetOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", new TailSetOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", new SubSetOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", new HeadMapOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", new SubMapOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", new TailMapOperation_DataFlow());
   }
 
 }

@@ -25,4 +25,8 @@ public interface ISortedSetSequence<T> extends ISetSequence<T>, SortedSet<T> {
 	
 	ISortedSetSequence<T> subSet (T fromElement, T toElement);
 	
+	public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq);
+	
+	public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq);
+	
 }
