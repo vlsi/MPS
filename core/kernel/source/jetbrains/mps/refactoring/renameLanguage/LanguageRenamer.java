@@ -98,13 +98,13 @@ public class LanguageRenamer {
     myLanguage.save();
 
     myProcessor.writeIntoLog(structure.getSModel(), myContext);
+    SModelRepository.getInstance().markChanged(structure.getSModel());
 
     SModelRepository.getInstance().saveAll(); 
   }
 
   private void renameGenerators(String oldFqName) {
     for (Generator g : myLanguage.getGenerators()) {
-
       GeneratorDescriptor genDesc = g.getGeneratorDescriptor();
       String uid = genDesc.getGeneratorUID();
       int sharpIndex = uid.indexOf('#');
