@@ -37,8 +37,8 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
@@ -1735,7 +1735,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1176797187498(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Set<SNode> classes = new LinkedHashSet<SNode>();
+    Set<SNode> classes = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet());
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
     }

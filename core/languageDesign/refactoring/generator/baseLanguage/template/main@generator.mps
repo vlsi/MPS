@@ -1862,9 +1862,8 @@
               <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356749423">
                 <link role="classifier" targetNodeId="19.~IModule" resolveInfo="IModule" />
               </node>
-              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194356752972">
-                <link role="classifier" targetNodeId="9.~List" resolveInfo="List" />
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239574025505" />
+              <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1240242077547">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1240242079846" />
               </node>
             </node>
           </node>

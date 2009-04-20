@@ -9609,10 +9609,9 @@
                                         </node>
                                       </node>
                                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598587">
-                                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598589">
-                                          <link role="baseMethodDeclaration" targetNodeId="3.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1176797229440">
-                                            <link role="concept" targetNodeId="10.1107461130800" />
+                                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240241992898">
+                                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240241997448">
+                                            <link role="concept" targetNodeId="10.1107461130800" resolveInfo="Classifier" />
                                           </node>
                                         </node>
                                       </node>

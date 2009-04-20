@@ -5,13 +5,11 @@ package jetbrains.mps.lang.script.plugin;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.script.structure.MigrationScript;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.lang.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.lang.script.plugin.RunMigrationScriptsAction;
 
@@ -23,13 +21,13 @@ public class ScriptsMenuBuilder {
 
   public ScriptsMenuBuilder(boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
-    this.allLanguages = new ArrayList<Language>(GlobalScope.getInstance().getVisibleLanguages());
-    Collections.sort(this.allLanguages, new Comparator <Language>() {
+    this.allLanguages = ListSequence.fromList(ListSequence.<Language>fromArray()).addSequence(ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages()));
+    ListSequence.fromList(this.allLanguages).sort(new Comparator <Language>() {
 
       public int compare(Language l1, Language l2) {
         return l1.getNamespace().compareTo(l2.getNamespace());
       }
-    });
+    }, true);
     this.allScripts = ScriptsActionGroupHelper.getMigrationScripts(this.allLanguages);
   }
 

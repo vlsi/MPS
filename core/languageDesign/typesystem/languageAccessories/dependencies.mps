@@ -124,13 +124,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194538029692">
             <property name="name" value="prevSize" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1194538029693" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628906884">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194616790402">
-                <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243924387">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243920871">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194616790402">
+                  <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" id="1240243921282" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628906885">
-                <link role="baseMethodDeclaration" targetNodeId="2.~Map.size():int" resolveInfo="size" />
-              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1240243928811" />
             </node>
           </node>
         </node>
@@ -184,13 +185,14 @@
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1194538075043">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628911235">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194612355907">
-                  <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243939708">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628911235">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194612355907">
+                    <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" id="1240243939112" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628911236">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~Map.size():int" resolveInfo="size" />
-                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1240243941108" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194538077265">
                 <link role="variableDeclaration" targetNodeId="1194538029692" resolveInfo="prevSize" />
@@ -200,13 +202,14 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194537984798">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194538047306">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1194538048652">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628914494">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194612356971">
-                    <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243947044">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240243944137">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194612356971">
+                      <link role="variableDeclaration" targetNodeId="1194612304660" resolveInfo="dependencies" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" id="1240243946269" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628914495">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~Map.size():int" resolveInfo="size" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1240243948655" />
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194538047307">
                   <link role="variableDeclaration" targetNodeId="1194538029692" resolveInfo="prevSize" />

@@ -9,6 +9,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies._Quotations;
@@ -29,13 +30,13 @@ public class DependenciesCollector {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
     }
-    int prevSize = dependencies.size();
+    int prevSize = Sequence.fromIterable(MapSequence.fromMap(dependencies).keySet()).count();
     int leavesSize = SetSequence.fromSet(leaves).count();
     for(SNode root : roots) {
       MapSequence.fromMap(dependencies).put(root, null);
     }
-    while (dependencies.size() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
-      prevSize = dependencies.size();
+    while (Sequence.fromIterable(MapSequence.fromMap(dependencies).keySet()).count() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
+      prevSize = Sequence.fromIterable(MapSequence.fromMap(dependencies).keySet()).count();
       leavesSize = SetSequence.fromSet(leaves).count();
       for(SNode node : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()))) {
         SNode parent = SNodeOperations.getParent(node);

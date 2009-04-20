@@ -3172,10 +3172,10 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation" id="1238773543385" />
             </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType" id="1238773439212">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238773452947">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType" id="1240242941881">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242955935">
                 <link role="classifier" targetNodeId="16.~SearchResult" resolveInfo="SearchResult" />
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238773493754" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240242961183" />
               </node>
             </node>
           </node>
@@ -3229,13 +3229,11 @@
                   </node>
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219923106434">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219923106435">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219923106436">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240242964889">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219923106437">
                           <link role="variableDeclaration" targetNodeId="1219923106405" resolveInfo="it" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219923106438">
-                          <link role="baseMethodDeclaration" targetNodeId="8.~Iterator.remove():void" resolveInfo="remove" />
-                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveOperation" id="1240242965518" />
                       </node>
                     </node>
                   </node>

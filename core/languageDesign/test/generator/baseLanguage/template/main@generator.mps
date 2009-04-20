@@ -1112,9 +1112,8 @@
                         </node>
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221567898695">
-                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221567898696">
-                          <link role="baseMethodDeclaration" targetNodeId="10.~LinkedHashSet.&lt;init&gt;()" resolveInfo="LinkedHashSet" />
-                          <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221567898697">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" id="1240242808416">
+                          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240242810673">
                             <link role="concept" targetNodeId="1.1210673684636" resolveInfo="TestNodeAnnotation" />
                           </node>
                         </node>

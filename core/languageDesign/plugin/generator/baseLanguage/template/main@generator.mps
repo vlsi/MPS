@@ -2332,12 +2332,6 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239982226161">
       <property name="name" value="enumerateChildren" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239981969154">
-        <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239981972656">
-          <link role="classifier" targetNodeId="63.~BaseAction" resolveInfo="BaseAction" />
-        </node>
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239982226163" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239982226164">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1239981928253">
@@ -2399,9 +2393,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239982039263">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239982039264">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239982039265">
-              <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239982039266">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240242051437">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242057079">
                 <link role="classifier" targetNodeId="63.~BaseAction" resolveInfo="BaseAction" />
               </node>
             </node>
@@ -2455,6 +2448,11 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1240242062032">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240242065379">
+          <link role="classifier" targetNodeId="63.~BaseAction" resolveInfo="BaseAction" />
         </node>
       </node>
     </node>
