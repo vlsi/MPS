@@ -51,7 +51,7 @@ public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
     return model.allNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
         if (node.isRoot()) return true;
-        if (node.getProperty(INamedConcept.NAME) != null) return true;
+        if (node.getPersistentProperty(INamedConcept.NAME) != null) return true;
         return false;
       }
     });
