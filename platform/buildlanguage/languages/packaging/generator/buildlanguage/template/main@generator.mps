@@ -4317,6 +4317,19 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240250938361">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240250942204">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240250939609">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240250938362">
+                    <link role="variable" targetNodeId="1219229184998" resolveInfo="holder" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1240250941064">
+                    <link role="link" targetNodeId="1.1234969173075" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" id="1240250950247" />
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1219229216419">
               <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1219229216420">
                 <property name="name" value="macroName" />
@@ -4572,14 +4585,17 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239121709280">
                           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239121709281">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239121716246">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239122174519">
-                                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1239122172936" />
-                                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1239122180684">
-                                  <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
-                                  <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239122187885">
-                                    <link role="variableDeclaration" targetNodeId="1239121705942" resolveInfo="macro" />
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251710102">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251710103">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1240251710104" />
+                                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" id="1240251710105">
+                                    <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
+                                    <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240251715439">
+                                      <link role="variableDeclaration" targetNodeId="1239121705942" resolveInfo="macro" />
+                                    </node>
                                   </node>
                                 </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1240251710107" />
                               </node>
                             </node>
                           </node>
@@ -4666,14 +4682,17 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235062834628">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235062834630">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1235062834631" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1235062834632">
-                          <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
-                          <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235062834633">
-                            <link role="variableDeclaration" targetNodeId="1235062834620" resolveInfo="macro" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251722672">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251722673">
+                          <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1240251722674" />
+                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" id="1240251722676">
+                            <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
+                            <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240251722677">
+                              <link role="variableDeclaration" targetNodeId="1235062834620" resolveInfo="macro" />
+                            </node>
                           </node>
                         </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1240251722678" />
                       </node>
                     </node>
                   </node>
@@ -4953,14 +4972,17 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234978694748">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234978694749">
-                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1234978694750" />
-                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1234978694751">
-                          <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
-                          <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234978694752">
-                            <link role="variableDeclaration" targetNodeId="1234978694739" resolveInfo="macro" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251684239">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251684240">
+                          <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1240251684241" />
+                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" id="1240251684242">
+                            <link role="label" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
+                            <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240251684243">
+                              <link role="variableDeclaration" targetNodeId="1234978694739" resolveInfo="macro" />
+                            </node>
                           </node>
                         </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1240251684244" />
                       </node>
                     </node>
                   </node>

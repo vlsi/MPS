@@ -332,7 +332,7 @@ public class QueriesGenerated {
         }
       });
       if (macro != null) {
-        return _context.getOutputNodeByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration");
+        return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
       }
       return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter <SNode>() {
 
@@ -342,7 +342,7 @@ public class QueriesGenerated {
       });
     }
     SNode macro = IMacroHolder_Behavior.call_findMacroForReference_1234972707641(holder, SLinkOperations.getTarget(_context.getNode(), "macro", false));
-    return _context.getOutputNodeByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration");
+    return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
   }
 
   public static Object referenceMacro_GetReferent_1220032480105(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -366,7 +366,7 @@ public class QueriesGenerated {
       });
     }
     SNode macro = IMacroHolder_Behavior.call_findMacroForReference_1234972707641(holder, SLinkOperations.getTarget(_context.getNode(), "macro", true));
-    return _context.getOutputNodeByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration");
+    return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
   }
 
   public static Object referenceMacro_GetReferent_1230221653582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -711,6 +711,7 @@ public class QueriesGenerated {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for(SNode holder : ListSequence.fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
+      SLinkOperations.removeAllChildren(holder, "macro");
       for(String macroName : ListSequence.fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);

@@ -22,16 +22,15 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.samples.complex.build/jetbrains.mps.samples.complex.build.msd" folder="customMPS" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/buildlanguage/buildlanguage.mpl" />
       <languagePath path="${project}/languages/custommps/custommps.mpl" folder="customMPS" />
+      <languagePath path="${project}/languages/custommpsInternal/custommpsInternal.mpl" folder="customMPS" />
       <languagePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
       <languagePath path="${project}/languages/distrib/distrib.mpl" folder="packaging" />
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" />
-      <languagePath path="${project}/languages/custommpsInternal/custommpsInternal.mpl" folder="customMPS" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
