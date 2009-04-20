@@ -229,21 +229,29 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
     return (INodePropertyGetter) getNodePropertyGetterOrSetter(node, propertyName, false);
-  }
+  }                           
 
   public INodePropertySetter getNodePropertySetter(SNode node, String propertyName) {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
   }
 
+  public boolean hasGetter(String conceptFqName, String property) {
+    return getNodePropertyGetterOrSetter(conceptFqName, property, false) != null;
+  }
+
   public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final SNode node, @NotNull final String propertyName, final boolean isSetter) {
-    String namespace = node.getLanguageNamespace();
+    return getNodePropertyGetterOrSetter(node.getConceptFqName(), propertyName, isSetter);    
+  }
+
+  public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final String conceptFqName, @NotNull final String propertyName, final boolean isSetter) {
+    String namespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
 
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(INamedConcept.NAME)
-      && !node.getConceptFqName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
+      && !conceptFqName.equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
       return null;
     }
-    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+    if (conceptFqName.equals(RuntimeTypeVariable.concept)) {
       // helgins ku-ku!
       return null;
     }
@@ -255,8 +263,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       final String prefixedPropertyName = builder.toString();
       builder.setLength(0);
 
-      final String nodeConceptFqName = node.getConceptFqName();
-      builder.append(nodeConceptFqName);
+      builder.append(conceptFqName);
       builder.append(prefixedPropertyName);
       final String originalKey = builder.toString();
 
@@ -272,7 +279,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
       return NodeReadAccessCaster.runReadTransparentAction(new Computable<IModelConstraints>() {
         public IModelConstraints compute() {
-          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+          AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
 
           for (final AbstractConceptDeclaration concept : hierarchy) {
             Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
