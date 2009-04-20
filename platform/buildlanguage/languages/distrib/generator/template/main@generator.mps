@@ -2466,6 +2466,23 @@
               </node>
             </node>
           </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240222386510">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240222386511">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240222386512">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240222389090">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240222389091">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240222389092">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240222389093" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240222389094">
+                        <link role="link" targetNodeId="1.1234790749272" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240222389095" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="propertyList" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration" id="1237900832060">
           <property name="name" value="license.src.path" />
@@ -2484,6 +2501,23 @@
                         <link role="link" targetNodeId="1.1234790749272" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240222396095">
+            <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240222396096">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240222396097">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240222398896">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240222398897">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240222398898">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240222398899" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240222398900">
+                        <link role="link" targetNodeId="1.1234790749272" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240222398901" />
                   </node>
                 </node>
               </node>
@@ -4093,6 +4127,17 @@
                 <link role="variableDeclaration" targetNodeId="1231694349361" resolveInfo="options" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231694349380">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240223827208">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240223827209">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1240223855763" />
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240223846575">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240223845164">
+                      <link role="variable" targetNodeId="1231694349378" resolveInfo="option" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" id="1240223850702" />
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231694349381">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231694349382">
                     <property name="name" value="line" />

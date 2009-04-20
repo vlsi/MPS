@@ -723,6 +723,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
+  public static boolean ifMacro_Condition_1240222386511(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240222396096(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
   }
@@ -791,6 +799,9 @@ public class QueriesGenerated {
     String[] options = SPropertyOperations.getString(_context.getNode(), "defaultVMOptions").split("\\s");
     List<SNode> lines = ListOperations.<SNode>createList();
     for(String option : options) {
+      if (StringUtils.isEmpty(option)) {
+        continue;
+      }
       SNode line = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GLine", null);
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GText", null);
       SPropertyOperations.set(text, "text", option);
