@@ -478,12 +478,6 @@
       <fileset dir="platform/ypath/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.samples.complex.build0">
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.samples.complex.build.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/buildlanguage/solutions/jetbrains.mps.samples.complex.build/jetbrains.mps.samples.complex.build.msd" prefix="module" />
-      <zipfileset dir="platform/buildlanguage/solutions/jetbrains.mps.samples.complex.build" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.buildlanguage0">
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
