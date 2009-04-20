@@ -61,6 +61,10 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
         return new MapSequenceInitializer<P,Q> (new MapSequence<P, Q> (map), keys);
     }
     
+    public static <P,Q> MapSequenceInitializer<P,Q> fromMapAndKeysArray (Map<P,Q> map, P...keys) {
+        return new MapSequenceInitializer<P,Q> (new MapSequence<P, Q> (map), keys);
+    }
+
     public static <P,Q> IMapSequence<P, Q> fromArray (IMapping<P,Q>...mappings) {
         Map<P, Q> map = new HashMap<P,Q> (); 
         for (IMapping<P, Q> mp : mappings) {

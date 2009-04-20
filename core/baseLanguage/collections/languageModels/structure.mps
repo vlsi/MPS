@@ -2120,5 +2120,44 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240216724530">
+    <property name="package" value="mapType" />
+    <property name="name" value="LinkedHashMapCreator" />
+    <link role="extends" targetNodeId="1197686869805" resolveInfo="HashMapCreator" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240219919705">
+      <property name="name" value="order" />
+      <link role="dataType" targetNodeId="1240219850850" resolveInfo="LinkedHashMapOrder" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240216724534">
+      <property name="value" value="linked_hashmap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240217271293">
+    <property name="name" value="LinkedHashSetCreator" />
+    <property name="package" value="set" />
+    <link role="extends" targetNodeId="1226516258405" resolveInfo="HashSetCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240217271294">
+      <property name="value" value="linked_hashset" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240217271295">
+      <property name="value" value="create new linked hashset" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1240219850850">
+    <property name="package" value="mapType" />
+    <property name="name" value="LinkedHashMapOrder" />
+    <link role="memberDataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1240219850851">
+      <property name="internalValue" value="false" />
+      <property name="externalValue" value="insertion_order" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1240219896671">
+      <property name="internalValue" value="true" />
+      <property name="externalValue" value="access_order" />
+    </node>
+  </node>
 </model>
 

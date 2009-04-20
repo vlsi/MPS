@@ -5,7 +5,10 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.collections.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MapType_Behavior {
@@ -18,10 +21,14 @@ public class MapType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode mapCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", null);
-    SLinkOperations.setTarget(mapCreator, "keyType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "keyType", true)), true);
-    SLinkOperations.setTarget(mapCreator, "valueType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "valueType", true)), true);
-    return mapCreator;
+    return null;
+  }
+
+  public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
+    List<SNode> result = ListOperations.<SNode>createList();
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_0().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "keyType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "valueType", true))));
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_1().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "keyType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "valueType", true))));
+    return result;
   }
 
 }

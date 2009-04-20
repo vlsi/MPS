@@ -200,6 +200,15 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0674_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0674_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_0674_0(EditorCell editorCell, SNode node, EditorContext context) {

@@ -9,7 +9,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.collections.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SetType_Behavior {
@@ -32,9 +33,14 @@ public class SetType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
-    SLinkOperations.setTarget(creator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
-    return creator;
+    return null;
+  }
+
+  public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
+    List<SNode> result = ListOperations.<SNode>createList();
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_2().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true))));
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_3().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true))));
+    return result;
   }
 
 }

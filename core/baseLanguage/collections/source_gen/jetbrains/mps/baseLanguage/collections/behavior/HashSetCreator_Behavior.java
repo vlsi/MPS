@@ -12,7 +12,7 @@ public class HashSetCreator_Behavior {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
   }
 
 }

@@ -10,6 +10,8 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import java.util.LinkedHashSet;
+import java.util.Arrays;
 
 public class Set_Test extends Util_Test {
 
@@ -93,6 +95,18 @@ public class Set_Test extends Util_Test {
   public void test_contains() throws Exception {
     Set<Integer> test = SetSequence.<Integer>fromArray(1, 2, 3, 4, 5);
     Assert.assertTrue(SetSequence.fromSet(test).contains(3));
+  }
+
+  @Test()
+  public void test_linkedHashSet() throws Exception {
+    Set<Integer> set = SetSequence.<Integer>fromSetAndArray(new LinkedHashSet());
+    SetSequence.fromSet(set).addElement(11);
+    SetSequence.fromSet(set).addElement(3);
+    SetSequence.fromSet(set).addElement(2);
+    SetSequence.fromSet(set).addElement(7);
+    SetSequence.fromSet(set).addElement(1);
+    SetSequence.fromSet(set).addElement(5);
+    this.assertIterableEquals(Arrays.asList(11, 3, 2, 7, 1, 5), set);
   }
 
   @Test()
