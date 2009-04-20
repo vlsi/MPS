@@ -289,5 +289,6 @@ public class RefactoringProcessor {
     refactoringHistory.addRefactoringContext(refactoringContext);
     model.increaseVersion();
     refactoringContext.setModelVersion(model.getVersion());
+    SModelRepository.getInstance().markChanged(model);    
   }
 }

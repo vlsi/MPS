@@ -98,8 +98,6 @@ public class LanguageRenamer {
     myLanguage.save();
 
     myProcessor.writeIntoLog(structure.getSModel(), myContext);
-    SModelRepository.getInstance().markChanged(structure.getSModel());
-
     SModelRepository.getInstance().saveAll(); 
   }
 
