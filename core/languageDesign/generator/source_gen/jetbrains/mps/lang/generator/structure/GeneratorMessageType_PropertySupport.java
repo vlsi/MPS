@@ -4,6 +4,8 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.generator.structure.GeneratorMessageType;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class GeneratorMessageType_PropertySupport extends PropertySupport {
 
@@ -11,7 +13,7 @@ public class GeneratorMessageType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<GeneratorMessageType> constants = GeneratorMessageType.getConstants().iterator();
+    Iterator<GeneratorMessageType> constants = ListSequence.fromList(GeneratorMessageType.getConstants()).iterator();
     while (constants.hasNext()) {
       GeneratorMessageType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +27,7 @@ public class GeneratorMessageType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<GeneratorMessageType> constants = GeneratorMessageType.getConstants().iterator();
+    Iterator<GeneratorMessageType> constants = ListSequence.fromList(GeneratorMessageType.getConstants()).iterator();
     while (constants.hasNext()) {
       GeneratorMessageType constant = constants.next();
       if (value.equals(constant.getName())) {

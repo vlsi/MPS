@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <maxImportIndex value="63" />
+  <maxImportIndex value="66" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
@@ -51,7 +51,6 @@
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.smodel.presentation(jetbrains.mps.smodel.presentation@java_stub)" version="-1" />
-  <import index="32" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="43" modelUID="f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
   <import index="47" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
@@ -70,6 +69,8 @@
   <import index="61" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="62" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="63" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
+  <import index="64" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
+  <import index="66" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="sideTransforms" />
@@ -105,8 +106,8 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182804849706">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182804878311">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182804878312">
-                    <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
+                    <link role="classConcept" targetNodeId="66.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="66.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977965615">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1182804885577" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1182804889313" />
@@ -129,8 +130,8 @@
                 <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182804899438">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182804906856">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1182804906857">
-                      <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
-                      <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="66.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
+                      <link role="classConcept" targetNodeId="66.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
                       <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1182804906860" />
                     </node>
                   </node>
@@ -190,8 +191,8 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608453592">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215608453593">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215608453594">
-                    <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
-                    <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="66.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
+                    <link role="classConcept" targetNodeId="66.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215608453595">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1215608453596" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1215608453597" />
@@ -214,8 +215,8 @@
                 <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608453605">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215608453606">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215608453607">
-                      <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
-                      <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="66.~ParenthesisUtil.checkOperationWRTPriority(jetbrains.mps.smodel.SNode):void" resolveInfo="checkOperationWRTPriority" />
+                      <link role="classConcept" targetNodeId="66.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
                       <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1215608453608" />
                     </node>
                   </node>
@@ -10563,11 +10564,11 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1235993978260">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235993978261">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235993987445">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235993987447">
-                  <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="createParenthesis" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235993987449" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1235993987451">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240230390793">
+                  <link role="baseMethodDeclaration" targetNodeId="64.1237567358423" resolveInfo="createParenthesis" />
+                  <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1240230390794" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240230390795">
                     <property name="value" value="false" />
                   </node>
                 </node>
@@ -10576,6 +10577,9 @@
           </node>
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1235993980239">
             <property name="text" value=")" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1240230723627">
+            <property name="text" value="Surrond with parenthesis" />
           </node>
         </node>
       </node>
@@ -10589,11 +10593,11 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1235991384133">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235991384134">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235991785447">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237571115160">
-                  <link role="classConcept" targetNodeId="32.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="32.~ParenthesisUtil.createParenthesis(jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="createParenthesis" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1237571115161" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237571115162">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240230399361">
+                  <link role="baseMethodDeclaration" targetNodeId="64.1237567358423" resolveInfo="createParenthesis" />
+                  <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1240230399362" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240230399363">
                     <property name="value" value="true" />
                   </node>
                 </node>
@@ -10604,7 +10608,7 @@
             <property name="text" value="(" />
           </node>
           <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1235991998999">
-            <property name="text" value="Surrond by parenthesis" />
+            <property name="text" value="Surrond with parenthesis" />
           </node>
         </node>
       </node>

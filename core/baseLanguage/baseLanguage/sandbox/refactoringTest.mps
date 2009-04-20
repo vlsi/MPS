@@ -41,13 +41,15 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="27" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="26" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="27" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211992713279">
     <property name="name" value="A" />
@@ -199,25 +201,17 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239295292397" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233740001265">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239711625597">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239711625598">
-            <property name="name" value="num" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239711625599" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1239711627380">
-              <property name="value" value="10" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240229695492">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240229695493">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1240229741594">
+              <link role="baseMethodDeclaration" targetNodeId="27.~LinkedHashSet.&lt;init&gt;(int,float)" resolveInfo="LinkedHashSet" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240229751590">
+                <property name="value" value="16" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1240229803513">
+                <property name="value" value="0.75" />
+              </node>
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239712165307">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1239718654386">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239718654387">
-              <link role="variableDeclaration" targetNodeId="1239711625598" resolveInfo="num" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239712154138">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239712183143">
-            <link role="variableDeclaration" targetNodeId="1233740454244" resolveInfo="b" />
           </node>
         </node>
       </node>

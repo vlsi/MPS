@@ -4,16 +4,18 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.lang.generator.constraints.Root_MappingRule_template_ReferentConstraint;
+import jetbrains.mps.lang.generator.constraints.CreateRootRule_templateNode_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new Root_MappingRule_template_ReferentConstraint());
-    this.myConstraints.add(new CreateRootRule_templateNode_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new Root_MappingRule_template_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new CreateRootRule_templateNode_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

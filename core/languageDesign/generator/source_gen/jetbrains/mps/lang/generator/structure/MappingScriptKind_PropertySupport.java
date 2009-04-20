@@ -4,6 +4,8 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.lang.generator.structure.MappingScriptKind;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MappingScriptKind_PropertySupport extends PropertySupport {
 
@@ -11,7 +13,7 @@ public class MappingScriptKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<MappingScriptKind> constants = MappingScriptKind.getConstants().iterator();
+    Iterator<MappingScriptKind> constants = ListSequence.fromList(MappingScriptKind.getConstants()).iterator();
     while (constants.hasNext()) {
       MappingScriptKind constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +27,7 @@ public class MappingScriptKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<MappingScriptKind> constants = MappingScriptKind.getConstants().iterator();
+    Iterator<MappingScriptKind> constants = ListSequence.fromList(MappingScriptKind.getConstants()).iterator();
     while (constants.hasNext()) {
       MappingScriptKind constant = constants.next();
       if (value.equals(constant.getName())) {

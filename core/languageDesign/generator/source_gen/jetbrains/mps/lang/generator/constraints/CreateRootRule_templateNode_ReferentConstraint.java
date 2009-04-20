@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.lang.generator.constraints.MappingRuleTemplateNodeSearchScope;
 
 public class CreateRootRule_templateNode_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 

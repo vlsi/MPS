@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration";
   public static final String DESCRIPTION = "description";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String REGEXP = "regexp";
 
   public RegexpDeclaration(SNode node) {
@@ -29,6 +29,14 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
 
   public void setDescription(String value) {
     this.setProperty(RegexpDeclaration.DESCRIPTION, value);
+  }
+
+  public String getName() {
+    return this.getProperty(RegexpDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(RegexpDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -53,14 +61,6 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(RegexpDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(RegexpDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(RegexpDeclaration.NAME, value);
   }
 
   public Regexp getRegexp() {

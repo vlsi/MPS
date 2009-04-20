@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.LastStatementUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.ReturnStatement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class StatementList_TextGen extends SNodeTextGen {
@@ -19,7 +19,7 @@ public class StatementList_TextGen extends SNodeTextGen {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       if ((i == size - 1) && (LastStatementUtil.canMakeReturnStatement(statement, null))) {
         SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-        SNode returnStatement = SNodeOperations.cast(ReturnStatement.newInstance(SNodeOperations.getModel(statement)).getNode(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+        SNode returnStatement = SModelOperations.createNewNode(SNodeOperations.getModel(statement), "jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
         SNode expression = SNodeOperations.copyNode(SLinkOperations.getTarget(expressionStatement, "expression", true));
         SLinkOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
         SLinkOperations.setTarget(returnStatement, "expression", expression, true);

@@ -3099,7 +3099,7 @@ __switch__:
         }
 
         public String getDescriptionText(String pattern) {
-          return "Surrond by parenthesis";
+          return "Surrond with parenthesis";
         }
       });
     }
@@ -3122,6 +3122,10 @@ __switch__:
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "Surrond with parenthesis";
         }
       });
     }
