@@ -812,5 +812,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240239329878">
+    <property name="package" value="mapType" />
+    <link role="concept" targetNodeId="1.1240239309184" resolveInfo="SortedMapOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240239331695">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240239331696">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240239336250">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240239354879">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1240239336251">
+              <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240239350729">
+                <property name="name" value="ignored" />
+                <link role="concept" targetNodeId="1.1240239337991" resolveInfo="SortedMapType" />
+              </node>
+              <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240239347850">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240239346017">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240239340117">
+                    <property name="asCast" value="true" />
+                    <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
+                    <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240239338287" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240239347588">
+                    <link role="link" targetNodeId="4.1197027771414" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1240239348441" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240239357022" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

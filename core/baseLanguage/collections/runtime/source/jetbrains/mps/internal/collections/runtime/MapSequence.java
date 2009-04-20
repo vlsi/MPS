@@ -43,7 +43,7 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
         private final P[] keys;
         private final IMapSequence<P, Q> mapSeq;
         
-        private MapSequenceInitializer (IMapSequence<P, Q> mapSeq, P...keys) {
+        protected MapSequenceInitializer (IMapSequence<P, Q> mapSeq, P...keys) {
             this.mapSeq = mapSeq;
             this.keys = keys;
         }
@@ -97,7 +97,7 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
         return new MapSequence<P, Q> (map);
     }
     
-    private MapSequence(Map<U,V> map) {
+    protected MapSequence(Map<U,V> map) {
         this.map = map;
     }
     
@@ -308,6 +308,10 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
     public Iterator<IMapping<U,V>> iterator() {
         return new MappingIterator ();
     }
+
+    protected Map<U, V> getMap() {
+		return map;
+	}
     
     private boolean eq(Object a, Object b) {
         return (a == b) || ((a != null) ? a.equals(b) : false);

@@ -99,7 +99,7 @@ public class Set_Test extends Util_Test {
 
   @Test()
   public void test_linkedHashSet() throws Exception {
-    Set<Integer> set = SetSequence.<Integer>fromSetAndArray(new LinkedHashSet());
+    Set<Integer> set = SetSequence.<Integer>fromSetAndArray(new LinkedHashSet<Integer>());
     SetSequence.fromSet(set).addElement(11);
     SetSequence.fromSet(set).addElement(3);
     SetSequence.fromSet(set).addElement(2);

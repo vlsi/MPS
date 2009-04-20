@@ -293,4 +293,8 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
     protected SetSequence (SetSequence<T> other) {
     	this.set = new HashSet<T> (other.set);
     }
+
+	protected Set<T> getSet() {
+		return set;
+	}
 }

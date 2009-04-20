@@ -2159,5 +2159,82 @@
       <property name="externalValue" value="access_order" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240239337991">
+    <property name="package" value="mapType" />
+    <property name="name" value="SortedMapType" />
+    <link role="extends" targetNodeId="1197683403723" resolveInfo="MapType" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240239356260">
+      <property name="value" value="sorted_map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240239494010">
+    <property name="package" value="mapType" />
+    <property name="name" value="TreeMapCreator" />
+    <link role="extends" targetNodeId="1197686869805" resolveInfo="HashMapCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240239533866">
+      <property name="value" value="treemap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240239309184">
+    <property name="package" value="mapType" />
+    <property name="name" value="SortedMapOperation" />
+    <link role="extends" targetNodeId="1201225890326" resolveInfo="MapOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240239326930">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240239379525">
+    <property name="package" value="mapType" />
+    <property name="name" value="HeadMapOperation" />
+    <link role="extends" targetNodeId="1240239309184" resolveInfo="SortedMapOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240239942969">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toKey" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240239394442">
+      <property name="value" value="headMap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240240127120">
+    <property name="package" value="mapType" />
+    <property name="name" value="TailMapOperation" />
+    <link role="extends" targetNodeId="1240239309184" resolveInfo="SortedMapOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240240145771">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromKey" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240240137845">
+      <property name="value" value="tailMap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240240201186">
+    <property name="package" value="mapType" />
+    <property name="name" value="SubMapOperation" />
+    <link role="extends" targetNodeId="1240239309184" resolveInfo="SortedMapOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240240285641">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromKey" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240240291802">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toKey" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240240233612">
+      <property name="value" value="subMap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -75,7 +75,7 @@ public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<
 		return null;
 	}
 
-	public <T> T[] toArray(T[] a) {
+	public <U> U[] toArray(U[] a) {
 		return null;
 	}
 	
