@@ -61,6 +61,11 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
           continue;
         }
 
+        if (ModelGenerationStatusManager.isDoNotGenerate(sm)) {
+          continue;
+        }
+
+
         if ("".equals(sm.getStereotype())) {
           models.add(sm);
         }
