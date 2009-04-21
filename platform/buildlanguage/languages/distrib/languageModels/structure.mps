@@ -151,6 +151,10 @@
       <property name="name" value="defaultVMOptions" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240321503907">
+      <property name="name" value="additionalVMOptions" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1230059161510">
     <property name="name" value="ClassPath" />

@@ -5,6 +5,7 @@ PROJECT_HOME_FROM_STARTUP_DIR=..
 JAVA=java
 MAIN_CLASS=jetbrains.mps.Launcher
 JVM_ARGS=`tr '\n' ' ' < "bin/mps.vmoptions" | tr '\r' ' '`
+#ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
 CLASSPATH=""
 CLASSPATH=$CLASSPATH:$PROJECT_HOME_FROM_STARTUP_DIR/lib/idea-patch.jar
@@ -88,4 +89,4 @@ cd $PROJECT_HOME
 cd bin
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD
 export LD_LIBRARY_PATH
-$JAVA $JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS
+$JAVA $JVM_ARGS $ADDITIONAL_JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS

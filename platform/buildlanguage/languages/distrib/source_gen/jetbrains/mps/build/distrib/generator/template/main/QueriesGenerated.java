@@ -438,6 +438,14 @@ public class QueriesGenerated {
     return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1240322800147(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240322826778(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
+  }
+
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
@@ -737,6 +745,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1240222396096(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240322753785(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
+  }
+
+  public static boolean ifMacro_Condition_1240322795463(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
   }
 
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -24,6 +24,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   public static final String concept = "jetbrains.mps.build.distrib.structure.DistribConfiguration";
   public static final String STARTUP_CLASS = "startupClass";
   public static final String DEFAULT_V_M_OPTIONS = "defaultVMOptions";
+  public static final String ADDITIONAL_V_M_OPTIONS = "additionalVMOptions";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -61,6 +62,14 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
 
   public void setDefaultVMOptions(String value) {
     this.setProperty(DistribConfiguration.DEFAULT_V_M_OPTIONS, value);
+  }
+
+  public String getAdditionalVMOptions() {
+    return this.getProperty(DistribConfiguration.ADDITIONAL_V_M_OPTIONS);
+  }
+
+  public void setAdditionalVMOptions(String value) {
+    this.setProperty(DistribConfiguration.ADDITIONAL_V_M_OPTIONS, value);
   }
 
   public String getName() {

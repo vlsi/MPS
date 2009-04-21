@@ -179,6 +179,8 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7701_8(context, node, "JVM options"));
     editorCell.addEditorCell(this.createProperty_7701_9(context, node));
+    editorCell.addEditorCell(this.createConstant_7701_18(context, node, "additional"));
+    editorCell.addEditorCell(this.createProperty_7701_13(context, node));
     return editorCell;
   }
 
@@ -450,6 +452,14 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7701_17(editorCell, node, context);
     setupLabel_Constant_7701_17(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_7701_18(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7701_18(editorCell, node, context);
+    setupLabel_Constant_7701_18(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -946,6 +956,35 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createProperty_7701_12_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_7701_6(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_7701_6((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_7701_13(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("additionalVMOptions");
+    provider.setNoTargetText("<no additionalVMOptions>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(true);
+    EditorCell cellWithRole = this.createProperty_7701_12_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_7701_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7701_0");
@@ -1403,6 +1442,15 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_7701_8(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_7701_18(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7701_18");
+    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Property_7701_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_additionalVMOptions");
+  }
+
   private static void setupLabel_Constant_7701_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1506,6 +1554,12 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNode_7701_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_7701_18(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_7701_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7701_0(SNode node, EditorContext editorContext, IScope scope) {

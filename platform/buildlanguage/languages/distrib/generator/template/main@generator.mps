@@ -415,6 +415,64 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240322744542">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323542155">
+        <property name="text" value="::" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322747595">
+        <property name="text" value="set ADDITIONAL_JVM_ARGS=" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323654650">
+        <property name="text" value="&quot;" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322785876">
+        <property name="text" value="additional args" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240322800146">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240322800147">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240322800148">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240322825867">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322858576">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322826460">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240322825868" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240322833986">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240322873742">
+                    <link role="property" targetNodeId="1.1240321503907" resolveInfo="additionalVMOptions" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323665784">
+        <property name="text" value="&quot;" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240322795462">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240322795463">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240322795464">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240322886771">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322897521">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322886772">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322886773">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240322886774" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240322886775">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240322921490">
+                    <link role="property" targetNodeId="1.1240321503907" resolveInfo="additionalVMOptions" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1240322917708" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230058871683">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230058891107">
         <property name="text" value="set CLASSPATH=" />
@@ -612,7 +670,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231751263216">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231751265045">
-        <property name="text" value="start &quot;&quot; %JAVA% %JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS%" />
+        <property name="text" value="start &quot;&quot; %JAVA% %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS%" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231749805201">
@@ -3223,6 +3281,64 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240322718242">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323562585">
+        <property name="text" value="#" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322722742">
+        <property name="text" value="ADDITIONAL_JVM_ARGS=" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323632926">
+        <property name="text" value="&quot;" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322741042">
+        <property name="text" value="additional args" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240322826777">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240322826778">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240322826779">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240322830036">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322830039">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322830040">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240322830041" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240322830042">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240322830043">
+                    <link role="property" targetNodeId="1.1240321503907" resolveInfo="additionalVMOptions" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323639035">
+        <property name="text" value="&quot;" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240322753784">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240322753785">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240322753786">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240322766869">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322805272">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322790578">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240322774573">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240322766870" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240322786174">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240322801694">
+                    <link role="property" targetNodeId="1.1240321503907" resolveInfo="additionalVMOptions" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1240322818583" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1231691240843" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230293101920">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230293101921">
@@ -3372,7 +3488,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231686953631">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231686958409">
-        <property name="text" value="$JAVA $JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS" />
+        <property name="text" value="$JAVA $JVM_ARGS $ADDITIONAL_JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS" />
       </node>
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1230292674840">

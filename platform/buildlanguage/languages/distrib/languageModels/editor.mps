@@ -333,6 +333,14 @@
               <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1231691709509">
                 <link role="relationDeclaration" targetNodeId="1.1231691593776" resolveInfo="defaultVMOptions" />
               </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240321765688">
+                <property name="text" value="additional" />
+                <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240321780179">
+                <property name="allowEmptyText" value="true" />
+                <link role="relationDeclaration" targetNodeId="1.1240321503907" resolveInfo="additionalVMOptions" />
+              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1231691666064">
                 <property name="flag" value="false" />
               </node>
