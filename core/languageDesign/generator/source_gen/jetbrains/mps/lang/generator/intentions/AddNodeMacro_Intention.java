@@ -36,7 +36,7 @@ public class AddNodeMacro_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode nodeMacro = QueriesUtil.addNodeMacro(node);
-    //     set caret
+    // set caret
     editorContext.selectAndSetCaret(nodeMacro, 1);
   }
 

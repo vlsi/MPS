@@ -1460,20 +1460,27 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1216319039499">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216319039500">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216319039501">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216319261663">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216319256659">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1216319249032">
-                <link role="concept" targetNodeId="1.1169569792945" resolveInfo="WeaveEach_RuleConsequence" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216319242556">
-                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1216319241446" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1216319243997" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240312392553">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240312400985">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240312397980">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240312397807" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1240312399218" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240312401989">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240312405694">
+                  <link role="conceptDeclaration" targetNodeId="1.1167171569011" resolveInfo="Weaving_MappingRule" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1216319257584">
-                <link role="link" targetNodeId="1.1169569853122" />
-              </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1216319264275" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216319261663">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216319256659">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1216319241446" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1216319257584">
+                  <link role="link" targetNodeId="1.1169569853122" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1216319264275" />
+            </node>
           </node>
         </node>
       </node>

@@ -101,7 +101,7 @@ public class AttachMappingLabelDialog extends BaseDialog {
           SLinkOperations.setTarget(templateFragment, "labelDeclaration", mappingLabel, false);
           return;
         }
-        //         create new MAP_SRC macro
+        // create new MAP_SRC macro
         SNode newMacro = SLinkOperations.addNewChild(AttachMappingLabelDialog.this.myTemplateNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro");
         SLinkOperations.setTarget(newMacro, "mappingLabel", mappingLabel, false);
       }
