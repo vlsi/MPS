@@ -411,6 +411,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.workbench.editors.MPSEditorOpener</implementation-class>
         </component>
 
