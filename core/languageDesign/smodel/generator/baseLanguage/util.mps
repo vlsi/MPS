@@ -1127,36 +1127,5 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239466128599" />
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240159807768">
-    <property name="name" value="SEnumOperations" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1240159895072">
-      <property name="name" value="getEnum" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240159947416" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240159895074" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240159895075">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240160031260">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240160071690">
-            <link role="baseMethodDeclaration" targetNodeId="30.~SNodeOperations.getNode(java.lang.String,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-            <link role="classConcept" targetNodeId="30.~SNodeOperations" resolveInfo="SNodeOperations" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240160085816">
-              <link role="variableDeclaration" targetNodeId="1240159975105" resolveInfo="modelUID" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240160088162">
-              <link role="variableDeclaration" targetNodeId="1240159985155" resolveInfo="nodeID" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240159975105">
-        <property name="name" value="modelUID" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240159981154" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240159985155">
-        <property name="name" value="nodeID" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240159986720" />
-      </node>
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240159807769" />
-  </node>
 </model>
 
