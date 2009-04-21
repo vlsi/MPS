@@ -55,14 +55,13 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239995796839" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240033962790">
     <link role="conceptDeclaration" targetNodeId="1.1240033962436" resolveInfo="UndeclaredVariableReference" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240033962791">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240033962792">
-        <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
         <link role="styleClass" targetNodeId="4.1233937712403" resolveInfo="undeclaredVaribale" />
+        <link role="relationDeclaration" targetNodeId="1.1240318544266" resolveInfo="name" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240033962793" />
     </node>

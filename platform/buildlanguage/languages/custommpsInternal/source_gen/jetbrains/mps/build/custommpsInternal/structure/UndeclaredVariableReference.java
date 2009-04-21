@@ -4,19 +4,18 @@ package jetbrains.mps.build.custommpsInternal.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.build.packaging.structure.IStringExpression;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class UndeclaredVariableReference extends BaseConcept implements IStringExpression, INamedConcept {
+public class UndeclaredVariableReference extends BaseConcept implements IStringExpression {
   public static final String concept = "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference";
   public static final String ANT_NAME = "antName";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public UndeclaredVariableReference(SNode node) {
     super(node);
@@ -28,6 +27,14 @@ public class UndeclaredVariableReference extends BaseConcept implements IStringE
 
   public void setAntName(String value) {
     this.setProperty(UndeclaredVariableReference.ANT_NAME, value);
+  }
+
+  public String getName() {
+    return this.getProperty(UndeclaredVariableReference.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(UndeclaredVariableReference.NAME, value);
   }
 
   public String getShortDescription() {
@@ -52,14 +59,6 @@ public class UndeclaredVariableReference extends BaseConcept implements IStringE
 
   public void setVirtualPackage(String value) {
     this.setProperty(UndeclaredVariableReference.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(UndeclaredVariableReference.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(UndeclaredVariableReference.NAME, value);
   }
 
 

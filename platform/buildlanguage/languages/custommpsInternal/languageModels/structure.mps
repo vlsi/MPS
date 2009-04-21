@@ -59,15 +59,16 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240033962437">
       <link role="intfc" targetNodeId="2.1205339194346" resolveInfo="IStringExpression" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240033962439">
-      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240033962440">
       <property name="value" value="undeclared variable" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240033962441">
       <property name="name" value="antName" />
+      <link role="dataType" targetNodeId="2.1223640176546" resolveInfo="StringWithoutSpaces" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240318544266">
+      <property name="name" value="name" />
       <link role="dataType" targetNodeId="2.1223640176546" resolveInfo="StringWithoutSpaces" />
     </node>
   </node>

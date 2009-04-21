@@ -801,6 +801,9 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1240318094607">
         <link role="conceptToRemove" targetNodeId="1.1205339044029" resolveInfo="SimpleString" />
       </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1240318787937">
+        <link role="conceptToRemove" targetNodeId="1.1205342812422" resolveInfo="CompositeString" />
+      </node>
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1240313315575">
         <link role="concept" targetNodeId="1.1205339194346" resolveInfo="IStringExpression" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="1240313340169">
