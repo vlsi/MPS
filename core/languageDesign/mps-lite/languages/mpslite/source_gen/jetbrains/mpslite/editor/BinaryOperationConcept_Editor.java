@@ -33,6 +33,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_1462_1(context, node));
     editorCell.addEditorCell(this.createCollection_1462_2(context, node));
+    editorCell.addEditorCell(this.createConstant_1462_5(context, node, " "));
     return editorCell;
   }
 
@@ -143,6 +144,14 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1462_4(editorCell, node, context);
     setupLabel_Constant_1462_4(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_1462_5(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_1462_5(editorCell, node, context);
+    setupLabel_Constant_1462_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -492,6 +501,18 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_sign");
   }
 
+  private static void setupBasic_Constant_1462_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1462_5");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1462_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -526,6 +547,9 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Property_1462_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1462_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

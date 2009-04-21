@@ -613,6 +613,12 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884376254" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317971644">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240317975704">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239884376229" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1183028105988">
@@ -1104,6 +1110,12 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884376242" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240318133731">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240318147115">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239884376271" />
     </node>
   </node>
@@ -1232,6 +1244,12 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884376264" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317932825">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240317936316">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239884376240" />
     </node>
   </node>
@@ -1350,6 +1368,12 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239939625860" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1239939625861">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317955034">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240317960417">
           <property name="flag" value="false" />
         </node>
       </node>

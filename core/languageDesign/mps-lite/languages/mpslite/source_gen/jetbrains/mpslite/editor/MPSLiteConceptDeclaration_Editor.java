@@ -40,6 +40,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_3196_1(context, node));
     editorCell.addEditorCell(this.createCollection_3196_5(context, node));
+    editorCell.addEditorCell(this.createConstant_3196_6(context, node, " "));
     return editorCell;
   }
 
@@ -150,6 +151,14 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3196_5(editorCell, node, context);
     setupLabel_Constant_3196_5(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_3196_6(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_3196_6(editorCell, node, context);
+    setupLabel_Constant_3196_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -406,6 +415,18 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_3196_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_3196_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_3196_6");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_3196_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -437,6 +458,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNode_3196_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_3196_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition3196_0(SNode node, EditorContext editorContext, IScope scope) {

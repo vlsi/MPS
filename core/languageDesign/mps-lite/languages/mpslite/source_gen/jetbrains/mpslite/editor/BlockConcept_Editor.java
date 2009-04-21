@@ -33,6 +33,7 @@ public class BlockConcept_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_7567_1(context, node));
     editorCell.addEditorCell(this.createCollection_7567_2(context, node));
+    editorCell.addEditorCell(this.createConstant_7567_2(context, node, " "));
     return editorCell;
   }
 
@@ -72,6 +73,14 @@ public class BlockConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7567_1(editorCell, node, context);
     setupLabel_Constant_7567_1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_7567_2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7567_2(editorCell, node, context);
+    setupLabel_Constant_7567_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -223,6 +232,18 @@ public class BlockConcept_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_7567_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_7567_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7567_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_7567_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -236,6 +257,9 @@ public class BlockConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNode_7567_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_7567_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
