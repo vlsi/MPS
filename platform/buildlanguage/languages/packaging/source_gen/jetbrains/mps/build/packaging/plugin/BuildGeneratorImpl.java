@@ -9,12 +9,13 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.build.packaging.plugin.NodeData;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.build.packaging.plugin.BuildGeneratorUtil;
-import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
@@ -55,7 +56,21 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private void generateInternal() {
-    this.generate(this.getSModelDescriptor(), this.getProjectName(), this.myProject.getBaseDir().getPath(), this.getModules());
+    final SModelDescriptor descriptor = this.getSModelDescriptor();
+    final String projectName = this.getProjectName();
+    final String projectBasedirPath = this.myProject.getBaseDir().getPath();
+    final List<NodeData> modules = this.getModules();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+
+          public void run() {
+            BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
+          }
+        });
+      }
+    });
   }
 
   public SModelDescriptor getSModelDescriptor() {
@@ -63,7 +78,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Solution solution;
       if (this.getCreateSolution()) {
         VirtualFile projectBaseDir = this.myProject.getBaseDir();
-        //          get solution
+        //  get solution
         String solutionName = this.getNewSolutionName();
         String solutionBaseDir = projectBaseDir.getPath() + File.separator + "solutions" + File.separator + solutionName;
         MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
@@ -91,12 +106,12 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
-    //     create mps layout
+    // create mps layout
     SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
-    //     add mps layout to the target model
+    // add mps layout to the target model
     SModel targetSModel = targetModelDescriptor.getSModel();
     targetSModel.addRoot(mpsLayout);
-    //     set properties
+    // set properties
     SPropertyOperations.set(mpsLayout, "name", name);
     String result = Macros.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");
@@ -109,14 +124,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
-    //     create zip
+    // create zip
     SNode zip = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Zip", null);
     SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip"), true);
     SLinkOperations.addChild(mpsLayout, "component", zip);
-    //     create folder inside zip
+    // create folder inside zip
     SNode folder = PackagingLanguageGenerator.createFolder(name);
     SLinkOperations.addChild(zip, "entry", folder);
-    //     add modules to folder
+    // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
     targetModelDescriptor.save();
     MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
@@ -136,16 +151,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   private static void createContent(List<NodeData> selectedData, SNode folder, SModel targetSModel) {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
-    Set<SNode> topLevel = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet());
+    Set<SNode> topLevel = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet<SNode>());
     for(NodeData data : ListSequence.fromList(selectedData)) {
-      //       creating component
+      // creating component
       SNode component = createComponent(data, targetSModel);
       if (component == null) {
         continue;
       }
       MapSequence.fromMap(createdComponent).put(data, component);
       SetSequence.fromSet(topLevel).addElement(component);
-      //       dealing with children
+      // dealing with children
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         List<NodeData> children = data.getChildren();
         for(NodeData child : ListSequence.fromList(children)) {
@@ -158,7 +173,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         }
       }
-      //       dealing with parent
+      // dealing with parent
       NodeData parent = data.getParent();
       if (parent == null) {
         break;

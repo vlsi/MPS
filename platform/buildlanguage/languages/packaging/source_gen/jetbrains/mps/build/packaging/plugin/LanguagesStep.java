@@ -113,11 +113,11 @@ public class LanguagesStep extends AbstractStep {
 
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
-    Set<NodeData> modules = SetSequence.<NodeData>fromSetAndArray(new LinkedHashSet());
+    Set<NodeData> modules = SetSequence.<NodeData>fromSetAndArray(new LinkedHashSet<NodeData>());
     for(NodeData item : SetSequence.fromSet(selectedItems)) {
       this.fillWithParents(item, modules);
     }
-    List<NodeData> toSort = ListSequence.fromList(new LinkedList<NodeData>());
+    List<NodeData> toSort = ListSequence.fromList(ListSequence.fromList(new LinkedList<NodeData>())).addSequence(SetSequence.fromSet(modules));
     ListSequence.fromList(toSort).sort(new Comparator <NodeData>() {
 
       public int compare(NodeData a, NodeData b) {

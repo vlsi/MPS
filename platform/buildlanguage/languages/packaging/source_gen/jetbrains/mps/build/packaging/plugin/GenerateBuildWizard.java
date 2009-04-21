@@ -57,10 +57,10 @@ public class GenerateBuildWizard extends AbstractWizard {
 
   protected void doOKAction() {
     super.doOKAction();
+    GenerateBuildWizard.this.myGenerator.generate();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        GenerateBuildWizard.this.myGenerator.generate();
       }
     });
   }

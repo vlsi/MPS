@@ -7,12 +7,14 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -38,7 +40,13 @@ public class BuildGeneratorUtil {
     if (modelDescriptor == null) {
       modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
     }
-    modelDescriptor.getSModel().addLanguage(getPackagingLanguageReference());
+    final SModelDescriptor descriptor = modelDescriptor;
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        descriptor.getSModel().addLanguage(getPackagingLanguageReference());
+      }
+    });
     return modelDescriptor;
   }
 
@@ -48,25 +56,38 @@ public class BuildGeneratorUtil {
       baseDirFile.mkdirs();
     }
     String solutionFilePath = solutionBaseDir + File.separator + solutionName + MPSExtentions.DOT_SOLUTION;
-    IFile solutionFile = FileSystem.getFile(solutionFilePath);
-    Solution solution;
+    final IFile solutionFile = FileSystem.getFile(solutionFilePath);
+    final Solution solution;
     if (solutionFile.exists()) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByFile(solutionFile.toFile());
-      if (!(module instanceof Solution)) {
+      IModule module = ModelAccess.instance().runReadAction(new Computable <IModule>() {
+
+        public IModule compute() {
+          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile.toFile());
+        }
+      });
+      if (module instanceof Solution) {
+        solution = (Solution)module;
+      } else if (module == null) {
+        solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
+      } else
+      {
         return null;
       }
-      solution = (Solution)module;
     } else
     {
       solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
     }
-    ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
-    solution.addDependency(packagingLanguageRef, false);
-    solution.addUsedLangauge(packagingLanguageRef);
+    final ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+
+      public void run() {
+        solution.addUsedLangauge(packagingLanguageRef);
+      }
+    });
     return solution;
   }
 
-  public static Solution createSolutionFormFile(MPSProject mpsProject, IFile solutionDescriptorFile) {
+  public static Solution createSolutionFormFile(final MPSProject mpsProject, final IFile solutionDescriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setExternallyVisible(true);
     descriptor.setCompileInMPS(true);
@@ -77,7 +98,12 @@ public class BuildGeneratorUtil {
     mr.setPath(solutionDescriptorFile.getParent().getAbsolutePath());
     descriptor.getModelRoots().add(mr);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
-    return mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+    return ModelAccess.instance().runWriteAction(new Computable <Solution>() {
+
+      public Solution compute() {
+        return mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+      }
+    });
   }
 
   private static ModuleReference getPackagingLanguageReference() {
