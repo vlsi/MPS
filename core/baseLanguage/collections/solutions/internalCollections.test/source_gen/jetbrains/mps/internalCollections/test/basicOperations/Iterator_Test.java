@@ -11,8 +11,10 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IEnumerator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class Iterator_Test extends Util_Test {
 
@@ -26,13 +28,13 @@ public class Iterator_Test extends Util_Test {
       Sequence.fromIterable(test).iterator().next();
       Assert.fail();
     } catch (NoSuchElementException e) {
-      //       expected exception
+      // expected exception
     }
     try {
       Sequence.fromIterable(test).enumerator().current();
       Assert.fail();
     } catch (NoSuchElementException e) {
-      //       expected exception
+      // expected exception
     }
   }
 
@@ -47,7 +49,7 @@ public class Iterator_Test extends Util_Test {
       is.next();
       Assert.fail();
     } catch (NoSuchElementException e) {
-      //       expected exception
+      // expected exception
     }
     IEnumerator<Integer> is2 = Sequence.fromIterable(test).enumerator();
     Assert.assertTrue(is2.moveNext());
@@ -57,7 +59,7 @@ public class Iterator_Test extends Util_Test {
       is2.current();
       Assert.fail();
     } catch (NoSuchElementException e) {
-      //       expected exception
+      // expected exception
     }
   }
 
@@ -79,13 +81,13 @@ public class Iterator_Test extends Util_Test {
 
   @Test()
   public void test_containerIterator() throws Exception {
-    List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     for(Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
       cit.next();
       cit.remove();
     }
     Assert.assertTrue(ListSequence.fromList(list).isEmpty());
-    Set<Integer> set = SetSequence.<Integer>fromArray(1, 2, 3);
+    Set<Integer> set = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3);
     for(Iterator<Integer> cit = SetSequence.fromSet(set).iterator() ; cit.hasNext() ; ) {
       cit.next();
       cit.remove();

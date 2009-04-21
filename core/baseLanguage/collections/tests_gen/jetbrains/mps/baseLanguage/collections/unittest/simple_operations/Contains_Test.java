@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Contains_Test extends TestCase {
 
@@ -66,10 +67,10 @@ __switch__:
 
   @Test()
   public void test_test2() throws Exception {
-    List<Integer> intL = ListSequence.<Integer>fromArray(10, 20, 30);
+    List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
-    //     null test
+    // null test
     intL = null;
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
   }

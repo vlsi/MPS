@@ -61,9 +61,15 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             if (set == null && array == null) {
                 return NullSetSequence.instance();
             }
-        }
-        if (set == null) {
-        	set = new HashSet<U>();
+            else if (set == null) {
+            	set = new HashSet<U>();
+            }
+            else if (array == null) {
+            	if (set instanceof ISetSequence) {
+            		return (ISetSequence<U>) set;
+            	}
+            	return new SetSequence<U> (set);
+            }
         }
         List<U> input = Arrays.asList(array);
         if (Sequence.IGNORE_NULL_VALUES) {
@@ -111,9 +117,21 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             	return fromSet (set);
             }
         }
-    	for (U u: it) {
-    		tmp.add(u);
-    	}
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : it) {
+                if (u != null) {
+                    tmp.add(u);
+                }
+            }
+        }
+        else if (it instanceof Collection){
+        	tmp.addAll((Collection<? extends U>) it);
+        } 
+        else {
+        	for (U u: it) {
+        		tmp.add(u);
+        	}
+        }
     	if (tmp instanceof ISetSequence) {
     		return (ISetSequence<U>) tmp;
     	}

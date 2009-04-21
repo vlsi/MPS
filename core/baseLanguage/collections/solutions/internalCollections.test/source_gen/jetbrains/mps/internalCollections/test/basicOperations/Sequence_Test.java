@@ -467,4 +467,10 @@ __switch__:
     Assert.assertEquals("[duh, foo, bar]", String.valueOf(test));
   }
 
+  @Test()
+  public void test_asSequence() throws Exception {
+    String[] arr = new String[]{"A","B","C"};
+    this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
+  }
+
 }

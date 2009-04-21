@@ -583,7 +583,7 @@ __switch__:
 
   @Test()
   public void test_selectMany() throws Exception {
-    //      only testing compileability of the generated code
+    //  only testing compileability of the generated code
     Iterable<B> bs = Sequence.fromIterable(Collections.<B>emptyList());
     Sequence.fromIterable(bs).translate(new ITranslator2 <B, A>() {
 

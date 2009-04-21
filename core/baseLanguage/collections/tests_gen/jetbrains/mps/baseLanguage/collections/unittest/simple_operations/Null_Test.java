@@ -17,7 +17,7 @@ public class Null_Test extends TestCase {
     ListSequence.fromList(l).addSequence(ListSequence.fromList(l));
     Assert.assertNull(ListSequence.fromList(l).first());
     Assert.assertNull(ListSequence.fromList(l).last());
-    Assert.assertNull(ListSequence.fromList(l).getElement(0));
+    Assert.assertNull(ListSequence.fromList(l).first());
     Assert.assertEquals(-1, ListSequence.fromList(l).indexOf(""));
     Assert.assertTrue(ListSequence.fromList(l).isEmpty());
     Assert.assertFalse(ListSequence.fromList(l).isNotEmpty());

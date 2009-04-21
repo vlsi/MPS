@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.unittest.simple_operations;
 import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -18,7 +19,7 @@ public class Distinct_Test extends TestCase {
   @Test()
   public void test_distinct1() throws Exception {
     Iterable<Integer> source;
-    source = ListSequence.<Integer>fromArray(1, 2, 2, 3, 4, 4, 5);
+    source = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3, 4, 4, 5);
     source = Sequence.fromIterable(source).distinct();
     Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter <Integer>() {
 

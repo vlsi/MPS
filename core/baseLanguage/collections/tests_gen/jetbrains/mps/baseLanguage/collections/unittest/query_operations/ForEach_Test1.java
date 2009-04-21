@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.unittest.query_operations;
 import junit.framework.TestCase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import junit.framework.Assert;
@@ -16,7 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 public class ForEach_Test1 extends TestCase {
 
   public void test_1() {
-    List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     final Wrappers._int sum = new Wrappers._int(0);
     ListSequence.fromList(list).visitAll(new IVisitor <Integer>() {
 

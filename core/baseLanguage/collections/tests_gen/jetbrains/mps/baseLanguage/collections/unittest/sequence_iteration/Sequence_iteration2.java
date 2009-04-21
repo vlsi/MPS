@@ -12,7 +12,7 @@ import junit.framework.Assert;
 public class Sequence_iteration2 extends TestCase {
 
   public void test_1() {
-    //     inner iteration
+    // inner iteration
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
 
       public Iterable<String> iterable() {

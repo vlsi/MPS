@@ -11,6 +11,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class NullValues_Test extends Util_Test {
 
@@ -66,17 +67,17 @@ __switch__:
   @Test()
   public void test_nullElements() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
-      List<Integer> list5 = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+      List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
       ListSequence.fromList(list5).addElement(null);
       this.assertIterableEquals(this.expect5(), list5);
       ListSequence.fromList(list5).removeElement(null);
       this.assertIterableEquals(this.expect5(), list5);
       ListSequence.fromList(list5).removeSequence(Sequence.fromIterable(this.input5()));
       this.assertEmptyList(list5);
-      this.assertEmptyList(ListSequence.<Integer>fromArray((Integer)null));
-      this.assertEmptyList(ListSequence.<Integer>fromArray(null, null));
+      this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null));
+      this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null));
       Integer nullvalue = null;
-      this.assertEmptyList(ListSequence.<Integer>fromArray(nullvalue));
+      this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), nullvalue));
     }
   }
 

@@ -17,14 +17,13 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import jetbrains.mps.internal.collections.runtime.impl.NullSortedSetSequence;
 
 public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
@@ -60,9 +59,15 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
             if (set == null && array == null) {
                 return NullSortedSetSequence.instance();
             }
-        }
-        if (set == null) {
-        	set = new TreeSet<U>();
+            else if (set == null) {
+            	set = new TreeSet<U>();
+            }
+            else if (array == null) {
+            	if (set instanceof ISortedSetSequence) {
+            		return (ISortedSetSequence<U>) set;
+            	}
+            	return new SortedSetSequence<U> (set);
+            }
         }
         List<U> input = Arrays.asList(array);
         if (Sequence.IGNORE_NULL_VALUES) {
@@ -97,26 +102,38 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
         return new SortedSetSequence<U> (set);
     }
     
-    public static <U> ISetSequence<U> fromSetWithValues (Set<U> set, Iterable<U> it) {
-        Set<U> tmp = set;
+    public static <U> ISortedSetSequence<U> fromSetWithValues (SortedSet<U> set, Iterable<U> it) {
+        SortedSet<U> tmp = set;
     	if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null && it == null) {
-                return NullSetSequence.instance();
+                return NullSortedSetSequence.instance();
             }
             else if (set == null) {
-            	tmp = new HashSet<U> ();
+            	tmp = new TreeSet<U> ();
             }
             else if (it == null) {
             	return fromSet (set);
             }
         }
-    	for (U u: it) {
-    		tmp.add(u);
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : it) {
+                if (u != null) {
+                    tmp.add(u);
+                }
+            }
+        }
+        else if (it instanceof Collection){
+        	tmp.addAll((Collection<? extends U>) it);
+        } 
+        else {
+        	for (U u: it) {
+        		tmp.add(u);
+        	}
+        }
+    	if (tmp instanceof ISortedSetSequence) {
+    		return (ISortedSetSequence<U>) tmp;
     	}
-    	if (tmp instanceof ISetSequence) {
-    		return (ISetSequence<U>) tmp;
-    	}
-    	return new SetSequence<U> (tmp);
+    	return new SortedSetSequence<U> (tmp);
     }
 
 	// delegated methods

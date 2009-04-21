@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 
@@ -22,7 +23,7 @@ public class NullSequence_Test extends Util_Test {
       Assert.assertNull(Sequence.fromIterable(nullSeq).last());
       Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
       Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
-      List<Integer> list5 = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+      List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
       ListSequence.fromList(list5).addSequence(Sequence.fromIterable(nullSeq));
       this.assertIterableEquals(this.expect5(), list5);
       ListSequence.fromList(list5).removeSequence(Sequence.fromIterable(nullSeq));

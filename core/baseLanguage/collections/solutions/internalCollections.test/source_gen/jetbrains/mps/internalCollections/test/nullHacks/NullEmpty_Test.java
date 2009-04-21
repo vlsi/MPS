@@ -9,6 +9,7 @@ import java.util.Collections;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class NullEmpty_Test extends Util_Test {
 
@@ -18,7 +19,7 @@ public class NullEmpty_Test extends Util_Test {
       Iterable<Integer> emptySeq = Sequence.fromIterable(Collections.<Integer>emptyList());
       Assert.assertNull(Sequence.fromIterable(emptySeq).first());
       Assert.assertNull(Sequence.fromIterable(emptySeq).last());
-      List<Integer> emptyList = ListSequence.<Integer>fromArray();
+      List<Integer> emptyList = ListSequence.fromList(new ArrayList<Integer>());
       Assert.assertNull(ListSequence.fromList(emptyList).first());
       Assert.assertNull(ListSequence.fromList(emptyList).last());
       Assert.assertNull(ListSequence.fromList(emptyList).first());

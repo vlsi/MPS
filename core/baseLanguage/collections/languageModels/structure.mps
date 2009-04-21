@@ -2317,5 +2317,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240325842691">
+    <property name="name" value="AsSequenceOperation" />
+    <link role="extends" targetNodeId="2.1208623485264" resolveInfo="AbstractOperation" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240325913084">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240325917421">
+      <property name="value" value="asSequence" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

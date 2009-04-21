@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,7 +35,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedList")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -62,7 +63,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -88,7 +89,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "get", ListSequence.<ParameterType>fromArray(ParameterType.INT));
+        return ListMigrationUtil.isApplicableForLists(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -117,7 +118,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "clear", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForLists(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -143,7 +144,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.ANY));
+        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.ANY));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -171,7 +172,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -200,7 +201,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -226,7 +227,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "set", ListSequence.<ParameterType>fromArray(ParameterType.INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "set", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -255,7 +256,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.INT));
+        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -283,7 +284,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -311,7 +312,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "removeAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -339,7 +340,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -367,7 +368,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "contains", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForAll(node, "contains", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -395,7 +396,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -423,7 +424,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addFirst", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addFirst", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -451,7 +452,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addLast", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addLast", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -479,7 +480,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "removeFirst", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForLists(node, "removeFirst", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -564,7 +565,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedHashSet")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~LinkedHashSet")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -592,7 +593,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "add", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -620,7 +621,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "addAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -648,7 +649,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "removeAll", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -676,7 +677,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "remove", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -766,7 +767,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -793,7 +794,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -820,7 +821,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -847,7 +848,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Iterator")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Iterator")));
       }
 
       public void doUpdateInstanceNode(SNode node) {

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -86,7 +87,7 @@ public class SelectTest_Test extends Util_Test {
 
   @Test()
   public void test_selectMany() throws Exception {
-    final List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3);
+    final List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
 
       public Iterable<Integer> iterable() {

@@ -2709,5 +2709,12 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240251704871" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240325926312">
+    <link role="conceptDeclaration" targetNodeId="1.1240325842691" resolveInfo="AsSequenceOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1240325929970">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+    </node>
+  </node>
 </model>
 

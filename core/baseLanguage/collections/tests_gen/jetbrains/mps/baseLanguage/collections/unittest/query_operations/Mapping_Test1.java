@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Mapping_Test1 extends TestCase {
 
@@ -69,11 +70,11 @@ __switch__:
         };
       }
     });
-    //     from infinite sequence take first 10 numbers,
-    //     ignore odd numbers,
-    //     map each even number to two strings:
-    //     "num:<n>"
-    //     "num:<n*100>"
+    // from infinite sequence take first 10 numbers,
+    // ignore odd numbers,
+    // map each even number to two strings:
+    // "num:<n>"
+    // "num:<n*100>"
     final Wrappers._int count = new Wrappers._int(0);
     Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2 <Integer, String>() {
 
@@ -166,7 +167,7 @@ __switch__:
   }
 
   public void test_yieldNull() {
-    List<String> strings = ListSequence.<String>fromArray("a");
+    List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
     List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2 <String, String>() {
 
       public Iterable<String> translate(final String it) {

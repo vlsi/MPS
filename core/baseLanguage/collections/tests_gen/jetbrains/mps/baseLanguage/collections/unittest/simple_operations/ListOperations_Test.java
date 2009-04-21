@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.collections.unittest.simple_operations;
 import junit.framework.TestCase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import junit.framework.Assert;
 import java.util.Arrays;
 
 public class ListOperations_Test extends TestCase {
 
   public void test_1() {
-    List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Integer at_2 = ListSequence.fromList(list).getElement(2);
     Assert.assertEquals(3, at_2.intValue());
     int index_2 = ListSequence.fromList(list).indexOf(at_2);
@@ -19,7 +20,7 @@ public class ListOperations_Test extends TestCase {
   }
 
   public void test_2() {
-    List<List<Boolean>> llb = ListSequence.<List<Boolean>>fromArray(ListSequence.<Boolean>fromArray(false, true));
+    List<List<Boolean>> llb = ListSequence.fromListAndArray(new ArrayList<List<Boolean>>(), ListSequence.fromListAndArray(new ArrayList<Boolean>(), false, true));
     Assert.assertSame(2, ListSequence.fromList(ListSequence.fromList(llb).first()).count());
     Assert.assertSame(false, ListSequence.fromList(ListSequence.fromList(llb).first()).first());
   }

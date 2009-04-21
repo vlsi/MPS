@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,7 +35,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.<SNode>fromArray(SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashMap")));
+        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~HashMap")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -63,7 +64,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "get", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForMap(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -92,7 +93,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "put", ListSequence.<ParameterType>fromArray(ParameterType.NOT_INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForMap(node, "put", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -124,7 +125,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "values", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForMap(node, "values", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -151,7 +152,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -178,7 +179,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.<ParameterType>fromArray());
+        return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {

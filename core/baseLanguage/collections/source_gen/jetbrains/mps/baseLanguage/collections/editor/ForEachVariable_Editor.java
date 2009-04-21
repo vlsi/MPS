@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
@@ -96,7 +97,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListSequence.<String>fromArray();
+      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
         ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"))));
       }

@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Where_Select_Test1 extends TestCase {
 
@@ -70,8 +71,8 @@ __switch__:
         };
       }
     });
-    //     from sequence of 10 numbers
-    //     take each even number and produce string: "num:<n>"
+    // from sequence of 10 numbers
+    // take each even number and produce string: "num:<n>"
     final Wrappers._int count = new Wrappers._int(0);
     Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter <Integer>() {
 
@@ -96,7 +97,7 @@ __switch__:
   }
 
   public void test_2() {
-    //     'where' and 'select' tolerate 'null' operand 
+    // 'where' and 'select' tolerate 'null' operand 
     List<Integer> nums = null;
     Iterable<Integer> evenNums = ListSequence.fromList(nums).where(new IWhereFilter <Integer>() {
 
@@ -114,8 +115,8 @@ __switch__:
   }
 
   public void test_3() {
-    //     'select' skips all 'null'-s
-    List<String> list = ListSequence.<String>fromArray("1", "2", "3");
+    // 'select' skips all 'null'-s
+    List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
     Iterable<String> empty = ListSequence.fromList(list).select(new ISelector <String, String>() {
 
       public String select(String it) {

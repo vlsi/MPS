@@ -5,14 +5,15 @@ package jetbrains.mps.baseLanguage.collections.unittest.simple_operations;
 import junit.framework.TestCase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
 
 public class Sort_Test1 extends TestCase {
 
   public void test_1() {
-    List<Integer> expected = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
-    List<Integer> list = ListSequence.<Integer>fromArray(2, 4, 1, 5, 3);
+    List<Integer> expected = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 1, 5, 3);
     List<Integer> list_sorted = ListSequence.fromList(list).sort(new ISelector <Integer, Comparable<?>>() {
 
       public Comparable<?> select(Integer it) {
@@ -27,8 +28,8 @@ public class Sort_Test1 extends TestCase {
   }
 
   public void test_2() {
-    List<Integer> expected = ListSequence.<Integer>fromArray(5, 4, 3, 2, 1);
-    List<Integer> list = ListSequence.<Integer>fromArray(2, 4, 1, 5, 3);
+    List<Integer> expected = ListSequence.fromListAndArray(new ArrayList<Integer>(), 5, 4, 3, 2, 1);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 1, 5, 3);
     List<Integer> list_sorted = ListSequence.fromList(list).sort(new ISelector <Integer, Comparable<?>>() {
 
       public Comparable<?> select(Integer it) {

@@ -11,6 +11,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class SimpleOperations1 extends TestCase {
 
@@ -136,7 +137,7 @@ __switch__:
   }
 
   public void test_L1() {
-    List<String> L = ListSequence.<String>fromArray();
+    List<String> L = ListSequence.fromList(new ArrayList<String>());
     Assert.assertEquals(null, ListSequence.fromList(L).first());
     Assert.assertEquals(null, ListSequence.fromList(L).first());
     Assert.assertEquals(null, ListSequence.fromList(L).last());
@@ -146,7 +147,7 @@ __switch__:
   }
 
   public void test_L2() {
-    List<String> L = ListSequence.<String>fromArray("0", "1", "2");
+    List<String> L = ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
     Assert.assertEquals("0", ListSequence.fromList(L).first());
     Assert.assertEquals("0", ListSequence.fromList(L).first());
     Assert.assertEquals("2", ListSequence.fromList(L).last());

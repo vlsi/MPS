@@ -6,10 +6,12 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,6 +22,11 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext) {
+    if (!(!(SLinkOperations.getCount(creator, "initValue") > 0 && (SLinkOperations.getTarget(creator, "copyFrom", true) != null)))) {
+      BaseIntentionProvider intentionProvider = null;
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(creator, "Either initial values or the copy from expression can be specified, not both", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240320852912", intentionProvider, errorTarget);
+    }
     {
       SNode initValue;
       Iterator<SNode> initValue_iterator = ListSequence.fromList(SLinkOperations.getTargets(creator, "initValue", true)).iterator();
@@ -39,7 +46,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = creator;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "copyFrom", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237732500184", true), new _Quotations.QuotationClass_144().createNode(SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237732500182", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "copyFrom", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306674737", true), new _Quotations.QuotationClass_144().createNode(SLinkOperations.getTarget(creator, "elementType", true), SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306677804", false, 0, intentionProvider);
       }
     }
     {

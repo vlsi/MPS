@@ -76,6 +76,38 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return new ListSequence<U> (list);
     }
     
+    public static <U> IListSequence<U> fromListAndArray (List<U> list, U...array) {
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (list == null && array == null) {
+                return NullListSequence.instance();
+            }
+            else if (list == null) {
+            	list = new ArrayList<U>();
+            }
+            else if (array == null) {
+            	if (list instanceof IListSequence) {
+            		return (IListSequence<U>) list;
+            	}
+            	return new ListSequence<U> (list);
+            }
+        }
+        List<U> input = Arrays.asList(array);
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : input) {
+                if (u != null) {
+                    list.add(u);
+                }
+            }
+        }
+        else {
+            list.addAll (input);
+        }
+        if (list instanceof IListSequence) {
+            return (IListSequence<U>) list;
+        }
+        return new ListSequence<U> (list);
+    }
+    
     public static <U> IListSequence<U> fromIterable (Iterable<U> it) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (it == null) {
@@ -105,9 +137,21 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
             	return fromList (list);
             }
         }
-    	for (U u: it) {
-    		tmp.add(u);
-    	}
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : it) {
+                if (u != null) {
+                    tmp.add(u);
+                }
+            }
+        }
+        else if (it instanceof Collection){
+        	tmp.addAll((Collection<? extends U>) it);
+        }
+        else {
+        	for (U u: it) {
+        		tmp.add(u);
+        	}
+        }
     	if (tmp instanceof IListSequence) {
     		return (IListSequence<U>) tmp;
     	}

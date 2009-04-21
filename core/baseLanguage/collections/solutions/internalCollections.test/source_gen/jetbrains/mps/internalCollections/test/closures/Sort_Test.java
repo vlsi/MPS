@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Sort_Test extends Util_Test {
 
@@ -75,7 +76,7 @@ public class Sort_Test extends Util_Test {
 
   @Test()
   public void test_caseSensitive() throws Exception {
-    List<String> test = ListSequence.<String>fromArray("abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
+    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
     this.assertIterableEquals(Arrays.asList("ABC", "ABCD", "Abc", "aBC", "abc", "abcD", "abcd"), ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
 
       public Comparable<?> select(String it) {
@@ -86,7 +87,7 @@ public class Sort_Test extends Util_Test {
 
   @Test()
   public void test_caseInsensitive() throws Exception {
-    List<String> test = ListSequence.<String>fromArray("abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
+    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
     this.assertIterableEquals(test, ListSequence.fromList(test).sort(new Comparator <String>() {
 
       public int compare(String a, String b) {

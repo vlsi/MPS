@@ -108,7 +108,7 @@ __skip__:
 
   @Test()
   public void test_parameterizedAdaptation() throws Exception {
-    List<String> ls = ListSequence.<String>fromArray("A", "BB", "CCC", "DDDD");
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "BB", "CCC", "DDDD");
     final Wrappers._int len = new Wrappers._int(0);
     this.forEach(ls, new IVisitor <String>() {
 
