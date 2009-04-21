@@ -15,10 +15,10 @@ import jetbrains.mps.project.GlobalScope;
 public class AnnotationLinkDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration";
   public static final String ROLE = "role";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String STEREOTYPE = "stereotype";
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SOURCE = "source";
@@ -34,6 +34,14 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
 
   public void setRole(String value) {
     this.setProperty(AnnotationLinkDeclaration.ROLE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(AnnotationLinkDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AnnotationLinkDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -58,14 +66,6 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
 
   public void setVirtualPackage(String value) {
     this.setProperty(AnnotationLinkDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(AnnotationLinkDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AnnotationLinkDeclaration.NAME, value);
   }
 
   public AnnotationLinkStereotype getStereotype() {

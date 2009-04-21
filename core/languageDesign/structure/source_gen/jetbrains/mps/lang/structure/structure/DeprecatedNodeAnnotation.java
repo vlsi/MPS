@@ -13,10 +13,10 @@ public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConce
   public static final String concept = "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation";
   public static final String BUILD = "build";
   public static final String COMMENT = "comment";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public DeprecatedNodeAnnotation(SNode node) {
     super(node);
@@ -36,6 +36,14 @@ public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConce
 
   public void setComment(String value) {
     this.setProperty(DeprecatedNodeAnnotation.COMMENT, value);
+  }
+
+  public String getName() {
+    return this.getProperty(DeprecatedNodeAnnotation.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(DeprecatedNodeAnnotation.NAME, value);
   }
 
   public String getShortDescription() {
@@ -60,14 +68,6 @@ public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConce
 
   public void setVirtualPackage(String value) {
     this.setProperty(DeprecatedNodeAnnotation.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(DeprecatedNodeAnnotation.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(DeprecatedNodeAnnotation.NAME, value);
   }
 
 

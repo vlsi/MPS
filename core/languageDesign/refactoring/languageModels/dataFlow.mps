@@ -69,5 +69,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1240302183947">
+    <link role="conceptDeclaration" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1240302183948">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240302183949">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1240302189841">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240302191922">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1240302191765" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240302194051">
+              <link role="link" targetNodeId="1.1197386861552" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1240302195412">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240302199603">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1240302199555" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240302200498">
+              <link role="link" targetNodeId="1.1197386874459" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1240302204484">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240302205893">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1240302205845" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240302208241">
+              <link role="link" targetNodeId="1.1197386900758" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
