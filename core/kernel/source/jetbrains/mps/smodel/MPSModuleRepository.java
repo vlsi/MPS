@@ -211,6 +211,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   public IModule getModuleById(ModuleId moduleId) {
     assertCanRead();
 
+    if (moduleId == null) return null;
     return myIdToModuleMap.get(moduleId);
   }
 
