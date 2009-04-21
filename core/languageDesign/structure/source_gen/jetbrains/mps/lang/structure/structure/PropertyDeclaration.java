@@ -13,14 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept, IStructureDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String DATA_TYPE = "dataType";
 
   public PropertyDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(PropertyDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(PropertyDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(PropertyDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(PropertyDeclaration.NAME, value);
   }
 
   public DataTypeDeclaration getDataType() {
