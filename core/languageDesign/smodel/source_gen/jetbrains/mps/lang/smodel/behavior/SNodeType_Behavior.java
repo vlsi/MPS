@@ -7,10 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.behavior._Quotations;
 
 public class SNodeType_Behavior {
 
@@ -26,7 +26,7 @@ public class SNodeType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> variableSuffixes = ListSequence.<String>fromArray("node");
+    List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
     if (SLinkOperations.getTarget(thisNode, "concept", false) != null) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "concept", false), "name"));
       ListSequence.fromList(variableSuffixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));

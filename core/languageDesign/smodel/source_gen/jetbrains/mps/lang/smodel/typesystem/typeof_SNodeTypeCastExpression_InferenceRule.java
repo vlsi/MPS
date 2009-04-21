@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -22,7 +21,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = expr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), typeCheckingContext.typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061673586", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061673586", intentionProvider);
     }
     //  this when concrete has a sense of overloading
     {
@@ -34,14 +33,14 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
             {
               SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082190", true), new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082188", intentionProvider);
+              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082190", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082188", intentionProvider);
             }
           } else
           {
             {
               SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085350", true), new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085348", intentionProvider);
+              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085350", true), (SNode)new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712085348", intentionProvider);
             }
           }
           {
@@ -52,7 +51,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
                 {
                   SNode _nodeToCheck_1029348928467 = expr;
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", intentionProvider);
+                  typeCheckingContext.createComparableEquation((SNode)typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), (SNode)typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", intentionProvider);
                 }
               }
             }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1239380067971", false, true);

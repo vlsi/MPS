@@ -10,8 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.smodel.typesystem._Quotations;
-import jetbrains.mps.lang.smodel.typesystem._Patterns;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,6 +27,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.Iterator;
 
@@ -199,7 +198,7 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545671650", false), new _Quotations.QuotationClass_48().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545687775", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545671650", false), (SNode)new _Quotations.QuotationClass_48().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545687775", false, 0, intentionProvider);
     }
   }
 
@@ -237,7 +236,7 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_49().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", intentionProvider);
+      typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)new _Quotations.QuotationClass_49().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", intentionProvider);
     }
   }
 
@@ -250,7 +249,7 @@ public class RulesUtil {
         {
           SNode _nodeToCheck_1029348928467 = null;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207352395113", intentionProvider);
+          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207352395113", intentionProvider);
         }
       } else
       {
@@ -261,7 +260,7 @@ public class RulesUtil {
         {
           SNode _nodeToCheck_1029348928467 = null;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createEquation(TypeToEquate, leastCommonSuperconcept(concepts), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1222429361005", intentionProvider);
+          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)leastCommonSuperconcept(concepts), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1222429361005", intentionProvider);
         }
       }
     } else
@@ -269,7 +268,7 @@ public class RulesUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(TypeToEquate, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219348168406", intentionProvider);
+        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219348168406", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
@@ -277,22 +276,22 @@ public class RulesUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), new _Quotations.QuotationClass_50().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669167291", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), (SNode)new _Quotations.QuotationClass_50().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669167291", false, 0, intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(TypeToEquate, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669541468", intentionProvider);
+        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669541468", intentionProvider);
       }
     }
   }
 
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
     Map<SNode, Set<SNode>> subTypesToSuperTypes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-    Set<SNode> keyset = SetSequence.<SNode>fromArray();
-    Set<SNode> allTypes = SetSequence.<SNode>fromArray();
-    Set<SNode> frontier = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(concepts));
-    Set<SNode> newFrontier = SetSequence.<SNode>fromArray();
+    Set<SNode> keyset = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> allTypes = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> frontier = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
+    Set<SNode> newFrontier = SetSequence.fromSet(new HashSet<SNode>());
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for(SNode concept : frontier) {
         if (SetSequence.fromSet(keyset).contains(concept)) {
@@ -301,7 +300,7 @@ public class RulesUtil {
         List<SNode> supertypes = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(concept);
         Set<SNode> set = subTypesToSuperTypes.get(concept);
         if (set == null) {
-          set = SetSequence.<SNode>fromArray();
+          set = SetSequence.fromSet(new HashSet<SNode>());
           MapSequence.fromMap(subTypesToSuperTypes).put(concept, set);
         }
         SetSequence.fromSet(set).addSequence(ListSequence.fromList(supertypes));
@@ -311,7 +310,7 @@ public class RulesUtil {
         ListSequence.fromList(supertypes).addElement(concept);
       }
       frontier = newFrontier;
-      newFrontier = SetSequence.<SNode>fromArray();
+      newFrontier = SetSequence.fromSet(new HashSet<SNode>());
     }
     // transitive closure
     for(SNode node2 : allTypes) {
@@ -331,7 +330,7 @@ public class RulesUtil {
         }
       }
     }
-    Set<SNode> result = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(concepts));
+    Set<SNode> result = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
     while (SetSequence.fromSet(result).count() >= 2) {
       Iterator<SNode> iterator = SetSequence.fromSet(result).iterator();
       SNode a = iterator.next();
@@ -352,17 +351,17 @@ public class RulesUtil {
     }
     Set<SNode> superTypesA = subTypesToSuperTypes.get(a);
     superTypesA = (superTypesA == null ?
-      SetSequence.<SNode>fromArray() :
+      SetSequence.fromSet(new HashSet<SNode>()) :
       superTypesA
     );
     Set<SNode> superTypesB = subTypesToSuperTypes.get(b);
     superTypesB = (superTypesB == null ?
-      SetSequence.<SNode>fromArray() :
+      SetSequence.fromSet(new HashSet<SNode>()) :
       superTypesB
     );
     SetSequence.fromSet(superTypesA).addElement(a);
     SetSequence.fromSet(superTypesB).addElement(b);
-    for(SNode superTypeA : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(superTypesA))) {
+    for(SNode superTypeA : SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)) {
       boolean matches = false;
       for(SNode superTypeB : superTypesB) {
         if (superTypeA == superTypeB) {
@@ -375,7 +374,7 @@ public class RulesUtil {
       }
     }
     Set<SNode> commonSupertypes = superTypesA;
-    for(SNode commonSupertype : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(commonSupertypes))) {
+    for(SNode commonSupertype : SetSequence.fromSetWithValues(new HashSet<SNode>(), commonSupertypes)) {
       if (!(SetSequence.fromSet(commonSupertypes).contains(commonSupertype))) {
         continue;
       }
