@@ -494,32 +494,32 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1236686502971">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236686502972">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236686580900">
-                <link role="variableDeclaration" targetNodeId="1236686542697" resolveInfo="packageName" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236686502974">
-                <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236686502975">
-                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.BufferParameter" id="1236686502976" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236686502977">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~TextGenBuffer.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236686502978">
-                      <property name="value" value="PACKAGE_NAME" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240313538677">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240313538678">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240313538679">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240313538680">
+                  <link role="variableDeclaration" targetNodeId="1236686542697" resolveInfo="packageName" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240313538681">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240313538682">
+                    <node role="operand" type="jetbrains.mps.lang.textGen.structure.BufferParameter" id="1240313538683" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240313538684">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~TextGenBuffer.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240313538685">
+                        <property name="value" value="PACKAGE_NAME" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1236686502979">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236686502980">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236686577586">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240313538686">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240313538687">
                   <link role="variableDeclaration" targetNodeId="1236686542697" resolveInfo="packageName" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236686502982">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240313538688">
                   <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236686502983">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240313538689">
                     <property name="value" value="java.lang" />
                   </node>
                 </node>

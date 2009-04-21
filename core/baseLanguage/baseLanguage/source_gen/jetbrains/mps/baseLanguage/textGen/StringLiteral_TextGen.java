@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.textGen.StringTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StringLiteral_TextGen extends SNodeTextGen {

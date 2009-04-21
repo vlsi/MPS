@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 
 public class TypeVariableDeclaration_TextGen extends SNodeTextGen {
 

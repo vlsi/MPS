@@ -160,7 +160,7 @@ public abstract class BaseLanguageTextGen {
       }
     }
     SetSequence.fromSet(importedNames).addElement(importedFqName);
-    if (!(packageName.equals("java.lang")) || packageName.equals(textGen.getBuffer().getUserObject("PACKAGE_NAME"))) {
+    if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject("PACKAGE_NAME")))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.appendNewLine();
       textGen.append("import " + importedFqName + ";");
