@@ -4101,7 +4101,7 @@
                 <property name="withIndent" value="true" />
               </node>
               <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237465859481">
-                <property name="withIndent" value="true" />
+                <property name="withIndent" value="false" />
                 <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237465861406">
                   <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237465861077" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1237465862707">

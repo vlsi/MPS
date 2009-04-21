@@ -12,7 +12,7 @@ public class RemarkStatement_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getString(node, "value") != null) {
       this.appendNewLine();
       this.appendWithIndent("// ");
-      this.appendWithIndent(SPropertyOperations.getString(node, "value"));
+      this.append(SPropertyOperations.getString(node, "value"));
     } else
     {
       this.appendNewLine();

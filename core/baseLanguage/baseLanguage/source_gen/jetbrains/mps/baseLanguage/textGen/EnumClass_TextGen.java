@@ -22,7 +22,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     }
     this.appendWithIndent("enum ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
-    //     new
+    // new
     if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
       this.append(" extends ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());

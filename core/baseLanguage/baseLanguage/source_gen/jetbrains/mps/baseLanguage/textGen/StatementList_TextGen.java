@@ -25,7 +25,7 @@ public class StatementList_TextGen extends SNodeTextGen {
         SLinkOperations.setTarget(returnStatement, "expression", expression, true);
         statement = returnStatement;
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
-        //         rollback changes
+        // rollback changes
         SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
         SLinkOperations.setTarget(expressionStatement, "expression", expression, true);
       } else
