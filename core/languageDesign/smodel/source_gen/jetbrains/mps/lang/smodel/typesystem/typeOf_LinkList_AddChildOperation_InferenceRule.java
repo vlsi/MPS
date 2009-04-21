@@ -17,7 +17,7 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule extends AbstractInf
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    //     checking
+    // checking
     SNode parameter = SLinkOperations.getTarget(op, "childNode", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101161890 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -29,7 +29,7 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule extends AbstractInf
         typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272443656", false, 0, intentionProvider);
       }
     }
-    //     op returns node passed in parameter
+    // op returns node passed in parameter
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

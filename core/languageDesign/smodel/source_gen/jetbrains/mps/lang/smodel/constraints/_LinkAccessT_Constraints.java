@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 public class _LinkAccessT_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    //     transient node
+    // transient node
     return false;
   }
 

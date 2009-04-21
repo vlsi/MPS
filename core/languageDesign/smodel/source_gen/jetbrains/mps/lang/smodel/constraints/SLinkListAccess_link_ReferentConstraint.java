@@ -30,7 +30,7 @@ public class SLinkListAccess_link_ReferentConstraint extends BaseNodeReferenceSe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    //     links with cardinality 0..n or 1..n
+    // links with cardinality 0..n or 1..n
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {

@@ -37,7 +37,7 @@ public class RulesUtil {
   @CheckingMethod()
   public static void checkAppliedCorrectly_generic(final TypeCheckingContext typeCheckingContext, final SNode op) {
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(op), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
-      //       don't check - it is red anyway
+      // don't check - it is red anyway
       return;
     }
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
@@ -68,13 +68,13 @@ public class RulesUtil {
         isGood = true;
       }
     }
-    //     ===========
+    // ===========
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLink")) {
       SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
       if (linkAccessT != null) {
         isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
         if (isGood) {
-          //           some of ops applicable to 'link' require left-expr to be a concept
+          // some of ops applicable to 'link' require left-expr to be a concept
           if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(op, "applicableToNode"))) {
             isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new _Quotations.QuotationClass_47().createNode(typeCheckingContext));
           }
@@ -87,7 +87,7 @@ public class RulesUtil {
         isGood = !(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"));
       }
     }
-    //     ===========
+    // ===========
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     if (SConceptPropertyOperations.getBoolean(op, "applicableToSimpleProperty")) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
@@ -119,7 +119,7 @@ public class RulesUtil {
 
   @CheckingMethod()
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
-    //     expect access to an aggregation link with singular cardinality
+    // expect access to an aggregation link with singular cardinality
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = false;
@@ -129,7 +129,7 @@ public class RulesUtil {
         isGood = true;
       }
     }
-    //     ----
+    // ----
     if (!(isGood)) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -139,8 +139,8 @@ public class RulesUtil {
 
   @CheckingMethod()
   public static void checkAppliedNotTo_LinkAccess_reference(final TypeCheckingContext typeCheckingContext, SNode op) {
-    //     expect access to an aggregation link with singular cardinality
-    //     left expression could also be something else (like just 'node') but not access to a reference link
+    // expect access to an aggregation link with singular cardinality
+    // left expression could also be something else (like just 'node') but not access to a reference link
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = true;
@@ -150,7 +150,7 @@ public class RulesUtil {
         isGood = false;
       }
     }
-    //     ----
+    // ----
     if (!(isGood)) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -313,7 +313,7 @@ public class RulesUtil {
       frontier = newFrontier;
       newFrontier = SetSequence.<SNode>fromArray();
     }
-    //     transitive closure
+    // transitive closure
     for(SNode node2 : allTypes) {
       for(SNode node1 : allTypes) {
         for(SNode node3 : allTypes) {

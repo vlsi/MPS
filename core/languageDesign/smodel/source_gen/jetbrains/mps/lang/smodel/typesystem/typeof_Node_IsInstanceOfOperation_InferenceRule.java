@@ -20,7 +20,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     SNode conceptArg = SLinkOperations.getTarget(op, "conceptArgument", true);
     if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      //       concept expected
+      // concept expected
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;

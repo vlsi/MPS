@@ -26,7 +26,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559), typeCheckingContext.typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060928458", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060923030", intentionProvider);
       }
-      //        this when concrete has a sense of overloading
+      //  this when concrete has a sense of overloading
       {
         final SNode v = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
         typeCheckingContext.whenConcrete(v, new Runnable() {

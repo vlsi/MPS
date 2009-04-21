@@ -20,7 +20,7 @@ public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenc
   public void applyRule(final SNode opp, final TypeCheckingContext typeCheckingContext) {
     SNode conceptArg = SLinkOperations.getTarget(opp, "conceptArgument", true);
     if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      //       concept expected
+      // concept expected
       {
         SNode _nodeToCheck_1029348928467 = opp;
         BaseIntentionProvider intentionProvider = null;

@@ -25,7 +25,7 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
       for(SNode superConcept : ListSequence.fromList(superConcepts)) {
         ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_35().createNode(superConcept));
       }
-      //       ==========
+      // ==========
       ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_36().createNode());
     }
     return supertypes;
