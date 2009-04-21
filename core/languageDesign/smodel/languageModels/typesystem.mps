@@ -10747,44 +10747,6 @@
       <link role="concept" targetNodeId="1.1240151383243" resolveInfo="SEnumType" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339090923">
-    <property name="name" value="supertypesOf_SNodeType_SEnumType" />
-    <property name="package" value="type" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339090924">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339090925">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339090926">
-          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240339115557" />
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240339090928">
-      <property name="name" value="node" />
-      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240339090929">
-        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339090930">
-          <link role="concept" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339134558">
-    <property name="name" value="supertypesOf_SNodeType_SEnumMemberType" />
-    <property name="package" value="type" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339134559">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339134560">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339134561">
-          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240339153724" />
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240339134563">
-      <property name="name" value="node" />
-      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240339134564">
-        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339134565">
-          <link role="concept" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339171475">
     <property name="package" value="type" />
     <property name="name" value="supertypesOf_SEnumMemberType_node_EnumerationMemberDeclaration" />
@@ -10799,6 +10761,52 @@
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240339171480">
       <property name="name" value="type" />
+      <link role="concept" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1240341651952">
+    <property name="package" value="type" />
+    <property name="name" value="comparable_SEnumType__node_EnumerationDataTypeDeclaration" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240341769870">
+      <property name="name" value="nodeType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240341769871">
+        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240341774778">
+          <link role="concept" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240341651954">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240341796264">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240341798516">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240341742144">
+      <property name="name" value="enumType" />
+      <link role="concept" targetNodeId="1.1240151383243" resolveInfo="SEnumType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1240341822704">
+    <property name="package" value="type" />
+    <property name="name" value="comparable_SEnumMemberType__node_EnumerationMemberDeclaration" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240341822705">
+      <property name="name" value="nodeType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240341822706">
+        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240341822707">
+          <link role="concept" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240341822708">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240341822709">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240341822710">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240341822711">
+      <property name="name" value="enumMemberType" />
       <link role="concept" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
     </node>
   </node>
