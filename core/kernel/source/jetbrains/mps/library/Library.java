@@ -17,7 +17,7 @@ package jetbrains.mps.library;
 
 import com.intellij.util.xmlb.annotations.Transient;
 
-public class Library {
+public class Library implements Cloneable {
   private String myName;
   private String myPath;
 
@@ -56,5 +56,13 @@ public class Library {
   @Transient
   public boolean isBootstrap() {
     return false;
+  }
+
+  public Library copy() {
+    try {
+      return (Library) super.clone();
+    } catch (CloneNotSupportedException e) {
+      throw new RuntimeException(e);
+    }
   }
 }

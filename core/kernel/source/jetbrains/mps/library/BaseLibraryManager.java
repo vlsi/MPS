@@ -25,13 +25,16 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.Macros;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -60,14 +63,21 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
     });
   }
 
+
+  public void disposeComponent() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (myOwner != null) {
+          myRepository.unRegisterModules(myOwner);
+        }
+      }
+    });
+  }
+
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Library Manager";
-  }
-
-  public void disposeComponent() {
-
   }
 
   protected MPSModuleRepository getModuleRepository() {
@@ -108,7 +118,6 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
     return myRepository.getOwners(m).contains(myOwner);
   }
 
-
   public void update() {
     if (myOwner != null) {
       myRepository.unRegisterModules(myOwner);
@@ -130,6 +139,8 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
       }
     });
   }
+
+
 
   protected void onAfterModulesRead() {
   }
@@ -183,11 +194,49 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
   }
 
   public MyState getState() {
-    return myState;
+    return addMacros(myState);
   }
 
   public void loadState(MyState state) {
-    myState = state;
+    myState = removeMacros(state);
+  }
+
+  private MyState addMacros(MyState state) {
+    MyState result = new MyState();
+    for (Entry<String, Library> entry : state.myLibraries.entrySet()) {
+      result.myLibraries.put(entry.getKey(), addMacros(entry.getValue()));
+      
+    }
+    return result;
+  }
+
+  private MyState removeMacros(MyState state) {
+    MyState result = new MyState();
+    for (Entry<String, Library> entry : state.myLibraries.entrySet()) {
+      result.myLibraries.put(entry.getKey(), removeMacros(entry.getValue()));
+
+    }
+    return result;
+  }
+
+  private Library addMacros(Library l) {
+    Library result = l.copy();
+    result.setPath(addMacros(result.getPath()));
+    return result;    
+  }
+
+  private Library removeMacros(Library l) {
+    Library result = l.copy();
+    result.setPath(removeMacros(result.getPath()));
+    return result;
+  }
+
+  protected String addMacros(String path) {
+    return Macros.mpsHomeMacros().shrinkPath(path, (IFile) null);
+  }
+
+  protected String removeMacros(String path) {
+    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);    
   }
 
   public static class MyState {

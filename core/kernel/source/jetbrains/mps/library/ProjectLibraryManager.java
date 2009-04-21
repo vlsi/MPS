@@ -18,7 +18,12 @@ package jetbrains.mps.library;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.vfs.IFile;
+
+import java.io.File;
 
 @State(
   name = "ProjectLibraryManager",
@@ -30,8 +35,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
   }
 )
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
-  public ProjectLibraryManager(MPSModuleRepository repo) {
+  private Project myProject;
+
+  public ProjectLibraryManager(Project project, MPSModuleRepository repo) {
     super(repo);
+    myProject = project;
   }
 
   public void projectOpened() {
@@ -40,5 +48,15 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   public void projectClosed() {
 
+  }
+
+  @Override
+  protected String addMacros(String path) {
+    return Macros.projectDescriptor().shrinkPath(path, new File(myProject.getPresentableUrl()));
+  }
+
+  @Override
+  protected String removeMacros(String path) {
+    return Macros.projectDescriptor().expandPath(path, new File(myProject.getPresentableUrl()));    
   }
 }
