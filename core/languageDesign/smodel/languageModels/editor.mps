@@ -2839,7 +2839,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1240317547330" resolveInfo="Enum_MemberForValueOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240317641760">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317646655">
-        <property name="text" value="nameForValue(" />
+        <property name="text" value="memberForValue(" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240317689658">
         <link role="relationDeclaration" targetNodeId="1.1240317673204" />
@@ -2848,6 +2848,22 @@
         <property name="text" value=")" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240317641762" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240321107918">
+    <property name="package" value="operation.enum" />
+    <link role="conceptDeclaration" targetNodeId="1.1240318876855" resolveInfo="Enum_MemberForNameOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240321109702">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240321109703">
+        <property name="text" value="memberForName(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240321109704">
+        <link role="relationDeclaration" targetNodeId="1.1240317673204" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240321109705">
+        <property name="text" value=")" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240321109706" />
     </node>
   </node>
 </model>

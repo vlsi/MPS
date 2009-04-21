@@ -6,9 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,9 +20,24 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = operation;
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(operation, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240171430475", true), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.typeOf(SNodeOperations.getParent(operation), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240171846320", true), "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), "enum", false), "memberDataType", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240171435306", intentionProvider);
+      final SNode parentType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240320237608", true);
+      typeCheckingContext.whenConcrete(parentType, new Runnable() {
+
+        public void run() {
+          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(parentType), "jetbrains.mps.lang.smodel.structure.SEnumMemberType"))) {
+            {
+              BaseIntentionProvider intentionProvider = null;
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(SNodeOperations.getParent(operation), "value operation can only be applied to enum members", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240319989088", intentionProvider, errorTarget);
+            }
+          }
+          {
+            SNode _nodeToCheck_1029348928467 = operation;
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(operation, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240320087585", true), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(parentType), "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), "enum", false), "memberDataType", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240320087576", intentionProvider);
+          }
+        }
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240319906805", false, false);
     }
   }
 
