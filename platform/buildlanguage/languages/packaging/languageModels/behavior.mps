@@ -55,10 +55,16 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877173054">
       <property name="name" value="getValue" />
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
+      <property name="isAbstract" value="false" />
       <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1213877173055" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877173056" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877173056">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240317482667">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240317486596">
+            <property name="value" value="" />
+          </node>
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724865" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877173057">

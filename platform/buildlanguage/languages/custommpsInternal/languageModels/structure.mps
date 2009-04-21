@@ -68,7 +68,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240033962441">
       <property name="name" value="antName" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+      <link role="dataType" targetNodeId="2.1223640176546" resolveInfo="StringWithoutSpaces" />
     </node>
   </node>
 </model>

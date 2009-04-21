@@ -11,6 +11,10 @@ public class IStringExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  public static String virtual_getValue_1213877173054(SNode thisNode) {
+    return "";
+  }
+
   public static String call_getValue_1213877173054(SNode thisNode) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getValue_1213877173054", PARAMETERS_1213877173054);
   }
