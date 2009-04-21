@@ -59,7 +59,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
           }
         } else
         {
-          SNode referent = instance.getReference(role).getSourceNode();
+          SNode referent = instance.getReferent(role);
           if (referent != null) {
             ListOperations.addElement(_results, referent);
           }
