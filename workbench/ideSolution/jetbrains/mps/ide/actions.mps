@@ -3194,7 +3194,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215889441734">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215889354419">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215889420333">
-                <link role="baseMethodDeclaration" targetNodeId="109.~MessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="MessageDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="109.~ScrollingMessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="ScrollingMessageDialog" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215889435885">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215889435886" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648694">
@@ -11060,7 +11060,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236348634322">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236348617032">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1236348620675">
-                <link role="baseMethodDeclaration" targetNodeId="109.~MessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="MessageDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="109.~ScrollingMessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="ScrollingMessageDialog" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236348624441">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236348624442" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236348624443">
@@ -11210,7 +11210,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236349476760">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236349476761">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1236349476762">
-                <link role="baseMethodDeclaration" targetNodeId="109.~MessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="MessageDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="109.~ScrollingMessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="ScrollingMessageDialog" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236349476763">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1236349476764" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1236349476765">

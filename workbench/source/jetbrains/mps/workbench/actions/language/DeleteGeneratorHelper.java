@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.actions.language;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.dialogs.MessageDialog;
+import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -64,7 +64,7 @@ public class DeleteGeneratorHelper {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-          new MessageDialog(frame, report.toString()).showDialog();
+          new ScrollingMessageDialog(frame, report.toString()).showDialog();
         }
       });
       return;

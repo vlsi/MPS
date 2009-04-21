@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.dialogs.MessageDialog;
+import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class OptimizeModuleImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -82,7 +82,7 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
           }
         }
       });
-      new MessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
+      new ScrollingMessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeModuleImports", t);

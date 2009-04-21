@@ -16,7 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
-import jetbrains.mps.ide.dialogs.MessageDialog;
+import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class OptimizeModelImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -77,7 +77,7 @@ public class OptimizeModelImports_Action extends GeneratedAction {
           report.value = OptimizeImportsHelper.optimizeModelsImports(OptimizeModelImports_Action.this.context, OptimizeModelImports_Action.this.models);
         }
       });
-      new MessageDialog(OptimizeModelImports_Action.this.frame, report.value).showDialog();
+      new ScrollingMessageDialog(OptimizeModelImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
