@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.build.packaging.editor.CompositeString_RT;
+import jetbrains.mps.build.packaging.editor.CompositeString_Left_Delete;
 import jetbrains.mps.build.packaging.editor.CompositeString_Right_Delete;
 
 public class CompositeString_Editor extends DefaultNodeEditor {
@@ -109,6 +110,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_4772_0(EditorCell editorCell, SNode node, EditorContext context) {
+    CompositeString_Left_Delete.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RefNode_4772_1(EditorCell editorCell, SNode node, EditorContext context) {
