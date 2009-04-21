@@ -31,11 +31,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import org.jetbrains.annotations.NotNull;
-
 public class LibraryManagerPreferences {
   private LibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
@@ -95,11 +90,15 @@ public class LibraryManagerPreferences {
 
     myMainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
-    updateModel();
+    updateModel(false);
   }
 
 
   private void updateModel() {
+    updateModel(true);
+  }
+
+  private void updateModel(final boolean updateManager) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         Library oldSelection = (Library) myLibrariesList.getSelectedValue();
@@ -113,6 +112,10 @@ public class LibraryManagerPreferences {
         if (oldSelection != null) {
           myLibrariesList.setSelectedValue(oldSelection, true);
         }
+
+        if (updateManager) {
+          myManager.update();
+        }
       }
     });
   }
@@ -123,6 +126,7 @@ public class LibraryManagerPreferences {
       return;
     }
     myManager.remove((Library) myListModel.get(index));
+    updateModel();
     myChanged = true;
   }
 
@@ -171,6 +175,8 @@ public class LibraryManagerPreferences {
     path = result.getAbsolutePath();
 
     myManager.newLibrary(name).setPath(path);
+    updateModel();
+
     myChanged = true;
   }
 
@@ -191,24 +197,7 @@ public class LibraryManagerPreferences {
   }
 
   public void commit() {
-    if (myChanged) {
-      ProgressManager.getInstance().run(new Modal(null, "Updating library manager", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          indicator.pushState();
-          try {
-            indicator.setIndeterminate(true);
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                myManager.update();
-              }
-            });
-          } finally {
-            indicator.popState();
-          }
-        }
-      });
-      updateModel();
-    }
+
   }
 
   public boolean isModified() {
