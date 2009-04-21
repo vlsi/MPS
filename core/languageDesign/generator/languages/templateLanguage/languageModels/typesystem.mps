@@ -103,17 +103,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178565150430">
               <property name="name" value="attrib" />
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1178565173080" />
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753470794">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1178564514830">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178564512291">
-                    <link role="variableDeclaration" targetNodeId="1178564471182" resolveInfo="template" />
-                  </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328331034">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178564512291">
+                  <link role="variableDeclaration" targetNodeId="1178564471182" resolveInfo="template" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204753470795">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~SNode.getAttribute(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getAttribute" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1178565127726">
-                    <link role="classifier" targetNodeId="25.~RootTemplateAnnotation_AnnotationLink" resolveInfo="RootTemplateAnnotation_AnnotationLink" />
-                    <link role="variableDeclaration" targetNodeId="25.~RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION" resolveInfo="ROOT_TEMPLATE_ANNOTATION" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1240328332897">
+                  <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1240328335556">
+                    <link role="annotationLink" targetNodeId="3.1168619445822" resolveInfo="rootTemplateAnnotation" />
                   </node>
                 </node>
               </node>

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -25,7 +25,7 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext) {
     SNode template = SLinkOperations.getTarget(rule, "template", false);
     if ((template != null)) {
-      SNode attrib = template.getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION);
+      SNode attrib = SLinkOperations.getTarget(template, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
       if ((attrib != null)) {
         SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
         SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, "applicableConcept", false);

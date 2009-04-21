@@ -27,7 +27,7 @@ public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTyp
         typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601255636", intentionProvider, errorTarget);
       }
     }
-    //     --
+    // --
     for(SNode scriptReference : ListSequence.fromList(SLinkOperations.getTargets(mc, "postMappingScript", true))) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "post_processing", "post_processing"))) {
         BaseIntentionProvider intentionProvider = null;

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
@@ -55,7 +55,7 @@ public class NodeMacro_Behavior {
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false);
     }
-    SNode rootAnnotation = SNodeOperations.getContainingRoot(thisNode).getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION);
+    SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(thisNode), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
 
