@@ -20,10 +20,10 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetDeclaration";
   public static final String IF = "if";
   public static final String UNLESS = "unless";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String TASK_CALL = "taskCall";
   public static final String DEPENDS = "depends";
   public static final String PROPERTY_LIST = "propertyList";
@@ -48,6 +48,14 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     this.setProperty(TargetDeclaration.UNLESS, value);
   }
 
+  public String getName() {
+    return this.getProperty(TargetDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TargetDeclaration.NAME, value);
+  }
+
   public String getShortDescription() {
     return this.getProperty(TargetDeclaration.SHORT_DESCRIPTION);
   }
@@ -70,14 +78,6 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
 
   public void setVirtualPackage(String value) {
     this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(TargetDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TargetDeclaration.NAME, value);
   }
 
   public int getTaskCallsCount() {

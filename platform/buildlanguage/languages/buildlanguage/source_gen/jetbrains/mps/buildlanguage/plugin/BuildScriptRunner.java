@@ -9,7 +9,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.StringUtils;
 import java.util.Arrays;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.plugin.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
@@ -36,7 +35,7 @@ public class BuildScriptRunner extends BaseRunner {
       List<String> commandLineList = Arrays.asList(commandLine.split("\\s+"));
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(commandLineList));
     }
-    ProcessBuilder builder = new ProcessBuilder(new ArrayList(parameters));
+    ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(ListSequence.<String>fromArray()).addSequence(ListSequence.fromList(parameters)));
     builder.directory(file.getParentFile());
     try {
       Process process = builder.start();

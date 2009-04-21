@@ -14,15 +14,23 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements IProjectComponent, ICommented {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PropertyDeclaration";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String TYPE = "type";
   public static final String PROPERTY_VALUE = "propertyValue";
 
   public PropertyDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(PropertyDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(PropertyDeclaration.NAME, value);
   }
 
   public String getShortDescription() {
@@ -47,14 +55,6 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(PropertyDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(PropertyDeclaration.NAME, value);
   }
 
   public PropertyType getType() {

@@ -21,10 +21,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String DEFAULT = "default";
   public static final String BASEDIR = "basedir";
   public static final String TARGET = "target";
@@ -35,6 +35,14 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public Project(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(Project.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Project.NAME, value);
   }
 
   public String getShortDescription() {
@@ -59,14 +67,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void setVirtualPackage(String value) {
     this.setProperty(Project.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(Project.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Project.NAME, value);
   }
 
   public TargetReference getDefault() {

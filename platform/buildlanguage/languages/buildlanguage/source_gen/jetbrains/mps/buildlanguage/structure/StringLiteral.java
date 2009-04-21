@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 public class StringLiteral extends PropertyValueExpression implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.StringLiteral";
   public static final String VALUE = "value";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
 
   public StringLiteral(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
 
   public void setValue(String value) {
     this.setProperty(StringLiteral.VALUE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(StringLiteral.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(StringLiteral.NAME, value);
   }
 
   public String getShortDescription() {
@@ -51,14 +59,6 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
 
   public void setVirtualPackage(String value) {
     this.setProperty(StringLiteral.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(StringLiteral.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(StringLiteral.NAME, value);
   }
 
 

@@ -13,14 +13,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MultiLineString extends PropertyValueExpression implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.MultiLineString";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String STRING_EXPRESSION = "stringExpression";
 
   public MultiLineString(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(MultiLineString.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(MultiLineString.NAME, value);
   }
 
   public String getShortDescription() {
@@ -45,14 +53,6 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
 
   public void setVirtualPackage(String value) {
     this.setProperty(MultiLineString.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(MultiLineString.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(MultiLineString.NAME, value);
   }
 
   public int getStringExpressionsCount() {
