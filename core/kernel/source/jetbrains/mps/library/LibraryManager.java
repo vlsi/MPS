@@ -55,6 +55,11 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
+  private MPSModuleOwner myBootstrapLibrariesOwner;
+  private MPSModuleOwner myPredefinedLibrariesOwner;
+  private boolean myInitializing = false;
+  private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+
   public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm) {
     super(repo);
   }
@@ -63,4 +68,116 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   protected void onAfterModulesRead() {
     ClassLoaderManager.getInstance().init(LibraryManager.this);
   }
+
+  @Override
+  public void initComponent() {
+    //todo hack
+    if (myInitializing) return;
+    myInitializing = true;
+    try {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          readCustomBuiltInLibraries();
+          updatePredefinedLibraries();
+          update();
+        }
+      });
+    } finally {
+      myInitializing = false;
+    }
+  }
+
+  private void readCustomBuiltInLibraries() {
+    BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
+  }
+
+  private void updatePredefinedLibraries() {
+    myPredefinedLibrariesOwner = new MPSModuleOwner() {
+    };
+    myBootstrapLibrariesOwner = new MPSModuleOwner() {
+    };
+    for (Library l : getLibraries()) {
+      if (l.isPredefined()) {
+        MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
+        List<IModule> modules = getModuleRepository().readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
+
+        if (l.isBootstrap()) {
+          for (IModule m : modules) {
+            m.updateClassPath();
+          }
+        }
+      }
+    }
+
+    fireOnLoad(myBootstrapLibrariesOwner);
+    fireOnLoad(myPredefinedLibrariesOwner);
+  }
+
+  @Override
+  public Set<Library> getLibraries() {
+    Set<Library> result = super.getLibraries();
+    result.add(new PredefinedLibrary("mps.bootstrap") {
+      public String getPath() {
+        return PathManager.getBootstrapPath();
+      }
+
+      @Transient
+      public boolean isBootstrap() {
+        return true;
+      }
+    });
+    result.add(new PredefinedLibrary("mps.platform") {
+      public String getPath() {
+        return PathManager.getPlatformPath();
+      }
+    });
+    result.add(new PredefinedLibrary("mps.workbench") {
+      public String getPath() {
+        return PathManager.getWorkbenchPath();
+      }
+    });
+    result.add(new PredefinedLibrary("mps.app") {
+      public String getPath() {
+        return PathManager.getAppPath();
+      }
+    });
+    result.add(new PredefinedLibrary("mps.samples") {
+      public String getPath() {
+        return PathManager.getSamplesPath();
+      }
+    });
+    result.addAll(myCustomBuiltInLibraries.values());
+    return result;
+  }
+
+  public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
+    List<M> result = new ArrayList<M>();
+    result.addAll(getModuleRepository().getModules(myBootstrapLibrariesOwner, cls));
+    result.addAll(getModuleRepository().getModules(myPredefinedLibrariesOwner, cls));
+    result.addAll(getModules(cls));
+
+    addGenerators(cls, result);
+
+    return new HashSet<M>(result);
+  }
+
+  public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
+    List<M> result = new ArrayList<M>();
+    result.addAll(getModuleRepository().getModules(myBootstrapLibrariesOwner, cls));
+
+    addGenerators(cls, result);
+
+    return new HashSet<M>(result);
+  }
+
+  private <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
+    for (M m : new ArrayList<M>(result)) {
+      if (m instanceof Language) {
+        if (cls==null || cls.isAssignableFrom(Generator.class)) {
+          result.addAll((List<? extends M>) ((Language) m).getGenerators());
+        }
+      }
+    }
+  }
+
 }

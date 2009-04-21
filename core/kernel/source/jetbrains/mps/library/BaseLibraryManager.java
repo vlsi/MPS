@@ -45,33 +45,19 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
   private MyState myState = new MyState();
 
   private MPSModuleOwner myOwner;
-  private MPSModuleOwner myBootstrapLibrariesOwner;
-  private MPSModuleOwner myPredefinedLibrariesOwner;
-
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
-  private boolean myInitializing = false;
-  private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
 
   public BaseLibraryManager(MPSModuleRepository repo) {
     myRepository = repo;
   }
 
   public void initComponent() {
-    //todo hack
-    if (myInitializing) return;
-    myInitializing = true;
-    try {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          readCustomBuiltInLibraries();
-          updatePredefinedLibraries();
-          update();
-        }
-      });
-    } finally {
-      myInitializing = false;
-    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        update();
+      }
+    });
   }
 
   @NonNls
@@ -82,6 +68,14 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
 
   public void disposeComponent() {
 
+  }
+
+  protected MPSModuleRepository getModuleRepository() {
+    return myRepository;
+  }
+
+  public<M extends IModule> List<M> getModules(Class<M> cls) {
+    return myRepository.getModules(myOwner, cls);
   }
 
   public Library newLibrary(String name) {
@@ -106,41 +100,7 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
 
   public Set<Library> getLibraries() {
     Set<Library> result = new HashSet<Library>();
-
     result.addAll(myState.myLibraries.values());
-
-    result.add(new PredefinedLibrary("mps.bootstrap") {
-      public String getPath() {
-        return PathManager.getBootstrapPath();
-      }
-
-      @Transient
-      public boolean isBootstrap() {
-        return true;
-      }
-    });
-    result.add(new PredefinedLibrary("mps.platform") {
-      public String getPath() {
-        return PathManager.getPlatformPath();
-      }
-    });
-    result.add(new PredefinedLibrary("mps.workbench") {
-      public String getPath() {
-        return PathManager.getWorkbenchPath();
-      }
-    });
-    result.add(new PredefinedLibrary("mps.app") {
-      public String getPath() {
-        return PathManager.getAppPath();
-      }
-    });
-    result.add(new PredefinedLibrary("mps.samples") {
-      public String getPath() {
-        return PathManager.getSamplesPath();
-      }
-    });
-
-    result.addAll(myCustomBuiltInLibraries.values());
     return result;
   }
 
@@ -148,31 +108,6 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
     return myRepository.getOwners(m).contains(myOwner);
   }
 
-  private void updatePredefinedLibraries() {
-    myPredefinedLibrariesOwner = new MPSModuleOwner() {
-    };
-    myBootstrapLibrariesOwner = new MPSModuleOwner() {
-    };
-    for (Library l : getLibraries()) {
-      if (l.isPredefined()) {
-        MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
-        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
-
-        if (l.isBootstrap()) {
-          for (IModule m : modules) {
-            m.updateClassPath();
-          }
-        }
-      }
-    }
-
-    fireOnLoad(myBootstrapLibrariesOwner);
-    fireOnLoad(myPredefinedLibrariesOwner);
-  }
-
-  private void readCustomBuiltInLibraries() {
-    BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
-  }
 
   public void update() {
     if (myOwner != null) {
@@ -199,39 +134,9 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
   protected void onAfterModulesRead() {
   }
 
-  private void fireOnLoad(final MPSModuleOwner owner) {
+  protected void fireOnLoad(final MPSModuleOwner owner) {
     for (IModule m : myRepository.getModules(owner)) {
       m.onModuleLoad();
-    }
-  }
-
-  public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
-    List<M> result = new ArrayList<M>();
-    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
-    result.addAll(myRepository.getModules(myPredefinedLibrariesOwner, cls));
-    result.addAll(myRepository.getModules(myOwner, cls));
-
-    addGenerators(cls, result);
-
-    return new HashSet<M>(result);
-  }
-
-  public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
-    List<M> result = new ArrayList<M>();
-    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
-
-    addGenerators(cls, result);
-
-    return new HashSet<M>(result);
-  }
-
-  private <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
-    for (M m : new ArrayList<M>(result)) {
-      if (m instanceof Language) {
-        if (cls==null || cls.isAssignableFrom(Generator.class)) {
-          result.addAll((List<? extends M>) ((Language) m).getGenerators());
-        }
-      }
     }
   }
 
