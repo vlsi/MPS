@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class LibraryManagerPreferences {
-  private LibraryManager myManager;
+  private BaseLibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private DefaultListModel myListModel = new DefaultListModel();
   private JList myLibrariesList = new JList(myListModel);
@@ -41,7 +41,7 @@ public class LibraryManagerPreferences {
   private JButton myRemoveButton;
   private JButton myEditButton;
 
-  public LibraryManagerPreferences(LibraryManager manager) {
+  public LibraryManagerPreferences(BaseLibraryManager manager) {
     myManager = manager;
 
     myMainPanel.add(new JScrollPane(myLibrariesList), BorderLayout.CENTER);
