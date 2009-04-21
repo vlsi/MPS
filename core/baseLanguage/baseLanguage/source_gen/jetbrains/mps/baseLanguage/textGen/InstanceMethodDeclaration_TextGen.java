@@ -18,6 +18,9 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
+    if (SPropertyOperations.getBoolean(node, "isFinal")) {
+      this.append("final ");
+    }
     if (SPropertyOperations.getBoolean(node, "isAbstract")) {
       this.append("abstract ");
     }

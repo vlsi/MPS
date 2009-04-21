@@ -6,6 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FieldDeclaration_TextGen extends SNodeTextGen {
 
@@ -13,6 +14,9 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
     this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
+    if (SPropertyOperations.getBoolean(node, "isVolatile")) {
+      this.append("volatile ");
+    }
     BaseLanguageTextGen.variableDeclaration(node, this);
     this.append(";");
   }
