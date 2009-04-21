@@ -18,14 +18,6 @@
     <property name="name" value="MPS" />
     <property name="scriptsFolder" value="build" />
     <node role="component" type="jetbrains.mps.build.custommps.structure.MPSBuild" id="1237299829995">
-      <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1240313055648">
-        <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1240313055649">
-          <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1240313055650">
-            <property name="name" value="basedir" />
-          </node>
-          <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1240313055651" />
-        </node>
-      </node>
       <node role="pathToBuildToolsZip" type="jetbrains.mps.build.packaging.structure.Path" id="1237299829996">
         <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1237299829997">
           <property name="name" value="basedir" />

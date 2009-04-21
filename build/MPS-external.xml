@@ -66,6 +66,7 @@
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <mkdir dir="${deploy.dir}/MPS/help-build.append.idea.version" />
     <mkdir dir="${deploy.dir}/MPS" />
+    <mkdir dir="${deploy.dir}/MPS" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/tools" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/resources" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
@@ -326,6 +327,9 @@
     <copy file="${mps_home}/entryPoints.xml" tofile="${deploy.dir}/MPS/entryPoints.xml" />
     <copy file="${mps_home}/readme.txt" tofile="${deploy.dir}/MPS/readme.txt" />
     <copy file="${mps_home}/about.txt" tofile="${deploy.dir}/MPS/about.txt" />
+    <copy todir="${deploy.dir}/MPS">
+      <fileset dir="" excludes="**/*.iml, **/*.iws" />
+    </copy>
     <mkdir dir="${deploy.dir}/MPS" />
     <copy todir="${deploy.dir}/MPS-buildTools.zip.tmp/tools">
       <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, " />
