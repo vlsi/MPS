@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.collections.behavior._Quotations;
 
 public class SetType_Behavior {
 

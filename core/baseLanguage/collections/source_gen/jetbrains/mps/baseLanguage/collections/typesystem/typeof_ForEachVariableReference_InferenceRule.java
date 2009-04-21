@@ -19,7 +19,7 @@ public class typeof_ForEachVariableReference_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = var;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(var, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1223982218686", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(var, "variable", false), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1178725705454", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1223982218681", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(var, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1223982218686", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(var, "variable", false), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1178725705454", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1223982218681", intentionProvider);
     }
   }
 

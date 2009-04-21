@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -38,7 +37,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
         {
           SNode _nodeToCheck_1029348928467 = creator;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(initValue, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723049579", true), SLinkOperations.getTarget(creator, "elementType", true), _nodeToCheck_1029348928467, "" + SLinkOperations.getTarget(creator, "elementType", true) + " is expected", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723049573", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(initValue, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723049579", true), (SNode)SLinkOperations.getTarget(creator, "elementType", true), _nodeToCheck_1029348928467, "" + SLinkOperations.getTarget(creator, "elementType", true) + " is expected", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723049573", false, 0, intentionProvider);
         }
       }
     }
@@ -46,13 +45,13 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = creator;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "copyFrom", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306674737", true), new _Quotations.QuotationClass_144().createNode(SLinkOperations.getTarget(creator, "elementType", true), SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306677804", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "copyFrom", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306674737", true), (SNode)new _Quotations.QuotationClass_144().createNode(SLinkOperations.getTarget(creator, "elementType", true), SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240306677804", false, 0, intentionProvider);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(creator, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723292398", true), AbstractContainerCreator_Behavior.call_createType_1237722437229(creator), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723275733", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(creator, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723292398", true), (SNode)AbstractContainerCreator_Behavior.call_createType_1237722437229(creator), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723275733", intentionProvider);
     }
   }
 

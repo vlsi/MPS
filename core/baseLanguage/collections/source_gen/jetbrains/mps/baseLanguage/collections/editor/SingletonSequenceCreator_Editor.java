@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 
 public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
 

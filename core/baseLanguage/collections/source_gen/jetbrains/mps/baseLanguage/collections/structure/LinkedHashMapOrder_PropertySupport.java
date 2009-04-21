@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.collections.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapOrder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LinkedHashMapOrder_PropertySupport extends PropertySupport {

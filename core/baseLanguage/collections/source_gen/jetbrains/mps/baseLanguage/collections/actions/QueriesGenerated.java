@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
-import jetbrains.mps.baseLanguage.collections.actions.ApplicableTypesInfo;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;

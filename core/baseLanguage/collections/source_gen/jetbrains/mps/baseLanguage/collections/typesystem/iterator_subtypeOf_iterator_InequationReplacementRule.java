@@ -30,7 +30,7 @@ public class iterator_subtypeOf_iterator_InequationReplacementRule extends Abstr
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "elementType", true), SLinkOperations.getTarget(supertype, "elementType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470147423", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470147423", false, 0, intentionProvider);
     }
   }
 
@@ -39,7 +39,7 @@ public class iterator_subtypeOf_iterator_InequationReplacementRule extends Abstr
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))))) {
       result_14532009 = false;
     }
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "elementType", true), SLinkOperations.getTarget(supertype, "elementType", true), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), true);
     return result_14532009;
   }
 

@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -30,6 +29,10 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_6309_0(context, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext context, SNode node) {
+    return this.createCollection_6309_1(context, node);
+  }
+
   public EditorCell createCollection_6309_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6309_0(editorCell, node, context);
@@ -37,9 +40,6 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_6309_1(context, node));
-    editorCell.addEditorCell(this.createConstant_6309_3(context, node, "("));
-    editorCell.addEditorCell(this.createProperty_6309_1(context, node));
-    editorCell.addEditorCell(this.createConstant_6309_4(context, node, ")"));
     editorCell.addEditorCell(this.createConstant_6309_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefNode_6309_1(context, node));
     editorCell.addEditorCell(this.createConstant_6309_1(context, node, ","));
@@ -48,6 +48,27 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     if (renderingCondition6309_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_6309_5(context, node));
     }
+    return editorCell;
+  }
+
+  public EditorCell createCollection_6309_1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_6309_1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_6309_2(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_6309_2(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_6309_2(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_6309_3(context, node, "iteration order:"));
+    editorCell.addEditorCell(this.createProperty_6309_1(context, node));
     return editorCell;
   }
 
@@ -79,14 +100,6 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6309_3(editorCell, node, context);
     setupLabel_Constant_6309_3(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_6309_4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6309_4(editorCell, node, context);
-    setupLabel_Constant_6309_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -294,19 +307,29 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_6309_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Collection_6309_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_6309_1");
+  }
+
+  private static void setupBasic_Collection_6309_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_6309_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupBasic_Constant_6309_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6309_3");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_6309_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_order");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_6309_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6309_4");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_ConceptProperty_6309_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -334,9 +357,6 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Property_6309_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6309_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition6309_0(SNode node, EditorContext editorContext, IScope scope) {

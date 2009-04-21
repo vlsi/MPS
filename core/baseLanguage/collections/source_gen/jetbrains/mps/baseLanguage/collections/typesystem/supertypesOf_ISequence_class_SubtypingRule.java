@@ -8,7 +8,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.collections.typesystem._Quotations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 

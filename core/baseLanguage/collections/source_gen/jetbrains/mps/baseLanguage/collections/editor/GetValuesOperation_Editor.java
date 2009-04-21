@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 
 public class GetValuesOperation_Editor extends DefaultNodeEditor {
 

@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE;
 
 public class DowncastExpression_Editor extends DefaultNodeEditor {
 

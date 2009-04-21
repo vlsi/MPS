@@ -2501,18 +2501,6 @@
           <property name="value" value="0.0" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240220070733">
-        <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240220087705">
-        <link role="relationDeclaration" targetNodeId="1.1240219919705" resolveInfo="order" />
-        <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240220091539">
-        <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240219713085">
         <property name="text" value="&lt;" />
         <link role="styleClass" targetNodeId="1215709345400" resolveInfo="LeftAngleBracket" />
@@ -2558,6 +2546,22 @@
         </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240219713102" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240327107675">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240327107676" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240327130046">
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240327130047" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240327130048">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240327134221">
+          <property name="text" value="iteration order:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240327154276">
+          <link role="relationDeclaration" targetNodeId="1.1240219919705" resolveInfo="order" />
+          <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240239932124">
