@@ -2834,5 +2834,21 @@
       <property name="text" value="name" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240317627288">
+    <property name="package" value="operation.enum" />
+    <link role="conceptDeclaration" targetNodeId="1.1240317547330" resolveInfo="Enum_MemberForValueOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240317641760">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317646655">
+        <property name="text" value="nameForValue(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240317689658">
+        <link role="relationDeclaration" targetNodeId="1.1240317673204" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240317701364">
+        <property name="text" value=")" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240317641762" />
+    </node>
+  </node>
 </model>
 

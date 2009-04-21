@@ -1625,20 +1625,6 @@
         </node>
       </node>
     </node>
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240161904118">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240161904119">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240161907386">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240161911872">
-            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240161907387" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240161912251">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240161917019">
-                <link role="conceptDeclaration" targetNodeId="18.1197027756228" resolveInfo="DotExpression" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240151960990">
     <property name="package" value="reference" />
@@ -1662,42 +1648,6 @@
                 <property name="value" value="true" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1240151962751" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240171448014">
-    <property name="package" value="operation.enum" />
-    <link role="concept" targetNodeId="1.1240171359678" resolveInfo="EnumMember_ValueOperation" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240171450327">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240171450328">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240171456695">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240171457651">
-            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240171456696" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240171458623">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240171461735">
-                <link role="conceptDeclaration" targetNodeId="18.1197027756228" resolveInfo="DotExpression" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1240173402729">
-    <property name="package" value="operation.enum" />
-    <link role="concept" targetNodeId="1.1240173327827" resolveInfo="EnumMember_NameOperation" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1240173406371">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240173406372">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240173409614">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240173411538">
-            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1240173409615" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240173414745">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240173417263">
-                <link role="conceptDeclaration" targetNodeId="18.1197027756228" resolveInfo="DotExpression" />
-              </node>
             </node>
           </node>
         </node>
