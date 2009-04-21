@@ -92,6 +92,14 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0475_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_0475_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

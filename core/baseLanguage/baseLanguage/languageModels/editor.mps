@@ -5932,6 +5932,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1145553197247">
         <property name="noTargetText" value="?" />
         <link role="relationDeclaration" targetNodeId="17.1145553007750" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" id="1240307926237">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237471451585" />
     </node>
@@ -10139,6 +10142,9 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215010868182">
       <property name="name" value="Parenthesis" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" id="1240252144198">
+        <property name="flag" value="true" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094796622">
         <property name="labelName" value="parenthesis" />
       </node>
@@ -10180,6 +10186,9 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="1238094870675">
         <property name="labelName" value="brace" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" id="1240252135296">
+        <property name="flag" value="true" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1215091279307">

@@ -254,9 +254,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      //       todo: this is quite a hackish stuff but we need it
-      //       todo: but we need it since we can't enable/disable
-      //       todo: menu items by condition
+      // todo: this is quite a hackish stuff but we need it
+      // todo: but we need it since we can't enable/disable
+      // todo: menu items by condition
       SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
       List<String> result = ListSequence.<String>fromArray();
       if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {

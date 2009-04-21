@@ -137,6 +137,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getParenthesis(final EditorCell cell) {
     return new Style(cell) {
       {
+        this.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
         this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
@@ -175,6 +176,7 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         this.set(StyleAttributes.MATCHING_LABEL, "brace");
+        this.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
       }
     };
   }

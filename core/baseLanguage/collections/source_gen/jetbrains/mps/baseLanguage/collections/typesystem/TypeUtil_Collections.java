@@ -24,21 +24,21 @@ public class TypeUtil_Collections {
     if (sequenceType == null) {
       return null;
     }
-    //     the following code is not reachable 
+    // the following code is not reachable 
     if (type == null) {
       return null;
     }
-    //     ==========
-    //     TEMP FIX FOR DNQ 1
+    // ==========
+    // TEMP FIX FOR DNQ 1
     if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
       SNode classifierType = SNodeOperations.cast(type.getChild("classifierType"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       return new _Quotations.QuotationClass_39().createNode(SNodeOperations.copyNode(classifierType));
     }
-    //     END TEMP FIX
-    //     ==========
-    //     ==========
-    //     TEMP FIX FOR DNQ
-    //     TODO: extract generics information
+    // END TEMP FIX
+    // ==========
+    // ==========
+    // TEMP FIX FOR DNQ
+    // TODO: extract generics information
     if (type != null) {
       SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
       GlobalScope scope = GlobalScope.getInstance();
@@ -55,7 +55,7 @@ public class TypeUtil_Collections {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
         return new _Quotations.QuotationClass_40().createNode(SNodeOperations.copyNode(entity));
       }
-      //       ==========
+      // ==========
       SNode entityIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
       SNode entityIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
@@ -63,8 +63,8 @@ public class TypeUtil_Collections {
         return new _Quotations.QuotationClass_41().createNode(SNodeOperations.copyNode(entity));
       }
     }
-    //     END FIX
-    //     ==========
+    // END FIX
+    // ==========
     return null;
   }
 

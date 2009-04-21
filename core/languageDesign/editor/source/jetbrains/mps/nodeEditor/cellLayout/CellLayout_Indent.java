@@ -339,7 +339,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (!myCell.isAncestorOf(prevLeaf)) break;
         if (!myLineContent.contains(prevLeaf)) break;
 
-        if (result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT) ||
+        if (isNoWrap(result) || result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT) ||
           prevLeaf.getStyle().get(StyleAttributes.PUNCTUATION_RIGTH)) {
 
           result = prevLeaf;
@@ -349,6 +349,20 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
 
       return result;
+    }
+
+    private Boolean isNoWrap(EditorCell current) {
+      while (current != null) {
+        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NO_WRAP)) {
+          return true;
+        }
+        if (current.getParent().getFirstChild() == current) {
+          current = current.getParent();
+        } else {
+          return false;
+        }
+      }
+      return false;
     }
 
     private boolean cellRangeFitsOnOneLine(EditorCell firstCell, EditorCell lastCell) {

@@ -183,31 +183,33 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="true" />
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1240250925877">
-      <property name="name" value="a" />
-      <property name="isVolatile" value="false" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1240250925878" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240250927973" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240244838911">
       <property name="isFinal" value="false" />
       <property name="name" value="F" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240244838912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240244838913" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240308658458">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240308658459">
+            <property name="name" value="varDeclStmnt" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240308658460">
+              <link role="concept" targetNodeId="22.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240308658461">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1240308658462">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240308658463">
+                  <link role="concept" targetNodeId="22.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240248149204">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240248149205" />
       </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239187811274">
-      <property name="name" value="method" />
-      <property name="isFinal" value="false" />
-      <property name="isAbstract" value="true" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239187774921" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239187763906" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239187763905" />
     </node>
   </node>
 </model>
