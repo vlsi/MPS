@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -39,7 +40,10 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   MPSNodeVirtualFile(@NotNull SNode node) {
     myNode = new WeakReference<SNode>(node);
-    myTimeStamp = node.getModel().getModelDescriptor().lastChangeTime();
+    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    if (modelDescriptor != null) {
+      myTimeStamp = modelDescriptor.lastChangeTime();
+    }
     updateFields();
   }
 
