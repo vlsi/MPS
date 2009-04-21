@@ -19,6 +19,8 @@ import com.intellij.ide.startup.FileSystemSynchronizer;
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManagerAdapter;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -36,7 +38,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   private Set<VirtualFile> myIndexableRoots;
 
-  public MPSFileBasedIndexProjectHandler(Project project, FileBasedIndex index, StartupModuleMaker maker) {
+  public MPSFileBasedIndexProjectHandler(final Project project, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
     myIndex = index;
 
@@ -49,6 +51,12 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
           updateRoots();
           startupManager.getFileSystemSynchronizer().registerCacheUpdater(updater);
           myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
+          ProjectManager projectManager = ProjectManager.getInstance();
+          projectManager.addProjectManagerListener(project, new ProjectManagerAdapter() {
+            public void projectClosing(Project project) {
+              myIndex.removeIndexableSet(MPSFileBasedIndexProjectHandler.this);
+            }
+          });
         }
       });
     }
