@@ -85,22 +85,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240160526996">
-      <link role="applicableConcept" targetNodeId="6.1240151383243" resolveInfo="SEnumType" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240160686532">
-        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240170210490">
-          <link role="concept" targetNodeId="8.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
-        </node>
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240170276556">
-      <link role="applicableConcept" targetNodeId="6.1240170042401" resolveInfo="SEnumMemberType" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240170289699">
-        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240170293638">
-          <link role="concept" targetNodeId="8.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
-        </node>
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168911029485">
       <link role="applicableConcept" targetNodeId="6.1143226024141" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1177112911167">
@@ -676,8 +660,8 @@
       <link role="applicableConcept" targetNodeId="6.1240151888333" resolveInfo="EnumRefExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240159779140">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240159995908">
-          <link role="baseMethodDeclaration" targetNodeId="15.1240159895072" resolveInfo="getEnum" />
-          <link role="classConcept" targetNodeId="15.1240159807768" resolveInfo="SEnumOperations" />
+          <link role="classConcept" targetNodeId="2.~SEnumOperations" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SEnumOperations.getEnum(java.lang.String,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getEnum" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240159995909">
             <property name="value" value="modelUID" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240159995910">
@@ -8622,6 +8606,26 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1240327119637">
+    <property name="package" value="enum" />
+    <property name="name" value="mc_enums" />
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240327125904">
+      <link role="applicableConcept" targetNodeId="6.1240151383243" resolveInfo="SEnumType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240327125905">
+        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240327125906">
+          <link role="concept" targetNodeId="8.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240327125907">
+      <link role="applicableConcept" targetNodeId="6.1240170042401" resolveInfo="SEnumMemberType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240327125908">
+        <node role="templateNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240327125909">
+          <link role="concept" targetNodeId="8.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
         </node>
       </node>
     </node>
