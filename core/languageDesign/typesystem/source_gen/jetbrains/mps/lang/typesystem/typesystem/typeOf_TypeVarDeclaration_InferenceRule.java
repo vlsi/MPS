@@ -19,7 +19,7 @@ public class typeOf_TypeVarDeclaration_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = typeVarDeclaration;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(typeVarDeclaration, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185878023858", true), new _Quotations.QuotationClass_14().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185878029189", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(typeVarDeclaration, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185878023858", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185878029189", intentionProvider);
     }
   }
 

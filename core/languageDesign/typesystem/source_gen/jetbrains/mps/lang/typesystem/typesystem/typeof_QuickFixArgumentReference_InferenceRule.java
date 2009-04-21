@@ -19,7 +19,7 @@ public class typeof_QuickFixArgumentReference_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = reference;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(reference, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257233821", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(reference, "quickFixArgument", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257241048", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257237871", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(reference, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257233821", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(reference, "quickFixArgument", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257241048", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1227257237871", intentionProvider);
     }
   }
 

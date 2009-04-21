@@ -220,6 +220,38 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+  public void createEquation(SNode node1,
+                             IWrapper wrapper2,
+                             SNode nodeToCheck,
+                             String errorString,
+                             String ruleModel,
+                             String ruleId,
+                             IntentionProvider intentionProvider) {
+    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
+    getCurrentSlicer().beforeUserEquationAdded(node1, wrapper2.getNode(), equationInfo);
+    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
+    equationManager.addEquation(
+      NodeWrapper.fromNode(node1, equationManager),
+      wrapper2,
+      equationInfo);
+  }
+
+  public void createEquation(IWrapper wrapper1,
+                             SNode node2,
+                             SNode nodeToCheck,
+                             String errorString,
+                             String ruleModel,
+                             String ruleId,
+                             IntentionProvider intentionProvider) {
+    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
+    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), node2, equationInfo);
+    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
+    equationManager.addEquation(
+      wrapper1,
+      NodeWrapper.fromNode(node2, equationManager),
+      equationInfo);
+  }
+
    public void createEquation(IWrapper wrapper1,
                              IWrapper wrapper2,
                              SNode nodeToCheck,

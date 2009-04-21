@@ -20,7 +20,7 @@ public class typeOf_PatternCondition_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = pc;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(paternCondition, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981204954", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1175521901932", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981204949", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(paternCondition, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981204954", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1175521901932", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981204949", intentionProvider);
     }
   }
 

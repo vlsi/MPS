@@ -11,21 +11,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_AssertStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
 
-  public typeOf_AssertStatement_InferenceRule() {
+  public typeof_ConceptClauseLinkInfo_InferenceRule() {
   }
 
-  public void applyRule(final SNode assertStatement, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode info, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = assertStatement;
+      SNode _nodeToCheck_1029348928467 = info;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1178271601478", true), (SNode)new _Quotations.QuotationClass_8().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1178271610359", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(info, "targetNode", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode)new _Quotations.QuotationClass_47().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103445", false, 0, intentionProvider);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.AssertStatement";
+    return "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo";
   }
 
   public boolean isApplicable(SNode argument) {

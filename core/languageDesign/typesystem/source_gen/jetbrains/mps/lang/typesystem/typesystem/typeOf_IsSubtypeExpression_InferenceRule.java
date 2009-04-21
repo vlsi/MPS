@@ -19,7 +19,7 @@ public class typeOf_IsSubtypeExpression_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = expr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205059", true), new _Quotations.QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205054", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(expr, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205059", true), (SNode)new _Quotations.QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205054", intentionProvider);
     }
   }
 

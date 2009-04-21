@@ -2787,5 +2787,33 @@
       <link role="concept" targetNodeId="1.1238846201744" resolveInfo="JoinOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240325088693">
+    <property name="name" value="typeof_ConceptClauseLinkInfo" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240325088694">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240325103445">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240325103446">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240325103447">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240325103448">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240325103449">
+                <link role="applicableNode" targetNodeId="1240325088695" resolveInfo="info" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240325103450">
+                <link role="link" targetNodeId="1.1240322649599" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240325106331">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240325106332">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240325109895" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240325088695">
+      <property name="name" value="info" />
+      <link role="concept" targetNodeId="1.1240322303006" resolveInfo="ConceptClauseLinkInfo" />
+    </node>
+  </node>
 </model>
 

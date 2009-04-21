@@ -51,7 +51,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = func;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485210", true), null, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485205", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485210", true), (SNode) null, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485205", intentionProvider);
       }
     } else
     {
