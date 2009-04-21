@@ -740,7 +740,12 @@ public class EquationManager {
   }
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
-    setParent(error, type); //type
+    if (type instanceof NodeWrapper) {
+      setParent(error, type);
+    } else if (error instanceof NodeWrapper) {
+      setParent(type, error);
+    }
+    //Concept Wrappers are removed
     myTypeCheckingContext.reportMessage(nodeToCheck, errorReporter);
     error.fireRepresentatorSet(type, this);
   }

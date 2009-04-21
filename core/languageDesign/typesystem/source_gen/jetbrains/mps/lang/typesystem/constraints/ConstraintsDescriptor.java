@@ -25,6 +25,7 @@ import jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_propertyD
 import jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_linkDeclaration_ReferentConstraint;
 import jetbrains.mps.lang.typesystem.constraints.LinkAssociation_subtypeLink_ReferentConstraint;
 import jetbrains.mps.lang.typesystem.constraints.LinkAssociation_supertypeLink_ReferentConstraint;
+import jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
@@ -52,6 +53,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListOperations.addElement(this.myConstraints, new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new LinkAssociation_subtypeLink_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new LinkAssociation_supertypeLink_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

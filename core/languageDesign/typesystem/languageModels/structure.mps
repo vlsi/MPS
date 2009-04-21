@@ -2455,5 +2455,37 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240322207314">
+    <property name="name" value="ConceptTypeClause" />
+    <link role="extends" targetNodeId="1185788561607" resolveInfo="TypeClause" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240322227198">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="matchingConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489090640" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240322224540">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="linkInfo" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1240322303006" resolveInfo="ConceptClauseLinkInfo" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240322303006">
+    <property name="name" value="ConceptClauseLinkInfo" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240322663260">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="linkDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240322649599">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="targetNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

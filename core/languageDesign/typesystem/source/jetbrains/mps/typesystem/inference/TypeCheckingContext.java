@@ -220,6 +220,21 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+   public void createEquation(IWrapper wrapper1,
+                             IWrapper wrapper2,
+                             SNode nodeToCheck,
+                             String errorString,
+                             String ruleModel,
+                             String ruleId,
+                             IntentionProvider intentionProvider) {
+    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
+    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
+    getNodeTypesComponent().getEquationManager().addEquation(
+      wrapper1,
+      wrapper2,
+      equationInfo);
+  }
+
   public void createLessThanInequation(SNode node1,
                                        SNode node2,
                                        SNode nodeToCheck,
