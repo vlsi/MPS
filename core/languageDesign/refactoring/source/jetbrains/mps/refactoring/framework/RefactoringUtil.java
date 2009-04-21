@@ -50,6 +50,7 @@ public class RefactoringUtil {
   }
 
   public static boolean isApplicableToNodes(ILoggableRefactoring r, List<SNode> nodes) {
+    if (nodes.isEmpty()) return false;
     for (SNode node : nodes) {
       if (!r.isApplicableWRTConcept(node)) {
         return false;
