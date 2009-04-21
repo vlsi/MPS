@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.lang.smodel.scripts._Quotations;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 
 public class AdapterElimination_MigrationScript extends BaseMigrationScript {

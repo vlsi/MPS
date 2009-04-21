@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.lang.smodel.editor.SemanticDowncastExpression_Symbol_Actions;
 
 public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 

@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp;
 
 public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
 

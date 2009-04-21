@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.structure.SNodeType;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

@@ -1881,6 +1881,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178287491362">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_SModelType_ClassifierTypeSModel" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491363">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178287491364">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487473">
@@ -1897,6 +1898,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178287491368">
     <property name="name" value="supertypesOf_SNodeListType_SNodeListType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491369">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179275501549">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179275501550">
@@ -2006,6 +2008,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178287491374">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_SNodeType_ClassifierTypeSNode" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491375">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178287491376">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487483">
@@ -2022,6 +2025,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178287491380">
     <property name="name" value="supertypesOf_SNodeType_SNodeType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491381">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179363847372">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179363847373">
@@ -2140,6 +2144,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1178287491408">
     <property name="name" value="supertypesOf_SConceptType_SNodeType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491409">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180544752193">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180544752194">
@@ -5899,6 +5904,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1179273722874">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_ClassifierTypeSNode_SNodeType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179273722875">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179273762255">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487650">
@@ -5918,6 +5924,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1179273814674">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_ClassifierTypeSModel_SModelType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179273814675">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179273814676">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487652">
@@ -5936,6 +5943,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1179364931863">
     <property name="name" value="supertypesOf_SNodeListType_ListType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179364931864">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179365563880">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179365563881">
@@ -6153,6 +6161,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1180462861797">
     <property name="name" value="supertypesOf_SNodeType_SConceptType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180462861798">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180462919850">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487663">
@@ -6171,6 +6180,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1180547887028">
     <property name="name" value="supertypesOf_SConceptTypeType_SConceptTypeType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180547887029">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180547887030">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180547887031">
@@ -6794,6 +6804,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1193943556383">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_ListType_ListType_elementSNode" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193943556384">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193947530695">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193947530696">
@@ -6879,6 +6890,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1197650845844">
     <property name="name" value="supertypesOf_ListType_SNodeListType" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197650845845">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197650920026">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197650923059">
@@ -7570,6 +7582,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1204928723254">
     <property name="name" value="supertypesOf__LinkAccessT_weak" />
     <property name="isWeak" value="true" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204928723255">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205352064890">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205352064891">
@@ -7675,6 +7688,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1205352520894">
     <property name="name" value="supertypesOf__LinkAccessT_storng" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205352520895">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205353022447">
         <property name="value" value="sequence operations (R/O) should be available after 'to-many-link-access'" />
@@ -7938,6 +7952,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1206557450080">
     <property name="name" value="supertypesOf_SNodeType__LinkAccessT" />
     <property name="isWeak" value="true" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206557450081">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206557818141">
         <property name="value" value="we need this to allow 'link-acc' in left part od an assignment expression" />
@@ -8663,6 +8678,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1221163216580">
     <property name="isWeak" value="true" />
     <property name="name" value="supertypesOf_SearchScopeType_ISearchScope" />
+    <property name="package" value="type" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221163216581">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221163216582">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1221163216583">
@@ -10707,6 +10723,83 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240321429321">
       <property name="name" value="operation" />
       <link role="concept" targetNodeId="1.1240318876855" resolveInfo="Enum_MemberForNameOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240338892937">
+    <property name="package" value="type" />
+    <property name="name" value="supertypesOf_SEnumType_node_EnumerationDataTypeDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240338892938">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339875048">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240340869812">
+          <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240340897251">
+            <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240340901300" />
+            <node role="initValue" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240340904412">
+              <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240340904413">
+                <link role="concept" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240338968300">
+      <property name="name" value="type" />
+      <link role="concept" targetNodeId="1.1240151383243" resolveInfo="SEnumType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339090923">
+    <property name="name" value="supertypesOf_SNodeType_SEnumType" />
+    <property name="package" value="type" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339090924">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339090925">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339090926">
+          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240339115557" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240339090928">
+      <property name="name" value="node" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240339090929">
+        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339090930">
+          <link role="concept" targetNodeId="3.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339134558">
+    <property name="name" value="supertypesOf_SNodeType_SEnumMemberType" />
+    <property name="package" value="type" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339134559">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339134560">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339134561">
+          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240339153724" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240339134563">
+      <property name="name" value="node" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240339134564">
+        <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339134565">
+          <link role="concept" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339171475">
+    <property name="package" value="type" />
+    <property name="name" value="supertypesOf_SEnumMemberType_node_EnumerationMemberDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339171476">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339171477">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339171478">
+          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339171479">
+            <link role="concept" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240339171480">
+      <property name="name" value="type" />
+      <link role="concept" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
     </node>
   </node>
 </model>
