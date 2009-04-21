@@ -13,13 +13,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink;
-import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink;
-import jetbrains.mps.lang.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.pattern.structure.AsPattern;
-import jetbrains.mps.lang.pattern.structure.Pattern;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
@@ -138,7 +134,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1190931377016(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode antiquotation = _context.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
+    SNode antiquotation = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true);
     return _context.getOutputNodeByInputNodeAndMappingLabel(antiquotation, "antiquotations");
   }
 
@@ -152,7 +148,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1190931377315(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String refRole = _context.getNode().getProperty("referentRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    SNode refAntiq = mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole);
+    SNode refAntiq = SLinkOperations.getTarget(mainNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", refRole), true);
     return _context.getOutputNodeByInputNodeAndMappingLabel(refAntiq.getChild(AbstractAntiquotation.EXPRESSION), "antiquotations");
   }
 
@@ -244,13 +240,13 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377036(final IOperationContext operationContext, final IfMacroContext _context) {
-    return _context.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION) != null;
+    return SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null;
   }
 
   public static boolean ifMacro_Condition_1190931377347(final IOperationContext operationContext, final IfMacroContext _context) {
     String refRole = _context.getNode().getProperty("referentRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) != null;
+    return SLinkOperations.getTarget(mainNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", refRole), true) != null;
   }
 
   public static boolean ifMacro_Condition_1190931377679(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -259,7 +255,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1190931377695(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode attribute = _context.getNode().getAttribute();
-    return attribute == null || attribute.getAdapter() instanceof AsPattern || !(attribute.getAdapter() instanceof Pattern);
+    return attribute == null || SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.AsPattern") || !(SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.Pattern"));
   }
 
   public static boolean ifMacro_Condition_1190931377744(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -279,7 +275,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1190931377867(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode attribute = _context.getNode().getAttribute();
-    return attribute == null || attribute.getAdapter() instanceof AsPattern || !(attribute.getAdapter() instanceof Pattern);
+    return attribute == null || SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.AsPattern") || !(SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.Pattern"));
   }
 
   public static boolean ifMacro_Condition_1190931377908(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -294,13 +290,13 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931378075(final IOperationContext operationContext, final IfMacroContext _context) {
-    return _context.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION) == null;
+    return SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) == null;
   }
 
   public static boolean ifMacro_Condition_1190931671231(final IOperationContext operationContext, final IfMacroContext _context) {
     String refRole = _context.getNode().getProperty("referentRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) == null;
+    return SLinkOperations.getTarget(mainNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", refRole), true) == null;
   }
 
   public static boolean ifMacro_Condition_1197652523288(final IOperationContext operationContext, final IfMacroContext _context) {
