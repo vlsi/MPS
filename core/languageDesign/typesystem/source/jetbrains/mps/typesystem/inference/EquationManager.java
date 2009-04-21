@@ -1227,7 +1227,11 @@ public class EquationManager {
         if (expandChild) {
           wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
         } else {
-          wrapper1 = (NodeWrapper) type;
+          if (type instanceof NodeWrapper) {
+           wrapper1 = (NodeWrapper) type;
+          } else {
+            wrapper1 = null;
+          }
         }
         variablesMet.remove(wrapper);
       }
@@ -1279,8 +1283,9 @@ public class EquationManager {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-        SNode newNode = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
-          depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, false).getNode();
+        NodeWrapper nodeWrapper = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
+          depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, false);
+        SNode newNode = nodeWrapper == null ? null : nodeWrapper.getNode();
 
         if (finalExpansion && BaseAdapter.isInstance(newNode, RuntimeTypeVariable.class)) {
           newNode = convertReferentVariable(node, reference.getRole(), newNode);

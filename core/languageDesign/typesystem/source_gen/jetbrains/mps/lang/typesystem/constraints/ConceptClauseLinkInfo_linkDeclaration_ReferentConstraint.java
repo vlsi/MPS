@@ -24,7 +24,7 @@ public class ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint extends Ba
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", false, false), "matchingConcept", false), "linkDeclaration", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", true, false), "matchingConcept", false), "linkDeclaration", true);
   }
 
 }

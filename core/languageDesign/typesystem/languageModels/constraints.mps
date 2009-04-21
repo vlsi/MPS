@@ -2685,6 +2685,7 @@
                         <link role="conceptDeclaration" targetNodeId="1.1240322207314" resolveInfo="ConceptClause" />
                       </node>
                     </node>
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1240326947308" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240323052970">

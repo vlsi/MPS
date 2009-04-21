@@ -2470,6 +2470,10 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1240322303006" resolveInfo="ConceptClauseLinkInfo" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240326873559">
+      <property name="value" value="typeInstanceOf" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240322303006">
     <property name="name" value="ConceptClauseLinkInfo" />

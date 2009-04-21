@@ -232,58 +232,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239803373892" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239356674662" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239356674663">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239803229543">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239803229544">
-            <property name="name" value="seq" />
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1239803229545">
-              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239803248516">
-                <link role="concept" targetNodeId="13.1237993244422" resolveInfo="IMPSLiteConcept" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239803280557">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1239803280558">
-                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239803280559">
-                  <link role="concept" targetNodeId="13.1237993244422" resolveInfo="IMPSLiteConcept" />
-                </node>
-              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240327848263">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240327848264">
+            <property name="name" value="card" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240327848265">
+              <link role="enum" targetNodeId="11.1084197782722" resolveInfo="Cardinality" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239803224350">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239803224351">
-            <property name="name" value="result" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239803224352">
-              <link role="elementConcept" targetNodeId="13.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240327856717">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240327856954">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240327856718">
+              <link role="variableDeclaration" targetNodeId="1240327848264" resolveInfo="card" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239803224353">
-              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1239803224354">
-                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1239803224355">
-                  <link role="elementConcept" targetNodeId="13.1182510906722" resolveInfo="MPSLiteConceptDeclaration" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1239803224356">
-          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1239803224357">
-            <property name="name" value="n" />
-          </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239803270894">
-            <link role="variableDeclaration" targetNodeId="1239803229544" resolveInfo="seq" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239803224359">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239803224360">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239803224361">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239803224362">
-                  <link role="variableDeclaration" targetNodeId="1239803224351" resolveInfo="result" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1239803224363">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1239803224365">
-                    <link role="variable" targetNodeId="1239803224357" resolveInfo="n" />
-                  </node>
-                </node>
-              </node>
-            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240327858451" />
           </node>
         </node>
       </node>
