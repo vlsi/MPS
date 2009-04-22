@@ -142,17 +142,27 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.PLUGIN_MODEL_ICON;
     }
-  },
+    },                                                                      
 
   DATA_FLOW("dataFlow") {
     public ModuleReference getMainLanguage() {
       return DataFlow_Language.MODULE_REFERENCE;
+    }
+
+    @Override
+    public Icon getIcon() {
+      return Icons.DATA_FLOW_MODEL_ICON;
     }
   },
 
   TEST("test") {
     public ModuleReference getMainLanguage() {
       return Test_Language.MODULE_REFERENCE;
+    }
+
+    @Override
+    public Icon getIcon() {
+      return Icons.TEST_MODEL_ICON;
     }
   },
 
