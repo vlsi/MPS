@@ -29,7 +29,7 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$APPLICATION_HOME_DIR$">
+        <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
@@ -42,7 +42,7 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$">
+        <entry key="$APPLICATION_HOME_DIR$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
@@ -62,8 +62,8 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 

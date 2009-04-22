@@ -330,8 +330,28 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240400925607">
+        <property name="text" value="final" />
+        <link role="styleClass" targetNodeId="2.1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap" targetNodeId="1240400999425" resolveInfo="NTCD_delete_final" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1240400933907">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240400933908">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240400938375">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240400938422">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240400938376" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240400940603">
+                  <link role="property" targetNodeId="1.1240400839614" resolveInfo="final" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239463516032">
         <link role="relationDeclaration" targetNodeId="1.1239462974287" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1240401073133">
+          <property name="tag" value="ext_1_RTransform" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1239463533524">
         <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
@@ -807,6 +827,30 @@
           <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1239576874677">
             <property name="style" value="BOLD" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1240400999425">
+    <property name="name" value="NTCD_delete_final" />
+    <link role="applicableConcept" targetNodeId="1.1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1240401003112">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1240401003113">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240401003114">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240401033211">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240401035690">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240401033259">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1240401033212" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240401034151">
+                  <link role="property" targetNodeId="1.1240400839614" resolveInfo="final" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240401037637">
+                <property name="value" value="false" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

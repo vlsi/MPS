@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class IndexedTupleType_Behavior {
 
@@ -27,7 +28,7 @@ public class IndexedTupleType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> suffixes = ListSequence.<String>fromArray();
+    List<String> suffixes = ListSequence.fromList(new ArrayList<String>());
     switch (SLinkOperations.getCount(thisNode, "componentType")) {
       case 0:
         ListSequence.fromList(suffixes).addElement("unit");

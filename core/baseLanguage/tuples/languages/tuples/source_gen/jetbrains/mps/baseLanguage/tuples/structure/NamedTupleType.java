@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.structure;
 
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

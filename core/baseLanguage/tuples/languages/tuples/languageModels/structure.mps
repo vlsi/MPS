@@ -176,6 +176,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1239462176079">
     <property name="name" value="NamedTupleComponentDeclaration" />
     <link role="extends" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240400839614">
+      <property name="name" value="final" />
+      <link role="dataType" targetNodeId="3v.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239462974287">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -303,9 +307,6 @@
       <property name="role" value="component" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1239578317604">
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1197029536315" resolveInfo="lvalue" />
     </node>
   </node>
 </model>

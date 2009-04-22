@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.baseLanguage.tuples.dataFlow.IndexedTupleLiteral_DataFlow;
-import jetbrains.mps.baseLanguage.tuples.dataFlow.NamedTupleLiteral_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

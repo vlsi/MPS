@@ -1538,7 +1538,7 @@
           <property name="value" value="false" />
         </node>
         <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239724938326">
-          <property name="value" value="Null is not comptible with tuple type" />
+          <property name="value" value="Null is not compatible with tuple type" />
         </node>
         <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239724938327">
           <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression" id="1239724938328" />

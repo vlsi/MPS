@@ -24,6 +24,7 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String FINAL = "final";
   public static final String TYPE = "type";
   public static final String ANNOTATION = "annotation";
 
@@ -69,6 +70,14 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
 
   public void setResolveInfo(String value) {
     this.setProperty(NamedTupleComponentDeclaration.RESOLVE_INFO, value);
+  }
+
+  public boolean getFinal() {
+    return this.getBooleanProperty(NamedTupleComponentDeclaration.FINAL);
+  }
+
+  public void setFinal(boolean value) {
+    this.setBooleanProperty(NamedTupleComponentDeclaration.FINAL, value);
   }
 
   public Type getType() {

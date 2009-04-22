@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

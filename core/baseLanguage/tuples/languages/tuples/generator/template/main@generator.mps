@@ -6112,6 +6112,25 @@
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1239719735178">
       <link role="applicableConcept" targetNodeId="1.1239360506533" resolveInfo="NamedTupleDeclaration" />
       <link role="template" targetNodeId="1239719777467" resolveInfo="NamedTuple" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1240402731846">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240402731847">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240402757816">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240402768660">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240402757867">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240402757817" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1240402760983">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1240402760984">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240402766041">
+                      <link role="conceptDeclaration" targetNodeId="2v.1107461130800" resolveInfo="Classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1240402769854" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1239631208111">
@@ -6214,6 +6233,22 @@
             <link role="key" targetNodeId="2.~SuppressWarnings.value()" resolveInfo="value" />
             <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239637168699">
               <property name="value" value="unchecked" />
+            </node>
+          </node>
+        </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240402803992">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240402803993">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240402803994">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240402813042">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240402813043">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240402817701">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240402817630" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240402822878">
+                      <link role="property" targetNodeId="1.1240400839614" resolveInfo="final" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

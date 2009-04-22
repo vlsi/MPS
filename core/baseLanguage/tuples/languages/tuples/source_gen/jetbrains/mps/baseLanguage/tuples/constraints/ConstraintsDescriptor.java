@@ -5,11 +5,6 @@ package jetbrains.mps.baseLanguage.tuples.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleDeclaration_resolveInfo_PropertyConstraint;
-import jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_alias_PropertyConstraint;
-import jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_componentDeclaration_ReferentConstraint;
-import jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_component_ReferentConstraint;
-import jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleDeclaration_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

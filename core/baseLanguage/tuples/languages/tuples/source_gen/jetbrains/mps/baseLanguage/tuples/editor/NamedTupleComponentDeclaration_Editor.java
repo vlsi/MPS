@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,7 +34,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 
 public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
 
@@ -51,6 +52,9 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     if (renderingCondition0912_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0912_1(context, node));
+    }
+    if (renderingCondition0912_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_0912_1(context, node, "final"));
     }
     editorCell.addEditorCell(this.createRefNode_0912_1(context, node));
     editorCell.addEditorCell(this.createProperty_0912_1(context, node));
@@ -72,6 +76,14 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0912_0(editorCell, node, context);
     setupLabel_Constant_0912_0(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_0912_1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_0912_1(editorCell, node, context);
+    setupLabel_Constant_0912_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -179,6 +191,14 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Property_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -188,6 +208,12 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0912_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+  }
+
+  private static void setupBasic_Constant_0912_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0912_1");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    NTCD_delete_final.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNodeList_0912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -202,8 +228,15 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_0912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_0912_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition0912_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static boolean renderingCondition0912_1(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "final");
   }
 
   public static class annotationListHandler_0912_0 extends RefNodeListHandler {
@@ -255,17 +288,17 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      //        copied from VariableDeclaration's editor
+      //  copied from VariableDeclaration's editor
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else
       {
-        result = ListSequence.<String>fromArray();
+        result = ListSequence.fromList(new ArrayList<String>());
       }
-      //       we need this because of smart input
-      //       DO NOT REMOVE IT
+      // we need this because of smart input
+      // DO NOT REMOVE IT
       if (SPropertyOperations.getString(node, "name") != null) {
         ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }

@@ -1370,6 +1370,34 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1239977019775">
     <property name="testCaseName" value="GenericNamedTuples" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240073848853">
+      <property name="name" value="pairOfStrings" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" id="1240073854188">
+        <link role="classifier" targetNodeId="1239977036413" resolveInfo="Pair" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240073859058" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240073861144" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240073848855" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240073848856">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240073873703">
+          <node role="expression" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="1240073873704">
+            <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="Pair" />
+            <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1240073873705">
+              <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240073875053">
+                <property name="value" value="X" />
+              </node>
+            </node>
+            <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1240073873707">
+              <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240073877358">
+                <property name="value" value="Y" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239977019776" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1239977019777">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239977019778" />
