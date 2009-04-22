@@ -1515,6 +1515,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216383170661">
     <property name="name" value="HelginsQuickFix" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/quickFix.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1216383424566">
       <property name="metaClass" value="aggregation" />
@@ -2107,6 +2108,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1228482838236">
     <property name="name" value="VariableConvertersContainer" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/variableReplacement.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1228482919686">
       <property name="metaClass" value="aggregation" />
