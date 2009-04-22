@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,19 +18,19 @@ public class CatchClause extends BaseConcept {
     super(node);
   }
 
-  public LocalVariableDeclaration getThrowable() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
+  public INodeAdapter getThrowable() {
+    return (INodeAdapter)this.getChild(, CatchClause.THROWABLE);
   }
 
-  public void setThrowable(LocalVariableDeclaration node) {
+  public void setThrowable(INodeAdapter node) {
     super.setChild(CatchClause.THROWABLE, node);
   }
 
-  public StatementList getCatchBody() {
-    return (StatementList)this.getChild(StatementList.class, CatchClause.CATCH_BODY);
+  public INodeAdapter getCatchBody() {
+    return (INodeAdapter)this.getChild(, CatchClause.CATCH_BODY);
   }
 
-  public void setCatchBody(StatementList node) {
+  public void setCatchBody(INodeAdapter node) {
     super.setChild(CatchClause.CATCH_BODY, node);
   }
 

@@ -10,76 +10,75 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1225277059829(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.BaseStringOperation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(, "operation", true), "jetbrains.mps.baseLanguage.structure.BaseStringOperation");
   }
 
   public static boolean baseMappingRule_Condition_1225277059846(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "trimKind", "leading", "both");
+    return SPropertyOperations.hasValue(, "trimKind", "leading", "both");
   }
 
   public static boolean baseMappingRule_Condition_1225277059857(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "trimKind", "trailing", "both");
+    return SPropertyOperations.hasValue(, "trimKind", "trailing", "both");
   }
 
   public static boolean ifMacro_Condition_1225277059757(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "startIndex", true) != null;
+    return SLinkOperations.getTarget(, "startIndex", true) != null;
   }
 
   public static SNode sourceNodeQuery_1225277059669(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return ;
   }
 
   public static SNode sourceNodeQuery_1225277059680(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return ;
   }
 
   public static SNode sourceNodeQuery_1225277059691(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+    return SLinkOperations.getTarget(, "leftExpression", true);
   }
 
   public static SNode sourceNodeQuery_1225277059699(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+    return SLinkOperations.getTarget(, "rightExpression", true);
   }
 
   public static SNode sourceNodeQuery_1225277059711(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+    return SLinkOperations.getTarget(, "leftExpression", true);
   }
 
   public static SNode sourceNodeQuery_1225277059719(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+    return SLinkOperations.getTarget(, "rightExpression", true);
   }
 
   public static SNode sourceNodeQuery_1225277059749(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+    return SLinkOperations.getTarget(, "operand", true);
   }
 
   public static SNode sourceNodeQuery_1225277059768(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "startIndex", true);
+    return SLinkOperations.getTarget(, "startIndex", true);
   }
 
   public static SNode sourceNodeQuery_1225277059776(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "endIndex", true);
+    return SLinkOperations.getTarget(, "endIndex", true);
   }
 
   public static SNode sourceNodeQuery_1225277059787(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return ;
   }
 
   public static SNode sourceNodeQuery_1225277059798(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return ;
   }
 
   public static SNode sourceNodeQuery_1225277059810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return ;
   }
 
   public static SNode sourceNodeQuery_1225277059823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operation", true);
+    return SLinkOperations.getTarget(, "operation", true);
   }
 
 }

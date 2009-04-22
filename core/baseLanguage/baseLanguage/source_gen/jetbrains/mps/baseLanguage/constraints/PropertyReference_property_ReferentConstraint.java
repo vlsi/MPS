@@ -9,9 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,21 +30,21 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return null;
     }
-    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+    SNode opClassifier = ;
     if (opClassifier == null) {
       return null;
     }
-    List<SNode> resultProperties = ListOperations.<SNode>createList();
+    List<SNode> resultProperties = ;
     List<SNode> classifiers = ((List<SNode>)new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes());
     for(SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
         List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
         for(SNode property : ListSequence.fromList(properties)) {
-          if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
+          if (VisibilityUtil.isVisible(, property)) {
             ListSequence.fromList(resultProperties).addElement(property);
           }
         }

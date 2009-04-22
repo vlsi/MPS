@@ -14,7 +14,7 @@ public class SwitchCase_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "body", true));
   }
 
 }

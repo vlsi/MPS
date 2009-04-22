@@ -9,33 +9,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1233837557097(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(, "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation");
   }
 
   public static Object propertyMacro_GetPropertyValue_1233837397113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false));
+    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(, "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false));
   }
 
   public static SNode sourceNodeQuery_1233837345550(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false), "type", true));
+    return ;
   }
 
   public static SNode sourceNodeQuery_1233837387040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+    return SLinkOperations.getTarget(, "operand", true);
   }
 
   public static SNode sourceNodeQuery_1233838831553(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
+    return ;
   }
 
   public static Iterable sourceNodesQuery_1233837222427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "item", true);
+    return SLinkOperations.getTargets(, "item", true);
   }
 
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.editor._Patterns;
 import javax.swing.JOptionPane;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {

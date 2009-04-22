@@ -14,9 +14,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.plugin.IntroduceConstantRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.plugin.IntroduceConstantDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends GeneratedAction {
@@ -40,7 +38,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
+    return SNodeOperations.isInstanceOf(IntroduceConstant_Action.this., "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -64,21 +62,21 @@ public class IntroduceConstant_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
       }
-      this.node = node;
+       = node;
     }
-    if (this.node == null) {
+    if ( == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.context == null) {
+     = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if ( == null) {
       return false;
     }
-    this.component = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.component == null) {
+     = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if ( == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+     = event.getData(MPSDataKeys.FRAME);
+    if ( == null) {
       return false;
     }
     return true;
@@ -91,16 +89,16 @@ public class IntroduceConstant_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          refactoring.value = new IntroduceConstantRefactoring();
-          error.value = refactoring.value.init(SNodeOperations.cast(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceConstant_Action.this.component);
+           = new IntroduceConstantRefactoring();
+           = .init(SNodeOperations.cast(IntroduceConstant_Action.this., "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceConstant_Action.this.);
         }
       });
-      if (error.value == null) {
-        IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this.frame, refactoring.value, IntroduceConstant_Action.this.context);
+      if ( == null) {
+        IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this., , IntroduceConstant_Action.this.);
         dialog.showDialog();
       } else
       {
-        JOptionPane.showMessageDialog(IntroduceConstant_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(IntroduceConstant_Action.this., , "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);

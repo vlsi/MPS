@@ -15,7 +15,7 @@ public class ArrayCreator_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode expression : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dimensionExpression", true))) {
+    for(SNode expression : ListSequence.fromList(SLinkOperations.getTargets(, "dimensionExpression", true))) {
       _context.getBuilder().build((SNode)expression);
     }
   }

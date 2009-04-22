@@ -14,8 +14,8 @@ public class SynchronizedStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "block", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "expression", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "block", true));
   }
 
 }

@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldReference_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classifier", false), this);
+    ;
     this.append(".");
     this.append(this.getReferentResolveInfoOrName("variableDeclaration", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference")));
   }

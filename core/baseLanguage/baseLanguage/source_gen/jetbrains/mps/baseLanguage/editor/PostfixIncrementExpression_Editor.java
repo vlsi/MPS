@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions;
 
 public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
 

@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,19 +18,19 @@ public class AnnotationInstanceValue extends BaseConcept {
     super(node);
   }
 
-  public AnnotationMethodDeclaration getKey() {
-    return (AnnotationMethodDeclaration)this.getReferent(AnnotationMethodDeclaration.class, AnnotationInstanceValue.KEY);
+  public INodeAdapter getKey() {
+    return (INodeAdapter)this.getReferent(, AnnotationInstanceValue.KEY);
   }
 
-  public void setKey(AnnotationMethodDeclaration node) {
+  public void setKey(INodeAdapter node) {
     super.setReferent(AnnotationInstanceValue.KEY, node);
   }
 
-  public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, AnnotationInstanceValue.VALUE);
+  public INodeAdapter getValue() {
+    return (INodeAdapter)this.getChild(, AnnotationInstanceValue.VALUE);
   }
 
-  public void setValue(Expression node) {
+  public void setValue(INodeAdapter node) {
     super.setChild(AnnotationInstanceValue.VALUE, node);
   }
 

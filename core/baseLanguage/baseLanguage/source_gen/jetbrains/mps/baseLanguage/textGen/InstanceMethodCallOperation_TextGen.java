@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 public class InstanceMethodCallOperation_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.methodCall(node, this);
+    ;
   }
 
 }

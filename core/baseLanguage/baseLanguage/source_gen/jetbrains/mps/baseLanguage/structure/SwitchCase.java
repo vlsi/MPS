@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,19 +18,19 @@ public class SwitchCase extends BaseConcept {
     super(node);
   }
 
-  public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, SwitchCase.EXPRESSION);
+  public INodeAdapter getExpression() {
+    return (INodeAdapter)this.getChild(, SwitchCase.EXPRESSION);
   }
 
-  public void setExpression(Expression node) {
+  public void setExpression(INodeAdapter node) {
     super.setChild(SwitchCase.EXPRESSION, node);
   }
 
-  public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, SwitchCase.BODY);
+  public INodeAdapter getBody() {
+    return (INodeAdapter)this.getChild(, SwitchCase.BODY);
   }
 
-  public void setBody(StatementList node) {
+  public void setBody(INodeAdapter node) {
     super.setChild(SwitchCase.BODY, node);
   }
 

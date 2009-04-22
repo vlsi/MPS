@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,11 +17,11 @@ public class StaticInitializer extends BaseConcept {
     super(node);
   }
 
-  public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, StaticInitializer.STATEMENT_LIST);
+  public INodeAdapter getStatementList() {
+    return (INodeAdapter)this.getChild(, StaticInitializer.STATEMENT_LIST);
   }
 
-  public void setStatementList(StatementList node) {
+  public void setStatementList(INodeAdapter node) {
     super.setChild(StaticInitializer.STATEMENT_LIST, node);
   }
 

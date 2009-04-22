@@ -23,7 +23,7 @@ public class LocalVariableReference_localVariableDeclaration_ReferentConstraint 
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new LocalVariablesScope(_context.getEnclosingNode());
+    return new LocalVariablesScope();
   }
 
 }

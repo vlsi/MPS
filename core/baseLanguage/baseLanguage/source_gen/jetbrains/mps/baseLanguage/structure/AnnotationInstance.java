@@ -4,9 +4,8 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Annotation;
+import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,11 +20,11 @@ public class AnnotationInstance extends BaseConcept {
     super(node);
   }
 
-  public Annotation getAnnotation() {
-    return (Annotation)this.getReferent(Annotation.class, AnnotationInstance.ANNOTATION);
+  public INodeAdapter getAnnotation() {
+    return (INodeAdapter)this.getReferent(, AnnotationInstance.ANNOTATION);
   }
 
-  public void setAnnotation(Annotation node) {
+  public void setAnnotation(INodeAdapter node) {
     super.setReferent(AnnotationInstance.ANNOTATION, node);
   }
 
@@ -33,19 +32,19 @@ public class AnnotationInstance extends BaseConcept {
     return this.getChildCount(AnnotationInstance.VALUE);
   }
 
-  public Iterator<AnnotationInstanceValue> values() {
-    return this.children(AnnotationInstanceValue.class, AnnotationInstance.VALUE);
+  public Iterator<INodeAdapter> values() {
+    return this.children(, AnnotationInstance.VALUE);
   }
 
-  public List<AnnotationInstanceValue> getValues() {
-    return this.getChildren(AnnotationInstanceValue.class, AnnotationInstance.VALUE);
+  public List<INodeAdapter> getValues() {
+    return this.getChildren(, AnnotationInstance.VALUE);
   }
 
-  public void addValue(AnnotationInstanceValue node) {
+  public void addValue(INodeAdapter node) {
     this.addChild(AnnotationInstance.VALUE, node);
   }
 
-  public void insertValue(AnnotationInstanceValue prev, AnnotationInstanceValue node) {
+  public void insertValue(INodeAdapter prev, INodeAdapter node) {
     this.insertChild(prev, AnnotationInstance.VALUE, node);
   }
 

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.plugin.ToDoHighlighter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
 
@@ -19,14 +18,14 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
   public void doInit(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.addChecker(this.myToDoHighlighter);
+      highlighter.addChecker(this.);
     }
   }
 
   public void doDispose(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.removeChecker(this.myToDoHighlighter);
+      highlighter.removeChecker(this.);
     }
   }
 

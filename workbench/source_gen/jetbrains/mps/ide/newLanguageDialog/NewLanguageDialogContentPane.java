@@ -8,10 +8,9 @@ import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.newLanguageDialog.NewLanguageDialog;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
@@ -51,7 +50,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private boolean myCompileInMPS = true;
   private Language myResult;
   private NewLanguageDialog myDialog;
-  public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
+  public List<AutoBinding> myBindings = ListOperations.<AutoBinding>createList();
   private Events myEvents = new Events(null) {
     {
     }
@@ -98,7 +97,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      this.myBindings.add(binding);
+      ListOperations.addElement(this.myBindings, binding);
     }
     {
       Object sourceObject = myThis;
@@ -107,7 +106,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      this.myBindings.add(binding);
+      ListOperations.addElement(this.myBindings, binding);
     }
   }
 
@@ -283,7 +282,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     language.save();
     myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
-    //     add to vcs
+    // add to vcs
     ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {

@@ -14,16 +14,16 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    //     todo hack
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "variable", true));
+    // todo hack
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "variable", true));
     _context.getBuilder().emitLabel("start");
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "condition", true));
+    _context.getBuilder().emitIfJump(_context.getBuilder().after());
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {
-        _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "iteration", true));
+        _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "iteration", true));
       }
     });
     _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "start"));

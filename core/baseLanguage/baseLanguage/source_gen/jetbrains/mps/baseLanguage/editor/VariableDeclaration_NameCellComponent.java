@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -22,6 +21,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
@@ -97,7 +97,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else
       {
-        result = ListSequence.<String>fromArray();
+        result = ListSequence.fromList(new ArrayList<String>());
       }
       // we need this because of smart input
       // DO NOT REMOVE IT

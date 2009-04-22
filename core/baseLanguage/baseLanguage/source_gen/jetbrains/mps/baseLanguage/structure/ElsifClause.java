@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,19 +18,19 @@ public class ElsifClause extends BaseConcept {
     super(node);
   }
 
-  public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, ElsifClause.CONDITION);
+  public INodeAdapter getCondition() {
+    return (INodeAdapter)this.getChild(, ElsifClause.CONDITION);
   }
 
-  public void setCondition(Expression node) {
+  public void setCondition(INodeAdapter node) {
     super.setChild(ElsifClause.CONDITION, node);
   }
 
-  public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, ElsifClause.STATEMENT_LIST);
+  public INodeAdapter getStatementList() {
+    return (INodeAdapter)this.getChild(, ElsifClause.STATEMENT_LIST);
   }
 
-  public void setStatementList(StatementList node) {
+  public void setStatementList(INodeAdapter node) {
     super.setChild(ElsifClause.STATEMENT_LIST, node);
   }
 

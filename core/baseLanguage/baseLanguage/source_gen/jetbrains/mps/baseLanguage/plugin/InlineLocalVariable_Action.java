@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.plugin.InlineVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
@@ -39,10 +38,10 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
+         = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.);
       }
     });
-    return result.value;
+    return ;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -66,17 +65,17 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
       }
-      this.node = node;
+       = node;
     }
-    if (this.node == null) {
+    if ( == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+     = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if ( == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+     = event.getData(MPSDataKeys.FRAME);
+    if ( == null) {
       return false;
     }
     return true;
@@ -89,16 +88,16 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
+           = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.);
         }
       });
-      isAvailable = ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame);
+      isAvailable = .checkRefactoring(InlineLocalVariable_Action.this.);
       if (isAvailable) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            SNode result = ref.value.doRefactoring();
-            InlineLocalVariable_Action.this.editorContext.select(result);
+            SNode result = .doRefactoring();
+            InlineLocalVariable_Action.this..select(result);
           }
         });
       }

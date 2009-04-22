@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope;
 
 public class ClassCreator_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -23,7 +22,7 @@ public class ClassCreator_constructorDeclaration_ReferentConstraint extends Base
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
+    return new VisibleClassConstructorsScope(, operationContext.getScope());
   }
 
 }

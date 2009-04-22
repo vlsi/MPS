@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class AnnotationMethodDeclaration_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Annotation");
+    return SNodeOperations.isInstanceOf(, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") || SNodeOperations.isInstanceOf(, "jetbrains.mps.baseLanguage.structure.Annotation");
   }
 
 }

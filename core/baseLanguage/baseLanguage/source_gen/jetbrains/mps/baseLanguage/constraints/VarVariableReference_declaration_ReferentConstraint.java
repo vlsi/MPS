@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -27,8 +26,8 @@ public class VarVariableReference_declaration_ReferentConstraint extends BaseNod
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    SNode methodDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    List<SNode> result = ;
+    SNode methodDeclaration = SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(methodDeclaration, "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", false)));
     return result;
   }

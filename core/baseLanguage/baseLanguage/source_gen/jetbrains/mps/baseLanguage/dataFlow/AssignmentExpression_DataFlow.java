@@ -8,8 +8,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 
 public class AssignmentExpression_DataFlow extends DataFlowBuilder {
 
@@ -17,15 +15,15 @@ public class AssignmentExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rValue", true));
-    SNode variable = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "rValue", true));
+    SNode variable = SLinkOperations.getTarget(, "lValue", true);
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      if (!(SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) || LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
-        _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(_context.getNode(), "rValue", true)));
+      if (!(SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) || ) {
+        _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), );
       }
     } else
     {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "lValue", true));
+      _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "lValue", true));
     }
   }
 

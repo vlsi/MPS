@@ -27,8 +27,8 @@ public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode classifier = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    return new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_FIELD);
+    SNode classifier = SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), , IClassifiersSearchScope.STATIC_FIELD);
   }
 
 }

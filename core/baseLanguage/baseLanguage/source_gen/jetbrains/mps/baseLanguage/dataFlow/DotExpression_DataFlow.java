@@ -14,8 +14,8 @@ public class DotExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "operand", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "operation", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "operand", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "operation", true));
   }
 
 }

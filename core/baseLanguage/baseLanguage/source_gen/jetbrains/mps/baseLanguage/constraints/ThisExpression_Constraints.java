@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ThisExpression_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null);
+    return (SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null);
   }
 
 }

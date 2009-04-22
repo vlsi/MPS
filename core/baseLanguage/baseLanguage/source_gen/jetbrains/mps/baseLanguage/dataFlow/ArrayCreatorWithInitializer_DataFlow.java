@@ -14,7 +14,7 @@ public class ArrayCreatorWithInitializer_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode initValue : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
+    for(SNode initValue : SLinkOperations.getTargets(, "initValue", true)) {
       _context.getBuilder().build((SNode)initValue);
     }
   }

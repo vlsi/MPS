@@ -10,10 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.plugin.ExtractMethodDialog;
+import java.util.ArrayList;
 
 public class ExtractMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -34,7 +33,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
+    return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -60,17 +59,17 @@ public class ExtractMethod_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        this.nodes = null;
+         = null;
       } else
       {
-        this.nodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
+         = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
-    if (this.nodes == null) {
+    if ( == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+     = event.getData(MPSDataKeys.FRAME);
+    if ( == null) {
       return false;
     }
     return true;
@@ -78,7 +77,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
+      ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this., ExtractMethod_Action.this.);
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {

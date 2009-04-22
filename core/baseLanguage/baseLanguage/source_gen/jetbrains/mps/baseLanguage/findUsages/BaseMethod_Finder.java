@@ -9,13 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class BaseMethod_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
@@ -43,7 +43,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> allAncestors = ListOperations.<SNode>createList();
+    List<SNode> allAncestors = ;
     SNode method = node;
     boolean isStatic = SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     SNode classNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -56,7 +56,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
       ListSequence.fromList(allAncestors).addElement(interfaceNode);
       ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
     }
-    Set<SNode> results = SetSequence.<SNode>fromArray();
+    Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
     for(SNode ancestor : ListSequence.fromList(allAncestors)) {
       List<SNode> classMethods = null;
       if (isStatic) {
@@ -73,7 +73,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
         }
       }
       for(SNode classMethod : ListSequence.fromList(classMethods)) {
-        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classMethod, method)) {
+        if () {
           SetSequence.fromSet(results).addElement(classMethod);
         }
       }

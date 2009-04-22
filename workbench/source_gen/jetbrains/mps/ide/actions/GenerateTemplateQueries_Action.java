@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -81,7 +82,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     try {
       GeneratorManager manager = GenerateTemplateQueries_Action.this.context.getComponent(GeneratorManager.class);
       IGenerationType genType = manager.getDefaultModuleGenerationType();
-      final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.<SModelDescriptor>fromArray());
+      final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

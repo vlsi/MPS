@@ -11,7 +11,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool;
 
 public class ShowTodoViewer_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true);
@@ -44,8 +43,8 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+     = event.getData(MPSDataKeys.MPS_PROJECT);
+    if ( == null) {
       return false;
     }
     return true;
@@ -53,7 +52,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ShowTodoViewer_Action.this.project.getPluginManager().getTool(TodoViewer_Tool.class).openToolLater(true);
+      ShowTodoViewer_Action.this..getPluginManager().getTool(TodoViewer_Tool.class).openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer", t);
     }

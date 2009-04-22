@@ -9,7 +9,7 @@ public class SuperMethodCall_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
     this.append("super.");
-    BaseLanguageTextGen.methodCall(node, this);
+    ;
   }
 
 }

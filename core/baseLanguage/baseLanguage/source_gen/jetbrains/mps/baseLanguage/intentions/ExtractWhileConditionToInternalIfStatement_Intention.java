@@ -32,15 +32,15 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    //     produce break statement
+    // produce break statement
     SNode breakStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
-    //     produce if statement
+    // produce if statement
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode conditionExpr = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(conditionExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
     SLinkOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     SLinkOperations.insertChildFirst(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", breakStatement);
-    //     insert if statement and replace condition with true
+    // insert if statement and replace condition with true
     SLinkOperations.insertChildFirst(SLinkOperations.getTarget(node, "body", true), "statement", ifStatement);
     SNode condition = SLinkOperations.setNewChild(node, "condition", "jetbrains.mps.baseLanguage.structure.BooleanConstant");
     SPropertyOperations.set(condition, "value", "" + (true));

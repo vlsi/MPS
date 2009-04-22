@@ -14,7 +14,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class OverridingFields_Finder extends GeneratedFinder {
@@ -52,7 +51,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
         fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true);
       }
       for(SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
-        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(node, "type", true)))) {
+        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && .equals()) {
           ListOperations.addElement(_results, field);
         }
       }
