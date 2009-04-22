@@ -350,9 +350,6 @@
   </node>
   <node type="jetbrains.mps.buildlanguage.structure.Project" id="1203611981921">
     <property name="name" value="project" />
-    <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161177041">
-      <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
-    </node>
     <node role="property" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration" id="1219229617369">
       <property name="name" value="macro.name" />
       <property name="checkOnStart" value="false" />
@@ -866,13 +863,62 @@
         </node>
       </node>
     </node>
+    <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1240399848014">
+      <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
+    </node>
+    <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertiesFromFile" id="1240398899948">
+      <node role="propertyFile" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240398941156">
+        <property name="value" value="property file" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1240398985173">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1240398985174">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240398985175">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240398993004">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240398993005">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240398993006">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240398993007" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240398993008">
+                      <link role="baseMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240398993009">
+                    <link role="link" targetNodeId="1.1240395872155" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240398963465">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240398963466">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240398963467">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240398977601">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240398977602">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240398977603">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240398977604">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240398977605" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240398977606">
+                      <link role="baseMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240398977607">
+                    <link role="link" targetNodeId="1.1240395872155" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1240398977608" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1203620346433">
     <property name="name" value="reduce_File" />
     <link role="applicableConcept" targetNodeId="1.1203598322527" resolveInfo="File" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1203622874738">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161096641">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161096641">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1203622882226">
@@ -965,7 +1011,7 @@
     <link role="applicableConcept" targetNodeId="1.1203598417283" resolveInfo="Jar" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1203622736857">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161107633">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161107633">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1203622741392">
@@ -1287,7 +1333,7 @@
     <link role="applicableConcept" targetNodeId="1.1203598512427" resolveInfo="Folder" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1203622500548">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1203622525775">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1203622525775">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1203622509489">
@@ -1574,7 +1620,7 @@
     <link role="applicableConcept" targetNodeId="1.1204015075559" resolveInfo="Copy" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1204016587252">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161066248">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161066248">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1204016587254">
@@ -1761,7 +1807,7 @@
     <link role="applicableConcept" targetNodeId="1.1204018553150" resolveInfo="Zip" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1204018639064">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161131764">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161131764">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1204018639066">
@@ -2700,7 +2746,7 @@
     <link role="applicableConcept" targetNodeId="1.1204122781510" resolveInfo="Delete" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1204122897112">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161074223">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161074223">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1204122897114">
@@ -2772,7 +2818,7 @@
     <link role="applicableConcept" targetNodeId="1.1205331422635" resolveInfo="Echo" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1205332427647">
       <property name="name" value="tmp" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161080374">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161080374">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1205332427649">
@@ -2877,7 +2923,7 @@
     <link role="applicableConcept" targetNodeId="1.1210777529562" resolveInfo="Antcall" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1210779845344">
       <property name="name" value="p" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1219161017517">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1219161017517">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1210779845345">
@@ -5117,7 +5163,7 @@
     <link role="applicableConcept" targetNodeId="1.1212485154251" resolveInfo="Replace" />
     <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1234272564509">
       <property name="name" value="some" />
-      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportProperties" id="1234273137708">
+      <node role="importProperties" type="jetbrains.mps.buildlanguage.structure.ImportPropertyNode" id="1234273137708">
         <link role="propertyNode" targetNodeId="1203622327796" resolveInfo="project.properties" />
       </node>
       <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234272564510">

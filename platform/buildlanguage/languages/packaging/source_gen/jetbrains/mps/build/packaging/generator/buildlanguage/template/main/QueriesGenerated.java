@@ -49,6 +49,7 @@ import java.util.Set;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
 
 public class QueriesGenerated {
@@ -508,6 +509,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "manifest", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1240398963466(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "propertyFile", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "left", true);
   }
@@ -572,6 +577,10 @@ public class QueriesGenerated {
     IModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
     String absoluteDescriptorPath = module.getDescriptorFile().getAbsolutePath();
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), absoluteDescriptorPath);
+  }
+
+  public static SNode sourceNodeQuery_1240398985174(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "propertyFile", true);
   }
 
   public static Iterable sourceNodesQuery_1203613712380(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -676,7 +685,7 @@ public class QueriesGenerated {
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new HashMap<IModule, List<SNode>>());
-      //       fill map
+      // fill map
       for(SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
@@ -689,9 +698,9 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(modulesForIModule).addElement(module);
       }
-      //       calculate module cycles
+      // calculate module cycles
       List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
-      //       say to all modules it's cycle
+      // say to all modules it's cycle
       for(Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);
@@ -727,7 +736,7 @@ public class QueriesGenerated {
     }
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
     for(SNode layout : ListSequence.fromList(layouts)) {
-      Set<IModule> modules = SetSequence.<IModule>fromArray();
+      Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
       for(SNode m : ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228340(layout))) {
         SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }

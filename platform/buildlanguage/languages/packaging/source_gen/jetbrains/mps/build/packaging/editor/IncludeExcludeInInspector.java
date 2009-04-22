@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 
 public class IncludeExcludeInInspector extends AbstractCellProvider {
 

@@ -500,6 +500,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1226494304686" resolveInfo="BaseDirPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240395872155">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertyFile" />
+      <link role="target" targetNodeId="1220973916698" resolveInfo="Path" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
     </node>

@@ -147,9 +147,33 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1205335615100">
         <property name="vertical" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205335619805">
-          <property name="text" value="variables" />
-          <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240395990824">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240395990825">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240395991534">
+            <property name="text" value="variables" />
+            <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240396000454">
+            <property name="text" value="(" />
+            <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240396004807">
+            <property name="text" value="read from" />
+            <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240396027176">
+            <link role="relationDeclaration" targetNodeId="1.1240395872155" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240396034836">
+            <property name="text" value=")" />
+            <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240395990827" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240395990828">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1205335627073">
           <property name="vertical" value="false" />

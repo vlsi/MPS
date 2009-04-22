@@ -16,9 +16,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.build.packaging.editor.CompositeString_RT;
-import jetbrains.mps.build.packaging.editor.CompositeString_Left_Delete;
-import jetbrains.mps.build.packaging.editor.CompositeString_Right_Delete;
 
 public class CompositeString_Editor extends DefaultNodeEditor {
 
