@@ -1456,6 +1456,7 @@
     <property name="name" value="GenerationListenerDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="GenerationListener" />
+    <property name="iconPath" value="${language_descriptor}/icons/generationListener.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210094435173">
       <property name="metaClass" value="aggregation" />
@@ -2073,6 +2074,7 @@
     <property name="package" value="FileGenerator" />
     <property name="name" value="FileGeneratorDeclaration" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/fileGenerator.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1218035912362">
       <property name="value" value="File Generator" />
