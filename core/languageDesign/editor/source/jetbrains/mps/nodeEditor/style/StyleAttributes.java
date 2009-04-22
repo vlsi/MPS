@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.style;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
+import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
@@ -44,7 +45,7 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Boolean> CONTROL_OVERED_REFERENCE = new SimpleStyleAttribute<Boolean>("control-overed-reference", false);
 
-  public static final StyleAttribute<String> RT_ANCHOR_TAG = new SimpleStyleAttribute<String>("rt-anchor-tag");
+  public static final StyleAttribute<String> RT_ANCHOR_TAG = new SimpleStyleAttribute<String>("rt-anchor-tag", RightTransformAnchorTag.default_.getValueAsString());
   public static final StyleAttribute<String> LAYOUT_CONSTRAINT = new SimpleStyleAttribute<String>("layout-constraint");
   public static final StyleAttribute<FocusPolicy> FOCUS_POLICY = new SimpleStyleAttribute<FocusPolicy>("focus-policy", FocusPolicy.NONE);
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITON = new SimpleStyleAttribute<CaretPosition>("default-caret-position");
