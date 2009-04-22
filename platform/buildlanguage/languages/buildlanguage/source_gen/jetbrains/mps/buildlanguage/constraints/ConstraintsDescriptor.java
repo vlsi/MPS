@@ -5,17 +5,6 @@ package jetbrains.mps.buildlanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.buildlanguage.constraints.GenericCall_name_PropertyConstraint;
-import jetbrains.mps.buildlanguage.constraints.TargetReferencePropertyValueExpression_fullName_PropertyConstraint;
-import jetbrains.mps.buildlanguage.constraints.StringLiteral_name_PropertyConstraint;
-import jetbrains.mps.buildlanguage.constraints.MultiLineString_name_PropertyConstraint;
-import jetbrains.mps.buildlanguage.constraints.TargetReference_targetDeclaration_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.GenericCall_declaration_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.PathReference_call_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.Reference_declaration_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.GenericAttribute_attributeDeclaration_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.PropertyReference_propertyDeclaration_ReferentConstraint;
-import jetbrains.mps.buildlanguage.constraints.GenericCall_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

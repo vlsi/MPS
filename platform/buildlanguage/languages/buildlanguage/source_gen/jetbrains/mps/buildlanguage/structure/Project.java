@@ -4,17 +4,9 @@ package jetbrains.mps.buildlanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.buildlanguage.structure.IPropertyHolder;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.buildlanguage.structure.TargetReference;
-import jetbrains.mps.buildlanguage.structure.FileName;
 import java.util.Iterator;
-import jetbrains.mps.buildlanguage.structure.TargetDeclaration;
 import java.util.List;
-import jetbrains.mps.buildlanguage.structure.AbstractImportProject;
-import jetbrains.mps.buildlanguage.structure.GenericCall;
-import jetbrains.mps.buildlanguage.structure.ImportProperties;
-import jetbrains.mps.buildlanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -149,19 +141,19 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     return this.getChildCount(Project.IMPORT_PROPERTIES);
   }
 
-  public Iterator<ImportProperties> importPropertieses() {
-    return this.children(ImportProperties.class, Project.IMPORT_PROPERTIES);
+  public Iterator<AbstractImportProperties> importPropertieses() {
+    return this.children(AbstractImportProperties.class, Project.IMPORT_PROPERTIES);
   }
 
-  public List<ImportProperties> getImportPropertieses() {
-    return this.getChildren(ImportProperties.class, Project.IMPORT_PROPERTIES);
+  public List<AbstractImportProperties> getImportPropertieses() {
+    return this.getChildren(AbstractImportProperties.class, Project.IMPORT_PROPERTIES);
   }
 
-  public void addImportProperties(ImportProperties node) {
+  public void addImportProperties(AbstractImportProperties node) {
     this.addChild(Project.IMPORT_PROPERTIES, node);
   }
 
-  public void insertImportProperties(ImportProperties prev, ImportProperties node) {
+  public void insertImportProperties(AbstractImportProperties prev, AbstractImportProperties node) {
     this.insertChild(prev, Project.IMPORT_PROPERTIES, node);
   }
 
