@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.ArrayList;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +31,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((ConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))), scope, new FindUsagesManager.ProgressAdapter(indicator), false)));
+    List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((ConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))), scope, new FindUsagesManager.ProgressAdapter(indicator), false));
     for(SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }

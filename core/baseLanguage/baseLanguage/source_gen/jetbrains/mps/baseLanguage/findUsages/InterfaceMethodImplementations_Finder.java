@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
@@ -43,7 +44,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
       ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
     // 
-    Set<SNode> implementorsAndAncestorsNodes = SetSequence.<SNode>fromArray();
+    Set<SNode> implementorsAndAncestorsNodes = SetSequence.fromSet(new HashSet<SNode>());
     for(SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
       SetSequence.fromSet(implementorsAndAncestorsNodes).addElement(SNodeOperations.cast(implementorOrAncestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }

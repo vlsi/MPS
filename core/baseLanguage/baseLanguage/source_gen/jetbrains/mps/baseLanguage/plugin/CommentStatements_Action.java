@@ -12,6 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends GeneratedAction {
@@ -67,7 +68,7 @@ public class CommentStatements_Action extends GeneratedAction {
         this.nodes = null;
       } else
       {
-        this.nodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
+        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
     if (this.nodes == null) {

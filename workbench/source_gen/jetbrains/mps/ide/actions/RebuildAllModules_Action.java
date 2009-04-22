@@ -18,7 +18,6 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -71,7 +70,7 @@ public class RebuildAllModules_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
 
             public void run() {
-              Set<IModule> modules = SetSequence.fromSet(SetSequence.<IModule>fromSetAndArray(new LinkedHashSet())).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
+              Set<IModule> modules = SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules());
               ModuleMaker maker = new ModuleMaker();
               maker.clean(modules, indicator);
               maker.make(modules, indicator);

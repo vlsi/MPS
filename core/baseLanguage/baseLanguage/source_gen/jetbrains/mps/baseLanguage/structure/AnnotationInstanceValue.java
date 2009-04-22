@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

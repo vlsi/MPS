@@ -22,19 +22,17 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
-import jetbrains.mps.baseLanguage.actions._Quotations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.actions._PrecompiledPatterns;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
@@ -53,6 +51,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.Icon;
@@ -392,10 +391,10 @@ __switch__:
   }
 
   public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetupContext _context) {
-    //      moved to substitute/expression/new
+    //  moved to substitute/expression/new
     /*
       if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-        //         Looking for the original node is required because sampleNode is just a copy
+        // Looking for the original node is required because sampleNode is just a copy
         SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
@@ -464,7 +463,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -511,7 +510,7 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return ListSequence.<Boolean>fromArray(Boolean.TRUE, Boolean.FALSE);
+            return ListSequence.fromListAndArray(new ArrayList<Boolean>(), Boolean.TRUE, Boolean.FALSE);
           }
         };
         Iterable<Boolean> queryResult = (Iterable)calc.calculate();
@@ -607,7 +606,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177362994569(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -642,7 +641,7 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            //              in anonymous classes
+            //  in anonymous classes
             SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
             if (anonymousClass == null) {
               return null;
@@ -675,7 +674,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177396179719(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -725,13 +724,13 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177397791368(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
           List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
-          //           skip Closure
+          // skip Closure
           SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
@@ -742,7 +741,7 @@ __switch__:
             return ConceptFunction_Behavior.call_getParameters_1213877374450(parentFunction);
           } else
           {
-            return ListSequence.<SNode>fromArray();
+            return ListSequence.fromList(new ArrayList<SNode>());
           }
         }
       };
@@ -758,12 +757,12 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1177400765735(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> concepts = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
+          List<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
           return concepts;
         }
       };
@@ -779,7 +778,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1177403614729(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -811,7 +810,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1177406371457(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -845,7 +844,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1177406968279(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -877,7 +876,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterDeclaration_1177408380007(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -909,12 +908,12 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Visibility_1178549410741(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1178893908066(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1009,7 +1008,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1188219521578(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1041,7 +1040,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197031199065(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1051,7 +1050,7 @@ __switch__:
           public Object calculate() {
             SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             List<SNode> fieldDeclarations = (List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
-            final Set<String> localNames = SetSequence.<String>fromArray();
+            final Set<String> localNames = SetSequence.fromSet(new HashSet<String>());
             ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor <SNode>() {
 
               public void visit(SNode it) {
@@ -1098,7 +1097,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197884213577(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1106,7 +1105,7 @@ __switch__:
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            //              'qualified this' - only in inner classes
+            //  'qualified this' - only in inner classes
             return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter <SNode>() {
 
               public boolean accept(SNode it) {
@@ -1146,7 +1145,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1198761609306(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -1156,7 +1155,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1202576255421(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ValueParameter");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -1166,7 +1165,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1210680266460(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1227,7 +1226,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractCreator_1212710956125(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1269,7 +1268,7 @@ __switch__:
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                   SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
                 }
-                //                 replace all type vars with Object
+                // replace all type vars with Object
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
                 for(SNode typeVar : ListSequence.fromList(typeVarRefs)) {
                   SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
@@ -1343,7 +1342,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_StatementList_1214487340583(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1375,7 +1374,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_InstanceMethodDeclaration_1214829968974(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1408,7 +1407,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_StaticMethodDeclaration_1214831660018(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1440,7 +1439,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ConstructorDeclaration_1214833806258(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1472,7 +1471,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1221635941573(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1502,7 +1501,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1221636607705(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1532,7 +1531,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1221637600612(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1562,7 +1561,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1221732858165(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1592,7 +1591,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1227002519873(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1601,9 +1600,9 @@ __switch__:
 
           public Object calculate() {
             SNode sampleNode = _context.getCurrentTargetNode();
-            //              copied from BL_nodeFactories
+            //  copied from BL_nodeFactories
             if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-              //               Looking for the original node is required because sampleNode is just a copy
+              // Looking for the original node is required because sampleNode is just a copy
               SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression"));
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
@@ -1646,7 +1645,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1229000267030(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -1688,10 +1687,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -1721,7 +1720,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1177502380176(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1750,10 +1749,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1177503307237(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -1777,7 +1776,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1177503884612(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1806,7 +1805,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_VariableDeclaration_1177505054799(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1834,7 +1833,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1177505359407(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1863,7 +1862,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassifierType_1177505734540(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1890,7 +1889,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_GenericDeclaration_1177506104969(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1917,7 +1916,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TryCatchStatement_1177507970664(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1940,7 +1939,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TryCatchStatement_1177508119482(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -1970,7 +1969,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1177508524786(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2003,7 +2002,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ArrayCreator_1187946508194(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2027,7 +2026,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_DimensionExpression_1187946681659(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -2061,7 +2060,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1197028841767(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2090,7 +2089,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IOperation_1197032086774(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -2105,13 +2104,13 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BreakStatement_1199465912028(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<String> labels = ListSequence.<String>fromArray();
+          List<String> labels = ListSequence.fromList(new ArrayList<String>());
           ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
 
             public Iterable<String> translate(final SNode it) {
@@ -2239,7 +2238,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ContinueStatement_1199470401054(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement");
       Calculable calculable = new Calculable() {
@@ -2325,7 +2324,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassCreator_1212701533821(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2352,7 +2351,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AbstractCreator_1213730817272(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -2367,7 +2366,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassifierType_1214840267304(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2398,7 +2397,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1214919536691(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2451,13 +2450,13 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IfStatement_1215434760427(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return ListSequence.<String>fromArray("else{", "else {");
+          return ListSequence.fromListAndArray(new ArrayList<String>(), "else{", "else {");
         }
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
@@ -2480,13 +2479,13 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IfStatement_1215436522417(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return ListSequence.<String>fromArray("else if", "elseif");
+          return ListSequence.fromListAndArray(new ArrayList<String>(), "else if", "elseif");
         }
       };
       Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
@@ -2517,7 +2516,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassCreator_1215595029605(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2551,10 +2550,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1215608453575(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2587,7 +2586,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ThisExpression_1215681514846(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression");
       Calculable calculable = new Calculable() {
@@ -2626,10 +2625,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1216039263418(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2659,7 +2658,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1219922154317(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2683,7 +2682,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AnonymousClass_1221054901509(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2707,7 +2706,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1221569206015(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2731,7 +2730,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LocalVariableReference_1221572224367(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final SNode assignment;
     final SNode type;
     {
@@ -2773,10 +2772,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1224071208705(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2806,7 +2805,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassifierType_1224071208742(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -2821,10 +2820,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1225276664061(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2850,7 +2849,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1232016045892(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2874,7 +2873,7 @@ __switch__:
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2898,10 +2897,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1232118196763(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2931,10 +2930,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Statement_1232463815953(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
-      Iterable<SNode> concepts = ListSequence.<SNode>fromArray(concept);
+      Iterable<SNode> concepts = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
       concepts = Sequence.fromIterable(concepts).concat(ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())));
       for(final SNode subconcept : concepts) {
         if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -2958,7 +2957,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Visibility_1233154549223(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -2982,7 +2981,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_1233156433392(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3006,7 +3005,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Visibility_1233161052644(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3029,7 +3028,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235477734335(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3062,7 +3061,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235991023656(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3088,7 +3087,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235993905117(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3114,7 +3113,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ElsifClause_1237484037312(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3137,7 +3136,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CatchClause_1237896682568(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3168,7 +3167,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1239713315270(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -3193,7 +3192,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1239714323555(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {

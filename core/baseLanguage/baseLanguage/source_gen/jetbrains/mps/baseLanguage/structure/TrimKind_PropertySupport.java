@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.TrimKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TrimKind_PropertySupport extends PropertySupport {

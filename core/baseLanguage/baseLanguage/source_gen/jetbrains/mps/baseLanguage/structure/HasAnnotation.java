@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import java.util.List;
 
 public interface HasAnnotation extends INodeAdapter {

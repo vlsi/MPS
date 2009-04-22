@@ -10,10 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.plugin.ExtractMethodDialog;
+import java.util.ArrayList;
 
 public class ExtractMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -63,7 +62,7 @@ public class ExtractMethod_Action extends GeneratedAction {
         this.nodes = null;
       } else
       {
-        this.nodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
+        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
     if (this.nodes == null) {

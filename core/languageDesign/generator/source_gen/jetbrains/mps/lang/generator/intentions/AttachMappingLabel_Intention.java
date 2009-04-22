@@ -23,7 +23,6 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog;
 
 public class AttachMappingLabel_Intention extends BaseIntention {
 
