@@ -21,7 +21,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
@@ -152,7 +151,7 @@ public class RenameLanguageDialog extends BaseDialog {
         myProject.getComponent(GeneratorManager.class)
           .generateModelsFromDifferentModules(
             new ModuleContext(myLanguage, mpsProject),
-            params.getModels(),
+            params.getModelDescriptors(),
             IGenerationType.FILES);
       }
     }

@@ -35,7 +35,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
-import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;

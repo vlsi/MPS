@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -20,11 +21,13 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -35,7 +38,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public static final String behaviorNode = "behaviorNode";
   public static final String editorNode = "editorNode";
 
-  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
+  private Set<String> myTransientParameters = SetSequence.fromSet(new HashSet<String>());
 
   public SafeDeleteConcept() {
     SetSequence.fromSet(this.myTransientParameters).addElement("sourceLanguage");
@@ -48,7 +51,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
+    return SetSequence.fromSetWithValues(new HashSet<String>(), this.myTransientParameters);
   }
 
   public String getKeyStroke() {
@@ -98,7 +101,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         if (editorModelDescriptor != null) {
           refactoringContext.setParameter("editorNode", SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
           if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
-            for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
+            for(SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList)) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("editorNode"))) {
                 searchResults.remove(searchResult);
               }
@@ -109,7 +112,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         if (behaviorModelDescriptor != null) {
           refactoringContext.setParameter("behaviorNode", SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
           if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
-            for(SearchResult<SNode> searchResult : ListSequence.fromList(ListSequence.<SearchResult<SNode>>fromArray()).addSequence(ListSequence.fromList(searchResultsList))) {
+            for(SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList)) {
               if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("behaviorNode"))) {
                 searchResults.remove(searchResult);
               }
@@ -137,26 +140,14 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-      if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
-        return result;
-      }
-      List<SModel> list = ListSequence.<SModel>fromArray();
-      MapSequence.fromMap(result).put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
-      ListSequence.fromList(list).addElement(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
-      SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-      if (editorModelDescriptor != null) {
-        ListSequence.fromList(list).addElement(editorModelDescriptor.getSModel());
-      }
-      SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-      if (constraintsModelDescriptor != null) {
-        ListSequence.fromList(list).addElement(constraintsModelDescriptor.getSModel());
-      }
+      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+      result.putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
       return result;
     }
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.<SModel>fromArray();
+    return ListSequence.fromList(new ArrayList<SModel>());
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {

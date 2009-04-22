@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -27,7 +28,8 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
@@ -39,7 +41,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public static final String targetModel = "targetModel";
   public static final String sourceModel = "sourceModel";
 
-  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
+  private Set<String> myTransientParameters = SetSequence.fromSet(new HashSet<String>());
 
   public MoveConcepts() {
     SetSequence.fromSet(this.myTransientParameters).addElement("targetModel");
@@ -51,7 +53,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
+    return SetSequence.fromSetWithValues(new HashSet<String>(), this.myTransientParameters);
   }
 
   public String getKeyStroke() {
@@ -124,7 +126,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<SNode> behaviors = ListOperations.<SNode>createList();
       List<SNode> constraints = ListOperations.<SNode>createList();
       List<SNode> dataFlows = ListOperations.<SNode>createList();
-      //       collecting editors:
+      // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -136,7 +138,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      //       collecting behaviors:
+      // collecting behaviors:
       SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
       if (behaviorModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -146,7 +148,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      //       collecting constraints:
+      // collecting constraints:
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
       if (constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -156,7 +158,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      //       collecting data flow:
+      // collecting data flow:
       SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
       if (dataflowModelDescriptor != null) {
         for(SNode node : nodes) {
@@ -166,7 +168,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
-      //       refactoring itself
+      // refactoring itself
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
@@ -211,7 +213,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         refactoringContext.computeCaches();
         refactoringContext.updateModelWithMaps(dataFlowModel);
       }
-      //       todo: move other concept-related aspect stuff
+      // todo: move other concept-related aspect stuff
     }
   }
 
@@ -219,31 +221,15 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
-      if (sourceLanguage != null) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(sourceLanguage.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
-
-          public SModel select(SModelDescriptor it) {
-            return it.getSModel();
-          }
-        }).toListSequence();
-        MapSequence.fromMap(result).put(sourceLanguage, aspectList);
-      }
+      result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      if (targetLanguage != null) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(targetLanguage.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
-
-          public SModel select(SModelDescriptor it) {
-            return it.getSModel();
-          }
-        }).toListSequence();
-        MapSequence.fromMap(result).put(targetLanguage, aspectList);
-      }
+      result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
       return result;
     }
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.<SModel>fromArray();
+    return ListSequence.fromList(new ArrayList<SModel>());
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -261,7 +247,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = ListSequence.<IChooseComponent>fromArray();
+      final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

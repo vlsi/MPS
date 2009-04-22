@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.Rename;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -20,8 +21,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class RenameProperty extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
 
-  private Set<String> myTransientParameters = SetSequence.<String>fromArray();
+  private Set<String> myTransientParameters = SetSequence.fromSet(new HashSet<String>());
 
   public RenameProperty() {
     SetSequence.fromSet(this.myTransientParameters).addElement("newName");
@@ -44,7 +46,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public Set<String> getTransientParameters() {
-    return SetSequence.fromSet(SetSequence.<String>fromArray()).addSequence(SetSequence.fromSet(this.myTransientParameters));
+    return SetSequence.fromSetWithValues(new HashSet<String>(), this.myTransientParameters);
   }
 
   public String getKeyStroke() {
@@ -101,23 +103,14 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-      SModel model = SNodeOperations.getModel(refactoringContext.getSelectedNode());
-      Language language = Language.getLanguageFor(model.getModelDescriptor());
-      if (language != null) {
-        List<SModel> aspectList = ListSequence.fromList(((List<SModelDescriptor>)ListSequence.fromList(ListSequence.<SModelDescriptor>fromArray()).addSequence(SetSequence.fromSet(language.getAspectModelDescriptors())))).select(new ISelector <SModelDescriptor, SModel>() {
-
-          public SModel select(SModelDescriptor it) {
-            return it.getSModel();
-          }
-        }).toListSequence();
-        MapSequence.fromMap(result).put(language, aspectList);
-      }
+      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+      result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
       return result;
     }
   }
 
   public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.<SModel>fromArray();
+    return ListSequence.fromList(new ArrayList<SModel>());
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -143,7 +136,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public boolean askForInfo(final RefactoringContext refactoringContext) {
     {
       boolean result = false;
-      final List<IChooseComponent> components = ListSequence.<IChooseComponent>fromArray();
+      final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {

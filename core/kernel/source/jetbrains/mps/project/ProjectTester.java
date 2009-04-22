@@ -168,7 +168,7 @@ public class ProjectTester {
 
             GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
             gm.generateModels(
-              parms.getModels(),
+              parms.getModelDescriptors(),
               new ModuleContext(parms.getModule(), myProject),
               generationType,
               new EmptyProgressIndicator(),

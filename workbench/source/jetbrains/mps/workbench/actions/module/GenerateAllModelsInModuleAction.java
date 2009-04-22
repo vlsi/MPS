@@ -161,7 +161,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     });
 
     if (params == null) return new ArrayList<SModelDescriptor>();
-    return params.getModels();
+    return params.getModelDescriptors();
   }
 
   private static class MyContext implements IOperationContext {

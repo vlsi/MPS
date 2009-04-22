@@ -141,7 +141,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
                       languageConfig.setModuleRef(l.getModuleReference());
                       languageConfig.setName("tmp");
                       try {
-                        models.addAll(languageConfig.getGenParams(mpsProject, false).getModels());
+                        models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
                       } catch (IllegalGeneratorConfigurationException e) {
                         LOG.error(e);
                       }

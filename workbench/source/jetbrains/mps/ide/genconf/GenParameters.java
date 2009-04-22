@@ -17,33 +17,31 @@ package jetbrains.mps.ide.genconf;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class GenParameters {
-  private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
+  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
   private IModule myModule;
 
-
   public GenParameters(List<SModelDescriptor> models, IModule module) {
-    myModels.addAll(models);
-
-/*
-    Collections.sort(myModels, new Comparator<SModelDescriptor>() {
-      public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-        return o1.getSModelReference().compareTo(o2.getSModelReference());
-      }
-    });
-
-*/
+    myModelDescriptors.addAll(models);
     myModule = module;
   }
 
+  public List<SModelDescriptor> getModelDescriptors() {
+    return Collections.unmodifiableList(myModelDescriptors);
+  }
 
-  public List<SModelDescriptor> getModels() {
-    return Collections.unmodifiableList(myModels);
+  public List<SModel> getSModels() {
+    List<SModel> result = new ArrayList<SModel>();
+    for (SModelDescriptor sm : myModelDescriptors) {
+      result.add(sm.getSModel());
+    }
+    return result;
   }
 
   public IModule getModule() {
