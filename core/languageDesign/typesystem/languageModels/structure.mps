@@ -2370,6 +2370,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236165709895">
     <property name="name" value="OverloadedOpRulesContainer" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/overloadedRules.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236165725858">
       <property name="metaClass" value="aggregation" />
