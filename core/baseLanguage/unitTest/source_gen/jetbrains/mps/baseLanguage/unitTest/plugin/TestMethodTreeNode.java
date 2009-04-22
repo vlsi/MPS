@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.unitTest.plugin.TestState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;

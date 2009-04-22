@@ -63,7 +63,7 @@ public class RefactoringUtil {
   }
 
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
-    Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
+    Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>();
 
     final Set<Language> langs = new LinkedHashSet<Language>();
     langs.add(language);

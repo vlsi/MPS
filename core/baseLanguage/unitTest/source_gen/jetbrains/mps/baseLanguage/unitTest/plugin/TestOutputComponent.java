@@ -7,6 +7,7 @@ import com.intellij.execution.ui.ConsoleView;
 import java.util.List;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import org.apache.commons.lang.ObjectUtils;
 import com.intellij.execution.ui.ConsoleViewContentType;
@@ -23,7 +24,7 @@ public class TestOutputComponent {
   private String filterMethod;
 
   public TestOutputComponent(Project project, JComponent parentComponent) {
-    this.messages = ListSequence.<TestOutputComponent.Message>fromArray();
+    this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.consoleView = new ConsoleViewImpl(project, false);
     this.component = this.consoleView.getComponent();
   }
@@ -60,7 +61,7 @@ public class TestOutputComponent {
   }
 
   public void clear() {
-    this.messages = ListSequence.<TestOutputComponent.Message>fromArray();
+    this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.consoleView.clear();
   }
 
