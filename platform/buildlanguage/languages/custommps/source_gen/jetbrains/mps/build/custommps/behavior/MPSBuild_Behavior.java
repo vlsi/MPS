@@ -19,6 +19,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -60,7 +61,7 @@ public class MPSBuild_Behavior {
     List<SNode> paths = ListOperations.<SNode>createList();
     File dir = new File(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
     List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
-    Set<IModule> modulesInClasspath = SetSequence.<IModule>fromArray();
+    Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
     for(IModule module : ListSequence.fromList(modulesList)) {
       if (module instanceof Language) {
         Language language = (Language)module;
