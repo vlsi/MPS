@@ -4,6 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.actions.FileActions_ActionGroup;
+import jetbrains.mps.ide.actions.FolderActions_ActionGroup;
+import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractFileActions_ActionGroup.class);

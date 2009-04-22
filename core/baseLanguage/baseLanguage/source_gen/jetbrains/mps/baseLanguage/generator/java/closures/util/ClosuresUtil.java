@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -66,7 +65,7 @@ public class ClosuresUtil {
       throw new RuntimeException("node can't be owner of a closure context " + node.getDebugText());
     }
     if (getClosureContextData(node, generator) == null) {
-      // init ClosureContextData
+      //       init ClosureContextData
       GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
       Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>)sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
       if (closureContexts == null) {
@@ -90,7 +89,7 @@ public class ClosuresUtil {
     if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false)).isEmpty()) {
       return false;
     }
-    Set<SNode> varDecl = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "parameter", true));
+    Set<SNode> varDecl = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)));
     return processNode(method, SLinkOperations.getTarget(method, "body", true), varDecl, generator);
   }
 
@@ -101,7 +100,7 @@ public class ClosuresUtil {
     if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(concFunc, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false)).isEmpty()) {
       return false;
     }
-    return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.fromSet(new HashSet<SNode>()), generator);
+    return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.<SNode>fromArray(), generator);
   }
 
   private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, ITemplateGenerator generator) {
@@ -131,7 +130,7 @@ public class ClosuresUtil {
   private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
     for(SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-      // skip inner closure
+      //       skip inner closure
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
         continue;
       }

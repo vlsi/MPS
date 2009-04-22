@@ -29,7 +29,7 @@ public class InvertIfCondition_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    // Invert condition
+    //     Invert condition
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
     if ((condition != null)) {
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
@@ -68,12 +68,12 @@ public class InvertIfCondition_Intention extends BaseIntention {
       }
       SLinkOperations.setTarget(node, "condition", condition, true);
     }
-    // Flip ifTrue and ifFalse
+    //     Flip ifTrue and ifFalse
     SNode ifTrue = SLinkOperations.getTarget(node, "ifTrue", true);
     SNode ifFalse = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     SNode newIfTrue;
     SNode newIfFalse;
-    // Set new ifFalse
+    //     Set new ifFalse
     if (SLinkOperations.getCount(ifTrue, "statement") == 0) {
       newIfFalse = null;
     } else
@@ -84,7 +84,7 @@ public class InvertIfCondition_Intention extends BaseIntention {
       newIfFalse = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
       SLinkOperations.setTarget(SNodeOperations.cast(newIfFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", ifTrue, true);
     }
-    // Set new ifTrue
+    //     Set new ifTrue
     if (SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       newIfTrue = SLinkOperations.getTarget(SNodeOperations.cast(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
     } else

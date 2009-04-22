@@ -6,8 +6,11 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.Constraints;
@@ -16,7 +19,7 @@ import com.intellij.openapi.actionSystem.Anchor;
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
-    List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
+    List<BaseGroup> groups = ListSequence.<BaseGroup>fromArray();
     String moduleName = "jetbrains.mps.ide";
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.NodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModelActions_ActionGroup");

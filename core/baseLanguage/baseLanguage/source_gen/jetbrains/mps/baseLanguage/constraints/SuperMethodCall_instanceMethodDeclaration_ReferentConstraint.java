@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.constraints.SuperMethodCall_InstanceMethodScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 

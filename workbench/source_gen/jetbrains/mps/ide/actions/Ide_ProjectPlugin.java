@@ -7,12 +7,14 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.ide.actions.NodeExplorer_Tool;
+import jetbrains.mps.ide.actions.ModuleRepository_Tool;
+import jetbrains.mps.ide.actions.ModelRepository_Tool;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
+    List<GeneratedTool> tools = ListSequence.<GeneratedTool>fromArray();
     ListSequence.fromList(tools).addElement(new NodeExplorer_Tool(project));
     ListSequence.fromList(tools).addElement(new ModuleRepository_Tool(project));
     ListSequence.fromList(tools).addElement(new ModelRepository_Tool(project));

@@ -7,19 +7,20 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTest_Tool;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_PreferencesComponent;
 
 public class UnitTest_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
+    List<GeneratedTool> tools = ListSequence.<GeneratedTool>fromArray();
     ListSequence.fromList(tools).addElement(new JUnitTest_Tool(project));
     return tools;
   }
 
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
-    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
+    List<BaseProjectPrefsComponent> components = ListSequence.<BaseProjectPrefsComponent>fromArray();
     ListSequence.fromList(components).addElement(new UnitTest_PreferencesComponent(project));
     return components;
   }

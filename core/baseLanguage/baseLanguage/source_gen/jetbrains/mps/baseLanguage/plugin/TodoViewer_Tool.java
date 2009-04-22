@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.baseLanguage.plugin.TodoViewer;
 
 public class TodoViewer_Tool extends GeneratedTool {
 

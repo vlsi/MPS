@@ -14,7 +14,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.plugin.IntroduceConstantRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.IntroduceConstantDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends GeneratedAction {

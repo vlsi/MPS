@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.RenameRafactoringDialog;
 
 public class RenameVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;

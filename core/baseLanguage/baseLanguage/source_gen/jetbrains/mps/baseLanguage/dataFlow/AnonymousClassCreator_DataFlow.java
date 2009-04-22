@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -21,7 +20,7 @@ public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     List<SNode> methods = SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false);
-    Set<SNode> vars = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> vars = SetSequence.<SNode>fromArray();
     for(SNode method : methods) {
       SetSequence.fromSet(vars).addSequence(SetSequence.fromSet(StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(method, "body", true))));
     }
