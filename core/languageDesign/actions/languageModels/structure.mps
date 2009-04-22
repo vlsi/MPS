@@ -2202,6 +2202,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1221135252814">
     <property name="name" value="PasteWrappers" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/pasteWrapper.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1221135307644">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
@@ -2293,6 +2294,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235051137001">
     <property name="name" value="SmartEditorActions" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/smartActions.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235051364953">
       <property name="metaClass" value="aggregation" />
