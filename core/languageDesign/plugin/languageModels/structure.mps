@@ -1209,7 +1209,7 @@
     <property name="name" value="ProjectPluginDeclaration" />
     <property name="package" value="Custom.ProjectPlugin" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${language_descriptor}/icons/plugin.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/projectPlugin.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1206111500859">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
@@ -1974,7 +1974,7 @@
     <property name="name" value="ApplicationPluginDeclaration" />
     <property name="package" value="Custom.ApplicationPlugin" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${language_descriptor}\icons\customPlugin.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/applicationPlugin.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1215279937188">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
