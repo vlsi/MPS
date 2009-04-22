@@ -6491,6 +6491,44 @@
             </node>
           </node>
         </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240404095000">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240404095001">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240404095002">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240404103517">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240404113291">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240404103558">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240404103518" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1240404109049">
+                      <link role="link" targetNodeId="1.1239529553065" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AllOperation" id="1240404113501">
+                    <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240404113502">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240404113503">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240404118512">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240404118513">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240404120992">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240404120705">
+                                <link role="variableDeclaration" targetNodeId="1240404113504" resolveInfo="cmp" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240404132343">
+                                <link role="property" targetNodeId="1.1240400839614" resolveInfo="final" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1240404113504">
+                        <property name="name" value="cmp" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1240404113505" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239631243070" />
       <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1239703368131">

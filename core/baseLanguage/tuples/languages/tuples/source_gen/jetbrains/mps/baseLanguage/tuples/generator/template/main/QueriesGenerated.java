@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -407,6 +408,15 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1240402803993(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "final"));
+  }
+
+  public static boolean ifMacro_Condition_1240404095001(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).all(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode cmp) {
+        return !(SPropertyOperations.getBoolean(cmp, "final"));
+      }
+    });
   }
 
   public static SNode sourceNodeQuery_1238936139713(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

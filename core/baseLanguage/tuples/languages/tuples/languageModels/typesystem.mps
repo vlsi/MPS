@@ -1618,5 +1618,97 @@
       <link role="concept" targetNodeId="1.1239531918181" resolveInfo="NamedTupleType" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1240403513227">
+    <property name="name" value="check_NamedTupleComponent_final" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403513228">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1240403562736">
+        <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240403570474">
+          <property name="name" value="namedTupleType" />
+          <link role="concept" targetNodeId="1.1239531918181" resolveInfo="NamedTupleType" />
+        </node>
+        <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403566919">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240403566376">
+            <link role="applicableNode" targetNodeId="1240403544749" resolveInfo="expression" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1240403568656" />
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403562739">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240403665721">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403665722">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1240403693265">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240403694891">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240403699529">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403712002">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240403703862">
+                        <property name="asCast" value="true" />
+                        <link role="concept" targetNodeId="2v.1215693861676" resolveInfo="BaseAssignmentExpression" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403701358">
+                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240403700778">
+                            <link role="applicableNode" targetNodeId="1240403544749" resolveInfo="expression" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1240403702278" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240403716255">
+                        <link role="link" targetNodeId="2v.1068498886295" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240403698181">
+                      <link role="applicableNode" targetNodeId="1240403544749" resolveInfo="expression" />
+                    </node>
+                  </node>
+                </node>
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240403718002">
+                  <property name="value" value="Cannot assign to final tuple component" />
+                </node>
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240403776907">
+                  <link role="applicableNode" targetNodeId="1240403544749" resolveInfo="expression" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403672269">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403669403">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403669404">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240403669405">
+                    <link role="applicableNode" targetNodeId="1240403570474" resolveInfo="namedTupleType" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240403669406">
+                    <link role="link" targetNodeId="1.1239531948650" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1240403669407">
+                  <link role="link" targetNodeId="1.1239529553065" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" id="1240403672571">
+                <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240403672572">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403672573">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240403675479">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240403675746">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240403675480">
+                          <link role="variableDeclaration" targetNodeId="1240403672574" resolveInfo="cmp" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240403676361">
+                          <link role="property" targetNodeId="1.1240400839614" resolveInfo="final" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1240403672574">
+                    <property name="name" value="cmp" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1240403672575" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240403544749">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 
