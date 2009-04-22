@@ -126,7 +126,11 @@ public class RefactoringProcessor {
   }
 
   public void doExecuteInTest(RefactoringContext refactoringContext, Runnable continuation) {
-    doExecute(refactoringContext, continuation);
+    try {
+      doExecute(refactoringContext, continuation);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
   }
 
   private void doExecute(final @NotNull RefactoringContext refactoringContext, final Runnable continuation) {
