@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -14,15 +14,15 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    ;
-    ;
+    BaseLanguageTextGen.annotations(node, this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       this.append("final ");
     }
     if (SPropertyOperations.getBoolean(node, "isAbstract")) {
       this.append("abstract ");
     }
-    ;
+    GenericDeclarationTextGen2.typeDeclarations(node, this);
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));

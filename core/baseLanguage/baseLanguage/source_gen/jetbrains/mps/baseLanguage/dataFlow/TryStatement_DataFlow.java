@@ -15,17 +15,17 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitTry();
-    for(SNode c : SLinkOperations.getTargets(, "catchClause", true)) {
+    for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(c));
     }
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "body", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));
       }
     });
-    for(SNode c : SLinkOperations.getTargets(, "catchClause", true)) {
+    for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode)c);
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
@@ -36,7 +36,7 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().emitLabel("afterCatches");
     _context.getBuilder().emitFinally();
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "finallyBody", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "finallyBody", true));
     _context.getBuilder().emitEndTry();
   }
 

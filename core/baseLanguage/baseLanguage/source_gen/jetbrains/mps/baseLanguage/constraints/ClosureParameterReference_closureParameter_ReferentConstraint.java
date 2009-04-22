@@ -24,7 +24,7 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint exten
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode enclosingClosure = SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.Closure", true, false);
+    SNode enclosingClosure = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Closure", true, false);
     return SNodeOperations.getChildren(enclosingClosure);
   }
 

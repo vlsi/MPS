@@ -14,11 +14,11 @@ public class TernaryOperatorExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "condition", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(, "ifFalse", true)));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "ifTrue", true));
-    _context.getBuilder().emitJump(_context.getBuilder().after());
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(, "ifFalse", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));
+    _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "ifFalse", true)));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
+    _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalse", true));
   }
 
 }

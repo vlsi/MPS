@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.generator.behavior._Patterns;
 
 public class CopySrcListMacro_Behavior {
 

@@ -10,9 +10,10 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.plugin.ExtractMethodDialog;
 
 public class ExtractMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -33,7 +34,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.);
+    return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -59,17 +60,17 @@ public class ExtractMethod_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-         = null;
+        this.nodes = null;
       } else
       {
-         = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+        this.nodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
       }
     }
-    if ( == null) {
+    if (this.nodes == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.FRAME);
-    if ( == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -77,7 +78,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this., ExtractMethod_Action.this.);
+      ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {

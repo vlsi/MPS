@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class AnnotationInstance_TextGen extends SNodeTextGen {
@@ -19,7 +19,7 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     {
       this.appendWithIndent("@");
     }
-    ;
+    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "annotation", false), this);
     this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
       for(SNode item : SLinkOperations.getTargets(node, "value", true)) {

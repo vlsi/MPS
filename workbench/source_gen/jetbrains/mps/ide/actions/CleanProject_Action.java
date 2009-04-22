@@ -75,7 +75,7 @@ public class CleanProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      final Set<IModule> modulesToBuild = SetSequence.<IModule>fromSetAndArray(new LinkedHashSet());
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectDevKits()));

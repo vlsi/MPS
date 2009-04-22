@@ -17,7 +17,7 @@ public class TypeVariableDeclaration_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "bound", true), this.getSNode());
       for(SNode clsType : SLinkOperations.getTargets(node, "auxBounds", true)) {
         this.append(" & ");
-        ;
+        BaseLanguageTextGen.classifierName(clsType, this);
       }
     }
   }

@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
@@ -25,7 +26,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvider {
 
@@ -137,7 +137,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else
       {
-        result = ListSequence.fromList(new ArrayList<String>());
+        result = ListSequence.<String>fromArray();
       }
       return result;
     }

@@ -4,19 +4,19 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class ClassConcept_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
-    ;
-    ;
-    ;
+    BaseLanguageTextGen.fileHeader(node, this);
+    BaseLanguageTextGen.annotations(node, this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if (!(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")).contains(node))) {
       this.append("static ");
     }
@@ -25,7 +25,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     }
     this.append("class ");
     this.append(SPropertyOperations.getString(node, "name"));
-    ;
+    GenericDeclarationTextGen2.typeDeclarations(node, this);
     if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
       this.append(" extends ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());

@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 
 public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -24,10 +27,10 @@ public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if (!(SNodeOperations.isInstanceOf(, "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
-      return Sequence.fromIterable();
+    if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return ;
+    return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
   }
 
 }

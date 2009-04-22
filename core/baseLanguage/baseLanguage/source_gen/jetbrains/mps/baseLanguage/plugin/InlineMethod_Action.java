@@ -13,8 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.MethodCallAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.InlineMethodDialog;
 
 public class InlineMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -41,10 +43,10 @@ public class InlineMethod_Action extends GeneratedAction {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-         = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.) || SNodeOperations.isInstanceOf(InlineMethod_Action.this., "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        b.value = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.node) || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     });
-    return ;
+    return b.value;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -68,21 +70,21 @@ public class InlineMethod_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
       }
-       = node;
+      this.node = node;
     }
-    if ( == null) {
+    if (this.node == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.FRAME);
-    if ( == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.PROJECT);
-    if ( == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if ( == null) {
+    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.operationContext == null) {
       return false;
     }
     return true;
@@ -90,7 +92,7 @@ public class InlineMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this., InlineMethod_Action.this., InlineMethod_Action.this.);
+      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {

@@ -8,9 +8,10 @@ import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
@@ -45,7 +46,7 @@ public class NewDevKitDialogContentPane extends JPanel {
   private MPSProject myProject;
   private DevKit myResult;
   private NewDevKitDialog myDialog;
-  public List<AutoBinding> myBindings = ListOperations.<AutoBinding>createList();
+  public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
   private Events myEvents = new Events(null) {
     {
     }
@@ -92,7 +93,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListOperations.addElement(this.myBindings, binding);
+      this.myBindings.add(binding);
     }
     {
       Object sourceObject = myThis;
@@ -101,7 +102,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListOperations.addElement(this.myBindings, binding);
+      this.myBindings.add(binding);
     }
   }
 

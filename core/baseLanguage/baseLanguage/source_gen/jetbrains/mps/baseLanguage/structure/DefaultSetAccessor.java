@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.baseLanguage.structure.Visibility;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,11 +17,11 @@ public class DefaultSetAccessor extends BaseConcept {
     super(node);
   }
 
-  public INodeAdapter getVisibility() {
-    return (INodeAdapter)this.getChild(, DefaultSetAccessor.VISIBILITY);
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
   }
 
-  public void setVisibility(INodeAdapter node) {
+  public void setVisibility(Visibility node) {
     super.setChild(DefaultSetAccessor.VISIBILITY, node);
   }
 

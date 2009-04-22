@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class NodeActionsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActionsInternal_ActionGroup.class);

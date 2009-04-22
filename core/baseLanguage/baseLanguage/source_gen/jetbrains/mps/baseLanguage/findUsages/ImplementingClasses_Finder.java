@@ -10,8 +10,8 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
@@ -33,7 +33,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     List<SNode> derivedInterfaces = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, indicator);
     ListSequence.fromList(derivedInterfaces).addElement(node);
     // 
-    List<SNode> derivedInterfacesUsages = ;
+    List<SNode> derivedInterfacesUsages = ListOperations.<SNode>createList();
     for(SNode derivedInterface : derivedInterfaces) {
       ListSequence.fromList(derivedInterfacesUsages).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", derivedInterface, scope, indicator)));
     }

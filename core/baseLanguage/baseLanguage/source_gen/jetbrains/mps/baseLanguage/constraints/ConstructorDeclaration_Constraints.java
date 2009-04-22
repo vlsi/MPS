@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ConstructorDeclaration_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(, "jetbrains.mps.lang.core.structure.IResolveInfo");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.core.structure.IResolveInfo");
   }
 
 }

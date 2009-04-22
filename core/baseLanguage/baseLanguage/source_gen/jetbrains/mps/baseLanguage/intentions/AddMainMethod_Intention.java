@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.intentions._Quotations;
 
 public class AddMainMethod_Intention extends BaseIntention {
 

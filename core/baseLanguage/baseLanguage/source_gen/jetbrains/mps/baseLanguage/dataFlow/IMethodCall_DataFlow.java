@@ -14,7 +14,7 @@ public class IMethodCall_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode arg : SLinkOperations.getTargets(, "actualArgument", true)) {
+    for(SNode arg : SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)) {
       _context.getBuilder().build((SNode)arg);
     }
   }

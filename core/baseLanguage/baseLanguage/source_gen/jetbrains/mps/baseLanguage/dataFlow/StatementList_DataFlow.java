@@ -18,18 +18,18 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for(SNode param : ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
         _context.getBuilder().build((SNode)param);
       }
     }
     _context.getBuilder().emitNop();
-    for(SNode s : SLinkOperations.getTargets(, "statement", true)) {
+    for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build((SNode)s);
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(, "statement", true)).isNotEmpty()) {
-      SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(, "statement", true)).last();
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
+      SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).last();
       if (LastStatementUtil.canMakeReturnStatement(lastStatement, GlobalScope.getInstance())) {
         _context.getBuilder().emitRet();
       }

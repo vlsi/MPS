@@ -13,8 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.IntroduceFieldRefactoring;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.plugin.IntroduceFieldDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceField_Action extends GeneratedAction {
@@ -38,7 +40,7 @@ public class IntroduceField_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceField_Action.this., "jetbrains.mps.baseLanguage.structure.Expression");
+    return SNodeOperations.isInstanceOf(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -62,21 +64,21 @@ public class IntroduceField_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
       }
-       = node;
+      this.node = node;
     }
-    if ( == null) {
+    if (this.node == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if ( == null) {
+    this.component = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.component == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if ( == null) {
+    this.context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.context == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.FRAME);
-    if ( == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -89,15 +91,15 @@ public class IntroduceField_Action extends GeneratedAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
 
         public void run() {
-           = introducer.init(SNodeOperations.cast(IntroduceField_Action.this., "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceField_Action.this.);
+          error.value = introducer.init(SNodeOperations.cast(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceField_Action.this.component);
         }
       });
-      if ( == null) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this., introducer, IntroduceField_Action.this.);
+      if (error.value == null) {
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer, IntroduceField_Action.this.context);
         dialog.showDialog();
       } else
       {
-        JOptionPane.showMessageDialog(IntroduceField_Action.this., , "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(IntroduceField_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);

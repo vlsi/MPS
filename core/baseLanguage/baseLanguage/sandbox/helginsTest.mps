@@ -588,12 +588,13 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226075402808">
             <property name="name" value="el" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1237046331412">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240393442995" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240393400339">
-              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240393415675">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240393445428" />
+              <node role="elementType" type="jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable" id="1237046331413">
+                <property name="name" value="p" />
               </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226075402811">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Collections.emptyList():java.util.List" resolveInfo="emptyList" />
+              <link role="classConcept" targetNodeId="1.~Collections" resolveInfo="Collections" />
             </node>
           </node>
         </node>

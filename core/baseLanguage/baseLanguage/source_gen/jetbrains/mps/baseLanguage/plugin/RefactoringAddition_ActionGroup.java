@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.lang.refactoring.plugin.Refactoring_ActionGroup;
 
 public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(RefactoringAddition_ActionGroup.class);
@@ -29,7 +30,7 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(, null);
+    this.insertGroupIntoAnother(Refactoring_ActionGroup.ID, null);
   }
 
 }

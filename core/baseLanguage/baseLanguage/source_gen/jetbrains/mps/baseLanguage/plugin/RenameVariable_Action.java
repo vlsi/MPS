@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.plugin.RenameRafactoringDialog;
 
 public class RenameVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -31,7 +32,7 @@ public class RenameVariable_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(RenameVariable_Action.this., "jetbrains.mps.baseLanguage.structure.VariableReference");
+    return SNodeOperations.isInstanceOf(RenameVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.VariableReference");
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -55,13 +56,13 @@ public class RenameVariable_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
       }
-       = node;
+      this.node = node;
     }
-    if ( == null) {
+    if (this.node == null) {
       return false;
     }
-     = event.getData(MPSDataKeys.FRAME);
-    if ( == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -69,7 +70,7 @@ public class RenameVariable_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      RenameRafactoringDialog dialog = new RenameRafactoringDialog(RenameVariable_Action.this., RenameVariable_Action.this.);
+      RenameRafactoringDialog dialog = new RenameRafactoringDialog(RenameVariable_Action.this.frame, RenameVariable_Action.this.node);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.constraints._Quotations;
 
 public class SuperConstructorInvocation_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -25,8 +26,8 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    //  just insure that dynamic reference resolve won't scan all models
-    SNode thisConcept = SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+    //      just insure that dynamic reference resolve won't scan all models
+    SNode thisConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     SNode superClass = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisConcept, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (superClass == null) {
       superClass = SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");

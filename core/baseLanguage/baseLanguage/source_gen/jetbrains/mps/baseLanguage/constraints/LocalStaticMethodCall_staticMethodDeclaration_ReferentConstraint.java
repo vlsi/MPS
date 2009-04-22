@@ -27,8 +27,8 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode clazz = SNodeOperations.getAncestor(, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), , IClassifiersSearchScope.STATIC_METHOD);
+    SNode clazz = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
 
 }

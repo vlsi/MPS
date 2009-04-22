@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 
 public class BaseLanguageModelActionsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageModelActionsInternal_ActionGroup.class);
@@ -20,7 +21,7 @@ public class BaseLanguageModelActionsInternal_ActionGroup extends GeneratedActio
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(, null);
+    this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, null);
   }
 
 }

@@ -13,8 +13,8 @@ public class ArrayLengthOperation_Constraints {
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     boolean result = false;
-    if (SNodeOperations.isInstanceOf(, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), false) != null;
+    if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), false) != null;
     }
     return result;
   }

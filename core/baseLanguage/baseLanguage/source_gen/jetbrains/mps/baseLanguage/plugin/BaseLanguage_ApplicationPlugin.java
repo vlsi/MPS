@@ -6,13 +6,12 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
-    List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
+    List<BaseGroup> groups = ListSequence.<BaseGroup>fromArray();
     String moduleName = "jetbrains.mps.baseLanguage";
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup");

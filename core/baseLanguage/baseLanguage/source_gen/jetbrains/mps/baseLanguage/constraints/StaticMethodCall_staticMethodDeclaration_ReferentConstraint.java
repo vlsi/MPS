@@ -27,7 +27,7 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint extends
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(, "classConcept", false))), , IClassifiersSearchScope.STATIC_METHOD);
+    return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false))), _context.getReferenceNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
 
 }

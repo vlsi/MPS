@@ -4,16 +4,16 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    ;
-    ;
+    BaseLanguageTextGen.annotations(node, this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     this.append("static ");
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       this.append("final ");

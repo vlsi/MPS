@@ -14,6 +14,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
@@ -52,7 +53,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
       }
       for(SNode sMethod : Sequence.fromIterable(methodsOfSameKind)) {
         if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(node, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(node, "parameter")) {
-          if () {
+          if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
             ListOperations.addElement(_results, sMethod);
           }
         }
