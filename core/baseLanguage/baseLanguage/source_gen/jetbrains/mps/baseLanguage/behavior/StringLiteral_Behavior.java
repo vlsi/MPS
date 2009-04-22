@@ -18,6 +18,8 @@ public class StringLiteral_Behavior {
   public static boolean call_isCorrect_1221565233201(SNode thisNode) {
     boolean isEscapeMode = false;
     boolean isUnicodeMode = false;
+    boolean isSymbolCodeMode = false;
+    int digitNumber = 0;
     int unicodeDigitNumber = 0;
     String value = SPropertyOperations.getString(thisNode, "value");
     if (value == null) {
@@ -28,12 +30,26 @@ public class StringLiteral_Behavior {
       if (isEscapeMode) {
         if (c == 'u') {
           isUnicodeMode = true;
+        } else if (Character.isDigit(c)) {
+          isSymbolCodeMode = true;
+          digitNumber = 1;
         } else if (c != 'n' && c != 't' && c != 'b' && c != 'f' && c != 'r' && c != '"' && c != '\'' && c != '\\') {
           return false;
         }
         isEscapeMode = false;
       } else if (c == '\\') {
         isEscapeMode = true;
+      } else if (isSymbolCodeMode) {
+        if (Character.isDigit(c)) {
+          digitNumber++ ;
+        } else
+        {
+          return false;
+        }
+        if (digitNumber == 3) {
+          isSymbolCodeMode = false;
+          digitNumber = 0;
+        }
       } else if (isUnicodeMode) {
         if (Character.isDigit(c) || StringLiteral_Behavior.call_isHexChar_1221565869792(thisNode, c)) {
           unicodeDigitNumber++ ;
@@ -43,6 +59,7 @@ public class StringLiteral_Behavior {
         }
         if (unicodeDigitNumber == 4) {
           isUnicodeMode = false;
+          unicodeDigitNumber = 0;
         }
       } else if (c == '"') {
         return false;
