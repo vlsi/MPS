@@ -2,6 +2,7 @@
   <property file="${ant.file}/../MPS.properties" />
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
+  <fail unless="version" message="Property version unspecified." />
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
   <import file="${ant.file}/../help-build.xml" />
   <import file="${ant.file}/../MPS-external.xml" />
@@ -315,7 +316,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide0" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
-    <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
+    <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS/help-build.append.idea.version" />
