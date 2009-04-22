@@ -10,8 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -27,7 +26,7 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTy
     if ((method == null)) {
       return;
     }
-    Set<SNode> throwables = SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)));
+    Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "throwsItem", true));
     RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, methodCall);
   }
 

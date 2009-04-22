@@ -10,13 +10,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.behavior._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior._Patterns;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ClassifierType_Behavior {

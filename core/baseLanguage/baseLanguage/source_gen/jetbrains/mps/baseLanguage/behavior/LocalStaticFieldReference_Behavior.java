@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 
 public class LocalStaticFieldReference_Behavior {
 

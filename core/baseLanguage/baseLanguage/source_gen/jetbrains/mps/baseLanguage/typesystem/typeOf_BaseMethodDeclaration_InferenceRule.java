@@ -8,12 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.baseLanguage.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -29,10 +27,10 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(throwsItem, new _Quotations.QuotationClass_29().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)throwsItem, (SNode)new _Quotations.QuotationClass_29().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", false, 0, intentionProvider);
       }
     }
-    //     ==========
+    // ==========
     if (SLinkOperations.getTarget(bmd, "body", true) == null) {
       return;
     }
@@ -42,12 +40,12 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     if (SNodeOperations.isInstanceOf(bmd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract")) {
       return;
     }
-    //     =============
+    // =============
     SNode expectedRetType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(bmd);
-    //     =============
+    // =============
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
-      //       shouldn't return any values
+      // shouldn't return any values
       for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
@@ -59,7 +57,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       }
     } else
     {
-      //       should return subtypes of the 'expected type'
+      // should return subtypes of the 'expected type'
       for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
@@ -73,21 +71,21 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", false, 0, intentionProvider);
           }
         }
       }
     }
-    //     =============
+    // =============
     if (expectedRetType != null) {
-      //       last expression statement can serve as return statement
+      // last expression statement can serve as return statement
       SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(bmd);
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765601477", true);
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", false, 0, intentionProvider);
         }
       }
     }

@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumClass_Behavior {
@@ -30,7 +29,7 @@ public class EnumClass_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    //     enums always have static operations: valueOf and values
+    // enums always have static operations: valueOf and values
     return true;
   }
 

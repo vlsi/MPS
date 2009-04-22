@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class PrimitiveType_Behavior {
 
@@ -17,7 +18,7 @@ public class PrimitiveType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return ListSequence.<String>fromArray(SConceptPropertyOperations.getString(thisNode, "alias").substring(0, 1));
+    return ListSequence.fromListAndArray(new ArrayList<String>(), SConceptPropertyOperations.getString(thisNode, "alias").substring(0, 1));
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {

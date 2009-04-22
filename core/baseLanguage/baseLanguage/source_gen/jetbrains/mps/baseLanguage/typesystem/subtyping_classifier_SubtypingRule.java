@@ -8,8 +8,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -19,8 +19,8 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
 
   public List<SNode> getSubOrSuperTypes(SNode clt) {
     SNode classifier = SLinkOperations.getTarget(clt, "classifier", false);
-    List<SNode> result = ListSequence.<SNode>fromArray();
-    List<SNode> supertypes = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (!((SLinkOperations.getTarget(classConcept, "superclass", true) == null))) {
@@ -37,7 +37,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      for(SNode typeParam : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SLinkOperations.getTargets(supertypeCopy, "parameter", true)))) {
+      for(SNode typeParam : ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
         if (SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = SNodeOperations.cast(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
           int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));

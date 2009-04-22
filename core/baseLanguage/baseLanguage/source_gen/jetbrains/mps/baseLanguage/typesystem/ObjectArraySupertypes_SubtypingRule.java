@@ -4,11 +4,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.baseLanguage.typesystem._Patterns;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.baseLanguage.typesystem._Quotations;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -18,7 +16,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType) {
-    //     see JLS 3.0
+    // see JLS 3.0
     return CollectionUtil.list(new _Quotations.QuotationClass_77().createNode(), new _Quotations.QuotationClass_78().createNode(), new _Quotations.QuotationClass_79().createNode());
   }
 

@@ -280,6 +280,30 @@ public class QueriesGenerated {
         }
       });
     }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode newNode = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
+          SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
+          SPropertyOperations.set(newNode, "asCast", "" + (true));
+          return newNode;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "as";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "node as cast";
+        }
+      });
+    }
     return result;
   }
 

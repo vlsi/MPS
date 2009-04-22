@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import java.util.ArrayList;
 
 public class ResolveUtil {
 
@@ -28,14 +30,14 @@ public class ResolveUtil {
     if (!(containsVars)) {
       return result;
     }
-    Set<SNode> frontier = SetSequence.<SNode>fromArray();
+    Set<SNode> frontier = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(frontier).addElement(instanceType);
     SNode concreteMethodClassifierType = ResolveUtil.getConcreteSuperClassifierType(frontier, classifier);
     if (concreteMethodClassifierType == null) {
       return result;
     }
     List<SNode> typeParameters = ListSequence.fromList(SLinkOperations.getTargets(concreteMethodClassifierType, "parameter", true)).toListSequence();
-    for(SNode paramType : ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(result))) {
+    for(SNode paramType : ListSequence.fromListWithValues(new ArrayList<SNode>(), result)) {
       for(SNode typeVar : SNodeOperations.getDescendants(paramType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true)) {
         SNode replacement = SNodeOperations.copyNode(ListSequence.fromList(typeParameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false))));
         if ((SNodeOperations.getParent(typeVar) == null)) {
@@ -62,7 +64,7 @@ public class ResolveUtil {
 
   public static SNode getConcreteSuperClassifierType(Set<SNode> frontier, SNode classifier) {
     SNode concreteMethodClassifierType = null;
-    Set<SNode> newFrontier = SetSequence.<SNode>fromArray();
+    Set<SNode> newFrontier = SetSequence.fromSet(new HashSet<SNode>());
 outer:
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for(SNode currentType : frontier) {
@@ -89,7 +91,7 @@ outer:
         }
       }
       frontier = newFrontier;
-      newFrontier = SetSequence.<SNode>fromArray();
+      newFrontier = SetSequence.fromSet(new HashSet<SNode>());
     }
     return concreteMethodClassifierType;
   }
@@ -97,7 +99,7 @@ outer:
   public static SNode processMethodToImplement(SNode enclosingClassifier, SNode method) {
     SNode declaringClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode result = SNodeOperations.copyNode(method);
-    Set<SNode> initialClassifierTypes = SetSequence.<SNode>fromArray();
+    Set<SNode> initialClassifierTypes = SetSequence.fromSet(new HashSet<SNode>());
     if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
@@ -115,7 +117,7 @@ outer:
       }
     }
     SNode concreteSuperClassifierType = getConcreteSuperClassifierType(initialClassifierTypes, declaringClassifier);
-    Set<SNode> types = SetSequence.<SNode>fromArray();
+    Set<SNode> types = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(types).addElement(SLinkOperations.getTarget(result, "returnType", true));
     for(SNode param : SLinkOperations.getTargets(result, "parameter", true)) {
       SetSequence.fromSet(types).addElement(SLinkOperations.getTarget(param, "type", true));
