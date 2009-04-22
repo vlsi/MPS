@@ -162,6 +162,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
+    <property name="iconPath" value="${language_descriptor}/icons/link.png" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1071599776563">
       <property name="name" value="role" />
@@ -198,6 +199,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1071489288299">
     <property name="name" value="PropertyDeclaration" />
+    <property name="iconPath" value="${language_descriptor}/icons/property.png" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1169197677374">
       <link role="intfc" targetNodeId="1.1169194658468" />
