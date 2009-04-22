@@ -160,6 +160,11 @@ public enum LanguageAspect {
     public ModuleReference getMainLanguage() {
       return TextGen_Language.MODULE_REFERENCE;
     }
+
+    @Override
+    public Icon getIcon() {
+      return Icons.TEXT_GEN_MODEL_ICON;
+    }
   },
 
   MPSLITE("mpslite") {

@@ -127,6 +127,7 @@
     <property name="name" value="ConceptTextGenDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="root" />
+    <property name="iconPath" value="${language_descriptor}/icons/textGen.png" />
     <link role="extends" targetNodeId="1234281982537" resolveInfo="AbstractTextGenDeclaration" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233749296504">
       <property name="metaClass" value="aggregation" />
@@ -214,6 +215,7 @@
     <property name="name" value="LanguageTextGenDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="root" />
+    <property name="iconPath" value="${language_descriptor}/icons/textGenComponent.png" />
     <link role="extends" targetNodeId="1234281982537" resolveInfo="AbstractTextGenDeclaration" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1234799343267">
       <link role="conceptLinkDeclaration" targetNodeId="1234799334167" resolveInfo="applicableHiddenParameter" />

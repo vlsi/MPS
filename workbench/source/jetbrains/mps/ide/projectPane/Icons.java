@@ -61,6 +61,7 @@ public class Icons {
   public static final Icon PLUGIN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/pluginModel.png"));
   public static final Icon BEHAVIOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/behaviorModel.png"));
   public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
+  public static final Icon TEXT_GEN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/textGenModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeOpened.png"));
