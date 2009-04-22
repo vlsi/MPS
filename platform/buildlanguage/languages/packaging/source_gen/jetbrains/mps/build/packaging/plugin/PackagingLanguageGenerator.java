@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
 
 public class PackagingLanguageGenerator {
@@ -41,7 +42,7 @@ public class PackagingLanguageGenerator {
     SPropertyOperations.set(SLinkOperations.getTarget(basedirPath, "macro", true), "name", macro);
     String[] pathComponents = path.split(File.separator.replace("\\", "\\\\"));
     if (pathComponents.length > 0) {
-      List<SNode> pathComponentNodes = ListSequence.<SNode>fromArray();
+      List<SNode> pathComponentNodes = ListSequence.fromList(new ArrayList<SNode>());
       for(String pathComponentName : pathComponents) {
         if (StringUtils.isEmpty(pathComponentName)) {
           continue;

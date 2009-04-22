@@ -10,7 +10,6 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JTree;
-import jetbrains.mps.build.packaging.plugin.CheckBoxNode;
 import java.awt.Dimension;
 
 public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {

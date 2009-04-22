@@ -7,7 +7,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -41,12 +43,17 @@ public class BuildGeneratorUtil {
       modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
     }
     final SModelDescriptor descriptor = modelDescriptor;
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {
-        descriptor.getSModel().addLanguage(getPackagingLanguageReference());
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            descriptor.getSModel().addLanguage(getPackagingLanguageReference());
+          }
+        });
       }
-    });
+    }, ModalityState.NON_MODAL);
     return modelDescriptor;
   }
 

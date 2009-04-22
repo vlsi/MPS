@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuildGenerationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -38,10 +38,10 @@ public class GenerateTextFromBuild {
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, mpsLayout);
     if (showWindow) {
-      generatorManager.generateModelsWithProgressWindow(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, true);
+      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationType, true);
     } else
     {
-      generatorManager.generateModels(ListSequence.<SModelDescriptor>fromArray(descriptor), context, generationType, new EmptyProgressIndicator(), new IMessageHandler() {
+      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationType, new EmptyProgressIndicator(), new IMessageHandler() {
 
         public void handle(Message message) {
           switch (message.getKind()) {

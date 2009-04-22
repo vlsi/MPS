@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 

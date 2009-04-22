@@ -4,14 +4,11 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.build.packaging.plugin.AbstractBuildGenerator;
-import jetbrains.mps.build.packaging.plugin.IErrorHandler;
 import com.intellij.ide.wizard.Step;
-import jetbrains.mps.build.packaging.plugin.SolutionStep;
-import jetbrains.mps.build.packaging.plugin.ModelStep;
-import jetbrains.mps.build.packaging.plugin.LanguagesStep;
 import javax.swing.JComponent;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
 
 public class GenerateBuildWizard extends AbstractWizard {
 
@@ -57,10 +54,11 @@ public class GenerateBuildWizard extends AbstractWizard {
 
   protected void doOKAction() {
     super.doOKAction();
-    GenerateBuildWizard.this.myGenerator.generate();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ProgressManager.getInstance().run(new Task.Modal(null, "Generating build script", false) {
 
-      public void run() {
+      public void run(ProgressIndicator progressIndicator) {
+        progressIndicator.setIndeterminate(true);
+        GenerateBuildWizard.this.myGenerator.generate(progressIndicator);
       }
     });
   }
