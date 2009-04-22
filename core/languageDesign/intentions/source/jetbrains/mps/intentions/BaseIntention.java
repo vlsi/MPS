@@ -18,6 +18,8 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.List;
+import java.util.ArrayList;
 
 public abstract class BaseIntention implements Intention {
   public abstract String getConcept();
@@ -48,5 +50,19 @@ public abstract class BaseIntention implements Intention {
 
   public SNode getNodeByIntention() {
     return null;
+  }
+
+  public List parameter(final SNode node, final EditorContext editorContext) {
+    return null;
+  }
+
+  public boolean isParameterized() {
+    return false;
+  }
+
+  public List<Intention> getInstances(SNode node, EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 }

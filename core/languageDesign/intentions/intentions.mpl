@@ -20,7 +20,7 @@
         <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_together">
+        <mapping-priority-rule kind="before_or_together">
           <greater-priority-mapping>
             <generator generatorUID="79a2d464-32b0-48d2-96f9-b40717277a07(jetbrains.mps.lang.intentions#1192798684353)" />
             <external-mapping>
@@ -44,6 +44,9 @@
     <entry path="${language_descriptor}/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</extendedLanguage>

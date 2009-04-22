@@ -116,7 +116,24 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     for (String conceptFQName : myIntentions.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
-        for (final Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
+        List<Intention> intentions = new ArrayList<Intention>();
+        for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
+          intentions.addAll(intention.getInstances(node, context));
+        }
+        Collections.sort(intentions, new Comparator<Intention>() {
+          public int compare(Intention i1, Intention i2) {
+            IntentionsManager manager = IntentionsManager.getInstance();
+            if (manager.intentionIsDisabled(i1) && !(manager.intentionIsDisabled(i2))) {
+              return 1;
+            }
+            if (!manager.intentionIsDisabled(i1) && manager.intentionIsDisabled(i2)) {
+              return -1;
+            }
+            int prio = i1.getType().getPriority() - i2.getType().getPriority();
+            return prio;
+          }
+        });
+        for (final Intention intention : intentions) {
           try {
             boolean isApplicable = false;
 

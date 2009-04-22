@@ -17,10 +17,20 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.ide.DataManager;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -29,8 +39,6 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -198,44 +206,54 @@ public class IntentionsSupport {
     return getInsertedPosition(viewRect, myLightBulb.getPreferredSize(), new Point(x, y));
   }
 
-  @NotNull
-  private Point getIntentionsMenuLocation(@NotNull EditorCell selectedCell, @NotNull IntentionsMenu menu) {
-    Point point = getLightBulbLocation(selectedCell);
-    point.x = selectedCell.getX();
-    point.y += myLightBulb.getHeight();
-    Rectangle viewRect = myEditor.getViewport().getViewRect();
-    return getInsertedPosition(viewRect, menu.getPreferredSize(), point);
+  private BaseGroup getIntentionGroup() {
+    BaseGroup group = new BaseGroup("");
+    for (final Pair<Intention, SNode> pair : getAvailableIntentions()) {
+      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), myEditor.getEditorContext())) {
+        protected void doExecute(AnActionEvent e) {
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
+            public void run() {
+              pair.getFirst().execute(pair.getSecond(), myEditor.getEditorContext());
+            }
+          });
+        }
+      };
+      Icon icon = IntentionType.getLowestPriorityType().getIcon();
+      action.getTemplatePresentation().setIcon(icon);
+      action.setExecuteOutsideCommand(true);
+      group.add(action);
+    }
+    return group;
   }
 
   private void showIntentionsMenu() {
-    IntentionsMenu intentionsMenu = new IntentionsMenu(myEditor.getOperationContext());
-
-    intentionsMenu.init(getAvailableIntentions(), myEditor.getEditorContext());
-
-    intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
-      public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        //setLightBulbVisibility(false);
-      }
-
-      public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
-      }
-
-      public void popupMenuCanceled(PopupMenuEvent e) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
+    EditorContext editorContext = myEditor.getEditorContext();
+    final EditorCell selectedCell = editorContext.getSelectedCell();
+    int x = selectedCell.getX();
+    int y = selectedCell.getY();
+    if (selectedCell instanceof EditorCell_Label) {
+      y += ((EditorCell_Label) selectedCell).getHeight();
+    }
+    final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
+    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      public ListPopup compute() {
+        ActionGroup group = getIntentionGroup();
+        ListPopup popup = null;
+        if (group != null) {
+          popup = JBPopupFactory.getInstance()
+            .createActionGroupPopup("Intentions",
+              group,
+              dataContext,
+              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+              false);
+        }
+        return popup;
       }
     });
-
-    Point loc = getIntentionsMenuLocation(myEditor.getSelectedCell(), intentionsMenu);
-    intentionsMenu.show(myEditor, loc.x, loc.y);
+    RelativePoint relativePoint = new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y));
+    if (popup != null) {
+      popup.show(relativePoint);
+    }
   }
 
   private void setLightBulbVisibility(final boolean value) {

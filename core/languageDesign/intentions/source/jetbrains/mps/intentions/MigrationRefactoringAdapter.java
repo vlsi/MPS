@@ -21,6 +21,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class MigrationRefactoringAdapter implements Intention {
   private AbstractMigrationRefactoring myRefactoring;
   private MigrationScript myMigrationScript;
@@ -34,6 +37,10 @@ public class MigrationRefactoringAdapter implements Intention {
     return myRefactoring.getFqNameOfConceptToSearchInstances();
   }
 
+  public boolean isParameterized() {
+    return false;  
+  }
+
   public String getDescription(SNode node, EditorContext editorContext) {
     return "Migration: " + NameUtil.multiWordCapitalize(myRefactoring.getName());
   }
@@ -44,6 +51,10 @@ public class MigrationRefactoringAdapter implements Intention {
 
   public boolean isAvailableInChildNodes() {
     return false;
+  }
+
+  public List parameter(SNode node, EditorContext editorContext) {
+    return null;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
@@ -60,5 +71,11 @@ public class MigrationRefactoringAdapter implements Intention {
 
   public SNode getNodeByIntention() {
     return null;
+  }
+
+  public List<Intention> getInstances(SNode node, EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 }

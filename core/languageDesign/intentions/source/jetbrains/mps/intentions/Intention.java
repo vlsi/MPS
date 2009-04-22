@@ -18,14 +18,20 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.List;
+
 public interface Intention {
   String getConcept();
+
+  boolean isParameterized();
 
   String getDescription(SNode node, EditorContext editorContext);
 
   boolean isApplicable(SNode node, EditorContext editorContext);
 
   boolean isAvailableInChildNodes();
+
+  List parameter(SNode node, EditorContext editorContext);
 
   void execute(SNode node, EditorContext editorContext);
 
@@ -34,4 +40,7 @@ public interface Intention {
   String getLocationString();
 
   SNode getNodeByIntention();
+
+  List<Intention> getInstances(SNode node, EditorContext editorContext);
+
 }

@@ -9,6 +9,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -35,8 +36,32 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1240406868383(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_1240409165143(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_1240411308254(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
+  }
+
   public static boolean ifMacro_Condition_1204743248015(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1240407057538(final IOperationContext operationContext, final IfMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
+  }
+
+  public static boolean ifMacro_Condition_1240407682815(final IOperationContext operationContext, final IfMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
+  }
+
+  public static boolean ifMacro_Condition_1240409436618(final IOperationContext operationContext, final IfMacroContext _context) {
+    return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1192806258867(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -49,6 +74,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1192806465664(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1240407188793(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
+  }
+
+  public static SNode sourceNodeQuery_1240407278754(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "body", true);
   }
 
 }

@@ -7,8 +7,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IntentionDeclaration_Behavior {
+  private static Class[] PARAMETERS_1240406910049 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -19,6 +21,18 @@ public class IntentionDeclaration_Behavior {
 
   public static String call_getConceptName_1213877237638(SNode thisNode) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(thisNode, "forConcept", false));
+  }
+
+  public static boolean virtual_isParameterized_1240406910049(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean call_isParameterized_1240406910049(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
+  }
+
+  public static boolean callSuper_isParameterized_1240406910049(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
   }
 
 }

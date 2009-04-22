@@ -24,6 +24,8 @@ import jetbrains.mps.project.GlobalScope;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -77,6 +79,10 @@ public class BaseIntentionProvider implements IntentionProvider {
         return null;
       }
 
+      public boolean isParameterized() {
+        return false;
+      }
+
       public String getDescription(SNode node, EditorContext editorContext) {
         return quickFix.getDescription();
       }
@@ -87,6 +93,10 @@ public class BaseIntentionProvider implements IntentionProvider {
 
       public boolean isAvailableInChildNodes() {
         return true;
+      }
+
+      public List parameter(SNode node, EditorContext editorContext) {
+        return null;
       }
 
       public void execute(SNode node, EditorContext editorContext) {
@@ -118,6 +128,12 @@ public class BaseIntentionProvider implements IntentionProvider {
           }
         }
         return null;
+      }
+
+      public List<Intention> getInstances(SNode node, EditorContext editorContext) {
+        List<Intention> list = new ArrayList<Intention>();
+        list.add(this);
+        return list;
       }
     };
   }
