@@ -35,27 +35,6 @@
   <import index="15" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590393(jetbrains.mps.baseLanguage.sandbox.genTest)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1217333605644">
-    <property name="name" value="ABC" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217333605645" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217333615542">
-      <property name="isAbstract" value="true" />
-      <property name="name" value="abc" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217333615543" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217333615544" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217333615545" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217334315586">
-      <property name="isAbstract" value="true" />
-      <property name="name" value="cde" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217334315587" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217334315588" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217334315589" />
-    </node>
-    <node role="extendedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221637757666">
-      <link role="classifier" targetNodeId="17.~Map$Entry" resolveInfo="Map.Entry" />
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1231680781312">
     <property name="name" value="Sandbox" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231680781313" />

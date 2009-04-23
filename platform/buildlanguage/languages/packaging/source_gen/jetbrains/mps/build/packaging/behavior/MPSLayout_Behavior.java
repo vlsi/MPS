@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import org.apache.commons.lang.StringUtils;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -56,7 +55,7 @@ public class MPSLayout_Behavior {
     String macro = IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
     if (StringUtils.isEmpty(macro)) {
-      if (Arrays.asList(File.listRoots()).contains(new File("/")) && !(fullPathWithoutMacro.startsWith("/"))) {
+      if (Sequence.fromIterable(Sequence.fromArray(File.listRoots())).contains(new File("/")) && !(fullPathWithoutMacro.startsWith("/"))) {
         fullPathWithoutMacro = "/" + fullPathWithoutMacro;
       }
       return fullPathWithoutMacro;

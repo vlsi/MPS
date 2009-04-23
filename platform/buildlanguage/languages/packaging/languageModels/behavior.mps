@@ -478,28 +478,7 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1235497759070">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235497737978">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235497737979">
-                    <link role="classConcept" targetNodeId="10.~Arrays" resolveInfo="Arrays" />
-                    <link role="baseMethodDeclaration" targetNodeId="10.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235497737980">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~File.listRoots():java.io.File[]" resolveInfo="listRoots" />
-                      <link role="classConcept" targetNodeId="5.~File" resolveInfo="File" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235497737981">
-                    <link role="baseMethodDeclaration" targetNodeId="10.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235497737982">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1235497737983">
-                        <link role="baseMethodDeclaration" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235497737984">
-                          <property name="value" value="/" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240482617769">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1235497770683">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235497771167">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235497771168">
@@ -509,6 +488,25 @@
                       <link role="baseMethodDeclaration" targetNodeId="3.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235497771170">
                         <property name="value" value="/" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240482621789">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240482621790">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240482621791">
+                      <link role="classConcept" targetNodeId="5.~File" resolveInfo="File" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~File.listRoots():java.io.File[]" resolveInfo="listRoots" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="1240482621792" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1240482621793">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240482621794">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1240482621795">
+                        <link role="baseMethodDeclaration" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240482621796">
+                          <property name="value" value="/" />
+                        </node>
                       </node>
                     </node>
                   </node>
