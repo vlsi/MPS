@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -221,6 +222,13 @@ public class GenerationPartitioner {
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
+        // trying to fix NPE here
+        if (grtPriMappingsFromMap == null) {
+          throw new RuntimeException("Internal error occurred while processing mapping priority rule:\n" +
+            GenerationPartitioningUtil.asString(rule, true) + "\n" +
+            "mapping config '" + NameUtil.nodeFQName(lesserPriMapping) + "' is not in priority map.");
+        }
+
         for (MappingConfiguration grtPriMapping : greaterPriMappings) {
           boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
           if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {

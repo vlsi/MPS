@@ -59,6 +59,7 @@ public class GenerationPartitioningUtil {
   }
 
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
+    // scanners framework wasn't finished :(
 //    AbstractModelScanner modelScanner = new SimpleModelScanner();
 //    if(TemplateLanguageUtil.isTemplatesModel(inputModel)) {
 //      modelScanner = new TemplateQueriesOnlyScanner();
@@ -66,6 +67,7 @@ public class GenerationPartitioningUtil {
 //    Set<Language> usedLanguages = new HashSet<Language>();
 //    Set<Generator> engagedGenerators = new HashSet<Generator>();
 //    modelScanner.collectUsedLanguagesAndEngagedGenerators(inputModel, true, usedLanguages, engagedGenerators, scope);
+    // collect generators brutally
     return collectGenerators(inputModel, false, true, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
@@ -226,7 +228,7 @@ public class GenerationPartitioningUtil {
     return list;
   }
 
-  private static String asString(MappingPriorityRule rule, boolean moreDetails) {
+  public static String asString(MappingPriorityRule rule, boolean moreDetails) {
     return asString(rule.getLeft(), moreDetails) + " " + rule.getType().getName() + " " + asString(rule.getRight(), moreDetails);
   }
 
