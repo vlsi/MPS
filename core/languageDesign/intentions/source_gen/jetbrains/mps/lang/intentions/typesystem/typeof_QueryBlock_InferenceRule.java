@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,8 +16,8 @@ public class typeof_QueryBlock_InferenceRule extends AbstractInferenceRule_Runti
   }
 
   public void applyRule(final SNode block, final TypeCheckingContext typeCheckingContext) {
-    ((List)SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).removeAll(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType"));
-    ((List)SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).add(new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(block, "paramType", true), typeCheckingContext));
+    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).removeSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")));
+    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).addElement(new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(block, "paramType", true), typeCheckingContext));
   }
 
   public String getApplicableConceptFQName() {

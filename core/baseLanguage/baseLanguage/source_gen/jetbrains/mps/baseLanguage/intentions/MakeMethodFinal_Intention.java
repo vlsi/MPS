@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class MakeMethodFinal_Intention extends BaseIntention {
@@ -47,8 +48,8 @@ public class MakeMethodFinal_Intention extends BaseIntention {
   }
 
   public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = new ArrayList<Intention>();
-    list.add(this);
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
     return list;
   }
 

@@ -6,12 +6,13 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseGroup> initGroups() {
-    List<BaseGroup> groups = ListSequence.<BaseGroup>fromArray();
+    List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.baseLanguage.dates";
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup");
     return groups;

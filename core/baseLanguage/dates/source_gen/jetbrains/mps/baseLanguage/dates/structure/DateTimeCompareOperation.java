@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.dates.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.dates.structure.CompareType;
 import jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
