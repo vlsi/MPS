@@ -55,6 +55,7 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
   private final Project myProject;
 
   private Map<VirtualFile, Editor> myVirtualFile2Editor = new HashMap<VirtualFile, Editor>();
+  private Map<VirtualFile, FileEditor[]> myVirtualFile2FileEditor = new HashMap<VirtualFile, FileEditor[]>();
   private VirtualFile myActiveFile = null;
   private static final LightVirtualFile LIGHT_VIRTUAL_FILE = new LightVirtualFile("Dummy.java");
 
@@ -236,6 +237,10 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
       EditorFactory.getInstance().releaseEditor(editor);
       myVirtualFile2Editor.remove(file);
     }
+    for (FileEditor fileEditor: myVirtualFile2FileEditor.get(file)) {
+      fileEditor.dispose();
+    }
+    myVirtualFile2FileEditor.remove(file);
   }
 
   public void closeFile(@NotNull VirtualFile file, @NotNull EditorWindow window) {
@@ -434,7 +439,9 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
     ((IdeDocumentHistoryImpl) IdeDocumentHistory.getInstance(myProject)).onSelectionChanged();
 
     // Make back/forward work
-    IdeDocumentHistory.getInstance(myProject).includeCurrentCommandAsNavigation();
+    IdeDocumentHistory.getInstance(myProject).includeCurrentCommandAsNavigation();    
+
+    myVirtualFile2FileEditor.put(file, editors);
 
     return editors;
   }
