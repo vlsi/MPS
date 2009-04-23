@@ -7696,21 +7696,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221142461520">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221142463745">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221142462101">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221142461521">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240492818927">
                   <link role="variableDeclaration" targetNodeId="1221142451654" resolveInfo="statement" />
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221142606678">
-                    <property name="name" value="statement" />
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221142606679">
-                      <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
-                    </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221142606680">
-                      <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1221142606681">
-                        <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221142606682">
-                          <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1221142463354">
                   <link role="link" targetNodeId="1.1068581242865" />
@@ -7722,21 +7709,8 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221142469850">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221142470744">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240492824659">
               <link role="variableDeclaration" targetNodeId="1221142451654" resolveInfo="statement" />
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221142578430">
-                <property name="name" value="statement" />
-                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221142578431">
-                  <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221142578432">
-                  <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1221142578433">
-                    <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221142578434">
-                      <link role="concept" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>
