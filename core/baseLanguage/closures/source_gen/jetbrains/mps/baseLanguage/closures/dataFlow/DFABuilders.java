@@ -4,9 +4,6 @@ package jetbrains.mps.baseLanguage.closures.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.baseLanguage.closures.dataFlow.ClosureLiteral_DataFlow;
-import jetbrains.mps.baseLanguage.closures.dataFlow.InvokeFunctionOperation_DataFlow;
-import jetbrains.mps.baseLanguage.closures.dataFlow.CompactInvokeFunctionExpression_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

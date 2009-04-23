@@ -6,13 +6,22 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.intentions._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIntention {
 
+  public replace_invokeOperation_with_compactInvoke_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -38,6 +47,12 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 
 }

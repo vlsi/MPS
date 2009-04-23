@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.help
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.StatementListUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public class PrepStatementUtil {
@@ -275,7 +275,7 @@ public class PrepStatementUtil {
 
   public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
     copyPrepDataNoRecursion(from, to, generator);
-    List<SNode> toDescendants = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(to, null, false)));
+    List<SNode> toDescendants = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getDescendants(to, null, false));
     int idx = 0;
     for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
       copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
@@ -294,7 +294,7 @@ public class PrepStatementUtil {
     genContext.putStepObject("flag_" + ((SNode)sn).getId(), flag);
     List<SNode> allFlagged = getAllFlagged(genContext);
     if (allFlagged == null) {
-      allFlagged = ListSequence.<SNode>fromArray();
+      allFlagged = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject("all_flagged", allFlagged);
     }
     if (!(ListSequence.fromList(allFlagged).contains(sn))) {

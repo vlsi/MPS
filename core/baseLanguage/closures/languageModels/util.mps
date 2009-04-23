@@ -33,7 +33,7 @@
       <property name="name" value="MAX_CLOSURE_PARAMETERS" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235405940852" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235405943926" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235405965509">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240478428772">
         <property name="value" value="10" />
       </node>
     </node>
@@ -41,7 +41,7 @@
       <property name="name" value="MAX_CLOSURE_EXCEPTIONS" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235405973535" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1235405975502" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1235405982577">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240478430399">
         <property name="value" value="10" />
       </node>
     </node>

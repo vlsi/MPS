@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.closures.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
-import jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;

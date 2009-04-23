@@ -31,7 +31,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       if (methods != null) {
         if (ListSequence.fromList(methods).count() > 1) {
-          //            dirty hack
+          //  dirty hack
           errorMsg = ": interface must have only one method";
           {
             BaseIntentionProvider intentionProvider = null;
@@ -44,7 +44,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           {
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 500, intentionProvider);
+            typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 500, intentionProvider);
           }
           {
             SNode fpt;
@@ -63,7 +63,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", false, 500, intentionProvider);
+                typeCheckingContext.createLessThanInequation((SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode)fpt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", false, 500, intentionProvider);
               }
             }
           }
@@ -96,13 +96,13 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
         if (methods != null) {
           if (ListSequence.fromList(methods).count() > 1) {
-            //              dirty hack
+            //  dirty hack
             errorMsg = ": interface must have only one method";
-            //             generated from warning statement
+            // generated from warning statement
           }
           SNode md = ListSequence.fromList(methods).getElement(0);
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), true);
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), true);
             {
               SNode fpt;
               SNode mpt;
@@ -117,7 +117,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
                 }
                 fpt = fpt_iterator.next();
                 mpt = mpt_iterator.next();
-                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, true);
+                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode)fpt, true);
               }
             }
             return result_14532009;

@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +20,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ft) {
-    List<SNode> supertypes = ListSequence.<SNode>fromArray();
+    List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     String rtSig = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(ft) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
     SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtSig);
     if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -31,7 +31,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
       for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
         SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(pt));
       }
-      supertypes = ListSequence.<SNode>fromArray();
+      supertypes = ListSequence.fromList(new ArrayList<SNode>());
     }
     return supertypes;
   }

@@ -15,13 +15,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.text.Collator;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 
 public class FunctionTypeUtil {
@@ -63,7 +62,7 @@ public class FunctionTypeUtil {
 
   public static List<SNode> getAllFunctionTypes(SModel sourceModel) {
     List<SNode> cls = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
-    List<SNode> typesList = ListSequence.<SNode>fromArray();
+    List<SNode> typesList = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode cl : cls) {
       ListSequence.fromList(typesList).addElement(TypeChecker.getInstance().getTypeOf(cl));
     }
@@ -138,8 +137,8 @@ with_meet:
       return;
     }
     if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
-      //        TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise
-      //        This may cause unexpected results, so please disable in case of difficulties generating some code
+      //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise
+      //  This may cause unexpected results, so please disable in case of difficulties generating some code
       if (!(SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
         return;
       }
@@ -179,7 +178,7 @@ with_meet:
   public static void addAdaptableClassifierTypeTarget(SNode adaptable, SNode target, TemplateQueryContext genContext) {
     List<SNode> allAdaptable = getAllAdaptableClassifierTypes(genContext);
     if (allAdaptable == null) {
-      allAdaptable = ListSequence.<SNode>fromArray();
+      allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject("all_needs_adapted", allAdaptable);
     }
     if (!(ListSequence.fromList(allAdaptable).contains(adaptable))) {
@@ -187,7 +186,7 @@ with_meet:
     }
     List<SNode> trgList = (List<SNode>)genContext.getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)));
     if (trgList == null) {
-      trgList = ListSequence.<SNode>fromArray();
+      trgList = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
     }
     boolean hasOneAlready = false;

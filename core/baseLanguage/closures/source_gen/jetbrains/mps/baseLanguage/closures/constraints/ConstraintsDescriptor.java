@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

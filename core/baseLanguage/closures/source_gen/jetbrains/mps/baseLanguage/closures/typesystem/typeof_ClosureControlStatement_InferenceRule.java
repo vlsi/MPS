@@ -44,7 +44,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         {
           SNode _nodeToCheck_1029348928467 = ccs;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(SLinkOperations.getTarget(ccs, "controlClosure", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(ccs, "controlClosure", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), (SNode)ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", false, 0, intentionProvider);
         }
       }
       List<SNode> params = SLinkOperations.getTargets(ccs, "actualParameter", true);
@@ -71,7 +71,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
           {
             SNode _nodeToCheck_1029348928467 = ccs;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode)pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", false, 0, intentionProvider);
           }
         }
       }

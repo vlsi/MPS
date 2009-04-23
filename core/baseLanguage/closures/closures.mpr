@@ -6,17 +6,22 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/solutions/closures.test/closures.test.msd" />
-      <solutionPath path="${project}/solutions/closures.sandbox/closures.sandbox.msd" />
       <solutionPath path="${project}/runtime/closures.runtime.msd" />
+      <solutionPath path="${project}/solutions/closures.sandbox/closures.sandbox.msd" />
+      <solutionPath path="${project}/solutions/closures.test/closures.test.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/closures.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="closures.test" moduleRef="7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)" />
       <genConfModule name="closures" moduleRef="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+      <genConfModule name="closures.test" moduleRef="7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)" />
+      <genConfModels name="runtime">
+        <models>
+          <model modelRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
+        </models>
+      </genConfModels>
     </genConfs>
   </component>
   <component name="ProjectDetails">

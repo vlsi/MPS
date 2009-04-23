@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ControlMethodUtil {
@@ -19,7 +20,7 @@ public class ControlMethodUtil {
   public static ControlMethodUtil.Info analyze(SNode smd) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(smd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       List<SNode> params = SLinkOperations.getTargets(smd, "parameter", true);
-      //        0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures
+      //  0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures
       ControlMethodUtil.Info inf = new ControlMethodUtil.Info();
       int functionParams = 0;
       int initClosures = 0;
@@ -39,7 +40,7 @@ public class ControlMethodUtil {
             controlClosures++ ;
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
-              closureParamTypes = ListSequence.<SNode>fromArray();
+              closureParamTypes = ListSequence.fromList(new ArrayList<SNode>());
               for(SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
               }
@@ -120,16 +121,16 @@ public class ControlMethodUtil {
 
     public List<SNode> ensureNotNull(List<SNode> list) {
       if (list == null) {
-        return ListSequence.<SNode>fromArray();
+        return ListSequence.fromList(new ArrayList<SNode>());
       }
       return list;
     }
 
     private void init() {
       if (!(this.initialized)) {
-        this.controlClosures = ListSequence.<SNode>fromArray();
-        this.initClosures = ListSequence.<SNode>fromArray();
-        this.functionParams = ListSequence.<SNode>fromArray();
+        this.controlClosures = ListSequence.fromList(new ArrayList<SNode>());
+        this.initClosures = ListSequence.fromList(new ArrayList<SNode>());
+        this.functionParams = ListSequence.fromList(new ArrayList<SNode>());
         this.initialized = true;
       }
     }

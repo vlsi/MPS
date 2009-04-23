@@ -20022,7 +20022,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232136781961">
-                    <property name="value" value="_return_terminate" />
+                    <property name="value" value="_UnrestrictedFunctionTypes._return_terminate" />
                   </node>
                 </node>
               </node>
@@ -20337,7 +20337,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232136696418">
-                    <property name="value" value="_return_terminate" />
+                    <property name="value" value="_UnrestrictedFunctionTypes._return_terminate" />
                   </node>
                 </node>
               </node>
@@ -21415,7 +21415,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232136032621">
-                    <property name="value" value="_return_terminate" />
+                    <property name="value" value="_UnrestrictedFunctionTypes._return_terminate" />
                   </node>
                 </node>
               </node>

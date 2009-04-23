@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.closures.structure;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

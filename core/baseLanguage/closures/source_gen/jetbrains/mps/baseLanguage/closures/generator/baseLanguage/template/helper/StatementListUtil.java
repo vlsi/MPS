@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementListUtil {
@@ -14,11 +15,11 @@ public class StatementListUtil {
     if (SLinkOperations.getCount(slist, "statement") > 0) {
       return selectStatementsUntilControlStatement(slist, ListSequence.fromList(((List<SNode>)SLinkOperations.getTargets(slist, "statement", true))).getElement(0));
     }
-    return ListSequence.<SNode>fromArray();
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist, SNode start) {
-    List<SNode> res = ListSequence.<SNode>fromArray();
+    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     boolean foundStart = false;
     for(SNode stmt : ((List<SNode>)SLinkOperations.getTargets(slist, "statement", true))) {
       if (stmt == start) {

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -15,11 +16,10 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -37,7 +37,7 @@ public class ClosureLiteralUtil {
   }
 
   public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
-    List<SNode> vrefs = ListSequence.<SNode>fromArray();
+    List<SNode> vrefs = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode desc : SNodeOperations.getDescendants(cl, null, false)) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
@@ -146,7 +146,7 @@ public class ClosureLiteralUtil {
   }
 
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
-    Set<String> visited = SetSequence.<String>fromArray();
+    Set<String> visited = SetSequence.fromSet(new HashSet<String>());
     List<SNode> queue = ListOperations.<SNode>createList();
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {

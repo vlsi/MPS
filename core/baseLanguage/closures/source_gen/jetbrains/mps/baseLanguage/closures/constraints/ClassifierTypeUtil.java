@@ -11,8 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.closures.constraints._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -170,7 +170,7 @@ public class ClassifierTypeUtil {
   }
 
   public static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
-    List<SNode> visitedClassifiers = ListSequence.<SNode>fromArray();
+    List<SNode> visitedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> concretes = ListSequence.fromList(new LinkedList<SNode>());
     ListSequence.fromList(concretes).addElement(concrete);
     SNode resType = type;
