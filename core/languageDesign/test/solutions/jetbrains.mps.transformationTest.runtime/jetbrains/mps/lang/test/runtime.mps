@@ -3112,10 +3112,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240477225459">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240477228889">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240477225460">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240477225461">
+                <link role="fieldDeclaration" targetNodeId="1229266543141" resolveInfo="editor" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1240477225462" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240477230751">
+              <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.dispose():void" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1229266543141">
-      <property name="name" value="editor" />
+      <property name="name" value="myEditor" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229269878447" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229266548099">
         <link role="classifier" targetNodeId="13.~IEditor" resolveInfo="IEditor" />

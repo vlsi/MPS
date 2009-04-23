@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,7 +24,7 @@ public class BaseTestBody {
 
   public BaseTestBody() {
     this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    this.myCopyes = ListSequence.<SNode>fromArray();
+    this.myCopyes = ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public void addNodeById(final String id) throws Exception {

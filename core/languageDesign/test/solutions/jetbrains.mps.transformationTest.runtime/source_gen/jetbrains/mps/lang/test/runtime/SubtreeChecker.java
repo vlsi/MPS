@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
@@ -35,7 +36,7 @@ public class SubtreeChecker {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = checker.getTypeOf(child);
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
-            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(type1), ListSequence.<SNode>fromArray(type2)));
+            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
             Assert.assertTrue(checker.getTypeErrorDontCheck(child) != null);
@@ -59,7 +60,7 @@ public class SubtreeChecker {
     TypeChecker checker = TypeChecker.getInstance();
     checker.checkIfNotChecked(nodeToCheck);
     SNode type1 = checker.getTypeOf(nodeToCheck);
-    Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(type), ListSequence.<SNode>fromArray(type1)));
+    Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type), ListSequence.fromListAndArray(new ArrayList<SNode>(), type1)));
   }
 
   public static void checkDataFlow(SNode node) {
