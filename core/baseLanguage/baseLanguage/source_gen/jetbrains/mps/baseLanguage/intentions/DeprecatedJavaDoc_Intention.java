@@ -7,11 +7,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
+  public DeprecatedJavaDoc_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -42,6 +52,12 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 
 }

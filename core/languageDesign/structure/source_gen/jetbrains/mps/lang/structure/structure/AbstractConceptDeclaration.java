@@ -4,16 +4,9 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.IStructureDeprecatable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import java.util.List;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptProperty;
-import jetbrains.mps.lang.structure.structure.ConceptLink;
-import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

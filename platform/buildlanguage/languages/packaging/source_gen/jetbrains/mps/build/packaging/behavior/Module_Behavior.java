@@ -8,11 +8,8 @@ import java.io.File;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.build.packaging.behavior.ModuleUtil;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -22,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -142,7 +140,7 @@ public class Module_Behavior {
   }
 
   public static List<String> getAllAvailableModules_1222444513017() {
-    List<String> list = ListSequence.<String>fromArray();
+    List<String> list = ListSequence.fromList(new ArrayList<String>());
     for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language.getModuleReference().getModuleFqName());
     }
@@ -156,7 +154,7 @@ public class Module_Behavior {
   }
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
-    List<IModule> list = ListSequence.<IModule>fromArray();
+    List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
     for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language);
     }

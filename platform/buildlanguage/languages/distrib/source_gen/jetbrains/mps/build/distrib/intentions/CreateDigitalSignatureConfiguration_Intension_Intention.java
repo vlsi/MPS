@@ -7,11 +7,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class CreateDigitalSignatureConfiguration_Intension_Intention extends BaseIntention {
 
+  public CreateDigitalSignatureConfiguration_Intension_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.build.distrib.structure.WindowsConfig";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -37,6 +47,12 @@ public class CreateDigitalSignatureConfiguration_Intension_Intention extends Bas
 
   public String getLocationString() {
     return "jetbrains.mps.build.distrib.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 
 }

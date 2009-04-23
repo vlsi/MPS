@@ -4,14 +4,13 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.io.File;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -61,7 +60,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    return ListSequence.<SNode>fromArray();
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static String call_getShortName_1213877333869(SNode thisNode, String name) {

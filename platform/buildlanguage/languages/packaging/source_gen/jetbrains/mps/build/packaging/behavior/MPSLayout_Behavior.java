@@ -11,18 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.io.File;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
-import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import java.util.Arrays;
 import java.util.List;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.LinkedList;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.build.packaging.behavior.ICondition_Behavior;
 
 public class MPSLayout_Behavior {
 
@@ -71,7 +67,7 @@ public class MPSLayout_Behavior {
   }
 
   public static List<SNode> call_getTopologicalSortedComponents_1213877228271(SNode thisNode) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
       MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(component, result);
     }
@@ -79,7 +75,7 @@ public class MPSLayout_Behavior {
   }
 
   public static List<SNode> call_getTopologicalSortedComponents_1213877228296(SNode thisNode, SNode config) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> all = MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228271(thisNode);
     for(SNode component : ListSequence.fromList(all)) {
       if (AbstractProjectComponent_Behavior.call_included_1213877333807(component, config)) {
@@ -91,7 +87,7 @@ public class MPSLayout_Behavior {
   }
 
   public static List<SNode> call_getModules_1213877228340(SNode thisNode) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));
@@ -104,7 +100,7 @@ public class MPSLayout_Behavior {
   }
 
   public static List<SNode> call_getModules_1213877228389(SNode thisNode, SNode component) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(component, "entry", true))) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));

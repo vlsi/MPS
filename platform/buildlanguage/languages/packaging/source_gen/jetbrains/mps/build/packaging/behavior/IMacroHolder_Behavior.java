@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.util.PathManager;
@@ -30,7 +30,7 @@ public class IMacroHolder_Behavior {
   }
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    List<String> names = ListSequence.<String>fromArray(MPSLayout_Behavior.getMPSHomeName_1226508944077());
+    List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), MPSLayout_Behavior.getMPSHomeName_1226508944077());
     if (addBasedir) {
       ListSequence.fromList(names).addElement(MPSLayout_Behavior.getBasedirName_1226509010730());
     }

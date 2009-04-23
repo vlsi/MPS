@@ -6,12 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Antcall_Behavior {
 
@@ -42,7 +42,7 @@ public class Antcall_Behavior {
   }
 
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    return ListSequence.<SNode>fromArray(SLinkOperations.getTarget(thisNode, "delete", true));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "delete", true));
   }
 
 }

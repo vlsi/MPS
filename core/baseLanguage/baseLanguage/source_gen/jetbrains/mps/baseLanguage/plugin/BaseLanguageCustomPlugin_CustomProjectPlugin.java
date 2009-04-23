@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.plugin.ToDoHighlighter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
 

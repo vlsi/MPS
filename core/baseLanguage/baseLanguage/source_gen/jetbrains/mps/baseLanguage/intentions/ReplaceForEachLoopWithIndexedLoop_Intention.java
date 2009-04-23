@@ -10,15 +10,24 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.intentions._Quotations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
 
+  public ReplaceForEachLoopWithIndexedLoop_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -42,7 +51,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    //     TODO: expression as iterable - make a variable
+    // TODO: expression as iterable - make a variable
     final SNode iterable = SLinkOperations.getTarget(node, "iterable", true);
     // 
     SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForStatement", null);
@@ -94,6 +103,12 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 
 }

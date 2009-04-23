@@ -14,7 +14,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet;
 
 public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
 

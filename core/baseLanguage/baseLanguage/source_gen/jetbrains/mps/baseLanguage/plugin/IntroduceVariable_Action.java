@@ -11,12 +11,10 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.plugin.IntroduceLocalVariableDialog;
 import javax.swing.JOptionPane;
 
 public class IntroduceVariable_Action extends GeneratedAction {

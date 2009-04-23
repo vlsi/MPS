@@ -5,7 +5,6 @@ package jetbrains.mps.build.dependency.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.build.dependency.structure.PathHolder;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertySupport {

@@ -5,7 +5,6 @@ package jetbrains.mps.build.distrib.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
 
 public class WindowsConfig_Behavior {
 

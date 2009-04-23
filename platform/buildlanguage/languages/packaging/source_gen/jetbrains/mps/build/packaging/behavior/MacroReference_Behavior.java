@@ -4,7 +4,6 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 
 public class MacroReference_Behavior {
 

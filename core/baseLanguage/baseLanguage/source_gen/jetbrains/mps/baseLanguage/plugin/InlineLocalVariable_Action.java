@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.plugin.InlineVariableRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class InlineLocalVariable_Action extends GeneratedAction {

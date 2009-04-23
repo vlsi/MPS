@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
-import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Path_Behavior {

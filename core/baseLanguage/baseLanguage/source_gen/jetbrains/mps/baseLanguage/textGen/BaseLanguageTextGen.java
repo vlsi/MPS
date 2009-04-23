@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
+import java.util.HashSet;
 import jetbrains.mps.generator.JavaNameUtil;
 
 public abstract class BaseLanguageTextGen {
@@ -114,7 +115,7 @@ public abstract class BaseLanguageTextGen {
   protected static Set<String> getImportedNames(final SNodeTextGen textGen) {
     Set<String> importedNames = (Set<String>)textGen.getBuffer().getUserObject("IMPORT");
     if (importedNames == null) {
-      importedNames = SetSequence.<String>fromArray();
+      importedNames = SetSequence.fromSet(new HashSet<String>());
       textGen.getBuffer().putUserObject("IMPORT", importedNames);
     }
     return importedNames;

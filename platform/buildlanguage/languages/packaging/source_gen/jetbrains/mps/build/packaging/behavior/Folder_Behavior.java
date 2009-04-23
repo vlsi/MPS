@@ -5,7 +5,6 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 
 public class Folder_Behavior {
 

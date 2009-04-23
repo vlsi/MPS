@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 
@@ -29,7 +30,7 @@ public class ExternalVariableReference_variable_ReferentConstraint extends BaseN
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode ancestor = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", true, false);
-    List<SNode> availableVars = ListSequence.<SNode>fromArray();
+    List<SNode> availableVars = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "builtInVariable", true)));
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));
     return availableVars;

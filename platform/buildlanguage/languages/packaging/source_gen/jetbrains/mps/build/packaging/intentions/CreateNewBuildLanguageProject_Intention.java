@@ -9,14 +9,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.intentions.Intention;
 
 public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
 
+  public CreateNewBuildLanguageProject_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.build.packaging.structure.Antcall";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -37,7 +46,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode project = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.Project", null);
-    List<String> externalProps = ListSequence.<String>fromArray("input.dir", "output.dir", "deploy.dir");
+    List<String> externalProps = ListSequence.fromListAndArray(new ArrayList<String>(), "input.dir", "output.dir", "deploy.dir");
     for(String prop : ListSequence.fromList(externalProps)) {
       SNode property = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
       SPropertyOperations.set(property, "name", prop);
@@ -54,6 +63,12 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.build.packaging.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
+    return list;
   }
 
 }

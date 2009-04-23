@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
+import java.util.ArrayList;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
@@ -41,7 +42,7 @@ public class ModuleUtil {
   }
 
   public static List<String> retrieveClassPath(IClassPathItem cpitem) {
-    List<String> result = ListSequence.<String>fromArray();
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
     if (cpitem instanceof CompositeClassPathItem) {
       List<IClassPathItem> flattenedClassPath = cpitem.flatten();
       for(IClassPathItem item : ListSequence.fromList(flattenedClassPath)) {

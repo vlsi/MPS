@@ -5,16 +5,6 @@ package jetbrains.mps.build.packaging.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.build.packaging.constraints.Folder_name_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.Module_name_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.Echo_name_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.File_name_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.Configuration_fullName_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.MacroReference_path_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_name_PropertyConstraint;
-import jetbrains.mps.build.packaging.constraints.Antcall_targetDeclaration_ReferentConstraint;
-import jetbrains.mps.build.packaging.constraints.Antcall_project_ReferentConstraint;
-import jetbrains.mps.build.packaging.constraints.Variable_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

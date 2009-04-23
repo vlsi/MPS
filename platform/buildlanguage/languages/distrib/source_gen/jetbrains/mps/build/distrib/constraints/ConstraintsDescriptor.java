@@ -5,8 +5,6 @@ package jetbrains.mps.build.distrib.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.build.distrib.constraints.DistribConfiguration_projectFolder_ReferentConstraint;
-import jetbrains.mps.build.distrib.constraints.ExternalVariableReference_variable_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
