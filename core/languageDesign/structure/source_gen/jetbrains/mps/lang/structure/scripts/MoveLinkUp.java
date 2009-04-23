@@ -116,9 +116,13 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     {
       Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
       Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-      result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
+      if (sourceLanguage != null) {
+        result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
+      }
       Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
-      result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
+      if (targetLanguage != null) {
+        result.putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
+      }
       return result;
     }
   }
