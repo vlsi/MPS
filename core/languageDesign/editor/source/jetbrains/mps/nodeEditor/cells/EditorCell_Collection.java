@@ -215,6 +215,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (!isSelectable()) return;
     EditorContext context = getEditorContext();
     EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+    assert selection != null;
     int caretX = selection.getCaretX();
     context.getNodeEditorComponent().pushSelection(selection);
     EditorCell target = this;
@@ -509,11 +510,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void paintSelection(Graphics g, Color c) {
     List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
 
-    BufferedImage image = new BufferedImage(getWidth() + 2, getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
+    Rectangle clip = g.getClipBounds();
+    Rectangle bound = getBounds();
+
+    Rectangle intersection = clip.intersection(bound);
+
+    BufferedImage image = new BufferedImage(intersection.width + 2, intersection.height + 2, BufferedImage.TYPE_INT_ARGB);
     Graphics gr = image.getGraphics();
 
-    int x0 = getX();
-    int y0 = getY();
+    int x0 = intersection.x;
+    int y0 = intersection.y;
 
     gr.setColor(c);
     for (Rectangle part : selection) {
