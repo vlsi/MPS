@@ -486,20 +486,6 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877273519">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877273520">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877273521" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877273522">
-                <link role="property" targetNodeId="1.1136923970224" resolveInfo="keycode" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877273523">
-              <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877273524">
-                <property name="value" value="VK_" />
-              </node>
-            </node>
-          </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1213877273525">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877273526">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877273527">
@@ -513,6 +499,31 @@
                   <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877273532">
                     <link role="variableDeclaration" targetNodeId="1213877273506" resolveInfo="keyName" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240476332760">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240476331068">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240476329094">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240476328687" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240476329895">
+                  <link role="property" targetNodeId="1.1136923970224" resolveInfo="keycode" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240476332306" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240476333325">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240476333326">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240476333327" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240476333328">
+                  <link role="property" targetNodeId="1.1136923970224" resolveInfo="keycode" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240476333329">
+                <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240476333330">
+                  <property name="value" value="VK_" />
                 </node>
               </node>
             </node>

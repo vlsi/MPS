@@ -18,7 +18,7 @@ public class CellKeyMapKeystroke_Behavior {
     }
     result = modifiers.replaceAll("\\+", " ");
     String keyName;
-    if (SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
+    if (SPropertyOperations.getString(thisNode, "keycode") != null && SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
       keyName = SPropertyOperations.getString(thisNode, "keycode").substring(3);
     } else
     {
