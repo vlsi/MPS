@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
-import jetbrains.mps.lang.typesystem.structure.MatchStatementItem;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;

@@ -4,12 +4,9 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.plugin.structure.ActionGroupMember;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.plugin.structure.GroupContents;
 import java.util.Iterator;
-import jetbrains.mps.lang.plugin.structure.ModificationStatement;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

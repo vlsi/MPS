@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
-import jetbrains.mps.lang.plugin.structure.ActionParameter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
 import jetbrains.mps.smodel.SModel;

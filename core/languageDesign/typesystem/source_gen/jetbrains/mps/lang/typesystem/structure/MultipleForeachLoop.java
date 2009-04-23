@@ -5,7 +5,6 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;

@@ -4,8 +4,6 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.lang.typesystem.structure.HelginsIntention;
-import jetbrains.mps.lang.typesystem.structure.MessageTarget;
 
 public interface MessageStatement extends INodeAdapter {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MessageStatement";

@@ -12,8 +12,10 @@ public class ParameterReference_Behavior {
   }
 
   public static boolean call_isParameterOfThisMethod_1240394425603(SNode thisNode) {
-    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "variableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      return true;
+    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false)) {
+      if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Closureoid", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closureoid", false, false)) {
+        return true;
+      }
     }
     return false;
   }

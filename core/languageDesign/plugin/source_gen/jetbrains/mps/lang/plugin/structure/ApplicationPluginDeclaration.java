@@ -5,8 +5,6 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock;
-import jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration;
 import java.util.List;
