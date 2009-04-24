@@ -24,7 +24,7 @@ public class ConstructorDeclaration_nestedName_PropertyConstraint implements IMo
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName");
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "nestedName");
   }
 
 }
