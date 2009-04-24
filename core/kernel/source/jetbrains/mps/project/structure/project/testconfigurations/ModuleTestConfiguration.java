@@ -80,7 +80,8 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model)) {
+        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model)) ||
+          ModelGenerationStatusManager.isDoNotGenerate(model)) {
           it.remove();
         }
       }
