@@ -437,7 +437,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196635192" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888419880">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888419882">
-                <link role="baseMethodDeclaration" targetNodeId="3.~String.&lt;init&gt;()" resolveInfo="String" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~String.&lt;init&gt;(java.lang.String)" resolveInfo="String" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184148604084">
                   <property name="value" value="&lt;root&gt;&lt;a a1=&quot;a1&quot;&gt;&lt;b b1=&quot;b1&quot; b2=&quot;b2&quot;&gt;&lt;c c1=&quot;c1&quot;/&gt;&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;" />
                 </node>
@@ -485,7 +485,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628993526">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~DocumentBuilder.parse(java.lang.String):org.w3c.dom.Document" resolveInfo="parse" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~DocumentBuilder.parse(java.io.InputStream):org.w3c.dom.Document" resolveInfo="parse" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184148621884">
                       <link role="variableDeclaration" targetNodeId="1184148621873" resolveInfo="is" />
                     </node>
@@ -1456,7 +1456,6 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1193063049629">
                 <link role="concept" targetNodeId="12.1138411891628" resolveInfo="SNodeOperation" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1193063049630" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193063049631">
@@ -1471,24 +1470,6 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1193063049633">
                 <node role="linkTarget" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1193063049634" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193063049638">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193063049639">
-              <property name="name" value="card" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193063049640">
-                <link role="classifier" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193063049641">
-                <link role="baseMethodDeclaration" targetNodeId="17.~Cardinality.parseValue(java.lang.String):jetbrains.mps.lang.structure.structure.Cardinality" resolveInfo="parseValue" />
-                <link role="classConcept" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227905013">
-                  <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1193063049644" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1193063049643">
-                    <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -1527,23 +1508,13 @@
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1193063049662">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193063049663">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193063049664">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._1" resolveInfo="_1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193063049665">
-                  <link role="variableDeclaration" targetNodeId="1193063049639" resolveInfo="card" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193063049666">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193063049667">
-                  <link role="variableDeclaration" targetNodeId="1193063049639" resolveInfo="card" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193063049668">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._0__1" resolveInfo="_0__1" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240330128481">
+              <link role="baseMethodDeclaration" targetNodeId="1240329969386" resolveInfo="singleCardinality" />
+              <link role="classConcept" targetNodeId="1240329957161" resolveInfo="SnodeGenUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330135874">
+                <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1240330135875" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240330135876">
+                  <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
                 </node>
               </node>
             </node>
@@ -1712,42 +1683,14 @@
       </node>
       <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1193058874206">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193058874207">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193060790046">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193060790047">
-              <property name="name" value="card" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193060790048">
-                <link role="classifier" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193060797697">
-                <link role="baseMethodDeclaration" targetNodeId="17.~Cardinality.parseValue(java.lang.String):jetbrains.mps.lang.structure.structure.Cardinality" resolveInfo="parseValue" />
-                <link role="classConcept" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227886862">
-                  <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1193060800336" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1193061691542">
-                    <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193060822252">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1193060833093">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193060850131">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193060855868">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._1" resolveInfo="_1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060836999">
-                  <link role="variableDeclaration" targetNodeId="1193060790047" resolveInfo="card" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193060825028">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060822253">
-                  <link role="variableDeclaration" targetNodeId="1193060790047" resolveInfo="card" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193060831481">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._0__1" resolveInfo="_0__1" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240330154189">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240330154190">
+              <link role="classConcept" targetNodeId="1240329957161" resolveInfo="SnodeGenUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1240329969386" resolveInfo="singleCardinality" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330154191">
+                <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1240330154192" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240330154193">
+                  <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
                 </node>
               </node>
             </node>
@@ -1780,7 +1723,6 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1193062933677">
                 <link role="concept" targetNodeId="12.1138411891628" resolveInfo="SNodeOperation" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1193062941308" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193047912070">
@@ -1795,24 +1737,6 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1193047912072">
                 <node role="linkTarget" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1193047912073" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193062874549">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193062874550">
-              <property name="name" value="card" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193062874551">
-                <link role="classifier" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193062874552">
-                <link role="baseMethodDeclaration" targetNodeId="17.~Cardinality.parseValue(java.lang.String):jetbrains.mps.lang.structure.structure.Cardinality" resolveInfo="parseValue" />
-                <link role="classConcept" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920640">
-                  <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1193062874555" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1193062874554">
-                    <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -1851,26 +1775,6 @@
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1193062891022">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193062891023">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193062891024">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._1" resolveInfo="_1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193062891025">
-                  <link role="variableDeclaration" targetNodeId="1193062874550" resolveInfo="card" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193062891026">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193062891027">
-                  <link role="variableDeclaration" targetNodeId="1193062874550" resolveInfo="card" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193062891028">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._0__1" resolveInfo="_0__1" />
-                </node>
-              </node>
-            </node>
             <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1193062897283">
               <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193062897284">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193062993616">
@@ -1904,6 +1808,16 @@
                       <node role="linkTarget" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1193062993625" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240330179121">
+              <link role="classConcept" targetNodeId="1240329957161" resolveInfo="SnodeGenUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1240329969386" resolveInfo="singleCardinality" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330179122">
+                <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1240330179123" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240330179124">
+                  <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
                 </node>
               </node>
             </node>
@@ -2049,42 +1963,14 @@
       </node>
       <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1193059035159">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193059035160">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193060870604">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193060870605">
-              <property name="name" value="card" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193060870606">
-                <link role="classifier" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193060870607">
-                <link role="baseMethodDeclaration" targetNodeId="17.~Cardinality.parseValue(java.lang.String):jetbrains.mps.lang.structure.structure.Cardinality" resolveInfo="parseValue" />
-                <link role="classConcept" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957179">
-                  <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1193060870610" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1193061695227">
-                    <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193060870611">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1193060870612">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193060870613">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193060870614">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._1" resolveInfo="_1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060870615">
-                  <link role="variableDeclaration" targetNodeId="1193060870605" resolveInfo="card" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1193060870616">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060870617">
-                  <link role="variableDeclaration" targetNodeId="1193060870605" resolveInfo="card" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193060870618">
-                  <link role="enumClass" targetNodeId="17.~Cardinality" resolveInfo="Cardinality" />
-                  <link role="enumConstantDeclaration" targetNodeId="17.~Cardinality._0__1" resolveInfo="_0__1" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240330173351">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240330173352">
+              <link role="classConcept" targetNodeId="1240329957161" resolveInfo="SnodeGenUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1240329969386" resolveInfo="singleCardinality" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330173353">
+                <node role="operand" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1240330173354" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240330173355">
+                  <link role="property" targetNodeId="6.1071599893252" resolveInfo="sourceCardinality" />
                 </node>
               </node>
             </node>
@@ -2141,6 +2027,82 @@
     <node role="treePathType" type="jetbrains.mps.ypath.structure.TreePathType" id="1191934136658">
       <node role="nodeType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1191934176137" />
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240329957161">
+    <property name="name" value="SnodeGenUtil" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1240329969386">
+      <property name="name" value="singleCardinality" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240329972750" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240329969388" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240329969389">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240330043347">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240330043348">
+            <property name="name" value="cardEnum" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240330043349">
+              <link role="enum" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240330043350">
+              <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240330043367">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240330043368">
+            <property name="name" value="card" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240330043369">
+              <link role="enum" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330043370">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330043371">
+                <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240330043372">
+                <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240330053221">
+                  <link role="variableDeclaration" targetNodeId="1240330009626" resolveInfo="cardinality" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240330084130">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240330099265">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240330099266">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099267">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099268">
+                  <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099269">
+                  <link role="member" targetNodeId="6.1084197782724" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099270">
+                <link role="variableDeclaration" targetNodeId="1240330043368" resolveInfo="card" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240330099271">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099272">
+                <link role="variableDeclaration" targetNodeId="1240330043368" resolveInfo="card" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099273">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099274">
+                  <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099275">
+                  <link role="member" targetNodeId="6.1084197782723" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240330009626">
+        <property name="name" value="cardinality" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240573073910">
+          <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240329957162" />
   </node>
 </model>
 
