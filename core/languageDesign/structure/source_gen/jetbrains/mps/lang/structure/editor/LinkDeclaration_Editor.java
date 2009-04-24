@@ -35,7 +35,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import jetbrains.mps.util.NameUtil;
 
@@ -600,14 +599,15 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
+      SNode cardEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1084197782722");
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
-        for(Cardinality c : Cardinality.getConstants()) {
-          ListSequence.fromList(result).addElement(c.getValueAsString());
+        for(SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(cardEnum))) {
+          ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
         }
       } else
       {
-        ListSequence.fromList(result).addElement(Cardinality._0__1.getValueAsString());
-        ListSequence.fromList(result).addElement(Cardinality._1.getValueAsString());
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(cardEnum, "0..1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(cardEnum, "1")));
       }
       return result;
     }
