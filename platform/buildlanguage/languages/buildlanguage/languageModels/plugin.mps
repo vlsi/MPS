@@ -133,20 +133,22 @@
                     <link role="classifier" targetNodeId="22.~String" resolveInfo="String" />
                   </node>
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236105891881">
-                  <link role="classConcept" targetNodeId="30.~Arrays" resolveInfo="Arrays" />
-                  <link role="baseMethodDeclaration" targetNodeId="30.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236105891882">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1236105891883">
-                      <link role="variableDeclaration" targetNodeId="1229179508539" resolveInfo="commandLine" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236105891884">
-                      <link role="baseMethodDeclaration" targetNodeId="22.~String.split(java.lang.String):java.lang.String[]" resolveInfo="split" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236105891885">
-                        <property name="value" value="\\s+" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240561232494">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240561232495">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240561232496">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240561232497">
+                        <link role="variableDeclaration" targetNodeId="1229179508539" resolveInfo="commandLine" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240561232498">
+                        <link role="baseMethodDeclaration" targetNodeId="22.~String.split(java.lang.String):java.lang.String[]" resolveInfo="split" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240561232499">
+                          <property name="value" value="\\s+" />
+                        </node>
                       </node>
                     </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="1240561232500" />
                   </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1240561232501" />
                 </node>
               </node>
             </node>

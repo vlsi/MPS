@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class BracesTest_Test extends BaseTransformationTest {
 
@@ -20,7 +21,7 @@ public class BracesTest_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1233333313960", "1233333372707");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" RIGHT", " RIGHT", " RIGHT"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT", " RIGHT", " RIGHT"));
       this.finishTest();
     }
 

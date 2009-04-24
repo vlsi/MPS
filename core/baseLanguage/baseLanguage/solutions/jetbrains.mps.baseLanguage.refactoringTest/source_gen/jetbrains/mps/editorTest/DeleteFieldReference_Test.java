@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class DeleteFieldReference_Test extends BaseTransformationTest {
 
@@ -20,7 +21,7 @@ public class DeleteFieldReference_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1232034672814", "1232034680617");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DELETE"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       this.finishTest();
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
-import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.plugin.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class BuildScriptRunner extends BaseRunner {
     BuildScriptRunner.addBasicParameters(parameters, file);
     BuildScriptRunner.addMacroValues(parameters);
     if (commandLine != null && StringUtils.isNotEmpty(commandLine)) {
-      List<String> commandLineList = Arrays.asList(commandLine.split("\\s+"));
+      List<String> commandLineList = Sequence.fromIterable(Sequence.fromArray(commandLine.split("\\s+"))).toListSequence();
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(commandLineList));
     }
     ProcessBuilder builder = new ProcessBuilder(ListSequence.fromListWithValues(new ArrayList<String>(), parameters));

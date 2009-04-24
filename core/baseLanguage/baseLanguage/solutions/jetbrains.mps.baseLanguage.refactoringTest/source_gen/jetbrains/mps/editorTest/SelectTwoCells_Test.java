@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class SelectTwoCells_Test extends BaseTransformationTest {
 
@@ -20,7 +21,7 @@ public class SelectTwoCells_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230119716735", "1230119724125");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray("shift RIGHT", "shift RIGHT"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "shift RIGHT", "shift RIGHT"));
       this.finishTest();
     }
 

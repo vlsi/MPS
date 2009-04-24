@@ -6,13 +6,11 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
-public class SidedeleteAtTheEnd_Test extends BaseTransformationTest {
+public class LeftTransformOfDotOperation_Test extends BaseTransformationTest {
 
   @Test()
-  public void test_SidedeleteAtTheEnd() throws Throwable {
+  public void test_LeftTransformOfDotOperation() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
@@ -20,8 +18,8 @@ public class SidedeleteAtTheEnd_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1232624761393", "1232624785391");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
+      IEditor editor = this.initEditor("1240561528709", "1240561563431");
+      BaseEditorTestBody.typeString(editor, "&&");
       this.finishTest();
     }
 

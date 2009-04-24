@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
 
@@ -20,8 +21,8 @@ public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1232980665819", "1232980720898");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray("ctrl UP", "ctrl UP", "ctrl UP"));
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" END", " LEFT"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP", "ctrl UP"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " END", " LEFT"));
       this.finishTest();
     }
 

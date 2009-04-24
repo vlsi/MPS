@@ -2509,5 +2509,83 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1240561497307">
+    <property name="package" value="bugTest" />
+    <property name="name" value="LeftTransformOfDotOperation" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240561528709">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1240561532552">
+        <property name="name" value="a" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1240561532553" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240561547685" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240561528710" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1240561528711">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240561528712" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240561528713" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240561528714">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240561552098">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240561552278">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240561555148">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240561552099">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240561552100">
+                  <link role="fieldDeclaration" targetNodeId="1240561532552" resolveInfo="a" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1240561552101">
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1240561576010">
+                    <property name="caretPosition" value="0" />
+                    <property name="cellId" value="Constant_6954_0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240561563431">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1240561563432">
+        <property name="name" value="a" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1240561563433" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240561563434" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240561563435" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1240561563436">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240561563437" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240561563438" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240561563439">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240561563440">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240561566639">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1240561566641">
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1240561571526">
+                  <property name="isLastPosition" value="true" />
+                  <property name="cellId" value="Custom_6116_0" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240561563441">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240561563442">
+                  <property name="value" value="0" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240561563443">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1240561563444">
+                    <link role="fieldDeclaration" targetNodeId="1240561563432" resolveInfo="a" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1240561563445" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240561585259">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1240562790266">
+        <property name="keys" value="&amp;&amp;" />
+      </node>
+    </node>
+  </node>
 </model>
 

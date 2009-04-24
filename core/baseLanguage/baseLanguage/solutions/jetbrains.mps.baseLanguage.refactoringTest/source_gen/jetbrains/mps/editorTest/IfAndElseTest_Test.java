@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class IfAndElseTest_Test extends BaseTransformationTest {
 
@@ -21,11 +22,11 @@ public class IfAndElseTest_Test extends BaseTransformationTest {
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635882", "1230058635887");
       BaseEditorTestBody.typeString(editor, "iftrue");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.typeString(editor, "else iffalse");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
-      BaseEditorTestBody.pressKeys(editor, ListSequence.<String>fromArray(" DOWN"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.typeString(editor, "else {");
       this.finishTest();
     }
