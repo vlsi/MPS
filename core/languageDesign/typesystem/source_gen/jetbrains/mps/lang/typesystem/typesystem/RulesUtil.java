@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.typesystem.typesystem._Quotations;
 
 public class RulesUtil {
   public static final Object MAY_BE_VARIABLE = new Object();

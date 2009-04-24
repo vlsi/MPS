@@ -2815,5 +2815,36 @@
       <link role="concept" targetNodeId="1.1240322303006" resolveInfo="ConceptClauseLinkInfo" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240580117889">
+    <property name="name" value="typeof_NormalTypeClause" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240580117890">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240580138294">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240580141610">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240580141611">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240580146160" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240580138297">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240580124502">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240580133398">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240580132491">
+                <link role="applicableNode" targetNodeId="1240580117891" resolveInfo="clause" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240580135574">
+                <link role="link" targetNodeId="1.1185788644032" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240580156193">
+          <link role="applicableNode" targetNodeId="1240580117891" resolveInfo="clause" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240580117891">
+      <property name="name" value="clause" />
+      <link role="concept" targetNodeId="1.1185788614172" resolveInfo="NormalTypeClause" />
+    </node>
+  </node>
 </model>
 
