@@ -42,6 +42,8 @@ public class ModuleNodeData extends BaseNodeData {
   public ModuleNodeData(PathItemRole role, IModule module, boolean isResult, boolean resultsSection) {
     super(role, getCaption(module), "", true, isResult, resultsSection);
     myModuleUID = module.getModuleUID();
+
+    startListening();
   }
 
   public ModuleNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -59,7 +61,7 @@ public class ModuleNodeData extends BaseNodeData {
     }
   }
 
-  public void startListening() {
+  private void startListening() {
     myRepositoryListener = new ModuleRepositoryAdapter() {
       public void moduleRemoved(IModule module) {
         if (module.getModuleUID().equals(myModuleUID)) {
@@ -69,10 +71,6 @@ public class ModuleNodeData extends BaseNodeData {
       }
     };
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-  }
-
-  public void stopListening(){
-    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
   }
 
   public Icon getIcon() {
@@ -97,6 +95,10 @@ public class ModuleNodeData extends BaseNodeData {
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
     myModuleUID = element.getAttributeValue(UID);
+
+    if (!isInvalid()) {
+      startListening();
+    }
   }
 
   public String getText(TextOptions options) {

@@ -150,10 +150,6 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   public abstract Object getIdObject();
 
-  public abstract void startListening();
-
-  public abstract void stopListening();
-
   //----LISTENERS STUFF----
 
   public void addChangeListener(IChangeListener listener) {

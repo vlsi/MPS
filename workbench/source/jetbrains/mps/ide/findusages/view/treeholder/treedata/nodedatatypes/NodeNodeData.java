@@ -56,13 +56,15 @@ public class NodeNodeData extends BaseNodeData {
       resultsSection
     );
     myNodePointer = new SNodePointer(node);
+
+    startListening();
   }
 
   public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public void startListening() {
+  private void startListening() {
     SNode node = myNodePointer.getNode();
     myModelListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
@@ -79,13 +81,7 @@ public class NodeNodeData extends BaseNodeData {
         }
       }
     };
-    myNodePointer.getModel().getSModel().addModelListener(myModelListener);
-  }
-
-  public void stopListening() {
-    if (myNodePointer.getModel() != null) {
-      myNodePointer.getModel().getSModel().removeModelListener(myModelListener);
-    }
+    node.getModel().addWeakSModelListener(myModelListener);
   }
 
   public SNode getNode() {
@@ -119,6 +115,10 @@ public class NodeNodeData extends BaseNodeData {
       node = ComponentsUtil.nodeFromElement((Element) children.get(0));
     }
     myNodePointer = new SNodePointer(node);
+
+    if (!isInvalid()) {
+      startListening();
+    }
   }
 
   public static String snodeRepresentation(final SNode node) {
