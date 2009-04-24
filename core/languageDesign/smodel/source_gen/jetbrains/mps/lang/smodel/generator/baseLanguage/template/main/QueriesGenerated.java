@@ -621,7 +621,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1240336990167(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return EnumerationMemberDeclaration_Behavior.call_getConstantName_1240164579791(SLinkOperations.getTarget(_context.getNode(), "member", false));
+    return EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(SLinkOperations.getTarget(_context.getNode(), "member", false));
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {

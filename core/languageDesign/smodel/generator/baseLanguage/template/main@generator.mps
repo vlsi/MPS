@@ -8291,8 +8291,8 @@
                           <link role="link" targetNodeId="6.1240147827713" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240336992127">
-                        <link role="baseMethodDeclaration" targetNodeId="52.1240164579791" resolveInfo="getConstantName" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240574380455">
+                        <link role="baseMethodDeclaration" targetNodeId="52.1240169660918" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
