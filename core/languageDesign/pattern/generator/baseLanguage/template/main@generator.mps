@@ -1146,23 +1146,24 @@
                                               </node>
                                             </node>
                                           </node>
-                                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232786" />
+                                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239568232786">
+                                            <link role="concept" targetNodeId="19.1196350785117" resolveInfo="ReferenceAntiquotation" />
+                                          </node>
                                         </node>
                                       </node>
                                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1190931377339">
-                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932943175">
-                                          <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216932943177" />
-                                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216932943178">
-                                            <link role="label" targetNodeId="1215479323036" resolveInfo="antiquotations" />
-                                            <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932768177">
-                                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190931377344">
-                                                <link role="variableDeclaration" targetNodeId="1190931377330" resolveInfo="refAntiq" />
-                                              </node>
-                                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216932768178">
-                                                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getChild(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getChild" />
-                                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1196441566658">
-                                                  <link role="classifier" targetNodeId="28.~AbstractAntiquotation" resolveInfo="AbstractAntiquotation" />
-                                                  <link role="variableDeclaration" targetNodeId="28.~AbstractAntiquotation.EXPRESSION" resolveInfo="EXPRESSION" />
+                                        <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240586400205">
+                                          <link role="concept" targetNodeId="4.1068390468200" resolveInfo="FieldDeclaration" />
+                                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932943175">
+                                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216932943177" />
+                                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216932943178">
+                                              <link role="label" targetNodeId="1215479323036" resolveInfo="antiquotations" />
+                                              <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586367215">
+                                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190931377344">
+                                                  <link role="variableDeclaration" targetNodeId="1190931377330" resolveInfo="refAntiq" />
+                                                </node>
+                                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240586369157">
+                                                  <link role="link" targetNodeId="19.1196350785111" />
                                                 </node>
                                               </node>
                                             </node>

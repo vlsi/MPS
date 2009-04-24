@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -149,7 +148,7 @@ public class QueriesGenerated {
     String refRole = _context.getNode().getProperty("referentRole");
     SNode mainNode = _context.getNode().getReferent("mainNode");
     SNode refAntiq = SLinkOperations.getTarget(mainNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", refRole), true);
-    return _context.getOutputNodeByInputNodeAndMappingLabel(refAntiq.getChild(AbstractAntiquotation.EXPRESSION), "antiquotations");
+    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(refAntiq, "expression", true), "antiquotations"), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1190931377499(final IOperationContext operationContext, final ReferenceMacroContext _context) {
