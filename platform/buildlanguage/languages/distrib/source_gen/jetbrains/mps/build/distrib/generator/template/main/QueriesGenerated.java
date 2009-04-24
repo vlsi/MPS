@@ -784,14 +784,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1240556843049(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_1240556844483(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
-  }
-
   public static boolean ifMacro_Condition_1240556882751(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
   }

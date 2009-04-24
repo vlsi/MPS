@@ -71,8 +71,6 @@
       <arg file="${application.icon}" />
       <arg file="${jre.unzipped.path}/jre" />
       <arg file="${homepage.icon}" />
-      <arg file="${installer.icon}" />
-      <arg file="${uninstaller.icon}" />
     </java>
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
     <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
