@@ -109,17 +109,19 @@ public class ModelChangesWatcher implements ApplicationComponent {
       for (final VFileEvent event : events) {
         String path = event.getPath();
         File file = new File(path);
-        FileUtil.processFilesRecursively(file, new Processor<File>() {
-          public boolean process(File file) {
-            String filePath = file.getAbsolutePath();
-            if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-              ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-            } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-              ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+        if (file.isDirectory() && file.exists()) {
+          FileUtil.processFilesRecursively(file, new Processor<File>() {
+            public boolean process(File file) {
+              String filePath = file.getAbsolutePath();
+              if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+                ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+              } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+                ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+              }
+              return true;
             }
-            return true;
-          }
-        });
+          });
+        }
         if (MPSFileTypesManager.instance().isModelFile(path)) {
           ModelFileProcessor.getInstance().process(event, reloadSession);
         } else if (MPSFileTypesManager.instance().isModuleFile(path)) {

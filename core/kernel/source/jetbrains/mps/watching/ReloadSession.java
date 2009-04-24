@@ -49,7 +49,6 @@ class ReloadSession {
 
   public void doReload() {
     if (hasAnythingToDo()) {
-      // TODO what to do with projects?
 
       ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
 
