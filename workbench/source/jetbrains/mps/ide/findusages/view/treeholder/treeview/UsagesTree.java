@@ -487,14 +487,14 @@ public abstract class UsagesTree extends MPSTree {
     });
   }
 
-  private boolean isResultNode(DataNode node) {
-    return node.getData().isResultNode();
+  private boolean isAliveResultNode(DataNode node) {
+    return node.getData().isResultNode() && !node.getData().isInvalid();
   }
 
   private UsagesTreeNode findFirstResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    if (includeRoot && isResultNode(root.getUserObject())) return root;
+    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
 
     UsagesTreeNode node = root;
     do {
@@ -503,7 +503,7 @@ public abstract class UsagesTree extends MPSTree {
       } else {
         node = (UsagesTreeNode) node.getChildAt(0);
       }
-    } while (node != null && !isResultNode(node.getUserObject()));
+    } while (node != null && !isAliveResultNode(node.getUserObject()));
 
     return node;
   }
@@ -511,14 +511,14 @@ public abstract class UsagesTree extends MPSTree {
   private UsagesTreeNode findLastResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    if (includeRoot && isResultNode(root.getUserObject())) return root;
+    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
 
     UsagesTreeNode node = root;
     while (node.getChildCount() != 0) {
       node = (UsagesTreeNode) node.getChildAt(node.getChildCount() - 1);
     }
 
-    assert (isResultNode(node.getUserObject()));
+    assert (isAliveResultNode(node.getUserObject()));
 
     return node;
   }
