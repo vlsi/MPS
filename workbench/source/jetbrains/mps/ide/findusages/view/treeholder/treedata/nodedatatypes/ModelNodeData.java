@@ -28,8 +28,6 @@ import org.jdom.Element;
 import javax.swing.Icon;
 
 public class ModelNodeData extends BaseNodeData {
-  private static Logger LOG = Logger.getLogger(ModelNodeData.class);
-
   private static final String MODEL = "model";
   private static final String UID = "uid";
 

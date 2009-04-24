@@ -31,8 +31,6 @@ import org.jdom.Element;
 import javax.swing.Icon;
 
 public class ModuleNodeData extends BaseNodeData {
-  private static Logger LOG = Logger.getLogger(ModuleNodeData.class);
-
   private static final String UID = "uid";
 
   private ModuleRepositoryAdapter myRepositoryListener = null;
@@ -70,7 +68,7 @@ public class ModuleNodeData extends BaseNodeData {
         }
       }
     };
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+    //todo MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
   }
 
   public Icon getIcon() {
