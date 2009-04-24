@@ -25,22 +25,17 @@ import org.jdom.Element;
 
 import javax.swing.Icon;
 
-public class CategoryNodeData extends BaseNodeData {
+public class CategoryNodeData extends BaseStaticNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
 
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
-    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
+    super(role, Icons.CLOSED_FOLDER,"<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
   }
 
   public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
-  }
-
-  public Icon getIcon() {
-    return Icons.CLOSED_FOLDER;
-    //return null;
   }
 
   public Object getIdObject() {

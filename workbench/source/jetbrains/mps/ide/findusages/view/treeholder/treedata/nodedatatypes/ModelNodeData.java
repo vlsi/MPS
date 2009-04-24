@@ -40,15 +40,13 @@ public class ModelNodeData extends BaseNodeData {
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
     super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
     myModelReference = model.getModelDescriptor().getSModelReference();
-
-    startListening();
   }
 
   public ModelNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  private void startListening() {
+  public void startListening() {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         if (modelDescriptor.getSModelReference().equals(myModelReference)) {
@@ -58,7 +56,11 @@ public class ModelNodeData extends BaseNodeData {
       }
     };
 
-    SModelRepository.getInstance().addWeakModelRepositoryListener(myModelRepositoryListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+  }
+
+  public void stopListening() {
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 
   public Icon getIcon() {
@@ -91,10 +93,6 @@ public class ModelNodeData extends BaseNodeData {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
-
-    if (!isInvalid()) {
-      startListening();
-    }
   }
 
   public String getText(TextOptions options) {
