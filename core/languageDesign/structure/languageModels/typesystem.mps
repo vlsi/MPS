@@ -394,7 +394,7 @@
             </node>
             <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1229447816770">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229447816771">
-                <property name="value" value="' is instance is deprecated concept" />
+                <property name="value" value="' is instance of deprecated concept" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1229447880944">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229447882275">
