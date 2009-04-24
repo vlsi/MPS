@@ -542,6 +542,40 @@
                 </node>
                 <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880057490" />
               </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240556326593">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240556326594">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240556326595">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240556326596">
+                  <property name="text" value="installer icon" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240556326597">
+                  <link role="relationDeclaration" targetNodeId="1.1240556282503" />
+                </node>
+                <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240556326598" />
+              </node>
+              <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240556327020">
+                <property name="vertical" value="false" />
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240556327021">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240556327022">
+                  <property name="flag" value="false" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240556327023">
+                  <property name="text" value="uninstaller icon" />
+                  <link role="styleClass" targetNodeId="1230217833302" resolveInfo="keyword" />
+                </node>
+                <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240556327024">
+                  <link role="relationDeclaration" targetNodeId="1.1240556295367" />
+                </node>
+                <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240556327025" />
+              </node>
               <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1234795229803">
                 <property name="vertical" value="false" />
                 <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1234795229804">

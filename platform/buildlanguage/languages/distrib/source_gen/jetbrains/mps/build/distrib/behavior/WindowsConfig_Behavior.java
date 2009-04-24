@@ -35,6 +35,14 @@ public class WindowsConfig_Behavior {
     return "homepage.ico";
   }
 
+  public static String call_getInstallerIcon_1240557277373(SNode thisNode) {
+    return "installer.ico";
+  }
+
+  public static String call_getUninstallerIcon_1240557275695(SNode thisNode) {
+    return "uninstaller.ico";
+  }
+
   public static String call_getLicensePath_1237900615474(SNode thisNode) {
     return "license.txt";
   }

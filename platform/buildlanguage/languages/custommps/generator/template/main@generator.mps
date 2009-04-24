@@ -5014,6 +5014,84 @@
           </node>
         </node>
       </node>
+      <node role="installerIcon" type="jetbrains.mps.build.packaging.structure.Path" id="1240558468364">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1240558468365">
+          <property name="name" value="mps_home" />
+        </node>
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1240558468366">
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558468367">
+            <property name="path" value="build" />
+            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240558468368">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240558468369">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240558468370">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240558468371">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240558468372">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240558468373">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240558468374" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1240558468375">
+                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1240558468376">
+                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240558468377">
+                              <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240558468378">
+                        <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558468379">
+            <property name="path" value="resources" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558491432">
+            <property name="path" value="mps.inst.ico" />
+          </node>
+        </node>
+      </node>
+      <node role="uninstallerIcon" type="jetbrains.mps.build.packaging.structure.Path" id="1240558476322">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1240558476323">
+          <property name="name" value="mps_home" />
+        </node>
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1240558476324">
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558476325">
+            <property name="path" value="build" />
+            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240558476326">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240558476327">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240558476328">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240558476329">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240558476330">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240558476331">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240558476332" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1240558476333">
+                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1240558476334">
+                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240558476335">
+                              <link role="conceptDeclaration" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240558476336">
+                        <link role="property" targetNodeId="2v.1229522370639" resolveInfo="scriptsFolder" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558476337">
+            <property name="path" value="resources" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240558488119">
+            <property name="path" value="mps.uninst.ico" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">

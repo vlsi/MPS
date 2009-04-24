@@ -21,13 +21,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.closures0">
-    <mkdir dir="core/baseLanguage/closures/runtime/classes" />
     <mkdir dir="core/baseLanguage/closures/classes" />
+    <mkdir dir="core/baseLanguage/closures/runtime/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/closures/closures.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/closures" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/closures/runtime/classes" />
       <zipfileset dir="core/baseLanguage/closures/classes" />
+      <zipfileset dir="core/baseLanguage/closures/runtime/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/closures/runtime/classes" />

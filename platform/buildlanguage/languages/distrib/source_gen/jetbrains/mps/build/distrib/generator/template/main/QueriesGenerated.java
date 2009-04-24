@@ -296,10 +296,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234545826028(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode macConf = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.MacConfig");
-    String path = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "icon", true)).getAbsolutePath();
-    int index = path.lastIndexOf(SConceptPropertyOperations.getString(macConf, "pathSeparator"));
-    return path.substring(index + 1);
+    return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(_context.getNode(), "icon", true)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234545884250(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -444,6 +441,22 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1240322826778(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240556381818(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getInstallerIcon_1240557277373(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240556384465(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getUninstallerIcon_1240557275695(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240557223519(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getInstallerIcon_1240557277373(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240557486481(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return WindowsConfig_Behavior.call_getUninstallerIcon_1240557275695(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -755,6 +768,46 @@ public class QueriesGenerated {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
   }
 
+  public static boolean ifMacro_Condition_1240556381826(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556384473(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556713263(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556714519(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556843049(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556844483(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556882751(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240556883263(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240557190171(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "installerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1240557209441(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
   }
@@ -797,6 +850,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1239975182819(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "icon", true);
+  }
+
+  public static SNode sourceNodeQuery_1240556713254(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "installerIcon", true);
+  }
+
+  public static SNode sourceNodeQuery_1240556714510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

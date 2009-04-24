@@ -454,6 +454,30 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234793472165" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240557277373">
+      <property name="name" value="getInstallerIcon" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240557277374" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240557277375">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240557277376">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240557277377">
+            <property name="value" value="installer.ico" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240557277378" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240557275695">
+      <property name="name" value="getUninstallerIcon" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240557275696" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240557275697">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240557275698">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240557275699">
+            <property name="value" value="uninstaller.ico" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240557275700" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237900615474">
       <property name="name" value="getLicensePath" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1237900617957" />

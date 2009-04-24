@@ -26,6 +26,8 @@ InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME}-${PRODUCT_VERSION
 ShowInstDetails show
 ShowUnInstDetails show
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME}.\n\nClick Next to continue."
+!define MUI_ICON "installer.ico"
+!define MUI_UNICON "uninstaller.ico"
 
 #************************************ Install *************************************************************#
 ; Welcome page

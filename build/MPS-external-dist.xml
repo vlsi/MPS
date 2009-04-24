@@ -44,6 +44,8 @@
     <property name="nsis.script.path.tmp" value="${basedir}/${deploy.dir}/installation.script${DSTAMP}.nsi" />
     <property name="application.icon" value="${basedir}/${deploy.dir}/application.ico" />
     <property name="homepage.icon" value="${basedir}/${deploy.dir}/homepage.ico" />
+    <property name="installer.icon" value="${basedir}/${deploy.dir}/installer.ico" />
+    <property name="uninstaller.icon" value="${basedir}/${deploy.dir}/uninstaller.ico" />
     <property name="license.path" value="${basedir}/${deploy.dir}/license.txt" />
     <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
     <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
@@ -56,6 +58,8 @@
     <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
     <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
     <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
+    <copy file="${mps_home}/build/resources/mps.inst.ico" tofile="${installer.icon}" />
+    <copy file="${mps_home}/build/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
     <copy file="${license.src.path}" tofile="${license.path}" />
     <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
     <copy file="${vmoptions.file}" todir="${root.folder}/bin" />
@@ -67,6 +71,8 @@
       <arg file="${application.icon}" />
       <arg file="${jre.unzipped.path}/jre" />
       <arg file="${homepage.icon}" />
+      <arg file="${installer.icon}" />
+      <arg file="${uninstaller.icon}" />
     </java>
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
     <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
@@ -77,6 +83,8 @@
     <delete file="${nsis.script.path.tmp}" />
     <delete file="${application.icon}" />
     <delete file="${homepage.icon}" />
+    <delete file="${installer.icon}" />
+    <delete file="${uninstaller.icon}" />
     <delete file="${license.path}" />
     <delete dir="${jre.unzipped.path}/jre" />
     <delete file="${nsis.script.path.tmp}/../install.nsh" />

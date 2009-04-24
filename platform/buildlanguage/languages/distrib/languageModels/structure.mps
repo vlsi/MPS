@@ -241,6 +241,16 @@
       <property name="role" value="homepageIcon" />
       <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240556282503">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="installerIcon" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240556295367">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="uninstallerIcon" />
+      <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1238075486867">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="embeddedJrePath" />

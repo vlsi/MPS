@@ -14,6 +14,8 @@ public class WindowsConfig extends SystemSpecificConfig {
   public static final String PATH_TO_NSIS_ZIP_FILE = "pathToNsisZipFile";
   public static final String APPLICATION_ICON = "applicationIcon";
   public static final String HOMEPAGE_ICON = "homepageIcon";
+  public static final String INSTALLER_ICON = "installerIcon";
+  public static final String UNINSTALLER_ICON = "uninstallerIcon";
   public static final String EMBEDDED_JRE_PATH = "embeddedJrePath";
   public static final String SIGNATURE_CONFIGURATION = "signatureConfiguration";
 
@@ -51,6 +53,22 @@ public class WindowsConfig extends SystemSpecificConfig {
 
   public void setHomepageIcon(IPath node) {
     super.setChild(WindowsConfig.HOMEPAGE_ICON, node);
+  }
+
+  public IPath getInstallerIcon() {
+    return (IPath)this.getChild(IPath.class, WindowsConfig.INSTALLER_ICON);
+  }
+
+  public void setInstallerIcon(IPath node) {
+    super.setChild(WindowsConfig.INSTALLER_ICON, node);
+  }
+
+  public IPath getUninstallerIcon() {
+    return (IPath)this.getChild(IPath.class, WindowsConfig.UNINSTALLER_ICON);
+  }
+
+  public void setUninstallerIcon(IPath node) {
+    super.setChild(WindowsConfig.UNINSTALLER_ICON, node);
   }
 
   public IPath getEmbeddedJrePath() {
