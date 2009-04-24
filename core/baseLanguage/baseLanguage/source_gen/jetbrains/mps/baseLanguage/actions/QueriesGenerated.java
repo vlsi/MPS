@@ -460,12 +460,6 @@ __switch__:
     }
   }
 
-  public static void nodeFactory_NodeSetup_TupleMember_1237464783516(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SLinkOperations.getTarget(_context.getNewNode(), "declaration", false) == null) {
-      SLinkOperations.setTarget(_context.getNewNode(), "declaration", _context.getNewNode(), false);
-    }
-  }
-
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {

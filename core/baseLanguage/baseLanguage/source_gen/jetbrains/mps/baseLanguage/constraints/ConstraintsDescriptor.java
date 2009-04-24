@@ -24,6 +24,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListOperations.addElement(this.myConstraints, new ConstructorDeclaration_resolveInfo_PropertyConstraint());
     ListOperations.addElement(this.myConstraints, new ClassifierMember_shortDescription_PropertyConstraint());
     ListOperations.addElement(this.myConstraints, new IValidIdentifier_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new TupleMemberAccessOperation_memberName_PropertyConstraint());
     ListOperations.addElement(this.myConstraints, new ClosureParameterReference_closureParameter_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
@@ -42,9 +43,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListOperations.addElement(this.myConstraints, new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new PropertyReference_property_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TupleMemberAccessOperation_member_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new VarVariableReference_declaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TupleMember_declaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new Annotation_DefaultSearchScope());
     ListOperations.addElement(this.myConstraints, new Classifier_DefaultSearchScope());
     ListOperations.addElement(this.myConstraints, new Interface_DefaultSearchScope());

@@ -12044,5 +12044,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714994839" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240586221626">
+    <property name="package" value="tuples" />
+    <link role="concept" targetNodeId="1.1233828326825" resolveInfo="TupleMemberAccessOperation" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240586221627">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240586221628">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240586239060">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240586242832">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240586243757">
+              <property name="value" value="-1" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586240077">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240586239061" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240586241316">
+                <link role="property" targetNodeId="1.1240577866181" resolveInfo="number" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

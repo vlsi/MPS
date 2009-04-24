@@ -7,9 +7,15 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
@@ -19,11 +25,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1233837397113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false));
+    return SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "number");
   }
 
   public static SNode sourceNodeQuery_1233837345550(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation"), "member", false), "type", true));
+    SNode tmoOperation = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation");
+    SNode operandType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true));
+    {
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.TupleType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_0);
+      if (coercedNode_0 != null) {
+        List<SNode> tupleMembers = SLinkOperations.getTargets(coercedNode_0, "member", true);
+        return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(ListSequence.fromList(tupleMembers).getElement(SPropertyOperations.getInteger(tmoOperation, "number")), "type", true));
+      } else
+      {
+        return null;
+      }
+    }
   }
 
   public static SNode sourceNodeQuery_1233837387040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

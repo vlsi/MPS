@@ -39,7 +39,7 @@ public class StructuralCollectionUtil {
     return result;
   }
 
-  private static void toString(StringBuilder result, SNode root, SNode node) {
+  public static void toString(StringBuilder result, SNode root, SNode node) {
     result.append(node.getConceptFqName());
     result.append("(");
 
@@ -52,14 +52,10 @@ public class StructuralCollectionUtil {
     }
 
     for (SReference ref : node.getReferences()) {
-      if (!ref.isExternal()) {
         SNode target = ref.getTargetNode();
         if (target != null && !target.isDescendantOf(root, true)) {
-          result.append(target);
+          result.append(target.getSNodeId());
         }
-      } else {
-        result.append(ref.getTargetNodeId());
-      }
     }
 
     result.append(")");
