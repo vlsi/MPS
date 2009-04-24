@@ -125,7 +125,7 @@ public class SearchQuery implements IExternalizeable {
     } else if (myScope instanceof BootstrapScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_BOOTSTRAP);
     } else {
-      throw new RuntimeException("unsupported scope " + myScope.getClass());
+      throw new CantSaveSomethingException("unsupported scope " + myScope.getClass());
     }
     element.addContent(scopeXML);
 
