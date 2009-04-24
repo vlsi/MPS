@@ -176,7 +176,7 @@ public class GenerationSession implements IGenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      LOG.error(gfe);
+      LOG.error(gfe.getMessage());
       // myProgressMonitor.addText(gfe.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
