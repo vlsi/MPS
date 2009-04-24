@@ -136,7 +136,7 @@ public abstract class UsagesTree extends MPSTree {
     addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
         if (myAutoscroll) {
-          openNewlySelectedNodeLink(e,false, false);
+          openNewlySelectedNodeLink(e, false, false);
         }
       }
     });
@@ -450,7 +450,7 @@ public abstract class UsagesTree extends MPSTree {
   private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
     Object treeNode = e.getNewLeadSelectionPath().getLastPathComponent();
     if (!(treeNode instanceof UsagesTreeNode)) return;
-    goByNodeLink((UsagesTreeNode) treeNode,inProjectIfPossible,focus);
+    goByNodeLink((UsagesTreeNode) treeNode, inProjectIfPossible, focus);
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
@@ -487,86 +487,84 @@ public abstract class UsagesTree extends MPSTree {
     });
   }
 
-  private boolean isResultNode(DataNode node) {
-    return node.getData().isResultNode();
+  private boolean isAliveResultNode(DataNode node) {
+    return node.getData().isResultNode() && !node.getData().isInvalid();
   }
 
   private UsagesTreeNode findFirstResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    if (includeRoot && isResultNode(root.getUserObject())) return root;
+    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
 
-    UsagesTreeNode node = root;
-    do {
-      if (node.getChildCount() == 0) {
-        node = null;
-      } else {
-        node = (UsagesTreeNode) node.getChildAt(0);
-      }
-    } while (node != null && !isResultNode(node.getUserObject()));
+    for (MPSTreeNode node : root) {
+      UsagesTreeNode result = findFirstResultInSubtree(((UsagesTreeNode) node), true);
+      if (result != null) return result;
+    }
 
-    return node;
+    return null;
   }
 
   private UsagesTreeNode findLastResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    if (includeRoot && isResultNode(root.getUserObject())) return root;
+    List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
+    for (MPSTreeNode node : root) {
+      children.add(node);
+    }
+    Collections.reverse(children);
 
-    UsagesTreeNode node = root;
-    while (node.getChildCount() != 0) {
-      node = (UsagesTreeNode) node.getChildAt(node.getChildCount() - 1);
+    for (MPSTreeNode node : children) {
+      UsagesTreeNode result = findLastResultInSubtree(((UsagesTreeNode) node), true);
+      if (result != null) return result;
     }
 
-    assert (isResultNode(node.getUserObject()));
+    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
 
-    return node;
+    return null;
   }
 
-  public UsagesTreeNode findNextResult(UsagesTreeNode current) {
-    assert current != null;
-    UsagesTreeNode node;
+  public UsagesTreeNode findNextResult(UsagesTreeNode fromNode) {
+    assert fromNode != null;
 
     //trying to do step into
-    node = findFirstResultInSubtree(current, false);
+    UsagesTreeNode node = findFirstResultInSubtree(fromNode, false);
     if (node != null) return node;
 
-    //go up until reach a node with child to the right from that we came from
-    node = current;
+    //go up until reach a node with child to the right from that we came from and try to get results from its children, the go to parent...
+    UsagesTreeNode current = fromNode;
     while (true) {
-      UsagesTreeNode parent = (UsagesTreeNode) node.getParent();
-      if (parent == getResultsNode().getParent()) break;
+      UsagesTreeNode parent = (UsagesTreeNode) current.getParent();
+      if (parent == getResultsNode().getParent()) return null;
 
-      if (parent.getIndex(node) == parent.getChildCount() - 1) {
-        node = parent;
-      } else break;
+      //step into next children of that parent
+      int nextIndex = parent.getIndex(current) + 1;
+      while (nextIndex < parent.getChildCount()) {
+        UsagesTreeNode firstResult = findFirstResultInSubtree((UsagesTreeNode) parent.getChildAt(nextIndex), true);
+        if (firstResult != null) return firstResult;
+        nextIndex++;
+      }
+      current = parent;
     }
-    if (node.getParent() == getResultsNode().getParent()) return null;
-
-    //step into next child of that parent
-    int nextIndex = node.getParent().getIndex(node) + 1;
-    return findFirstResultInSubtree((UsagesTreeNode) node.getParent().getChildAt(nextIndex), true);
   }
 
-  public UsagesTreeNode findPrevResult(UsagesTreeNode current) {
-    assert current != null;
-    UsagesTreeNode node;
+  public UsagesTreeNode findPrevResult(UsagesTreeNode fromNode) {
+    assert fromNode != null;
 
-    //go up until reach a node with child to the left from that we came from or find a result node
-    node = current;
+    //go up until reach a node with child result nodes to the left from that we came from or find a result node
+    UsagesTreeNode current = fromNode;
     while (true) {
-      UsagesTreeNode parent = (UsagesTreeNode) node.getParent();
-      if (parent == getResultsNode().getParent()) break;
+      UsagesTreeNode parent = (UsagesTreeNode) current.getParent();
+      if (parent == getResultsNode().getParent()) return null;
 
-      if (parent.getIndex(node) == 0) {
-        node = parent;
-      } else break;
+      //step into prev children of that parent
+      int prevIndex = parent.getIndex(current) - 1;
+      while (prevIndex >= 0) {
+        UsagesTreeNode lastResult = findLastResultInSubtree((UsagesTreeNode) parent.getChildAt(prevIndex), true);
+        if (lastResult != null) return lastResult;
+        prevIndex--;
+      }
+      current = parent;
     }
-    if (node.getParent() == getResultsNode().getParent()) return null;
-
-    //step into next child of that parent
-    int nextIndex = node.getParent().getIndex(node) - 1;
-    return findLastResultInSubtree((UsagesTreeNode) node.getParent().getChildAt(nextIndex), true);
   }
 
   public void navigateToNextResult() {
