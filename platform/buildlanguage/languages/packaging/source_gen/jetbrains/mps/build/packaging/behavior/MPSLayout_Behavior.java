@@ -139,16 +139,10 @@ public class MPSLayout_Behavior {
       for(SNode entry : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true))) {
         MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
       }
-    } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
-      SNode toDo;
-      if (ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "condition", true))) {
-        toDo = SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "ifTrue", true);
-      } else
-      {
-        toDo = SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.IfProjectComponent"), "ifFaulse", true);
-      }
-      if (toDo != null) {
-        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(toDo, list);
+    } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent")) {
+      List<SNode> childrenToDo = ITransparentProjectComponent_Behavior.call_getChildrenToDo_1240564451382(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"));
+      for(SNode child : ListSequence.fromList(childrenToDo)) {
+        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(child, list);
       }
       return;
     }

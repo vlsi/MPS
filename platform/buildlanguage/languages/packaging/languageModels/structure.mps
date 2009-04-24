@@ -1078,6 +1078,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389339515">
       <link role="intfc" targetNodeId="1237389142373" resolveInfo="IAbstractCompositeComponent" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240564486597">
+      <link role="intfc" targetNodeId="1240564398817" resolveInfo="ITransparentProjectComponent" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233159299625">
     <property name="package" value="projectComponents.conditions" />
@@ -1212,6 +1215,31 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239621756947">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240562872025">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="ComponentsList" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240564882506">
+      <property name="value" value="list" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240562948869">
+      <link role="intfc" targetNodeId="1237389142373" resolveInfo="IAbstractCompositeComponent" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240564896440">
+      <link role="intfc" targetNodeId="1240564398817" resolveInfo="ITransparentProjectComponent" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240563011522">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="entry" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1240564398817">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="ITransparentProjectComponent" />
   </node>
 </model>
 

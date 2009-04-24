@@ -848,9 +848,17 @@
           </node>
           <node role="canSubstitute" type="jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute" id="1240313343936">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240313343937">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240313346167">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240313346168">
-                  <property name="value" value="true" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240406245607">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240406257201">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240406246732">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="1240406245608" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240406249689">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~String.contains(java.lang.CharSequence):boolean" resolveInfo="contains" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240406250700">
+                        <property name="value" value=" " />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -858,7 +866,7 @@
           <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="1240313563534">
             <property name="text" value="simple string" />
           </node>
-          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="1240313836485">
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="1240406198373">
             <property name="text" value="*" />
           </node>
         </node>

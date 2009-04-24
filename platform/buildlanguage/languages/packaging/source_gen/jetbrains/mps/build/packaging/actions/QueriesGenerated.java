@@ -222,7 +222,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return true;
+            return !(pattern.contains(" "));
           }
 
           public String getDescriptionText(String pattern) {

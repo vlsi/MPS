@@ -1938,5 +1938,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240563038441">
+    <property name="package" value="projectComponents" />
+    <link role="conceptDeclaration" targetNodeId="1.1240562872025" resolveInfo="ComponentsList" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1240563050606">
+      <link role="relationDeclaration" targetNodeId="1.1240563011522" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" id="1240563112702">
+        <property name="flag" value="true" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem" id="1240563418227">
+        <property name="color" value="darkGray" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1240563050607" />
+    </node>
+  </node>
 </model>
 
