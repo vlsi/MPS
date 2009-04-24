@@ -143,68 +143,31 @@ public class ChildSubstituteActionsHelper {
       link = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
     }
 
-    // add actions from 'primary' language
-    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionsBuilders(parentNode, primaryLanguage, childConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context);
-    allBuilders.addAll(primaryBuilders);
+    List<Language> languages = parentNode.getModel().getLanguages(scope);
+    for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
+      AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
+      if (applicableConcept == null) continue;
+      if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
+        SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
 
-    for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-      resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
-    }
-
-    if (!containsRemoveDefaults(primaryBuilders)) {
-      List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
-      List<Language> languages = parentNode.getModel().getLanguages(scope);
-      for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
-        AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
-        if (applicableConcept == null) continue;
-        if (applicableConcept == childConcept) continue;
-        if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
-          SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
-          // check precondition tricking builder by passing builder's own applicable-concept as child-concept
-          if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context)) {
-            buildersFromSubconcepts.add(actionsBuilder);
-          }
+        if (satisfiesPrecondition(actionsBuilder, parentNode,
+              applicableConcept, BaseAdapter.fromAdapter(link),
+              currentChild, wrapped, context)) {
+          allBuilders.add(actionsBuilder);
         }
       }
-      allBuilders.addAll(buildersFromSubconcepts);
-      // create default action 1
-      for (NodeSubstituteActionsBuilder builder : buildersFromSubconcepts) {
-        List<INodeSubstituteAction> actions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
-        resultActions.addAll(actions);
-      }
-
-      Condition<SNode> filter = TRUE_CONDITION;
-      // create default action 2
-      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, context));
     }
 
-    // search 'extending' builders
-    List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
-    List<Language> languages = parentNode.getModel().getLanguages(scope);
-    for (Language language : languages) {
-      if (language == primaryLanguage) {
-        continue;
-      }
-      extendedBuilders.addAll(getActionsBuilders(parentNode, language, childConcept, BaseAdapter.fromAdapter(link), currentChild, wrapped, context));
+    if (!containsRemoveDefaults(allBuilders)) {
+      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
     }
-    allBuilders.addAll(extendedBuilders);
 
-    // create 'extended' actions
-    for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
+    for (NodeSubstituteActionsBuilder builder : allBuilders) {
       List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
       resultActions.addAll(addActions);
     }
 
-    // apply all filters
     for (NodeSubstituteActionsBuilder builder : allBuilders) {
-      // it seems ok to apply all filters.
-      // the 'applicable concept' is checked in generated code
-////      AbstractConceptDeclaration applicableConcept = builder.getApplicableConcept();
-////      // try to apply only if childConcept (link target) is sub-concept of builder's applicableConcept
-////      // otherwise builder's filter can't handle context of node insertion correctly
-////      // case: 'Quotation' can have any node as child, but some filters can treat the 'quotation' as incorrect parent.
-////      if (SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
-////      }
       resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
     }
 
