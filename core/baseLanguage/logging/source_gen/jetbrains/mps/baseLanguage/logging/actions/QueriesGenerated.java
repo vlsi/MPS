@@ -7,12 +7,13 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.baseLanguage.logging.structure.Severity;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -24,7 +25,7 @@ public class QueriesGenerated {
   private static Logger LOG = Logger.getLogger(QueriesGenerated.class);
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1167245930434(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.logging.structure.LogStatement");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -33,18 +34,17 @@ public class QueriesGenerated {
 
           public Object calculate() {
             LOG.info("test info");
-            return Severity.getConstants();
+            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "1167245107475"));
           }
-
         };
-        Iterable<Severity> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final Severity item : queryResult) {
-            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          for(final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode logStatement = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", null);
-                SPropertyOperations.set(logStatement, "severity", (item).getValueAsString());
+                SPropertyOperations.set(logStatement, "severity", SEnumOperations.getEnumMemberValue((item)));
                 SLinkOperations.setNewChild(logStatement, "logExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
                 SNode catchClause = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.CatchClause", true, false);
                 if ((catchClause != null) && (SLinkOperations.getTarget(catchClause, "throwable", true) != null)) {
@@ -56,7 +56,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return (item).getValueAsString();
+                return SEnumOperations.getEnumMemberValue((item));
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -66,7 +66,6 @@ public class QueriesGenerated {
               public String getDescriptionText(String pattern) {
                 return "Log statement";
               }
-
             });
           }
         }

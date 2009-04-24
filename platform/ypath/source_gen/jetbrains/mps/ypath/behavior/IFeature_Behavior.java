@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 
 public class IFeature_Behavior {
 
@@ -75,7 +76,7 @@ public class IFeature_Behavior {
 
   public static Iterable<SNode> call_getPartialOpposites_1213877499798(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "opposite", false) != null)) {
-      return ListSequence.<SNode>fromArray();
+      return ListSequence.fromList(new ArrayList<SNode>());
     }
     final SNode thisNodeLoc = thisNode;
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {

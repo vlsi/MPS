@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.ypath.behavior.TreePath_Behavior;
-import jetbrains.mps.ypath.behavior._Quotations;
 
 public class ChildrenBlock_Behavior {
 

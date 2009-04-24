@@ -17,15 +17,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -164,11 +162,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), _FontStyle_Enum.query.getValue()));
+    return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"), "query"))));
   }
 
   public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
-    return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), _FontStyle_Enum.query.getValue());
+    return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"), "query")));
   }
 
   public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -187,20 +185,16 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<_FontStyle_Enum> types = ListSequence.<_FontStyle_Enum>fromArray();
-      for(_FontStyle_Enum color : _FontStyle_Enum.values()) {
-        ListSequence.fromList(types).addElement(color);
-      }
-      return types;
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"));
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((_FontStyle_Enum)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(_FontStyle_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "style", parameterObject.getValue());
+      SPropertyOperations.set(node, "style", "" + (SEnumOperations.getEnumMemberValue(parameterObject)));
     }
 
     public boolean isReferentPresentation() {

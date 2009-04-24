@@ -6233,51 +6233,12 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225465568568">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225465568569">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225465568570">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225466595470">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225466595471">
-                    <property name="name" value="types" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225466595472">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466598537">
-                        <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329301705">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329304660">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329301706">
+                      <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
                     </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225466612481">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225466612482">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466612483">
-                          <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1225465998084">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225465998085">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466037432">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466094811">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466037433">
-                          <link role="variableDeclaration" targetNodeId="1225466595471" resolveInfo="types" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1225466097424">
-                          <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466100036">
-                            <link role="variableDeclaration" targetNodeId="1225465998088" resolveInfo="color" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1225466028210">
-                    <link role="enumClass" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                  </node>
-                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225465998088">
-                    <property name="name" value="color" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466014470">
-                      <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225466713504">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466715897">
-                    <link role="variableDeclaration" targetNodeId="1225466595471" resolveInfo="types" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329309463" />
                   </node>
                 </node>
               </node>
@@ -6306,17 +6267,15 @@
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1225466907774">
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466910074">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="1225466909260" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225466912358">
-                          <link role="baseMethodDeclaration" targetNodeId="36.~_Colors_Enum.getValue():java.lang.String" resolveInfo="getValue" />
-                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329319590" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466581339">
-              <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+            <node role="parameterObjectType" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240329312746">
+              <link role="enum" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
             </node>
           </node>
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1225466728384">
@@ -6383,51 +6342,12 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225472714608">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225472714609">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225472714610">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225472714611">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225472714612">
-                    <property name="name" value="types" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225472714613">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225472714614">
-                        <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                      </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329264791">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329268152">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329264792">
+                      <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
                     </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225472714615">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225472714616">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225472714617">
-                          <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1225472714618">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225472714619">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225472714620">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225472714621">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225472714622">
-                          <link role="variableDeclaration" targetNodeId="1225472714612" resolveInfo="types" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1225472714623">
-                          <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225472714624">
-                            <link role="variableDeclaration" targetNodeId="1225472714626" resolveInfo="color" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1225472714625">
-                    <link role="enumClass" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                  </node>
-                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225472714626">
-                    <property name="name" value="color" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225472714627">
-                      <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225472714628">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225472714629">
-                    <link role="variableDeclaration" targetNodeId="1225472714612" resolveInfo="types" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329275609" />
                   </node>
                 </node>
               </node>
@@ -6456,17 +6376,15 @@
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1225472714643">
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225472714644">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="1225472714645" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225472714646">
-                          <link role="baseMethodDeclaration" targetNodeId="36.~_Colors_Enum.getValue():java.lang.String" resolveInfo="getValue" />
-                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329278532" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225472714647">
-              <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+            <node role="parameterObjectType" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240329248774">
+              <link role="enum" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
             </node>
           </node>
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1225472714648">
@@ -6537,20 +6455,22 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220975716955">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220975737191">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" id="1232812555787">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232812577012">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1232812575339">
-                    <link role="enumConstantDeclaration" targetNodeId="36.~_FontStyle_Enum.query" resolveInfo="query" />
-                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232812584110">
-                    <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
-                  </node>
-                </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220975738833">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1220975737192" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1232812536797">
                     <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
                   </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329227440">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329227441">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329227442">
+                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240329227443">
+                      <link role="member" targetNodeId="2.1220973684614" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329227444" />
                 </node>
               </node>
             </node>
@@ -6569,14 +6489,16 @@
                     <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
                   </node>
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232812600560">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1232812600561">
-                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                    <link role="enumConstantDeclaration" targetNodeId="36.~_FontStyle_Enum.query" resolveInfo="query" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329208060">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329205915">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329199367">
+                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240329207200">
+                      <link role="member" targetNodeId="2.1220973684614" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232812600562">
-                    <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329209236" />
                 </node>
               </node>
             </node>
@@ -6604,51 +6526,12 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225473442525">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225473442526">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225473442527">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225473442528">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225473442529">
-                    <property name="name" value="types" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225473442530">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884572239">
-                        <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                      </node>
-                    </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225473442532">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225473442533">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884577571">
-                          <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1225473442535">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225473442536">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225473442537">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225473442538">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225473442539">
-                          <link role="variableDeclaration" targetNodeId="1225473442529" resolveInfo="types" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1225473442540">
-                          <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225473442541">
-                            <link role="variableDeclaration" targetNodeId="1225473442543" resolveInfo="color" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1225473442542">
-                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                  </node>
-                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225473442543">
-                    <property name="name" value="color" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884583609">
-                      <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
-                    </node>
-                  </node>
-                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225473442545">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225473442546">
-                    <link role="variableDeclaration" targetNodeId="1225473442529" resolveInfo="types" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329117213">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329117214">
+                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329117215" />
                   </node>
                 </node>
               </node>
@@ -6675,19 +6558,17 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1225473442560">
-                      <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225473442561">
+                      <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329148064">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="1225473442562" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225884990630">
-                          <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
-                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329149161" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884597256">
-              <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
+            <node role="parameterObjectType" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240329139359">
+              <link role="enum" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
             </node>
           </node>
         </node>

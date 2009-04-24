@@ -7520,6 +7520,28 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240328906162">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240328906163">
+                <property name="name" value="name" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240328906164" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906165">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906166">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240328906167">
+                      <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240328906168">
+                      <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906169">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240328906170" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240328906171">
+                          <link role="property" targetNodeId="38.1139535298778" resolveInfo="actionId" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1240328906172" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212798092868">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212798092869">
                 <property name="name" value="actionItemId" />
@@ -7527,19 +7549,8 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212798092871">
                   <link role="baseMethodDeclaration" targetNodeId="20.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
                   <link role="classConcept" targetNodeId="20.~NameUtil" resolveInfo="NameUtil" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212798092872">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212798092873">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212798092874">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1212798092875" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1212798092876" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544739001">
-                        <link role="baseMethodDeclaration" targetNodeId="71.~CellActionMapItem.getActionId():jetbrains.mps.lang.editor.structure.CellActionId" resolveInfo="getActionId" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544740549">
-                      <link role="baseMethodDeclaration" targetNodeId="71.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
-                    </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240328916081">
+                    <link role="variableDeclaration" targetNodeId="1240328906163" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -7619,20 +7630,22 @@
                 <node role="referenceMacro$link_attribute$enumConstantDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1217443071854">
                   <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1217443071855">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217443071856">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217443090398">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217443090399">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217443090400">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217443090401">
-                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217443090402" />
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217443090403" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240328788731">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328843379">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328818240">
+                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240328788732">
+                              <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544749082">
-                              <link role="baseMethodDeclaration" targetNodeId="71.~CellActionMapItem.getActionId():jetbrains.mps.lang.editor.structure.CellActionId" resolveInfo="getActionId" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240328820556">
+                              <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328835138">
+                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240328833886" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240328838612">
+                                  <link role="property" targetNodeId="38.1139535298778" resolveInfo="actionId" />
+                                </node>
+                              </node>
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544751114">
-                            <link role="baseMethodDeclaration" targetNodeId="71.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
-                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1240328847226" />
                         </node>
                       </node>
                     </node>

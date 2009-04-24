@@ -7351,8 +7351,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536332">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226062536333">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062536334">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062536335" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062536336">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240574074547" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240574069061">
                       <link role="baseMethodDeclaration" targetNodeId="41.1213877507916" resolveInfo="getRangePresentation" />
                     </node>
                   </node>

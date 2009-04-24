@@ -17,14 +17,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.lang.editor.structure._Colors_Enum;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -208,20 +206,16 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
-      for(_Colors_Enum color : _Colors_Enum.values()) {
-        ListSequence.fromList(types).addElement(color);
-      }
-      return types;
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1083952545109"));
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "color", parameterObject.getValue());
+      SPropertyOperations.set(node, "color", "" + (SEnumOperations.getEnumMemberValue(parameterObject)));
     }
 
     public boolean isReferentPresentation() {
@@ -235,20 +229,16 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
-      for(_Colors_Enum color : _Colors_Enum.values()) {
-        ListSequence.fromList(types).addElement(color);
-      }
-      return types;
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1083952545109"));
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "color", parameterObject.getValue());
+      SPropertyOperations.set(node, "color", "" + (SEnumOperations.getEnumMemberValue(parameterObject)));
     }
 
     public boolean isReferentPresentation() {

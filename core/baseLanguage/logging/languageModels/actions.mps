@@ -49,10 +49,12 @@
                   <property name="value" value="test info" />
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178200307875">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178200310146">
-                  <link role="classConcept" targetNodeId="4.~Severity" resolveInfo="Severity" />
-                  <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getConstants():java.util.List" resolveInfo="getConstants" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329407786">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329411194">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329407787">
+                    <link role="enumDeclaration" targetNodeId="1.1167245107475" resolveInfo="Severity" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329416981" />
                 </node>
               </node>
             </node>
@@ -86,9 +88,7 @@
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1178200477985">
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737787257">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1178200515706" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737787258">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329454265" />
                     </node>
                   </node>
                 </node>
@@ -217,17 +217,15 @@
               </node>
             </node>
           </node>
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223379437400">
-            <link role="classifier" targetNodeId="4.~Severity" resolveInfo="Severity" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240329400846">
+            <link role="enum" targetNodeId="1.1167245107475" resolveInfo="Severity" />
           </node>
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1178200323241">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200323242">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178200350843">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737791866">
                   <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1178200350844" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737791867">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329439404" />
                 </node>
               </node>
             </node>

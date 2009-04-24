@@ -9,13 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import java.util.List;
-import jetbrains.mps.ypath.actions.TreePathAspectUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.ypath.actions._Quotations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -30,7 +29,7 @@ import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
-import jetbrains.mps.ypath.structure.FragmentTypeEnum;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
@@ -41,7 +40,6 @@ import jetbrains.mps.util.Triplet;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
-import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.util.Quadruplet;
@@ -148,22 +146,22 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169037620751(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169038110957(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169038203232(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1180011230210(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -173,7 +171,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_VisitParameterDeclaration_1180018851746(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -205,7 +203,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1180026401346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -215,7 +213,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IFeature_1184067774388(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -250,7 +248,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterWrapper_1184768393149(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -288,7 +286,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IAnchor_1194436439282(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IndexAnchor");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
@@ -342,12 +340,12 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureFun_1196420410543(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> res = ListSequence.<SNode>fromArray(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
+          List<SNode> res = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
             for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder"), "functions", true))) {
               if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
@@ -379,58 +377,61 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            List<FragmentTypeEnum> types = ListSequence.<FragmentTypeEnum>fromArray(FragmentTypeEnum.replace_single, FragmentTypeEnum.replace_selection, FragmentTypeEnum.replace_all, FragmentTypeEnum.remove_single, FragmentTypeEnum.remove_selection, FragmentTypeEnum.remove_all, FragmentTypeEnum.insert_at_start, FragmentTypeEnum.insert_at_end, FragmentTypeEnum.insert_before, FragmentTypeEnum.insert_after);
+            List<SNode> types = ListSequence.fromList(new ArrayList<SNode>());
+            SNode ftEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "1196419521949");
+            ListSequence.fromList(types).addSequence(ListSequence.fromList(SEnumOperations.getEnumMembers(ftEnum)));
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
               for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder"), "functions", true))) {
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.parseValue(SPropertyOperations.getString_def(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE")));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.enumMemberForValue(ftEnum, SPropertyOperations.getString_def(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE")));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_single);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_selection);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.replace_all);
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace single"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace selection"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace all"));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_single);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_selection);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.remove_all);
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove single"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove selection"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove all"));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_at_start);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_at_end);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_before);
-                  ListSequence.fromList(types).removeElement(FragmentTypeEnum.insert_after);
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert at start"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert at end"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert before"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert after"));
                 }
               }
             }
             return types;
           }
         };
-        Iterable<FragmentTypeEnum> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final FragmentTypeEnum item : queryResult) {
+          for(final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                FragmentTypeEnum type = (item);
                 SNode fragment = null;
-                if (type == FragmentTypeEnum.replace_single || type == FragmentTypeEnum.replace_selection || type == FragmentTypeEnum.replace_all) {
+                SNode type = (item);
+                SNode ftEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "1196419521949");
+                if (type == SEnumOperations.getEnumMember(ftEnum, "replace single") || type == SEnumOperations.getEnumMember(ftEnum, "replace selection") || type == SEnumOperations.getEnumMember(ftEnum, "replace all")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
                   }
                 } else
-                if (type == FragmentTypeEnum.remove_single || type == FragmentTypeEnum.remove_selection || type == FragmentTypeEnum.remove_all) {
+                if (type == SEnumOperations.getEnumMember(ftEnum, "remove single") || type == SEnumOperations.getEnumMember(ftEnum, "remove selection") || type == SEnumOperations.getEnumMember(ftEnum, "remove all")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
                   }
                 } else
-                if (type == FragmentTypeEnum.insert_at_start || type == FragmentTypeEnum.insert_at_end || type == FragmentTypeEnum.insert_before || type == FragmentTypeEnum.insert_after) {
+                if (type == SEnumOperations.getEnumMember(ftEnum, "insert at start") || type == SEnumOperations.getEnumMember(ftEnum, "insert at end") || type == SEnumOperations.getEnumMember(ftEnum, "insert before") || type == SEnumOperations.getEnumMember(ftEnum, "insert after")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
                   }
@@ -439,7 +440,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return (item).getName();
+                return SEnumOperations.getEnumMemberName((item));
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -454,7 +455,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_GenericFeatureFunHolder_1196424373003(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -503,7 +504,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1196791152384(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.EmptySequenceExpression");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -536,7 +537,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1168893677147(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       Calculable calculable = new Calculable() {
@@ -579,7 +580,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TreeNodeKindOccurrence_1175164446140(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation");
       Calculable calculable = new Calculable() {
@@ -631,7 +632,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1194616742213(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
@@ -705,13 +706,13 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IFeature_1197904809758(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IFeature");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Pair> res = ListSequence.<Pair>fromArray();
+          List<Pair> res = ListSequence.fromList(new ArrayList<Pair>());
           final SNode srcNode = _context.getSourceNode();
           final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
           for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
@@ -773,13 +774,13 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1198013650231(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Triplet> res = ListSequence.<Triplet>fromArray();
+          List<Triplet> res = ListSequence.fromList(new ArrayList<Triplet>());
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           if ((tpoe == null)) {
             return res;
@@ -1004,7 +1005,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1198013650823(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -1019,7 +1020,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TreePathOperation_1198013650840(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -1034,7 +1035,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ParameterWrapper_1198013650848(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
 
@@ -1049,13 +1050,13 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1198013853576(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Quadruplet> res = ListSequence.<Quadruplet>fromArray();
+          List<Quadruplet> res = ListSequence.fromList(new ArrayList<Quadruplet>());
           SNode nodeType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Type");
           for(SNode aspect : ListSequence.fromList(TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope()))) {
             for(TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {

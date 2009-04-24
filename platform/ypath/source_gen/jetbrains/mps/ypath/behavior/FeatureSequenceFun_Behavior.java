@@ -5,7 +5,6 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ypath.behavior._Quotations;
 
 public class FeatureSequenceFun_Behavior {
 

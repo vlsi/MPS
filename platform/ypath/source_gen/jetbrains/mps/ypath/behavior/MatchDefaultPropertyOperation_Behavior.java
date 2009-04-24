@@ -4,8 +4,6 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
-import jetbrains.mps.ypath.behavior.TreePathAspect_Behavior;
 
 public class MatchDefaultPropertyOperation_Behavior {
 
