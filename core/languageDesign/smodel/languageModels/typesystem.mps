@@ -10617,9 +10617,9 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240333139167">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240333139168">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240333139169">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240333139170">
-              <node role="referenceAntiquotation$link_attribute$enum" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1240333139171">
-                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240333139172">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240572563808">
+              <node role="referenceAntiquotation$link_attribute$enum" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1240572568653">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1240572571905">
                   <link role="typeVarDeclaration" targetNodeId="1240333139165" resolveInfo="Enum" />
                 </node>
               </node>
