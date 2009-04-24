@@ -124,7 +124,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static Cardinality getGenuineLinkSourceCardinality(LinkDeclaration linkDeclaration) {
-    return SModelUtil.getGenuineLinkSourceCardinality(BaseAdapter.fromAdapter(linkDeclaration));
+    return ((LinkDeclaration) SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)).getAdapter()).getSourceCardinality();
   }
 
   public static List<AbstractConceptDeclaration> getConceptAndSuperConcepts(AbstractConceptDeclaration topConcept) {

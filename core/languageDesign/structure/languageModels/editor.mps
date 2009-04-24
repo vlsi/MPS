@@ -808,27 +808,14 @@
         <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062528127">
           <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062528128">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528129">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226062528130">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226062528131">
-                  <property name="name" value="cardinality" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226062528132">
-                    <link role="classifier" targetNodeId="35.~Cardinality" resolveInfo="Cardinality" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238252849692">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226062528137">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240578376393">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240578369626">
                     <link role="baseMethodDeclaration" targetNodeId="38.1238252473172" resolveInfo="getGenuineLinkSourceCardinality" />
                     <link role="classConcept" targetNodeId="38.1237995590703" resolveInfo="SModelUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1238252849694" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240578369627" />
                   </node>
-                </node>
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226062528137">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062528138">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226062528139">
-                    <link role="variableDeclaration" targetNodeId="1226062528131" resolveInfo="cardinality" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062528140">
-                    <link role="baseMethodDeclaration" targetNodeId="35.~Cardinality.getName():java.lang.String" resolveInfo="getName" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1240578377710" />
                 </node>
               </node>
             </node>

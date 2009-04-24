@@ -29,9 +29,9 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
 public class SModelUtil {
   private static Map<String, SNode> myFQNameToConcepDecl = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -131,7 +131,7 @@ public class SModelUtil {
   }
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
-    Set<SNode> result = SetSequence.<SNode>fromSetAndArray(new LinkedHashSet());
+    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for(AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
@@ -139,11 +139,11 @@ public class SModelUtil {
         }
       }
     }
-    return ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(result));
+    return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
   }
 
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDecl = (SNode)concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
@@ -182,8 +182,8 @@ public class SModelUtil {
     return LanguageHierarchyCache.getInstance().getAncestorsNames(fromFqName).contains(toFqName);
   }
 
-  public static Cardinality getGenuineLinkSourceCardinality(SNode linkDecl) {
-    return ((LinkDeclaration)SNodeOperations.getAdapter(getGenuineLinkDeclaration(linkDecl))).getSourceCardinality();
+  public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
+    return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1084197782722"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
   }
 
   public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {

@@ -1193,18 +1193,22 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1238252473174" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238252473175">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238252729416">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252835435">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238252830507">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1238252735199">
-                <link role="baseMethodDeclaration" targetNodeId="1237995590890" resolveInfo="getGenuineLinkDeclaration" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238252738763">
-                  <link role="variableDeclaration" targetNodeId="1238252717257" resolveInfo="linkDecl" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240578335089">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240578331416">
+              <link role="enumDeclaration" targetNodeId="8.1084197782722" resolveInfo="Cardinality" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240578341515">
+              <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240578342722">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1240578342723">
+                  <link role="baseMethodDeclaration" targetNodeId="1237995590890" resolveInfo="getGenuineLinkDeclaration" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240578342724">
+                    <link role="variableDeclaration" targetNodeId="1238252717257" resolveInfo="linkDecl" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240578342725">
+                  <link role="property" targetNodeId="8.1071599893252" resolveInfo="sourceCardinality" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238252834871" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238252838487">
-              <link role="baseMethodDeclaration" targetNodeId="2.~LinkDeclaration.getSourceCardinality():jetbrains.mps.lang.structure.structure.Cardinality" resolveInfo="getSourceCardinality" />
             </node>
           </node>
         </node>
@@ -1215,8 +1219,8 @@
           <link role="concept" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238252770427">
-        <link role="classifier" targetNodeId="2.~Cardinality" resolveInfo="Cardinality" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240578349402">
+        <link role="enum" targetNodeId="8.1084197782722" resolveInfo="Cardinality" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1238258652894">

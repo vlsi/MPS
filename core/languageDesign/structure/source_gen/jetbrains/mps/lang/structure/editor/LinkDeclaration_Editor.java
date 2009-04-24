@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,6 +35,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import jetbrains.mps.util.NameUtil;
 
@@ -131,8 +132,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
-        Cardinality cardinality = SModelUtil.getGenuineLinkSourceCardinality(node);
-        return cardinality.getName();
+        return SEnumOperations.getEnumMemberName(SModelUtil.getGenuineLinkSourceCardinality(node));
       }
 
       public void setText(String s) {
