@@ -39,6 +39,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,8 +57,11 @@ public class Language extends AbstractModule {
 
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
+
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private IClassPathItem myLanguageRuntimeClasspath;
+
+  private CachesInvalidator myCachesInvalidator;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
   private
@@ -397,6 +401,10 @@ public class Language extends AbstractModule {
     }
 
     MPSModuleRepository.getInstance().invalidateCaches();
+
+    if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
+      getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
+    }
   }
 
   public boolean isBootstrap() {
@@ -773,5 +781,17 @@ public class Language extends AbstractModule {
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
+  }
+
+  private class CachesInvalidator extends SModelAdapter {
+    @Override
+    public void modelChanged(SModel model) {
+      invalidateCaches();
+    }
+
+    @Override
+    public void modelChangedDramatically(SModel model) {
+      invalidateCaches();
+    }
   }
 }

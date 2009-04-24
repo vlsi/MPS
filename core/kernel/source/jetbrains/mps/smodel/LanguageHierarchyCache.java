@@ -67,7 +67,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
     myModelListener = new SModelAdapter() {
       public void modelChangedDramatically(SModel model) {
-        myDescendantsCachesAreValid = false;
         invalidateCache();
       }
     };
@@ -80,7 +79,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
           assert structureDescriptor != null;
           structureDescriptor.addModelListener(myModelListener);
         }
-
+                                    
         mySModelRepository.addModelRepositoryListener(myRepositoryListener);
       }
     });
@@ -111,38 +110,42 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public void invalidateCache() {
     myDirectDescendantsCache.clear();
-    myDescendantsCachesAreValid = false;
-
     myParentsNamesMap.clear();
     myAncestorsNamesMap.clear();
+    myDescendantsCachesAreValid = false;
   }
 
-  public Set<String> getParentsNames(String conceptFqName) {
+  public Set<String> getParentsNames(final String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
       return Collections.unmodifiableSet(myParentsNamesMap.get(conceptFqName));
+    } else {
+      return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
+        public Set<String> compute() {
+          Set<String> result = new LinkedHashSet<String>();
+          AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+          if (declaration == null) {
+            return result;
+          }
+          if (declaration instanceof ConceptDeclaration) {
+            ConceptDeclaration cd = (ConceptDeclaration) declaration;
+            if (cd.getExtends() != null) {
+              result.add(NameUtil.nodeFQName(cd.getExtends()));
+            }
+            for (InterfaceConceptReference icr : cd.getImplementses()) {
+              result.add(NameUtil.nodeFQName(icr.getIntfc()));
+            }
+          }
+          if (declaration instanceof InterfaceConceptDeclaration) {
+            InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
+            for (InterfaceConceptReference icr : icd.getExtendses()) {
+              result.add(NameUtil.nodeFQName(icr.getIntfc()));
+            }
+          }
+          myParentsNamesMap.put(conceptFqName, result);
+          return Collections.unmodifiableSet(result);
+        }
+      });
     }
-    Set<String> result = new LinkedHashSet<String>();
-    AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (declaration == null) {
-      return result;
-    }
-    if (declaration instanceof ConceptDeclaration) {
-      ConceptDeclaration cd = (ConceptDeclaration) declaration;
-      if (cd.getExtends() != null) {
-        result.add(NameUtil.nodeFQName(cd.getExtends()));
-      }
-      for (InterfaceConceptReference icr : cd.getImplementses()) {
-        result.add(NameUtil.nodeFQName(icr.getIntfc()));
-      }
-    }
-    if (declaration instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-      for (InterfaceConceptReference icr : icd.getExtendses()) {
-        result.add(NameUtil.nodeFQName(icr.getIntfc()));
-      }
-    }
-    myParentsNamesMap.put(conceptFqName, result);
-    return Collections.unmodifiableSet(result);
   }
 
   public Set<String> getAncestorsNames(final String conceptFqName) {
@@ -153,7 +156,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         public Set<String> compute() {
           Set<String> result = new LinkedHashSet<String>();
           AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-          Set<String> parents = new LinkedHashSet<String>();
           if (declaration == null) {
             return result;
           }
@@ -167,7 +169,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               String fqName = NameUtil.nodeFQName(extendedConcept);
               Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage != null) {
-                parents.add(fqName);
                 result.addAll(getAncestorsNames(fqName));
               }
             }
@@ -178,7 +179,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               String fqName = NameUtil.nodeFQName(interfaceConcept);
               Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
-              parents.add(fqName);
               result.addAll(getAncestorsNames(fqName));
             }
           }
@@ -191,11 +191,10 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               String fqName = NameUtil.nodeFQName(interfaceConcept);
               Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
-              parents.add(fqName);
+              result.add(fqName);
               result.addAll(getAncestorsNames(fqName));
             }
           }
-          myParentsNamesMap.put(conceptFqName, parents);
           myAncestorsNamesMap.put(conceptFqName, result);
           return Collections.unmodifiableSet(result);
         }
