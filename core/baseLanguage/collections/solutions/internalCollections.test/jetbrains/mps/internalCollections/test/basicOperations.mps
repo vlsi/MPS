@@ -1372,6 +1372,60 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1240688629229">
+        <property name="methodName" value="join" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240688629230" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240688629231">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240688635483">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240688635484">
+              <property name="name" value="test" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1240688635485">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240688638293" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240688644769">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1240688666393">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240688668139" />
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240688673053">
+                    <property name="value" value="vodka" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240688693430">
+                    <property name="value" value="tequila" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240688696689">
+                    <property name="value" value="whisky" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1240688710941">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240688711479">
+              <property name="value" value="vodka tequila whisky" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240689288398">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240688727396">
+                <link role="variableDeclaration" targetNodeId="1240688635484" resolveInfo="test" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.JoinOperation" id="1240689288826" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1240688876148">
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240689293029">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240688891858">
+                <link role="variableDeclaration" targetNodeId="1240688635484" resolveInfo="test" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.JoinOperation" id="1240689293509">
+                <node role="delimiter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240689294716">
+                  <property name="value" value=", " />
+                </node>
+              </node>
+            </node>
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240688884725">
+              <property name="value" value="vodka, tequila, whisky" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204982066081">
       <link role="classifier" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />

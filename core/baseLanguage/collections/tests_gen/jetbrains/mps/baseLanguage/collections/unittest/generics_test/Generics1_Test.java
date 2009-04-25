@@ -4,10 +4,8 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence;
 
 public class Generics1_Test extends TestCase {
 

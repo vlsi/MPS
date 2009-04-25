@@ -17,6 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class Sequence_Test extends Util_Test {
 
@@ -471,6 +473,13 @@ __switch__:
   public void test_asSequence() throws Exception {
     String[] arr = new String[]{"A","B","C"};
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
+  }
+
+  @Test()
+  public void test_join() throws Exception {
+    Iterable<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "vodka", "tequila", "whisky");
+    Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));
+    Assert.assertEquals("vodka, tequila, whisky", IterableUtils.join(Sequence.fromIterable(test), ", "));
   }
 
 }

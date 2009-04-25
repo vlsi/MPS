@@ -41,6 +41,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", new HeadMapOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", new SubMapOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", new TailMapOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.JoinOperation", new JoinOperation_DataFlow());
   }
 
 }

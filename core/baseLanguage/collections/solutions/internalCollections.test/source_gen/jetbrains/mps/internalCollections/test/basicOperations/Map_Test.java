@@ -12,8 +12,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internalCollections.test.basicOperations.Foo;
-import jetbrains.mps.internalCollections.test.basicOperations.Bar;
 
 public class Map_Test extends Util_Test {
 

@@ -95,6 +95,16 @@ public class IterableUtils {
         }
         throw new NoSuchElementException ("Empty iterator");
     }
+    
+    public static String join(Iterable<? extends String> seq, String delimiter) {
+    	StringBuilder sb = new StringBuilder ();
+    	String sep = "";
+    	for (Iterator<? extends String> it=seq.iterator(); it.hasNext();) {
+    		sb.append(sep).append(it.next());
+    		sep = delimiter;
+    	}
+    	return sb.toString();
+    }
         
     private static boolean eq(Object a, Object b) {
         return (a == b) || ((a != null) ? a.equals(b) : false);
