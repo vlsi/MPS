@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}/lib/beansbinding/beansbinding-1.2.1.jar" include="false" />
+  </classPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
