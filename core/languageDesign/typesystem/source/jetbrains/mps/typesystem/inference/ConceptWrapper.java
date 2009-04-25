@@ -97,8 +97,71 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
         equationManager.addChildEquations(childEQs, errorInfo);
       }
       return true;
+    } else if (wrapper instanceof ConceptWrapper) {
+      return true; //this case will be checked in other place
     }
     return wrapper.matchesWith(this, equationManager, errorInfo);
+  }
+
+  public ConceptWrapper combineWith(ConceptWrapper conceptWrapper, EquationManager equationManager, @Nullable EquationInfo errorInfo) {
+    if (!(conceptWrapper.myConceptFQName.equals(myConceptFQName))) {
+      return null; //can't combine
+    }
+
+    ConceptWrapper result = new ConceptWrapper(myConceptFQName);
+    Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+
+    Set<String> childRoles = new HashSet<String>(myChildRolesToNodes.keySet());
+    childRoles.addAll(conceptWrapper.myChildRolesToNodes.keySet());
+    for (String childRole : childRoles) {
+      SNode child1 = myChildRolesToNodes.get(childRole);
+      SNode child2 = conceptWrapper.myChildRolesToNodes.get(childRole);
+      if (child1 != null) {
+        result.myChildRolesToNodes.put(childRole, child1);
+      }
+      if (child2 != null) {
+        result.myChildRolesToNodes.put(childRole, child2);
+      }
+      if (child1 != null && child2 != null) {
+        childEQs.add(new Pair<SNode, SNode>(child1, child2));
+      }
+    }
+
+    Set<String> referentRoles = new HashSet<String>(myReferentRolesToNodes.keySet());
+    referentRoles.addAll(conceptWrapper.myReferentRolesToNodes.keySet());
+    for (String referentRole : referentRoles) {
+      SNode ref1 = myReferentRolesToNodes.get(referentRole);
+      SNode ref2 = conceptWrapper.myReferentRolesToNodes.get(referentRole);
+      if (ref1 != null) {
+        result.myReferentRolesToNodes.put(referentRole, ref1);
+      }
+      if (ref2 != null) {
+        result.myReferentRolesToNodes.put(referentRole, ref2);
+      }
+      if (ref1 != null && ref2 != null) {
+        childEQs.add(new Pair<SNode, SNode>(ref1, ref2));
+      }
+    }
+
+    Set<Pair<String, Integer>> childRolesAndIndices = new HashSet<Pair<String, Integer>>(myChildRolesAndIndicesToNodes.keySet());
+    childRolesAndIndices.addAll(conceptWrapper.myChildRolesAndIndicesToNodes.keySet());
+    for (Pair<String, Integer> childRoleAndIndex : childRolesAndIndices) {
+      SNode child1 = myChildRolesAndIndicesToNodes.get(childRoleAndIndex);
+      SNode child2 = conceptWrapper.myChildRolesAndIndicesToNodes.get(childRoleAndIndex);
+      if (child1 != null) {
+        result.myChildRolesAndIndicesToNodes.put(childRoleAndIndex, child1);
+      }
+      if (child2 != null) {
+        result.myChildRolesAndIndicesToNodes.put(childRoleAndIndex, child2);
+      }
+      if (child1 != null && child2 != null) {
+        childEQs.add(new Pair<SNode, SNode>(child1, child2));
+      }
+    }
+    if (equationManager != null) {
+      equationManager.addChildEquations(childEQs, errorInfo);
+    }
+    return result;
   }
 
   public static class LinkTargetInfo {

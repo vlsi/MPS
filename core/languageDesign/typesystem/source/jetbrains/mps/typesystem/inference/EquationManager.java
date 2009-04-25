@@ -192,7 +192,7 @@ public class EquationManager {
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
     // RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
-    RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
+    boolean supertypeConcrete = supertypeRepresentator == null ? true : supertypeRepresentator.isConcrete();
     isConcrete(subtypeRepresentator);
     boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
     boolean supertypeHasNonConcreteVars = !isConcrete(supertypeRepresentator);
@@ -233,7 +233,7 @@ public class EquationManager {
     }
 
     // if one of them is a var
-    if (subtypeHasNonConcreteVars && solveOnlyConcrete || varSupertype != null) {
+    if (subtypeHasNonConcreteVars && solveOnlyConcrete || !supertypeConcrete) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, equationInfo, false);
       } else {
@@ -567,26 +567,47 @@ public class EquationManager {
       return;
     }
 
-    // solve equation
-    if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
-      IErrorReporter errorReporter;
-      SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
-      IntentionProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
-      String errorString = errorInfo == null ? null : errorInfo.getErrorString();
-      String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
-      String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
-
-      if (errorString != null) {
-        errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    //both are concept wrappers
+    if (lhsRepresentator instanceof ConceptWrapper && rhsRepresentator instanceof ConceptWrapper) {
+      ConceptWrapper conceptWrapper = ((ConceptWrapper) lhsRepresentator).combineWith((ConceptWrapper) rhsRepresentator, this, errorInfo);
+      if (conceptWrapper == null) {
+        reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
       } else {
-        errorReporter =
-          new EquationErrorReporter(nodeWithError, this, "incompatible types: ",
-            rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
+        processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
+        processEquation(lhsRepresentator, conceptWrapper, errorInfo);
       }
-      errorReporter.setIntentionProvider(intentionProvider);
-      processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
       return;
     }
+
+    // solve equation
+    if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
+      reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
+    } else {
+      if (lhsRepresentator instanceof ConceptWrapper) {
+        processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
+      } else if (rhsRepresentator instanceof ConceptWrapper) {
+        processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
+      }
+    }
+  }
+
+  private void reportEquationBroken(EquationInfo errorInfo, IWrapper lhsRepresentator, IWrapper rhsRepresentator) {
+    IErrorReporter errorReporter;
+    SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
+    IntentionProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
+    String errorString = errorInfo == null ? null : errorInfo.getErrorString();
+    String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
+    String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
+
+    if (errorString != null) {
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    } else {
+      errorReporter =
+        new EquationErrorReporter(nodeWithError, this, "incompatible types: ",
+          rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
+    }
+    errorReporter.setIntentionProvider(intentionProvider);
+    processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
   }
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
@@ -744,8 +765,9 @@ public class EquationManager {
       setParent(error, type);
     } else if (error instanceof NodeWrapper) {
       setParent(type, error);
+    } else {
+      setParent(error, type);
     }
-    //Concept Wrappers are removed
     myTypeCheckingContext.reportMessage(nodeToCheck, errorReporter);
     error.fireRepresentatorSet(type, this);
   }
@@ -1188,7 +1210,8 @@ public class EquationManager {
     IWrapper wrapper = NodeWrapper.createWrapperFromNode(type, this);
     IWrapper representator;
     representator = this.getRepresentatorWrapper(wrapper);
-    return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
+    IWrapper resultWrapper = expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent);
+    return resultWrapper == null ? null : resultWrapper.getNode();
   }
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
@@ -1209,6 +1232,9 @@ public class EquationManager {
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent nodeTypesComponent, boolean expandChild) {
     if (wrapper == null) return null;
+    if (wrapper instanceof ConceptWrapper) {
+      return null; //todo
+    }
     if (wrapper.getNode().isRegistered() && expandChild) {
       wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));
     }

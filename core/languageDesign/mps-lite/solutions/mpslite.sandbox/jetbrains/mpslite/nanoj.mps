@@ -72,6 +72,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240671898420">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240671898421">
+            <property name="name" value="aSet" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TupleType" id="1240671898422">
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1240671903345">
+                <property name="name" value="obj" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240671906081">
+                  <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+                </node>
+              </node>
+              <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1240671910817">
+                <property name="name" value="seet" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240671917600">
+                  <link role="classifier" targetNodeId="12.~Set" resolveInfo="Set" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1240585560629">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1240585560630">
             <property name="name" value="bt" />
@@ -104,6 +123,17 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240655503807">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1240655503808" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240671955197">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240671969038">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240671955198">
+              <link role="variableDeclaration" targetNodeId="1240671898421" resolveInfo="aSet" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation" id="1240671971417">
+              <property name="number" value="1" />
+              <property name="memberName" value="seet" />
             </node>
           </node>
         </node>
