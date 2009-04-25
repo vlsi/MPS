@@ -194,7 +194,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "style", "" + (SEnumOperations.getEnumMemberValue(parameterObject)));
+      SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
     }
 
     public boolean isReferentPresentation() {

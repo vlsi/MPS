@@ -100,6 +100,11 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240655503806">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240655503807">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1240655503808" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

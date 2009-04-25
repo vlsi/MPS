@@ -6066,6 +6066,52 @@
                 </node>
               </node>
             </node>
+            <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1240655864852">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240656085621">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240656085990">
+                  <property name="value" value="1" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240656081999">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240655896611">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1240655894607" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1240655931023">
+                      <link role="link" targetNodeId="2.1073389446424" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1240656084595" />
+                </node>
+              </node>
+              <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240655864854">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240656097708">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240656097709">
+                    <property name="name" value="cell" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240656097710">
+                      <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240656097711">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240656097712">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1240656097713" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1240656097714">
+                          <link role="link" targetNodeId="2.1073389446424" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1240656097715" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240656102895">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240656102940">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1240656102896" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1240656104881">
+                      <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240656106005">
+                        <link role="variableDeclaration" targetNodeId="1240656097709" resolveInfo="cell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240656112922" />
+              </node>
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183710915637">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227891586">
