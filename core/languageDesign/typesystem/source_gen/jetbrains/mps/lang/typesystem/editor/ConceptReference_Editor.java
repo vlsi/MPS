@@ -30,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
 
@@ -249,7 +250,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
         result = NameUtil.splitByCamels(name);
       } else
       {
-        result = ListSequence.<String>fromArray();
+        result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }

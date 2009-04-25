@@ -2493,6 +2493,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240657901213">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="childIndex" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
 </model>
 

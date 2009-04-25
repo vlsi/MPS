@@ -14,6 +14,7 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo";
   public static final String LINK_DECLARATION = "linkDeclaration";
   public static final String TARGET_NODE = "targetNode";
+  public static final String CHILD_INDEX = "childIndex";
 
   public ConceptClauseLinkInfo(SNode node) {
     super(node);
@@ -33,6 +34,14 @@ public class ConceptClauseLinkInfo extends BaseConcept {
 
   public void setTargetNode(Expression node) {
     super.setChild(ConceptClauseLinkInfo.TARGET_NODE, node);
+  }
+
+  public Expression getChildIndex() {
+    return (Expression)this.getChild(Expression.class, ConceptClauseLinkInfo.CHILD_INDEX);
+  }
+
+  public void setChildIndex(Expression node) {
+    super.setChild(ConceptClauseLinkInfo.CHILD_INDEX, node);
   }
 
 

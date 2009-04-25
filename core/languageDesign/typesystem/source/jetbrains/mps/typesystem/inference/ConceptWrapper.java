@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 
 import com.intellij.util.containers.HashMap;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class ConceptWrapper extends DefaultAbstractWrapper {
   private String myConceptFQName;
   private Map<String, SNode> myChildRolesToNodes = new HashMap<String, SNode>();
+  private Map<Pair<String, Integer>, SNode> myChildRolesAndIndicesToNodes = new HashMap<Pair<String, Integer>, SNode>();
   private Map<String, SNode> myReferentRolesToNodes = new HashMap<String, SNode>();
 
   public ConceptWrapper(String conceptFQName, LinkTargetInfo... rolesAndNodes) {
@@ -29,7 +31,11 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
       if (linkTargetInfo.myIsReference) {
         myReferentRolesToNodes.put(linkTargetInfo.myRole, linkTargetInfo.myTarget);
       } else {
-        myChildRolesToNodes.put(linkTargetInfo.myRole, linkTargetInfo.myTarget);
+        if (linkTargetInfo.myIndex == -1) {
+          myChildRolesToNodes.put(linkTargetInfo.myRole, linkTargetInfo.myTarget);
+        } else {
+          myChildRolesAndIndicesToNodes.put(new Pair<String, Integer>(linkTargetInfo.myRole, linkTargetInfo.myIndex), linkTargetInfo.myTarget);
+        }
       }
     }
   }
@@ -77,6 +83,13 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
       for (String role : myChildRolesToNodes.keySet()) {
         childEQs.add(new Pair<SNode, SNode>(myChildRolesToNodes.get(role), otherNode.getChild(role)));
       }
+      for (Pair<String, Integer> pair : myChildRolesAndIndicesToNodes.keySet()) {
+        List<SNode> children = otherNode.getChildren(pair.o1);
+        if (pair.o2 >= children.size()) {
+          return false;
+        }
+        childEQs.add(new Pair<SNode, SNode>(myChildRolesAndIndicesToNodes.get(pair), children.get(pair.o2)));
+      }
       for (String role : myReferentRolesToNodes.keySet()) {
         childEQs.add(new Pair<SNode, SNode>(myReferentRolesToNodes.get(role), otherNode.getReferent(role)));
       }
@@ -92,11 +105,17 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
     public boolean myIsReference;
     public String myRole;
     public SNode myTarget;
+    public int myIndex = -1;
 
     public LinkTargetInfo(boolean isReference, String role, SNode target) {
       myIsReference = isReference;
       myRole = role;
       myTarget = target;
+    }
+
+    public LinkTargetInfo(boolean isReference, String role, SNode target, int index) {
+      this(isReference, role, target);
+      myIndex = index;
     }
   }
 }

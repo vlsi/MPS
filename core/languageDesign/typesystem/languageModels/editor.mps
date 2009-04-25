@@ -4272,6 +4272,70 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240657180253">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240657180254">
+          <property name="flag" value="false" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240657180256" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1240657180257">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240657161784">
+          <property name="text" value="[" />
+          <link role="styleClass" targetNodeId="27.1233923571622" resolveInfo="LeftBracket" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240657948639">
+          <link role="relationDeclaration" targetNodeId="1.1240657901213" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240657163736">
+          <property name="text" value="]" />
+          <link role="styleClass" targetNodeId="27.1233923584313" resolveInfo="RightBracket" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1240657221641">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240657221642">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240657226772">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240657261841">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657234775">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657230813">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657228111">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240657226773" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240657229980">
+                        <link role="link" targetNodeId="1.1240322663260" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240657234018">
+                      <link role="property" targetNodeId="8.1071599893252" resolveInfo="sourceCardinality" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1240657236616">
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1240657236617">
+                      <link role="enumMember" targetNodeId="8.1084197782725" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657262919">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657262920">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240657262921">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240657262922" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240657262923">
+                        <link role="link" targetNodeId="1.1240322663260" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240657262924">
+                      <link role="property" targetNodeId="8.1071599893252" resolveInfo="sourceCardinality" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1240657262925">
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1240657262926">
+                      <link role="enumMember" targetNodeId="8.1084197782726" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240322702981">
         <property name="text" value="=" />
       </node>
