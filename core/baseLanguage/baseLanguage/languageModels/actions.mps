@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <maxImportIndex value="66" />
+  <maxImportIndex value="67" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
@@ -71,6 +71,7 @@
   <import index="63" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="64" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="66" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
+  <import index="67" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="sideTransforms" />
@@ -10698,6 +10699,63 @@
           </node>
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1239713389665">
             <property name="text" value="--" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1240657827409">
+    <property name="name" value="tupleInInternalModeOnly" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1240657999273">
+      <link role="applicableConcept" targetNodeId="1.1197027803184" resolveInfo="IOperation" />
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1240658015500">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240658015501">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240658015502">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240658015503">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240658015504">
+                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
+                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1240658019021">
+        <link role="conceptToRemove" targetNodeId="1.1233828326825" resolveInfo="TupleMemberAccessOperation" />
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1240657982492">
+      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1240657991451">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240657991452">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240657991453">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240657991454">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240657991455">
+                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
+                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1240657993925">
+        <link role="conceptToRemove" targetNodeId="1.1233829069870" resolveInfo="TupleExpression" />
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1240657847105">
+      <link role="applicableConcept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="1240657922070">
+        <link role="conceptToRemove" targetNodeId="1.1233824724035" resolveInfo="TupleType" />
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1240657927808">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240657927809">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240657936466">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240657975768">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240657975769">
+                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
+                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
