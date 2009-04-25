@@ -707,7 +707,7 @@ public class Language extends AbstractModule {
     return getLanguageFor(modelDescriptor);
   }
 
-  public LanguageAspect getAspectForModel(SModelDescriptor sm) {
+  public LanguageAspect getAspectForModel(@NotNull SModelDescriptor sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
         return la;

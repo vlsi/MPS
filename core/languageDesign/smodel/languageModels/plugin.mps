@@ -227,20 +227,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240668503550">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240668504131" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240668321711">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240668320694">
-                            <link role="variableDeclaration" targetNodeId="1240664728641" resolveInfo="language" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240668386569">
-                            <link role="baseMethodDeclaration" targetNodeId="2.~Language.getAspectForModel(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getAspectForModel" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240668491610">
-                              <link role="variableDeclaration" targetNodeId="1240668482633" resolveInfo="langModelForStub" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1240668510009">
                         <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240668510010">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240668521418">
@@ -280,6 +266,28 @@
                               </node>
                               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240668531105">
                                 <link role="variableDeclaration" targetNodeId="1240668278792" resolveInfo="otherStubsMsg" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240669614826">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240669613056">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669610961">
+                            <link role="variableDeclaration" targetNodeId="1240668482633" resolveInfo="langModelForStub" />
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240669613700" />
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240669615579">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240669615580" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240669615581">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669615582">
+                              <link role="variableDeclaration" targetNodeId="1240664728641" resolveInfo="language" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240669615583">
+                              <link role="baseMethodDeclaration" targetNodeId="2.~Language.getAspectForModel(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getAspectForModel" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669615584">
+                                <link role="variableDeclaration" targetNodeId="1240668482633" resolveInfo="langModelForStub" />
                               </node>
                             </node>
                           </node>
