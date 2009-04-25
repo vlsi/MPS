@@ -549,6 +549,16 @@
                       </node>
                     </node>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240679548651">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240679550138">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240679548652">
+                        <link role="variable" targetNodeId="1240676621849" resolveInfo="module" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240679553761">
+                        <link role="baseMethodDeclaration" targetNodeId="6.~IModule.save():void" resolveInfo="save" />
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1240677206902">
                     <property name="severity" value="info" />
                     <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240677249447">
