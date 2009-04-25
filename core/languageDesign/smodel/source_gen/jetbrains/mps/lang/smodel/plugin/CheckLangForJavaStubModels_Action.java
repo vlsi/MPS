@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import javax.swing.JOptionPane;
 
 public class CheckLangForJavaStubModels_Action extends GeneratedAction {
@@ -23,10 +25,10 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
 
   public IModule module;
-  public Frame frmae;
+  public Frame frame;
 
   public CheckLangForJavaStubModels_Action() {
-    super("Check for java_stubs", "", ICON);
+    super("Check for java_stubs usages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -61,8 +63,8 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     if (this.module == null) {
       return false;
     }
-    this.frmae = event.getData(MPSDataKeys.FRAME);
-    if (this.frmae == null) {
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -71,20 +73,33 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       Language language = ((Language)CheckLangForJavaStubModels_Action.this.module);
-      boolean noStubs = true;
-      String stubMsg = "";
+      boolean langStubsPresent = false;
+      boolean otherStubsPresent = false;
+      String langStubsMsg = "";
+      String otherStubsMsg = "";
       for(SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
         for(SModelDescriptor model : ListSequence.fromList(md.getSModel().importedModels(GlobalScope.getInstance()))) {
           if (model.getSModelReference().getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-            noStubs = false;
-            stubMsg += model.getSModelFqName().toString() + "\n";
+            SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
+            if (language.getAspectForModel(langModelForStub) != null) {
+              langStubsPresent = true;
+              langStubsMsg += "  " + model.getSModelFqName().toString() + "\n";
+            } else
+            {
+              otherStubsPresent = true;
+              otherStubsMsg += "  " + model.getSModelFqName().toString() + "\n";
+            }
           }
         }
       }
-      JOptionPane.showMessageDialog(CheckLangForJavaStubModels_Action.this.frmae, (noStubs ?
-        "No java_stub models" :
-        stubMsg
+      String message = ((!(langStubsPresent) ?
+        "No language stub models" :
+        "Language stub models: \n" + langStubsMsg
+      )) + "\n\n" + ((!(otherStubsPresent) ?
+        "No other stub models" :
+        "Other stub models: \n" + otherStubsMsg
       ));
+      JOptionPane.showMessageDialog(CheckLangForJavaStubModels_Action.this.frame, message);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
     }
