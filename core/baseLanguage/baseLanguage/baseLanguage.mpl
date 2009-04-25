@@ -22,9 +22,16 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/actions/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/behavior/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/dataFlow/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/dataFlow/runtime/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
+    <entry path="${mps_home}/core/languageDesign/actions/classes" />
+    <entry path="${mps_home}/core/languageDesign/dataFlow/classes" />
+    <entry path="${mps_home}/core/languageDesign/dataFlow/runtime/classes" />
     <entry path="${mps_home}/lib/commons-lang/commons-lang-2.1.jar" />
   </languageRuntimeClassPath>
   <sourcePath />
@@ -54,10 +61,9 @@
     <dependency reexport="false">8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</dependency>
     <dependency reexport="false">fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)</dependency>
     <dependency reexport="false">707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)</dependency>
-    <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
+    <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
-    <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguages>

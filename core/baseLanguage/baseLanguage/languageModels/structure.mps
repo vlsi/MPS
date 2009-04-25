@@ -31,7 +31,6 @@
   <maxImportIndex value="39" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="39" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <property name="package" value="assignments" />

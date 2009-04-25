@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.findUsages" uuid="64d34fcd-ad02-4e73-aff8-a581124c2e30" java-stubs-enabled="true" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.findUsages" uuid="64d34fcd-ad02-4e73-aff8-a581124c2e30" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.findUsages" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.findUsages" />

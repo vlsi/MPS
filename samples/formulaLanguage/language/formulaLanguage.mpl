@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.formulaLanguage" uuid="b1a9bc47-8a26-4792-8b68-4660c531090a" generatorOutputPath="${mps_home}\samples\formulaLanguage\source_gen" java-stubs-enabled="true" compileInMPS="false">
+<language namespace="jetbrains.mps.samples.formulaLanguage" uuid="b1a9bc47-8a26-4792-8b68-4660c531090a" generatorOutputPath="${mps_home}\samples\formulaLanguage\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.samples.formulaLanguage" />
   </models>
