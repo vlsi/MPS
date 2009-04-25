@@ -4,14 +4,10 @@
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
@@ -42,18 +38,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="3" modelUID="r:bacea126-6179-40b4-b82e-503faf6ff765(jetbrains.mpslite.generator.template.util)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895905cf(jetbrains.mpslite.behavior)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
+  <import index="9" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingScript" id="1238589718395">
     <property name="scriptKind" value="pre_processing" />
     <property name="name" value="generate" />
@@ -608,7 +602,7 @@
                 <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
               </node>
               <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239118042640">
-                <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238677482191">
@@ -617,7 +611,7 @@
                   <link role="concept" targetNodeId="2v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                 </node>
                 <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238677513171">
-                  <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                  <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
                 </node>
               </node>
             </node>
@@ -629,7 +623,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238614003655">
                 <property name="name" value="editor" />
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238614003656">
-                  <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                  <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239893548155">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239893547193">
@@ -681,7 +675,7 @@
                     <link role="variableDeclaration" targetNodeId="1238614003655" resolveInfo="editor" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1238682784882">
-                    <link role="link" targetNodeId="4v.1166049300910" />
+                    <link role="link" targetNodeId="9.1166049300910" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1238682786593">
@@ -723,7 +717,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239895416078">
                 <property name="name" value="editor" />
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239895416079">
-                  <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                  <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239896066536">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239896065828">
@@ -775,7 +769,7 @@
                     <link role="variableDeclaration" targetNodeId="1239895416078" resolveInfo="editor" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239896093180">
-                    <link role="link" targetNodeId="4v.1166049300910" />
+                    <link role="link" targetNodeId="9.1166049300910" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1239896093181">
@@ -1244,7 +1238,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238676751479">
                 <property name="name" value="editorDeclaration" />
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238676751480">
-                  <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                  <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239118056144">
                   <node role="key" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239894835058">
@@ -1290,7 +1284,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239894852629">
                 <property name="name" value="editorDeclaration" />
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239894852630">
-                  <link role="concept" targetNodeId="4v.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                  <link role="concept" targetNodeId="9.1071666914219" resolveInfo="ConceptEditorDeclaration" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239894852631">
                   <node role="key" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239894852632">

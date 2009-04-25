@@ -3,11 +3,12 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}/core/baseLanguage/collections/runtime/classes" include="false" />
+  </classPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
-    <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
   </dependencies>
   <usedLanguages>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.script" uuid="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" java-stubs-enabled="true" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.script" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.script" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.script" />
   </models>
   <accessoryModels />
   <generators>
@@ -39,6 +39,7 @@
     </generator>
   </generators>
   <classPath>
+    <entry path="${mps_home}/core/languageDesign/plugin/classes" include="false" />
     <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
@@ -50,8 +51,8 @@
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
   </dependencies>
   <extendedLanguages>
-    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</extendedLanguage>
   </extendedLanguages>
 </language>

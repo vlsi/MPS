@@ -5,14 +5,9 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
@@ -45,14 +40,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#java.util.jar(java.util.jar@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.analyzers(jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -83,7 +77,8 @@
   <import index="35" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.idea(com.intellij.idea@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
-  <import index="39" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
+  <import index="40" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="41" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215078243118">
     <property name="name" value="SubtreeChecker" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215078294635">
@@ -1058,8 +1053,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215078243119" />
   </node>
-  <visible index="2" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" />
-  <visible index="3" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215696484420">
     <property name="name" value="BaseTransformationTest" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1217508601914">
@@ -1319,7 +1312,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224595559044">
             <property name="name" value="module" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224595559045">
-              <link role="classifier" targetNodeId="2v.~TransientModelsModule" resolveInfo="TransientModelsModule" />
+              <link role="classifier" targetNodeId="40.~TransientModelsModule" resolveInfo="TransientModelsModule" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224595559046">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224595559047">
@@ -1328,7 +1321,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224595559048">
                 <link role="baseMethodDeclaration" targetNodeId="16.~ModuleContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1224595559049">
-                  <link role="classifier" targetNodeId="2v.~TransientModelsModule" resolveInfo="TransientModelsModule" />
+                  <link role="classifier" targetNodeId="40.~TransientModelsModule" resolveInfo="TransientModelsModule" />
                 </node>
               </node>
             </node>
@@ -1347,7 +1340,7 @@
                 <link role="variableDeclaration" targetNodeId="1224595559044" resolveInfo="module" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224595559057">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~TransientModelsModule.createTransientModel(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createTransientModel" />
+                <link role="baseMethodDeclaration" targetNodeId="40.~TransientModelsModule.createTransientModel(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createTransientModel" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224595559058">
                   <property name="value" value="testTransidentModel" />
                 </node>
@@ -1360,8 +1353,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224595559060">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224595559061">
-            <link role="classConcept" targetNodeId="3v.~CloneUtil" resolveInfo="CloneUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="3v.~CloneUtil.cloneModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,boolean):void" resolveInfo="cloneModel" />
+            <link role="classConcept" targetNodeId="41.~CloneUtil" resolveInfo="CloneUtil" />
+            <link role="baseMethodDeclaration" targetNodeId="41.~CloneUtil.cloneModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,boolean):void" resolveInfo="cloneModel" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224595559062">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224595559063">
                 <link role="baseMethodDeclaration" targetNodeId="17.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
