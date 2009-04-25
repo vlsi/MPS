@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.readerConfigLanguage" uuid="089e26c5-bfc3-4a60-9953-f68169a4608a" compileInMPS="false">
+<language namespace="jetbrains.mps.samples.readerConfigLanguage" uuid="089e26c5-bfc3-4a60-9953-f68169a4608a" java-stubs-enabled="false" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.readerConfigLanguage" />
   </models>
@@ -32,7 +32,9 @@
   <classPath>
     <entry path="${mps_home}/samples/fixedLengthReader/classes" include="false" />
   </classPath>
-  <languageRuntimeClassPath />                                                            
+  <languageRuntimeClassPath>
+    <entry path="${mps_home}/samples/fixedLengthReader/classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />
 </language>
