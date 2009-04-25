@@ -15,6 +15,7 @@ public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.smodel";
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.smodel.plugin.ToolsInternalAddition_ActionGroup");
     return groups;
   }
 
