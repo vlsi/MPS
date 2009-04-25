@@ -15,7 +15,7 @@ public class RulesUtil_Closures {
 
   public static List<SNode> getInterfaces() {
     if (ourInterfaces == null) {
-      ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
+      ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
       ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
 
         public void onReload() {
