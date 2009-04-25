@@ -29,6 +29,7 @@
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
+    <entry path="${mps_home}/core/baseLanguage/collections/runtime/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>

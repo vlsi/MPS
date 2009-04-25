@@ -32,7 +32,6 @@
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.logging.structure(jetbrains.mps.baseLanguage.logging.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1167245922666">
     <property name="name" value="logging_nodeSubstitue" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1167245930434">
