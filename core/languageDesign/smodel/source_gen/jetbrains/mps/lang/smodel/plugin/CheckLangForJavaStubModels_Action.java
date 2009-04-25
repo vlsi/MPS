@@ -11,13 +11,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
 import javax.swing.JOptionPane;
 
 public class CheckLangForJavaStubModels_Action extends GeneratedAction {
@@ -73,29 +74,34 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       Language language = ((Language)CheckLangForJavaStubModels_Action.this.module);
-      boolean langStubsPresent = false;
-      boolean otherStubsPresent = false;
-      String langStubsMsg = "";
-      String otherStubsMsg = "";
+      Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
+      Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
       for(SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
-        for(SModelDescriptor model : ListSequence.fromList(md.getSModel().importedModels(GlobalScope.getInstance()))) {
-          if (model.getSModelReference().getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+        for(SModelReference model : ListSequence.fromList(md.getSModel().getImportedModelUIDs())) {
+          if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
+            String modelName = model.getSModelFqName().toString();
             if (langModelForStub != null && language.getAspectForModel(langModelForStub) != null) {
-              langStubsPresent = true;
-              langStubsMsg += "  " + model.getSModelFqName().toString() + "\n";
+              SetSequence.fromSet(langStubModels).addElement(modelName);
             } else
             {
-              otherStubsPresent = true;
-              otherStubsMsg += "  " + model.getSModelFqName().toString() + "\n";
+              SetSequence.fromSet(otherStubModels).addElement(modelName);
             }
           }
         }
       }
-      String message = ((!(langStubsPresent) ?
+      String langStubsMsg = "";
+      for(String modelName : SetSequence.fromSet(langStubModels)) {
+        langStubsMsg += "  " + modelName + "\n";
+      }
+      String otherStubsMsg = "";
+      for(String modelName : SetSequence.fromSet(otherStubModels)) {
+        otherStubsMsg += "  " + modelName + "\n";
+      }
+      String message = ((SetSequence.fromSet(langStubModels).isEmpty() ?
         "No language stub models" :
         "Language stub models: \n" + langStubsMsg
-      )) + "\n\n" + ((!(otherStubsPresent) ?
+      )) + "\n" + ((SetSequence.fromSet(otherStubModels).isEmpty() ?
         "No other stub models" :
         "Other stub models: \n" + otherStubsMsg
       ));
