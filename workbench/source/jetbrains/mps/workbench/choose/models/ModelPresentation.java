@@ -33,9 +33,7 @@ public class ModelPresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    String modelName = myModelDescriptor.getSModelReference().getLongName();
-    boolean javaStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
-    return modelName + (javaStub ? "@java_stub" : "");
+    return myModelDescriptor.getSModelReference().getSModelFqName().toString();
   }
 
   public String getParentLocation() {
