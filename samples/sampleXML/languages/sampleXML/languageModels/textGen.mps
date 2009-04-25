@@ -24,12 +24,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#org.jdom.output(org.jdom.output@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#org.jdom.output(org.jdom.output@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1236699935298">
     <link role="conceptDeclaration" targetNodeId="1.1225239603382" resolveInfo="Document" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1236699935299">
@@ -338,11 +338,11 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236700869046">
                 <property name="name" value="prettyFormat" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236700869047">
-                  <link role="classifier" targetNodeId="3.~Format" resolveInfo="Format" />
+                  <link role="classifier" targetNodeId="6.~Format" resolveInfo="Format" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236700884894">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Format.getPrettyFormat():org.jdom.output.Format" resolveInfo="getPrettyFormat" />
-                  <link role="classConcept" targetNodeId="3.~Format" resolveInfo="Format" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~Format.getPrettyFormat():org.jdom.output.Format" resolveInfo="getPrettyFormat" />
+                  <link role="classConcept" targetNodeId="6.~Format" resolveInfo="Format" />
                 </node>
               </node>
             </node>
@@ -352,10 +352,10 @@
                   <link role="variableDeclaration" targetNodeId="1236700869046" resolveInfo="prettyFormat" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236700892152">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Format.setTextMode(org.jdom.output.Format$TextMode):org.jdom.output.Format" resolveInfo="setTextMode" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~Format.setTextMode(org.jdom.output.Format$TextMode):org.jdom.output.Format" resolveInfo="setTextMode" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1236700942811">
-                    <link role="classifier" targetNodeId="3.~Format$TextMode" resolveInfo="Format.TextMode" />
-                    <link role="variableDeclaration" targetNodeId="3.~Format$TextMode.PRESERVE" resolveInfo="PRESERVE" />
+                    <link role="classifier" targetNodeId="6.~Format$TextMode" resolveInfo="Format.TextMode" />
+                    <link role="variableDeclaration" targetNodeId="6.~Format$TextMode.PRESERVE" resolveInfo="PRESERVE" />
                   </node>
                 </node>
               </node>
@@ -364,11 +364,11 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236700954190">
                 <property name="name" value="xmlOutputter" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236700954191">
-                  <link role="classifier" targetNodeId="3.~XMLOutputter" resolveInfo="XMLOutputter" />
+                  <link role="classifier" targetNodeId="6.~XMLOutputter" resolveInfo="XMLOutputter" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236700977029">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1236700977030">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~XMLOutputter.&lt;init&gt;(org.jdom.output.Format)" resolveInfo="XMLOutputter" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~XMLOutputter.&lt;init&gt;(org.jdom.output.Format)" resolveInfo="XMLOutputter" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236700981187">
                       <link role="variableDeclaration" targetNodeId="1236700869046" resolveInfo="prettyFormat" />
                     </node>
@@ -385,7 +385,7 @@
                     <link role="variableDeclaration" targetNodeId="1236700954190" resolveInfo="xmlOutputter" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236701009714">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~XMLOutputter.outputString(org.jdom.Document):java.lang.String" resolveInfo="outputString" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~XMLOutputter.outputString(org.jdom.Document):java.lang.String" resolveInfo="outputString" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701012497">
                       <link role="variableDeclaration" targetNodeId="1236700791061" resolveInfo="document" />
                     </node>
