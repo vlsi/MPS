@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
@@ -35,7 +33,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     return false;
   }
 
-  protected abstract String getExtenstion(SNode node);
+  protected abstract String getExtension(SNode node);
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {
@@ -43,7 +41,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     }
 
     File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
-    File file = new File(outputDir, outputRootNode.getName() + "." + getExtenstion(outputRootNode));
+    File file = new File(outputDir, outputRootNode.getName() + "." + getExtension(outputRootNode));
 
     if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();
