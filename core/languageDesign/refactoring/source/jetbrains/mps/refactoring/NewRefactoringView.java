@@ -20,20 +20,31 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import java.util.List;
 import java.util.ArrayList;
 
-public class NewRefactoringView extends BaseProjectTool {
+//todo rename to RefactoringView
+public class NewRefactoringView extends BaseProjectTool implements INavigateableUsagesTool {
   private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
 
   protected NewRefactoringView(Project project) {
     super(project, "RefactoringView", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+  }
+
+  protected void doRegister() {
+    UsagesViewTracker.register(this);
+  }
+
+  protected void doUnregister() {
+    UsagesViewTracker.unregister(this);
   }
 
   public void initComponent() {
@@ -70,5 +81,17 @@ public class NewRefactoringView extends BaseProjectTool {
         }
       }
     });
+  }
+
+  public int getPriority() {
+    return -1;
+  }
+
+  public UsagesView getCurrentView() {
+    int currentTabIndex = getCurrentTabIndex();
+    if (currentTabIndex >= 0 && currentTabIndex < myRefactoringViewItems.size()) {
+      return myRefactoringViewItems.get(currentTabIndex).getUsagesView();
+    }
+    return null;
   }
 }

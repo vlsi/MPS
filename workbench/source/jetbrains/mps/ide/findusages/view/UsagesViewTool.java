@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -37,6 +32,8 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -66,7 +63,7 @@ import java.util.List;
     )
   }
 )
-public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element> {
+public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element>, INavigateableUsagesTool {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
   private static final String VERSION_NUMBER = "0.9996";
@@ -77,9 +74,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   private static final String TABS = "tabs";
 
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
-
-  private static final String PREV_COMMAND = "FindUsages.Previous";
-  private static final String NEXT_COMMAND = "FindUsages.Next";
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
@@ -93,11 +87,15 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //----TOOL STUFF----
 
+  public int getPriority() {
+    return 0;
+  }
+
   @Nullable
   public UsagesView getCurrentView() {
     LOG.checkEDT();
 
-    int index = currentTabIndex();
+    int index = getCurrentTabIndex();
     if (index == -1) return null;
 
     UsagesViewTool.UsageViewData data = myUsageViewsData.get(index);
@@ -130,30 +128,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     }
   }
 
-  private int currentTabIndex() {
-    ContentManager contentManager = getContentManager();
-    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
-  }
-
   public void doRegister() {
-    ActionManager am = ActionManager.getInstance();
-    if (am.getAction(PREV_COMMAND) != null) return;
-
-    am.registerAction(PREV_COMMAND, new AnAction() {
-      public void actionPerformed(AnActionEvent e) {
-        UsagesView usagesView = getCurrentView();
-        if (usagesView != null) usagesView.goToPrevious();
-      }
-    });
-    KeymapManager.getInstance().getActiveKeymap().addShortcut(PREV_COMMAND, getPrevShortcut());
-
-    am.registerAction(NEXT_COMMAND, new AnAction() {
-      public void actionPerformed(AnActionEvent e) {
-        UsagesView usagesView = getCurrentView();
-        if (usagesView != null) usagesView.goToNext();
-      }
-    });
-    KeymapManager.getInstance().getActiveKeymap().addShortcut(NEXT_COMMAND, getNextShortcut());
+    UsagesViewTracker.register(this);
 
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
@@ -164,21 +140,10 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     getContentManager().addContentManagerListener(myContentListener);
   }
 
-  private KeyboardShortcut getNextShortcut() {
-    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt DOWN"), null);
-  }
-
-  private KeyboardShortcut getPrevShortcut() {
-    return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
-  }
-
   public void doUnregister() {
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);
-    KeymapManager.getInstance().getActiveKeymap().removeShortcut(PREV_COMMAND, getPrevShortcut());
-    KeymapManager.getInstance().getActiveKeymap().removeShortcut(NEXT_COMMAND, getNextShortcut());
-    ActionManager.getInstance().unregisterAction(PREV_COMMAND);
-    ActionManager.getInstance().unregisterAction(NEXT_COMMAND);
+    UsagesViewTracker.unregister(this);
   }
 
   //---FIND USAGES STUFF----
@@ -218,7 +183,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
             }
           });
         } else {
-          int index = currentTabIndex();
+          int index = getCurrentTabIndex();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               UsageViewData usageViewData = new UsageViewData();

@@ -98,6 +98,10 @@ public class RefactoringViewItem {
     return myPanel;
   }
 
+  public UsagesView getUsagesView() {
+    return myUsagesView;
+  }
+
   /*package*/ void initUsagesView() {
     Thread thread = new Thread() {
       public void run() {

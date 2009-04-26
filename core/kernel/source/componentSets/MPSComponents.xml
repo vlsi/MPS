@@ -179,6 +179,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.ide.findusages.UsagesViewTracker</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.ide.messages.NavigationManager</implementation-class>
         </component>
 

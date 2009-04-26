@@ -60,7 +60,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private boolean myAutoExpandable = true;
   private ErrorState myErrorState = ErrorState.NONE;
   private ErrorState myCombinedErrorState = ErrorState.NONE;
-  private Runnable myDoubleClickProcessor = null;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;

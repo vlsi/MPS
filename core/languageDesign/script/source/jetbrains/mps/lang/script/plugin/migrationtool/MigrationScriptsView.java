@@ -53,7 +53,7 @@ public class MigrationScriptsView {
   private MigrationScriptFinder myFinder;
   private SearchQuery myQuery;
   private MigrationScriptsTool myTool;
-  private UsagesView myUsagesVew;
+  private UsagesView myUsagesView;
   private JPanel myMainPanel;
   private JPanel myControlsPanel;
   private JPanel myStatusPanel;
@@ -71,16 +71,16 @@ public class MigrationScriptsView {
     viewOptions.myGroupSearchedNodes = false;
     viewOptions.mySearchedNodesButtonsVisible = false;
 
-    myUsagesVew = new UsagesView(project, viewOptions) {
+    myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
         myTool.closeTab(MigrationScriptsView.this);
       }
     };
 
-    myUsagesVew.setRunOptions(provider, query, new ButtonConfiguration(true, true, true), finder.getLastSearchResults());
+    myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(true, true, true), finder.getLastSearchResults());
 
     myMainPanel = new JPanel(new BorderLayout());
-    myMainPanel.add(myUsagesVew.getComponent(), BorderLayout.CENTER);
+    myMainPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myApplyButton = new JButton(new AbstractAction("Apply Migrations") {
       public void actionPerformed(ActionEvent e) {
@@ -98,7 +98,7 @@ public class MigrationScriptsView {
     final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNodePointer> includedNodes = myUsagesVew.getIncludedResultNodes();
+        List<SNodePointer> includedNodes = myUsagesView.getIncludedResultNodes();
         Set<SNode> aliveIncludedNodes = new HashSet<SNode>();
         for (SNodePointer includedNode : includedNodes) {
           if(includedNode.getNode() != null) {
@@ -202,6 +202,10 @@ public class MigrationScriptsView {
 
     myStatusPanel.revalidate();
     myStatusPanel.repaint();
+  }
+
+  public UsagesView getUsagesView() {
+    return myUsagesView;
   }
 
   public JComponent getComponent() {

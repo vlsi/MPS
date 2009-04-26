@@ -233,6 +233,11 @@ public abstract class BaseTool {
 
   }
 
+  public int getCurrentTabIndex() {
+    ContentManager contentManager = getContentManager();
+    return contentManager.getIndexOfContent(contentManager.getSelectedContent());
+  }
+
   protected BaseAction createCloseAction() {
     return new CloseAction(this);
   }
@@ -304,5 +309,4 @@ public abstract class BaseTool {
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
-
 }

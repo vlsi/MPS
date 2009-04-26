@@ -27,6 +27,9 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -45,7 +48,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsTool extends BaseProjectTool {
+public class MigrationScriptsTool extends BaseProjectTool implements INavigateableUsagesTool{
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;
@@ -58,12 +61,20 @@ public class MigrationScriptsTool extends BaseProjectTool {
 
   protected void doRegister() {
     super.doRegister();
+
+    UsagesViewTracker.register(this);
+
     myContentListener = new ContentManagerAdapter(){
       public void contentRemoved(ContentManagerEvent event) {
         myViews.remove(event.getIndex());
       }
     };
     getContentManager().addContentManagerListener(myContentListener);
+  }
+
+  @Override
+  protected void doUnregister() {
+    UsagesViewTracker.unregister(this);
   }
 
   void closeTab(int index) {
@@ -140,5 +151,17 @@ public class MigrationScriptsTool extends BaseProjectTool {
 
   public Project getProject() {
     return super.getProject();
+  }
+
+  public int getPriority() {
+    return -1;
+  }
+
+  public UsagesView getCurrentView() {
+    int currentTabIndex = getCurrentTabIndex();
+    if (currentTabIndex >= 0 && currentTabIndex < myViews.size()) {
+      return myViews.get(currentTabIndex).getUsagesView();
+    }
+    return null;
   }
 }
