@@ -354,6 +354,12 @@
         <link role="template" targetNodeId="1230221604639" resolveInfo="reduce_MPSLayoutConfigurationReferencePropertyValueExpression" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240849408232">
+      <link role="applicableConcept" targetNodeId="1.1234531699390" resolveInfo="Space" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1240849424226">
+        <link role="template" targetNodeId="1240849283962" resolveInfo="reduce_Space" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.buildlanguage.structure.Project" id="1203611981921">
     <property name="name" value="project" />
@@ -6258,6 +6264,27 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1240849283962">
+    <property name="name" value="reduce_Space" />
+    <link role="applicableConcept" targetNodeId="1.1234531699390" resolveInfo="Space" />
+    <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1240849283963">
+      <property name="name" value="proejct" />
+      <node role="property" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration" id="1240849283964">
+        <property name="name" value="name" />
+        <node role="type" type="jetbrains.mps.buildlanguage.structure.StringType" id="1240849283965" />
+        <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240849305264">
+          <property name="value" value=" " />
+          <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1240849308601" />
+        </node>
+      </node>
+      <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1240849283976">
+        <property name="name" value="target" />
+      </node>
+      <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1240849283977">
+        <link role="targetDeclaration" targetNodeId="1240849283976" resolveInfo="target" />
       </node>
     </node>
   </node>
