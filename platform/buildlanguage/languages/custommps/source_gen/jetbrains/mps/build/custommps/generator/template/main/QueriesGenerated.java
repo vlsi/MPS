@@ -188,7 +188,7 @@ public class QueriesGenerated {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "libraryName", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1240847118817(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1240855906999(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
   }
 
@@ -401,12 +401,12 @@ public class QueriesGenerated {
     return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
-  public static boolean ifMacro_Condition_1240405813130(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
-  }
-
   public static boolean ifMacro_Condition_1240846920579(final IOperationContext operationContext, final IfMacroContext _context) {
     return MPSBuild_Behavior.isInMPSBuild_1239995424995();
+  }
+
+  public static boolean ifMacro_Condition_1240855521673(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
