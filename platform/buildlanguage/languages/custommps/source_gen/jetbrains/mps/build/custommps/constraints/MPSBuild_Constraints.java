@@ -15,9 +15,9 @@ public class MPSBuild_Constraints {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout") && (ListSequence.fromList(SNodeOperations.getChildren(_context.getParentNode())).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.MPSLayout");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.custommps.structure.MPSBuild");
       }
-    }).count() > 1);
+    }).count() <= 1);
   }
 
 }
