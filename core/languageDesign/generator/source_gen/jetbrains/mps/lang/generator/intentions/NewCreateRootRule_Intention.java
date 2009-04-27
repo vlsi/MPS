@@ -16,11 +16,20 @@ import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class NewCreateRootRule_Intention extends BaseIntention {
 
+  public NewCreateRootRule_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.INamedConcept";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -91,6 +100,12 @@ public class NewCreateRootRule_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }

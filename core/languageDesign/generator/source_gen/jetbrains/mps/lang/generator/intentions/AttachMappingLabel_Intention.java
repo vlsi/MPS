@@ -23,12 +23,20 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class AttachMappingLabel_Intention extends BaseIntention {
 
+  public AttachMappingLabel_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -150,6 +158,12 @@ __switch__:
 
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }

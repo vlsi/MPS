@@ -19,7 +19,6 @@ import javax.swing.JTextField;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.generator.intentions.MappingLabelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import java.awt.Insets;
