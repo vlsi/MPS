@@ -788,6 +788,10 @@
       <property name="value" value="echo" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240852090407">
+      <property name="name" value="append" />
+      <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205335290326">
     <property name="name" value="Variable" />

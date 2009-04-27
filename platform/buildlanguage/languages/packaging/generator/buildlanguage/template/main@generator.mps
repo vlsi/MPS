@@ -3384,6 +3384,26 @@
               </node>
             </node>
           </node>
+          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240852452097">
+            <link role="attributeDeclaration" targetNodeId="7.1199644186804" resolveInfo="append" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1240852458337">
+              <property name="value" value="true" />
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240852461261">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240852461262">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240852461263">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240852468253">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240852468309">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240852468254" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240852470754">
+                        <link role="property" targetNodeId="1.1240852090407" resolveInfo="append" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1205332427678">

@@ -9,10 +9,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Echo extends File {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Echo";
+  public static final String APPEND = "append";
   public static final String MESSAGE = "message";
 
   public Echo(SNode node) {
     super(node);
+  }
+
+  public boolean getAppend() {
+    return this.getBooleanProperty(Echo.APPEND);
+  }
+
+  public void setAppend(boolean value) {
+    this.setBooleanProperty(Echo.APPEND, value);
   }
 
   public IStringExpression getMessage() {
