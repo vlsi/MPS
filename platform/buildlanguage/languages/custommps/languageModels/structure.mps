@@ -43,6 +43,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233149869651">
       <link role="intfc" targetNodeId="2v.1203617883391" resolveInfo="ICompositeComponent" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240832859448">
+      <link role="intfc" targetNodeId="2v.1240832649054" resolveInfo="INotBuildableComponent" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233150001577">
       <property name="value" value="mps-build" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />

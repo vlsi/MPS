@@ -4,6 +4,7 @@ package jetbrains.mps.build.custommps.structure;
 
 import jetbrains.mps.build.packaging.structure.AbstractProjectComponent;
 import jetbrains.mps.build.packaging.structure.ICompositeComponent;
+import jetbrains.mps.build.packaging.structure.INotBuildableComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.structure.Path;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MPSBuild extends AbstractProjectComponent implements ICompositeComponent {
+public class MPSBuild extends AbstractProjectComponent implements ICompositeComponent, INotBuildableComponent {
   public static final String concept = "jetbrains.mps.build.custommps.structure.MPSBuild";
   public static final String EXCLUDES = "excludes";
   public static final String INCLUDES = "includes";

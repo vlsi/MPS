@@ -1241,5 +1241,9 @@
     <property name="package" value="projectComponents" />
     <property name="name" value="ITransparentProjectComponent" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1240832649054">
+    <property name="package" value="projectComponents" />
+    <property name="name" value="INotBuildableComponent" />
+  </node>
 </model>
 

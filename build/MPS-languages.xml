@@ -243,6 +243,9 @@
       <zipfileset dir="core/languageDesign/findUsages" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="core/languageDesign/findUsages/classes" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="core/languageDesign/findUsages/classes" />
+    </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.typesystem0">
     <mkdir dir="core/languageDesign/typesystem/classes" />
