@@ -18,9 +18,6 @@
     <property name="name" value="MPS" />
     <property name="scriptsFolder" value="build" />
     <node role="component" type="jetbrains.mps.build.custommps.structure.MPSBuild" id="1237299829995">
-      <node role="configuration" type="jetbrains.mps.build.packaging.structure.ConfigurationReference" id="1240834568983">
-        <link role="configuration" targetNodeId="1240834558729" resolveInfo="some" />
-      </node>
       <node role="pathToBuildToolsZip" type="jetbrains.mps.build.packaging.structure.Path" id="1237299829996">
         <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1237299829997">
           <property name="name" value="basedir" />
@@ -30,9 +27,6 @@
     </node>
     <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1237299779834">
       <property name="name" value="external" />
-    </node>
-    <node role="configuration" type="jetbrains.mps.build.packaging.structure.Configuration" id="1240834558729">
-      <property name="name" value="some" />
     </node>
     <node role="builtInVariable" type="jetbrains.mps.build.packaging.structure.Variable" id="1237299779835">
       <property name="name" value=":" />
