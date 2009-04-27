@@ -9741,5 +9741,65 @@
       <link role="concept" targetNodeId="3.1240854379201" resolveInfo="MappingsSetOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240857007399">
+    <property name="package" value="mapType" />
+    <property name="name" value="sequence_supertypeOf_map" />
+    <property name="isWeak" value="false" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240857007400">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240857089236">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240857089237">
+          <property name="name" value="mappingType" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240857089238">
+            <link role="concept" targetNodeId="3.1240424373525" resolveInfo="MappingType" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240857089239">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.MappingType" id="1240857089240">
+              <node role="keyType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240857089241">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240857089242">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240857089243">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240857089244">
+                      <link role="applicableNode" targetNodeId="1240857028108" resolveInfo="mapType" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240857089245">
+                      <link role="link" targetNodeId="3.1197683466920" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="valueType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240857089246">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240857089247">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240857089248">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240857089249">
+                      <link role="applicableNode" targetNodeId="1240857028108" resolveInfo="mapType" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240857089250">
+                      <link role="link" targetNodeId="3.1197683475734" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240857046028">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240857047830">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1240857053341">
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240857053342">
+              <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240857054304">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240857095309">
+                  <link role="variableDeclaration" targetNodeId="1240857089237" resolveInfo="mappingType" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240857028108">
+      <property name="name" value="mapType" />
+      <link role="concept" targetNodeId="3.1197683403723" resolveInfo="MapType" />
+    </node>
+  </node>
 </model>
 

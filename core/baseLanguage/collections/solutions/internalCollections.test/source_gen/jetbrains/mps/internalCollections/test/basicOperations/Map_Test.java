@@ -18,6 +18,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class Map_Test extends Util_Test {
 
@@ -148,6 +149,18 @@ public class Map_Test extends Util_Test {
     }
     Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(test).keySet()).isEmpty());
     Assert.assertTrue(ListSequence.fromList(nums).isEmpty());
+  }
+
+  @Test()
+  public void test_mapIsASequence() throws Exception {
+    Map<String, Integer> test = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
+    Iterable<IMapping<String, Integer>> seq = MapSequence.fromMap(test);
+    Assert.assertSame(3, Sequence.fromIterable(seq).count());
+    Assert.assertTrue(Sequence.fromIterable(seq).isNotEmpty());
+    Assert.assertFalse(Sequence.fromIterable(seq).isEmpty());
+    Map<String, Integer> test2 = MapSequence.<String, Integer>fromMapAndKeysArray(new LinkedHashMap<String, Integer>(16, (float)0.75, false), "b", "a", "c").withValues(2, 1, 3);
+    Iterable<IMapping<String, Integer>> seq2 = MapSequence.fromMap(test2);
+    this.assertIterableEqualsIgnoreOrder(seq, seq2);
   }
 
 }
