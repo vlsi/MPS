@@ -3184,8 +3184,9 @@
     <property name="package" value="tuples" />
     <property name="name" value="TupleMember" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233824783104">
-      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240847316329">
+      <property name="name" value="memberName" />
+      <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233824786450">
       <property name="metaClass" value="aggregation" />
@@ -3217,20 +3218,14 @@
     <property name="package" value="tuples" />
     <property name="name" value="TupleMemberAccessOperation" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240577866181">
-      <property name="name" value="number" />
-      <link role="dataType" targetNodeId="4.1082983657062" resolveInfo="integer" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1240577875761">
-      <property name="name" value="memberName" />
-      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240847215899">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="member" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1233824771431" resolveInfo="TupleMember" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233828356717">
       <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240587046167">
-      <property name="value" value="{m}" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240587051302">
       <property name="value" value="tuple member access" />
