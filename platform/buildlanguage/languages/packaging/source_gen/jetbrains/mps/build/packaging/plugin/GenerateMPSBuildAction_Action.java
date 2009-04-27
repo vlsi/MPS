@@ -12,6 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerateMPSBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -72,7 +76,14 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     try {
       // calculate output path
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
-      GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
+      final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
+        }
+      });
+      GenerateTextFromBuild.generate(configuration.value, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }

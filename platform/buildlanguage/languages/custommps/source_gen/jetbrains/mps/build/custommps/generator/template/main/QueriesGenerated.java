@@ -69,6 +69,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false)).isNotEmpty() && MPSBuild_Behavior.isInMPSBuild_1239995424995();
   }
 
+  public static boolean baseMappingRule_Condition_1240840023963(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false)).isNotEmpty();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1233670619638(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuiltInLibrariesIO.class.getName();
   }
