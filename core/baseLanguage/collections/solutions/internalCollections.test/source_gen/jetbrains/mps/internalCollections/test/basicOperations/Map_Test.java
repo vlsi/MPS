@@ -12,6 +12,12 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Iterator;
 
 public class Map_Test extends Util_Test {
 
@@ -33,7 +39,7 @@ public class Map_Test extends Util_Test {
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
       Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
-      Assert.assertEquals(values.get(i - 1), map.get(i));
+      Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
     for(Integer i : Arrays.asList(1, 2, 3)) {
@@ -57,7 +63,7 @@ public class Map_Test extends Util_Test {
     for(Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
       Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
-      Assert.assertEquals(values.get(i - 1), map.get(i));
+      Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
     this.assertIterableEqualsIgnoreOrder(Arrays.asList("a", "b", "c"), MapSequence.fromMap(map).values());
@@ -76,10 +82,10 @@ public class Map_Test extends Util_Test {
   @Test()
   public void test_primitiveParameter() throws Exception {
     Map<Integer, Character> ascii = MapSequence.<Integer, Character>fromKeysArray(48, 49, 50).withValues('0', '1', '2');
-    Assert.assertSame('1', ascii.get(49));
+    Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
     for(int k : Sequence.fromIterable(keys)) {
-      Assert.assertEquals(Character.valueOf((char)k), ascii.get(k));
+      Assert.assertEquals(Character.valueOf((char)k), MapSequence.fromMap(ascii).get(k));
     }
   }
 
@@ -88,7 +94,7 @@ public class Map_Test extends Util_Test {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
-    String[] array = test.get("foo");
+    String[] array = MapSequence.fromMap(test).get("foo");
     Assert.assertSame(2, array.length);
   }
 
@@ -97,7 +103,7 @@ public class Map_Test extends Util_Test {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
-    String[] array = test.get("foo");
+    String[] array = MapSequence.fromMap(test).get("foo");
     Assert.assertSame(2, array.length);
   }
 
@@ -119,6 +125,29 @@ public class Map_Test extends Util_Test {
   public void test_toString() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1).withValues("a");
     Assert.assertEquals("[1=a]", String.valueOf(test));
+  }
+
+  @Test()
+  public void test_mappings() throws Exception {
+    Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
+    List<Integer> nums = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+    Set<IMapping<Integer, String>> ms = MapSequence.fromMap(test).mappingsSet();
+    Assert.assertSame(3, SetSequence.fromSet(ms).count());
+    Iterator<IMapping<Integer, String>> itr = SetSequence.fromSet(ms).iterator();
+    Assert.assertTrue(itr.hasNext());
+    while (itr.hasNext()) {
+      IMapping<Integer, String> m = itr.next();
+      int key = m.key();
+      Assert.assertTrue(ListSequence.fromList(nums).contains(key));
+      ListSequence.fromList(nums).removeElement(key);
+      String val = m.value();
+      Assert.assertEquals(MapSequence.fromMap(test).get(key), val);
+      itr.remove();
+      Assert.assertFalse(MapSequence.fromMap(test).containsKey(key));
+      Assert.assertFalse(MapSequence.fromMap(test).containsValue(val));
+    }
+    Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(test).keySet()).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(nums).isEmpty());
   }
 
 }

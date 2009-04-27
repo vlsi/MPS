@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class SelectingSequence<U,V> extends AbstractChainedSequence<U,V> implements Iterable<V>{
     private final ISelector<? super U, V> selector;
 
-    public SelectingSequence (Sequence<U> input, ISelector<? super U,V> selector) {
+    public SelectingSequence (Iterable<U> input, ISelector<? super U,V> selector) {
         super (input);
         this.selector = selector;
     }
@@ -45,7 +45,7 @@ public class SelectingSequence<U,V> extends AbstractChainedSequence<U,V> impleme
         
         public boolean hasNext() {
             if (inputIterator == null) {
-                this.inputIterator = getInput().toIterable().iterator();
+                this.inputIterator = getInput().iterator();
                 moveToNext ();
             }
             return hasNext;

@@ -16,6 +16,7 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -25,365 +26,514 @@ import java.util.Set;
 
 import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
 
-
 /**
  * @author fyodor
  */
-public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSequence<U,V>, Map<U,V>, Serializable {
-    
-    /**
+public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements
+		IMapSequence<U, V>, Map<U, V>, Serializable {
+
+	/**
 	 * Auto-computed serialVersionUID
 	 */
 	private static final long serialVersionUID = 4362668497945620393L;
-	
+
 	private Map<U, V> map;
-    
-    public static class MapSequenceInitializer<P,Q> {
-        
-        private final P[] keys;
-        private final IMapSequence<P, Q> mapSeq;
-        
-        protected MapSequenceInitializer (IMapSequence<P, Q> mapSeq, P...keys) {
-            this.mapSeq = mapSeq;
-            this.keys = keys;
-        }
-        
-        public IMapSequence<P, Q> withValues (Q...values) {
-            for (int i=0; i<keys.length && i<values.length; i++) {
-                mapSeq.put (keys[i], values[i]);
-            }
-            return mapSeq;
-        }
-    }
-    
-    public static <P,Q> MapSequenceInitializer<P,Q> fromKeysArray (P...keys) {
-        Map<P, Q> map = new HashMap<P,Q> ();
-        return new MapSequenceInitializer<P,Q> (new MapSequence<P, Q> (map), keys);
-    }
-    
-    public static <P,Q> MapSequenceInitializer<P,Q> fromMapAndKeysArray (Map<P,Q> map, P...keys) {
-        return new MapSequenceInitializer<P,Q> (new MapSequence<P, Q> (map), keys);
-    }
 
-    public static <P,Q> IMapSequence<P, Q> fromArray (IMapping<P,Q>...mappings) {
-        Map<P, Q> map = new HashMap<P,Q> (); 
-        for (IMapping<P, Q> mp : mappings) {
-            map.put(mp.key(), mp.value());
-        }
-        return new MapSequence<P, Q> (map);
-    }
-    
-    @SuppressWarnings("unchecked")
-	public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
-        if (iterable instanceof IMapSequence) {
-            return (IMapSequence<P, Q>) iterable;
-        }
-        Map<P,Q> map = new HashMap<P, Q> ();
-        for (IMapping<P, Q> mpng: iterable) {
-            map.put(mpng.key(), mpng.value());
-        }
-        return new MapSequence<P, Q> (map);
-    }
-    
-    public static <P,Q> IMapSequence<P, Q> fromMap (Map<P,Q> map) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (map == null) {
-                return NullMapSequence.<P,Q>instance();
-            }
-        }
-        if (map instanceof IMapSequence) {
-            return (IMapSequence<P, Q>) map;
-        }
-        return new MapSequence<P, Q> (map);
-    }
-    
-    protected MapSequence(Map<U,V> map) {
-        this.map = map;
-    }
-    
-    // delegated methods
-    
-    public void clear() {
-        map.clear();
-    }
+	public static class MapSequenceInitializer<P, Q> {
 
-    public boolean containsKey(Object key) {
-        return map.containsKey(key);
-    }
+		private final P[] keys;
+		private final IMapSequence<P, Q> mapSeq;
 
-    public boolean containsValue(Object value) {
-        return map.containsValue(value);
-    }
+		protected MapSequenceInitializer(IMapSequence<P, Q> mapSeq, P... keys) {
+			this.mapSeq = mapSeq;
+			this.keys = keys;
+		}
 
-    public Set<Entry<U, V>> entrySet() {
-        return map.entrySet();
-    }
+		public IMapSequence<P, Q> withValues(Q... values) {
+			for (int i = 0; i < keys.length && i < values.length; i++) {
+				mapSeq.put(keys[i], values[i]);
+			}
+			return mapSeq;
+		}
+	}
 
-    public boolean equals(Object o) {
-        return map.equals(o);
-    }
+	public static <P, Q> MapSequenceInitializer<P, Q> fromKeysArray(P... keys) {
+		Map<P, Q> map = new HashMap<P, Q>();
+		return new MapSequenceInitializer<P, Q>(new MapSequence<P, Q>(map),
+				keys);
+	}
 
-    public V get(Object key) {
-        return map.get(key);
-    }
+	public static <P, Q> MapSequenceInitializer<P, Q> fromMapAndKeysArray(
+			Map<P, Q> map, P... keys) {
+		return new MapSequenceInitializer<P, Q>(new MapSequence<P, Q>(map),
+				keys);
+	}
 
-    public int hashCode() {
-        return map.hashCode();
-    }
+	public static <P, Q> IMapSequence<P, Q> fromArray(
+			IMapping<P, Q>... mappings) {
+		Map<P, Q> map = new HashMap<P, Q>();
+		for (IMapping<P, Q> mp : mappings) {
+			map.put(mp.key(), mp.value());
+		}
+		return new MapSequence<P, Q>(map);
+	}
 
-    public boolean isEmpty() {
-        return map.isEmpty();
-    }
+	@SuppressWarnings("unchecked")
+	public static <P, Q> IMapSequence<P, Q> fromIterable(
+			Iterable<IMapping<P, Q>> iterable) {
+		if (iterable instanceof IMapSequence) {
+			return (IMapSequence<P, Q>) iterable;
+		}
+		Map<P, Q> map = new HashMap<P, Q>();
+		for (IMapping<P, Q> mpng : iterable) {
+			map.put(mpng.key(), mpng.value());
+		}
+		return new MapSequence<P, Q>(map);
+	}
 
-    public Set<U> keySet() {
-        return map.keySet();
-    }
+	public static <P, Q> IMapSequence<P, Q> fromMap(Map<P, Q> map) {
+		if (Sequence.USE_NULL_SEQUENCE) {
+			if (map == null) {
+				return NullMapSequence.<P, Q> instance();
+			}
+		}
+		if (map instanceof IMapSequence) {
+			return (IMapSequence<P, Q>) map;
+		}
+		return new MapSequence<P, Q>(map);
+	}
 
-    public V put(U key, V value) {
-        return map.put(key, value);
-    }
+	protected MapSequence(Map<U, V> map) {
+		this.map = map;
+	}
 
-    public void putAll(Map<? extends U, ? extends V> m) {
-        map.putAll(m);
-    }
+	// delegated methods
 
-    public V remove(Object key) {
-        return map.remove(key);
-    }
+	public void clear() {
+		map.clear();
+	}
 
-    public int size() {
-        return map.size();
-    }
+	public boolean containsKey(Object key) {
+		return map.containsKey(key);
+	}
 
-    public Collection<V> values() {
-        return map.values();
-    }
-    
-    // additional methods
-    public Map<U, V> toMap() {
-        return this;
-    }
+	public boolean containsValue(Object value) {
+		return map.containsValue(value);
+	}
 
-    // sequence
-    @Override
-    public ISequence<IMapping<U,V>> concat(ISequence<IMapping<U,V>> that) {
-        return super.concat(that);
-    }
+	public Set<Entry<U, V>> entrySet() {
+		return map.entrySet();
+	}
 
-    @Override
-    public boolean contains(IMapping<U,V> t) {
-        V v = map.get (t.key ());
-        return eq (v, t.value());
-    }
+	public boolean equals(Object o) {
+		return map.equals(o);
+	}
 
-    @Override
-    public int count() {
-        return map.size();
-    }
+	public V get(Object key) {
+		return map.get(key);
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> cut(int length) {
-        // TODO Auto-generated method stub
-        return super.cut(length);
-    }
+	public int hashCode() {
+		return map.hashCode();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> disjunction(ISequence<IMapping<U,V>> that) {
-        // TODO Auto-generated method stub
-        return super.disjunction(that);
-    }
+	public boolean isEmpty() {
+		return map.isEmpty();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> distinct() {
-        return this;
-    }
+	public Set<U> keySet() {
+		return map.keySet();
+	}
 
-    @Override
-    public IMapping<U,V> first() {
-        // TODO Auto-generated method stub
-        return super.first();
-    }
+	public V put(U key, V value) {
+		return map.put(key, value);
+	}
 
-    @Override
-    public int indexOf(IMapping<U,V> t) {
-        // TODO Auto-generated method stub
-        return super.indexOf(t);
-    }
+	public void putAll(Map<? extends U, ? extends V> m) {
+		map.putAll(m);
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> intersect(ISequence<IMapping<U,V>> that) {
-        // TODO Auto-generated method stub
-        return super.intersect(that);
-    }
+	public V remove(Object key) {
+		return map.remove(key);
+	}
 
-    @Override
-    public boolean isNotEmpty() {
-        return !(map.isEmpty());
-    }
+	public int size() {
+		return map.size();
+	}
 
-    @Override
-    public IMapping<U,V> last() {
-        // TODO Auto-generated method stub
-        return super.last();
-    }
+	public Collection<V> values() {
+		return map.values();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> page(int skip, int skipplustake) {
-        // TODO Auto-generated method stub
-        return super.page(skip, skipplustake);
-    }
+	// additional methods
+	public Map<U, V> toMap() {
+		return this;
+	}
 
-    @Override
-    public <W> ISequence<W> select(ISelector<IMapping<U,V>, W> selector) {
-        // TODO Auto-generated method stub
-        return super.select(selector);
-    }
+	@SuppressWarnings("unchecked")
+	public ISetSequence<IMapping<U, V>> mappingsSet() {
+		return (ISetSequence<IMapping<U, V>>) new MappingsSetSequence ();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> skip(int length) {
-        // TODO Auto-generated method stub
-        return super.skip(length);
-    }
+	// sequence
+	@Override
+	public ISequence<IMapping<U, V>> concat(ISequence<IMapping<U, V>> that) {
+		return super.concat(that);
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> sort(ISelector<IMapping<U,V>, Comparable<?>> selector, boolean ascending) {
-        // TODO Auto-generated method stub
-        return super.sort(selector, ascending);
-    }
-    
-    @Override
-    public ISequence<IMapping<U, V>> sort(Comparator<IMapping<U, V>> comparator, boolean ascending) {
-        // TODO Auto-generated method stub
-        return super.sort(comparator, ascending);
-    }
+	@Override
+	public boolean contains(IMapping<U, V> t) {
+		V v = map.get(t.key());
+		return eq(v, t.value());
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> subtract(ISequence<IMapping<U,V>> that) {
-        // TODO Auto-generated method stub
-        return super.subtract(that);
-    }
+	@Override
+	public int count() {
+		return map.size();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> tail(int length) {
-        // TODO Auto-generated method stub
-        return super.tail(length);
-    }
+	@Override
+	public ISequence<IMapping<U, V>> cut(int length) {
+		// TODO Auto-generated method stub
+		return super.cut(length);
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> take(int length) {
-        // TODO Auto-generated method stub
-        return super.take(length);
-    }
+	@Override
+	public ISequence<IMapping<U, V>> disjunction(ISequence<IMapping<U, V>> that) {
+		// TODO Auto-generated method stub
+		return super.disjunction(that);
+	}
 
-    @Override
-    public Iterable<IMapping<U,V>> toIterable() {
-        // TODO Auto-generated method stub
-        return super.toIterable();
-    }
+	@Override
+	public ISequence<IMapping<U, V>> distinct() {
+		return this;
+	}
 
-    @Override
-    public <W> ISequence<W> translate(ITranslator<IMapping<U,V>, W> translator) {
-        // TODO Auto-generated method stub
-        return super.translate(translator);
-    }
+	@Override
+	public IMapping<U, V> first() {
+		// TODO Auto-generated method stub
+		return super.first();
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> union(ISequence<IMapping<U,V>> that) {
-        // TODO Auto-generated method stub
-        return super.union(that);
-    }
+	@Override
+	public int indexOf(IMapping<U, V> t) {
+		// TODO Auto-generated method stub
+		return super.indexOf(t);
+	}
 
-    @Override
-    public void visitAll(IVisitor<IMapping<U,V>> visitor) {
-        // TODO Auto-generated method stub
-        super.visitAll(visitor);
-    }
+	@Override
+	public ISequence<IMapping<U, V>> intersect(ISequence<IMapping<U, V>> that) {
+		// TODO Auto-generated method stub
+		return super.intersect(that);
+	}
 
-    @Override
-    public ISequence<IMapping<U,V>> where(IWhereFilter<IMapping<U,V>> filter) {
-        // TODO Auto-generated method stub
-        return super.where(filter);
-    }
+	@Override
+	public boolean isNotEmpty() {
+		return !(map.isEmpty());
+	}
 
-    public Iterator<IMapping<U,V>> iterator() {
-        return new MappingIterator ();
-    }
+	@Override
+	public IMapping<U, V> last() {
+		// TODO Auto-generated method stub
+		return super.last();
+	}
 
-    protected Map<U, V> getMap() {
+	@Override
+	public ISequence<IMapping<U, V>> page(int skip, int skipplustake) {
+		// TODO Auto-generated method stub
+		return super.page(skip, skipplustake);
+	}
+
+	@Override
+	public <W> ISequence<W> select(ISelector<IMapping<U, V>, W> selector) {
+		// TODO Auto-generated method stub
+		return super.select(selector);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> skip(int length) {
+		// TODO Auto-generated method stub
+		return super.skip(length);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> sort(
+			ISelector<IMapping<U, V>, Comparable<?>> selector, boolean ascending) {
+		// TODO Auto-generated method stub
+		return super.sort(selector, ascending);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> sort(
+			Comparator<IMapping<U, V>> comparator, boolean ascending) {
+		// TODO Auto-generated method stub
+		return super.sort(comparator, ascending);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> subtract(ISequence<IMapping<U, V>> that) {
+		// TODO Auto-generated method stub
+		return super.subtract(that);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> tail(int length) {
+		// TODO Auto-generated method stub
+		return super.tail(length);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> take(int length) {
+		// TODO Auto-generated method stub
+		return super.take(length);
+	}
+
+	@Override
+	public Iterable<IMapping<U, V>> toIterable() {
+		// TODO Auto-generated method stub
+		return super.toIterable();
+	}
+
+	@Override
+	public <W> ISequence<W> translate(ITranslator<IMapping<U, V>, W> translator) {
+		// TODO Auto-generated method stub
+		return super.translate(translator);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> union(ISequence<IMapping<U, V>> that) {
+		// TODO Auto-generated method stub
+		return super.union(that);
+	}
+
+	@Override
+	public void visitAll(IVisitor<IMapping<U, V>> visitor) {
+		// TODO Auto-generated method stub
+		super.visitAll(visitor);
+	}
+
+	@Override
+	public ISequence<IMapping<U, V>> where(IWhereFilter<IMapping<U, V>> filter) {
+		// TODO Auto-generated method stub
+		return super.where(filter);
+	}
+
+	public Iterator<IMapping<U, V>> iterator() {
+		return new MappingIterator();
+	}
+
+	protected Map<U, V> getMap() {
 		return map;
 	}
-    
-    private boolean eq(Object a, Object b) {
-        return (a == b) || ((a != null) ? a.equals(b) : false);
-    }
-    
-    private class MappingIterator implements Iterator<IMapping<U,V>> {
-        
-        private Iterator<Entry<U, V>> entriesIt;
 
-        public MappingIterator() {
-            this.entriesIt = entrySet().iterator();
-        }
-        
-        public boolean hasNext() {
-            return entriesIt.hasNext();
-        }
-        
-        public IMapping<U,V> next() {
-            Entry<U, V> next = entriesIt.next();
-            return new Mapping<U, V> (next.getKey(), next.getValue());
-        }
-        
-        public void remove() {
-            entriesIt.remove();
-        }
-    }
-    
-    private static class Mapping<F,S> implements IMapping<F,S> {
-        
-        private final F key;
-        private final S value;
-        
-        public Mapping(F key, S value) {
-            this.key = key;
-            this.value = value;
-        }
-        
-        public F key() {
-            return key;
-        }
-        public S value() {
-            return value;
-        }
-        
-        @Override
-        public int hashCode() {
-            int h = 17;
-            h = h*37 + (key != null ? key.hashCode() : 19);
-            h = h*37 + (value != null ? value.hashCode() : 23);
-            return h;
-        }
-        
-        @SuppressWarnings("unchecked")
-        @Override
-        public boolean equals(Object o) {
-            if (o == null) {
-                return false;
-            }
-            if (this.getClass() != o.getClass()) {
-                return false;
-            }
-            Mapping <F,S> that = (Mapping<F, S>) o;
-            return eq(this.key, that.key) && eq(this.value, that.value);
-        }
-        
-        @Override
-        public String toString() {
-        	return key() + "=" + value();
-        }
-        
-        private boolean eq(Object a, Object b) {
-            return (a == b) || ((a != null) ? a.equals(b) : false);
-        }
-    }
+	private boolean eq(Object a, Object b) {
+		return (a == b) || ((a != null) ? a.equals(b) : false);
+	}
+
+	private class MappingIterator implements Iterator<IMapping<U, V>> {
+
+		private Iterator<Entry<U, V>> entriesIt;
+
+		public MappingIterator() {
+			this.entriesIt = entrySet().iterator();
+		}
+
+		public boolean hasNext() {
+			return entriesIt.hasNext();
+		}
+
+		public IMapping<U, V> next() {
+			Entry<U, V> next = entriesIt.next();
+			return new EntryMapping<U, V>(next);
+		}
+
+		public void remove() {
+			entriesIt.remove();
+		}
+	}
+
+	private static class EntryMapping<F, S> implements IMapping<F, S> {
+
+		private final Entry<F, S> entry;
+
+		public EntryMapping(Entry<F, S> entry) {
+			this.entry = entry;
+		}
+
+		public F key() {
+			return entry.getKey();
+		}
+
+		public S value() {
+			return entry.getValue();
+		}
+
+		public S value(S newValue) {
+			return entry.setValue(newValue);
+		}
+
+		public java.util.Map.Entry<F, S> toEntry() {
+			return entry;
+		}
+
+		@Override
+		public int hashCode() {
+			return entry.hashCode();
+		}
+
+		@SuppressWarnings("unchecked")
+		@Override
+		public boolean equals(Object that) {
+			if (that == null) {
+				return false;
+			}
+			if (this.getClass() == that.getClass()) {
+				return this.entry.equals(((EntryMapping<F, S>) that).entry);
+			}
+			if (that instanceof IMapping) {
+				return eq(key(), ((IMapping) that).key())
+						&& eq(value(), ((IMapping) that).value());
+			}
+			return false;
+		}
+
+		@Override
+		public String toString() {
+			return key() + "=" + value();
+		}
+
+		private boolean eq(Object a, Object b) {
+			return (a == b) || ((a != null) ? a.equals(b) : false);
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private class MappingsSetSequence/*IMapping<U,V>*/ extends Sequence/*<IMapping<U,V>>*/
+			implements ISetSequence/*IMapping<U,V>*/, Set/*IMapping<U,V>*/ {
+
+		public Object addElement(Object t) {
+			throw new UnsupportedOperationException();
+		}
+
+		public ISetSequence addSequence(ISequence seq) {
+			throw new UnsupportedOperationException();
+		}
+
+		public Object removeElement(Object t) {
+			if (map.entrySet().remove(((IMapping<U,V>)t).toEntry())) {
+				return t;
+			}
+			return null;
+		}
+
+		public ISetSequence removeSequence(ISequence seq) {
+			if (Sequence.USE_NULL_SEQUENCE) {
+				if (seq == null) {
+					return this;
+				}
+			}
+			for (Object t : seq.toIterable()) {
+				map.entrySet().remove(((IMapping<U,V>)t).toEntry());
+			}
+			return this;
+		}
+
+		public boolean contains(Object t) {
+			return map.entrySet().contains(((IMapping<U,V>)t).toEntry());
+		}
+
+		public Object[] toGenericArray() {
+			Object[] result = new Object[size()];
+			Iterator<IMapping<U, V>> it = MapSequence.this.iterator();
+			for (int i = 0; it.hasNext(); i++)
+				result[i] = it.next();
+			return result;
+		}
+
+		public Object[] toGenericArray(Class runtimeClass) {
+			Object[] arr = (Object[]) Array.newInstance(runtimeClass, size());
+			return toArray(arr);
+		}
+
+		public Set toSet() {
+			return this;
+		}
+
+		public Iterator iterator() {
+			return MapSequence.this.iterator();
+		}
+
+		public boolean add(Object o) {
+			throw new UnsupportedOperationException();
+		}
+
+		public boolean addAll(Collection c) {
+			throw new UnsupportedOperationException();
+		}
+
+		public void clear() {
+			map.entrySet().clear();
+		}
+
+		public boolean containsAll(Collection c) {
+			for (Iterator it = c.iterator(); it.hasNext(); ) {
+			    if(!map.entrySet().contains((IMapping<U,V>)it.next())) {
+			    	return false;
+			    }
+			}
+			return true;
+		}
+
+		public boolean remove(Object o) {
+			return map.entrySet().remove((IMapping<U,V>) o);
+		}
+
+		public boolean removeAll(Collection c) {
+			boolean modified = false;
+			for (Iterator it = iterator(); it.hasNext(); ) {
+				if (c.contains(it.next())) {
+					it.remove();
+					modified = true;
+				}
+			}
+			return modified;
+		}
+
+		public boolean retainAll(Collection c) {
+			boolean modified = false;
+			for (Iterator it = iterator(); it.hasNext();) {
+			    if (!c.contains(it.next())) {
+			    	it.remove();
+			    	modified = true;
+			    }
+			}
+			return modified;
+		}
+
+		public int size() {
+			return map.entrySet().size();
+		}
+
+		public Object[] toArray() {
+			return toGenericArray();
+		}
+
+		public Object[] toArray(Object[] arr) {
+			int size = size();
+			if (arr.length < size) {
+				arr = (Object[]) Array.newInstance(
+						arr.getClass().getComponentType(), size);
+			}
+			Iterator it = iterator();
+			Object[] result = arr;
+			for (int i = 0; i < size; i++) {
+				result[i] = it.next();
+			}
+			if (arr.length > size) {
+				arr[size] = null;
+			}
+			return arr;
+		}
+
+	}
 }

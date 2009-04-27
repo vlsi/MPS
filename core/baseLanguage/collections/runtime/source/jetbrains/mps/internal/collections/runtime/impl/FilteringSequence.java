@@ -19,7 +19,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 
 /**
@@ -29,7 +28,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U,U> implement
     
     private final IWhereFilter<? super U> filter;
 
-    public FilteringSequence(Sequence<U> input, IWhereFilter<? super U> filter) {
+    public FilteringSequence(Iterable<U> input, IWhereFilter<? super U> filter) {
         super (input);
         if (filter == null) {
             throw new NullPointerException ();
@@ -49,7 +48,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U,U> implement
 
         public boolean hasNext() {
             if (hasNext < 0) {
-                this.inputIterator = getInput().toIterable().iterator();
+                this.inputIterator = getInput().iterator();
                 moveToNext();
             }
             return hasNext > 0;

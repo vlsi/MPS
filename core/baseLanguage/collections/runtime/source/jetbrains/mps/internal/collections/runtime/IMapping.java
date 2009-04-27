@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.util.Map;
+
 /**
  * @author fyodor
  */
@@ -23,5 +25,9 @@ public interface IMapping<U, V> {
     U key();
 
     V value();
+    
+    V value(V newValue);
+    
+    Map.Entry<U, V>	toEntry ();
 
 }

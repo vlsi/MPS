@@ -22,5 +22,7 @@ import java.util.Map;
  */
 public interface IMapSequence<U, V> extends ISequence<IMapping<U, V>>, Map<U, V> {
 
+	ISetSequence<IMapping<U, V>> mappingsSet();
+	
     Map<U, V> toMap();
 }

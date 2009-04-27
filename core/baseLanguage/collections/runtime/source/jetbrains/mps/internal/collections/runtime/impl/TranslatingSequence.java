@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> implements Iterable<V> {
     private final ITranslator<? super U, V> translator;
 
-    public TranslatingSequence (Sequence<U> input, ITranslator<? super U,V> translator) {
+    public TranslatingSequence (Iterable<U> input, ITranslator<? super U,V> translator) {
         super (input);
         if (translator == null) {
             throw new NullPointerException ();
@@ -51,7 +51,7 @@ public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> imple
         
         public boolean hasNext() {
             if (hasNext < 0) {
-                this.inputIt = getInput().toIterable().iterator();
+                this.inputIt = getInput().iterator();
                 moveToNext();
             }
             return hasNext > 0;

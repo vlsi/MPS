@@ -2800,5 +2800,21 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240687617100" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240824744085">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1240824716764" resolveInfo="MappingOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1240824762025">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240854408116">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1240854379201" resolveInfo="MappingsSetOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1240854410923">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+    </node>
+  </node>
 </model>
 

@@ -23,6 +23,8 @@ import java.util.Set;
 
 import jetbrains.mps.internal.collections.runtime.IMapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.ISetSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 /**
  * @author fyodor
@@ -90,5 +92,9 @@ public class NullMapSequence<U, V> extends NullSequence<IMapping<U, V>> implemen
     public Iterator<IMapping<U, V>> iterator() {
         return new NullSequence.EmptyIterator<IMapping<U, V>>();
     }
+
+	public ISetSequence<IMapping<U, V>> mappingsSet() {
+		return SetSequence.fromSet(Collections.<IMapping<U, V>>emptySet());
+	}
 
 }

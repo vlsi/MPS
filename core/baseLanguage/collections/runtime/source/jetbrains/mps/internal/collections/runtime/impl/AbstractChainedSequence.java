@@ -22,16 +22,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
  */
 public abstract class AbstractChainedSequence<U,V> extends Sequence<V> {
     
-    private final Sequence<U> input;
+    private final Iterable<U> input;
 
-    public AbstractChainedSequence (Sequence<U> input) {
+    public AbstractChainedSequence (Iterable<U> input) {
         if (input == null) {
             throw new NullPointerException ();
         }
         this.input = input;
     }
     
-    public Sequence<U> getInput() {
+    public Iterable<U> getInput() {
         return input;
     }
     
