@@ -356,7 +356,7 @@ public class LeftEditorHighlighter {
       if (myEditorCellInfo1 == null) return;
       EditorCell cell1 = myEditorCellInfo1.findCell(myEditor);
       EditorCell cell2 = myEditorCellInfo2.findCell(myEditor);
-      if (cell1 != null) {
+      if (cell1 != null && cell2 != null) {
         if (cell1.getY() <= cell2.getY()) {
           setY1(cell1.getY());
           setY2(cell2.getY() + cell2.getHeight());
