@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.buildlanguage.structure.IAntScript;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept, IVariableHolder, IMacroHolder {
+public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept, IVariableHolder, IMacroHolder, IAntScript {
   public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
   public static final String SCRIPTS_FOLDER = "scriptsFolder";
   public static final String SHORT_DESCRIPTION = "shortDescription";

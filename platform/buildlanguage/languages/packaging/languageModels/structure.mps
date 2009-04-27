@@ -517,6 +517,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1234968783421">
       <link role="intfc" targetNodeId="1234968728594" resolveInfo="IMacroHolder" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240833807879">
+      <link role="intfc" targetNodeId="4.1240833739976" resolveInfo="IAntScript" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203614596836">
       <property name="value" value="build script" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
