@@ -164,6 +164,25 @@
       <property name="keepSourceRoot" value="true" />
       <link role="applicableConcept" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
       <link role="template" targetNodeId="1233668931882" resolveInfo="help-build" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1240840023963">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240840023964">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240840026548">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240840038730">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240840026633">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240840026549" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1240840027561">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1240840027562">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240840033807">
+                      <link role="conceptDeclaration" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1240840040566" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1234781123286">
       <link role="applicableConcept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />

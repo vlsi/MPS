@@ -17,7 +17,7 @@ public class MPSBuild_Constraints {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.MPSLayout");
       }
-    }).count() == 1);
+    }).count() > 1);
   }
 
 }
