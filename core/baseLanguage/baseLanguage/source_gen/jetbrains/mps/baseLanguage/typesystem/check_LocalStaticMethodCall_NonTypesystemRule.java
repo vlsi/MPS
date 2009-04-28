@@ -8,7 +8,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -22,7 +27,14 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext) {
     List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
-    if (!(ListSequence.fromList(containers).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
+    Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
+    for(SNode classConcept : containers) {
+      List<Classifier> classifiers = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(classConcept))).getClassifiers();
+      for(Classifier classifier : classifiers) {
+        SetSequence.fromSet(containersAndParentClasses).addElement(classifier.getNode());
+      }
+    }
+    if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
