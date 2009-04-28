@@ -16,6 +16,7 @@
     <usedLanguages>0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)</usedLanguages>
     <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
     <usedLanguages>3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</usedLanguages>
+    <usedLanguages>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguages>
   </usedLanguages>
 </solution>
 

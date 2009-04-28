@@ -7949,32 +7949,32 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237732273863">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237732273864">
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240306677804">
-            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240306703380">
-              <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240306703381">
-                <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.MeetType" id="1240306706273">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1240306730976">
-                    <node role="componentType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240306730977">
-                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240306733359">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240306734811">
-                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240306734812">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240918480296">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240918480297">
+              <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240918480298">
+                <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.JoinType" id="1240918489624">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1240918512142">
+                    <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240918508193">
+                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240918515296">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240918516328">
+                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240918516329">
                             <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240306734813">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240918516330">
                             <link role="link" targetNodeId="3.1237721435807" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1240306714102">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1240306714103">
-                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240306715580">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240306718898">
-                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240306718899">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1240918523702">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240918526099">
+                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240918527913">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240918531129">
+                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240918531130">
                             <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240306718900">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240918531131">
                             <link role="link" targetNodeId="3.1237721435807" />
                           </node>
                         </node>
@@ -7984,13 +7984,13 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240306677808">
-              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240306674737">
-                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240306674738">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240306674739">
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240918480313">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1240918480314">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240918480315">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240918480316">
                     <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240306674740">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240918480317">
                     <link role="link" targetNodeId="3.1237731803878" />
                   </node>
                 </node>
