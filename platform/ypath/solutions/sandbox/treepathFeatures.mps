@@ -2035,17 +2035,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240329972750" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240329969388" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240329969389">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240330043347">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240330043348">
-            <property name="name" value="cardEnum" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240330043349">
-              <link role="enum" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240330043350">
-              <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240330043367">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240330043368">
             <property name="name" value="card" />
@@ -2053,8 +2042,8 @@
               <link role="enum" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330043370">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330043371">
-                <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376485">
+                <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240330043372">
                 <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240330053221">
@@ -2068,8 +2057,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240330099265">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240330099266">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099267">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099268">
-                  <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376484">
+                  <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099269">
                   <link role="member" targetNodeId="6.1084197782724" />
@@ -2084,8 +2073,8 @@
                 <link role="variableDeclaration" targetNodeId="1240330043368" resolveInfo="card" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099273">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099274">
-                  <link role="variableDeclaration" targetNodeId="1240330043348" resolveInfo="cardEnum" />
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376486">
+                  <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099275">
                   <link role="member" targetNodeId="6.1084197782723" />

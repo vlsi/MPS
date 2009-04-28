@@ -2680,14 +2680,23 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240147814945">
     <property name="package" value="operation.enum" />
     <link role="conceptDeclaration" targetNodeId="1.1240147669236" resolveInfo="Enum_MemberOperation" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1240147906651">
-      <link role="relationDeclaration" targetNodeId="1.1240147827713" />
-      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1240147906652">
-        <link role="conceptDeclaration" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
-        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240147913655">
-          <property name="readOnly" value="true" />
-          <link role="relationDeclaration" targetNodeId="3.1083923523172" resolveInfo="externalValue" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240925591066">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240925591067" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240925600022">
+        <property name="text" value="&lt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1240147906651">
+        <link role="relationDeclaration" targetNodeId="1.1240147827713" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1240147906652">
+          <link role="conceptDeclaration" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240147913655">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3.1083923523172" resolveInfo="externalValue" />
+          </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240925604836">
+        <property name="text" value="&gt;" />
       </node>
     </node>
   </node>

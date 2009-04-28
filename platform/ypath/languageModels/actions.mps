@@ -2558,17 +2558,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240172838332">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240172838333">
-                  <property name="name" value="ftEnum" />
-                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240172838334">
-                    <link role="enum" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240172838335">
-                    <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240169465583">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240169467695">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240169465584">
@@ -2576,8 +2565,8 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1240169469371">
                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240169474245">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172838336">
-                        <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291409">
+                        <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240169474247" />
                     </node>
@@ -2619,8 +2608,8 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421683380">
                                 <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240324466381">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240324464738">
-                                    <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="enum" />
+                                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291413">
+                                    <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240324806278">
                                     <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240325263114">
@@ -2649,8 +2638,8 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421933456">
                                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240167232719">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172849778">
-                                      <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291404">
+                                      <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240167235281">
                                       <link role="member" targetNodeId="1.1196419521950" />
@@ -2666,8 +2655,8 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421950952">
                                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172812643">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172854486">
-                                      <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291410">
+                                      <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172816461">
                                       <link role="member" targetNodeId="1.1196419564011" />
@@ -2683,8 +2672,8 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421962605">
                                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172819667">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172858959">
-                                      <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291412">
+                                      <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172823407">
                                       <link role="member" targetNodeId="1.1196419568550" />
@@ -2713,8 +2702,8 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421990896">
                                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172866985">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172865887">
-                                        <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291407">
+                                        <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                       </node>
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172869289">
                                         <link role="member" targetNodeId="1.1196420251775" />
@@ -2730,8 +2719,8 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421990902">
                                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172873871">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172873872">
-                                        <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291408">
+                                        <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                       </node>
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172881133">
                                         <link role="member" targetNodeId="1.1196420259670" />
@@ -2747,8 +2736,8 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196421990907">
                                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172877018">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172877019">
-                                        <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291406">
+                                        <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                       </node>
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172884887">
                                         <link role="member" targetNodeId="1.1196420267949" />
@@ -2777,8 +2766,8 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196422040997">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172890594">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172890595">
-                                          <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291405">
+                                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172896195">
                                           <link role="member" targetNodeId="1.1196419570737" />
@@ -2794,8 +2783,8 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196422041002">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172899778">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172899779">
-                                          <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291403">
+                                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172908471">
                                           <link role="member" targetNodeId="1.1196419579750" />
@@ -2811,8 +2800,8 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196422041007">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172902535">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172902536">
-                                          <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291414">
+                                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172911320">
                                           <link role="member" targetNodeId="1.1196419581755" />
@@ -2828,8 +2817,8 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1196422066639">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240172905199">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240172905200">
-                                          <link role="variableDeclaration" targetNodeId="1240172838333" resolveInfo="fragmentTypeEnum" />
+                                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926291411">
+                                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240172913872">
                                           <link role="member" targetNodeId="1.1196419585696" />
@@ -2892,17 +2881,6 @@
                   <node role="initializer" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1240317323748" />
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240317365078">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240317365079">
-                  <property name="name" value="ftEnum" />
-                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumType" id="1240317365080">
-                    <link role="enum" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240317365081">
-                    <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196422125776">
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1196422168361">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240317412436">
@@ -2911,8 +2889,8 @@
                         <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317418709">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317418177">
-                          <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308068">
+                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317421463">
                           <link role="member" targetNodeId="1.1196419568550" />
@@ -2924,8 +2902,8 @@
                         <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317383702">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317383703">
-                          <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308070">
+                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317391065">
                           <link role="member" targetNodeId="1.1196419564011" />
@@ -2935,8 +2913,8 @@
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240317372410">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317374555">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317373976">
-                        <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308071">
+                        <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317377309">
                         <link role="member" targetNodeId="1.1196419521950" />
@@ -3088,8 +3066,8 @@
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1196422206072">
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1196422206073">
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317458060">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317457621">
-                            <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308075">
+                            <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317459486">
                             <link role="member" targetNodeId="1.1196420267949" />
@@ -3104,8 +3082,8 @@
                           <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                         </node>
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317446599">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317445208">
-                            <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308066">
+                            <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317448041">
                             <link role="member" targetNodeId="1.1196420259670" />
@@ -3118,8 +3096,8 @@
                         <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317435655">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317434498">
-                          <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308069">
+                          <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317437471">
                           <link role="member" targetNodeId="1.1196420251775" />
@@ -3201,8 +3179,8 @@
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1196422247767">
                           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1196422250618">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317492776">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317491822">
-                                <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308067">
+                                <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317494733">
                                 <link role="member" targetNodeId="1.1196419585696" />
@@ -3217,8 +3195,8 @@
                               <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317485582">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317484690">
-                                <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308073">
+                                <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317488055">
                                 <link role="member" targetNodeId="1.1196419581755" />
@@ -3231,8 +3209,8 @@
                             <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                           </node>
                           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317478403">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317477449">
-                              <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308072">
+                              <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317480407">
                               <link role="member" targetNodeId="1.1196419579750" />
@@ -3245,8 +3223,8 @@
                           <link role="variableDeclaration" targetNodeId="1240317323746" resolveInfo="type" />
                         </node>
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240317472208">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240317471004">
-                            <link role="variableDeclaration" targetNodeId="1240317365079" resolveInfo="enum" />
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926308074">
+                            <link role="enumDeclaration" targetNodeId="1.1196419521949" resolveInfo="FragmentTypeEnum" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240317474165">
                             <link role="member" targetNodeId="1.1196419570737" />
