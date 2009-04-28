@@ -72,9 +72,11 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1239699344950(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     long started = System.currentTimeMillis();
     SNode tupleType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false);
-    Date elapsed = new Date(System.currentTimeMillis() - started);
-    String info = NameUtil.nodeFQName(_context.getNode()) + "(" + _context.getNode().getId() + ")";
-    System.out.println("**** coerceStrong of " + info + " finished in " + new SimpleDateFormat("ss.SSSS").format(elapsed) + " sec.");
+    if (false) {
+      Date elapsed = new Date(System.currentTimeMillis() - started);
+      String info = NameUtil.nodeFQName(TypeChecker.getInstance().getTypeOf(_context.getNode())) + "(" + TypeChecker.getInstance().getTypeOf(_context.getNode()).getId() + ")";
+      System.out.println("**** coerceStrong of " + info + " finished in " + new SimpleDateFormat("ss.SSSS").format(elapsed) + " sec.");
+    }
     return (tupleType != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
   }
 
