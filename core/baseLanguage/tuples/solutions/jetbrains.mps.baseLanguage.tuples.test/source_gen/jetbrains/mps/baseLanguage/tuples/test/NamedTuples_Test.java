@@ -59,7 +59,7 @@ public class NamedTuples_Test extends TestCase {
 
   @Test()
   public void test_assignToIndexedTupleType() throws Exception {
-    Tuples._2<String, String> itpl = new Data().assignFrom(this.getData());
+    Tuples._2<String, String> itpl = this.getData();
     Assert.assertEquals("ABC", itpl._0());
     Assert.assertEquals("XYZ", itpl._1());
   }
@@ -112,6 +112,10 @@ public class NamedTuples_Test extends TestCase {
     SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
+    SharedPair<Integer, String> pp = new SharedPair<Integer, String>().assignFrom(p);
+    Assert.assertFalse(((Object)p) == ((Object)pp));
+    Assert.assertSame(1, pp.first());
+    Assert.assertEquals("a", pp.second());
   }
 
   public Data getData() {
