@@ -41,7 +41,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     }
     List<SNode> PTYPES = ListOperations.<SNode>createList();
     for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
-      List<SNode> nodes = mmap.get(foo);
+      List<SNode> nodes = MapSequence.fromMap(mmap).get(foo);
       final SNode PTYPE_typevar_1239968089672 = typeCheckingContext.createNewRuntimeTypesVariable();
       if (ListSequence.fromList(nodes).isNotEmpty()) {
         {

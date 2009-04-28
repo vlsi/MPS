@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.structure;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,10 +15,31 @@ public class NamedTupleDeclaration extends Classifier {
   public static final String concept = "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration";
   public static final String CPR_LeftBracket = "leftBracket";
   public static final String CPR_RightBracket = "rightBracket";
+  public static final String EXTENDS = "extends";
   public static final String COMPONENT = "component";
 
   public NamedTupleDeclaration(SNode node) {
     super(node);
+  }
+
+  public int getExtendsesCount() {
+    return this.getChildCount(NamedTupleDeclaration.EXTENDS);
+  }
+
+  public Iterator<ClassifierType> extendses() {
+    return this.children(ClassifierType.class, NamedTupleDeclaration.EXTENDS);
+  }
+
+  public List<ClassifierType> getExtendses() {
+    return this.getChildren(ClassifierType.class, NamedTupleDeclaration.EXTENDS);
+  }
+
+  public void addExtends(ClassifierType node) {
+    this.addChild(NamedTupleDeclaration.EXTENDS, node);
+  }
+
+  public void insertExtends(ClassifierType prev, ClassifierType node) {
+    this.insertChild(prev, NamedTupleDeclaration.EXTENDS, node);
   }
 
   public int getComponentsCount() {

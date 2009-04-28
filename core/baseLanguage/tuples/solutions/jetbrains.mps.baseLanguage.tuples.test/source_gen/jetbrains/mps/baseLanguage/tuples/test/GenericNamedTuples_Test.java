@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.baseLanguage.tuples.test.Pair;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 

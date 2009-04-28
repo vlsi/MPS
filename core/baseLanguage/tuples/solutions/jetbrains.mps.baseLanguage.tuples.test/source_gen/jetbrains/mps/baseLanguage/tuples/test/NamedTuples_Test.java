@@ -4,11 +4,12 @@ package jetbrains.mps.baseLanguage.tuples.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.baseLanguage.tuples.test.Data;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.util.SharedPair;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -87,6 +88,30 @@ public class NamedTuples_Test extends TestCase {
     tpl2.assignFrom(new Data(tpl2.bar(), tpl2.foo()));
     Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
     Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
+  }
+
+  @Test()
+  public void test_boolean() throws Exception {
+    Bool truth = new Bool(true);
+    Assert.assertTrue(truth.isTrue());
+  }
+
+  @Test()
+  public void test_filter() throws Exception {
+    Iterable<Data> seq = this.getSequence();
+    Sequence.fromIterable(seq).any(new IWhereFilter <Data>() {
+
+      public boolean accept(Data it) {
+        return it.foo() == it.bar();
+      }
+    });
+  }
+
+  @Test()
+  public void test_sharedPair() throws Exception {
+    SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
+    Assert.assertSame(1, p.first());
+    Assert.assertEquals("a", p.second());
   }
 
   public Data getData() {

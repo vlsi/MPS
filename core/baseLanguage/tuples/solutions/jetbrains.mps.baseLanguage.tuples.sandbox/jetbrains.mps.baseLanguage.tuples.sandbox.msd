@@ -5,6 +5,9 @@
   </models>
   <classPath />
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguages>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguages>
   </usedLanguages>

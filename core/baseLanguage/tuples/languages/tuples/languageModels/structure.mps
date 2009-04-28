@@ -150,6 +150,12 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1239546098880">
       <property name="name" value="rightBracket" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240485934753">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="extends" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2v.1107535904670" resolveInfo="ClassifierType" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1239529553065">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="component" />
@@ -307,6 +313,43 @@
       <property name="role" value="component" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240683407958">
+    <property name="name" value="InterfaceTupleType" />
+    <link role="extends" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240701281430">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="iface" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1107796713796" resolveInfo="Interface" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240700862985">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameterType" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1240683963841">
+      <property name="name" value="leftBracket" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1240683972792">
+      <property name="name" value="rightBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240701576991">
+      <property name="value" value="((&lt;{iface}&gt;))" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240683980068">
+      <property name="value" value="((" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1240683963841" resolveInfo="leftBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240683984110">
+      <property name="value" value="))" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1240683972792" resolveInfo="rightBracket" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240933311393">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>
