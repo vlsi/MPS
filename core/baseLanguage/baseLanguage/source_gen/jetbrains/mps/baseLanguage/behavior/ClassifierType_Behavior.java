@@ -56,7 +56,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
+    return new _Quotations.QuotationClass_8().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {

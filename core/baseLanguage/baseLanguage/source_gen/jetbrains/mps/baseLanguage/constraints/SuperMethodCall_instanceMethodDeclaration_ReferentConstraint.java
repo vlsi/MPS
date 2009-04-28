@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -27,7 +27,7 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extend
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(SLinkOperations.getTarget(enclosingClass, "superclass", true))), _context.getEnclosingNode());
+    return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
   }
 
 }

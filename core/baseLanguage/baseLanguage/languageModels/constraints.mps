@@ -854,8 +854,8 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104855730">
                       <link role="variableDeclaration" targetNodeId="1213104855717" resolveInfo="enclosingClass" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213104855731">
-                      <link role="link" targetNodeId="1.1165602531693" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240936807692">
+                      <link role="baseMethodDeclaration" targetNodeId="50.1240936569950" resolveInfo="getSuperclass" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1213104855732" />

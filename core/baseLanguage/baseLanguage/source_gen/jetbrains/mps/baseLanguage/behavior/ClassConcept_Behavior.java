@@ -15,8 +15,10 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassConcept_Behavior {
+  private static Class[] PARAMETERS_1240936569950 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -66,6 +68,18 @@ public class ClassConcept_Behavior {
       }
     }
     return methods;
+  }
+
+  public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "superclass", true);
+  }
+
+  public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
+  }
+
+  public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
 }

@@ -10,11 +10,11 @@ public class ByteType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new _Quotations.QuotationClass_12().createNode();
+    return new _Quotations.QuotationClass_13().createNode();
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_13().createNode();
+    return new _Quotations.QuotationClass_14().createNode();
   }
 
 }
