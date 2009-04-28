@@ -5634,17 +5634,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235149213344">
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992235">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992237">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235149231791">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235149233372">
-                <property name="value" value="..." />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235149227802">
-                <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235149227113" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235149229790">
-                  <link role="link" targetNodeId="1.1219921048460" />
-                </node>
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235149227802">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235149227113" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1235149229790">
+                <link role="link" targetNodeId="1.1219921048460" />
               </node>
             </node>
+          </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1240940920665">
+            <property name="value" value="..." />
           </node>
         </node>
       </node>
