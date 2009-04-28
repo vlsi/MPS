@@ -44,7 +44,7 @@ public class MyMenu extends JPopupMenu {
       String nodeName = node.getName();
       if (nodeName == null || nodeName.equals("")) nodeName = node.getConceptShortName();
       SNode root = node.getContainingRoot();
-      add(new AbstractAction(nodeName + " (" + root.getName() + " in " + node.getModel() + ")") {
+      add(new AbstractAction(nodeName + " (" + root.getName() + " in " + node.getModel().getLongName() + ")") {
         {
           putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
         }

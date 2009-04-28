@@ -983,8 +983,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238673076130">
               <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238673076131">
                 <link role="classifier" targetNodeId="9.~Pair" resolveInfo="Pair" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238673076132" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238673076133" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240919971710">
+                  <link role="classifier" targetNodeId="22.~String" resolveInfo="String" />
+                </node>
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240919974308">
+                  <link role="classifier" targetNodeId="22.~String" resolveInfo="String" />
+                </node>
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184271336">
