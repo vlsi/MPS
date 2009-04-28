@@ -174,6 +174,12 @@
       <property name="role" value="type" />
       <link role="target" targetNodeId="2.1068431790189" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240934738108">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1173996588177">
       <property name="name" value="fqClassName" />
       <link role="dataType" targetNodeId="1.1082983041843" />

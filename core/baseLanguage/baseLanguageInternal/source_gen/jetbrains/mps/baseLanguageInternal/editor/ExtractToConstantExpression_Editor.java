@@ -14,7 +14,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 
 public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
 

@@ -135,6 +135,18 @@
         <link role="relationDeclaration" targetNodeId="1.1173996588177" />
         <link role="styleClass" targetNodeId="1224158483340" resolveInfo="InternalName" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240934769692">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="3.1238161779414" resolveInfo="BaseAngleBracket" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1240934773669">
+        <link role="relationDeclaration" targetNodeId="1.1240934738108" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240934773670" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240934794890">
+        <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="3.1238161779414" resolveInfo="BaseAngleBracket" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1173996742260">
         <link role="editorComponent" targetNodeId="3.1173990860683" />
       </node>

@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguageInternal.structure;
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +15,7 @@ public class InternalNewExpression extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
   public static final String FQ_CLASS_NAME = "fqClassName";
   public static final String TYPE = "type";
+  public static final String PARAMETER = "parameter";
 
   public InternalNewExpression(SNode node) {
     super(node);
@@ -32,6 +35,26 @@ public class InternalNewExpression extends BaseMethodCall {
 
   public void setType(Type node) {
     super.setChild(InternalNewExpression.TYPE, node);
+  }
+
+  public int getParametersCount() {
+    return this.getChildCount(InternalNewExpression.PARAMETER);
+  }
+
+  public Iterator<Type> parameters() {
+    return this.children(Type.class, InternalNewExpression.PARAMETER);
+  }
+
+  public List<Type> getParameters() {
+    return this.getChildren(Type.class, InternalNewExpression.PARAMETER);
+  }
+
+  public void addParameter(Type node) {
+    this.addChild(InternalNewExpression.PARAMETER, node);
+  }
+
+  public void insertParameter(Type prev, Type node) {
+    this.insertChild(prev, InternalNewExpression.PARAMETER, node);
   }
 
 
