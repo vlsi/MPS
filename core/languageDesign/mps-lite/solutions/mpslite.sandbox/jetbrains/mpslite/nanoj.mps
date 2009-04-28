@@ -94,12 +94,48 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240926548131">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240926548132">
+            <property name="name" value="hm" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240926548133">
+              <link role="classifier" targetNodeId="12.~HashMap" resolveInfo="HashMap" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240926551988">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1240926565065">
+                <link role="baseMethodDeclaration" targetNodeId="12.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240926502613">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240926504608">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240926533260">
+              <link role="variableDeclaration" targetNodeId="1240926518992" resolveInfo="fun" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" id="1240926506000">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926570772">
+                <link role="variableDeclaration" targetNodeId="1240926548132" resolveInfo="hm" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240394194581">
         <property name="name" value="parameter" />
         <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240394194582">
           <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240926518992">
+        <property name="name" value="fun" />
+        <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType" id="1240926527470">
+          <node role="resultType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240926527471">
+            <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
+          </node>
+          <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240926527472">
+            <link role="classifier" targetNodeId="12.~Map" resolveInfo="Map" />
+          </node>
         </node>
       </node>
     </node>
