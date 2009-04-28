@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.util.SharedPair;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -127,6 +129,21 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertFalse(((Object)p) == ((Object)pp));
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
+  }
+
+  @Test()
+  public void test_vararg() throws Exception {
+    String string = this.getString(new SharedPair<String, String>("a", "A"), new SharedPair<String, String>("b", "B"), new SharedPair<String, String>("c", "C"));
+    Assert.assertEquals("a=A, b=B, c=C", string);
+  }
+
+  public String getString(Object<String,String>... tuples) {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <Object<String, String>, String>() {
+
+      public String select(Object<String, String> t) {
+        return t.first() + "=" + t.second();
+      }
+    }), ", ");
   }
 
   public Data getData() {
