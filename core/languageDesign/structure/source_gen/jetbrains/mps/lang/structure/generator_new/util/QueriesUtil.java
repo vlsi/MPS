@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
@@ -104,7 +105,7 @@ public class QueriesUtil {
   }
 
   public static List<SNode> conceptAndItsInterfaces(SNode concept) {
-    List<SNode> result = ListSequence.<SNode>fromArray(concept);
+    List<SNode> result = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelUtil.getDirectSuperInterfacesAndTheirSupers(concept)));
     return result;
   }

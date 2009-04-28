@@ -11,9 +11,9 @@ public class AdvancedFunctionTypes_Test extends TestCase {
 
   @Test()
   public void test_returnsFunction() throws Exception {
-    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<Integer>>() {
+    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends Integer>>() {
 
-      public _FunctionTypes._return_P0_E0<Integer> invoke() {
+      public _FunctionTypes._return_P0_E0<? extends Integer> invoke() {
         return new _FunctionTypes._return_P0_E0 <Integer>() {
 
           public Integer invoke() {
@@ -22,12 +22,12 @@ public class AdvancedFunctionTypes_Test extends TestCase {
         };
       }
     };
-    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>> fun2 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<Integer>>>() {
+    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>> fun2 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>>() {
 
-      public _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<Integer>> invoke() {
-        return new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<Integer>>() {
+      public _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> invoke() {
+        return new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends Integer>>() {
 
-          public _FunctionTypes._return_P0_E0<Integer> invoke() {
+          public _FunctionTypes._return_P0_E0<? extends Integer> invoke() {
             return new _FunctionTypes._return_P0_E0 <Integer>() {
 
               public Integer invoke() {
@@ -48,9 +48,9 @@ public class AdvancedFunctionTypes_Test extends TestCase {
 
   @Test()
   public void test_acceptsFunction() throws Exception {
-    _FunctionTypes._return_P1_E0<? extends Integer, ? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0 <Integer, _FunctionTypes._return_P0_E0<Integer>>() {
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0 <Integer, _FunctionTypes._return_P0_E0<? extends Integer>>() {
 
-      public Integer invoke(_FunctionTypes._return_P0_E0<Integer> f) {
+      public Integer invoke(_FunctionTypes._return_P0_E0<? extends Integer> f) {
         return f.invoke();
       }
     };

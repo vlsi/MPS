@@ -4,7 +4,6 @@ package jetbrains.mps.dataFlow.runtime;
 
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import java.util.Map;
-import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -45,7 +44,7 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
 
   public Map<T, NullableVariableState> fun(Map<T, NullableVariableState> input, ProgramState state) {
     Map<T, NullableVariableState> result = MapSequence.fromMap(new HashMap<T, NullableVariableState>());
-    result.putAll(input);
+    MapSequence.fromMap(result).putAll(input);
     if (state.getInstruction() instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction)state.getInstruction();
       NullableVariableState value = ((NullableVariableState)write.getValue());

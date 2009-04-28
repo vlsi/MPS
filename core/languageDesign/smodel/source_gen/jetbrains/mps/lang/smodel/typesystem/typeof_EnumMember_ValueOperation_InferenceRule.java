@@ -29,7 +29,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), new ConceptWrapper("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", new ConceptWrapper.LinkTargetInfo(true, "memberDataType", typeCheckingContext.getEquationManager().getRepresentator(Member_typevar_1240331876974))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331973196", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), new ConceptWrapper("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", new ConceptWrapper.LinkTargetInfo(true, "memberDataType", typeCheckingContext.getEquationManager().getRepresentator(Member_typevar_1240331876974), -1)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331973196", intentionProvider);
     }
     {
       final SNode memberType = typeCheckingContext.getEquationManager().getRepresentator(Member_typevar_1240331876974);

@@ -9,7 +9,7 @@ public class Parent_Test extends TestCase {
   public int foo;
 
   public void testStub() {
-    //     do nothing
+    // do nothing
   }
 
 }

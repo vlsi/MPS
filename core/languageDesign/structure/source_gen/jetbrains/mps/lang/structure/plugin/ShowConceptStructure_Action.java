@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.plugin.StructureView_Tool;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.ProjectOperationContext;
 

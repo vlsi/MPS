@@ -6,7 +6,6 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
-import jetbrains.mps.closures.test.ThisProvider;
 
 public class ThisExpression_Test extends TestCase {
 

@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -195,7 +196,7 @@ __switch__:
 
   @InferenceMethod()
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
-    if ((genericClassifier != null) && mmap != null && !(mmap.isEmpty())) {
+    if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
       for(SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
         List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);

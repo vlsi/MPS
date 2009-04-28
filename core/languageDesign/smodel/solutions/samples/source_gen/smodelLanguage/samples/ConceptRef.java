@@ -44,33 +44,33 @@ public class ConceptRef {
     SNode exprConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
     SNode c1 = exprConcept;
     SNode c2 = (SNode)c1;
-    //     ====== to node
-    //     - ok -
+    // ====== to node
+    // - ok -
     SNode n1 = exprConcept;
     SNode n2 = exprConcept;
-    //     -- not ok --
+    // -- not ok --
     SNode n3 = exprConcept;
     exprConcept = n1;
     exprConcept = n2;
-    //     ====== to concept
-    //     - ok -
+    // ====== to concept
+    // - ok -
     SNode exprConc = SNodeOperations.castConcept(c1, "jetbrains.mps.baseLanguage.structure.Expression");
     SNode bExprConc = SNodeOperations.castConcept(exprConcept, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     exprConc = bExprConc;
-    //     -- not ok --
+    // -- not ok --
     bExprConc = exprConc;
   }
 
   public void concept_hierarchy1(SNode concept) {
-    //     concept and all its supers
+    // concept and all its supers
     List<SNode> hierarchy = SConceptOperations.getConceptHierarchy(concept);
-    //     supers
+    // supers
     List<SNode> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
     List<SNode> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);
-    //     direct supers
+    // direct supers
     List<SNode> supers_direct = SConceptOperations.getDirectSuperConcepts(concept, false);
     List<SNode> supers_direct_inclusive = SConceptOperations.getDirectSuperConcepts(concept, true);
-    //     ======
+    // ======
     boolean yes1 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     boolean yes2 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")));
     boolean yes3 = SConceptOperations.isSubConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), "jetbrains.mps.baseLanguage.structure.Expression");

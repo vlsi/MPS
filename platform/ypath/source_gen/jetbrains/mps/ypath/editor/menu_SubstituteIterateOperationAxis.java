@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Triplet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
@@ -35,7 +36,7 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      List<Triplet> res = ListSequence.<Triplet>fromArray();
+      List<Triplet> res = ListSequence.fromList(new ArrayList<Triplet>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
         for(TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {

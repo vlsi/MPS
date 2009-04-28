@@ -19,7 +19,7 @@ public class typeof_TreePathAspect_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = aspect;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(aspect, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184578634207", true), SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184578634206", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(aspect, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184578634207", true), (SNode)SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184578634206", intentionProvider);
     }
   }
 

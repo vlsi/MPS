@@ -9,7 +9,6 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.closures.test.Worker;
 
 public class ExternalReferences_Test extends TestCase {
 
@@ -94,7 +93,7 @@ __switch__:
 
       public void invoke() {
         bytes.value = new byte[3];
-        //          no return value
+        //  no return value
       }
     }.invoke();
     Assert.assertSame(3, bytes.value.length);

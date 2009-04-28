@@ -5,6 +5,7 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -12,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ListOfNodes {
 
   public void newList(SNode e1, SNode e2) {
-    List<SNode> list = ListSequence.<SNode>fromArray(e1, e2);
+    List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), e1, e2);
   }
 
   public void first(SNode sl) {

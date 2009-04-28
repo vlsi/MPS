@@ -12,11 +12,21 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SReference;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class ChangeTransactionalProperty_Intention extends BaseIntention {
 
+  public ChangeTransactionalProperty_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -52,6 +62,12 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }

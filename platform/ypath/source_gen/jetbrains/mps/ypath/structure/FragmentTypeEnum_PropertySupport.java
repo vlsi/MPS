@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class FragmentTypeEnum_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
+    Iterator<FragmentTypeEnum> constants = ListSequence.fromList(FragmentTypeEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class FragmentTypeEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<FragmentTypeEnum> constants = FragmentTypeEnum.getConstants().iterator();
+    Iterator<FragmentTypeEnum> constants = ListSequence.fromList(FragmentTypeEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       FragmentTypeEnum constant = constants.next();
       if (value.equals(constant.getName())) {

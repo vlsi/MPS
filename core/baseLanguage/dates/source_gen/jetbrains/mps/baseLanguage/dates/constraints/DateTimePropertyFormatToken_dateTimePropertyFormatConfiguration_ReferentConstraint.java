@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.dates.constraints.DateTimePropertFormatTokenUtil;
 
 public class DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_ReferentConstraint implements IModelConstraints, INodeReferentSetEventHandler {
 

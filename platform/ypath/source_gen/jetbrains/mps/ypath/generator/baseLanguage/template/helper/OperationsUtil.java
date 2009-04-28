@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
@@ -23,7 +24,7 @@ public class OperationsUtil {
 
   public static List<SNode> substituteApplicableOperations(SNode wildCardOp) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(wildCardOp, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature") && (SLinkOperations.getTarget(wildCardOp, "paramObject", true) != null)) {
-      return ListSequence.<SNode>fromArray(wildCardOp);
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), wildCardOp);
     }
     SNode tpoe = SNodeOperations.getAncestor(wildCardOp, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     final SNode nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true));
@@ -36,7 +37,7 @@ public class OperationsUtil {
           return TraversalAxisUtil.isAcceptableFeatureForAxis(it, axis);
         }
       }).toListSequence() :
-      ListSequence.<SNode>fromArray(SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
+      ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
     return ListSequence.fromList(features).translate(new ITranslator2 <SNode, SNode>() {
 

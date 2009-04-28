@@ -342,13 +342,12 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230491828707">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230491845234">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240926191014">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230491828708">
               <link role="variableDeclaration" targetNodeId="1230491608554" resolveInfo="result" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230491857784">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Map.putAll(java.util.Map):void" resolveInfo="putAll" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230491860316">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PutAllOperation" id="1240926192268">
+              <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240926194719">
                 <link role="variableDeclaration" targetNodeId="1230466891931" resolveInfo="input" />
               </node>
             </node>

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class EditNode_Action extends GeneratedAction {
@@ -58,7 +59,7 @@ public class EditNode_Action extends GeneratedAction {
         this.nodes = null;
       } else
       {
-        this.nodes = ListSequence.fromList(ListSequence.<SNode>fromArray()).addSequence(ListSequence.fromList(nodes));
+        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
     if (this.nodes == null) {

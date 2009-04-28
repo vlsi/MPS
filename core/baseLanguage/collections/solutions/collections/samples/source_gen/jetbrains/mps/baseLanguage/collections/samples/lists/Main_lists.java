@@ -11,10 +11,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   /* package */static void main(String[] args) {
     List<Integer> ll = new ArrayList<Integer>();
     List<Integer> lll = ll;
-    List<String> list = ListSequence.<String>fromArray("val1", "val2", "val3");
+    List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "val1", "val2", "val3");
     ListSequence.fromList(list).addElement("var4");
     ListSequence.fromList(list).addElement("var5");
-    ListSequence.fromList(list).addSequence(ListSequence.fromList(ListSequence.<String>fromArray("var6", "var7")));
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "var6", "var7")));
     for(String s : ListSequence.fromList(list)) {
       System.out.println(s);
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TraversalAxis_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class TraversalAxis_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<TraversalAxis> constants = TraversalAxis.getConstants().iterator();
+    Iterator<TraversalAxis> constants = ListSequence.fromList(TraversalAxis.getConstants()).iterator();
     while (constants.hasNext()) {
       TraversalAxis constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class TraversalAxis_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TraversalAxis> constants = TraversalAxis.getConstants().iterator();
+    Iterator<TraversalAxis> constants = ListSequence.fromList(TraversalAxis.getConstants()).iterator();
     while (constants.hasNext()) {
       TraversalAxis constant = constants.next();
       if (value.equals(constant.getName())) {

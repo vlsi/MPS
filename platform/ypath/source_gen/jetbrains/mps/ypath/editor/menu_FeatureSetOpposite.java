@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,7 +30,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair> res = ListSequence.<Pair>fromArray();
+      List<Pair> res = ListSequence.fromList(new ArrayList<Pair>());
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
       for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {

@@ -5,14 +5,6 @@ package jetbrains.mps.lang.structure.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint;
-import jetbrains.mps.lang.structure.constraints.AnnotationLinkDeclaration_name_PropertyConstraint;
-import jetbrains.mps.lang.structure.constraints.ConceptDeclaration_extends_ReferentConstraint;
-import jetbrains.mps.lang.structure.constraints.LinkDeclaration_specializedLink_ReferentConstraint;
-import jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint;
-import jetbrains.mps.lang.structure.constraints.ReferenceConceptLink_target_ReferentConstraint;
-import jetbrains.mps.lang.structure.constraints.ConceptLink_conceptLinkDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.structure.constraints.ConceptProperty_conceptPropertyDeclaration_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

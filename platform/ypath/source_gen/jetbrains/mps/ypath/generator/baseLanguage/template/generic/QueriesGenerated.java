@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ypath.generator.baseLanguage.template.generic._Quotations;
 import jetbrains.mps.ypath.behavior.TreePathOperationExpression_Behavior;
 import jetbrains.mps.ypath.behavior.TreePathAdapterExpression_Behavior;
 import jetbrains.mps.ypath.behavior.IRange_Behavior;
@@ -30,6 +29,7 @@ import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -266,12 +266,12 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199729133010(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     children
+    // children
     return TraversalAxis.CHILDREN == TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
   }
 
   public static boolean baseMappingRule_Condition_1199798796256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     descendants
+    // descendants
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case DESCENDANTS:
@@ -285,7 +285,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199813378575(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     siblings
+    // siblings
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case FOLLOWING_SIBLINGS:
@@ -303,7 +303,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199997838698(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     children
+    // children
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case CHILDREN:
@@ -314,7 +314,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199997838710(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     descendants
+    // descendants
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case DESCENDANTS:
@@ -328,7 +328,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1199997838743(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     siblings
+    // siblings
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case FOLLOWING_SIBLINGS:
@@ -342,7 +342,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1200052661742(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    //     children
+    // children
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     switch (axis) {
       case CHILDREN:
@@ -1154,7 +1154,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> newCandidates = ListSequence.<SNode>fromArray();
+    List<SNode> newCandidates = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.StatementAggregator"), "candidates", true))) {
       if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.StatementAggregator")) {
         ListSequence.fromList(newCandidates).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.StatementAggregator"), "candidates", true)));
@@ -1239,7 +1239,7 @@ __switch__:
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
-    final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
+    final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1311,7 +1311,7 @@ __switch__:
     TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
-    final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
+    final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
     return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {

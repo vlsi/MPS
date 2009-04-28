@@ -5,18 +5,19 @@ package jetbrains.mps.ypath.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = new ArrayList<BaseCustomApplicationPlugin>();
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new DesignPartLoader_CustomApplicationPlugin());
     return res;
   }
 
   private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    plugins.add(plugin);
+    ListSequence.fromList(plugins).addElement(plugin);
     plugin.init();
   }
 

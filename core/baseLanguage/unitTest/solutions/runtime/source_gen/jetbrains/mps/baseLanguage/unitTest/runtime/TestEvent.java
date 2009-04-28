@@ -8,6 +8,7 @@ import junit.framework.TestCase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.ArrayList;
 
 public class TestEvent {
   public static String START_TEST_PREFIX = "<START_TEST>";
@@ -111,7 +112,7 @@ public class TestEvent {
   }
 
   static {
-    ALL_TOKENS = ListSequence.<String>fromArray(START_TEST_PREFIX, END_TEST_PREFIX, ERROR_TEST_PREFIX, ERROR_TEST_SUFFIX, FAILURE_TEST_PREFIX, FAILURE_TEST_SUFFIX);
+    ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), START_TEST_PREFIX, END_TEST_PREFIX, ERROR_TEST_PREFIX, ERROR_TEST_SUFFIX, FAILURE_TEST_PREFIX, FAILURE_TEST_SUFFIX);
   }
 
 }

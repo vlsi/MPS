@@ -64,7 +64,7 @@ public class SModelUtil {
   }
 
   public static SNode findConceptDeclaration(final String conceptFQName, final IScope scope) {
-    SNode cd = myFQNameToConcepDecl.get(conceptFQName);
+    SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
     }
@@ -100,7 +100,7 @@ public class SModelUtil {
   }
 
   public static Language getDeclaringLanguage(SNode concept, @NotNull() IScope scope) {
-    Language l = myConceptToLanguage.get(concept);
+    Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
     }

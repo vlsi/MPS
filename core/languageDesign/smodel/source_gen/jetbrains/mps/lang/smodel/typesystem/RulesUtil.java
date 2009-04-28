@@ -298,7 +298,7 @@ public class RulesUtil {
           continue;
         }
         List<SNode> supertypes = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(concept);
-        Set<SNode> set = subTypesToSuperTypes.get(concept);
+        Set<SNode> set = MapSequence.fromMap(subTypesToSuperTypes).get(concept);
         if (set == null) {
           set = SetSequence.fromSet(new HashSet<SNode>());
           MapSequence.fromMap(subTypesToSuperTypes).put(concept, set);
@@ -316,11 +316,11 @@ public class RulesUtil {
     for(SNode node2 : allTypes) {
       for(SNode node1 : allTypes) {
         for(SNode node3 : allTypes) {
-          Set<SNode> supertypes1 = subTypesToSuperTypes.get(node1);
+          Set<SNode> supertypes1 = MapSequence.fromMap(subTypesToSuperTypes).get(node1);
           if (supertypes1 == null) {
             continue;
           }
-          Set<SNode> supertypes2 = subTypesToSuperTypes.get(node2);
+          Set<SNode> supertypes2 = MapSequence.fromMap(subTypesToSuperTypes).get(node2);
           if (supertypes2 == null) {
             continue;
           }
@@ -349,12 +349,12 @@ public class RulesUtil {
     if (a == b) {
       return a;
     }
-    Set<SNode> superTypesA = subTypesToSuperTypes.get(a);
+    Set<SNode> superTypesA = MapSequence.fromMap(subTypesToSuperTypes).get(a);
     superTypesA = (superTypesA == null ?
       SetSequence.fromSet(new HashSet<SNode>()) :
       superTypesA
     );
-    Set<SNode> superTypesB = subTypesToSuperTypes.get(b);
+    Set<SNode> superTypesB = MapSequence.fromMap(subTypesToSuperTypes).get(b);
     superTypesB = (superTypesB == null ?
       SetSequence.fromSet(new HashSet<SNode>()) :
       superTypesB
@@ -378,7 +378,7 @@ public class RulesUtil {
       if (!(SetSequence.fromSet(commonSupertypes).contains(commonSupertype))) {
         continue;
       }
-      Set<SNode> superTypes = subTypesToSuperTypes.get(commonSupertype);
+      Set<SNode> superTypes = MapSequence.fromMap(subTypesToSuperTypes).get(commonSupertype);
       if (superTypes != null) {
         for(SNode superType : superTypes) {
           if (superType != commonSupertype) {

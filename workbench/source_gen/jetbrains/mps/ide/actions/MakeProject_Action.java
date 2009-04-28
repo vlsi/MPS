@@ -70,7 +70,7 @@ public class MakeProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Set<IModule> modules = SetSequence.<IModule>fromSetAndArray(new LinkedHashSet());
+      final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectDevKits()));

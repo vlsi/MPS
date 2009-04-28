@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.uiLanguage.plugin.ComponentEditor_TabbedEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
 

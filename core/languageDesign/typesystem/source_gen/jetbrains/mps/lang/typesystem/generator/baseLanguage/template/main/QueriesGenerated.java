@@ -2396,8 +2396,8 @@ public class QueriesGenerated {
       SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.lang.core.structure.BaseConcept", null);
       composite.setReferent("leaf", leaf);
       SNode current = leaf;
-      while (dependencies.get(current) != null) {
-        Pair<SNode, SNode> pair = dependencies.get(current);
+      while (MapSequence.fromMap(dependencies).get(current) != null) {
+        Pair<SNode, SNode> pair = MapSequence.fromMap(dependencies).get(current);
         current = pair.o1;
         SNode method = pair.o2;
         composite.addChild("method", method);

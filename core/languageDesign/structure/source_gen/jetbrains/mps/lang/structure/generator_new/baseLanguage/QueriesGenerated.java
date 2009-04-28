@@ -22,6 +22,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -717,8 +718,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1169582607427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all string-type-properties from implemented interfaces
-    final List<String> names = ListSequence.<String>fromArray();
+    // all string-type-properties from implemented interfaces
+    final List<String> names = ListSequence.fromList(new ArrayList<String>());
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -795,8 +796,8 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169582607484(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all boolean-type-properties from implemented interfaces
-    final List<String> names = ListSequence.<String>fromArray();
+    // all boolean-type-properties from implemented interfaces
+    final List<String> names = ListSequence.fromList(new ArrayList<String>());
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -873,8 +874,8 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169582607556(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all integer-type-properties from implemented interfaces
-    final List<String> names = ListSequence.<String>fromArray();
+    // all integer-type-properties from implemented interfaces
+    final List<String> names = ListSequence.fromList(new ArrayList<String>());
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -951,8 +952,8 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169582607613(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all enum-type-properties from implemented interfaces
-    final List<String> names = ListSequence.<String>fromArray();
+    // all enum-type-properties from implemented interfaces
+    final List<String> names = ListSequence.fromList(new ArrayList<String>());
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1029,7 +1030,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169582939001(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all reference links with cardinality=1 and no specialization
+    // all reference links with cardinality=1 and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1095,7 +1096,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169583297000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all reference links with cardinality=1 and specialization
+    // all reference links with cardinality=1 and specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1161,7 +1162,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169591070416(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all aggregation links with cardinality:1 and no specialization
+    // all aggregation links with cardinality:1 and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1227,7 +1228,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all aggregation links with cardinality:1 and specialization
+    // all aggregation links with cardinality:1 and specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
@@ -1298,7 +1299,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
-    //     all aggregation links with cardinality:n and no specialization
+    // all aggregation links with cardinality:n and no specialization
     return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
 
       public Iterable<SNode> translate(final SNode it) {
