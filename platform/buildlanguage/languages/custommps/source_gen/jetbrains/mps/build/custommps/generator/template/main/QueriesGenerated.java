@@ -409,6 +409,14 @@ public class QueriesGenerated {
     return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
+  public static boolean ifMacro_Condition_1240927270388(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
+  public static boolean ifMacro_Condition_1240931158726(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static SNode sourceNodeQuery_1233749686668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "create", true);
   }

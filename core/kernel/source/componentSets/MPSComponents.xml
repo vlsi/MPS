@@ -303,6 +303,10 @@
         <component>
             <implementation-class>jetbrains.mps.generator.GenerationSettings</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.build.SamplesExtractor</implementation-class>
+        </component>
     </application-components>
 
     <project-components>
