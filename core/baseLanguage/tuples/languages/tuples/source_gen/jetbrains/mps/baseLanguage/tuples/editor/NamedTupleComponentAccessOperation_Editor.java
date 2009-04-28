@@ -11,11 +11,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor {
 
@@ -54,6 +52,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_RefCell_2041_0(EditorCell editorCell, SNode node, EditorContext context) {
+    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefCell_2041_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -105,14 +104,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
 
     private static void setupBasic_Property_2041_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          }
-        };
-        inlineStyle.apply(editorCell);
-      }
+      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_2041_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

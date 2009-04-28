@@ -898,14 +898,13 @@
     <link role="conceptDeclaration" targetNodeId="1.1239576519914" resolveInfo="NamedTupleAccessOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1239576646158">
       <link role="relationDeclaration" targetNodeId="1.1239576542472" />
+      <link role="styleClass" targetNodeId="2.1198595398954" resolveInfo="Field" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1239576646159">
         <link role="conceptDeclaration" targetNodeId="1.1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1239576653632">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1239576874677">
-            <property name="style" value="BOLD" />
-          </node>
+          <link role="styleClass" targetNodeId="2.1198595398954" resolveInfo="Field" />
         </node>
       </node>
     </node>
