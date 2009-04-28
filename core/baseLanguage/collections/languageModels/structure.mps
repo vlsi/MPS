@@ -2400,7 +2400,22 @@
     <property name="name" value="MappingsSetOperation" />
     <link role="extends" targetNodeId="1201225890326" resolveInfo="MapOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240854394488">
-      <property name="value" value="mappingsSet" />
+      <property name="value" value="mappings" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240906768633">
+    <property name="package" value="mapType" />
+    <property name="name" value="PutAllOperation" />
+    <link role="extends" targetNodeId="1201225890326" resolveInfo="MapOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240906921264">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="map" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240906879126">
+      <property name="value" value="putAll" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>

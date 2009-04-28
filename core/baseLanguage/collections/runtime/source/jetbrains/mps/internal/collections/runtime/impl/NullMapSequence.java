@@ -84,6 +84,10 @@ public class NullMapSequence<U, V> extends NullSequence<IMapping<U, V>> implemen
     }
 
     // IMapSequence
+    
+    public IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map) {
+    	return this;
+    }
 
     public Map<U, V> toMap() {
         return this;

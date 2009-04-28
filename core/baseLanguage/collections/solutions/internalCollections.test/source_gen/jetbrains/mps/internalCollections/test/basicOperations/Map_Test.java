@@ -163,4 +163,16 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(seq, seq2);
   }
 
+  @Test()
+  public void test_putAll() throws Exception {
+    Map<String, String> map = MapSequence.<String, String>fromKeysArray("a", "b", "c").withValues("A", "B", "C");
+    Map<String, String> test = MapSequence.fromMap(new HashMap<String, String>());
+    Assert.assertTrue(MapSequence.fromMap(test).isEmpty());
+    MapSequence.fromMap(test).putAll(map);
+    Assert.assertFalse(MapSequence.fromMap(test).isEmpty());
+    this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).values(), MapSequence.fromMap(test).values());
+    this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).keySet(), MapSequence.fromMap(test).keySet());
+    this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).mappingsSet(), MapSequence.fromMap(test).mappingsSet());
+  }
+
 }

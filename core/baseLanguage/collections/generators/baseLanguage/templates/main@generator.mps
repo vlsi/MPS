@@ -10948,7 +10948,7 @@
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240860540148">
       <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+      <link role="applicableConcept" targetNodeId="6.1068498886296" resolveInfo="VariableReference" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240860674151">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.Expression" id="1240860677136">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1240860680259">
@@ -11995,6 +11995,30 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205940675274">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208693608288">
           <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.reversedList():jetbrains.mps.internal.collections.runtime.IListSequence" resolveInfo="reversedList" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240907523274">
+      <link role="applicableConcept" targetNodeId="8.1240906768633" resolveInfo="PutAllOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1240907534044">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240907570244">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IMapSequence.putAll(jetbrains.mps.internal.collections.runtime.IMapSequence):jetbrains.mps.internal.collections.runtime.IMapSequence" resolveInfo="putAll" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1240907570245">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1240907570246">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1240907570247">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240907570248">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240907570249">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240907570250">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240907570251" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240907570252">
+                        <link role="link" targetNodeId="8.1240906921264" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -166,6 +166,12 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements
 	}
 
 	// additional methods
+	
+	public IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map) {
+		getMap().putAll(map);
+		return this;
+	}
+	
 	public Map<U, V> toMap() {
 		return this;
 	}
