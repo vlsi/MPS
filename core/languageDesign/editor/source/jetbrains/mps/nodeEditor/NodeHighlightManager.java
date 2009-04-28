@@ -23,6 +23,7 @@ import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 
 import java.awt.Color;
 import java.util.*;
@@ -32,7 +33,7 @@ import java.util.HashMap;
 
 public class NodeHighlightManager implements EditorMessageOwner {
   private final Object myMessagesLock = new Object();
-  
+
   private EditorComponent myEditor;
   private Set<EditorMessage> myMessages = new HashSet<EditorMessage>();
   private Map<EditorMessageOwner, Set<EditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
@@ -110,18 +111,22 @@ public class NodeHighlightManager implements EditorMessageOwner {
         result.add(message);
       }
     }
-    if (cell.isBigCell()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (SNode child : node.getChildren()) {
-            EditorCell cellForChild = myEditor.findNodeCell(child);
-            if (cellForChild == null) {
-              getMessagesFromDescendants(child, result);
+    if (myEditor.getRootCell() != cell || !(myEditor instanceof InspectorEditorComponent)) {
+      // the condition above is because an inspector for the node
+      // does not have cells for some node's children (they are edited in main editor)
+      // but the cell should not be highlighted only because of this
+      if (cell.isBigCell()) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            for (SNode child : node.getChildren()) {
+              EditorCell cellForChild = myEditor.findNodeCell(child);
+              if (cellForChild == null) {
+                getMessagesFromDescendants(child, result);
+              }
             }
           }
-        }
-      });
-
+        });
+      }
     }
     return result;
   }
@@ -154,7 +159,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessages.remove(m);
     myEditor.getMessagesGutter().remove(m);
 
-    myMessagesToNodes.clearFirst(m);    
+    myMessagesToNodes.clearFirst(m);
   }
 
   public void mark(EditorMessage message, boolean repaintAndRebuild) {
