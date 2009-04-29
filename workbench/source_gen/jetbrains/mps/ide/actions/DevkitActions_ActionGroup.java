@@ -16,9 +16,9 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.project.AddModuleToProjectAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.module.DeleteModuleAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.DeleteModule_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       this.addSeparator();

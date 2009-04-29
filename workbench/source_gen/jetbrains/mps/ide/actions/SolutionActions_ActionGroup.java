@@ -18,14 +18,14 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.project.AddModuleToProjectAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.module.DeleteModuleAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.DeleteModule_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", true);
       this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", false);
-      this.addAction("jetbrains.mps.workbench.actions.solution.GenerateTextFromAllModelsInSolutionAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CheckSolution_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");

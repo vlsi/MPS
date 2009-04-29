@@ -605,7 +605,7 @@
       <property name="value" value="update" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1216470385935">
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1241020888747">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
@@ -1311,7 +1311,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207145475354">
-    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
     <property name="name" value="AddElementStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207145494930">
@@ -2391,7 +2391,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227013049127">
-    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
     <property name="name" value="AddStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227013166210">

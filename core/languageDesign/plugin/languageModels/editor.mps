@@ -1540,7 +1540,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1207145729128">
-    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
     <link role="conceptDeclaration" targetNodeId="1.1207145475354" resolveInfo="AddActionStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1207145733287">
       <property name="vertical" value="false" />
@@ -3240,7 +3240,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227013092957">
-    <property name="package" value="Actions.Groups.GroupContents" />
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
     <link role="conceptDeclaration" targetNodeId="1.1227013049127" resolveInfo="AddStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227013095318">
       <property name="vertical" value="false" />
