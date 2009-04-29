@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class WrappersUtils {
 
@@ -44,37 +43,6 @@ with_decls:
       it.remove();
     }
     return vdecls;
-  }
-
-  public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putStepObject("wrappers_data_" + ((SNode)sn).getId(), data);
-    sn.putUserObject("wrappers_data_", data);
-  }
-
-  public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    Object sessionData = generator.getGeneratorSessionContext().getStepObject("wrappers_data_" + ((SNode)sn).getId());
-    if (sessionData == null) {
-      sessionData = sn.getUserObject("wrappers_data_");
-    }
-    return sessionData;
-  }
-
-  public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
-    copyPrepDataNoRecursion(from, to, generator);
-    List<SNode> toDescendants = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getDescendants(to, null, false));
-    List<SNode> fromDescendats = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getDescendants(from, null, false));
-    int idx = 0;
-    for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
-      copyPrepDataNoRecursion(fromDesc, ListSequence.fromList(toDescendants).getElement(idx), generator);
-      idx++ ;
-    }
-  }
-
-  private static void copyPrepDataNoRecursion(SNode from, SNode to, ITemplateGenerator generator) {
-    Object data = getPrepData(from, generator);
-    if (data != null) {
-      putPrepData(to, data, generator);
-    }
   }
 
 }

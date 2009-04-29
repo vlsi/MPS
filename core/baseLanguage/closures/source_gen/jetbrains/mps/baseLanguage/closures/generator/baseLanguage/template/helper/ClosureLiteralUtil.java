@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -55,12 +54,8 @@ public class ClosureLiteralUtil {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
     matchParameters(target, trgCopy, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), literal, genContext);
-    genContext.putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
-    ((SNode)trgCopy).putUserObject("literal", literal);
-  }
-
-  public static SNode getAdaptableClosureLiteralTarget(SNode literal, ITemplateGenerator generator) {
-    return (SNode)generator.getGeneratorSessionContext().getStepObject("literal_target_" + ((SNode)literal).getId());
+    Values.LITERAL.set(trgCopy, literal);
+    Values.LITERAL_TARGET.set(literal, trgCopy);
   }
 
   private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft, SNode literal, TemplateQueryContext genContext) {
@@ -92,7 +87,7 @@ public class ClosureLiteralUtil {
         idx++ ;
       }
     }
-    ((SNode)ctNoParams).putUserObject("typeMap", map);
+    Values.TYPE_MAP.set(ctNoParams, map);
     if ((absRetCT != null)) {
       SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       /*
@@ -110,7 +105,7 @@ public class ClosureLiteralUtil {
               SLinkOperations.addChild(newRetCT, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
             }
           */
-          ((SNode)ctNoParams).putUserObject("returnType", newRetCT);
+          Values.RETURN_TYPE.set(ctNoParams, newRetCT);
           break;
         }
       }

@@ -199,7 +199,7 @@ with_meet:
     if (!(hasOneAlready)) {
       SNode trg = SNodeOperations.copyNode(target);
       ListSequence.fromList(trgList).addElement(trg);
-      ((SNode)trg).putUserObject("adaptable", adaptable);
+      Values.ADAPTABLE.set(trg, adaptable);
     }
   }
 
