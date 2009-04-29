@@ -21,11 +21,11 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
 
 import java.io.File;
@@ -46,7 +46,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
   public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";
 
-  public static SamplesExtractor getInstance(){
+  public static SamplesExtractor getInstance() {
     return ApplicationManager.getApplication().getComponent(SamplesExtractor.class);
   }
 
@@ -79,10 +79,28 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
       if (!myIsSamplesInMPSHome) {
 
         File samplesZipFile = new File(PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_ZIP);
-        try {
-          ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
-        } catch (IOException e) {
-          LOG.error(e);
+        if (samplesZipFile.exists()) {
+          File samplesDir = new File(getSamplesPathInUserHome());
+          if (samplesDir.exists()){
+            File backupCopy = new File(samplesDir.getAbsolutePath() + myState.myLastBuildNumber);
+            if (backupCopy.exists()) {
+              backupCopy = new File(backupCopy.getAbsolutePath() + "." + System.currentTimeMillis());              
+            }
+            if (samplesDir.isDirectory()){
+              FileUtil.moveDirWithContent(samplesDir, backupCopy);
+            } else {
+              try {
+                FileUtil.rename(samplesDir, backupCopy);
+              } catch (IOException e) {
+                LOG.error(e);
+              }
+            }
+          }
+          try {
+            ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
+          } catch (IOException e) {
+            LOG.error(e);
+          }
         }
 
       }
