@@ -599,15 +599,14 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
-      SNode cardEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1084197782722");
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
-        for(SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(cardEnum))) {
+        for(SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
           ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
         }
       } else
       {
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(cardEnum, "0..1")));
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(cardEnum, "1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
       }
       return result;
     }

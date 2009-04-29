@@ -48,12 +48,10 @@
                   <property name="value" value="test info" />
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329407786">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329411194">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329407787">
-                    <link role="enumDeclaration" targetNodeId="1.1167245107475" resolveInfo="Severity" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329416981" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240932331955">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240932331956">
+                  <link role="enumDeclaration" targetNodeId="1.1167245107475" resolveInfo="Severity" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1240932339193" />
                 </node>
               </node>
             </node>

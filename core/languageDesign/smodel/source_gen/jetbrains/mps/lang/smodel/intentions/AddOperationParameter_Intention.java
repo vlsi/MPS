@@ -10,11 +10,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 
 public class AddOperationParameter_Intention extends BaseIntention {
 
+  public AddOperationParameter_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -48,6 +57,12 @@ public class AddOperationParameter_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }

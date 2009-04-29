@@ -216,7 +216,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1184071848765(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode actionMap = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration");
-    String name = SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), SPropertyOperations.getString_def(_context.getNode(), "actionId", "right_transform_action_id")));
+    String name = SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), "actionId", "right_transform_action_id")));
     String actionItemId = NameUtil.toValidIdentifier(name);
     return SPropertyOperations.getString(actionMap, "name") + "_" + actionItemId;
   }
@@ -998,7 +998,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1217443071855(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), SPropertyOperations.getString_def(_context.getNode(), "actionId", "right_transform_action_id")));
+    return SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), "actionId", "right_transform_action_id")));
   }
 
   public static Object referenceMacro_GetReferent_1223890372986(final IOperationContext operationContext, final ReferenceMacroContext _context) {

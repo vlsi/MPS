@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */_Patterns.Pattern_3 myMatchingPattern;
+  /* package */_Patterns.Pattern_2 myMatchingPattern;
 
   public supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule() {
   }
@@ -22,7 +22,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_3();
+    this.myMatchingPattern = new _Patterns.Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
 

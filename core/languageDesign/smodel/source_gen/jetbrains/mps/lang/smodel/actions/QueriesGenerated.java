@@ -146,10 +146,6 @@ public class QueriesGenerated {
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
           }
-          // is enum ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
-            result.myToEnum = true;
-          }
           // is enum member ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumMemberType"), false) != null) {
             result.myToEnumMember = true;
@@ -374,10 +370,6 @@ public class QueriesGenerated {
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
           }
-          // is enum ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
-            result.myToEnum = true;
-          }
           // is enum member ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumMemberType"), false) != null) {
             result.myToEnumMember = true;
@@ -436,10 +428,6 @@ public class QueriesGenerated {
           if (appTypesInfo.myToConcept) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept"));
           }
-          // is enum ?
-          if (appTypesInfo.myToEnum) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnum"));
-          }
           // is enum member ?
           if (appTypesInfo.myToEnumMember) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnumMember"));
@@ -484,10 +472,6 @@ public class QueriesGenerated {
           // is node ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
-          }
-          // is enum ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumType"), false) != null) {
-            result.myToEnum = true;
           }
           // is enum member ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SEnumMemberType"), false) != null) {

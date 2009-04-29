@@ -34,7 +34,7 @@ public class QueriesGenerated {
 
           public Object calculate() {
             LOG.info("test info");
-            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "1167245107475"));
+            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)", "Severity"));
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();

@@ -57,13 +57,8 @@ public class RulesUtil {
         isGood = true;
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicableToEnum")) {
-      if (TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, new _Patterns.Pattern_0(), false, typeCheckingContext) != null) {
-        isGood = true;
-      }
-    }
     if (SConceptPropertyOperations.getBoolean(op, "applicableToEnumMember")) {
-      if (TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, new _Patterns.Pattern_1(), false, typeCheckingContext) != null) {
+      if (TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, new _Patterns.Pattern_0(), false, typeCheckingContext) != null) {
         isGood = true;
       }
     }

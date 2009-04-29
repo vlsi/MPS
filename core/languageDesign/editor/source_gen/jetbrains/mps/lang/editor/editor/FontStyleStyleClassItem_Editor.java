@@ -162,11 +162,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"), "query"))));
+    return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))));
   }
 
   public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
-    return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"), "query")));
+    return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", null), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
 
   public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -185,7 +185,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1101211480448"));
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

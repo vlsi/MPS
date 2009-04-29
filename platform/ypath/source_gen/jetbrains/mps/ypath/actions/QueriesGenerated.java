@@ -378,28 +378,27 @@ public class QueriesGenerated {
 
           public Object calculate() {
             List<SNode> types = ListSequence.fromList(new ArrayList<SNode>());
-            SNode ftEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "1196419521949");
-            ListSequence.fromList(types).addSequence(ListSequence.fromList(SEnumOperations.getEnumMembers(ftEnum)));
+            ListSequence.fromList(types).addSequence(ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"))));
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
               for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder"), "functions", true))) {
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.enumMemberForValue(ftEnum, SPropertyOperations.getString_def(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE")));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), SPropertyOperations.getString_def(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE")));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace single"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace selection"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "replace all"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace single"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace selection"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace all"));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove single"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove selection"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "remove all"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove single"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove selection"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove all"));
                 } else
                 if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert at start"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert at end"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert before"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(ftEnum, "insert after"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at start"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at end"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert before"));
+                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert after"));
                 }
               }
             }
@@ -414,24 +413,23 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode fragment = null;
                 SNode type = (item);
-                SNode ftEnum = SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "1196419521949");
-                if (type == SEnumOperations.getEnumMember(ftEnum, "replace single") || type == SEnumOperations.getEnumMember(ftEnum, "replace selection") || type == SEnumOperations.getEnumMember(ftEnum, "replace all")) {
+                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace single") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace selection") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace all")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
+                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
                   }
                 } else
-                if (type == SEnumOperations.getEnumMember(ftEnum, "remove single") || type == SEnumOperations.getEnumMember(ftEnum, "remove selection") || type == SEnumOperations.getEnumMember(ftEnum, "remove all")) {
+                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove single") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove selection") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove all")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
+                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
                   }
                 } else
-                if (type == SEnumOperations.getEnumMember(ftEnum, "insert at start") || type == SEnumOperations.getEnumMember(ftEnum, "insert at end") || type == SEnumOperations.getEnumMember(ftEnum, "insert before") || type == SEnumOperations.getEnumMember(ftEnum, "insert after")) {
+                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at start") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at end") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert before") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert after")) {
                   fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", "" + (SEnumOperations.getEnumMemberValue(type)));
+                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
                   if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
                     SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
                   }

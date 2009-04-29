@@ -704,12 +704,6 @@
                       <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1240589458330">
                         <property name="name" value="member" />
                       </node>
-                      <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240589538071">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926280078">
-                          <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240589539857" />
-                      </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240589458332">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240589547720">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240589548472">
@@ -726,6 +720,10 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node role="inputSequence" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240936768426">
+                        <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1240936774887" />
                       </node>
                     </node>
                   </node>
@@ -751,11 +749,9 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1185271273286">
                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586798877">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586795447">
-                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926280079">
-                                  <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240586797468">
+                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240936748476">
+                                <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240936748477">
                                   <link role="member" targetNodeId="1.1084197782723" />
                                 </node>
                               </node>
@@ -771,11 +767,9 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1185271284843">
                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586857502">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240586857503">
-                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926280077">
-                                  <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240586861198">
+                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240936757451">
+                                <link role="enumDeclaration" targetNodeId="1.1084197782722" resolveInfo="Cardinality" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240936757452">
                                   <link role="member" targetNodeId="1.1084197782724" />
                                 </node>
                               </node>
@@ -811,7 +805,7 @@
                     <link role="classConcept" targetNodeId="38.1237995590703" resolveInfo="SModelUtil" />
                     <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240578369627" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1240578377710" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1241006493431" />
                 </node>
               </node>
             </node>

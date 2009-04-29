@@ -2041,12 +2041,10 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240330043369">
               <link role="enum" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330043370">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376485">
-                <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240330043372">
-                <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240330053221">
+            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240937090248">
+              <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" id="1240937094750">
+                <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240937096206">
                   <link role="variableDeclaration" targetNodeId="1240330009626" resolveInfo="cardinality" />
                 </node>
               </node>
@@ -2056,27 +2054,23 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240330084130">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1240330099265">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240330099266">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099267">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376484">
-                  <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099269">
-                  <link role="member" targetNodeId="6.1084197782724" />
-                </node>
-              </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099270">
                 <link role="variableDeclaration" targetNodeId="1240330043368" resolveInfo="card" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240937111148">
+                <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240937115526">
+                  <link role="member" targetNodeId="6.1084197782724" />
+                </node>
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240330099271">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240330099272">
                 <link role="variableDeclaration" targetNodeId="1240330043368" resolveInfo="card" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240330099273">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240926376486">
-                  <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240330099275">
+              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240937102488">
+                <link role="enumDeclaration" targetNodeId="6.1084197782722" resolveInfo="Cardinality" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240937107991">
                   <link role="member" targetNodeId="6.1084197782723" />
                 </node>
               </node>

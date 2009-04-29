@@ -7525,14 +7525,12 @@
                 <property name="name" value="name" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240328906164" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906165">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906166">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240328906167">
-                      <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240328906168">
-                      <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328906169">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240328906170" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240328906171">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240936695249">
+                    <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" id="1240936695250">
+                      <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240936695251">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240936695252" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240936695253">
                           <link role="property" targetNodeId="38.1139535298778" resolveInfo="actionId" />
                         </node>
                       </node>
@@ -7632,14 +7630,12 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217443071856">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240328788731">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328843379">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328818240">
-                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240328788732">
-                              <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberForValueOperation" id="1240328820556">
-                              <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240328835138">
-                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240328833886" />
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240328838612">
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240936073941">
+                            <link role="enumDeclaration" targetNodeId="38.1139535328871" resolveInfo="CellActionId" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" id="1240936073942">
+                              <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240938044633">
+                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240938044634" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240938044635">
                                   <link role="property" targetNodeId="38.1139535298778" resolveInfo="actionId" />
                                 </node>
                               </node>

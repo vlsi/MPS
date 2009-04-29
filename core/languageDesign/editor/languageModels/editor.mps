@@ -6279,12 +6279,10 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225465568568">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225465568569">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225465568570">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329301705">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329304660">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329301706">
-                      <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329309463" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240932730781">
+                  <node role="expression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240932730782">
+                    <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1240932737471" />
                   </node>
                 </node>
               </node>
@@ -6388,12 +6386,10 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225472714608">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225472714609">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225472714610">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240329264791">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329268152">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329264792">
-                      <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329275609" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240932749942">
+                  <node role="expression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240932749943">
+                    <link role="enumDeclaration" targetNodeId="2.1083952545109" resolveInfo="_Colors_Enum" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1240932756492" />
                   </node>
                 </node>
               </node>
@@ -6508,15 +6504,13 @@
                   </node>
                 </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329227440">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329227441">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329227442">
-                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240329227443">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240935271405">
+                    <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240935271406">
                       <link role="member" targetNodeId="2.1220973684614" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329227444" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240935284409" />
                 </node>
               </node>
             </node>
@@ -6535,16 +6529,14 @@
                     <link role="property" targetNodeId="2.1186403771423" resolveInfo="style" />
                   </node>
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329208060">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329205915">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329199367">
-                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MemberOperation" id="1240329207200">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240935963635">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240935963636">
+                    <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" id="1240935963637">
                       <link role="member" targetNodeId="2.1220973684614" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329209236" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240935963638" />
                 </node>
               </node>
             </node>
@@ -6572,12 +6564,10 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225473442525">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225473442526">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225473442527">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225473442545">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240329117213">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.EnumRefExpression" id="1240329117214">
-                      <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Enum_MembersOperation" id="1240329117215" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240932768843">
+                  <node role="expression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240932768844">
+                    <link role="enumDeclaration" targetNodeId="2.1101211480448" resolveInfo="_FontStyle_Enum" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1240932775299" />
                   </node>
                 </node>
               </node>

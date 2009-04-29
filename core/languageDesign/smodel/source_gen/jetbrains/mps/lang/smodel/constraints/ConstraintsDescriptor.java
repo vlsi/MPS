@@ -30,8 +30,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListOperations.addElement(this.myConstraints, new NodeRefExpression_referentNode_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new LinkRefExpression_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Enum_MemberOperation_member_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new EnumRefExpression_enumDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new SEnum_MemberOperation_member_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new SEnumOperationInvocation_enumDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
