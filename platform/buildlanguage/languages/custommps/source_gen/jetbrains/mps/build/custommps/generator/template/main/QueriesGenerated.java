@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
+import jetbrains.mps.build.SamplesExtractor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
@@ -190,6 +191,18 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1240855906999(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240993661261(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240993720607(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1240994139294(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
   }
 
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {

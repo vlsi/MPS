@@ -48,7 +48,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
@@ -63,6 +63,7 @@
   <import index="14" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="16" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="17" modelUID="r:2b19badf-1dc2-46e6-ac2c-0d8d94be0fc1(jetbrains.mps.build.custommpsInternal.behavior)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.build(jetbrains.mps.build@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <visible index="3" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
@@ -1813,12 +1814,36 @@
               </node>
               <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1240917850295">
                 <property name="name" value="MPSSamples" />
+                <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240993661260">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240993661261">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240993661262">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240993690060">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1240993690061">
+                          <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
+                          <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
           <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="1240917839811" />
           <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1240917842565">
             <property name="name" value="samples.zip" />
+            <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240993720606">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240993720607">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240993720608">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240993724334">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1240993724335">
+                      <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
+                      <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240927270387">
             <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240927270388">
@@ -1842,6 +1867,18 @@
                   <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1240927307160">
                     <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240927316994">
                       <property name="path" value="samples.zip" />
+                      <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240994139293">
+                        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240994139294">
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240994139295">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240994152006">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1240994152007">
+                                <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
+                                <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -42,7 +42,7 @@ public class BuildTableModel implements TableModel {
     MapSequence.fromMap(this.myCommandLines).clear();
     for(SNodePointer pointer : Sequence.fromIterable(MapSequence.fromMap(pointersToMap).keySet())) {
       ListSequence.fromList(this.mySNodes).addElement(pointer);
-      MapSequence.fromMap(this.myCommandLines).put(pointer, pointersToMap.get(pointer));
+      MapSequence.fromMap(this.myCommandLines).put(pointer, MapSequence.fromMap(pointersToMap).get(pointer));
     }
   }
 
@@ -85,7 +85,7 @@ public class BuildTableModel implements TableModel {
     } else if (column == 1) {
       return snode.getModelReference().getSModelFqName();
     }
-    return this.myCommandLines.get(snode);
+    return MapSequence.fromMap(this.myCommandLines).get(snode);
   }
 
   public boolean isCellEditable(int row, int column) {
@@ -112,7 +112,7 @@ public class BuildTableModel implements TableModel {
   public Map<String, String> saveState() {
     Map<String, String> mapToSerialize = MapSequence.fromMap(new HashMap<String, String>());
     for(SNodePointer pointer : ListSequence.fromList(this.mySNodes)) {
-      MapSequence.fromMap(mapToSerialize).put(pointerToString(pointer), this.myCommandLines.get(pointer));
+      MapSequence.fromMap(mapToSerialize).put(pointerToString(pointer), MapSequence.fromMap(this.myCommandLines).get(pointer));
     }
     return mapToSerialize;
   }
@@ -126,7 +126,7 @@ public class BuildTableModel implements TableModel {
     for(String name : Sequence.fromIterable(MapSequence.fromMap(state).keySet())) {
       SNodePointer pointer = stringToPointer(name);
       if (pointer.getNode() != null) {
-        MapSequence.fromMap(result).put(pointer, state.get(name));
+        MapSequence.fromMap(result).put(pointer, MapSequence.fromMap(state).get(name));
       }
     }
     return result;
