@@ -5455,5 +5455,83 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1241018402608">
+    <property name="name" value="StructureLanguageEnums" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241018421130">
+      <property name="name" value="iteration" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241018421131" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241018421132" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018421133">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1241018438639">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1241018438640">
+            <property name="name" value="member" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1241018444597">
+            <link role="enumDeclaration" targetNodeId="9.1084197782722" resolveInfo="Cardinality" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" id="1241018463761" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018438642">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241018645359">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241018645360">
+                <property name="name" value="value" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241018645361" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018650021">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1241018649020">
+                    <link role="variable" targetNodeId="1241018438640" resolveInfo="member" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1241018655323" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241018693382">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241018693383">
+                <property name="name" value="name" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241018693384" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018693385">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1241018693386">
+                    <link role="variable" targetNodeId="1241018438640" resolveInfo="member" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1241018693387" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241018719427">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241018719428">
+                <property name="name" value="cardinality" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1241018719429">
+                  <link role="enum" targetNodeId="9.1084197782722" resolveInfo="Cardinality" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1241018719430">
+                  <link role="enumDeclaration" targetNodeId="9.1084197782722" resolveInfo="Cardinality" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation" id="1241018719431">
+                    <node role="nameExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241018719432">
+                      <link role="variableDeclaration" targetNodeId="1241018693383" resolveInfo="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241018727183">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241018727184">
+                <property name="name" value="cardinality2" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1241018727185">
+                  <link role="enum" targetNodeId="9.1084197782722" resolveInfo="Cardinality" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1241018727186">
+                  <link role="enumDeclaration" targetNodeId="9.1084197782722" resolveInfo="Cardinality" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" id="1241018736376">
+                    <node role="valueExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241018741035">
+                      <link role="variableDeclaration" targetNodeId="1241018645360" resolveInfo="s" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241018402609" />
+  </node>
 </model>
 
