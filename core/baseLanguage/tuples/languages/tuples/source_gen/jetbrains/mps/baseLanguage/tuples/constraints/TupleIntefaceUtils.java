@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.internal.collections.runtime.IEnumerator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -33,9 +34,9 @@ public class TupleIntefaceUtils {
     int ignored = 0;
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
       if (SLinkOperations.getCount(method, "parameter") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-        ListSequence.fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+        ListSequence.fromList(accessors).addElement(new Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if (SLinkOperations.getCount(method, "parameter") == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(0))) {
-        ListSequence.fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+        ListSequence.fromList(mutators).addElement(new Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && SLinkOperations.getCount(method, "parameter") == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
         ignored++ ;
       } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && SLinkOperations.getCount(method, "parameter") == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {

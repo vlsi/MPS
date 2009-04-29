@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.util.SharedPair;
+import jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -132,15 +133,45 @@ public class NamedTuples_Test extends TestCase {
   }
 
   @Test()
-  public void test_vararg() throws Exception {
+  public void test_vararg1() throws Exception {
+    String string = this.getString(new Pair<String, String>("a", "A"), new Pair<String, String>("b", "B"), new Pair<String, String>("c", "C"));
+    Assert.assertEquals("a=A, b=B, c=C", string);
+  }
+
+  @Test()
+  public void test_vararg2() throws Exception {
     String string = this.getString(new SharedPair<String, String>("a", "A"), new SharedPair<String, String>("b", "B"), new SharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
 
-  public String getString(Object<String,String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <Object<String, String>, String>() {
+  @Test()
+  public void test_vararg3() throws Exception {
+    String string = this.getString(new GlobalSharedPair<String, String>("a", "A"), new GlobalSharedPair<String, String>("b", "B"), new GlobalSharedPair<String, String>("c", "C"));
+    Assert.assertEquals("a=A, b=B, c=C", string);
+  }
 
-      public String select(Object<String, String> t) {
+  public String getString(SharedPair<String, String>... tuples) {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <SharedPair<String, String>, String>() {
+
+      public String select(SharedPair<String, String> t) {
+        return t.first() + "=" + t.second();
+      }
+    }), ", ");
+  }
+
+  public String getString(Pair<String, String>... tuples) {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <Pair<String, String>, String>() {
+
+      public String select(Pair<String, String> t) {
+        return t.first() + "=" + t.second();
+      }
+    }), ", ");
+  }
+
+  public String getString(GlobalSharedPair<String, String>... tuples) {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <GlobalSharedPair<String, String>, String>() {
+
+      public String select(GlobalSharedPair<String, String> t) {
         return t.first() + "=" + t.second();
       }
     }), ", ");
