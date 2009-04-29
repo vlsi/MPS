@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
