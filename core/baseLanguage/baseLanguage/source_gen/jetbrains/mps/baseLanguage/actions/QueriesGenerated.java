@@ -439,8 +439,7 @@ __switch__:
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "rValue", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "rValue", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "lValue", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), true);
-    } else
-    {
+    } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "rValue", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
     }
   }
