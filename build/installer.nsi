@@ -30,6 +30,7 @@ ShowUnInstDetails show
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME}.\n\nClick Next to continue."
 !define MUI_ICON "installer.ico"
 !define MUI_UNICON "uninstaller.ico"
+!define MUI_COMPONENTSPAGE_NODESC
 
 #************************************ Install *************************************************************#
 ; Welcome page

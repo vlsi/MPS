@@ -7378,6 +7378,11 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241010260125">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241010262986">
+        <property name="text" value="!define MUI_COMPONENTSPAGE_NODESC" />
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234789162271" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788833591">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788833592">
