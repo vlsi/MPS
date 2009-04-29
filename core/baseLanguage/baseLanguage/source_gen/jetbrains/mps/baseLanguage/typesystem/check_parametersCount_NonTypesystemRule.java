@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,27 +23,39 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false);
     boolean b = true;
-    List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
-    List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-      b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
-    } else
-    {
-      b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
-    }
-    if (!(b)) {
+    if (baseMethodDeclaration == null) {
       {
         BaseIntentionProvider intentionProvider = null;
         intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
         intentionProvider.putArgument("methodCall", iMethodCall);
-        intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+        intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(iMethodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(iMethodCall, "wrong number of parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219948518456", intentionProvider, errorTarget);
+        typeCheckingContext.reportTypeError(iMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241010157418", intentionProvider, errorTarget);
       }
-    }
-    if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
-      for(SNode actual : actualArguments) {
-        typeCheckingContext.addDependencyForCurrent(actual);
+    } else
+    {
+      List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
+      List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+        b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
+      } else
+      {
+        b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
+      }
+      if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
+        for(SNode actual : actualArguments) {
+          typeCheckingContext.addDependencyForCurrent(actual);
+        }
+      }
+      if (!(b)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
+          intentionProvider.putArgument("methodCall", iMethodCall);
+          intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(iMethodCall, "wrong number of parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219948518456", intentionProvider, errorTarget);
+        }
       }
     }
   }

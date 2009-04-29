@@ -32,22 +32,22 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       for(SNode constructorDeclaration : list) {
         if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constructorCall, "actualArgument")) {
           boolean good = true;
-          List<SNode> parameterTypes = ResolveUtil.parameterTypes(SLinkOperations.getTarget(constructorCall, "baseMethodDeclaration", false), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(constructorCall), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((SNode)this.getField("classifier")[0]));
+          List<SNode> parameterTypes = ResolveUtil.parameterTypes(constructorDeclaration, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(constructorCall), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((SNode)this.getField("classifier")[0]));
           {
-            SNode parameter;
+            SNode parameterType;
             SNode argument;
-            Iterator<SNode> parameter_iterator = ListSequence.fromList(parameterTypes).iterator();
+            Iterator<SNode> parameterType_iterator = ListSequence.fromList(parameterTypes).iterator();
             Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(constructorCall, "actualArgument", true)).iterator();
             while (true) {
-              if (!(parameter_iterator.hasNext())) {
+              if (!(parameterType_iterator.hasNext())) {
                 break;
               }
               if (!(argument_iterator.hasNext())) {
                 break;
               }
-              parameter = parameter_iterator.next();
+              parameterType = parameterType_iterator.next();
               argument = argument_iterator.next();
-              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), SLinkOperations.getTarget(parameter, "type", true)))) {
+              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), parameterType))) {
                 good = false;
                 break;
               }
@@ -55,6 +55,40 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
           }
           if (good) {
             SLinkOperations.setTarget(constructorCall, "baseMethodDeclaration", constructorDeclaration, false);
+            return;
+          }
+        }
+      }
+    } else if (SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration") && SNodeOperations.isInstanceOf(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      SNode constantDeclaration = SNodeOperations.cast(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+      SNode enumClass = SNodeOperations.cast(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.EnumClass");
+      List<SNode> list = SLinkOperations.getTargets(enumClass, "constructor", true);
+      for(SNode constructorDeclaration : list) {
+        if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constantDeclaration, "actualArgument")) {
+          boolean good = true;
+          List<SNode> parameterTypes = ResolveUtil.parameterTypes(constructorDeclaration, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(constantDeclaration), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((SNode)this.getField("classifier")[0]));
+          {
+            SNode parameterType;
+            SNode argument;
+            Iterator<SNode> parameterType_iterator = ListSequence.fromList(parameterTypes).iterator();
+            Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(constantDeclaration, "actualArgument", true)).iterator();
+            while (true) {
+              if (!(parameterType_iterator.hasNext())) {
+                break;
+              }
+              if (!(argument_iterator.hasNext())) {
+                break;
+              }
+              parameterType = parameterType_iterator.next();
+              argument = argument_iterator.next();
+              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), parameterType))) {
+                good = false;
+                break;
+              }
+            }
+          }
+          if (good) {
+            SLinkOperations.setTarget(constantDeclaration, "baseMethodDeclaration", constructorDeclaration, false);
             return;
           }
         }
