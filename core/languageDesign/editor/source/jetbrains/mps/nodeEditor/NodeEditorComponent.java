@@ -62,8 +62,9 @@ public class NodeEditorComponent extends EditorComponent {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            //todo: (why? It breaks navigation to node) if (!isFocusOwner()) return;
-            inspect(toSelect[0]);
+            if (isDisplayable()) {
+              inspect(toSelect[0]);
+            }
           }
         });
       }
@@ -86,7 +87,6 @@ public class NodeEditorComponent extends EditorComponent {
     return myLastInspectedNode.getNode();
   }
 
-  
 
   private void inspect(final SNode toSelect) {
     myLastInspectedNode = new SNodePointer(toSelect);
@@ -130,14 +130,14 @@ public class NodeEditorComponent extends EditorComponent {
     return getInspectorTool().getInspector();
   }
 
-  public InspectorTool getInspectorTool() {        
+  public InspectorTool getInspectorTool() {
     if (getOperationContext().getProject().isDisposed()) return null;
     return getOperationContext().getComponent(InspectorTool.class);
   }
 
   public void dispose() {
     InspectorTool inspectorTool = getInspectorTool();
-    if (inspectorTool!=null){
+    if (inspectorTool != null) {
       inspectorTool.inspect(null, null, null);
     }
     super.dispose();
