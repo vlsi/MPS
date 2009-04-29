@@ -346,6 +346,21 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SEnumOperation_1241013269073(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(_context.getSourceNode());
+        }
+      };
+      SNode node = (SNode)calc.calculate();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+    }
+    return result;
+  }
+
   public static void removeActionsByCondition_1180467401112(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     final ApplicableTypesInfo appTypesInfo;
     {

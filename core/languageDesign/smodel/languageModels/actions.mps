@@ -1926,5 +1926,25 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1241013242727">
+    <property name="package" value="rightTransform" />
+    <property name="name" value="EnumOperationActions" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1241013269073">
+      <property name="description" value="same actions as for containing OperationInvocation" />
+      <link role="applicableConcept" targetNodeId="1.1240930395965" resolveInfo="SEnumOperation" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart" id="1241013269074">
+        <node role="nodeBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" id="1241013269075">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241013269076">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241013269077">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241013269078">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1241013269079" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1241013269080" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

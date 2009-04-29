@@ -2773,6 +2773,7 @@
         <link role="styleClass" targetNodeId="5.1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1240930332272">
+        <property name="attractsFocus" value="0" />
         <link role="relationDeclaration" targetNodeId="1.1240930317927" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1240930284968" />
@@ -2797,9 +2798,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240930687542">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1241007460448">
-          <property name="flag" value="false" />
-        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240930687543" />
     </node>

@@ -14,8 +14,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
 
@@ -106,14 +104,6 @@ public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8820_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8820_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_8820_2(EditorCell editorCell, SNode node, EditorContext context) {
