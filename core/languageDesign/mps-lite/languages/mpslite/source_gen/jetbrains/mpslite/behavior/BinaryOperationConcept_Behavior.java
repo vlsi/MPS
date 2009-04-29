@@ -4,10 +4,9 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,7 +18,7 @@ public class BinaryOperationConcept_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode conceptDeclaration = SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    SNode conceptDeclaration = ((SNode)concept);
     SNode leftLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode rightLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SLinkOperations.setTarget(leftLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "leftTarget", true), conceptsToTargets), false);
@@ -46,11 +45,11 @@ public class BinaryOperationConcept_Behavior {
     SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
     SLinkOperations.setNewChild(contentCell, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
     SNode leftCell = SLinkOperations.addNewChild(contentCell, "childCellModel", "jetbrains.mps.lang.editor.structure.CellModel_RefNode");
-    SLinkOperations.setTarget(leftCell, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(SLinkOperations.getTarget(thisNode, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SLinkOperations.setTarget(leftCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     SNode signCell = SLinkOperations.addNewChild(contentCell, "childCellModel", "jetbrains.mps.lang.editor.structure.CellModel_Constant");
     SPropertyOperations.set(signCell, "text", SPropertyOperations.getString(thisNode, "sign"));
     SNode rightCell = SLinkOperations.addNewChild(contentCell, "childCellModel", "jetbrains.mps.lang.editor.structure.CellModel_RefNode");
-    SLinkOperations.setTarget(rightCell, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(SLinkOperations.getTarget(thisNode, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SLinkOperations.setTarget(rightCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SLinkOperations.setTarget(result, "cellModel", contentCell, true);
     return result;

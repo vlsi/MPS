@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class TypePart_Behavior {
 
@@ -16,7 +17,7 @@ public class TypePart_Behavior {
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     SNode refNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
     SNode variableConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.VariableConcept", false, false);
-    SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(SLinkOperations.getTarget(variableConcept, "typeConcept", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(variableConcept, "typeConcept", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     return refNode;
   }
 

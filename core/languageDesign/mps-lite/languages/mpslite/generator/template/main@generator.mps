@@ -477,22 +477,26 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1238596245735">
-                  <node role="linkTarget" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490689266">
-                    <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239194477508">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239194474166">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239194472902">
-                          <link role="variableDeclaration" targetNodeId="1238596098561" resolveInfo="conceptDeclaration" />
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241019352170">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241019352171">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241019352172">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241019352173">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241019352174">
+                            <link role="variableDeclaration" targetNodeId="1238596098561" resolveInfo="conceptDeclaration" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241019352175">
+                            <link role="link" targetNodeId="1.1239193400062" />
+                          </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239194476515">
-                          <link role="link" targetNodeId="1.1239193400062" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241019352176">
+                          <link role="baseMethodDeclaration" targetNodeId="6.1238594571574" resolveInfo="getConcept" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241019352177">
+                            <link role="variableDeclaration" targetNodeId="1238589779942" resolveInfo="conceptsToTargets" />
+                          </node>
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239194505356">
-                        <link role="baseMethodDeclaration" targetNodeId="6.1238594571574" resolveInfo="getConcept" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239194509507">
-                          <link role="variableDeclaration" targetNodeId="1238589779942" resolveInfo="conceptsToTargets" />
-                        </node>
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019359919">
+                        <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
                       </node>
                     </node>
                   </node>
@@ -522,14 +526,18 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1238596482457">
                   <link role="baseMethodDeclaration" targetNodeId="6.1239891562930" resolveInfo="fillConcept" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490688662">
-                    <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239118056272">
-                      <node role="key" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239118056273">
-                        <link role="variableDeclaration" targetNodeId="1238596401634" resolveInfo="conceptDeclaration" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241019391274">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241019391275">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1241019391276">
+                        <node role="key" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241019391277">
+                          <link role="variableDeclaration" targetNodeId="1238596401634" resolveInfo="conceptDeclaration" />
+                        </node>
+                        <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241019391278">
+                          <link role="variableDeclaration" targetNodeId="1238589779942" resolveInfo="conceptsToTargets" />
+                        </node>
                       </node>
-                      <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238596560413">
-                        <link role="variableDeclaration" targetNodeId="1238589779942" resolveInfo="conceptsToTargets" />
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019391279">
+                        <link role="concept" targetNodeId="2v.1071489090640" resolveInfo="ConceptDeclaration" />
                       </node>
                     </node>
                   </node>

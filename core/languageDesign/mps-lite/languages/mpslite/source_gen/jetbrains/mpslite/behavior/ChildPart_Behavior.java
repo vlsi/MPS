@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ChildPart_Behavior {
 
@@ -23,12 +24,12 @@ public class ChildPart_Behavior {
       {
         SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
       }
-      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNodeList;
     } else
     {
       SNode refNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
-      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNode;
     }
   }

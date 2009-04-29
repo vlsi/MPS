@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mpslite.behavior._Quotations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcretePropertyPart_Behavior {

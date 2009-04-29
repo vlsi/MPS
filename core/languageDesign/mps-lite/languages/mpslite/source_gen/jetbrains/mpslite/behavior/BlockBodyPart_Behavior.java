@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class BlockBodyPart_Behavior {
 
@@ -17,7 +18,7 @@ public class BlockBodyPart_Behavior {
     SNode refNodeList = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
     SLinkOperations.setNewChild(refNodeList, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
     SNode blockConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.BlockConcept", false, false);
-    SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(partsToLinks.get(blockConcept), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(blockConcept), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     return refNodeList;
   }
 

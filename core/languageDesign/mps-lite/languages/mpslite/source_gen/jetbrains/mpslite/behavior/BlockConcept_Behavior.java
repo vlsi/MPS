@@ -6,10 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mpslite.behavior.GenerationUtils;
 
 public class BlockConcept_Behavior {
 
@@ -20,7 +19,7 @@ public class BlockConcept_Behavior {
     SNode linkDeclaration = SLinkOperations.addNewChild(concept, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(linkDeclaration, "role", "body");
     SPropertyOperations.set(linkDeclaration, "metaClass", "aggregation");
-    SLinkOperations.setTarget(linkDeclaration, "target", conceptsToTargets.get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true)), false);
+    SLinkOperations.setTarget(linkDeclaration, "target", MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true)), false);
     SPropertyOperations.set(linkDeclaration, "sourceCardinality", "0..n");
     MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }

@@ -1434,10 +1434,14 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239893282561">
               <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239893282562">
-              <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239893334190">
-                <link role="variableDeclaration" targetNodeId="1239892739112" resolveInfo="concept" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241019175854">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241019175855">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241019175856">
+                  <link role="variableDeclaration" targetNodeId="1239892739112" resolveInfo="concept" />
+                </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019175857">
+                  <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -3081,12 +3085,16 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1239891768991">
               <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239891768992">
-              <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239891768993">
-                <node role="key" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239891817108" />
-                <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239891768995">
-                  <link role="variableDeclaration" targetNodeId="1239891765781" resolveInfo="conceptsToTargets" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241019232660">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241019232661">
+                <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1241019232662">
+                  <node role="key" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241019232663" />
+                  <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241019232664">
+                    <link role="variableDeclaration" targetNodeId="1239891765781" resolveInfo="conceptsToTargets" />
+                  </node>
+                </node>
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019232665">
+                  <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
                 </node>
               </node>
             </node>
@@ -4924,12 +4932,16 @@
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239891996631">
               <link role="baseMethodDeclaration" targetNodeId="1238593666753" resolveInfo="fillConceptStructure" />
-              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239891996632">
-                <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1239891996633">
-                  <node role="key" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239892003438" />
-                  <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239891996695">
-                    <link role="variableDeclaration" targetNodeId="1239891990694" resolveInfo="conceptsToTargets" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241019198288">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241019198289">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1241019198290">
+                    <node role="key" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241019198291" />
+                    <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241019198292">
+                      <link role="variableDeclaration" targetNodeId="1239891990694" resolveInfo="conceptsToTargets" />
+                    </node>
+                  </node>
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019198293">
+                    <link role="concept" targetNodeId="6.1071489090640" resolveInfo="ConceptDeclaration" />
                   </node>
                 </node>
               </node>

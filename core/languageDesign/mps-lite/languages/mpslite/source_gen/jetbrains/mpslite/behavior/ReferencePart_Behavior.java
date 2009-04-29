@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -16,7 +17,7 @@ public class ReferencePart_Behavior {
 
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     SNode refCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
-    SNode linkDeclaration = SNodeOperations.cast(partsToLinks.get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SNode linkDeclaration = SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SLinkOperations.setTarget(refCell, "relationDeclaration", linkDeclaration, false);
     SNode component = SLinkOperations.setNewChild(refCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
     SNode propertyCell = SLinkOperations.setNewChild(component, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");

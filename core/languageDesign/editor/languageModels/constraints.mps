@@ -581,14 +581,18 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213104860175">
                 <link role="concept" targetNodeId="4.1071489090640" resolveInfo="ConceptDeclaration" />
               </node>
-              <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1215739649124">
-                <link role="concept" targetNodeId="4.1071489090640" resolveInfo="ConceptDeclaration" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104860176">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104860177">
-                    <link role="variableDeclaration" targetNodeId="1213104860165" resolveInfo="editorComponent" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241018971951">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241018971952">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018971953">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241018971954">
+                      <link role="variableDeclaration" targetNodeId="1213104860165" resolveInfo="editorComponent" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241018971955">
+                      <link role="link" targetNodeId="1.1166049300910" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213104860178">
-                    <link role="link" targetNodeId="1.1166049300910" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241018971956">
+                    <link role="concept" targetNodeId="4.1071489090640" resolveInfo="ConceptDeclaration" />
                   </node>
                 </node>
               </node>

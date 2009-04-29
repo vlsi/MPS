@@ -4,6 +4,7 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSLiteConceptReference_Behavior {
@@ -12,7 +13,7 @@ public class MPSLiteConceptReference_Behavior {
   }
 
   public static SNode virtual_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
-    return conceptsToTargets.get(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false));
+    return MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false));
   }
 
 }

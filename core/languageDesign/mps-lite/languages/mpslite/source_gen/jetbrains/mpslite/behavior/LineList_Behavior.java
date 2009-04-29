@@ -5,7 +5,6 @@ package jetbrains.mpslite.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mpslite.behavior.LinePart_Behavior;
 
 public class LineList_Behavior {
 

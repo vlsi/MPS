@@ -4,11 +4,9 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mpslite.behavior.LineList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mpslite.behavior.GenerationUtils;
 
 public class MPSLiteConceptDeclaration_Behavior {
 
@@ -16,7 +14,7 @@ public class MPSLiteConceptDeclaration_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(thisNode, "lineList", true), SNodeOperations.cast(conceptsToTargets.get(thisNode), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), conceptsToTargets, partsToLinks);
+    LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(thisNode, "lineList", true), ((SNode)MapSequence.fromMap(conceptsToTargets).get(thisNode)), conceptsToTargets, partsToLinks);
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {

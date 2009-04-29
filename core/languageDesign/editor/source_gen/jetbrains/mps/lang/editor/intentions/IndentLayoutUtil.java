@@ -74,7 +74,7 @@ public class IndentLayoutUtil {
     if (editor == null) {
       return false;
     }
-    if (SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(editor, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(((SNode)SLinkOperations.getTarget(editor, "conceptDeclaration", false)), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
       return false;
     }
     return true;

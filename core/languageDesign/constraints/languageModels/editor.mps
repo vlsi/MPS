@@ -1120,12 +1120,16 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227085145675">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1227085180310">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085191855">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1227085189149">
-                        <link role="concept" targetNodeId="5.1071489090640" resolveInfo="ConceptDeclaration" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085181518">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1227085181407" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227085183755">
-                            <link role="link" targetNodeId="1.1213093996982" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241018900748">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241018900749">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018900750">
+                            <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1241018900751" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241018900752">
+                              <link role="link" targetNodeId="1.1213093996982" />
+                            </node>
+                          </node>
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241018911671">
+                            <link role="concept" targetNodeId="5.1071489090640" resolveInfo="ConceptDeclaration" />
                           </node>
                         </node>
                       </node>
