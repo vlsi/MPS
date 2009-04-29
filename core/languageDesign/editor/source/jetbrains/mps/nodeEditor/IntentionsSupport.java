@@ -45,8 +45,7 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
@@ -208,7 +207,26 @@ public class IntentionsSupport {
 
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
-    for (final Pair<Intention, SNode> pair : getAvailableIntentions()) {
+    List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
+    groupItems.addAll(getAvailableIntentions());
+    Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
+      public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
+        Intention intention1 = o1.getFirst();
+        Intention intention2 = o2.getFirst();
+        IntentionsManager manager = IntentionsManager.getInstance();
+        if (manager.intentionIsDisabled(intention1) && !(manager.intentionIsDisabled(intention2))) {
+          return 1;
+        }
+        if (!manager.intentionIsDisabled(intention1) && manager.intentionIsDisabled(intention2)) {
+          return -1;
+        }
+        SNode node1 = o1.getSecond();
+        SNode node2 = o2.getSecond();
+        EditorContext context = myEditor.getEditorContext();
+        return intention1.getDescription(node1, context).compareTo(intention2.getDescription(node2, context));
+      }
+    });
+    for (final Pair<Intention, SNode> pair : groupItems) {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), myEditor.getEditorContext())) {
         protected void doExecute(AnActionEvent e) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
