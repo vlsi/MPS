@@ -7641,7 +7641,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1240328847226" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" id="1241016030525" />
                         </node>
                       </node>
                     </node>

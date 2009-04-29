@@ -2720,14 +2720,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240171387899">
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240171359678" resolveInfo="EnumMember_ValueOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240171391370">
       <property name="text" value="value" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240173384882">
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240173327827" resolveInfo="EnumMember_NameOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240173388509">
       <property name="text" value="name" />
@@ -2780,7 +2780,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240930685662">
-    <property name="package" value="enum.operation" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240930444812" resolveInfo="SEnum_MemberForNameOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240930687539">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240930687540">
@@ -2803,7 +2803,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240930807032">
-    <property name="package" value="enum.operation" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240930444878" resolveInfo="SEnum_MemberForValueOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240930809018">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240930809019">
@@ -2826,7 +2826,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240931137552">
-    <property name="package" value="enum.operation" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240930444945" resolveInfo="SEnum_MemberOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240931140741">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240931140742" />
@@ -2852,7 +2852,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240931199155">
-    <property name="package" value="enum.operation" />
+    <property name="package" value="enum.enumoperation" />
     <link role="conceptDeclaration" targetNodeId="1.1240930444980" resolveInfo="SEnum_MembersOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240931210472">
       <property name="text" value="members" />

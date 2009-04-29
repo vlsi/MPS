@@ -8480,7 +8480,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1241008270488">
-      <link role="applicableConcept" targetNodeId="6.1240173327827" resolveInfo="EnumMember_NameOperation" />
+      <link role="applicableConcept" targetNodeId="3.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1241008270489">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241008270490">
           <link role="baseMethodDeclaration" targetNodeId="64.1240335535195" resolveInfo="getEnumMemberName" />
@@ -8491,13 +8491,7 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241008270494">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241008270495">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241008841194">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1241008836082">
-                        <link role="concept" targetNodeId="3.1197027756228" resolveInfo="DotExpression" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241008823655">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241008270497" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1241008830488" />
-                        </node>
-                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241008270497" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241008843245">
                         <link role="link" targetNodeId="3.1197027771414" />
                       </node>
@@ -8509,9 +8503,28 @@
           </node>
         </node>
       </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1241017019675">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241017019676">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241017024193">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241017029069">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241017024414">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241017024194" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241017028115">
+                  <link role="link" targetNodeId="3.1197027833540" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1241017031230">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1241017035029">
+                  <link role="conceptDeclaration" targetNodeId="6.1240173327827" resolveInfo="EnumMember_NameOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1241008270508">
-      <link role="applicableConcept" targetNodeId="6.1240171359678" resolveInfo="EnumMember_ValueOperation" />
+      <link role="applicableConcept" targetNodeId="3.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1241008270509">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241008270510">
           <link role="baseMethodDeclaration" targetNodeId="64.1240335626182" resolveInfo="getEnumMemberValue" />
@@ -8522,18 +8535,31 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241008270514">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241008857871">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241008857872">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1241008857873">
-                        <link role="concept" targetNodeId="3.1197027756228" resolveInfo="DotExpression" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241008857874">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241008857875" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1241008857876" />
-                        </node>
-                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241008857875" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241008857877">
                         <link role="link" targetNodeId="3.1197027771414" />
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1241017040905">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241017040906">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241017064151">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241017064152">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241017064153">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241017064154" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241017064155">
+                  <link role="link" targetNodeId="3.1197027833540" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1241017064156">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1241017067877">
+                  <link role="conceptDeclaration" targetNodeId="6.1240171359678" resolveInfo="EnumMember_ValueOperation" />
                 </node>
               </node>
             </node>

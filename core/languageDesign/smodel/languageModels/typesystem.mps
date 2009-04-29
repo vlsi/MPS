@@ -2428,50 +2428,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240170478212">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240170478213">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240170806891">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240170806892">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240170806893">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1240170806894">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240170806895">
-                      <property name="value" value="true" />
-                    </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240170806896">
-                      <link role="variableDeclaration" targetNodeId="1186067103529" resolveInfo="isGood" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240171325276">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240171325277" />
-                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" id="1240171325278">
-                  <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240171325279">
-                    <property name="name" value="v" />
-                    <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1240171325280">
-                      <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType" id="1240171334129">
-                        <node role="_attr_$link_attribute$enum" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1240171336489">
-                          <property name="varName" value="enumDecl" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240171325283">
-                    <link role="variableDeclaration" targetNodeId="1226075028894" resolveInfo="LeftType" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240170478228">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240170478229">
-              <link role="variableDeclaration" targetNodeId="1178292801475" resolveInfo="op" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1240170481653">
-              <link role="conceptProperty" targetNodeId="1.1240170360781" resolveInfo="applicableToEnumMember" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205265592172">
           <property name="value" value="===========" />
         </node>
@@ -10169,7 +10125,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240148191521">
     <property name="name" value="typeof_SEnum_MemberOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240148191522">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240333198027">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240333198028">
@@ -10204,7 +10160,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240156075297">
     <property name="name" value="typeof_SEnum_MembersOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240156075298">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240333222958">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240333222959">
@@ -10241,7 +10197,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240171423045">
     <property name="name" value="typeof_EnumMember_ValueOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.memberoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240171423046">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1240331870095">
         <property name="name" value="Enum" />
@@ -10337,7 +10293,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240173355660">
     <property name="name" value="typeof_EnumMember_NameOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.memberoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240173355661">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240173368280">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240173371909">
@@ -10361,7 +10317,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240317772458">
     <property name="name" value="typeof_SEnum_MemberForValueOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240317772459">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240333106575">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240333106576">
@@ -10396,7 +10352,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240321146614">
     <property name="name" value="typeof_SEnum_MemberForNameOperation" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240321146615">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1240333018573">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240333018574">
@@ -10431,7 +10387,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240321215114">
     <property name="name" value="typeof_SEnum_MemberForValueOperation_checkArg" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240321215115">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="1240931057511">
         <property name="checkOnly" value="true" />
@@ -10482,25 +10438,8 @@
       <link role="concept" targetNodeId="1.1240930444878" resolveInfo="SEnum_MemberForValueOperation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="1240339171475">
-    <property name="package" value="type" />
-    <property name="name" value="supertypesOf_SEnumMemberType_node_EnumerationMemberDeclaration" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240339171476">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240339171477">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240339171478">
-          <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1240339171479">
-            <link role="concept" targetNodeId="3.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240339171480">
-      <property name="name" value="type" />
-      <link role="concept" targetNodeId="1.1240170042401" resolveInfo="SEnumMemberType" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1240341822704">
-    <property name="package" value="type" />
+    <property name="package" value="enum" />
     <property name="name" value="comparable_SEnumMemberType__node_EnumerationMemberDeclaration" />
     <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1240341822705">
       <property name="name" value="nodeType" />
@@ -10555,7 +10494,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240321429319">
     <property name="name" value="typeof_SEnum_MemberForNameOperation_checkArg" />
-    <property name="package" value="operation.enum" />
+    <property name="package" value="enum.enumoperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240321429320">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="1240321449347">
         <property name="checkOnly" value="true" />

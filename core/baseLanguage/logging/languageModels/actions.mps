@@ -85,7 +85,7 @@
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1178200477985">
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737787257">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1178200515706" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1240329454265" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" id="1241016925108" />
                     </node>
                   </node>
                 </node>

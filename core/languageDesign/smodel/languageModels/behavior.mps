@@ -2517,7 +2517,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240931315602">
-    <property name="package" value="enum.operation" />
+    <property name="package" value="enum.enumoperation" />
     <link role="concept" targetNodeId="1.1240930395965" resolveInfo="SEnumOperation" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240931315603">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240931315604" />

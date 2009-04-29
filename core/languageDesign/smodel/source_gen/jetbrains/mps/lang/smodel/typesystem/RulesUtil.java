@@ -57,11 +57,6 @@ public class RulesUtil {
         isGood = true;
       }
     }
-    if (SConceptPropertyOperations.getBoolean(op, "applicableToEnumMember")) {
-      if (TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, new _Patterns.Pattern_0(), false, typeCheckingContext) != null) {
-        isGood = true;
-      }
-    }
     // ===========
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLink")) {
       SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);

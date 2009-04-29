@@ -15,8 +15,6 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeOperation";
   public static final String CPR_ApplicableToModel = "applicableToModel";
   public static final String CPR_ApplicableToNode = "applicableToNode";
-  public static final String CPR_ApplicableToEnum = "applicableToEnum";
-  public static final String CPR_ApplicableToEnumMember = "applicableToEnumMember";
   public static final String CPR_ApplicableToSimpleProperty = "applicableToSimpleProperty";
   public static final String CPR_ApplicableToEnumProperty = "applicableToEnumProperty";
   public static final String CPR_ApplicableToConceptProperty = "applicableToConceptProperty";
