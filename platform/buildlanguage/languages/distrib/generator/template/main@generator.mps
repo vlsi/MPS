@@ -7130,7 +7130,7 @@
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234788540407" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788574684">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788576058">
-        <property name="text" value="#************************************ Start Menu **********************************************************#" />
+        <property name="text" value="#************************************ Shortcuts ***********************************************************#" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788586274">
@@ -7151,6 +7151,16 @@
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788815685">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788815686">
         <property name="text" value="!define UNINSTALL_LINK &quot;${MAIN_MENU_FOLDER}\Uninstall ${APP_NAME}.lnk&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005222729">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005222730">
+        <property name="text" value="!define DESKTOP_LINK &quot;$DESKTOP\${APP_NAME}.lnk&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005408888">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005408889">
+        <property name="text" value="!define QL_LINK &quot;$QUICKLAUNCH\${APP_NAME}.lnk&quot;" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234788920444" />
@@ -7440,6 +7450,16 @@
         <property name="text" value="!insertmacro MUI_PAGE_DIRECTORY" />
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005163806">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005163807">
+        <property name="text" value="; Components Page" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005163804">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005163805">
+        <property name="text" value="!insertmacro MUI_PAGE_COMPONENTS" />
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788841882">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788841883">
         <property name="text" value="; Instfiles page" />
@@ -7483,7 +7503,7 @@
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234789561646" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788850905">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788850906">
-        <property name="text" value="Section &quot;Main Application&quot; sec01" />
+        <property name="text" value="Section &quot;Main Application&quot; secMain" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234789588652">
@@ -7491,6 +7511,14 @@
         <property name="text" value="    " />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234789611207">
+        <property name="text" value="SectionIn RO" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005132645">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005132646">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005132647">
         <property name="text" value="SetOutPath '$INSTDIR'" />
       </node>
     </node>
@@ -7515,10 +7543,10 @@
         <property name="text" value="SectionEnd" />
       </node>
     </node>
-    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234789739475" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1240998127883" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234789590023">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234789590024">
-        <property name="text" value="Section -AdditionalIcons" />
+        <property name="text" value="Section &quot;Start Menu Folder&quot; setStartMenuFolder" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234789590221">
@@ -7652,6 +7680,110 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234792136072" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240997932985">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240997936861">
+        <property name="text" value="Section &quot;Desktop Shortcut&quot; secDesktop" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240998255056">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998255057">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998255058">
+        <property name="text" value="CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998255059">
+        <property name="text" value="startup file.bat" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240998255060">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240998255061">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240998255062">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240998255063">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255064">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255065">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255066">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255067" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255068">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998255069">
+                      <property name="value" value="." />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255070">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255071" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255072">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998255073">
+        <property name="text" value="&quot; &quot;&quot; &quot;$INSTDIR\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240998166996">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998171420">
+        <property name="text" value="SectionEnd" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1240998364880" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240998360998">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998360999">
+        <property name="text" value="Section &quot;Quick Launch Shortcut&quot; secQuickLaunch" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240998361000">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998361001">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998361002">
+        <property name="text" value="CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998361003">
+        <property name="text" value="startup file.bat" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240998361004">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240998361005">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240998361006">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240998361007">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361008">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361009">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361010">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361011" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361012">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998361013">
+                      <property name="value" value="." />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361014">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361015" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361016">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998361017">
+        <property name="text" value="&quot; &quot;&quot; &quot;$INSTDIR\application.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1240998361018">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240998361019">
+        <property name="text" value="SectionEnd" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234789739475" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234789591481">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234789591482">
         <property name="text" value="Section -Post" />
@@ -7762,22 +7894,6 @@
         <property name="text" value="Section UnInstall" />
       </node>
     </node>
-    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792463201">
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792484778">
-        <property name="text" value="    " />
-      </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792463202">
-        <property name="text" value="; clean classes before uninstallation" />
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792434863">
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792434864">
-        <property name="text" value="    " />
-      </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792502545">
-        <property name="text" value="nsExec::Exec 'CMD /C DEL /S &quot;$INSTDIR\*.class&quot;'" />
-      </node>
-    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792436016">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792436017">
         <property name="text" value="    " />
@@ -7816,6 +7932,22 @@
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792437077">
         <property name="text" value="RmDir  &quot;${MAIN_MENU_FOLDER}&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005476125">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005476126">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005476127">
+        <property name="text" value="Delete &quot;${QL_LINK}&quot;" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241005476628">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005476629">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241005476630">
+        <property name="text" value="Delete &quot;${DESKTOP_LINK}&quot;" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792437551">
