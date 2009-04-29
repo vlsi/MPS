@@ -5,6 +5,9 @@ package jetbrains.mps.build.distrib.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class WindowsConfig_Behavior {
 
@@ -45,6 +48,17 @@ public class WindowsConfig_Behavior {
 
   public static String call_getLicensePath_1237900615474(SNode thisNode) {
     return "license.txt";
+  }
+
+  public static List<SNode> call_getUserHomeDirs_1241017510516(SNode thisNode) {
+    List<SNode> result = ListOperations.<SNode>createList();
+    if ((SLinkOperations.getTarget(thisNode, "settingsDir", true) != null)) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "settingsDir", true));
+    }
+    if ((SLinkOperations.getTarget(thisNode, "examplesDir", true) != null)) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "examplesDir", true));
+    }
+    return result;
   }
 
 }

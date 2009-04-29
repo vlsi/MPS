@@ -467,6 +467,22 @@ public class QueriesGenerated {
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(_context.getNode()) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_1241015288992(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "settingsDir", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241015378530(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "examplesDir", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241024460738(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "settingsDir", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241024567452(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "examplesDir", true));
+  }
+
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
@@ -806,6 +822,26 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1240557209441(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1241015383793(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "settingsDir", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1241015424372(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "examplesDir", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1241020066258(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(WindowsConfig_Behavior.call_getUserHomeDirs_1241017510516(_context.getNode())).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_1241026430881(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "settingsDir", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1241026467244(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "examplesDir", true) != null);
   }
 
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

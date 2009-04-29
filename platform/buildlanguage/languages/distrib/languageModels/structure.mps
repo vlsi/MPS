@@ -256,6 +256,16 @@
       <property name="role" value="embeddedJrePath" />
       <link role="target" targetNodeId="3v.1233321544558" resolveInfo="IPath" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1241014670163">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="settingsDir" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1241014690867">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="examplesDir" />
+      <link role="target" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231856017880">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="signatureConfiguration" />

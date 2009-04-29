@@ -75,7 +75,7 @@
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
     <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
     <unzip src="${mps_home}/build/tools/nsis.zip" dest="${deploy.dir}" />
-    <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true" output="nsis.out">
+    <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>
     <delete file="${nsis.script.path.tmp}" />

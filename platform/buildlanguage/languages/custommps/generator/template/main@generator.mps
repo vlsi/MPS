@@ -5543,6 +5543,24 @@
           </node>
         </node>
       </node>
+      <node role="settingsDir" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1241015675910">
+        <property name="path" value=".MPS10" />
+      </node>
+      <node role="examplesDir" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1241015683677">
+        <property name="path" value="MPSSamples" />
+        <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241015690725">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241015690726">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241015690727">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241015702100">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1241015702101">
+                  <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
+                  <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">

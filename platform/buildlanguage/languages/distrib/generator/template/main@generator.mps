@@ -1949,14 +1949,6 @@
               <property name="value" value="true" />
             </node>
           </node>
-          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1231863549017">
-            <link role="attributeDeclaration" targetNodeId="4v.1199644185977" resolveInfo="output" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1231863554057">
-              <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1231863554058">
-                <property name="value" value="nsis.out" />
-              </node>
-            </node>
-          </node>
         </node>
         <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1231864034830">
           <link role="declaration" targetNodeId="4v.1199644185919" resolveInfo="exec" />
@@ -7490,6 +7482,28 @@
         <property name="text" value="; Uninstaller pages" />
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241020043344">
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1241020066257">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1241020066258">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241020066259">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241020075086">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241020081078">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241020075338">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241020075087" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241020080123">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1241017510516" resolveInfo="getUserHomeDirs" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1241020085443" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024659587">
+        <property name="text" value="!insertmacro MUI_UNPAGE_COMPONENTS" />
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234788847118">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234788847119">
         <property name="text" value="!insertmacro MUI_UNPAGE_INSTFILES" />
@@ -7896,7 +7910,15 @@
     <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234792424259" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792429121">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792432885">
-        <property name="text" value="Section UnInstall" />
+        <property name="text" value="Section &quot;UN.Main Application&quot; UN.Install" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241024690698">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024692810">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024699624">
+        <property name="text" value="SectionIn RO" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792436016">
@@ -8000,10 +8022,222 @@
         <property name="text" value="SectionEnd" />
       </node>
     </node>
-    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1234792730732" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241014948432" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241014930304">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241014940696">
+        <property name="text" value="Section &quot;UN.Settings from %HOME_FOLDER%\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024446798">
+        <property name="text" value="SettingsDir" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241024460737">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241024460738">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241024460739">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241024475790">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241024481594">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241024478401">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241024475791" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241024480843">
+                      <link role="link" targetNodeId="1.1241014670163" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241024485410">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024438390">
+        <property name="text" value="&quot; UN.Settings" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015266907" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015280643">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015288989">
+        <property name="text" value="RmDir /r $DOCUMENTS\..\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015288990">
+        <property name="text" value="SettingsDir" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241015288991">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241015288992">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241015288993">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241015288994">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015288995">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015288996">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241015288997" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241015288998">
+                      <link role="link" targetNodeId="1.1241014670163" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241015288999">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015349426" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015346236">
+        <property name="text" value="SectionEnd" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015368069" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1241015383792">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1241015383793">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241015383794">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241015386233">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015393505">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015386313">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241015386234" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241015392098">
+                    <link role="link" targetNodeId="1.1241014670163" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1241015399728" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241015378523">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015378524">
+        <property name="text" value="Section &quot;UN.Examples from %HOME_FOLDER%\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024567450">
+        <property name="text" value="ExamplesDir" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241024567451">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241024567452">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241024567453">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241024567454">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241024567455">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241024567456">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241024567457" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241024586320">
+                      <link role="link" targetNodeId="1.1241014690867" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241024567459">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241024530430">
+        <property name="text" value="&quot; UN.Examples" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015378525" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015378526">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015378527">
+        <property name="text" value="RmDir /r $DOCUMENTS\..\" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015378528">
+        <property name="text" value="ExamplesDir" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241015378529">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241015378530">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241015378531">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241015378532">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015378533">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015378534">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241015378535" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241015460043">
+                      <link role="link" targetNodeId="1.1241014690867" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241015378537">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1230059208735" resolveInfo="getFullPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015378538" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241015378539">
+        <property name="text" value="SectionEnd" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="1241015378540" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1241015424371">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1241015424372">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241015424373">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241015428280">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015438631">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241015428392">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241015428281" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241015437521">
+                    <link role="link" targetNodeId="1.1241014690867" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1241015444917" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792438320">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1234792438321">
         <property name="text" value="Function UN.onInit" />
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241026390511">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241026392248">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241026396484">
+        <property name="text" value="SectionSetFlags ${UN.Settings} 0x40000000" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1241026430880">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1241026430881">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241026430882">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241026447699">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241026452565">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241026447873">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241026447700" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241026449767">
+                    <link role="link" targetNodeId="1.1241014670163" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1241026459975" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241026408626">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241026408627">
+        <property name="text" value="    " />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241026408628">
+        <property name="text" value="SectionSetFlags ${UN.Examples} 0x40000000" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1241026467243">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1241026467244">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241026467245">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241026469246">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241026469247">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241026469248">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241026469249" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241026479301">
+                    <link role="link" targetNodeId="1.1241014690867" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1241026469251" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1234792438417">

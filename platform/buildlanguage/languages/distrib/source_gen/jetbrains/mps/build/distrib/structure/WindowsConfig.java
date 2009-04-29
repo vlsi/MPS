@@ -17,6 +17,8 @@ public class WindowsConfig extends SystemSpecificConfig {
   public static final String INSTALLER_ICON = "installerIcon";
   public static final String UNINSTALLER_ICON = "uninstallerIcon";
   public static final String EMBEDDED_JRE_PATH = "embeddedJrePath";
+  public static final String SETTINGS_DIR = "settingsDir";
+  public static final String EXAMPLES_DIR = "examplesDir";
   public static final String SIGNATURE_CONFIGURATION = "signatureConfiguration";
 
   public WindowsConfig(SNode node) {
@@ -77,6 +79,22 @@ public class WindowsConfig extends SystemSpecificConfig {
 
   public void setEmbeddedJrePath(IPath node) {
     super.setChild(WindowsConfig.EMBEDDED_JRE_PATH, node);
+  }
+
+  public AbstractPath getSettingsDir() {
+    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.SETTINGS_DIR);
+  }
+
+  public void setSettingsDir(AbstractPath node) {
+    super.setChild(WindowsConfig.SETTINGS_DIR, node);
+  }
+
+  public AbstractPath getExamplesDir() {
+    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.EXAMPLES_DIR);
+  }
+
+  public void setExamplesDir(AbstractPath node) {
+    super.setChild(WindowsConfig.EXAMPLES_DIR, node);
   }
 
   public DigitalSignatureWindowsConfiguration getSignatureConfiguration() {

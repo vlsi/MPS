@@ -205,6 +205,10 @@ public class QueriesGenerated {
     return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1241015690726(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
+  }
+
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
