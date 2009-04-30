@@ -24,6 +24,8 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
       if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
         {
           BaseIntentionProvider intentionProvider = null;
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
+          intentionProvider.putArgument("varRef", localVariableReference);
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportTypeError(localVariableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", intentionProvider, errorTarget);
         }

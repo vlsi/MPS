@@ -8,23 +8,34 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToTypeErrorRuleUtil {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
 
   public static void goToTypeErrorRule(IOperationContext context, IErrorReporter error) {
-    String ruleID = error.getRuleId();
+    final String ruleID = error.getRuleId();
     String ruleModel = error.getRuleModel();
     SModelReference modelUID = SModelReference.fromString(ruleModel);
     modelUID = SModelReference.fromString(modelUID.getLongName());
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
+    Computable<SNode> c = new Computable <SNode>() {
+
+      public SNode compute() {
+        return modelDescriptor.getSModel().getNodeById(ruleID);
+      }
+    };
+    SNode rule = (ModelAccess.instance().canRead() ?
+      c.compute() :
+      ModelAccess.instance().runReadAction(c)
+    );
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;

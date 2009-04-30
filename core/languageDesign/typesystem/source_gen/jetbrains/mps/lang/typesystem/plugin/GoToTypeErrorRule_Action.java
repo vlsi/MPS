@@ -13,7 +13,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 
 public class GoToTypeErrorRule_Action extends GeneratedAction {
   private static final Icon ICON = null;

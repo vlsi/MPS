@@ -15988,6 +15988,15 @@
                 <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239123019456">
                   <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
                 </node>
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1241101113554">
+                  <link role="quickFix" targetNodeId="1241100983853" resolveInfo="MakeVariableFinal" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1241101115272">
+                    <link role="quickFixArgument" targetNodeId="1241101001015" resolveInfo="varRef" />
+                    <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241101120667">
+                      <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -16338,6 +16347,50 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240395549409">
       <property name="name" value="parameterReference" />
       <link role="concept" targetNodeId="1.1068581242874" resolveInfo="ParameterReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1241100983853">
+    <property name="name" value="MakeVariableFinal" />
+    <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1241101001015">
+      <property name="name" value="varRef" />
+      <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241101006368">
+        <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+      </node>
+    </node>
+    <node role="executeBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" id="1241100983854">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241100983855">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241101057690">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241101064942">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241101062793">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241101059185">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="1241101057691">
+                  <link role="quickFixArgument" targetNodeId="1241101001015" resolveInfo="varRef" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241101061620">
+                  <link role="link" targetNodeId="1.1068581517664" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1241101064146">
+                <link role="property" targetNodeId="1.1176718929932" resolveInfo="isFinal" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1241101065302">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241101067702">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="1241101017870">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241101017871">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241101021484">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241101021485">
+            <property name="value" value="Make variable final" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
