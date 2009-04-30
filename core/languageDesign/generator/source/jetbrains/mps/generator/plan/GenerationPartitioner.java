@@ -222,12 +222,39 @@ public class GenerationPartitioner {
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
+
         // trying to fix NPE here
         if (grtPriMappingsFromMap == null) {
-          throw new RuntimeException("Internal error occurred while processing mapping priority rule:\n" +
-            GenerationPartitioningUtil.asString(rule, true) + "\n" +
-            "mapping config '" + NameUtil.nodeFQName(lesserPriMapping) + "' is not in priority map.");
+          String message = "Internal error occurred while processing mapping priority rule:\n" +
+            GenerationPartitioningUtil.asString(rule, true) +
+            "\nmapping config\n'" + NameUtil.nodeFQName(lesserPriMapping) + "'\nis not in priority map.";
+          //
+          message += "\ndisposed: " + lesserPriMapping.getModel().isDisposed();
+          message += "\n---------------------------";
+          message += "\ncheck priority map: ";
+          // check priority map
+          for (MappingConfiguration mappingConfig : myPriorityMap.keySet()) {
+            if (mappingConfig.getName().equals(lesserPriMapping.getName())) {
+              message += "\n" + NameUtil.nodeFQName(mappingConfig);
+              message += "\n  disposed: " + mappingConfig.getModel().isDisposed();
+              message += "\n  same adapter: " + (mappingConfig == lesserPriMapping);
+              message += "\n  same node: " + (mappingConfig.getNode() == lesserPriMapping.getNode());
+              message += "\n  same model: " + (mappingConfig.getModel() == lesserPriMapping.getModel());
+            }
+          }
+          message += "\n---------------------------";
+          String model_name = lesserPriMapping.getModel().getLongName();
+          message += "\nmappings from model '"+ model_name +"' in priority map: ";
+          for (MappingConfiguration mappingConfig : myPriorityMap.keySet()) {
+            if (mappingConfig.getModel().getLongName().equals(model_name)) {
+              message += "\n" + NameUtil.nodeFQName(mappingConfig);
+            }
+          }
+          message += "\n---------------------------";
+
+          throw new RuntimeException(message);
         }
+        // trying to fix NPE here
 
         for (MappingConfiguration grtPriMapping : greaterPriMappings) {
           boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
