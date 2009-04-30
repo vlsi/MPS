@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypeDerivable_Behavior {
   private static Class[] PARAMETERS_1213877435747 = {SNode.class ,SNode.class};
@@ -16,11 +17,11 @@ public class TypeDerivable_Behavior {
   }
 
   public static SNode call_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
   }
 
   public static SNode callSuper_deriveType_1213877435747(SNode thisNode, String callerConceptFqName, SNode expression) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), callerConceptFqName, "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
   }
 
 }

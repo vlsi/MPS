@@ -43,35 +43,35 @@ public class IOperation_Behavior {
   }
 
   public static boolean call_isLValue_1213877410080(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
 
   public static String call_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
   }
 
   public static NullableVariableState call_getNullableState_1230555106620(SNode thisNode) {
-    return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
+    return (NullableVariableState)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
   }
 
   public static boolean call_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
   }
 
   public static boolean callSuper_isLValue_1213877410080(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isLValue_1213877410080", PARAMETERS_1213877410080);
   }
 
   public static String callSuper_getVariableExpectedName_1213877410087(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_getVariableExpectedName_1213877410087", PARAMETERS_1213877410087);
   }
 
   public static NullableVariableState callSuper_getNullableState_1230555106620(SNode thisNode, String callerConceptFqName) {
-    return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
+    return (NullableVariableState)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_getNullableState_1230555106620", PARAMETERS_1230555106620);
   }
 
   public static boolean callSuper_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
   }
 
 }

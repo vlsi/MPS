@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
@@ -15,7 +16,7 @@ public class BTestCase_Behavior {
   }
 
   public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
-    List<String> ret = ListSequence.<String>fromArray();
+    List<String> ret = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(ret).addElement("-c");
     ListSequence.fromList(ret).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
     return ret;

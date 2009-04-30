@@ -4,18 +4,18 @@ package jetbrains.mps.samples.secretCompartmentLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new StateMachine_name_PropertyConstraint());
-    this.myConstraints.add(new StateMachineTest_name_PropertyConstraint());
-    this.myConstraints.add(new Event_name_PropertyConstraint());
-    this.myConstraints.add(new State_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new StateMachine_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new StateMachineTest_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new Event_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new State_name_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

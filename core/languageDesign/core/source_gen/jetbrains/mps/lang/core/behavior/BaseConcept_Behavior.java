@@ -29,17 +29,17 @@ public class BaseConcept_Behavior {
       }
       return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name") + "]";
     }
-    //     --
+    // --
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
     if (smartRefPresentation != null) {
       return smartRefPresentation;
     }
-    //     --
+    // --
     String conceptAlias = SConceptPropertyOperations.getString(thisNode, "alias");
     if (conceptAlias != null) {
       return conceptAlias;
     }
-    //     --
+    // --
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
   }
 
@@ -48,19 +48,19 @@ public class BaseConcept_Behavior {
   }
 
   public static String call_getPresentation_1213877396640(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
   }
 
   public static boolean call_useHorizontalInspector_1213877396707(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_useHorizontalInspector_1213877396707", PARAMETERS_1213877396707);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_useHorizontalInspector_1213877396707", PARAMETERS_1213877396707);
   }
 
   public static String callSuper_getPresentation_1213877396640(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
   }
 
   public static boolean callSuper_useHorizontalInspector_1213877396707(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_useHorizontalInspector_1213877396707", PARAMETERS_1213877396707);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_useHorizontalInspector_1213877396707", PARAMETERS_1213877396707);
   }
 
 }

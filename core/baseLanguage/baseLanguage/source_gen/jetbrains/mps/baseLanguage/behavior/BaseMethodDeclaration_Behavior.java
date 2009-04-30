@@ -130,27 +130,27 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
 
   public static boolean call_isReturnsVoid_1234359555698(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isReturnsVoid_1234359555698", PARAMETERS_1234359555698);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isReturnsVoid_1234359555698", PARAMETERS_1234359555698);
   }
 
   public static boolean call_isAbstract_1232982539764(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
   }
 
   public static boolean callSuper_isDataFlowChecked_1227714048980(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
 
   public static boolean callSuper_isReturnsVoid_1234359555698(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isReturnsVoid_1234359555698", PARAMETERS_1234359555698);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isReturnsVoid_1234359555698", PARAMETERS_1234359555698);
   }
 
   public static boolean callSuper_isAbstract_1232982539764(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
   }
 
 }

@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.style.StyleAttribute;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BooleanStyleSheetItem_Behavior {
   private static Class[] PARAMETERS_1223387362946 = {SNode.class};
@@ -27,11 +28,11 @@ public class BooleanStyleSheetItem_Behavior {
   }
 
   public static boolean call_useQuery_1223387362946(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
 
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
 
 }

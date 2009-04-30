@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IAbstractCompositeComponent_Behavior {
   private static Class[] PARAMETERS_1237389224202 = {SNode.class};
@@ -12,11 +13,11 @@ public class IAbstractCompositeComponent_Behavior {
   }
 
   public static String call_getChildrenTargetDir_1237389224202(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202);
   }
 
   public static String callSuper_getChildrenTargetDir_1237389224202(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), callerConceptFqName, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_1237389224202);
   }
 
 }

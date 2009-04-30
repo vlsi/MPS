@@ -39,11 +39,11 @@ public class SimpleTextGenOperation_Behavior {
   }
 
   public static String call_getMethodName_1234789420862(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
   }
 
   public static String callSuper_getMethodName_1234789420862(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), callerConceptFqName, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
   }
 
 }

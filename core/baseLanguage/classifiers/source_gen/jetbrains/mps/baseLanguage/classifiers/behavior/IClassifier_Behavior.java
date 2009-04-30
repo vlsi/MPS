@@ -9,9 +9,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -100,35 +98,35 @@ public class IClassifier_Behavior {
   }
 
   public static SNode call_createType_1213877527970(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createType_1213877527970", PARAMETERS_1213877527970);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", PARAMETERS_1213877527970);
   }
 
   public static SNode call_createSuperType_1217433657148(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createSuperType_1217433657148", PARAMETERS_1217433657148);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createSuperType_1217433657148", PARAMETERS_1217433657148);
   }
 
   public static List<SNode> call_getParts_1213877527988(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
   }
 
   public static List<SNode> call_getMembers_1213877528124(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getMembers_1213877528124", PARAMETERS_1213877528124);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_getMembers_1213877528124", PARAMETERS_1213877528124);
   }
 
   public static SNode callSuper_createType_1213877527970(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_1213877527970);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_1213877527970);
   }
 
   public static SNode callSuper_createSuperType_1217433657148(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createSuperType_1217433657148", PARAMETERS_1217433657148);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_createSuperType_1217433657148", PARAMETERS_1217433657148);
   }
 
   public static List<SNode> callSuper_getParts_1213877527988(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
   }
 
   public static List<SNode> callSuper_getMembers_1213877528124(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getMembers_1213877528124", PARAMETERS_1213877528124);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getMembers_1213877528124", PARAMETERS_1213877528124);
   }
 
   public static SNode getContextClassifier_1213877527940(SNode contextNode) {

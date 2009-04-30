@@ -7,22 +7,26 @@
   <component name="FileProjectViewPane">
     <subPane />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\behavior.sandbox\behavior.sandbox.msd" />
+      <solutionPath path="${project}/solutions/behavior.sandbox/behavior.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\behavior\behavior.mpl" />
+      <languagePath path="${project}/languages/behavior/behavior.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="behavior" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

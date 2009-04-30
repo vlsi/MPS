@@ -232,11 +232,11 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
   public static void commitNameProperty_1232962485892(EditorContext editorContext, String oldValue, final SNode node, final String newValue) {

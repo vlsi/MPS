@@ -35,11 +35,11 @@ public class IStyleContainer_Behavior {
   }
 
   public static SNode call_getParent_1219419981626(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
   }
 
   public static SNode callSuper_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
   }
 
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Statement_Behavior {
   private static Class[] PARAMETERS_1237547327995 = {SNode.class};
@@ -16,11 +17,11 @@ public class Statement_Behavior {
   }
 
   public static boolean call_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
 
   public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
 
 }

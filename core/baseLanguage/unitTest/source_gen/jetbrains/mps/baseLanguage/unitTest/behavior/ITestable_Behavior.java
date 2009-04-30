@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ITestable_Behavior {
   private static Class[] PARAMETERS_1215620460293 = {SNode.class};
@@ -19,19 +20,19 @@ public class ITestable_Behavior {
   }
 
   public static List<String> call_getParametersPart_1215620460293(SNode thisNode) {
-    return (List<String>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getParametersPart_1215620460293", PARAMETERS_1215620460293);
+    return (List<String>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getParametersPart_1215620460293", PARAMETERS_1215620460293);
   }
 
   public static TestRunParameters call_getTestRunParameters_1216045139515(SNode thisNode) {
-    return (TestRunParameters)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
+    return (TestRunParameters)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
   }
 
   public static List<String> callSuper_getParametersPart_1215620460293(SNode thisNode, String callerConceptFqName) {
-    return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getParametersPart_1215620460293", PARAMETERS_1215620460293);
+    return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_getParametersPart_1215620460293", PARAMETERS_1215620460293);
   }
 
   public static TestRunParameters callSuper_getTestRunParameters_1216045139515(SNode thisNode, String callerConceptFqName) {
-    return (TestRunParameters)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
+    return (TestRunParameters)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
   }
 
 }

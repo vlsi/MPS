@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SeqRegexp_Behavior {
   private static Class[] PARAMETERS_1222436755347 = {SNode.class ,List.class};
@@ -19,11 +19,11 @@ public class SeqRegexp_Behavior {
   }
 
   public static String call_getString_1222436755347(SNode thisNode, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
   }
 
   public static String callSuper_getString_1222436755347(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
   }
 
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
-import jetbrains.mps.lang.behavior.behavior._Quotations;
 
 public class ConceptBehavior_Behavior {
 

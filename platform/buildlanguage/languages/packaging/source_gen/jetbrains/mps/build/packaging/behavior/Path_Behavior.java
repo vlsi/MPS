@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Path_Behavior {
   private static Class[] PARAMETERS_1221141245424 = {SNode.class};
@@ -50,11 +51,11 @@ public class Path_Behavior {
   }
 
   public static String call_getName_1221141245424(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getName_1221141245424", PARAMETERS_1221141245424);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), "virtual_getName_1221141245424", PARAMETERS_1221141245424);
   }
 
   public static String callSuper_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424);
   }
 
 }

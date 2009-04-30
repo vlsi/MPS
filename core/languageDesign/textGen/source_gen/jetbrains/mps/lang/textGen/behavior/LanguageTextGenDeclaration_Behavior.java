@@ -5,6 +5,7 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,7 +18,7 @@ public class LanguageTextGenDeclaration_Behavior {
 
   public static List<SNode> call_getParameters_1234799367488(SNode thisNode) {
     if (thisNode == null) {
-      return ListSequence.<SNode>fromArray();
+      return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = ListOperations.<SNode>createList();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));

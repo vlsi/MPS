@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ILocalVariableElementList_Behavior {
   private static Class[] PARAMETERS_1238805763253 = {SNode.class};
@@ -13,11 +14,11 @@ public class ILocalVariableElementList_Behavior {
   }
 
   public static List<SNode> call_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
   }
 
   public static List<SNode> callSuper_getLocalVariableElements_1238805763253(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
   }
 
 }

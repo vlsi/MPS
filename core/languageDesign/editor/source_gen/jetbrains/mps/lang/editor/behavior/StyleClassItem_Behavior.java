@@ -24,19 +24,19 @@ public class StyleClassItem_Behavior {
   }
 
   public static boolean call_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, cellModel);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, cellModel);
   }
 
   public static SNode call_getStyleConstant_1215703564594(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
   }
 
   public static boolean callSuper_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, cellModel);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, cellModel);
   }
 
   public static SNode callSuper_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
   }
 
 }

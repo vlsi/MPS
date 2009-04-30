@@ -4,6 +4,7 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LinkPatternVariableReference_Behavior {
   private static Class[] PARAMETERS_1225210740874 = {SNode.class ,Object.class};
@@ -15,11 +16,11 @@ public class LinkPatternVariableReference_Behavior {
   }
 
   public static void call_abxcdef_1225210740874(SNode thisNode, @Deprecated() Object o) {
-    BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, o);
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, o);
   }
 
   public static void callSuper_abxcdef_1225210740874(SNode thisNode, String callerConceptFqName, @Deprecated() Object o) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, o);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), callerConceptFqName, "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, o);
   }
 
 }

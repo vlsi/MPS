@@ -4,6 +4,7 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractCommandLinePart_Behavior {
   private static Class[] PARAMETERS_1231864533228 = {SNode.class};
@@ -12,11 +13,11 @@ public class AbstractCommandLinePart_Behavior {
   }
 
   public static String call_getText_1231864533228(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getText_1231864533228", PARAMETERS_1231864533228);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"), "virtual_getText_1231864533228", PARAMETERS_1231864533228);
   }
 
   public static String callSuper_getText_1231864533228(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getText_1231864533228", PARAMETERS_1231864533228);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"), callerConceptFqName, "virtual_getText_1231864533228", PARAMETERS_1231864533228);
   }
 
 }

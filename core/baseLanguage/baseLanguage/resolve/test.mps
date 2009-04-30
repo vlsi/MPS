@@ -31,11 +31,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237574003941" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237574003942" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237574003943">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239964502906">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" id="1239964502907">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239964506091">
-              <link role="classifier" targetNodeId="2.~Boolean" resolveInfo="Boolean" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241035074683">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1241035074684">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.Expression" id="1241035074685" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.Expression" id="1241035074686" />
           </node>
         </node>
       </node>

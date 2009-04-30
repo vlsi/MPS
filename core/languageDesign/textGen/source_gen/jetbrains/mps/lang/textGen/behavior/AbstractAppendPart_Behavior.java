@@ -4,6 +4,7 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractAppendPart_Behavior {
   private static Class[] PARAMETERS_1237466287046 = {SNode.class};
@@ -16,11 +17,11 @@ public class AbstractAppendPart_Behavior {
   }
 
   public static boolean call_withIndent_1237466287046(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), "virtual_withIndent_1237466287046", PARAMETERS_1237466287046);
   }
 
   public static boolean callSuper_withIndent_1237466287046(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), callerConceptFqName, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046);
   }
 
 }

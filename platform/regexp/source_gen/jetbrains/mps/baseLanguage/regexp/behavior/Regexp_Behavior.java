@@ -45,19 +45,19 @@ public class Regexp_Behavior {
   }
 
   public static String call_toString_1213877429451(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_toString_1213877429451", PARAMETERS_1213877429451);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_toString_1213877429451", PARAMETERS_1213877429451);
   }
 
   public static String call_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
   }
 
   public static String callSuper_toString_1213877429451(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_toString_1213877429451", PARAMETERS_1213877429451);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_toString_1213877429451", PARAMETERS_1213877429451);
   }
 
   public static String callSuper_getString_1222432436326(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
   }
 
 }

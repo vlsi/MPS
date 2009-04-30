@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -35,19 +34,19 @@ public class NodeOperation_Behavior {
   }
 
   public static String call_getName_1217435265700(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
   }
 
   public static void call_perform_1215601182156(SNode thisNode, SNode node) {
-    BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
   }
 
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
   }
 
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
   }
 
 }

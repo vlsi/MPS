@@ -60,11 +60,11 @@ public class NodeMacro_Behavior {
   }
 
   public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
   }
 
   public static SNode callSuper_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
   }
 
 }

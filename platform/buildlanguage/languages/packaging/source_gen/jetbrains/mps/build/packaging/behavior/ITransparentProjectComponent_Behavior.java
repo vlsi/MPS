@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ITransparentProjectComponent_Behavior {
   private static Class[] PARAMETERS_1240564451382 = {SNode.class};
@@ -13,11 +14,11 @@ public class ITransparentProjectComponent_Behavior {
   }
 
   public static List<SNode> call_getChildrenToDo_1240564451382(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
   }
 
   public static List<SNode> callSuper_getChildrenToDo_1240564451382(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), callerConceptFqName, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
   }
 
 }

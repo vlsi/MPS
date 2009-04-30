@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IMethodLike_Behavior {
   private static Class[] PARAMETERS_1239354342632 = {SNode.class};
@@ -20,27 +21,27 @@ public class IMethodLike_Behavior {
   }
 
   public static SNode call_getExpectedRetType_1239354342632(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
   }
 
   public static SNode call_getLastStatement_1239354409446(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446);
   }
 
   public static SNode call_getBody_1239354440022(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
   }
 
   public static SNode callSuper_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
   }
 
   public static SNode callSuper_getLastStatement_1239354409446(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getLastStatement_1239354409446", PARAMETERS_1239354409446);
   }
 
   public static SNode callSuper_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
   }
 
 }

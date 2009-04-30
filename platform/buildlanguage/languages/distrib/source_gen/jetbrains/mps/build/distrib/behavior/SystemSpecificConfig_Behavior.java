@@ -50,11 +50,11 @@ public class SystemSpecificConfig_Behavior {
   }
 
   public static List<SNode> call_getAllUsedVariable_1234793567442(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
   }
 
   public static List<SNode> callSuper_getAllUsedVariable_1234793567442(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), callerConceptFqName, "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
   }
 
 }

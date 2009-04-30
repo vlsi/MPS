@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMember_Behavior {
@@ -42,27 +41,27 @@ public class IMember_Behavior {
   }
 
   public static SNode call_getVisiblity_1213877352965(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965);
   }
 
   public static SNode call_getOperationConcept_1213877352972(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972);
   }
 
   public static SNode call_createOperation_1213877353000(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), "virtual_createOperation_1213877353000", PARAMETERS_1213877353000);
   }
 
   public static SNode callSuper_getVisiblity_1213877352965(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getVisiblity_1213877352965", PARAMETERS_1213877352965);
   }
 
   public static SNode callSuper_getOperationConcept_1213877352972(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getOperationConcept_1213877352972", PARAMETERS_1213877352972);
   }
 
   public static SNode callSuper_createOperation_1213877353000(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000);
   }
 
 }

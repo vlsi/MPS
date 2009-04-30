@@ -35,7 +35,7 @@ public class MPSLayout_Behavior {
     for(String s : Sequence.fromIterable(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
-      SPropertyOperations.set(var, "antName", vars.get(s));
+      SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
   }

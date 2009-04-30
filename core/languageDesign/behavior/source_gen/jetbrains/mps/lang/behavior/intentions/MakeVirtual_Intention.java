@@ -6,11 +6,22 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class MakeVirtual_Intention extends BaseIntention {
 
+  public MakeVirtual_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -40,6 +51,12 @@ public class MakeVirtual_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.behavior.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderNameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_WithRole_Behavior {
   private static Class[] PARAMETERS_1216377898846 = {SNode.class};
@@ -25,19 +26,19 @@ public class CellModel_WithRole_Behavior {
   }
 
   public static String call_getRoleForCell_1216377898846(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
   }
 
   public static String call_getCellProviderClassName_1216378357889(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
   }
 
   public static String callSuper_getRoleForCell_1216377898846(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
   }
 
   public static String callSuper_getCellProviderClassName_1216378357889(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
   }
 
 }

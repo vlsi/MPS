@@ -5,7 +5,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.refactoring.behavior._Quotations;
 
 public class ChooseComponentClause_Behavior {
 

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IVariableHolder_Behavior {
   private static Class[] PARAMETERS_1234864693585 = {SNode.class};
@@ -25,11 +26,11 @@ public class IVariableHolder_Behavior {
   }
 
   public static List<SNode> call_getAllVariable_1234864693585(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
   }
 
   public static List<SNode> callSuper_getAllVariable_1234864693585(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
   }
 
 }

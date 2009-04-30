@@ -35,19 +35,19 @@ public class VariableDeclaration_Behavior {
   }
 
   public static SNode call_createReference_1213877517482(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createReference_1213877517482", PARAMETERS_1213877517482);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_createReference_1213877517482", PARAMETERS_1213877517482);
   }
 
   public static boolean call_isInitializable_1213877517488(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isInitializable_1213877517488", PARAMETERS_1213877517488);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_1213877517488);
   }
 
   public static SNode callSuper_createReference_1213877517482(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createReference_1213877517482", PARAMETERS_1213877517482);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_createReference_1213877517482", PARAMETERS_1213877517482);
   }
 
   public static boolean callSuper_isInitializable_1213877517488(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_1213877517488);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_1213877517488);
   }
 
 }

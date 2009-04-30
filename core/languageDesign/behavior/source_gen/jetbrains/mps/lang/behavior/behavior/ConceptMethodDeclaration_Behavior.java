@@ -14,12 +14,16 @@ public class ConceptMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_findBehaviour_1225196403947(SNode thisNode) {
+  public static SNode call_getBehaviour_1225196403947(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
+  }
+
+  public static SNode call_getContainingConcept_1241074789565(SNode thisNode) {
+    return SLinkOperations.getTarget(ConceptMethodDeclaration_Behavior.call_getBehaviour_1225196403947(thisNode), "concept", false);
   }
 
   public static SNode call_getOverridenMethod_1225196403956(SNode thisNode) {
@@ -31,7 +35,7 @@ public class ConceptMethodDeclaration_Behavior {
     }
     return null;
   }
-
+                   
   public static boolean call_isCorrectlyOverriden_1227262347923(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == null)) {
       return true;

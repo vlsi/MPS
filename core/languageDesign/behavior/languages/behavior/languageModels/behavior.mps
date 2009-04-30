@@ -881,7 +881,7 @@
     <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225196403947">
-      <property name="name" value="findBehaviour" />
+      <property name="name" value="getBehaviour" />
       <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225196403948">
         <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
@@ -911,6 +911,28 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076469052" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076469053" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1241074789565">
+      <property name="name" value="getContainingConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241074789566" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241074795617">
+        <link role="concept" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241074789569">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241074803955">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241074808364">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241074805959">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241074805960" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241074805961">
+                <link role="baseMethodDeclaration" targetNodeId="1225196403947" resolveInfo="findBehaviour" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241074820857">
+              <link role="link" targetNodeId="1.1225194240799" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225196403956">
       <property name="name" value="getOverridenMethod" />

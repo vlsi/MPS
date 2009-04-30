@@ -33,19 +33,19 @@ public class IContainsStatementList_Behavior {
   }
 
   public static boolean call_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
   }
 
   public static boolean call_isStatementListCompact_1237546693016(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
   }
 
   public static boolean callSuper_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
   }
 
   public static boolean callSuper_isStatementListCompact_1237546693016(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
   }
 
 }

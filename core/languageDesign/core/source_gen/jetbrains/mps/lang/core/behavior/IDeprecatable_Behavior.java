@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IDeprecatable_Behavior {
   private static Class[] PARAMETERS_1224609060727 = {SNode.class};
@@ -21,19 +22,19 @@ public class IDeprecatable_Behavior {
   }
 
   public static boolean call_isDeprecated_1224609060727(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
   }
 
   public static String call_getMessage_1225207468592(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
   }
 
   public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
   }
 
   public static String callSuper_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
   }
 
 }

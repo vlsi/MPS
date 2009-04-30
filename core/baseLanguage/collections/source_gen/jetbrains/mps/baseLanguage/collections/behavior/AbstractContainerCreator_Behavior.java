@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractContainerCreator_Behavior {
   private static Class[] PARAMETERS_1237722437229 = {SNode.class};
@@ -12,11 +13,11 @@ public class AbstractContainerCreator_Behavior {
   }
 
   public static SNode call_createType_1237722437229(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_createType_1237722437229", PARAMETERS_1237722437229);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1237722437229);
   }
 
   public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229);
   }
 
 }

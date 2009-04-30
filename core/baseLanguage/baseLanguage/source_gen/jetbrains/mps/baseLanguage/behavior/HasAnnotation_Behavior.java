@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class HasAnnotation_Behavior {
   private static Class[] PARAMETERS_1233076312117 = {SNode.class};
@@ -16,11 +17,11 @@ public class HasAnnotation_Behavior {
   }
 
   public static boolean call_canBeAnnotated_1233076312117(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
   }
 
   public static boolean callSuper_canBeAnnotated_1233076312117(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), callerConceptFqName, "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
   }
 
 }

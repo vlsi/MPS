@@ -5,9 +5,9 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class EditorTestCase_Behavior {
 
@@ -15,7 +15,7 @@ public class EditorTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
-    return ListSequence.<SNode>fromArray(thisNode);
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), thisNode);
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_1240406910049 = {SNode.class};
@@ -28,11 +29,11 @@ public class IntentionDeclaration_Behavior {
   }
 
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
   }
 
   public static boolean callSuper_isParameterized_1240406910049(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), callerConceptFqName, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
   }
 
 }

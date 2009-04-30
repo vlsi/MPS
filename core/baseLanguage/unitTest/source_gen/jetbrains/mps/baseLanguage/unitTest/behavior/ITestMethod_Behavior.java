@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ITestMethod_Behavior {
   private static Class[] PARAMETERS_1216134500045 = {SNode.class};
@@ -16,26 +17,26 @@ public class ITestMethod_Behavior {
   }
 
   public static List<String> virtual_getParametersPart_1215620460293(SNode thisNode) {
-    List<String> params = ListSequence.<String>fromArray();
+    List<String> params = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(params).addElement("-m");
     ListSequence.fromList(params).addElement(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(thisNode)) + "." + ITestMethod_Behavior.call_getTestName_1216136419751(thisNode));
     return params;
   }
 
   public static SNode call_getTestCase_1216134500045(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045);
   }
 
   public static String call_getTestName_1216136419751(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestName_1216136419751", PARAMETERS_1216136419751);
   }
 
   public static SNode callSuper_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", PARAMETERS_1216134500045);
   }
 
   public static String callSuper_getTestName_1216136419751(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751);
   }
 
 }

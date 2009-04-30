@@ -5,8 +5,6 @@ package jetbrains.mps.samples.matrixLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint;
-import jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

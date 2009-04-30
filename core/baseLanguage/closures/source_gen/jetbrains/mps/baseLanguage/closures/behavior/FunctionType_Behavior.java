@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -154,7 +155,7 @@ with_meet:
 
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       return null;
     }
@@ -176,7 +177,7 @@ with_meet:
 
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       return null;
     }
@@ -198,7 +199,7 @@ with_meet:
 
   public static SNode call_getRuntimeType_1230320203983(SNode thisNode, List<SNode> parameterType) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = RuntimeUtils.getRuntimeClassifiersMap().get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       return null;
     }
@@ -258,35 +259,35 @@ with_meet:
   }
 
   public static String call_getRuntimeSignature_1213877404927(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
   }
 
   public static String call_getRuntimeClassName_1230472987259(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
   }
 
   public static SNode call_getResultType_1230475757059(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
   }
 
   public static SNode call_getTerminateType_1232032188607(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
   }
 
   public static String callSuper_getRuntimeSignature_1213877404927(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_1213877404927);
   }
 
   public static String callSuper_getRuntimeClassName_1230472987259(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getRuntimeClassName_1230472987259", PARAMETERS_1230472987259);
   }
 
   public static SNode callSuper_getResultType_1230475757059(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getResultType_1230475757059", PARAMETERS_1230475757059);
   }
 
   public static SNode callSuper_getTerminateType_1232032188607(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getTerminateType_1232032188607", PARAMETERS_1232032188607);
   }
 
 }

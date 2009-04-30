@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IParameter_Behavior {
   private static Class[] PARAMETERS_1225280611056 = {SNode.class};
@@ -13,19 +14,19 @@ public class IParameter_Behavior {
   }
 
   public static String call_getParameterName_1225280611056(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
   }
 
   public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
   }
 
   public static String callSuper_getParameterName_1225280611056(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
   }
 
   public static SNode callSuper_getDeclaration_1225282371351(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
   }
 
 }

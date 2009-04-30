@@ -4,6 +4,7 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractPath_Behavior {
   private static Class[] PARAMETERS_1230059208735 = {SNode.class};
@@ -12,11 +13,11 @@ public class AbstractPath_Behavior {
   }
 
   public static String call_getFullPath_1230059208735(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getFullPath_1230059208735", PARAMETERS_1230059208735);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractPath"), "virtual_getFullPath_1230059208735", PARAMETERS_1230059208735);
   }
 
   public static String callSuper_getFullPath_1230059208735(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getFullPath_1230059208735", PARAMETERS_1230059208735);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractPath"), callerConceptFqName, "virtual_getFullPath_1230059208735", PARAMETERS_1230059208735);
   }
 
 }

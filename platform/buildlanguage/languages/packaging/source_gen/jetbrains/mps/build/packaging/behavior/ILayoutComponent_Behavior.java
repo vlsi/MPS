@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ILayoutComponent_Behavior {
   private static Class[] PARAMETERS_1213877230696 = {SNode.class};
@@ -12,11 +13,11 @@ public class ILayoutComponent_Behavior {
   }
 
   public static String call_getPath_1213877230696(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ILayoutComponent"), "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
   }
 
   public static String callSuper_getPath_1213877230696(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ILayoutComponent"), callerConceptFqName, "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
   }
 
 }

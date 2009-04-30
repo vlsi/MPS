@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryFunction_StyleParameter_Behavior {
   private static Class[] PARAMETERS_1221482178305 = {SNode.class};
@@ -16,11 +17,11 @@ public class QueryFunction_StyleParameter_Behavior {
   }
 
   public static String call_getQueryMethodName_1221482178305(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getQueryMethodName_1221482178305", PARAMETERS_1221482178305);
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), "virtual_getQueryMethodName_1221482178305", PARAMETERS_1221482178305);
   }
 
   public static String callSuper_getQueryMethodName_1221482178305(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getQueryMethodName_1221482178305", PARAMETERS_1221482178305);
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), callerConceptFqName, "virtual_getQueryMethodName_1221482178305", PARAMETERS_1221482178305);
   }
 
 }
