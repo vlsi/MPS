@@ -4046,7 +4046,7 @@
     <property name="name" value="HorizontalAlign" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1235999512654">
-      <property name="value" value="hirizontal-align" />
+      <property name="value" value="horizontal-align" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1235999557292">

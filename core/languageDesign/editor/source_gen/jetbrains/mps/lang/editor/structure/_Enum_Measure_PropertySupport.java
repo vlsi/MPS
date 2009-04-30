@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _Enum_Measure_PropertySupport extends PropertySupport {
