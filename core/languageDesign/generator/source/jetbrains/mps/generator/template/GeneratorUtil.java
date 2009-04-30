@@ -724,7 +724,7 @@ public class GeneratorUtil {
     }
     if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
       String expected = link.getTarget().getName();
-      String was = targetNode.getConceptDeclarationAdapter().getName();
+      String was = targetNode.getConceptShortName();
       reportProblem(relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'", sourceNode, riseError);
       reportProblem(" -- was " + relationKind + ": " + targetNode.getDebugText(), targetNode, riseError);
       return false;
