@@ -2847,6 +2847,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240931140747">
         <property name="text" value="&gt;" />
+        <property name="attractsFocus" value="1" />
         <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -96,6 +97,9 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7750_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7750_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
   }
 
   private static void setupLabel_Constant_7750_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
