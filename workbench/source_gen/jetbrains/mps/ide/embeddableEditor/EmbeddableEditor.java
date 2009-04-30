@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.generator.GeneratorManager;
@@ -31,6 +32,7 @@ public class EmbeddableEditor {
     this.myNode = node;
     this.myOwner = owner;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
+    this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.myModel.getSModel().runLoadingAction(new Runnable() {
 
       public void run() {

@@ -23,7 +23,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="28" />
+  <maxImportIndex value="29" />
   <import index="1" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -36,6 +36,7 @@
   <import index="20" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1219405202223">
     <property name="name" value="EmbeddableEditor" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220278334166">
@@ -431,6 +432,28 @@
                   <link role="fieldDeclaration" targetNodeId="1219413493008" resolveInfo="myOwner" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219653957302" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241096433931">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241096470806">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241096435529">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241096433932">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1241096433933">
+                  <link role="fieldDeclaration" targetNodeId="1219408476932" resolveInfo="myModel" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1241096433934" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241096446414">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241096475530">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModel.addDevKit(jetbrains.mps.project.DevKit):void" resolveInfo="addDevKit" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241096560037">
+                <link role="baseMethodDeclaration" targetNodeId="29.~LanguageDesign_DevKit.get():jetbrains.mps.project.DevKit" resolveInfo="get" />
+                <link role="classConcept" targetNodeId="29.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
               </node>
             </node>
           </node>
