@@ -48,7 +48,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     int result = 0;
 
     if (overflow) {
-      result++;
+      result+=2;
     }
 
     while (cell != root) {
