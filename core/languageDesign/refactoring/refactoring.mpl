@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.refactoring" uuid="3ecd7c84-cde3-45de-886c-135ecc69b742" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.refactoring" uuid="3ecd7c84-cde3-45de-886c-135ecc69b742" java-stubs-enabled="true" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.refactoring" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.refactoring" />

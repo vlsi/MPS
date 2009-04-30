@@ -22,9 +22,6 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/actions/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/behavior/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/dataFlow/classes" include="false" />
     <entry path="${mps_home}/core/languageDesign/dataFlow/runtime/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
