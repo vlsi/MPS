@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Keys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -15,6 +16,7 @@ import jetbrains.mps.util.NameUtil;
 import java.text.SimpleDateFormat;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Values;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -35,15 +37,15 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1238919799353(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject("tuples_runtime_interfaces_generated") == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_INTERFACES_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238927275010(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject("tuples_runtime_implementation_generated") == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_IMPL_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238931738408(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject("tuples_runtime_from_generated") == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_FROM_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238935880762(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -59,7 +61,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238950442311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject("tuples_runtime_empty_generated") == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_EMPTY_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1239641011995(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -147,7 +149,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238937134317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String rnd = _context.createUniqueName("_tmp", _context.getNode());
-    _context.getNode().putUserObject("rvalue", rnd);
+    Values.RVALUE.set(_context.getNode(), rnd);
     return rnd;
   }
 
@@ -286,11 +288,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1238936085934(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_" + String.valueOf(_context.getNode().getUserObject("number"));
+    return "_" + String.valueOf(Values.NUMBER.get(_context.getNode()));
   }
 
   public static Object referenceMacro_GetReferent_1238937287101(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)_context.getNode().getUserObject("rvalue");
+    return (String)Values.RVALUE.get(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1238938164854(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -694,8 +696,8 @@ public class QueriesGenerated {
     List<SNode> nodes = ListOperations.<SNode>createList();
     int i = 0;
     for(SNode exp : SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"), "component", true)) {
-      exp.putUserObject("number", i);
-      exp.putUserObject("rvalue", _context.getNode().getUserObject("rvalue"));
+      Values.NUMBER.set(exp, i);
+      Values.RVALUE.set(exp, Values.RVALUE.get(_context.getNode()));
       ListSequence.fromList(nodes).addElement(exp);
       i++ ;
     }
@@ -932,22 +934,22 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238919774446(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    _context.putSessionObject("tuples_runtime_interfaces_generated", true);
+    _context.putSessionObject(Keys.RUNTIME_INTERFACES_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238927241809(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    _context.putSessionObject("tuples_runtime_implementation_generated", true);
+    _context.putSessionObject(Keys.RUNTIME_IMPL_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238931738394(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    _context.putSessionObject("tuples_runtime_from_generated", true);
+    _context.putSessionObject(Keys.RUNTIME_FROM_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238950442297(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    _context.putSessionObject("tuples_runtime_empty_generated", true);
+    _context.putSessionObject(Keys.RUNTIME_EMPTY_GENERATED, true);
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 

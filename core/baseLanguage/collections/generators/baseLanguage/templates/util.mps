@@ -495,7 +495,7 @@
               <link role="variableDeclaration" targetNodeId="1241087826101" resolveInfo="str" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241087826099">
-              <property name="value" value="jetbrains.mps.baselanguage.closures.generator." />
+              <property name="value" value="jetbrains.mps.baselanguage.collections.generator." />
             </node>
           </node>
         </node>

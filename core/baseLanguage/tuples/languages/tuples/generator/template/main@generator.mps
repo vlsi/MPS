@@ -482,17 +482,16 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238937203954">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238937210411">
-                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238937209438">
-                            <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238937203955" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241092241407">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092242575">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092241989">
+                            <link role="enumConstantDeclaration" targetNodeId="15.1241092066427" resolveInfo="RVALUE" />
+                            <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238937215780">
-                            <link role="baseMethodDeclaration" targetNodeId="8.~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238937216415">
-                              <property name="value" value="rvalue" />
-                            </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238937226720">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092243030">
+                            <link role="baseMethodDeclaration" targetNodeId="15.1241092045117" resolveInfo="set" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241092245911" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241092247235">
                               <link role="variableDeclaration" targetNodeId="1238937198116" resolveInfo="rnd" />
                             </node>
                           </node>
@@ -554,15 +553,14 @@
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238936545877">
                                 <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
                                 <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238936546785">
-                                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238936546786">
-                                    <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238936546787" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092219684">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092218836">
+                                    <link role="enumConstantDeclaration" targetNodeId="15.1241092076637" resolveInfo="NUMBER" />
+                                    <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238936546788">
-                                    <link role="baseMethodDeclaration" targetNodeId="8.~SNode.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238936546789">
-                                      <property name="value" value="number" />
-                                    </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092220892">
+                                    <link role="baseMethodDeclaration" targetNodeId="15.1241092045132" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241092222327" />
                                   </node>
                                 </node>
                               </node>
@@ -582,15 +580,14 @@
                               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238937302909">
                                 <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                               </node>
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238937307951">
-                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238937307106">
-                                  <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238937304727" />
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092115530">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092114444">
+                                  <link role="enumConstantDeclaration" targetNodeId="15.1241092066427" resolveInfo="RVALUE" />
+                                  <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238937310093">
-                                  <link role="baseMethodDeclaration" targetNodeId="8.~SNode.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238937311147">
-                                    <property name="value" value="rvalue" />
-                                  </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092117123">
+                                  <link role="baseMethodDeclaration" targetNodeId="15.1241092045132" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241092120009" />
                                 </node>
                               </node>
                             </node>
@@ -630,45 +627,42 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1238936364661">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238936364662">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238936451442">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238936461230">
-                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238936460250">
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238936451443">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241092180109">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092193204">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092191961">
+                              <link role="enumConstantDeclaration" targetNodeId="15.1241092076637" resolveInfo="NUMBER" />
+                              <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092193685">
+                              <link role="baseMethodDeclaration" targetNodeId="15.1241092045117" resolveInfo="set" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241092195859">
                                 <link role="variableDeclaration" targetNodeId="1238936364665" resolveInfo="exp" />
                               </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238936470066">
-                              <link role="baseMethodDeclaration" targetNodeId="8.~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238936473404">
-                                <property name="value" value="number" />
-                              </node>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238936480741">
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241092198394">
                                 <link role="variableDeclaration" targetNodeId="1238936383430" resolveInfo="i" />
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238936797130">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238936807118">
-                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238936806183">
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238936804801">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241092134994">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092138361">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092136878">
+                              <link role="enumConstantDeclaration" targetNodeId="15.1241092066427" resolveInfo="RVALUE" />
+                              <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092139554">
+                              <link role="baseMethodDeclaration" targetNodeId="15.1241092045117" resolveInfo="set" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241092173250">
                                 <link role="variableDeclaration" targetNodeId="1238936364665" resolveInfo="exp" />
                               </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238936811189">
-                              <link role="baseMethodDeclaration" targetNodeId="8.~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238936811424">
-                                <property name="value" value="rvalue" />
-                              </node>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238937336006">
-                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1238937334965">
-                                  <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238936819941" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241092163713">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241092162639">
+                                  <link role="enumConstantDeclaration" targetNodeId="15.1241092066427" resolveInfo="RVALUE" />
+                                  <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238937337229">
-                                  <link role="baseMethodDeclaration" targetNodeId="8.~SNode.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238937338180">
-                                    <property name="value" value="rvalue" />
-                                  </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241092165474">
+                                  <link role="baseMethodDeclaration" targetNodeId="15.1241092045132" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241092170566" />
                                 </node>
                               </node>
                             </node>
@@ -1404,8 +1398,9 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238921831939">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238921829545" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238921832590">
-                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238921836041">
-                    <property name="value" value="tuples_runtime_interfaces_generated" />
+                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091868144">
+                    <link role="enumConstantDeclaration" targetNodeId="15.1241091830153" resolveInfo="RUNTIME_INTERFACES_GENERATED" />
+                    <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                   </node>
                 </node>
               </node>
@@ -1430,8 +1425,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238921765057">
                   <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238921764475" />
                   <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238921777014">
-                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238921784767">
-                      <property name="value" value="tuples_runtime_interfaces_generated" />
+                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091855167">
+                      <link role="enumConstantDeclaration" targetNodeId="15.1241091830153" resolveInfo="RUNTIME_INTERFACES_GENERATED" />
+                      <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                     </node>
                   </node>
                 </node>
@@ -1562,8 +1558,9 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238927308389">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238927308390" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238927308391">
-                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238927308392">
-                    <property name="value" value="tuples_runtime_implementation_generated" />
+                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091888325">
+                    <link role="enumConstantDeclaration" targetNodeId="15.1241091723893" resolveInfo="RUNTIME_IMPL_GENERATED" />
+                    <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                   </node>
                 </node>
               </node>
@@ -1588,8 +1585,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238927276092">
                   <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238927276093" />
                   <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238927276094">
-                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238927276095">
-                      <property name="value" value="tuples_runtime_implementation_generated" />
+                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091876898">
+                      <link role="enumConstantDeclaration" targetNodeId="15.1241091723893" resolveInfo="RUNTIME_IMPL_GENERATED" />
+                      <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                     </node>
                   </node>
                 </node>
@@ -1720,8 +1718,9 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238931738399">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238931738400" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238931738401">
-                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238931738402">
-                    <property name="value" value="tuples_runtime_from_generated" />
+                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091912252">
+                    <link role="enumConstantDeclaration" targetNodeId="15.1241091789734" resolveInfo="RUNTIME_FROM_GENERATED" />
+                    <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                   </node>
                 </node>
               </node>
@@ -1746,8 +1745,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238931738414">
                   <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238931738415" />
                   <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238931738416">
-                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238931738417">
-                      <property name="value" value="tuples_runtime_from_generated" />
+                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091901849">
+                      <link role="enumConstantDeclaration" targetNodeId="15.1241091789734" resolveInfo="RUNTIME_FROM_GENERATED" />
+                      <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                     </node>
                   </node>
                 </node>
@@ -1878,8 +1878,9 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238950442302">
                 <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238950442303" />
                 <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238950442304">
-                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238950442305">
-                    <property name="value" value="tuples_runtime_empty_generated" />
+                  <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091930640">
+                    <link role="enumConstantDeclaration" targetNodeId="15.1241091808118" resolveInfo="RUNTIME_EMPTY_GENERATED" />
+                    <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                   </node>
                 </node>
               </node>
@@ -1904,8 +1905,9 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238950442317">
                   <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238950442318" />
                   <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" id="1238950442319">
-                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238950442320">
-                      <property name="value" value="tuples_runtime_empty_generated" />
+                    <node role="userKey" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241091924438">
+                      <link role="enumConstantDeclaration" targetNodeId="15.1241091808118" resolveInfo="RUNTIME_EMPTY_GENERATED" />
+                      <link role="enumClass" targetNodeId="15.1241091679770" resolveInfo="Keys" />
                     </node>
                   </node>
                 </node>
