@@ -7,6 +7,8 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="ba34a21d-7690-4acd-a096-7302fdbeb969(jetbrains.mps.langAlpha)" />
+  <language namespace="d431aa49-24df-485d-80c1-3eda33d816b0(jetbrains.mps.langBeta)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905d0(jetbrains.mpslite.constraints)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -292,6 +294,13 @@
         <property name="value" value="" />
       </node>
     </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1241099265718">
+      <property name="name" value="D" />
+      <link role="baseMethodDeclaration" targetNodeId="1241010708676" resolveInfo="Hare" />
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241099284728">
+        <property name="value" value="8" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1241004064808">
       <property name="name" value="name" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1241004064809" />
@@ -331,5 +340,6 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.langBeta.structure.AlphaConcept" id="1241089250329" />
 </model>
 
