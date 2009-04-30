@@ -11,7 +11,9 @@ public enum Values {
   LITERAL_TARGET("literal_target"),
   TYPE_MAP("type_map"),
   ADAPTABLE("adaptable"),
-  CLOSURE_DATA("closure_data");
+  CLOSURE_DATA("closure_data"),
+  PREP_DATA("prep_data"),
+  POST_DATA("post_data");
 
   private String name;
 

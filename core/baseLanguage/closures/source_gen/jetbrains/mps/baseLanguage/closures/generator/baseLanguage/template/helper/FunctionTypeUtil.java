@@ -49,7 +49,7 @@ public class FunctionTypeUtil {
     SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     assert ntype != null;
     List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), generator);
-    String trgFQname = (String)FunctionTypeUtil.getPrepData(expr, generator);
+    String trgFQname = (String)Values.PREP_DATA.get(expr);
     SNode trg = null;
     for(SNode ct : targets) {
       if (trgFQname.equals(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ct, "classifier", false)))) {
@@ -158,19 +158,19 @@ with_meet:
       } else
       {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType, genContext);
-        FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)), genContext);
+        Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)));
       }
     } else
     if ((lFType != null) && (rCType != null)) {
       FunctionTypeUtil.addAdaptableClassifierTypeTarget(rCType, ClassifierTypeUtil.getDeclarationClassifierType(lFType), genContext);
-      FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), genContext);
+      Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)), genContext);
       } else if (SLinkOperations.getCount(lFType, "throwsType") != SLinkOperations.getCount(rFType, "throwsType")) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType), genContext);
-        FunctionTypeUtil.putPrepData(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)), genContext);
+        Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
       }
     }
   }
@@ -179,15 +179,15 @@ with_meet:
     List<SNode> allAdaptable = getAllAdaptableClassifierTypes(genContext);
     if (allAdaptable == null) {
       allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject("all_needs_adapted", allAdaptable);
+      genContext.putStepObject(Keys.ALL_NEEDS_ADAPTED, allAdaptable);
     }
     if (!(ListSequence.fromList(allAdaptable).contains(adaptable))) {
       ListSequence.fromList(allAdaptable).addElement(adaptable);
     }
-    List<SNode> trgList = (List<SNode>)genContext.getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)));
+    List<SNode> trgList = (List<SNode>)genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
     if (trgList == null) {
       trgList = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
+      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
     }
     boolean hasOneAlready = false;
     for(SNode ct : trgList) {
@@ -204,27 +204,11 @@ with_meet:
   }
 
   public static List<SNode> getAllAdaptableClassifierTypes(TemplateQueryContext genContext) {
-    return (List<SNode>)genContext.getStepObject("all_needs_adapted");
+    return (List<SNode>)genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
   }
 
   public static List<SNode> getAdaptableClassifierTypeTargets(SNode adaptable, ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false)));
-  }
-
-  public static void putPrepData(SNode sn, Object data, TemplateQueryContext genContext) {
-    genContext.putStepObject("classifierType_prepdata_" + ((SNode)sn).getId(), data);
-  }
-
-  public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getStepObject("classifierType_prepdata_" + ((SNode)sn).getId());
-  }
-
-  public static void putPostData(SNode sn, Object data, TemplateQueryContext genContext) {
-    genContext.putStepObject("classifierType_postData_" + ((SNode)sn).getId(), data);
-  }
-
-  public static Object getPostData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getStepObject("classifierType_postData_" + ((SNode)sn).getId());
+    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
   }
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Keys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
@@ -15,10 +16,9 @@ import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helpe
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Flags;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -42,6 +42,7 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils;
 import java.util.Iterator;
 
@@ -50,7 +51,7 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
     if (adapters != null && ListSequence.fromList(adapters).count() > 0) {
-      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+      _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, Boolean.TRUE);
       return true;
     }
     return false;
@@ -139,24 +140,6 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1201390755365(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return Values.CLOSURE_DATA.get(_context.getNode()) != null;
-  }
-
-  public static boolean baseMappingRule_Condition_1201782893971(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (true) {
-      return false;
-    }
-    if (_context.getStepObject("done_weaving_class_for_YieldStatement") == null) {
-      _context.putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
-      return true;
-    }
-    return false;
-  }
-
-  public static boolean baseMappingRule_Condition_1202834518311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (true) {
-      return false;
-    }
-    return PrepStatementUtil.getFlag(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) == Boolean.TRUE;
   }
 
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -260,16 +243,16 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995117221(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (_context.getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
+    if (_context.getStepObject(Keys.NEEDS_WEAVING_CLASS) != null) {
+      _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, null);
       return true;
     }
     return false;
   }
 
   public static boolean baseMappingRule_Condition_1216995140846(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (_context.getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
+    if (_context.getStepObject(Keys.NEEDS_WEAVING_CLASS) != null) {
+      _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, null);
       return true;
     }
     return false;
@@ -282,9 +265,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995176904(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean hasPrep = FunctionTypeUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
-    boolean hasPost = FunctionTypeUtil.getPostData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
-    return hasPrep && !(hasPost);
+    return Values.PREP_DATA.isSet(_context.getNode()) && !(Values.POST_DATA.isSet(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1219916476737(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -345,9 +326,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1230127385232(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean hasPrep = FunctionTypeUtil.getPrepData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
-    boolean hasPost = FunctionTypeUtil.getPostData(_context.getNode(), ((TemplateQueryContext)_context).getGenerator()) != null;
-    return !(hasPrep) || hasPost;
+    return !(Values.PREP_DATA.isSet(_context.getNode())) || Values.POST_DATA.isSet(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1231340529133(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1899,11 +1878,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(cl, "body", true);
   }
 
-  public static SNode sourceNodeQuery_1202834560823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    PrepStatementUtil.setFlag(_context.getNode(), _context, Boolean.FALSE);
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1203249955325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
@@ -2017,7 +1991,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216995176860(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    FunctionTypeUtil.putPostData(_context.getNode(), "done", _context);
+    Values.POST_DATA.set(_context.getNode(), "done");
     return _context.getNode();
   }
 
@@ -3628,10 +3602,6 @@ public class QueriesGenerated {
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201389219923(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1201782869830(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_FunctionTypes");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1216995117212(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

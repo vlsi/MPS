@@ -9,8 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import java.util.ArrayList;
 
 public class PrepStatementUtil {
 
@@ -296,26 +294,6 @@ public class PrepStatementUtil {
   public static void prepStatementList(SNode slist, ITemplateGenerator generator) {
     PrepStatementUtil psu = new PrepStatementUtil(generator);
     psu.prepTopStatementList(slist);
-  }
-
-  public static void setFlag(SNode sn, TemplateQueryContext genContext, Object flag) {
-    genContext.putStepObject("flag_" + ((SNode)sn).getId(), flag);
-    List<SNode> allFlagged = getAllFlagged(genContext);
-    if (allFlagged == null) {
-      allFlagged = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject("all_flagged", allFlagged);
-    }
-    if (!(ListSequence.fromList(allFlagged).contains(sn))) {
-      ListSequence.fromList(allFlagged).addElement(sn);
-    }
-  }
-
-  public static Object getFlag(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getStepObject("flag_" + ((SNode)sn).getId());
-  }
-
-  public static List<SNode> getAllFlagged(TemplateQueryContext genContext) {
-    return (List<SNode>)genContext.getSessionObject("all_flagged");
   }
 
   private static class Context {
