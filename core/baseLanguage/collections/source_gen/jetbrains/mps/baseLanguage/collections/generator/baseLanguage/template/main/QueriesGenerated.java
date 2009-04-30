@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -69,9 +70,6 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1205318778177(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (false && _context.getSessionObject("switch_sequence_operation_toSequence_" + _context.getNode().getId()) != null) {
-      return false;
-    }
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation"))) {
       return false;
     }
@@ -172,9 +170,6 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1208440989717(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (false && _context.getSessionObject("switch_sequence_operation_toList_" + _context.getNode().getId()) != null) {
-      return false;
-    }
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractListOperation"))) {
       return false;
     }
@@ -626,7 +621,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1240860548412(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _context.getNode().getUserObject("wrapped_with_MapSequence") == null && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) != null);
+    return _context.getSessionObject(Keys.WRAPPED_WITH_MAP_SEQUENCE.compose(_context.getNode().getId())) == null && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2212,7 +2207,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1240860686347(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    _context.getNode().putUserObject("wrapped_with_MapSequence", Boolean.TRUE);
+    _context.putSessionObject(Keys.WRAPPED_WITH_MAP_SEQUENCE.compose(_context.getNode().getId()), Boolean.TRUE);
     return _context.getNode();
   }
 
