@@ -36,7 +36,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       {
         SNode _nodeToCheck_1029348928467 = literal;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(cmpRef, "value", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239901999897", true), (SNode)matchedType, _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239901999895", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(cmpRef, "value", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1241203605193", true), (SNode)matchedType, _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1241203605191", intentionProvider);
       }
     }
     List<SNode> PTYPES = ListOperations.<SNode>createList();

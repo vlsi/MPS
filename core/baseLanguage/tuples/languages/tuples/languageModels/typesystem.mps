@@ -609,21 +609,21 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1239901999895">
-            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1239901999896">
-              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1239901999897">
-                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239901999898">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1239901999899">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1241203605191">
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241203605192">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1241203605193">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241203605194">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1241203605195">
                     <link role="variable" targetNodeId="1239894693059" resolveInfo="cmpRef" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239901999900">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241203605196">
                     <link role="link" targetNodeId="1.1239560837729" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1239901999901">
-              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239901999902">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241203605197">
+              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241203605198">
                 <link role="variableDeclaration" targetNodeId="1239900488864" resolveInfo="matchedType" />
               </node>
             </node>
@@ -1628,6 +1628,17 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1240403513227">
     <property name="name" value="check_NamedTupleComponent_final" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403513228">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1241087520978">
+        <property name="value" value=" this rule triggers a critical bug in typesystem, disabled" />
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1241087512562">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241087512563">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241087515291" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241087512668">
+          <property name="value" value="true" />
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1240403562736">
         <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240403570474">
           <property name="name" value="namedTupleType" />

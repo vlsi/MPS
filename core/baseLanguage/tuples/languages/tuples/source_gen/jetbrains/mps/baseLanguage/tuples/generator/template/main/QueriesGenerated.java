@@ -74,13 +74,16 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1239699344950(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     long started = System.currentTimeMillis();
-    SNode tupleType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false);
-    if (false) {
-      Date elapsed = new Date(System.currentTimeMillis() - started);
-      String info = NameUtil.nodeFQName(TypeChecker.getInstance().getTypeOf(_context.getNode())) + "(" + TypeChecker.getInstance().getTypeOf(_context.getNode()).getId() + ")";
-      System.out.println("**** coerceStrong of " + info + " finished in " + new SimpleDateFormat("ss.SSSS").format(elapsed) + " sec.");
-    }
-    return (tupleType != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+    /*
+      SNode tupleType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false);
+      if (true) {
+        Date elapsed = new Date(System.currentTimeMillis() - started);
+        String info = NameUtil.nodeFQName(TypeChecker.getInstance().getTypeOf(_context.getNode())) + "(" + TypeChecker.getInstance().getTypeOf(_context.getNode()).getId() + ")";
+        System.out.println("**** coerceStrong of " + info + " finished in " + new SimpleDateFormat("ss.SSSS").format(elapsed) + " sec.");
+      }
+      (tupleType != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+    */
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1239700274788(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
