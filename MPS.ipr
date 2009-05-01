@@ -930,7 +930,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" group="core/baseLanguage/closures" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" group="core/baseLanguage/closures" />
-      <module fileurl="file://$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" group="samples" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/tuples/Tuples.iml" filepath="$PROJECT_DIR$/core/baseLanguage/tuples/Tuples.iml" group="core/baseLanguage/tuples" /><module fileurl="file://$PROJECT_DIR$/core/baseLanguage/tuples/runtime/Tuples-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/tuples/runtime/Tuples-runtime.iml" group="core/baseLanguage/tuples" /><module fileurl="file://$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" group="samples" />
