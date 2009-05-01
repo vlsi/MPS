@@ -179,8 +179,8 @@ public class DateTimeOperations {
     return left + right;
   }
 
-  public static Long minus(Long left, Long right) {
-    return left.longValue() - right.longValue();
+  public static Period minus(Long left, Long right) {
+    return new Period(right.longValue(), left.longValue());
   }
 
   public static Long minus(Long leftExpression, Period rightExpression) {
