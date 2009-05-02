@@ -35,6 +35,8 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
@@ -135,6 +137,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   private MyScrollPane myScrollPane;
   private boolean myLastPropertiesState;
 
+  private VirtualFileManagerListener myRefreshListener = new RefreshListener();
+
   public static final String ID = ProjectViewPane.ID;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -208,7 +212,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void initComponent() {
     addListeners();
 
-    if (IdeMain.getTestMode()!= TestMode.CORE_TEST) {
+    if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           rebuildTree();
@@ -943,10 +947,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
       getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
       getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);
+      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
     }
   }
 
   protected void addListeners() {
+    VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
@@ -1230,6 +1236,16 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
+    }
+  }
+
+  private class RefreshListener implements VirtualFileManagerListener {
+    public void beforeRefreshStart(boolean asynchonous) {
+
+    }
+
+    public void afterRefreshFinish(boolean asynchonous) {
+      rebuildTree();
     }
   }
 }
