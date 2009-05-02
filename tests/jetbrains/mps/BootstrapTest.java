@@ -70,9 +70,9 @@ public class BootstrapTest extends BaseMPSTest {
     assertGenerates(new File("core/baseLanguage/dates/dates.mpr"));
   }
 
-//  public void testTuples() {
-//    assertGenerates(new File("core/baseLanguage/tuples/tuples.mpr"));
-//  }
+  public void testTuples() {
+    assertGenerates(new File("core/baseLanguage/tuples/tuples.mpr"));
+  }
   
   public void testClosures() {
     assertGenerates(new File("core/baseLanguage/closures/closures.mpr"));
