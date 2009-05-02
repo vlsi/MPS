@@ -92,7 +92,6 @@ public class Solution extends AbstractModule {
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     setSolutionDescriptor(newDescriptor, true);
-
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {

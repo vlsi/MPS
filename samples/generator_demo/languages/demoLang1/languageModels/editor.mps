@@ -2,7 +2,6 @@
 <model modelUID="r:46b12f8e-acd3-4631-b7a9-fc3f25929869(jetbrains.mps.samples.generator_demo.demoLang1.editor)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
@@ -28,8 +27,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:f7ddbc6b-2d9d-4a75-bb9b-b90ee3072c08(jetbrains.mps.samples.generator_demo.demoLang1.structure)" version="1" />
-  <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:f7ddbc6b-2d9d-4a75-bb9b-b90ee3072c08(jetbrains.mps.samples.generator_demo.demoLang1.structure)" version="1" />
 </model>
 

@@ -18,7 +18,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}/classes" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />

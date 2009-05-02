@@ -7,7 +7,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
@@ -35,7 +34,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="r:0ae9068e-ff36-49f1-b852-e23f63981832(jetbrains.mps.samples.generator_demo.demoLang4.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -43,7 +41,6 @@
   <import index="6" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="8" modelUID="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" version="-1" />
-  <import index="9" modelUID="r:c6505a4e-e114-47ba-aea6-f577e907f241(jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main@generator)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1228678752534">
     <property name="name" value="DemoApp" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228678752535" />
