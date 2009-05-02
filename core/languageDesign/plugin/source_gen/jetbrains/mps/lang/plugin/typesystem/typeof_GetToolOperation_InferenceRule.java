@@ -20,7 +20,7 @@ public class typeof_GetToolOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = getToolOperation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(getToolOperation, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209910024367", true), IClassifier_Behavior.call_createType_1213877527970(SLinkOperations.getTarget(getToolOperation, "tool", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209910058897", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(getToolOperation, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209910024367", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(SLinkOperations.getTarget(getToolOperation, "tool", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209910058897", intentionProvider);
     }
   }
 

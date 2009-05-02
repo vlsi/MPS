@@ -5,10 +5,6 @@ package jetbrains.mps.lang.plugin.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.plugin.constraints.ParameterizedActionCreator_constructorDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.plugin.constraints.ModificationStatement_point_ReferentConstraint;
-import jetbrains.mps.lang.plugin.constraints.ModificationStatement_modifiedGroup_ReferentConstraint;
-import jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_key_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

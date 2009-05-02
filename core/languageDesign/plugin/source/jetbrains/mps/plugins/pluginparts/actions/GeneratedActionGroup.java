@@ -35,6 +35,13 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     }
   }
 
+  protected void addGroup(String groupClassName, String moduleName, Object... params) {
+    AnAction group = ActionFactory.getInstance().acquireRegisteredGroup(groupClassName, moduleName, params);
+    if (group != null) {
+      this.add(group);
+    }
+  }
+
   public void insertGroupIntoAnother(String toId, String labelName) {
     DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
     if (gTo == null) {
