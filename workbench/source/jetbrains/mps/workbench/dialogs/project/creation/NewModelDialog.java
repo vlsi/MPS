@@ -73,7 +73,9 @@ public class NewModelDialog extends BaseDialog {
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      model.addElement(new ModelRootWrapper(root, myNamespace));
+      if (myNamespace==null || root.getPrefix().equals(myNamespace)){
+        model.addElement(new ModelRootWrapper(root));
+      }
     }
 
     myModelRoots.addItemListener(new ItemListener() {
@@ -106,7 +108,7 @@ public class NewModelDialog extends BaseDialog {
 
         SModelFqName modelUID = new SModelFqName(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-          setErrorText("Model with an uid " + myModelName.getText() + " is already exists");
+          setErrorText("Model with an uid " + myModelName.getText() + " already exists");
           return null;
         }
 
@@ -143,14 +145,9 @@ public class NewModelDialog extends BaseDialog {
     private String myNamespace;
     private String myText;
 
-    private ModelRootWrapper(SModelRoot modelRoot, String namespace) {
+    private ModelRootWrapper(SModelRoot modelRoot) {
       myModelRoot = modelRoot;
-
-      String prefix = myModelRoot.getPrefix();
-      if (prefix == null) prefix = "";
-      if (namespace == null) namespace = "";
-
-      myNamespace = namespace.equals("") ? prefix : namespace;
+      myNamespace = myModelRoot.getPrefix();
 
       boolean needsNamespace = !myNamespace.equals("");
       myText = myModelRoot.getPath() + (needsNamespace ? " (" + myNamespace + ")" : "");

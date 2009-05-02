@@ -223,9 +223,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModelDescriptor createNewModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName, @NotNull ModelOwner owner) {
-    if (root.getPrefix().length() > 0 && !fqName.getLongName().startsWith(root.getPrefix())) {
-      throw new IllegalArgumentException();
-    }
+    assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
 
     IFile modelFile = createFileForModelUID(root, fqName);
     SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), fqName, owner);
