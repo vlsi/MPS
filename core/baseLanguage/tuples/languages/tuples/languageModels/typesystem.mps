@@ -609,21 +609,21 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1241203605191">
-            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241203605192">
-              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1241203605193">
-                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241203605194">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1241203605195">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1241265635615">
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241265635616">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1241265635617">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241265635618">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1241265635619">
                     <link role="variable" targetNodeId="1239894693059" resolveInfo="cmpRef" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241203605196">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241265635620">
                     <link role="link" targetNodeId="1.1239560837729" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241203605197">
-              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241203605198">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241265635621">
+              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241265635622">
                 <link role="variableDeclaration" targetNodeId="1239900488864" resolveInfo="matchedType" />
               </node>
             </node>
