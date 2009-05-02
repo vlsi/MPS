@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class OptimizeModuleImports_Action extends GeneratedAction {
@@ -82,6 +84,7 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
           }
         }
       });
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       new ScrollingMessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

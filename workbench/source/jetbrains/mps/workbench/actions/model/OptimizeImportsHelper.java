@@ -51,7 +51,7 @@ public class OptimizeImportsHelper {
 
     SolutionDescriptor descriptor = solution.getSolutionDescriptor();
     result.myReport = optimizeModuleImports(context, descriptor, result)+ "\n\n" + result.myReport;
-    solution.setSolutionDescriptor(descriptor);
+    solution.setSolutionDescriptor(descriptor,false);
 
     return result;
   }
@@ -66,7 +66,7 @@ public class OptimizeImportsHelper {
 
     LanguageDescriptor descriptor = language.getLanguageDescriptor();
     result.myReport = optimizeModuleImports(context, descriptor, result)+ "\n\n" + result.myReport;
-    language.setLanguageDescriptor(descriptor);
+    language.setLanguageDescriptor(descriptor,false);
 
     return result;
   }

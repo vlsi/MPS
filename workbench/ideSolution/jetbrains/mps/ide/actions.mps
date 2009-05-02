@@ -11205,6 +11205,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241285289507">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241285289508">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241285289509">
+              <link role="baseMethodDeclaration" targetNodeId="79.~ClassLoaderManager.getInstance():jetbrains.mps.reloading.ClassLoaderManager" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="79.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241285289510">
+              <link role="baseMethodDeclaration" targetNodeId="79.~ClassLoaderManager.reloadAll(com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="reloadAll" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1241285289511">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1241285289512">
+                  <link role="baseMethodDeclaration" targetNodeId="68.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236349476759">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236349476760">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236349476761">
