@@ -16,19 +16,17 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
-import jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
-import jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool;
 
 public class ReplaceDialog extends BaseDialog {
 
@@ -61,7 +59,7 @@ public class ReplaceDialog extends BaseDialog {
     for(Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
-    this.myEditor.addLanguageStructureModel(Collections_Language.get());
+    this.myEditor.addLanguageStructureModel(BootstrapLanguages.collectionsLanguage());
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
     this.setSize(new Dimension(500, 500));
     this.setModal(false);

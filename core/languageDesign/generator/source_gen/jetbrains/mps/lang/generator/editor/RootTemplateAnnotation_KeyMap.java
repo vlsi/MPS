@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
@@ -61,7 +61,7 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
       }
       SNode applyToNode = SNodeOperations.getContainingRoot(node);
       Language language = applyToNode.getNodeLanguage();
-      if (language == Generator_Language.get()) {
+      if (language == BootstrapLanguages.generatorLanguage()) {
         return false;
       }
       return SLinkOperations.getTarget(applyToNode, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) == null;

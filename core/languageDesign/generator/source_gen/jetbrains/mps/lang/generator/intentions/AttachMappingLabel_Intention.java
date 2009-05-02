@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -59,7 +59,7 @@ public class AttachMappingLabel_Intention extends BaseIntention {
       return false;
     }
     //  not an element form generator language
-    if (node.getNodeLanguage() == Generator_Language.get()) {
+    if (node.getNodeLanguage() == BootstrapLanguages.generatorLanguage()) {
       return false;
     }
     //  not inside macro

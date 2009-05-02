@@ -21,7 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;

@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -27,6 +26,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -625,7 +625,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> values = ListSequence.<String>fromArray();
+      List<String> values = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
         ListSequence.fromList(values).addElement("reduce_" + SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name"));
         ListSequence.fromList(values).addElement("weave_" + SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name"));

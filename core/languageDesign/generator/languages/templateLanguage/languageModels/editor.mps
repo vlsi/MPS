@@ -3549,9 +3549,9 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205883087541">
                 <link role="variableDeclaration" targetNodeId="1205883003794" resolveInfo="language" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225107825054">
-                <link role="baseMethodDeclaration" targetNodeId="76.~Generator_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
-                <link role="classConcept" targetNodeId="76.~Generator_Language" resolveInfo="Generator_Language" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241266278060">
+                <link role="baseMethodDeclaration" targetNodeId="10.~BootstrapLanguages.generatorLanguage():jetbrains.mps.smodel.Language" resolveInfo="generatorLanguage" />
+                <link role="classConcept" targetNodeId="10.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
               </node>
             </node>
           </node>

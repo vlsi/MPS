@@ -3628,9 +3628,9 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227302273337">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227302902266">
-              <link role="baseMethodDeclaration" targetNodeId="25.~Generator_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
-              <link role="classConcept" targetNodeId="25.~Generator_Language" resolveInfo="Generator_Language" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241266265115">
+              <link role="baseMethodDeclaration" targetNodeId="6.~BootstrapLanguages.generatorLanguage():jetbrains.mps.smodel.Language" resolveInfo="generatorLanguage" />
+              <link role="classConcept" targetNodeId="6.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227302259708">
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1227302258018">

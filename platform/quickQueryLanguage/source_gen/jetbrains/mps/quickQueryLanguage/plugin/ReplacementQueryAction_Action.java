@@ -10,8 +10,6 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog;
-import jetbrains.mps.quickQueryLanguage.plugin.FindInstancesContext;
 import jetbrains.mps.smodel.Language;
 
 public class ReplacementQueryAction_Action extends GeneratedAction {

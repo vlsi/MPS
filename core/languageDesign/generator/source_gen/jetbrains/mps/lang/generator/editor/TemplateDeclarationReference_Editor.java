@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 
 public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
 

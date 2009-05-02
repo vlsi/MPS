@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.lang.generator.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;

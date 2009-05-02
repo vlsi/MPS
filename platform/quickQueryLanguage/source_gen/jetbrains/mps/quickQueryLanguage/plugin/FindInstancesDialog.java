@@ -18,12 +18,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
-import jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.project.Project;
@@ -31,7 +30,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.quickQueryLanguage.plugin.QueryFinder;
 
 public class FindInstancesDialog extends BaseDialog {
 
@@ -71,7 +69,7 @@ public class FindInstancesDialog extends BaseDialog {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
-    this.myEditor.addLanguageStructureModel(Collections_Language.get());
+    this.myEditor.addLanguageStructureModel(BootstrapLanguages.collectionsLanguage());
     this.myEditor.addLanguageStructureModel(language);
     ModelAccess.instance().runReadAction(new Runnable() {
 

@@ -1358,9 +1358,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237824639794">
               <link role="baseMethodDeclaration" targetNodeId="35.1219418281320" resolveInfo="addLanguageStructureModel" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237824639795">
-                <link role="baseMethodDeclaration" targetNodeId="51.~Smodel_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
-                <link role="classConcept" targetNodeId="52.~Collections_Language" resolveInfo="Collections_Language" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241266240445">
+                <link role="baseMethodDeclaration" targetNodeId="5.~BootstrapLanguages.collectionsLanguage():jetbrains.mps.smodel.Language" resolveInfo="collectionsLanguage" />
+                <link role="classConcept" targetNodeId="5.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
               </node>
             </node>
           </node>
@@ -2278,9 +2278,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237824889887">
               <link role="baseMethodDeclaration" targetNodeId="35.1219418281320" resolveInfo="addLanguageStructureModel" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237824889888">
-                <link role="baseMethodDeclaration" targetNodeId="52.~Collections_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
-                <link role="classConcept" targetNodeId="52.~Collections_Language" resolveInfo="Collections_Language" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1241266229943">
+                <link role="baseMethodDeclaration" targetNodeId="5.~BootstrapLanguages.collectionsLanguage():jetbrains.mps.smodel.Language" resolveInfo="collectionsLanguage" />
+                <link role="classConcept" targetNodeId="5.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
               </node>
             </node>
           </node>

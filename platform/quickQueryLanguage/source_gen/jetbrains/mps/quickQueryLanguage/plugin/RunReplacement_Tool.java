@@ -4,8 +4,8 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import java.util.List;
-import jetbrains.mps.quickQueryLanguage.plugin.ReplacementView;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
@@ -17,11 +17,10 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.quickQueryLanguage.plugin.QueryFinder;
 
 public class RunReplacement_Tool extends GeneratedTool {
 
-  private List<ReplacementView> myViews = ListSequence.<ReplacementView>fromArray();
+  private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
 
   public RunReplacement_Tool(Project project) {
     super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);

@@ -10,8 +10,6 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.quickQueryLanguage.plugin.FindInstancesContext;
-import jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog;
 import jetbrains.mps.smodel.Language;
 
 public class FindInstancesByCondition_Action extends GeneratedAction {

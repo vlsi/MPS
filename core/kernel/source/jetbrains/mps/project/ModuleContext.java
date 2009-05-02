@@ -35,12 +35,12 @@ public class ModuleContext extends StandaloneMPSContext {
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
-  private ModuleReference myModulReference;
+  private ModuleReference myModuleReference;
 
   public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myModulReference = module.getModuleReference();
+        myModuleReference = module.getModuleReference();
         myProject = project;
       }
     });
@@ -53,7 +53,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public IModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModulReference);
+    return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 
   public MPSProject getMPSProject() {
@@ -69,7 +69,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public String toString() {
-    return "module context: " + myModulReference;
+    return "module context: " + myModuleReference;
   }
 
   @Nullable

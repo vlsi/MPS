@@ -16,6 +16,7 @@
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntry type="module" module-name="mps-lite" />
+    <orderEntry type="module" module-name="dates" />
   </component>
 </module>
 
