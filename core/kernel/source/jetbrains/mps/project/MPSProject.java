@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -53,8 +54,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private File myProjectFile;
 
   private ProjectDescriptor myProjectDescriptor;
-  private List<Solution> mySolutions = new ArrayList<Solution>();
-  private List<Language> myLanguages = new ArrayList<Language>();
+  private List<ModuleReference> mySolutions = new ArrayList<ModuleReference>();
+  private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
 
   private List<DevKit> myDevKits = new ArrayList<DevKit>();
 
@@ -113,24 +114,24 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     myErrors = null;
 
     // load solutions
-    mySolutions = new LinkedList<Solution>();
+    mySolutions = new LinkedList<ModuleReference>();
     for (Path solutionPath : myProjectDescriptor.getSolutions()) {
       String path = solutionPath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (descriptorFile.exists()) {
-        mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
+        mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
       } else {
         error("Can't load solution from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
       }
     }
 
     // load languages
-    myLanguages = new LinkedList<Language>();
+    myLanguages = new LinkedList<ModuleReference>();
     for (Path languagePath : myProjectDescriptor.getLanguages()) {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (descriptorFile.exists()) {
-        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
+        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
       } else {
         error("Can't load language from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
       }
@@ -164,7 +165,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   @Nullable
   public Solution findSolution(String name) {
-    for (Solution s : mySolutions) {
+    for (Solution s : getProjectSolutions()) {
       if (name.equals(s.getSolutionDescriptor().getNamespace())) return s;
     }
     return null;
@@ -173,8 +174,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   @NotNull
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();
-    result.addAll(myLanguages);
-    result.addAll(mySolutions);
+    result.addAll(getProjectLanguages());
+    result.addAll(getProjectSolutions());
     result.addAll(myDevKits);
     return result;
   }
@@ -320,12 +321,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   @NotNull
   public List<Language> getProjectLanguages() {
-    return Collections.unmodifiableList(myLanguages);
+    List<Language> result = new ArrayList<Language>();
+    for (ModuleReference langRef : myLanguages) {
+      Language language = MPSModuleRepository.getInstance().getLanguage(langRef);
+      if (language != null) result.add(language);
+    }
+    return result;
   }
 
   @NotNull
   public List<Solution> getProjectSolutions() {
-    return Collections.unmodifiableList(mySolutions);
+    List<Solution> result = new ArrayList<Solution>();
+    for (ModuleReference solRef : mySolutions) {
+      Solution solution = MPSModuleRepository.getInstance().getSolution(solRef);
+      if (solution != null) result.add(solution);
+    }
+    return result;
   }
 
   @NotNull
@@ -335,10 +346,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public boolean isProjectModule(@NotNull IModule module) {
     if (module instanceof Language) {
-      return myLanguages.contains((Language) module);
+      return getProjectLanguages().contains((Language) module);
     }
     if (module instanceof Solution) {
-      return mySolutions.contains((Solution) module);
+      return getProjectSolutions().contains((Solution) module);
     }
     if (module instanceof DevKit) {
       return myDevKits.contains((DevKit) module);
