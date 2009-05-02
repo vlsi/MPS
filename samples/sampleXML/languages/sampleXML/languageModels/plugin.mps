@@ -32,7 +32,6 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" id="1228521817646">
     <property name="name" value="Xml" />
     <link role="extendedClass" targetNodeId="2.~DefaultFileGenerator" resolveInfo="DefaultFileGenerator" />

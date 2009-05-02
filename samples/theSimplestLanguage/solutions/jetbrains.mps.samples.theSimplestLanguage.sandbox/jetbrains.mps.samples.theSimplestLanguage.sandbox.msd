@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.samples.theSimplestLanguage.sandbox" uuid="710ae5d7-8901-4b20-9d5d-f48c728543b5" extenallyVisible="true" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath />
   <sourcePath />
