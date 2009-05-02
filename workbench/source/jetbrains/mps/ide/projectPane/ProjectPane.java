@@ -1245,7 +1245,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
 
     public void afterRefreshFinish(boolean asynchonous) {
-      rebuildTree();
+      if (myNeedRebuild){
+        rebuildTree();
+      }
     }
   }
 }

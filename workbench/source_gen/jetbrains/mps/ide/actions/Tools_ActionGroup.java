@@ -9,7 +9,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Tools";
   public static final String LABEL_ID_customTools = ID + "customTools";
-  public static final String INTERNAL_LABEL_ID_Internal = ID + "Internal";
 
   public Tools_ActionGroup() {
     super("Tools", ID);
@@ -26,7 +25,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
+      this.addGroup("jetbrains.mps.ide.actions.ToolsInternal_ActionGroup", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

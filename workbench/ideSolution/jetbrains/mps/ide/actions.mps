@@ -900,9 +900,11 @@
           <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215890791091">
             <link role="action" targetNodeId="1215890512584" resolveInfo="RemoveTransientModels" />
           </node>
-          <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207148387805" />
           <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215878170807">
             <link role="action" targetNodeId="1215878121755" resolveInfo="DumpKeyStrokes" />
+          </node>
+          <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1241287334170">
+            <link role="action" targetNodeId="1241286908088" resolveInfo="OptimizeImportsInGlobalScope" />
           </node>
           <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207148387807" />
         </node>
@@ -12338,19 +12340,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1241286908156">
-    <property name="name" value="ToolsInternalAddition" />
-    <property name="isInternal" value="true" />
-    <property name="package" value="Menu.MainMenu" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1241286908157">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1241286908158">
-        <link role="action" targetNodeId="1241286908088" resolveInfo="OptimizeImportsInGlobalScope" />
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1241286908159">
-      <link role="modifiedGroup" targetNodeId="1204991238062" resolveInfo="Tools" />
     </node>
   </node>
 </model>

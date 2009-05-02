@@ -53,7 +53,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Bookmarks_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ToolsInternalAddition_ActionGroup");
     return groups;
   }
 
