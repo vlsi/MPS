@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="ypath.sandbox" uuid="c13beb70-150a-461e-b6de-05489d7b1dd3" extenallyVisible="true" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="${mps_home}\platform\ypath\solutions\classes" />
+    <entry path="${mps_home}/platform/ypath/solutions/classes" include="false" />
   </classPath>
   <sourcePath />
   <dependencies>

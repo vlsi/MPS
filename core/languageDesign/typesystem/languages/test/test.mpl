@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.helgins.test" uuid="145670e6-4b63-4079-b9f0-4a07fca69426" generatorOutputPath="${mps_home}\core\languageDesign\typesystem\source_gen" java-stubs-enabled="false" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.helgins.test" uuid="145670e6-4b63-4079-b9f0-4a07fca69426" generatorOutputPath="${mps_home}/core/languageDesign/typesystem/source_gen" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
   </models>
   <accessoryModels />
   <generators />
