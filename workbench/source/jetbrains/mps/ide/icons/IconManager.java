@@ -38,6 +38,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * @author Kostik
@@ -60,7 +62,7 @@ public class IconManager {
     }
   };
 
-  public static Icon getIconFor(final SNode node) {
+  public static Icon getIconFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
         Icon result = null;
