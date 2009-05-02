@@ -4,17 +4,14 @@
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
+  <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
   <language namespace="8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)" />
+  <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
+  <language namespace="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
@@ -48,26 +45,23 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="18" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
   <import index="4" modelUID="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.lang.smodel.structure(jetbrains.mps.lang.smodel.structure@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="14" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="16" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="17" modelUID="r:2b19badf-1dc2-46e6-ac2c-0d8d94be0fc1(jetbrains.mps.build.custommpsInternal.behavior)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.build(jetbrains.mps.build@java_stub)" version="-1" />
+  <import index="19" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
+  <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="17" />
+  <import index="21" modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
-  <visible index="3" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" />
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
-  <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1233155140772">
     <property name="name" value="main" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1237471258572">
@@ -127,7 +121,7 @@
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1238405445057" />
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1238405431520">
                     <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1238405439006">
-                      <link role="conceptDeclaration" targetNodeId="3v.1230056066379" resolveInfo="DistribConfiguration" />
+                      <link role="conceptDeclaration" targetNodeId="19.1230056066379" resolveInfo="DistribConfiguration" />
                     </node>
                   </node>
                 </node>
@@ -144,7 +138,7 @@
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1233671018495">
       <property name="name" value="CustomMPSBuildToTargetDeclaration" />
       <link role="sourceConcept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-      <link role="targetConcept" targetNodeId="4v.1196851099544" resolveInfo="TargetDeclaration" />
+      <link role="targetConcept" targetNodeId="20.1196851099544" resolveInfo="TargetDeclaration" />
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1233931087363">
       <property name="name" value="UndeclaredVariableReferenceToVariable" />
@@ -159,7 +153,7 @@
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1237295614240">
       <property name="name" value="CustomMPSBuildToUnpackZipAntcall" />
       <link role="sourceConcept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-      <link role="targetConcept" targetNodeId="4v.1196851099544" resolveInfo="TargetDeclaration" />
+      <link role="targetConcept" targetNodeId="20.1196851099544" resolveInfo="TargetDeclaration" />
     </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1233739939617">
       <property name="keepSourceRoot" value="true" />
@@ -236,7 +230,7 @@
                                   <link role="variableDeclaration" targetNodeId="1234878901184" resolveInfo="it" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234878901179">
-                                  <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                 </node>
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234878901180">
@@ -303,7 +297,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1234877152438">
-      <link role="applicableConcept" targetNodeId="3v.1230056066379" resolveInfo="DistribConfiguration" />
+      <link role="applicableConcept" targetNodeId="19.1230056066379" resolveInfo="DistribConfiguration" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" id="1234877165686">
         <link role="template" targetNodeId="1233931547920" resolveInfo="weave_UndeclaredVariableReference" />
         <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1234877165687">
@@ -349,7 +343,7 @@
                                   <link role="variableDeclaration" targetNodeId="1234878890991" resolveInfo="it" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234878890985">
-                                  <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                 </node>
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234878890986">
@@ -393,7 +387,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234877733393">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234877433284" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234877747636">
-                      <link role="link" targetNodeId="3v.1230216533585" />
+                      <link role="link" targetNodeId="19.1230216533585" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234877752001">
@@ -1250,7 +1244,7 @@
                                           <link role="variable" targetNodeId="1234971270266" resolveInfo="builtInVar" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270272">
-                                          <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                          <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                         </node>
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270273">
@@ -2272,7 +2266,7 @@
                                     <link role="variable" targetNodeId="1234971270566" resolveInfo="builtInVar" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270572">
-                                    <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                    <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270573">
@@ -2357,7 +2351,7 @@
                                             <link role="variable" targetNodeId="1234971270605" resolveInfo="builtInVar" />
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270611">
-                                            <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                            <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270612">
@@ -2421,7 +2415,7 @@
                                             <link role="variable" targetNodeId="1234971270633" resolveInfo="builtInVar" />
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270639">
-                                            <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                            <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270640">
@@ -2480,7 +2474,7 @@
                                             <link role="variable" targetNodeId="1234971270659" resolveInfo="builtInVar" />
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270665">
-                                            <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                            <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270666">
@@ -2571,7 +2565,7 @@
                                               <link role="variable" targetNodeId="1234971270690" resolveInfo="builtInVar" />
                                             </node>
                                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234971270697">
-                                              <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                              <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                             </node>
                                           </node>
                                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1234971270698">
@@ -2641,7 +2635,7 @@
                                                   <link role="variable" targetNodeId="1240405288552" resolveInfo="builtInVar" />
                                                 </node>
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240405288558">
-                                                  <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                                 </node>
                                               </node>
                                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240405288559">
@@ -2825,7 +2819,7 @@
                                               <link role="variable" targetNodeId="1240846949754" resolveInfo="builtInVar" />
                                             </node>
                                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240846949760">
-                                              <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                              <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                             </node>
                                           </node>
                                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240846949761">
@@ -2959,7 +2953,7 @@
                                 <link role="variable" targetNodeId="1240847398981" resolveInfo="builtInVar" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240847398987">
-                                <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240847398988">
@@ -3062,7 +3056,7 @@
                                             <link role="variable" targetNodeId="1240847003288" resolveInfo="builtInVar" />
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240847003294">
-                                            <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                            <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                           </node>
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240847003295">
@@ -3173,7 +3167,7 @@
                                     <link role="variable" targetNodeId="1240847353826" resolveInfo="builtInVar" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240847353832">
-                                    <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                    <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240847353833">
@@ -3297,7 +3291,7 @@
                                   <link role="variable" targetNodeId="1240847362041" resolveInfo="builtInVar" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240847362047">
-                                  <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240847362048">
@@ -3470,7 +3464,6 @@
       </node>
     </node>
   </node>
-  <visible index="6" modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" />
   <node type="jetbrains.mps.buildlanguage.structure.Project" id="1233668931882">
     <property name="name" value="help-build" />
     <node role="property" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration" id="1233673101173">
@@ -3515,7 +3508,7 @@
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234275178217">
       <property name="name" value="nothing" />
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234275185148">
-        <link role="declaration" targetNodeId="6v.1199644186802" resolveInfo="echo" />
+        <link role="declaration" targetNodeId="21.1199644186802" resolveInfo="echo" />
         <node role="internalText" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1234275187894">
           <property name="value" value="Doing nothing..." />
         </node>
@@ -3524,39 +3517,39 @@
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1233749187524">
       <property name="name" value="repack.sources" />
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233749187525">
-        <link role="declaration" targetNodeId="6v.1199644186266" resolveInfo="copy" />
+        <link role="declaration" targetNodeId="21.1199644186266" resolveInfo="copy" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233749187526">
-          <link role="declaration" targetNodeId="6v.1199644186089" resolveInfo="mapper" />
+          <link role="declaration" targetNodeId="21.1199644186089" resolveInfo="mapper" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233749187527">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644186116" resolveInfo="type" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644186116" resolveInfo="type" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233749187528">
               <property name="value" value="regexp" />
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233749187529">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644186104" resolveInfo="from" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644186104" resolveInfo="from" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233749187530">
               <property name="value" value="(.*)(/|\\)(src|sources|source|source_gen|tests)(/|\\)(.*)" />
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233749187531">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644186112" resolveInfo="to" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644186112" resolveInfo="to" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233749187532">
               <property name="value" value="\5" />
             </node>
           </node>
         </node>
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233749187533">
-          <link role="declaration" targetNodeId="6v.1199644187604" resolveInfo="fileset" />
+          <link role="declaration" targetNodeId="21.1199644187604" resolveInfo="fileset" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233749187534">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644187633" resolveInfo="dir" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644187633" resolveInfo="dir" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233749196577">
               <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
             </node>
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233749187536">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233749194392">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
@@ -3566,60 +3559,60 @@
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1240930717938">
       <property name="name" value="fix.samples.classpath" />
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240930844846">
-        <link role="declaration" targetNodeId="6v.1199644188188" resolveInfo="replace" />
+        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930870281">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188190" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240930873435">
             <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930921928">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188214" resolveInfo="token" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240930928097">
             <property name="value" value="$${mps_home}/samples" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930976730">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188218" resolveInfo="value" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240930980731">
             <property name="value" value="$${language_descriptor}/../.." />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240932416640">
-        <link role="declaration" targetNodeId="6v.1199644188188" resolveInfo="replace" />
+        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416641">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188190" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240932416642">
             <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416643">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188214" resolveInfo="token" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416644">
             <property name="value" value="$${mps_home}\samples" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416645">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644188218" resolveInfo="value" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416646">
             <property name="value" value="$${language_descriptor}\..\..\.." />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240931016538">
-        <link role="declaration" targetNodeId="6v.1199644186266" resolveInfo="copy" />
+        <link role="declaration" targetNodeId="21.1199644186266" resolveInfo="copy" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240931062952">
-          <link role="declaration" targetNodeId="6v.1199644187604" resolveInfo="fileset" />
+          <link role="declaration" targetNodeId="21.1199644187604" resolveInfo="fileset" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240931065495">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644187633" resolveInfo="dir" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644187633" resolveInfo="dir" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240931068157">
               <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
             </node>
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240931021759">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240931023237">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
@@ -3643,13 +3636,13 @@
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1234285345202">
       <property name="name" value="append.mps.version" />
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234285978079">
-        <link role="declaration" targetNodeId="6v.1199644187827" resolveInfo="loadfile" />
+        <link role="declaration" targetNodeId="21.1199644187827" resolveInfo="loadfile" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234286001013">
-          <link role="declaration" targetNodeId="6v.1199644186346" resolveInfo="filterchain" />
+          <link role="declaration" targetNodeId="21.1199644186346" resolveInfo="filterchain" />
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234286047837">
-            <link role="declaration" targetNodeId="6v.1208450039517" resolveInfo="prefixlines" />
+            <link role="declaration" targetNodeId="21.1208450039517" resolveInfo="prefixlines" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234286051184">
-              <link role="attributeDeclaration" targetNodeId="6v.1208450040438" resolveInfo="prefix" />
+              <link role="attributeDeclaration" targetNodeId="21.1208450040438" resolveInfo="prefix" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234286060708">
                 <link role="propertyDeclaration" targetNodeId="1234285774142" resolveInfo="prefix" />
               </node>
@@ -3657,7 +3650,7 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234285983131">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187849" resolveInfo="srcfile" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187849" resolveInfo="srcfile" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1234286101382">
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1234286101383">
               <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234286101384">
@@ -3670,16 +3663,16 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234286139833">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187838" resolveInfo="property" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187838" resolveInfo="property" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1234286201853">
             <property name="value" value="mps.buildinfo" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234286069009">
-        <link role="declaration" targetNodeId="6v.1199644186802" resolveInfo="echo" />
+        <link role="declaration" targetNodeId="21.1199644186802" resolveInfo="echo" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234286073805">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186812" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186812" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234286107661">
             <link role="propertyDeclaration" targetNodeId="1234285415512" resolveInfo="build.number.file" />
           </node>
@@ -3689,15 +3682,15 @@
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1234285483633">
-        <link role="declaration" targetNodeId="6v.1199644186266" resolveInfo="copy" />
+        <link role="declaration" targetNodeId="21.1199644186266" resolveInfo="copy" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234285483634">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186280" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186280" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234285483635">
             <link role="propertyDeclaration" targetNodeId="1234285415512" resolveInfo="build.number.file" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1234285483636">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234285483637">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
@@ -3752,9 +3745,9 @@
         <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1233753795643" />
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233753749191">
-        <link role="declaration" targetNodeId="6v.1199644185264" resolveInfo="property" />
+        <link role="declaration" targetNodeId="21.1199644185264" resolveInfo="property" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749192">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644185278" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644185278" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1233753749193">
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233753798929">
               <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233753800672">
@@ -3767,22 +3760,22 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749195">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644185286" resolveInfo="prefix" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644185286" resolveInfo="prefix" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233753749196">
             <property name="value" value="repo" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233753749197">
-        <link role="declaration" targetNodeId="6v.1199644186802" resolveInfo="echo" />
+        <link role="declaration" targetNodeId="21.1199644186802" resolveInfo="echo" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749198">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186812" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186812" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233753749199">
             <link role="propertyDeclaration" targetNodeId="1233753749185" resolveInfo="build.number.file" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749200">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186804" resolveInfo="append" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186804" resolveInfo="append" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1233753749201">
             <property name="value" value="true" />
           </node>
@@ -3792,15 +3785,15 @@
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233753749203">
-        <link role="declaration" targetNodeId="6v.1199644186266" resolveInfo="copy" />
+        <link role="declaration" targetNodeId="21.1199644186266" resolveInfo="copy" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749204">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186280" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186280" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233753749205">
             <link role="propertyDeclaration" targetNodeId="1233753749185" resolveInfo="build.number.file" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233753749206">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233753749207">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
@@ -3829,22 +3822,22 @@
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027785">
-        <link role="declaration" targetNodeId="6v.1199644187982" resolveInfo="mkdir" />
+        <link role="declaration" targetNodeId="21.1199644187982" resolveInfo="mkdir" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027786">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187984" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187984" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238512027787">
             <link role="propertyDeclaration" targetNodeId="1238512027771" resolveInfo="tmpdir" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027794">
-        <link role="declaration" targetNodeId="6v.1199644186689" resolveInfo="zip" />
+        <link role="declaration" targetNodeId="21.1199644186689" resolveInfo="zip" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027795">
-          <link role="declaration" targetNodeId="6v.1199644189629" resolveInfo="zipfileset" />
+          <link role="declaration" targetNodeId="21.1199644189629" resolveInfo="zipfileset" />
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027796">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027797">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1238512027798">
                 <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238512027799">
                   <link role="propertyDeclaration" targetNodeId="1234275070591" resolveInfo="deploy.dir" />
@@ -3856,27 +3849,27 @@
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027801">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027802">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027803">
                 <property name="value" value="lib/jetbrains-ideframework/idea-platform-src.zip" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027804">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027805">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027806">
                 <property name="value" value="lib/jetbrains-ideframework/idea-external-src.zip" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027807">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027808">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027809">
                 <property name="value" value="**/*.class" />
               </node>
@@ -3884,9 +3877,9 @@
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027810">
             <property name="shortDescription" value="exclude build desk files" />
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027811">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027812">
                 <property name="value" value="**/*.bdp" />
               </node>
@@ -3894,52 +3887,52 @@
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027814">
             <property name="shortDescription" value="exclude files used for signing" />
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027815">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027816">
                 <property name="value" value="**/*.pvk" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027817">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027818">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027819">
                 <property name="value" value="**/*.spc" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027820">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027821">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027822">
                 <property name="value" value="**/sign/**" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027823">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027824">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027825">
                 <property name="value" value="system/**" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027826">
-            <link role="declaration" targetNodeId="6v.1201800722236" resolveInfo="exclude" />
+            <link role="declaration" targetNodeId="21.1201800722236" resolveInfo="exclude" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027827">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027828">
                 <property name="value" value="integrationBuild*" />
               </node>
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027829">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644188740" resolveInfo="dir" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644188740" resolveInfo="dir" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1238512027830">
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027831">
                 <property name="value" value="${basedir}" />
@@ -3947,16 +3940,16 @@
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027832">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644188748" resolveInfo="prefix" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644188748" resolveInfo="prefix" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027833">
               <property name="value" value="MPS" />
             </node>
           </node>
         </node>
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027834">
-          <link role="declaration" targetNodeId="6v.1199644189629" resolveInfo="zipfileset" />
+          <link role="declaration" targetNodeId="21.1199644189629" resolveInfo="zipfileset" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027835">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644187645" resolveInfo="file" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644187645" resolveInfo="file" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1238512224564">
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512224565">
                 <property name="value" value="lib/jetbrains-ideframework/idea-external-src.zip" />
@@ -3964,14 +3957,14 @@
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027837">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644188748" resolveInfo="prefix" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644188748" resolveInfo="prefix" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1238512027838">
               <property name="value" value="MPS/lib/jetbrains-ideframework" />
             </node>
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027839">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186703" resolveInfo="destfile" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186703" resolveInfo="destfile" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1238512027840">
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1238512027841">
               <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1238512027842">
@@ -3994,16 +3987,16 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027848">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186719" resolveInfo="filesonly" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186719" resolveInfo="filesonly" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1238512027849">
             <property name="value" value="true" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1238512027850">
-        <link role="declaration" targetNodeId="6v.1199644186566" resolveInfo="delete" />
+        <link role="declaration" targetNodeId="21.1199644186566" resolveInfo="delete" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1238512027851">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186580" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186580" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1238512027852">
             <link role="propertyDeclaration" targetNodeId="1238512027771" resolveInfo="tmpdir" />
           </node>
@@ -4053,9 +4046,9 @@
         <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1236885260509" />
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1239974200488">
-        <link role="declaration" targetNodeId="6v.1199644187982" resolveInfo="mkdir" />
+        <link role="declaration" targetNodeId="21.1199644187982" resolveInfo="mkdir" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239974207422">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187984" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187984" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239974227872">
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239974227873">
               <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239974227874">
@@ -4125,9 +4118,9 @@
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1236885039844">
-        <link role="declaration" targetNodeId="6v.1199644186894" resolveInfo="unzip" />
+        <link role="declaration" targetNodeId="21.1199644186894" resolveInfo="unzip" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1236885049170">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186908" resolveInfo="src" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186908" resolveInfo="src" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1236885051678">
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1236885051679">
               <property name="value" value="" />
@@ -4149,7 +4142,7 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1236885242173">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186896" resolveInfo="dest" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186896" resolveInfo="dest" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1236885248245">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1239370889222">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1239370889223">
@@ -4312,37 +4305,37 @@
         <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1233676727803" />
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233673214521">
-        <link role="declaration" targetNodeId="6v.1199644186894" resolveInfo="unzip" />
+        <link role="declaration" targetNodeId="21.1199644186894" resolveInfo="unzip" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233673234029">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186908" resolveInfo="src" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186908" resolveInfo="src" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233673339308">
             <link role="propertyDeclaration" targetNodeId="1233673320950" resolveInfo="mps.jar" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233673248910">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186896" resolveInfo="dest" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186896" resolveInfo="dest" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233673305222">
             <link role="propertyDeclaration" targetNodeId="1233673278770" resolveInfo="tmp.mpsjar" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233670603230">
-        <link role="declaration" targetNodeId="6v.1199644187209" resolveInfo="java" />
+        <link role="declaration" targetNodeId="21.1199644187209" resolveInfo="java" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233671999409">
-          <link role="declaration" targetNodeId="6v.1229267104860" resolveInfo="classpath" />
+          <link role="declaration" targetNodeId="21.1229267104860" resolveInfo="classpath" />
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233672399651">
-            <link role="declaration" targetNodeId="6v.1199644185206" resolveInfo="pathelement" />
+            <link role="declaration" targetNodeId="21.1199644185206" resolveInfo="pathelement" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233672416264">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185210" resolveInfo="location" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185210" resolveInfo="location" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233673668646">
                 <link role="propertyDeclaration" targetNodeId="1233673320950" resolveInfo="mps.jar" />
               </node>
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233673674847">
-            <link role="declaration" targetNodeId="6v.1199644185206" resolveInfo="pathelement" />
+            <link role="declaration" targetNodeId="21.1199644185206" resolveInfo="pathelement" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233674025893">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185210" resolveInfo="location" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185210" resolveInfo="location" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1233674372437">
                 <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233676739029">
                   <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233676741703">
@@ -4356,9 +4349,9 @@
             </node>
           </node>
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233682906670">
-            <link role="declaration" targetNodeId="6v.1199644185206" resolveInfo="pathelement" />
+            <link role="declaration" targetNodeId="21.1199644185206" resolveInfo="pathelement" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233682906671">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185210" resolveInfo="location" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185210" resolveInfo="location" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1233682906672">
                 <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233682906673">
                   <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233682906674">
@@ -4373,18 +4366,18 @@
           </node>
         </node>
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233670734003">
-          <link role="declaration" targetNodeId="6v.1229267104851" resolveInfo="arg" />
+          <link role="declaration" targetNodeId="21.1229267104851" resolveInfo="arg" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233670744095">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644185637" resolveInfo="value" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644185637" resolveInfo="value" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233673995681">
               <link role="propertyDeclaration" targetNodeId="1233673278770" resolveInfo="extracted.mps.jar" />
             </node>
           </node>
         </node>
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233670724508">
-          <link role="declaration" targetNodeId="6v.1229267104851" resolveInfo="arg" />
+          <link role="declaration" targetNodeId="21.1229267104851" resolveInfo="arg" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233670778739">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644185637" resolveInfo="value" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644185637" resolveInfo="value" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670793130">
               <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670802355">
                 <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670806209">
@@ -4462,7 +4455,7 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233670607419">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187219" resolveInfo="classname" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187219" resolveInfo="classname" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670609057">
             <property name="value" value="jetbrains.mps.library.BuiltInLibrariesIO" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233670619637">
@@ -4484,26 +4477,26 @@
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233745798081">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187235" resolveInfo="dir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187235" resolveInfo="dir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233745809155">
             <property name="value" value="${basedir}" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233745906813">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644187251" resolveInfo="fork" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644187251" resolveInfo="fork" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1233745911453">
             <property name="value" value="true" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233680873794">
-        <link role="declaration" targetNodeId="6v.1199644186688" resolveInfo="jar" />
+        <link role="declaration" targetNodeId="21.1199644186688" resolveInfo="jar" />
         <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233681062021">
-          <link role="declaration" targetNodeId="6v.1199644187604" resolveInfo="fileset" />
+          <link role="declaration" targetNodeId="21.1199644187604" resolveInfo="fileset" />
           <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233683007638">
-            <link role="declaration" targetNodeId="6v.1201800722232" resolveInfo="include" />
+            <link role="declaration" targetNodeId="21.1201800722232" resolveInfo="include" />
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233683013369">
-              <link role="attributeDeclaration" targetNodeId="6v.1199644185401" resolveInfo="name" />
+              <link role="attributeDeclaration" targetNodeId="21.1199644185401" resolveInfo="name" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233683018281">
                 <property name="value" value="library.configuration.file.name" />
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233683018282">
@@ -4534,35 +4527,35 @@
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233681065604">
-            <link role="attributeDeclaration" targetNodeId="6v.1199644187633" resolveInfo="dir" />
+            <link role="attributeDeclaration" targetNodeId="21.1199644187633" resolveInfo="dir" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233681070649">
               <link role="propertyDeclaration" targetNodeId="1233673278770" resolveInfo="extracted.mps.jar" />
             </node>
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233680919631">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186703" resolveInfo="destfile" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186703" resolveInfo="destfile" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233680934237">
             <link role="propertyDeclaration" targetNodeId="1233673320950" resolveInfo="mps.jar" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233680886366">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186750" resolveInfo="update" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186750" resolveInfo="update" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="1233680912450">
             <property name="value" value="true" />
           </node>
         </node>
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1233680995566">
-        <link role="declaration" targetNodeId="6v.1199644187988" resolveInfo="move" />
+        <link role="declaration" targetNodeId="21.1199644187988" resolveInfo="move" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233680998168">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186280" resolveInfo="file" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186280" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233681001903">
             <link role="propertyDeclaration" targetNodeId="1233673320950" resolveInfo="mps.jar" />
           </node>
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233681009152">
-          <link role="attributeDeclaration" targetNodeId="6v.1199644186328" resolveInfo="todir" />
+          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233681011603">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
           </node>
@@ -4948,7 +4941,7 @@
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238405961337">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1238405961338" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1238405961339">
-                                <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238405961340">
@@ -5074,7 +5067,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234961684095">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234961684096" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234961690834">
-                    <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                    <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -6110,7 +6103,7 @@
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891649641">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234891649642" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234891649643">
-                          <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
+                          <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                         </node>
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891649644">

@@ -30,9 +30,6 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="7" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.samples.readerConfigLanguage.dsl(jetbrains.mps.samples.readerConfigLanguage.dsl@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.samples.readerConfigLanguage.reader(jetbrains.mps.samples.readerConfigLanguage.reader@java_stub)" version="-1" />
   <import index="16" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />

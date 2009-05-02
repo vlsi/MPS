@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.complex" uuid="ff24ab03-965e-4d15-9aed-52dc276658f4" java-stubs-enabled="false" compileInMPS="true">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.samples.complex" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.samples.complex" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.complex" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.samples.complex" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.complex#1196260164557" uuid="5cf20145-0114-4f14-a81d-642f4fbc2d08">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.samples.complex.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.samples.complex.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>

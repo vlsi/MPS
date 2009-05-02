@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.secretCompartmentLanguage" uuid="6986543d-8218-4ebf-a2e9-565e5049c1ce" compileInMPS="false">
+<language namespace="jetbrains.mps.samples.secretCompartmentLanguage" uuid="6986543d-8218-4ebf-a2e9-565e5049c1ce" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="secretCompartmentLanguage#1197167152697" uuid="b77e1ec6-a025-4317-a254-45c93d6d6fbb">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}/generator/baseLanguage/template" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>
@@ -22,10 +22,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\samples\dslbook_example\classes" />
+    <entry path="${mps_home}/samples/dslbook_example/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${mps_home}\samples\dslbook_example\classes" />
+    <entry path="${mps_home}/samples/dslbook_example/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />
