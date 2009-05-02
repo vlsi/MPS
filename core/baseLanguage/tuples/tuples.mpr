@@ -21,7 +21,6 @@
           <model modelRef="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)" />
         </models>
       </genConfModels>
-      <genConfModule name="runtime" moduleRef="jetbrains.mps.baseLanguage.tuples.runtime" />
       <genConfModule name="test" moduleRef="jetbrains.mps.baseLanguage.tuples.test" />
     </genConfs>
   </component>

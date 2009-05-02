@@ -62,7 +62,7 @@ public class NamedTuples_Test extends TestCase {
 
   @Test()
   public void test_assignToIndexedTupleType() throws Exception {
-    Tuples._2<String, String> itpl = this.getData();
+    Tuples._2<String, String> itpl = MultiTuple.<String, String>empty2().assign(this.getData());
     Assert.assertEquals("ABC", itpl._0());
     Assert.assertEquals("XYZ", itpl._1());
   }
@@ -71,12 +71,11 @@ public class NamedTuples_Test extends TestCase {
   public void test_patternMatching() throws Exception {
     String foo;
     String bar;
-    
     {
       Tuples._2<String, String> _tmp6211_0 = this.getData();
       foo = _tmp6211_0._0();
       bar = _tmp6211_0._1();
-    };
+    }
     Assert.assertEquals("ABC", foo);
     Assert.assertEquals("XYZ", bar);
   }

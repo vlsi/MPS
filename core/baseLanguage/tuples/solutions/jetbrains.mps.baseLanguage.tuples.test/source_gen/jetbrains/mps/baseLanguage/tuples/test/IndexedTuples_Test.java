@@ -39,19 +39,17 @@ public class IndexedTuples_Test extends TestCase {
   @Test()
   public void test_writeVar() throws Exception {
     int a;
-    
     {
       Tuples._1<Integer> _tmp9717_0 = MultiTuple.from(1);
       a = _tmp9717_0._0();
-    };
+    }
     Assert.assertSame(1, a);
     char c = 'a';
-    
     {
       Tuples._2<Integer, Character> _tmp9717_1 = MultiTuple.from(2, 'b');
       a = _tmp9717_1._0();
       c = _tmp9717_1._1();
-    };
+    }
     Assert.assertSame(2, a);
     Assert.assertSame('b', c);
   }
@@ -60,12 +58,11 @@ public class IndexedTuples_Test extends TestCase {
   public void test_swapVars() throws Exception {
     String foo = "bar";
     String bar = "foo";
-    
     {
       Tuples._2<String, String> _tmp9717_2 = MultiTuple.from(bar, foo);
       foo = _tmp9717_2._0();
       bar = _tmp9717_2._1();
-    };
+    }
     Assert.assertEquals("foo", foo);
     Assert.assertEquals("bar", bar);
   }
