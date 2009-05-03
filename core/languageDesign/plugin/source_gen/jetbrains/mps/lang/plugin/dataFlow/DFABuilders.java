@@ -11,6 +11,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", new BaseExecuteCommandStatement_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", new CommandClosureLiteral_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", new BaseExecuteCommandStatementSync_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", new ActionParameterReferenceOperation_DataFlow());
   }
 
 }
