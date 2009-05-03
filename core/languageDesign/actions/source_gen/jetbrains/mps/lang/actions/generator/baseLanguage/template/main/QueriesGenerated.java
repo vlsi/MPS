@@ -24,6 +24,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
@@ -578,7 +579,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1235155841332(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListSequence.<SNode>fromArray();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> smartEditorActions = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions");
     for(SNode actionsContainer : smartEditorActions) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(actionsContainer, "generateCode", true)));

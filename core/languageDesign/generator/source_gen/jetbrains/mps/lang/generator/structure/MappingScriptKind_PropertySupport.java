@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MappingScriptKind_PropertySupport extends PropertySupport {

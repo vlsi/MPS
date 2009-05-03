@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
@@ -39,7 +40,7 @@ public class QueriesUtil {
         return genctx.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(inputCellModel), "nodeListHandler");
       }
     }
-    //     otherwise get 'generatedClass' by enclosing 'editor component'
+    // otherwise get 'generatedClass' by enclosing 'editor component'
     SNode ancestor = SNodeOperations.getAncestor(inputCellModel, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
     return genctx.getOutputNodeByInputNodeAndMappingLabel(ancestor, "generatedClass");
   }
@@ -125,7 +126,7 @@ __switch__:
     SNode bigCell = root;
     Set<String> namesSet = ((Set<String>)context.getStepObject(bigCell));
     if (namesSet == null) {
-      namesSet = SetSequence.<String>fromArray();
+      namesSet = SetSequence.fromSet(new HashSet<String>());
       context.putStepObject(bigCell, namesSet);
     }
     String result = name;

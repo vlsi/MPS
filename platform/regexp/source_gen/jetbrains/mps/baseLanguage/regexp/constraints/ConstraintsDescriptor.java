@@ -4,18 +4,16 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_match_ReferentConstraint;
-import jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_match_ReferentConstraint;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new MatchVariableReference_match_ReferentConstraint());
-    this.myConstraints.add(new MatchVariableReferenceRegexp_match_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new MatchVariableReference_match_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new MatchVariableReferenceRegexp_match_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

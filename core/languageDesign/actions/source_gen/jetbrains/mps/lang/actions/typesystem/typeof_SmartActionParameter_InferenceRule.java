@@ -19,7 +19,7 @@ public class typeof_SmartActionParameter_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1235053810945", true), SLinkOperations.getTarget(parameter, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1235053817637", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1235053810945", true), (SNode)SLinkOperations.getTarget(parameter, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1235053817637", intentionProvider);
     }
   }
 

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.generator.generationContext.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +19,7 @@ public class typeof_GenerationContextOp_GetOutputByLabel_InferenceRule extends A
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931336", true), new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931325", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931336", true), (SNode)new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931325", intentionProvider);
     }
   }
 

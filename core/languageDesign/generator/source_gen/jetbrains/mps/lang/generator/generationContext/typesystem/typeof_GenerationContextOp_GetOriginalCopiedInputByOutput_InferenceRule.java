@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.generator.generationContext.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +18,7 @@ public class typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_Inference
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1229478051687", true), new _Quotations.QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1229478073864", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1229478051687", true), (SNode)new _Quotations.QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1229478073864", intentionProvider);
     }
   }
 

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.textGen.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -22,7 +21,7 @@ public class typeof_NodeParameter_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1233748157688", true), new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1233748157679", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(parameter, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1233748157688", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(builder, "conceptDeclaration", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1233748157679", intentionProvider);
     }
   }
 

@@ -25,7 +25,7 @@ public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeRe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    //     concepts from this language
+    // concepts from this language
     Language language = Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor());
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
     return new ModelNodesSearchScope(structureModel);

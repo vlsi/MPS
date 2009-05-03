@@ -6,12 +6,11 @@ import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Comparator;
-import jetbrains.mps.lang.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.lang.script.plugin.RunMigrationScriptsAction;
 
 public class ScriptsMenuBuilder {
 
@@ -21,7 +20,7 @@ public class ScriptsMenuBuilder {
 
   public ScriptsMenuBuilder(boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
-    this.allLanguages = ListSequence.fromList(ListSequence.<Language>fromArray()).addSequence(ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages()));
+    this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), GlobalScope.getInstance().getVisibleLanguages());
     ListSequence.fromList(this.allLanguages).sort(new Comparator <Language>() {
 
       public int compare(Language l1, Language l2) {

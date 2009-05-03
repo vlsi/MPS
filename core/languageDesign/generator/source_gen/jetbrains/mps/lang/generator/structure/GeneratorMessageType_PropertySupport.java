@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.lang.generator.structure.GeneratorMessageType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class GeneratorMessageType_PropertySupport extends PropertySupport {

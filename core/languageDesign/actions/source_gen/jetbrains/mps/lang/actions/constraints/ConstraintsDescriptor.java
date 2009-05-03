@@ -5,11 +5,6 @@ package jetbrains.mps.lang.actions.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.actions.constraints.NodeFactory_alias_PropertyConstraint;
-import jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.actions.constraints.NodeFactory_applicableConcept_ReferentConstraint;
-import jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_smartActionParameter_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

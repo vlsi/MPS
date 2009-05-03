@@ -70,7 +70,7 @@ public class PrintNullableInformation_Action extends GeneratedAction {
       for(Instruction instruction : ListSequence.fromList(program.getInstructions())) {
         System.out.println(instruction.toString());
         for(SNode key : Sequence.fromIterable(MapSequence.fromMap(result.get(instruction)).keySet())) {
-          System.out.println("\t" + key + " -> " + result.get(instruction).get(key));
+          System.out.println("\t" + key + " -> " + MapSequence.fromMap(result.get(instruction)).get(key));
         }
       }
     } catch (Throwable t) {

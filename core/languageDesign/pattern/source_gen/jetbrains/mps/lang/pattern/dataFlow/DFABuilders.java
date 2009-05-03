@@ -4,11 +4,6 @@ package jetbrains.mps.lang.pattern.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.pattern.dataFlow.PatternVariableDeclaration_DataFlow;
-import jetbrains.mps.lang.pattern.dataFlow.PropertyPatternVariableDeclaration_DataFlow;
-import jetbrains.mps.lang.pattern.dataFlow.PatternExpression_DataFlow;
-import jetbrains.mps.lang.pattern.dataFlow.PatternVariableReference_DataFlow;
-import jetbrains.mps.lang.pattern.dataFlow.PropertyPatternVariableReference_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

@@ -4,26 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReference_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.MatchParensRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.Regexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.MatchVariableReferenceRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpStatement_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchStatement_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.ForEachMatchStatement_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.MatchRegexpOperation_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.InlineRegexpExpression_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.ReplaceWithRegexpOperation_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.SplitOperation_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.Regexps_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpExpression_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclaration_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.UnaryRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.SymbolClassRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.RegexpDeclarationReferenceRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.LookRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.ParensRegexp_DataFlow;
-import jetbrains.mps.baseLanguage.regexp.dataFlow.BinaryRegexp_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

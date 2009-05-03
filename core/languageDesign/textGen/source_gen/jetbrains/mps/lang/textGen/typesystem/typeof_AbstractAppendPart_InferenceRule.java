@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.textGen.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractAppendPart_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +18,7 @@ public class typeof_AbstractAppendPart_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = part;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(part, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038485", true), new _Quotations.QuotationClass_3().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038480", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(part, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038485", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237483038480", intentionProvider);
     }
   }
 

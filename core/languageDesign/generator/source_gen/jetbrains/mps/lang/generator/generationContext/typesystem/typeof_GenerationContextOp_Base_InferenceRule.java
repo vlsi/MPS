@@ -22,7 +22,7 @@ public class typeof_GenerationContextOp_Base_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217025739514", true), returnType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217025739512", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217025739514", true), (SNode)returnType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217025739512", intentionProvider);
       }
     }
   }

@@ -4,22 +4,18 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_name_PropertyConstraint;
-import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_operationName_PropertyConstraint;
-import jetbrains.mps.lang.textGen.constraints.OperationDeclaration_DefaultSearchScope;
-import jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_DefaultSearchScope;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new ConceptTextGenDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new OperationDeclaration_operationName_PropertyConstraint());
-    this.myConstraints.add(new OperationDeclaration_DefaultSearchScope());
-    this.myConstraints.add(new UtilityMethodDeclaration_DefaultSearchScope());
+    ListOperations.addElement(this.myConstraints, new ConceptTextGenDeclaration_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new OperationDeclaration_operationName_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new OperationDeclaration_DefaultSearchScope());
+    ListOperations.addElement(this.myConstraints, new UtilityMethodDeclaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

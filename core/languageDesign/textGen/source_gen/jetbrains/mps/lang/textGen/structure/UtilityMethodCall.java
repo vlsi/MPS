@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;

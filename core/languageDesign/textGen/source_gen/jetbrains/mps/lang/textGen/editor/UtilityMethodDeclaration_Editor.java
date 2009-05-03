@@ -37,6 +37,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
 
@@ -545,7 +546,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else
       {
-        result = ListSequence.<String>fromArray();
+        result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.dataFlow.structure.EmitStatement;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

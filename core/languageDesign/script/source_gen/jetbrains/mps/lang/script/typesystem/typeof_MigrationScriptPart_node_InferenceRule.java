@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.script.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MigrationScriptPart_node_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -22,7 +21,7 @@ public class typeof_MigrationScriptPart_node_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748604", true), new _Quotations.QuotationClass_0().createNode(affectedConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748602", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748604", true), (SNode)new _Quotations.QuotationClass_0().createNode(affectedConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748602", intentionProvider);
     }
   }
 

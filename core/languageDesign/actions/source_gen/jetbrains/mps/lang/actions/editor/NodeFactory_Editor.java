@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.actions.editor.Disable_Delete;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class NodeFactory_Editor extends DefaultNodeEditor {
