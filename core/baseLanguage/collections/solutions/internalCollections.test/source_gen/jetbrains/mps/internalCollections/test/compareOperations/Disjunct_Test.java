@@ -8,6 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
+import java.util.ArrayList;
+import junit.framework.Assert;
+import java.util.NoSuchElementException;
 
 public class Disjunct_Test extends Util_Test {
 
@@ -31,6 +35,22 @@ public class Disjunct_Test extends Util_Test {
     Iterable<String> b = Arrays.asList("V", "X", "V", "Z", "Z", "Z", "Y");
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).union(Sequence.fromIterable(b)).subtract(Sequence.fromIterable(a).intersect(Sequence.fromIterable(b))));
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).subtract(Sequence.fromIterable(b)).union(Sequence.fromIterable(b).subtract(Sequence.fromIterable(a))));
+  }
+
+  @Test()
+  public void test_nextWithoutHasNext() throws Exception {
+    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4, 5, 6))).iterator();
+    Assert.assertSame(1, it.next());
+    Assert.assertSame(2, it.next());
+    Assert.assertSame(5, it.next());
+    Assert.assertSame(6, it.next());
+    Assert.assertFalse(it.hasNext());
+    try {
+      it.next();
+      Assert.fail();
+    } catch (NoSuchElementException e) {
+      // expected exception
+    }
   }
 
 }

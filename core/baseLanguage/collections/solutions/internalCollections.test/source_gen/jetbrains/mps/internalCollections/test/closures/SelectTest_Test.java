@@ -138,4 +138,14 @@ __switch__:
     Assert.assertEquals(list, Sequence.fromIterable(result).first());
   }
 
+  @Test()
+  public void test_nextWithoutHasNext() throws Exception {
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector <Integer, Integer>() {
+
+      public Integer select(Integer i) {
+        return i * 2;
+      }
+    }).iterator(), 2, 4, 6);
+  }
+
 }

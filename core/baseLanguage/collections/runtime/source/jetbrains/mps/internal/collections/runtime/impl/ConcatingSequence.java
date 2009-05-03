@@ -46,21 +46,24 @@ public class ConcatingSequence<U> extends Sequence<U> {
     private class ConcatingIterator implements Iterator<U> {
         
         private U next;
-        private int hasNext = -1;
+        private HasNextState hasNext = HasNextState.UNKNOWN;
         private Iterator<U> leftIt;
         private Iterator<U> rightIt;
         
         public boolean hasNext() {
-            if (hasNext < 0) {
-                this.leftIt = left.toIterable().iterator();
-                this.rightIt = right.toIterable().iterator();
+            if (hasNext.unknown()) {
+                init();
                 moveToNext();
             }
-            return hasNext > 0;
+            return hasNext.hasNext();
         }
         
         public U next() {
-            if (hasNext <= 0) {
+            if (hasNext.unknown()) {
+                init();
+                moveToNext();
+            }
+            if (!(hasNext.hasNext())) {
                 throw new NoSuchElementException ();
             }
             U tmp = next;
@@ -72,9 +75,14 @@ public class ConcatingSequence<U> extends Sequence<U> {
             throw new UnsupportedOperationException ();
         }
         
+        private void init() {
+            this.leftIt = left.toIterable().iterator();
+            this.rightIt = right.toIterable().iterator();
+        }
+        
         private void moveToNext () {
             this.next = null;
-            this.hasNext = 0;
+            this.hasNext = HasNextState.AT_END;
             if (leftIt.hasNext()) {
                 setNext (leftIt.next());
             }
@@ -85,7 +93,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
 
         private void setNext(U next) {
             this.next = next;
-            this.hasNext = 1;
+            this.hasNext = HasNextState.HAS_NEXT;
         }
     }
 }

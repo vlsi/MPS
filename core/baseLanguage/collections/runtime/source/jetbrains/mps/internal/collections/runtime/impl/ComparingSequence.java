@@ -60,23 +60,27 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U>{
         private Iterator<U> leftIt;
         private Iterator<U> rightIt;
         private U next;
-        private int hasNext = -1;
+        private HasNextState hasNext = HasNextState.UNKNOWN;
         
         public boolean hasNext() {
-            if (hasNext < 0) {
+            if (hasNext.unknown()) {
                 init ();
                 moveToNext();
             }
-            return hasNext > 0;
+            return hasNext.hasNext();
         }
         
         public U next() {
-            if (hasNext <= 0) {
+            if (hasNext.unknown()) {
+                init ();
+                moveToNext();
+            }
+            if (!(hasNext.hasNext())) {
                 throw new NoSuchElementException ();
             }
             U tmp = next;
             moveToNext();
-            if (hasNext <= 0) {
+            if (!(hasNext.hasNext())) {
                 destroy ();
             }
             return tmp;
@@ -127,7 +131,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U>{
         
         private void moveToNext () {
             this.next = null;
-            this.hasNext = 0;
+            this.hasNext = HasNextState.AT_END;
 loop:
             do {
                 switch (kind) {
@@ -206,7 +210,7 @@ loop:
 
         private void setNext(U tmp) {
             this.next = tmp;
-            this.hasNext = 1;
+            this.hasNext = HasNextState.HAS_NEXT;
         }
     }
 

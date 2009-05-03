@@ -37,39 +37,47 @@ public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> imple
         }
         this.translator = translator;
     }
-    
+
     public Iterator<V> iterator() {
         return new TranslatingIterator ();
     }
-    
+
     private class TranslatingIterator implements Iterator<V> {
-        
+
         private Iterator<U> inputIt;
         private Iterator<V> transIt;
-        private int hasNext = -1;
+        private HasNextState hasNext = HasNextState.UNKNOWN;
         private V next;
-        
+
         public boolean hasNext() {
-            if (hasNext < 0) {
-                this.inputIt = getInput().iterator();
+            if (hasNext.unknown()) {
+                init();
                 moveToNext();
             }
-            return hasNext > 0;
+            return hasNext.hasNext();
         }
-        
+
         public V next() {
-            if (hasNext <= 0) throw new NoSuchElementException ();
+            if (hasNext.unknown()) {
+                init();
+                moveToNext();
+            }
+            if (!(hasNext.hasNext())) throw new NoSuchElementException ();
             V tmp = next;
             moveToNext ();
             return tmp;
         }
-        
+
         public void remove() {
             throw new UnsupportedOperationException ();
         }
+
+        private void init() {
+            this.inputIt = getInput().iterator();
+        }
         
         private void moveToNext () {
-            this.hasNext = 0;
+            this.hasNext = HasNextState.AT_END;
             this.next = null;
             do {
                 try {
@@ -81,7 +89,7 @@ public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> imple
                             }
                         }
                         this.next = tmp;
-                        this.hasNext = 1;
+                        this.hasNext = HasNextState.HAS_NEXT;
                         break;
                     }
                 }
@@ -107,7 +115,7 @@ public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> imple
                 else {
                     break;
                 }
-                
+
             } while (true);
         }
     }

@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Collections;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Util_Test extends TestCase {
 
@@ -100,6 +101,19 @@ public class Util_Test extends TestCase {
 
   public Iterable<Integer> expectEven10() {
     return Arrays.asList(2, 4, 6, 8, 10);
+  }
+
+  public void assertIteratorYields(Iterator it, Object... values) {
+    for(Object v : values) {
+      Assert.assertSame(v, it.next());
+    }
+    Assert.assertFalse(it.hasNext());
+    try {
+      it.next();
+      Assert.fail();
+    } catch (NoSuchElementException e) {
+      // expected exception
+    }
   }
 
 }

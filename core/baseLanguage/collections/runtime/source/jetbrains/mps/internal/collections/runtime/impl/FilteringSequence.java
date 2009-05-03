@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
  * @author fyodor
  */
 public class FilteringSequence<U> extends AbstractChainedSequence<U,U> implements Iterable<U>{
-    
+
     private final IWhereFilter<? super U> filter;
 
     public FilteringSequence(Iterable<U> input, IWhereFilter<? super U> filter) {
@@ -39,46 +39,53 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U,U> implement
     public Iterator<U> iterator() {
         return new FilteringIterator ();
     }
-    
+
     private class FilteringIterator implements Iterator<U> {
-        
+
         private Iterator<U> inputIterator;
-        private int hasNext = -1;
+        private HasNextState  hasNext = HasNextState.UNKNOWN;
         private U next;
 
         public boolean hasNext() {
-            if (hasNext < 0) {
-                this.inputIterator = getInput().iterator();
+            if (hasNext.unknown()) {
+                init();
                 moveToNext();
             }
-            return hasNext > 0;
+            return hasNext.hasNext();
         }
-        
+
         public U next() {
-            if (hasNext <= 0) {
+            if (hasNext.unknown()) {
+                init();
+                moveToNext();
+            }            if (!(hasNext.hasNext())) {
                 throw new NoSuchElementException ();
             }
             U tmp = next;
             moveToNext ();
             return tmp;
         }
-        
+
         public void remove() {
             throw new UnsupportedOperationException ();
         }
         
+        private void init() {
+            this.inputIterator = getInput().iterator();
+        }
+
         private void moveToNext() {
-            this.hasNext = 0;
+            this.hasNext = HasNextState.AT_END;
             this.next = null;
             while (inputIterator.hasNext()) {
                 U tmp = inputIterator.next();
                 if (filter.accept(tmp)) {
                     this.next = tmp;
-                    this.hasNext = 1;
+                    this.hasNext = HasNextState.HAS_NEXT;
                     break;
                 }
             }
         }
     }
-    
+
 }

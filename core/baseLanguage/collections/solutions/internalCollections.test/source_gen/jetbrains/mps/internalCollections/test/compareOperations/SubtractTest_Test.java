@@ -8,6 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
+import java.util.ArrayList;
+import junit.framework.Assert;
+import java.util.NoSuchElementException;
 
 public class SubtractTest_Test extends Util_Test {
 
@@ -23,6 +27,21 @@ public class SubtractTest_Test extends Util_Test {
     Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 3, 3, 4, 4);
     Iterable<Integer> test = Sequence.fromIterable(input).subtract(ListSequence.fromList(Arrays.asList(2, 3, 4, 4, 5)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3, 3), test);
+  }
+
+  @Test()
+  public void test_nextWithoutHasNext() throws Exception {
+    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5)).subtract(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 2))).iterator();
+    Assert.assertSame(1, it.next());
+    Assert.assertSame(4, it.next());
+    Assert.assertSame(5, it.next());
+    Assert.assertFalse(it.hasNext());
+    try {
+      it.next();
+      Assert.fail();
+    } catch (NoSuchElementException e) {
+      // expected exception
+    }
   }
 
 }

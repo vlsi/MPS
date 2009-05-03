@@ -7,6 +7,11 @@ import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import junit.framework.Assert;
+import java.util.NoSuchElementException;
 
 public class Distinct_Test extends Util_Test {
 
@@ -20,6 +25,21 @@ public class Distinct_Test extends Util_Test {
   public void test_distinctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).distinct());
+  }
+
+  @Test()
+  public void test_nextWithoutHasNext() throws Exception {
+    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
+    Assert.assertSame(1, it.next());
+    Assert.assertSame(2, it.next());
+    Assert.assertSame(3, it.next());
+    Assert.assertFalse(it.hasNext());
+    try {
+      it.next();
+      Assert.fail();
+    } catch (NoSuchElementException e) {
+      // expected exception
+    }
   }
 
 }

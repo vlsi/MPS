@@ -11,6 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Chunks_Test extends Util_Test {
 
@@ -100,6 +103,16 @@ __switch__:
       }
     });
     Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
+  }
+
+  @Test()
+  public void test_nextWithoutHasNext() throws Exception {
+    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    this.assertIteratorYields(ListSequence.fromList(test).take(3).iterator(), 1, 2, 3);
+    this.assertIteratorYields(ListSequence.fromList(test).skip(7).iterator(), 8, 9, 10);
+    this.assertIteratorYields(ListSequence.fromList(test).cut(4).iterator(), 1, 2, 3, 4, 5, 6);
+    this.assertIteratorYields(ListSequence.fromList(test).tail(5).iterator(), 6, 7, 8, 9, 10);
+    this.assertIteratorYields(ListSequence.fromList(test).page(4, 7).iterator(), 5, 6, 7);
   }
 
 }

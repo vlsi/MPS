@@ -39,6 +39,13 @@ public class SelectComparator<T> implements Comparator<T> {
         // everything should be an Object, right?
         Comparable<Object> cmpa = (Comparable<Object>) selector.select(a);
         Comparable<Object> cmpb = (Comparable<Object>) selector.select(b);
+        if (cmpa == cmpb) {
+            return 0;
+        }
+        if (cmpa == null || cmpb == null) {
+            return cmpa == null ? -1 : 1; 
+        }
+
         return cmpa.compareTo(cmpb);
     }
 }

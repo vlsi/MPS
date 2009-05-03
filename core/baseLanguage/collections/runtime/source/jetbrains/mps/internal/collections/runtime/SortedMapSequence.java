@@ -24,27 +24,27 @@ import jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence;
 
 public class SortedMapSequence<U,V> extends MapSequence<U,V> implements ISortedMapSequence<U,V>, SortedMap<U,V>, Serializable {
 
-	/**
-	 * Auto-computed serialVersionUID
-	 */
-	private static final long serialVersionUID = -829873362463757916L;
-    
+    /**
+     * Auto-computed serialVersionUID
+     */
+    private static final long serialVersionUID = -829873362463757916L;
+
     public static class SortedMapSequenceInitializer<P,Q> extends MapSequenceInitializer<P, Q> {
-        
+
         private SortedMapSequenceInitializer (ISortedMapSequence<P, Q> mapSeq, P...keys) {
-        	super (mapSeq, keys);
+            super (mapSeq, keys);
         }
-        
+
         public ISortedMapSequence<P, Q> withValues (Q...values) {
-        	return (ISortedMapSequence<P, Q>) super.withValues(values);
+            return (ISortedMapSequence<P, Q>) super.withValues(values);
         }
     }
-    
+
     public static <P,Q> SortedMapSequenceInitializer<P,Q> fromKeysArray (P...keys) {
         SortedMap<P, Q> map = new TreeMap<P,Q> ();
         return new SortedMapSequenceInitializer<P,Q> (new SortedMapSequence<P, Q> (map), keys);
     }
-    
+
     public static <P,Q> SortedMapSequenceInitializer<P,Q> fromMapAndKeysArray (SortedMap<P,Q> map, P...keys) {
         return new SortedMapSequenceInitializer<P,Q> (new SortedMapSequence<P, Q> (map), keys);
     }
@@ -56,9 +56,9 @@ public class SortedMapSequence<U,V> extends MapSequence<U,V> implements ISortedM
         }
         return new SortedMapSequence<P, Q> (map);
     }
-    
+
     @SuppressWarnings("unchecked")
-	public static <P,Q> ISortedMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
+    public static <P,Q> ISortedMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
         if (iterable instanceof ISortedMapSequence) {
             return (ISortedMapSequence<P, Q>) iterable;
         }
@@ -68,7 +68,7 @@ public class SortedMapSequence<U,V> extends MapSequence<U,V> implements ISortedM
         }
         return new SortedMapSequence<P, Q> (map);
     }
-    
+
     public static <P,Q> ISortedMapSequence<P, Q> fromMap (SortedMap<P,Q> map) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (map == null) {
@@ -80,41 +80,41 @@ public class SortedMapSequence<U,V> extends MapSequence<U,V> implements ISortedM
         }
         return new SortedMapSequence<P, Q> (map);
     }
-	
-	protected SortedMapSequence(SortedMap<U,V> map) {
-		super (map);
-	}
-	
-	// delegated methods
-	
-	public Comparator<? super U> comparator() {
-		return getMap().comparator();
-	}
 
-	public U firstKey() {
-		return getMap().firstKey();
-	}
+    protected SortedMapSequence(SortedMap<U,V> map) {
+        super (map);
+    }
 
-	public ISortedMapSequence<U, V> headMap(U toKey) {
-		return SortedMapSequence.fromMap(getMap().headMap(toKey));
-	}
+    // delegated methods
 
-	public U lastKey() {
-		return getMap().lastKey();
-	}
+    public Comparator<? super U> comparator() {
+        return getMap().comparator();
+    }
 
-	public ISortedMapSequence<U, V> subMap(U fromKey, U toKey) {
-		return SortedMapSequence.fromMap(getMap().subMap(fromKey, toKey));
-	}
+    public U firstKey() {
+        return getMap().firstKey();
+    }
 
-	public ISortedMapSequence<U, V> tailMap(U fromKey) {
-		return SortedMapSequence.fromMap(getMap().tailMap(fromKey));
-	}
-	
-	protected SortedMap<U,V> getMap () {
-		return (SortedMap<U, V>) super.getMap();
-	}
-	
-	
+    public ISortedMapSequence<U, V> headMap(U toKey) {
+        return SortedMapSequence.fromMap(getMap().headMap(toKey));
+    }
+
+    public U lastKey() {
+        return getMap().lastKey();
+    }
+
+    public ISortedMapSequence<U, V> subMap(U fromKey, U toKey) {
+        return SortedMapSequence.fromMap(getMap().subMap(fromKey, toKey));
+    }
+
+    public ISortedMapSequence<U, V> tailMap(U fromKey) {
+        return SortedMapSequence.fromMap(getMap().tailMap(fromKey));
+    }
+
+    protected SortedMap<U,V> getMap () {
+        return (SortedMap<U, V>) super.getMap();
+    }
+
+
 
 }

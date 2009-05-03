@@ -12,8 +12,8 @@ import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Mapper_Test extends Util_Test {
 
@@ -609,46 +609,47 @@ __switch__:
   }
 
   @Test()
-  public void test_mps3758() throws Exception {
-    /*
-      Iterable<SNode> snbc = Sequence.fromIterable(Collections.<SNode>emptyList());
-      Sequence.fromIterable(snbc).translate(new ITranslator2 <SNode, SNode>() {
+  public void test_nextWithoutHasNext() throws Exception {
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3)).translate(new ITranslator2 <Integer, Integer>() {
 
-        public Iterable<SNode> translate(final SNode it) {
-          return new Iterable <SNode>() {
+      public Iterable<Integer> translate(final Integer i) {
+        return new Iterable <Integer>() {
 
-            public Iterator<SNode> iterator() {
-              return new YieldingIterator <SNode>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
 
-                private int __CP__ = 0;
+              private int __CP__ = 0;
 
-                protected boolean moveToNext() {
+              protected boolean moveToNext() {
 __loop__:
-                  do {
+                do {
 __switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this.__CP__ = 1;
-                        this.yield(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.IType"));
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while(true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      });
-    */
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(i);
+                      return true;
+                    case 3:
+                      this.__CP__ = 1;
+                      this.yield(i + 1);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    }).iterator(), 1, 2, 3, 4);
   }
 
 }

@@ -62,13 +62,13 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
                 return NullSetSequence.instance();
             }
             else if (set == null) {
-            	set = new HashSet<U>();
+                set = new HashSet<U>();
             }
             else if (array == null) {
-            	if (set instanceof ISetSequence) {
-            		return (ISetSequence<U>) set;
-            	}
-            	return new SetSequence<U> (set);
+                if (set instanceof ISetSequence) {
+                    return (ISetSequence<U>) set;
+                }
+                return new SetSequence<U> (set);
             }
         }
         List<U> input = Arrays.asList(array);
@@ -80,7 +80,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             }
         }
         else {
-        	set.addAll(input);
+            set.addAll(input);
         }
         if (set instanceof ISetSequence) {
             return (ISetSequence<U>) set;
@@ -98,23 +98,35 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             return (ISetSequence<U>) it;
         }
         Set<U> set = new HashSet<U> ();
-        for (U u: it) {
-            set.add(u);
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : it) {
+                if (u != null) {
+                    set.add(u);
+                }
+            }
+        }
+        else if (it instanceof Collection){
+            set.addAll((Collection<? extends U>) it);
+        } 
+        else {
+            for (U u: it) {
+                set.add(u);
+            }
         }
         return new SetSequence<U> (set);
     }
     
     public static <U> ISetSequence<U> fromSetWithValues (Set<U> set, Iterable<U> it) {
         Set<U> tmp = set;
-    	if (Sequence.USE_NULL_SEQUENCE) {
+        if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null && it == null) {
                 return NullSetSequence.instance();
             }
             else if (set == null) {
-            	tmp = new HashSet<U> ();
+                tmp = new HashSet<U> ();
             }
             else if (it == null) {
-            	return fromSet (set);
+                return fromSet (set);
             }
         }
         if (Sequence.IGNORE_NULL_VALUES) {
@@ -125,17 +137,17 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
             }
         }
         else if (it instanceof Collection){
-        	tmp.addAll((Collection<? extends U>) it);
+            tmp.addAll((Collection<? extends U>) it);
         } 
         else {
-        	for (U u: it) {
-        		tmp.add(u);
-        	}
+            for (U u: it) {
+                tmp.add(u);
+            }
         }
-    	if (tmp instanceof ISetSequence) {
-    		return (ISetSequence<U>) tmp;
-    	}
-    	return new SetSequence<U> (tmp);
+        if (tmp instanceof ISetSequence) {
+            return (ISetSequence<U>) tmp;
+        }
+        return new SetSequence<U> (tmp);
     }
 	
 	// Set

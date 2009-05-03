@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Arrays;
+import junit.framework.Assert;
 
 public class NullValues_Test extends Util_Test {
 
@@ -78,6 +80,21 @@ __switch__:
       this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null));
       Integer nullvalue = null;
       this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), nullvalue));
+    }
+  }
+
+  @Test()
+  public void test_nullsViaBackdoor() throws Exception {
+    if (Sequence.IGNORE_NULL_VALUES) {
+      List<String> listWithNulls = Arrays.asList("foo", null, "bar");
+      String[] arr = ListSequence.fromList(listWithNulls).toGenericArray(String.class);
+      Assert.assertSame(3, arr.length);
+      Assert.assertEquals("foo", arr[0]);
+      Assert.assertNull(arr[1]);
+      Assert.assertEquals("bar", arr[2]);
+      List<String> dlist = ListSequence.fromList(listWithNulls).distinct().toListSequence();
+      Assert.assertSame(2, ListSequence.fromList(dlist).count());
+      this.assertIterableEquals(Arrays.asList("foo", "bar"), dlist);
     }
   }
 

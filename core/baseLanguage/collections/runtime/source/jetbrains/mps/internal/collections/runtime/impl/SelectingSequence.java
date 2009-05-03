@@ -45,13 +45,17 @@ public class SelectingSequence<U,V> extends AbstractChainedSequence<U,V> impleme
         
         public boolean hasNext() {
             if (inputIterator == null) {
-                this.inputIterator = getInput().iterator();
+                init();
                 moveToNext ();
             }
             return hasNext;
         }
         
         public V next() {
+            if (inputIterator == null) {
+                init();
+                moveToNext ();
+            }
             if (!hasNext) {
                 throw new NoSuchElementException ();
             }
@@ -62,6 +66,10 @@ public class SelectingSequence<U,V> extends AbstractChainedSequence<U,V> impleme
         
         public void remove() {
             throw new UnsupportedOperationException ();
+        }
+        
+        private void init() {
+            this.inputIterator = getInput().iterator();
         }
         
         private void moveToNext() {

@@ -27,12 +27,12 @@ import jetbrains.mps.internal.collections.runtime.impl.NullSortedSetSequence;
 
 public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
 
-	/**
-	 * Auto-computed serialVersionUID 
-	 */
-	private static final long serialVersionUID = -1048576263715753714L;
+    /**
+     * Auto-computed serialVersionUID 
+     */
+    private static final long serialVersionUID = -1048576263715753714L;
 
-	public static <U> ISortedSetSequence<U> fromArray (U...array) {
+    public static <U> ISortedSetSequence<U> fromArray (U...array) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (array == null) {
                 return NullSortedSetSequence.<U>instance();
@@ -40,7 +40,7 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
         }
         return SortedSetSequence.fromSetAndArray(new TreeSet<U>(), array);
     }
-    
+
     public static <U> ISortedSetSequence<U> fromSet (SortedSet<U> set) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null) {
@@ -59,13 +59,13 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
                 return NullSortedSetSequence.instance();
             }
             else if (set == null) {
-            	set = new TreeSet<U>();
+                set = new TreeSet<U>();
             }
             else if (array == null) {
-            	if (set instanceof ISortedSetSequence) {
-            		return (ISortedSetSequence<U>) set;
-            	}
-            	return new SortedSetSequence<U> (set);
+                if (set instanceof ISortedSetSequence) {
+                    return (ISortedSetSequence<U>) set;
+                }
+                return new SortedSetSequence<U> (set);
             }
         }
         List<U> input = Arrays.asList(array);
@@ -77,14 +77,14 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
             }
         }
         else {
-        	set.addAll(input);
+            set.addAll(input);
         }
         if (set instanceof ISortedSetSequence) {
             return (ISortedSetSequence<U>) set;
         }
         return new SortedSetSequence<U> (set);
     }
-    
+
     public static <U> ISortedSetSequence<U> fromIterable (Iterable<U> it) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (it == null) {
@@ -95,23 +95,38 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
             return (ISortedSetSequence<U>) it;
         }
         SortedSet<U> set = new TreeSet<U> ();
-        for (U u: it) {
+        if (Sequence.IGNORE_NULL_VALUES) {
+            for (U u : it) {
+                if (u != null) {
+                    set.add(u);
+                }
+            }
+        }
+        else if (it instanceof Collection){
+            set.addAll((Collection<? extends U>) it);
+        } 
+        else {
+            for (U u: it) {
+                set.add(u);
+            }
+        }
+       for (U u: it) {
             set.add(u);
         }
         return new SortedSetSequence<U> (set);
     }
-    
+
     public static <U> ISortedSetSequence<U> fromSetWithValues (SortedSet<U> set, Iterable<U> it) {
         SortedSet<U> tmp = set;
-    	if (Sequence.USE_NULL_SEQUENCE) {
+        if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null && it == null) {
                 return NullSortedSetSequence.instance();
             }
             else if (set == null) {
-            	tmp = new TreeSet<U> ();
+                tmp = new TreeSet<U> ();
             }
             else if (it == null) {
-            	return fromSet (set);
+                return fromSet (set);
             }
         }
         if (Sequence.IGNORE_NULL_VALUES) {
@@ -122,64 +137,64 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
             }
         }
         else if (it instanceof Collection){
-        	tmp.addAll((Collection<? extends U>) it);
+            tmp.addAll((Collection<? extends U>) it);
         } 
         else {
-        	for (U u: it) {
-        		tmp.add(u);
-        	}
+            for (U u: it) {
+                tmp.add(u);
+            }
         }
-    	if (tmp instanceof ISortedSetSequence) {
-    		return (ISortedSetSequence<U>) tmp;
-    	}
-    	return new SortedSetSequence<U> (tmp);
+        if (tmp instanceof ISortedSetSequence) {
+            return (ISortedSetSequence<U>) tmp;
+        }
+        return new SortedSetSequence<U> (tmp);
     }
 
-	// delegated methods
-	
-	@Override
-	public T first() {
-		return getSet().first();
-	}
-	
-	@Override
-	public T last() {
-		return getSet().last();
-	}
-	
-	public ISortedSetSequence<T> headSet(T toElement) {
-		return SortedSetSequence.fromSet(getSet().headSet(toElement));
-	}
+    // delegated methods
 
-	public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
-		return SortedSetSequence.fromSet(getSet().subSet(fromElement, toElement));
-	}
+    @Override
+    public T first() {
+        return getSet().first();
+    }
 
-	public ISortedSetSequence<T> tailSet(T fromElement) {
-		return SortedSetSequence.fromSet(getSet().tailSet(fromElement));
-	}
+    @Override
+    public T last() {
+        return getSet().last();
+    }
 
-	public Comparator<? super T> comparator() {
-		return getSet().comparator();
-	}
-	
-	@Override
-	public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
-		return (ISortedSetSequence<T>) super.addSequence(seq);
-	}
-	
-	@Override
-	public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
-		return (ISortedSetSequence<T>) super.removeSequence(seq);
-	}
-	
-	protected SortedSetSequence(SortedSet<T> set) {
-		super (set);
-	}
+    public ISortedSetSequence<T> headSet(T toElement) {
+        return SortedSetSequence.fromSet(getSet().headSet(toElement));
+    }
 
-	@Override
-	protected SortedSet<T> getSet() {
-		return (SortedSet<T>) super.getSet();
-	}
+    public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
+        return SortedSetSequence.fromSet(getSet().subSet(fromElement, toElement));
+    }
+
+    public ISortedSetSequence<T> tailSet(T fromElement) {
+        return SortedSetSequence.fromSet(getSet().tailSet(fromElement));
+    }
+
+    public Comparator<? super T> comparator() {
+        return getSet().comparator();
+    }
+
+    @Override
+    public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
+        return (ISortedSetSequence<T>) super.addSequence(seq);
+    }
+
+    @Override
+    public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
+        return (ISortedSetSequence<T>) super.removeSequence(seq);
+    }
+
+    protected SortedSetSequence(SortedSet<T> set) {
+        super (set);
+    }
+
+    @Override
+    protected SortedSet<T> getSet() {
+        return (SortedSet<T>) super.getSet();
+    }
 
 }
