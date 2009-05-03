@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class ActionParameterReferenceOperation_DataFlow extends DataFlowBuilder {
+public class ActionConstructorParameterReferenceOperation_DataFlow extends DataFlowBuilder {
 
-  public ActionParameterReferenceOperation_DataFlow() {
+  public ActionConstructorParameterReferenceOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
