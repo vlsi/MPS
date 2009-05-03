@@ -277,7 +277,7 @@ public class MPSEditorOpener implements ProjectComponent {
     while (currentTargetNode != null) {
       EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
       if (cellInInspector != null) {
-        inspector.selectNode(node);
+        inspector.changeSelection(cellInInspector);
         return;
       }
       currentTargetNode = currentTargetNode.getParent();
