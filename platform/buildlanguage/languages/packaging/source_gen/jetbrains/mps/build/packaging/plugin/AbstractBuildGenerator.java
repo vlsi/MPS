@@ -8,7 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import com.intellij.openapi.progress.ProgressIndicator;
-import java.util.Collections;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.IModule;
@@ -80,7 +80,7 @@ public abstract class AbstractBuildGenerator {
   }
 
   public List<NodeData> getModules() {
-    return Collections.unmodifiableList(this.myModules);
+    return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myModules);
   }
 
   public void setModules(List<NodeData> modules) {

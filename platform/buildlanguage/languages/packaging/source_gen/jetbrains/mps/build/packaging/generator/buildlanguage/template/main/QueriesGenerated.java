@@ -775,7 +775,7 @@ public class QueriesGenerated {
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
         }
-        List<SNode> modulesForIModule = map.get(imodule);
+        List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
         if (modulesForIModule == null) {
           modulesForIModule = ListOperations.<SNode>createList();
           MapSequence.fromMap(map).put(imodule, modulesForIModule);
@@ -789,7 +789,7 @@ public class QueriesGenerated {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);
         for(IModule imodule : SetSequence.fromSet(moduleSet)) {
-          List<SNode> modulesForIModule = map.get(imodule);
+          List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for(SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);

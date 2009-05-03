@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
-import java.util.Collections;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import jetbrains.mps.ide.projectPane.Icons;
 
@@ -28,7 +28,7 @@ public class NamespaceData implements NodeData {
   }
 
   public List<NodeData> getChildren() {
-    return Collections.unmodifiableList(this.myData);
+    return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myData);
   }
 
   public Icon getIcon(boolean expanded) {

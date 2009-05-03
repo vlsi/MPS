@@ -13,7 +13,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
-import java.util.Collections;
 
 public class CheckBoxTree <N extends NodeData> extends JPanel {
 
@@ -86,7 +85,7 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
   }
 
   public Set<N> getSelectedItems() {
-    return Collections.unmodifiableSet(this.mySelectedItems);
+    return SetSequence.fromSetWithValues(new HashSet<N>(), this.mySelectedItems);
   }
 
 }

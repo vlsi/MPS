@@ -6,9 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -17,13 +17,13 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ct) {
-    List<SNode> res = Collections.emptyList();
+    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     if (SLinkOperations.getTarget(new _Quotations.QuotationClass_73().createNode(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
-      res = new ArrayList<SNode>();
+      res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
-      if (ptypes.size() > 0) {
-        SNode elType = ptypes.get(0);
-        res.add(new _Quotations.QuotationClass_72().createNode(elType));
+      if (ListSequence.fromList(ptypes).count() > 0) {
+        SNode elType = ListSequence.fromList(ptypes).getElement(0);
+        ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_72().createNode(elType));
       }
     }
     return res;
