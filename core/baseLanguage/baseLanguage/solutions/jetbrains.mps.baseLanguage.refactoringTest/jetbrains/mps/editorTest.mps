@@ -11,6 +11,7 @@
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -2607,16 +2608,18 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241100756811" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241100756812">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241100756813">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241351147291">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147292">
-              <property name="value" value="2" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1241357476202">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241351147291">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147292">
+                <property name="value" value="2" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147293">
+                <property name="value" value="2" />
+              </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147293">
-              <property name="value" value="2" />
-            </node>
-            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1241353572111">
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1241357480395">
               <property name="caretPosition" value="0" />
-              <property name="cellId" value="Collection_4282_0" />
+              <property name="cellId" value="Constant_8232_0" />
             </node>
           </node>
         </node>
@@ -2627,7 +2630,7 @@
         <property name="keys" value="(" />
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241105111414">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241353461822">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241357453259">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241105111416">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241105111417">
               <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1241105111418" />
@@ -2639,8 +2642,80 @@
               <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
             </node>
           </node>
-          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241353522192">
-            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.dispose():void" resolveInfo="dispose" />
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241357455951">
+            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.doSubstituteSelection(java.lang.String,int):void" resolveInfo="doSubstituteSelection" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241357456660">
+              <property name="value" value="(" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241357459374">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1241356058569">
+    <property name="name" value="ReplacingSelection" />
+    <property name="package" value="editorCell" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241356146402">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241356146403" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241356146404" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241356146405">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241356160257">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241356249722">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241356160258">
+              <property name="value" value="3" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241356252117">
+              <property name="value" value="2" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1241356264356">
+              <property name="caretPosition" value="0" />
+              <property name="cellId" value="Collection_4282_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241356152205">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241356152206" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241356152207" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241356152208">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241356258536">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241356315245">
+            <property name="value" value="3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241356507889">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1241356507890">
+        <property name="keys" value="3" />
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241356598001">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241357035841">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241356598002">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241356598003">
+              <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1241356598004" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241356598005">
+                <link role="baseMethodDeclaration" targetNodeId="8.~IEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getCurrentEditorComponent" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241356598006">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241357065097">
+            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.doSubstituteSelection(java.lang.String,int):void" resolveInfo="doSubstituteSelection" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241357084457">
+              <property name="value" value="3" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241357162412">
+              <property name="value" value="0" />
+            </node>
           </node>
         </node>
       </node>

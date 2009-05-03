@@ -458,6 +458,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     action.substitute(myEditorComponent.getEditorContext(), pattern);
   }
 
+  public void doSubstituteSelection(String pattern, int index) {
+    List<INodeSubstituteAction> actions = getMatchingActions(pattern, false);
+    actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
+  }
+
   private void updatePatternEditor() {
     if (!myMenuEmpty) {
       int oldPosition = myPatternEditor.getCaretPosition();

@@ -7,10 +7,10 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 
-public class SurrondByParensesis_Test extends BaseTransformationTest {
+public class ReplacingSelection_Test extends BaseTransformationTest {
 
   @Test()
-  public void test_SurrondByParensesis() throws Throwable {
+  public void test_ReplacingSelection() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
@@ -18,9 +18,9 @@ public class SurrondByParensesis_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1241100704753", "1241100756809");
-      BaseEditorTestBody.typeString(editor, "(");
-      editor.getCurrentEditorComponent().getNodeSubstituteChooser().doSubstituteSelection("(", 0);
+      IEditor editor = this.initEditor("1241356146402", "1241356152205");
+      BaseEditorTestBody.typeString(editor, "3");
+      editor.getCurrentEditorComponent().getNodeSubstituteChooser().doSubstituteSelection("3", 0);
       this.finishTest();
     }
 

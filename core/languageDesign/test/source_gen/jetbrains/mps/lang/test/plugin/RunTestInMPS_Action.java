@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
@@ -85,7 +86,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Set<SNode> tests = SetSequence.<SNode>fromArray();
+      final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
       for(SNode test : SetSequence.fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test);
