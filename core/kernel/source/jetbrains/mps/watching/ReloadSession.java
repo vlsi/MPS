@@ -75,7 +75,7 @@ class ReloadSession {
   private void updateModels(final ProgressIndicator progressIndicator) {
     progressIndicator.setText("Reloading updated models... Please wait.");
     for (final SModelDescriptor model : myChangedModels) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           try {
             String text = "Reloading " + model.getSModelReference().getSModelFqName();
@@ -93,7 +93,7 @@ class ReloadSession {
   private void updateModules(final ProgressIndicator progressIndicator) {
     progressIndicator.setText("Reloading updated modules... Please wait.");
     for (final IModule module : myChangedModules) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           String text = "Reloading " + module.getModuleFqName();
           LOG.info(text);
@@ -104,7 +104,7 @@ class ReloadSession {
     }
 
     for (final IModule module : myDeletedModules) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           String text = "Unloading removed module " + module.getModuleFqName();
           LOG.info(text);
