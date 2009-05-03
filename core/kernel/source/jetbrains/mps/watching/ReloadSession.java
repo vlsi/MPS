@@ -17,6 +17,7 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -30,6 +31,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -67,6 +69,9 @@ class ReloadSession {
 
           updateModules(progressIndicator);
           updateModels(progressIndicator);
+
+          progressIndicator.setText("Reloading classes... Please wait.");
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
     }
