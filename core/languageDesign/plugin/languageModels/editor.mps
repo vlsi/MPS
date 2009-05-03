@@ -1332,9 +1332,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205679161879">
         <property name="noTargetText" value="&lt;name&gt;" />
         <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233928173872">
-          <property name="flag" value="true" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205679222181">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996229">

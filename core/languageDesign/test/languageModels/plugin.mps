@@ -456,7 +456,7 @@
   </node>
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1224594330528">
-    <property name="name" value="RunTestInMPS" />
+    <property name="name" value="EditorInternalAddition" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1224594334248">
       <link role="modifiedGroup" targetNodeId="4v.1204991232446" resolveInfo="EditorInternal" />
     </node>

@@ -14,7 +14,7 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.test";
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.test.plugin.RunTestInMPS_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.test.plugin.EditorInternalAddition_ActionGroup");
     return groups;
   }
 

@@ -173,14 +173,6 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
