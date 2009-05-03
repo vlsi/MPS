@@ -29,7 +29,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.LanguageHierarchy_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action", "jetbrains.mps.ide");

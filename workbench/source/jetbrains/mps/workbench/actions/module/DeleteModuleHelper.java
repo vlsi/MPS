@@ -18,11 +18,11 @@ package jetbrains.mps.workbench.actions.module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 import javax.swing.JOptionPane;
 
@@ -38,23 +38,38 @@ public class DeleteModuleHelper {
   }
 
   private static void delete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
-    if (!mpsProject.isProjectModule(module)) {
-      JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Can't delete module that is not in project already", "Can't delete module", JOptionPane.WARNING_MESSAGE);
-      return;
+    if (!mpsProject.isProjectModule(module) && !deleteFiles){
+      JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }
-    if (module instanceof Language) {
-      mpsProject.removeProjectLanguage((Language) module);
-    } else if (module instanceof Solution) {
-      mpsProject.removeProjectSolution((Solution) module);
-    } else if (module instanceof DevKit) {
-      mpsProject.removeProjectDevKit((DevKit) module);
-    } else {
-      LOG.warning("Module type " + module.getClass().getSimpleName() + " is not supported by delete refactoring.");
+
+    //remove from project
+    if (mpsProject.isProjectModule(module)) {
+      if (module instanceof Language) {
+        mpsProject.removeProjectLanguage((Language) module);
+      } else if (module instanceof Solution) {
+        mpsProject.removeProjectSolution((Solution) module);
+      } else if (module instanceof DevKit) {
+        mpsProject.removeProjectDevKit((DevKit) module);
+      } else {
+        reportUnsupportedModuleType(module);
+      }
+      project.save();
     }
-    project.save();
+
+    if (deleteFiles){
+      for(SModelDescriptor model:module.getOwnModelDescriptors()){
+        DeleteModelHelper.delete(module,model,true);
+      }
+      module.getDescriptorFile().delete();
+      MPSModuleRepository.getInstance().removeModule(module);
+    }
   }
 
   private static void safeDelete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
 
+  }
+
+  private static void reportUnsupportedModuleType(IModule module) {
+    LOG.warning("Module type " + module.getClass().getSimpleName() + " is not supported by delete refactoring.");
   }
 }

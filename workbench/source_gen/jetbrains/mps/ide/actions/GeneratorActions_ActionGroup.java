@@ -19,7 +19,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", true);
       this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", false);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.language.DeleteGeneratorAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");

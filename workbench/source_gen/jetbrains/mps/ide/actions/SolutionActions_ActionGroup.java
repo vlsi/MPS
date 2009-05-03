@@ -29,7 +29,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.CheckSolution_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.MakeModule_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action", "jetbrains.mps.ide");
