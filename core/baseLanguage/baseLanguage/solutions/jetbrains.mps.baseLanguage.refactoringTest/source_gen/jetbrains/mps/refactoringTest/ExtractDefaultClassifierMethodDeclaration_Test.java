@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoring;
@@ -34,22 +35,22 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");
       this.addNodeById("1230052509301");
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509264"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509264"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("bar");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
     }
 
     public void test_extractFromExecute() throws Exception {
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");
       this.addNodeById("1230052509301");
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509271"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509271"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("boo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
     }
 
 }

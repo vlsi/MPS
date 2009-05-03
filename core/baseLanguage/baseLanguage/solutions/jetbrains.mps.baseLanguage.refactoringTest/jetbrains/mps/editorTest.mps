@@ -2577,5 +2577,74 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1241100648020">
+    <property name="package" value="bugTest" />
+    <property name="name" value="SurrondByParensesis" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241100704753">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241100704754" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241100704755" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241100704756">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241100743452">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241100744167">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241100744234">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241100743453">
+              <property name="value" value="2" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1241100752539">
+              <property name="caretPosition" value="0" />
+              <property name="cellId" value="Collection_4282_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241100756809">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241100756810" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241100756811" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241100756812">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241100756813">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241351147291">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147292">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241351147293">
+              <property name="value" value="2" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1241353572111">
+              <property name="caretPosition" value="0" />
+              <property name="cellId" value="Collection_4282_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241100783691">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1241100788983">
+        <property name="keys" value="(" />
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241105111414">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241353461822">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241105111416">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241105111417">
+              <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1241105111418" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241105111419">
+                <link role="baseMethodDeclaration" targetNodeId="8.~IEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getCurrentEditorComponent" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241105111420">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241353522192">
+            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.dispose():void" resolveInfo="dispose" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

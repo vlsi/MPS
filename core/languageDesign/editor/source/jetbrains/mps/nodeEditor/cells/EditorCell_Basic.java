@@ -443,19 +443,20 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     getEditorContext().executeCommand(new Runnable() {
       public void run() {
-        SNode newNode = replaceWithDefault();
+
         EditorComponent editor = getEditorContext().getNodeEditorComponent();
-        EditorCell nodeCell = editor.findNodeCell(newNode);
+        /*
+        EditorCell nodeCell = editor.findNodeCell(get);
         if (nodeCell == null) return;
         EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
         if (editable != null) {
           editor.changeSelection(editable);
           editable.processKeyTyped(e, allowErrors);
         } else {
-          editor.changeSelection(nodeCell);
-          editor.activateNodeSubstituteChooser(nodeCell, true);
-          editor.processKeyTyped(e);
-        }
+        */
+
+        editor.activateNodeSubstituteChooser(EditorCell_Basic.this, true);
+        editor.processKeyTyped(e);                
       }
     });
 

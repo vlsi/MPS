@@ -7,6 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoring;
@@ -27,11 +28,11 @@ public class ExtractFromExpressionWithoutReturn_Test extends BaseTransformationT
     public void test_extractFromExpressionWithoutReturn() throws Exception {
       this.addNodeById("1230052552061");
       this.addNodeById("1230052552076");
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052552068"), "jetbrains.mps.baseLanguage.structure.DotExpression")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052552068"), "jetbrains.mps.baseLanguage.structure.DotExpression")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052552062"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052552077"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052552062"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052552077"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }

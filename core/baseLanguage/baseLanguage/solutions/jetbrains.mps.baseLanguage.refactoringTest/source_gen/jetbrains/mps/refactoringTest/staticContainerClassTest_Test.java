@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoring;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodFabric;
 import junit.framework.Assert;
@@ -35,12 +36,12 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684711"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684702"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684688"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromArray(SNodeOperations.cast(this.getNodeById("1230052684698"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684688"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684698"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
 }
