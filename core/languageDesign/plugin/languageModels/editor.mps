@@ -3263,10 +3263,29 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239975702654">
         <link role="relationDeclaration" targetNodeId="1.1239975488603" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239975706000" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239975706000">
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1241371859348">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241371859349">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241371861647">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241371861648">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239975713408">
         <property name="noTargetText" value="&lt;no enumerate function&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1239975503745" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1241371865274">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241371865275">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241371867198">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241371867199">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239975698903" />
     </node>
