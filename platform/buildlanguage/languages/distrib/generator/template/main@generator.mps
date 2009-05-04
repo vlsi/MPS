@@ -670,7 +670,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231751263216">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231751265045">
-        <property name="text" value="start &quot;&quot; %JAVA% %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS%" />
+        <property name="text" value="start &quot;&quot; %JAVA% %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS% %*" />
       </node>
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231749805201">
@@ -3741,7 +3741,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1231686953631">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231686958409">
-        <property name="text" value="$JAVA $JVM_ARGS $ADDITIONAL_JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS" />
+        <property name="text" value="$JAVA $JVM_ARGS $ADDITIONAL_JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS $*" />
       </node>
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1230292674840">
