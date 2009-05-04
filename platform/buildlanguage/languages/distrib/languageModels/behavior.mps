@@ -1493,5 +1493,54 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238070873592" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1241440507171">
+    <property name="package" value="systemSpecific" />
+    <link role="concept" targetNodeId="1.1241440443288" resolveInfo="UnixConfig" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1241440511778">
+      <property name="name" value="getStartupScriptName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241440511779" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241440511780">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241440511781">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440511782">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440511783">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440511784">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440511785">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241440511786" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440511787">
+                    <link role="baseMethodDeclaration" targetNodeId="1230207861621" resolveInfo="getDistribConfiguration" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241440511788">
+                  <link role="link" targetNodeId="1.1234784278747" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440511789">
+                <link role="baseMethodDeclaration" targetNodeId="3v.1213877173054" resolveInfo="getValue" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241440511790">
+              <link role="baseMethodDeclaration" targetNodeId="5.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241440511791" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1241440511792">
+      <property name="name" value="getStartupScriptExtension" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241440511793" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241440511794">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241440511795">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241440511796">
+            <property name="value" value="sh" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241440511797" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1241440507172">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241440507173" />
+    </node>
+  </node>
 </model>
 

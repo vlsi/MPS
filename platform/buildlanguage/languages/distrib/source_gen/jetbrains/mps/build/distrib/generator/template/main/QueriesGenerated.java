@@ -483,6 +483,42 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(_context.getNode(), "examplesDir", true));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1241440614564(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "antName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614574(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614613(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614630(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614641(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode()) + "." + UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614710(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614719(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241440614739(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1241441036084(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true)).replace("\\", "/");
+  }
+
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
@@ -844,6 +880,22 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "examplesDir", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1241440614601(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1241440614728(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_1241440614776(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_1241441039451(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
   public static SNode sourceNodeQuery_1234805895221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pathToNsisZipFile", true);
   }
@@ -894,6 +946,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1240556714510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "uninstallerIcon", true);
+  }
+
+  public static SNode sourceNodeQuery_1241440614591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -981,6 +1037,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1240245207752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
+  }
+
+  public static Iterable sourceNodesQuery_1241440614557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
   }
 
   public static void mappingScript_CodeBlock_1234975234874(final IOperationContext operationContext, final MappingScriptContext _context) {

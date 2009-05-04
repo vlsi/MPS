@@ -5560,6 +5560,7 @@
       </node>
     </node>
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
+    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UnixConfig" id="1241441472522" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">
       <node role="association" type="jetbrains.mps.build.distrib.structure.MacOsFileAssociation" id="1234780843466">
         <property name="extensions" value="mpr" />

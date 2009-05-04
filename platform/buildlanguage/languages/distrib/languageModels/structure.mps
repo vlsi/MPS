@@ -443,5 +443,22 @@
       <link role="target" targetNodeId="3v.1220973916698" resolveInfo="Path" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1241440443288">
+    <property name="package" value="systemSpecific" />
+    <property name="name" value="UnixConfig" />
+    <link role="extends" targetNodeId="1230207207601" resolveInfo="SystemSpecificConfig" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1241440481672">
+      <property name="value" value="unix" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1230207324294" resolveInfo="operatingSystem" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1241440481674">
+      <property name="value" value="unix" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1241440481675">
+      <property name="value" value="/" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1231769310934" resolveInfo="pathSeparator" />
+    </node>
+  </node>
 </model>
 

@@ -11,6 +11,7 @@
   <target name="default" depends="base">
     <antcall target="windows.dist" />
     <antcall target="universal.dist" />
+    <antcall target="unix.dist" />
     <antcall target="macos.dist" />
     <antcall target="clean" />
   </target>
@@ -23,6 +24,10 @@
   </target>
   <target name="universal.single" depends="base">
     <antcall target="universal.dist" />
+    <antcall target="clean" />
+  </target>
+  <target name="unix.single" depends="base">
+    <antcall target="unix.dist" />
     <antcall target="clean" />
   </target>
   <target name="macos.single" depends="base">
@@ -109,6 +114,23 @@
       <zipfileset file="${windows.startup.file}" prefix="${root.folder}" />
       <zipfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
     </zip>
+  </target>
+  <target name="unix.dist">
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="root.folder" value="MPS" />
+    <property name="tar.gz.file" value="MPS-${build.number}-linux.tar.gz" />
+    <property name="unix.startup.file" value="build/mps.sh" />
+    <property name="vmoptions.file" value="build/mps.vmoptions" />
+    <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
+    <fixcrlf file="${vmoptions.file}" eof="asis" eol="unix" />
+    <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
+      <tarfileset dir="${deploy.dir}" excludes="**/*.dll, **/*.exe">
+        <include name="${root.folder}/**" />
+      </tarfileset>
+      <tarfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
+      <tarfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
+    </tar>
   </target>
   <target name="macos.dist">
     <fail unless="version" message="Property version unspecified." />
