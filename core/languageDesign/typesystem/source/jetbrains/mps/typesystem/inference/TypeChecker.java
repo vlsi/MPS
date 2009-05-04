@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystem.debug.ISlicer;
@@ -60,6 +59,8 @@ public class TypeChecker implements ApplicationComponent {
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
 
+  private TypesReadListener myTypesReadListener = null;
+
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
 
@@ -68,6 +69,8 @@ public class TypeChecker implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
 
   private boolean myIsGeneration = false;
+
+  private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
@@ -318,6 +321,9 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
+    if (myTypesReadListener != null) {
+      myTypesReadListener.nodeTypeAccessed(node);
+    }
     TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
     if (context != null && context.isInEditorQueries()) {
       return getTypeOf_resolveMode(node, true);
@@ -408,6 +414,30 @@ public class TypeChecker implements ApplicationComponent {
 
   public boolean isGenerationMode() {
     return myIsGeneration;
+  }
+
+  public void setTypesReadListener(TypesReadListener typesReadListener) {
+    myTypesReadListener = typesReadListener;
+  }
+
+  public void removeTypesReadListener() {
+    myTypesReadListener = null;
+  }
+
+  public void removeTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
+    myTypeRecalculatedListeners.remove(typeRecalculatedListener);
+  }
+
+  public void addTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
+    if (!myTypeRecalculatedListeners.contains(typeRecalculatedListener)) {
+      myTypeRecalculatedListeners.add(typeRecalculatedListener);
+    }
+  }
+
+  public void fireTypeWillBeRecalculatedForTerm(SNode term) {
+    for (TypeRecalculatedListener typeRecalculatedListener : myTypeRecalculatedListeners) {
+      typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
+    }
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {

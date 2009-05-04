@@ -26,7 +26,6 @@ import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -76,12 +75,18 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private MyModelListener myModelListener = new MyModelListener();
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
+  private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
 
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
+  private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
 
   // nodes to rules which depend on this nodes
   private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myNodesToDependentNodesWithNTRules =
+    new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+
+  // typed terms to rules which depend on this nodes
+  private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myTypedTermsToDependentNodesWithNTRules =
     new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
 
   //checked node & NT rule -> set of errors
@@ -109,6 +114,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private HoleWrapper myHoleTypeWrapper = null;
   private boolean myHoleIsAType = false;
 
+
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
@@ -135,14 +141,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myCheckedNodesNonTypesystem = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
     result.myNodesAndNTRulesToErrors = new HashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
     result.myNodesToDependentNodesWithNTRules = new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+    result.myTypedTermsToDependentNodesWithNTRules = new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
     result.myTypeCheckingContext = null;
     result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
     result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
     result.myModelListener = new MyModelListener();
+    result.myTypeRecalculatedListener = new MyTypeRecalculatedListener();
     result.myNodesReadListener = new MyEventsReadListener();
     result.myCurrentNodesToInvalidate = new HashSet<SNode>();
     result.myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
+    result.myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
     result.myCurrentFrontier = null;
     result.myCurrentCheckedNode = null;
     result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
@@ -183,6 +192,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     myNodesToDependentNodes.clear();
     myNodesAndNTRulesToErrors.clear();
     myNodesToDependentNodesWithNTRules.clear();
+    myTypedTermsToDependentNodesWithNTRules.clear();
     myNodesToRules.clear();
   }
 
@@ -192,20 +202,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     myNodesToNonTypesystemErrorsMap.clear();
     myCurrentNodesToInvalidate.clear();
     myCurrentNodesToInvalidateNonTypesystem.clear();
+    myCurrentTypedTermsToInvalidateNonTypesystem.clear();
     myVariableChar = A_CHAR;
     myVariableIndex = 0;
   }
 
-  private void invalidateNode(SNode node, boolean nonTypesystem) {
-    if (!nonTypesystem) {
-      myFullyCheckedNodes.remove(node);
-      myPartlyCheckedNodes.remove(node);
-      myNodesToTypesMap.remove(node);
-      myNodesToErrorsMap.remove(node);
-    } else {
-      myCheckedNodesNonTypesystem.remove(node);  //todo
-      myNodesToNonTypesystemErrorsMap.remove(node);
-    }
+  private void invalidateNodeTypesystem(SNode node) {
+    myFullyCheckedNodes.remove(node);
+    myPartlyCheckedNodes.remove(node);
+    myNodesToTypesMap.remove(node);
+    myNodesToErrorsMap.remove(node);
+    TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
     myNodesToRules.remove(node);
   }
 
@@ -337,6 +344,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         }
       }
     }
+    TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
   }
 
   public void solveInequationsAndExpandTypes() {
@@ -493,7 +501,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           if (isIncrementalMode()) {
             synchronized (ACCESS_LOCK) {
               myNodesReadListener.setAccessReport(true);
-              addDepedentNodesTypesystem(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+              addDepedentNodesTypesystem(sNode, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
               myNodesReadListener.setAccessReport(false);
             }
             myNodesReadListener.clear();
@@ -521,12 +529,22 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
+    addDepedentNodesNonTypesystem(sNode, rule, nodesToDependOn, false);
+  }
+
+  private void  addDepedentTypeTermsNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
+    addDepedentNodesNonTypesystem(sNode, rule, typesToDependOn, true);
+  }
+
+  private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
+    Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules =
+      isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesToDependentNodesWithNTRules.get(nodeToDependOn);
+      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
         dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
-        myNodesToDependentNodesWithNTRules.put(nodeToDependOn, dependentNodes);
+        mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
       Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
       if (rules == null) {
@@ -593,12 +611,14 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     if (nonTypesystemRules != null) {
       for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
+        MyTypesReadListener typesReadListener = new MyTypesReadListener();
         if (isIncrementalMode()) {
           if (myCheckedNodesNonTypesystem.contains(nodeAndRule)) {
             continue;
           }
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+          TypeChecker.getInstance().setTypesReadListener(typesReadListener);
           myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
         }
         try {
@@ -606,6 +626,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         } finally {
           if (isIncrementalMode()) {
             NodeReadEventsCaster.removeNodesReadListener();
+            TypeChecker.getInstance().removeTypesReadListener();
           }
           myNonTypesystemRuleAndNodeBeingChecked = null;
         }
@@ -613,8 +634,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             myNodesReadListener.setAccessReport(true);
-            addDepedentNodesNonTypesystem(node, rule, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+            addDepedentNodesNonTypesystem(node, rule, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
             myNodesReadListener.setAccessReport(false);
+
+            typesReadListener.setAccessReport(true);
+            addDepedentTypeTermsNonTypesystem(node, rule, new HashSet<SNode>(typesReadListener.myAccessedNodes));
+            typesReadListener.setAccessReport(false);
           }
           myNodesReadListener.clear();
         }
@@ -662,6 +687,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   public void clearListeners() {
     removeOurListener();
+    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
   public SNode getType(SNode node) {
@@ -672,7 +698,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   public void markUnchecked(SNode node) {
-    invalidateNode(node, false);
+    invalidateNodeTypesystem(node);
   }
 
   public SNode getRawTypeFromContext(SNode node) {
@@ -728,6 +754,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private void doInvalidateNonTypesystem(List<SModelEvent> events) {
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
+    //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
       WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
       if (nodesAndRules != null) {
@@ -741,6 +768,21 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         }
       }
     }
+    //typed terms
+    for (SNode node : myCurrentTypedTermsToInvalidateNonTypesystem) {
+      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myTypedTermsToDependentNodesWithNTRules.get(node);
+      if (nodesAndRules != null) {
+        for (SNode nodeOfRule : nodesAndRules.keySet()) {
+          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
+          if (rules != null) {
+            for (NonTypesystemRule_Runtime rule : rules) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+            }
+          }
+        }
+      }
+    }
+
     for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
       myCheckedNodesNonTypesystem.remove(nodeAndRule);
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
@@ -757,6 +799,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       }
     }
     myCurrentNodesToInvalidateNonTypesystem.clear();
+    myCurrentTypedTermsToInvalidateNonTypesystem.clear();
   }
 
   private void doInvalidateTypesystem() {
@@ -766,7 +809,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     while (!currentNodesToInvalidate.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate) {
         if (invalidatedNodes.contains(nodeToInvalidate)) continue;
-        invalidateNode(nodeToInvalidate, false);
+        invalidateNodeTypesystem(nodeToInvalidate);
         invalidatedNodes.add(nodeToInvalidate);
         WeakSet<SNode> nodes = myNodesToDependentNodes.get(nodeToInvalidate);
         if (nodes != null) {
@@ -858,8 +901,14 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
   }
 
+  private class MyTypeRecalculatedListener implements TypeRecalculatedListener {
+    public void typeWillBeRecalculatedForTerm(SNode term) {
+      myCurrentTypedTermsToInvalidateNonTypesystem.add(term);
+    }
+  }
+
   private class MyEventsReadListener implements INodesReadListener {
-    private Set<SNode> myAcessedNodes = new HashSet<SNode>(1);
+    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     private boolean myIsSetAccessReport = false;
 
     public void setAccessReport(boolean accessReport) {
@@ -875,37 +924,59 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAcessedNodes.add(node);
-        myAcessedNodes.add(child);
+        myAccessedNodes.add(node);
+        myAccessedNodes.add(child);
       }
     }
 
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAcessedNodes.add(node);
+        myAccessedNodes.add(node);
       }
     }
 
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAcessedNodes.add(node);
-        myAcessedNodes.add(referent);
+        myAccessedNodes.add(node);
+        myAccessedNodes.add(referent);
       }
     }
 
     public void nodeUnclassifiedReadAccess(SNode node) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAcessedNodes.add(node);
+        myAccessedNodes.add(node);
       }
     }
 
     public void clear() {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAcessedNodes.clear();
+        myAccessedNodes.clear();
+      }
+    }
+  }
+
+  private class MyTypesReadListener implements TypesReadListener {
+    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
+    private boolean myIsSetAccessReport = false;
+
+    public void setAccessReport(boolean accessReport) {
+      myIsSetAccessReport = accessReport;
+    }
+
+    private void reportAccess() {
+      if (myIsSetAccessReport) {
+        new Throwable().printStackTrace();
+      }
+    }
+
+    public void nodeTypeAccessed(SNode term) {
+      synchronized (ACCESS_LOCK) {
+        reportAccess();
+        myAccessedNodes.add(term);
       }
     }
   }
