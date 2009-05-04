@@ -16860,5 +16860,13 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1239709669424" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1241450665683">
+    <property name="package" value="type" />
+    <link role="conceptDeclaration" targetNodeId="17.1241450588333" resolveInfo="BLBottomType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1241450737471">
+      <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 

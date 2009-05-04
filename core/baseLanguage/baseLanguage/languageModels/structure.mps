@@ -2623,7 +2623,7 @@
       <property name="value" value="nulltype" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1204200858358">
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1241451259642">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
@@ -3315,6 +3315,18 @@
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1241450588333">
+    <property name="package" value="type" />
+    <property name="name" value="BLBottomType" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1241450643632">
+      <property name="value" value="BLBottom" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1241451263722">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

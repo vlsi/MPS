@@ -16395,5 +16395,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" id="1241450769537">
+    <property name="name" value="any_type_supertypeof_bottom" />
+    <node role="supertypeNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241450801401">
+      <property name="name" value="baseConcept" />
+      <link role="concept" targetNodeId="25.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241450769539">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1241450828487">
+        <property name="value" value="bottom is always a subtype" />
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241450813924">
+      <property name="name" value="bLBottomType" />
+      <link role="concept" targetNodeId="1.1241450588333" resolveInfo="BLBottomType" />
+    </node>
+  </node>
 </model>
 
