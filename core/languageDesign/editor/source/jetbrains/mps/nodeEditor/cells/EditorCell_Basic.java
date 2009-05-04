@@ -450,10 +450,9 @@ public abstract class EditorCell_Basic implements EditorCell {
         EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
         if (editable != null) {
           editor.changeSelection(editable);
-          editable.processKeyTyped(e, allowErrors);
+          editor.processKeyTyped(e);
         } else {
-          editor.changeSelection(nodeCell);
-          editor.activateNodeSubstituteChooser(nodeCell, true);
+          editor.changeSelection(nodeCell);         
           editor.processKeyTyped(e);
         }
       }
