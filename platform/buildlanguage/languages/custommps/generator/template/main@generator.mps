@@ -3562,6 +3562,27 @@
     </node>
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1240930717938">
       <property name="name" value="fix.samples.classpath" />
+      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240932416640">
+        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416641">
+          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240932416642">
+            <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
+          </node>
+        </node>
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416643">
+          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416644">
+            <property name="value" value="$${mps_home}/samples/dslbook_example" />
+          </node>
+        </node>
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416645">
+          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416646">
+            <property name="value" value="$${language_descriptor}/../../../dslbook_example" />
+          </node>
+        </node>
+      </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240930844846">
         <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930870281">
@@ -3580,27 +3601,6 @@
           <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240930980731">
             <property name="value" value="$${language_descriptor}/../.." />
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240932416640">
-        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416641">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240932416642">
-            <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416643">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416644">
-            <property name="value" value="$${mps_home}\samples" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416645">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416646">
-            <property name="value" value="$${language_descriptor}\..\..\.." />
           </node>
         </node>
       </node>

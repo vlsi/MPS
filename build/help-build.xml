@@ -15,8 +15,8 @@
   <target name="fix.samples.classpath">
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />
+    <replace dir="${input.dir}" token="$${mps_home}/samples/dslbook_example" value="$${language_descriptor}/../../../dslbook_example" />
     <replace dir="${input.dir}" token="$${mps_home}/samples" value="$${language_descriptor}/../.." />
-    <replace dir="${input.dir}" token="$${mps_home}\samples" value="$${language_descriptor}\..\..\.." />
     <copy todir="${output.dir}">
       <fileset dir="${input.dir}" />
     </copy>
