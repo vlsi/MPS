@@ -15,5 +15,7 @@
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
+  <component name="ProjectModuleManager" />
+  <component name="ProjectRunConfigurationManager" />
 </module>
 
