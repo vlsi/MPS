@@ -1649,7 +1649,7 @@ public final class SNode {
   public synchronized BaseAdapter getAdapter() {
     if (myAdapter != null) return myAdapter;
     try {
-      Constructor c = QueryMethod.getAdapterConstructor(getConceptFqName());
+      Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
       if (c != null) {
         myAdapter = (BaseAdapter) c.newInstance(this);
         assert myAdapter.getNode() == this;

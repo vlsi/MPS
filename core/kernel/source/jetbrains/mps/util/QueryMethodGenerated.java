@@ -22,11 +22,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -36,7 +38,9 @@ public class QueryMethodGenerated implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelReference, String>, Method> ourMethods = new HashMap<Pair<SModelReference, String>, Method>();
+  private static Map<String, Constructor> ourAdaptorsConstructors = new HashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new HashSet<String>();
+
 
   public static IModule findModuleForModel(SModel sourceModel) {
     SModelDescriptor smd = sourceModel.getModelDescriptor();
@@ -58,6 +62,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
   public static void clearCaches() {
     ourMethods.clear();
     ourClassesReportedAsNotFound.clear();
+    ourAdaptorsConstructors.clear();
   }
 
   public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
@@ -135,6 +140,51 @@ public class QueryMethodGenerated implements ApplicationComponent {
       }
       LOG.error(e.getCause());
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
+    }
+    return result;
+  }
+
+  public static Constructor getAdapterConstructor(String className) {
+    Constructor result = ourAdaptorsConstructors.get(className);
+    if (result == null) {
+      try {
+        String adapterName = className;
+
+        String namespace = NameUtil.namespaceFromLongName(className);
+
+        assert namespace.endsWith(".structure");
+        String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
+        Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+
+
+        Class cls;
+        if (l == null) {
+          LOG.error("Can't find a language " + namespace);
+          throw new RuntimeException("Can't find a language " + namespace);
+        }
+        cls = l.getClass(adapterName);
+
+        if (cls == null) {
+          throw new ClassNotFoundException(adapterName);
+        }
+
+        if (cls.isInterface()) {
+          result = BaseConcept.class.getConstructor(SNode.class);
+        } else {
+          result = cls.getConstructor(SNode.class);
+        }
+        result.setAccessible(true);
+        ourAdaptorsConstructors.put(className, result);
+      } catch (NoSuchMethodException e) {
+        LOG.error(e);
+      } catch (ClassNotFoundException e) {
+        if (!ourClassesReportedAsNotFound.contains(className)) {
+          LOG.error("Can't find a class : " + e.getMessage());
+        }
+        ourClassesReportedAsNotFound.add(className);
+      } catch (NoClassDefFoundError e) {
+        LOG.error("no class def found : " + e.getMessage() + " because of " + className);
+      }
     }
     return result;
   }
