@@ -1901,9 +1901,21 @@
           <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1234971270472">
             <property name="file" value="false" />
             <property name="name" value="baseLanguage" />
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543748339">
+              <property name="id" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
+              <property name="name" value="jetbrains.mps.baseLanguage" />
+            </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543654600">
               <property name="id" value="df345b11-b8c7-4213-ac66-48d2a9b75d88" />
               <property name="name" value="jetbrains.mps.baseLanguageInternal" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543740187">
+              <property name="id" value="ed6d7656-532c-4bc2-81d1-af945aeb8280" />
+              <property name="name" value="jetbrains.mps.baseLanguage.blTypes" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544198571">
+              <property name="id" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" />
+              <property name="name" value="jetbrains.mps.baseLanguage.classifiers" />
             </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543664913">
               <property name="id" value="fd392034-7849-419d-9071-12563d152375" />
@@ -1933,33 +1945,21 @@
               <property name="id" value="2ebbb458-8ebb-481e-a5d7-9e27903323d4" />
               <property name="name" value="jetbrains.mps.baseLanguage.dates.runtime" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557083346">
+              <property name="id" value="760a0a8c-eabb-4521-8bfd-65db761a9ba3" />
+              <property name="name" value="jetbrains.mps.baseLanguage.logging" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1241437317860">
+              <property name="id" value="3304fc6e-7c6b-401e-a016-b944934bb21f" />
+              <property name="name" value="jetbrains.mps.baseLanguage.math" />
+            </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543725817">
               <property name="id" value="f43135f9-b833-4685-8d26-ffb6c8215f72" />
               <property name="name" value="jetbrains.mps.baseLanguage.money" />
             </node>
-            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543731560">
-              <property name="id" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-              <property name="name" value="JDK" />
-            </node>
-            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543740187">
-              <property name="id" value="ed6d7656-532c-4bc2-81d1-af945aeb8280" />
-              <property name="name" value="jetbrains.mps.baseLanguage.blTypes" />
-            </node>
-            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543748339">
-              <property name="id" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
-              <property name="name" value="jetbrains.mps.baseLanguage" />
-            </node>
-            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544179230">
-              <property name="id" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
-              <property name="name" value="MPS.Classpath" />
-            </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544191479">
               <property name="id" value="bc28947e-a07d-4cec-a415-87d92c77bcd8" />
               <property name="name" value="jetbrains.mps.baseLanguage.refactoring" />
-            </node>
-            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544198571">
-              <property name="id" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" />
-              <property name="name" value="jetbrains.mps.baseLanguage.classifiers" />
             </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544207570">
               <property name="id" value="f61473f9-130f-42f6-b98d-6c438812c2f6" />
@@ -1980,6 +1980,14 @@
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1240088118104">
               <property name="id" value="d44dab97-aaac-44cb-9745-8a14db674c03" />
               <property name="name" value="jetbrains.mps.baseLanguage.tuples.runtime" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237543731560">
+              <property name="id" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+              <property name="name" value="JDK" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544179230">
+              <property name="id" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+              <property name="name" value="MPS.Classpath" />
             </node>
             <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270490">
               <property name="name" value="baseLanguage" />
@@ -2158,10 +2166,6 @@
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557075815">
             <property name="id" value="5d6bee4c-f891-4a93-a0c9-e2268726ae47" />
             <property name="name" value="jetbrains.mps.uiLanguage" />
-          </node>
-          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557083346">
-            <property name="id" value="760a0a8c-eabb-4521-8bfd-65db761a9ba3" />
-            <property name="name" value="jetbrains.mps.baseLanguage.logging" />
           </node>
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557090992">
             <property name="id" value="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9" />
