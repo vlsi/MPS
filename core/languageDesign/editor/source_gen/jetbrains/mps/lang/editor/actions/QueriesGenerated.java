@@ -9,14 +9,14 @@ import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -53,9 +53,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CellModel_Collection_1159287296419(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
-      SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-      SPropertyOperations.set(item, "flag", "" + (false));
-      SLinkOperations.addChild(_context.getNewNode(), "styleItem", item);
+      EditorCellModel_Behavior.call_setSelectable_1241444765326(_context.getNewNode(), false);
       if (SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true) != null) {
         SLinkOperations.setTarget(_context.getNewNode(), "cellLayout", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true)), true);
       }
@@ -64,9 +62,7 @@ public class QueriesGenerated {
       SNode innerNode = SNodeOperations.copyNode(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
       SLinkOperations.addChild(_context.getNewNode(), "childCellModel", innerNode);
       if (SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && EditorCellModel_Behavior.call_isSelectable_1219420196673(innerNode)) {
-        SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-        SPropertyOperations.set(item, "flag", "" + (false));
-        SLinkOperations.addChild(innerNode, "styleItem", item);
+        EditorCellModel_Behavior.call_setSelectable_1241444765326(innerNode, false);
       }
     }
   }
@@ -138,10 +134,8 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
-            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null) && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(item, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", item);
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }
@@ -191,10 +185,8 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null) && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(item, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", item);
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }
@@ -244,10 +236,8 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SLinkOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
-            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null) && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(item, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", item);
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }
@@ -275,14 +265,10 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Indent", null);
-            SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-            SPropertyOperations.set(item, "flag", "" + (false));
-            SLinkOperations.addChild(indent, "styleItem", item);
+            EditorCellModel_Behavior.call_setSelectable_1241444765326(indent, false);
             SLinkOperations.insertChildFirst(result, "childCellModel", indent);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null) && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode styleItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(styleItem, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", styleItem);
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }
@@ -332,10 +318,8 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
-            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection") && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(item, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", item);
+            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }
@@ -385,10 +369,8 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection") && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              SNode item = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-              SPropertyOperations.set(item, "flag", "" + (false));
-              SLinkOperations.addChild(result, "styleItem", item);
+            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
+              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
             return result;
           }

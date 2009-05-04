@@ -57,6 +57,15 @@ public class EditorCellModel_Behavior {
     return SPropertyOperations.getBoolean(firstItem, "flag");
   }
 
+  public static void call_setSelectable_1241444765326(SNode thisNode, boolean newSelectable) {
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
+    if ((firstItem == null)) {
+      firstItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
+      SLinkOperations.addChild(thisNode, "styleItem", firstItem);
+    }
+    SPropertyOperations.set(firstItem, "flag", "" + (newSelectable));
+  }
+
   public static Color call_getColor_1225468825117(SNode thisNode, SNode firstItem) {
     if ((firstItem == null)) {
       return null;
