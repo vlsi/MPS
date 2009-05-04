@@ -77,32 +77,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     if (Integer.parseInt(myState.myLastBuildNumber) < Integer.parseInt(currentBuildNumberString)) {
 
       if (!myIsSamplesInMPSHome) {
-
-        File samplesZipFile = new File(PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_ZIP);
-        if (samplesZipFile.exists()) {
-          File samplesDir = new File(getSamplesPathInUserHome());
-          if (samplesDir.exists()){
-            File backupCopy = new File(samplesDir.getAbsolutePath() + myState.myLastBuildNumber);
-            if (backupCopy.exists()) {
-              backupCopy = new File(backupCopy.getAbsolutePath() + "." + System.currentTimeMillis());              
-            }
-            if (samplesDir.isDirectory()){
-              FileUtil.moveDirWithContent(samplesDir, backupCopy);
-            } else {
-              try {
-                FileUtil.rename(samplesDir, backupCopy);
-              } catch (IOException e) {
-                LOG.error(e);
-              }
-            }
-          }
-          try {
-            ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
-
+        extractSamples();
       }
 
       myState.myLastBuildNumber = currentBuildNumberString;
@@ -139,6 +114,33 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
 
   private String getSamplesPathInMPSHome() {
     return PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_DIR;
+  }
+
+  public void extractSamples() {
+    File samplesZipFile = new File(PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_ZIP);
+    if (samplesZipFile.exists()) {
+      File samplesDir = new File(getSamplesPathInUserHome());
+      if (samplesDir.exists()) {
+        File backupCopy = new File(samplesDir.getAbsolutePath() + myState.myLastBuildNumber);
+        if (backupCopy.exists()) {
+          backupCopy = new File(backupCopy.getAbsolutePath() + "." + System.currentTimeMillis());
+        }
+        if (samplesDir.isDirectory()) {
+          FileUtil.moveDirWithContent(samplesDir, backupCopy);
+        } else {
+          try {
+            FileUtil.rename(samplesDir, backupCopy);
+          } catch (IOException e) {
+            LOG.error(e);
+          }
+        }
+      }
+      try {
+        ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
   }
 
   public static class MyState {

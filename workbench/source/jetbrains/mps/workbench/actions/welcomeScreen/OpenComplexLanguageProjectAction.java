@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.actions.help.Icons;
+import jetbrains.mps.build.SamplesExtractor;
 
 import java.io.File;
 
@@ -31,6 +32,9 @@ public class OpenComplexLanguageProjectAction extends AnAction {
 
   public void actionPerformed(AnActionEvent e) {
     String projectFile = PathManager.getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.mpr";
+    if (!new File(projectFile).exists()){
+      SamplesExtractor.getInstance().extractSamples();
+    }
     ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }
