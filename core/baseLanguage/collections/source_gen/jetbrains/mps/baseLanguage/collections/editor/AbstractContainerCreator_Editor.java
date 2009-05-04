@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -32,6 +34,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
 
@@ -154,6 +157,7 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
       setupLabel_ConceptProperty_7023_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractContainerCreator_Editor.AbstractContainerCreator_Editor_replaceWith_AbstractContainerCreator_cellMenu0()}));
     return editorCell;
   }
 
@@ -469,6 +473,16 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_Constant_7023_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    }
+
+}
+  public static class AbstractContainerCreator_Editor_replaceWith_AbstractContainerCreator_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public AbstractContainerCreator_Editor_replaceWith_AbstractContainerCreator_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
     }
 
 }

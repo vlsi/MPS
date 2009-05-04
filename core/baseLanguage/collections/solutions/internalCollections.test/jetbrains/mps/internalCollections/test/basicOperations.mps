@@ -7788,6 +7788,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237103459570" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237103459571" />
     </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241473281691">
+      <link role="classifier" targetNodeId="1237103452115" resolveInfo="Foo" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1237471372422">
     <property name="testCaseName" value="Iterator" />

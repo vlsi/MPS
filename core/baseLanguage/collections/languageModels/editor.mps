@@ -1199,6 +1199,11 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215765926053">
           <property name="value" value="0.0" />
         </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1241447230109">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1241447235539">
+            <link role="replacementConcept" targetNodeId="1.1197686869805" resolveInfo="HashMapCreator" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1197686924626">
         <property name="text" value="&lt;" />
@@ -2309,6 +2314,11 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1237721473435">
           <property name="value" value="0.0" />
         </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1241442573516">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1241442599117">
+            <link role="replacementConcept" targetNodeId="1.1237721394592" resolveInfo="AbstractContainerCreator" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237721473436">
         <property name="text" value="&lt;" />
@@ -2497,6 +2507,11 @@
         <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1240219713084">
           <property name="value" value="0.0" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1241475400938">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1241475405528">
+            <link role="replacementConcept" targetNodeId="1.1197686869805" resolveInfo="HashMapCreator" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240219713085">
