@@ -3881,20 +3881,18 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197809896390">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197809896391">
               <property name="name" value="elemSuperTypes" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197809896392">
-                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1197809946545" />
-              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1197809974705">
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197809974706">
-                  <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1197809974707" />
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1241435525822">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241435527947" />
                 </node>
                 <node role="expression" type="jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression" id="1197809974708">
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197809974709">
                     <link role="variableDeclaration" targetNodeId="1197809855566" resolveInfo="elementType" />
                   </node>
                 </node>
+              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1241435496432">
+                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241435497906" />
               </node>
             </node>
           </node>
