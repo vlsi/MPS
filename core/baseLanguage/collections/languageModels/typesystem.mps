@@ -3881,18 +3881,20 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197809896390">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197809896391">
               <property name="name" value="elemSuperTypes" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197809896392">
+                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1197809946545" />
+              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1197809974705">
-                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1241435525822">
-                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241435527947" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197809974706">
+                  <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1197809974707" />
                 </node>
                 <node role="expression" type="jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression" id="1197809974708">
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197809974709">
                     <link role="variableDeclaration" targetNodeId="1197809855566" resolveInfo="elementType" />
                   </node>
                 </node>
-              </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1241435496432">
-                <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241435497906" />
               </node>
             </node>
           </node>
@@ -9882,6 +9884,123 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240906947630">
       <property name="name" value="operation" />
       <link role="concept" targetNodeId="3.1240906768633" resolveInfo="PutAllOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1241437869459">
+    <property name="name" value="set_type_comparableWith_Set" />
+    <property name="isWeak" value="true" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1241437905112">
+      <property name="name" value="classifierSetType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1241437905113">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241437912082">
+          <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1241437913157">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1241437915105">
+              <property name="varName" value="ELEMENT" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241437869461">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241438003084">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241438004930">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241437899884">
+      <property name="name" value="setType" />
+      <link role="concept" targetNodeId="3.1226511727824" resolveInfo="SetType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1241438170772">
+    <property name="name" value="list_type_comparableWith_List" />
+    <property name="isWeak" value="true" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1241438198089">
+      <property name="name" value="classifierListType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1241438198090">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241438204018">
+          <link role="classifier" targetNodeId="8.~List" resolveInfo="List" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1241438329370">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1241438330290">
+              <property name="varName" value="ELEMENT" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241438170774">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241438219887">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241438220640">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241438188119">
+      <property name="name" value="listType" />
+      <link role="concept" targetNodeId="3.1151688443754" resolveInfo="ListType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1241438229076">
+    <property name="name" value="map_type_comparableWith_Map" />
+    <property name="isWeak" value="true" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1241438245062">
+      <property name="name" value="classifierMapType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1241438245063">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241438253001">
+          <link role="classifier" targetNodeId="8.~Map" resolveInfo="Map" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1241438321869">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1241438323021">
+              <property name="varName" value="KEY" />
+            </node>
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1241438324012">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1241438325224">
+              <property name="varName" value="VALUE" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241438229078">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241438258821">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241438259918">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241438238707">
+      <property name="name" value="mapType" />
+      <link role="concept" targetNodeId="3.1197683403723" resolveInfo="MapType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1241438271946">
+    <property name="name" value="sequence_type_comparableWith_Iterable" />
+    <property name="isWeak" value="true" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1241438293204">
+      <property name="name" value="classifierIterableType" />
+      <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1241438293205">
+        <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241438298728">
+          <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1241438316279">
+            <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1241438317332">
+              <property name="varName" value="ELEMENT" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241438271948">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241438337158">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241438337935">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241438288290">
+      <property name="name" value="sequenceType" />
+      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
     </node>
   </node>
 </model>
