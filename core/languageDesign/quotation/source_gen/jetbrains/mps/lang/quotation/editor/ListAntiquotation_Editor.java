@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.lang.quotation.editor.Colors;
 
 public class ListAntiquotation_Editor extends DefaultNodeEditor {
 

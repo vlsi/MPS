@@ -35,7 +35,7 @@ public class ConceptMethodDeclaration_Behavior {
     }
     return null;
   }
-                   
+
   public static boolean call_isCorrectlyOverriden_1227262347923(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == null)) {
       return true;

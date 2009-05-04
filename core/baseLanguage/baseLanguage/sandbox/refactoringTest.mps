@@ -176,12 +176,22 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240244838911">
       <property name="isFinal" value="false" />
       <property name="name" value="F" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1241445598160">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1241445599124" />
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240244838912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240244838913" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240248149204">
-        <property name="name" value="a" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1240248149205" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241445584123">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241445584124">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1241445584125" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241445586174">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

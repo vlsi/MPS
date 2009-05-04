@@ -4,6 +4,7 @@ package jetbrains.mps.lang.sharedConcepts.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Options_DefaultTrue_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Options_DefaultTrue> constants = Options_DefaultTrue.getConstants().iterator();
+    Iterator<Options_DefaultTrue> constants = ListSequence.fromList(Options_DefaultTrue.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Options_DefaultTrue> constants = Options_DefaultTrue.getConstants().iterator();
+    Iterator<Options_DefaultTrue> constants = ListSequence.fromList(Options_DefaultTrue.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {

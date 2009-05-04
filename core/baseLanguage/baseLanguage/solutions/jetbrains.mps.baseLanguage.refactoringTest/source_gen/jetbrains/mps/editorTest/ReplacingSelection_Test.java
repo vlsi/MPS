@@ -20,7 +20,6 @@ public class ReplacingSelection_Test extends BaseTransformationTest {
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1241356146402", "1241356152205");
       BaseEditorTestBody.typeString(editor, "3");
-      editor.getCurrentEditorComponent().getNodeSubstituteChooser().doSubstituteSelection("3", 0);
       this.finishTest();
     }
 

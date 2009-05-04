@@ -4,11 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertTrue_DataFlow;
-import jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertEquals_DataFlow;
-import jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertFalse_DataFlow;
-import jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertIsNull_DataFlow;
-import jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertSame_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

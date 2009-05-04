@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.logging.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Severity_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class Severity_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Severity> constants = Severity.getConstants().iterator();
+    Iterator<Severity> constants = ListSequence.fromList(Severity.getConstants()).iterator();
     while (constants.hasNext()) {
       Severity constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class Severity_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Severity> constants = Severity.getConstants().iterator();
+    Iterator<Severity> constants = ListSequence.fromList(Severity.getConstants()).iterator();
     while (constants.hasNext()) {
       Severity constant = constants.next();
       if (value.equals(constant.getName())) {

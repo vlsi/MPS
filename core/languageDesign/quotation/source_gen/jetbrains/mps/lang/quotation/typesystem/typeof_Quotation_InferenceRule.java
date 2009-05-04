@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.quotation.typesystem._Quotations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +21,7 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = quotation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(quotationNode, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483112", true), new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483110", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(quotationNode, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483112", true), (SNode)new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483110", intentionProvider);
     }
   }
 

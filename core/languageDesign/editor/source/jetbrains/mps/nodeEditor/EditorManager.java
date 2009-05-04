@@ -46,6 +46,8 @@ public class EditorManager {
   public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
   public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
+  public static final String OLD_NODE_FOR_SUBSTITUTION = "oldNode";
+
   private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
   private boolean myCreatingInspectedCell = false;
 

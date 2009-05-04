@@ -21,6 +21,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 /**
  * Igor Alshannikov
@@ -28,6 +29,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  */
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
+  private SNode myOldChild;
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
@@ -37,7 +39,14 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     // parameter object is always output concept?
     super(parameterObject, parentNode);
+
     myCurrentChild = currentChild;
+    if (currentChild != null && currentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION) != null) {
+      myOldChild = (SNode) currentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+    } else {
+      myOldChild = myCurrentChild;
+    }
+
     myScope = scope;
     mySetter = setter;
   }
@@ -52,6 +61,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     // parameter object is always output concept?
     super(BaseAdapter.fromAdapter(outputConcept), parameterObject, parentNode);
     myCurrentChild = currentChild;
+    myOldChild = myCurrentChild;
     myScope = scope;
     mySetter = setter;
   }
@@ -84,7 +94,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     } else {
       throw new RuntimeException("Couldn't create child node. Parameter object: " + getParameterObject());
     }
-    return NodeFactoryManager.createNode(conceptDeclaration, myCurrentChild, getSourceNode(), model, getScope());
+    return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model, getScope());
   }
 
   public SNode getActionType(String pattern) {

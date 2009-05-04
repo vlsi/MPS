@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_name_PropertyConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

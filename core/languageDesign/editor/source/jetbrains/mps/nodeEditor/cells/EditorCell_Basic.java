@@ -443,7 +443,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     getEditorContext().executeCommand(new Runnable() {
       public void run() {
+        SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();
+        newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
         EditorComponent editor = getEditorContext().getNodeEditorComponent();
         EditorCell nodeCell = editor.findNodeCell(newNode);
         if (nodeCell == null) return;

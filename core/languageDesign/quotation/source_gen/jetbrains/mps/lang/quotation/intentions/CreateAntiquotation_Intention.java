@@ -10,11 +10,22 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class CreateAntiquotation_Intention extends BaseIntention {
 
+  public CreateAntiquotation_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.quotation.structure.Quotation";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {
@@ -48,6 +59,12 @@ public class CreateAntiquotation_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.quotation.intentions";
+  }
+
+  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    ListSequence.fromList(list).addElement(this);
+    return list;
   }
 
 }
