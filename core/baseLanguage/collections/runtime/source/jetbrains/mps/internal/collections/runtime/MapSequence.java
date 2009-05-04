@@ -18,7 +18,6 @@ package jetbrains.mps.internal.collections.runtime;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

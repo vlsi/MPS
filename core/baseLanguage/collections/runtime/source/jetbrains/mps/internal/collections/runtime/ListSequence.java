@@ -49,8 +49,7 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
                 return NullListSequence.instance();
             }
         }
-        List<U> input = Arrays.asList(array);
-        return fromListAndArray(new ArrayList<U> ());
+        return fromListAndArray(new ArrayList<U> (), array);
     }
 
     public static <U> IListSequence<U> fromList (List<U> list) {
