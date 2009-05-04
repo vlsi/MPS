@@ -25,10 +25,6 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
   }
 
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext) {
-    //  this rule triggers a critical bug in typesystem, disabled
-    if (true) {
-      return;
-    }
     {
       IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_0, typeCheckingContext);

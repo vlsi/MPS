@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 import java.util.*;
@@ -171,7 +172,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     public boolean equals(Object obj) {
       if (!(obj instanceof SNodeWrapper)) return false;
       SNodeWrapper wrapper = (SNodeWrapper) obj;
-      return MatchingUtil.matchNodes(wrapper.myNode, myNode);
+      return MatchingUtil.matchNodes(wrapper.myNode, myNode, IMatchModifier.DEFAULT, false);
     }
   }
 }

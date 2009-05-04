@@ -1621,17 +1621,6 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1240403513227">
     <property name="name" value="check_NamedTupleComponent_final" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240403513228">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1241087520978">
-        <property name="value" value=" this rule triggers a critical bug in typesystem, disabled" />
-      </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1241087512562">
-        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241087512563">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241087515291" />
-        </node>
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1241087512668">
-          <property name="value" value="true" />
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1240403562736">
         <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240403570474">
           <property name="name" value="namedTupleType" />
