@@ -8,7 +8,6 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.complex.runtime.msd" />
-      <solutionPath path="${project}/solutions/Complex.build/Complex.build.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/complex/complex.mpl" />
@@ -23,35 +22,12 @@
   <component name="ProjectDetails">
     <option name="projectName" value="Complex" />
   </component>
-  <component name="ProjectModuleManager">
-    <modules />
-  </component>
-  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$APPLICATION_HOME_DIR$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="https://svn.jetbrains.org/mps/branches" />
-                  <option value="https://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="myVersion" value="124" />
-    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="$APPLICATION_HOME_DIR$/artifacts/MPS" vcs="" />
   </component>
 </project>
 

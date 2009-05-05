@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -17,10 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1196261413060(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromArray();
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.ReExpression", null);
@@ -40,11 +40,12 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex real part";
         }
+
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.ImExpression", null);
@@ -64,11 +65,12 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex imaginary part";
         }
+
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.AbsExpression", null);
@@ -88,11 +90,12 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex absolute value";
         }
+
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.ArgExpression", null);
@@ -112,11 +115,12 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex argument";
         }
+
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", null);
@@ -136,11 +140,12 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex conjugative";
         }
+
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.complex.structure.DegreeComplexExpression", null);
@@ -160,6 +165,7 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "complex degree";
         }
+
       });
     }
     return result;

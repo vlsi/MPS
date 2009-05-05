@@ -27,7 +27,7 @@ public class NodeReferentConstraint_applicableLink_ReferentConstraint extends Ba
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links declared in specified concept
+    //     links declared in specified concept
     SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getReferenceNode());
     if (applicableConcept == null) {
       applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);

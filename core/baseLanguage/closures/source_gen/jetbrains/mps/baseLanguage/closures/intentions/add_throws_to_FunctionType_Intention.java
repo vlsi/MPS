@@ -49,8 +49,8 @@ public class add_throws_to_FunctionType_Intention extends BaseIntention {
   }
 
   public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
+    List<Intention> list = new ArrayList<Intention>();
+    list.add(this);
     return list;
   }
 
