@@ -1003,21 +1003,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1182937366968">
-    <property name="name" value="HelginsJudgement" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1182937420689">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="type" />
-      <link role="target" targetNodeId="1.1133920641626" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1182950852687">
-    <property name="role" value="helginsJudgement" />
-    <link role="source" targetNodeId="1.1133920641626" />
-    <link role="target" targetNodeId="1182937366968" resolveInfo="HelginsJudgement" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1185281562361">
     <property name="name" value="RuntimeErrorType" />
     <link role="extends" targetNodeId="1185281562363" resolveInfo="RuntimeTypeVariable" />

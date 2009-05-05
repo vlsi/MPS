@@ -19,7 +19,6 @@ import junit.framework.TestCase;
 
 import java.io.File;
 
-import jetbrains.mps.lang.typesystem.tests.HelginsTestUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 
 import javax.swing.SwingUtilities;
@@ -63,10 +62,6 @@ public class BaseMPSTest extends TestCase {
 
   protected boolean testProjectGenerationForLeaks(File project) {
     return TestMain.testProjectGenerationForLeaks(project);
-  }
-
-  protected void testHelgins(File project, String modelName) {
-    HelginsTestUtil.doTest(project, modelName);
   }
 
   protected boolean testRefactoringTestEnvironment(File projectDirectory) {
