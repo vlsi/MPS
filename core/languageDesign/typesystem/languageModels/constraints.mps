@@ -2255,25 +2255,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1227088575642">
-    <link role="concept" targetNodeId="1.1182937959055" resolveInfo="HelginsTestSuite" />
-    <node role="canBeRoot" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" id="1227088576893">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227088576894">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227088577208">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227088577209">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227088577210">
-              <link role="enumClass" targetNodeId="22.~LanguageAspect" resolveInfo="LanguageAspect" />
-              <link role="enumConstantDeclaration" targetNodeId="22.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227088577211">
-              <link role="baseMethodDeclaration" targetNodeId="22.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
-              <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1227088577212" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1227088583369">
     <link role="concept" targetNodeId="1.1201607707634" resolveInfo="InequationReplacementRule" />
     <node role="canBeRoot" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" id="1227088585370">

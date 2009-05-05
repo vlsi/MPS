@@ -286,46 +286,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724071" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877337955">
-    <link role="concept" targetNodeId="1.1182937959055" resolveInfo="HelginsTestSuite" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877337956">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877337957" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877337958">
-      <property name="name" value="doTest" />
-      <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1213877337959" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877337960">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1213877337961">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877337962">
-            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877337963" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213877337964">
-              <link role="link" targetNodeId="1.1182937980212" />
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877337965">
-            <property name="name" value="judgement" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877337966">
-              <link role="concept" targetNodeId="1.1182937366968" resolveInfo="HelginsJudgement" />
-            </node>
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877337967">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877337968">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877337969">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877337970">
-                  <link role="variableDeclaration" targetNodeId="1213877337965" resolveInfo="judgement" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877337971">
-                  <link role="baseMethodDeclaration" targetNodeId="1213877321559" resolveInfo="doTest" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724356" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877357223">
     <link role="concept" targetNodeId="1.1174989799417" resolveInfo="PropertyPatternVariableReference" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877357224">

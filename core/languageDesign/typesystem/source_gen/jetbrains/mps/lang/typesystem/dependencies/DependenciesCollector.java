@@ -7,12 +7,12 @@ import java.util.Map;
 import jetbrains.mps.util.Pair;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.typesystem.dependencies._Quotations;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -24,7 +24,7 @@ public class DependenciesCollector {
   }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
-    Set<SNode> roots = SetSequence.<SNode>fromArray();
+    Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false)) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
@@ -38,7 +38,7 @@ public class DependenciesCollector {
     while (Sequence.fromIterable(MapSequence.fromMap(dependencies).keySet()).count() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
       prevSize = Sequence.fromIterable(MapSequence.fromMap(dependencies).keySet()).count();
       leavesSize = SetSequence.fromSet(leaves).count();
-      for(SNode node : SetSequence.fromSet(SetSequence.<SNode>fromArray()).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()))) {
+      for(SNode node : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
         SNode parent = SNodeOperations.getParent(node);
         do {
           SNode matchedNode_0 = parent;
