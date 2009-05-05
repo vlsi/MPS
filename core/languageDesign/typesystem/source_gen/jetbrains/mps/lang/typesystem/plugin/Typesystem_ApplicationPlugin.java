@@ -15,10 +15,10 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.typesystem";
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsNodeActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsEditorPopupInternal_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsModelActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.HelginsToolsAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemModelActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemToolsAddition_ActionGroup");
     return groups;
   }
 
