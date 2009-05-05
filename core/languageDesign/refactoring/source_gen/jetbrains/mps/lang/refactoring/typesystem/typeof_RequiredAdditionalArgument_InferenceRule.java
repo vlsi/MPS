@@ -19,7 +19,7 @@ public class typeof_RequiredAdditionalArgument_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = requiredAdditionalArgument;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(requiredAdditionalArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728902837", true), SLinkOperations.getTarget(requiredAdditionalArgument, "argumentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728908074", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(requiredAdditionalArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728902837", true), (SNode)SLinkOperations.getTarget(requiredAdditionalArgument, "argumentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728908074", intentionProvider);
     }
   }
 

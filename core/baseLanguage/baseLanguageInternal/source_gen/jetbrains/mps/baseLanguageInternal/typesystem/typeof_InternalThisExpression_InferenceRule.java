@@ -42,7 +42,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = ite;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(ite, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1202838281158", true), ct, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1202838278072", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(ite, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1202838281158", true), (SNode)ct, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1202838278072", intentionProvider);
     }
   }
 

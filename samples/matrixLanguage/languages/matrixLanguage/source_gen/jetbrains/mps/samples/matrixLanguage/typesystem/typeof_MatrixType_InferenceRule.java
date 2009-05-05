@@ -19,7 +19,7 @@ public class typeof_MatrixType_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(nodeToCheck, "scalarType", true), SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210166478532", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(nodeToCheck, "scalarType", true), (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210166478532", false, 0, intentionProvider);
     }
   }
 

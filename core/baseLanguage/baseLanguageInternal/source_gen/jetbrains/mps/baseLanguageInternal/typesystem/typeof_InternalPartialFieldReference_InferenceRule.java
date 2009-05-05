@@ -19,7 +19,7 @@ public class typeof_InternalPartialFieldReference_InferenceRule extends Abstract
     {
       SNode _nodeToCheck_1029348928467 = fieldRef;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(fieldRef, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371952", true), SLinkOperations.getTarget(fieldRef, "fieldType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371950", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(fieldRef, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371952", true), (SNode)SLinkOperations.getTarget(fieldRef, "fieldType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371950", intentionProvider);
     }
   }
 

@@ -19,7 +19,7 @@ public class typeof_InternalVariableReference_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = varRef;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371941", true), SLinkOperations.getTarget(varRef, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371939", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371941", true), (SNode)SLinkOperations.getTarget(varRef, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371939", intentionProvider);
     }
   }
 

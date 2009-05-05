@@ -18,11 +18,11 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule extends 
 
   public void applyRule(final SNode conceptFunctionParameter_UserArgument, final TypeCheckingContext typeCheckingContext) {
     SNode filterArgumentClause = SNodeOperations.getAncestor(conceptFunctionParameter_UserArgument, "jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", false, false);
-    SNode requiredUserEnteredArgument = SNodeOperations.getParent(filterArgumentClause);
+    SNode requiredUserEnteredArgument = SNodeOperations.cast(SNodeOperations.getParent(filterArgumentClause), "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument");
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_UserArgument;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), typeCheckingContext.typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795194145", intentionProvider);
+      typeCheckingContext.createEquation((SNode)SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), (SNode)typeCheckingContext.typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795194145", intentionProvider);
     }
   }
 
