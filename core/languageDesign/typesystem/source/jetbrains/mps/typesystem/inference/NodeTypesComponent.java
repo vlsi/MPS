@@ -501,6 +501,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           }
           try {
             applyRulesToNode(sNode);
+          } catch (Throwable t) {
+            LOG.error("an error occurred while calculating types for node " + sNode, t, sNode);
           } finally {
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
@@ -623,7 +625,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       while (!(frontier.isEmpty())) {
         for (SNode sNode : frontier) {
           newFrontier.addAll(sNode.getChildren());
-          applyNonTypesystemRulesToNode(sNode);
+          try {
+            applyNonTypesystemRulesToNode(sNode);
+          } catch (Throwable t) {
+            LOG.error("an error occurred while checking node " + sNode, t, sNode);
+          }
         }
         frontier = newFrontier;
         newFrontier = new LinkedHashSet<SNode>();
