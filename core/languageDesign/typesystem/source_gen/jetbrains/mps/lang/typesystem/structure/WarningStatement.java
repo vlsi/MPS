@@ -63,11 +63,11 @@ public class WarningStatement extends Statement implements MessageStatement {
     super.setChild(WarningStatement.NODE_TO_REPORT, node);
   }
 
-  public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(HelginsIntention.class, WarningStatement.HELGINS_INTENTION);
+  public TypesystemIntention getHelginsIntention() {
+    return (TypesystemIntention)this.getChild(TypesystemIntention.class, WarningStatement.HELGINS_INTENTION);
   }
 
-  public void setHelginsIntention(HelginsIntention node) {
+  public void setHelginsIntention(TypesystemIntention node) {
     super.setChild(WarningStatement.HELGINS_INTENTION, node);
   }
 

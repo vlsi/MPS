@@ -29,7 +29,7 @@ public class QuickFixArgumentReference_quickFixArgument_ReferentConstraint exten
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> nodes = ListOperations.<SNode>createList();
-    SNode quickFix = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.HelginsQuickFix", false, false);
+    SNode quickFix = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", false, false);
     if ((quickFix != null)) {
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(quickFix, "quickFixArgument", true)));
     }

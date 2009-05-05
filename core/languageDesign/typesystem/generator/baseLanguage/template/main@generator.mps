@@ -41,11 +41,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="49" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -15650,7 +15650,7 @@
           </node>
         </node>
       </node>
-      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1216210608882">
+      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1216210608882">
         <link role="intentionDeclaration" targetNodeId="42.1212611479483" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1216210638494">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1216210638495">
@@ -16281,7 +16281,7 @@
           </node>
         </node>
       </node>
-      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1222949973471">
+      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1222949973471">
         <link role="quickFix" targetNodeId="42.1216648306971" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1222949980223">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1222949980224">
@@ -17612,7 +17612,7 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1223996258109" />
-      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1223996011789">
+      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1223996011789">
         <link role="quickFix" targetNodeId="42.1216648306971" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1223996017401">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1223996017402">
@@ -19436,7 +19436,7 @@
           </node>
         </node>
       </node>
-      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1225969337478">
+      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1225969337478">
         <link role="quickFix" targetNodeId="42.1216648306971" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225969341198">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225969341199">
@@ -19551,7 +19551,7 @@
           </node>
         </node>
       </node>
-      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1225972304353">
+      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1225972304353">
         <link role="quickFix" targetNodeId="42.1216648306971" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225972308590">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225972308591">

@@ -15,9 +15,9 @@ public interface MessageStatement extends INodeAdapter {
 
   public void setNodeToReport(Expression node);
 
-  public HelginsIntention getHelginsIntention();
+  public TypesystemIntention getHelginsIntention();
 
-  public void setHelginsIntention(HelginsIntention node);
+  public void setHelginsIntention(TypesystemIntention node);
 
   public MessageTarget getMessageTarget();
 

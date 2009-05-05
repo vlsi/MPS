@@ -62,11 +62,11 @@ public class AbstractEquationStatement extends Statement {
     super.setChild(AbstractEquationStatement.ERROR_STRING, node);
   }
 
-  public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(HelginsIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
+  public TypesystemIntention getHelginsIntention() {
+    return (TypesystemIntention)this.getChild(TypesystemIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
   }
 
-  public void setHelginsIntention(HelginsIntention node) {
+  public void setHelginsIntention(TypesystemIntention node) {
     super.setChild(AbstractEquationStatement.HELGINS_INTENTION, node);
   }
 

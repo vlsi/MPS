@@ -63,11 +63,11 @@ public class InfoStatement extends Statement implements MessageStatement {
     super.setChild(InfoStatement.NODE_TO_REPORT, node);
   }
 
-  public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(HelginsIntention.class, InfoStatement.HELGINS_INTENTION);
+  public TypesystemIntention getHelginsIntention() {
+    return (TypesystemIntention)this.getChild(TypesystemIntention.class, InfoStatement.HELGINS_INTENTION);
   }
 
-  public void setHelginsIntention(HelginsIntention node) {
+  public void setHelginsIntention(TypesystemIntention node) {
     super.setChild(InfoStatement.HELGINS_INTENTION, node);
   }
 

@@ -63,11 +63,11 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
     super.setChild(ReportErrorStatement.NODE_TO_REPORT, node);
   }
 
-  public HelginsIntention getHelginsIntention() {
-    return (HelginsIntention)this.getChild(HelginsIntention.class, ReportErrorStatement.HELGINS_INTENTION);
+  public TypesystemIntention getHelginsIntention() {
+    return (TypesystemIntention)this.getChild(TypesystemIntention.class, ReportErrorStatement.HELGINS_INTENTION);
   }
 
-  public void setHelginsIntention(HelginsIntention node) {
+  public void setHelginsIntention(TypesystemIntention node) {
     super.setChild(ReportErrorStatement.HELGINS_INTENTION, node);
   }
 

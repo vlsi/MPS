@@ -364,6 +364,36 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="HelginsIntention" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsIntention" featureKind="CONCEPT" />
+          <value featureName="TypesystemIntention" conceptFQName="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="HelginsQuickFix" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" featureKind="CONCEPT" />
+          <value featureName="TypesystemQuickFix" conceptFQName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="HelginsIntentionArgument" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" featureKind="CONCEPT" />
+          <value featureName="TypesystemIntentionArgument" conceptFQName="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -389,7 +419,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="9" />
@@ -1285,7 +1315,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210784285454">
-    <property name="name" value="HelginsIntention" />
+    <property name="name" value="TypesystemIntention" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1216127910019">
       <property name="name" value="applyImmediately" />
@@ -1305,7 +1335,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210784384552">
-    <property name="name" value="HelginsIntentionArgument" />
+    <property name="name" value="TypesystemIntentionArgument" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210784642750">
       <property name="metaClass" value="aggregation" />
@@ -1479,7 +1509,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216383170661">
-    <property name="name" value="HelginsQuickFix" />
+    <property name="name" value="TypesystemQuickFix" />
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}/icons/quickFix.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />

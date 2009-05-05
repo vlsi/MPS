@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="50" />
@@ -2970,16 +2970,16 @@
                       </node>
                     </node>
                   </node>
-                  <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1219947530382">
+                  <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1219947530382">
                     <property name="applyImmediately" value="true" />
                     <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1219947530383">
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1219947530383">
                       <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219947530384">
                         <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1219947530385">
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1219947530385">
                       <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947530386">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947530387">
@@ -3111,16 +3111,16 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1220347279323">
+                                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1220347279323">
                                   <property name="applyImmediately" value="true" />
                                   <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1220347279324">
+                                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1220347279324">
                                     <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                                     <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220347279325">
                                       <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
                                     </node>
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1220347279326">
+                                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1220347279326">
                                     <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                                     <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220347279327">
                                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220347279328">
@@ -3159,16 +3159,16 @@
                                   <link role="whenConcreteVar" targetNodeId="1220347102535" resolveInfo="actualType" />
                                 </node>
                               </node>
-                              <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1220347200879">
+                              <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1220347200879">
                                 <property name="applyImmediately" value="true" />
                                 <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1220347200880">
+                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1220347200880">
                                   <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                                   <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220347200881">
                                     <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
                                   </node>
                                 </node>
-                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1220347200882">
+                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1220347200882">
                                   <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                                   <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220347200883">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220347200884">
@@ -3267,16 +3267,16 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1219947702428">
+                              <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1219947702428">
                                 <property name="applyImmediately" value="true" />
                                 <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1219947702429">
+                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1219947702429">
                                   <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                                   <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219947702430">
                                     <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
                                   </node>
                                 </node>
-                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1219947702431">
+                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1219947702431">
                                   <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                                   <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947702432">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219947702433">
@@ -3402,16 +3402,16 @@
                         </node>
                       </node>
                     </node>
-                    <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1216209815020">
+                    <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1216209815020">
                       <property name="applyImmediately" value="true" />
                       <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1216209822990">
+                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1216209822990">
                         <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                         <node role="value" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216209829477">
                           <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
                         </node>
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1216209862478">
+                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1216209862478">
                         <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                         <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216209874220">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216209866872">
@@ -4805,9 +4805,9 @@
                       <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210182160753">
                         <link role="variableDeclaration" targetNodeId="1210182138169" resolveInfo="baseMethodCall" />
                       </node>
-                      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1210785091581">
+                      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1210785091581">
                         <link role="quickFix" targetNodeId="1216393886413" resolveInfo="AddExceptionToMethodSignature" />
-                        <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1210785094332">
+                        <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1210785094332">
                           <link role="quickFixArgument" targetNodeId="1216393910650" resolveInfo="throwableType" />
                           <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238770898006">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210785112834">
@@ -10044,7 +10044,7 @@
       <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1216393886413">
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="1216393886413">
     <property name="name" value="AddExceptionToMethodSignature" />
     <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1216393910650">
       <property name="name" value="throwableType" />
@@ -10124,7 +10124,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1216647860300">
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="1216647860300">
     <property name="name" value="ChooseAppropriateMethodDeclaration" />
     <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1216647878010">
       <property name="name" value="methodCall" />
@@ -10898,7 +10898,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1216647988572">
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="1216647988572">
     <property name="name" value="ChooseAppropriateConstructorDeclaration" />
     <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1216648076194">
       <property name="name" value="constructorCall" />
@@ -11228,16 +11228,16 @@
             <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241010157420">
               <property name="value" value="no method declaration" />
             </node>
-            <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1241010157421">
+            <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1241010157421">
               <property name="applyImmediately" value="true" />
               <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1241010157422">
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1241010157422">
                 <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                 <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241010157423">
                   <link role="applicableNode" targetNodeId="1219948090891" resolveInfo="iMethodCall" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1241010157424">
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1241010157424">
                 <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                 <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241010206479">
                   <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241010206480">
@@ -11413,16 +11413,16 @@
                   <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219948520792">
                     <property name="value" value="wrong number of parameters" />
                   </node>
-                  <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1227257158747">
+                  <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1227257158747">
                     <property name="applyImmediately" value="true" />
                     <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227257697031">
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1227257697031">
                       <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                       <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227257711354">
                         <link role="applicableNode" targetNodeId="1219948090891" resolveInfo="iMethodCall" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227257734090">
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1227257734090">
                       <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241010303671">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241010303672">
@@ -11968,16 +11968,16 @@
                     <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227259028685">
                       <link role="variableDeclaration" targetNodeId="1227258840881" resolveInfo="nodeWithError" />
                     </node>
-                    <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1227259060765">
+                    <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1227259060765">
                       <property name="applyImmediately" value="true" />
                       <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227259070344">
+                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1227259070344">
                         <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
                         <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227259074205">
                           <link role="variableDeclaration" targetNodeId="1227258925907" resolveInfo="methodCall" />
                         </node>
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227259075003">
+                      <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1227259075003">
                         <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
                         <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227259080583">
                           <link role="variableDeclaration" targetNodeId="1227258997203" resolveInfo="classifier" />
@@ -12752,7 +12752,7 @@
                       <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223642282238">
                         <link role="variableDeclaration" targetNodeId="1223642282210" resolveInfo="assignment" />
                       </node>
-                      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1223830700265">
+                      <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1223830700265">
                         <link role="quickFix" targetNodeId="2v.1216648306971" resolveInfo="RemoveUnusedAssignment" />
                       </node>
                     </node>
@@ -13598,9 +13598,9 @@
                     <link role="link" targetNodeId="43.1196350785111" />
                   </node>
                 </node>
-                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1228302388410">
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1228302388410">
                   <link role="quickFix" targetNodeId="1228302110245" resolveInfo="ReplaceAntiquotationConceptWithClassifierType" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1228302389539">
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1228302389539">
                     <link role="quickFixArgument" targetNodeId="1228302217408" resolveInfo="antiquotation" />
                     <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1228302395995">
                       <link role="applicableNode" targetNodeId="1228301751771" resolveInfo="antiquotation" />
@@ -13646,7 +13646,7 @@
       <link role="concept" targetNodeId="43.1196350785112" resolveInfo="Antiquotation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1228302110245">
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="1228302110245">
     <property name="name" value="ReplaceClassAntiquotationWithClassifierType" />
     <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1228302217408">
       <property name="name" value="antiquotation" />
@@ -15990,9 +15990,9 @@
                 <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1239123019456">
                   <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
                 </node>
-                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1241101113554">
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1241101113554">
                   <link role="quickFix" targetNodeId="1241100983853" resolveInfo="MakeVariableFinal" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1241101115272">
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1241101115272">
                     <link role="quickFixArgument" targetNodeId="1241101001015" resolveInfo="varRef" />
                     <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241101120667">
                       <link role="applicableNode" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
@@ -16351,7 +16351,7 @@
       <link role="concept" targetNodeId="1.1068581242874" resolveInfo="ParameterReference" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" id="1241100983853">
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="1241100983853">
     <property name="name" value="MakeVariableFinal" />
     <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="1241101001015">
       <property name="name" value="varRef" />

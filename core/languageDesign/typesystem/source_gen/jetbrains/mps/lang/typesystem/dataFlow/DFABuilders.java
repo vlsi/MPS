@@ -34,8 +34,8 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", new AddDependencyStatement_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", new PropertyNameTarget_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", new ReferenceRoleTarget_DataFlow());
-    manager.register("jetbrains.mps.lang.typesystem.structure.HelginsIntention", new HelginsIntention_DataFlow());
-    manager.register("jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument", new HelginsIntentionArgument_DataFlow());
+    manager.register("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", new TypesystemIntention_DataFlow());
+    manager.register("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", new TypesystemIntentionArgument_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.WarningStatement", new WarningStatement_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.InfoStatement", new InfoStatement_DataFlow());
   }
