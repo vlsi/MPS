@@ -4797,8 +4797,8 @@
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641131320">
             <link role="attributeDeclaration" targetNodeId="4v.1199644186966" resolveInfo="eol" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239641201046">
-              <property name="value" value="mac" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1241524124767">
+              <property name="value" value="unix" />
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641204868">
@@ -4818,8 +4818,8 @@
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641271482">
             <link role="attributeDeclaration" targetNodeId="4v.1199644186966" resolveInfo="eol" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239641277918">
-              <property name="value" value="mac" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1241524131774">
+              <property name="value" value="unix" />
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641279625">
@@ -4882,8 +4882,8 @@
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641531847">
             <link role="attributeDeclaration" targetNodeId="4v.1199644186966" resolveInfo="eol" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239641537923">
-              <property name="value" value="mac" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1241524139416">
+              <property name="value" value="unix" />
             </node>
           </node>
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239641540007">
@@ -4928,6 +4928,12 @@
               <link role="attributeDeclaration" targetNodeId="4v.1199644188748" resolveInfo="prefix" />
               <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1234519548810">
                 <link role="propertyDeclaration" targetNodeId="1234519528999" resolveInfo="root.folder.dest" />
+              </node>
+            </node>
+            <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1241523290443">
+              <link role="attributeDeclaration" targetNodeId="4v.1199644187637" resolveInfo="excludes" />
+              <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1241523303775">
+                <property name="value" value="**/*.dll, **/*.exe" />
               </node>
             </node>
           </node>

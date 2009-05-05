@@ -149,11 +149,11 @@
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
-    <fixcrlf file="${info.plist.tmp}" eol="mac" eof="remove" />
-    <fixcrlf file="${unix.startup.script}" eol="mac" eof="remove" />
-    <fixcrlf file="${scripts.folder}/mps.vmoptions" eol="mac" eof="remove" />
+    <fixcrlf file="${info.plist.tmp}" eol="unix" eof="remove" />
+    <fixcrlf file="${unix.startup.script}" eol="unix" eof="remove" />
+    <fixcrlf file="${scripts.folder}/mps.vmoptions" eol="unix" eof="remove" />
     <zip destfile="${deploy.dir}/${zip.file}" duplicate="preserve">
-      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" />
+      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" excludes="**/*.dll, **/*.exe" />
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
       <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${mps_home}/build/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
