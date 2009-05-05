@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -23,7 +24,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -42,6 +42,14 @@ public class MPSBuild_Behavior {
       ListSequence.fromList(path).insertElement(0, SLinkOperations.getTarget(folder, "title", true));
     }
     return path;
+  }
+
+  public static String call_getScriptsFolder_1241536330057(SNode thisNode) {
+    String parentScriptsFolder = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "scriptsFolder");
+    if (parentScriptsFolder == null) {
+      return "build";
+    }
+    return parentScriptsFolder;
   }
 
   public static String getMPSBuildToolsZipName_1234294616845() {

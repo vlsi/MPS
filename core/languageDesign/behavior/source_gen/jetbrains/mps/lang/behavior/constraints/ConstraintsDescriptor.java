@@ -4,20 +4,17 @@ package jetbrains.mps.lang.behavior.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint;
-import jetbrains.mps.lang.behavior.constraints.ConceptBehavior_defaultConcreteConcept_ReferentConstraint;
-import jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new ConceptBehavior_name_PropertyConstraint());
-    this.myConstraints.add(new ConceptBehavior_defaultConcreteConcept_ReferentConstraint());
-    this.myConstraints.add(new ConceptMethodDeclaration_overriddenMethod_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptBehavior_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptBehavior_defaultConcreteConcept_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new ConceptMethodDeclaration_overriddenMethod_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

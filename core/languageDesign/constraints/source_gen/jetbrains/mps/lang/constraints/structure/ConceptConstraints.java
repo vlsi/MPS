@@ -21,10 +21,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ConceptConstraints";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String CONCEPT = "concept";
   public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static final String DEFAULT_SCOPE = "defaultScope";
@@ -36,6 +36,14 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public ConceptConstraints(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ConceptConstraints.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ConceptConstraints.NAME, value);
   }
 
   public String getShortDescription() {
@@ -60,14 +68,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptConstraints.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ConceptConstraints.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ConceptConstraints.NAME, value);
   }
 
   public AbstractConceptDeclaration getConcept() {

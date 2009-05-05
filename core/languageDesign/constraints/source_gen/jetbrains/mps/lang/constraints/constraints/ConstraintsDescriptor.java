@@ -5,9 +5,6 @@ package jetbrains.mps.lang.constraints.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.constraints.constraints.ConceptConstraints_name_PropertyConstraint;
-import jetbrains.mps.lang.constraints.constraints.NodePropertyConstraint_applicableProperty_ReferentConstraint;
-import jetbrains.mps.lang.constraints.constraints.NodeReferentConstraint_applicableLink_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {

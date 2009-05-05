@@ -29,20 +29,27 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.VcsRootsManager;
 import jetbrains.mps.vcs.VcsRootsManager.VcsRootsListener;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JEditorPane;
+import javax.swing.JPanel;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import java.awt.Color;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChangesNotificator implements ProjectComponent {
   private final VcsRootsManager myVcsRootsManager;
   private final Project myProject;
   private final ChangesNotificator.MyVcsRootsListener myListener = new MyVcsRootsListener();
   private static final Color POPUP_COLOR = LightColors.RED;
+  private final Map<VirtualFile, MyNotificationPanel> myPanels = new HashMap<VirtualFile, MyNotificationPanel>();
 
   public ChangesNotificator(Project project, VcsRootsManager manager) {
     myProject = project;
@@ -71,27 +78,33 @@ public class ChangesNotificator implements ProjectComponent {
     myVcsRootsManager.removeListener(myListener);
   }
 
-  private void showAddVcsRootsPopup(final Project project, final VirtualFile vcsRoot, final SModelDescriptor sm) {
+  private synchronized void showAddVcsRootsPopup(final Project project, final VirtualFile vcsRoot, final SModelDescriptor sm) {
 
     StatusBar bar = WindowManager.getInstance().getStatusBar(project);
 
-    JEditorPane pane = createPopupComponent(sm);
-    pane.addHyperlinkListener(new HyperlinkListener() {
-      public void hyperlinkUpdate(final HyperlinkEvent e) {
-        if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+    MyNotificationPanel panel;
+    if (myPanels.get(vcsRoot) == null) {
+      panel = createPopupComponent(vcsRoot, sm);
+      panel.addHyperlinkListener(new HyperlinkListener() {
+        public void hyperlinkUpdate(final HyperlinkEvent e) {
+          if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
 
-          boolean result = showAddVcsRootsDialog(sm, vcsRoot, project);
+            boolean result = showAddVcsRootsDialog(sm, vcsRoot, project);
 
-          if (result) {
-            myVcsRootsManager.addNewVcsRoot(vcsRoot);
-          } else {
-            myVcsRootsManager.addExcludedRoot(vcsRoot);
+            if (result) {
+              myVcsRootsManager.addNewVcsRoot(vcsRoot);
+            } else {
+              myVcsRootsManager.addExcludedRoot(vcsRoot);
+            }
           }
         }
-      }
-    });
+      });
+    } else {
+      panel = myPanels.get(vcsRoot);
+      panel.addModel(sm);
+    }
 
-    bar.fireNotificationPopup(pane, POPUP_COLOR);
+    bar.fireNotificationPopup(panel, POPUP_COLOR);
   }
 
   private boolean showAddVcsRootsDialog(SModelDescriptor sm, VirtualFile vcsRoot, Project project) {
@@ -103,15 +116,64 @@ public class ChangesNotificator implements ProjectComponent {
     return Messages.showYesNoDialog(project, message, title, Messages.getQuestionIcon()) == DialogWrapper.OK_EXIT_CODE;
   }
 
-  private JEditorPane createPopupComponent(SModelDescriptor sm) {
-    String popupMessage = "<html><body><font size=\"3\">Model <b>" + sm.getSModelFqName() + "</b> is not under version control. <a href=\"more\">Read More...</a></font></body></html>";
-    JEditorPane pane = new JEditorPane();
-    pane.setBackground(POPUP_COLOR);
-    pane.setEditorKit(new HTMLEditorKit());
-    pane.setContentType(UIUtil.HTML_MIME);
-    pane.setEditable(false);
-    pane.setText(popupMessage);
-    return pane;
+  private MyNotificationPanel createPopupComponent(VirtualFile vcsRoot, SModelDescriptor sm) {
+    MyNotificationPanel panel = new MyNotificationPanel(vcsRoot);
+    panel.addModel(sm);
+    return panel;
+  }
+
+  private class MyNotificationPanel extends JEditorPane {
+    private final Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
+    private final VirtualFile myVcsRoot;
+
+    public MyNotificationPanel(VirtualFile vcsRoot) {
+      myVcsRoot = vcsRoot;
+
+      setBackground(POPUP_COLOR);
+      setEditorKit(new HTMLEditorKit());
+      setContentType(UIUtil.HTML_MIME);
+      setEditable(false);
+    }
+
+    public void addModel(SModelDescriptor d) {
+      myModels.add(d);
+      setText(getPopupText());
+    }
+
+    public String getDialogText() {
+      String text;
+      assert myModels.size() > 0;
+      if (myModels.size() <= 1) {
+        text = "model " + myModels.iterator().next().getSModelFqName();
+      } else {
+        text = "models";
+        for (SModelDescriptor m : myModels) {
+          text += "\n" + m.getSModelFqName();
+        }
+      }
+
+      return "You have changed " + text + ".\n" +
+        "Do you want to add folder " + myVcsRoot.getPath() + " to the list of vcs roots so you would be able to commit your changes?\n" +
+        "You can always do it later choosing Settings -> Project Settings -> Version Control.";
+    }
+
+    public String getDialogTitle() {
+      return "Add Folder " + myVcsRoot.getPath() + " To The List Of Vcs Roots?";
+    }
+
+    private String getPopupText() {
+      String mainText;
+      assert myModels.size() > 0;
+      if (myModels.size() <= 1) {
+        mainText = "Model <b>" + myModels.iterator().next().getSModelFqName() + "</b>";
+      } else {
+        mainText = "Models";
+        for (SModelDescriptor m : myModels) {
+          mainText += "<br>" + m.getSModelFqName();
+        }
+      }
+      return "<html><body><font size=\"3\">" + mainText + "<br>is not under version control. <a href=\"more\">Read More...</a></font></body></html>";
+    }
   }
 
   private class MyVcsRootsListener implements VcsRootsListener {

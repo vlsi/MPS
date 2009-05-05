@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.samples.complex.typesystem._Quotations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ImaginaryUnit_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {

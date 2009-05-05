@@ -6,6 +6,7 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
@@ -279,6 +280,54 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1233680214776">
         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1233680218110">
           <link role="concept" targetNodeId="3v.1205339194346" resolveInfo="IStringExpression" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1241536330057">
+      <property name="name" value="getScriptsFolder" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241536330058" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241536334553" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241536330060">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241536385032">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241536385033">
+            <property name="name" value="parentScriptsFolder" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241536385034" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536385035">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536385036">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241536385037" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1241536385038">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1241536385039">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1241536385040">
+                      <link role="conceptDeclaration" targetNodeId="3v.1202916958754" resolveInfo="MPSLayout" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1241536385041">
+                <link role="property" targetNodeId="3v.1229522370639" resolveInfo="scriptsFolder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1241536387114">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241536387115">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241536395452">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241536397788">
+                <property name="value" value="build" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1241536390972">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1241536392163" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241536388925">
+              <link role="variableDeclaration" targetNodeId="1241536385033" resolveInfo="parentScriptsFolder" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241536408545">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241536412202">
+            <link role="variableDeclaration" targetNodeId="1241536385033" resolveInfo="parentScriptsFolder" />
+          </node>
         </node>
       </node>
     </node>

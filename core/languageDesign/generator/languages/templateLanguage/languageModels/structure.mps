@@ -936,7 +936,6 @@
     <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1167945743727">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1167945743728" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1167945743729">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
