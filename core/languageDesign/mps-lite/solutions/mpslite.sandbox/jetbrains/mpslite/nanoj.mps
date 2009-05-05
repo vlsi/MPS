@@ -739,8 +739,8 @@
     </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1241535704477">
       <property name="name" value="HAIR" />
-      <link role="baseMethodDeclaration" targetNodeId="1241010708676" resolveInfo="Hare" />
-      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241535711119">
+      <link role="baseMethodDeclaration" targetNodeId="1241003183174" resolveInfo="Hare" />
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241536011983">
         <property name="value" value="2" />
       </node>
     </node>
