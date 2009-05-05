@@ -127,9 +127,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184783914166">
         <property name="name" value="op" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184783914167">
-          <link role="concept" targetNodeId="3.1151701983961" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184783914167" />
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223648195555">
         <link role="annotation" targetNodeId="19.1223644778913" resolveInfo="CheckingMethod" />
@@ -399,9 +397,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184844804682">
         <property name="name" value="op" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184844804683">
-          <link role="concept" targetNodeId="3.1151701983961" />
-        </node>
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184844804683" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184844804684">
         <property name="name" value="target" />
@@ -1847,11 +1843,8 @@
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184851121761">
           <link role="baseMethodDeclaration" targetNodeId="1184844804647" resolveInfo="setInputElementType" />
           <link role="classConcept" targetNodeId="1178725704623" resolveInfo="RulesFunctions_Collections" />
-          <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1184851128110">
-            <link role="concept" targetNodeId="3.1151701983961" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184851124347">
-              <link role="variableDeclaration" targetNodeId="1178733734462" resolveInfo="op" />
-            </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184851124347">
+            <link role="variableDeclaration" targetNodeId="1178733734462" resolveInfo="op" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1184851146405">
             <link role="applicableNode" targetNodeId="1178725704691" resolveInfo="closureParameter" />
