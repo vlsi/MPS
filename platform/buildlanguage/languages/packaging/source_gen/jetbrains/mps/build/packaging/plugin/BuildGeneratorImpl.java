@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.Solution;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
@@ -65,7 +66,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         });
       }
-    });
+    }, ModalityState.NON_MODAL);
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
@@ -143,6 +144,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   protected void finishGeneration(SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
+    targetModelDescriptor.getModule().save();
     targetModelDescriptor.save();
     MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
     editorOpener.openNode(mpsLayout);

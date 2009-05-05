@@ -24,7 +24,7 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
   public GenerateCustomMPSBuildForProjectAction_Action() {
     super("Custom MPS Build Script", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()

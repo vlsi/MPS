@@ -6,12 +6,14 @@ import jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl;
 import com.intellij.openapi.project.Project;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import jetbrains.mps.build.packaging.plugin.NodeData;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import com.intellij.openapi.application.ApplicationManager;
+import java.util.List;
+import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Macros;
 import java.io.File;
 import jetbrains.mps.build.packaging.plugin.PackagingLanguageGenerator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
@@ -42,16 +45,32 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     return super.isValid() && StringUtils.isNotEmpty(this.myPathToBuildTools);
   }
 
-  public void generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
+    final SModelDescriptor descriptor = super.getSModelDescriptor(indicator);
     final Language custommpsLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps");
     ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {
         ModuleReference moduleReference = custommpsLanguage.getModuleReference();
-        targetModelDescriptor.getModule().addUsedLangauge(moduleReference);
-        targetModelDescriptor.getSModel().addLanguage(moduleReference);
+        descriptor.getModule().addUsedLangauge(moduleReference);
       }
     });
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            ModuleReference moduleReference = custommpsLanguage.getModuleReference();
+            descriptor.getSModel().addLanguage(moduleReference);
+          }
+        });
+      }
+    });
+    return descriptor;
+  }
+
+  public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
     // 
     SNode zipNode = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");
@@ -87,6 +106,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
       PackagingLanguageGenerator.createPath(buildToolsPath, "", this.myPathToBuildTools);
     }
     SLinkOperations.setTarget(mpsBuild, "pathToBuildToolsZip", buildToolsPath, true);
+    SPropertyOperations.set(mpsLayout, "scriptsFolder", "build");
     this.finishGeneration(targetModelDescriptor, mpsLayout);
   }
 
