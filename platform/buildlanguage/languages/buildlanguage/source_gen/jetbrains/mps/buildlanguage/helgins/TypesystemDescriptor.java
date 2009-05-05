@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
-public class HelginsDescriptor extends BaseHelginsDescriptor {
+public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
-  public HelginsDescriptor() {
+  public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_PropertyDeclaration_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
