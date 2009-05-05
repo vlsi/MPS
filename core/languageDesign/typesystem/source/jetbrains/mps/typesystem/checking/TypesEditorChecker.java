@@ -40,8 +40,8 @@ import java.util.*;
  * Time: 15:04:28
  * To change this template use File | Settings | File Templates.
  */
-public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
-  private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
+public class TypesEditorChecker extends EditorCheckerAdapter {
+  private static Logger LOG = Logger.getLogger(TypesEditorChecker.class);
 
   private Timer myTimer = new Timer("helgins interruptor");
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();

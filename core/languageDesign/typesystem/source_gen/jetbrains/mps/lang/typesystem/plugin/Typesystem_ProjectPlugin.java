@@ -14,7 +14,7 @@ public class Typesystem_ProjectPlugin extends BaseProjectPlugin {
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     {
-      BaseCustomProjectPlugin plugin = new HelginsPlugin_CustomProjectPlugin();
+      BaseCustomProjectPlugin plugin = new TypesystemPlugin_CustomProjectPlugin();
       ListSequence.fromList(res).addElement(plugin);
       plugin.init(project);
     }

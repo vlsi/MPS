@@ -1387,7 +1387,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration" id="1206189513856">
-    <property name="name" value="HelginsPlugin" />
+    <property name="name" value="TypesystemPlugin" />
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215438760598">
       <property name="name" value="mySupertypesViewTool" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215438760599" />
@@ -1398,8 +1398,8 @@
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1215438799718">
       <property name="name" value="myChecker" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1215438799719" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438802898">
-        <link role="classifier" targetNodeId="28.~HelginsTypesEditorChecker" resolveInfo="HelginsTypesEditorChecker" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241523876973">
+        <link role="classifier" targetNodeId="28.~TypesEditorChecker" resolveInfo="TypesEditorChecker" />
       </node>
     </node>
     <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1206190084322">
@@ -1407,8 +1407,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211475061618">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1211475061619">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888414346">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888414363">
-                <link role="baseMethodDeclaration" targetNodeId="28.~HelginsTypesEditorChecker.&lt;init&gt;()" resolveInfo="HelginsTypesEditorChecker" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1241523882440">
+                <link role="baseMethodDeclaration" targetNodeId="28.~TypesEditorChecker.&lt;init&gt;()" resolveInfo="TypesEditorChecker" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211475061621">
@@ -1510,7 +1510,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219142080011">
-                  <link role="baseMethodDeclaration" targetNodeId="28.~HelginsTypesEditorChecker.dispose():void" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration" targetNodeId="28.~TypesEditorChecker.dispose():void" resolveInfo="dispose" />
                 </node>
               </node>
             </node>
