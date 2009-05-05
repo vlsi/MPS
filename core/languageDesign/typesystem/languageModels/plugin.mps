@@ -80,9 +80,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1206185060411">
         <link role="action" targetNodeId="1206184013394" resolveInfo="ShowRulesWhichAffectNodeType" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205606669810">
-        <link role="action" targetNodeId="1205606256131" resolveInfo="ShowSupertypes" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205244470519">
@@ -98,6 +95,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205245331359">
     <property name="name" value="TypesystemEditorPopupInternal" />
+    <property name="isInternal" value="true" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205245368690">
       <link role="modifiedGroup" targetNodeId="4.1204991231476" resolveInfo="EditorPopup" />
     </node>
@@ -111,24 +109,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1232296044963">
         <link role="action" targetNodeId="1232294286916" resolveInfo="TestSubtypingGraph" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1205606256131">
-    <property name="name" value="ShowSupertypes" />
-    <property name="caption" value="Show Supertypes" />
-    <property name="package" value="Actions" />
-    <property name="isAlwaysVisible" value="true" />
-    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1205606256134">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205606256135" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647147">
-      <property name="name" value="operationContext" />
-      <link role="key" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="1205870959450">
-      <property name="name" value="node" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205870959451" />
-      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1205870982126" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1206101816406">

@@ -12,7 +12,7 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
 
   public TypesystemEditorPopupInternal_ActionGroup() {
     super("TypesystemEditorPopupInternal", ID);
-    this.setIsInternal(false);
+    this.setIsInternal(true);
     this.setPopup(false);
     try {
       this.addAction("jetbrains.mps.lang.typesystem.plugin.SliceWithNode_Action", "jetbrains.mps.lang.typesystem");

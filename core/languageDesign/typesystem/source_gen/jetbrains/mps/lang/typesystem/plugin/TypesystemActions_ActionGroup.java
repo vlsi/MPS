@@ -19,7 +19,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.workbench.actions.nodes.ShowNodeTypeAction", "jetbrains.mps.lang.typesystem");
       this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
       this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action", "jetbrains.mps.lang.typesystem");
-      this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowSupertypes_Action", "jetbrains.mps.lang.typesystem");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
