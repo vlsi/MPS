@@ -219,7 +219,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
     if (!isExact) {
-      Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(concept));
+      Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
       for (String fqName : fqNames) {
         candidates.addAll(getCandidates(scopeFiles, fqName));
       }
