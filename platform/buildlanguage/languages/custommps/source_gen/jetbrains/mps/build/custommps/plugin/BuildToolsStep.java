@@ -64,6 +64,9 @@ public class BuildToolsStep extends AbstractStep {
       this.myErrorHandler.setErrorText("Empty path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");
     } else if (!(new File(path).exists())) {
       this.myErrorHandler.setErrorText("Illegal path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");
+    } else
+    {
+      this.myErrorHandler.setErrorText(null);
     }
   }
 

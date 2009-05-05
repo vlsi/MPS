@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -1342,6 +1342,24 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1241546707052">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241546707053">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241546725750">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241546731044">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241546727165">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1241546725751" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1241546730074">
+                      <link role="fieldDeclaration" targetNodeId="1241460184377" resolveInfo="myErrorHandler" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241546733052">
+                    <link role="baseMethodDeclaration" targetNodeId="3v.1224788785255" resolveInfo="setErrorText" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1241546739602" />
                   </node>
                 </node>
               </node>
