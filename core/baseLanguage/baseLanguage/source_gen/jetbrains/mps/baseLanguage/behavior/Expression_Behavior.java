@@ -46,7 +46,7 @@ public class Expression_Behavior {
   }
 
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    return false;
+    return SConceptPropertyOperations.getBoolean(thisNode, "legalAsStatement");
   }
 
   public static Object call_eval_1213877519769(SNode thisNode, IModule module) {

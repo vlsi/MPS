@@ -63,6 +63,9 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1238860354371">
       <property name="name" value="constant" />
     </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1241531154556">
+      <property name="name" value="legalAsStatement" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1107216504832">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>

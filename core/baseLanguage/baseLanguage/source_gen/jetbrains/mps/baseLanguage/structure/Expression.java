@@ -12,6 +12,7 @@ public class Expression extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Expression";
   public static final String CPR_Lvalue = "lvalue";
   public static final String CPR_Constant = "constant";
+  public static final String CPR_LegalAsStatement = "legalAsStatement";
 
   public Expression(SNode node) {
     super(node);

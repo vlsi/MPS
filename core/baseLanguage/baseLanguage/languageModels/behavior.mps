@@ -9279,9 +9279,12 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239211900845" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239211943662" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239211900847">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239211957476">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1239211958613">
-            <property name="value" value="false" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241531203715">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241531204639">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241531203716" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1241531205814">
+              <link role="conceptProperty" targetNodeId="1.1241531154556" resolveInfo="legalAsStatement" />
+            </node>
           </node>
         </node>
       </node>
