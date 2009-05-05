@@ -75,7 +75,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240676129847">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1241540614005">
           <link role="baseMethodDeclaration" targetNodeId="1241539163414" resolveInfo="Donkey" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241542995924">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241544394272">
             <property name="value" value="3" />
           </node>
         </node>
@@ -120,6 +120,13 @@
       <property name="name" value="HAIR" />
       <link role="baseMethodDeclaration" targetNodeId="1241003183174" resolveInfo="Hare" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241536011983">
+        <property name="value" value="2" />
+      </node>
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1241544357909">
+      <property name="name" value="D" />
+      <link role="baseMethodDeclaration" targetNodeId="1241010708676" resolveInfo="Hare" />
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241544386990">
         <property name="value" value="2" />
       </node>
     </node>
