@@ -85,17 +85,17 @@ public class BuildScriptRunner extends BaseRunner {
       String javaBinHome = javaHome + File.separator + "bin" + File.separator;
       String osName = System.getProperty("os.name");
       if (osName.startsWith("Mac OS")) {
-        if (new File(javaBinHome + "javac").exists()) {
+        if (new File(javaBinHome + "java").exists()) {
           return javaHome;
         }
       } else
       if (osName.startsWith("Windows")) {
-        if (new File(javaBinHome + "javac.exe").exists()) {
+        if (new File(javaBinHome + "java.exe").exists()) {
           return javaHome;
         }
       } else
       {
-        if (new File(javaBinHome + "javac").exists()) {
+        if (new File(javaBinHome + "java").exists()) {
           return javaHome;
         }
       }

@@ -74,7 +74,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225567253971">
     <property name="name" value="BuildScriptRunner" />
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1225567253972">
       <property name="name" value="myComponent" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1225567253973" />
@@ -657,7 +657,7 @@
                               <link role="variableDeclaration" targetNodeId="1236272906836" resolveInfo="javaBinHome" />
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236273174090">
-                              <property name="value" value="javac.exe" />
+                              <property name="value" value="java.exe" />
                             </node>
                           </node>
                         </node>
@@ -687,7 +687,7 @@
                                 <link role="variableDeclaration" targetNodeId="1236272906836" resolveInfo="javaBinHome" />
                               </node>
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236273194163">
-                                <property name="value" value="javac" />
+                                <property name="value" value="java" />
                               </node>
                             </node>
                           </node>
@@ -729,7 +729,7 @@
                             <link role="variableDeclaration" targetNodeId="1236272906836" resolveInfo="javaBinHome" />
                           </node>
                           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236273136155">
-                            <property name="value" value="javac" />
+                            <property name="value" value="java" />
                           </node>
                         </node>
                       </node>
@@ -1299,7 +1299,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225567254164">
     <property name="name" value="BuildScriptRunnerComponent" />
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1225567254165">
       <property name="name" value="myConsoleView" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1225567254166" />
@@ -1504,7 +1504,7 @@
     <property name="name" value="BuildLanguageTool" />
     <property name="caption" value="Run Build Language Project" />
     <property name="icon" value="${language_descriptor}\icons\build.png" />
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <node role="getComponentBlock" type="jetbrains.mps.lang.plugin.structure.GetComponentBlock" id="1225567254246">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225567254247">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225567254248">
@@ -1570,7 +1570,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1225568085443">
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <property name="name" value="RunBuildLanguageScript" />
     <property name="caption" value="Run Build Language Project" />
     <property name="iconPath" value="${language_descriptor}\icons\run.png" />
@@ -1654,6 +1654,36 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241549100282">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241549100283">
+                <property name="name" value="antScript" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241549100284">
+                  <link role="concept" targetNodeId="2v.1240833739976" resolveInfo="IAntScript" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1241549129646">
+              <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1241549129647">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241549129648">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241549130687">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1241549181262">
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241549176577">
+                        <link role="variableDeclaration" targetNodeId="1241549100283" resolveInfo="antScript" />
+                      </node>
+                      <node role="rValue" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1241549182050">
+                        <link role="concept" targetNodeId="2v.1240833739976" resolveInfo="IAntScript" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241549182051">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241549182052" />
+                          <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1241549182053">
+                            <link role="member" targetNodeId="1225568194417" resolveInfo="currentNode" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240833820345">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240833821618">
                 <link role="baseMethodDeclaration" targetNodeId="1240834761784" resolveInfo="runAntScript" />
@@ -1664,14 +1694,8 @@
                     <link role="member" targetNodeId="1225568233237" resolveInfo="mpsProject" />
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1240833846409">
-                  <link role="concept" targetNodeId="2v.1240833739976" resolveInfo="IAntScript" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240833843441">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1240833843442" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1240833843443">
-                      <link role="member" targetNodeId="1225568194417" resolveInfo="currentNode" />
-                    </node>
-                  </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241549100292">
+                  <link role="variableDeclaration" targetNodeId="1241549100283" resolveInfo="antScript" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240833857775">
                   <link role="variableDeclaration" targetNodeId="1225568251903" resolveInfo="file" />
@@ -2114,7 +2138,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1225570357784">
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <property name="name" value="ProjectPaneNodeAddition" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1225570370145">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225570459385">
@@ -2498,7 +2522,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239804220497" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240833723109">
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <property name="name" value="BuildTableModel" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1240833723110">
       <property name="name" value="loadState" />
@@ -3502,7 +3526,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240833723564" />
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" id="1240833723566">
-    <property name="package" value="run.preferences" />
+    <property name="package" value="runner.preferences" />
     <property name="name" value="AntRunnerPreferences" />
     <node role="persistenPropertyDeclaration" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="1240833723567">
       <property name="name" value="data" />
@@ -3796,7 +3820,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240833723703">
-    <property name="package" value="run.preferences" />
+    <property name="package" value="runner.preferences" />
     <property name="name" value="AntRunnerPreferencesPage" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240833723704">
       <property name="name" value="updateState" />
@@ -4027,7 +4051,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240834761783">
-    <property name="package" value="run" />
+    <property name="package" value="runner" />
     <property name="name" value="AntRunner" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1240834761784">
       <property name="name" value="runAntScript" />
