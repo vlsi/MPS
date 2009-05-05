@@ -707,6 +707,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241529468611">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241529468612">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241529468613">
+              <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241529475413">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

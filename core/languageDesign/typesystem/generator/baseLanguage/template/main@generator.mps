@@ -3975,7 +3975,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1175243271669">
-    <property name="name" value="HelginsDescriptor" />
+    <property name="name" value="TypesystemDescriptor" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1175247626875">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1175247626876" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175247626877">

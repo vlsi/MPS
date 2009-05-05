@@ -101,10 +101,14 @@ public class RulesManager {
     SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
     if (helginsModelDescriptor == null) return false;
     String packageName = helginsModelDescriptor.getLongName();
-    String classname = "HelginsDescriptor";
+    String oldClassname = "HelginsDescriptor";
+    String classname = "TypesystemDescriptor";
     try {
       IHelginsDescriptor helginsDescriptor;
       Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
+      if (c == null) {
+        c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + oldClassname);
+      }
       if (c != null) {
         helginsDescriptor = c.newInstance();
         myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
