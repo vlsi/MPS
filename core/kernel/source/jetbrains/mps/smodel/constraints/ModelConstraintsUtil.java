@@ -72,7 +72,7 @@ public class ModelConstraintsUtil {
         try {
           status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(t, referenceNode != null ? referenceNode : enclosingNode_);
           status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
         } finally {
           if (typeCheckingContext != null) {

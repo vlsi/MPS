@@ -158,7 +158,7 @@
               </node>
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1218737853465">
                 <link role="concept" targetNodeId="1.1205752633985" resolveInfo="ThisClassifierExpresson" />
-                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1218737806139" />
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="1241523558136" />
               </node>
             </node>
           </node>
