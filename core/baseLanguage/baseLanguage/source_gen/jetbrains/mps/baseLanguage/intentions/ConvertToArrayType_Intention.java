@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,6 +36,10 @@ public class ConvertToArrayType_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert to Array Type";
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -7365,6 +7365,43 @@
         </node>
       </node>
     </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1241450324705">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241450324706">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241450349602">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1241450368514">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1241450381776">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1241450383498">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241450385095">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1241450384969" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="1241450386020">
+                    <link role="conceptOfParent" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+                    <link role="linkInParent" targetNodeId="1.1107797138135" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1241450369721">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241450370802">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1241450370738" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="1241450371493">
+                    <link role="conceptOfParent" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                    <link role="linkInParent" targetNodeId="1.1165602531693" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1241450366901">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241450366902">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1241450366903" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="1241450366904">
+                  <link role="conceptOfParent" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <link role="linkInParent" targetNodeId="1.1095933932569" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1226918395187">
     <property name="name" value="RemoveArrayType" />
