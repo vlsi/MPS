@@ -240,7 +240,6 @@ public class GenerationController {
           continue;
         }
 
-
         info("");
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
@@ -295,6 +294,8 @@ public class GenerationController {
 
     if (module != null && myGenerationType.requiresCompilationAfterGeneration()) {
       if (!isIDEAPresent() && !module.isCompileInMPS()) {
+        error("Module is compiled in IntelliJ IDEA but IntelliJ IDEA isn't present.");
+        error("Can't compile it.");
         compiledSuccessfully = false;
       } else {
         checkMonitorCanceled();
