@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
 import java.util.List;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
@@ -39,19 +39,7 @@ public class PackagingLanguageGenerator {
 
   public static SNode createBasedirPath(String macro, String path) {
     SNode basedirPath = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.BaseDirPath", null);
-    SPropertyOperations.set(SLinkOperations.getTarget(basedirPath, "macro", true), "name", macro);
-    String[] pathComponents = path.split(File.separator.replace("\\", "\\\\"));
-    if (pathComponents.length > 0) {
-      List<SNode> pathComponentNodes = ListSequence.fromList(new ArrayList<SNode>());
-      for(String pathComponentName : pathComponents) {
-        if (StringUtils.isEmpty(pathComponentName)) {
-          continue;
-        }
-        ListSequence.fromList(pathComponentNodes).addElement(PackagingLanguageGenerator.createPathComponent(pathComponentName));
-      }
-      SNode compositePathComponent = createCompositePathComponent(pathComponentNodes);
-      SLinkOperations.setTarget(basedirPath, "compositePathComponent", compositePathComponent, true);
-    }
+    PackagingLanguageGenerator.createPath(basedirPath, macro, path);
     return basedirPath;
   }
 
@@ -65,6 +53,22 @@ public class PackagingLanguageGenerator {
     SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", text);
     return pathComponent;
+  }
+
+  public static void createPath(SNode path, String macro, String pathTail) {
+    SPropertyOperations.set(SLinkOperations.getTarget(path, "macro", true), "name", macro);
+    String[] pathComponents = pathTail.split(File.separator.replace("\\", "\\\\"));
+    if (pathComponents.length > 0) {
+      List<SNode> pathComponentNodes = ListSequence.fromList(new ArrayList<SNode>());
+      for(String pathComponentName : pathComponents) {
+        if (StringUtils.isEmpty(pathComponentName)) {
+          continue;
+        }
+        ListSequence.fromList(pathComponentNodes).addElement(PackagingLanguageGenerator.createPathComponent(pathComponentName));
+      }
+      SNode compositePathComponent = createCompositePathComponent(pathComponentNodes);
+      SLinkOperations.setTarget(path, "compositePathComponent", compositePathComponent, true);
+    }
   }
 
 }

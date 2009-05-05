@@ -103,6 +103,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+    SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
+    this.finishGeneration(targetModelDescriptor, mpsLayout);
+  }
+
+  protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // create mps layout
     SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
     // add mps layout to the target model
@@ -110,15 +115,19 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     targetSModel.addRoot(mpsLayout);
     // set properties
     SPropertyOperations.set(mpsLayout, "name", name);
+    // create basedir path
+    SNode basedirPath;
     String result = Macros.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");
     if (index > -1) {
       String macro = result.substring(result.indexOf("{") + 1, index);
-      SLinkOperations.setTarget(mpsLayout, "baseDirectory", PackagingLanguageGenerator.createBasedirPath(macro, result.substring(index + 2)), true);
+      basedirPath = PackagingLanguageGenerator.createBasedirPath(macro, result.substring(index + 2));
     } else
     {
-      SLinkOperations.setTarget(mpsLayout, "baseDirectory", PackagingLanguageGenerator.createBasedirPath("", basedir), true);
+      basedirPath = PackagingLanguageGenerator.createBasedirPath("", basedir);
     }
+    SLinkOperations.setTarget(mpsLayout, "baseDirectory", basedirPath, true);
+    // 
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
     // create zip
@@ -130,6 +139,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SLinkOperations.addChild(zip, "entry", folder);
     // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
+    return mpsLayout;
+  }
+
+  protected void finishGeneration(SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
     targetModelDescriptor.save();
     MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
     editorOpener.openNode(mpsLayout);
