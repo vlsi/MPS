@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.security.SecureRandom;
 
 /**
  * User: Sergey Dmitriev
@@ -54,7 +55,7 @@ public final class SNode {
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
-  private static long ourCounter = 0;
+  private static long ourCounter;
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
@@ -83,6 +84,14 @@ public final class SNode {
   private String myLanguageNamespace;
 
   private BaseAdapter myAdapter;
+
+  static {
+    resetIdCounter();
+  }
+
+  static void resetIdCounter() {
+    ourCounter = Math.abs(new SecureRandom().nextLong());
+  }
 
   public static void setNodeMemeberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
@@ -1325,8 +1334,7 @@ public final class SNode {
   }
 
   public static SNodeId generateUniqueId() {
-    long id = System.currentTimeMillis() + ourCounter;
-    ourCounter++;
+    long id = Math.abs(ourCounter++);
     return new SNodeId.Regular(id);
   }
 

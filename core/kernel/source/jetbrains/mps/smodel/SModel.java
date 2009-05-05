@@ -1033,8 +1033,8 @@ public class SModel implements Iterable<SNode> {
 
     SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
-      LOG.errorWithTrace("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
-      return;
+      SNode.resetIdCounter();
+      throw new RuntimeException("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
     }
     myIdToNodeMap.put(id, node);
   }
