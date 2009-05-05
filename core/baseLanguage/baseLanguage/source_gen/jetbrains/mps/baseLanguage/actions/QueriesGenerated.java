@@ -939,7 +939,7 @@ __switch__:
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null);
-                SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
+                SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
                   for(SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
@@ -986,7 +986,7 @@ __switch__:
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null);
-                SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
+                SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
                   for(SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);

@@ -17,11 +17,11 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "constructorDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "baseMethodDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "constructorDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "baseMethodDeclaration");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {

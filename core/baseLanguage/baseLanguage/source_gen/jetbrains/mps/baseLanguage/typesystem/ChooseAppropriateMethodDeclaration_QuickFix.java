@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -33,6 +34,43 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constructorCall, "actualArgument")) {
           boolean good = true;
           List<SNode> parameterTypes = ResolveUtil.parameterTypes(constructorDeclaration, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(constructorCall), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((SNode)this.getField("classifier")[0]));
+          {
+            SNode parameterType;
+            SNode argument;
+            Iterator<SNode> parameterType_iterator = ListSequence.fromList(parameterTypes).iterator();
+            Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(constructorCall, "actualArgument", true)).iterator();
+            while (true) {
+              if (!(parameterType_iterator.hasNext())) {
+                break;
+              }
+              if (!(argument_iterator.hasNext())) {
+                break;
+              }
+              parameterType = parameterType_iterator.next();
+              argument = argument_iterator.next();
+              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), parameterType))) {
+                good = false;
+                break;
+              }
+            }
+          }
+          if (good) {
+            SLinkOperations.setTarget(constructorCall, "baseMethodDeclaration", constructorDeclaration, false);
+            return;
+          }
+        }
+      }
+    } else if (SNodeOperations.isInstanceOf(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement") && SNodeOperations.isInstanceOf(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      SNode classConcept = SNodeOperations.cast(((SNode)this.getField("classifier")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      SNode constructorCall = SNodeOperations.cast(((SNode)this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement");
+      List<SNode> list = SLinkOperations.getTargets(classConcept, "constructor", true);
+      for(SNode constructorDeclaration : list) {
+        if (SLinkOperations.getCount(constructorDeclaration, "parameter") == SLinkOperations.getCount(constructorCall, "actualArgument")) {
+          boolean good = true;
+          List<SNode> parameterTypes = ListSequence.fromList(new ArrayList<SNode>());
+          for(SNode parameter : SLinkOperations.getTargets(constructorDeclaration, "parameter", true)) {
+            ListSequence.fromList(parameterTypes).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)));
+          }
           {
             SNode parameterType;
             SNode argument;

@@ -17,11 +17,11 @@ public class ThisConstructorInvocation_constructorDeclaration_ReferentConstraint
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "constructorDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "baseMethodDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "constructorDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "baseMethodDeclaration");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {

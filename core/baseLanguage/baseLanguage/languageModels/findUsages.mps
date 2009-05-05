@@ -2163,8 +2163,8 @@
                                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1204127398194" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206444676604">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204127398197">
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1204127553635">
-                                      <link role="link" targetNodeId="1.1070475587104" />
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241539699449">
+                                      <link role="link" targetNodeId="1.1068499141038" />
                                     </node>
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204127548427">
                                       <link role="variableDeclaration" targetNodeId="1204127428918" resolveInfo="invocationNode" />
@@ -2245,8 +2245,8 @@
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204127543436">
                                   <link role="variableDeclaration" targetNodeId="1204127428918" resolveInfo="invocationNode" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1204127551757">
-                                  <link role="link" targetNodeId="1.1070475587104" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241539685059">
+                                  <link role="link" targetNodeId="1.1068499141038" />
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1204127398235" />
@@ -2277,8 +2277,8 @@
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1204127398248">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206444685029">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204127398252">
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1204127483532">
-                              <link role="link" targetNodeId="1.1070475587104" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241539681180">
+                              <link role="link" targetNodeId="1.1068499141038" />
                             </node>
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204127481090">
                               <link role="variableDeclaration" targetNodeId="1204127428918" resolveInfo="invocationNode" />

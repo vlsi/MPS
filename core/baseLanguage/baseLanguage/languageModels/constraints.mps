@@ -614,7 +614,7 @@
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104847239">
     <link role="concept" targetNodeId="1.1070475587102" resolveInfo="SuperConstructorInvocation" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104847240">
-      <link role="applicableLink" targetNodeId="1.1070475587103" />
+      <link role="applicableLink" targetNodeId="1.1241540960362" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847241">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847242">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104847243">
@@ -886,7 +886,7 @@
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104855787">
     <link role="concept" targetNodeId="1.1178893518978" resolveInfo="ThisConstructorInvocation" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104855788">
-      <link role="applicableLink" targetNodeId="1.1178893537034" />
+      <link role="applicableLink" targetNodeId="1.1241540960362" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104855789">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104855790">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104855791">

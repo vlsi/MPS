@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
@@ -4923,8 +4923,8 @@
             <property name="withSeparator" value="true" />
             <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236253659461">
               <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236253659132" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1236253661278">
-                <link role="link" targetNodeId="1.1070475587104" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241539728280">
+                <link role="link" targetNodeId="1.1068499141038" />
               </node>
             </node>
           </node>
@@ -5278,8 +5278,8 @@
             <property name="withSeparator" value="true" />
             <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236253686228">
               <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236253685883" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1236253688060">
-                <link role="link" targetNodeId="1.1178893537035" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241541649707">
+                <link role="link" targetNodeId="1.1068499141038" />
               </node>
             </node>
           </node>
