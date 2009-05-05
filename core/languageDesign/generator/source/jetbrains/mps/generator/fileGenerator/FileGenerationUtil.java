@@ -140,6 +140,18 @@ public class FileGenerationUtil {
     cleanUp(context, new HashSet<File>(0), directories);
   }
 
+  public static void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
+    File outDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
+    if (!outDir.exists()) {
+      if (!outDir.mkdirs()) {
+        throw new RuntimeException("Can't create " + outDir);
+      }
+    }
+    if (!outDir.setLastModified(System.currentTimeMillis())) {
+      throw new RuntimeException("Can't touch " + outDir);
+    }
+  }
+
   public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
@@ -164,4 +176,6 @@ public class FileGenerationUtil {
       }
     }
   }
+  
+
 }

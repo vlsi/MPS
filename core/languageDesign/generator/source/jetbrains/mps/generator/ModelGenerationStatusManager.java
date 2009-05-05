@@ -67,7 +67,7 @@ public class ModelGenerationStatusManager {
     }
 
     if (isEmpty(sm)) {
-      return getLastGenerationTime(sm)!=0 && sm.lastChangeTime() >= getLastGenerationTime(sm);
+      return getLastGenerationTime(sm) != 0 && sm.lastChangeTime() >= getLastGenerationTime(sm);
     }
 
     return sm.lastChangeTime() >= getLastGenerationTime(sm);
