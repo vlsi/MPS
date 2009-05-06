@@ -630,7 +630,7 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941218682">
                               <link role="variableDeclaration" targetNodeId="1240941184665" resolveInfo="t" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241008924604">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903121">
                               <link role="component" targetNodeId="2.1240933484206" resolveInfo="second" />
                             </node>
                           </node>
@@ -642,7 +642,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941200799">
                             <link role="variableDeclaration" targetNodeId="1240941184665" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241008922866">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903102">
                             <link role="component" targetNodeId="2.1240933472056" resolveInfo="first" />
                           </node>
                         </node>
@@ -708,7 +708,7 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587754">
                               <link role="variableDeclaration" targetNodeId="1241009587760" resolveInfo="t" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241009587755">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903159">
                               <link role="component" targetNodeId="1239977055868" resolveInfo="second" />
                             </node>
                           </node>
@@ -720,7 +720,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587758">
                             <link role="variableDeclaration" targetNodeId="1241009587760" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241009587759">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903140">
                             <link role="component" targetNodeId="1239977053138" resolveInfo="first" />
                           </node>
                         </node>
@@ -777,8 +777,8 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009714392">
                               <link role="variableDeclaration" targetNodeId="1241009714398" resolveInfo="t" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241009778912">
-                              <link role="component" targetNodeId="3.1241009497930" resolveInfo="right" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903197">
+                              <link role="component" targetNodeId="3.1241009497930" resolveInfo="second" />
                             </node>
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009714394">
@@ -789,8 +789,8 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009714396">
                             <link role="variableDeclaration" targetNodeId="1241009714398" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1241009775276">
-                            <link role="component" targetNodeId="3.1241009495081" resolveInfo="left" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903178">
+                            <link role="component" targetNodeId="3.1241009495081" resolveInfo="first" />
                           </node>
                         </node>
                       </node>
