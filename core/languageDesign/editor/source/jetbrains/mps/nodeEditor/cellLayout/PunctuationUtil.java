@@ -103,7 +103,7 @@ class PunctuationUtil {
     if (cell == null) {
       return true;
     }
-    return cell.getLastLeaf().getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
+    return cell.getLastLeaf().getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
   }
 
   static Boolean hasPunctuationLeft(EditorCell cell) {

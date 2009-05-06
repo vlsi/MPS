@@ -128,7 +128,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
         }
       };
       inlineStyle.apply(editorCell);

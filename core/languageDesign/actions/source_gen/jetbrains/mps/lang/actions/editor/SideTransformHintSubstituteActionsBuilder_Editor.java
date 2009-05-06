@@ -638,7 +638,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
         }
       };
       inlineStyle.apply(editorCell);

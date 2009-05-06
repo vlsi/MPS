@@ -32,7 +32,6 @@ import jetbrains.mps.workbench.search.SearchHistoryComponent;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
 import java.util.regex.Matcher;
 
 public class SearchPanel extends AbstractSearchPanel {
@@ -145,7 +144,7 @@ public class SearchPanel extends AbstractSearchPanel {
     boolean doubleSpace = false;
     for (EditorCell_Label cell : cells) {
       boolean punctuationLeft = cell.getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
-      boolean punctuationRight = cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGTH);
+      boolean punctuationRight = cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
       if (!punctuationLeft && !doubleSpace) {
         sourceBuilder.append(" ");
       }

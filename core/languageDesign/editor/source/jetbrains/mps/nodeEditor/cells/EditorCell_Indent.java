@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 public class EditorCell_Indent extends EditorCell_Label {
   public EditorCell_Indent(@NotNull EditorContext editorContext, SNode node) {
@@ -31,7 +30,7 @@ public class EditorCell_Indent extends EditorCell_Label {
 
     getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
     getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
-    getStyle().set(StyleAttributes.PUNCTUATION_RIGTH, true);
+    getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
     getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 

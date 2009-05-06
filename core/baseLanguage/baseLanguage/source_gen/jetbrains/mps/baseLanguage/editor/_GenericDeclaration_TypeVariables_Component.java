@@ -98,7 +98,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
         }
       };
       inlineStyle.apply(editorCell);

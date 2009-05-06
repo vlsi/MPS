@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 
@@ -395,7 +394,7 @@ public class EditorManager {
       setCellBackgroundColor(LightColors.BLUE);
 
       getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
-      getStyle().set(StyleAttributes.PUNCTUATION_RIGTH, true);
+      getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
       getStyle().set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
       getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, true);
 

@@ -4000,7 +4000,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1233759270401">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PUNCTUATION_RIGTH" resolveInfo="PUNCTUATION_RIGTH" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PUNCTUATION_RIGHT" resolveInfo="PUNCTUATION_RIGHT" />
       </node>
     </node>
   </node>

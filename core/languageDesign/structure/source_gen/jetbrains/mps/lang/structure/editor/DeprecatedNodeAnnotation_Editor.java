@@ -381,7 +381,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.MATCHING_LABEL, "brace");
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
         }
       };
       inlineStyle.apply(editorCell);

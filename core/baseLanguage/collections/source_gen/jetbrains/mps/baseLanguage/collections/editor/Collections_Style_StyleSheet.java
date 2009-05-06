@@ -31,7 +31,7 @@ public class Collections_Style_StyleSheet {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
         this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.PUNCTUATION_RIGTH, true);
+        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
       }
     };
   }

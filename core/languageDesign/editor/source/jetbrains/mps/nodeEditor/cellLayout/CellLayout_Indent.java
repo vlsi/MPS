@@ -340,7 +340,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (!myLineContent.contains(prevLeaf)) break;
 
         if (isNoWrap(result) || result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT) ||
-          prevLeaf.getStyle().get(StyleAttributes.PUNCTUATION_RIGTH)) {
+          prevLeaf.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT)) {
 
           result = prevLeaf;
         } else {
