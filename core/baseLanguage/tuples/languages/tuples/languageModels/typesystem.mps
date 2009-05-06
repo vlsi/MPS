@@ -2085,5 +2085,87 @@
       <link role="concept" targetNodeId="1.1240683407958" resolveInfo="InterfaceTupleType" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="8197465398807013607">
+    <property name="name" value="check_TupleComponentIsInScope" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8197465398807013608">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8197465398807016909">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8197465398807016910">
+          <property name="name" value="tupleComponents" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="8197465398807016911">
+            <link role="elementConcept" targetNodeId="1.1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8197465398807016912">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8197465398807016913">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8197465398807016914">
+                <link role="applicableNode" targetNodeId="8197465398807013610" resolveInfo="namedTupleLiteral" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8197465398807016915">
+                <link role="link" targetNodeId="1.1239560008022" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8197465398807016916">
+              <link role="link" targetNodeId="1.1239529553065" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="8197465398807015776">
+        <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8197465398807015788">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8197465398807015783">
+            <link role="applicableNode" targetNodeId="8197465398807013610" resolveInfo="namedTupleLiteral" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8197465398807016882">
+            <link role="link" targetNodeId="1.1239560910577" />
+          </node>
+        </node>
+        <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8197465398807015778">
+          <property name="name" value="ref" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8197465398807016886">
+            <link role="concept" targetNodeId="1.1239560581441" resolveInfo="NamedTupleComponentReference" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8197465398807015780">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8197465398807016936">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8197465398807016937">
+              <property name="name" value="tupleComponent" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8197465398807016938">
+                <link role="concept" targetNodeId="1.1239462176079" resolveInfo="NamedTupleComponentDeclaration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8197465398807016939">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8197465398807016940">
+                  <link role="variableDeclaration" targetNodeId="8197465398807015778" resolveInfo="ref" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8197465398807016941">
+                  <link role="link" targetNodeId="1.1239560595302" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="8197465398807016917">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8197465398807016922">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8197465398807016921">
+                <link role="variableDeclaration" targetNodeId="8197465398807016910" resolveInfo="tupleComponents" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="8197465398807016926">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8197465398807016942">
+                  <link role="variableDeclaration" targetNodeId="8197465398807016937" resolveInfo="tupleComponent" />
+                </node>
+              </node>
+            </node>
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8197465398807016943">
+              <property name="value" value="tuple component is out of scope" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8197465398807016944">
+              <link role="variableDeclaration" targetNodeId="8197465398807015778" resolveInfo="ref" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8197465398807013610">
+      <property name="name" value="namedTupleLiteral" />
+      <link role="concept" targetNodeId="1.1239559992092" resolveInfo="NamedTupleLiteral" />
+    </node>
+  </node>
 </model>
 
