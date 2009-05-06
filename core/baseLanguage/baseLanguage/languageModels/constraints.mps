@@ -567,7 +567,7 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239781735195">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239781737886">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1239781737166" />
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="192498826882128626" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1239781738718">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1239781740454">
                     <link role="conceptDeclaration" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
@@ -580,7 +580,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215682259266">
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1215682254061">
                 <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
-                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1215682243816" />
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" id="192498826882128627" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215682263686">
                 <link role="baseMethodDeclaration" targetNodeId="50.1215682129821" resolveInfo="getPossibleClassifiers" />

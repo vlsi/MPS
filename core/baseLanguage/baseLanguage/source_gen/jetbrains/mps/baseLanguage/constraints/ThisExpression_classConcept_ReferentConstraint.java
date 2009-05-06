@@ -27,10 +27,10 @@ public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
+    return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
   }
 
 }
