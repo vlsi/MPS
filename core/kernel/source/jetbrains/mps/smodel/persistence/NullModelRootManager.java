@@ -41,7 +41,7 @@ class NullModelRootManager extends AbstractModelRootManager {
   }
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    String message = "saving model " + modelDescriptor + " using null model root manager \n";
+    String message = "saving model " + modelDescriptor.getSModelFqName() + " using null model root manager \n";
     message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
     LOG.error(message);
   }
