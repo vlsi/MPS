@@ -24,6 +24,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.runtime.BundleClassLoader;
 
 import java.util.*;
 
@@ -229,14 +230,14 @@ public class GenerationPartitioner {
             GenerationPartitioningUtil.asString(rule, true) +
             "\nmapping config\n'" + NameUtil.nodeFQName(lesserPriMapping) + "'\nis not in priority map.";
           //
-          message += "\ndisposed: " + lesserPriMapping.getModel().isDisposed();
+          message += "\ndisposed: " + ((BundleClassLoader) lesserPriMapping.getClass().getClassLoader()).isDisposed();
           message += "\n---------------------------";
           message += "\ncheck priority map: ";
           // check priority map
           for (MappingConfiguration mappingConfig : myPriorityMap.keySet()) {
             if (mappingConfig.getName().equals(lesserPriMapping.getName())) {
               message += "\n" + NameUtil.nodeFQName(mappingConfig);
-              message += "\n  disposed: " + mappingConfig.getModel().isDisposed();
+              message += "\n  disposed: " + ((BundleClassLoader) mappingConfig.getClass().getClassLoader()).isDisposed();
               message += "\n  same adapter: " + (mappingConfig == lesserPriMapping);
               message += "\n  same node: " + (mappingConfig.getNode() == lesserPriMapping.getNode());
               message += "\n  same model: " + (mappingConfig.getModel() == lesserPriMapping.getModel());
