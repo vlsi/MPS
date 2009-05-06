@@ -1995,13 +1995,13 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="1241009642166">
                     <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642167">
-                      <link role="componentDeclaration" targetNodeId="2.1240933472056" resolveInfo="first" />
+                      <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642168">
                         <property name="value" value="a" />
                       </node>
                     </node>
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642169">
-                      <link role="componentDeclaration" targetNodeId="2.1240933484206" resolveInfo="second" />
+                      <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642170">
                         <property name="value" value="A" />
                       </node>
@@ -2010,13 +2010,13 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="1241009642171">
                     <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642172">
-                      <link role="componentDeclaration" targetNodeId="2.1240933472056" resolveInfo="first" />
+                      <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642173">
                         <property name="value" value="b" />
                       </node>
                     </node>
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642174">
-                      <link role="componentDeclaration" targetNodeId="2.1240933484206" resolveInfo="second" />
+                      <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642175">
                         <property name="value" value="B" />
                       </node>
@@ -2025,13 +2025,13 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="1241009642176">
                     <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="Pair" />
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642177">
-                      <link role="componentDeclaration" targetNodeId="2.1240933472056" resolveInfo="first" />
+                      <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642178">
                         <property name="value" value="c" />
                       </node>
                     </node>
                     <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="1241009642179">
-                      <link role="componentDeclaration" targetNodeId="2.1240933484206" resolveInfo="second" />
+                      <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009642180">
                         <property name="value" value="C" />
                       </node>
