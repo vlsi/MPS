@@ -371,6 +371,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1151689724996">
     <property name="name" value="SequenceType" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="2.1068431790189" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1151689745422">
       <property name="metaClass" value="aggregation" />
@@ -385,6 +386,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1151701983961">
     <property name="name" value="SequenceOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1151702039690">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
@@ -395,6 +397,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1151702311717">
     <property name="name" value="ToListOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1151702364436">
       <property name="value" value="toList" />
@@ -409,6 +412,7 @@
     <property name="name" value="ValueSupplierBlock" />
     <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1152728232947" />
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737837" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141063573">
     <property name="name" value="TraversalYieldStatement" />
@@ -427,6 +431,7 @@
       <property name="role" value="value" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737836" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141130888">
     <property name="name" value="TraversalStopStatement" />
@@ -439,6 +444,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1152233812471">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737835" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141160639">
     <property name="name" value="TraversalSkipStatement" />
@@ -451,6 +457,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1152233807751">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737834" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141311721">
     <property name="name" value="SequenceCreatorWithSupplier" />
@@ -478,6 +485,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1228653041114">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737830" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152906680026">
     <property name="name" value="MappingOperation" />
@@ -502,11 +510,13 @@
     <property name="name" value="MapperBlock" />
     <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737827" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153248196026">
     <property name="name" value="DefaultInputElement" />
     <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1153179527848" />
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737824" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153509719989">
     <property name="name" value="ClosureWithInputElement" />
@@ -521,11 +531,13 @@
       <property name="role" value="defaultInputElement" />
       <link role="target" targetNodeId="1153248196026" resolveInfo="DefaultInputElement" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737822" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153513461623">
     <property name="name" value="ForEachBlock" />
     <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1153509719989" resolveInfo="ClosureWithInputElement" />
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737825" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153513495343">
     <property name="name" value="ForEachOperation" />
@@ -544,6 +556,7 @@
       <property name="role" value="forEachClosure" />
       <link role="target" targetNodeId="1153513461623" resolveInfo="ForEachBlock" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737826" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153760673252">
     <property name="name" value="WhereBlock" />
@@ -553,6 +566,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1172935321119" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737838" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153760737019">
     <property name="name" value="WhereOperation" />
@@ -571,6 +585,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224598676009">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737839" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153779885165">
     <property name="name" value="SelectorBlock" />
@@ -580,6 +595,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1178759689025" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737829" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153779905654">
     <property name="name" value="SelectOperation" />
@@ -598,6 +614,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224598651456">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737828" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153943597977">
     <property name="name" value="ForEachStatement" />
@@ -722,6 +739,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1162935959151">
     <property name="name" value="GetSizeOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1162935959153">
       <property name="value" value="size" />
@@ -734,6 +752,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1165525191778">
     <property name="name" value="GetFirstOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1165525191779">
       <property name="value" value="first" />
@@ -746,6 +765,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1165530316231">
     <property name="name" value="IsEmptyOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1165530316232">
       <property name="value" value="isEmpty" />
@@ -758,6 +778,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1165595910856">
     <property name="name" value="GetLastOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1165595910857">
       <property name="value" value="last" />
@@ -810,6 +831,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224598662064">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737832" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1168502774204">
     <property name="name" value="SortBlock" />
@@ -819,9 +841,11 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1178763648998" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737831" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171391069720">
     <property name="name" value="GetIndexOfOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1171391518575">
       <property name="metaClass" value="aggregation" />
@@ -840,6 +864,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172254888721">
     <property name="name" value="ContainsOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172256416782">
       <property name="metaClass" value="aggregation" />
@@ -858,6 +883,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172650591544">
     <property name="name" value="SkipOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172658456740">
       <property name="metaClass" value="aggregation" />
@@ -876,6 +902,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172664342967">
     <property name="name" value="TakeOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172664372046">
       <property name="metaClass" value="aggregation" />
@@ -894,6 +921,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172667724288">
     <property name="name" value="PageOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172667737868">
       <property name="metaClass" value="aggregation" />
@@ -950,6 +978,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176501494711">
     <property name="name" value="IsNotEmptyOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176501515993">
       <property name="value" value="isNotEmpty" />
@@ -962,6 +991,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176903168877">
     <property name="name" value="UnionOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176903221206">
       <property name="value" value="union" />
@@ -974,6 +1004,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176906603202">
     <property name="name" value="BinaryOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1176906787974">
       <property name="metaClass" value="aggregation" />
@@ -987,6 +1018,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176921879268">
     <property name="name" value="IntersectOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176921903552">
       <property name="value" value="intersect" />
@@ -999,6 +1031,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176923520476">
     <property name="name" value="ExcludeOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176923534742">
       <property name="value" value="except" />
@@ -1011,6 +1044,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1178286324487">
     <property name="name" value="SortDirection" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="2.1068580123137" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1178286349577">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
@@ -1018,6 +1052,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1178894719932">
     <property name="name" value="DistinctOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1178896388823">
       <property name="value" value="distinct" />
@@ -1030,6 +1065,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1180964022718">
     <property name="name" value="ConcatOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1180964128658">
       <property name="value" value="concat" />
@@ -1042,6 +1078,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1184963466173">
     <property name="name" value="ToArrayOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1184963488862">
       <property name="value" value="toArray" />
@@ -1054,6 +1091,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192413483650">
     <property name="name" value="ToSetListOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1192413504699">
       <property name="value" value="toSetList" />
@@ -1066,9 +1104,11 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1228407586316">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737833" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1195127791705">
     <property name="name" value="CountOperation" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1195127791706">
       <property name="value" value="count" />
@@ -1077,6 +1117,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224753890248">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="7569794070509737823" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197683403723">
     <property name="name" value="MapType" />
@@ -1248,6 +1289,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207236100912">
     <property name="name" value="ToIteratorOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207236100913">
       <property name="value" value="iterator" />
@@ -1272,7 +1314,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1201792049884">
     <property name="name" value="TranslateOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1201885265234">
       <property name="value" value="selectMany" />
@@ -1292,7 +1334,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1202120902084">
     <property name="name" value="WhereOperationNew" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1202120914925">
       <property name="metaClass" value="aggregation" />
@@ -1312,7 +1354,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1202128969694">
     <property name="name" value="SelectOperationNew" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1202129035304">
       <property name="metaClass" value="aggregation" />
@@ -1332,7 +1374,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203518072036">
     <property name="name" value="SmartClosureParameterDeclaration" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="4.1203252195462" resolveInfo="UnboundClosureParameterDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203518094838">
       <property name="value" value="~ &lt;name&gt;" />
@@ -1345,7 +1387,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204796164442">
     <property name="name" value="InternalSequenceOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1204796294226">
       <property name="metaClass" value="aggregation" />
@@ -1359,7 +1401,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204980550705">
     <property name="name" value="VisitAllOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205842034725">
       <property name="value" value="forEach" />
@@ -1379,6 +1421,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205598340672">
     <property name="name" value="DisjunctOperation" />
+    <property name="package" value="sequence.binary" />
     <link role="extends" targetNodeId="1176906603202" resolveInfo="BinaryOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205598362409">
       <property name="value" value="disjunction" />
@@ -1391,7 +1434,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205679737078">
     <property name="name" value="SortOperationNew" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205679819055">
       <property name="metaClass" value="aggregation" />
@@ -1417,6 +1460,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205753243362">
     <property name="name" value="ChunkOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205753261887">
       <property name="metaClass" value="aggregation" />
@@ -1430,6 +1474,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205753590798">
     <property name="name" value="CutOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1205753243362" resolveInfo="ChunkOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205753613023">
       <property name="value" value="cut" />
@@ -1442,6 +1487,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205753630278">
     <property name="name" value="TailOperation" />
+    <property name="package" value="sequence.chunks" />
     <link role="extends" targetNodeId="1205753243362" resolveInfo="ChunkOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205753643313">
       <property name="value" value="tail" />
@@ -1454,7 +1500,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209727891789">
     <property name="name" value="ComparatorSortOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209727951854">
       <property name="metaClass" value="aggregation" />
@@ -1479,6 +1525,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224414427926">
     <property name="name" value="SequenceCreator" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224414456414">
       <property name="metaClass" value="aggregation" />
@@ -1500,7 +1547,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224446583770">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <property name="name" value="SkipStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224446596627">
@@ -1513,7 +1560,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224451845108">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <property name="name" value="StopStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224451853677">
@@ -1594,7 +1641,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225727723840">
     <property name="name" value="FindFirstOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225727743579">
       <property name="metaClass" value="aggregation" />
@@ -1614,7 +1661,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225730411176">
     <property name="name" value="FindLastOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225730460423">
       <property name="metaClass" value="aggregation" />
@@ -1885,7 +1932,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235566554328">
     <property name="name" value="AnyOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235566554329">
       <property name="metaClass" value="aggregation" />
@@ -1905,7 +1952,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235566831861">
     <property name="name" value="AllOperation" />
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235566831862">
       <property name="metaClass" value="aggregation" />
@@ -1925,6 +1972,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235573135402">
     <property name="name" value="SingletonSequenceCreator" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235573175711">
       <property name="metaClass" value="aggregation" />
@@ -1949,6 +1997,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237467461002">
     <property name="name" value="GetIteratorOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237467653962">
       <property name="value" value="iterator" />
@@ -1957,6 +2006,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237467705688">
     <property name="name" value="IteratorType" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237467730343">
       <property name="metaClass" value="aggregation" />
@@ -1971,6 +2021,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237470736245">
     <property name="name" value="AbstractIteratorOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237470827652">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
@@ -1981,6 +2032,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237470895604">
     <property name="name" value="HasNextOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237470909869">
       <property name="value" value="hasNext" />
@@ -1989,6 +2041,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471031357">
     <property name="name" value="GetNextOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471040849">
       <property name="value" value="next" />
@@ -1997,6 +2050,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471080820">
     <property name="name" value="GetCurrentOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471094865">
       <property name="value" value="current" />
@@ -2005,6 +2059,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237471163346">
     <property name="name" value="MoveNextOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237471179576">
       <property name="value" value="moveNext" />
@@ -2013,6 +2068,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237496250641">
     <property name="name" value="EnumeratorType" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237496250642">
       <property name="metaClass" value="aggregation" />
@@ -2027,6 +2083,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237497044713">
     <property name="name" value="AbstractEnumeratorOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237497053118">
       <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
@@ -2037,6 +2094,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237549269949">
     <property name="name" value="GetEnumeratorOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237549289142">
       <property name="value" value="enumerator" />
@@ -2069,6 +2127,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237783176940">
     <property name="name" value="AllConstant" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="2.1068580320020" resolveInfo="IntegerConstant" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237783293934">
       <property name="value" value="ALL" />
@@ -2105,6 +2164,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240151247486">
     <property name="name" value="ContainerIteratorType" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237467705688" resolveInfo="IteratorType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240151247488">
       <property name="value" value="modifying_iterator" />
@@ -2113,6 +2173,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240151544672">
     <property name="name" value="RemoveOperation" />
+    <property name="package" value="iteratorEnumerator" />
     <link role="extends" targetNodeId="1237470736245" resolveInfo="AbstractIteratorOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240151544673">
       <property name="value" value="remove" />
@@ -2350,6 +2411,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240687580870">
     <property name="name" value="JoinOperation" />
+    <property name="package" value="sequence" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240687658305">
       <property name="metaClass" value="aggregation" />

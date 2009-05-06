@@ -120,7 +120,7 @@ __skip__:
 
   @Test()
   public void test_typing() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3, 4, 5, 6);
+    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 6);
     final List<Integer> out = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(test).visitAll(new IVisitor <Integer>() {
 
@@ -128,7 +128,7 @@ __skip__:
         ListSequence.fromList(out).addElement(it - 1);
       }
     });
-    this.assertIterableEquals(this.expectOdd5());
+    this.assertIterableEquals(this.expectOdd5(), out);
   }
 
   public void forEach(Iterable<String> seqs, IVisitor<String> visitor) {

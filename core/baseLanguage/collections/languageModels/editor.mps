@@ -40,7 +40,7 @@
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1203518207327">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1203518210010">
       <property name="vertical" value="false" />
@@ -93,6 +93,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1151690931651">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1151689724996" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1151690938950">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1151690938951">
@@ -124,6 +125,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1151703473043">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1151702311717" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1151703486466">
       <property name="text" value="toList" />
@@ -684,6 +686,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1162936066645">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1162935959151" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1162936070069">
       <property name="text" value="size" />
@@ -694,6 +697,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1165525220483">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1165525191778" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1165525227552">
       <property name="text" value="first" />
@@ -704,6 +708,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1165530349031">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1165530316231" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1165530350614">
       <property name="text" value="isEmpty" />
@@ -714,6 +719,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1165595937750">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1165595910856" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1165595939380">
       <property name="text" value="last" />
@@ -790,12 +796,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171391150066">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1151701983961" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1171391160396">
       <property name="text" value="&lt;oper&gt;" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171391449553">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1171391069720" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1171391534131">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171391534132">
@@ -825,6 +833,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172254918286">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1172254888721" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172256447723">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1172256447724">
@@ -855,6 +864,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172658537040">
+    <property name="package" value="sequence.chunks" />
     <link role="conceptDeclaration" targetNodeId="1.1172650591544" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172658539229">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1172658541028">
@@ -881,6 +891,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172664398283">
+    <property name="package" value="sequence.chunks" />
     <link role="conceptDeclaration" targetNodeId="1.1172664342967" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172664400582">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1172664402224">
@@ -907,6 +918,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1172667769604">
+    <property name="package" value="sequence.chunks" />
     <link role="conceptDeclaration" targetNodeId="1.1172667724288" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1172667776732">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1172667781187">
@@ -978,6 +990,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1176501531228">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1176501494711" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1176501533715">
       <property name="text" value="isNotEmpty" />
@@ -985,6 +998,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1176906814100">
+    <property name="package" value="sequence.binary" />
     <link role="conceptDeclaration" targetNodeId="1.1176906603202" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1176906818758">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1176906825135">
@@ -1011,6 +1025,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1178286388399">
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1178286324487" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1178286394774">
       <property name="vertical" value="true" />
@@ -1043,6 +1058,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1178896394002">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1178894719932" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1178896397231">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" />
@@ -1128,6 +1144,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1184963494332">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1184963466173" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1184963496459">
       <property name="text" value="toArray" />
@@ -1135,12 +1152,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1192413532418">
+    <property name="package" value="obsolete" />
     <link role="conceptDeclaration" targetNodeId="1.1192413483650" resolveInfo="ToSetListOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1192413535998">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1195127810355">
+    <property name="package" value="obsolete" />
     <link role="conceptDeclaration" targetNodeId="1.1195127791705" resolveInfo="CountOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1195127812696">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
@@ -1403,6 +1422,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1207236167840">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1207236100912" resolveInfo="ToIteratorOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1207236171678">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
@@ -1455,7 +1475,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1205679893773">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1205679737078" resolveInfo="SortOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1205679897421">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1209728064817">
@@ -1487,6 +1507,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1205753270392">
+    <property name="package" value="sequence.chunks" />
     <link role="conceptDeclaration" targetNodeId="1.1205753243362" resolveInfo="ChunkOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1205753272748">
       <property name="vertical" value="false" />
@@ -1509,7 +1530,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1206729661481">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1206729664777">
       <property name="vertical" value="false" />
@@ -1533,7 +1554,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1209728118074">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1209727891789" resolveInfo="ComparatorSortOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1209728120152">
       <property name="vertical" value="false" />
@@ -1566,6 +1587,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224414784649">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1224414427926" resolveInfo="SequenceCreator" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224414806136">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224414806137">
@@ -1633,7 +1655,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224446621928">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1224446583770" resolveInfo="SkipStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224446624012">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224446624013">
@@ -1651,7 +1673,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224451886447">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="conceptDeclaration" targetNodeId="1.1224451845108" resolveInfo="StopStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224451888514">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224451888515">
@@ -2161,6 +2183,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1235573413466">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1235573135402" resolveInfo="SingletonSequenceCreator" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1235573415079">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1235573415080">
@@ -2202,6 +2225,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237467605110">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237467461002" resolveInfo="IteratorOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237467610304">
       <property name="vertical" value="false" />
@@ -2213,6 +2237,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237467761919">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237467705688" resolveInfo="IteratorType" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237467763960">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237467773423">
@@ -2244,6 +2269,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237470749417">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237470736245" resolveInfo="AbstractIteratorOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237470751823">
       <property name="vertical" value="false" />
@@ -2254,6 +2280,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237496362240">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237496250641" resolveInfo="EnumeratorType" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237496364013">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1237496364014">
@@ -2285,6 +2312,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237497066846">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237497044713" resolveInfo="AbstractEnumeratorOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237497068279">
       <property name="vertical" value="false" />
@@ -2295,6 +2323,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237549301926">
+    <property name="package" value="iteratorEnumerator" />
     <link role="conceptDeclaration" targetNodeId="1.1237549269949" resolveInfo="GetEnumeratorOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237549303630">
       <property name="vertical" value="false" />
@@ -2454,6 +2483,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237785285779">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1237783176940" resolveInfo="AllConstant" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237785289048">
       <property name="vertical" value="false" />
@@ -2766,6 +2796,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240687606670">
+    <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1240687580870" resolveInfo="JoinOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240687617098">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1240688741825">

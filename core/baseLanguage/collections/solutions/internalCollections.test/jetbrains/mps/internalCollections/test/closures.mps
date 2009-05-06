@@ -4218,14 +4218,8 @@
                   <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3229004455031219542">
                     <property name="value" value="2" />
                   </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3229004455031219544">
-                    <property name="value" value="3" />
-                  </node>
                   <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7569794070509694791">
                     <property name="value" value="4" />
-                  </node>
-                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7569794070509694798">
-                    <property name="value" value="5" />
                   </node>
                   <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7569794070509694815">
                     <property name="value" value="6" />
@@ -4291,6 +4285,9 @@
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7569794070509694784">
                     <link role="baseMethodDeclaration" targetNodeId="1204793880605" resolveInfo="expectOdd5" />
                   </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6890435117858523645">
+                  <link role="variableDeclaration" targetNodeId="7569794070509684629" resolveInfo="out" />
                 </node>
               </node>
             </node>

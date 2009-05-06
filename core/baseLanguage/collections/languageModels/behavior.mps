@@ -40,6 +40,7 @@
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877245174">
+    <property name="package" value="sequence" />
     <link role="concept" targetNodeId="1.1151689724996" resolveInfo="SequenceType" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877245175">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877245176" />
@@ -295,6 +296,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877497462">
+    <property name="package" value="sequence" />
     <link role="concept" targetNodeId="1.1151701983961" resolveInfo="SequenceOperation" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877497463">
       <property name="name" value="getLeft" />
@@ -1040,6 +1042,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237468611264">
+    <property name="package" value="iteratorEnumerator" />
     <link role="concept" targetNodeId="1.1237467705688" resolveInfo="IteratorType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237468613396">
       <property name="name" value="getPresentation" />
@@ -1173,6 +1176,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237496376141">
+    <property name="package" value="iteratorEnumerator" />
     <link role="concept" targetNodeId="1.1237496250641" resolveInfo="EnumeratorType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237496377901">
       <property name="name" value="getPresentation" />
@@ -1306,7 +1310,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237548270025">
-    <property name="package" value="internal" />
+    <property name="package" value="sequence.closures" />
     <link role="concept" targetNodeId="1.1224446583770" resolveInfo="SkipStatement" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237548270026">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237548270027" />
@@ -1441,6 +1445,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237783270701">
+    <property name="package" value="sequence" />
     <link role="concept" targetNodeId="1.1237783176940" resolveInfo="AllConstant" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237783270702">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237783270703">
