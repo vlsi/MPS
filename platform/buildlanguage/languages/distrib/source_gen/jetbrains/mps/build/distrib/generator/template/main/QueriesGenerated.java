@@ -527,10 +527,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationWin");
   }
 
-  public static Object referenceMacro_GetReferent_1230650252582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
-  }
-
   public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
@@ -572,6 +568,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1240246843004(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_4331351068295137109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
