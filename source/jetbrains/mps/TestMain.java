@@ -356,7 +356,7 @@ public class TestMain {
     long start = System.currentTimeMillis();
     configureMPS();
 
-    System.out.println("loading project...");
+    System.out.println("loading project " + projectFile + "...");
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
