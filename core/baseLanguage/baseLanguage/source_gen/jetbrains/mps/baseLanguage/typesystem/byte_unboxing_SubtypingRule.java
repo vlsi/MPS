@@ -14,7 +14,7 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode byteType) {
-    return new _Quotations.QuotationClass_61().createNode();
+    return new _Quotations.QuotationClass_62().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -10,6 +10,7 @@
   <language namespace="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -3469,6 +3470,23 @@
               <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1203441371363">
                 <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203441371364">
                   <link role="variableDeclaration" targetNodeId="1203441371350" resolveInfo="matchedType" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="3254522536313044080">
+              <property name="inequationPriority" value="500" />
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3254522536313044088">
+                <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3254522536313044089">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3254522536313044092">
+                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3254522536313044083">
+                <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3254522536313044077">
+                  <node role="term" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3254522536313044079">
+                    <link role="variableDeclaration" targetNodeId="1203441332134" resolveInfo="mc" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -7834,6 +7852,23 @@
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206554174387">
           <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206554174388">
             <link role="variableDeclaration" targetNodeId="1206554174376" resolveInfo="matchedType" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="3254522536313044098">
+        <property name="inequationPriority" value="500" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3254522536313044102">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3254522536313044103">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3254522536313044106">
+              <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3254522536313044101">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3254522536313044095">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3254522536313044097">
+              <link role="applicableNode" targetNodeId="1197029977453" resolveInfo="fieldReference" />
+            </node>
           </node>
         </node>
       </node>

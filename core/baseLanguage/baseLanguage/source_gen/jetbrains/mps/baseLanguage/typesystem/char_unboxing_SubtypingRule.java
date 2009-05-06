@@ -14,7 +14,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode charType) {
-    return new _Quotations.QuotationClass_59().createNode();
+    return new _Quotations.QuotationClass_60().createNode();
   }
 
   public String getApplicableConceptFQName() {

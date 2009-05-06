@@ -23,7 +23,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       for(SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(arrayType, "componentType", true))) {
         if (SNodeOperations.isInstanceOf(componentTypeSupertype, "jetbrains.mps.baseLanguage.structure.Type")) {
-          ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_51().createNode(componentTypeSupertype));
+          ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_52().createNode(componentTypeSupertype));
         }
       }
     }

@@ -13,7 +13,7 @@ public class string_extends_java_lang_String_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode stringType) {
-    return new _Quotations.QuotationClass_95().createNode();
+    return new _Quotations.QuotationClass_97().createNode();
   }
 
   public String getApplicableConceptFQName() {
