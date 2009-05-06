@@ -28,4 +28,13 @@ public class TupleDeclarationUtil {
     return SNodeOperations.cast(new DynamicReference(role, node, smr, resolveInfo).getTargetNode(), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
+  public static String getResolveInfo(SNode tupleDeclaration) {
+    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(tupleDeclaration);
+    String packageName = SNodeOperations.getModel(tupleDeclaration).getLongName();
+    if (fqName.startsWith(packageName + ".")) {
+      return "[" + packageName + "]" + fqName.substring(packageName.length() + 1);
+    }
+    return fqName;
+  }
+
 }
