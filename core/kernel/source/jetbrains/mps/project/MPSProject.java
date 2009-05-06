@@ -418,10 +418,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
     //todo hack
     if (getComponent(Project.class) != null) {
-      Project project = getComponentSafe(Project.class);
+      final Project project = getComponentSafe(Project.class);
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-//        com.intellij.openapi.command.undo.UndoManager.getGlobalInstance().dropHistory();
-        ProjectUtil.closeProject(project);
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            ProjectUtil.closeProject(project);
+          }
+        });
       }
     }
     myDisposed = true;
