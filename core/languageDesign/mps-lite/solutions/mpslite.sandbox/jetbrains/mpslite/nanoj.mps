@@ -68,6 +68,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1240676129842">
     <property name="name" value="Hedgehog" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2584609026702191164">
+      <property name="name" value="getStr" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="2584609026702191168" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2584609026702191166" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2584609026702191167">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2584609026702191169">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2584609026702191171" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240676129843" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1240676129844">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240676129845" />
@@ -87,10 +97,80 @@
         </node>
       </node>
     </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2584609026702191160">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2584609026702191161" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2584609026702191162" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2584609026702191163" />
+    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1241542937542">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1241542937543" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241542937544" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241542937545" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241542937545">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2584609026702191142">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2584609026702191143">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191144">
+              <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2584609026702191146" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2584609026702191148">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2584609026702191149">
+            <property name="name" value="qr" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191150">
+              <link role="classifier" targetNodeId="9.~Iterable" resolveInfo="Iterable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191152">
+                <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="2584609026702191154">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191155">
+                <link role="classifier" targetNodeId="9.~Iterable" resolveInfo="Iterable" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2584609026702191158">
+                <link role="variableDeclaration" targetNodeId="2584609026702191143" resolveInfo="o" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2584609026702191172">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2584609026702191173">
+            <property name="name" value="hedgehogs" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="2584609026702191174">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191176">
+                <link role="classifier" targetNodeId="1240676129842" resolveInfo="Hedgehog" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2584609026702191178">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="2584609026702191179">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2584609026702191180">
+                  <link role="classifier" targetNodeId="1240676129842" resolveInfo="Hedgehog" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2584609026702191182">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2584609026702191184">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2584609026702191183">
+              <link role="variableDeclaration" targetNodeId="2584609026702191173" resolveInfo="hedgehogs" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" id="2584609026702191205">
+              <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="2584609026702191206">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2584609026702191207" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="2584609026702191208">
+                  <property name="name" value="it" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="2584609026702191209" />
+                </node>
+              </node>
+              <node role="ascending" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection" id="2584609026702191210">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1241542940061">
         <property name="name" value="d" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1241542940062" />
