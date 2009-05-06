@@ -118,6 +118,19 @@ __skip__:
     Assert.assertEquals(10, len.value);
   }
 
+  @Test()
+  public void test_typing() throws Exception {
+    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3, 4, 5, 6);
+    final List<Integer> out = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(test).visitAll(new IVisitor <Integer>() {
+
+      public void visit(Integer it) {
+        ListSequence.fromList(out).addElement(it - 1);
+      }
+    });
+    this.assertIterableEquals(this.expectOdd5());
+  }
+
   public void forEach(Iterable<String> seqs, IVisitor<String> visitor) {
     Sequence.fromIterable(seqs).visitAll(visitor);
   }

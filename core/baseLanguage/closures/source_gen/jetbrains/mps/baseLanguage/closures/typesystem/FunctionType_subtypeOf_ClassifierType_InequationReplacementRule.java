@@ -41,10 +41,13 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         }
         SNode md = ListSequence.fromList(methods).getElement(0);
         if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-          {
-            SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 500, intentionProvider);
+          SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+          if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              BaseIntentionProvider intentionProvider = null;
+              typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)retType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", false, 500, intentionProvider);
+            }
           }
           {
             SNode fpt;
@@ -102,7 +105,10 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           }
           SNode md = ListSequence.fromList(methods).getElement(0);
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), true);
+            SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+            if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)retType, true);
+            }
             {
               SNode fpt;
               SNode mpt;
