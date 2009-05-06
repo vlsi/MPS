@@ -56,7 +56,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
   }
 
   public boolean isGenerationOptimizationEnabled() {
-    return /*false &&*/ myState.isGenerationOptimizationEnabled();
+    return /*false && */myState.isGenerationOptimizationEnabled();
   }
 
   public int getHelginsTimeoutSeconds() {
@@ -64,15 +64,15 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
   }
 
   public boolean isCoersionSimpleCached() {
-    return /*false &&*/ myState.isCoersionSimpleCached();
+    return /*false && */myState.isCoersionSimpleCached();
   }
 
   public boolean isCoersionPatternCached() {
-    return /*false &&*/ myState.isCoersionPatternCached();
+    return /*false && */myState.isCoersionPatternCached();
   }
 
   public boolean isSubtypingCached() {
-    return false && myState.isSubtypingCached();
+    return /*false && */myState.isSubtypingCached();
   }
 
 
