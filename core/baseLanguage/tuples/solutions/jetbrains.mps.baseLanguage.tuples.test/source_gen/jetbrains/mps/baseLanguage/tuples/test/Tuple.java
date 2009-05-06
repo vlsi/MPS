@@ -14,14 +14,12 @@ public class Tuple <AAA> extends MultiTuple._2<Integer, AAA> {
     super(value, anotherValue);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Tuple value(Integer value) {
-    return (Tuple)super._0(value);
+  public Integer value(Integer value) {
+    return super._0(value);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Tuple anotherValue(AAA value) {
-    return (Tuple)super._1(value);
+  public AAA anotherValue(AAA value) {
+    return super._1(value);
   }
 
   public Integer value() {

@@ -14,9 +14,8 @@ public class Bool extends MultiTuple._1<Boolean> {
     super(isTrue);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Bool isTrue(Boolean value) {
-    return (Bool)super._0(value);
+  public Boolean isTrue(Boolean value) {
+    return super._0(value);
   }
 
   public Boolean isTrue() {

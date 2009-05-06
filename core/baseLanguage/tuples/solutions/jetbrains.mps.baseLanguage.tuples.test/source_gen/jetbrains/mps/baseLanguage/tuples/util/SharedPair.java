@@ -14,14 +14,12 @@ public class SharedPair <F, S> extends MultiTuple._2<F, S> {
     super(first, second);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public SharedPair first(F value) {
-    return (SharedPair)super._0(value);
+  public F first(F value) {
+    return super._0(value);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public SharedPair second(S value) {
-    return (SharedPair)super._1(value);
+  public S second(S value) {
+    return super._1(value);
   }
 
   public F first() {

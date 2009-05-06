@@ -14,14 +14,12 @@ public class Pair <S, T> extends MultiTuple._2<S, T> {
     super(first, second);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Pair first(S value) {
-    return (Pair)super._0(value);
+  public S first(S value) {
+    return super._0(value);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Pair second(T value) {
-    return (Pair)super._1(value);
+  public T second(T value) {
+    return super._1(value);
   }
 
   public S first() {

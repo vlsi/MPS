@@ -121,6 +121,15 @@ public class NamedTuples_Test extends TestCase {
   }
 
   @Test()
+  public void test_valueOfAssignment() throws Exception {
+    Pair<String, Integer> pair = new Pair<String, Integer>("foo", 13);
+    String res = pair.first("bar");
+    Assert.assertEquals("bar", res);
+    int i = pair.second(99);
+    Assert.assertSame(99, i);
+  }
+
+  @Test()
   public void test_sharedPair() throws Exception {
     SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());

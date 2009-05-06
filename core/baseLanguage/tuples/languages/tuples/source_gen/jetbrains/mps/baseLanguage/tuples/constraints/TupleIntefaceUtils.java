@@ -86,19 +86,16 @@ public class TupleIntefaceUtils {
       super(isfinal, name, type);
     }
 
-    @SuppressWarnings(value = "unchecked")
-    public TupleIntefaceUtils.Property isfinal(Boolean value) {
-      return (TupleIntefaceUtils.Property)super._0(value);
+    public Boolean isfinal(Boolean value) {
+      return super._0(value);
     }
 
-    @SuppressWarnings(value = "unchecked")
-    public TupleIntefaceUtils.Property name(String value) {
-      return (TupleIntefaceUtils.Property)super._1(value);
+    public String name(String value) {
+      return super._1(value);
     }
 
-    @SuppressWarnings(value = "unchecked")
-    public TupleIntefaceUtils.Property type(SNode value) {
-      return (TupleIntefaceUtils.Property)super._2(value);
+    public SNode type(SNode value) {
+      return super._2(value);
     }
 
     public Boolean isfinal() {

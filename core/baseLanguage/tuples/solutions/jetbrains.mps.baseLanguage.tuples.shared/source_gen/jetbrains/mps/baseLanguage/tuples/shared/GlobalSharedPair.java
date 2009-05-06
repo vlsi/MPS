@@ -14,14 +14,12 @@ public class GlobalSharedPair <A, B> extends MultiTuple._2<A, B> {
     super(first, second);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public GlobalSharedPair first(A value) {
-    return (GlobalSharedPair)super._0(value);
+  public A first(A value) {
+    return super._0(value);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public GlobalSharedPair second(B value) {
-    return (GlobalSharedPair)super._1(value);
+  public B second(B value) {
+    return super._1(value);
   }
 
   public A first() {

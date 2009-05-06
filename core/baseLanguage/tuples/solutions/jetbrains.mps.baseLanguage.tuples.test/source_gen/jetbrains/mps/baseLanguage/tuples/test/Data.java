@@ -14,14 +14,12 @@ public class Data extends MultiTuple._2<String, String> {
     super(foo, bar);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Data foo(String value) {
-    return (Data)super._0(value);
+  public String foo(String value) {
+    return super._0(value);
   }
 
-  @SuppressWarnings(value = "unchecked")
-  public Data bar(String value) {
-    return (Data)super._1(value);
+  public String bar(String value) {
+    return super._1(value);
   }
 
   public String foo() {

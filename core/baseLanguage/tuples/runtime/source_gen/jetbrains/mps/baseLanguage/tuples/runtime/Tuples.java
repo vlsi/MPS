@@ -14,7 +14,7 @@ public static   interface _0 {
 }
 public static   interface _1 <T0> {
 
-    public abstract Tuples._1<T0> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
     public abstract T0 _0();
 
@@ -23,9 +23,9 @@ public static   interface _1 <T0> {
 }
 public static   interface _2 <T0, T1> {
 
-    public abstract Tuples._2<T0, T1> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._2<T0, T1> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
     public abstract T0 _0();
 
@@ -36,11 +36,11 @@ public static   interface _2 <T0, T1> {
 }
 public static   interface _3 <T0, T1, T2> {
 
-    public abstract Tuples._3<T0, T1, T2> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._3<T0, T1, T2> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._3<T0, T1, T2> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
     public abstract T0 _0();
 
@@ -53,13 +53,13 @@ public static   interface _3 <T0, T1, T2> {
 }
 public static   interface _4 <T0, T1, T2, T3> {
 
-    public abstract Tuples._4<T0, T1, T2, T3> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._4<T0, T1, T2, T3> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._4<T0, T1, T2, T3> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._4<T0, T1, T2, T3> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
     public abstract T0 _0();
 
@@ -74,15 +74,15 @@ public static   interface _4 <T0, T1, T2, T3> {
 }
 public static   interface _5 <T0, T1, T2, T3, T4> {
 
-    public abstract Tuples._5<T0, T1, T2, T3, T4> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._5<T0, T1, T2, T3, T4> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._5<T0, T1, T2, T3, T4> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._5<T0, T1, T2, T3, T4> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
-    public abstract Tuples._5<T0, T1, T2, T3, T4> _4(T4 value);
+    public abstract T4 _4(T4 value);
 
     public abstract T0 _0();
 
@@ -99,17 +99,17 @@ public static   interface _5 <T0, T1, T2, T3, T4> {
 }
 public static   interface _6 <T0, T1, T2, T3, T4, T5> {
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _4(T4 value);
+    public abstract T4 _4(T4 value);
 
-    public abstract Tuples._6<T0, T1, T2, T3, T4, T5> _5(T5 value);
+    public abstract T5 _5(T5 value);
 
     public abstract T0 _0();
 
@@ -128,19 +128,19 @@ public static   interface _6 <T0, T1, T2, T3, T4, T5> {
 }
 public static   interface _7 <T0, T1, T2, T3, T4, T5, T6> {
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _4(T4 value);
+    public abstract T4 _4(T4 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _5(T5 value);
+    public abstract T5 _5(T5 value);
 
-    public abstract Tuples._7<T0, T1, T2, T3, T4, T5, T6> _6(T6 value);
+    public abstract T6 _6(T6 value);
 
     public abstract T0 _0();
 
@@ -161,21 +161,21 @@ public static   interface _7 <T0, T1, T2, T3, T4, T5, T6> {
 }
 public static   interface _8 <T0, T1, T2, T3, T4, T5, T6, T7> {
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _4(T4 value);
+    public abstract T4 _4(T4 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _5(T5 value);
+    public abstract T5 _5(T5 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _6(T6 value);
+    public abstract T6 _6(T6 value);
 
-    public abstract Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> _7(T7 value);
+    public abstract T7 _7(T7 value);
 
     public abstract T0 _0();
 
@@ -198,23 +198,23 @@ public static   interface _8 <T0, T1, T2, T3, T4, T5, T6, T7> {
 }
 public static   interface _9 <T0, T1, T2, T3, T4, T5, T6, T7, T8> {
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _0(T0 value);
+    public abstract T0 _0(T0 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _1(T1 value);
+    public abstract T1 _1(T1 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _2(T2 value);
+    public abstract T2 _2(T2 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _3(T3 value);
+    public abstract T3 _3(T3 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _4(T4 value);
+    public abstract T4 _4(T4 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _5(T5 value);
+    public abstract T5 _5(T5 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _6(T6 value);
+    public abstract T6 _6(T6 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _7(T7 value);
+    public abstract T7 _7(T7 value);
 
-    public abstract Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> _8(T8 value);
+    public abstract T8 _8(T8 value);
 
     public abstract T0 _0();
 
