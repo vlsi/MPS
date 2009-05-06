@@ -2152,6 +2152,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1182954970616">
           <property name="text" value="this" />
+          <property name="attractsFocus" value="1" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994336">
             <property name="flag" value="true" />

@@ -5,8 +5,6 @@ package jetbrains.mps.lang.script.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate;
-import jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

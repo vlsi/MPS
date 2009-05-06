@@ -37,8 +37,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="27" />
+  <maxImportIndex value="28" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1211992713279">
     <property name="name" value="A" />
@@ -171,7 +172,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
-    <property name="abstractClass" value="true" />
+    <property name="abstractClass" value="false" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233680540702" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240244838911">
       <property name="isFinal" value="false" />
@@ -183,12 +184,52 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240244838912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240244838913" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240244838914">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241445584123">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241445584124">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1241445584125" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1241445586174">
-              <property name="value" value="10" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3272512148015207952">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3272512148015207953">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="3272512148015259964">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="3272512148015259965">
+                <link role="classifier" targetNodeId="28.~DocumentListener" resolveInfo="DocumentListener" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3272512148015259966" />
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3272512148015259967">
+                  <property name="isAbstract" value="false" />
+                  <property name="name" value="insertUpdate" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3272512148015259968" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3272512148015259969" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3272512148015259970">
+                    <property name="name" value="p0" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3272512148015259971">
+                      <link role="classifier" targetNodeId="28.~DocumentEvent" resolveInfo="DocumentEvent" />
+                    </node>
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3272512148015259972" />
+                </node>
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3272512148015259973">
+                  <property name="isAbstract" value="false" />
+                  <property name="name" value="removeUpdate" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3272512148015259974" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3272512148015259975" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3272512148015259976">
+                    <property name="name" value="p0" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3272512148015259977">
+                      <link role="classifier" targetNodeId="28.~DocumentEvent" resolveInfo="DocumentEvent" />
+                    </node>
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3272512148015259978" />
+                </node>
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3272512148015259979">
+                  <property name="isAbstract" value="false" />
+                  <property name="name" value="changedUpdate" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3272512148015259980" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3272512148015259981" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3272512148015259982">
+                    <property name="name" value="p0" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3272512148015259983">
+                      <link role="classifier" targetNodeId="28.~DocumentEvent" resolveInfo="DocumentEvent" />
+                    </node>
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3272512148015259984" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

@@ -4,26 +4,20 @@ package jetbrains.mps.lang.pattern.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_name_PropertyConstraint;
-import jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_name_PropertyConstraint;
-import jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_name_PropertyConstraint;
-import jetbrains.mps.lang.pattern.constraints.PatternVariableReference_patternVariableDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableReference_propertyVariableDeclaration_ReferentConstraint;
-import jetbrains.mps.lang.pattern.constraints.LinkPatternVariableReference_linkVariableDeclaration_ReferentConstraint;
+import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new PatternVariableDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new LinkPatternVariableDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new PropertyPatternVariableDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new PatternVariableReference_patternVariableDeclaration_ReferentConstraint());
-    this.myConstraints.add(new PropertyPatternVariableReference_propertyVariableDeclaration_ReferentConstraint());
-    this.myConstraints.add(new LinkPatternVariableReference_linkVariableDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new PatternVariableDeclaration_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new LinkPatternVariableDeclaration_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new PropertyPatternVariableDeclaration_name_PropertyConstraint());
+    ListOperations.addElement(this.myConstraints, new PatternVariableReference_patternVariableDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new PropertyPatternVariableReference_propertyVariableDeclaration_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new LinkPatternVariableReference_linkVariableDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
