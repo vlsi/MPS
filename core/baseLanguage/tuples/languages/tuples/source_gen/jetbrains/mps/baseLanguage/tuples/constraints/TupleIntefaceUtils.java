@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.tuples.constraints;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.internal.collections.runtime.IEnumerator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -21,9 +21,6 @@ public class TupleIntefaceUtils {
   }
 
   public static boolean isTupleInterface(SNode ifc) {
-    if (ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty()) {
-      System.out.println("*** Found tuple interface: " + SPropertyOperations.getString(ifc, "name") + ": " + String.valueOf(analyzeTupleInterface(ifc)));
-    }
     return ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty();
   }
 

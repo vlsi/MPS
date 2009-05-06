@@ -253,60 +253,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240488432519" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240488428957" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240488428958">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240574270844">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240574270845">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240574273197">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240574273198">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1240574273199">
-                  <link role="classifier" targetNodeId="2.~System" />
-                  <link role="variableDeclaration" targetNodeId="2.~System.out" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240574273200">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~PrintStream.println(java.lang.String):void" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240574284663">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240574290371">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
-                      <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1240574298921">
-                        <link role="baseMethodDeclaration" targetNodeId="1240573211676" resolveInfo="analyzeTupleInterface" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240574298922">
-                          <link role="variableDeclaration" targetNodeId="1240488439728" resolveInfo="ifc" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240574304977">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240574310058">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240574310478">
-                          <property name="value" value=": " />
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240574306242">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240574306079">
-                            <link role="variableDeclaration" targetNodeId="1240488439728" resolveInfo="ifc" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240574307019">
-                            <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
-                          </node>
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240574273201">
-                        <property name="value" value="*** Found tuple interface: " />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240574271730">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1240574271731">
-              <link role="baseMethodDeclaration" targetNodeId="1240573211676" resolveInfo="analyzeTupleInterface" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240574271732">
-                <link role="variableDeclaration" targetNodeId="1240488439728" resolveInfo="ifc" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1240574271733" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240573408991">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573415853">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1240573411094">
