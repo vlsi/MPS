@@ -64,6 +64,8 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Boolean> PUNCTUATION_LEFT = new SimpleStyleAttribute<Boolean>("punctuation-left", false);
   public static final StyleAttribute<Boolean> PUNCTUATION_RIGHT = new SimpleStyleAttribute<Boolean>("punctuation-right", false);
+  @Deprecated
+  public static final StyleAttribute<Boolean> PUNCTUATION_RIGTH = new SimpleStyleAttribute<Boolean>("punctuation-right", false);
 
   public static final StyleAttribute<Padding> HORIZONTAL_GAP = new SimpleStyleAttribute<Padding>("horizontal-gap", new Padding(1.0));
 
