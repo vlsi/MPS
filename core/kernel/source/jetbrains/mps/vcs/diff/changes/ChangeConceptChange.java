@@ -35,6 +35,7 @@ public class ChangeConceptChange extends Change {
 
   public boolean apply(SModel m) {
     SNode node = m.getNodeById(mySNodeId);
+    if (node == null) return false; 
     HackSNodeUtil.setConceptFqName(node, myConceptFqName);
     return true;
   }
