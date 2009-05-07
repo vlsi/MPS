@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import java.util.Set;
@@ -355,6 +356,22 @@ __switch__:
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode)new _Quotations.QuotationClass_26().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", false, 500, intentionProvider);
+      }
+    }
+  }
+
+  @InferenceMethod()
+  public static void inference_setConcreteUpperBorders(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
+    if (mmap != null) {
+      for(SNode tvd : MapSequence.fromMap(mmap).keySet()) {
+        List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+        if (nodes != null && !(ListSequence.fromList(nodes).isEmpty())) {
+          {
+            SNode _nodeToCheck_1029348928467 = null;
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.createLessThanInequation((SNode)ListSequence.fromList(nodes).first(), (SNode)TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", false, 500, intentionProvider);
+          }
+        }
       }
     }
   }

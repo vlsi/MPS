@@ -52,6 +52,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     }
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
+    RulesFunctions_BaseLanguage.inference_setConcreteUpperBorders(typeCheckingContext, mmap);
   }
 
   public String getApplicableConceptFQName() {
