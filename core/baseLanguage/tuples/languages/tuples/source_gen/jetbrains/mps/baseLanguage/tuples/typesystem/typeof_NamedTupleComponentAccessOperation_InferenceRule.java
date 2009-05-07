@@ -13,8 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.LinkedList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -34,27 +32,26 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(operation), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode)new _Quotations.QuotationClass_3().createNode(tupleDecl, PTYPES, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414716", false, 0, intentionProvider);
     }
-    SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
-    SLinkOperations.setTarget(tmp, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true)), true);
-    List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), SLinkOperations.getTarget(tmp, "componentType", true));
-    while (ListSequence.fromList(queue).isNotEmpty()) {
-      SNode t = ListSequence.fromList(queue).removeElementAt(0);
-      if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+    SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true));
+    if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+      opType = ListSequence.fromList(PTYPES).getElement(idx);
+    } else
+    {
+      List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
+      List<SNode> tvrs = ListOperations.<SNode>createList();
+      ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
+      for(SNode tvr : tvrs) {
+        int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
         if (idx < ListSequence.fromList(PTYPES).count()) {
-          SNodeOperations.replaceWithAnother(t, ListSequence.fromList(PTYPES).getElement(idx));
-        }
-      } else
-      {
-        for(SNode c : ListSequence.fromList(SNodeOperations.getChildren(t))) {
-          ListSequence.fromList(queue).addElement(c);
+          SNodeOperations.replaceWithAnother(tvr, ListSequence.fromList(PTYPES).getElement(idx));
         }
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(operation, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579816726", true), (SNode)SLinkOperations.getTarget(tmp, "componentType", true), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579829277", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(operation, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579816726", true), (SNode)opType, _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579829277", intentionProvider);
     }
   }
 
