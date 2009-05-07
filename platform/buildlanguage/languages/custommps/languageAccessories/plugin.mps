@@ -556,7 +556,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ToolDeclaration" id="1240830394395">
-    <property name="name" value="BuildTool" />
+    <property name="name" value="CustomMPSBuildTool" />
     <property name="icon" value="${language_descriptor}\icons\build.png" />
     <property name="caption" value="Build Custom MPS" />
     <property name="package" value="runner" />

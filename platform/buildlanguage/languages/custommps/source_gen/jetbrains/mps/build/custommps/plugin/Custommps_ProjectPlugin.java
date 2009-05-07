@@ -13,7 +13,7 @@ public class Custommps_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
-    ListSequence.fromList(tools).addElement(new BuildTool_Tool(project));
+    ListSequence.fromList(tools).addElement(new CustomMPSBuildTool_Tool(project));
     return tools;
   }
 
