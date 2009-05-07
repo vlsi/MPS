@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import jetbrains.mps.build.packaging.plugin.NodeData;
@@ -52,7 +54,10 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
 
       public void run() {
         ModuleReference moduleReference = custommpsLanguage.getModuleReference();
-        descriptor.getModule().addUsedLangauge(moduleReference);
+        Solution module = (Solution)descriptor.getModule();
+        SolutionDescriptor moduleDescriptor = module.getModuleDescriptor();
+        moduleDescriptor.getUsedLanguages().add(moduleReference);
+        module.setModuleDescriptor(moduleDescriptor);
       }
     });
     ApplicationManager.getApplication().invokeLater(new Runnable() {

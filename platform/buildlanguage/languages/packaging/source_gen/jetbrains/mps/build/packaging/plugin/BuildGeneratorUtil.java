@@ -88,7 +88,9 @@ public class BuildGeneratorUtil {
     ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {
-        solution.addUsedLangauge(packagingLanguageRef);
+        SolutionDescriptor moduleDescriptor = solution.getModuleDescriptor();
+        moduleDescriptor.getUsedLanguages().add(packagingLanguageRef);
+        solution.setSolutionDescriptor(moduleDescriptor);
       }
     });
     return solution;

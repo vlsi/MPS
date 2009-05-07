@@ -8,6 +8,7 @@ import javax.swing.JComponent;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.ide.wizard.Step;
 
 public class GenerateBuildWizard extends AbstractWizard {
@@ -52,6 +53,8 @@ public class GenerateBuildWizard extends AbstractWizard {
       public void run(ProgressIndicator progressIndicator) {
         progressIndicator.setIndeterminate(true);
         GenerateBuildWizard.this.myGenerator.generate(progressIndicator);
+        progressIndicator.setText("Realoding Classes...");
+        ClassLoaderManager.getInstance().reloadAll(progressIndicator);
       }
     });
   }
