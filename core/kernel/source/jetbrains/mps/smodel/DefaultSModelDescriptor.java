@@ -647,8 +647,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public int getVersion() {
+    String attributeValue = getAttribute(VERSION);
+    if (attributeValue == null) {
+      return -1;
+    }     
     try {
-      return Integer.parseInt(getAttribute(VERSION));
+      return Integer.parseInt(attributeValue);
     } catch (NumberFormatException e) {
       return -1;
     }
