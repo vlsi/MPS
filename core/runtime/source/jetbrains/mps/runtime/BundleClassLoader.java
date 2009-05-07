@@ -101,7 +101,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   private void checkDisposed() {
     if (myDisposed) {
-      throw new IllegalStateException("Attempt to load class from disposed class loader");
+//      throw new IllegalStateException("Attempt to load class from disposed class loader");
     }
   }
 
