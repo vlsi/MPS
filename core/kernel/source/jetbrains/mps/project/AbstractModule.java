@@ -160,7 +160,9 @@ public abstract class AbstractModule implements IModule {
         visited.add(entry.getPath());
       }
       descriptor.getClassPaths().removeAll(remove);
-      String bundleHomePath = getBundleHome().getPath();
+      File bundleHomeFile = getBundleHome();
+      if (bundleHomeFile == null) return;
+      String bundleHomePath = bundleHomeFile.getPath();
       if (!visited.contains(bundleHomePath)) {
         ClassPathEntry bundleHome = new ClassPathEntry();
         descriptor.getClassPaths().add(bundleHome);
