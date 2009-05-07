@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListOperations.addElement(this.myConstraints, new NamedTupleComponentAccessOperation_alias_PropertyConstraint());
     ListOperations.addElement(this.myConstraints, new NamedTupleComponentReference_componentDeclaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new NamedTupleComponentAccessOperation_component_ReferentConstraint());
+    ListOperations.addElement(this.myConstraints, new NamedTupleType_tupleDeclaration_ReferentConstraint());
     ListOperations.addElement(this.myConstraints, new NamedTupleDeclaration_DefaultSearchScope());
   }
 
