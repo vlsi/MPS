@@ -216,6 +216,11 @@ public abstract class BaseTool {
 
     if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
+      //todo hack
+      if (getContentManager().getContentCount() != 0) {
+        getContentManager().removeAllContents(true);
+      }
+
       addContent(myComponent, null, null, false);
     }
 
