@@ -123,7 +123,7 @@
     <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
     <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
     <property name="jre.unzipped.path" value="${basedir}/${deploy.dir}" />
-    <property name="installer" value="MPS-${build.number}-windows.exe" />
+    <property name="installer" value="${basedir}/${deploy.dir}/MPS-${build.number}-windows.exe" />
     <property name="mps_home" value="${basedir}" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
@@ -152,7 +152,7 @@
       <arg file="${nsis.script.path.tmp}" />
     </exec>
     <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
-      <arg line="/spc  build\sign\MASertificate.spc  /v  build\sign\test.pvk  /t http://timestamp.verisign.com/scripts/timstamp.dll  ${installer} " />
+      <arg line="/spc ${mps_home}/build/sign/MASertificate.spc /v ${mps_home}/build/sign/test.pvk /t http://timestamp.verisign.com/scripts/timstamp.dll ${installer}" />
     </exec>
     <delete file="${nsis.script.path.tmp}" />
     <delete file="${application.icon}" />

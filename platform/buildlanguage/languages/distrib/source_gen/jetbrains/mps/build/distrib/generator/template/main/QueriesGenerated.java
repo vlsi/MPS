@@ -206,7 +206,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String commandLine = "";
     for(SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
-      commandLine += AbstractCommandLinePart_Behavior.call_getText_1231864533228(commandLinePart) + " ";
+      commandLine += AbstractCommandLinePart_Behavior.call_getText_1231864533228(commandLinePart);
     }
     return commandLine;
   }
