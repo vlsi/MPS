@@ -4399,8 +4399,8 @@
         </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233745906813">
           <link role="attributeDeclaration" targetNodeId="21.1199644187251" resolveInfo="fork" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="2302907644796038948">
-            <property name="value" value="false" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="8879716232917749346">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>

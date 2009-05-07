@@ -116,29 +116,6 @@ public class PathManager {
 
   }
 
-  public static String getTmpPath() {
-    return getConfigPath() + File.separator + "tmp";
-  }
-
-  public static String getConfigPath() {
-    if (ourConfigPath != null) return ourConfigPath;
-
-    if (System.getProperty(PROPERTY_CONFIG_PATH) != null) {
-      ourConfigPath = getAbsolutePath(System.getProperty(PROPERTY_CONFIG_PATH));
-    } else {
-      ourConfigPath = System.getProperty("user.home") + File.separator + ".MPS" + File.separator + "config";
-    }
-
-    try {
-      File file = new File(ourConfigPath);
-      file.mkdirs();
-    } catch (Exception e) {
-      LOG.error(e);
-    }
-
-    return ourConfigPath;
-  }
-
   public static void setConfigPath(String newConfigPath) {
     ourConfigPath = newConfigPath;
   }

@@ -254,11 +254,6 @@ public class Generator extends AbstractModule {
   }
 
   public File getBundleHome() {
-    File home = new File(PathManager.getTmpPath() + "generators", getModuleFqName().replace('#', '.'));
-    if (!home.exists()) {
-      home.mkdirs();
-    }
-
     return home.getAbsoluteFile();
   }
 
