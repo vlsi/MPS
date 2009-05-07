@@ -2999,12 +2999,17 @@
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234794045366">
                           <property name="value" value="-" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793995037">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234794005955">
-                            <link role="variableDeclaration" targetNodeId="1234794005948" resolveInfo="config" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7675365865760045811">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793995037">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234794005955">
+                              <link role="variableDeclaration" targetNodeId="1234794005948" resolveInfo="config" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234793995041">
+                              <link role="link" targetNodeId="1.1234784278747" />
+                            </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234793995041">
-                            <link role="link" targetNodeId="1.1234784278747" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7675365865760045815">
+                            <link role="baseMethodDeclaration" targetNodeId="9.1213877173054" resolveInfo="getValue" />
                           </node>
                         </node>
                       </node>

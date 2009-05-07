@@ -28,6 +28,7 @@ public class Path_Behavior {
       sb.append(SPropertyOperations.getString(component, "path"));
       sb.append(File.separator);
     }
+    sb.deleteCharAt(sb.length() - 1);
     return sb.toString();
   }
 

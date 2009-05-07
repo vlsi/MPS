@@ -5344,6 +5344,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2372113960322751411">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2372113960322751413">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2372113960322751412">
+              <link role="variableDeclaration" targetNodeId="1226511625880" resolveInfo="sb" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2372113960322751417">
+              <link role="baseMethodDeclaration" targetNodeId="3.~StringBuffer.deleteCharAt(int):java.lang.StringBuffer" resolveInfo="deleteCharAt" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="2372113960322751424">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2372113960322751427">
+                  <property name="value" value="1" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2372113960322751419">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2372113960322751418">
+                    <link role="variableDeclaration" targetNodeId="1226511625880" resolveInfo="sb" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2372113960322751423">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~StringBuffer.length():int" resolveInfo="length" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226511686866">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226511689363">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226511689061">
