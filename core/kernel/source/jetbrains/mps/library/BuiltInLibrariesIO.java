@@ -116,7 +116,7 @@ public class BuiltInLibrariesIO {
 
       if (!strings[0].startsWith("\"") || !strings[0].endsWith("\"") ||
         !strings[1].startsWith("\"") || !strings[1].endsWith("\"")) {
-        continue;
+        throw new IllegalArgumentException("Illegal Argument " + param);
       }
 
       String name = strings[0].substring(1, strings[0].length() - 1);
