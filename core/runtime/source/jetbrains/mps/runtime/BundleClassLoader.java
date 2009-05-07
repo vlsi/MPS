@@ -23,7 +23,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
-  private Boolean myDisposed;
+  private boolean myDisposed;
   private RBundle<T> myBundle;
 
   BundleClassLoader(RBundle<T> bundle) {
@@ -100,8 +100,8 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   private void checkDisposed() {
-    if (myDisposed != null && myDisposed) {
-//      throw new IllegalStateException("Attempt to load class from disposed class loader");
+    if (myDisposed) {
+      throw new IllegalStateException("Attempt to load class from disposed class loader");
     }
   }
 
