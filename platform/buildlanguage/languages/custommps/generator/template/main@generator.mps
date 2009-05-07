@@ -4303,60 +4303,50 @@
           <link role="declaration" targetNodeId="21.1229267104851" resolveInfo="arg" />
           <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1233670778739">
             <link role="attributeDeclaration" targetNodeId="21.1199644185637" resolveInfo="value" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670793130">
-              <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670802355">
-                <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670806209">
-                  <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670817949">
-                    <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670819947">
-                      <property name="value" value="&quot;" />
-                    </node>
-                    <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670812663">
-                      <property name="value" value="library.path" />
-                      <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233738709210">
-                        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233738709211">
-                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233738709212">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240408169739">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240408641130">
-                                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240408640912" />
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240408689573">
-                                  <link role="baseMethodDeclaration" targetNodeId="4.1240408519032" resolveInfo="getLibraryPathRelativeToMPSBuild" />
-                                </node>
-                              </node>
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670802355">
+              <node role="right" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1233670806209">
+                <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670812663">
+                  <property name="value" value="library.path" />
+                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233738709210">
+                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233738709211">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233738709212">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240408169739">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240408641130">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240408640912" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240408689573">
+                              <link role="baseMethodDeclaration" targetNodeId="4.1240408519032" resolveInfo="getLibraryPathRelativeToMPSBuild" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670804192">
-                    <property name="value" value="&quot;=&quot;" />
                   </node>
                 </node>
-                <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670795450">
-                  <property name="value" value="library.name" />
-                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233738680553">
-                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233738680554">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233738680555">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233738682394">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233738692283">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233738682791">
-                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233738682395" />
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233738691096">
-                                <link role="link" targetNodeId="1.1233679274643" />
-                              </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233738694204">
-                              <link role="baseMethodDeclaration" targetNodeId="5.1213877173054" resolveInfo="getValue" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670804192">
+                  <property name="value" value="=" />
                 </node>
               </node>
-              <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670785261">
-                <property name="value" value="&quot;" />
+              <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1233670795450">
+                <property name="value" value="library.name" />
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1233738680553">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1233738680554">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233738680555">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233738682394">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233738692283">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233738682791">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233738682395" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1233738691096">
+                              <link role="link" targetNodeId="1.1233679274643" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1233738694204">
+                            <link role="baseMethodDeclaration" targetNodeId="5.1213877173054" resolveInfo="getValue" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

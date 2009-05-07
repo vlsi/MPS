@@ -114,13 +114,8 @@ public class BuiltInLibrariesIO {
       String param = args[i];
       String[] strings = param.split("=");
 
-      if (!strings[0].startsWith("\"") || !strings[0].endsWith("\"") ||
-        !strings[1].startsWith("\"") || !strings[1].endsWith("\"")) {
-        throw new IllegalArgumentException("Illegal Argument " + param);
-      }
-
-      String name = strings[0].substring(1, strings[0].length() - 1);
-      String path = Macros.MPS_HOME + File.separator + strings[1].substring(1, strings[1].length() - 1);
+      String name = strings[0];
+      String path = Macros.MPS_HOME + File.separator + strings[1];
 
       BuiltInLibrariesIO.addLibraryToConfigurationFile(name, path, mpsHome);
     }
