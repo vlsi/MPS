@@ -254,7 +254,7 @@ public class Generator extends AbstractModule {
   }
 
   public File getBundleHome() {
-    return home.getAbsoluteFile();
+    return null;
   }
 
   public List<ModuleReference> getUsedLanguagesReferences() {
