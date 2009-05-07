@@ -22,6 +22,21 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build5/BuildLanguage.build5.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build6/BuildLanguage.build6.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build7/BuildLanguage.build7.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build8/BuildLanguage.build8.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build9/BuildLanguage.build9.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build10/BuildLanguage.build10.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build11/BuildLanguage.build11.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build12/BuildLanguage.build12.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build13/BuildLanguage.build13.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build14/BuildLanguage.build14.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build15/BuildLanguage.build15.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build/BuildLanguage.build.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build0/BuildLanguage.build0.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build1/BuildLanguage.build1.msd" />
+      <solutionPath path="${project}/solutions/BuildLanguage.build4/BuildLanguage.build4.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/buildlanguage/buildlanguage.mpl" />

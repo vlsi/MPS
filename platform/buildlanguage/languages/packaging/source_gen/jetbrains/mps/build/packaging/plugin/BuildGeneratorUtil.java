@@ -7,15 +7,13 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -42,18 +40,6 @@ public class BuildGeneratorUtil {
     if (modelDescriptor == null) {
       modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
     }
-    final SModelDescriptor descriptor = modelDescriptor;
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
-          public void run() {
-            descriptor.getSModel().addLanguage(getPackagingLanguageReference());
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
     return modelDescriptor;
   }
 
@@ -85,12 +71,7 @@ public class BuildGeneratorUtil {
       solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
     }
     final ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-
-      public void run() {
-        solution.addUsedLangauge(packagingLanguageRef);
-      }
-    });
+    BuildGeneratorUtil.addReferenceToSolution(packagingLanguageRef, solution);
     return solution;
   }
 
@@ -113,9 +94,20 @@ public class BuildGeneratorUtil {
     });
   }
 
-  private static ModuleReference getPackagingLanguageReference() {
+  public static ModuleReference getPackagingLanguageReference() {
     Language packagingLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging");
     return packagingLanguage.getModuleReference();
+  }
+
+  public static void addReferenceToSolution(final ModuleReference packagingLanguageRef, final Solution solution) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+
+      public void run() {
+        SolutionDescriptor descriptor = solution.getModuleDescriptor();
+        descriptor.getUsedLanguages().add(packagingLanguageRef);
+        solution.setSolutionDescriptor(descriptor, false);
+      }
+    });
   }
 
 }

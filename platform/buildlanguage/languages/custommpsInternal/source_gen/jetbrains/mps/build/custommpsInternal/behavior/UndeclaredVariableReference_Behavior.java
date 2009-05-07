@@ -11,7 +11,7 @@ public class UndeclaredVariableReference_Behavior {
   }
 
   public static String virtual_getValue_1213877173054(SNode thisNode) {
-    return "$" + SPropertyOperations.getString(thisNode, "antName") + "$";
+    return "${" + SPropertyOperations.getString(thisNode, "antName") + "}";
   }
 
 }

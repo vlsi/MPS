@@ -55,7 +55,7 @@
     <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
     <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
     <property name="jre.unzipped.path" value="${basedir}/${deploy.dir}" />
-    <property name="installer" value="MPS-$build$-windows.exe" />
+    <property name="installer" value="MPS-${build.number}-windows.exe" />
     <property name="mps_home" value="${basedir}" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />

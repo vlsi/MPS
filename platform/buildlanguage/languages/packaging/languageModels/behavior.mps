@@ -65,6 +65,22 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724865" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8148924375507875982">
+      <property name="name" value="getAntValue" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8148924375507875983" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8148924375507879477" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8148924375507875985">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8148924375507879478">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8148924375507879481">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8148924375507879480" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8148924375507879485">
+              <link role="baseMethodDeclaration" targetNodeId="1213877173054" resolveInfo="getValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877173057">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877173058" />
     </node>

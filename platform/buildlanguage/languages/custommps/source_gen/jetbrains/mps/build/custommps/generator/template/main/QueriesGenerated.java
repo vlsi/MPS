@@ -382,7 +382,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1238071255691(final IOperationContext operationContext, final IfMacroContext _context) {
-    return new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists();
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean ifMacro_Condition_1238512293286(final IOperationContext operationContext, final IfMacroContext _context) {

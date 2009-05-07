@@ -28,7 +28,7 @@ public abstract class AbstractBuildGenerator {
   public AbstractBuildGenerator() {
   }
 
-  public abstract void generate(ProgressIndicator indicator);
+  public abstract Runnable generate(ProgressIndicator indicator);
 
   public void setProjectName(String projectName) {
     this.myProjectName = projectName;

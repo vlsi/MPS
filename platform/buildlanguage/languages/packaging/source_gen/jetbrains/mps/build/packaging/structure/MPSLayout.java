@@ -89,11 +89,11 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
     super.setChild(MPSLayout.BASE_DIRECTORY, node);
   }
 
-  public Path getPropertyFile() {
-    return (Path)this.getChild(Path.class, MPSLayout.PROPERTY_FILE);
+  public PropertiesImport getPropertyFile() {
+    return (PropertiesImport)this.getChild(PropertiesImport.class, MPSLayout.PROPERTY_FILE);
   }
 
-  public void setPropertyFile(Path node) {
+  public void setPropertyFile(PropertiesImport node) {
     super.setChild(MPSLayout.PROPERTY_FILE, node);
   }
 

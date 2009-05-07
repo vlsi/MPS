@@ -503,7 +503,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1240395872155">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="propertyFile" />
-      <link role="target" targetNodeId="1220973916698" resolveInfo="Path" />
+      <link role="target" targetNodeId="2372113960322848944" resolveInfo="PropertiesImport" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
@@ -1251,6 +1251,42 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1240832649054">
     <property name="package" value="projectComponents" />
     <property name="name" value="INotBuildableComponent" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2372113960322848944">
+    <property name="name" value="PropertiesImport" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="2372113960322848945">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2372113960322848946">
+    <property name="name" value="PropertyNodeImport" />
+    <link role="extends" targetNodeId="2372113960322848944" resolveInfo="PropertiesImport" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2372113960322848952">
+      <property name="value" value="node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2372113960322853251">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="propertyNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1200504738494" resolveInfo="PropertyNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2372113960322848948">
+    <property name="name" value="PropertyFileImport" />
+    <link role="extends" targetNodeId="2372113960322848944" resolveInfo="PropertiesImport" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2372113960322848949">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="file" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1220973916698" resolveInfo="Path" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2372113960322848955">
+      <property name="value" value="file" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 

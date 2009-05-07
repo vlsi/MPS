@@ -20,6 +20,10 @@ public class ExternalVariableReference_Behavior {
     return "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variable", false), "antName") + "}";
   }
 
+  public static String virtual_getAntValue_8148924375507875982(SNode thisNode) {
+    return PropertyValueExpression_Behavior.call_getActualValue_1213877472572(thisNode);
+  }
+
   public static String virtual_toString_1213877472569(SNode thisNode) {
     return PropertyValueExpression_Behavior.call_getActualValue_1213877472572(thisNode);
   }

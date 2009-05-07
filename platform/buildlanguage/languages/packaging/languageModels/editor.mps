@@ -2004,5 +2004,39 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1240563050607" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2372113960322848950">
+    <link role="conceptDeclaration" targetNodeId="1.2372113960322848946" resolveInfo="PropertyNodeImport" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2372113960322853245">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="2372113960322853248">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="2372113960322853253">
+        <link role="relationDeclaration" targetNodeId="1.2372113960322853251" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="2372113960322853254">
+          <link role="conceptDeclaration" targetNodeId="2v.1200504738494" resolveInfo="PropertyNode" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2372113960322853256">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2372113960322853247" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2372113960322848953">
+    <link role="conceptDeclaration" targetNodeId="1.2372113960322848948" resolveInfo="PropertyFileImport" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2372113960322853239">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="2372113960322853242">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2372113960322853244">
+        <link role="relationDeclaration" targetNodeId="1.2372113960322848949" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2372113960322853241" />
+    </node>
+  </node>
 </model>
 

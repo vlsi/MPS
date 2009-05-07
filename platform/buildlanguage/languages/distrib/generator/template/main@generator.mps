@@ -3008,8 +3008,8 @@
                               <link role="link" targetNodeId="1.1234784278747" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7675365865760045815">
-                            <link role="baseMethodDeclaration" targetNodeId="9.1213877173054" resolveInfo="getValue" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8148924375507879499">
+                            <link role="baseMethodDeclaration" targetNodeId="9.8148924375507875982" resolveInfo="getAntValue" />
                           </node>
                         </node>
                       </node>
@@ -3028,8 +3028,8 @@
                                 <link role="link" targetNodeId="1.1234784309457" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234794061855">
-                              <link role="baseMethodDeclaration" targetNodeId="9.1213877173054" resolveInfo="getValue" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8148924375507879498">
+                              <link role="baseMethodDeclaration" targetNodeId="9.8148924375507875982" resolveInfo="getAntValue" />
                             </node>
                           </node>
                           <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234794022276">

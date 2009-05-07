@@ -349,9 +349,9 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234793901359(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode config = SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode());
-    String exe = IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(config, "shortName", true)) + "-";
+    String exe = IStringExpression_Behavior.call_getAntValue_8148924375507875982(SLinkOperations.getTarget(config, "shortName", true)) + "-";
     if ((SLinkOperations.getTarget(config, "buildVersion", true) != null)) {
-      exe += IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(config, "buildVersion", true));
+      exe += IStringExpression_Behavior.call_getAntValue_8148924375507875982(SLinkOperations.getTarget(config, "buildVersion", true));
       exe += "-";
     }
     exe += "windows.exe";

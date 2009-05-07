@@ -462,6 +462,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_8148924375507507648(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "propertyNode", false);
+  }
+
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {
     return SConceptPropertyOperations.getBoolean(_context.getNode(), "cleanAfterTheJob");
   }
@@ -663,7 +667,11 @@ public class QueriesGenerated {
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), absoluteDescriptorPath);
   }
 
-  public static SNode sourceNodeQuery_1240398985174(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8148924375507507636(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "file", true);
+  }
+
+  public static SNode sourceNodeQuery_8148924375507507659(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "propertyFile", true);
   }
 
