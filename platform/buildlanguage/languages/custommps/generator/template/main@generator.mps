@@ -4114,13 +4114,13 @@
             <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1241537670532">
               <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1241537670533">
                 <property name="value" value="scripts folder" />
-                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1241537670534">
-                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241537670535">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241537670536">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241537670537">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241537670538">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241537670539" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241537670540">
+                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="4350419540517826478">
+                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="4350419540517826479">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4350419540517826480">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4350419540517826481">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4350419540517826482">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4350419540517826483" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4350419540517826484">
                             <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
                           </node>
                         </node>
@@ -5275,8 +5275,8 @@
                 </node>
               </node>
             </node>
-            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238070002314">
-              <property name="path" value="tools" />
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="4350419540517973572">
+              <property name="path" value="sign" />
             </node>
             <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238070004675">
               <property name="path" value="SignCode.exe" />

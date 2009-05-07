@@ -38,7 +38,7 @@ public class QueriesGenerated {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode role = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.Role", null);
-                SPropertyOperations.set(role, "name", "" + ((item)));
+                SPropertyOperations.set(role, "name", (item));
                 return role;
               }
             });

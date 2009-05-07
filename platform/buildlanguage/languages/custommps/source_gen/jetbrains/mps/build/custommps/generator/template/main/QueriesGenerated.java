@@ -204,7 +204,7 @@ public class QueriesGenerated {
     return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1241537670535(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4350419540517826479(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
   }
 

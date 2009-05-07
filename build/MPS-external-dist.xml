@@ -151,8 +151,8 @@
     <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>
-    <exec executable="${mps_home}/build/tools/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
-      <arg line="/spc  build/sign/MASertificate.spc  /v  build/sign/test.pvk  /t http://timestamp.verisign.com/scripts/timstamp.dll  ${installer} " />
+    <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
+      <arg line="/spc  build\sign\MASertificate.spc  /v  build\sign\test.pvk  /t http://timestamp.verisign.com/scripts/timstamp.dll  ${installer} " />
     </exec>
     <delete file="${nsis.script.path.tmp}" />
     <delete file="${application.icon}" />
