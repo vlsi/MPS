@@ -5009,6 +5009,107 @@
     <property name="defaultVMOptions" value="-Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=windows-1251" />
     <property name="additionalVMOptions" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
     <link role="buildScriptConfiguration" targetNodeId="1233857021519" resolveInfo="default" />
+    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
+    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UnixConfig" id="1241441472522" />
+    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">
+      <node role="association" type="jetbrains.mps.build.distrib.structure.MacOsFileAssociation" id="1234780843466">
+        <property name="extensions" value="mpr" />
+        <property name="name" value="JetBrains MPS Project" />
+        <node role="role" type="jetbrains.mps.build.distrib.structure.Role" id="1234780843467">
+          <property name="name" value="Editor" />
+        </node>
+        <node role="icon" type="jetbrains.mps.build.packaging.structure.Path" id="1239975455644">
+          <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239975455645">
+            <property name="name" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239975455646">
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975462892">
+              <property name="path" value="build" />
+              <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239975476521">
+                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239975476522">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239975476523">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536572002">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536572003">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536572004" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536572005">
+                          <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975465441">
+              <property name="path" value="resources" />
+            </node>
+            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975469534">
+              <property name="path" value="mps.icns" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="javaApplicationStubPath" type="jetbrains.mps.build.packaging.structure.Path" id="1234894088288">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1234894088289">
+          <property name="name" value="mps_home" />
+        </node>
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1234894088290">
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894099774">
+            <property name="path" value="build" />
+            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239714303950">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239714303951">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714303952">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536553224">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536553225">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536553226" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536553227">
+                        <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894101997">
+            <property name="path" value="resources" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894156432">
+            <property name="path" value="mps" />
+          </node>
+        </node>
+      </node>
+      <node role="iconPath" type="jetbrains.mps.build.packaging.structure.Path" id="1234894159534">
+        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1234894159535">
+          <property name="name" value="mps_home" />
+        </node>
+        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1234894159536">
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894169515">
+            <property name="path" value="build" />
+            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239714309620">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239714309621">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714309622">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536560212">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536560213">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536560214" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536560215">
+                        <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894173732">
+            <property name="path" value="resources" />
+          </node>
+          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894183381">
+            <property name="path" value="mps.icns" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.WindowsConfig" id="1234780843434">
       <property name="uninstallNshName" value="uninstall" />
       <property name="generateInstallUninstallLists" value="false" />
@@ -5376,107 +5477,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
-    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UnixConfig" id="1241441472522" />
-    <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.MacConfig" id="1234780843440">
-      <node role="association" type="jetbrains.mps.build.distrib.structure.MacOsFileAssociation" id="1234780843466">
-        <property name="extensions" value="mpr" />
-        <property name="name" value="JetBrains MPS Project" />
-        <node role="role" type="jetbrains.mps.build.distrib.structure.Role" id="1234780843467">
-          <property name="name" value="Editor" />
-        </node>
-        <node role="icon" type="jetbrains.mps.build.packaging.structure.Path" id="1239975455644">
-          <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239975455645">
-            <property name="name" value="mps_home" />
-          </node>
-          <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239975455646">
-            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975462892">
-              <property name="path" value="build" />
-              <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239975476521">
-                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239975476522">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239975476523">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536572002">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536572003">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536572004" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536572005">
-                          <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975465441">
-              <property name="path" value="resources" />
-            </node>
-            <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239975469534">
-              <property name="path" value="mps.icns" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="javaApplicationStubPath" type="jetbrains.mps.build.packaging.structure.Path" id="1234894088288">
-        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1234894088289">
-          <property name="name" value="mps_home" />
-        </node>
-        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1234894088290">
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894099774">
-            <property name="path" value="build" />
-            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239714303950">
-              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239714303951">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714303952">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536553224">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536553225">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536553226" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536553227">
-                        <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894101997">
-            <property name="path" value="resources" />
-          </node>
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894156432">
-            <property name="path" value="mps" />
-          </node>
-        </node>
-      </node>
-      <node role="iconPath" type="jetbrains.mps.build.packaging.structure.Path" id="1234894159534">
-        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1234894159535">
-          <property name="name" value="mps_home" />
-        </node>
-        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1234894159536">
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894169515">
-            <property name="path" value="build" />
-            <node role="propertyMacro$property_attribute$path" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1239714309620">
-              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1239714309621">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239714309622">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241536560212">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241536560213">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241536560214" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241536560215">
-                        <link role="baseMethodDeclaration" targetNodeId="4.1241536330057" resolveInfo="getScriptsFolder" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894173732">
-            <property name="path" value="resources" />
-          </node>
-          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234894183381">
-            <property name="path" value="mps.icns" />
           </node>
         </node>
       </node>

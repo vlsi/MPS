@@ -9,18 +9,14 @@
     <antcall target="MPS-external.main" />
   </target>
   <target name="default" depends="base">
-    <antcall target="windows.dist" />
     <antcall target="universal.dist" />
     <antcall target="unix.dist" />
     <antcall target="macos.dist" />
+    <antcall target="windows.dist" />
     <antcall target="clean" />
   </target>
   <target name="clean">
     <delete dir="${deploy.dir}/MPS" />
-  </target>
-  <target name="windows.single" depends="base">
-    <antcall target="windows.dist" />
-    <antcall target="clean" />
   </target>
   <target name="universal.single" depends="base">
     <antcall target="universal.dist" />
@@ -34,69 +30,9 @@
     <antcall target="macos.dist" />
     <antcall target="clean" />
   </target>
-  <target name="windows.dist" if="windows">
-    <fail unless="version" message="Property version unspecified." />
-    <fail unless="build.number" message="Property build.number unspecified." />
-    <property name="scripts.folder" value="build" />
-    <property name="startup.bat.name" value="mps.bat" />
-    <property name="startup.bat" value="${scripts.folder}/${startup.bat.name}" />
-    <property name="vmoptions.file.name" value="mps.vmoptions" />
-    <property name="vmoptions.file" value="${scripts.folder}/${vmoptions.file.name}" />
-    <property name="root.folder.name" value="MPS" />
-    <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
-    <property name="nsis.script.name" value="installer.nsi" />
-    <property name="nsis.script.path" value="${basedir}/${scripts.folder}/${nsis.script.name}" />
-    <property name="nsis.script.path.tmp" value="${basedir}/${deploy.dir}/installation.script${DSTAMP}.nsi" />
-    <property name="application.icon" value="${basedir}/${deploy.dir}/application.ico" />
-    <property name="homepage.icon" value="${basedir}/${deploy.dir}/homepage.ico" />
-    <property name="installer.icon" value="${basedir}/${deploy.dir}/installer.ico" />
-    <property name="uninstaller.icon" value="${basedir}/${deploy.dir}/uninstaller.ico" />
-    <property name="license.path" value="${basedir}/${deploy.dir}/license.txt" />
-    <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
-    <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
-    <property name="jre.unzipped.path" value="${basedir}/${deploy.dir}" />
-    <property name="installer" value="MPS-${build.number}-windows.exe" />
-    <property name="mps_home" value="${basedir}" />
-    <fail unless="mps_home" message="Property mps_home unspecified." />
-    <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
-    <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
-    <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
-    <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
-    <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
-    <copy file="${mps_home}/build/resources/mps.inst.ico" tofile="${installer.icon}" />
-    <copy file="${mps_home}/build/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
-    <copy file="${license.src.path}" tofile="${license.path}" />
-    <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
-    <copy file="${vmoptions.file}" todir="${root.folder}/bin" />
-    <java classpath="${mps_home}/platform/buildlanguage/languages/distrib/classes" classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
-      <arg file="${nsis.script.path.tmp}/../install.nsh" />
-      <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
-      <arg file="${root.folder}" />
-      <arg file="${startup.bat}" />
-      <arg file="${application.icon}" />
-      <arg file="${jre.unzipped.path}/jre" />
-      <arg file="${homepage.icon}" />
-    </java>
-    <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
-    <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
-    <unzip src="${mps_home}/build/tools/nsis.zip" dest="${deploy.dir}" />
-    <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
-      <arg file="${nsis.script.path.tmp}" />
-    </exec>
-    <exec executable="${mps_home}/build/tools/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
-      <arg line="/spc  build/sign/MASertificate.spc  /v  build/sign/test.pvk  /t http://timestamp.verisign.com/scripts/timstamp.dll  ${installer} " />
-    </exec>
-    <delete file="${nsis.script.path.tmp}" />
-    <delete file="${application.icon}" />
-    <delete file="${homepage.icon}" />
-    <delete file="${installer.icon}" />
-    <delete file="${uninstaller.icon}" />
-    <delete file="${license.path}" />
-    <delete dir="${jre.unzipped.path}/jre" />
-    <delete file="${nsis.script.path.tmp}/../install.nsh" />
-    <delete file="${nsis.script.path.tmp}/../uninstall.nsh" />
-    <delete dir="${deploy.dir}/nsis" />
-    <delete file="${root.folder}/bin/${vmoptions.file.name}" />
+  <target name="windows.single" depends="base">
+    <antcall target="windows.dist" />
+    <antcall target="clean" />
   </target>
   <target name="universal.dist">
     <fail unless="version" message="Property version unspecified." />
@@ -165,5 +101,69 @@
       <zipfileset file="${scripts.folder}/mps.vmoptions" prefix="${root.folder.dest}/bin" />
     </zip>
     <delete file="${info.plist.tmp}" />
+  </target>
+  <target name="windows.dist" if="windows">
+    <fail unless="version" message="Property version unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="scripts.folder" value="build" />
+    <property name="startup.bat.name" value="mps.bat" />
+    <property name="startup.bat" value="${scripts.folder}/${startup.bat.name}" />
+    <property name="vmoptions.file.name" value="mps.vmoptions" />
+    <property name="vmoptions.file" value="${scripts.folder}/${vmoptions.file.name}" />
+    <property name="root.folder.name" value="MPS" />
+    <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
+    <property name="nsis.script.name" value="installer.nsi" />
+    <property name="nsis.script.path" value="${basedir}/${scripts.folder}/${nsis.script.name}" />
+    <property name="nsis.script.path.tmp" value="${basedir}/${deploy.dir}/installation.script${DSTAMP}.nsi" />
+    <property name="application.icon" value="${basedir}/${deploy.dir}/application.ico" />
+    <property name="homepage.icon" value="${basedir}/${deploy.dir}/homepage.ico" />
+    <property name="installer.icon" value="${basedir}/${deploy.dir}/installer.ico" />
+    <property name="uninstaller.icon" value="${basedir}/${deploy.dir}/uninstaller.ico" />
+    <property name="license.path" value="${basedir}/${deploy.dir}/license.txt" />
+    <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
+    <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
+    <property name="jre.unzipped.path" value="${basedir}/${deploy.dir}" />
+    <property name="installer" value="MPS-${build.number}-windows.exe" />
+    <property name="mps_home" value="${basedir}" />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
+    <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
+    <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
+    <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
+    <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
+    <copy file="${mps_home}/build/resources/mps.inst.ico" tofile="${installer.icon}" />
+    <copy file="${mps_home}/build/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
+    <copy file="${license.src.path}" tofile="${license.path}" />
+    <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
+    <copy file="${vmoptions.file}" todir="${root.folder}/bin" />
+    <java classpath="${mps_home}/platform/buildlanguage/languages/distrib/classes" classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
+      <arg file="${nsis.script.path.tmp}/../install.nsh" />
+      <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
+      <arg file="${root.folder}" />
+      <arg file="${startup.bat}" />
+      <arg file="${application.icon}" />
+      <arg file="${jre.unzipped.path}/jre" />
+      <arg file="${homepage.icon}" />
+    </java>
+    <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
+    <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
+    <unzip src="${mps_home}/build/tools/nsis.zip" dest="${deploy.dir}" />
+    <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
+      <arg file="${nsis.script.path.tmp}" />
+    </exec>
+    <exec executable="${mps_home}/build/tools/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
+      <arg line="/spc  build/sign/MASertificate.spc  /v  build/sign/test.pvk  /t http://timestamp.verisign.com/scripts/timstamp.dll  ${installer} " />
+    </exec>
+    <delete file="${nsis.script.path.tmp}" />
+    <delete file="${application.icon}" />
+    <delete file="${homepage.icon}" />
+    <delete file="${installer.icon}" />
+    <delete file="${uninstaller.icon}" />
+    <delete file="${license.path}" />
+    <delete dir="${jre.unzipped.path}/jre" />
+    <delete file="${nsis.script.path.tmp}/../install.nsh" />
+    <delete file="${nsis.script.path.tmp}/../uninstall.nsh" />
+    <delete dir="${deploy.dir}/nsis" />
+    <delete file="${root.folder}/bin/${vmoptions.file.name}" />
   </target>
 </project>
