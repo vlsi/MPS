@@ -7,7 +7,9 @@ import jetbrains.mps.vfs.MPSExtentions;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.Solution;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
@@ -43,33 +45,28 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setValidDefaultSolutionName(projectName);
   }
 
-  public Runnable generate(ProgressIndicator indicator) {
-    return this.generateInternal(indicator);
+  public void generate(ProgressIndicator indicator) {
+    this.generateInternal(indicator);
   }
 
-  private Runnable generateInternal(ProgressIndicator indicator) {
+  private void generateInternal(ProgressIndicator indicator) {
     indicator.setText("Preparing...");
     final SModelDescriptor descriptor = this.getSModelDescriptor(indicator);
     final String projectName = this.getProjectName();
     final String projectBasedirPath = this.myProject.getBaseDir().getPath();
     final List<NodeData> modules = this.getModules();
     indicator.setText("Creating Script...");
-    return new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
 
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            BuildGeneratorImpl.this.addReferencesToModel(descriptor);
             BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
           }
         });
       }
-    };
-  }
-
-  protected void addReferencesToModel(SModelDescriptor descriptor) {
-    descriptor.getSModel().addLanguage(BuildGeneratorUtil.getPackagingLanguageReference());
+    }, ModalityState.NON_MODAL);
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {

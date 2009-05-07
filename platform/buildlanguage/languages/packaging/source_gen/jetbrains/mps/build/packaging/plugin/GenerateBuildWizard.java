@@ -5,14 +5,9 @@ package jetbrains.mps.build.packaging.plugin;
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.ide.wizard.Step;
 
 public class GenerateBuildWizard extends AbstractWizard {
@@ -52,18 +47,13 @@ public class GenerateBuildWizard extends AbstractWizard {
 
   protected void doOKAction() {
     super.doOKAction();
-    final List<Runnable> toRunAfter = ListSequence.fromList(new ArrayList<Runnable>());
     ProgressManager.getInstance().run(new Task.Modal(null, "Generating build script", false) {
 
       public void run(ProgressIndicator progressIndicator) {
         progressIndicator.setIndeterminate(true);
-        ListSequence.fromList(toRunAfter).addElement(GenerateBuildWizard.this.myGenerator.generate(progressIndicator));
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        GenerateBuildWizard.this.myGenerator.generate(progressIndicator);
       }
     });
-    for(Runnable runnable : ListSequence.fromList(toRunAfter)) {
-      runnable.run();
-    }
   }
 
   public void initWizard() {

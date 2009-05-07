@@ -27,13 +27,13 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
     this.myTree.addMouseListener(new MouseAdapter() {
 
       public void mousePressed(MouseEvent e) {
-        CheckBoxTree.this.mousePressed(e.getX(), e.getY());
+        CheckBoxTree.this.mouseParessed(e.getX(), e.getY());
       }
     });
     this.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
   }
 
-  public void mousePressed(int x, int y) {
+  public void mouseParessed(int x, int y) {
     int row = this.myTree.getRowForLocation(x, y);
     if (row == 0) {
       this.myTree.revalidate();
