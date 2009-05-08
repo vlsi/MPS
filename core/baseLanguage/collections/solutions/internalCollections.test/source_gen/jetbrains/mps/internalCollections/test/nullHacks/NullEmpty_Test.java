@@ -10,6 +10,9 @@ import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class NullEmpty_Test extends Util_Test {
 
@@ -25,6 +28,16 @@ public class NullEmpty_Test extends Util_Test {
       Assert.assertNull(ListSequence.fromList(emptyList).first());
       Assert.assertNull(ListSequence.fromList(emptyList).getElement(-1));
     }
+  }
+
+  @Test()
+  public void test_nullAddAll() throws Exception {
+    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    ListSequence.fromList(test).addSequence(null);
+    this.assertIterableEquals(this.expect5(), test);
+    Set<Integer> test2 = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
+    ListSequence.fromList(test).addSequence(null);
+    this.assertIterableEqualsAsSet(this.expect5(), test2);
   }
 
 }

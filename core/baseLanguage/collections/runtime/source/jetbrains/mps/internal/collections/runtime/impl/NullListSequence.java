@@ -16,7 +16,6 @@
 package jetbrains.mps.internal.collections.runtime.impl;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
@@ -29,7 +28,9 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
  * @author fyodor
  */
 public class NullListSequence<T> extends NullSequence<T> implements IListSequence<T>, List<T> {
-
+     
+    private static Object[] EMPTY_ARRAY = new Object [0];
+    
     private final static NullListSequence<Object> INSTANCE = new NullListSequence<Object> (); 
     
     @SuppressWarnings("unchecked")
@@ -115,11 +116,12 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     }
 
     public Object[] toArray() {
-        return null;
+        return EMPTY_ARRAY;
     }
 
+    @SuppressWarnings("unchecked")
     public <U> U[] toArray(U[] a) {
-        return null;
+        return (U[]) EMPTY_ARRAY;
     }
     
     // additional methods 
@@ -174,12 +176,12 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     
     @SuppressWarnings("unchecked")
     public T[] toGenericArray() {
-        return (T[]) Collections.<T>emptyList().toArray();
+        return (T[])EMPTY_ARRAY;
     }
     
     @SuppressWarnings("unchecked")
     public T[] toGenericArray(Class<T> runtimeClass) {
-        return (T[]) Collections.<T>emptyList().toArray();
+        return (T[]) EMPTY_ARRAY;
     }
 
     private static class EmptyListIterator<U> implements ListIterator<U> {

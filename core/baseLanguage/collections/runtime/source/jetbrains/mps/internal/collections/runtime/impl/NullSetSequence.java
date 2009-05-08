@@ -24,91 +24,94 @@ import jetbrains.mps.internal.collections.runtime.ISetSequence;
 
 public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<T>, Set<T> {
 
-	private static final NullSetSequence<Object> INSTANCE = new NullSetSequence<Object> ();
-	
-	@SuppressWarnings("unchecked")
-	public static <U> NullSetSequence<U> instance () {
-		return (NullSetSequence<U>) INSTANCE;
-	}
-	
-	protected NullSetSequence () {
-	}
-	
-	// Set
-	
-	public boolean add(T e) {
-		return false;
-	}
+    private static Object[] EMPTY_ARRAY = new Object [0];
 
-	public boolean addAll(Collection<? extends T> c) {
-		return false;
-	}
+    private static final NullSetSequence<Object> INSTANCE = new NullSetSequence<Object> ();
 
-	public void clear() {
-	}
-
-	public boolean contains(Object t) {
-		return false;
-	}
-	
-	public boolean containsAll(Collection<?> c) {
-		return false;
-	}
-
-	public boolean remove(Object o) {
-		return false;
-	}
-
-	public boolean removeAll(Collection<?> c) {
-		return false;
-	}
-
-	public boolean retainAll(Collection<?> c) {
-		return false;
-	}
-
-	public int size() {
-		return 0;
-	}
-
-	public Object[] toArray() {
-		return null;
-	}
-
-	public <U> U[] toArray(U[] a) {
-		return null;
-	}
-	
-	// ISetSequence
-
-	public T addElement(T t) {
-		return null;
-	}
-
-	public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
-		return this;
-	}
-
-	public T removeElement(T t) {
-		return null;
-	}
-
-	public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
-		return this;
-	}
-
-	@SuppressWarnings("unchecked")
-    public T[] toGenericArray() {
-        return (T[]) Collections.<T>emptyList().toArray();
+    @SuppressWarnings("unchecked")
+    public static <U> NullSetSequence<U> instance () {
+        return (NullSetSequence<U>) INSTANCE;
     }
-    
+
+    protected NullSetSequence () {
+    }
+
+    // Set
+
+    public boolean add(T e) {
+        return false;
+    }
+
+    public boolean addAll(Collection<? extends T> c) {
+        return false;
+    }
+
+    public void clear() {
+    }
+
+    public boolean contains(Object t) {
+        return false;
+    }
+
+    public boolean containsAll(Collection<?> c) {
+        return false;
+    }
+
+    public boolean remove(Object o) {
+        return false;
+    }
+
+    public boolean removeAll(Collection<?> c) {
+        return false;
+    }
+
+    public boolean retainAll(Collection<?> c) {
+        return false;
+    }
+
+    public int size() {
+        return 0;
+    }
+
+    public Object[] toArray() {
+        return EMPTY_ARRAY;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <U> U[] toArray(U[] a) {
+        return (U[]) EMPTY_ARRAY;
+    }
+
+    // ISetSequence
+
+    public T addElement(T t) {
+        return null;
+    }
+
+    public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
+        return this;
+    }
+
+    public T removeElement(T t) {
+        return null;
+    }
+
+    public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
+        return this;
+    }
+
+    @SuppressWarnings("unchecked")
+    public T[] toGenericArray() {
+        return (T[]) EMPTY_ARRAY;
+    }
+
     @SuppressWarnings("unchecked")
     public T[] toGenericArray(Class<T> runtimeClass) {
-        return (T[]) Collections.<T>emptyList().toArray();
+        return (T[]) EMPTY_ARRAY;
     }
 
-	public Set<T> toSet() {
-		return this;
-	}
+    public Set<T> toSet() {
+        return this;
+    }
 
 }
