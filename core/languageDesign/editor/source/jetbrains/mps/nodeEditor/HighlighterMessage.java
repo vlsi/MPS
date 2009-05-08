@@ -168,13 +168,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {
-      int x = cell.getX();
-      int y = cell.getY();
-      int height = cell.getHeight();
-      int leftInternalInset = cell.getLeftInset();
-      int effectiveWidth = cell.getEffectiveWidth();
-      g.setColor(new Color(250, 247, 158));
-      g.fillRect(x + leftInternalInset, y, effectiveWidth, height);
+      cell.paintSelection(g, new Color(250, 247, 158), false);      
     } else {
       ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);
     }

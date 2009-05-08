@@ -269,7 +269,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void setDescent(int newDescent) {
     myDescent = newDescent;
   }
-  
+
   public Iterable<EditorCell> contentCells() {
     if (usesBraces()) {
       return new Iterable<EditorCell>() {
@@ -324,7 +324,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       }
     };
   }
-  
+
   public EditorCell[] getContentCells() {
     if (usesBraces()) {
       List<EditorCell> contentList = myEditorCellsWrapper.subList(1, myEditorCells.length - 1);
@@ -343,7 +343,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell cell : myEditorCells) {
       if (cell instanceof EditorCell_Collection) {
         result.add(cell);
-        result.addAll(((EditorCell_Collection)cell).dfsCells());
+        result.addAll(((EditorCell_Collection) cell).dfsCells());
       } else {
         result.add(cell);
       }
@@ -398,7 +398,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     myAscent = myCellLayout.getAscent(this);
     myDescent = myCellLayout.getDescent(this);
   }
-
 
 
   public void fold() {
@@ -507,7 +506,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void paintContent(Graphics g) {
   }
 
-  public void paintSelection(Graphics g, Color c) {
+  public void paintSelection(Graphics g, Color c, boolean drawBorder) {
     List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
 
     Rectangle clip = g.getClipBounds();
@@ -525,24 +524,25 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (Rectangle part : selection) {
       gr.fillRect(part.x - x0 + 1, part.y - y0 + 1, part.width, part.height);
     }
+    if (drawBorder) {
+      Color darkerColor = c.darker();
+      gr.setColor(darkerColor);
+      int[] color = {darkerColor.getRed(), darkerColor.getGreen(), darkerColor.getBlue(), 255};
+      for (int x = 1; x < image.getWidth() - 1; x++) {
+        for (int y = 1; y < image.getHeight() - 1; y++) {
+          WritableRaster raster = image.getRaster();
+          int[] curPix = raster.getPixel(x, y, (int[]) null);
 
-    Color darkerColor = c.darker();
-    gr.setColor(darkerColor);
-    int[] color = { darkerColor.getRed(),  darkerColor.getGreen(), darkerColor.getBlue(), 255};
-    for (int x = 1; x < image.getWidth() - 1; x++) {
-      for (int y = 1; y < image.getHeight() - 1; y++) {
-        WritableRaster raster = image.getRaster();
-        int[] curPix = raster.getPixel(x, y, (int[]) null);
+          if (curPix[3] == 0) continue;
 
-        if (curPix[3] == 0) continue;
+          int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
+          int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
+          int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
+          int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
 
-        int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
-        int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
-        int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
-        int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
-
-        if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
-          raster.setPixel(x, y, color);
+          if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
+            raster.setPixel(x, y, color);
+          }
         }
       }
     }
@@ -568,7 +568,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void paintSelectionAsIfNotCollection(Graphics g, Color c) {
-    super.paintSelection(g, c);
+    super.paintSelection(g, c, true);
   }
 
   public TextBuilder renderText() {
@@ -696,7 +696,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public EditorCell getLastLeaf() {
     if (myEditorCells.length == 0) return this;
     return getLastChild().getLastLeaf();
-  }    
+  }
 
   public EditorCell getLastChild() {
     if (myEditorCells.length == 0) return null;
@@ -871,13 +871,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       EditorCell firstSelectableLeaf = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       if (deepestSelection instanceof EditorCell_Brace) {
         EditorCell_Collection braceOwner = deepestSelection.getParent();
-        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(CellFinders.LAST_SELECTABLE_LEAF) == lastSelectableLeaf)
-        {
+        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(CellFinders.LAST_SELECTABLE_LEAF) == lastSelectableLeaf) {
           enableBraces();
           return;
         }
-        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == firstSelectableLeaf)
-        {
+        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == firstSelectableLeaf) {
           enableBraces();
           return;
         }

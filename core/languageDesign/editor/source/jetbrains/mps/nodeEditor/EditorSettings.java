@@ -589,7 +589,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       return true;
     }
 
-    public void paintSelection(Graphics g, Color c) {
+    public void paintSelection(Graphics g, Color c, boolean drawBorder) {
 
     }
 

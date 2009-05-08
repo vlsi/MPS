@@ -628,7 +628,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   protected void paintSelectionIfRequired(Graphics g) {
     if (isSelectionPainted()) {
-      paintSelection(g, getSelectionColor());
+      paintSelection(g, getSelectionColor(), true);
     }
   }
 
@@ -764,10 +764,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myHeight - getAscent();
   }
 
-  public void paintSelection(Graphics g, Color c) {
+  public void paintSelection(Graphics g, Color c, boolean drawBorder) {
     g.setColor(c);
     g.fillRect(getX(), getY() /*+ getTopInset()*/, getWidth(), getHeight() - getTopInset() - getBottomInset());
-    if (getEditor().hasFocus()) {
+    if (getEditor().hasFocus() && drawBorder) {
       g.setColor(c.darker());
       g.drawRect(getX(), getY(), getWidth(), getHeight());
     }

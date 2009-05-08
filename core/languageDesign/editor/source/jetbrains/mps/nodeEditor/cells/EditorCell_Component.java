@@ -109,7 +109,7 @@ public class EditorCell_Component extends EditorCell_Basic {
   }
 
   public void paintSelection(Graphics g) {
-    paintSelection(g, getSelectionColor());
+    paintSelection(g, getSelectionColor(), true);
   }
 
   public String toString() {
