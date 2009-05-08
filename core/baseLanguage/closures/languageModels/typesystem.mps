@@ -401,33 +401,33 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240676737271">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240676737272">
-          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240676737273">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240676737274">
-              <link role="applicableNode" targetNodeId="1201614774958" resolveInfo="functionSubType" />
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="4160512568111333309">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4160512568111333313">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4160512568111333315">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4160512568111333314">
+              <link role="applicableNode" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240676737275">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4160512568111333321">
               <link role="link" targetNodeId="1.1199542457201" />
             </node>
           </node>
         </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240676737276">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240676759738">
-            <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.JoinType" id="1240676762849">
-              <node role="argument" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1240676767726">
-                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1240676771321">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240676785153">
-                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240676780245">
-                      <link role="applicableNode" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4160512568111333312">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4160512568111332200">
+            <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.MeetType" id="4160512568111332202">
+              <node role="argument" type="jetbrains.mps.lang.core.structure.BaseConcept" id="4160512568111332203">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="4160512568111332206">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4160512568111332212">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4160512568111332209">
+                      <link role="applicableNode" targetNodeId="1201614774958" resolveInfo="functionSubType" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240676787106">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4160512568111333306">
                       <link role="link" targetNodeId="1.1199542457201" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1240676813928" />
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4160512568111332205" />
             </node>
           </node>
         </node>
