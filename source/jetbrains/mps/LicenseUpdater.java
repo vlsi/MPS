@@ -41,17 +41,23 @@ public class LicenseUpdater {
       " */\n").replace("\n", LINE_SEPARATOR);
 
 
-  private static void updateLicense(File current, boolean inSourceDir) {
+  private static void updateLicense(File current, boolean inSourceDir, boolean inSourceGen) {
     if (current.getName().equals(".svn")) return;
 
     if (current.isDirectory()) {
       File[] files = current.listFiles();
       if (files == null) return;
       for (File f : files) {
-        if (f.isDirectory() && isSourceFolder(f.getName()) && !inSourceDir) {
-          updateLicense(f, true);
+        if (f.isDirectory()) {
+          if (isSourceFolder(f.getName()) && !inSourceGen) {
+            updateLicense(f, true, inSourceGen);
+          } else if (isSourceGenFolder(f.getName())) {
+            updateLicense(f, inSourceDir, true);
+          } else {
+            updateLicense(f, inSourceDir, inSourceGen);
+          }
         } else {
-          updateLicense(f, inSourceDir);
+          updateLicense(f, inSourceDir, inSourceGen);
         }
       }
     } else if (inSourceDir && current.getName().endsWith(".java")) {
@@ -72,7 +78,11 @@ public class LicenseUpdater {
     return "source".equals(name) || "test".equals(name) || "src".equals(name) || "tests".equals(name);
   }
 
+  private static boolean isSourceGenFolder(String name) {
+    return "source_gen".equals(name) || "test_gen".equals(name);
+  }
+
   public static void main(String[] args) {
-    updateLicense(new File(System.getProperty("user.dir")), false);
+    updateLicense(new File(System.getProperty("user.dir")), false, false);
   }
 }
