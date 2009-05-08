@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
 
@@ -93,28 +93,12 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1753_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1753_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_1753_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1753_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefCell_1753_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

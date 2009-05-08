@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions;
 
 public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 

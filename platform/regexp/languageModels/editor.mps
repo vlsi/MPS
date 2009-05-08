@@ -45,6 +45,12 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678539">
           <property name="color" value="DARK_GREEN" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996394315795">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996394315797">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051122" />
     </node>
@@ -121,10 +127,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174491189175">
         <property name="text" value="(" />
         <link role="actionMap" targetNodeId="1174902509875" resolveInfo="ParensRegexp_Actions" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678519">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174491192506">
         <link role="relationDeclaration" targetNodeId="1.1174491174779" />
@@ -132,10 +135,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174491196039">
         <property name="text" value=")" />
         <link role="actionMap" targetNodeId="1174902509875" resolveInfo="ParensRegexp_Actions" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678559">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051126" />
     </node>
@@ -478,9 +478,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174557643563">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557644675">
         <property name="text" value="[" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399679057">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1174557647349">
         <link role="relationDeclaration" targetNodeId="1.1174557628217" />
@@ -488,9 +486,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557649257">
         <property name="text" value="]" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678092">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800050987" />
     </node>
@@ -500,9 +496,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174557673745">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557673746">
         <property name="text" value="[^" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678551">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1174557673747">
         <link role="relationDeclaration" targetNodeId="1.1174557628217" />
@@ -510,9 +504,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557673748">
         <property name="text" value="]" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678252">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051087" />
     </node>
@@ -536,6 +528,12 @@
         <property name="text" value="-" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678617">
           <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996393720300">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996393720302">
+          <property name="flag" value="true" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174558329519">
@@ -571,13 +569,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174564107521">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174564108851">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678746">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223038743582">
-          <property name="style" value="BOLD" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174564130683">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -587,19 +579,16 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678497">
           <property name="color" value="DARK_BLUE" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996394264431">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174564178985">
         <link role="relationDeclaration" targetNodeId="1.1174564160889" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174564111509">
         <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678198">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223038743599">
-          <property name="style" value="BOLD" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051116" />
     </node>
@@ -768,6 +757,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1174900304959">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <link role="actionMap" targetNodeId="1174901330112" resolveInfo="UnaryRegexp_Regexp_actions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996393727015">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051172" />
     </node>
@@ -781,6 +773,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1174900475613">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996393572084">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996393572086">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174900480209">
         <link role="relationDeclaration" targetNodeId="1.1174485181039" />
@@ -1044,12 +1042,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174909137457">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174909553541">
         <property name="text" value="(ref" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678185">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223038745282">
-          <property name="style" value="BOLD" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174909139725">
         <link role="relationDeclaration" targetNodeId="1.1174909113141" />
@@ -1069,12 +1062,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174909556965">
         <property name="text" value=")" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678800">
-          <property name="color" value="DARK_MAGENTA" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223038745298">
-          <property name="style" value="BOLD" />
-        </node>
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051113" />
     </node>
@@ -1294,6 +1282,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1220356843355">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996393828800">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996393828802">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220356849720">
         <link role="relationDeclaration" targetNodeId="1.1220356007276" />
@@ -1418,6 +1412,36 @@
         <link role="relationDeclaration" targetNodeId="1.1174653387388" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051007" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="5169131996393625116">
+    <property name="name" value="RegexpStylesheet" />
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="5169131996393625117">
+      <property name="name" value="RegexpBrace" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="5169131996393625118">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="5169131996393625120">
+        <property name="labelName" value="regexpBrace" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="5169131996393625121">
+      <property name="name" value="LeftRegexpBrace" />
+      <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="5169131996393625124">
+        <link role="styleSheetClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996393625126">
+        <property name="flag" value="true" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="5169131996393625128">
+      <property name="name" value="RightRegexpBrace" />
+      <node role="extendedClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference" id="5169131996393625129">
+        <link role="styleSheetClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5169131996393625131">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
 </model>

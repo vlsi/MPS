@@ -13,7 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
@@ -100,6 +101,14 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_9804_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 

@@ -14,11 +14,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
@@ -120,30 +119,12 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4405_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4405_0");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_4405_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4405_1");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Property_4405_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -153,6 +134,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
         }
       };
       inlineStyle.apply(editorCell);

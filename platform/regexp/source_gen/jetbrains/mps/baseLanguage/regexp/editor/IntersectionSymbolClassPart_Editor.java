@@ -13,8 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Left_Actions;
-import jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Right_Actions;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
 
@@ -132,6 +132,15 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_7554_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_7554_1(EditorCell editorCell, SNode node, EditorContext context) {

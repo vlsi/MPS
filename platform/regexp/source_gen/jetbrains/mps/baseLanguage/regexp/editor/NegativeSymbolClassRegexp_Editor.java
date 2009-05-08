@@ -10,9 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -77,14 +74,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9912_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9912_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_9912_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -93,14 +83,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9912_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9912_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_9912_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
