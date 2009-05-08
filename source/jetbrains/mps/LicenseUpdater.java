@@ -48,7 +48,7 @@ public class LicenseUpdater {
       File[] files = current.listFiles();
       if (files == null) return;
       for (File f : files) {
-        if (f.isDirectory() && isSourceFolder(f.getName())) {
+        if (f.isDirectory() && isSourceFolder(f.getName()) && !inSourceDir) {
           updateLicense(f, true);
         } else {
           updateLicense(f, inSourceDir);
@@ -71,7 +71,6 @@ public class LicenseUpdater {
   private static boolean isSourceFolder(String name) {
     return "source".equals(name) || "test".equals(name) || "src".equals(name) || "tests".equals(name);
   }
-
 
   public static void main(String[] args) {
     updateLicense(new File(System.getProperty("user.dir")), false);
