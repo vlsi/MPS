@@ -75,5 +75,10 @@ Copyright (c) 1999
 JNA Project
 https://jna.dev.java.net/
 
+JFCUnit
+http://jfcunit.sourceforge.net/
+Copyright (C) 2001 Matt Caswell, Greg Houston
+Copyright (C) 2002 Vijay Aravamudhan, Kevin Wilson
+
 You can find licenses for these software
 in the %MPS_HOME%/license directory
