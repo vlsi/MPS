@@ -31,16 +31,11 @@ public interface Intention {
 
   boolean isAvailableInChildNodes();
 
-  List parameter(SNode node, EditorContext editorContext);
-
   void execute(SNode node, EditorContext editorContext);
 
   IntentionType getType();
 
   String getLocationString();
 
-  SNode getNodeByIntention();
-
-  List<Intention> getInstances(SNode node, EditorContext editorContext);
-
+  SNode getNodeByIntention(); 
 }

@@ -1482,7 +1482,7 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178670165537">
       <property name="name" value="getApplicableConcept_fromEnvironment" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1178670176491" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1178908833826" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5372307750807855344" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178670165540">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178670295328">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178670295329">

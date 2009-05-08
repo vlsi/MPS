@@ -130,7 +130,7 @@ public class BaseIntentionProvider implements IntentionProvider {
         return null;
       }
 
-      public List<Intention> getInstances(SNode node, EditorContext editorContext) {
+      public List<Intention> getParameterizedInstances(SNode node, EditorContext editorContext) {
         List<Intention> list = new ArrayList<Intention>();
         list.add(this);
         return list;

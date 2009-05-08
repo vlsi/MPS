@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -30,25 +29,7 @@ public class IntentionParameter_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_1903_0(context, node, "$copy_item{"));
     editorCell.addEditorCell(this.createConceptProperty_1903_1(context, node));
-    editorCell.addEditorCell(this.createConstant_1903_1(context, node, "}"));
-    return editorCell;
-  }
-
-  public EditorCell createConstant_1903_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1903_0(editorCell, node, context);
-    setupLabel_Constant_1903_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_1903_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1903_1(editorCell, node, context);
-    setupLabel_Constant_1903_1(editorCell, node, context);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -99,39 +80,7 @@ public class IntentionParameter_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1903_0");
   }
 
-  private static void setupBasic_Constant_1903_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1903_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_1903_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1903_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupLabel_ConceptProperty_1903_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1903_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1903_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

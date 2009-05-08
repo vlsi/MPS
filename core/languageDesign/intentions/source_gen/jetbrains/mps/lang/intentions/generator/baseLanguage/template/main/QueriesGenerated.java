@@ -40,11 +40,11 @@ public class QueriesGenerated {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_1240409165143(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4945049520561168160(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_1240411308254(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4945049520561168169(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
   }
 
@@ -52,15 +52,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1240407057538(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4945049520561168333(final IOperationContext operationContext, final IfMacroContext _context) {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
-  public static boolean ifMacro_Condition_1240407682815(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4945049520561168352(final IOperationContext operationContext, final IfMacroContext _context) {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
-  public static boolean ifMacro_Condition_1240409436618(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8499078905499803540(final IOperationContext operationContext, final IfMacroContext _context) {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
@@ -76,11 +76,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1240407278754(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2011896947621803615(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
+  }
+
+  public static SNode sourceNodeQuery_4945049520561168189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
+  }
+
+  public static SNode sourceNodeQuery_4945049520561168304(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1240490631348(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4945049520561168371(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
   }
 

@@ -545,30 +545,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1240322627579" resolveInfo="ConceptFunctionParameter_parameter" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240405367294">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240405367295" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240405375766">
-        <property name="text" value="$copy_item{" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1240405491005">
-          <property name="style" value="PLAIN" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1240405856987">
-          <property name="flag" value="true" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1240405361808">
         <property name="noTargetText" value="&lt;ConceptFunctionParameter with no alias&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1240405361809">
           <property name="style" value="ITALIC" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240405427113">
-        <property name="text" value="}" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1240405493773">
-          <property name="style" value="PLAIN" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1240406277957">
-          <property name="flag" value="true" />
         </node>
       </node>
     </node>

@@ -11,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
 
 public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntention {
 
@@ -69,12 +67,6 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
 
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }

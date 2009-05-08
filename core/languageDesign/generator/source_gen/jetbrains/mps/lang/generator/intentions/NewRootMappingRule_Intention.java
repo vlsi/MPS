@@ -16,8 +16,6 @@ import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
 
 public class NewRootMappingRule_Intention extends BaseIntention {
 
@@ -101,12 +99,6 @@ public class NewRootMappingRule_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }

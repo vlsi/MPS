@@ -52,17 +52,7 @@ public abstract class BaseIntention implements Intention {
     return null;
   }
 
-  public List parameter(final SNode node, final EditorContext editorContext) {
-    return null;
-  }
-
   public boolean isParameterized() {
     return false;
-  }
-
-  public List<Intention> getInstances(SNode node, EditorContext editorContext) {
-    List<Intention> list = new ArrayList<Intention>();
-    list.add(this);
-    return list;
   }
 }

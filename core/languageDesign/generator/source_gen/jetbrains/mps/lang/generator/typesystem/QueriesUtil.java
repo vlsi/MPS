@@ -240,7 +240,7 @@ __switch__:
     return new _Quotations.QuotationClass_6().createNode();
   }
 
-  private static SNode getApplicableConcept_fromEnvironment(SNode node) {
+  public static SNode getApplicableConcept_fromEnvironment(SNode node) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.BaseMappingRule"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false);

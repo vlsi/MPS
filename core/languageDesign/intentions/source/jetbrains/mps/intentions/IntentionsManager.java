@@ -40,6 +40,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 
 @State(
@@ -118,7 +120,25 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (node.isInstanceOfConcept(conceptFQName)) {
         List<Intention> intentions = new ArrayList<Intention>();
         for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
-          intentions.addAll(intention.getInstances(node, context));
+          if (intention.isParameterized()) {
+            Method method = null;
+            try {
+              method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
+            } catch (NoSuchMethodException e) {
+              e.printStackTrace();
+            }
+            Object[] arguments = new Object[]{node, context};
+            try {
+              List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
+              intentions.addAll(parameterizedIntentions);
+            } catch (IllegalAccessException e) {
+              e.printStackTrace();
+            } catch (InvocationTargetException e) {
+              e.printStackTrace();
+            }
+          } else {
+            intentions.add(intention);
+          }
         }
         Collections.sort(intentions, new Comparator<Intention>() {
           public int compare(Intention i1, Intention i2) {
