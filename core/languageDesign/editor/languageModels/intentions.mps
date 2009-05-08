@@ -4199,7 +4199,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1445505956982045047">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1445505956982045062">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1445505956982045064">
-                <property name="value" value="Add newline for children" />
+                <property name="value" value="Add New Line for Children" />
               </node>
             </node>
           </node>
@@ -4207,7 +4207,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1445505956982045061">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1445505956982045065">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1445505956982045066">
-                  <property name="value" value="Remove newline for children" />
+                  <property name="value" value="Remove New Line for Children" />
                 </node>
               </node>
             </node>

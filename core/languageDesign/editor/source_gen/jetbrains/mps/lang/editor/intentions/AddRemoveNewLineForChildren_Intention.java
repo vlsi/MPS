@@ -38,10 +38,10 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
-      return "Add newline for children";
+      return "Add New Line for Children";
     } else
     {
-      return "Remove newline for children";
+      return "Remove New Line for Children";
     }
   }
 
