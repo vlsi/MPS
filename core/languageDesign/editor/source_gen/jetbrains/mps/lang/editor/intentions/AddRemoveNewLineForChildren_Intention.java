@@ -21,7 +21,7 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.editor.structure.CellModel_Collection";
+    return "jetbrains.mps.lang.editor.structure.EditorCellModel";
   }
 
   public boolean isParameterized() {
@@ -46,7 +46,16 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
+        return true;
+      }
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
