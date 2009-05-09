@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.model;
 
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.*;
@@ -65,8 +66,8 @@ public class OptimizeImportsHelper {
     Result result = optimizeModelsImports_internal(context, modelsToOptimize);
 
     SolutionDescriptor descriptor = solution.getSolutionDescriptor();
-    result.myReport = optimizeModuleImports(context, descriptor, result)+ "\n\n" + result.myReport;
-    solution.setSolutionDescriptor(descriptor,false);
+    result.myReport = optimizeModuleImports(context, descriptor, result) + "\n\n" + result.myReport;
+    solution.setSolutionDescriptor(descriptor, false);
 
     return result;
   }
@@ -80,31 +81,46 @@ public class OptimizeImportsHelper {
     Result result = optimizeModelsImports_internal(context, modelsToOptimize);
 
     LanguageDescriptor descriptor = language.getLanguageDescriptor();
-    result.myReport = optimizeModuleImports(context, descriptor, result)+ "\n\n" + result.myReport;
-    language.setLanguageDescriptor(descriptor,false);
+    result.myReport = optimizeModuleImports(context, descriptor, result) + "\n\n" + result.myReport;
+    language.setLanguageDescriptor(descriptor, false);
 
     return result;
   }
 
   private static String optimizeModuleImports(IOperationContext context, ModuleDescriptor descriptor, Result result) {
     List<ModuleReference> unusedLanguages = new ArrayList<ModuleReference>();
-    List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
-    List<Dependency> unusedDeps = new ArrayList<Dependency>();
-
-    for (Dependency m : descriptor.getDependencies()) {
-      Dependency ref = getUnusedDependency(result,context,m);
-      if (ref!=null) unusedDeps.add(ref);
-    }
     for (ModuleReference langRef : descriptor.getUsedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, context, langRef);
-      if (ref != null) unusedDevkits.add(langRef);
+      if (ref != null) unusedLanguages.add(langRef);
     }
+
+    List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
     for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
       ModuleReference ref = getUnusedDevkitRef(result, context, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }
 
-    return removeFromImports(descriptor, unusedLanguages, unusedDevkits, unusedDeps);
+    return removeFromImports(descriptor, unusedLanguages, unusedDevkits, getUnusedDeps(descriptor, result));
+  }
+
+  private static List<Dependency> getUnusedDeps(ModuleDescriptor descriptor, Result result) {
+    List<Dependency> unusedDeps = new ArrayList<Dependency>();
+
+    for (Dependency m : descriptor.getDependencies()) {
+      IModule module = MPSModuleRepository.getInstance().getModule(m.getModuleRef());
+      boolean used = false;
+
+      for (SModelReference mr : result.myUsedModels) {
+        SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
+        if (md.getModules().contains(module)) {
+          used = true;
+          break;
+        }
+      }
+      Dependency ref = used ? null : m;
+      if (ref != null) unusedDeps.add(ref);
+    }
+    return unusedDeps;
   }
 
   private static Result optimizeModelsImports_internal(IOperationContext context, List<SModelDescriptor> modelsToOptimize) {
@@ -122,8 +138,9 @@ public class OptimizeImportsHelper {
     for (SNode node : modelDescriptor.getSModel().allNodes()) {
       result.myUsedLanguages.add(node.getLanguage(context.getScope()));
       for (SReference ref : node.getReferences()) {
-        if (!ref.getTargetSModelReference().equals(modelDescriptor.getSModelReference())) {
-          result.myUsedModels.add(ref.getTargetSModelReference());
+        SModelReference mr = ref.getTargetSModelReference();
+        if (!modelDescriptor.getSModelReference().equals(mr)) {
+          result.myUsedModels.add(mr);
         }
       }
     }
@@ -150,11 +167,6 @@ public class OptimizeImportsHelper {
 
     result.myReport = removeFromImports(modelDescriptor, unusedModels, unusedLanguages, unusedDevkits);
     return result;
-  }
-
-  private static Dependency getUnusedDependency(Result result, IOperationContext context, Dependency d) {
-    //todo
-    return null;
   }
 
   private static ModuleReference getUnusedDevkitRef(Result result, IOperationContext context, ModuleReference devkitRef) {
