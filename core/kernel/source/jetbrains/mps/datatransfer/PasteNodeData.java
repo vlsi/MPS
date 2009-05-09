@@ -26,13 +26,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.09.2005
- * Time: 18:44:18
- * To change this template use File | Settings | File Templates.
- */
+import org.jetbrains.annotations.Nullable;
+
 public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
@@ -40,14 +35,17 @@ public class PasteNodeData {
   private Set<SModelReference> myNecessaryImports;
   private Set<ModuleReference> myNecessaryDevKits;
   private SModel myModelProperties;
+  private ModuleReference mySourceModule;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
+                       ModuleReference sourceModule,
                        SModel modelProperties,
                        Set<ModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryImports,
                        Set<ModuleReference> necessaryDevKits) {
-    this.myNodes = nodes;
-    this.myRequireResolveReferences = references;
+    myNodes = nodes;
+    myRequireResolveReferences = references;
+    mySourceModule = sourceModule;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryImports = necessaryImports;
     myNecessaryDevKits = necessaryDevKits;
@@ -62,6 +60,16 @@ public class PasteNodeData {
     return myRequireResolveReferences;
   }
 
+  @Nullable
+  public ModuleReference getSourceModule() {
+    return mySourceModule;
+  }
+
+  @Nullable
+  public SModel getModelProperties() {
+    return myModelProperties;
+  }
+
   public Set<ModuleReference> getNecessaryLanguages() {
     return myNecessaryLanguages;
   }
@@ -74,14 +82,10 @@ public class PasteNodeData {
     return myNecessaryDevKits;
   }
 
-  public SModel getModelProperties() {
-    return myModelProperties;
-  }
-
-
-  public static PasteNodeData emptyPasteNodeData(SModel model) {
+  public static PasteNodeData emptyPasteNodeData(ModuleReference sourceModule, SModel model) {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
+      sourceModule,
       model,
       new HashSet<ModuleReference>(),
       new HashSet<SModelReference>(),

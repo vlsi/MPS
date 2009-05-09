@@ -50,7 +50,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myCanceled;
   }
 
-  public AddRequiredModelImportsDialog(Frame frame, SModel model,
+  public AddRequiredModelImportsDialog(Frame frame, ModuleReference sourceModule, SModel model,
                                        Set<SModelReference> necessaryImports,
                                        Set<ModuleReference> necessaryLanguages,
                                        Set<ModuleReference> necessaryDevKits) {

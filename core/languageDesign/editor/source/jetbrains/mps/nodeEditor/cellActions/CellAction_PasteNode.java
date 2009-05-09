@@ -16,16 +16,21 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.datatransfer.CopyPasteUtil;
-import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.NodePaster;
-import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.datatransfer.NodePaster.NodeAndRole;
+import jetbrains.mps.datatransfer.PasteNodeData;
+import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 
 import javax.swing.SwingUtilities;
 import java.util.List;
@@ -68,13 +73,11 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
 
-    final Set<ModuleReference> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
-    final Set<SModelReference> necessaryImports = pasteNodeData.getNecessaryImports();
     final SModel model = selectedNode.getModel();
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CopyPasteUtil.addImportsAndLanguagesToModel(model, necessaryLanguages, necessaryImports, context.getOperationContext(), new Runnable() {
+        CopyPasteUtil.addImportsAndLanguagesToModel(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryImports(), context.getOperationContext(), new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
@@ -124,7 +127,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole_());
     if (nodeAndRole == null) return false;
 
-    EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);    
+    EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);
     return targetCell != null && targetCell.getFirstLeaf(CellConditions.SELECTABLE) == selectedCell &&
       new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
   }
@@ -141,7 +144,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       if (result != null) {
         if (result instanceof EditorCell_Collection) {
           return result.getLastChild();
-        }        
+        }
         return result;
       }
     }
