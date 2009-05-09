@@ -32,7 +32,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.index.*;
+import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
+import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -150,7 +153,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           if (!myContextModule.getScope().getVisibleLanguages().contains(getModule())) {
-            myContextModule.addUsedLangauge(getModule().getModuleReference());
+            myContextModule.addUsedLanguage(getModule().getModuleReference());
           }
 
           myModel.getSModel().addLanguage((Language) getModule());

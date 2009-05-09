@@ -344,17 +344,13 @@ public class CopyPasteUtil {
     if ((!necessaryImports.isEmpty()) || (!necessaryLanguages.isEmpty()) || (!necessaryDevKits.isEmpty())) {
       AddRequiredModelImportsDialog dialog = ModelAccess.instance().runReadAction(new Computable<AddRequiredModelImportsDialog>() {
         public AddRequiredModelImportsDialog compute() {
-          AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), sourceModule, targetModel,
-            necessaryImports,
-            necessaryLanguages,
-            necessaryDevKits);
-          dialog.setModal(true);
-          return dialog;
+          return new AddRequiredModelImportsDialog(context, sourceModule, targetModel, necessaryImports, necessaryLanguages);
         }
       });
 
+      dialog.setModal(true);
       dialog.showDialog();
-      if (!dialog.isCanceled()) {
+      if (!dialog.isCancelled()) {
         onOk.run();
       }
       return;

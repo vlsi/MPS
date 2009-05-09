@@ -16,26 +16,15 @@
 package jetbrains.mps.workbench.dialogs.project;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import org.jdesktop.beansbinding.AutoBinding;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
 
-public abstract class BaseStretchingProjectDialog extends BaseProjectDialog {
-  private JPanel myContentPanel;
-
-  protected BaseStretchingProjectDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(text, operationContext);
-    myContentPanel = new JPanel(new GridBagLayout());
-  }
-
-  public JComponent getMainComponent() {
-    return myContentPanel;
-  }
-
-  protected void addComponent(JComponent comp, GridBagConstraints c) {
-    myContentPanel.add(comp, c);
-  }
+public interface IBindedDialog {
+  JComponent getMainComponent();
+  IOperationContext getOperationContext();
+  IScope getModuleScope();
+  IScope getProjectScope();
+  void addBinding(AutoBinding binding);
 }

@@ -1099,7 +1099,7 @@ public class SModel implements Iterable<SNode> {
         if (respectModulesScopes) {
           IModule module = this.getModelDescriptor().getModule();
           if (!module.getAllUsedLanguages().contains(lang)) {
-            module.addUsedLangauge(ref);
+            module.addUsedLanguage(ref);
           }
         }
 

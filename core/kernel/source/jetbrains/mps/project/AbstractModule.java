@@ -31,11 +31,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.ConflictException;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -209,7 +207,7 @@ public abstract class AbstractModule implements IModule {
     save();
   }
 
-  public void addUsedLangauge(ModuleReference langRef) {
+  public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     descriptor.getUsedLanguages().add(langRef);
     setModuleDescriptor(descriptor);

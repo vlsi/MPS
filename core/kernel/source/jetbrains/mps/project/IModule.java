@@ -68,7 +68,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void addDependency(ModuleReference moduleRef, boolean reexport);
 
-  void addUsedLangauge(ModuleReference langRef);
+  void addUsedLanguage(ModuleReference langRef);
 
   void addUsedDevkit(ModuleReference devkitRef);
 

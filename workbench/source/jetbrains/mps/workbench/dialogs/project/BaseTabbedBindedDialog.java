@@ -28,12 +28,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseTabbedProjectDialog extends BaseProjectDialog {
+public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
   private JTabbedPane myTabbedPane;
   private Map<String, JComponent> myComponents;
   private List<String> myTabOrder;
 
-  protected BaseTabbedProjectDialog(String text, IOperationContext operationContext) throws HeadlessException {
+  protected BaseTabbedBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);
     myComponents = new HashMap<String, JComponent>();
     myTabOrder = new ArrayList<String>();

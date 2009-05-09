@@ -15,23 +15,34 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.datatransfer.CloneModelUtil;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.dialogs.project.BaseStretchingProjectDialog;
+import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class CloneModelDialog extends BaseStretchingProjectDialog {
+public class CloneModelDialog extends BaseStretchingBindedDialog {
+  private static Logger LOG = Logger.getLogger(CloneModelDialog.class);
+
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
 
@@ -223,5 +234,49 @@ public class CloneModelDialog extends BaseStretchingProjectDialog {
       }
     });
     return true;
+  }
+
+  /**
+   * @return true if no errors and the dialog should be closed
+   */
+  private boolean saveChanges() {
+    final boolean[] dontCloseDialog = new boolean[]{true};
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        dontCloseDialog[0] = doSaveChanges();
+      }
+    });
+
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
+        try {
+
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              CleanupManager.getInstance().cleanup();
+            }
+          });
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    });
+
+    ApplicationManager.getApplication().saveAll();
+
+    return dontCloseDialog[0];
+  }
+
+  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  public void buttonOK() {
+    if (!saveChanges()) return;
+    this.dispose();
+  }
+
+  @BaseDialog.Button(position = 1, name = "Cancel")
+  public void buttonCancel() {
+    dispose();
   }
 }
