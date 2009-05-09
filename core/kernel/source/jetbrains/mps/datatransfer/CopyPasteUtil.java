@@ -21,7 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.dialogs.project.utildialogs.AddRequiredModelImportsDialog;
+import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;
@@ -327,17 +327,16 @@ public class CopyPasteUtil {
         for (SModelReference modelReference : necessaryImports) {
           if (modelReference != null &&
             !(allImportedModels.contains(modelReference)) &&
-            !(targetModel.getSModelReference().equals(modelReference)))
+            !(targetModel.getSModelReference().equals(modelReference)))        //todo - why?
             additionalModels.add(modelReference);
         }
+        necessaryImports.retainAll(additionalModels);
 
         for (ModuleReference moduleReference : necessaryLanguages) {
           if (!targetModel.hasLanguage(moduleReference)) {
             additionalLanguages.add(moduleReference);
           }
         }
-
-        necessaryImports.retainAll(additionalModels);
         necessaryLanguages.retainAll(additionalLanguages);
       }
     });
@@ -357,10 +356,8 @@ public class CopyPasteUtil {
       dialog.showDialog();
       if (!dialog.isCanceled()) {
         onOk.run();
-        return;
-      } else {
-        return;
       }
+      return;
     }
 
     onOk.run();

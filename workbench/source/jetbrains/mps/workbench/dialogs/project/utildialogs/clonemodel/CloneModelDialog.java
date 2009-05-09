@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.project.utildialogs;
+package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;

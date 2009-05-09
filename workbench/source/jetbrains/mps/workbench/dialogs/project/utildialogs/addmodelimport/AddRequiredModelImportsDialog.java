@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.project.utildialogs;
+package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -23,9 +23,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 
 import javax.swing.*;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -71,7 +68,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     JPanel panel = new JPanel(new GridLayout(3, 1, 5, 5));
 
     if (!myImports.isEmpty()) {
-      MyImportsTableModel importsTableModel = new MyImportsTableModel(myImports, myImportsToAdd);
+      ImportsTableModel importsTableModel = new ImportsTableModel(myImports, myImportsToAdd);
       JPanel innerPanel = new JPanel(new BorderLayout());
       JTable importsTable = new JTable(importsTableModel);
       importsTable.getColumnModel().getColumn(0).setWidth(30);
@@ -81,7 +78,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
       panel.add(innerPanel);
     }
     if (!myLanguages.isEmpty()) {
-      MyImportsTableModel languagesTableModel = new MyImportsTableModel(myLanguages, myLanguagesToAdd);
+      ImportsTableModel languagesTableModel = new ImportsTableModel(myLanguages, myLanguagesToAdd);
       JPanel innerPanel = new JPanel(new BorderLayout());
       JTable languagesTable = new JTable(languagesTableModel);
       languagesTable.getColumnModel().getColumn(0).setWidth(30);
@@ -92,7 +89,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     }
     if (!myDevKits.isEmpty()) {
       JPanel innerPanel = new JPanel(new BorderLayout());
-      MyImportsTableModel devKitTableModel = new MyImportsTableModel(myDevKits, myDevKitsToAdd);
+      ImportsTableModel devKitTableModel = new ImportsTableModel(myDevKits, myDevKitsToAdd);
       JTable devkitTable = new JTable(devKitTableModel);
       devkitTable.getColumnModel().getColumn(0).setWidth(30);
       devkitTable.getColumnModel().getColumn(1).setPreferredWidth(300);
@@ -162,77 +159,4 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myMainComponent;
   }
 
-  private class MyImportsTableModel implements TableModel {
-
-    private List myItemsToAdd;
-    private List myItems;
-
-    private List<TableModelListener> myListeners = new ArrayList<TableModelListener>();
-
-    public MyImportsTableModel(List items, List itemsToAdd) {
-      myItems = items;
-      myItemsToAdd = itemsToAdd;
-    }
-
-    public int getRowCount() {
-      return myItems.size();
-    }
-
-    public int getColumnCount() {
-      return 2;
-    }
-
-    public String getColumnName(int columnIndex) {
-      return "";
-    }
-
-    public Class<?> getColumnClass(int columnIndex) {
-      if (columnIndex == 0) return Boolean.class;
-      return String.class;
-    }
-
-    public boolean isCellEditable(int rowIndex, int columnIndex) {
-      return columnIndex == 0;
-    }
-
-    public Object getValueAt(int rowIndex, int columnIndex) {
-      Object value = myItems.get(rowIndex);
-      if (columnIndex == 0) return myItemsToAdd.contains(value);
-
-      if (value instanceof SModelReference) {
-        return ((SModelReference) value).getSModelFqName().toString();
-      }
-      if (value instanceof ModuleReference) {
-        return ((ModuleReference) value).getModuleFqName();
-      }
-      return value.toString();
-    }
-
-    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-      if (columnIndex != 0) return;
-      if (aValue instanceof Boolean) {
-        boolean b = (Boolean) aValue;
-        if (b) {
-          myItemsToAdd.add(myItems.get(rowIndex));
-        } else {
-          myItemsToAdd.remove(myItems.get(rowIndex));
-        }
-        fireTableChanged();
-      }
-    }
-
-    public void fireTableChanged() {
-      for (TableModelListener l : myListeners) {
-        l.tableChanged(new TableModelEvent(this));
-      }
-    }
-
-    public void addTableModelListener(TableModelListener l) {
-      myListeners.add(l);
-    }
-
-    public void removeTableModelListener(TableModelListener l) {
-      myListeners.remove(l);
-    }
-  }
 }
