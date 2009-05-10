@@ -113,7 +113,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209384006437">
-              <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addUsedLangauge(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addUsedLangauge" />
+              <link role="baseMethodDeclaration" targetNodeId="4.~IModule.addUsedLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addUsedLanguage" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239134261178">
                 <link role="variableDeclaration" targetNodeId="1239134261153" resolveInfo="moduleRef" />
               </node>
