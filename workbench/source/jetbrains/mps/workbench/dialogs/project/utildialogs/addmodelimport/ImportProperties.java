@@ -119,18 +119,11 @@ public class ImportProperties {
   public List<ModuleReference> getModulesForModel(int numberInList) {
     SModelReference modelRef = getModelList().get(numberInList).getModel();
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
-
-    Set<IModule> modules = new HashSet<IModule>(model.getModules());
-    modules.retainAll(mySourceModule.getAllDependOnModules());
-    modules.add(mySourceModule);
-    modules.removeAll(myTargetModule.getAllDependOnModules());
-    modules.remove(myTargetModule);
-
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (IModule module : modules) {
-      result.add(module.getModuleReference());
+    ArrayList<ModuleReference> result = new ArrayList<ModuleReference>();
+    for (IModule owner : model.getModules()) {
+      result.add(owner.getModuleReference());
+      result.remove(myTargetModule.getModuleReference());
     }
-
     return result;
   }
 
@@ -155,17 +148,12 @@ public class ImportProperties {
     Set<IModule> owners = model.getModules();
 
     if (owners.contains(myTargetModule)) return null;
-    List<IModule> deps = myTargetModule.getAllDependOnModules();
-    for (IModule owner : owners) {
-      if (deps.contains(owner)) return null;
-    }
 
     for (IModule module : myModulesCache) {
       if (owners.contains(module)) return module.getModuleReference();
     }
 
     IModule module = model.getModule();
-    if (module == null) return null;
     myModulesCache.add(module);
     return module.getModuleReference();
   }
