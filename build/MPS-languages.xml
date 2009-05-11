@@ -453,12 +453,10 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.textGen0">
-    <mkdir dir="core/languageDesign/textGen/classes_gen" />
     <mkdir dir="core/languageDesign/textGen/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/textGen/textGen.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/textGen" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/textGen/classes_gen" />
       <zipfileset dir="core/languageDesign/textGen/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.runtime.jar" duplicate="preserve" filesonly="true">

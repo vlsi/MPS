@@ -5581,7 +5581,10 @@
         <property name="path" value="core/baseLanguage/jetbrains.mps.baseLanguage.dates.mpsarch.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="7435147164990358739">
-        <property name="path" value="core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar " />
+        <property name="path" value="core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar" />
+      </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="8825264714574789816">
+        <property name="path" value="core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.mpsarch.jar" />
       </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786068">
         <property name="path" value="core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" />
