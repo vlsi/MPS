@@ -81,6 +81,10 @@ public class NewModelDialog extends BaseDialog {
       }
     }
 
+    if (model.getSize()==0){
+      model.addElement("<NO MODEL ROOTS>");
+    }
+
     myModelRoots.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         completePrefix();
@@ -95,13 +99,19 @@ public class NewModelDialog extends BaseDialog {
 
   private void completePrefix() {
     Object selected = myModelRoots.getSelectedItem();
-    ModelRootWrapper wrapper = (ModelRootWrapper) selected;
 
+    if (!(selected instanceof ModelRootWrapper)) return;
+
+    ModelRootWrapper wrapper = (ModelRootWrapper) selected;
     myModelName.setText(wrapper.getNamespace());
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
+    if (!(myModelRoots.getSelectedItem() instanceof ModelRootWrapper)){
+      setErrorText("At least one module root should be added to module to create models in this module");
+      return;
+    }
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         if (myModelName.getText().length() == 0) {
