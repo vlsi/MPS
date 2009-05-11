@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.datatransfer;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import org.jetbrains.annotations.Nullable;
 
 public class PasteNodeData {
   private List<SNode> myNodes;
@@ -35,10 +35,10 @@ public class PasteNodeData {
   private Set<SModelReference> myNecessaryImports;
   private Set<ModuleReference> myNecessaryDevKits;
   private SModel myModelProperties;
-  private ModuleReference mySourceModule;
+  private IModule mySourceModule;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
-                       ModuleReference sourceModule,
+                       IModule sourceModule,
                        SModel modelProperties,
                        Set<ModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryImports,
@@ -61,7 +61,7 @@ public class PasteNodeData {
   }
 
   @Nullable
-  public ModuleReference getSourceModule() {
+  public IModule getSourceModule() {
     return mySourceModule;
   }
 
@@ -82,7 +82,7 @@ public class PasteNodeData {
     return myNecessaryDevKits;
   }
 
-  public static PasteNodeData emptyPasteNodeData(ModuleReference sourceModule, SModel model) {
+  public static PasteNodeData emptyPasteNodeData(IModule sourceModule, SModel model) {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
       sourceModule,

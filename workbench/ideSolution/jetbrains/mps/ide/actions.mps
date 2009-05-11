@@ -2419,16 +2419,14 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1222268722470">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222268722941">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222268722942">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1222268722943">
-                  <link role="baseMethodDeclaration" targetNodeId="58.~ActionEventData.&lt;init&gt;(com.intellij.openapi.actionSystem.AnActionEvent)" resolveInfo="ActionEventData" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="1222268722944" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222268722945">
-                <link role="baseMethodDeclaration" targetNodeId="58.~ActionEventData.hasOneSelectedItem():boolean" resolveInfo="hasOneSelectedItem" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="4448098401449018958">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4448098401449018961">
+              <property name="value" value="1" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4448098401449018908">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="4448098401449018909" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="4448098401449018910">
+                <link role="member" targetNodeId="4448098401448976729" resolveInfo="selSize" />
               </node>
             </node>
           </node>
@@ -2517,6 +2515,10 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646895">
       <property name="name" value="context" />
       <link role="key" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4448098401448976729">
+      <property name="name" value="selSize" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE" resolveInfo="LOGICAL_VIEW_SELECTION_SIZE" />
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1225452376018">
       <property name="modifiers" value="shift" />

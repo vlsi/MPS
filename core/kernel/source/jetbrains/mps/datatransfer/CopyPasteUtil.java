@@ -71,7 +71,6 @@ public class CopyPasteUtil {
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null, null);
     SModel model = sourceNodes.get(0).getModel();
     IModule module = model.getModelDescriptor().getModule();
-    ModuleReference moduleRef = module == null ? null : module.getModuleReference();
 
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
@@ -93,7 +92,7 @@ public class CopyPasteUtil {
     processReferencesIn(sourceNodesToNewNodes, allReferences);
 
     model.setLoading(false);
-    return new PasteNodeData(result, null, moduleRef, fakeModel, necessaryLanguages, necessaryImports, necessaryDevKits);
+    return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties,
@@ -128,8 +127,7 @@ public class CopyPasteUtil {
     fakeModel.setLoading(false);
 
     IModule module = model.getModelDescriptor().getModule();
-    ModuleReference moduleRef = module == null ? null : module.getModuleReference();
-    return new PasteNodeData(result, referencesRequireResolve, moduleRef, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
+    return new PasteNodeData(result, referencesRequireResolve, module, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
@@ -270,11 +268,10 @@ public class CopyPasteUtil {
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     IModule module = model.getModelDescriptor().getModule();
-    ModuleReference moduleRef = module == null ? null : module.getModuleReference();
 
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     if (cb == null) {
-      return PasteNodeData.emptyPasteNodeData(moduleRef, model);
+      return PasteNodeData.emptyPasteNodeData(module, model);
     }
 
     Transferable content = null;
@@ -284,7 +281,7 @@ public class CopyPasteUtil {
       //LOG.warning("Clipboard is not accessible. It can happen if another application is using it.");
     }
     if (content == null) {
-      return PasteNodeData.emptyPasteNodeData(moduleRef, model);
+      return PasteNodeData.emptyPasteNodeData(module, model);
     }
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
@@ -299,7 +296,7 @@ public class CopyPasteUtil {
       }
     }
 
-    return PasteNodeData.emptyPasteNodeData(moduleRef, model);
+    return PasteNodeData.emptyPasteNodeData(module, model);
   }
 
 
@@ -307,7 +304,7 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static void addImportsAndLanguagesToModel(final ModuleReference sourceModule,
+  public static void addImportsAndLanguagesToModel(final IModule sourceModule,
                                                    final SModel targetModel,
                                                    final Set<ModuleReference> necessaryLanguages,
                                                    final Set<SModelReference> necessaryImports,

@@ -41,7 +41,7 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
   private IModule myTargetModule;
 
   public AddRequiredModelImportsDialog(IOperationContext context,
-                                       ModuleReference sourceModule, SModel targetModel,
+                                       IModule sourceModule, SModel targetModel,
                                        Set<SModelReference> necessaryModels,
                                        Set<ModuleReference> necessaryLanguages) {
     super("Import Models and Languages", context);
@@ -68,7 +68,7 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
     return result;
   }
 
-  private void collectProperties(Set<SModelReference> necessaryModels, Set<ModuleReference> necessaryLanguages, ModuleReference sourceModule) {
+  private void collectProperties(Set<SModelReference> necessaryModels, Set<ModuleReference> necessaryLanguages, IModule sourceModule) {
     myProps = new ImportProperties();
     myProps.loadFrom(necessaryModels, necessaryLanguages, sourceModule, myTargetModule);
   }

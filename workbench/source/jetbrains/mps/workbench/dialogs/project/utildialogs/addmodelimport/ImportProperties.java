@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
-import jetbrains.mps.lang.core.structure.Core_Language;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -33,11 +30,13 @@ import java.util.Set;
 public class ImportProperties {
   private Set<SModelReference> myModels;
   private Set<ModuleReference> myLanguages;
-  private ModuleReference mySourceModule;
+  private IModule mySourceModule;
   private IModule myTargetModule;
 
   private List<ModelImportDescriptor> myModelImports = new ArrayList<ModelImportDescriptor>();
   private List<LanguageImportDescriptor> myLanguageImports = new ArrayList<LanguageImportDescriptor>();
+
+  private List<IModule> myModulesCache = new ArrayList<IModule>();
 
   public List<LanguageImportDescriptor> getLanguagesList() {
     return myLanguageImports;
@@ -94,7 +93,7 @@ public class ImportProperties {
     if (all) {
       for (SModelReference model : myModels) {
         ModuleReference prefModule = getPreferredModuleForModel(model);
-        if (prefModule!=null){
+        if (prefModule != null) {
           depModules.add(prefModule);
         }
       }
@@ -121,7 +120,7 @@ public class ImportProperties {
     SModelReference modelRef = getModelList().get(numberInList).getModel();
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
     ArrayList<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (IModule owner:model.getModules()){
+    for (IModule owner : model.getModules()) {
       result.add(owner.getModuleReference());
       result.remove(myTargetModule.getModuleReference());
     }
@@ -129,30 +128,48 @@ public class ImportProperties {
   }
 
   public List<ModuleReference> getModulesForLanguage(int numberInList) {
-    //todo
-    ArrayList<ModuleReference> list = new ArrayList<ModuleReference>();
-    list.add(Core_Language.MODULE_REFERENCE);
-    return list;
+    ArrayList<ModuleReference> result = new ArrayList<ModuleReference>();
+
+    ModuleReference langRef = getLanguagesList().get(numberInList).getLanguage();
+    Language language = MPSModuleRepository.getInstance().getLanguage(langRef);
+    for (ModuleReference devkitRef : mySourceModule.getModuleDescriptor().getUsedDevkits()) {
+      DevKit d = MPSModuleRepository.getInstance().getDevKit(devkitRef);
+      if (d.getAllExportedLanguages().contains(language)) {
+        result.add(devkitRef);
+      }
+    }
+
+    return result;
   }
 
   //should return null if module is already in place
-  public ModuleReference getPreferredModuleForModel(SModelReference modelRef) {
+  private ModuleReference getPreferredModuleForModel(SModelReference modelRef) {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
-    if (model.getModules().contains(myTargetModule)) return null;
-    return model.getModule().getModuleReference();
+    Set<IModule> owners = model.getModules();
+
+    if (owners.contains(myTargetModule)) return null;
+
+    for (IModule module : myModulesCache) {
+      if (owners.contains(module)) return module.getModuleReference();
+    }
+
+    IModule module = model.getModule();
+    myModulesCache.add(module);
+    return module.getModuleReference();
   }
 
   //should return null if module is already in place
-  public ModuleReference getPreferredModuleForLanguage(ModuleReference language) {
-    //todo
+  private ModuleReference getPreferredModuleForLanguage(ModuleReference language) {
     return null;
   }
 
-  public void loadFrom(Set<SModelReference> models, Set<ModuleReference> languages, ModuleReference sourceModule, IModule targetModule) {
+  public void loadFrom(Set<SModelReference> models, Set<ModuleReference> languages, IModule sourceModule, IModule targetModule) {
     myModels = models;
     myLanguages = languages;
     mySourceModule = sourceModule;
     myTargetModule = targetModule;
+
+    myModulesCache.add(mySourceModule);
 
     for (ModuleReference langRef : myLanguages) {
       LanguageImportDescriptor lid = new LanguageImportDescriptor();
