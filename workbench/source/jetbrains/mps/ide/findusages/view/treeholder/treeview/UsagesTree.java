@@ -448,7 +448,9 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
-    Object treeNode = e.getNewLeadSelectionPath().getLastPathComponent();
+    TreePath path = e.getNewLeadSelectionPath();
+    if (path==null) return;
+    Object treeNode = path.getLastPathComponent();
     if (!(treeNode instanceof UsagesTreeNode)) return;
     goByNodeLink((UsagesTreeNode) treeNode, inProjectIfPossible, focus);
   }
