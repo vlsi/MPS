@@ -28,6 +28,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -56,7 +57,7 @@ public class BlameDialog extends BaseDialog {
   private JRadioButton myAnonymousRadio;
   private JTextField myTitleField;
 
-  private boolean myIsCancelled = false;
+  private boolean myIsCancelled = true;
   private Response myResult;
 
   private Throwable myEx;
@@ -154,6 +155,7 @@ public class BlameDialog extends BaseDialog {
     return myAnonymousRadio.isSelected() ? Query.ANONYMOUS_PASSWORD : myPassword.getText();
   }
 
+  @NotNull
   public Response getResult() {
     return myResult;
   }
@@ -190,8 +192,8 @@ public class BlameDialog extends BaseDialog {
 
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
-    myIsCancelled = true;
     myResult = null;
+    myIsCancelled = true;
     dispose();
   }
 
