@@ -95,7 +95,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties,
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes,IModule sourceModule, SModel model, SModel modelProperties,
                                                 Set<ModuleReference> necessaryLanguages,
                                                 Set<SModelReference> necessaryImports,
                                                 Set<ModuleReference> necessaryDevKits) {
@@ -126,8 +126,7 @@ public class CopyPasteUtil {
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
 
-    IModule module = model.getModelDescriptor().getModule();
-    return new PasteNodeData(result, referencesRequireResolve, module, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
+    return new PasteNodeData(result, referencesRequireResolve, sourceModule, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {

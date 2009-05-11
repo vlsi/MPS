@@ -36,8 +36,6 @@ public class ImportProperties {
   private List<ModelImportDescriptor> myModelImports = new ArrayList<ModelImportDescriptor>();
   private List<LanguageImportDescriptor> myLanguageImports = new ArrayList<LanguageImportDescriptor>();
 
-  private List<IModule> myModulesCache = new ArrayList<IModule>();
-
   public List<LanguageImportDescriptor> getLanguagesList() {
     return myLanguageImports;
   }
@@ -119,11 +117,18 @@ public class ImportProperties {
   public List<ModuleReference> getModulesForModel(int numberInList) {
     SModelReference modelRef = getModelList().get(numberInList).getModel();
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
-    ArrayList<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (IModule owner : model.getModules()) {
-      result.add(owner.getModuleReference());
-      result.remove(myTargetModule.getModuleReference());
+
+    Set<IModule> modules = new HashSet<IModule>(model.getModules());
+    modules.retainAll(mySourceModule.getAllDependOnModules());
+    modules.add(mySourceModule);
+    modules.removeAll(myTargetModule.getAllDependOnModules());
+    modules.remove(myTargetModule);
+
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    for (IModule module : modules) {
+      result.add(module.getModuleReference());
     }
+
     return result;
   }
 
@@ -148,14 +153,18 @@ public class ImportProperties {
     Set<IModule> owners = model.getModules();
 
     if (owners.contains(myTargetModule)) return null;
-
-    for (IModule module : myModulesCache) {
-      if (owners.contains(module)) return module.getModuleReference();
+    List<IModule> deps = myTargetModule.getAllDependOnModules();
+    for (IModule owner : owners) {
+      if (deps.contains(owner)) return null;
+    }
+    if (owners.contains(mySourceModule)){
+      return mySourceModule.getModuleReference();
+    }
+    for (IModule owner : owners) {
+      if (mySourceModule.getAllDependOnModules().contains(owner)) return owner.getModuleReference();
     }
 
-    IModule module = model.getModule();
-    myModulesCache.add(module);
-    return module.getModuleReference();
+    return null;
   }
 
   //should return null if module is already in place
@@ -168,8 +177,6 @@ public class ImportProperties {
     myLanguages = languages;
     mySourceModule = sourceModule;
     myTargetModule = targetModule;
-
-    myModulesCache.add(mySourceModule);
 
     for (ModuleReference langRef : myLanguages) {
       LanguageImportDescriptor lid = new LanguageImportDescriptor();

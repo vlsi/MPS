@@ -16,6 +16,7 @@
 package jetbrains.mps.datatransfer;
 
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -50,6 +51,7 @@ public class SNodeTransferable implements Transferable {
 
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
+  private IModule mySourceModule;
   private SModel myModelProperties;
   private Set<SModelReference> myNecessaryImports = new HashSet<SModelReference>();
   private Set<ModuleReference> myNecessaryLanguages = new HashSet<ModuleReference>();
@@ -109,6 +111,7 @@ public class SNodeTransferable implements Transferable {
     mySNodes.clear();
     PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
+    mySourceModule = pasteNodeData.getSourceModule();
     myModelProperties = pasteNodeData.getModelProperties();
     myNecessaryImports = pasteNodeData.getNecessaryImports();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
@@ -122,7 +125,7 @@ public class SNodeTransferable implements Transferable {
     Set<ModuleReference> necessaryDevKits = myNecessaryDevKits;
     if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<ModuleReference>();
-    return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties,
+    return CopyPasteUtil.createNodeDataOut(mySNodes,mySourceModule, sModel, myModelProperties,
       new HashSet<ModuleReference>(necessaryLanguages),
       new HashSet<SModelReference>(necessaryImports),
       new HashSet<ModuleReference>(necessaryDevKits));
