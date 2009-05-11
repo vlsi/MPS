@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="168" />
+  <maxImportIndex value="169" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -117,6 +117,7 @@
   <import index="166" modelUID="f:java_stub#jetbrains.mps.ide.genconf(jetbrains.mps.ide.genconf@java_stub)" version="-1" />
   <import index="167" modelUID="f:java_stub#jetbrains.mps.ide.dependency(jetbrains.mps.ide.dependency@java_stub)" version="-1" />
   <import index="168" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel(jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel@java_stub)" version="-1" />
+  <import index="169" modelUID="f:java_stub#java.awt.image(java.awt.image@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -3549,6 +3550,53 @@
     <property name="caption" value="Model" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1215903504455">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215903504456">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6997588768408813367">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6997588768408813368">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6997588768408884000">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6997588768408894759">
+                <link role="baseMethodDeclaration" targetNodeId="72.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolveInfo="showMessageDialog" />
+                <link role="classConcept" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6997588768408894760">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="6997588768408894761" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="6997588768408894762">
+                    <link role="member" targetNodeId="6997588768408894749" resolveInfo="frame" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6997588768408894763">
+                  <property name="value" value="Can't create a model in solution with no module roots" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6997588768408894764">
+                  <property name="value" value="Can't create model" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6997588768408894765">
+                  <link role="classifier" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
+                  <link role="variableDeclaration" targetNodeId="169.~ImageObserver.ERROR" resolveInfo="ERROR" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="6997588768408883993">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6997588768408883996">
+              <property name="value" value="0" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6997588768408883988">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6997588768408813421">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6997588768408813371">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="6997588768408813372" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="6997588768408813373">
+                    <link role="member" targetNodeId="1218636598414" resolveInfo="module" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6997588768408813669">
+                  <link role="baseMethodDeclaration" targetNodeId="63.~IModule.getSModelRoots():java.util.List" resolveInfo="getSModelRoots" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6997588768408883992">
+                <link role="baseMethodDeclaration" targetNodeId="78.~List.size():int" resolveInfo="size" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215903551082">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215903551083">
             <property name="name" value="dialog" />
@@ -3740,6 +3788,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="6997588768408894749">
+      <property name="name" value="frame" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1218631158469">
       <property name="name" value="project" />

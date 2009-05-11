@@ -45,6 +45,9 @@ public class NewModelDialog extends BaseDialog {
     myContext = context;
     myModule = module;
     myNamespace = namespace;
+
+    assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no module roots";
+
     initContentPane();
   }
 
@@ -73,7 +76,7 @@ public class NewModelDialog extends BaseDialog {
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      if (myNamespace==null || root.getPrefix().equals(myNamespace)){
+      if (myNamespace == null || root.getPrefix().equals(myNamespace)) {
         model.addElement(new ModelRootWrapper(root));
       }
     }
