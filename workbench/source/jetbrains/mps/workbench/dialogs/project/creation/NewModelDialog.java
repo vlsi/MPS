@@ -109,7 +109,13 @@ public class NewModelDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
     if (!(myModelRoots.getSelectedItem() instanceof ModelRootWrapper)){
-      setErrorText("At least one module root should be added to module to create models in this module");
+      String message;
+      if (myNamespace==null){
+        message = "At least one module root should be added to module to create models in this module";
+      }else{
+        message = "At least one module root with prefix "+myNamespace+" should be added to module to create models with this namespace";
+      }
+      setErrorText(message);
       return;
     }
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
