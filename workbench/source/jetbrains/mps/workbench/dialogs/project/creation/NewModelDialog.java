@@ -52,7 +52,7 @@ public class NewModelDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 400, 500);
+    return new DialogDimensions(100, 100, 400, 300);
   }
 
   public SModelDescriptor getResult() {
