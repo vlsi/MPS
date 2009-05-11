@@ -3600,23 +3600,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215903551082">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215903551083">
             <property name="name" value="dialog" />
-            <property name="isFinal" value="true" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1215903557151">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215903551084">
-                <link role="classifier" targetNodeId="160.~NewModelDialog" resolveInfo="NewModelDialog" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215903561459">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="1215903561460">
-                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215903561462">
-                  <link role="classifier" targetNodeId="160.~NewModelDialog" resolveInfo="NewModelDialog" />
-                </node>
-                <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression" id="1215906212347">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215906214898">
-                    <property name="value" value="1" />
-                  </node>
-                </node>
-              </node>
+            <property name="isFinal" value="false" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215903551084">
+              <link role="classifier" targetNodeId="160.~NewModelDialog" resolveInfo="NewModelDialog" />
             </node>
           </node>
         </node>
@@ -3693,13 +3679,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="1215903582744">
-                    <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215903586135">
-                      <property name="value" value="0" />
-                    </node>
-                    <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215903580730">
-                      <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
-                    </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215903580730">
+                    <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
                   </node>
                 </node>
               </node>
@@ -3708,13 +3689,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215903633027">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215903639539">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="1215903635056">
-              <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215903637644">
-                <property name="value" value="0" />
-              </node>
-              <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215903633028">
-                <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
-              </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215903633028">
+              <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215903646647">
               <link role="baseMethodDeclaration" targetNodeId="109.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
@@ -3728,13 +3704,8 @@
               <link role="classifier" targetNodeId="40.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227892026280">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="1227892026281">
-                <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227892026282">
-                  <property name="value" value="0" />
-                </node>
-                <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227892026283">
-                  <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227892026283">
+                <link role="variableDeclaration" targetNodeId="1215903551083" resolveInfo="dialog" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227892026284">
                 <link role="baseMethodDeclaration" targetNodeId="160.~NewModelDialog.getResult():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getResult" />
