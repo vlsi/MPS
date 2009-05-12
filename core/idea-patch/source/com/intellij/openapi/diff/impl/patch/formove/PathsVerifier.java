@@ -34,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.*;
 
+import jetbrains.mps.util.annotation.Patch;
+
 /*
 * This class was copied from same IDEA class
 * to fix http://jetbrains.net/jira/browse/IDEA-22685
@@ -277,6 +279,7 @@ public class PathsVerifier {
       return checkModificationValid(file, name);
     }
 
+    @Patch
     protected boolean checkModificationValid(final VirtualFile file, final String name) {
       // security check to avoid overwriting system files with a patch
       // Next condition was changed from former PathsVerifier, provided by IDEA, to fix

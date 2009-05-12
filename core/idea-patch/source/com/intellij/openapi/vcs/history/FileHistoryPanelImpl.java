@@ -97,6 +97,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
+import jetbrains.mps.util.annotation.Patch;
+
 /**
  * This file was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299
  * TODO remove, when issue would be fixed
@@ -841,6 +843,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
       refreshFile(revision);
     }
 
+    @Patch
     private void refreshFile(VcsFileRevision revision) {
       final VirtualFile file = getVirtualFile();
       if (file == null) {
