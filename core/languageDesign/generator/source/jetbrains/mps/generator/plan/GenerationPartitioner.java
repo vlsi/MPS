@@ -237,7 +237,7 @@ public class GenerationPartitioner {
           for (MappingConfiguration mappingConfig : myPriorityMap.keySet()) {
             if (mappingConfig.getName().equals(lesserPriMapping.getName())) {
               message += "\n" + NameUtil.nodeFQName(mappingConfig);
-              message += "\n  disposed: " + ((BundleClassLoader) mappingConfig.getClass().getClassLoader()).isDisposed();
+//              message += "\n  disposed: " + ((BundleClassLoader) mappingConfig.getClass().getClassLoader()).isDisposed();
               message += "\n  same adapter: " + (mappingConfig == lesserPriMapping);
               message += "\n  same node: " + (mappingConfig.getNode() == lesserPriMapping.getNode());
               message += "\n  same model: " + (mappingConfig.getModel() == lesserPriMapping.getModel());
