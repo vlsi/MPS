@@ -51,7 +51,8 @@ GETTING HELP AND REPORTING BUGS
     For getting help you can visit several locations:
     - home http://www.jetbrains.com/mps/
     - JetBrains MPS space http://www.jetbrains.net/confluence/display/MPS/Welcome+to+JetBrains+MPS+Space
-    - issue tracker http://jetbrains.net/tracker
+    - issue tracker http://www.jetbrains.net/tracker/issues/MPS
+    - forum http://www.jetbrains.net/devnet/community/mps?view=discussions
 
 ----------------------
 Develop with pleasure!
