@@ -105,7 +105,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
         }
       };
       inlineStyle.apply(editorCell);

@@ -180,6 +180,14 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1017_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1017_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_1017_0(EditorCell editorCell, SNode node, EditorContext context) {

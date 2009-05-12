@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TestMethodList_Editor extends DefaultNodeEditor {
 
@@ -96,7 +97,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstant_8171_0(context, node, "<< test methods >>");
+      return this.createConstant_8171_0(context, node, "<<test methods>>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -128,6 +129,15 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_8171_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_8171_0");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, false);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Constant_8171_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

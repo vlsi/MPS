@@ -108,6 +108,14 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_7317_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7317_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_7317_0(EditorCell editorCell, SNode node, EditorContext context) {

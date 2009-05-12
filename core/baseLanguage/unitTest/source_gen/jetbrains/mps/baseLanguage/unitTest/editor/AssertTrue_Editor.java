@@ -102,6 +102,14 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9112_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9112_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_9112_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

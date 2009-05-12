@@ -138,6 +138,14 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9097_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9097_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_9097_2(EditorCell editorCell, SNode node, EditorContext context) {

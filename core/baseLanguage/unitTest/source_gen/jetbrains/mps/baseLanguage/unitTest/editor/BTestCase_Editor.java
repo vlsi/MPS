@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BTestCase_Editor extends DefaultNodeEditor {
 
@@ -433,7 +434,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstant_7256_5(context, node, "<< static fields >>");
+      return this.createConstant_7256_5(context, node, "<<static fields>>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -465,6 +466,15 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_7256_5(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_7256_5");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, false);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Constant_7256_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -496,7 +506,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstant_7256_8(context, node, "<< methods >>");
+      return this.createConstant_7256_8(context, node, "<<methods>>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -528,6 +538,15 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_7256_8(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_7256_8");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.EDITABLE, false);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Constant_7256_8(EditorCell_Label editorCell, SNode node, EditorContext context) {

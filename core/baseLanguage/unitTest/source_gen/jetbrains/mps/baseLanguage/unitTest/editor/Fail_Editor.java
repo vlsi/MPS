@@ -99,6 +99,14 @@ public class Fail_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0894_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0894_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefNode_0894_0(EditorCell editorCell, SNode node, EditorContext context) {
