@@ -36,28 +36,6 @@ import java.util.*;
 public class GenerationPartitioningUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
 
-  public static List<Generator> getAllReachableGenerators(GeneratorDescriptor descriptorWorkingCopy, IScope scope) {
-    ArrayList<Generator> collectedGenerators = new ArrayList<Generator>();
-    HashSet<Language> processedLanguages = new HashSet<Language>();
-
-    // generator edited in 'property dialog'
-    Generator editedGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(descriptorWorkingCopy.getGeneratorUID());
-    collectedGenerators.add(editedGenerator);
-    List<ModuleReference> generatorRefs = descriptorWorkingCopy.getDepGenerators();
-    for (ModuleReference generatorRef : generatorRefs) {
-      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorRef);
-      collectGenerators(refGenerator, true, collectedGenerators, processedLanguages);
-    }
-    for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
-      collectGenerators(model.getSModel(), true, true, collectedGenerators, processedLanguages, scope);
-    }
-    return collectedGenerators;
-  }
-
-  public static List<Generator> getExplicitlyEngagedGenerators(SModel inputModel, IScope scope) {
-    return collectGenerators(inputModel, false, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
-  }
-
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
     // scanners framework wasn't finished :(
 //    AbstractModelScanner modelScanner = new SimpleModelScanner();
@@ -67,6 +45,7 @@ public class GenerationPartitioningUtil {
 //    Set<Language> usedLanguages = new HashSet<Language>();
 //    Set<Generator> engagedGenerators = new HashSet<Generator>();
 //    modelScanner.collectUsedLanguagesAndEngagedGenerators(inputModel, true, usedLanguages, engagedGenerators, scope);
+
     // collect generators brutally
     return collectGenerators(inputModel, false, true, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
