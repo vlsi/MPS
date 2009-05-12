@@ -257,7 +257,22 @@ public class TemplateProcessor {
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes = copyNodeFromInputNode(mappingName, templateNode, newInputNode);
-        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        if (_outputNodes != null) {
+          // check node languages : prevent 'input node' query from returnning node, which language was not counted when
+          // planning the generation steps.
+          for (SNode outputNode : _outputNodes) {
+            Language outputNodeLang = outputNode.getNodeLanguage();
+            if (!myGenerator.getGeneratorSessionContext().getGenerationStepController().isCountedLanguage(outputNodeLang)) {
+              if (!outputNodeLang.getGenerators().isEmpty()) {
+                LOG.error("language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!", outputNode);
+                LOG.error(" -- was input: " + inputNode.getDebugText(), inputNode);
+                LOG.error(" -- was template: " + nodeMacro.getDebugText(), nodeMacro);
+                LOG.error(" -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+              }
+            }
+          }
+          outputNodes.addAll(_outputNodes);
+        }
       }
       return outputNodes;
 

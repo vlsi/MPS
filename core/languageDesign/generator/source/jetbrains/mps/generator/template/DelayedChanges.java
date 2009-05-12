@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.NodeMacro;
 
 import java.util.ArrayList;
@@ -73,6 +74,18 @@ public class DelayedChanges {
       try {
         SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro, myChildToReplace.getParent(), myGenerator);
         if (child != null) {
+          // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
+          // planning the generation steps.
+          Language childLang = child.getNodeLanguage();
+          if (!myGenerator.getGeneratorSessionContext().getGenerationStepController().isCountedLanguage(childLang)) {
+            if (!childLang.getGenerators().isEmpty()) {
+              LOG.error("language of output node is '" + childLang.getNamespace() + "' - this language did not show up when computing generation steps!", child);
+              LOG.error(" -- was input: " + myInputNode.getDebugText(), myInputNode);
+              LOG.error(" -- was template: " + myMapSrcMacro.getDebugText(), myMapSrcMacro);
+              LOG.error(" -- workaround: add the language '" + childLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+            }
+          }
+
           if (child.isRegistered()) {
             // must be "in air"
             child = CopyUtil.copy(child);
