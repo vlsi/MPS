@@ -21,12 +21,25 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.util.io.ZipUtil;
+import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.util.messages.MessageBus;
+import com.intellij.ide.AppLifecycleListener;
+import com.intellij.ide.AppLifecycleListener.Adapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +58,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
   public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
   public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";
+  private String myLastBuildNumber;
 
   public static SamplesExtractor getInstance() {
     return ApplicationManager.getApplication().getComponent(SamplesExtractor.class);
@@ -53,6 +67,13 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private MyState myState;
   private final ApplicationInfo myApplicationInfo;
   private boolean myIsSamplesInMPSHome;
+  private final AppLifecycleListener myProjectManagerListener = new Adapter() {
+    @Override
+    public void appStarting(Project projectFromCommandLine) {
+      checkSamplesAndUpdateIfNeeded();
+    }
+  };
+  private MessageBusConnection myMessageBusConnection;
 
   public SamplesExtractor(ApplicationInfo applicationInfo) {
     myApplicationInfo = applicationInfo;
@@ -70,19 +91,27 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
 
     updateSamplesLocation();
 
-    String currentBuildNumberString = myApplicationInfo.getBuildNumber();
-    if (currentBuildNumberString.matches(".*[^\\d].*")) {
-      currentBuildNumberString = MyState.DEFAULT;
-    }
+    MessageBus bus = ApplicationManager.getApplication().getMessageBus();
+    myMessageBusConnection = bus.connect();
+    myMessageBusConnection.subscribe(AppLifecycleListener.TOPIC, myProjectManagerListener);
+  }
+
+  private synchronized void checkSamplesAndUpdateIfNeeded() {
+    String currentBuildNumberString = currentBuildNumberString();
     if (Integer.parseInt(myState.myLastBuildNumber) < Integer.parseInt(currentBuildNumberString)) {
 
       if (!myIsSamplesInMPSHome) {
         extractSamples();
       }
-
-      myState.myLastBuildNumber = currentBuildNumberString;
     }
+  }
 
+  private String currentBuildNumberString() {
+    String currentBuildNumberString = myApplicationInfo.getBuildNumber();
+    if (currentBuildNumberString.matches(".*[^\\d].*")) {
+      currentBuildNumberString = MyState.DEFAULT;
+    }
+    return currentBuildNumberString;
   }
 
   private void updateSamplesLocation() {
@@ -91,6 +120,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   public void disposeComponent() {
+    myMessageBusConnection.disconnect();
   }
 
   public MyState getState() {
@@ -116,31 +146,82 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     return PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_DIR;
   }
 
-  public void extractSamples() {
+  public synchronized void extractSamples() {
+    myLastBuildNumber = myState.myLastBuildNumber;
+    myState.myLastBuildNumber = currentBuildNumberString();
     File samplesZipFile = new File(PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_ZIP);
     if (samplesZipFile.exists()) {
       File samplesDir = new File(getSamplesPathInUserHome());
       if (samplesDir.exists()) {
-        File backupCopy = new File(samplesDir.getAbsolutePath() + myState.myLastBuildNumber);
-        if (backupCopy.exists()) {
-          backupCopy = new File(backupCopy.getAbsolutePath() + "." + System.currentTimeMillis());
-        }
-        if (samplesDir.isDirectory()) {
-          FileUtil.moveDirWithContent(samplesDir, backupCopy);
-        } else {
-          try {
-            FileUtil.rename(samplesDir, backupCopy);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
+        extractSamplesWithDialog(samplesDir, samplesZipFile);
+      } else {
+        actuallyExtractSamples(samplesZipFile);
       }
+    }
+  }
+
+  private void backupSamples(File samplesDir) {
+    File backupCopy = new File(samplesDir.getAbsolutePath() + myLastBuildNumber);
+    if (backupCopy.exists()) {
+      backupCopy = new File(backupCopy.getAbsolutePath() + "." + System.currentTimeMillis());
+    }
+    if (samplesDir.isDirectory()) {
+      FileUtil.moveDirWithContent(samplesDir, backupCopy);
+    } else {
       try {
-        ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
+        FileUtil.rename(samplesDir, backupCopy);
       } catch (IOException e) {
         LOG.error(e);
       }
     }
+  }
+
+  private synchronized void actuallyExtractSamples(File samplesZipFile) {
+    try {
+      ZipUtil.extract(samplesZipFile, PathManager.getUserHomeFile(), null);
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            LibraryManager.getInstance().updatePredefinedLibraries();
+          }
+        });
+        ProgressManager.getInstance().run(new Modal(null, "Reloading Classes", false) {
+          @Override
+          public void run(@NotNull ProgressIndicator indicator) {
+            ClassLoaderManager.getInstance().reloadAll(indicator);
+          }
+        });
+      }
+    });
+  }
+
+  private void extractSamplesWithDialog(final File futureSamplesDir, final File existingSamplesFile) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        String directory = futureSamplesDir.isDirectory() ? "directory" : "file";
+        int result = Messages.showDialog("Could not extract samples to " + futureSamplesDir + " - " + directory + " exists.\n" +
+          "Backup the " + directory + " or owerwrite it?",
+          "Could not extract samples to " + futureSamplesDir, new String[]{"Overwrite", "Backup"},
+          1, Messages.getQuestionIcon());
+        switch (result) {
+          case 0:
+            FileUtil.delete(futureSamplesDir);
+            break;
+          case 1:
+            backupSamples(futureSamplesDir);
+            break;
+          default:
+            LOG.error("Dialog returned unknown result " + result);
+            break;
+        }
+        actuallyExtractSamples(existingSamplesFile);
+      }
+    });
   }
 
   public static class MyState {
