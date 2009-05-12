@@ -21,6 +21,10 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.smodel.IScope;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestMethod_Editor extends DefaultNodeEditor {
 
@@ -42,7 +46,9 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4471_1(context, node, "{"));
     editorCell.addEditorCell(this.createRefNode_4471_1(context, node));
     editorCell.addEditorCell(this.createConstant_4471_2(context, node, "}"));
-    editorCell.addEditorCell(this.createConstant_4471_3(context, node, ""));
+    if (renderingCondition4471_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_4471_3(context, node, ""));
+    }
     return editorCell;
   }
 
@@ -245,6 +251,11 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_4471_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition4471_0(SNode node, EditorContext editorContext, IScope scope) {
+    List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
+    return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
 
 }
