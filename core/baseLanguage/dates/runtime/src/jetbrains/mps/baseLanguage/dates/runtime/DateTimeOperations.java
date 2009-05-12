@@ -82,25 +82,23 @@ public class DateTimeOperations {
     op1 = roundFloor(op1, type);
     op2 = roundFloor(op2, type);
 
+    if (op1 == null) {
+      op1 = Long.MIN_VALUE;
+    }
+    if (op2 == null) {
+      op2 = Long.MIN_VALUE;
+    }
+
     boolean result;
-    if (op1 == null || op2 == null) {
-      switch (cmp) {
-        case EQ: result = op1 == op2; break;
-        case NE: result = op1 != op2; break;
-        default:
-          throw new NullPointerException();
-      }
-    } else {
-      switch (cmp) {
-        case EQ: result = op1.compareTo(op2) == 0; break;
-        case NE: result = op1.compareTo(op2) != 0; break;
-        case LT: result = op1.compareTo(op2) < 0;  break;
-        case GT: result = op1.compareTo(op2) > 0;  break;
-        case LE: result = op1.compareTo(op2) <= 0; break;
-        case GE: result = op1.compareTo(op2) >= 0; break;
-        default:
-          throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
-      }
+    switch (cmp) {
+      case EQ: result = op1.compareTo(op2) == 0; break;
+      case NE: result = op1.compareTo(op2) != 0; break;
+      case LT: result = op1.compareTo(op2) < 0;  break;
+      case GT: result = op1.compareTo(op2) > 0;  break;
+      case LE: result = op1.compareTo(op2) <= 0; break;
+      case GE: result = op1.compareTo(op2) >= 0; break;
+      default:
+        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
     }
     return result;
   }
@@ -215,6 +213,10 @@ public class DateTimeOperations {
     return result;
   }
 
+  public static Long never() {
+    return null;
+  }
+
   public static boolean equals(Period leftExpression, Period rightExpression) {
     boolean result;
     if (leftExpression == null || rightExpression == null) {
@@ -252,6 +254,5 @@ public class DateTimeOperations {
   public static boolean isNotNull(long datetime) {
     return true;
   }
-
 
 }
