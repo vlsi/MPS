@@ -91,7 +91,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
   }
 
-  public void updatePredefinedLibraries() {
+  private void updatePredefinedLibraries() {
     myPredefinedLibrariesOwner = new MPSModuleOwner() {
     };
     myBootstrapLibrariesOwner = new MPSModuleOwner() {
