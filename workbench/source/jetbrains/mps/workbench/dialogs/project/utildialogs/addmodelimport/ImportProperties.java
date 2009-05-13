@@ -206,21 +206,25 @@ public class ImportProperties {
       targetModel.addNewlyImportedDevKit(devkit);
     }
 
-    if (getLanguagesToImport(all).isEmpty() && getDevkitsToImport(all).isEmpty() && getNewModuleDependencies(all).isEmpty()) {
-      return;
-    }
 
-    ModuleDescriptor descriptor = targetModule.getModuleDescriptor();
     for (ModuleReference language : getLanguagesToImport(all)) {
-      descriptor.getUsedLanguages().add(language);
+      targetModule.getModuleDescriptor().getUsedLanguages().add(language);
     }
     for (ModuleReference devkit : getDevkitsToImport(all)) {
-      descriptor.getUsedDevkits().add(devkit);
+      targetModule.getModuleDescriptor().getUsedDevkits().add(devkit);
     }
-    for (Dependency dep : getNewModuleDependencies(all)) {
-      descriptor.getDependencies().add(dep);
+
+    //if there are new module dependencies, class reloading is needed
+    List<Dependency> deps = getNewModuleDependencies(all);
+    if (!deps.isEmpty()){
+      ModuleDescriptor descriptor = targetModule.getModuleDescriptor();
+      for (Dependency dep : deps) {
+        descriptor.getDependencies().add(dep);
+      }
+      targetModule.setModuleDescriptor(descriptor);
     }
-    targetModule.setModuleDescriptor(descriptor);
+
+    targetModule.save();
   }
 
   public class ImportDescriptor {
