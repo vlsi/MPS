@@ -23,6 +23,7 @@ import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -367,7 +368,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailureException {
-    ConceptDeclaration nodeConcept = (ConceptDeclaration) inputNode.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
 
     if (myTemplateSwitchGraph == null) {
       myTemplateSwitchGraph = new TemplateSwitchGraph(getGeneratorSessionContext().getTemplateModels());
@@ -384,7 +385,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (TemplateSwitch aSwitch : switches) {
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
-        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, nodeConcept, rule, this)) {
+        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, this)) {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
             showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");

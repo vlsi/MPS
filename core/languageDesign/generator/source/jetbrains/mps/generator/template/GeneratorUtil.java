@@ -82,13 +82,13 @@ public class GeneratorUtil {
     return mappingName;
   }
 
-  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
+  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
       if (rule.getApplyToConceptInheritors()) {
-        if (!SModelUtil_new.isAssignableConcept(sourceNodeConcept, applicableConcept)) return false;
+        if (!SModelUtil_new.isAssignableConcept(inputNodeConcept, applicableConcept)) return false;
       } else {
-        if (sourceNodeConcept != applicableConcept) return false;
+        if (inputNodeConcept != applicableConcept) return false;
       }
     }
     return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
