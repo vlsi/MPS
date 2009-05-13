@@ -31,8 +31,8 @@ public class FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private Map<String, Set<SNode>> myNodesAll = new jetbrains.mps.util.misc.hash.HashMap<String, Set<SNode>>();
-  private Map<String, Set<SNode>> myNodesNoInheritance = new jetbrains.mps.util.misc.hash.HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesAll = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesNoInheritance = new HashMap<String, Set<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
