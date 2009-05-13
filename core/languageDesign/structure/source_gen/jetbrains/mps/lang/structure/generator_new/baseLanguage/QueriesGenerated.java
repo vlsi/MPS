@@ -1474,7 +1474,15 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1198509713444(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "extends", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        if ((SLinkOperations.getTarget(it, "intfc", false) == null)) {
+          _context.showErrorMessage(it, "Can't extend null interface");
+        }
+        return (SLinkOperations.getTarget(it, "intfc", false) != null);
+      }
+    });
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacroContext _context) {

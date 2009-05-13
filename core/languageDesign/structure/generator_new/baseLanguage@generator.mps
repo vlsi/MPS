@@ -5890,10 +5890,63 @@
         <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1198509713444">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198509713445">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198509720821">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721758726">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1198509720822" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1198509722889">
-                  <link role="link" targetNodeId="18.1169127546356" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082494678">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721758726">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1198509720822" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1198509722889">
+                    <link role="link" targetNodeId="18.1169127546356" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="171978335082494683">
+                  <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="171978335082494684">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="171978335082494685">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="171978335082498250">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="171978335082498251">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="171978335082498301">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082498309">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="171978335082498302" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" id="171978335082498319">
+                                <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="171978335082498334">
+                                  <property name="value" value="Can't extend null interface" />
+                                </node>
+                                <node role="referenceNode" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="171978335082498327">
+                                  <link role="variableDeclaration" targetNodeId="171978335082494686" resolveInfo="it" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082498284">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082498267">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="171978335082498260">
+                              <link role="variableDeclaration" targetNodeId="171978335082494686" resolveInfo="it" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="171978335082498277">
+                              <link role="link" targetNodeId="18.1169127628841" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="171978335082498294" />
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="171978335082498347">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082498379">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="171978335082498380">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="171978335082498381">
+                              <link role="variableDeclaration" targetNodeId="171978335082494686" resolveInfo="it" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="171978335082498382">
+                              <link role="link" targetNodeId="18.1169127628841" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="171978335082498383" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="171978335082494686">
+                      <property name="name" value="it" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="171978335082494687" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
