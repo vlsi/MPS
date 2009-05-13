@@ -114,10 +114,10 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       if (ideaProject.isDisposed()) return;
       try {
         tool.init(ideaProject);
+        tool.register();
       } catch (Throwable t) {
         LOG.error(t);
       }
-      tool.register();
       myInitializedTools.add(tool);
     }
 
