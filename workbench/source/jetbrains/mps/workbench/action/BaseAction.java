@@ -19,7 +19,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +27,7 @@ import javax.swing.Icon;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.util.Set;
+import java.util.HashSet;
 
 public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible = true;

@@ -16,15 +16,8 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.util.misc.hash.*;
-import jetbrains.mps.util.misc.hash.LinkedHashSet;
-import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.util.misc.hash.HashMap;
 
-import java.util.Set;
-import java.util.Map;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 
 /**

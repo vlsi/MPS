@@ -21,7 +21,6 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.Color;
 import java.awt.Graphics;
