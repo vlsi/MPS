@@ -32,8 +32,7 @@ public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
   private Set<ModuleReference> myNecessaryLanguages;
-  private Set<SModelReference> myNecessaryImports;
-  private Set<ModuleReference> myNecessaryDevKits;
+  private Set<SModelReference> myNecessaryModels;
   private SModel myModelProperties;
   private IModule mySourceModule;
 
@@ -41,14 +40,12 @@ public class PasteNodeData {
                        IModule sourceModule,
                        SModel modelProperties,
                        Set<ModuleReference> necessaryLanguages,
-                       Set<SModelReference> necessaryImports,
-                       Set<ModuleReference> necessaryDevKits) {
+                       Set<SModelReference> necessaryModels) {
     myNodes = nodes;
     myRequireResolveReferences = references;
     mySourceModule = sourceModule;
     myNecessaryLanguages = necessaryLanguages;
-    myNecessaryImports = necessaryImports;
-    myNecessaryDevKits = necessaryDevKits;
+    myNecessaryModels = necessaryModels;
     myModelProperties = modelProperties;
   }
 
@@ -74,12 +71,8 @@ public class PasteNodeData {
     return myNecessaryLanguages;
   }
 
-  public Set<SModelReference> getNecessaryImports() {
-    return myNecessaryImports;
-  }
-
-  public Set<ModuleReference> getNecessaryDevKits() {
-    return myNecessaryDevKits;
+  public Set<SModelReference> getNecessaryModels() {
+    return myNecessaryModels;
   }
 
   public static PasteNodeData emptyPasteNodeData(IModule sourceModule, SModel model) {
@@ -88,7 +81,6 @@ public class PasteNodeData {
       sourceModule,
       model,
       new HashSet<ModuleReference>(),
-      new HashSet<SModelReference>(),
-      new HashSet<ModuleReference>());
+      new HashSet<SModelReference>());
   }
 }

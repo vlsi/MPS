@@ -18,6 +18,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
@@ -31,13 +32,6 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.07.2005
- * Time: 20:10:01
- * To change this template use File | Settings | File Templates.
- */
 public class SNodeTransferable implements Transferable {
 
   private static final int NODE = 0;
@@ -51,11 +45,10 @@ public class SNodeTransferable implements Transferable {
 
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
-  private IModule mySourceModule;
+  private ModuleReference mySourceModule;
   private SModel myModelProperties;
-  private Set<SModelReference> myNecessaryImports = new HashSet<SModelReference>();
+  private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
   private Set<ModuleReference> myNecessaryLanguages = new HashSet<ModuleReference>();
-  private Set<ModuleReference> myNecessaryDevKits = new HashSet<ModuleReference>();
   private String myText = "";
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -111,24 +104,23 @@ public class SNodeTransferable implements Transferable {
     mySNodes.clear();
     PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
-    mySourceModule = pasteNodeData.getSourceModule();
+    IModule module = pasteNodeData.getSourceModule();
+    mySourceModule = module == null ? null : module.getModuleReference();
     myModelProperties = pasteNodeData.getModelProperties();
-    myNecessaryImports = pasteNodeData.getNecessaryImports();
+    myNecessaryModels = pasteNodeData.getNecessaryModels();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
-    myNecessaryDevKits = pasteNodeData.getNecessaryDevKits();
   }
 
 
   public PasteNodeData createNodeData(SModel sModel) {
     Set<ModuleReference> necessaryLanguages = myNecessaryLanguages;
-    Set<SModelReference> necessaryImports = myNecessaryImports;
-    Set<ModuleReference> necessaryDevKits = myNecessaryDevKits;
+    Set<SModelReference> necessaryImports = myNecessaryModels;
     if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<ModuleReference>();
-    return CopyPasteUtil.createNodeDataOut(mySNodes,mySourceModule, sModel, myModelProperties,
+    IModule module = MPSModuleRepository.getInstance().getModule(mySourceModule);
+    return CopyPasteUtil.createNodeDataOut(mySNodes, module, sModel, myModelProperties,
       new HashSet<ModuleReference>(necessaryLanguages),
-      new HashSet<SModelReference>(necessaryImports),
-      new HashSet<ModuleReference>(necessaryDevKits));
+      new HashSet<SModelReference>(necessaryImports));
   }
 
 

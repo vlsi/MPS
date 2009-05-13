@@ -77,7 +77,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CopyPasteUtil.addImportsAndLanguagesToModel(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryImports(), context.getOperationContext(), new Runnable() {
+        CopyPasteUtil.addImportsAndLanguagesToModel(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext(), new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
