@@ -25,6 +25,7 @@ import jetbrains.mps.util.Condition;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
