@@ -196,4 +196,8 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
       myIndex = index;
     }
   }
+
+  public int getDegree() {
+    return 2;
+  }
 }

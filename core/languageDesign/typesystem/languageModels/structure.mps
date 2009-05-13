@@ -2495,5 +2495,15 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7204977815415955556">
+    <property name="name" value="CopiedTypeProvider" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7204977815415955557">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="copiedTypeSource" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </node>
 </model>
 

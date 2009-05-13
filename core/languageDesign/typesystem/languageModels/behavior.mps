@@ -741,5 +741,39 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235492943488" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7204977815415971300">
+    <link role="concept" targetNodeId="1.7204977815415955556" resolveInfo="CopiedTypeProvider" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7204977815415971303">
+      <property name="name" value="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7204977815415971306">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7204977815415971463">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7204977815415971466">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7204977815415971475">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7204977815415971470">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7204977815415971469" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7204977815415971474">
+                  <link role="link" targetNodeId="1.7204977815415955557" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7204977815415971479">
+                <link role="baseMethodDeclaration" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7204977815415971465">
+              <property name="value" value="copied " />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7204977815415971307">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7204977815415971308" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7204977815415971301">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7204977815415971302" />
+    </node>
+  </node>
 </model>
 

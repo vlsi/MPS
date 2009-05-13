@@ -17,6 +17,8 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
@@ -38,8 +40,8 @@ import java.util.*;
 public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
-  private final SNode myNode;
-  private int myHashCode = Integer.MAX_VALUE;
+  protected final SNode myNode;
+  protected int myHashCode = Integer.MAX_VALUE;
 
   public static NodeWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
     return createWrapperFromNode(node, equationManager, false);
@@ -49,9 +51,11 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if (node == null) return null;
     NodeWrapper result;
     String conceptFqName = node.getConceptFqName();
-    if ("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)) {
+    if (RuntimeTypeVariable.concept.equals(conceptFqName)) {
       result = new VariableWrapper(node, equationManager, equationManagerNullable);
-    } else if ("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName)) {
+    } else if (CopiedTypeProvider.concept.equals(conceptFqName)) {
+      result = new CopiedTypeWrapper(node, equationManager);
+    } else if (RuntimeHoleType.concept.equals(conceptFqName)) {
       result = new HoleWrapper(node, equationManager, null);
     } else {
       result = new NodeWrapper(node);
@@ -251,5 +255,9 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     SNode node = getNode();
     if (node == null) return "<no node>";
     return node.toString();
+  }
+
+  public int getDegree() {
+    return 10;
   }
 }

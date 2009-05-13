@@ -72,4 +72,8 @@ public class HoleWrapper extends NodeWrapper {
   public EquationManager getEquationManager() {
     return myEquationManager;
   }
+
+  public int getDegree() {
+    return 4;
+  }
 }

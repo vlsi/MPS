@@ -29,8 +29,11 @@ import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.util.LatticeUtil;
 
 import java.util.*;
+import java.util.HashSet;
+import java.util.HashMap;
 
 import org.jetbrains.annotations.NotNull;
+import com.intellij.util.containers.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -72,6 +75,8 @@ public class EquationManager {
 
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
+
+  private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new com.intellij.util.containers.HashMap<IWrapper, Set<CopiedTypeWrapper>>();
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
@@ -619,8 +624,14 @@ public class EquationManager {
   }
 
   private void processEquation(IWrapper var, IWrapper type, EquationInfo errorInfo) {
-    setParent(var, type);
-    keepInequationsAndEffects(var, type, false);
+    boolean reverse = var.getDegree() > type.getDegree();
+    if (reverse) {
+      setParent(type, var);
+      keepInequationsAndEffects(type, var, false);
+    } else {
+      setParent(var, type);
+      keepInequationsAndEffects(var, type, false);
+    }
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
       SNode nodeWithError = errorInfo.getNodeWithError();
@@ -629,7 +640,11 @@ public class EquationManager {
       myTypeCheckingContext.reportMessage(
         nodeWithError, reporter);
     }
-    var.fireRepresentatorSet(type, this);
+    if (reverse) {
+      type.fireRepresentatorSet(var, this);
+    } else {
+      var.fireRepresentatorSet(type, this);
+    }
   }
 
   private void keepInequationsAndEffects(IWrapper var, IWrapper type, boolean avoidCheckonlyMaps) {
@@ -758,18 +773,28 @@ public class EquationManager {
         addInequationComparable(subtype, type, comparables.get(subtype), false);
       }
     }
+
+    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.remove(var);
+    if (typeWrappers != null) {
+      for (CopiedTypeWrapper copiedTypeWrapper : typeWrappers) {
+        addCopiedTypeWrapper(type, copiedTypeWrapper);
+      }
+    }
   }
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
-    if (type instanceof NodeWrapper) {
-      setParent(error, type);
-    } else if (error instanceof NodeWrapper) {
+    boolean reverse = error.getDegree() > type.getDegree();
+    if (reverse) {
       setParent(type, error);
     } else {
       setParent(error, type);
     }
     myTypeCheckingContext.reportMessage(nodeToCheck, errorReporter);
-    error.fireRepresentatorSet(type, this);
+    if (reverse) {
+      type.fireRepresentatorSet(error, this);
+    } else {
+      error.fireRepresentatorSet(type, this);
+    }
   }
 
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, EquationInfo errorInfo) {
@@ -1361,33 +1386,64 @@ public class EquationManager {
     }
   }
 
+  /*package*/ void addCopiedTypeWrapper(IWrapper source, CopiedTypeWrapper copiedTypeWrapper) {
+    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.get(source);
+    if (typeWrappers == null) {
+      typeWrappers = new HashSet<CopiedTypeWrapper>();
+      myCopiedWrappers.put(source, typeWrappers);
+    }
+    typeWrappers.add(copiedTypeWrapper);
+  }
+
+  public Set<CopiedTypeWrapper> getCopiedTypeWrappers(IWrapper wrapper) {
+    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.get(wrapper);
+    if (typeWrappers == null) {
+      return new HashSet<CopiedTypeWrapper>();
+    }
+    return typeWrappers;
+  }
+
 
   /*package*/ void checkConcrete(IWrapper representator) {
     if (representator == null) return;
     // NB: we assume that wrapper is a representator
     if (isConcrete(representator)) {
-      WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(representator);
-      if (whenConcreteEntity != null) {
-        clearWhenConcreteEntity(representator);
-        if (myCollectConcretes) {
-          myCollectedWhenConcreteEntities.add(whenConcreteEntity);
-        } else {
-          whenConcreteEntity.run();
-        }
+      isDeeplyConcrete(representator);
+      for (CopiedTypeWrapper copiedTypeWrapper : getCopiedTypeWrappers(representator)) {
+        isDeeplyConcrete(copiedTypeWrapper);
       }
-      representator.fireBecomesDeeplyConcrete(this);
     }
     if (!representator.isVariable()) {
-      WhenConcreteEntity whenConcreteEntity = getShallowWhenConcreteEntity(representator);
-      if (whenConcreteEntity != null) {
-        clearShallowWhenConcreteEntity(representator);
-        if (myCollectConcretes) {
-          myCollectedWhenConcreteEntities.add(whenConcreteEntity);
-        } else {
-          whenConcreteEntity.run();
-        }
+      isShallowConcrete(representator);
+      for (CopiedTypeWrapper copiedTypeWrapper : getCopiedTypeWrappers(representator)) {
+        isShallowConcrete(copiedTypeWrapper);
       }
     }
+  }
+
+  private void isShallowConcrete(IWrapper representator) {
+    WhenConcreteEntity whenConcreteEntity = getShallowWhenConcreteEntity(representator);
+    if (whenConcreteEntity != null) {
+      clearShallowWhenConcreteEntity(representator);
+      if (myCollectConcretes) {
+        myCollectedWhenConcreteEntities.add(whenConcreteEntity);
+      } else {
+        whenConcreteEntity.run();
+      }
+    }
+  }
+
+  private void isDeeplyConcrete(IWrapper representator) {
+    WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(representator);
+    if (whenConcreteEntity != null) {
+      clearWhenConcreteEntity(representator);
+      if (myCollectConcretes) {
+        myCollectedWhenConcreteEntities.add(whenConcreteEntity);
+      } else {
+        whenConcreteEntity.run();
+      }
+    }
+    representator.fireBecomesDeeplyConcrete(this);
   }
 
 

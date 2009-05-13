@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -167,7 +168,7 @@ public class TypeCheckingContext {
 
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
-    SNode type;
+    SNode type = null;
     NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
@@ -178,16 +179,33 @@ public class TypeCheckingContext {
       //--- for diagnostics:
       if (ruleModel != null && ruleId != null) {
         currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+        //todo wrap into "if (addDependency) {}" when sure that typeof works fine
       }
       //----
       type = currentTypesComponent.getRawTypeFromContext(node);
-      if (type != null) return getRepresentatorIfNecessary(type);
     }
+    SNode representator;
+    if (type != null) {
+      representator = getRepresentatorIfNecessary(type);
+    } else {
+      SNode var = createNewRuntimeTypesVariable();
+      type = TypeChecker.asType(var);
+      getMainContext().put(node, type);
+      representator = getRepresentatorIfNecessary(type);
+    }
+    if (addDependency) {
+      return representator;
+    } else {
+      return representator;
+     // return createCopiedTypeProviderNode(representator);
+    }
+  }
 
-    SNode var = createNewRuntimeTypesVariable();
-    type = TypeChecker.asType(var);
-    getMainContext().put(node, type);
-    return getRepresentatorIfNecessary(type);
+  public SNode createCopiedTypeProviderNode(SNode source) {
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(CopiedTypeProvider.concept,
+      getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+    result.setReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE, source);
+    return result;
   }
 
   public SNode[] getRegisteredTypeVariables(String varName) {

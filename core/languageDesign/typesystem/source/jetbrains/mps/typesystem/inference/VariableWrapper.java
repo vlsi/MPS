@@ -120,11 +120,15 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
         }
       }
     } else {
-      LOG.warning("becomesDeplyConcrete event: a wrapper which just became concrete is not my shallow-concrete representator");
+//      LOG.warning("becomesDeplyConcrete event: a wrapper which just became concrete is not my shallow-concrete representator");
     }
   }
 
   public void weakParentAdded(IWrapper wrapper, IWrapper parent, EquationManager equationManager) {
     //todo
+  }
+
+  public int getDegree() {
+    return 0;
   }
 }
