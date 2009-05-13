@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
@@ -38,7 +37,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -47,6 +45,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.SwingUtilities;
 import java.util.*;
 
 @State(
@@ -122,10 +121,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           mySortedPlugins = createPlugins(mpsProject);
-        }
-      });
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.init(mpsProject);
@@ -133,9 +128,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
               LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
             }
           }
+          spreadState(mySortedPlugins);
         }
       });
-      spreadState(mySortedPlugins);
     }
 
     myLoaded = true;
@@ -144,8 +139,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void disposePlugins() {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
-
     if (!myLoaded) return;
+
     synchronized (myPluginsLock) {
       Collections.reverse(mySortedPlugins);
       collectState(mySortedPlugins);
@@ -277,7 +272,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     private volatile boolean myIsDisposed = false;
 
     public void onBeforeReload() {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           if (myIsDisposed) return;
           disposePlugins();
@@ -286,7 +281,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
 
     public void onReload() {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           if (myIsDisposed) return;
           loadPlugins();
@@ -294,7 +289,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       });
     }
 
-    public void dispose(){
+    public void dispose() {
       myIsDisposed = true;
     }
   }

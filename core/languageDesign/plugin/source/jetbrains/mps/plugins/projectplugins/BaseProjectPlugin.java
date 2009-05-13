@@ -30,13 +30,10 @@ import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -120,15 +117,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       } catch (Throwable t) {
         LOG.error(t);
       }
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              tool.registerLater();
-            }
-          });
-        }
-      });
+      tool.register();
       myInitializedTools.add(tool);
     }
 
@@ -208,7 +197,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       if (componentState.second == null) return;
       try {
         BaseProjectPrefsComponent component = components.get(componentState.first);
-        if (component!=null){
+        if (component != null) {
           component.loadState(componentState.second);
         }
       } catch (Throwable t) {
