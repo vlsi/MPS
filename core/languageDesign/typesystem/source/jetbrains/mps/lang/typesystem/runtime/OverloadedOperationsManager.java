@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -56,12 +56,23 @@ public class OverloadedOperationsManager {
       return null;
     }
     SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
+    List<OverloadedOperationsTypesProvider> filteredProviders = new ArrayList<OverloadedOperationsTypesProvider>();
     for (OverloadedOperationsTypesProvider provider : operationsTypesProviderSet) {
       if (provider.isApplicable(subtypingManager, leftOperandType, rightOperandType)) {
-        SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
-        if (result != null) {
-          return result;
-        }
+        filteredProviders.add(provider);
+      }
+    }
+    Collections.sort(filteredProviders, new Comparator<OverloadedOperationsTypesProvider>() {
+      public int compare(OverloadedOperationsTypesProvider o1, OverloadedOperationsTypesProvider o2) {
+        int i1 = (o1.myLeftTypeIsExact ? 1 : 0) + (o1.myRightTypeIsExact ? 1 : 0);
+        int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
+        return i2 - i1;
+      }
+    });
+    for (OverloadedOperationsTypesProvider provider : filteredProviders) {
+      SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
+      if (result != null) {
+        return result;
       }
     }
     return null;
