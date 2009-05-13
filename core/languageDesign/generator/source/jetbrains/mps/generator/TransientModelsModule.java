@@ -115,6 +115,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public void clearAll() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().removeUnusedDescriptors();
+    invalidateCaches();
     setInvocationContext(null);
     myModelsToKeep.clear();
   }
