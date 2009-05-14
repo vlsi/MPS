@@ -70,5 +70,41 @@
       <link role="dataType" targetNodeId="2.1223640176546" resolveInfo="StringWithoutSpaces" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4435815598243878832">
+    <property name="name" value="IfProjectComponent" />
+    <property name="package" value="projectComponents.conditions" />
+    <link role="extends" targetNodeId="2.1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4435815598243878833">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="condition" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1233159299625" resolveInfo="ICondition" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4435815598243878834">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ifTrue" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4435815598243878835">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="ifFaulse" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4435815598243878836">
+      <property name="value" value="if" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4435815598243878837">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1233309050521" resolveInfo="acceptFiles" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4435815598243878838">
+      <link role="intfc" targetNodeId="2.1237389142373" resolveInfo="IAbstractCompositeComponent" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4435815598243878839">
+      <link role="intfc" targetNodeId="2.1240564398817" resolveInfo="ITransparentProjectComponent" />
+    </node>
+  </node>
 </model>
 

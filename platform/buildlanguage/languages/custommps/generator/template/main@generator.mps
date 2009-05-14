@@ -1072,7 +1072,7 @@
               </node>
             </node>
           </node>
-          <node role="entry" type="jetbrains.mps.build.packaging.structure.IfProjectComponent" id="1239375077843">
+          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1239375077843">
             <node role="ifTrue" type="jetbrains.mps.build.packaging.structure.Folder" id="1239375106045">
               <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1239375106046">
                 <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239375106047">
@@ -2230,7 +2230,7 @@
             <property name="name" value="workbench" />
           </node>
         </node>
-        <node role="entry" type="jetbrains.mps.build.packaging.structure.IfProjectComponent" id="1234971270550">
+        <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1234971270550">
           <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition" id="1234971270551">
             <node role="pathToCheck" type="jetbrains.mps.build.packaging.structure.NonExistingPath" id="1234971270552">
               <property name="pathToCheck" value="lib/mps.jar" />
@@ -4543,7 +4543,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1233749569093">
     <property name="name" value="reduce_CreateIfNotExists" />
     <link role="applicableConcept" targetNodeId="16.1239995796746" resolveInfo="CreateIfNotExists" />
-    <node role="contentNode" type="jetbrains.mps.build.packaging.structure.IfProjectComponent" id="1233749593543">
+    <node role="contentNode" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1233749593543">
       <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition" id="1233749597731">
         <node role="pathToCheck" type="jetbrains.mps.build.packaging.structure.NonExistingPath" id="1233749597732">
           <property name="pathToCheck" value="path/to/artifact" />
@@ -6380,7 +6380,7 @@
     <property name="name" value="weave_MPSLayout" />
     <link role="applicableConcept" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
     <node role="contentNode" type="jetbrains.mps.build.packaging.structure.MPSLayout" id="1238505290211">
-      <node role="component" type="jetbrains.mps.build.packaging.structure.IfProjectComponent" id="1238505343964">
+      <node role="component" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1238505343964">
         <node role="condition" type="jetbrains.mps.build.packaging.structure.NotCondition" id="1238505349284">
           <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition" id="1238505350873">
             <node role="pathToCheck" type="jetbrains.mps.build.packaging.structure.NonExistingPath" id="1238505350874">

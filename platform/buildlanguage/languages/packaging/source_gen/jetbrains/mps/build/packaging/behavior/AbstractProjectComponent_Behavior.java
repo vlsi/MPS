@@ -34,7 +34,7 @@ public class AbstractProjectComponent_Behavior {
         return new File(SPropertyOperations.getString(thisNode, "name"));
       }
       return new File(parentTargetDir + File.separator + SPropertyOperations.getString(thisNode, "name"));
-    } else if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IfProjectComponent")) {
+    } else if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent")) {
       return AbstractProjectComponent_Behavior.call_getPath_1233752667763(thisNode, SNodeOperations.getParent(parentNode));
     }
     return new File(SPropertyOperations.getString(thisNode, "name"));

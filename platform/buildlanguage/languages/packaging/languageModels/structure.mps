@@ -1053,42 +1053,6 @@
       <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233159190548">
-    <property name="name" value="IfProjectComponent" />
-    <property name="package" value="projectComponents.conditions" />
-    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159308698">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="condition" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1233159299625" resolveInfo="ICondition" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159215203">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="ifTrue" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233159231309">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="ifFaulse" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233159464071">
-      <property name="value" value="if" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1233309321847">
-      <link role="conceptPropertyDeclaration" targetNodeId="1233309050521" resolveInfo="acceptFiles" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237389339515">
-      <link role="intfc" targetNodeId="1237389142373" resolveInfo="IAbstractCompositeComponent" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240564486597">
-      <link role="intfc" targetNodeId="1240564398817" resolveInfo="ITransparentProjectComponent" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233159299625">
     <property name="package" value="projectComponents.conditions" />
     <property name="name" value="ICondition" />
