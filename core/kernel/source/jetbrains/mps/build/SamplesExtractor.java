@@ -128,7 +128,12 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String getSamplesPathInUserHome() {
-    return PathManager.getUserHome() + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + myApplicationInfo.getMajorVersion();
+    return PathManager.getUserHome() + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + getSuffix();
+  }
+
+  private String getSuffix() {
+    String[] tokens = myApplicationInfo.getVersionName().split("\\s+");
+    return tokens[tokens.length - 1];
   }
 
   private String getSamplesPathInMPSHome() {

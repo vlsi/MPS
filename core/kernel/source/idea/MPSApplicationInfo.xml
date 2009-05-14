@@ -1,5 +1,5 @@
 <component>
-    <version codename="" major="__VERSION__" minor="" eap="false"/>
+    <version codename="" major="" minor="" eap="false"/>
     <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
     <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387"/>
     <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
