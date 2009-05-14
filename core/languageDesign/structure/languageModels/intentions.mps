@@ -131,5 +131,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="2799938697970315260">
+    <property name="name" value="MakeRootable" />
+    <property name="isAvailableInChildNodes" value="true" />
+    <link role="forConcept" targetNodeId="1.1071489090640" resolveInfo="ConceptDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="2799938697970315261">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2799938697970315262">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2799938697970315267">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="2799938697970315268">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2799938697970315273">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="2799938697970315272" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2799938697970315277">
+                <link role="property" targetNodeId="1.1096454100552" resolveInfo="rootable" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2799938697970315278">
+              <property name="value" value="Make not rootable" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2799938697970315279">
+              <property name="value" value="Make rootable" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="2799938697970315263">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2799938697970315264">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2799938697970315280">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="2799938697970315287">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="9014999033545867993">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9014999033545867994">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="9014999033545867995" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="9014999033545867996">
+                  <link role="property" targetNodeId="1.1096454100552" resolveInfo="rootable" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2799938697970315282">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="2799938697970315281" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2799938697970315286">
+                <link role="property" targetNodeId="1.1096454100552" resolveInfo="rootable" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
