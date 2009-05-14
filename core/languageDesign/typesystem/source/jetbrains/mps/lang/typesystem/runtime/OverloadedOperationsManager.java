@@ -19,6 +19,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -30,7 +31,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class OverloadedOperationsManager {
-
+  private static Logger LOG = Logger.getLogger(OverloadedOperationsManager.class);
 
   private RuleSet<OverloadedOperationsTypesProvider> myOperationsToTypeProviders =
     new RuleSet<OverloadedOperationsTypesProvider>();
@@ -62,13 +63,21 @@ public class OverloadedOperationsManager {
         filteredProviders.add(provider);
       }
     }
+    final boolean[] severalRules = new boolean[]{false};
     Collections.sort(filteredProviders, new Comparator<OverloadedOperationsTypesProvider>() {
       public int compare(OverloadedOperationsTypesProvider o1, OverloadedOperationsTypesProvider o2) {
         int i1 = (o1.myLeftTypeIsExact ? 1 : 0) + (o1.myRightTypeIsExact ? 1 : 0);
         int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
-        return i2 - i1;
+        int i = i2 - i1;
+        if (i == 0) {
+          severalRules[0] = true;
+        }
+        return i;
       }
     });
+    if (severalRules[0]) {
+      LOG.warning("several overloaded rules found for operation", operation);
+    }
     for (OverloadedOperationsTypesProvider provider : filteredProviders) {
       SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
       if (result != null) {
