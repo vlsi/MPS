@@ -8,7 +8,7 @@ else
     JAVA="$JDK_HOME/bin/java"
 fi
 MAIN_CLASS=jetbrains.mps.Launcher
-JVM_ARGS=`tr '\n' ' ' < "bin/mps.vmoptions" | tr '\r' ' '`
+JVM_ARGS=`tr '\n' ' ' < "$PROJECT_HOME/bin/mps.vmoptions" | tr '\r' ' '`
 #ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
 CLASSPATH=""

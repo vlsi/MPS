@@ -336,6 +336,9 @@
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230660055900">
         <property name="text" value="FOR /F &quot;delims=&quot; %%i in (" />
       </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3737542460576194415">
+        <property name="text" value="%PROJECT_HOME%" />
+      </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231749330993">
         <property name="text" value="vmoptions.file" />
         <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1231750861492">
@@ -3466,6 +3469,9 @@
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230293101918">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230293101919">
         <property name="text" value="JVM_ARGS=`tr '\n' ' ' &lt; &quot;" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3737542460576194409">
+        <property name="text" value="$PROJECT_HOME/" />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231748093915">
         <property name="text" value="pathToVMOptionsFile" />

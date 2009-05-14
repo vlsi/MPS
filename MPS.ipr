@@ -924,7 +924,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="http://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
+    <option name="state" value="https://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -1079,7 +1079,7 @@
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=200m  -Xss1024k -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-6-sun" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
@@ -1092,7 +1092,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -1156,11 +1156,10 @@
             <SvnBranchConfiguration>
               <option name="branchUrls">
                 <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
+                  <option value="https://svn.jetbrains.org/mps/branches" />
                 </list>
               </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
