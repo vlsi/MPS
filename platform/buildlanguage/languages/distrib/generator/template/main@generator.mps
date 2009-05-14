@@ -328,6 +328,31 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="3858179827519823472">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3858179827519823475">
+        <property name="text" value="IF &quot;%MPS_VM_OPTIONS%&quot; == &quot;&quot; SET MPS_VM_OPTIONS=&quot;%PROJECT_HOME%" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3858179827519823477">
+        <property name="text" value="vmoptions.file" />
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3858179827519823478">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3858179827519823479">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3858179827519823480">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3858179827519823481">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3858179827519823482">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3858179827519823483" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3858179827519823484">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1231769123888" resolveInfo="getVMOptionsFilePath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3858179827519823486">
+        <property name="text" value="&quot;" />
+      </node>
+    </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230058867816">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230058878617">
         <property name="text" value="set ACC=" />
@@ -336,25 +361,8 @@
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230660055900">
         <property name="text" value="FOR /F &quot;delims=&quot; %%i in (" />
       </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3737542460576194415">
-        <property name="text" value="%PROJECT_HOME%" />
-      </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231749330993">
-        <property name="text" value="vmoptions.file" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1231750861492">
-          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1231750861493">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231750861494">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231750869016">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231750869122">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1231750869017" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231769441077">
-                    <link role="baseMethodDeclaration" targetNodeId="8.1231769123888" resolveInfo="getVMOptionsFilePath" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+        <property name="text" value="%MPS_VM_OPTIONS%" />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231749361099">
         <property name="text" value=") DO call :parse_vmoptions" />

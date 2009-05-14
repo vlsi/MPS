@@ -187,10 +187,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1231750861493(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1231760312435(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
   }
@@ -513,6 +509,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1241441036084(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true)).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3858179827519823479(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4570889604826394255(final IOperationContext operationContext, final PropertyMacroContext _context) {

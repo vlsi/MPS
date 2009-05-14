@@ -4,8 +4,9 @@ set PROJECT_HOME=%~dp0
 set JAVA=javaw
 IF EXIST "%PROJECT_HOME%jre" set JAVA="%PROJECT_HOME%jre\bin\%JAVA%"
 set MAIN_CLASS=jetbrains.mps.Launcher
+IF "%MPS_VM_OPTIONS%" == "" SET MPS_VM_OPTIONS="%PROJECT_HOME%bin\mps.vmoptions"
 set ACC=
-FOR /F "delims=" %%i in (%PROJECT_HOME%bin\mps.vmoptions) DO call :parse_vmoptions "%%i"
+FOR /F "delims=" %%i in (%MPS_VM_OPTIONS%) DO call :parse_vmoptions "%%i"
 set JVM_ARGS=%ACC%
 ::set ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 set CLASSPATH="%PROJECT_HOME%lib\idea-patch.jar"
