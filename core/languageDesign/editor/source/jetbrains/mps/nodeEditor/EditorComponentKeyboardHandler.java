@@ -159,7 +159,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         }
       }
     }
-    
+
     if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
       keyEvent.consume();
       return true;

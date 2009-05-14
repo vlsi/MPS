@@ -197,11 +197,15 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCellAction getApplicableCellAction(CellActionType type) {
-    EditorCell current = this;
+    EditorCell current = this;    
     while (current != null) {
       EditorCellAction currentAction = current.getAction(type);
       if (currentAction != null && currentAction.canExecute(myEditorContext)) {
-        return currentAction;
+        if (type == CellActionType.INSERT) {
+          return getInsertAction(current, type);
+        } else {
+          return currentAction;
+        }
       }
       current = current.getParent();
     }
@@ -210,6 +214,17 @@ public abstract class EditorCell_Basic implements EditorCell {
       return action;
     }
     return null;
+  }
+
+  private EditorCellAction getInsertAction(EditorCell current, CellActionType type) {
+    EditorCellAction cellAction = current.getAction(type);
+    while (current != null) {
+      if (current.getAction(type) != null && current.getLastLeaf() == this) {
+        cellAction = current.getAction(type);
+      }
+      current = current.getParent();
+    }
+    return cellAction;
   }
 
   public void addKeyMap(EditorCellKeyMap keyMap) {

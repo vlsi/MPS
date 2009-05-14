@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.classifiers.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.baseLanguage.classifiers.dataFlow.DefaultClassifierMethodCallOperation_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

@@ -2706,5 +2706,60 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="7424976593885769460">
+    <property name="package" value="editorCell" />
+    <property name="name" value="EnterAfterElseIf" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7424976593885769462">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7424976593885769463" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7424976593885769464" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885769465">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7424976593885770506">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770508" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7424976593885770511">
+            <property name="value" value="false" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="7424976593885770512">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="7424976593885770513" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770514" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7424976593885770529">
+              <property name="isLastPosition" value="true" />
+              <property name="cellId" value="Constant_1596_4" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7424976593885770519">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7424976593885770520" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7424976593885770521" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770522">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7424976593885770523">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770524" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7424976593885770525">
+            <property name="value" value="false" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="7424976593885770526">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="7424976593885770527" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770528" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7424976593885770530">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7424976593885770531">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Error_3869_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7424976593885770532">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="7424976593885770533">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="7424976593885770534">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

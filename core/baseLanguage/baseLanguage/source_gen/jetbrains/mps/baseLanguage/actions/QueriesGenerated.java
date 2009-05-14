@@ -1943,7 +1943,8 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+          SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
+          SLinkOperations.insertChildFirst(_context.getSourceNode(), "catchClause", catchClause);
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).first();
         }
 
@@ -3153,6 +3154,39 @@ __switch__:
         }
       });
     }
+    {
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ElsifClause");
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return ListSequence.fromListAndArray(new ArrayList<String>(), "else if", "elseif");
+        }
+      };
+      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      assert parameterObjects != null;
+      for(final String item : parameterObjects) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode elseIf = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
+            SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), elseIf);
+            return elseIf;
+          }
+
+          public SNode getOutputConcept() {
+            return concept;
+          }
+
+          public String getMatchingText(String text) {
+            return (item);
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+        });
+      }
+    }
     return result;
   }
 
@@ -3275,6 +3309,30 @@ __switch__:
           }
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CatchClause_7424976593885875650(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
+          SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), catchClause);
+          return catchClause;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "catch";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }
