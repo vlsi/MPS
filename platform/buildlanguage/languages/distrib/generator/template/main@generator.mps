@@ -362,7 +362,7 @@
         <property name="text" value="FOR /F &quot;delims=&quot; %%i in (" />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231749330993">
-        <property name="text" value="%MPS_VM_OPTIONS%" />
+        <property name="text" value="'TYPE %MPS_VM_OPTIONS%'" />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231749361099">
         <property name="text" value=") DO call :parse_vmoptions" />
