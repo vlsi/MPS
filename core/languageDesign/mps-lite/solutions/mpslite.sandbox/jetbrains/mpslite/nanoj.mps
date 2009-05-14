@@ -58,12 +58,7 @@
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="15" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="17" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
-  <import index="20" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
-  <import index="21" modelUID="r:00000000-0000-4000-0000-011c8959037c(jetbrains.mps.lang.dataFlow.plugin)" version="-1" />
-  <import index="22" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1454355863982978612">
     <property name="testCaseName" value="Mapper" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1454355863982978613" />
@@ -133,6 +128,11 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1903068118004306139">
               <property name="value" value="" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1101622988260184299">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1101622988260184300">
+            <property name="value" value="" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8628887801098853706">

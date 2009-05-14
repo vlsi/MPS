@@ -19,6 +19,8 @@
     <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
     <usedLanguages>3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</usedLanguages>
     <usedLanguages>cccc689c-f365-4862-a8b6-34ecddf8ee26(jetbrains.mps.baseLanguage.dates)</usedLanguages>
+    <usedLanguages>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguages>
+    <usedLanguages>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguages>
   </usedLanguages>
 </solution>
 
