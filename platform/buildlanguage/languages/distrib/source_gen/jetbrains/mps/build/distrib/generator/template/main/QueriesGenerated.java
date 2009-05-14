@@ -183,10 +183,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1231748469358(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1231749507312(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
@@ -517,6 +513,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1241441036084(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true)).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4570889604826394255(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -893,6 +893,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1241441039451(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_4570889604826394267(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 

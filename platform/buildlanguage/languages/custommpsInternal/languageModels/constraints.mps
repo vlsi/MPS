@@ -77,5 +77,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="4435815598243980826">
+    <property name="package" value="projectComponents.conditions" />
+    <link role="concept" targetNodeId="1.4435815598243878832" resolveInfo="IfProjectComponent" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="4435815598244012781">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4435815598244012782">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4435815598244012783">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="4435815598244012784">
+            <link role="baseMethodDeclaration" targetNodeId="3.1238403397946" resolveInfo="isInCustomMPSGenerator" />
+            <link role="concept" targetNodeId="2.1233149592028" resolveInfo="MPSBuild" />
+            <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="4435815598244012785" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

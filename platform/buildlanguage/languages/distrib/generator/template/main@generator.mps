@@ -3408,6 +3408,7 @@
         </node>
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="4570889604826529143" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1241441690221">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1241441747330">
         <property name="text" value="if [ -z &quot;$JDK_HOME&quot; ]; then" />
@@ -3439,6 +3440,7 @@
         <property name="text" value="fi" />
       </node>
     </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="4570889604826529147" />
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230293101906">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230293101907">
         <property name="text" value="MAIN_CLASS=" />
@@ -3466,22 +3468,27 @@
         </node>
       </node>
     </node>
-    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230293101918">
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230293101919">
-        <property name="text" value="JVM_ARGS=`tr '\n' ' ' &lt; &quot;" />
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="4570889604826394248">
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="4570889604826529150" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394249">
+        <property name="text" value="if [ -z &quot;$MPS_VM_OPTIONS&quot; ]; then" />
       </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3737542460576194409">
-        <property name="text" value="$PROJECT_HOME/" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="4570889604826394250" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394251">
+        <property name="text" value="    " />
       </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231748093915">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394252">
+        <property name="text" value="MPS_VM_OPTIONS=&quot;$PROJECT_HOME/" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394253">
         <property name="text" value="pathToVMOptionsFile" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1231748469357">
-          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1231748469358">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231748469359">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231769101990">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1231769102086">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1231769101991" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1231769415806">
+        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="4570889604826394254">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="4570889604826394255">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4570889604826394256">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4570889604826394257">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4570889604826394258">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4570889604826394259" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4570889604826394260">
                     <link role="baseMethodDeclaration" targetNodeId="8.1231769123888" resolveInfo="getVMOptionsFilePath" />
                   </node>
                 </node>
@@ -3490,8 +3497,39 @@
           </node>
         </node>
       </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394261">
+        <property name="text" value="&quot;" />
+      </node>
+      <node role="item" type="jetbrains.mps.gtext.structure.GNewLine" id="4570889604826394262" />
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="4570889604826394263">
+        <property name="text" value="fi" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="4570889604826394266">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="4570889604826394267">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4570889604826394268">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4570889604826394269">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4570889604826394270">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4570889604826394271">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4570889604826394272" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4570889604826394273">
+                    <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4570889604826394274">
+                  <link role="property" targetNodeId="1.1231691563959" resolveInfo="useVMOptionsFile" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="1230293101918">
+      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1230293101919">
+        <property name="text" value="JVM_ARGS=`tr '\n' ' ' &lt; $MPS_VM_OPTIONS" />
+      </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1231748107094">
-        <property name="text" value="&quot; | tr '\r' ' '`" />
+        <property name="text" value=" | tr '\r' ' '`" />
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1231748274954">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1231748274955">

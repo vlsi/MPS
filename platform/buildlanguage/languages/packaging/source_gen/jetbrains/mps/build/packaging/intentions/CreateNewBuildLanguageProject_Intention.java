@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.intentions.Intention;
 
 public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
 
@@ -63,12 +62,6 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.build.packaging.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }
