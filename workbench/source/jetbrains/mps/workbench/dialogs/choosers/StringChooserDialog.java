@@ -48,7 +48,7 @@ class StringChooserDialog extends BaseDialog {
   }
 
   StringChooserDialog(Dialog owner, List<String> values, String entity) throws HeadlessException {
-    super(owner, "Choose Model" + entity);
+    super(owner, "Choose " + entity);
     doInit(values);
   }
 

@@ -79,7 +79,7 @@ public class NewModel_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
-        JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no module roots", "Can't create model", JOptionPane.ERROR);
+        JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no module roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       final IOperationContext localContext = NewModel_Action.this.context;
