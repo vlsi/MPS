@@ -50,6 +50,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
 
+  private static final Object UPDATE_EDITOR_LOCK = new Object();
+
   private boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
@@ -246,43 +248,45 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean updateEditorComponent(EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
-    final SNode editedNode = component.getEditedNode();
-    if (editedNode != null) {
+    synchronized (UPDATE_EDITOR_LOCK) {
+      final SNode editedNode = component.getEditedNode();
+      if (editedNode != null) {
 
-      final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
-      boolean wasCheckedOnce = wasCheckedOnce(component);
-      if (!wasCheckedOnce) {
-        checkersToRecheck.addAll(checkers);
-      } else {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (IEditorChecker checker : checkers) {
-              if (checker.hasDramaticalEvent(events)) {
-                checkersToRecheck.add(checker);
+        final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
+        boolean wasCheckedOnce = wasCheckedOnce(component);
+        if (!wasCheckedOnce) {
+          checkersToRecheck.addAll(checkers);
+        } else {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              for (IEditorChecker checker : checkers) {
+                if (checker.hasDramaticalEvent(events)) {
+                  checkersToRecheck.add(checker);
+                }
               }
             }
-          }
-        });
-      }
+          });
+        }
 
-      if (checkersToRecheck.isEmpty()) {
-        return false;
-      }
+        if (checkersToRecheck.isEmpty()) {
+          return false;
+        }
 
-      boolean hackCheckedOnce = wasCheckedOnce;
-      if (component instanceof InspectorEditorComponent) {
-        hackCheckedOnce = true;
-        myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
-      } else {
-        myCheckedOnceEditors.add(component);
-      }
+        boolean hackCheckedOnce = wasCheckedOnce;
+        if (component instanceof InspectorEditorComponent) {
+          hackCheckedOnce = true;
+          myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
+        } else {
+          myCheckedOnceEditors.add(component);
+        }
 
 
-      if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
-        return true;
+        if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
+          return true;
+        }
       }
+      return false;
     }
-    return false;
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
@@ -293,11 +297,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void resetCheckedState(EditorComponent editorComponent) {
-    if (editorComponent instanceof InspectorEditorComponent) {
-      myCheckedOnceInspectors.remove(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
-      return;
+    synchronized (UPDATE_EDITOR_LOCK) {
+      if (editorComponent instanceof InspectorEditorComponent) {
+        myCheckedOnceInspectors.remove(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
+        return;
+      }
+      myCheckedOnceEditors.remove(editorComponent);
     }
-    myCheckedOnceEditors.remove(editorComponent);
   }
 
   private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
