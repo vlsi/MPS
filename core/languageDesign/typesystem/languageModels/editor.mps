@@ -248,7 +248,7 @@
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1183469577810">
                           <property name="name" value="concept" />
                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1183469577811">
-                            <link role="concept" targetNodeId="8.1071489090640" />
+                            <link role="concept" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                           </node>
                           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942951">
                             <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1183469565809">
@@ -420,6 +420,21 @@
               <property name="flag" value="false" />
             </node>
             <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880443125" />
+            <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="843338424126772895">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="843338424126772896">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="843338424126774841">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="843338424126774848">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="843338424126774843">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="843338424126774842" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="843338424126774847">
+                        <link role="link" targetNodeId="1.1212574183907" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="843338424126774852" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198243759896">
             <property name="text" value=" " />

@@ -25,6 +25,9 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,11 +36,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InferenceRule_Editor extends DefaultNodeEditor {
@@ -107,7 +107,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_8985_5(context, node));
     editorCell.addEditorCell(this.createCollection_8985_6(context, node));
-    editorCell.addEditorCell(this.createCollection_8985_9(context, node));
+    if (renderingCondition8985_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8985_9(context, node));
+    }
     editorCell.addEditorCell(this.createConstant_8985_7(context, node, " "));
     editorCell.addEditorCell(this.createCollection_8985_7(context, node));
     editorCell.addEditorCell(this.createCollection_8985_8(context, node));
@@ -719,6 +721,10 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNodeList_8985_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition8985_0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "childTypeRestriction", true)).isNotEmpty();
   }
 
   public static class dependencyListHandler_8985_0 extends RefNodeListHandler {
