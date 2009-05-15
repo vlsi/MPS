@@ -94,7 +94,7 @@ public final class NamespaceTextNode extends TextTreeNode {
     if (hasModelsUnder) {
       newGroup.add(new NewModel_Action() {
         protected String getNamespace() {
-          return myName;
+          return NamespaceTextNode.this.getNamespace();
         }
       });
     }
@@ -132,6 +132,13 @@ public final class NamespaceTextNode extends TextTreeNode {
 
   public boolean hasModulesUnder() {
     return getModulesUnder().size() > 0;
+  }
+
+  public String getNamespace() {
+    if (getParent() instanceof NamespaceTextNode) {
+      return ((NamespaceTextNode) getParent()).getNamespace() + "." + myName;
+    }
+    return myName;
   }
 
   public String getName() {
