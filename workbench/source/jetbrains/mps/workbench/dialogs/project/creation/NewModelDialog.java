@@ -76,13 +76,13 @@ public class NewModelDialog extends BaseDialog {
 
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (SModelRoot root : myModule.getSModelRoots()) {
-      if (myNamespace == null || root.getPrefix().equals(myNamespace)) {
+      if (myNamespace == null || myNamespace.startsWith(root.getPrefix())) {
         model.addElement(new ModelRootWrapper(root));
       }
     }
 
-    if (model.getSize()==0){
-      model.addElement("<NO MODEL ROOTS>");
+    if (model.getSize() == 0) {
+      model.addElement("<NO MODEL ROOTS FOR SELECTED NAMESPACE>");
     }
 
     myModelRoots.addItemListener(new ItemListener() {
@@ -103,17 +103,17 @@ public class NewModelDialog extends BaseDialog {
     if (!(selected instanceof ModelRootWrapper)) return;
 
     ModelRootWrapper wrapper = (ModelRootWrapper) selected;
-    myModelName.setText(wrapper.getNamespace());
+    myModelName.setText(myNamespace == null ? wrapper.getNamespace() : myNamespace);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
-    if (!(myModelRoots.getSelectedItem() instanceof ModelRootWrapper)){
+    if (!(myModelRoots.getSelectedItem() instanceof ModelRootWrapper)) {
       String message;
-      if (myNamespace==null){
+      if (myNamespace == null) {
         message = "At least one module root should be added to module to create models in this module";
-      }else{
-        message = "At least one module root with prefix "+myNamespace+" should be added to module to create models with this namespace";
+      } else {
+        message = "At least one module root with prefix " + myNamespace + " should be added to module to create models with this namespace";
       }
       setErrorText(message);
       return;
@@ -121,7 +121,7 @@ public class NewModelDialog extends BaseDialog {
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         if (myModelName.getText().length() == 0) {
-          setErrorText("Empty model's name isn't allowed");
+          setErrorText("Empty model name isn't allowed");
           return null;
         }
 
