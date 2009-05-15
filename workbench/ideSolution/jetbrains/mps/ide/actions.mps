@@ -3570,7 +3570,7 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6997588768408894765">
                   <link role="classifier" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
-                  <link role="variableDeclaration" targetNodeId="169.~ImageObserver.ERROR" resolveInfo="ERROR" />
+                  <link role="variableDeclaration" targetNodeId="72.~JOptionPane.ERROR_MESSAGE" resolveInfo="ERROR_MESSAGE" />
                 </node>
               </node>
             </node>
