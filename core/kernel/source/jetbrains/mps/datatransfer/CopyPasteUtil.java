@@ -94,7 +94,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryModels);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes,IModule sourceModule, SModel model, SModel modelProperties,
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, SModel model, SModel modelProperties,
                                                 Set<ModuleReference> necessaryLanguages,
                                                 Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null, null);
@@ -117,9 +117,6 @@ public class CopyPasteUtil {
       nodeToPaste.changeModel(model);
     }
     processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
-    for (SNode nodeToPaste : result) {
-      nodeToPaste.changeModel(model);
-    }
     model.setLoading(false);
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
@@ -181,7 +178,6 @@ public class CopyPasteUtil {
     }
   }
 
-
   private static void processReferencesOut(Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> referencesRequireResolve) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
@@ -190,11 +186,12 @@ public class CopyPasteUtil {
       SNode oldTargetNode = sourceReference.getTargetNode();
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       SReference newReference;
-      if (newTargetNode != null) {//if our reference points inside our node's subtree
+      if (newTargetNode != null) {
+        //if our reference points inside our node's subtree
         newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
-      } else {//otherwise it points out of our node's subtree
-        // prefer resolveInfo over direct reference
-        // todo: ?. Method call is exception - it can't be resolved just by name.
+      } else {
+        //otherwise it points out of our node's subtree
+        //prefer resolveInfo over direct reference
         if (BaseAdapter.isInstance(newSourceNode, IMethodCall.class) && oldTargetNode != null) {
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
@@ -213,8 +210,7 @@ public class CopyPasteUtil {
     }
   }
 
-
-  public static SModel copyModelProperties(SModel model) {
+  private static SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
@@ -231,7 +227,6 @@ public class CopyPasteUtil {
 
     return newModel;
   }
-
 
   public static void copyTextToClipboard(String text) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -296,17 +291,16 @@ public class CopyPasteUtil {
     return PasteNodeData.emptyPasteNodeData(module, model);
   }
 
-
   public static SNode getNodeFromClipboard(SModel model) {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static void addImportsAndLanguagesToModel(final IModule sourceModule,
-                                                   final SModel targetModel,
-                                                   final Set<ModuleReference> necessaryLanguages,
-                                                   final Set<SModelReference> necessaryImports,
-                                                   final IOperationContext context,
-                                                   Runnable onOk) {
+  //false if cancelled
+  public static boolean addImportsWithDialog(final IModule sourceModule,
+                                             final SModel targetModel,
+                                             final Set<ModuleReference> necessaryLanguages,
+                                             final Set<SModelReference> necessaryImports,
+                                             final IOperationContext context) {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
 
@@ -343,17 +337,13 @@ public class CopyPasteUtil {
 
       dialog.setModal(true);
       dialog.showDialog();
-      if (!dialog.isCancelled()) {
-        onOk.run();
-      }
-      return;
+      return !dialog.isCancelled();
     }
 
-    onOk.run();
+    return true;
   }
 
-
-  public static boolean doesClipboardContainNode(SModel modelToPaste) {
+  public static boolean doesClipboardContainNode() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     boolean hasNodes = false;

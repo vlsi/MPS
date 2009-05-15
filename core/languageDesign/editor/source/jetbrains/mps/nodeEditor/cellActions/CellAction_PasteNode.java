@@ -77,44 +77,44 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CopyPasteUtil.addImportsAndLanguagesToModel(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext(), new Runnable() {
+        boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext());
+        if (!successfull) return;
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                List<SNode> pasteNodes = pasteNodeData.getNodes();
-                Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
+            List<SNode> pasteNodes = pasteNodeData.getNodes();
+            Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
-                if (canPasteBefore(selectedCell, pasteNodes)) {
-                  new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
-                } else {
-                  new NodePaster(pasteNodes).paste(selectedCell);
-                }
+            if (canPasteBefore(selectedCell, pasteNodes)) {
+              new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
+            } else {
+              new NodePaster(pasteNodes).paste(selectedCell);
+            }
 
-                Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
+            Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
 
-                // set selection
-                editorComponent.flushEvents();
-                EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
-                if (nodeCell == null) return; // after 'set reference'?
-                editorComponent.changeSelection(nodeCell);
+            // set selection
+            editorComponent.flushEvents();
+            EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
+            if (nodeCell == null) return; // after 'set reference'?
+            editorComponent.changeSelection(nodeCell);
 
-                EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+            EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
 
-                if (labelCell != null) {
-                  editorComponent.changeSelection(labelCell);
-                  if (pasteNodes.size() == 1) {
-                    editorComponent.pushSelection(labelCell);
-                    editorComponent.setSelectionDontClearStack(nodeCell, true);
-                  }
-                }
-
-                if (pasteNodes.size() > 1) {
-                  editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
-                }
+            if (labelCell != null) {
+              editorComponent.changeSelection(labelCell);
+              if (pasteNodes.size() == 1) {
+                editorComponent.pushSelection(labelCell);
+                editorComponent.setSelectionDontClearStack(nodeCell, true);
               }
-            });
+            }
+
+            if (pasteNodes.size() > 1) {
+              editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
+            }
           }
         });
+
       }
     });
   }

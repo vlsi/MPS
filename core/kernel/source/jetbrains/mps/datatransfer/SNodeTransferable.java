@@ -45,6 +45,7 @@ public class SNodeTransferable implements Transferable {
 
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
+  @Nullable
   private ModuleReference mySourceModule;
   private SModel myModelProperties;
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
@@ -111,23 +112,19 @@ public class SNodeTransferable implements Transferable {
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
   }
 
-
   public PasteNodeData createNodeData(SModel sModel) {
     Set<ModuleReference> necessaryLanguages = myNecessaryLanguages;
     Set<SModelReference> necessaryImports = myNecessaryModels;
     if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<ModuleReference>();
-    IModule module = MPSModuleRepository.getInstance().getModule(mySourceModule);
+    IModule module = mySourceModule == null ? null : MPSModuleRepository.getInstance().getModule(mySourceModule);
     return CopyPasteUtil.createNodeDataOut(mySNodes, module, sModel, myModelProperties,
       new HashSet<ModuleReference>(necessaryLanguages),
       new HashSet<SModelReference>(necessaryImports));
   }
 
-
   public boolean containsNodes() {
     return (!mySNodes.isEmpty());
   }
-
-
 }
 

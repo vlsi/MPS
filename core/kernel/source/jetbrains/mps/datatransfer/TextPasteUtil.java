@@ -15,22 +15,12 @@
  */
 package jetbrains.mps.datatransfer;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.07.2005
- * Time: 19:29:37
- * To change this template use File | Settings | File Templates.
- */
-
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 
 public class TextPasteUtil {
-
-
   public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
@@ -52,5 +42,4 @@ public class TextPasteUtil {
     }
     return result;
   }
-
 }

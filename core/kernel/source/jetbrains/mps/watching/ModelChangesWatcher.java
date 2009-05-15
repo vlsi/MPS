@@ -19,7 +19,6 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
@@ -29,8 +28,6 @@ import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +47,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final MessageBus myBus;
   private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
   private MessageBusConnection myConnection;
-  private BulkFileListener myBusListener = new BulkFileCahngesListener();
+  private BulkFileListener myBusListener = new BulkFileChangesListener();
 
   public ModelChangesWatcher(final MessageBus bus) {
     myBus = bus;
@@ -89,7 +86,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     void metadataFileCreated(IFile f);
   }
 
-  private class BulkFileCahngesListener implements BulkFileListener {
+  private class BulkFileChangesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
       for (VFileEvent event : events) {
         BeforeEventProcessor.getInstance().process(event, null);

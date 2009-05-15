@@ -56,9 +56,9 @@ public class ActionFactory {
 
     AnAction newAction = createAction(actionClass, params);
     String actionId;
-    if (newAction instanceof BaseAction){
+    if (newAction instanceof BaseAction) {
       actionId = ((BaseAction) newAction).getActionId();
-    }else{
+    } else {
       actionId = newAction.getClass().getName();
     }
     String id = getFullId(actionId, moduleNamespace, actionClass);
@@ -78,13 +78,13 @@ public class ActionFactory {
       newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
     } catch (InstantiationException e) {
       LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-      newAction= null;
+      newAction = null;
     } catch (IllegalAccessException e) {
       LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-      newAction= null;
+      newAction = null;
     } catch (InvocationTargetException e) {
       LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
-      newAction= null;
+      newAction = null;
     }
     return newAction;
   }

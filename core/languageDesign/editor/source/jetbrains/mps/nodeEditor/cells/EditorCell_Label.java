@@ -15,34 +15,33 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.UndoUtil;
-import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.util.Computable;
+import com.intellij.util.LocalTimeCounter;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.UndoUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
-
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.util.Computable;
-import com.intellij.util.LocalTimeCounter;
-import com.intellij.util.ui.UIUtil;
 
 public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean myNoTextSet;
@@ -942,7 +941,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
-      return node != null && label.canPasteText() && TextPasteUtil.getStringFromClipboard() != null && !(CopyPasteUtil.doesClipboardContainNode(node.getModel()));
+      return node != null && label.canPasteText() && TextPasteUtil.getStringFromClipboard() != null && !(CopyPasteUtil.doesClipboardContainNode());
     }
 
     public void execute(EditorContext context) {
