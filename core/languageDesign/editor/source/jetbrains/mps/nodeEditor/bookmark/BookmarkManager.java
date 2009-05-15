@@ -220,11 +220,10 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     }
   }
 
-  public void removeUnnumberedBookmark(SNode node) {
-    SNodePointer nodePointer = new SNodePointer(node);
+  public void removeUnnumberedBookmark(SNodePointer nodePointer) {
     if (myUnnumberedBookmarks.contains(nodePointer)) {
       myUnnumberedBookmarks.remove(nodePointer);
-      fireBookmarkRemoved(-1, node);
+      fireBookmarkRemoved(-1, nodePointer.getNode());
     }
   }
 

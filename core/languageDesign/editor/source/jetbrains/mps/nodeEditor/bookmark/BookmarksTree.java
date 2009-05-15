@@ -177,7 +177,7 @@ public class BookmarksTree extends MPSTree {
     }
 
     public void removeBookmark() {
-      myBookmarkManager.removeUnnumberedBookmark(myNodePointer.getNode());
+      myBookmarkManager.removeUnnumberedBookmark(myNodePointer);
     }
 
     public MyTextTreeNodeUnnumbered(SNodePointer nodePointer) {
