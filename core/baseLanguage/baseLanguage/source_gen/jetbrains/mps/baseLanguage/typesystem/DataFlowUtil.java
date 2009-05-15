@@ -48,12 +48,12 @@ public class DataFlowUtil {
     for(SNode n : expectedReturns) {
       if (n != null) {
         SNode nodeToSelect;
-        SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+        SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
         if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
           nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
         } else
         {
-          nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+          nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
         }
         if (nodeToSelect != null) {
           {

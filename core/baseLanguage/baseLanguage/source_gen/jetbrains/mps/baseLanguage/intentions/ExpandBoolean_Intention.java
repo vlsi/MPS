@@ -12,9 +12,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
 
 public class ExpandBoolean_Intention extends BaseIntention {
 
@@ -97,12 +94,6 @@ public class ExpandBoolean_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }

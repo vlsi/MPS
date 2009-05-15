@@ -12616,6 +12616,7 @@
                             <link role="conceptDeclaration" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
                           </node>
                         </node>
+                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1700110921306400922" />
                       </node>
                     </node>
                   </node>
@@ -12679,6 +12680,7 @@
                                   <link role="conceptDeclaration" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
                                 </node>
                               </node>
+                              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="470994544597430393" />
                             </node>
                           </node>
                         </node>

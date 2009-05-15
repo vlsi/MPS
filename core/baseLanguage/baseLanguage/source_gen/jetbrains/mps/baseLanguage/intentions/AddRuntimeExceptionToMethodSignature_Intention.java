@@ -12,9 +12,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.List;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
 
 public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntention {
 
@@ -79,12 +76,6 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }
