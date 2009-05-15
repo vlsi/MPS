@@ -35,15 +35,19 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
 
+  private final Object myLock = new Object();
+
   public static NodeTypesComponentsRepository getInstance() {
     return ApplicationManager.getApplication().getComponent(NodeTypesComponentsRepository.class);
   }
 
   private SModelListener myModelListener = new SModelAdapter() {
     public void modelReloaded(SModelDescriptor sm) {
-      for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
-        if (sm == node.getModel().getModelDescriptor()) {
-          myNodesToContexts.remove(node);
+      synchronized (myLock) {
+        for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
+          if (sm == node.getModel().getModelDescriptor()) {
+            myNodesToContexts.remove(node);
+          }
         }
       }
     }
@@ -51,11 +55,13 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      for (final TypeCheckingContext typeCheckingContext :
-        myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
-        if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
-          typeCheckingContext.clearListeners();
-          myNodesToContexts.remove(typeCheckingContext.getNode());
+      synchronized (myLock) {
+        for (final TypeCheckingContext typeCheckingContext :
+          myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
+          if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+            typeCheckingContext.clearListeners();
+            myNodesToContexts.remove(typeCheckingContext.getNode());
+          }
         }
       }
     }
@@ -92,7 +98,9 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   public TypeCheckingContext getTypeCheckingContext(SNode node) {
     if (node == null) return null;
-    return myNodesToContexts.get(node.getContainingRoot());
+    synchronized (myLock) {
+      return myNodesToContexts.get(node.getContainingRoot());
+    }
   }
 
   @Deprecated
@@ -107,29 +115,33 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
         SNode root = node.getContainingRoot();
         if (root == null) return null;
 
-        TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
-        if (typeCheckingContext != null) {
+        synchronized (myLock) {
+          TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
+          if (typeCheckingContext != null) {
+            return typeCheckingContext;
+          }
+          typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
+          myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
+          SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+          SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+          SModel sModel = root.getModel();
+          if (!sModel.hasModelListener(myModelListener)) {
+            sModel.addWeakSModelListener(myModelListener);
+          }
           return typeCheckingContext;
         }
-        typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
-        myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
-        SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-        SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-        SModel sModel = root.getModel();
-        if (!sModel.hasModelListener(myModelListener)) {
-          sModel.addWeakSModelListener(myModelListener);
-        }
-        return typeCheckingContext;
       }
     });
   }
 
   public void clear() {
-    for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {
-      typeCheckingContext.clearListeners();
-    }
-    for (SNode node : new HashSet<SNode>(myNodesToContexts.keySet())) {
-      myNodesToContexts.remove(node);
+    synchronized (myLock) {
+      for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {
+        typeCheckingContext.clearListeners();
+      }
+      for (SNode node : new HashSet<SNode>(myNodesToContexts.keySet())) {
+        myNodesToContexts.remove(node);
+      }
     }
   }
 
