@@ -16,7 +16,6 @@
 package jetbrains.mps.internal.collections.runtime.impl;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Set;
 
 import jetbrains.mps.internal.collections.runtime.ISequence;

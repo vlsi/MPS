@@ -33,10 +33,12 @@ public class NullEmpty_Test extends Util_Test {
   @Test()
   public void test_nullAddAll() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
-    ListSequence.fromList(test).addSequence(null);
+    List<Integer> nullList = null;
+    ListSequence.fromList(test).addSequence(ListSequence.fromList(nullList));
     this.assertIterableEquals(this.expect5(), test);
     Set<Integer> test2 = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
-    ListSequence.fromList(test).addSequence(null);
+    Set<Integer> nullSet = null;
+    ListSequence.fromList(test).addSequence(SetSequence.fromSet(nullSet));
     this.assertIterableEqualsAsSet(this.expect5(), test2);
   }
 
