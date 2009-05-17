@@ -74,7 +74,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -1185,7 +1184,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private class MyCopyProvider implements CopyProvider {
-    private CopyNodeAction myAction = new CopyNodeAction();
+    private CopyNode_Action myAction = new CopyNode_Action();
 
     public void performCopy(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);

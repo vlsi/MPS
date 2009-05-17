@@ -135,14 +135,14 @@
         <link role="action" targetNodeId="1215884802964" resolveInfo="ExpandNode" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204908813326" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715567">
-        <link role="constructorDeclaration" targetNodeId="1.~CopyNodeReferenceAction.&lt;init&gt;()" resolveInfo="CopyNodeReferenceAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426684801">
+        <link role="action" targetNodeId="5033107305426668800" resolveInfo="CopyNodeReference" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1236184897330">
         <link role="action" targetNodeId="1236184638750" resolveInfo="CopyNodeName" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1236184904384">
-        <link role="constructorDeclaration" targetNodeId="1.~CopyNodeAction.&lt;init&gt;()" resolveInfo="CopyNodeAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426685904">
+        <link role="action" targetNodeId="5033107305426684804" resolveInfo="CopyNode" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717323">
         <link role="constructorDeclaration" targetNodeId="1.~PasteNodeAction.&lt;init&gt;()" resolveInfo="PasteNodeAction" />
@@ -753,11 +753,11 @@
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148341327">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215010892018" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717340">
-        <link role="constructorDeclaration" targetNodeId="1.~CopyNodeAction.&lt;init&gt;()" resolveInfo="CopyNodeAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426685906">
+        <link role="action" targetNodeId="5033107305426684804" resolveInfo="CopyNode" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715979">
-        <link role="constructorDeclaration" targetNodeId="1.~CopyNodeReferenceAction.&lt;init&gt;()" resolveInfo="CopyNodeReferenceAction" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426684803">
+        <link role="action" targetNodeId="5033107305426668800" resolveInfo="CopyNodeReference" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717735">
         <link role="constructorDeclaration" targetNodeId="1.~PasteNodeAction.&lt;init&gt;()" resolveInfo="PasteNodeAction" />
@@ -12666,6 +12666,137 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3575273646046443829">
       <property name="keycode" value="VK_DELETE" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="5033107305426668800">
+    <property name="package" value="Menu.ProjectPane.Node.Actions" />
+    <property name="name" value="CopyNodeReference" />
+    <property name="caption" value="Copy Reference" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="5033107305426677114">
+      <property name="name" value="nodes" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5033107305426677115" />
+      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="5033107305426677116" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5033107305426668801">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5033107305426668802">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5033107305426684727">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5033107305426684728">
+            <property name="name" value="builder" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5033107305426684729">
+              <link role="classifier" targetNodeId="73.~StringBuilder" resolveInfo="StringBuilder" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5033107305426684731">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5033107305426684732">
+                <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="5033107305426684734">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="5033107305426684735">
+            <property name="name" value="node" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684739">
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="5033107305426684740" />
+            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="5033107305426684741">
+              <link role="member" targetNodeId="5033107305426677114" resolveInfo="nodes" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5033107305426684737">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5033107305426684743">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684766">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684745">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684744">
+                    <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684749">
+                    <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426684750">
+                      <link role="classConcept" targetNodeId="76.~NameUtil" resolveInfo="NameUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="76.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="5033107305426684759">
+                        <link role="variable" targetNodeId="5033107305426684735" resolveInfo="node" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684771">
+                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5033107305426684772">
+                    <property name="value" value="\n" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5033107305426684780">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684782">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684781">
+              <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684786">
+              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.deleteCharAt(int):java.lang.StringBuilder" resolveInfo="deleteCharAt" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684788">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684787">
+                  <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684792">
+                  <link role="baseMethodDeclaration" targetNodeId="73.~AbstractStringBuilder.length():int" resolveInfo="length" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5033107305426684716">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426684717">
+            <link role="baseMethodDeclaration" targetNodeId="162.~CopyPasteUtil.copyTextToClipboard(java.lang.String):void" resolveInfo="copyTextToClipboard" />
+            <link role="classConcept" targetNodeId="162.~CopyPasteUtil" resolveInfo="CopyPasteUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684795">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684794">
+                <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684799">
+                <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5033107305426677117">
+      <property name="modifiers" value="ctrl+shift" />
+      <property name="keycode" value="VK_C" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="5033107305426684804">
+    <property name="package" value="Menu.ProjectPane.Node.Actions" />
+    <property name="name" value="CopyNode" />
+    <property name="caption" value="Copy" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="5033107305426684816">
+      <property name="name" value="nodes" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5033107305426684817" />
+      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="5033107305426684818" />
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5033107305426684805">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5033107305426684806">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5033107305426685897">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426685899">
+            <link role="baseMethodDeclaration" targetNodeId="162.~CopyPasteUtil.copyNodesToClipboard(java.util.List):void" resolveInfo="copyNodesToClipboard" />
+            <link role="classConcept" targetNodeId="162.~CopyPasteUtil" resolveInfo="CopyPasteUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426685900">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="5033107305426685901" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="5033107305426685902">
+                <link role="member" targetNodeId="5033107305426684816" resolveInfo="nodes" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5033107305426684807">
+      <property name="keycode" value="VK_C" />
+      <property name="modifiers" value="ctrl" />
     </node>
   </node>
 </model>

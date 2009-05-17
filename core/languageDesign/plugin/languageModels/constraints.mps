@@ -692,5 +692,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5033107305426720164">
+    <property name="package" value="Actions.Action.Methods" />
+    <link role="concept" targetNodeId="7.1205681149025" resolveInfo="UpdateBlock" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5033107305426720165">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5033107305426720166">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5033107305426720167">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5033107305426720169">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
