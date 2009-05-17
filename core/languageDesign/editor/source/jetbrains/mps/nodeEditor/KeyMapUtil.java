@@ -104,8 +104,10 @@ public class KeyMapUtil {
       for (ModuleReference langRef : model.getLanguageRefs(GlobalScope.getInstance())) {
         importedAndExtendedLanguages.add(langRef);
         Language l = MPSModuleRepository.getInstance().getLanguage(langRef);
-        for (Language le : l.getAllExtendedLanguages()) {
-          importedAndExtendedLanguages.add(le.getModuleReference());
+        if (l != null) {
+          for (Language le : l.getAllExtendedLanguages()) {
+            importedAndExtendedLanguages.add(le.getModuleReference());
+          }
         }
       }
 
