@@ -74,7 +74,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
@@ -1222,7 +1221,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private class MyCutProvider implements CutProvider {
-    private CutNodeAction myAction = new CutNodeAction();
+    private CutNode_Action myAction = new CutNode_Action();
 
     public void performCut(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
