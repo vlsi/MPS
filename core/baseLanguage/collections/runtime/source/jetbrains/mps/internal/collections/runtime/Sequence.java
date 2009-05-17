@@ -61,7 +61,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
      * <code>translate ()</code> or <code>select ()</code>, respectively. 
      * </p>
      */
-    public static final boolean IGNORE_NULL_VALUES = false;    
+    public static final boolean IGNORE_NULL_VALUES = true;    
 
     /**
      * <p>
