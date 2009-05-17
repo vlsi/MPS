@@ -2761,5 +2761,104 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1195975797953542959">
+    <property name="package" value="editorCell" />
+    <property name="name" value="PressingBackspaseInFirstPosition" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1195975797953576231">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1195975797953576232" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1195975797953576233" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953576234">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195975797953578363">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.RemExpression" id="1195975797953580257">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953580258">
+              <property name="value" value="2" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953580259">
+              <property name="value" value="2" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1195975797953580260">
+              <property name="caretPosition" value="0" />
+              <property name="cellId" value="conceptProperty_alias" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1195975797953580249">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1195975797953580250" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1195975797953580251" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953580252">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195975797953886105">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.RemExpression" id="1195975797953886107">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953886110">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953580263">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1195975797953580264">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1195975797953580265">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1195975797953892764">
+    <property name="package" value="editorCell" />
+    <property name="name" value="PressingDelInLastPosition" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1195975797953892766">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1195975797953892767" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1195975797953892768" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953892769">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195975797953892770">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DivExpression" id="1195975797953892777">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953892780">
+              <property name="value" value="23" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953892776">
+              <property name="value" value="23" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1195975797953896198">
+              <property name="isLastPosition" value="true" />
+              <property name="cellId" value="conceptProperty_alias" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1195975797953892781">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1195975797953892782" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1195975797953892783" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953892784">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195975797953892795">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DivExpression" id="1195975797953892799">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953892802">
+              <property name="value" value="3" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1195975797953892803">
+                <property name="caretPosition" value="0" />
+                <property name="cellId" value="property_value" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1195975797953892798">
+              <property name="value" value="23" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195975797953892791">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1195975797953892805">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1195975797953892806">
+          <property name="keycode" value="VK_DELETE" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
