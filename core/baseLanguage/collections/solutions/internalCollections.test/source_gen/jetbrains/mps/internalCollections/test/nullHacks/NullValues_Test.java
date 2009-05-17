@@ -159,6 +159,7 @@ __switch__:
       Assert.assertTrue(ListSequence.fromList(list5).isEmpty());
       Assert.assertSame(1, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), (Integer)null)).count());
       Assert.assertSame(2, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null)).count());
+      Assert.assertSame(3, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null)).addSequence(Sequence.fromIterable(Sequence.fromArray(new Integer[]{null}))).count());
       final Integer nullvalue = null;
       Assert.assertSame(1, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), nullvalue)).count());
       Assert.assertSame(3, Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure <Integer>() {
@@ -220,6 +221,17 @@ __switch__:
       List<String> dlist = ListSequence.fromList(listWithNulls).distinct().toListSequence();
       Assert.assertSame(2, ListSequence.fromList(dlist).count());
       this.assertIterableEquals(Arrays.asList("foo", "bar"), dlist);
+    } else
+    {
+      List<String> listWithNulls = Arrays.asList("foo", null, "bar");
+      String[] arr = ListSequence.fromList(listWithNulls).toGenericArray(String.class);
+      Assert.assertSame(3, arr.length);
+      Assert.assertEquals("foo", arr[0]);
+      Assert.assertNull(arr[1]);
+      Assert.assertEquals("bar", arr[2]);
+      List<String> dlist = ListSequence.fromList(listWithNulls).distinct().toListSequence();
+      Assert.assertSame(3, ListSequence.fromList(dlist).count());
+      this.assertIterableEquals(Arrays.asList("foo", null, "bar"), dlist);
     }
   }
 

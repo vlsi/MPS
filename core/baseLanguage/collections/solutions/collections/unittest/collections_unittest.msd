@@ -8,6 +8,7 @@
   <dependencies>
     <dependency reexport="true">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
     <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
+    <dependency reexport="false">4f57e080-33c7-449c-96f9-dd8dfead6ae4(jetbrains.mps.baseLanguage.sandbox)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
