@@ -17,7 +17,7 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.IExternalizeable;
 
-public abstract class BaseOptions<Result> implements IExternalizeable, Cloneable {
+public abstract class BaseOptions implements IExternalizeable, Cloneable {
   protected BaseOptions() {
 
   }

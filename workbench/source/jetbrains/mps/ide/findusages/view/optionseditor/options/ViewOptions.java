@@ -16,11 +16,9 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.ActionEventData;
 import org.jdom.Element;
 
-public class ViewOptions extends BaseOptions<ViewOptions> {
+public class ViewOptions extends BaseOptions {
   private static final String FLAGS = "flags";
   private static final String SHOW_ONE_RESULT = "show_one_result";
   private static final String NEW_TAB = "new_tab";
@@ -44,10 +42,6 @@ public class ViewOptions extends BaseOptions<ViewOptions> {
 
   public ViewOptions clone() {
     return new ViewOptions(myShowOneResult, myNewTab);
-  }
-
-  public ViewOptions getResult(SNode node, ActionEventData data) {
-    return this;
   }
 
   public void read(Element element, MPSProject project) {

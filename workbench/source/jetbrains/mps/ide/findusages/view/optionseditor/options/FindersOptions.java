@@ -26,7 +26,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -35,12 +34,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindersOptions extends BaseOptions<IResultProvider> {
+public class FindersOptions extends BaseOptions {
   private static final Logger LOG = Logger.getLogger(FindersOptions.class);
 
   private static final String FINDERS = "finders";
   private static final String FINDER = "finder";
-  private static final String FINDER_REF = "finder_ref";
   private static final String CLASS_NAME = "class_name";
 
   @NotNull
@@ -69,7 +67,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
     myFindersClassNames = findersClassNames;
   }
 
-  public IResultProvider getResult(SNode node) {
+  public IResultProvider getResult() {
     List<IFinder> finders = new ArrayList<IFinder>();
     for (String finderClassName : myFindersClassNames) {
       String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);

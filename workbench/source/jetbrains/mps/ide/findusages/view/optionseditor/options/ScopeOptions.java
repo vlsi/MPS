@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class ScopeOptions extends BaseOptions<SearchQuery> {
+public class ScopeOptions extends BaseOptions {
   private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
 
   public static final String SCOPE_TYPE = "scope_type";
