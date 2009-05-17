@@ -48,7 +48,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
@@ -68,6 +68,7 @@
   <import index="35" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="37" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
+  <import index="38" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1189697384036">
     <property name="name" value="main" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1189698922552">
@@ -4104,9 +4105,10 @@
             <link role="classConcept" targetNodeId="29.~FindUtils" resolveInfo="FindUtils" />
             <link role="baseMethodDeclaration" targetNodeId="29.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
             <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1212243700418" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216221284767">
-              <link role="baseMethodDeclaration" targetNodeId="33.~ActionEventData.createProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolveInfo="createProgressIndicator" />
-              <link role="classConcept" targetNodeId="33.~ActionEventData" resolveInfo="ActionEventData" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5033107305426653493">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5033107305426653495">
+                <link role="baseMethodDeclaration" targetNodeId="38.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+              </node>
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212243779095">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212243777516">

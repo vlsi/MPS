@@ -31,8 +31,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,11 +67,7 @@ public class FindUtils {
       if (finder != null) finders.add(finder);
     }
 
-    return getSearchResults(indicator, node, scope, finders.toArray(new GeneratedFinder[0]));
-  }
-
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final IFinder... finders) {
-    return getSearchResults(indicator, new SearchQuery(node, scope), makeProvider(finders));
+    return getSearchResults(indicator, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IFinder... finders) {

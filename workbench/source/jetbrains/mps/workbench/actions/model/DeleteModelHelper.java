@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
@@ -38,7 +39,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -190,7 +190,7 @@ public class DeleteModelHelper {
 
     public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
       SearchQuery searchQuery = new SearchQuery(refactoringContext.getSelectedModel().getSModel(), GlobalScope.getInstance());
-      return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), searchQuery, new ModelUsagesFinder());
+      return FindUtils.getSearchResults(new EmptyProgressIndicator(), searchQuery, new ModelUsagesFinder());
     }
   }
 
