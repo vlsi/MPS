@@ -26,7 +26,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.CopyNodeName_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyNode_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.CutNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.CutNode_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action", "jetbrains.mps.ide");
@@ -40,7 +40,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", "jetbrains.mps.ide");
       this.addAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
