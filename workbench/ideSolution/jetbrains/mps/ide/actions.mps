@@ -42,7 +42,6 @@
   <import index="16" modelUID="f:java_stub#jetbrains.mps.workbench.actions.baseLanguage(jetbrains.mps.workbench.actions.baseLanguage@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#jetbrains.mps.ide.classpath(jetbrains.mps.ide.classpath@java_stub)" version="-1" />
-  <import index="43" modelUID="f:java_stub#jetbrains.mps.lang.generator.plugin.debug.actions(jetbrains.mps.lang.generator.plugin.debug.actions@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#jetbrains.mps.workbench.actions.imports(jetbrains.mps.workbench.actions.imports@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="53" modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)" version="-1" />
