@@ -38,10 +38,10 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GenerateCodeAction_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.lang.generator.plugin.debug.actions.ShowGenerationTraceAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", "jetbrains.mps.ide");
       this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_find_instances);
       this.addSeparator();
