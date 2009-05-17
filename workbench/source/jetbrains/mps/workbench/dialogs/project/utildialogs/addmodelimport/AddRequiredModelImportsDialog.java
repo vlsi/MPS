@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IOperationContext;
@@ -73,8 +73,8 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
     myProps.loadFrom(necessaryModels, necessaryLanguages, sourceModule, myTargetModule);
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 300);
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(200, 200, 600, 300);
   }
 
   public boolean isCancelled() {

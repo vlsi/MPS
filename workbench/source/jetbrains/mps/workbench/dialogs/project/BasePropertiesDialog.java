@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -68,6 +69,10 @@ public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
     ApplicationManager.getApplication().saveAll();
 
     return dontCloseDialog[0];
+  }
+
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(100, 100, 500, 600);
   }
 
   protected abstract boolean doSaveChanges();
