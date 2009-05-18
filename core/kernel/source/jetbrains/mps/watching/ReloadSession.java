@@ -67,10 +67,10 @@ class ReloadSession {
 
           preprocess();
 
-          boolean isModulesUpdated = updateModules(progressIndicator);
+          boolean areModulesUpdated = updateModules(progressIndicator);
           updateModels(progressIndicator);
 
-          if (isModulesUpdated) {
+          if (areModulesUpdated) {
             progressIndicator.setText("Reloading classes... Please wait.");
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
           }
