@@ -1755,7 +1755,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
     EditorSettings setting = EditorSettings.getInstance();
-    g.setColor(Color.LIGHT_GRAY);                                      
+    g.setColor(Color.LIGHT_GRAY);
     int boundPosition = myRootCell.getX() + setting.getVerticalBoundWith();
     g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
@@ -1846,20 +1846,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && noKeysDown(keyEvent)) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode sNode = getRootCell().getSNode();
-          if (sNode == null) {
-            return;
+      //this lock should be obtained before the following read action to avoid deadlock
+      synchronized(Highlighter.UPDATE_EDITOR_LOCK) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode sNode = getRootCell().getSNode();
+            if (sNode == null) {
+              return;
+            }
+            Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
+            if (highlighter != null) {
+              highlighter.resetCheckedState(EditorComponent.this);
+            }
+            TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
+            rebuildEditorContent();
           }
-          Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
-          if (highlighter != null) {
-            highlighter.resetCheckedState(EditorComponent.this);
-          }
-          TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
-          rebuildEditorContent();
-        }
-      });
+        });
+      }
       keyEvent.consume();
       return;
     }

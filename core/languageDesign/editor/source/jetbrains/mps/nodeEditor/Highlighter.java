@@ -50,7 +50,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
 
-  private static final Object UPDATE_EDITOR_LOCK = new Object();
+  public static final Object UPDATE_EDITOR_LOCK = new Object();
 
   private boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
