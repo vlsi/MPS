@@ -10,7 +10,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
@@ -49,7 +50,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   private MPSProject myProject;
   private Solution myResult;
   private NewSolutionDialog myDialog;
-  public List<AutoBinding> myBindings = ListOperations.<AutoBinding>createList();
+  public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
     }
@@ -96,7 +97,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListOperations.addElement(this.myBindings, binding);
+      ListSequence.fromList(this.myBindings).addElement(binding);
     }
     {
       Object sourceObject = myThis;
@@ -105,7 +106,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListOperations.addElement(this.myBindings, binding);
+      ListSequence.fromList(this.myBindings).addElement(binding);
     }
   }
 
