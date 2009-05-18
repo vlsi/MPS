@@ -220,10 +220,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1206093513502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1206097752224(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -619,6 +615,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1239984869886(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConstructorParameterToField");
+  }
+
+  public static Object referenceMacro_GetReferent_598602464792786140(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
   }
 
   public static boolean ifMacro_Condition_1204048094902(final IOperationContext operationContext, final IfMacroContext _context) {

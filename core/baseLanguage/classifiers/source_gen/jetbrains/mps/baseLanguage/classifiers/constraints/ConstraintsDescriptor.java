@@ -4,17 +4,18 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new IMemberOperation_member_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ThisClassifierExpresson_classifier_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new DefaultClassifierType_classifier_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IMemberOperation_member_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ThisClassifierExpresson_classifier_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DefaultClassifierType_classifier_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

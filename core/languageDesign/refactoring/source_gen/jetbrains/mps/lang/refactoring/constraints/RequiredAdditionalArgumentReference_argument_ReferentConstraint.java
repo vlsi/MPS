@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -27,7 +28,7 @@ public class RequiredAdditionalArgumentReference_argument_ReferentConstraint ext
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> nodes = ListSequence.<SNode>fromArray();
+    List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
     SNode refactoring = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
     ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "arguments", true)));
     ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "internalArguments", true)));

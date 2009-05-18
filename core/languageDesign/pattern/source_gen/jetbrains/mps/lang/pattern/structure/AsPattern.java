@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AsPattern extends jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration {
+public class AsPattern extends PatternVariableDeclaration {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.AsPattern";
 
   public AsPattern(SNode node) {

@@ -13,8 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
 
 public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseIntention {
 
@@ -64,12 +62,6 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
 
   public String getLocationString() {
     return "jetbrains.mps.lang.typesystem.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }

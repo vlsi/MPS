@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -34,7 +34,7 @@ public class IClassifier_Behavior {
   }
 
   public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
       if (IClassifierPart_Behavior.call_getMainClassifier_1213877255428(part) == thisNode) {
         ListSequence.fromList(result).addElement(part);
@@ -44,7 +44,7 @@ public class IClassifier_Behavior {
   }
 
   public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode member : IClassifier_Behavior.call_getMembers_1213877528124(thisNode)) {
       if (IMember_Behavior.call_getVisiblity_1213877352965(member) == null && SNodeOperations.getModel(member) == SNodeOperations.getModel(contextNode)) {
         ListSequence.fromList(result).addElement(member);
@@ -66,7 +66,7 @@ public class IClassifier_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));

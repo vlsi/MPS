@@ -9,8 +9,8 @@ import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class TypeVariableDeclaration_Behavior {
 
@@ -40,7 +40,7 @@ public class TypeVariableDeclaration_Behavior {
       return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
     }
     List<SNode> variableReferences = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
-    List<SNode> list = ListOperations.<SNode>createList();
+    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(list).addSequence(ListSequence.fromList(variableReferences));
     for(SNode typeVariableReference : list) {
       SNode concreteUpperBound = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false), visitedVars);

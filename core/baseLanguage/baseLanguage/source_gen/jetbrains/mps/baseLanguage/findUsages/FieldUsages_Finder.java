@@ -48,16 +48,16 @@ public class FieldUsages_Finder extends GeneratedFinder {
     // 
     for(SNode fieldDeclaration : ListSequence.fromList(fieldDeclarations)) {
       for(SNode fieldUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator))) {
-        ListOperations.addElement(_results, fieldUsage);
+        ListSequence.fromList(_results).addElement(fieldUsage);
       }
     }
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
+    ListSequence.fromList(_results).addElement(node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
       for(SNode fieldNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new EmptyProgressIndicator()))) {
-        ListOperations.addElement(_results, fieldNode);
+        ListSequence.fromList(_results).addElement(fieldNode);
       }
     }
   }

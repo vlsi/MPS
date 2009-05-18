@@ -4,50 +4,51 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new AnonymousClass_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Classifier_nestedName_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Classifier_resolveInfo_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Classifier_shortDescription_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Property_alias_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Property_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new LocalVariableDeclaration_shortDescription_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ConstructorDeclaration_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ConstructorDeclaration_nestedName_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ConstructorDeclaration_resolveInfo_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ClassifierMember_shortDescription_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new IValidIdentifier_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ClosureParameterReference_closureParameter_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ClassCreator_constructorDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ThisExpression_classConcept_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SuperConstructorInvocation_constructorDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new StaticFieldReference_staticFieldDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SuperMethodCall_instanceMethodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ThisConstructorInvocation_constructorDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new EnumConstantReference_enumConstantDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ParameterReference_parameterDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new AnnotationInstanceValue_key_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyReference_property_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TupleMemberAccessOperation_member_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new VarVariableReference_declaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Annotation_DefaultSearchScope());
-    ListOperations.addElement(this.myConstraints, new Classifier_DefaultSearchScope());
-    ListOperations.addElement(this.myConstraints, new Interface_DefaultSearchScope());
-    ListOperations.addElement(this.myConstraints, new ClassConcept_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new AnonymousClass_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Classifier_nestedName_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Classifier_resolveInfo_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Classifier_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Property_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Property_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalVariableDeclaration_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_nestedName_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_resolveInfo_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ClassifierMember_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IValidIdentifier_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ClosureParameterReference_closureParameter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ClassCreator_constructorDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ThisExpression_classConcept_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SuperConstructorInvocation_constructorDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StaticFieldReference_staticFieldDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SuperMethodCall_instanceMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ThisConstructorInvocation_constructorDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EnumConstantReference_enumConstantDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ParameterReference_parameterDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new AnnotationInstanceValue_key_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyReference_property_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TupleMemberAccessOperation_member_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new VarVariableReference_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Annotation_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new Classifier_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new Interface_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new ClassConcept_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

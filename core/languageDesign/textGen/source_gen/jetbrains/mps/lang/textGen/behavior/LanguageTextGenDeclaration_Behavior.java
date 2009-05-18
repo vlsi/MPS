@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,14 +19,14 @@ public class LanguageTextGenDeclaration_Behavior {
     if (thisNode == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));
     return (List<SNode>)result;
   }
 
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, ListOperations.<SNode>createList(), thisNode);
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, ListSequence.fromList(new ArrayList<SNode>()), thisNode);
     for(SNode baseTextGen : list) {
       for(SNode func : SLinkOperations.getTargets(baseTextGen, "operation", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {
@@ -40,8 +39,8 @@ public class LanguageTextGenDeclaration_Behavior {
   }
 
   public static List<SNode> call_getAvailableFunctions_1234781318196(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
-    List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, ListOperations.<SNode>createList(), SLinkOperations.getTarget(thisNode, "baseTextGen", false));
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, ListSequence.fromList(new ArrayList<SNode>()), SLinkOperations.getTarget(thisNode, "baseTextGen", false));
     for(SNode baseTextGen : list) {
       for(SNode func : SLinkOperations.getTargets(baseTextGen, "function", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {

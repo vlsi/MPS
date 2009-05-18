@@ -7,24 +7,18 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent;
 import java.util.Iterator;
-import jetbrains.mps.lang.constraints.structure.NodePropertyConstraint;
 import java.util.List;
-import jetbrains.mps.lang.constraints.structure.NodeReferentConstraint;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ConceptConstraints";
+  public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String NAME = "name";
   public static final String CONCEPT = "concept";
   public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static final String DEFAULT_SCOPE = "defaultScope";
@@ -36,6 +30,14 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public ConceptConstraints(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(ConceptConstraints.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ConceptConstraints.NAME, value);
   }
 
   public String getShortDescription() {
@@ -60,14 +62,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptConstraints.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(ConceptConstraints.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ConceptConstraints.NAME, value);
   }
 
   public AbstractConceptDeclaration getConcept() {

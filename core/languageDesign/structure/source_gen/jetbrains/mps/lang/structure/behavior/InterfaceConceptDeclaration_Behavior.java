@@ -4,9 +4,9 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InterfaceConceptDeclaration_Behavior {
 
@@ -14,7 +14,7 @@ public class InterfaceConceptDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "extends", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
     }

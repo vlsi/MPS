@@ -10,8 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CreateReferenceOnClassifier_Intention extends BaseIntention {
 
+  public CreateReferenceOnClassifier_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {

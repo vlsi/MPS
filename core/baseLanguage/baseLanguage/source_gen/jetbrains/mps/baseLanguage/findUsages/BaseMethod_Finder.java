@@ -80,7 +80,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
       }
     }
     for(SNode result : SetSequence.fromSet(results)) {
-      ListOperations.addElement(_results, result);
+      ListSequence.fromList(_results).addElement(result);
     }
   }
 

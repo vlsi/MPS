@@ -12,8 +12,8 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Type_Behavior {
@@ -51,7 +51,7 @@ public class Type_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> creators = ListOperations.<SNode>createList();
+    List<SNode> creators = ListSequence.fromList(new ArrayList<SNode>());
     SNode ac = Type_Behavior.call_getAbstractCreator_1213877337340(thisNode);
     if ((ac != null)) {
       ListSequence.fromList(creators).addElement(ac);

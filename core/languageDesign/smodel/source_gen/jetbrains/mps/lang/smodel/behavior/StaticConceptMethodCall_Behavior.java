@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
 
 public class StaticConceptMethodCall_Behavior {
@@ -18,7 +18,7 @@ public class StaticConceptMethodCall_Behavior {
   }
 
   public static List<SNode> getClassifiersWithStaticMethods_1213877485028(SModel model, IScope scope, SNode enclosingNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode behavior : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       SNode concept = SLinkOperations.getTarget(behavior, "concept", false);
       if (concept != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {

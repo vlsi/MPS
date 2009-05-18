@@ -9,10 +9,6 @@ import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class ChangeOrientationList_Intention extends BaseIntention {
 
@@ -57,12 +53,6 @@ public class ChangeOrientationList_Intention extends BaseIntention {
 
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
-  }
-
-  public List<Intention> getInstances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    ListSequence.fromList(list).addElement(this);
-    return list;
   }
 
 }

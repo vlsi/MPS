@@ -39,7 +39,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
         ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       if (passingNode != node) {
-        ListOperations.addElement(_results, passingNode);
+        ListSequence.fromList(_results).addElement(passingNode);
       }
       passed++ ;
     }

@@ -13,8 +13,15 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 public class AddMissingDependency_Intention extends BaseIntention {
 
+  public AddMissingDependency_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {

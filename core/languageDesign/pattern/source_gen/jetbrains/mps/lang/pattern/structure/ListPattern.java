@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ListPattern extends jetbrains.mps.lang.pattern.structure.AsPattern {
+public class ListPattern extends AsPattern {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.ListPattern";
 
   public ListPattern(SNode node) {

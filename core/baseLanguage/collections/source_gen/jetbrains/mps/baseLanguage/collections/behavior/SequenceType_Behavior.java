@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -34,7 +33,7 @@ public class SequenceType_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     SNode seqCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", null);
     SLinkOperations.setTarget(seqCreator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
     ListSequence.fromList(result).addElement(seqCreator);

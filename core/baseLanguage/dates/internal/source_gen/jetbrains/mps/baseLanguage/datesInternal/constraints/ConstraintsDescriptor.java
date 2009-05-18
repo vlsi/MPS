@@ -4,36 +4,26 @@ package jetbrains.mps.baseLanguage.datesInternal.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DurationType_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.SchedulePeriod_alias_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.PredefinedDateFormat_isPublic_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.PredefinedDateFormat_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.Month_alias_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimePropertyConfiguration_shortDescription_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimePropertyFormatType_name_PropertyConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimeProperty_jodaPeriodType_ReferentConstraint;
-import jetbrains.mps.baseLanguage.datesInternal.constraints.DateTimeProperty_jodaDateTimeFieldType_ReferentConstraint;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new DurationType_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new SchedulePeriod_alias_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new PredefinedDateFormat_isPublic_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new PredefinedDateFormat_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new Month_alias_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimePropertyConfiguration_shortDescription_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimePropertyFormatType_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimeProperty_jodaPeriodType_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new DateTimeProperty_jodaDateTimeFieldType_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DurationType_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SchedulePeriod_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PredefinedDateFormat_isPublic_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PredefinedDateFormat_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Month_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyConfiguration_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyFormatType_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimeProperty_jodaPeriodType_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new DateTimeProperty_jodaDateTimeFieldType_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

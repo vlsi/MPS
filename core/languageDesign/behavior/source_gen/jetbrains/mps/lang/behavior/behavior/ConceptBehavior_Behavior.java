@@ -4,8 +4,8 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -20,7 +20,7 @@ public class ConceptBehavior_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = ListOperations.<SNode>createList();
+    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "properties", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "references", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
@@ -28,7 +28,7 @@ public class ConceptBehavior_Behavior {
   }
 
   public static List<SNode> call_getVisibleStaticMethods_1225194243338(SNode thisNode, SNode contextNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode method : SLinkOperations.getTargets(thisNode, "staticMethod", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
         ListSequence.fromList(result).addElement(method);

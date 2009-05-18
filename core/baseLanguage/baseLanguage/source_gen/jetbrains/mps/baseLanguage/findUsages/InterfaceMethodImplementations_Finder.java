@@ -52,7 +52,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     for(SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {
       for(SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
-          ListOperations.addElement(_results, sMethod);
+          ListSequence.fromList(_results).addElement(sMethod);
         }
       }
     }

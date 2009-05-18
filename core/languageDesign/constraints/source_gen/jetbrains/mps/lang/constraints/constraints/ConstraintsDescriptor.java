@@ -4,20 +4,18 @@ package jetbrains.mps.lang.constraints.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
-import jetbrains.mps.lang.constraints.constraints.ConceptConstraints_name_PropertyConstraint;
-import jetbrains.mps.lang.constraints.constraints.NodePropertyConstraint_applicableProperty_ReferentConstraint;
-import jetbrains.mps.lang.constraints.constraints.NodeReferentConstraint_applicableLink_ReferentConstraint;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ConceptConstraints_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new NodePropertyConstraint_applicableProperty_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NodeReferentConstraint_applicableLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConceptConstraints_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodePropertyConstraint_applicableProperty_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeReferentConstraint_applicableLink_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

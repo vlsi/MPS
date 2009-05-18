@@ -4,9 +4,6 @@ package jetbrains.mps.lang.refactoring.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.refactoring.dataFlow.DeleteFeatureOperation_DataFlow;
-import jetbrains.mps.lang.refactoring.dataFlow.AbstractMoveExpression_DataFlow;
-import jetbrains.mps.lang.refactoring.dataFlow.ChangeFeatureNameOperation_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

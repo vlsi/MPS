@@ -4,20 +4,18 @@ package jetbrains.mps.xml.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.xml.constraints.Element_alias_PropertyConstraint;
-import jetbrains.mps.xml.constraints.Element_elementDeclaration_ReferentConstraint;
-import jetbrains.mps.xml.constraints.Attribute_attributeDeclaration_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new Element_alias_PropertyConstraint());
-    this.myConstraints.add(new Element_elementDeclaration_ReferentConstraint());
-    this.myConstraints.add(new Attribute_attributeDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Element_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Element_elementDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Attribute_attributeDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

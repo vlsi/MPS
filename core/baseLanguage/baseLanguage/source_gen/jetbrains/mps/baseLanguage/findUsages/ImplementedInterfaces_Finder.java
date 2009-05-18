@@ -41,7 +41,7 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
       }
     }
     for(SNode interfaceNode : ListSequence.fromList(result)) {
-      ListOperations.addElement(_results, interfaceNode);
+      ListSequence.fromList(_results).addElement(interfaceNode);
     }
   }
 

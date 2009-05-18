@@ -9,8 +9,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemoveMayBeUnreachable_Intention extends BaseIntention {
 
+  public RemoveMayBeUnreachable_Intention() {
+  }
+
   public String getConcept() {
     return "jetbrains.mps.lang.dataFlow.structure.EmitStatement";
+  }
+
+  public boolean isParameterized() {
+    return false;
   }
 
   public boolean isErrorIntention() {

@@ -4,35 +4,36 @@ package jetbrains.mps.lang.typesystem.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ChildTypeRestrictionReference_typeRestriction_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ListVarReference_listVarDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyPatternVariableReference_patternVarDecl_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkPatternVariableReference_patternVarDecl_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PatternVariableReference_patternVarDecl_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TypeVarReference_typeVarDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ChildTypeRestriction_childLinkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ConceptReference_concept_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ApplicableNodeReference_applicableNode_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TypesystemIntentionArgument_quickFixArgument_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new QuickFixArgumentReference_quickFixArgument_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SimpleRule_VarRef_link_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SimpleRule_ProcedureCall_parametersLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyMessageTarget_propertyDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkAssociation_subtypeLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkAssociation_supertypeLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ChildTypeRestrictionReference_typeRestriction_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ListVarReference_listVarDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyPatternVariableReference_patternVarDecl_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkPatternVariableReference_patternVarDecl_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PatternVariableReference_patternVarDecl_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TypeVarReference_typeVarDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ChildTypeRestriction_childLinkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConceptReference_concept_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ApplicableNodeReference_applicableNode_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TypesystemIntentionArgument_quickFixArgument_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new QuickFixArgumentReference_quickFixArgument_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_VarRef_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_parametersLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyMessageTarget_propertyDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkAssociation_subtypeLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkAssociation_supertypeLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

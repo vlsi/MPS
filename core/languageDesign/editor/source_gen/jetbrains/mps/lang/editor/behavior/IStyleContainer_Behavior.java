@@ -4,11 +4,11 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IStyleContainer_Behavior {
@@ -22,7 +22,7 @@ public class IStyleContainer_Behavior {
   }
 
   public static List<SNode> call_getClassItems_1219419901278(SNode thisNode, SNode itemConcept) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
       if (SNodeOperations.isInstanceOf(item, NameUtil.nodeFQName(itemConcept))) {
         ListSequence.fromList(result).addElement(item);

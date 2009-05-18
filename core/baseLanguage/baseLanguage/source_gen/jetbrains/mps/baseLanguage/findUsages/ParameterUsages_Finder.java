@@ -12,7 +12,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
@@ -43,7 +42,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
       SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
       for(SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
-        ListOperations.addElement(_results, parameterUsage);
+        ListSequence.fromList(_results).addElement(parameterUsage);
       }
     }
   }
@@ -55,7 +54,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      ListOperations.addElement(_results, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
+      ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
 

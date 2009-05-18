@@ -10,7 +10,7 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
@@ -31,7 +31,7 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator)) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-          ListOperations.addElement(_results, SNodeOperations.getParent(nodeUsage));
+          ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
         }
       }
     }

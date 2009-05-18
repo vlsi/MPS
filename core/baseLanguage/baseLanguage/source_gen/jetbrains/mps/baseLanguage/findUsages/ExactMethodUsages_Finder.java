@@ -12,7 +12,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.baseLanguage.plugin.MethodCallAdapter;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ExactMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
@@ -40,7 +39,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
     for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
       if (MethodCallAdapter.isMethodCall(nodeUsage)) {
         if (new MethodCallAdapter(nodeUsage).getMethodDeclaration() == node) {
-          ListOperations.addElement(_results, nodeUsage);
+          ListSequence.fromList(_results).addElement(nodeUsage);
         }
       }
     }

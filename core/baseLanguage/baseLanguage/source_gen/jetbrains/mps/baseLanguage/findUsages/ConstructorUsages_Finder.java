@@ -11,7 +11,6 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -39,7 +38,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     // search for straight usages & search for SUPER calls
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
     for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
-      ListOperations.addElement(_results, nodeUsage);
+      ListSequence.fromList(_results).addElement(nodeUsage);
     }
     // WORKAROUND - FIND SUPER() CALLS
     for(SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
@@ -61,7 +60,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
               }
             }
             if (thisConstructor) {
-              ListOperations.addElement(_results, invocationNode);
+              ListSequence.fromList(_results).addElement(invocationNode);
             }
           }
         }
@@ -81,7 +80,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
             }
           }
           if (thisConstructor) {
-            ListOperations.addElement(_results, enumConstant);
+            ListSequence.fromList(_results).addElement(enumConstant);
           }
         }
       }

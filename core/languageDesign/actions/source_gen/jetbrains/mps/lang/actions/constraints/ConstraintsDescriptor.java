@@ -4,19 +4,20 @@ package jetbrains.mps.lang.actions.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new NodeFactory_alias_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NodeFactory_applicableConcept_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SmartActionParameterReference_smartActionParameter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeFactory_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeFactory_applicableConcept_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SmartActionParameterReference_smartActionParameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

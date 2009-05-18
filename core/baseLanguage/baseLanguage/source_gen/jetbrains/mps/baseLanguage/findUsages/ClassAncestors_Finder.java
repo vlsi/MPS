@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
@@ -39,7 +39,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     while (current != null) {
       current = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (current != null) {
-        ListOperations.addElement(_results, current);
+        ListSequence.fromList(_results).addElement(current);
       }
     }
   }

@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -18,10 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1187360495057(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
@@ -44,12 +45,11 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "get currency";
         }
-
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
@@ -72,12 +72,11 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "compare to zero";
         }
-
       });
     }
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
@@ -100,7 +99,6 @@ public class QueriesGenerated {
         public String getDescriptionText(String pattern) {
           return "get amount";
         }
-
       });
     }
     return result;

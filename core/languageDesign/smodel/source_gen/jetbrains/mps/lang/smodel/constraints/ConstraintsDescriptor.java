@@ -4,34 +4,35 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new SPropertyAccess_property_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NodeAttributeAccessQualifier_annotationLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SLinkAccess_link_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Node_IsRoleOperation_linkInParent_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new StaticConceptMethodCall_concept_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new StaticConceptMethodCall_methodDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SLinkListAccess_link_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkAttributeAccessQualifier_annotationLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new EnumMemberReference_enumMember_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkRefQualifier_link_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SConceptPropertyAccess_conceptProperty_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyRefQualifier_property_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NodeRefExpression_referentNode_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new LinkRefExpression_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SEnum_MemberOperation_member_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new SEnumOperationInvocation_enumDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SPropertyAccess_property_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeAttributeAccessQualifier_annotationLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SLinkAccess_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Node_IsRoleOperation_linkInParent_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StaticConceptMethodCall_concept_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StaticConceptMethodCall_methodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SLinkListAccess_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkAttributeAccessQualifier_annotationLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EnumMemberReference_enumMember_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkRefQualifier_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SConceptPropertyAccess_conceptProperty_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyRefQualifier_property_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeRefExpression_referentNode_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkRefExpression_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SEnum_MemberOperation_member_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SEnumOperationInvocation_enumDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

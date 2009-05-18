@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SymbolClassRegexp_Behavior {
@@ -59,10 +59,10 @@ public class SymbolClassRegexp_Behavior {
         SNode left = SLinkOperations.getTarget(iscp, "left", true);
         if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
           SNode tmLeft = SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
-          result.append(Regexp_Behavior.call_getString_1222432436326(tmLeft, ListOperations.<SNode>createList()));
+          result.append(Regexp_Behavior.call_getString_1222432436326(tmLeft, ListSequence.fromList(new ArrayList<SNode>())));
         } else if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart")) {
           SNode tmLeft = SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-          List<SNode> tr = ListOperations.<SNode>createList();
+          List<SNode> tr = ListSequence.fromList(new ArrayList<SNode>());
           ListSequence.fromList(tr).addElement(tmLeft);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
         } else
@@ -73,7 +73,7 @@ public class SymbolClassRegexp_Behavior {
         SNode right = SNodeOperations.cast(SLinkOperations.getTarget(iscp, "left", true), "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart");
         if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
           SNode tmrRight = SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-          List<SNode> tr = ListOperations.<SNode>createList();
+          List<SNode> tr = ListSequence.fromList(new ArrayList<SNode>());
           ListSequence.fromList(tr).addElement(tmrRight);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
         } else

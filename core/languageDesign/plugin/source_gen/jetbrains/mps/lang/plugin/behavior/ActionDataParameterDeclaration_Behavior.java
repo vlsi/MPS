@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 
 public class ActionDataParameterDeclaration_Behavior {
 
@@ -19,7 +19,7 @@ public class ActionDataParameterDeclaration_Behavior {
   }
 
   public static List<SNode> getVariants_1227641865136() {
-    List<SNode> dataKeys = ListOperations.<SNode>createList();
+    List<SNode> dataKeys = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     return dataKeys;

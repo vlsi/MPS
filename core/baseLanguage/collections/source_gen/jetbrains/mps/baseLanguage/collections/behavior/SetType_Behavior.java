@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class SetType_Behavior {
 
@@ -37,7 +36,7 @@ public class SetType_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     return result;

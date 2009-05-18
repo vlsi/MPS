@@ -4,16 +4,17 @@ package jetbrains.mps.baseLanguage.unitTest.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new BTestCase_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new TestMethod_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new BTestCase_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TestMethod_name_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

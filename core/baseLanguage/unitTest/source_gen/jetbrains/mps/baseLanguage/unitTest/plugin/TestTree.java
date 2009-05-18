@@ -33,7 +33,7 @@ public class TestTree extends MPSTree {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       this.map.put(testCase, testCaseTreeNode);
-      for(SNode method : ListSequence.fromList(this.tests.get(testCase))) {
+      for(SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
         testCaseTreeNode.add(testMethodTreeNode);
         this.map.put(testCase, method, testMethodTreeNode);

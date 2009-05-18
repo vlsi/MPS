@@ -5,8 +5,6 @@ package jetbrains.mps.lang.constraints.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

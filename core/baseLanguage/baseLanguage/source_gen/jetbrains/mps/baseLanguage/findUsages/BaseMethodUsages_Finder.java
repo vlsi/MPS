@@ -12,7 +12,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class BaseMethodUsages_Finder extends GeneratedFinder {
@@ -44,7 +43,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), indicator);
     for(SNode method : ListSequence.fromList(baseMethods)) {
       for(SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, indicator))) {
-        ListOperations.addElement(_results, usage);
+        ListSequence.fromList(_results).addElement(usage);
       }
     }
   }
@@ -53,7 +52,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), new EmptyProgressIndicator());
     ListSequence.fromList(baseMethods).addElement(node);
     for(SNode method : ListSequence.fromList(baseMethods)) {
-      ListOperations.addElement(_results, method);
+      ListSequence.fromList(_results).addElement(method);
     }
   }
 

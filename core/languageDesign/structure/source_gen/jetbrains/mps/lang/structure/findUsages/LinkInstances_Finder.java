@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class LinkInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder");
@@ -56,13 +55,13 @@ public class LinkInstances_Finder extends GeneratedFinder {
       for(String role : SetSequence.fromSet(roles)) {
         if (isChild) {
           for(SNode child : ListSequence.fromList(instance.getChildren(role))) {
-            ListOperations.addElement(_results, child);
+            ListSequence.fromList(_results).addElement(child);
           }
         } else
         {
           SNode referent = instance.getReferent(role);
           if (referent != null) {
-            ListOperations.addElement(_results, referent);
+            ListSequence.fromList(_results).addElement(referent);
           }
         }
       }

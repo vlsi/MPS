@@ -4,15 +4,16 @@ package jetbrains.mps.baseLanguage.blTypes.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new BLArrayType_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new BLArrayType_name_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

@@ -4,28 +4,29 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ConceptEditorDeclaration_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new RGBColor_value_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_Component_editorComponent_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_RefCell_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_Property_propertyDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_WithRole_relationDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_RefNode_linkDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new CellModel_TransactionalProperty_property_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NavigatableReferenceStyleClassItem_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConceptEditorDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new RGBColor_value_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_Component_editorComponent_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefCell_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_Property_propertyDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_WithRole_relationDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CellModel_TransactionalProperty_property_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NavigatableReferenceStyleClassItem_link_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

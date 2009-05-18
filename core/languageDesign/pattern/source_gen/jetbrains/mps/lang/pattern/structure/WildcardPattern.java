@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class WildcardPattern extends jetbrains.mps.lang.pattern.structure.Pattern {
+public class WildcardPattern extends Pattern {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.WildcardPattern";
 
   public WildcardPattern(SNode node) {

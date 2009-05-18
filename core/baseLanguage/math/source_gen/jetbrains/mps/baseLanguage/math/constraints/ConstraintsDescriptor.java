@@ -4,15 +4,16 @@ package jetbrains.mps.baseLanguage.math.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new SumVariableReference_sumVariable_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SumVariableReference_sumVariable_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
