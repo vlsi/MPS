@@ -1090,6 +1090,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
+  public static SNode sourceNodeQuery_5834814271541225961(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ActionDataParameterDeclaration_Behavior.call_getType_1217257091542(SLinkOperations.getTarget(_context.getNode(), "member", false));
+  }
+
   public static Iterable sourceNodesQuery_1204045442068(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "tabs", true);
   }

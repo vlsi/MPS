@@ -8855,6 +8855,27 @@
                   </node>
                 </node>
               </node>
+              <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5834814271541225958">
+                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="5834814271541225960">
+                  <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="5834814271541225961">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5834814271541225962">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5834814271541225963">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5834814271541225970">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5834814271541225965">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5834814271541225964" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5834814271541225969">
+                              <link role="link" targetNodeId="1.1217252428771" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5834814271541225974">
+                            <link role="baseMethodDeclaration" targetNodeId="64.1217257091542" resolveInfo="getType" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
