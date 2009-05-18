@@ -15,8 +15,12 @@ public class SortedMapType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_12().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
     return result;
+  }
+
+  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return new _Quotations.QuotationClass_13().createNode();
   }
 
 }

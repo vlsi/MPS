@@ -37,9 +37,13 @@ public class SetType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
-    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_6().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     return result;
+  }
+
+  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return new _Quotations.QuotationClass_7().createNode();
   }
 
 }

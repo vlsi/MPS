@@ -7,6 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -31,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -39,6 +40,8 @@
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877245174">
     <property name="package" value="sequence" />
     <link role="concept" targetNodeId="1.1151689724996" resolveInfo="SequenceType" />
@@ -293,6 +296,24 @@
         <link role="elementConcept" targetNodeId="8.1145552809883" resolveInfo="AbstractCreator" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235575444889" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080244">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080245">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080246">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080247">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080251">
+              <link role="classifier" targetNodeId="12.~ISequence" resolveInfo="ISequence" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080249">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080250" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877497462">
@@ -646,6 +667,24 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227009981001" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080209">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080210">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080211">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080212">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080216">
+              <link role="classifier" targetNodeId="11.~List" resolveInfo="List" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080214">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080215" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877520358">
     <property name="package" value="mapType" />
@@ -805,6 +844,24 @@
         <link role="elementConcept" targetNodeId="8.1145552809883" resolveInfo="AbstractCreator" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240216982994" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080191">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080192">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080193">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080194">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080198">
+              <link role="classifier" targetNodeId="11.~Map" resolveInfo="Map" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080196">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080197" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877520413">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877520414" />
@@ -1037,6 +1094,24 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240217445976" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080146">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080147">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080166">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080167">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080173">
+              <link role="classifier" targetNodeId="11.~Set" resolveInfo="Set" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080151">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080152" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226515539541">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226515539542" />
     </node>
@@ -1170,6 +1245,24 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237468719578" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080219">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080220">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080221">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080222">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080226">
+              <link role="classifier" targetNodeId="11.~Iterator" resolveInfo="Iterator" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080224">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080225" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1237468611265">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237468611266" />
@@ -1532,6 +1625,24 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240241612218" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080228">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080229">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080230">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080231">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080235">
+              <link role="classifier" targetNodeId="11.~SortedMap" resolveInfo="SortedMap" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080233">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080234" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240239413631">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240239413632" />
     </node>
@@ -1591,6 +1702,24 @@
         <link role="elementConcept" targetNodeId="8.1145552809883" resolveInfo="AbstractCreator" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240249648718" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3078742637637080175">
+      <property name="name" value="getClassExpression" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337357" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3078742637637080176">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3078742637637080177">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3078742637637080178">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3078742637637080183">
+              <link role="classifier" targetNodeId="11.~SortedSet" resolveInfo="SortedSet" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3078742637637080180">
+        <link role="concept" targetNodeId="8.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3078742637637080181" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240249640916">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240249640917" />

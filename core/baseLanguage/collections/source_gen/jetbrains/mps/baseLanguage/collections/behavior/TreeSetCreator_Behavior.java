@@ -11,7 +11,7 @@ public class TreeSetCreator_Behavior {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return new _Quotations.QuotationClass_9().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return new _Quotations.QuotationClass_16().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
   }
 
 }

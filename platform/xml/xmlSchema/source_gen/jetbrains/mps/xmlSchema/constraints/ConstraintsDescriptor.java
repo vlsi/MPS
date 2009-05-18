@@ -4,34 +4,25 @@ package jetbrains.mps.xmlSchema.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.xmlSchema.constraints.AttributeDeclaration_name_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.EntityDeclaration_alias_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.ElementDeclaration_alias_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.ComplexType_alias_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.EntitySet_name_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.GroupDeclaration_alias_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.Declaration_name_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.Schema_name_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.AttributeGroup_alias_PropertyConstraint;
-import jetbrains.mps.xmlSchema.constraints.Declaration_DefaultSearchScope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new AttributeDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new EntityDeclaration_alias_PropertyConstraint());
-    this.myConstraints.add(new ElementDeclaration_alias_PropertyConstraint());
-    this.myConstraints.add(new ComplexType_alias_PropertyConstraint());
-    this.myConstraints.add(new EntitySet_name_PropertyConstraint());
-    this.myConstraints.add(new GroupDeclaration_alias_PropertyConstraint());
-    this.myConstraints.add(new Declaration_name_PropertyConstraint());
-    this.myConstraints.add(new Schema_name_PropertyConstraint());
-    this.myConstraints.add(new AttributeGroup_alias_PropertyConstraint());
-    this.myConstraints.add(new Declaration_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new AttributeDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EntityDeclaration_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ElementDeclaration_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ComplexType_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EntitySet_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GroupDeclaration_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Declaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Schema_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new AttributeGroup_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Declaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
