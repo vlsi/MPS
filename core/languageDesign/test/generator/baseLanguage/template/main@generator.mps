@@ -671,53 +671,22 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221570038160">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221570038161">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221570038162">
-                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221570038163">
-                              <property name="name" value="path" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192547404" />
-                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038165">
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221570038166">
-                                  <link role="baseMethodDeclaration" targetNodeId="2.~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceAll" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221570038167">
-                                    <property name="value" value="/" />
-                                  </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221570038168">
-                                    <property name="value" value="\\\\" />
-                                  </node>
-                                </node>
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221570038169">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221570038170">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038172">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221570038173">
+                                <link role="classConcept" targetNodeId="18.~Macros" resolveInfo="Macros" />
+                                <link role="baseMethodDeclaration" targetNodeId="18.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221570038174">
+                                <link role="baseMethodDeclaration" targetNodeId="18.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4057143398206306468">
                                   <link role="variableDeclaration" targetNodeId="1221570038153" resolveInfo="url" />
                                 </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221570038170">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038171">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038172">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221570038173">
-                                  <link role="classConcept" targetNodeId="18.~Macros" resolveInfo="Macros" />
-                                  <link role="baseMethodDeclaration" targetNodeId="18.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221570038174">
-                                  <link role="baseMethodDeclaration" targetNodeId="18.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221570038175">
-                                    <link role="variableDeclaration" targetNodeId="1221570038163" resolveInfo="path" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1221570038176">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221570038177" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221570038178">
+                                    <link role="classifier" targetNodeId="19.~IFile" resolveInfo="IFile" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1221570038176">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221570038177" />
-                                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221570038178">
-                                      <link role="classifier" targetNodeId="19.~IFile" resolveInfo="IFile" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221570038179">
-                                <link role="baseMethodDeclaration" targetNodeId="2.~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceAll" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221570038180">
-                                  <property name="value" value="\\\\" />
-                                </node>
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221570038181">
-                                  <property name="value" value="/" />
                                 </node>
                               </node>
                             </node>
@@ -1794,53 +1763,22 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229198973240">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229198973241">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229198973242">
-                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229198973243">
-                              <property name="name" value="path" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1229198973244" />
-                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229198973245">
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229198973246">
-                                  <link role="baseMethodDeclaration" targetNodeId="2.~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceAll" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229198973247">
-                                    <property name="value" value="/" />
-                                  </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229198973248">
-                                    <property name="value" value="\\\\" />
-                                  </node>
-                                </node>
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229198973249">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229198973250">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229198973252">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229198973253">
+                                <link role="classConcept" targetNodeId="18.~Macros" resolveInfo="Macros" />
+                                <link role="baseMethodDeclaration" targetNodeId="18.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229198973254">
+                                <link role="baseMethodDeclaration" targetNodeId="18.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2647429983645416243">
                                   <link role="variableDeclaration" targetNodeId="1229198973233" resolveInfo="url" />
                                 </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229198973250">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229198973251">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229198973252">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1229198973253">
-                                  <link role="classConcept" targetNodeId="18.~Macros" resolveInfo="Macros" />
-                                  <link role="baseMethodDeclaration" targetNodeId="18.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229198973254">
-                                  <link role="baseMethodDeclaration" targetNodeId="18.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229198973255">
-                                    <link role="variableDeclaration" targetNodeId="1229198973243" resolveInfo="path" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1229198973256">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1229198973257" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229198973258">
+                                    <link role="classifier" targetNodeId="19.~IFile" resolveInfo="IFile" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1229198973256">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1229198973257" />
-                                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229198973258">
-                                      <link role="classifier" targetNodeId="19.~IFile" resolveInfo="IFile" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229198973259">
-                                <link role="baseMethodDeclaration" targetNodeId="2.~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceAll" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229198973260">
-                                  <property name="value" value="\\\\" />
-                                </node>
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229198973261">
-                                  <property name="value" value="/" />
                                 </node>
                               </node>
                             </node>

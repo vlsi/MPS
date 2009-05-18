@@ -74,8 +74,7 @@ public class QueriesGenerated {
     IOperationContext invocationContext = _context.getInvocationContext();
     String url = invocationContext.getProject().getPresentableUrl();
     if (url != null) {
-      String path = url.replaceAll("/", "\\\\");
-      return Macros.mpsHomeMacros().shrinkPath(path, (IFile)null).replaceAll("\\\\", "/");
+      return Macros.mpsHomeMacros().shrinkPath(url, (IFile)null);
     }
     return "";
   }
@@ -136,8 +135,7 @@ public class QueriesGenerated {
     IOperationContext invocationContext = _context.getInvocationContext();
     String url = invocationContext.getProject().getPresentableUrl();
     if (url != null) {
-      String path = url.replaceAll("/", "\\\\");
-      return Macros.mpsHomeMacros().shrinkPath(path, (IFile)null).replaceAll("\\\\", "/");
+      return Macros.mpsHomeMacros().shrinkPath(url, (IFile)null);
     }
     return "";
   }
