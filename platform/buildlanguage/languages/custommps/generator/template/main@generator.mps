@@ -4996,7 +4996,7 @@
     <property name="name" value="MPS-autodist" />
     <property name="startupClass" value="jetbrains.mps.Launcher" />
     <property name="useVMOptionsFile" value="true" />
-    <property name="defaultVMOptions" value="-Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=windows-1251" />
+    <property name="defaultVMOptions" value="-Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
     <property name="additionalVMOptions" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
     <link role="buildScriptConfiguration" targetNodeId="1233857021519" resolveInfo="default" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />
