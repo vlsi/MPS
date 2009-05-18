@@ -458,7 +458,7 @@ public class TypeCheckingContext {
     myTemporaryComponentsStack.pop();
   }
 
-  public SNode computeTypeForResolve(SNode node, Runnable continuation) {
+  public SNode computeTypeForResolve(SNode node) {
     if (myNodesToComputeDuringResolve.contains(node)) {
      // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
       return null;
@@ -467,7 +467,7 @@ public class TypeCheckingContext {
     temporaryComponent = this.createTemporaryTypesComponent();
     myNodesToComputeDuringResolve.push(node);
     try {
-      return temporaryComponent.computeTypesForNodeDuringResolving(node, continuation);
+      return temporaryComponent.computeTypesForNodeDuringResolving(node);
     } finally {
       temporaryComponent.clearListeners(); //in order to prevent memory leaks.
       this.popTemporaryTypesComponent();

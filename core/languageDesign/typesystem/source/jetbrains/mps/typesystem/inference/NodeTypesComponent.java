@@ -383,12 +383,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return myTypeCheckingContext.isIncrementalMode();
   }
 
-  public SNode computeTypesForNodeDuringGeneration(SNode initialNode, Runnable continuation) {
-    return computeTypesForNode_special(initialNode, continuation, true);
+  public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, true);
   }
 
-  public SNode computeTypesForNodeDuringResolving(SNode initialNode, Runnable continuation) {
-    return computeTypesForNode_special(initialNode, continuation, false);
+  public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, false);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
@@ -399,7 +399,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       myIsSmartCompletion = true;
       myHole = hole;
       myHoleIsAType = holeIsAType;
-      computeTypesForNode_special(hole.getParent(), null, false, additionalNodes);
+      computeTypesForNode_special(hole.getParent(), false, additionalNodes);
       return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
@@ -422,11 +422,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes) {
-    return computeTypesForNode_special(initialNode, continuation, refreshTypes, new ArrayList<SNode>());
+  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes) {
+    return computeTypesForNode_special(initialNode, refreshTypes, new ArrayList<SNode>());
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes, List<SNode> givenAdditionalNodes) {
+  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes, List<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -446,19 +446,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           if (node.isRoot()) {
             computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
-            if (continuation != null) {
-              continuation.run();
-            }
             return type;
           }
           prevNode = node;
           node = node.getParent();
         } else {
-          if (node.isRoot()) {
-            if (continuation != null) {
-              continuation.run();
-            }
-          }
           return type;
         }
       }

@@ -243,11 +243,7 @@ public class TypeChecker implements ApplicationComponent {
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
       checkWithinRoot(node, new Runnable() {
         public void run() {
-          result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
-            public void run() {
-              myCheckedRoots.add(node);
-            }
-          });
+          result[0] = component1.computeTypesForNodeDuringGeneration(node);
         }
       });
       SNode resultt_type = result[0];
@@ -282,22 +278,10 @@ public class TypeChecker implements ApplicationComponent {
     if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || typeCheckingContext == null) {
       final SNode[] result = new SNode[1];
       typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
-      final NodeTypesComponent component = typeCheckingContext.getNodeTypesComponent();
-      SNode computedType = component.getType(node);
-      if (computedType != null) {
-        if (myComputedTypesForCompletion != null) {
-          myComputedTypesForCompletion.put(node, computedType);
-        }
-        return computedType;
-      }
       final TypeCheckingContext finalTypeCheckingContext = typeCheckingContext;
       checkWithinRoot(node, new Runnable() {
         public void run() {
-          result[0] = finalTypeCheckingContext.computeTypeForResolve(node, new Runnable() {
-            public void run() {
-              myCheckedRoots.add(node);
-            }
-          });
+          result[0] = finalTypeCheckingContext.computeTypeForResolve(node);
         }
       });
       SNode resultType = result[0];
