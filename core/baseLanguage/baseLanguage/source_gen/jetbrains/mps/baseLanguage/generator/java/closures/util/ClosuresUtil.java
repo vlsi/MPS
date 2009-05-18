@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClosuresUtil {
@@ -171,7 +171,7 @@ public class ClosuresUtil {
 
     public List<SNode> getVariables() {
       if (this.myVars == null) {
-        return ListOperations.<SNode>createList();
+        return new ArrayList<SNode>();
       }
       return this.myVars;
     }
@@ -210,7 +210,7 @@ public class ClosuresUtil {
       if (this.myVars == null) {
         this.myVar2Name = MapSequence.fromMap(new HashMap<SNode, String>());
         this.myName2Var = MapSequence.fromMap(new HashMap<String, SNode>());
-        this.myVars = ListOperations.<SNode>createList();
+        this.myVars = new ArrayList<SNode>();
       }
     }
 

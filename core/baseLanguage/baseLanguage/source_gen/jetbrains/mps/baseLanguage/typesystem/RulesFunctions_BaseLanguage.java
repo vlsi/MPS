@@ -23,7 +23,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -456,7 +455,7 @@ __switch__:
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
     if (nodes == null) {
-      nodes = ListOperations.<SNode>createList();
+      nodes = new ArrayList<SNode>();
       MapSequence.fromMap(mmap).put(tvd, nodes);
     }
     ListSequence.fromList(nodes).addElement(tvar);

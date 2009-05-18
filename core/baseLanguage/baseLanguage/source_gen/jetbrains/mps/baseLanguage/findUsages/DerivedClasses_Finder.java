@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -29,7 +29,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> derived = ListOperations.<SNode>createList();
+    List<SNode> derived = new ArrayList<SNode>();
     ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     // 
     int passed = 0;

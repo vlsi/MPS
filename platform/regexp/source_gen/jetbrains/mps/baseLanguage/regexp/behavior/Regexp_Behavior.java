@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.regex.Pattern;
@@ -26,7 +25,7 @@ public class Regexp_Behavior {
   }
 
   public static String virtual_toString_1213877429451(SNode thisNode) {
-    return Regexp_Behavior.call_getString_1222432436326(thisNode, ListSequence.fromList(new ArrayList<SNode>()));
+    return Regexp_Behavior.call_getString_1222432436326(thisNode, new ArrayList<SNode>());
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {

@@ -33,7 +33,7 @@ public class SequenceType_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
     SNode seqCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", null);
     SLinkOperations.setTarget(seqCreator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
     ListSequence.fromList(result).addElement(seqCreator);

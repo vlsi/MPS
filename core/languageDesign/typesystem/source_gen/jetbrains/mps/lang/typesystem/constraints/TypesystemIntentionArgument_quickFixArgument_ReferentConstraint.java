@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,7 +28,7 @@ public class TypesystemIntentionArgument_quickFixArgument_ReferentConstraint ext
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> nodes = ListOperations.<SNode>createList();
+    List<SNode> nodes = new ArrayList<SNode>();
     SNode helginsIntention = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", false, false);
     if (helginsIntention != null) {
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(helginsIntention, "quickFix", false), "quickFixArgument", true)));

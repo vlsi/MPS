@@ -4,7 +4,6 @@ package jetbrains.mps.ide.uiLanguage.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.ide.uiLanguage.constraints.DialogUtil;
 
 public class DialogExpression_Constraints {
 

@@ -19,7 +19,7 @@ public class ActionDataParameterDeclaration_Behavior {
   }
 
   public static List<SNode> getVariants_1227641865136() {
-    List<SNode> dataKeys = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> dataKeys = new ArrayList<SNode>();
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     return dataKeys;

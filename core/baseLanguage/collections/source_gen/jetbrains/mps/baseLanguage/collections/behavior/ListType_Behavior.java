@@ -39,7 +39,7 @@ public class ListType_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> res = new ArrayList<SNode>();
     SNode lc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
     SLinkOperations.setTarget(lc, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
     ListSequence.fromList(res).addElement(lc);

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mpslite.editor.LinePart_Actions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class IndentLinePart_Editor extends DefaultNodeEditor {

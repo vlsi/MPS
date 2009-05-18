@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -32,7 +32,7 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
       return new EmptySearchScope();
     }
     SNode test = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", true, false);
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     if (test != null) {
       for(SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true))) {
         ListSequence.fromList(result).addElement(node);

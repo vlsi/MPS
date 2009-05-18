@@ -40,7 +40,7 @@ public class ConceptFunction_Behavior {
     if (thisNode == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableConceptFunctionParameter")));
     return (List<SNode>)result;

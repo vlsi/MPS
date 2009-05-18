@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
 
@@ -142,7 +141,7 @@ public class ClosureLiteralUtil {
 
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
     Set<String> visited = SetSequence.fromSet(new HashSet<String>());
-    List<SNode> queue = ListOperations.<SNode>createList();
+    List<SNode> queue = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         ListSequence.fromList(queue).addElement(arg);

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class WindowsConfig_Behavior {
@@ -51,7 +51,7 @@ public class WindowsConfig_Behavior {
   }
 
   public static List<SNode> call_getUserHomeDirs_1241017510516(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(thisNode, "settingsDir", true) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "settingsDir", true));
     }

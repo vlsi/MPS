@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -32,7 +32,7 @@ public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint extends 
     SNode conceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "procedureDeclaration", false), "target", false);
     if ((conceptDeclaration != null)) {
       List<SNode> aggregationLinkDeclarations = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(conceptDeclaration);
-      List<SNode> result = ListOperations.<SNode>createList();
+      List<SNode> result = new ArrayList<SNode>();
       for(SNode ld : aggregationLinkDeclarations) {
         if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(ld))) {
           ListSequence.fromList(result).addElement(ld);
@@ -40,7 +40,7 @@ public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint extends 
       }
       return result;
     }
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
 }

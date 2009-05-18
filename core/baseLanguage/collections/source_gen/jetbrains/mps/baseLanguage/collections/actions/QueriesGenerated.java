@@ -20,7 +20,6 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
@@ -300,7 +299,7 @@ public class QueriesGenerated {
             stopAllowed = true;
             skipAllowed = true;
           }
-          List<SNode> concepts = ListOperations.<SNode>createList();
+          List<SNode> concepts = new ArrayList<SNode>();
           if (yieldAllowed) {
             ListSequence.fromList(concepts).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement"));
           }

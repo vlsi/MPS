@@ -20,7 +20,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -29,7 +29,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
@@ -122,10 +121,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      List<SNode> editors = ListOperations.<SNode>createList();
-      List<SNode> behaviors = ListOperations.<SNode>createList();
-      List<SNode> constraints = ListOperations.<SNode>createList();
-      List<SNode> dataFlows = ListOperations.<SNode>createList();
+      List<SNode> editors = new ArrayList<SNode>();
+      List<SNode> behaviors = new ArrayList<SNode>();
+      List<SNode> constraints = new ArrayList<SNode>();
+      List<SNode> dataFlows = new ArrayList<SNode>();
       // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
@@ -241,7 +240,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

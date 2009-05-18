@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReturnStatement_Behavior {
 
@@ -15,7 +15,7 @@ public class ReturnStatement_Behavior {
   }
 
   public static List<SNode> call_getFinallyBlocks_1213877501572(SNode thisNode) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;
     while (true) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TryStatement")) {

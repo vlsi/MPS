@@ -11,8 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mpslite.editor.MPSLite_Style_StyleSheet;
-import jetbrains.mpslite.editor.LinePart_Actions;
 
 public class NamePropertyNamePart_Editor extends DefaultNodeEditor {
 

@@ -4,15 +4,16 @@ package jetbrains.mps.build.dependency.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ProjectDescriptionReference_description_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ProjectDescriptionReference_description_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

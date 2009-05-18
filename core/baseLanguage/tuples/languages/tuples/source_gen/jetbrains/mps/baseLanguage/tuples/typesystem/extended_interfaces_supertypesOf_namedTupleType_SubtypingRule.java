@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,9 +18,9 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
   }
 
   public List<SNode> getSubOrSuperTypes(SNode namedTupleType) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode ct : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleType, "classifier", false), "extends", true))) {
-      List<SNode> paramTypes = ListOperations.<SNode>createList();
+      List<SNode> paramTypes = new ArrayList<SNode>();
       for(SNode pt : ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true))) {
         if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           ListSequence.fromList(paramTypes).addElement(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(namedTupleType, "parameter", true)).toListSequence()).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false))));

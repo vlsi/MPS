@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
@@ -136,7 +135,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

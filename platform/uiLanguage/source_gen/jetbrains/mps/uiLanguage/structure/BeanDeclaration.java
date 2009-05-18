@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.uiLanguage.structure.AttributeDeclaration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;

@@ -21,7 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -243,7 +243,7 @@ public class RulesUtil {
         }
       } else
       {
-        List<SNode> concepts = ListOperations.<SNode>createList();
+        List<SNode> concepts = new ArrayList<SNode>();
         for(SNode conceptReference : SLinkOperations.getTargets(opParmList, "concept", true)) {
           ListSequence.fromList(concepts).addElement(SLinkOperations.getTarget(conceptReference, "concept", false));
         }

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,7 +21,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
   }
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> PTYPES = ListOperations.<SNode>createList();
+    List<SNode> PTYPES = new ArrayList<SNode>();
     SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, "component", false)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
     for(SNode tvr : ListSequence.fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
       final SNode PTYPE_typevar_1239974367138 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -39,7 +39,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     } else
     {
       List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
-      List<SNode> tvrs = ListOperations.<SNode>createList();
+      List<SNode> tvrs = new ArrayList<SNode>();
       ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
       for(SNode tvr : tvrs) {
         int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));

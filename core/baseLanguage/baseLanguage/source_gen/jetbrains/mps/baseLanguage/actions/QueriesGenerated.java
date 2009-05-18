@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
@@ -652,7 +651,7 @@ __switch__:
             if (anonymousClass == null) {
               return null;
             }
-            List<SNode> result = ListOperations.<SNode>createList();
+            List<SNode> result = new ArrayList<SNode>();
             List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
             for(SNode outerClassifier : ListSequence.fromList(outerClassifiers)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)));
@@ -690,7 +689,7 @@ __switch__:
           public Object calculate() {
             IClassifiersSearchScope searchScope = new VisibleClassifiersScope(SNodeOperations.getModel(_context.getParentNode()), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
             List<SNode> visibleClassifiers = (List<SNode>)searchScope.getClassifierNodes();
-            List<SNode> classifiers = ListOperations.<SNode>createList();
+            List<SNode> classifiers = new ArrayList<SNode>();
             for(SNode cls : visibleClassifiers) {
               if (Classifier_Behavior.call_hasStaticMemebers_1214840444586(cls)) {
                 ListSequence.fromList(classifiers).addElement(cls);
@@ -1303,7 +1302,7 @@ __switch__:
           public Object calculate() {
             VisibleClassifiersScope serchScope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
             List<SNode> list = (List<SNode>)serchScope.getClassifierNodes();
-            List<SNode> types = ListOperations.<SNode>createList();
+            List<SNode> types = new ArrayList<SNode>();
             for(SNode classifier : ListSequence.fromList(list)) {
               SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
               SLinkOperations.setTarget(type, "classifier", classifier, false);

@@ -37,7 +37,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -199,7 +198,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
     {
-      List<SNode> result = ListOperations.<SNode>createList();
+      List<SNode> result = new ArrayList<SNode>();
       ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
       return result;
     }

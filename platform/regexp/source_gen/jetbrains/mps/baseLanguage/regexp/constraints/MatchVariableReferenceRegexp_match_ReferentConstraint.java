@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -27,7 +27,7 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> matches = ListOperations.<SNode>createList();
+    List<SNode> matches = new ArrayList<SNode>();
     SNode top = _context.getEnclosingNode();
     while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
       top = SNodeOperations.getParent(top);

@@ -4,25 +4,26 @@ package jetbrains.mps.buildlanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new GenericCall_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new TargetReferencePropertyValueExpression_fullName_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new StringLiteral_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new MultiLineString_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new TargetReference_targetDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new GenericCall_declaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PathReference_call_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new Reference_declaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new GenericAttribute_attributeDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new PropertyReference_propertyDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new GenericCall_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TargetReferencePropertyValueExpression_fullName_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StringLiteral_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new MultiLineString_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TargetReference_targetDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PathReference_call_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Reference_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericAttribute_attributeDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PropertyReference_propertyDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

@@ -27,7 +27,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class QueriesGenerated {
 
@@ -253,7 +252,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1225976113129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> nodes = ListOperations.<SNode>createList();
+    List<SNode> nodes = new ArrayList<SNode>();
     for(SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
       ListSequence.fromList(nodes).addElement(SNodeOperations.cast(nodeTocheck, "jetbrains.mps.lang.test.structure.TestNode"));
     }

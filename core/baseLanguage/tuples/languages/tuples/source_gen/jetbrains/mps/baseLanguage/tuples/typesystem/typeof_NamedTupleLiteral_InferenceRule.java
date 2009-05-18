@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -39,7 +39,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(cmpRef, "value", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830133", true), (SNode)matchedType, _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830131", false, 0, intentionProvider);
       }
     }
-    List<SNode> PTYPES = ListOperations.<SNode>createList();
+    List<SNode> PTYPES = new ArrayList<SNode>();
     for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
       List<SNode> nodes = MapSequence.fromMap(mmap).get(foo);
       final SNode PTYPE_typevar_1239968089672 = typeCheckingContext.createNewRuntimeTypesVariable();

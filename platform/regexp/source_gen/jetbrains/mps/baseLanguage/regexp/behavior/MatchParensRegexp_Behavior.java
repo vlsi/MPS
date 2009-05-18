@@ -23,7 +23,7 @@ public class MatchParensRegexp_Behavior {
 
   public static int call_getIndex_1223361984345(SNode thisNode) {
     SNode parens = thisNode;
-    List<SNode> parensList = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }

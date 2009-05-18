@@ -44,7 +44,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -785,7 +785,7 @@ public class QueriesGenerated {
         }
         List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
         if (modulesForIModule == null) {
-          modulesForIModule = ListOperations.<SNode>createList();
+          modulesForIModule = new ArrayList<SNode>();
           MapSequence.fromMap(map).put(imodule, modulesForIModule);
         }
         ListSequence.fromList(modulesForIModule).addElement(module);

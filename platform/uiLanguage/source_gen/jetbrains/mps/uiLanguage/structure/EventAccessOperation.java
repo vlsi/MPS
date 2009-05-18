@@ -6,7 +6,6 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
-import jetbrains.mps.uiLanguage.structure.EventDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

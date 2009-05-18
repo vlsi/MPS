@@ -4,19 +4,20 @@ package jetbrains.mps.uiLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new ComponentController_name_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new ComponentReference_component_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new ComponentInstance_componentDeclaration_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new AttributeValue_attribute_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new StubCellRendererInfo_cellRendererSetter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ComponentController_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ComponentReference_component_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ComponentInstance_componentDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new AttributeValue_attribute_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StubCellRendererInfo_cellRendererSetter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

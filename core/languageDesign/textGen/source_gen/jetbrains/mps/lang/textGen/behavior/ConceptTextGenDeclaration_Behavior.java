@@ -4,10 +4,10 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptTextGenDeclaration_Behavior {
@@ -16,7 +16,7 @@ public class ConceptTextGenDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> roots = SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
     for(SNode langTextGen : roots) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(langTextGen, "operation", true)));

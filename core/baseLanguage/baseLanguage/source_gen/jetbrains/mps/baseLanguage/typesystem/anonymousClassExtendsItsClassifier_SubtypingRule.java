@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,7 +17,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
   }
 
   public List<SNode> getSubOrSuperTypes(SNode classifierType) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     do {
       SNode matchedNode_1 = SLinkOperations.getTarget(classifierType, "classifier", false);
       {

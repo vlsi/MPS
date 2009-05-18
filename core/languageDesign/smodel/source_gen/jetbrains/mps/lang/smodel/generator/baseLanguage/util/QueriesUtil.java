@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
@@ -21,7 +21,7 @@ public class QueriesUtil {
 
   public static List<SNode> getNodeOperation_ConceptList_concepts(SNode operation) {
     SNode parm_ConceptList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList");
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_ConceptList, "concept", true))) {
       if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));

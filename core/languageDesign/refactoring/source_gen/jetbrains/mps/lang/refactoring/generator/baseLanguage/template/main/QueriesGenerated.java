@@ -19,7 +19,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.refactoring.behavior.RequiredAdditionalArgument_Behavior;
 
 public class QueriesGenerated {
@@ -490,7 +490,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1197992301257(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
@@ -501,7 +501,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1198600029014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
@@ -512,7 +512,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1198673830801(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
@@ -523,7 +523,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1201177824403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
         ListSequence.fromList(result).addElement(argument);

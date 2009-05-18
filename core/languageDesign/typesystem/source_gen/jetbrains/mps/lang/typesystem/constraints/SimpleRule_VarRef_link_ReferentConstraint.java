@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 
 public class SimpleRule_VarRef_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -30,7 +30,7 @@ public class SimpleRule_VarRef_link_ReferentConstraint extends BaseNodeReference
     if ((conceptDeclaration != null)) {
       return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(conceptDeclaration);
     }
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
 }

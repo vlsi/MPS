@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -28,7 +28,7 @@ public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeRefere
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     if ((SLinkOperations.getTarget(_context.getReferenceNode(), "project", false) == null)) {
-      return new SimpleSearchScope(ListOperations.<SNode>createList());
+      return new SimpleSearchScope(new ArrayList<SNode>());
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true)).toListSequence();
   }

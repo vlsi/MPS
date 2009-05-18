@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -19,7 +19,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   }
 
   public List<SNode> getSubOrSuperTypes(SNode listType) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_87().createNode(), "classifier", false)) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_86().createNode());

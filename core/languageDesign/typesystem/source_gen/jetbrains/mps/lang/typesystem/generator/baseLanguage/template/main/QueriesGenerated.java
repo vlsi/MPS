@@ -41,7 +41,6 @@ import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
@@ -2390,7 +2389,7 @@ public class QueriesGenerated {
     for(SNode inferenceRule : SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
       dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
     }
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     SModel targetModel = _context.getOutputModel();
     for(SNode leaf : leaves) {
       SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.lang.core.structure.BaseConcept", null);

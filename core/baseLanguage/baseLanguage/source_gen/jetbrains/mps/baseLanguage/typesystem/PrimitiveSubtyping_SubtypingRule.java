@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +17,7 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "descriptor", false));
     }

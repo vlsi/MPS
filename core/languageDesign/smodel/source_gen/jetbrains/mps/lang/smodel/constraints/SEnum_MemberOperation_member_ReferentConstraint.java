@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 
 public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
 
@@ -30,7 +30,7 @@ public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeRef
     if (enumNode != null) {
       return SLinkOperations.getTargets(enumNode, "member", true);
     }
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
 }

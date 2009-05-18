@@ -4,7 +4,6 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mpslite.structure.MPSLitePropertyType_Enum;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {

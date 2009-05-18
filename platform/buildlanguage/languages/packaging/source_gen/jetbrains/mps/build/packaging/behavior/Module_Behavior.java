@@ -13,13 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -85,7 +84,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> classpath, boolean onlyUnderProjectBasedir) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     String projectBasedir = "";
     // search for project if needed
     if (onlyUnderProjectBasedir) {
@@ -112,7 +111,7 @@ public class Module_Behavior {
     if (module instanceof Language) {
       return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((Language)module).getLanguageRuntimeClassPathItems(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
     }
-    return ListOperations.<SNode>createList();
+    return new ArrayList<SNode>();
   }
 
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {

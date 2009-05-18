@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -46,7 +46,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static List<SNode> createPathHolders_1218716903754(List<String> stringClasspath, String homePath, List<SNode> macro) {
-    List<SNode> pathHolders = ListOperations.<SNode>createList();
+    List<SNode> pathHolders = new ArrayList<SNode>();
     for(String string : ListSequence.fromList(stringClasspath)) {
       SNode holder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
       String relativePath = ModuleUtil.getRelativePath(string, homePath);

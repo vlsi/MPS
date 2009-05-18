@@ -4,7 +4,6 @@ package jetbrains.mps.ide.uiLanguage.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.ide.uiLanguage.dataFlow.ReportErrorExpression_DataFlow;
 
 public class DFABuilders extends DataFlowBuilders {
 

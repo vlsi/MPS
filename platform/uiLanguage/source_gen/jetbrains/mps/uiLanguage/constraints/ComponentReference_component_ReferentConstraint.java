@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -38,7 +38,7 @@ public class ComponentReference_component_ReferentConstraint extends BaseNodeRef
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")) {
       componentDeclaration = SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration");
     }
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     if (componentDeclaration != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false)).where(new IWhereFilter <SNode>() {
 

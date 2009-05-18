@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SortedSetType_Behavior {
@@ -14,7 +14,7 @@ public class SortedSetType_Behavior {
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_8().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     return result;
   }

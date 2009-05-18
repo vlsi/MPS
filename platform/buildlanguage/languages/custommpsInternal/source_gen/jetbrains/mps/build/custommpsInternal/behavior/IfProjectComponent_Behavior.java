@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.build.packaging.behavior.ICondition_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,7 +24,7 @@ public class IfProjectComponent_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDo_1240564451382(SNode thisNode) {
-    List<SNode> children = ListOperations.<SNode>createList();
+    List<SNode> children = new ArrayList<SNode>();
     if (ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(thisNode, "condition", true))) {
       if ((SLinkOperations.getTarget(thisNode, "ifTrue", true) != null)) {
         ListSequence.fromList(children).addElement(SLinkOperations.getTarget(thisNode, "ifTrue", true));
