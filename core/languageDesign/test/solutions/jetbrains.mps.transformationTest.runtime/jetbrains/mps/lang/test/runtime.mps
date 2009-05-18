@@ -1119,6 +1119,22 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217253486859" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217253486860" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217253486861">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6457861881078087071">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6457861881078087072">
+            <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(jetbrains.mps.ide.IdeMain$TestMode):void" resolveInfo="setTestMode" />
+            <link role="classConcept" targetNodeId="13.~IdeMain" resolveInfo="IdeMain" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6457861881078087073">
+              <link role="enumClass" targetNodeId="13.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
+              <link role="enumConstantDeclaration" targetNodeId="13.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6901046659778297388">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6901046659778297389">
+            <link role="baseMethodDeclaration" targetNodeId="14.~TestMain.configureMPS():void" resolveInfo="configureMPS" />
+            <link role="classConcept" targetNodeId="14.~TestMain" resolveInfo="TestMain" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466970648">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225466973840">
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466970649">
@@ -1175,16 +1191,6 @@
                       <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="1223217167466">
                         <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1223217167467">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223217167468">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223217174025">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237577048067">
-                                <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(jetbrains.mps.ide.IdeMain$TestMode):void" resolveInfo="setTestMode" />
-                                <link role="classConcept" targetNodeId="13.~IdeMain" resolveInfo="IdeMain" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237577065338">
-                                  <link role="enumConstantDeclaration" targetNodeId="13.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
-                                  <link role="enumClass" targetNodeId="13.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
-                                </node>
-                              </node>
-                            </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224595493894">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224595493895">
                                 <property name="name" value="modelDescriptor" />
@@ -2047,12 +2053,6 @@
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215702411281">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215702411282">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215702411283">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215702411284">
-                  <link role="classConcept" targetNodeId="14.~TestMain" resolveInfo="TestMain" />
-                  <link role="baseMethodDeclaration" targetNodeId="14.~TestMain.configureMPS():void" resolveInfo="configureMPS" />
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215702411285">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215702411286">
                   <property name="name" value="p" />
