@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class VariableConcept_Behavior {
@@ -77,7 +77,7 @@ public class VariableConcept_Behavior {
 
   public static SNode call_createVariableScope_1239942296621(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     SNode statementConcept = MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true));
-    final List<SNode> conceptReferences = ListOperations.<SNode>createList();
+    final List<SNode> conceptReferences = new ArrayList<SNode>();
     for(SNode blockReference : SLinkOperations.getTargets(thisNode, "scopeBlock", true)) {
       ListSequence.fromList(conceptReferences).addElement(new _Quotations.QuotationClass_3().createNode(MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(blockReference, "conceptDeclaration", false))));
     }

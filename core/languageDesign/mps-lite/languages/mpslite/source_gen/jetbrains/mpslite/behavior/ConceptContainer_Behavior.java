@@ -4,7 +4,7 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -17,7 +17,7 @@ public class ConceptContainer_Behavior {
   }
 
   public static List<SNode> call_getAllConcepts_1239801518275(SNode thisNode) {
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)));
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "expressionConcept", true));
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "statementConcept", true));
@@ -31,7 +31,7 @@ public class ConceptContainer_Behavior {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
       }
     });
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
       ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
     }
@@ -45,7 +45,7 @@ public class ConceptContainer_Behavior {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.BinaryOperationConcept");
       }
     });
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
       ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.BinaryOperationConcept"));
     }
@@ -59,7 +59,7 @@ public class ConceptContainer_Behavior {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.VariableConcept");
       }
     });
-    List<SNode> result = ListOperations.<SNode>createList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
       ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.VariableConcept"));
     }
