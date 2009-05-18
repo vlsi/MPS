@@ -6515,6 +6515,21 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234975967991" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1234975967992" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234975967993">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="9161637758940143651">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9161637758940143652">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9161637758940143660">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="9161637758940143662">
+                <property name="value" value="" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="9161637758940143656">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="9161637758940143659" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9161637758940143655">
+              <link role="variableDeclaration" targetNodeId="1234975968018" resolveInfo="macroName" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1234975967994">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234975967995">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234975967996">

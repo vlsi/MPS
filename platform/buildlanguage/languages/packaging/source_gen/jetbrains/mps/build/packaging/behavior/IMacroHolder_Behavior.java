@@ -40,6 +40,9 @@ public class IMacroHolder_Behavior {
   }
 
   public static String call_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    if (macroName == null) {
+      return "";
+    }
     if (macroName.equals(MPSLayout_Behavior.getBasedirName_1226509010730())) {
       return IMacroHolder_Behavior.call_getPath_1234976932856(thisNode);
     }
