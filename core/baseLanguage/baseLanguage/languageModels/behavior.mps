@@ -3383,10 +3383,37 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724425" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225366337331">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1225366337332">
-          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225366348695">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225366397253">
-              <link role="baseMethodDeclaration" targetNodeId="2.~UnsupportedOperationException.&lt;init&gt;()" resolveInfo="UnsupportedOperationException" />
+        <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="5576891833224311744">
+          <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5576891833224311749">
+            <property name="name" value="classifierType" />
+            <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+          </node>
+          <node role="nodeToCoerce" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5576891833224311748" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5576891833224311747">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5576891833224311754">
+              <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5576891833224311756">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="5576891833224311758">
+                  <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="5576891833224311759">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5576891833224311762">
+                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5576891833224311761">
+                        <link role="applicableNode" targetNodeId="5576891833224311749" resolveInfo="classifierType" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5576891833224311766">
+                        <link role="link" targetNodeId="1.1107535924139" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="elseClause" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5576891833224311750">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="5576891833224311751">
+              <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5576891833224311752">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5576891833224311753">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~UnsupportedOperationException.&lt;init&gt;()" resolveInfo="UnsupportedOperationException" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

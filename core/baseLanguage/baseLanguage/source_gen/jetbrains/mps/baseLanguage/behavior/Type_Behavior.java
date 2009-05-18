@@ -14,6 +14,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Type_Behavior {
@@ -68,14 +69,23 @@ public class Type_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    throw new UnsupportedOperationException();
+    {
+      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
+      if (coercedNode_1 != null) {
+        return new _Quotations.QuotationClass_13().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
+      } else
+      {
+        throw new UnsupportedOperationException();
+      }
+    }
   }
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      _Patterns.Pattern_2 pattern_1 = new _Patterns.Pattern_2(thisNode);
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
-      if (coercedNode_1 != null) {
+      _Patterns.Pattern_2 pattern_2 = new _Patterns.Pattern_2(thisNode);
+      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
+      if (coercedNode_2 != null) {
         return true;
       } else
       {
