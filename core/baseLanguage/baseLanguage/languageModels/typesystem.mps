@@ -7867,6 +7867,7 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="1206554174350">
+        <property name="checkOnly" value="true" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206554174351">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1206554174352">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206554174353">
