@@ -67,11 +67,13 @@ class ReloadSession {
 
           preprocess();
 
-          updateModules(progressIndicator);
+          boolean isModulesUpdated = updateModules(progressIndicator);
           updateModels(progressIndicator);
 
-          progressIndicator.setText("Reloading classes... Please wait.");
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          if (isModulesUpdated) {
+            progressIndicator.setText("Reloading classes... Please wait.");
+            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          }
         }
       });
     }
@@ -95,7 +97,8 @@ class ReloadSession {
     }
   }
 
-  private void updateModules(final ProgressIndicator progressIndicator) {
+  private boolean updateModules(final ProgressIndicator progressIndicator) {
+    boolean isUpdated = false;
     progressIndicator.setText("Reloading updated modules... Please wait.");
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -106,6 +109,7 @@ class ReloadSession {
           module.reloadFromDisk();
         }
       });
+      isUpdated = true;
     }
 
     for (final IModule module : myDeletedModules) {
@@ -117,7 +121,9 @@ class ReloadSession {
           progressIndicator.setText2(text);
         }
       });
+      isUpdated = true;
     }
+    return isUpdated;
   }
 
   private void preprocess() {
