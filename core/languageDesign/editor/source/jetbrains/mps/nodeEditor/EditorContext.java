@@ -264,6 +264,7 @@ public class EditorContext {
       final Memento memento = (Memento) o;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          myNodeEditorComponent.relayoutIfNeeded();
           memento.restore(myNodeEditorComponent);
           myNodeEditorComponent.relayoutIfNeeded();
         }
