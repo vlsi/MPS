@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.actions.nodes;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -35,8 +34,6 @@ import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
-  private static Logger LOG = Logger.getLogger(MyBaseNodeDialog.class);
-
   private final SNode myType;
   private final SModel myModel;
   private final IErrorReporter myError;
