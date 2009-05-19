@@ -435,6 +435,11 @@ public class TypeCheckingContext {
 
   public void clearListeners() { //todo more attentively
     getNodeTypesComponent().clearListeners();
+    if (!myTemporaryComponentsStack.isEmpty()) {
+      for (NodeTypesComponent nodeTypesComponent : myTemporaryComponentsStack) {
+        nodeTypesComponent.clearListeners();
+      }
+    }
   }
 
   public SNode getNode() {
