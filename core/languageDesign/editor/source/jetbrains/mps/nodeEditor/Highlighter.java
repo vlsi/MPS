@@ -19,6 +19,7 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -50,7 +51,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
 
-  public static final Object UPDATE_EDITOR_LOCK = new Object();
+  private static final Object UPDATE_EDITOR_LOCK = new Object();
 
   private boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
@@ -247,46 +248,59 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return myEditorsProvider.getCurrentEditor();
   }
 
-  private boolean updateEditorComponent(EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, Set<IEditorChecker> checkersToRemove) {
+  public static void runUpdateMessagesAction(Runnable updateAction) {
     synchronized (UPDATE_EDITOR_LOCK) {
-      final SNode editedNode = component.getEditedNode();
-      if (editedNode != null) {
+      updateAction.run();
+    }
+  }
 
-        final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
-        boolean wasCheckedOnce = wasCheckedOnce(component);
-        if (!wasCheckedOnce) {
-          checkersToRecheck.addAll(checkers);
-        } else {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              for (IEditorChecker checker : checkers) {
-                if (checker.hasDramaticalEvent(events)) {
-                  checkersToRecheck.add(checker);
+  public static <C> C runUpdateMessagesAction(Computable<C> updateAction) {
+    synchronized (UPDATE_EDITOR_LOCK) {
+      return updateAction.compute();
+    }
+  }
+
+  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, final Set<IEditorChecker> checkersToRemove) {
+    return runUpdateMessagesAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        final SNode editedNode = component.getEditedNode();
+        if (editedNode != null) {
+          final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
+          boolean wasCheckedOnce = wasCheckedOnce(component);
+          if (!wasCheckedOnce) {
+            checkersToRecheck.addAll(checkers);
+          } else {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                for (IEditorChecker checker : checkers) {
+                  if (checker.hasDramaticalEvent(events)) {
+                    checkersToRecheck.add(checker);
+                  }
                 }
               }
-            }
-          });
-        }
+            });
+          }
 
-        if (checkersToRecheck.isEmpty()) {
-          return false;
-        }
+          if (checkersToRecheck.isEmpty()) {
+            return false;
+          }
 
-        boolean hackCheckedOnce = wasCheckedOnce;
-        if (component instanceof InspectorEditorComponent) {
-          hackCheckedOnce = true;
-          myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
-        } else {
-          myCheckedOnceEditors.add(component);
-        }
+          boolean hackCheckedOnce = wasCheckedOnce;
+          if (component instanceof InspectorEditorComponent) {
+            hackCheckedOnce = true;
+            myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
+          } else {
+            myCheckedOnceEditors.add(component);
+          }
 
 
-        if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
-          return true;
+          if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
+            return true;
+          }
         }
+        return false;
       }
-      return false;
-    }
+    });
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
@@ -296,14 +310,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
-  public void resetCheckedState(EditorComponent editorComponent) {
-    synchronized (UPDATE_EDITOR_LOCK) {
-      if (editorComponent instanceof InspectorEditorComponent) {
-        myCheckedOnceInspectors.remove(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
-        return;
+  public void resetCheckedState(final EditorComponent editorComponent) {
+    runUpdateMessagesAction(new Runnable() {
+      public void run() {
+        if (editorComponent instanceof InspectorEditorComponent) {
+          myCheckedOnceInspectors.remove(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
+          return;
+        }
+        myCheckedOnceEditors.remove(editorComponent);
       }
-      myCheckedOnceEditors.remove(editorComponent);
-    }
+    });
   }
 
   private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
