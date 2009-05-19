@@ -6926,7 +6926,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224168785805">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224168829449">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224168829450">
-            <property name="value" value="Add Field For Unused Parameter." />
+            <property name="value" value="Add Field For Unused Parameter" />
           </node>
         </node>
       </node>
