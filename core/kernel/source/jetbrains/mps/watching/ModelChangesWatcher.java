@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
@@ -45,12 +46,35 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   private final MessageBus myBus;
+
   private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
+  private final VirtualFileManager myVirtualFileManager;
+  private boolean isRefreshInProgress = false;
+  private ReloadSession myReloadSession;
+  private final Object myLock = new Object();
+  private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
+    public void beforeRefreshStart(boolean asynchonous) {
+      synchronized (myLock) {
+        isRefreshInProgress = true;
+      }
+    }
+
+    public void afterRefreshFinish(boolean asynchonous) {
+      synchronized (myLock) {
+        isRefreshInProgress = false;
+        if (myReloadSession != null) {
+          doReload();
+        }
+      }
+    }
+  };
+
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new BulkFileChangesListener();
 
-  public ModelChangesWatcher(final MessageBus bus) {
+  public ModelChangesWatcher(MessageBus bus, VirtualFileManager manager) {
     myBus = bus;
+    myVirtualFileManager = manager;
   }
 
   @NonNls
@@ -62,10 +86,24 @@ public class ModelChangesWatcher implements ApplicationComponent {
   public void initComponent() {
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
+    myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
   public void disposeComponent() {
     myConnection.disconnect();
+    myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
+  }
+
+  private void doReload() {
+    final ReloadSession session = myReloadSession;
+    myReloadSession = null;
+    if (session.hasAnythingToDo()) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          session.doReload();
+        }
+      }, ModalityState.NON_MODAL);
+    }
   }
 
   public void addMetadataListener(MetadataCreationListener l) {
@@ -95,43 +133,47 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     public void after(final List<? extends VFileEvent> events) {
 
-      Application application = ApplicationManager.getApplication();
+      final Application application = ApplicationManager.getApplication();
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
+      
+      synchronized (myLock) {
 
-      final ReloadSession reloadSession = new ReloadSession();
-
-      // collecting changed models, modules etc.
-      for (final VFileEvent event : events) {
-        String path = event.getPath();
-        File file = new File(path);
-        if (file.isDirectory() && file.exists()) {
-          FileUtil.processFilesRecursively(file, new Processor<File>() {
-            public boolean process(File file) {
-              String filePath = file.getAbsolutePath();
-              if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-                ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-              } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-                ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-              }
-              return true;
-            }
-          });
+        if (myReloadSession == null) {
+          myReloadSession = new ReloadSession();
         }
-        if (MPSFileTypesManager.instance().isModelFile(path)) {
-          ModelFileProcessor.getInstance().process(event, reloadSession);
-        } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
-          ModuleFileProcessor.getInstance().process(event, reloadSession);
+
+        final ReloadSession reloadSession = myReloadSession;
+
+        // collecting changed models, modules etc.
+        for (final VFileEvent event : events) {
+          String path = event.getPath();
+          File file = new File(path);
+          if (file.isDirectory() && file.exists()) {
+            FileUtil.processFilesRecursively(file, new Processor<File>() {
+              public boolean process(File file) {
+                String filePath = file.getAbsolutePath();
+                if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+                  ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+                } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+                  ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
+                }
+                return true;
+              }
+            });
+          }
+          if (MPSFileTypesManager.instance().isModelFile(path)) {
+            ModelFileProcessor.getInstance().process(event, reloadSession);
+          } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
+            ModuleFileProcessor.getInstance().process(event, reloadSession);
+          }
+        }
+
+        if (!isRefreshInProgress) {
+          doReload();
         }
       }
-
-      // reloading
-      application.invokeLater(new Runnable() {
-        public void run() {
-          reloadSession.doReload();
-        }
-      }, ModalityState.NON_MODAL);
     }
   }
 }

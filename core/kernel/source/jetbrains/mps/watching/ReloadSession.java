@@ -70,7 +70,7 @@ class ReloadSession {
           boolean areModulesUpdated = updateModules(progressIndicator);
           updateModels(progressIndicator);
 
-          if (areModulesUpdated) {
+          if (areModulesUpdated || !myNewModuleVFiles.isEmpty()) {
             progressIndicator.setText("Reloading classes... Please wait.");
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
           }
@@ -168,7 +168,7 @@ class ReloadSession {
     });
   }
 
-  private boolean hasAnythingToDo() {
+  public boolean hasAnythingToDo() {
     return !(myChangedModels.isEmpty() && myChangedModules.isEmpty() && myChangedProjects.isEmpty()
       && myNewModelVFiles.isEmpty() && myNewModuleVFiles.isEmpty() && myDeletedModels.isEmpty()
       && myDeletedModules.isEmpty());
