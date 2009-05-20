@@ -27,6 +27,16 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1550_1(context, node));
+    editorCell.addEditorCell(this.createCollection_1550_1(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_1550_1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_1550_1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1550_0(context, node, "as"));
     editorCell.addEditorCell(this.createRefNode_1550_3(context, node));
     return editorCell;
@@ -106,21 +116,27 @@ public class AsExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_1550_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_RefNode_1550_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Collection_1550_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_1550_1");
+    AsExpression_Delete.setCellActions(editorCell, node, context);
+  }
+
   private static void setupBasic_Constant_1550_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1550_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_1550_1(EditorCell editorCell, SNode node, EditorContext context) {
+    AsExpression_Delete.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_RefNode_1550_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_1550_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_RefNode_1550_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_RefNode_1550_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1550_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

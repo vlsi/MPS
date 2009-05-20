@@ -14267,12 +14267,17 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224071154943">
         <link role="relationDeclaration" targetNodeId="17.1224071154656" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224071154944">
-        <property name="text" value="as" />
-        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224071154946">
-        <link role="relationDeclaration" targetNodeId="17.1224071154657" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="472228411249332947">
+        <link role="actionMap" targetNodeId="6040729714013676768" resolveInfo="AsExpression_Delete" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="472228411249332949">
+          <property name="text" value="as" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <link role="actionMap" targetNodeId="6040729714013676768" resolveInfo="AsExpression_Delete" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="472228411249332950" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224071154946">
+          <link role="relationDeclaration" targetNodeId="17.1224071154657" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237471248545" />
     </node>
@@ -16859,6 +16864,30 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1241450737471">
       <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
       <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="6040729714013676768">
+    <property name="name" value="AsExpression_Delete" />
+    <link role="applicableConcept" targetNodeId="17.1224071154655" resolveInfo="AsExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="6040729714013739387">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="6040729714013739388">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6040729714013739389">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6040729714013739447">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6040729714013739449">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="6040729714013739448" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="6040729714013739453">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6040729714013739456">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="6040729714013739455" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6040729714013739460">
+                    <link role="link" targetNodeId="17.1224071154656" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
