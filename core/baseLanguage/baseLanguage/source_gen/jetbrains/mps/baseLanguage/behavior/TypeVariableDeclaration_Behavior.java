@@ -23,14 +23,14 @@ public class TypeVariableDeclaration_Behavior {
 
   public static SNode call_getConcreteUpperBound_4346214032091504647(SNode thisNode, Set<SNode> visitedVars) {
     if (SetSequence.fromSet(visitedVars).contains(thisNode)) {
-      return new _Quotations.QuotationClass_20().createNode();
+      return new _Quotations.QuotationClass_24().createNode();
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
       return TypeVariableDeclaration_Behavior.getTypeWithConcreteUpperBounds_4346214032091504651(SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
     } else
     {
-      return new _Quotations.QuotationClass_21().createNode();
+      return new _Quotations.QuotationClass_25().createNode();
     }
   }
 

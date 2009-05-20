@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -25,17 +25,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
       classifier = SLinkOperations.getTarget(thisExpr, "classConcept", false);
     } else
     {
-      SNode contextNode = thisExpr;
-      SNode parent = SNodeOperations.getParent(thisExpr);
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        for(SNode param : SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)) {
-          if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true)).contains(thisExpr)) {
-            contextNode = parent;
-            break;
-          }
-        }
-      }
-      classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(thisExpr);
     }
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {

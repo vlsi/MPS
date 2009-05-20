@@ -8,8 +8,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMethodCall_Behavior {
+  private static Class[] PARAMETERS_8008512149545154471 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -30,14 +34,64 @@ public class IMethodCall_Behavior {
       int i = SNodeOperations.getIndexInParent(expression);
       if (i < SLinkOperations.getCount(method, "parameter")) {
         SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
-        return SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
+        SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
+        SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+        if ((instanceType == null)) {
+          return rawType;
+        }
+        SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        {
+          _Patterns.Pattern_3 pattern_3 = new _Patterns.Pattern_3(methodClassifier);
+          SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_3);
+          if (coercedNode_3 != null) {
+            SNode resultType;
+            if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              resultType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, SNodeOperations.cast(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), coercedNode_3, methodClassifier);
+            } else
+            {
+              for(SNode typeVariableReference : SNodeOperations.getDescendants(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false)) {
+                SNode concreteType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, typeVariableReference, coercedNode_3, methodClassifier);
+                SNodeOperations.replaceWithAnother(typeVariableReference, concreteType);
+              }
+              resultType = rawType;
+            }
+            return resultType;
+          } else
+          {
+            return rawType;
+          }
+        }
       }
     }
     return null;
   }
 
+  public static SNode call_getConcreteType_8008512149545161843(SNode thisNode, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
+    List<SNode> parameters = SLinkOperations.getTargets(coercedClt, "parameter", true);
+    SNode concreteType;
+    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
+      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
+    } else
+    {
+      concreteType = new _Quotations.QuotationClass_16().createNode();
+    }
+    return concreteType;
+  }
+
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return TypeAnnotable_Behavior.call_getTypeAnnotation_1233920952262(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
+  }
+
+  public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
+    return null;
+  }
+
+  public static SNode call_getInstanceType_8008512149545154471(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
+  }
+
+  public static SNode callSuper_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
   }
 
 }

@@ -82,4 +82,18 @@ public class ClassConcept_Behavior {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
+  public static SNode getContextClass_8008512149545173402(SNode expr) {
+    SNode contextNode = expr;
+    SNode parent = SNodeOperations.getParent(expr);
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      for(SNode param : SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)) {
+        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true)).contains(expr)) {
+          contextNode = parent;
+          break;
+        }
+      }
+    }
+    return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+  }
+
 }

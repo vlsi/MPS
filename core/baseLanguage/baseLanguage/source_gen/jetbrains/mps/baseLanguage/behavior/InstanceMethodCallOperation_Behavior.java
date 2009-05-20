@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.dataFlow.runtime.NullableUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class InstanceMethodCallOperation_Behavior {
 
@@ -33,6 +35,10 @@ public class InstanceMethodCallOperation_Behavior {
 
   public static NullableVariableState virtual_getNullableState_1230555106620(SNode thisNode) {
     return NullableUtil.getVariableStateByAnnotation(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "annotation", true));
+  }
+
+  public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
 }
