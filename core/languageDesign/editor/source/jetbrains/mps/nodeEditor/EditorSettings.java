@@ -333,6 +333,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private JTextField myLineSpacingField;
     private JComboBox myFontSizesComboBox;
     private JComboBox myVerticalBoundComboBox;
+    private JComboBox myIndentSizeComboBox;
     private MyColorComponent mySelectionBackgroundColorComponent;
     private MyColorComponent mySelectionForegroundColorComponent;
     private JCheckBox myAntialiasingCheckBox;
@@ -362,11 +363,19 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       fontPropertiesPanel.add(myLineSpacingField);
       fontPropertiesPanel.add(new JLabel("Text Width : "));
       List<String> sizes = new ArrayList<String>();
-      for (int i = 60; i < 300; i += 20) {
+      for (int i = 60; i <= 300; i += 20) {
         sizes.add("" + i);
       }
       myVerticalBoundComboBox = new JComboBox(sizes.toArray());
       fontPropertiesPanel.add(myVerticalBoundComboBox);
+
+      fontPropertiesPanel.add(new JLabel("Indent Size : "));
+      List<String> indents = new ArrayList<String>();
+      for (int i = 2; i <= 10; i += 2) {
+        indents.add("" + i);
+      }
+      myIndentSizeComboBox = new JComboBox(indents.toArray());
+      fontPropertiesPanel.add(myIndentSizeComboBox);
 
       panel.add(fontPropertiesPanel);
 
@@ -505,6 +514,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
           setVerticalBound(Integer.parseInt(myVerticalBoundComboBox.getSelectedItem().toString()));
 
+          setIndentSize(Integer.parseInt(myIndentSizeComboBox.getSelectedItem().toString()));
+
           int blinkingPeriod = getBlinkingPeriod();
           CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
@@ -534,6 +545,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
     public boolean isModified() {
       boolean sameTextWidth = myVerticalBoundComboBox.getSelectedItem().equals("" + getVerticalBound());
+      boolean sameIndentSize = myIndentSizeComboBox.getSelectedItem().equals("" + getIndentSize());
       boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == isUseAntialiasing();
       boolean sameUseBraces = myUseBraces.isSelected() == useBraces();
       boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + myState.myFontSize);
@@ -543,11 +555,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(getDefaultSelectionForegroundColor());
       boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
 
-      return !(sameTextWidth && sameAntialiasing && sameUseBraces && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate);
+      return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces
+        && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate);
     }
 
     public void reset() {
       myVerticalBoundComboBox.setSelectedItem("" + getVerticalBound());
+
+      myIndentSizeComboBox.setSelectedItem("" + getIndentSize());
 
       myAntialiasingCheckBox.setSelected(isUseAntialiasing());
 
