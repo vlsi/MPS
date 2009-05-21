@@ -330,7 +330,7 @@
     </node>
     <node role="item" type="jetbrains.mps.gtext.structure.GLine" id="3858179827519823472">
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3858179827519823475">
-        <property name="text" value="IF &quot;%MPS_VM_OPTIONS%&quot; == &quot;&quot; SET MPS_VM_OPTIONS=&quot;%PROJECT_HOME%" />
+        <property name="text" value="IF %MPS_VM_OPTIONS% == &quot;&quot; SET MPS_VM_OPTIONS=&quot;%PROJECT_HOME%" />
       </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="3858179827519823477">
         <property name="text" value="vmoptions.file" />
