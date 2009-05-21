@@ -200,7 +200,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myBottomInset = 0;
 
       EditorSettings settings = EditorSettings.getInstance();
-      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWith();
+      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWidth();
     }
 
     public void layout() {

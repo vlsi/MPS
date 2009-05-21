@@ -63,9 +63,6 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
 
-  private int myIndentSize = 2;
-  private int myVerticalBound = 120;
-
   private MyState myState = new MyState();
   private Font myDefaultEditorFont;
   private int mySpaceWidth = -1;
@@ -102,14 +99,22 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   }
 
   public int getIndentSize() {
-    return myIndentSize;
+    return myState.myIndentSize;
+  }
+
+  public void setIndentSize(int indentSize) {
+    myState.myIndentSize = indentSize;
   }
 
   public int getVerticalBound() {
-    return myVerticalBound;
+    return myState.myVerticalBound;
   }
 
-  public int getVerticalBoundWith() {
+  public void setVerticalBound(int verticalBound) {
+    myState.myVerticalBound = verticalBound;
+  }
+
+  public int getVerticalBoundWidth() {
     return getSpacesWidth(getVerticalBound());
   }
 
@@ -119,14 +124,6 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   public void setUseAntialiasing(boolean useAntialiasing) {
     myState.myUseAntialiasing = useAntialiasing;
-  }
-
-  public int getTextWidth() {
-    return myState.myTextWidth;
-  }
-
-  public void setTextWidth(int textWidth) {
-    myState.myTextWidth = textWidth;
   }
 
   public Color getSelectionBackgroundColor() {
@@ -186,11 +183,11 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   }
 
   public String getId() {
-    return "mps.editor.settings";  
+    return "mps.editor.settings";
   }
 
   public Runnable enableSearch(String option) {
-    return null;  
+    return null;
   }
 
   private abstract static class MyColorComponent extends JPanel {
@@ -335,7 +332,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private JComboBox myFontsComboBox;
     private JTextField myLineSpacingField;
     private JComboBox myFontSizesComboBox;
-    private JComboBox myTextWidthComboBox;
+    private JComboBox myVerticalBoundComboBox;
     private MyColorComponent mySelectionBackgroundColorComponent;
     private MyColorComponent mySelectionForegroundColorComponent;
     private JCheckBox myAntialiasingCheckBox;
@@ -365,11 +362,11 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       fontPropertiesPanel.add(myLineSpacingField);
       fontPropertiesPanel.add(new JLabel("Text Width : "));
       List<String> sizes = new ArrayList<String>();
-      for (int i = 200; i < 1600; i += 100) {
+      for (int i = 60; i < 300; i += 20) {
         sizes.add("" + i);
       }
-      myTextWidthComboBox = new JComboBox(sizes.toArray());
-      fontPropertiesPanel.add(myTextWidthComboBox);
+      myVerticalBoundComboBox = new JComboBox(sizes.toArray());
+      fontPropertiesPanel.add(myVerticalBoundComboBox);
 
       panel.add(fontPropertiesPanel);
 
@@ -506,7 +503,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
           Font newFont = new Font(fontName, Font.PLAIN, fontSize);
           setDefaultEditorFont(newFont);
 
-          setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
+          setVerticalBound(Integer.parseInt(myVerticalBoundComboBox.getSelectedItem().toString()));
 
           int blinkingPeriod = getBlinkingPeriod();
           CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
@@ -536,7 +533,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     }
 
     public boolean isModified() {
-      boolean sameTextWidth = myTextWidthComboBox.getSelectedItem().equals("" + getTextWidth());
+      boolean sameTextWidth = myVerticalBoundComboBox.getSelectedItem().equals("" + getVerticalBound());
       boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == isUseAntialiasing();
       boolean sameUseBraces = myUseBraces.isSelected() == useBraces();
       boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + myState.myFontSize);
@@ -550,7 +547,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     }
 
     public void reset() {
-      myTextWidthComboBox.setSelectedItem("" + getTextWidth());
+      myVerticalBoundComboBox.setSelectedItem("" + getVerticalBound());
 
       myAntialiasingCheckBox.setSelected(isUseAntialiasing());
 
@@ -619,7 +616,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       return isSelected();
     }
 
-  /*  public void paintContent(Graphics g) {
+    /*  public void paintContent(Graphics g) {
       TextLine textLine = new TextLine(getText());
       textLine.setCaretPosition(this.getCaretPosition());
       textLine.setCaretEnabled(true);
@@ -641,23 +638,32 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
     private boolean myUseBraces = true;
 
+    private int myIndentSize = 2;
+    private int myVerticalBound = 120;
+
     @Override
     public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
 
-      MyState myState = (MyState) o;
+      MyState otherState = (MyState) o;
 
-      if (myFontSize != myState.myFontSize) return false;
-      if (Double.compare(myState.myLineSpacing, myLineSpacing) != 0) return false;
-      if (myTextWidth != myState.myTextWidth) return false;
-      if (myUseAntialiasing != myState.myUseAntialiasing) return false;
-      if (myUseBraces != myState.myUseBraces) return false;
-      if (myFontFamily != null ? !myFontFamily.equals(myState.myFontFamily) : myState.myFontFamily != null)
+      if (myFontSize != otherState.myFontSize) return false;
+      if (Double.compare(otherState.myLineSpacing, myLineSpacing) != 0) return false;
+      if (myTextWidth != otherState.myTextWidth) return false;
+      if (myUseAntialiasing != otherState.myUseAntialiasing) return false;
+      if (myUseBraces != otherState.myUseBraces) return false;
+      if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null)
         return false;
-      if (mySelectionBackground != null ? !mySelectionBackground.equals(myState.mySelectionBackground) : myState.mySelectionBackground != null)
+      if (mySelectionBackground != null ? !mySelectionBackground.equals(otherState.mySelectionBackground) : otherState.mySelectionBackground != null)
         return false;
-      if (mySelectionForeground != null ? !mySelectionForeground.equals(myState.mySelectionForeground) : myState.mySelectionForeground != null)
+      if (mySelectionForeground != null ? !mySelectionForeground.equals(otherState.mySelectionForeground) : otherState.mySelectionForeground != null)
+        return false;
+
+      if(myIndentSize != otherState.myIndentSize)
+        return false;
+
+      if(myVerticalBound != otherState.myVerticalBound)
         return false;
 
       return true;
@@ -672,6 +678,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       temp = myLineSpacing != +0.0d ? Double.doubleToLongBits(myLineSpacing) : 0L;
       result = 31 * result + (int) (temp ^ (temp >>> 32));
       result = 31 * result + myTextWidth;
+      result = 31 * result + myIndentSize;
+      result = 31 * result + myVerticalBound;
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (mySelectionForeground != null ? mySelectionForeground.hashCode() : 0);
       result = 31 * result + (mySelectionBackground != null ? mySelectionBackground.hashCode() : 0);
@@ -701,6 +709,22 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
     public void setTextWidth(int textWidth) {
       myTextWidth = textWidth;
+    }
+
+    public int getVerticalBound() {
+      return myVerticalBound;
+    }
+
+    public void setVerticalBound(int verticalBound) {
+      myVerticalBound = verticalBound;
+    }
+
+    public int getIndentSize() {
+      return myIndentSize;
+    }
+
+    public void setIndentSize(int indentSize) {
+      myIndentSize = indentSize;
     }
 
     public boolean isUseAntialiasing() {

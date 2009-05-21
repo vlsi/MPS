@@ -1756,7 +1756,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     EditorSettings setting = EditorSettings.getInstance();
     g.setColor(Color.LIGHT_GRAY);
-    int boundPosition = myRootCell.getX() + setting.getVerticalBoundWith();
+    int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
     g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
     myLeftHighlighter.paint(g);

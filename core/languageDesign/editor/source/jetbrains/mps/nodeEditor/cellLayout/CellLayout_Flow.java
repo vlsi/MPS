@@ -90,7 +90,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
 
   private int getMaxX() {
-    return EditorSettings.getInstance().getTextWidth();
+    return EditorSettings.getInstance().getVerticalBoundWidth();
   }
 
 
