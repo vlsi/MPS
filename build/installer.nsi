@@ -46,7 +46,6 @@ ShowUnInstDetails show
 ; Finish page
 !insertmacro MUI_PAGE_FINISH
 ; Uninstaller pages
-!insertmacro MUI_UNPAGE_COMPONENTS
 !insertmacro MUI_UNPAGE_INSTFILES
 ; Language files
 !insertmacro MUI_LANGUAGE "English"
@@ -95,7 +94,7 @@ Function UN.onUninstSuccess
     MessageBox MB_ICONINFORMATION|MB_OK "${APP_NAME} was successfully uninstalled."
 FunctionEnd
 
-Section "UN.Main Application" UN.Install
+Section -UN.Install
     SectionIn RO
     Delete "$INSTDIR\${PRODUCT_NAME}.url"
     Delete "${PROGRAM_LINK}"
@@ -111,17 +110,7 @@ Section "UN.Main Application" UN.Install
     DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
 SectionEnd
 
-Section "UN.Settings from %HOME_FOLDER%\.MPS10" UN.Settings
-    RmDir /r $DOCUMENTS\..\.MPS10
-SectionEnd
-
-Section "UN.Examples from %HOME_FOLDER%\MPSSamples" UN.Examples
-    RmDir /r $DOCUMENTS\..\MPSSamples
-SectionEnd
-
 Function UN.onInit
-    SectionSetFlags ${UN.Settings} 0x40000000
-    SectionSetFlags ${UN.Examples} 0x40000000
     MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "Are you sure you want to uninstall ${APP_NAME}?" IDYES +2
     Abort
 FunctionEnd
