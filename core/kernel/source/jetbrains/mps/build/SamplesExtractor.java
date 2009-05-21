@@ -59,6 +59,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
   public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";
   private String myLastBuildNumber;
+  private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
     return ApplicationManager.getApplication().getComponent(SamplesExtractor.class);
@@ -132,8 +133,10 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String getSuffix() {
-    String[] tokens = myApplicationInfo.getVersionName().split("\\s+");
-    return tokens[tokens.length - 1];
+    String versionName = myApplicationInfo.getVersionName();
+    int i = versionName.indexOf(MPS);
+    assert i >= 0;
+    return versionName.substring(i + MPS.length()).replaceAll("\\s+", "");
   }
 
   private String getSamplesPathInMPSHome() {
