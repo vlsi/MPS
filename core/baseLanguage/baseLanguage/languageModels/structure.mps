@@ -479,8 +479,8 @@
       <property name="value" value="integer constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1180108482734">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4269842503727556104">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1238860884088">
       <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
@@ -3326,6 +3326,18 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1241541030384">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4269842503726207156">
+    <property name="name" value="LongLiteral" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4269842503726207157">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="4269842503726207818" resolveInfo="_LongType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="4269842503726207818">
+    <property name="name" value="_LongType_String" />
+    <property name="constraint" value="[0-9]+(l|L)" />
   </node>
 </model>
 

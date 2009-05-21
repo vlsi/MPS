@@ -97,6 +97,14 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_9804_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_ConceptProperty_9804_0(EditorCell editorCell, SNode node, EditorContext context) {

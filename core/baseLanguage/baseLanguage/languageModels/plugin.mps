@@ -5348,6 +5348,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220353713049">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1220354388968">
           <link role="constructorDeclaration" targetNodeId="55.~BaseDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="BaseDialog" />
+          <link role="baseMethodDeclaration" targetNodeId="55.~BaseDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="BaseDialog" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223037001973">
             <link role="variableDeclaration" targetNodeId="1223036986434" resolveInfo="frame" />
           </node>

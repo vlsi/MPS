@@ -16688,5 +16688,28 @@
       <link role="concept" targetNodeId="1.1241540912639" resolveInfo="ConstructorInvocationStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="4269842503726235544">
+    <property name="name" value="typeof_LongLiteral" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4269842503726235545">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="4269842503726244058">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4269842503726244062">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4269842503726244063">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.LongType" id="4269842503726244065" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4269842503726244061">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="4269842503726244055">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4269842503726244057">
+              <link role="applicableNode" targetNodeId="4269842503726235546" resolveInfo="literal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4269842503726235546">
+      <property name="name" value="literal" />
+      <link role="concept" targetNodeId="1.4269842503726207156" resolveInfo="LongLiteral" />
+    </node>
+  </node>
 </model>
 

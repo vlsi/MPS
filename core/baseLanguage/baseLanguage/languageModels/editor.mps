@@ -16890,5 +16890,14 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4269842503726207819">
+    <link role="conceptDeclaration" targetNodeId="17.4269842503726207156" resolveInfo="LongLiteral" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4269842503726702744">
+      <link role="relationDeclaration" targetNodeId="17.4269842503726207157" resolveInfo="value" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4269842503726702745">
+        <property name="color" value="blue" />
+      </node>
+    </node>
+  </node>
 </model>
 

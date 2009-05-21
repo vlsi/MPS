@@ -7900,5 +7900,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4269842503727610175">
+    <link role="conceptDeclaration" targetNodeId="1.4269842503726207156" resolveInfo="LongLiteral" />
+    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4269842503727610176">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4269842503727610177">
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4269842503727782059">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4269842503727782061">
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4269842503727782063">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4269842503727782064" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4269842503727782065">
+                <link role="property" targetNodeId="1.4269842503726207157" resolveInfo="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
