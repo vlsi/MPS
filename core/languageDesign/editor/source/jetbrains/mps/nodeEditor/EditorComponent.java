@@ -2228,8 +2228,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName()))
-      return getRootCell().getSNode().getModel().getModelDescriptor().getModule();
+    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+      EditorCell rootCell = getRootCell();
+      if (rootCell == null) {
+        return null;
+      }
+      return rootCell.getSNode().getModel().getModelDescriptor().getModule();
+    }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
     if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getSelectedCell();
