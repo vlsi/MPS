@@ -255,7 +255,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1220986324545(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(_context.getNode(), "compositePathComponent", true));
+    String path = CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(_context.getNode(), "compositePathComponent", true));
+    File[] roots = File.listRoots();
+    if (roots.length == 1 && roots[0].getAbsolutePath().equals("/")) {
+      path = "/" + path;
+    }
+    return path;
   }
 
   public static Object propertyMacro_GetPropertyValue_1230209762850(final IOperationContext operationContext, final PropertyMacroContext _context) {

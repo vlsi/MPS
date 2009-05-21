@@ -70,6 +70,6 @@
   <target name="unpack.buildtools.zip0">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <mkdir dir="${mps_home}/build" />
-    <unzip src="" dest="${mps_home}/build" />
+    <unzip src="/" dest="${mps_home}/build" />
   </target>
 </project>
