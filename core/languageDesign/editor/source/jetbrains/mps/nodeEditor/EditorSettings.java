@@ -40,6 +40,8 @@ import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -416,6 +418,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
         }
       }
 
+      MouseAdapter adapter = new MouseAdapter() {
+        @Override
+        public void mousePressed(MouseEvent e) {
+          myBlinkingDemo.changeSelection(null);
+        }
+      };
+      panel.addMouseListener(adapter);
+
       panel.add(colorSettingsPanel);
 
       myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
@@ -440,6 +450,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
       myEditorSettingsPanel = new JPanel(new BorderLayout());
       myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
+      myEditorSettingsPanel.addMouseListener(adapter);
 
       myTimer.start();
 
@@ -593,12 +604,28 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
     }
 
-    public void paintContent(Graphics g) {
+    @Override
+    protected boolean toShowCaret() {
+      return myCaretIsVisible;
+    }
+
+    @Override
+    public boolean isDrawBrackets() {
+      return false;
+    }
+
+    @Override
+    protected boolean isSelectionPaintedOnAncestor() {
+      return isSelected();
+    }
+
+  /*  public void paintContent(Graphics g) {
       TextLine textLine = new TextLine(getText());
+      textLine.setCaretPosition(this.getCaretPosition());
       textLine.setCaretEnabled(true);
       boolean toShowCaret = myCaretIsVisible;
       textLine.paint(g, myX, myY, myWidth, myHeight, isSelected(), toShowCaret);
-    }
+    }*/
   }
 
   public static class MyState {
