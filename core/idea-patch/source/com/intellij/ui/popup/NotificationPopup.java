@@ -1,5 +1,17 @@
 /*
- * Copyright (c) 2000-2006 JetBrains s.r.o. All Rights Reserved.
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.intellij.ui.popup;
@@ -16,8 +28,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+import jetbrains.mps.util.annotation.Patch;
+
 /**
- * @author max
+ * See http://jetbrains.net/jira/browse/IDEA-22993
  */
 public class NotificationPopup {
 
@@ -92,7 +106,7 @@ public class NotificationPopup {
   private IdeFrameImpl findFrame(JComponent owner) {
     final Window frame = SwingUtilities.getWindowAncestor(owner);
     if (frame instanceof IdeFrameImpl) {
-      return (IdeFrameImpl)frame;
+      return (IdeFrameImpl) frame;
     }
 
     return null;
@@ -108,10 +122,18 @@ public class NotificationPopup {
     void hide();
   }
 
+  /**
+   * See http://jetbrains.net/jira/browse/IDEA-22993
+   */
+  @Patch
   public void addListener(JBPopupListener listener) {
     myImpl.addListener(listener);
   }
 
+  /**
+   * See http://jetbrains.net/jira/browse/IDEA-22993
+   */
+  @Patch
   public void hide() {
     myImpl.hide();
   }
