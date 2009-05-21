@@ -29,5 +29,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       SubtypingRule_Runtime subtypingRule = new Complex_is_Numeric_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
+    {
+      SubtypingRule_Runtime subtypingRule = new Complex_is_Object_weak_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
   }
 }
