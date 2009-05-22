@@ -55,7 +55,6 @@ public class ChangesNotificator implements ProjectComponent {
   private final ChangesNotificator.MyVcsRootsListener myListener = new MyVcsRootsListener();
   private static final Color POPUP_COLOR = LightColors.RED;
   private final Map<VirtualFile, MyNotificationInfo> myRoots = new HashMap<VirtualFile, MyNotificationInfo>();
-  private final Object myLock = new Object();
 
   public ChangesNotificator(Project project, VcsRootsManager manager) {
     myProject = project;
@@ -85,53 +84,49 @@ public class ChangesNotificator implements ProjectComponent {
   }
 
   private void showAddVcsRootsPopup(final Project project, final VirtualFile vcsRoot, final SModelDescriptor sm) {
-    synchronized (myLock) {
 
-      final StatusBar bar = WindowManager.getInstance().getStatusBar(project);
+    final StatusBar bar = WindowManager.getInstance().getStatusBar(project);
 
-      if (myRoots.get(vcsRoot) == null) {
+    if (myRoots.get(vcsRoot) == null) {
 
-        final MyNotificationInfo info = new MyNotificationInfo();
-        info.addSModelDescriptor(sm);
-        myRoots.put(vcsRoot, info);
+      final MyNotificationInfo info = new MyNotificationInfo();
+      info.addSModelDescriptor(sm);
+      myRoots.put(vcsRoot, info);
 
-        final JEditorPane pane = createPopupComponent();
-        pane.addHyperlinkListener(new HyperlinkListener() {
-          public void hyperlinkUpdate(final HyperlinkEvent e) {
-            if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+      final JEditorPane pane = createPopupComponent();
+      pane.addHyperlinkListener(new HyperlinkListener() {
+        public void hyperlinkUpdate(final HyperlinkEvent e) {
+          if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
 
-              boolean result = showAddVcsRootsDialog(info, vcsRoot, project);
+            boolean result = showAddVcsRootsDialog(info, vcsRoot, project);
 
-              if (result) {
-                myVcsRootsManager.addNewVcsRoot(vcsRoot);
-              } else {
-                myVcsRootsManager.addExcludedRoot(vcsRoot);
-              }
+            if (result) {
+              myVcsRootsManager.addNewVcsRoot(vcsRoot);
+            } else {
+              myVcsRootsManager.addExcludedRoot(vcsRoot);
             }
           }
-        });
-        pane.setText(info.getPopupMessage());
+        }
+      });
+      pane.setText(info.getPopupMessage());
 
-        info.setListener(new ChangeListener() {
-          public void stateChanged(ChangeEvent e) {
-            pane.setText(info.getPopupMessage());
-          }
-        });
+      info.setListener(new ChangeListener() {
+        public void stateChanged(ChangeEvent e) {
+          pane.setText(info.getPopupMessage());
+        }
+      });
 
-        final NotificationPopup popup = new NotificationPopup((JComponent) bar, pane, POPUP_COLOR);
-        popup.addListener(new JBPopupAdapter() {
-          @Override
-          public void onClosed(LightweightWindowEvent event) {
-            synchronized (myLock) {
-              myRoots.remove(vcsRoot);
-            }
-          }
-        });
+      final NotificationPopup popup = new NotificationPopup((JComponent) bar, pane, POPUP_COLOR);
+      popup.addListener(new JBPopupAdapter() {
+        @Override
+        public void onClosed(LightweightWindowEvent event) {
+          myRoots.remove(vcsRoot);
+        }
+      });
 
-      } else {
-        MyNotificationInfo info = myRoots.get(vcsRoot);
-        info.addSModelDescriptor(sm);
-      }
+    } else {
+      MyNotificationInfo info = myRoots.get(vcsRoot);
+      info.addSModelDescriptor(sm);
     }
   }
 
