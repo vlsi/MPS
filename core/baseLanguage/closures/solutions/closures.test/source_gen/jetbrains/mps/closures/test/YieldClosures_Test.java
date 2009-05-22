@@ -172,14 +172,14 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      if (this._3_i > 0) {
+                      if (_3_i > 0) {
                         this.__CP__ = 6;
                         break;
                       }
                       this.__CP__ = 16;
                       break;
                     case 10:
-                      if (this._8_j <= 3) {
+                      if (_8_j <= 3) {
                         this.__CP__ = 11;
                         break;
                       }
@@ -187,23 +187,23 @@ __switch__:
                       break;
                     case 4:
                       this.__CP__ = 5;
-                      this.yield(this._3_i);
+                      this.yield(_3_i);
                       return true;
                     case 9:
                       this.__CP__ = 10;
-                      this.yield(this._8_j);
+                      this.yield(_8_j);
                       return true;
                     case 12:
                       this.__CP__ = 13;
-                      this.yield(this._3_i * this._8_j);
+                      this.yield(_3_i * _8_j);
                       return true;
                     case 14:
                       this.__CP__ = 15;
-                      this.yield(this._8_j);
+                      this.yield(_8_j);
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield(this._3_i);
+                      this.yield(_3_i);
                       return true;
                     case 0:
                       this._3_i = 3;
@@ -218,14 +218,14 @@ __switch__:
                       this.__CP__ = 9;
                       break;
                     case 15:
-                      this._3_i-- ;
+                      _3_i-- ;
                       this.__CP__ = 5;
                       break;
                     case 11:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      this._8_j++ ;
+                      _8_j++ ;
                       this.__CP__ = 10;
                       break;
                     default:
@@ -284,14 +284,14 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 7:
-                      if (this._4_i > 0) {
+                      if (_4_i > 0) {
                         this.__CP__ = 6;
                         break;
                       }
                       this.__CP__ = 8;
                       break;
                     case 13:
-                      if (this._10_j > 0) {
+                      if (_10_j > 0) {
                         this.__CP__ = 12;
                         break;
                       }
@@ -303,23 +303,23 @@ __switch__:
                       return true;
                     case 5:
                       this.__CP__ = 6;
-                      this.yield(this._4_i);
+                      this.yield(_4_i);
                       return true;
                     case 11:
                       this.__CP__ = 12;
-                      this.yield(this._10_j);
+                      this.yield(_10_j);
                       return true;
                     case 15:
                       this.__CP__ = 16;
-                      this.yield(this._10_j * this._4_i);
+                      this.yield(_10_j * _4_i);
                       return true;
                     case 17:
                       this.__CP__ = 13;
-                      this.yield(this._10_j + this._4_i);
+                      this.yield(_10_j + _4_i);
                       return true;
                     case 18:
                       this.__CP__ = 19;
-                      this.yield(this._4_i);
+                      this.yield(_4_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -329,7 +329,7 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 8:
-                      this._4_i = 0;
+                      _4_i = 0;
                       this.__CP__ = 18;
                       break;
                     case 19:
@@ -337,18 +337,18 @@ __switch__:
                       this.__CP__ = 1;
                       break;
                     case 6:
-                      this._10_j = this._4_i;
+                      this._10_j = _4_i;
                       this.__CP__ = 11;
                       break;
                     case 14:
-                      this._4_i-- ;
+                      _4_i-- ;
                       this.__CP__ = 7;
                       break;
                     case 12:
                       this.__CP__ = 15;
                       break;
                     case 16:
-                      this._10_j-- ;
+                      _10_j-- ;
                       this.__CP__ = 17;
                       break;
                     default:
@@ -399,36 +399,36 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(this._2_i < 3)) {
+                      if (!(_2_i < 3)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
                       this._6_j = 0;
                     case 7:
-                      if (!(this._6_j < 3)) {
+                      if (!(_6_j < 3)) {
                         this.__CP__ = 5;
                         break;
                       }
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      this._6_j++ ;
+                      _6_j++ ;
                       this.__CP__ = 7;
                       break;
                     case 10:
                       this.__CP__ = 11;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(this._6_j);
+                      this.yield(_6_j);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -512,19 +512,19 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 6;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 10:
                       this.__CP__ = 11;
-                      this.yield(this._6_j);
+                      this.yield(_6_j);
                       return true;
                     case 11:
                       this.__CP__ = 7;
-                      this.yield(this._2_i + this._6_j);
+                      this.yield(_2_i + _6_j);
                       return true;
                     case 9:
                       this.__CP__ = 3;
-                      this.yield(this._2_i * this._2_i);
+                      this.yield(_2_i * _2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -590,38 +590,38 @@ __switch__:
                     case 4:
                       this._4_i = 0;
                     case 5:
-                      if (!(this._4_i < 10)) {
+                      if (!(_4_i < 10)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._4_i++ ;
+                      _4_i++ ;
                       this.__CP__ = 5;
                       break;
                     case 8:
                       this._8_j = 0;
                     case 9:
-                      if (!(this._8_j < 10)) {
+                      if (!(_8_j < 10)) {
                         this.__CP__ = 7;
                         break;
                       }
                       this.__CP__ = 10;
                       break;
                     case 11:
-                      this._8_j++ ;
+                      _8_j++ ;
                       this.__CP__ = 9;
                       break;
                     case 14:
-                      if (this._4_i < this._8_j) {
+                      if (_4_i < _8_j) {
                         this.__CP__ = 16;
                         break;
                       }
                       this.__CP__ = 11;
                       break;
                     case 12:
-                      if (this._4_i + this._8_j < 5) {
+                      if (_4_i + _8_j < 5) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -629,7 +629,7 @@ __switch__:
                       break;
                     case 18:
                       this.__CP__ = 11;
-                      this.yield(this._3_a);
+                      this.yield(_3_a);
                       return true;
                     case 0:
                       this._3_a = 0;
@@ -642,7 +642,7 @@ __switch__:
                       this.__CP__ = 12;
                       break;
                     case 16:
-                      this._3_a = this._3_a + this._4_i + this._8_j;
+                      _3_a = _3_a + _4_i + _8_j;
                       this.__CP__ = 18;
                       break;
                     case 13:
@@ -712,7 +712,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      switch (this._2_fr) {
+                      switch (_2_fr) {
                         case APPLES:
                           this.__CP__ = 6;
                           break __switch__;
@@ -820,24 +820,24 @@ __switch__:
                     case 2:
                       this._2_i = 1;
                     case 3:
-                      if (!(this._2_i <= 10)) {
+                      if (!(_2_i <= 10)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
-                      if (this._2_i % 2 == 0) {
+                      if (_2_i % 2 == 0) {
                         this.__CP__ = 7;
                         break;
-                      } else if (this._2_i % 3 == 0) {
+                      } else if (_2_i % 3 == 0) {
                         this.__CP__ = 9;
                         break;
-                      } else if (this._2_i % 5 == 0) {
+                      } else if (_2_i % 5 == 0) {
                         this.__CP__ = 11;
                         break;
                       }
@@ -852,23 +852,23 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 5;
-                      this.yield(this._2_i * 10);
+                      this.yield(_2_i * 10);
                       return true;
                     case 10:
                       this.__CP__ = 5;
-                      this.yield(this._2_i * 100);
+                      this.yield(_2_i * 100);
                       return true;
                     case 14:
                       this.__CP__ = 15;
-                      this.yield(this._2_i * 10000);
+                      this.yield(_2_i * 10000);
                       return true;
                     case 12:
                       this.__CP__ = 5;
-                      this.yield(this._2_i * 1000);
+                      this.yield(_2_i * 1000);
                       return true;
                     case 18:
                       this.__CP__ = 5;
-                      this.yield(this._2_i * 100000);
+                      this.yield(_2_i * 100000);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -952,7 +952,7 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 6:
-                      if (this._3_val != 0) {
+                      if (_3_val != 0) {
                         this.__CP__ = 12;
                         break;
                       }
@@ -967,14 +967,14 @@ __switch__:
                       break;
                     case 13:
                       this.__CP__ = 1;
-                      this.yield(this._3_val);
+                      this.yield(_3_val);
                       return true;
                     case 0:
                       this._3_val = 0;
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._3_val = 42;
+                      _3_val = 42;
                       this.__CP__ = 6;
                       break;
                     case 12:
@@ -982,7 +982,7 @@ __switch__:
                       break;
                     case 9:
                       this._11_foo = -1;
-                      this._3_val = 24;
+                      _3_val = 24;
                       this.__CP__ = 6;
                       break;
                     default:
@@ -1053,17 +1053,17 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(this._2__yield);
+                      this.yield(_2__yield);
                       return true;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 5:
                       //  last statement
                       this.__CP__ = 1;
-                      break;
-                    case 4:
-                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -1115,19 +1115,19 @@ __switch__:
                       this._3__yield = this._3__yield_it.next();
                       this.__CP__ = 5;
                       break;
+                    case 6:
+                      this.__CP__ = 4;
+                      this.yield(_3__yield);
+                      return true;
                     case 2:
                       this.__CP__ = 3;
                       this.yield(1);
                       return true;
-                    case 6:
-                      this.__CP__ = 4;
-                      this.yield(this._3__yield);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     case 5:
                       this.__CP__ = 6;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -1193,20 +1193,20 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(this._2__yield);
+                      this.yield(_2__yield);
                       return true;
                     case 9:
                       this.__CP__ = 7;
-                      this.yield(this._6__yield);
+                      this.yield(_6__yield);
                       return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     case 4:
                       this.__CP__ = 6;
                       break;
                     case 8:
                       this.__CP__ = 9;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -1237,9 +1237,9 @@ __switch__:
             return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
-              private int _2_i;
               private Integer _6__yield;
               private Iterator<Integer> _6__yield_it;
+              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1252,18 +1252,18 @@ __switch__:
                     case 2:
                       this._2_i = 1;
                     case 3:
-                      if (!(this._2_i <= 4)) {
+                      if (!(_2_i <= 4)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
-                      this._6__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), this._2_i).iterator();
+                      this._6__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i).iterator();
                     case 7:
                       if (!(this._6__yield_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1274,16 +1274,16 @@ __switch__:
                       break;
                     case 9:
                       this.__CP__ = 7;
-                      this.yield(this._6__yield);
+                      this.yield(_6__yield);
                       return true;
+                    case 8:
+                      this.__CP__ = 9;
+                      break;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 4:
                       this.__CP__ = 6;
-                      break;
-                    case 8:
-                      this.__CP__ = 9;
                       break;
                     default:
                       break __loop__;
@@ -1438,29 +1438,29 @@ __switch__:
                     case 2:
                       this._2_i = start;
                     case 3:
-                      if (!(this._2_i < end)) {
+                      if (!(_2_i < end)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 7:
                       this.__CP__ = 8;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      ListSequence.fromList(res).addElement(this._2_i + 10);
+                      ListSequence.fromList(res).addElement(_2_i + 10);
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      ListSequence.fromList(res).addElement(this._2_i + 20);
+                      ListSequence.fromList(res).addElement(_2_i + 20);
                       this.__CP__ = 5;
                       break;
                     default:

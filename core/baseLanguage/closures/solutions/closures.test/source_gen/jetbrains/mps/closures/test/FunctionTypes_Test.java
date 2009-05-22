@@ -154,18 +154,18 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(this._2_i < 3)) {
+                      if (!(_2_i < 3)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 7:
-                      switch (this._2_i) {
+                      switch (_2_i) {
                         case 1:
                           this.__CP__ = 8;
                           break __switch__;
@@ -181,7 +181,7 @@ __switch__:
                       }
                     case 6:
                       this.__CP__ = 7;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;

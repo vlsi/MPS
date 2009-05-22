@@ -58,7 +58,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -110,7 +110,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_i);
+                      this.yield(_2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -163,7 +163,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_s);
+                      this.yield(_2_s);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -215,7 +215,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_s);
+                      this.yield(_2_s);
                       return true;
                     case 0:
                       this.__CP__ = 2;

@@ -48,7 +48,7 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 7;
-                      this.yield(this._3_num);
+                      this.yield(_3_num);
                       return true;
                     case 0:
                       this._3_num = 0;
@@ -58,7 +58,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._3_num++ ;
+                      _3_num++ ;
                       this.__CP__ = 4;
                       break;
                     default:

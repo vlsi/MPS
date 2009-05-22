@@ -104,14 +104,14 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(this._2_i < 5)) {
+                      if (!(_2_i < 5)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -179,19 +179,19 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(this._2_i < sequence_size)) {
+                      if (!(_2_i < sequence_size)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:
                       this.__CP__ = 5;
-                      this.yield("" + this._2_i);
+                      this.yield("" + _2_i);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -249,14 +249,14 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(this._2_i < sequence_size)) {
+                      if (!(_2_i < sequence_size)) {
                         this.__CP__ = 1;
                         break;
                       }
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._2_i++ ;
+                      _2_i++ ;
                       this.__CP__ = 3;
                       break;
                     case 6:

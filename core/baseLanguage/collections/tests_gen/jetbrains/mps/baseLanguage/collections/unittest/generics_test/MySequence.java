@@ -30,7 +30,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 8:
-                      if (this._7_next == null) {
+                      if (_7_next == null) {
                         this.__CP__ = 9;
                         break;
                       }
@@ -52,7 +52,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 4;
-                      this.yield(this._7_next);
+                      this.yield(_7_next);
                       return true;
                     case 2:
                       this.__CP__ = 4;
