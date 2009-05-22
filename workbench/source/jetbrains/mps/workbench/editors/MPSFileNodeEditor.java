@@ -27,12 +27,8 @@ import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -48,18 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
-  private static Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
-
   private IEditor myNodeEditor;
-  private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void onAfterReload() {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          recreateEditor();
-        }
-      });
-    }
-  };
   private JPanel myComponent = new JPanel(new BorderLayout());
   private Project myProject;
   private MPSNodeVirtualFile myFile;
@@ -84,8 +69,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
         recreateEditor();
       }
     });
-
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   public DocumentReference[] getDocumentReferences() {
@@ -193,11 +176,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   }
 
   public void dispose() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     myNodeEditor.dispose();
   }
 
-  private void recreateEditor() {
+  public void recreateEditor() {
     if (myProject.isDisposed()) return;
     if (myNodeEditor instanceof NodeEditor) return;
 

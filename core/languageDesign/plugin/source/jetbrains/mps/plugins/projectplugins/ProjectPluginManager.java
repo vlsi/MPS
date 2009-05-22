@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
@@ -41,6 +42,8 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -69,6 +72,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private Ide_ProjectPlugin myIdePlugin;
 
   private MyReloadListener myReloadListener;
+  private EditorsProvider myEditorsProvider;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
@@ -76,6 +80,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   public void projectOpened() {
     myReloadListener = new MyReloadListener();
+    myEditorsProvider=new EditorsProvider(myProject);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
@@ -268,6 +273,22 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     public Map<String, PluginState> pluginsState = new HashMap<String, PluginState>();
   }
 
+  //--------------ADDITIONAL----------------
+
+  private void recreateEditors(){
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IEditor editor: myEditorsProvider.getAllEditors()){
+          if (editor instanceof MPSFileNodeEditor){
+            ((MPSFileNodeEditor)editor).recreateEditor();
+          }
+        }
+      }
+    });
+  }
+
+  //--------------RELOADING----------------
+
   private class MyReloadListener extends ReloadAdapter {
     private volatile boolean myIsDisposed = false;
 
@@ -285,6 +306,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           if (myIsDisposed) return;
           loadPlugins();
+          recreateEditors();
         }
       });
     }
