@@ -3666,6 +3666,10 @@
                               <link role="classifier" targetNodeId="25.~Boolean" resolveInfo="Boolean" />
                               <link role="variableDeclaration" targetNodeId="25.~Boolean.TRUE" resolveInfo="TRUE" />
                             </node>
+                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452093871" />
+                            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452093897">
+                              <link role="classifier" targetNodeId="25.~Boolean" resolveInfo="Boolean" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -3686,6 +3690,10 @@
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197904829546">
                               <link role="classifier" targetNodeId="25.~Boolean" resolveInfo="Boolean" />
                               <link role="variableDeclaration" targetNodeId="25.~Boolean.FALSE" resolveInfo="FALSE" />
+                            </node>
+                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452093923" />
+                            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452093949">
+                              <link role="classifier" targetNodeId="25.~Boolean" resolveInfo="Boolean" />
                             </node>
                           </node>
                         </node>
@@ -4075,6 +4083,11 @@
                                           <link role="variable" targetNodeId="1198013650316" resolveInfo="feat" />
                                         </node>
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198056168783" />
+                                        <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452102591">
+                                          <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                        </node>
+                                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102631" />
+                                        <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102652" />
                                       </node>
                                     </node>
                                   </node>
@@ -4114,6 +4127,11 @@
                                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1198056176830">
                                                 <link role="variable" targetNodeId="1198056176821" resolveInfo="pw" />
                                               </node>
+                                              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452102692">
+                                                <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              </node>
+                                              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102732" />
+                                              <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102753" />
                                             </node>
                                           </node>
                                         </node>
@@ -4164,6 +4182,11 @@
                                               <link role="variable" targetNodeId="1198013650316" resolveInfo="feat" />
                                             </node>
                                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198056176849" />
+                                            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452102793">
+                                              <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            </node>
+                                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102814" />
+                                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452102854" />
                                           </node>
                                         </node>
                                       </node>
@@ -5483,6 +5506,12 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198015957211" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198015957212" />
+                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452123208" />
+                                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452111580">
+                                  <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                </node>
+                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452111630" />
+                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452111656" />
                               </node>
                             </node>
                           </node>
@@ -5527,6 +5556,12 @@
                                               <link role="variable" targetNodeId="1198015957236" resolveInfo="feat" />
                                             </node>
                                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198055886133" />
+                                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452122986" />
+                                            <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452111756">
+                                              <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            </node>
+                                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452111782" />
+                                            <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452111881" />
                                           </node>
                                         </node>
                                       </node>
@@ -5569,6 +5604,12 @@
                                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1198055871944">
                                                     <link role="variable" targetNodeId="1198055871934" resolveInfo="pw" />
                                                   </node>
+                                                  <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452123060" />
+                                                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452111981">
+                                                    <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                  </node>
+                                                  <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452112031" />
+                                                  <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452112081" />
                                                 </node>
                                               </node>
                                             </node>
@@ -5622,6 +5663,12 @@
                                                   <link role="variable" targetNodeId="1198015957236" resolveInfo="feat" />
                                                 </node>
                                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198055871964" />
+                                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452123134" />
+                                                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4470085003452112181">
+                                                  <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                </node>
+                                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452112231" />
+                                                <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4470085003452112330" />
                                               </node>
                                             </node>
                                           </node>

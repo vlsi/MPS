@@ -26,28 +26,12 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static IClassPathItem parent(IClassPathItem node) {
       throw new UnsupportedOperationException();
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 
     public static Iterable<IClassPathItem> children(IClassPathItem node) {
       if (node instanceof CompositeClassPathItem) {
@@ -62,14 +46,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
   public static class COMPOSITE_NodeKindTrigger implements IFilter<IClassPathItem> {
     private static ClassPathItemTreePath.COMPOSITE_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private COMPOSITE_NodeKindTrigger() {
-    }
-    public COMPOSITE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(IClassPathItem node) {
@@ -88,14 +65,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
   public static class FILE_NodeKindTrigger implements IFilter<IClassPathItem> {
     private static ClassPathItemTreePath.FILE_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private FILE_NodeKindTrigger() {
-    }
-    public FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(IClassPathItem node) {
@@ -114,14 +84,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
   public static class JAR_NodeKindTrigger implements IFilter<IClassPathItem> {
     private static ClassPathItemTreePath.JAR_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private JAR_NodeKindTrigger() {
-    }
-    public JAR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(IClassPathItem node) {

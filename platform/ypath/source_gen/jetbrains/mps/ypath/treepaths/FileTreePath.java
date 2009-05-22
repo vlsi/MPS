@@ -21,28 +21,12 @@ public class FileTreePath extends TreePath<File> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static File parent(File node) {
       return node.getParentFile();
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 
     public static File[] childrenArray(File node) {
       return node.listFiles();
@@ -52,14 +36,7 @@ public class FileTreePath extends TreePath<File> {
   public static class DIR_NodeKindTrigger implements IFilter<File> {
     private static FileTreePath.DIR_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private DIR_NodeKindTrigger() {
-    }
-    public DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(File node) {
@@ -78,14 +55,7 @@ public class FileTreePath extends TreePath<File> {
   public static class FILE_NodeKindTrigger implements IFilter<File> {
     private static FileTreePath.FILE_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private FILE_NodeKindTrigger() {
-    }
-    public FILE_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(File node) {
@@ -130,14 +100,6 @@ public class FileTreePath extends TreePath<File> {
 
     private static class Getter {
 
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
-
       public static String getValue(File node) {
         return node.getName();
       }
@@ -173,14 +135,6 @@ public class FileTreePath extends TreePath<File> {
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(File node) {
         String name = node.getName();

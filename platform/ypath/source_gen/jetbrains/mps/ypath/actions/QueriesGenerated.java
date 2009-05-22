@@ -722,8 +722,8 @@ public class QueriesGenerated {
               ));
             }
           })) {
-            ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
-            ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
+            ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.TRUE));
+            ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.FALSE));
           }
           return res;
         }
@@ -789,15 +789,15 @@ public class QueriesGenerated {
             for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
               if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                 if (SPropertyOperations.getBoolean(feat, "default")) {
-                  ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
+                  ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, null));
                 } else
                 if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
                   for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
-                    ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
+                    ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, pw));
                   }
                 } else
                 {
-                  ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
+                  ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, null));
                 }
               }
             }
@@ -1058,19 +1058,19 @@ public class QueriesGenerated {
           SNode nodeType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Type");
           for(SNode aspect : ListSequence.fromList(TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope()))) {
             for(TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {
-              ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, null, null));
+              ListSequence.fromList(res).addElement(new Quadruplet<SNode, TraversalAxis, SNode, SNode>(aspect, axis, null, null));
               for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(aspect, nodeType))) {
                 if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                   if (SPropertyOperations.getBoolean(feat, "default")) {
-                    ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
+                    ListSequence.fromList(res).addElement(new Quadruplet<SNode, TraversalAxis, SNode, SNode>(aspect, axis, feat, null));
                   } else
                   if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
                     for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
-                      ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, pw));
+                      ListSequence.fromList(res).addElement(new Quadruplet<SNode, TraversalAxis, SNode, SNode>(aspect, axis, feat, pw));
                     }
                   } else
                   {
-                    ListSequence.fromList(res).addElement(new Quadruplet(aspect, axis, feat, null));
+                    ListSequence.fromList(res).addElement(new Quadruplet<SNode, TraversalAxis, SNode, SNode>(aspect, axis, feat, null));
                   }
                 }
               }

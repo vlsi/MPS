@@ -216,18 +216,18 @@ __switch__:
                       case 8:
                         this._8_idx = 0;
                       case 9:
-                        if (!(this._8_idx < this._7_count)) {
+                        if (!(_8_idx < _7_count)) {
                           this.__CP__ = 1;
                           break;
                         }
                         this.__CP__ = 10;
                         break;
                       case 11:
-                        this._8_idx++ ;
+                        _8_idx++ ;
                         this.__CP__ = 9;
                         break;
                       case 4:
-                        if (this._3_attributes != null) {
+                        if (_3_attributes != null) {
                           this.__CP__ = 5;
                           break;
                         }
@@ -235,14 +235,14 @@ __switch__:
                         break;
                       case 12:
                         this.__CP__ = 11;
-                        this.yield(_node.getAttributes().item(this._8_idx));
+                        this.yield(_node.getAttributes().item(_8_idx));
                         return true;
                       case 0:
                         this._3_attributes = _node.getAttributes();
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        this._7_count = this._3_attributes.getLength();
+                        this._7_count = _3_attributes.getLength();
                         this.__CP__ = 8;
                         break;
                       case 10:

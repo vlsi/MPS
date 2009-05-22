@@ -48,7 +48,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (SPropertyOperations.getBoolean(SNodeOperations.cast(this._2_prop, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default")) {
+                      if (SPropertyOperations.getBoolean(SNodeOperations.cast(_2_prop, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default")) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -56,7 +56,7 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 3;
-                      this.yield(this._2_prop);
+                      this.yield(_2_prop);
                       return true;
                     case 0:
                       this.__CP__ = 2;

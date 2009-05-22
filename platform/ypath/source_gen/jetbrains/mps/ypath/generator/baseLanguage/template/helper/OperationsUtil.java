@@ -94,11 +94,11 @@ __switch__:
                       break;
                     case 11:
                       this.__CP__ = 7;
-                      this.yield(this._10_io);
+                      this.yield(_10_io);
                       return true;
                     case 19:
                       this.__CP__ = 3;
-                      this.yield(this._18_io);
+                      this.yield(_18_io);
                       return true;
                     case 2:
                       this.__CP__ = 4;
@@ -108,9 +108,9 @@ __switch__:
                       break;
                     case 8:
                       this._10_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._10_io, "usedFeature", it, false);
-                      SPropertyOperations.set(this._10_io, "axis", axis.getValue());
-                      SLinkOperations.setTarget(this._10_io, "paramObject", this._6_po, true);
+                      SLinkOperations.setTarget(_10_io, "usedFeature", it, false);
+                      SPropertyOperations.set(_10_io, "axis", axis.getValue());
+                      SLinkOperations.setTarget(_10_io, "paramObject", _6_po, true);
                       this.__CP__ = 11;
                       break;
                     case 12:
@@ -121,8 +121,8 @@ __switch__:
                       break;
                     case 16:
                       this._18_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._18_io, "usedFeature", it, false);
-                      SPropertyOperations.set(this._18_io, "axis", axis.getValue());
+                      SLinkOperations.setTarget(_18_io, "usedFeature", it, false);
+                      SPropertyOperations.set(_18_io, "axis", axis.getValue());
                       this.__CP__ = 19;
                       break;
                     case 15:
