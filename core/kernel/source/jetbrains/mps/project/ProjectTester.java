@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.util.lang.UrlClassLoader;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -31,26 +30,17 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.dates.unittest.tests.Compare_Test;
-import jetbrains.mps.baseLanguage.dates.unittest.tests.DateTimeZone_Test;
-import jetbrains.mps.baseLanguage.dates.unittest.tests.BaseTestCase;
-import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.smodel.SNode;
+import junit.framework.TestCase;
+import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.internal.compiler.ClassFile;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Collections;
-import java.util.Arrays;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.io.StringWriter;
-
-import junit.framework.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -211,7 +201,7 @@ public class ProjectTester {
                       setName.invoke(instance, method.getName());
                       if (instance instanceof TestCase) {
                         junit.framework.TestResult testResult = new junit.framework.TestResult();
-                        ((TestCase)instance).run(testResult);
+                        ((TestCase) instance).run(testResult);
                         for (TestFailure testError : Collections.list(testResult.errors())) {
                           failedTests.add(testError);
                         }
