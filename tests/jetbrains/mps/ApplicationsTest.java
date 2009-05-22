@@ -45,4 +45,9 @@ public class ApplicationsTest extends BaseMPSTest {
   public void testMatrixLanguage() {
     assertGenerates(new File("samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"));
   }
+
+  public void testYpath() {
+      assertGenerates(new File("platform/ypath/YPath.mpr"));
+    }
+
 }
