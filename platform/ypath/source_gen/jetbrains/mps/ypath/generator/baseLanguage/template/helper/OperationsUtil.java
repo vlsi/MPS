@@ -27,7 +27,7 @@ public class OperationsUtil {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), wildCardOp);
     }
     SNode tpoe = SNodeOperations.getAncestor(wildCardOp, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    final SNode nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true));
+    final SNode nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true));
     SNode tp = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     final TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(wildCardOp, "axis", "DESCENDANTS"));
     List<SNode> features = ((SLinkOperations.getTarget(wildCardOp, "usedFeature", false) == null) ?

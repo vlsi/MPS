@@ -1220,7 +1220,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition1553_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "parentBlock", true) != null) || (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
+    return true || (SLinkOperations.getTarget(node, "parentBlock", true) != null) || (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
   }
 
   public static class nodeKindsListHandler_1553_0 extends RefNodeListHandler {

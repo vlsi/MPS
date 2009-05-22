@@ -7,7 +7,6 @@ import org.w3c.dom.Node;
 import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
-
 import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -30,41 +29,23 @@ public class DOM2 extends TreePath<Node> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
-    public static DOM2.ELEMENT_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static DOM2.ELEMENT_NodeKindTrigger instance;
 
     private ELEMENT_NodeKindTrigger() {
     }
-    public ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
+
+    public boolean accept(Node e) {
+      return e instanceof Element;
     }
+
 
     public static IFilter<Node> getInstance() {
       if (instance == null) {
@@ -73,35 +54,23 @@ public class DOM2 extends TreePath<Node> {
       return instance;
     }
 
-
-    public boolean accept(Node e) {
-      return e instanceof Element;
-    }
-
 }
   public static class ATTR_NodeKindTrigger implements IFilter<Node> {
-    public static DOM2.ATTR_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static DOM2.ATTR_NodeKindTrigger instance;
 
     private ATTR_NodeKindTrigger() {
     }
-    public ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
+
+    public boolean accept(Node a) {
+      return a instanceof Attr;
     }
+
 
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM2.ATTR_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(Node a) {
-      return a instanceof Attr;
     }
 
 }
@@ -117,7 +86,6 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -128,21 +96,12 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ELEMENT_tag_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
@@ -163,7 +122,6 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ATTR_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -174,21 +132,12 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ATTR_name_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node a) {
         return ((Attr)a).getName();
@@ -209,7 +158,6 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ATTR_value_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -220,21 +168,12 @@ public class DOM2 extends TreePath<Node> {
             String actualValue = DOM2.ATTR_value_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node a) {
         return ((Attr)a).getValue();
@@ -259,7 +198,7 @@ public class DOM2 extends TreePath<Node> {
           return new Iterable <Node>() {
 
             public Iterator<Node> iterator() {
-              return new YieldingIterator<Node>() {
+              return new YieldingIterator <Node>() {
 
                 private int __CP__ = 0;
                 private NamedNodeMap _3_attributes;
@@ -284,7 +223,7 @@ __switch__:
                         this.__CP__ = 10;
                         break;
                       case 11:
-                        this._8_idx = this._8_idx + 1;
+                        this._8_idx++ ;
                         this.__CP__ = 9;
                         break;
                       case 4:
@@ -315,13 +254,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       });
     }
 

@@ -42,8 +42,8 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
           ));
         }
       })) {
-        ListSequence.fromList(res).addElement(new Pair(fe, Boolean.TRUE));
-        ListSequence.fromList(res).addElement(new Pair(fe, Boolean.FALSE));
+        ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.TRUE));
+        ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.FALSE));
       }
       return res;
     }

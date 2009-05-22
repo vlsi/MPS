@@ -26,40 +26,17 @@ public class TryFeatures extends TreePath<Node> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 }
   public static class foo_NodeKindTrigger implements IFilter<Node> {
     private static TryFeatures.foo_NodeKindTrigger instance;
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
     private foo_NodeKindTrigger() {
-    }
-    public foo_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(Node node) {
@@ -87,7 +64,6 @@ public class TryFeatures extends TreePath<Node> {
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -98,21 +74,12 @@ public class TryFeatures extends TreePath<Node> {
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node node) {
         return "";
@@ -133,7 +100,6 @@ public class TryFeatures extends TreePath<Node> {
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -144,21 +110,12 @@ public class TryFeatures extends TreePath<Node> {
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node node) {
         return "";
@@ -250,19 +207,19 @@ __switch__:
                       case 4:
                         this._4_idx = 0;
                       case 5:
-                        if (!(this._4_idx < this._3_count)) {
+                        if (!(_4_idx < _3_count)) {
                           this.__CP__ = 1;
                           break;
                         }
                         this.__CP__ = 6;
                         break;
                       case 7:
-                        this._4_idx = this._4_idx + 1;
+                        _4_idx++ ;
                         this.__CP__ = 5;
                         break;
                       case 8:
                         this.__CP__ = 7;
-                        this.yield(_node.getAttributes().item(this._4_idx));
+                        this.yield(_node.getAttributes().item(_4_idx));
                         return true;
                       case 0:
                         this._3_count = _node.getAttributes().getLength();
@@ -277,13 +234,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       });
     }
 

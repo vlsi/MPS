@@ -53,7 +53,7 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038348122(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-      return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
+      return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "operand", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
     }
     return false;
   }
@@ -61,7 +61,7 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038722084(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
         return true;
       }
     }
@@ -71,7 +71,7 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169039090800(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "operand", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
     }
     return false;
   }
@@ -258,7 +258,7 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode op = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.IterateOperation");
             SNode tpoe = SNodeOperations.cast(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            return FeatureTargetTypeUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true));
+            return FeatureTargetTypeUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true));
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
@@ -815,7 +815,7 @@ public class QueriesGenerated {
             SNode feat = (SNode)(item).second();
             SNode pw = (SNode)(item).third();
             SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", _context.getSourceNode(), true);
+            SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
             SNode op = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.IterateOperation", null);
             SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if ((feat != null)) {
@@ -892,7 +892,7 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-          SLinkOperations.setTarget(tpoExp, "expression", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
           SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.WhereOperation");
           return tpoExp;
         }
@@ -931,7 +931,7 @@ public class QueriesGenerated {
 
           public SNode doSubstitute(String pattern) {
             SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", _context.getSourceNode(), true);
+            SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
             SNode mnko = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchKindOperation");
             SLinkOperations.setTarget(SLinkOperations.getTarget(mnko, "nodeKindOccurrence", true), "nodeKind", (item), false);
             return tpoExp;
@@ -976,7 +976,7 @@ public class QueriesGenerated {
 
           public SNode doSubstitute(String pattern) {
             SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", _context.getSourceNode(), true);
+            SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
             SNode mdpo = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation");
             return tpoExp;
           }
@@ -1090,9 +1090,9 @@ public class QueriesGenerated {
             SNode feat = (SNode)(item).third();
             SNode pw = (SNode)(item).fourth();
             SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setNewChild(tpoExp, "expression", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
-            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "expression", _context.getSourceNode(), true);
-            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "treepathAspect", aspect, false);
+            SLinkOperations.setNewChild(tpoExp, "operand", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "expression", _context.getSourceNode(), true);
+            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "treepathAspect", aspect, false);
             SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if ((feat != null)) {
               SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", feat, false);

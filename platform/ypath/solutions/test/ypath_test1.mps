@@ -22,6 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="8" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -75,7 +76,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628913497">
-                <link role="baseMethodDeclaration" targetNodeId="5.~DocumentBuilder.parse(java.lang.String):org.w3c.dom.Document" resolveInfo="parse" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~DocumentBuilder.parse(java.io.InputStream):org.w3c.dom.Document" resolveInfo="parse" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179329386920">
                   <link role="variableDeclaration" targetNodeId="1179329359487" resolveInfo="is" />
                 </node>
@@ -302,7 +303,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179400643373">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179400640169">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179400640169">
                   <link role="treepathAspect" targetNodeId="6.1175083364493" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179400638826">
                     <link role="variableDeclaration" targetNodeId="1179400611280" resolveInfo="doc" />
@@ -351,8 +352,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179400944982">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179400944983">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179400944984">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179400944983">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179400944984">
                     <link role="treepathAspect" targetNodeId="6.1175083364493" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179400944985">
                       <link role="variableDeclaration" targetNodeId="1179400611280" resolveInfo="doc" />
@@ -428,7 +429,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179401084517">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179401084518">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179401084518">
                   <link role="treepathAspect" targetNodeId="6.1175083364493" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179401084519">
                     <link role="variableDeclaration" targetNodeId="1179401070249" resolveInfo="doc" />
@@ -500,8 +501,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179401457177">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179401452829">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179401449927">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1179401452829">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1179401449927">
                     <link role="treepathAspect" targetNodeId="6.1175083364493" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179401448724">
                       <link role="variableDeclaration" targetNodeId="1179401438198" resolveInfo="doc" />
@@ -575,8 +576,8 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625313887">
                 <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230277004">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230180841">
-                    <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1181230175804">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230180841">
+                    <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1181230175804">
                       <link role="treepathAspect" targetNodeId="6.1175083364493" />
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1181230174252">
                         <link role="variableDeclaration" targetNodeId="1181230140365" resolveInfo="doc" />
@@ -616,8 +617,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230190950">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230184848">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1181231280134">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1181230184848">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1181231280134">
                     <link role="treepathAspect" targetNodeId="6.1175083364493" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1181231319628">
                       <link role="variableDeclaration" targetNodeId="1181231319626" resolveInfo="foo" />

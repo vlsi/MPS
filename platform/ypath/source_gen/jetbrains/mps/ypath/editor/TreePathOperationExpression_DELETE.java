@@ -33,7 +33,7 @@ public class TreePathOperationExpression_DELETE {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
     }
 
 }

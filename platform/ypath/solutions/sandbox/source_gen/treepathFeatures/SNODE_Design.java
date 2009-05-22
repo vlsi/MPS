@@ -6,6 +6,7 @@ import jetbrains.mps.ypath.design.IParameterizedFeatureDesign;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -14,29 +15,26 @@ public class SNODE_Design {
   public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
 
     public Iterable<String> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
-
       }).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "role");
         }
-
       });
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
       final String _param = param;
-      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "role").equals(_param);
         }
-
       }).first();
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
       return new _Quotations.QuotationClass_0().createNode(trg);
@@ -50,29 +48,26 @@ public class SNODE_Design {
   public static class Design_Feature_link extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
 
     public Iterable<String> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
-
       }).select(new ISelector <SNode, String>() {
 
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "role");
         }
-
       });
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
       final String _param = param;
-      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
+      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "role").equals(_param);
         }
-
       }).first();
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
       return new _Quotations.QuotationClass_1().createNode(trg);

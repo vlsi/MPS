@@ -6,6 +6,7 @@ import jetbrains.mps.ypath.runtime.TreePath;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ypath.runtime.IFilter;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
@@ -53,7 +54,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
         return ((CompositeClassPathItem)node).getChildren();
       } else
       {
-        return ListSequence.<IClassPathItem>fromArray();
+        return ListSequence.fromList(new ArrayList<IClassPathItem>());
       }
     }
 

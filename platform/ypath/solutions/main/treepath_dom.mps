@@ -21,6 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ypath.runtime.dom(jetbrains.mps.ypath.runtime.dom@java_stub)" version="-1" />
@@ -256,9 +257,6 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178558211779" />
     <node role="treePathType" type="jetbrains.mps.ypath.structure.TreePathType" id="1178882722893">
       <node role="nodeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178882722896">
-        <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
-      </node>
-      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179351339513">
         <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
       </node>
     </node>

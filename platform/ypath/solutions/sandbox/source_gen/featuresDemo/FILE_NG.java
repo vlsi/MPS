@@ -8,6 +8,7 @@ import jetbrains.mps.ypath.runtime.IFilter;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
@@ -18,16 +19,9 @@ public class FILE_NG extends TreePath<File> {
     this.registerFeature(new FILE_NG.Desc_Feature_parent());
   }
   public static class DIR_NodeKindTrigger implements IFilter<File> {
-private      static FILE_NG.DIR_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static FILE_NG.DIR_NodeKindTrigger instance;
 
     private DIR_NodeKindTrigger() {
-    }
-    public DIR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(File node) {
@@ -75,7 +69,7 @@ private      static FILE_NG.DIR_NodeKindTrigger instance;
     }
 
     public Iterable<File> sequence() {
-      return ListSequence.<File>fromArray(this.thisNode.getParentFile());
+      return ListSequence.fromListAndArray(new ArrayList<File>(), this.thisNode.getParentFile());
     }
 
     public Iterator<File> iterator() {

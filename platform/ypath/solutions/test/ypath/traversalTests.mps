@@ -33,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -71,7 +72,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899946">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899947">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899947">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" resolveInfo="DOM2" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899948">
                     <link role="variableDeclaration" targetNodeId="1196720899937" resolveInfo="doc" />
@@ -107,7 +108,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899959">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899960">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899960">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" resolveInfo="DOM2" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899961">
                     <link role="variableDeclaration" targetNodeId="1196720899937" resolveInfo="doc" />
@@ -140,8 +141,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899972">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899973">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899974">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899973">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899974">
                     <link role="treepathAspect" targetNodeId="5.1184239525252" resolveInfo="DOM2" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899975">
                       <link role="variableDeclaration" targetNodeId="1196720899937" resolveInfo="doc" />
@@ -181,7 +182,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720899987">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899988">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720899988">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" resolveInfo="DOM2" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899989">
                     <link role="variableDeclaration" targetNodeId="1196720899937" resolveInfo="doc" />
@@ -261,7 +262,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628855132">
-                <link role="baseMethodDeclaration" targetNodeId="4.~DocumentBuilder.parse(java.lang.String):org.w3c.dom.Document" resolveInfo="parse" />
+                <link role="baseMethodDeclaration" targetNodeId="4.~DocumentBuilder.parse(java.io.InputStream):org.w3c.dom.Document" resolveInfo="parse" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900015">
                   <link role="variableDeclaration" targetNodeId="1196720900006" resolveInfo="is" />
                 </node>
@@ -413,8 +414,8 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720900072">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720900073">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720900074">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196720900073">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196720900074">
                     <link role="treepathAspect" targetNodeId="1196720900145" resolveInfo="DOMF" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900075">
                       <link role="variableDeclaration" targetNodeId="1196720900063" resolveInfo="doc" />
@@ -504,7 +505,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628903228">
-                <link role="baseMethodDeclaration" targetNodeId="4.~DocumentBuilder.parse(java.lang.String):org.w3c.dom.Document" resolveInfo="parse" />
+                <link role="baseMethodDeclaration" targetNodeId="4.~DocumentBuilder.parse(java.io.InputStream):org.w3c.dom.Document" resolveInfo="parse" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900102">
                   <link role="variableDeclaration" targetNodeId="1196720900093" resolveInfo="is" />
                 </node>

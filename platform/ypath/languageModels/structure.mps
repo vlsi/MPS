@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="expression" conceptFQName="jetbrains.mps.ypath.structure.TreePathOperationExpression" featureKind="CHILD" />
+          <value featureName="operand" conceptFQName="jetbrains.mps.ypath.structure.TreePathOperationExpression" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -21,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -121,18 +133,20 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1168468602533">
     <property name="package" value="treeOperation" />
     <property name="name" value="TreePathOperationExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" />
+    <link role="extends" targetNodeId="2.1197027756228" resolveInfo="DotExpression" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1168468622494">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
+      <property name="role" value="operand" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
+      <link role="specializedLink" targetNodeId="2.1197027771414" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1168468671991">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="operation" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
+      <link role="specializedLink" targetNodeId="2.1197027833540" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1194366915856">
       <link role="intfc" targetNodeId="1194366835810" resolveInfo="ITreePathExpression" />
@@ -144,6 +158,9 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1168468923164">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4234084459083992286">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1168513806633">
@@ -209,8 +226,15 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1168527754706">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="whereBlock" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1168527733553" resolveInfo="WhereBlock" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4234084459083986489" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4234084459083986488">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1168527733553">

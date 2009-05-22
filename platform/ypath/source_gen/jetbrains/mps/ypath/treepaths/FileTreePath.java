@@ -113,7 +113,6 @@ public class FileTreePath extends TreePath<File> {
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -124,7 +123,6 @@ public class FileTreePath extends TreePath<File> {
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<File>)filter;
@@ -159,7 +157,6 @@ public class FileTreePath extends TreePath<File> {
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -170,7 +167,6 @@ public class FileTreePath extends TreePath<File> {
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<File>)filter;

@@ -7,6 +7,8 @@ import java.io.ByteArrayInputStream;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.IFilter;
+import org.w3c.dom.Node;
 
 public class FeaturesDemo {
 
@@ -15,7 +17,12 @@ public class FeaturesDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new WhereFilter0(null, null));
+      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new IFilter <Node>() {
+
+        public boolean accept(Node node) {
+          return node.getNodeValue().equals("c");
+        }
+      });
     } catch (Exception ignored) {
     }
   }

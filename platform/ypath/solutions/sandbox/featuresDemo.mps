@@ -21,6 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -532,9 +533,9 @@
                 <property name="name" value="foo" />
               </node>
               <node role="inputSequence" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198083619543">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198083402781">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198082993852">
-                    <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1198082993860">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198083402781">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198082993852">
+                    <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1198082993860">
                       <link role="treepathAspect" targetNodeId="1197995958228" resolveInfo="DOM_NG" />
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198082989851">
                         <link role="variableDeclaration" targetNodeId="1197998576462" resolveInfo="doc" />
@@ -795,8 +796,8 @@
             </node>
           </node>
           <node role="inputSequence" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198864375109">
-            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198861671765">
-              <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1198861671766">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198861671765">
+              <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1198861671766">
                 <link role="treepathAspect" targetNodeId="1198846127773" resolveInfo="FILE_NG" />
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198861671767">
                   <link role="variableDeclaration" targetNodeId="1198852354929" resolveInfo="dir" />

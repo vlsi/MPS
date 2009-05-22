@@ -4,24 +4,25 @@ package jetbrains.mps.ypath.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
 
-  private List<IModelConstraints> myConstraints = ListOperations.<IModelConstraints>createList();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListOperations.addElement(this.myConstraints, new TreeNodeKindProperty_default_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new IFeature_default_PropertyConstraint());
-    ListOperations.addElement(this.myConstraints, new MatchPropertyOperation_property_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TreePathAspect_defaultFeature_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new IterateOperation_usedFeature_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new IFeature_opposite_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TreePathAdapterExpression_treepathAspect_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TreeNodeKindReference_treeNodeKind_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new TreeNodeKindOccurrence_nodeKind_ReferentConstraint());
-    ListOperations.addElement(this.myConstraints, new NodeKindSpecificCase_treeNodeKind_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TreeNodeKindProperty_default_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IFeature_default_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new MatchPropertyOperation_property_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TreePathAspect_defaultFeature_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IterateOperation_usedFeature_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IFeature_opposite_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TreePathAdapterExpression_treepathAspect_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TreeNodeKindReference_treeNodeKind_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TreeNodeKindOccurrence_nodeKind_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NodeKindSpecificCase_treeNodeKind_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

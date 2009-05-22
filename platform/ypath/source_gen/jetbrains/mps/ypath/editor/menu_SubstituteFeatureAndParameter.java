@@ -39,17 +39,17 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       ListSequence.fromList(res).addElement(new Pair(null, null));
       TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
-        SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
+        SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
         for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
           if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
             if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
               for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
-                ListSequence.fromList(res).addElement(new Pair(feat, pw));
+                ListSequence.fromList(res).addElement(new Pair<SNode, SNode>(feat, pw));
               }
             } else
             {
-              ListSequence.fromList(res).addElement(new Pair(feat, null));
+              ListSequence.fromList(res).addElement(new Pair<SNode, Object>(feat, null));
             }
           }
         }

@@ -14,6 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
@@ -85,8 +86,8 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1175090694726">
               <node role="iterable" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175164319381">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175090703444">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175090703445">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175090703444">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175090703445">
                     <link role="treepathAspect" targetNodeId="7.1175083364493" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1175090701994">
                       <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
@@ -125,10 +126,10 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1175165765485">
               <node role="iterable" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175170426638">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175252786877">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175252783348">
-                    <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175165777254">
-                      <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175165777255">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175252786877">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175252783348">
+                    <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175165777254">
+                      <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175165777255">
                         <link role="treepathAspect" targetNodeId="7.1175083364493" />
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1175165776061">
                           <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
@@ -192,10 +193,10 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1175882263391">
               <node role="iterable" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882291218">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882287338">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882277198">
-                    <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882271113">
-                      <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175882271114">
+                <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882287338">
+                  <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882277198">
+                    <node role="operand" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1175882271113">
+                      <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1175882271114">
                         <link role="treepathAspect" targetNodeId="7.1175083364493" />
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1175882269670">
                           <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />

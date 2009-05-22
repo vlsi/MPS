@@ -82,8 +82,8 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_7232_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("expression");
-    provider.setNoTargetText("<no expression>");
+    provider.setRole("operand");
+    provider.setNoTargetText("<no operand>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_7232_0_internal(context, node, provider);
@@ -181,7 +181,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition7232_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
   }
 
 }

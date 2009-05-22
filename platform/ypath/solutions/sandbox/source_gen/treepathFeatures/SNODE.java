@@ -30,28 +30,12 @@ public class SNODE extends TreePath<SNode> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static SNode parent(SNode node) {
       return SNodeOperations.getParent(node);
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 }
   private static class Feature_child extends AbstractCollection<SNode> {
 

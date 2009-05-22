@@ -31,7 +31,7 @@ public class IterateOperation_DELETE {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expr = SNodeOperations.getParent(node);
       if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
-        SNode newExpr = SLinkOperations.getTarget(SNodeOperations.cast(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "expression", true);
+        SNode newExpr = SLinkOperations.getTarget(SNodeOperations.cast(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "operand", true);
         SNodeOperations.replaceWithAnother(expr, newExpr);
         if (SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression") && (SNodeOperations.getAncestor(newExpr, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null)) {
           SNodeOperations.replaceWithAnother(newExpr, SLinkOperations.getTarget(SNodeOperations.cast(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "expression", true));

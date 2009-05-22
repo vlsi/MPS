@@ -36,8 +36,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="24" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="12" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895905a6(jetbrains.mps.ypath.actions)" version="-1" />
@@ -1917,6 +1918,35 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213104860514">
                 <link role="link" targetNodeId="1.1172240749936" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5626852792500016114">
+    <property name="package" value="treeOperation" />
+    <link role="concept" targetNodeId="1.1168468681335" resolveInfo="TreePathOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5626852792500016115">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5626852792500016116">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5626852792500016117">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="5626852792500016118">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="5626852792500016119">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5626852792500016120">
+                <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.LinkRefExpression" id="5626852792500016121">
+                  <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                  <link role="linkDeclaration" targetNodeId="1.1168468671991" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="5626852792500016122" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5626852792500016123">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5626852792500016124" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5626852792500016125">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5626852792500019327">
+                  <link role="conceptDeclaration" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                </node>
               </node>
             </node>
           </node>

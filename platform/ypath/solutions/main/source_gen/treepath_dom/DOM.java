@@ -10,9 +10,6 @@ import jetbrains.mps.ypath.runtime.dom.ChainedIterable;
 import jetbrains.mps.ypath.runtime.dom.NamedNodeMapIterableAdapter;
 import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Attr;
-import treepath_dom.DOM.ELEMENT_tag_Property;
-import treepath_dom.DOM.ATTR_name_Property;
-import treepath_dom.DOM.ATTR_value_Property;
 
 public class DOM extends TreePath<Node> {
 
@@ -29,28 +26,12 @@ public class DOM extends TreePath<Node> {
 
   private static class Parent {
 
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Parent(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
 
 }
   private static class Children {
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
-
-    public Children(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
-    }
 
     public static Iterable<Node> children(Node node) {
       Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
@@ -62,17 +43,15 @@ public class DOM extends TreePath<Node> {
 
 }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
-    public static DOM.ELEMENT_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static DOM.ELEMENT_NodeKindTrigger instance;
 
     private ELEMENT_NodeKindTrigger() {
     }
-    public ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
+
+    public boolean accept(Node e) {
+      return e instanceof Element;
     }
+
 
     public static IFilter<Node> getInstance() {
       if (instance == null) {
@@ -81,35 +60,23 @@ public class DOM extends TreePath<Node> {
       return instance;
     }
 
-
-    public boolean accept(Node e) {
-      return e instanceof Element;
-    }
-
 }
   public static class ATTR_NodeKindTrigger implements IFilter<Node> {
-    public static DOM.ATTR_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static DOM.ATTR_NodeKindTrigger instance;
 
     private ATTR_NodeKindTrigger() {
     }
-    public ATTR_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
+
+    public boolean accept(Node a) {
+      return a instanceof Attr;
     }
+
 
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM.ATTR_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(Node a) {
-      return a instanceof Attr;
     }
 
 }
@@ -125,7 +92,6 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -136,21 +102,12 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
@@ -171,7 +128,6 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -182,21 +138,12 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node a) {
         return ((Attr)a).getName();
@@ -217,7 +164,6 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -228,21 +174,12 @@ public class DOM extends TreePath<Node> {
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node a) {
         return ((Attr)a).getValue();

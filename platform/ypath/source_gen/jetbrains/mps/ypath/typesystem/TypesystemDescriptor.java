@@ -127,6 +127,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_WhereOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_ExpressionWritePathStatement_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

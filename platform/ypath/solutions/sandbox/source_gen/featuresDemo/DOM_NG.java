@@ -14,6 +14,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.w3c.dom.NamedNodeMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class DOM_NG extends TreePath<Node> {
@@ -24,16 +25,9 @@ public class DOM_NG extends TreePath<Node> {
     this.registerFeature(new DOM_NG.Desc_Feature_parent());
   }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
-private      static DOM_NG.ELEMENT_NodeKindTrigger instance;
-
-    /* package */Object _enclosingClass;
-    /* package */Object _closureContext;
+    private static DOM_NG.ELEMENT_NodeKindTrigger instance;
 
     private ELEMENT_NodeKindTrigger() {
-    }
-    public ELEMENT_NodeKindTrigger(Object enclosingClass, Object closureContext) {
-      this._enclosingClass = enclosingClass;
-      this._closureContext = (Object)closureContext;
     }
 
     public boolean accept(Node e) {
@@ -61,7 +55,6 @@ private      static DOM_NG.ELEMENT_NodeKindTrigger instance;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
-
         };
       } else
       {
@@ -72,21 +65,12 @@ private      static DOM_NG.ELEMENT_NodeKindTrigger instance;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
             return actualValue == null;
           }
-
         };
       }
       return (IFilter<Node>)filter;
     }
 
     private static class Getter {
-
-      /* package */Object _enclosingClass;
-      /* package */Object _closureContext;
-
-      public Getter(Object enclosingClass, Object closureContext) {
-        this._enclosingClass = enclosingClass;
-        this._closureContext = (Object)closureContext;
-      }
 
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
@@ -179,18 +163,18 @@ __switch__:
                       case 8:
                         this._8_idx = 0;
                       case 9:
-                        if (!(this._8_idx < this._7_count)) {
+                        if (!(_8_idx < _7_count)) {
                           this.__CP__ = 1;
                           break;
                         }
                         this.__CP__ = 10;
                         break;
                       case 11:
-                        this._8_idx = this._8_idx + 1;
+                        _8_idx++ ;
                         this.__CP__ = 9;
                         break;
                       case 4:
-                        if (this._3_attributes != null) {
+                        if (_3_attributes != null) {
                           this.__CP__ = 5;
                           break;
                         }
@@ -198,14 +182,14 @@ __switch__:
                         break;
                       case 12:
                         this.__CP__ = 11;
-                        this.yield(_node.getAttributes().item(this._8_idx));
+                        this.yield(_node.getAttributes().item(_8_idx));
                         return true;
                       case 0:
                         this._3_attributes = _node.getAttributes();
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        this._7_count = this._3_attributes.getLength();
+                        this._7_count = _3_attributes.getLength();
                         this.__CP__ = 8;
                         break;
                       case 10:
@@ -217,13 +201,10 @@ __switch__:
                   } while(true);
                   return false;
                 }
-
               };
             }
-
           };
         }
-
       });
     }
 
@@ -253,8 +234,8 @@ __switch__:
     public Iterable<Node> sequence() {
       Node parentNode = this.thisNode.getParentNode();
       return (parentNode != null ?
-        ListSequence.<Node>fromArray(parentNode) :
-        ListSequence.<Node>fromArray()
+        ListSequence.fromListAndArray(new ArrayList<Node>(), parentNode) :
+        ListSequence.fromList(new ArrayList<Node>())
       );
     }
 
