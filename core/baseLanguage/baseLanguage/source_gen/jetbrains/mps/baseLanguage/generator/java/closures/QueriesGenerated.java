@@ -73,10 +73,6 @@ public class QueriesGenerated {
     return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
 
-  public static boolean baseMappingRule_Condition_1235512472616(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.ypath.structure.LambdaMethod"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1170347597854(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
   }
