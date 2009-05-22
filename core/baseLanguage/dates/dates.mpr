@@ -30,9 +30,9 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="UnitTests" moduleRef="d5e1eadc-0b90-46d3-ad09-aafe577e509d(dates_unittest)" />
-      <genConfModule name="dates" moduleRef="jetbrains.mps.baseLanguage.dates" />
-      <genConfModule name="datestInternal" moduleRef="jetbrains.mps.baseLanguage.datesInternal" />
+      <genConfModule runnable="true" name="UnitTests" moduleRef="dates_unittest" />
+      <genConfModule runnable="false" name="dates" moduleRef="jetbrains.mps.baseLanguage.dates" />
+      <genConfModule runnable="false" name="datestInternal" moduleRef="jetbrains.mps.baseLanguage.datesInternal" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

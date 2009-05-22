@@ -16,17 +16,17 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModels name="runtime">
+      <genConfModels runnable="false" name="runtime">
         <models>
           <model modelRef="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" />
         </models>
       </genConfModels>
-      <genConfModels name="shared">
+      <genConfModels runnable="false" name="shared">
         <models>
           <model modelRef="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)" />
         </models>
       </genConfModels>
-      <genConfModule name="test" moduleRef="jetbrains.mps.baseLanguage.tuples.test" />
+      <genConfModule runnable="true" name="test" moduleRef="jetbrains.mps.baseLanguage.tuples.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -52,7 +52,7 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="$APPLICATION_HOME_DIR$">
+        <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
@@ -72,8 +72,8 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
 

@@ -14,14 +14,20 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="regexp" moduleRef="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
+      <genConfModule runnable="true" name="examples" moduleRef="jetbrains.mps.baseLanguage.regexp.examples" />
+      <genConfModule runnable="false" name="regexp" moduleRef="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="regexp" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
