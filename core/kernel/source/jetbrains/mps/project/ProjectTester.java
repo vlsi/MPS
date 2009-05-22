@@ -16,8 +16,10 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.util.lang.UrlClassLoader;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -29,11 +31,26 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.dates.unittest.tests.Compare_Test;
+import jetbrains.mps.baseLanguage.dates.unittest.tests.DateTimeZone_Test;
+import jetbrains.mps.baseLanguage.dates.unittest.tests.BaseTestCase;
+import jetbrains.mps.compiler.JavaCompiler;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.internal.compiler.ClassFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+import java.util.Arrays;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.io.StringWriter;
+
+import junit.framework.*;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -68,8 +85,8 @@ public class ProjectTester {
 
     final List<String> errors = new ArrayList<String>();
     final List<String> warnings = new ArrayList<String>();
-
     final List<String> compilationResults = new ArrayList<String>();
+    final List<TestFailure> failedTests = new ArrayList<TestFailure>();
 
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
@@ -116,7 +133,7 @@ public class ProjectTester {
     try {
       Logger.addLoggingHandler(loggingHandler);
 
-      final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {
+      final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(true) {
         public boolean requiresReloading() {
           return false;
         }
@@ -175,7 +192,39 @@ public class ProjectTester {
               handler
             );
 
-            compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
+            List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+            compilationResults.addAll(createCompilationProblemsList(compilationResultList));
+
+            if (t.getIsRunnable()) {
+              for (SModel model : parms.getSModels()) {
+                for (SNode root : model.getRoots()) {
+                  try {
+                    ClassLoader classLoader = generationType.getCompiler().getClassLoader(getClass().getClassLoader());
+                    String className = JavaNameUtil.packageNameForModelUID(model.getSModelReference()) + "." + root.getName();
+                    Class instanceClass = Class.forName(className, true, classLoader);
+                    Object instance = instanceClass.newInstance();
+                    Method setName = TestCase.class.getMethod("setName", String.class);
+                    for (Method method : instanceClass.getMethods()) {
+                      if (method.getAnnotation(org.junit.Test.class) == null) {
+                        continue;
+                      }
+                      setName.invoke(instance, method.getName());
+                      if (instance instanceof TestCase) {
+                        junit.framework.TestResult testResult = new junit.framework.TestResult();
+                        ((TestCase)instance).run(testResult);
+                        for (TestFailure testError : Collections.list(testResult.errors())) {
+                          failedTests.add(testError);
+                        }
+                        for (TestFailure testFailure : Collections.list(testResult.failures())) {
+                          failedTests.add(testFailure);
+                        }
+                      }
+                    }
+                  } catch (Throwable ignored) {
+                  }
+                }
+              }
+            }
 
             System.out.println("");
             System.out.println("");
@@ -187,6 +236,6 @@ public class ProjectTester {
       Logger.removeLoggingHandler(loggingHandler);
     }
 
-    return new TestResult(errors, warnings, compilationResults);
+    return new TestResult(errors, warnings, compilationResults, failedTests);
   }
 }

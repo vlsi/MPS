@@ -15,22 +15,32 @@
  */
 package jetbrains.mps.project;
 
+import junit.framework.TestFailure;
+
 import java.io.PrintStream;
 import java.util.List;
+import java.util.ArrayList;
 
 public class TestResult {
   public List<String> myGenerationErrors;
   public List<String> myGenerationWarnings;
   public List<String> myCompilationProblems;
+  public List<TestFailure> myFailedTestReports;
 
-  public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems) {
+  public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems,
+                    List<TestFailure> testResults) {
     this.myGenerationErrors = generationErrors;
     this.myGenerationWarnings = generationWarnings;
     this.myCompilationProblems = compilationProblems;
+    this.myFailedTestReports = testResults;
+  }
+
+  public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems) {
+    this(generationErrors, generationWarnings, compilationProblems, new ArrayList<TestFailure>());
   }
 
   public boolean isOk() {
-    return !hasGenerationErrors() && !hasCompilationProblems();
+    return !hasGenerationErrors() && !hasCompilationProblems() && !hasFailedTestReports();
   }
 
   public int warningsStartsWith(String warn) {
@@ -50,6 +60,10 @@ public class TestResult {
 
   public boolean hasGenerationWarnings() {
     return myGenerationWarnings.size() != 0;
+  }
+
+  public boolean hasFailedTestReports() {
+    return myFailedTestReports.size() != 0;
   }
 
   public boolean hasCompilationProblems() {
@@ -86,6 +100,18 @@ public class TestResult {
       }
     } else {
       out.println("No compilation problems.");
+    }
+    out.println("");
+
+    if (hasFailedTestReports()) {
+      out.println("Test problems:");
+      for (TestFailure tf : myFailedTestReports) {
+        out.println("" + tf);
+        tf.thrownException().printStackTrace(out);
+        out.println();
+      }
+    } else {
+      out.println("No test problems.");
     }
     out.println("=========================================================================");
   }

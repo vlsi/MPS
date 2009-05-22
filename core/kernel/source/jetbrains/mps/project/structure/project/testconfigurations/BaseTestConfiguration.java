@@ -20,7 +20,19 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseTestConfiguration {
+  public static final String PROPERTY_NAME = "name";
+  public static final String PROPERTY_RUNNABLE = "isRunnable";
+
+  private Boolean myIsRunnable;
   private String myName;
+
+  public Boolean getIsRunnable() {
+    return myIsRunnable;
+  }
+
+  public void setIsRunnable(Boolean isRunnable) {
+    myIsRunnable = isRunnable;
+  }
 
   public String getName() {
     return myName;
