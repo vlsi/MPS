@@ -126,9 +126,6 @@
   <sourcePath>
     <source path="${language_descriptor}/source" />
   </sourcePath>
-  <dependencies>
-    <dependency reexport="false">4f57e080-33c7-449c-96f9-dd8dfead6ae4(jetbrains.mps.baseLanguage.sandbox)</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
