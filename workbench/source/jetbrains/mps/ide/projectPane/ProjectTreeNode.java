@@ -48,4 +48,9 @@ class ProjectTreeNode extends MPSTreeNode {
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS);
   }
+
+  @Override
+  public int getToggleClickCount() {
+    return -1;
+  }
 }
