@@ -71,7 +71,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
       try {
         plugin.preInit();
       } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
       }
     }
 

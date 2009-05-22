@@ -213,6 +213,7 @@ public class GeneratorManager {
             message += "\n" + sm.getSModelFqName();
           }
 
+
           int result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
           if (result == 2) {
             return false;
