@@ -47,7 +47,7 @@ public class ApplicationsTest extends BaseMPSTest {
   }
 
   public void testYpath() {
-      assertGenerates(new File("platform/ypath/YPath.mpr"));
-    }
+    assertGenerates(new File("platform/ypath/YPath.mpr"));
+  }
 
 }
