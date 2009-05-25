@@ -7770,6 +7770,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8881577682537773107">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8881577682537773108">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8881577682537773117">
+              <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8881577682537773120">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8881577682537773124">
+                  <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8881577682537773112">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8881577682537773111">
+              <link role="variableDeclaration" targetNodeId="8008512149545161854" resolveInfo="parameters" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8881577682537773116" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8008512149545161859">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8008512149545161860">
             <property name="name" value="concreteType" />
