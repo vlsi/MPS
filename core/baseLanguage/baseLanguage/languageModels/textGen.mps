@@ -5509,18 +5509,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1235134426126">
-    <link role="conceptDeclaration" targetNodeId="1.1068431790189" resolveInfo="Type" />
-    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235134426127">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235134426128">
-        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992812">
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992814">
-            <property name="value" value="Type" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1235148827560">
     <link role="conceptDeclaration" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235148827561">
