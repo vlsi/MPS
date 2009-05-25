@@ -20,6 +20,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 /**
  * Author: Sergey Dmitriev
  * Created Sep 16, 2003
+ *
+ * WARNING: Do not use this kind of listener in UI. In case of changes to a model
+ * that affect many nodes it might lead to performance problems. Use SModelCommandListener
+ * instead in these cases. 
  */
 public interface SModelListener {
   void languageAdded(SModelLanguageEvent event);
