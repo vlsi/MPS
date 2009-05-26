@@ -69,6 +69,11 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       public void modelChangedDramatically(SModel model) {
         invalidateCache();
       }
+
+      @Override
+      public void modelChanged(SModel model) {
+        invalidateCache();
+      }
     };
 
     //for consistency
