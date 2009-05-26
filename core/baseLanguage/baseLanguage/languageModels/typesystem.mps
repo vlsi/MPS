@@ -11,6 +11,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -39,7 +40,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="50" />
+  <maxImportIndex value="51" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
@@ -60,6 +61,7 @@
   <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="46" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
   <import index="48" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="51" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1175495245176">
     <property name="name" value="typeOf_andExpression" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175495245177">
@@ -16709,6 +16711,85 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4269842503726235546">
       <property name="name" value="literal" />
       <link role="concept" targetNodeId="1.4269842503726207156" resolveInfo="LongLiteral" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="2913480580301821154">
+    <property name="name" value="check_StaticMethodScope" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2913480580301821155">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2913480580301828893">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2913480580301828894">
+          <property name="name" value="staticMethods" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2913480580301828920">
+            <link role="elementConcept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="2913480580301828925">
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2913480580301828926">
+              <link role="elementConcept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2913480580301828927">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2913480580301828928">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2913480580301828929">
+                  <link role="baseMethodDeclaration" targetNodeId="35.~ClassifierVisibleStaticMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleStaticMembersScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2913480580301828930">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2913480580301828931">
+                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2913480580301828932">
+                        <link role="applicableNode" targetNodeId="2913480580301821157" resolveInfo="staticMethodCall" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2913480580301828933">
+                        <link role="link" targetNodeId="1.1144433194310" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="2913480580301828934" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2913480580301828935">
+                    <link role="applicableNode" targetNodeId="2913480580301821157" resolveInfo="staticMethodCall" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2913480580301828936">
+                    <link role="classifier" targetNodeId="35.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                    <link role="variableDeclaration" targetNodeId="35.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2913480580301828937">
+                <link role="baseMethodDeclaration" targetNodeId="51.~AbstractSearchScope.getNodes():java.util.List" resolveInfo="getNodes" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2913480580301828910">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2913480580301828911">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="2913480580301828959">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2913480580301828962">
+              <property name="value" value="Incorrect method reference" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2913480580301828963">
+              <link role="applicableNode" targetNodeId="2913480580301821157" resolveInfo="staticMethodCall" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2913480580301828914">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2913480580301828941">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2913480580301828917">
+              <link role="variableDeclaration" targetNodeId="2913480580301828894" resolveInfo="staticMethods" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="2913480580301828948">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2913480580301828953">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2913480580301828951">
+                  <link role="applicableNode" targetNodeId="2913480580301821157" resolveInfo="staticMethodCall" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2913480580301828958">
+                  <link role="link" targetNodeId="1.1081236769987" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="2913480580301821157">
+      <property name="name" value="staticMethodCall" />
+      <link role="concept" targetNodeId="1.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
   </node>
 </model>
