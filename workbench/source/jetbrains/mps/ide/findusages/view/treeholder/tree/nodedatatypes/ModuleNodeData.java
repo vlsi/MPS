@@ -62,11 +62,15 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   public IModule getModule() {
-    return (IModule) getIdObject();
+    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+  }
+
+  public ModuleReference getModuleReference() {
+    return myModuleReference;
   }
 
   public Object getIdObject() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+    return getModule();
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {

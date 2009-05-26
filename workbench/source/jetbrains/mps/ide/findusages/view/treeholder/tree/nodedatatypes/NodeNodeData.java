@@ -56,6 +56,10 @@ public class NodeNodeData extends BaseNodeData {
     read(element, project);
   }
 
+  public SNodePointer getNodePointer() {
+    return myNodePointer;
+  }
+
   public SNode getNode() {
     return (SNode) getIdObject();
   }

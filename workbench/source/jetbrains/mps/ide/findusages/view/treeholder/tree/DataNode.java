@@ -67,12 +67,16 @@ public class DataNode implements IExternalizeable {
     return result;
   }
 
+  public List<DataNode> getDescendantsByDataClass(final Class dataClass){
+    return getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      public boolean met(BaseNodeData data) {
+        return dataClass.isInstance(data);
+      }
+    });
+  }
+
   public boolean containsNodes(Class dataClass) {
-    if (dataClass.isInstance(myData)) return true;
-    for (DataNode node : myChildren) {
-      if (node.containsNodes(dataClass)) return true;
-    }
-    return false;
+    return !getDescendantsByDataClass(dataClass).isEmpty();
   }
 
   //-------DATA QUERY--------

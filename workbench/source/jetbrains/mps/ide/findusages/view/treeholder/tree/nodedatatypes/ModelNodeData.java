@@ -58,8 +58,12 @@ public class ModelNodeData extends BaseNodeData {
     return modelDescriptor.getSModel();
   }
 
-  private SModelDescriptor getModelDescriptor() {
+  public SModelDescriptor getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
+  }
+
+  public SModelReference getModelReference() {
+    return myModelReference;
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {

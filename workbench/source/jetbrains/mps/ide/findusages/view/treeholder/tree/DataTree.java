@@ -34,9 +34,10 @@ import org.jdom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataTree implements IExternalizeable {
+public class DataTree implements IExternalizeable,IChangeListener {
   private DataNode myTreeRoot = buildEmpty();
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
+  private DataTreeChangesNotifier myChangesNotifier =new DataTreeChangesNotifier(this);
 
   public DataTree() {
 
@@ -52,17 +53,17 @@ public class DataTree implements IExternalizeable {
 
   //----EXCLUSION/EXPANSION----
 
-  public void setExcluded(List<DataNode> nodes,boolean value){
-    for (DataNode node:nodes){
-      setExcludedRecursive(node,value);
+  public void setExcluded(List<DataNode> nodes, boolean value) {
+    for (DataNode node : nodes) {
+      setExcludedRecursive(node, value);
     }
     notifyChangeListeners();
   }
 
-  private void setExcludedRecursive(DataNode node,boolean value){
+  private void setExcludedRecursive(DataNode node, boolean value) {
     node.getData().setExcluded(value);
-    for (DataNode child:node.getChildren()){
-      setExcludedRecursive(child,value);
+    for (DataNode child : node.getChildren()) {
+      setExcludedRecursive(child, value);
     }
   }
 
@@ -99,20 +100,22 @@ public class DataTree implements IExternalizeable {
   }
 
   protected void setContents(DataNode root) {
-    stopListening();
     myTreeRoot = root;
-    startListening();
+    updateNotifier();
     notifyChangeListeners();
   }
 
-  private void startListening() {
-   
-
+  public void startListening(){
+    myChangesNotifier.startListening(myTreeRoot);
   }
 
-  private void stopListening() {
+  public void stopListening(){
+    myChangesNotifier.stopListening();
+  }
 
-
+  private void updateNotifier() {
+    myChangesNotifier.stopListening();
+    myChangesNotifier.startListening(myTreeRoot);
   }
 
   //----TREE BUILD STUFF----
@@ -217,5 +220,9 @@ public class DataTree implements IExternalizeable {
     for (IChangeListener listener : myListeners) {
       listener.changed();
     }
+  }
+
+  public void changed() {
+    notifyChangeListeners();
   }
 }
