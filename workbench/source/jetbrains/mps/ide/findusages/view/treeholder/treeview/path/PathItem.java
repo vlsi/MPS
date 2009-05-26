@@ -13,8 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.tree;
+package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
-public interface IChangeListener {
-  public void changed();
+public class PathItem {
+  private Object myIdObject;
+  private PathItemRole myRole;
+
+  public PathItem(PathItemRole role, Object idObject) {
+    myRole = role;
+    myIdObject = idObject;
+  }
+
+  public Object getIdObject() {
+    return myIdObject;
+  }
+
+  public PathItemRole getRole() {
+    return myRole;
+  }
 }

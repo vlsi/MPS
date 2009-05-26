@@ -32,8 +32,8 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -50,7 +50,10 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +69,7 @@ import java.util.List;
 public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element>, INavigateableUsagesTool {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
-  private static final String VERSION_NUMBER = "0.9996";
+  private static final String VERSION_NUMBER = "0.9997";
   private static final String VERSION = "version";
   private static final String ID = "id";
 

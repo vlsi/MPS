@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
+package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
-
-import javax.swing.Icon;
 
 public class SearchedNodesNodeData extends BaseStaticNodeData {
   public static final String CATEGORY_NAME = "Searched nodes";
 
   public SearchedNodesNodeData(PathItemRole role) {
-    super(role,Icons.SEARCHED_NODES_ICON, CATEGORY_NAME, "", true, false, false);
+    super(role, Icons.SEARCHED_NODES_ICON, CATEGORY_NAME, "", true, false, false);
   }
 
   public SearchedNodesNodeData(Element element, MPSProject project) throws CantLoadSomethingException {

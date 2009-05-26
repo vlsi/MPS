@@ -26,14 +26,14 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowType;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.BaseNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModelNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.ModuleNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.NodeNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataNode;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -243,13 +243,14 @@ public abstract class UsagesTree extends MPSTree {
           HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
           searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
 
-          if (myContents.getTreeRoot().getChild(0).containsNodes(NodeNodeData.class)) {
+          DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
+          if (searchedNodesRoot.containsNodes(NodeNodeData.class)) {
             if (myGroupSearchedNodes) {
               searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
               searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
             }
             searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
-          } else if (myContents.getTreeRoot().getChild(0).containsNodes(ModelNodeData.class)) {
+          } else if (searchedNodesRoot.containsNodes(ModelNodeData.class)) {
             if (myGroupSearchedNodes) {
               searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
             }
@@ -257,9 +258,9 @@ public abstract class UsagesTree extends MPSTree {
           } else {
             searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
           }
-          root.add(buildTree(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider));
+          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
         }
-        root.add(buildTree(myContents.getTreeRoot().getChild(1), myResultPathProvider));
+        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
 
         return root;
       }
@@ -400,11 +401,11 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void setCurrentNodesExclusion(boolean isExculded) {
-    myContents.setAdjusting(true);
+    List<DataNode> nodes=new ArrayList<DataNode>();
     for (UsagesTreeNode node : getCurrentNodes()) {
-      setExcluded(node, isExculded, false);
+      nodes.add(node.getUserObject());
     }
-    myContents.setAdjusting(false);
+    myContents.setExcluded(nodes,isExculded);
   }
 
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
@@ -425,15 +426,6 @@ public abstract class UsagesTree extends MPSTree {
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
-  private void setExcluded(UsagesTreeNode node, boolean isExcluded, boolean useAdjust) {
-    if (useAdjust) myContents.setAdjusting(true);
-    node.getUserObject().getData().setExcluded(isExcluded);
-    for (MPSTreeNode child : node) {
-      setExcluded((UsagesTreeNode) child, isExcluded, false);
-    }
-    if (useAdjust) myContents.setAdjusting(false);
-  }
-
   private void openCurrentNodeLinkIfLeaf(boolean inProject, boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
@@ -449,7 +441,7 @@ public abstract class UsagesTree extends MPSTree {
 
   private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
     TreePath path = e.getNewLeadSelectionPath();
-    if (path==null) return;
+    if (path == null) return;
     Object treeNode = path.getLastPathComponent();
     if (!(treeNode instanceof UsagesTreeNode)) return;
     goByNodeLink((UsagesTreeNode) treeNode, inProjectIfPossible, focus);

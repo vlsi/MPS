@@ -13,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
+package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -43,8 +39,6 @@ public class NodeNodeData extends BaseNodeData {
   private static final String NODE = "node";
 
   private SNodePointer myNodePointer;
-  private SModelListener myModelListener = null;
-  private boolean myIsRemoved = false;
 
   public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(
@@ -56,32 +50,10 @@ public class NodeNodeData extends BaseNodeData {
       resultsSection
     );
     myNodePointer = new SNodePointer(node);
-
-    startListening();
   }
 
   public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
-  }
-
-  private void startListening() {
-    SNode node = myNodePointer.getNode();
-    myModelListener = new SModelAdapter() {
-      public void rootRemoved(SModelRootEvent event) {
-        if (event.getRoot() == getNode()) {
-          myIsRemoved = true;
-          notifyChangeListeners();
-        }
-      }
-
-      public void childRemoved(SModelChildEvent event) {
-        if (event.getChild() == getNode()) {
-          myIsRemoved = true;
-          notifyChangeListeners();
-        }
-      }
-    };
-    node.getModel().addWeakSModelListener(myModelListener);
   }
 
   public SNode getNode() {
@@ -89,12 +61,11 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public Icon getIcon() {
-    if (myNodePointer.getNode() == null || myIsRemoved) return null;
+    if (myNodePointer.getNode() == null) return null;
     return IconManager.getIconFor(myNodePointer.getNode());
   }
 
   public Object getIdObject() {
-    if (myIsRemoved) return null;
     return myNodePointer.getNode();
   }
 
@@ -115,10 +86,6 @@ public class NodeNodeData extends BaseNodeData {
       node = ComponentsUtil.nodeFromElement((Element) children.get(0));
     }
     myNodePointer = new SNodePointer(node);
-
-    if (!isInvalid()) {
-      startListening();
-    }
   }
 
   public static String snodeRepresentation(final SNode node) {

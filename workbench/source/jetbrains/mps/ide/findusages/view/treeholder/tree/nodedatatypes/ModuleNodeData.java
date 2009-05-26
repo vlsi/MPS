@@ -13,35 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
+package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import org.jdom.Element;
 
 import javax.swing.Icon;
 
 public class ModuleNodeData extends BaseNodeData {
-  private static final String UID = "uid";
+  private static final String MODULE_REF = "module_ref";
 
-  private ModuleRepositoryAdapter myRepositoryListener = null;
-  private boolean myIsRemoved = false;
-  public String myModuleUID = "";
+  private ModuleReference myModuleReference = new ModuleReference("");
 
   public ModuleNodeData(PathItemRole role, IModule module, boolean isResult, boolean resultsSection) {
     super(role, getCaption(module), "", true, isResult, resultsSection);
-    myModuleUID = module.getModuleUID();
-
-    startListening();
+    myModuleReference = module.getModuleReference();
   }
 
   public ModuleNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -59,21 +54,11 @@ public class ModuleNodeData extends BaseNodeData {
     }
   }
 
-  private void startListening() {
-    myRepositoryListener = new ModuleRepositoryAdapter() {
-      public void moduleRemoved(IModule module) {
-        if (module.getModuleUID().equals(myModuleUID)) {
-          myIsRemoved = true;
-          notifyChangeListeners();
-        }
-      }
-    };
-    //todo MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-  }
 
   public Icon getIcon() {
-    if (myIsRemoved) return null;
-    return IconManager.getIconFor(getModule());
+    IModule module = getModule();
+    if (module == null) return null;
+    return IconManager.getIconFor(module);
   }
 
   public IModule getModule() {
@@ -81,22 +66,17 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    if (myIsRemoved) return null;
-    return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
+    return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
-    element.setAttribute(UID, myModuleUID);
+    element.setAttribute(MODULE_REF, myModuleReference.toString());
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
-    myModuleUID = element.getAttributeValue(UID);
-
-    if (!isInvalid()) {
-      startListening();
-    }
+    myModuleReference = ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
   }
 
   public String getText(TextOptions options) {

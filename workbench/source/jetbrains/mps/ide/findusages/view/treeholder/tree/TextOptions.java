@@ -13,22 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.path;
+package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
-public class PathItem {
-  private Object myIdObject;
-  private PathItemRole myRole;
+public class TextOptions {
+  public boolean myAdditionalInfo;
+  public boolean myCounters;
+  public int mySubresultsCount;
 
-  public PathItem(PathItemRole role, Object idObject) {
-    myRole = role;
-    myIdObject = idObject;
-  }
-
-  public Object getIdObject() {
-    return myIdObject;
-  }
-
-  public PathItemRole getRole() {
-    return myRole;
+  public TextOptions(boolean additionalInfo, boolean counters, int subresultsCount) {
+    myAdditionalInfo = additionalInfo;
+    myCounters = counters;
+    mySubresultsCount = subresultsCount;
   }
 }

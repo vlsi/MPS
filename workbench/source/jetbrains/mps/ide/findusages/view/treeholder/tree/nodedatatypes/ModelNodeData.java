@@ -13,16 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
+package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -32,31 +34,14 @@ public class ModelNodeData extends BaseNodeData {
   private static final String UID = "uid";
 
   public SModelReference myModelReference = SModelReference.fromString("");
-  private SModelRepositoryListener myModelRepositoryListener = null;
-  private boolean myIsRemoved = false;
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
     super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
     myModelReference = model.getModelDescriptor().getSModelReference();
-
-    startListening();
   }
 
   public ModelNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
-  }
-
-  private void startListening() {
-    myModelRepositoryListener = new SModelRepositoryAdapter() {
-      public void modelRemoved(SModelDescriptor modelDescriptor) {
-        if (modelDescriptor.getSModelReference().equals(myModelReference)) {
-          myIsRemoved = true;
-          notifyChangeListeners();
-        }
-      }
-    };
-
-    SModelRepository.getInstance().addWeakModelRepositoryListener(myModelRepositoryListener);
   }
 
   public Icon getIcon() {
@@ -68,7 +53,6 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    if (myIsRemoved) return null;
     SModelDescriptor modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
@@ -89,10 +73,6 @@ public class ModelNodeData extends BaseNodeData {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
-
-    if (!isInvalid()) {
-      startListening();
-    }
   }
 
   public String getText(TextOptions options) {

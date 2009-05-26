@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.tree;
+package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -21,11 +21,11 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItem;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathProvider;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes.*;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.*;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -34,10 +34,9 @@ import org.jdom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataTree implements IExternalizeable, IChangeListener {
+public class DataTree implements IExternalizeable {
   private DataNode myTreeRoot = buildEmpty();
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
-  private boolean myIsAdjusting = false;
 
   public DataTree() {
 
@@ -47,15 +46,52 @@ public class DataTree implements IExternalizeable, IChangeListener {
     read(element, project);
   }
 
-  public void setAdjusting(boolean isAdjusting) {
-    myIsAdjusting = isAdjusting;
-    if (!myIsAdjusting) {
-      notifyChangeListeners();
+  public DataNode getTreeRoot() {
+    return myTreeRoot;
+  }
+
+  //----EXCLUSION/EXPANSION----
+
+  public void setExcluded(List<DataNode> nodes,boolean value){
+    for (DataNode node:nodes){
+      setExcludedRecursive(node,value);
+    }
+    notifyChangeListeners();
+  }
+
+  private void setExcludedRecursive(DataNode node,boolean value){
+    node.getData().setExcluded(value);
+    for (DataNode child:node.getChildren()){
+      setExcludedRecursive(child,value);
     }
   }
 
-  public DataNode getTreeRoot() {
-    return myTreeRoot;
+  //----DATA QUERY----
+
+  public List<SModelDescriptor> getIncludedModels() {
+    return getResultsNode().getIncludedModels();
+  }
+
+  public List<SModelDescriptor> getAllModels() {
+    return getResultsNode().getAllModels();
+  }
+
+  public List<SNodePointer> getIncludedResultNodes() {
+    return getResultsNode().getIncludedResultNodes();
+  }
+
+  public List<SNodePointer> getAllResultNodes() {
+    return getResultsNode().getAllResultNodes();
+  }
+
+  private DataNode getResultsNode() {
+    return myTreeRoot.getChildren().get(1);
+  }
+
+  //----CONTENT MANAGEMENT----
+
+  public void clearContents() {
+    setContents(buildEmpty());
   }
 
   public void setContents(SearchResults results, INodeRepresentator nodeRepresentator) {
@@ -63,44 +99,20 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   protected void setContents(DataNode root) {
-    removeChangeListenersFromTree(myTreeRoot);
+    stopListening();
     myTreeRoot = root;
-    addChangeListenersToTree(myTreeRoot);
     notifyChangeListeners();
+    startListening();
   }
 
-  private void addChangeListenersToTree(DataNode treeRoot) {
-    treeRoot.addChangeListener(this);
-    for (DataNode child : treeRoot.getChildren()) {
-      addChangeListenersToTree(child);
-    }
+  private void startListening() {
+   
+
   }
 
-  private void removeChangeListenersFromTree(DataNode treeRoot) {
-    treeRoot.removeChangeListener(this);
-    for (DataNode child : treeRoot.getChildren()) {
-      removeChangeListenersFromTree(child);
-    }
-  }
+  private void stopListening() {
 
-  public void clearContents() {
-    setContents(buildEmpty());
-  }
 
-  public List<SModelDescriptor> getIncludedModels() {
-    return myTreeRoot.getChild(1).getIncludedModels();
-  }
-
-  public List<SModelDescriptor> getAllModels() {
-    return myTreeRoot.getChild(1).getAllModels();
-  }
-
-  public List<SNodePointer> getIncludedResultNodes() {
-    return myTreeRoot.getChild(1).getIncludedResultNodes();
-  }
-
-  public List<SNodePointer> getAllResultNodes() {
-    return myTreeRoot.getChild(1).getAllResultNodes();
   }
 
   //----TREE BUILD STUFF----
@@ -202,14 +214,8 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   public void notifyChangeListeners() {
-    if (myIsAdjusting) return;
     for (IChangeListener listener : myListeners) {
       listener.changed();
     }
   }
-
-  public void changed() {
-    notifyChangeListeners();
-  }
-
 }

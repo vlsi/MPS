@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
+package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.IChangeListener;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import javax.swing.Icon;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class BaseNodeData implements IExternalizeable {
   private static final String EXPANDED = "expanded";
@@ -36,8 +33,6 @@ public abstract class BaseNodeData implements IExternalizeable {
   private static final String RESULTS_SECTION = "results_section";
   private static final String ISRESULT = "isresult";
   private static final String ROLE = "role";
-
-  private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
 
   private PathItemRole myRole;
   private String myCaption;
@@ -67,6 +62,16 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   //----MAIN DATA STUFF----
 
+  //must be used only via DataTree
+  public void setExcluded(boolean isExcluded) {
+    myIsExcluded = isExcluded;
+  }
+
+  //must be used only via DataTree
+  public void setExpanded(boolean isExpanded) {
+    myIsExpanded = isExpanded;
+  }
+
   public boolean isResultsSection() {
     return myResultsSection;
   }
@@ -75,18 +80,8 @@ public abstract class BaseNodeData implements IExternalizeable {
     return myIsExcluded;
   }
 
-  public void setExcluded(boolean isExcluded) {
-    myIsExcluded = isExcluded;
-    notifyChangeListeners();
-  }
-
   public boolean isExpanded() {
     return myIsExpanded;
-  }
-
-  public void setExpanded(boolean isExpanded) {
-    myIsExpanded = isExpanded;
-    //notifyChangeListeners();
   }
 
   public PathItemRole getRole() {
@@ -107,10 +102,6 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   public boolean isInvalid() {
     return getIdObject() == null;
-  }
-
-  public void setCaption(String caption) {
-    myCaption = caption;
   }
 
   public boolean isResultNode() {
@@ -149,25 +140,4 @@ public abstract class BaseNodeData implements IExternalizeable {
   public abstract Icon getIcon();
 
   public abstract Object getIdObject();
-
-  //----LISTENERS STUFF----
-
-  public void addChangeListener(IChangeListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeChangeListeners(IChangeListener listener) {
-    myListeners.remove(listener);
-  }
-
-  public void notifyChangeListeners() {
-    for (IChangeListener listener : myListeners) {
-      listener.changed();
-    }
-  }
-
-  //just for assert purposes
-  public int getListenersCount() {
-    return myListeners.size();
-  }
 }
