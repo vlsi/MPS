@@ -200,6 +200,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     myTreeRoot.read(element, project);
     notifyChangeListeners();
+    updateNotifier();
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
