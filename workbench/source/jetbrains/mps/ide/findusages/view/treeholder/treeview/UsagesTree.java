@@ -216,6 +216,14 @@ public abstract class UsagesTree extends MPSTree {
     }
   }
 
+  public void setAll(DataTree contents, HashSet<PathItemRole> pathProvider) {
+    myContents = contents;
+    myResultPathProvider = pathProvider;
+    if (!myIsAdjusting) {
+      rebuildLater();
+    }
+  }
+
   public void expandResults() {
     expandAll(getResultsNode());
   }

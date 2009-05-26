@@ -42,9 +42,9 @@ public class DataTreeChangesNotifier {
   private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
   private MyModuleRepositoryListener myModuleRepositoryListener = new MyModuleRepositoryListener();
 
-  private Set<SNodePointer> myNodes=new HashSet<SNodePointer>();
+  private Set<SNodePointer> myNodes = new HashSet<SNodePointer>();
   private Set<SModelReference> myModels = new HashSet<SModelReference>();
-  private Set<ModuleReference> myModules=new HashSet<ModuleReference>();
+  private Set<ModuleReference> myModules = new HashSet<ModuleReference>();
 
   public DataTreeChangesNotifier(IChangeListener tree) {
     myTree = tree;
@@ -89,18 +89,18 @@ public class DataTreeChangesNotifier {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (myModels.contains(event.getModelDescriptor().getSModelReference())) {
-          if (event instanceof SModelRootEvent){
-            SModelRootEvent modelRootEvent=(SModelRootEvent)event;
-            SNodePointer rootPointer=new SNodePointer(modelRootEvent.getRoot());
-            if(modelRootEvent.isRemoved() && myNodes.contains(rootPointer)){
-              myChanged=true;
+          if (event instanceof SModelRootEvent) {
+            SModelRootEvent modelRootEvent = (SModelRootEvent) event;
+            SNodePointer rootPointer = new SNodePointer(modelRootEvent.getRoot());
+            if (modelRootEvent.isRemoved() && myNodes.contains(rootPointer)) {
+              myChanged = true;
               return;
             }
-          } else if (event instanceof SModelChildEvent){
-            SModelChildEvent modelChildEvent=(SModelChildEvent)event;
-            SNodePointer childPointer=new SNodePointer(modelChildEvent.getChild());
-            if(modelChildEvent.isRemoved() && myNodes.contains(childPointer)){
-              myChanged=true;
+          } else if (event instanceof SModelChildEvent) {
+            SModelChildEvent modelChildEvent = (SModelChildEvent) event;
+            SNodePointer childPointer = new SNodePointer(modelChildEvent.getChild());
+            if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
+              myChanged = true;
               return;
             }
           }
@@ -111,8 +111,8 @@ public class DataTreeChangesNotifier {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     public void modelDeleted(SModelDescriptor modelDescriptor) {
-      if (myModels.contains(modelDescriptor.getSModelReference())){
-        myChanged=true;
+      if (myModels.contains(modelDescriptor.getSModelReference())) {
+        myChanged = true;
         return;
       }
     }
@@ -120,8 +120,8 @@ public class DataTreeChangesNotifier {
 
   private class MyCommandNotifier extends CommandAdapter {
     public void commandFinished(CommandEvent event) {
-      if (myChanged){
-        myChanged=false;
+      if (myChanged) {
+        myChanged = false;
         myTree.changed();
       }
     }
@@ -129,8 +129,8 @@ public class DataTreeChangesNotifier {
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     public void moduleRemoved(IModule module) {
-      if (myModules.contains(module.getModuleReference())){
-        myChanged=true;
+      if (myModules.contains(module.getModuleReference())) {
+        myChanged = true;
         return;
       }
     }

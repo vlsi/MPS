@@ -51,7 +51,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   private Class myNodeRepresentatorClass = null;
 
   private UsagesTree myTree;
-  private DataTree myContents = new DataTree();
+  private DataTree myContents;
   private Set<PathItemRole> myPathProvider = new HashSet<PathItemRole>();
 
   private ViewToolbar myViewToolbar;
@@ -91,7 +91,13 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
     add(treePane, BorderLayout.CENTER);
 
+    myContents = new DataTree();
     myContents.addChangeListener(this);
+    myContents.startListening();
+  }
+
+  public void dispose(){
+    myContents.stopListening();
   }
 
   public void setEmptyContents() {

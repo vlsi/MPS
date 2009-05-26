@@ -95,6 +95,10 @@ public abstract class UsagesView implements IExternalizeable {
     myPanel.setMinimumSize(new Dimension());
   }
 
+  public void dispose(){
+    myTreeComponent.dispose();
+  }
+
   //----RUN STUFF----
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
