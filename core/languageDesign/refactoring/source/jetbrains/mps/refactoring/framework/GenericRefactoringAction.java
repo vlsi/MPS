@@ -17,14 +17,14 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenericRefactoringAction extends BaseAction {
   private ILoggableRefactoring myRefactoring;
@@ -70,11 +70,6 @@ public class GenericRefactoringAction extends BaseAction {
   @NotNull
   public String getKeyStroke() {
     return myRefactoring.getKeyStroke();
-  }
-
-  @Override
-  public void addPlace(ActionPlace place) {
-    super.addPlace(place);
   }
 
   private List<SNode> getNodes(ActionEventData data) {

@@ -29,6 +29,7 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.Intention;
@@ -67,15 +68,14 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
@@ -1472,7 +1472,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        GoByCurrentReferenceAction action = new GoByCurrentReferenceAction();
+        GoByCurrentReference_Action action = new GoByCurrentReference_Action();
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
         action.update(event);
         if (event.getPresentation().isEnabled()) {

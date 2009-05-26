@@ -11,7 +11,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="language" moduleRef="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
+      <genConfModule runnable="false" name="language" moduleRef="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

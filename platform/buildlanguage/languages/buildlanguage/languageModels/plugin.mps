@@ -1314,6 +1314,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225567254172">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1225567254173">
           <link role="constructorDeclaration" targetNodeId="31.~JPanel.&lt;init&gt;(java.awt.LayoutManager,boolean)" resolveInfo="JPanel" />
+          <link role="baseMethodDeclaration" targetNodeId="31.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225567254174">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225567254175">
               <link role="baseMethodDeclaration" targetNodeId="24.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
@@ -3935,6 +3936,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240833723761">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1240833723762">
           <link role="constructorDeclaration" targetNodeId="31.~JPanel.&lt;init&gt;(java.awt.LayoutManager,boolean)" resolveInfo="JPanel" />
+          <link role="baseMethodDeclaration" targetNodeId="31.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240833723763">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1240833723764">
               <link role="baseMethodDeclaration" targetNodeId="24.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
