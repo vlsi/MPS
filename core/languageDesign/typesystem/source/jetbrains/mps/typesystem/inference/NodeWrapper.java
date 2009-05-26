@@ -54,7 +54,13 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if (RuntimeTypeVariable.concept.equals(conceptFqName)) {
       result = new VariableWrapper(node, equationManager, equationManagerNullable);
     } else if (CopiedTypeProvider.concept.equals(conceptFqName)) {
-      result = new CopiedTypeWrapper(node, equationManager);
+      SNode copied = node;
+      SNode source = copied.getReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE);
+      while(CopiedTypeProvider.concept.equals(source.getConceptFqName())) {
+        copied = source;
+        source = copied.getReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE);
+      }
+      result = new CopiedTypeWrapper(copied, equationManager);
     } else if (RuntimeHoleType.concept.equals(conceptFqName)) {
       result = new HoleWrapper(node, equationManager, null);
     } else {

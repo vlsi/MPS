@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -75,5 +76,9 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
 
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
     return matchesWith(wrapper, equationManager, errorInfo, null);
+  }
+
+  public SNode fromWrapper() {
+    return getNode();
   }
 }

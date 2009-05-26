@@ -47,4 +47,6 @@ public interface IWrapper extends IMatcher {
   public IWrapper getShallowConcreteRepresentator();
 
   public int getDegree();
+
+  SNode fromWrapper();
 }

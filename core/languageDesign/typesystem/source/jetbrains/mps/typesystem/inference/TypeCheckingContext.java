@@ -50,6 +50,7 @@ public class TypeCheckingContext {
   private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
 
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
+  private static final boolean GREY_TYPEOF_ENABLED = false;
 
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
@@ -196,8 +197,11 @@ public class TypeCheckingContext {
     if (addDependency) {
       return representator;
     } else {
-      return representator;
-     // return createCopiedTypeProviderNode(representator);
+      if (GREY_TYPEOF_ENABLED) {
+        return createCopiedTypeProviderNode(representator);
+      }   else {
+        return representator;
+      }
     }
   }
 
@@ -218,9 +222,11 @@ public class TypeCheckingContext {
 
   private SNode getRepresentatorIfNecessary(SNode type) {
     if (type == null) return null;
-    SNode representator = getNodeTypesComponent().getEquationManager().getRepresentator(type);
-    if (representator != null) return representator;
-    return type;
+    EquationManager equationManager = getEquationManager();
+    IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type, equationManager));
+    SNode representator = representatorWrapper.fromWrapper();
+    if (representator == null) return type;
+    return representator;
   }
 
   public void createEquation(SNode node1,
@@ -270,7 +276,7 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
-   public void createEquation(IWrapper wrapper1,
+  public void createEquation(IWrapper wrapper1,
                              IWrapper wrapper2,
                              SNode nodeToCheck,
                              String errorString,
@@ -465,7 +471,7 @@ public class TypeCheckingContext {
 
   public SNode computeTypeForResolve(SNode node) {
     if (myNodesToComputeDuringResolve.contains(node)) {
-     // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
+      // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
       return null;
     }
     final NodeTypesComponent temporaryComponent;

@@ -76,7 +76,8 @@ public class EquationManager {
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
 
-  private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new com.intellij.util.containers.HashMap<IWrapper, Set<CopiedTypeWrapper>>();
+  private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new HashMap<IWrapper, Set<CopiedTypeWrapper>>();
+  private Map<VariableWrapper, Set<CopiedTypeWrapper>> myCopiedVars = new HashMap<VariableWrapper, Set<CopiedTypeWrapper>>();
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
@@ -127,7 +128,12 @@ public class EquationManager {
 
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
-    SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_, this)));
+    IWrapper representatorWrapper = getRepresentatorWrapper(NodeWrapper.fromNode(type_, this));
+    if (representatorWrapper instanceof CopiedTypeWrapper
+      && representatorWrapper.getNode().getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      return representatorWrapper.fromWrapper();
+    }
+    SNode representator = NodeWrapper.fromWrapper(representatorWrapper);
     if (representator == null) return type_;
     return representator;
   }
@@ -780,6 +786,15 @@ public class EquationManager {
         addCopiedTypeWrapper(type, copiedTypeWrapper);
       }
     }
+
+    if (var instanceof VariableWrapper) {
+      Set<CopiedTypeWrapper> typeVarCopies = myCopiedVars.remove((VariableWrapper) var);
+      if (typeVarCopies != null) {
+        for (CopiedTypeWrapper copiedTypeVar : typeVarCopies) {
+          keepInequationsAndEffects(copiedTypeVar, copiedTypeVar, avoidCheckonlyMaps);
+        }
+      }
+    }
   }
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
@@ -969,9 +984,9 @@ public class EquationManager {
         mySubtypesToSupertypesMap.remove(type);
         for (IWrapper supertype : supertypes.keySet()) {
           mySupertypesToSubtypesMap.get(supertype).remove(type);
-            EquationInfo errorInfo = supertypes.get(supertype);
-            slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
-            addEquation(type, supertype, errorInfo);
+          EquationInfo errorInfo = supertypes.get(supertype);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
+          addEquation(type, supertype, errorInfo);
         }
       }
       Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(type);
@@ -979,9 +994,9 @@ public class EquationManager {
         mySupertypesToSubtypesMap.remove(type);
         for (IWrapper subtype : subtypes.keySet()) {
           mySubtypesToSupertypesMap.get(subtype).remove(type);
-            EquationInfo errorInfo = subtypes.get(subtype);
-            slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
-            addEquation(type, subtype, errorInfo);
+          EquationInfo errorInfo = subtypes.get(subtype);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
+          addEquation(type, subtype, errorInfo);
         }
       }
       Map<IWrapper, EquationInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
@@ -989,9 +1004,9 @@ public class EquationManager {
         mySubtypesToSupertypesMapStrong.remove(type);
         for (IWrapper supertype : supertypesStrong.keySet()) {
           mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
-            EquationInfo errorInfo = supertypesStrong.get(supertype);
-            slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
-            addEquation(type, supertype, errorInfo);
+          EquationInfo errorInfo = supertypesStrong.get(supertype);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
+          addEquation(type, supertype, errorInfo);
         }
       }
       Map<IWrapper, EquationInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
@@ -999,9 +1014,9 @@ public class EquationManager {
         mySupertypesToSubtypesMapStrong.remove(type);
         for (IWrapper subtype : subtypesStrong.keySet()) {
           mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
-            EquationInfo errorInfo = subtypesStrong.get(subtype);
-            slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
-            addEquation(type, subtype, errorInfo);
+          EquationInfo errorInfo = subtypesStrong.get(subtype);
+          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
+          addEquation(type, subtype, errorInfo);
         }
       }
     }
@@ -1243,9 +1258,6 @@ public class EquationManager {
                                      boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     HashSet<IWrapper> variables = new HashSet<IWrapper>();
     NodeWrapper result = expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
-  /*  if (variables.isEmpty()) {
-      return representator;
-    }*/
     return result;
   }
 
@@ -1259,6 +1271,9 @@ public class EquationManager {
     if (wrapper == null) return null;
     if (wrapper instanceof ConceptWrapper) {
       return null; //todo
+    }
+    while (wrapper instanceof CopiedTypeWrapper) {
+      wrapper = ((CopiedTypeWrapper)wrapper).getSourceWrapper();
     }
     if (wrapper.getNode().isRegistered() && expandChild) {
       wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));
@@ -1279,7 +1294,7 @@ public class EquationManager {
           wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
         } else {
           if (type instanceof NodeWrapper) {
-           wrapper1 = (NodeWrapper) type;
+            wrapper1 = (NodeWrapper) type;
           } else {
             wrapper1 = null;
           }
@@ -1397,6 +1412,23 @@ public class EquationManager {
 
   public Set<CopiedTypeWrapper> getCopiedTypeWrappers(IWrapper wrapper) {
     Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.get(wrapper);
+    if (typeWrappers == null) {
+      return new HashSet<CopiedTypeWrapper>();
+    }
+    return typeWrappers;
+  }
+
+  /*package*/ void addCopiedVar(VariableWrapper source, CopiedTypeWrapper copiedTypeWrapper) {
+    Set<CopiedTypeWrapper> typeWrappers = myCopiedVars.get(source);
+    if (typeWrappers == null) {
+      typeWrappers = new HashSet<CopiedTypeWrapper>();
+      myCopiedVars.put(source, typeWrappers);
+    }
+    typeWrappers.add(copiedTypeWrapper);
+  }
+
+  public Set<CopiedTypeWrapper> getCopiedTypeVars(VariableWrapper variableWrapper) {
+    Set<CopiedTypeWrapper> typeWrappers = myCopiedVars.get(variableWrapper);
     if (typeWrappers == null) {
       return new HashSet<CopiedTypeWrapper>();
     }
