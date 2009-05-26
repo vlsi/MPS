@@ -42,14 +42,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
   private boolean myDescendantsCachesAreValid = false;
 
-  private SModelRepositoryAdapter myRepositoryListener = null;
-  private SModelAdapter myModelListener = null;
-
-  private SModelRepository mySModelRepository;
   private MPSModuleRepository myModuleRepository;
 
-  public LanguageHierarchyCache(SModelRepository modelRepository, MPSModuleRepository moduleRepository) {
-    mySModelRepository = modelRepository;
+  public LanguageHierarchyCache(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
   }
 
@@ -59,33 +54,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myRepositoryListener = new SModelRepositoryAdapter() {
-      public void modelAdded(SModelDescriptor modelDescriptor) {
-        modelDescriptor.addModelListener(myModelListener);
-      }
-    };
-
-    myModelListener = new SModelAdapter() {
-      public void modelChangedDramatically(SModel model) {
+    MPSModuleRepository.getInstance().addRepositoryListener(new MPSModuleRepositoryListener() {
+      public void repositoryChanged() {
         invalidateCache();
-      }
-
-      @Override
-      public void modelChanged(SModel model) {
-        invalidateCache();
-      }
-    };
-
-    //for consistency
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (Language language : myModuleRepository.getAllLanguages()) {
-          SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
-          assert structureDescriptor != null;
-          structureDescriptor.addModelListener(myModelListener);
-        }
-                                    
-        mySModelRepository.addModelRepositoryListener(myRepositoryListener);
       }
     });
 
@@ -101,16 +72,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (Language language : myModuleRepository.getAllLanguages()) {
-          SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
-          structureDescriptor.removeModelListener(myModelListener);
-        }
-
-        mySModelRepository.removeModelRepositoryListener(myRepositoryListener);
-      }
-    });
   }
 
   public void invalidateCache() {
