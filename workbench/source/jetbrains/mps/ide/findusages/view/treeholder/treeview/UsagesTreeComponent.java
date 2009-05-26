@@ -96,7 +96,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     myContents.startListening();
   }
 
-  public void dispose(){
+  public void dispose() {
     myContents.stopListening();
   }
 

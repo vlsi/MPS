@@ -34,10 +34,10 @@ import org.jdom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataTree implements IExternalizeable,IChangeListener {
+public class DataTree implements IExternalizeable, IChangeListener {
   private DataNode myTreeRoot = buildEmpty();
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
-  private DataTreeChangesNotifier myChangesNotifier =new DataTreeChangesNotifier(this);
+  private DataTreeChangesNotifier myChangesNotifier = new DataTreeChangesNotifier(this);
 
   public DataTree() {
 
@@ -105,11 +105,11 @@ public class DataTree implements IExternalizeable,IChangeListener {
     notifyChangeListeners();
   }
 
-  public void startListening(){
+  public void startListening() {
     myChangesNotifier.startListening(myTreeRoot);
   }
 
-  public void stopListening(){
+  public void stopListening() {
     myChangesNotifier.stopListening();
   }
 

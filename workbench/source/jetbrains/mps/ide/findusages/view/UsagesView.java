@@ -95,7 +95,7 @@ public abstract class UsagesView implements IExternalizeable {
     myPanel.setMinimumSize(new Dimension());
   }
 
-  public void dispose(){
+  public void dispose() {
     myTreeComponent.dispose();
   }
 

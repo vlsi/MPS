@@ -63,6 +63,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   //----MAIN DATA STUFF----
 
   //must be used only via DataTree
+
   public void setExcluded(boolean isExcluded) {
     myIsExcluded = isExcluded;
   }

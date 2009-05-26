@@ -67,7 +67,7 @@ public class DataNode implements IExternalizeable {
     return result;
   }
 
-  public List<DataNode> getDescendantsByDataClass(final Class dataClass){
+  public List<DataNode> getDescendantsByDataClass(final Class dataClass) {
     return getDescendantsWithCondition(new Condition<BaseNodeData>() {
       public boolean met(BaseNodeData data) {
         return dataClass.isInstance(data);

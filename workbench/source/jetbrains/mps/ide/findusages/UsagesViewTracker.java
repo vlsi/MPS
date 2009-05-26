@@ -15,28 +15,23 @@
  */
 package jetbrains.mps.ide.findusages;
 
-import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.keymap.Keymap;
+import com.intellij.openapi.keymap.KeymapManager;
+import jetbrains.mps.ide.findusages.view.UsagesView;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.KeyStroke;
-
-import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
-import org.jetbrains.annotations.NotNull;
-
-public class UsagesViewTracker implements ApplicationComponent{
+public class UsagesViewTracker implements ApplicationComponent {
   private static final String PREV_COMMAND = "FindUsages.Previous";
   private static final String NEXT_COMMAND = "FindUsages.Next";
   private static List<INavigateableUsagesTool> myTools = new ArrayList<INavigateableUsagesTool>();
@@ -58,14 +53,14 @@ public class UsagesViewTracker implements ApplicationComponent{
   }
 
   public static UsagesView getOperatingView() {
-    Collections.sort(myTools,new Comparator<INavigateableUsagesTool>() {
+    Collections.sort(myTools, new Comparator<INavigateableUsagesTool>() {
       public int compare(INavigateableUsagesTool t1, INavigateableUsagesTool t2) {
-        return t1.getPriority()-t2.getPriority();
+        return t1.getPriority() - t2.getPriority();
       }
     });
 
-    for(INavigateableUsagesTool tool:myTools){
-      if (tool.getCurrentView()!=null) return tool.getCurrentView();
+    for (INavigateableUsagesTool tool : myTools) {
+      if (tool.getCurrentView() != null) return tool.getCurrentView();
     }
 
     return null;
