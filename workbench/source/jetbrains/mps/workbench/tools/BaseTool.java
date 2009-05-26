@@ -26,6 +26,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerListener;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -50,6 +51,7 @@ public abstract class BaseTool {
   private boolean myCanCloseContent;
   private boolean myIsRegistered;
   private ToolWindowManager myWindowManager;
+  private ContentManagerListener myListener;
 
   private JComponent myComponent = null;
 
