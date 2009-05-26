@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -34,8 +35,15 @@ public class DefaultCellInfo implements CellInfo {
 
   protected CellInfo myParentInfo;
 
-  public DefaultCellInfo(EditorCell cell) {
-    myNodePointer = new SNodePointer(cell.getSNode());
+  public DefaultCellInfo(final EditorCell cell) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        myNodePointer = new SNodePointer(cell.getSNode());
+      }
+      
+    });
+
     myCellId = cell.getCellId();
 
     EditorCell_Collection parent = cell.getParent();
@@ -54,7 +62,7 @@ public class DefaultCellInfo implements CellInfo {
     String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
     String cellNumber = cellElement.getAttributeValue(ComponentsUtil.NUMBER);
     String isInList = cellElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
-    myNodePointer = new SNodePointer(ComponentsUtil.nodeFromElement(nodeElement, scope));
+    myNodePointer =  new SNodePointer(ComponentsUtil.nodeFromElement(nodeElement, scope));
     myCellId = cellId;
     if (parentInfoElement != null) {
       if (cellNumber != null) {
