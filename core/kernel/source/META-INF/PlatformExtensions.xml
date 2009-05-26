@@ -98,6 +98,15 @@
     <projectService serviceInterface="com.intellij.ui.RecentsManager"
                     serviceImplementation="com.intellij.ui.RecentsManager"/>
 
+    <projectService serviceInterface="com.intellij.ui.FileColorManager"
+                    serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
+
+    <projectService serviceInterface="com.intellij.ui.tabs.FileColorSharedConfigurationManager"
+                    serviceImplementation="com.intellij.ui.tabs.FileColorSharedConfigurationManager"/>
+
+    <applicationService serviceInterface="com.intellij.openapi.project.DumbService"
+                        serviceImplementation="com.intellij.openapi.project.DumbServiceImpl"/>
+
     <!-- General -->
     <applicationConfigurable implementation="com.intellij.ide.GeneralSettingsConfigurable"/>
 
