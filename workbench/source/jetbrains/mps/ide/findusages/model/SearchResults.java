@@ -41,7 +41,7 @@ public class SearchResults<T> {
     return mySearchResults;
   }
 
-  public void addAll(SearchResults<T> sr){
+  public void addAll(SearchResults<T> sr) {
     mySearchedNodes.addAll(sr.mySearchedNodes);
     mySearchResults.addAll(sr.mySearchResults);
   }
