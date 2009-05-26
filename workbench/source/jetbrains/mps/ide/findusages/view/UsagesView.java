@@ -31,7 +31,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.project.MPSProject;
@@ -63,7 +63,7 @@ public abstract class UsagesView implements IExternalizeable {
 
   //my components
   private JPanel myPanel;
-  private UsagesTreeHolder myTreeHolder;
+  private UsagesTreeComponent myTreeComponent;
 
   //model components
   private IResultProvider myResultProvider;
@@ -78,18 +78,18 @@ public abstract class UsagesView implements IExternalizeable {
 
     myPanel = new JPanel(new BorderLayout());
 
-    myTreeHolder = new UsagesTreeHolder(defaultOptions) {
+    myTreeComponent = new UsagesTreeComponent(defaultOptions) {
       public MPSProject getProject() {
         return myProject;
       }
     };
-    myTreeHolder.setEmptyContents();
+    myTreeComponent.setEmptyContents();
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());
-    treeToolbarPanel.add(myTreeHolder.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
+    treeToolbarPanel.add(myTreeComponent.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
     treeWrapperPanel.add(treeToolbarPanel, BorderLayout.WEST);
-    treeWrapperPanel.add(myTreeHolder, BorderLayout.CENTER);
+    treeWrapperPanel.add(myTreeComponent, BorderLayout.CENTER);
     myPanel.add(treeWrapperPanel, BorderLayout.CENTER);
 
     myPanel.setMinimumSize(new Dimension());
@@ -108,18 +108,18 @@ public abstract class UsagesView implements IExternalizeable {
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
     setRunOptions(resultProvider, searchQuery, buttonConfiguration);
-    myTreeHolder.setContents(results);
+    myTreeComponent.setContents(results);
   }
 
   public void setCustomNodeRepresentator(Class nodeRepresentatorClass) {
-    myTreeHolder.setCustomRepresentator(nodeRepresentatorClass);
+    myTreeComponent.setCustomRepresentator(nodeRepresentatorClass);
   }
 
   public void run(ProgressIndicator indicator) {
     assert myIsInitialized;
     final SearchResults myLastResults = FindUtils.getSearchResults(indicator, mySearchQuery, myResultProvider);
     myLastResults.removeDuplicates();
-    myTreeHolder.setContents(myLastResults);
+    myTreeComponent.setContents(myLastResults);
   }
 
   private void regenerate() {
@@ -130,7 +130,7 @@ public abstract class UsagesView implements IExternalizeable {
 
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : myTreeHolder.getIncludedModels()) {
+    for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
         models.add(modelDescriptor);
       }
@@ -139,11 +139,11 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public void goToNext() {
-    myTreeHolder.goToNext();
+    myTreeComponent.goToNext();
   }
 
   public void goToPrevious() {
-    myTreeHolder.goToPrevious();
+    myTreeComponent.goToPrevious();
   }
 
   //----COMPONENT STUFF----
@@ -165,19 +165,19 @@ public abstract class UsagesView implements IExternalizeable {
   //----RESULTS MANIPUALTION STUFF----
 
   public List<SModelDescriptor> getIncludedModels() {
-    return myTreeHolder.getIncludedModels();
+    return myTreeComponent.getIncludedModels();
   }
 
   public List<SModelDescriptor> getAllModels() {
-    return myTreeHolder.getAllModels();
+    return myTreeComponent.getAllModels();
   }
 
   public List<SNodePointer> getIncludedResultNodes() {
-    return myTreeHolder.getIncludedResultNodes();
+    return myTreeComponent.getIncludedResultNodes();
   }
 
   public List<SNodePointer> getAllResultNodes() {
-    return myTreeHolder.getAllResultNodes();
+    return myTreeComponent.getAllResultNodes();
   }
 
   //----SAVE/LOAD STUFF----
@@ -203,7 +203,7 @@ public abstract class UsagesView implements IExternalizeable {
     mySearchQuery = new SearchQuery(queryXML, project);
 
     Element treeWrapperXML = element.getChild(TREE_WRAPPER);
-    myTreeHolder.read(treeWrapperXML, project);
+    myTreeComponent.read(treeWrapperXML, project);
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
@@ -221,7 +221,7 @@ public abstract class UsagesView implements IExternalizeable {
     element.addContent(queryXML);
 
     Element treeWrapperXML = new Element(TREE_WRAPPER);
-    myTreeHolder.write(treeWrapperXML, project);
+    myTreeComponent.write(treeWrapperXML, project);
     element.addContent(treeWrapperXML);
   }
 
@@ -308,7 +308,7 @@ public abstract class UsagesView implements IExternalizeable {
         });
       }
 
-      add(myTreeHolder.getActionsToolbar(JToolBar.VERTICAL));
+      add(myTreeComponent.getActionsToolbar(JToolBar.VERTICAL));
 
       if (buttonConfiguration.isShowCloseButton()) {
         add(new AnonymButton(Icons.CLOSE_ICON, "Close") {

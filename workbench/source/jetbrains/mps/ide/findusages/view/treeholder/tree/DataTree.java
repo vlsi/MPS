@@ -101,8 +101,8 @@ public class DataTree implements IExternalizeable {
   protected void setContents(DataNode root) {
     stopListening();
     myTreeRoot = root;
-    notifyChangeListeners();
     startListening();
+    notifyChangeListeners();
   }
 
   private void startListening() {

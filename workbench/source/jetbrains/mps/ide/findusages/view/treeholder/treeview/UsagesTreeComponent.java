@@ -39,8 +39,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class UsagesTreeHolder extends JPanel implements IChangeListener {
-  private static Logger LOG = Logger.getLogger(UsagesTreeHolder.class);
+public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
+  private static Logger LOG = Logger.getLogger(UsagesTreeComponent.class);
 
   private static final String CONTENTS = "contents";
   private static final String VIEW_OPTIONS = "view_options";
@@ -64,12 +64,12 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
   private boolean myIsAdjusting = false;
 
-  public UsagesTreeHolder(ViewOptions defaultOptions) {
+  public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
 
     myTree = new UsagesTree() {
       public MPSProject getProject() {
-        return UsagesTreeHolder.this.getProject();
+        return UsagesTreeComponent.this.getProject();
       }
     };
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
