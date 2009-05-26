@@ -29,14 +29,14 @@ import java.util.Stack;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private Stack<SNodePointer> myContextRefererNodes = new Stack<SNodePointer>();
-  private SNodePointer myNodePointer = null;
+  private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
+  private SNode myNodePointer = null;
   private Stack<String> myContextRoles = new Stack<String>();
-  private Stack<SNodePointer> myAttributesStack = new Stack<SNodePointer>();
+  private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   private ReferencedNodeContext(SNode node) {
     assert node != null;
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = node;
     node.putUserObject(this, this); //context must be collected only after its target node is collected
   }
 
@@ -54,7 +54,7 @@ public class ReferencedNodeContext {
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = sameContextButAnotherNode(node);
     result.myContextRoles.push(contextRole);
-    result.myContextRefererNodes.push(new SNodePointer(contextRefererNode));
+    result.myContextRefererNodes.push(contextRefererNode);
     return result;
   }
 
@@ -64,7 +64,7 @@ public class ReferencedNodeContext {
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = sameContextButAnotherNode(getNode());
-    result.myAttributesStack.push(new SNodePointer(attribute));
+    result.myAttributesStack.push(attribute);
     return result;
   }
 
@@ -73,7 +73,7 @@ public class ReferencedNodeContext {
   }
 
   public SNode getNode() {
-    return myNodePointer.getNode();
+    return myNodePointer;
   }
 
   public int hashCode() {

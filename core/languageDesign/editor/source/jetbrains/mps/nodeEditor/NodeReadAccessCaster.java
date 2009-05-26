@@ -83,9 +83,8 @@ public class NodeReadAccessCaster {
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
     ourPropertyAccessor = accessor;
     String propertyName = accessor.getPropertyName();
-    SNodePointer pointer = accessor.getNodePointer();
-    try {
-      SNode node = pointer.getNode();
+    SNode node = accessor.getNode();
+    try {      
       if (node == null) return null;
       return node.getProperty(propertyName);
     } finally {

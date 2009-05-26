@@ -123,8 +123,7 @@ public interface EditorCell extends Cloneable {
 
   void synchronizeViewWithModel();
 
-  SNode getSNode();
-  SNodePointer getSNodePointer();
+  SNode getSNode(); 
 
   SNode getSNodeWRTReference();
   String getCellRole();

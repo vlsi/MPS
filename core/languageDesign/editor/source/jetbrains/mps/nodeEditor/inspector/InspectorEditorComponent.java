@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.inspector;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -25,10 +24,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import java.util.List;
@@ -37,7 +32,7 @@ public class InspectorEditorComponent extends EditorComponent {
 
   public InspectorEditorComponent() {
     super(null);
-    myNodePointer = new SNodePointer((SNode) null);
+    myNode = null;
     reinitEditor();
   }
 
@@ -61,12 +56,11 @@ public class InspectorEditorComponent extends EditorComponent {
     myInspectionSessionId = new Object();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        myNode = node;
         if (node == null) {
           setOperationContext(null);
-          myNodePointer = null;
         } else {
           setOperationContext(context);
-          myNodePointer = new SNodePointer(node);
         }
 
         reinitEditor();

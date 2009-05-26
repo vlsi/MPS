@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 public class PropertyAccessor implements ModelAccessor {
-  private SNodePointer myNodePointer;
+  private SNode myNode;
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
@@ -30,7 +30,7 @@ public class PropertyAccessor implements ModelAccessor {
   private IScope myScope;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
-    myNodePointer = new SNodePointer(node);
+    myNode = node;
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
@@ -39,7 +39,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
-    myNodePointer = new SNodePointer(node);
+    myNode = node;
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
     myAllowEmptyText = allowEmptyText;
@@ -47,8 +47,8 @@ public class PropertyAccessor implements ModelAccessor {
     myScope = context.getScope();
   }
 
-  public SNodePointer getNodePointer() {
-    return myNodePointer;
+  public SNode getNode() {
+    return myNode;
   }
 
   public String getPropertyName() {
@@ -76,7 +76,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   protected void doSetValue(String newText) {
-    myNodePointer.getNode().setProperty(myPropertyName, newText);
+    myNode.setProperty(myPropertyName, newText);
   }
 
   @Hack
@@ -96,7 +96,7 @@ public class PropertyAccessor implements ModelAccessor {
 
     if (myPropertyDeclaration != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
-      return propertySupport.canSetValue(myNodePointer.getNode(), myPropertyName, text, myScope);
+      return propertySupport.canSetValue(myNode, myPropertyName, text, myScope);
     }
     return true;
   }

@@ -44,7 +44,7 @@ import com.intellij.ide.DataManager;
 
 public class NodeEditorComponent extends EditorComponent {
   private JPanel myExternalComponent;
-  private SNodePointer myLastInspectedNode = new SNodePointer((SNode) null);
+  private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(IOperationContext operationContext) {
     super(operationContext, false);
@@ -84,12 +84,12 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public SNode getLastInspectedNode() {
-    return myLastInspectedNode.getNode();
+    return myLastInspectedNode;
   }
 
 
   private void inspect(final SNode toSelect) {
-    myLastInspectedNode = new SNodePointer(toSelect);
+    myLastInspectedNode = toSelect;
     if (toSelect != null && getInspector() != null) {
       FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
       getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);

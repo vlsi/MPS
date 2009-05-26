@@ -50,6 +50,7 @@ import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
 
 class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MyMPSTree();
@@ -67,12 +68,14 @@ class ModelDifferenceComponent extends JPanel {
   private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private SModel myNewModel;
+  private SModel myOldModel;
   private List<Change> myChanges;
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private ActionToolbar myModelTreeToolBar;
   private DefaultActionGroup myModelTreeActionGroup;
   private ActionToolbar myChangesTreeToolBar;
   private DefaultActionGroup myChangesTreeActionGroup;
+  private List<NodeActionListener> myNodeClickActions = new ArrayList<NodeActionListener>();
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
@@ -118,6 +121,7 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
+    myOldModel = oldModel;
     myNewModel = newModel;
 
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
@@ -311,6 +315,10 @@ class ModelDifferenceComponent extends JPanel {
     myModelTreeActionGroup.add(action);
   }
 
+  public void addNodeClickAction(NodeActionListener listener) {
+    myNodeClickActions.add(listener);
+  }
+
   private class MySModelTreeNode extends SModelTreeNode {
     private SModel myModel;
 
@@ -371,6 +379,9 @@ class ModelDifferenceComponent extends JPanel {
     }
 
     public void doubleClick() {
+      for (NodeActionListener listener: myNodeClickActions) {
+        listener.actionPerformed(getSNode());
+      }
     }
   }
 

@@ -5545,7 +5545,17 @@
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281978979">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234281978980">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234281978981">
-                                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
+                                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8308833415850531651">
+                                  <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="8308833415850531652" />
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8308833415850531653">
+                                    <link role="baseMethodDeclaration" targetNodeId="100.~AnActionEvent.getRequiredData(com.intellij.openapi.actionSystem.DataKey):java.lang.Object" resolveInfo="getRequiredData" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="8308833415850531654">
+                                      <link role="classifier" targetNodeId="107.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                                      <link role="variableDeclaration" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281978982">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1234281978983" />
                                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1234281978984">

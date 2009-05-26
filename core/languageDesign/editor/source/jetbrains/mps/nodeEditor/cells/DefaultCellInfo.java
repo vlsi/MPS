@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -27,7 +28,7 @@ import org.jdom.Element;
 
 public class DefaultCellInfo implements CellInfo {
 
-  private SNodePointer myNodePointer;
+  private SNode myNode;
   private String myCellId;
   private int myCellNumber;
   private boolean myIsInList = false;
@@ -35,7 +36,7 @@ public class DefaultCellInfo implements CellInfo {
   protected CellInfo myParentInfo;
 
   public DefaultCellInfo(EditorCell cell) {
-    myNodePointer = cell.getSNodePointer();
+    myNode = cell.getSNode();
     myCellId = cell.getCellId();
 
     EditorCell_Collection parent = cell.getParent();
@@ -54,7 +55,7 @@ public class DefaultCellInfo implements CellInfo {
     String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
     String cellNumber = cellElement.getAttributeValue(ComponentsUtil.NUMBER);
     String isInList = cellElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
-    myNodePointer =  new SNodePointer(ComponentsUtil.nodeFromElement(nodeElement, scope));
+    myNode = ComponentsUtil.nodeFromElement(nodeElement, scope);
     myCellId = cellId;
     if (parentInfoElement != null) {
       if (cellNumber != null) {
@@ -69,14 +70,14 @@ public class DefaultCellInfo implements CellInfo {
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-        (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
+        (myNode == null?0: myNode.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
   public EditorCell findCell(EditorComponent editorComponent) {
-    if (myNodePointer == null) {
+    if (myNode == null) {
       return null;
     }
-    return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
+    return editorComponent.findCellWithId(myNode, myCellId);
   }
 
   public EditorCell findClosestCell(EditorComponent editorComponent) {
@@ -87,11 +88,11 @@ public class DefaultCellInfo implements CellInfo {
     if (!(o instanceof CellInfo)) return false;
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
     if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
-    if (cellInfo.myNodePointer == null) return false;
+    if (cellInfo.myNode == null) return false;
     boolean idsBothNull = false;
     if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;
     return (cellInfo.myCellId == null ? idsBothNull : cellInfo.myCellId.equals(myCellId))
-            && (cellInfo.myNodePointer.equals(myNodePointer))
+            && (cellInfo.myNode.equals(myNode))
             && cellInfo.myCellNumber == myCellNumber;
   }
 }

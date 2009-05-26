@@ -20,6 +20,8 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import java.awt.Frame;
@@ -29,13 +31,22 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceComponent myDifferenceComponent;
 
-  public ModelDifferenceDialog(Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
+  public ModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
     super(parent, windowTitle);
     setModal(modal);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myDifferenceComponent = new ModelDifferenceComponent();
         myDifferenceComponent.showDifference(oldModel, newModel);
+        myDifferenceComponent.addNodeClickAction(new NodeActionListener() {
+          public void actionPerformed(SNode sNode) {
+
+            RootDefferenceDialog dialog = new RootDefferenceDialog(parent, context, sNode, newModel, oldModel, "Difference");
+            dialog.showDialog();
+          }
+        }
+
+        );
       }
     });
   }

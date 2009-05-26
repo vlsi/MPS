@@ -29,9 +29,13 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.MPSProjectHolder;
 import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +54,9 @@ public class ModelDiffTool implements DiffTool {
 
       final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          return new ModelDifferenceDialog(WindowManager.getInstance().getFrame(request.getProject()), oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
+          MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+          IOperationContext context = new ModuleContext(oldModel.getModelDescriptor().getModule(), project);
+          return new ModelDifferenceDialog(context, WindowManager.getInstance().getFrame(request.getProject()), oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
         }
       });
       AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON) {

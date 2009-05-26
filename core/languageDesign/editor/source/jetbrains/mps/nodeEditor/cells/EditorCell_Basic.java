@@ -68,7 +68,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorContext myEditorContext;
 
   private EditorCell_Collection myParent = null;
-  private SNodePointer myNodePointer;
+  private SNode myNode;
   private NodeSubstituteInfo mySubstitueInfo;
   private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();  
 
@@ -86,9 +86,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
-    if (node != null) {
-      myNodePointer = new SNodePointer(node);
-    }
+    myNode = node;
   }
 
   public EditorComponent getEditor() {
@@ -240,10 +238,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getSNode() {
-    if (myNodePointer != null) {
-      return myNodePointer.getNode();
-    }
-    return null;
+    return myNode;
   }
 
   public SNode getSNodeWRTReference() {
@@ -269,13 +264,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       return getRole();
     }
   }
-
-  public SNodePointer getSNodePointer() {
-    return myNodePointer;
-  }
-
+  
   public final void setSNode(SNode node) {
-    myNodePointer = new SNodePointer(node);
+    myNode = node;
   }
 
   public int getHeight() {

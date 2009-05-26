@@ -178,7 +178,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
-  protected SNodePointer myNodePointer;
+  protected SNode myNode;
   private EditorContext myEditorContext;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
@@ -568,20 +568,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }.goToNextCell(backwards);
   }
 
-  public SNode getEditedNode() {
-    final SNodePointer nodePointer = myNodePointer;
-    if (nodePointer != null) {
-      return ModelAccess.instance().runReadAction(new Computable<SNode>() {
-        public SNode compute() {
-          return nodePointer.getNode();
-        }
-      });
-    }
-    return null;
+  public SNode getEditedNode() {    
+    return myNode;
   }
 
   public SNodePointer getEditedNodePointer() {
-    return myNodePointer;
+    return new SNodePointer(myNode);
   }
 
   public String getToolTipText(final MouseEvent event) {
@@ -691,7 +683,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         IOperationContext operationContext = getOperationContext();
-        myNodePointer = new SNodePointer(node);
+        myNode = node;
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
@@ -2248,9 +2240,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
-          SNodePointer nodePointer = myNodePointer;
-          if (nodePointer == null || nodePointer.getNode() == null) return null;
-          SModelDescriptor sModelDescriptor = nodePointer.getNode().getModel().getModelDescriptor();
+          if (myNode == null) return null;
+          SModelDescriptor sModelDescriptor = myNode.getModel().getModelDescriptor();
           IFile ifile = sModelDescriptor.getModelFile();
           if (ifile == null || !ifile.exists()) return null;
           VirtualFile vfile = VFileSystem.getFile(ifile);
