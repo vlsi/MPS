@@ -32,7 +32,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="mpslite" moduleRef="jetbrains.mpslite" />
+      <genConfModule runnable="false" name="mpslite" moduleRef="jetbrains.mpslite" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

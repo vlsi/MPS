@@ -17,7 +17,7 @@ public class InlineReferenceWithAssignment_Test extends BaseTransformationTest {
 
   @Test()
   public void test_InlineReferenceWithAssignment() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/core/languageDesign/mps-lite/mps-lite.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_InlineReferenceWithAssignment", true);
   }
 
