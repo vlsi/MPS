@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.CollectionUtil;
@@ -18,7 +19,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public PrimitiveArraySupertypes_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode arrayType) {
+  public List<SNode> getSubOrSuperTypes(SNode arrayType, EquationManager equationManager) {
     // see JLS 3.0
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return CollectionUtil.list(new _Quotations.QuotationClass_82().createNode(), new _Quotations.QuotationClass_83().createNode(), new _Quotations.QuotationClass_84().createNode());

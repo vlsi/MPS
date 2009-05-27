@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,9 +19,9 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   public supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode listType) {
+  public List<SNode> getSubOrSuperTypes(SNode listType, EquationManager equationManager) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, equationManager);
     if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_87().createNode(), "classifier", false)) {
       ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_86().createNode());
     }

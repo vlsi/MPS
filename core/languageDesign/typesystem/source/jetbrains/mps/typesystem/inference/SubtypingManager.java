@@ -187,7 +187,7 @@ public class SubtypingManager {
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        collectImmediateSupertypes_internal(node, isWeak, ancestors);
+        collectImmediateSupertypes_internal(node, isWeak, ancestors, equationManager);
         yetPassedRaw.add(node);
         //    yetPassed.add(node);
       }
@@ -292,18 +292,18 @@ public class SubtypingManager {
 
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
-    collectImmediateSupertypes_internal(term, isWeak, result);
+    collectImmediateSupertypes_internal(term, isWeak, result, null);
     return result;
   }
 
-  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result) {
+  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager) {
     if (term == null) {
       return;
     }
     Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     if (subtypingRule_runtimes != null) {
       for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term);
+        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term, equationManager);
         result.addAll(supertypes);
       }
     }
@@ -329,7 +329,7 @@ public class SubtypingManager {
       Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node);
+          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should eq.manager really be null?
           result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
         }
       }
@@ -547,7 +547,7 @@ System.out.println("alltypes = " + allTypes);*/
     }
 
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-    boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, null, null, isWeak);
+    boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, equationManager, null, isWeak);
     SNode result;
     if (!success) {
       result = null;

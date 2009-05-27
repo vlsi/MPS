@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +19,7 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   public supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
+  public List<SNode> getSubOrSuperTypes(SNode type, EquationManager equationManager) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {

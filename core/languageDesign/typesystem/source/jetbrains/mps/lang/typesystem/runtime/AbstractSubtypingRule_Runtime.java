@@ -17,9 +17,12 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystem.inference.EquationManager;
 
 import java.util.List;
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,7 +33,19 @@ import java.util.ArrayList;
  */
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
+  public List<SNode> getSubOrSuperTypes(SNode type, @Nullable EquationManager equationManager) {
+    SNode subOrSuperType = getSubOrSuperType(type, equationManager);
+    if (subOrSuperType != null) {
+      return CollectionUtil.list(subOrSuperType); 
+    }
+    return getSubOrSuperTypes(type);
+  }
 
+  public SNode getSubOrSuperType(SNode type, EquationManager equationManager) {
+    return getSubOrSuperType(type);
+  }
+
+  @Deprecated
   public List<SNode> getSubOrSuperTypes(SNode type) {
     SNode subOrSuperType = getSubOrSuperType(type);
     if (subOrSuperType == null) {
@@ -39,6 +54,7 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return CollectionUtil.list(subOrSuperType);
   }
 
+  @Deprecated
   public SNode getSubOrSuperType(SNode type) {
     return null;
   }

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -13,7 +14,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode boolType) {
+  public SNode getSubOrSuperType(SNode boolType, EquationManager equationManager) {
     return new _Quotations.QuotationClass_7().createNode();
   }
 

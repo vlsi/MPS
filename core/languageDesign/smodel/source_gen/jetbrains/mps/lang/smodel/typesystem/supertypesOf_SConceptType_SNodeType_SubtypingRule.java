@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
   public supertypesOf_SConceptType_SNodeType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode conceptType) {
+  public SNode getSubOrSuperType(SNode conceptType, EquationManager equationManager) {
     SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if (concept != null) {
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {

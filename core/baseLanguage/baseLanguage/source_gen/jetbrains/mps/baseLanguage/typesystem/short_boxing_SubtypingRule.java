@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -12,7 +13,7 @@ public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   public short_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode shortType) {
+  public SNode getSubOrSuperType(SNode shortType, EquationManager equationManager) {
     return new _Quotations.QuotationClass_59().createNode();
   }
 

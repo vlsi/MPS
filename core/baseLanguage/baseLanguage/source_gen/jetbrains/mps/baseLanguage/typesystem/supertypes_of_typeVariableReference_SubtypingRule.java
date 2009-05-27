@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +17,7 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
   public supertypes_of_typeVariableReference_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode typeVariableReference) {
+  public List<SNode> getSubOrSuperTypes(SNode typeVariableReference, EquationManager equationManager) {
     SNode typeVariableDeclaration = SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false);
     List<SNode> supertypes = new ArrayList<SNode>();
     ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_90().createNode());

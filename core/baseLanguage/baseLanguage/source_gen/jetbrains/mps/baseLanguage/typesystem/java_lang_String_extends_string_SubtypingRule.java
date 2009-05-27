@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationManager;
 
 public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -13,7 +14,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
   public java_lang_String_extends_string_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode stringClassType) {
+  public SNode getSubOrSuperType(SNode stringClassType, EquationManager equationManager) {
     return new _Quotations.QuotationClass_96().createNode();
   }
 
