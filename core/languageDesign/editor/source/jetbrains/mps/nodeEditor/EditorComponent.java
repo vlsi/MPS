@@ -115,6 +115,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private boolean myRelayoutRequested = false;
+  private boolean myIsEditable = true;
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
@@ -2525,6 +2526,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean isProjectDisposed() {
     return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
+  }
+
+  public boolean isEditable() {
+    return myIsEditable;
+  }
+
+  public void setEditable(boolean isEditable) {
+    myIsEditable = isEditable;
+    if (!isEditable) {
+      setFocusable(false);
+    }
   }
 
   private class MySimpleModelListener extends SModelAdapter {

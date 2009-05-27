@@ -37,16 +37,9 @@ public class ModelDifferenceDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myDifferenceComponent = new ModelDifferenceComponent();
+        myDifferenceComponent.setParentFrame(parent);
+        myDifferenceComponent.setContext(context);
         myDifferenceComponent.showDifference(oldModel, newModel);
-        myDifferenceComponent.addNodeClickAction(new NodeActionListener() {
-          public void actionPerformed(SNode sNode) {
-
-            RootDefferenceDialog dialog = new RootDefferenceDialog(parent, context, sNode, newModel, oldModel, "Difference");
-            dialog.showDialog();
-          }
-        }
-
-        );
       }
     });
   }

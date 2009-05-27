@@ -45,6 +45,7 @@ import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
@@ -75,7 +76,8 @@ class ModelDifferenceComponent extends JPanel {
   private DefaultActionGroup myModelTreeActionGroup;
   private ActionToolbar myChangesTreeToolBar;
   private DefaultActionGroup myChangesTreeActionGroup;
-  private List<NodeActionListener> myNodeClickActions = new ArrayList<NodeActionListener>();
+  private Frame myParentFrame;
+  private IOperationContext myContext;
 
   public ModelDifferenceComponent() {
     setLayout(new BorderLayout());
@@ -315,8 +317,12 @@ class ModelDifferenceComponent extends JPanel {
     myModelTreeActionGroup.add(action);
   }
 
-  public void addNodeClickAction(NodeActionListener listener) {
-    myNodeClickActions.add(listener);
+  public void setParentFrame(Frame parentFrame) {
+    myParentFrame = parentFrame;
+  }
+
+  public void setContext(IOperationContext context) {
+    myContext = context;
   }
 
   private class MySModelTreeNode extends SModelTreeNode {
@@ -379,9 +385,9 @@ class ModelDifferenceComponent extends JPanel {
     }
 
     public void doubleClick() {
-      for (NodeActionListener listener: myNodeClickActions) {
-        listener.actionPerformed(getSNode());
-      }
+      RootDifferenceDialog dialog = new RootDifferenceDialog(myParentFrame, myNewModel, myOldModel, "Difference");
+      dialog.init(myContext, getSNode(), myAddedNodes, myChangedNodes);
+      dialog.showDialog();
     }
   }
 

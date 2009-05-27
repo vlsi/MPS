@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -38,14 +36,14 @@ public class DefaultEditorMessage implements EditorMessage {
   private Color myColor;
   private String myMessage;
   private EditorMessageOwner myOwner;
-  private SNodePointer myNodePointer;
+  private SNode myNode;
   private IntentionProvider myIntentionProvider;
   private MessageStatus myStatus = MessageStatus.OK;
 
   private Map<Object, Object> myUserObjects;
 
   public DefaultEditorMessage(SNode node, Color color, String message, EditorMessageOwner owner) {
-    myNodePointer = new SNodePointer(node);
+    myNode = node;
     myColor = color;
     myMessage = message;
     myOwner = owner;
@@ -130,7 +128,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public SNode getNode() {
-    return myNodePointer.getNode();
+    return myNode;
   }
 
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
