@@ -8,7 +8,7 @@ IF %MPS_VM_OPTIONS% == "" SET MPS_VM_OPTIONS="%PROJECT_HOME%bin\mps.vmoptions"
 set ACC=
 FOR /F "delims=" %%i in ('TYPE %MPS_VM_OPTIONS%') DO call :parse_vmoptions "%%i"
 set JVM_ARGS=%ACC%
-::set ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+::set ADDITIONAL_JVM_ARGS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 set CLASSPATH="%PROJECT_HOME%lib\idea-patch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\mps.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%core\languageDesign\jetbrains.mps.lang.actions.mpsarch.jar"

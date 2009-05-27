@@ -472,28 +472,38 @@
     </jar>
   </target>
   <target name="pack.ypath.main0">
+    <mkdir dir="platform/ypath/solutions/main/classes_gen" />
+    <mkdir dir="platform/ypath/solutions/main/classes_gen" />
     <mkdir dir="platform/ypath/solutions/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.main.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/solutions/main/main.msd" prefix="module" />
       <zipfileset dir="platform/ypath/solutions/main" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
+      <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
       <zipfileset dir="platform/ypath/solutions/classes" />
     </jar>
   </target>
   <target name="pack.ypath.test0">
+    <mkdir dir="platform/ypath/solutions/test/classes_gen" />
+    <mkdir dir="platform/ypath/solutions/test/classes_gen" />
     <mkdir dir="platform/ypath/solutions/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/solutions/test/test.msd" prefix="module" />
       <zipfileset dir="platform/ypath/solutions/test" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
+      <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
       <zipfileset dir="platform/ypath/solutions/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ypath0">
-    <mkdir dir="platform/ypath/classes" />
+    <mkdir dir="platform/ypath/classes_gen" />
+    <mkdir dir="platform/ypath/classes_gen" />
     <mkdir dir="platform/ypath/runtime/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.ypath.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/ypath.mpl" prefix="module" />
       <zipfileset dir="platform/ypath" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/ypath/classes" />
+      <zipfileset dir="platform/ypath/classes_gen" />
+      <zipfileset dir="platform/ypath/classes_gen" />
       <zipfileset dir="platform/ypath/runtime/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.ypath.runtime.jar" duplicate="preserve" filesonly="true">

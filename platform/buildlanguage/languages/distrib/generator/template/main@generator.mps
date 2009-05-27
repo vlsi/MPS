@@ -433,9 +433,6 @@
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322747595">
         <property name="text" value="set ADDITIONAL_JVM_ARGS=" />
       </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323654650">
-        <property name="text" value="&quot;" />
-      </node>
       <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240322785876">
         <property name="text" value="additional args" />
         <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240322800146">
@@ -457,9 +454,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1240323665784">
-        <property name="text" value="&quot;" />
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240322795462">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240322795463">
