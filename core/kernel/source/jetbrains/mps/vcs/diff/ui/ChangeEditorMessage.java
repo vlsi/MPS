@@ -1,0 +1,61 @@
+package jetbrains.mps.vcs.diff.ui;
+
+import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.smodel.SNode;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+public class ChangeEditorMessage extends DefaultEditorMessage {
+  private String myProperty;
+  private String myRole;
+
+  public ChangeEditorMessage(SNode node, Color color, String message, EditorMessageOwner owner) {
+    super(node, color, message, owner);
+  }
+
+  @Override
+  public boolean isBackGround() {
+    return true;
+  }
+
+  @Override
+  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+    if (cell == null) return false;
+    if (!(editor.isValid(cell) && cell.getSNode() == getNode())) {
+      return false;
+    }
+    if (myProperty != null) {
+      if (! (cell instanceof EditorCell_Property)) {
+        return false;
+      }
+
+      ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
+      return myProperty.equals(((PropertyAccessor)modelAccessor).getPropertyName());
+    }
+    if (myRole != null) {
+      return myRole.equals(cell.getRole());
+    }
+    return cell.isBigCell();
+  }
+
+  @Override
+  public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+    cell.paintSelection(g, getColor(), false);
+  }
+
+  public void setProperty(String property) {
+    myProperty = property;
+  }
+
+  public void setRole(String role) {
+    myRole = role;
+  }
+}

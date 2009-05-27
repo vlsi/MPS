@@ -386,7 +386,7 @@ class ModelDifferenceComponent extends JPanel {
 
     public void doubleClick() {
       RootDifferenceDialog dialog = new RootDifferenceDialog(myParentFrame, myNewModel, myOldModel, "Difference");
-      dialog.init(myContext, getSNode(), myAddedNodes, myChangedNodes);
+      dialog.init(myContext, getSNode(), myChanges);
       dialog.showDialog();
     }
   }

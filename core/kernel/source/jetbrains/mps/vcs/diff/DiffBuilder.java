@@ -23,8 +23,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.util.EqualUtil;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class DiffBuilder {
   private SModel myOldModel;
@@ -173,15 +175,43 @@ public class DiffBuilder {
       SNodeId nid = getParentId(n);
       SNodeId oid = getParentId(o);
 
-      if (!(nid + "").equals(oid + "")) {
-        SNode prevSibling = n.prevSibling();
-        if (prevSibling != null) {
-          myChanges.add(new MoveNodeChange(id, nid, prevSibling.getSNodeId(), n.getRole_()));
-        } else {
-          myChanges.add(new MoveNodeChange(id, nid, null, n.getRole_()));
+      SNode nPrevSibling = n.prevSibling();
+      SNode oPrevSibling = o.prevSibling();
+      if (EqualUtil.equals(nid, oid)) {
+        if (nPrevSibling == oPrevSibling) {
+          continue;
+        }
+        if (nPrevSibling != null && oPrevSibling != null && nPrevSibling.getId().equals(oPrevSibling.getId())) {
+          continue;
+        }
+        if (nPrevSibling != null) {
+          if (getChangesFor(nPrevSibling.getSNodeId()).size() > 0) {
+            continue;
+          }
+        }
+        if (oPrevSibling != null) {
+          if (getChangesFor(oPrevSibling.getSNodeId()).size() > 0) {
+            continue;
+          }
         }
       }
+      
+      if (nPrevSibling != null) {
+        myChanges.add(new MoveNodeChange(id, nid, nPrevSibling.getSNodeId(), n.getRole_()));
+      } else {
+        myChanges.add(new MoveNodeChange(id, nid, null, n.getRole_()));
+      }
     }
+  }
+
+  private List<Change> getChangesFor(SNodeId sNodeId) {
+    List<Change> result = new ArrayList<Change>();
+    for (Change change: myChanges) {
+      if (sNodeId.equals(change.getAffectedNodeId())) {
+        result.add(change);
+      }
+    }
+    return result;
   }
 
   private SNodeId getParentId(SNode n) {
