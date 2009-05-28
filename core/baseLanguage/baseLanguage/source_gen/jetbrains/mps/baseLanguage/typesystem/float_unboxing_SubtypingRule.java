@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -14,8 +14,8 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   public float_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode floatType, EquationManager equationManager) {
-    return new _Quotations.QuotationClass_63().createNode();
+  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_63().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -13,8 +13,8 @@ public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implem
   public char_extends_int_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode charType, EquationManager equationManager) {
-    return new _Quotations.QuotationClass_47().createNode();
+  public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_47().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

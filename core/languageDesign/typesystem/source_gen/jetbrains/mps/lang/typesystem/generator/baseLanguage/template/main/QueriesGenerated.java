@@ -2610,11 +2610,6 @@ parametersLoop:
               SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_34().createNode());
             }
             break parametersLoop;
-          } else if (SPropertyOperations.getString(parameterDeclaration, "name").equals("equationManager") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_38().createNode(), "classifier", false)) {
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_36().createNode(), "classifier", false);
-            if (!(alreadyProcessed)) {
-              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_37().createNode());
-            }
           }
         }
       }

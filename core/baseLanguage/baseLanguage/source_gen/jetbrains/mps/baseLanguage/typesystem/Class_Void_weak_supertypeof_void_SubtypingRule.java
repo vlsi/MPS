@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -13,8 +13,8 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
   public Class_Void_weak_supertypeof_void_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode voidType, EquationManager equationManager) {
-    return new _Quotations.QuotationClass_107().createNode();
+  public SNode getSubOrSuperType(SNode voidType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_107().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

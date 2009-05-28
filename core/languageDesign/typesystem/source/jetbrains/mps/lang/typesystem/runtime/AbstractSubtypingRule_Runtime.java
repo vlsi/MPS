@@ -18,6 +18,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -33,15 +34,15 @@ import org.jetbrains.annotations.Nullable;
  */
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public List<SNode> getSubOrSuperTypes(SNode type, @Nullable EquationManager equationManager) {
-    SNode subOrSuperType = getSubOrSuperType(type, equationManager);
+  public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {
+    SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext);
     if (subOrSuperType != null) {
       return CollectionUtil.list(subOrSuperType); 
     }
     return getSubOrSuperTypes(type);
   }
 
-  public SNode getSubOrSuperType(SNode type, EquationManager equationManager) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
     return getSubOrSuperType(type);
   }
 

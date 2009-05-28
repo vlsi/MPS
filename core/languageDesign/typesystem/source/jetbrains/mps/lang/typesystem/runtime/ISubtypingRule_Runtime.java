@@ -17,6 +17,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.List;
 
@@ -28,6 +29,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISubtypingRule_Runtime extends Rule_Runtime {
-  List<SNode> getSubOrSuperTypes(SNode type, EquationManager equationManager);
+  List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext);
   boolean isWeak();
 }

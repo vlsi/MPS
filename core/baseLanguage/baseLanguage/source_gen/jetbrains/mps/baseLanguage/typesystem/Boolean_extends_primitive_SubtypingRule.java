@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,8 +14,8 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
   public Boolean_extends_primitive_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode boolType, EquationManager equationManager) {
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "descriptor", false);
+  public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(typeCheckingContext), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {

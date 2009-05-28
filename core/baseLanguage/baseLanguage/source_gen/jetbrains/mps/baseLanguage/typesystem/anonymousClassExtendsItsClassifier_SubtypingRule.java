@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +17,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
   public anonymousClassExtendsItsClassifier_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode classifierType, EquationManager equationManager) {
+  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     do {
       SNode matchedNode_1 = SLinkOperations.getTarget(classifierType, "classifier", false);
@@ -30,7 +30,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
           }
         }
         if (matches_1) {
-          ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_89().createNode(SLinkOperations.getTargets(matchedNode_1, "typeParameter", true), SLinkOperations.getTarget(matchedNode_1, "classifier", false)));
+          ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_89().createNode(SLinkOperations.getTargets(matchedNode_1, "typeParameter", true), SLinkOperations.getTarget(matchedNode_1, "classifier", false), typeCheckingContext));
           break;
         }
       }

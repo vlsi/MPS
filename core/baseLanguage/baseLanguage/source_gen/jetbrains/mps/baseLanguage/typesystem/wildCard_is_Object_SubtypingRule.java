@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class wildCard_is_Object_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -13,8 +13,8 @@ public class wildCard_is_Object_SubtypingRule extends SubtypingRule_Runtime impl
   public wildCard_is_Object_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode wildCardType, EquationManager equationManager) {
-    return new _Quotations.QuotationClass_91().createNode();
+  public SNode getSubOrSuperType(SNode wildCardType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_91().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

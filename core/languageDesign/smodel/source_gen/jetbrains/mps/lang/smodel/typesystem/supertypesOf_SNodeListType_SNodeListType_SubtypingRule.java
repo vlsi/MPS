@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,16 +18,16 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
   public supertypesOf_SNodeListType_SNodeListType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type, EquationManager equationManager) {
+  public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
       for(SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_35().createNode(superConcept));
+        ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_35().createNode(superConcept, typeCheckingContext));
       }
       // ==========
-      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_36().createNode());
+      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_36().createNode(typeCheckingContext));
     }
     return supertypes;
   }

@@ -303,7 +303,7 @@ public class SubtypingManager {
     Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     if (subtypingRule_runtimes != null) {
       for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term, equationManager);
+        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term, equationManager == null ? null : equationManager.getTypeCheckingContext());
         result.addAll(supertypes);
       }
     }
@@ -329,7 +329,7 @@ public class SubtypingManager {
       Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should eq.manager really be null?
+          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
           result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
         }
       }
