@@ -978,54 +978,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5239146621999643484" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5239146621999643485" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5239146621999643486">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5239146621999643487">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5239146621999643488">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5239146621999643489">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5239146621999643490">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5239146621999643491">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5239146621999643492">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5239146621999643493">
-                <link role="variableDeclaration" targetNodeId="5239146621999643538" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5239146621999643494">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5239146621999643495">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5239146621999643496">
-                    <link role="conceptDeclaration" targetNodeId="1.1174643105530" resolveInfo="InferenceRule" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5239146621999643497" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5239146621999643498">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5239146621999643499">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5239146621999643500">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5239146621999643501">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5239146621999643502">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5239146621999643503">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5239146621999643504">
-                <link role="variableDeclaration" targetNodeId="5239146621999643538" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5239146621999643505">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5239146621999643506">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5239146621999643507">
-                    <link role="conceptDeclaration" targetNodeId="1.1201607707634" resolveInfo="InequationReplacementRule" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5239146621999643508" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5239146621999643581">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5239146621999643582">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5239146621999643631">
@@ -1048,6 +1000,30 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5239146621999643628" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2386296566107170463">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2386296566107170464">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2386296566107170465">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2386296566107170466">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2386296566107170467">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2386296566107170468">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2386296566107170469">
+                <link role="variableDeclaration" targetNodeId="5239146621999643538" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="2386296566107170470">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="2386296566107170471">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2386296566107172717">
+                    <link role="conceptDeclaration" targetNodeId="1.1195213580585" resolveInfo="AbstractCheckingRule" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="2386296566107170473" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5239146621999643509">

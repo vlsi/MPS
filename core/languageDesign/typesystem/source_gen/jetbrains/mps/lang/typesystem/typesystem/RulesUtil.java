@@ -27,13 +27,10 @@ public class RulesUtil {
   }
 
   public static boolean withinCheckingItem(SNode node) {
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
-      return true;
-    }
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null)) {
-      return true;
-    }
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", false, false) != null)) {
+      return true;
+    }
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", false, false) != null)) {
       return true;
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);

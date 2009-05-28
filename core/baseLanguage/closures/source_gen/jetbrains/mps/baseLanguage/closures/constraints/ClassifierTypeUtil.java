@@ -21,21 +21,23 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class ClassifierTypeUtil {
 
   public static SNode getTypeCoercedToClassifierType(SNode type) {
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-      return type;
+    // cast is such to avoid exception if MeetType
+    SNode purified = (SNode)removeCopiedProviders(type);
+    if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+      return purified;
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+    if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
-      SLinkOperations.setTarget(res, "bound", SNodeOperations.copyNode(getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true))), true);
+      SLinkOperations.setTarget(res, "bound", SNodeOperations.copyNode(getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.cast(purified, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true))), true);
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+    if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode at = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
-      SLinkOperations.setTarget(at, "componentType", coerceToClassifierTypeOrPrimitive(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true))), true);
+      SLinkOperations.setTarget(at, "componentType", coerceToClassifierTypeOrPrimitive(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(purified, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true))), true);
       return at;
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+    if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
-      for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
+      for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(purified, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
           SLinkOperations.addChild(res, "argument", getTypeCoercedToClassifierType(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.Type")));
         } else
@@ -45,7 +47,20 @@ public class ClassifierTypeUtil {
       }
       return res;
     }
-    return coerceToClassifierType(type);
+    return coerceToClassifierType(purified);
+  }
+
+  private static SNode removeCopiedProviders(SNode type) {
+    SNode result = SNodeOperations.copyNode(type);
+    if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider")) {
+      return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider"), "copiedTypeSource", false));
+    } else
+    {
+      for(SNode descendant : SNodeOperations.getDescendants(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider", false)) {
+        SNodeOperations.replaceWithAnother(descendant, SNodeOperations.copyNode(SLinkOperations.getTarget(descendant, "copiedTypeSource", false)));
+      }
+      return result;
+    }
   }
 
   private static SNode coerceToClassifierType(SNode type) {
@@ -175,7 +190,7 @@ public class ClassifierTypeUtil {
     ListSequence.fromList(concretes).addElement(concrete);
     SNode resType = type;
     while (!(ListSequence.fromList(concretes).isEmpty())) {
-      SNode ct = ListSequence.fromList(concretes).removeElementAt(0);
+      SNode ct = SNodeOperations.as(ListSequence.fromList(concretes).removeElementAt(0), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       if (ListSequence.fromList(visitedClassifiers).contains(SLinkOperations.getTarget(ct, "classifier", false)) || SLinkOperations.getCount(ct, "parameter") == 0) {
         continue;
       }
