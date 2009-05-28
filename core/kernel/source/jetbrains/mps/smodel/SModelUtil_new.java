@@ -43,8 +43,8 @@ import java.util.List;
 public class SModelUtil_new implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(SModelUtil_new.class);
 
-  public SModelUtil_new(ClassLoaderManager clManager,GlobalSModelEventsManager meManager) {
-    SModelUtil.startListeningOnce(clManager,meManager);
+  public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
+    SModelUtil.startListeningOnce(clManager, meManager);
   }
 
   public void initComponent() {
@@ -84,7 +84,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
 
   public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, AbstractConceptDeclaration toConcept) {
-    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(fromConcept),BaseAdapter.fromAdapter(toConcept));
+    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(fromConcept), BaseAdapter.fromAdapter(toConcept));
   }
 
   public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, String toConceptFqName) {
@@ -124,7 +124,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers(AbstractConceptDeclaration concept) {
-   return BaseAdapter.toAdapters(SModelUtil.getDirectSuperInterfacesAndTheirSupers(BaseAdapter.fromAdapter(concept)));
+    return BaseAdapter.toAdapters(SModelUtil.getDirectSuperInterfacesAndTheirSupers(BaseAdapter.fromAdapter(concept)));
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperConcepts(AbstractConceptDeclaration concept) {
@@ -198,7 +198,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
-    if (concept==null) return null;
+    if (concept == null) return null;
     return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
   }
 
@@ -251,19 +251,19 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptEditorDeclaration) BaseAdapter.fromNode(SModelUtil.findEditorDeclaration(editorModel,BaseAdapter.fromAdapter(conceptDeclaration)));
+    return (ConceptEditorDeclaration) BaseAdapter.fromNode(SModelUtil.findEditorDeclaration(editorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static ConceptBehavior findBehaviorDeclaration(SModel behaviorModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptBehavior) BaseAdapter.fromNode(SModelUtil.findBehaviorDeclaration(behaviorModel,BaseAdapter.fromAdapter(conceptDeclaration)));
+    return (ConceptBehavior) BaseAdapter.fromNode(SModelUtil.findBehaviorDeclaration(behaviorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static ConceptConstraints findConstraintsDeclaration(SModel constaintsModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptConstraints) BaseAdapter.fromNode(SModelUtil.findConstraintsDeclaration(constaintsModel,BaseAdapter.fromAdapter(conceptDeclaration)));
+    return (ConceptConstraints) BaseAdapter.fromNode(SModelUtil.findConstraintsDeclaration(constaintsModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static DataFlowBuilderDeclaration findDataFlowDeclaration(SModel dataFlowModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (DataFlowBuilderDeclaration) BaseAdapter.fromNode(SModelUtil.findDataFlowDeclaration(dataFlowModel,BaseAdapter.fromAdapter(conceptDeclaration)));
+    return (DataFlowBuilderDeclaration) BaseAdapter.fromNode(SModelUtil.findDataFlowDeclaration(dataFlowModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static boolean isEmptyPropertyValue(String s) {
