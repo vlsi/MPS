@@ -39,7 +39,7 @@ public class SModelUtil {
 
       public void rootRemoved(SModelRootEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode)p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+          if (SNodeOperations.isInstanceOf(((SNode) p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
             MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
             MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
           }
@@ -48,7 +48,7 @@ public class SModelUtil {
 
       public void propertyChanged(SModelPropertyEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode)p0.getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+          if (SNodeOperations.isInstanceOf(((SNode) p0.getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
             if (p0.getPropertyName().equals("name")) {
               String modelName = p0.getNode().getModel().getLongName();
               String newName = modelName + "." + p0.getNewPropertyValue();
@@ -65,12 +65,12 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for(SModelDescriptor descriptor : ListSequence.fromList(scope.getModelDescriptors())) {
+    for (SModelDescriptor descriptor : ListSequence.fromList(scope.getModelDescriptors())) {
       if (!(modelName.equals(descriptor.getLongName()))) {
         continue;
       }
       SModel model = descriptor.getSModel();
-      for(SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
         if (name.equals(root.getName()) && SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
           return root;
         }
@@ -90,7 +90,7 @@ public class SModelUtil {
     if (conceptFQName.equals("jetbrains.mps.smodel.structure.ModelPersistence$UnknownSNode")) {
       return null;
     }
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable <SNode>() {
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<SNode>() {
 
       public SNode compute() {
         String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
@@ -100,7 +100,7 @@ public class SModelUtil {
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
-        SNode result = ((SNode)BaseAdapter.fromAdapter(resultAdapter));
+        SNode result = ((SNode) BaseAdapter.fromAdapter(resultAdapter));
         MapSequence.fromMap(myFQNameToConcepDecl).put(conceptFQName, result);
         return result;
       }
@@ -123,7 +123,7 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
     if (languageNamespace == null) {
       return null;
     }
@@ -151,9 +151,9 @@ public class SModelUtil {
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
+    for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for(AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
+        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(superConcept))).getConcepts())) {
           SetSequence.fromSet(result).addElement(adapter.getNode());
         }
       }
@@ -164,20 +164,19 @@ public class SModelUtil {
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode conceptDecl = (SNode)concept;
+      SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
       if (extended != null) {
         ListSequence.fromList(result).addElement(extended);
       }
-      for(SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
       }
-    } else
-    {
-      SNode intConceptDecl = (SNode)concept;
-      for(SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
+    } else {
+      SNode intConceptDecl = (SNode) concept;
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
@@ -206,7 +205,7 @@ public class SModelUtil {
   }
 
   public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
       if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
         return root;
       }
@@ -215,7 +214,7 @@ public class SModelUtil {
   }
 
   public static SNode findBehaviorDeclaration(SModel behaviorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
       if (concept == SLinkOperations.getTarget(root, "concept", false)) {
         return root;
       }
@@ -224,7 +223,7 @@ public class SModelUtil {
   }
 
   public static SNode findConstraintsDeclaration(SModel constraintsModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
       if (concept == SLinkOperations.getTarget(root, "concept", false)) {
         return root;
       }
@@ -233,7 +232,7 @@ public class SModelUtil {
   }
 
   public static SNode findDataFlowDeclaration(SModel dataFlowModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
       if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
         return root;
       }
