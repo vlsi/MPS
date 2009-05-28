@@ -23,12 +23,14 @@ import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import com.intellij.openapi.util.Computable;
+import org.jetbrains.annotations.NotNull;
 
 public class ChildrenCollectionFinder {
+  @NotNull
   private EditorCell myCurrent;
   private boolean myForward;
 
-  public ChildrenCollectionFinder(EditorCell current, boolean forward) {
+  public ChildrenCollectionFinder(@NotNull EditorCell current, boolean forward) {
     myCurrent = current;
     myForward = forward;
   }
