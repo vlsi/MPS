@@ -76,8 +76,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
     JScrollPane treePane = new JScrollPane(myTree);
 
-    setEmptyContents();
-
     myPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
     myPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
@@ -92,15 +90,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     add(treePane, BorderLayout.CENTER);
 
     myContents.addChangeListener(this);
-    //myContents.startListening();
+    myContents.startListening();
   }
 
   public void dispose() {
-    //myContents.stopListening();
-  }
-
-  public void setEmptyContents() {
-    myContents.clearContents();
+    myContents.stopListening();
   }
 
   public void setContents(SearchResults contents) {

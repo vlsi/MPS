@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -92,16 +93,21 @@ public class SNodePointer {
 
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    SNode node = this.getNode();
-    if (node == null) return false;
-    return node == ((SNodePointer) o).getNode();
+    if (o == null || !(o instanceof SNodePointer)) return false;
+
+    SNodePointer np = (SNodePointer)o;
+    return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId,np.myNodeId);
   }
 
   public int hashCode() {
-    if (myModelReference == null) return 0;
-    if (myNodeId == null) return 0;
-    return myModelReference.hashCode() + myNodeId.hashCode();
+    int sum = 0;
+    if (myModelReference != null) {
+      sum += myModelReference.hashCode();
+    }
+    if (myNodeId != null) {
+      sum += 11 * myNodeId.hashCode();
+    }
+    return sum;
   }
 
 

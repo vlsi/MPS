@@ -136,7 +136,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
-        myUsageViewsData.remove(event.getIndex());
+        UsagesViewTool.UsageViewData data = myUsageViewsData.remove(event.getIndex());
+        data.myUsagesView.dispose();
       }
     };
 

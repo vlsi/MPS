@@ -83,7 +83,6 @@ public abstract class UsagesView implements IExternalizeable {
         return myProject;
       }
     };
-    myTreeComponent.setEmptyContents();
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());

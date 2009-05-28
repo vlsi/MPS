@@ -35,12 +35,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataTree implements IExternalizeable, IChangeListener {
-  private DataNode myTreeRoot = buildEmpty();
+  private DataNode myTreeRoot = build(new SearchResults(), null);
   private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
   private DataTreeChangesNotifier myChangesNotifier = new DataTreeChangesNotifier(this);
 
   public DataTree() {
-
   }
 
   public DataTree(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -91,10 +90,6 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----CONTENT MANAGEMENT----
 
-  public void clearContents() {
-    setContents(buildEmpty());
-  }
-
   public void setContents(SearchResults results, INodeRepresentator nodeRepresentator) {
     setContents(build(results, nodeRepresentator));
   }
@@ -119,10 +114,6 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   //----TREE BUILD STUFF----
-
-  public DataNode buildEmpty() {
-    return build(new SearchResults(), null);
-  }
 
   public DataNode build(final SearchResults results, final INodeRepresentator nodeRepresentator) {
     return ModelAccess.instance().runReadAction(new Computable<DataNode>() {
