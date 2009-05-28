@@ -23,12 +23,10 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -40,22 +38,16 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.List;
 
 public class SModelUtil_new implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(SModelUtil_new.class);
-  private ClassLoaderManager myManager;
 
-  public SModelUtil_new(ClassLoaderManager manager) {
-    myManager = manager;
+  public SModelUtil_new(ClassLoaderManager clManager,GlobalSModelEventsManager meManager) {
+    SModelUtil.startListeningOnce(clManager,meManager);
   }
 
   public void initComponent() {
-    myManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        SModelUtil.invalidateCaches();
-      }
-    });
   }
 
   @NonNls
@@ -210,14 +202,6 @@ public class SModelUtil_new implements ApplicationComponent {
     return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
   }
 
-  public static List<AbstractConceptDeclaration> getSubconcepts(String baseConceptFqName, SModel sourceModel, IScope scope) {
-    AbstractConceptDeclaration baseConceptDeclaration = SModelUtil_new.findConceptDeclaration(baseConceptFqName, scope);
-    if (baseConceptDeclaration == null) {
-      return Collections.emptyList();
-    }
-    return getSubconcepts(baseConceptDeclaration, sourceModel, scope);
-  }
-
   /**
    * @return list of sub-concepts including the concept passed as parameter
    */
@@ -293,14 +277,4 @@ public class SModelUtil_new implements ApplicationComponent {
   public static ConceptDeclaration getBaseConcept() {
     return (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
   }
-
-  public static Language getDeclaringLanguage(String conceptFQName, @NotNull IScope scope) {
-    //todo this operation was performed with results caching
-      String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
-      if (languageNamespace == null) {
-        return null;
-      }
-      Language l = scope.getLanguage(languageNamespace);
-      return l;
-    }
 }

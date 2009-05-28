@@ -15,16 +15,18 @@
  */
 package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public final class SConceptOperations {
 
@@ -116,7 +118,8 @@ public final class SConceptOperations {
     Set<Language> availableLanguages = new HashSet<Language>(model.getLanguages(scope));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
-      Language lang = SModelUtil_new.getDeclaringLanguage(descendant, scope);
+      SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
+      Language lang = SModelUtil.getDeclaringLanguage(declaration, scope);
       if (availableLanguages.contains(lang)) {
         result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());         
       }      

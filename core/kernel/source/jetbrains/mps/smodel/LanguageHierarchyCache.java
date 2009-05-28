@@ -25,9 +25,9 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -132,20 +132,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             ConceptDeclaration cd = (ConceptDeclaration) declaration;
             ConceptDeclaration extendedConcept = cd.getExtends();
             if (extendedConcept != null) {
-              String fqName = NameUtil.nodeFQName(extendedConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil.getDeclaringLanguage(extendedConcept.getNode(), GlobalScope.getInstance());
               if (declaringLanguage != null) {
-                result.addAll(getAncestorsNames(fqName));
+                result.addAll(getAncestorsNames(NameUtil.nodeFQName(extendedConcept)));
               }
             }
 
             for (InterfaceConceptReference icr : cd.getImplementses()) {
               InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
               if (interfaceConcept == null) continue;
-              String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept.getNode(), GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
-              result.addAll(getAncestorsNames(fqName));
+              result.addAll(getAncestorsNames(NameUtil.nodeFQName(interfaceConcept)));
             }
           }
 
@@ -154,9 +152,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             for (InterfaceConceptReference icr : icd.getExtendses()) {
               InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
               if (interfaceConcept == null) continue;
-              String fqName = NameUtil.nodeFQName(interfaceConcept);
-              Language declaringLanguage = SModelUtil_new.getDeclaringLanguage(fqName, GlobalScope.getInstance());
+              Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept.getNode(), GlobalScope.getInstance());
               if (declaringLanguage == null) continue;
+              String fqName = NameUtil.nodeFQName(interfaceConcept);
               result.add(fqName);
               result.addAll(getAncestorsNames(fqName));
             }
