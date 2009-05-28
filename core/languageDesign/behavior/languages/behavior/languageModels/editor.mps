@@ -588,7 +588,7 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225194473540">
               <property name="flag" value="false" />
             </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880264567" />
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="207142635382748027" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225194473541">
             <property name="vertical" value="false" />
@@ -656,7 +656,7 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225194473577">
               <property name="flag" value="false" />
             </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880264590" />
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="207142635382748028" />
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239880264587" />
         </node>
