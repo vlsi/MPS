@@ -28,10 +28,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LazyTabbedPane extends JPanel {
   private JTabbedPane myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
@@ -54,30 +51,30 @@ public class LazyTabbedPane extends JPanel {
     });
   }
 
-  public void removeTab(ILazyTab tab) {
+  public void add(ILazyTab lazyTab) {
+    myLazyTabs.add(lazyTab);
+    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));
+    updateTabColor(lazyTab);
+  }
+
+  public void remove(ILazyTab tab) {
     myInitializedTabs.remove(tab);
   }
 
   public List<ILazyTab> getTabs() {
-    return new ArrayList<ILazyTab>(myLazyTabs);
+    return Collections.unmodifiableList(myLazyTabs);
   }
 
   public int getCurrentTabIndex() {
     return getTabs().indexOf(getCurrentTab());
   }
 
-  public void selectTab(int index) {
-    myTabbedPane.setSelectedIndex(index);
-  }
-
   public ILazyTab getCurrentTab() {
     return myLazyTabs.get(myTabbedPane.getSelectedIndex());
   }
 
-  public void add(ILazyTab lazyTab) {
-    myLazyTabs.add(lazyTab);
-    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));
-    updateTabColor(lazyTab);
+  public void selectTab(int index) {
+    myTabbedPane.setSelectedIndex(index);
   }
 
   private void updateTabColor(ILazyTab tab) {

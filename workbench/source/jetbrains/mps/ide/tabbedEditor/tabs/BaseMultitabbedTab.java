@@ -136,7 +136,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (myLoadableNodes.size() == 0) {
       myComponent = null;
       myCurrentIndex = 0;
-      myTabbedEditor.getTabbedPane().removeTab(this);
+      myTabbedEditor.getTabbedPane().remove(this);
       myTabbedEditor.getTabbedPane().initTab(this);
     }
   }
@@ -191,10 +191,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!loadableNodes.isEmpty()) {
       myComponent = new JPanel(new BorderLayout());
       myInnerTabbedPane = new JTabbedPane();
-        try {
-          myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex,0));
-        } catch (IndexOutOfBoundsException e) {
-        }
+      try {
+        myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex, 0));
+      } catch (IndexOutOfBoundsException e) {
+      }
 
       for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
         addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
@@ -219,7 +219,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
-    if (getLoadableNodes().size()==0) {
+    if (getLoadableNodes().size() == 0) {
       tryToInitComponent();
     } else {
       addInnerTab(loadableNode, operationContext);

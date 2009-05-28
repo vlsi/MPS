@@ -81,7 +81,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         SReference reference = event.getReference();
         INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
         if (!myClass.isInstance(referentNode)) return;
-        if (getLoadableNode()!=null && tryToLoadNode()==null) {
+        if (getLoadableNode() != null && tryToLoadNode() == null) {
           reinit();
         }
       }
@@ -107,7 +107,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   }
 
   private void reinit() {
-    myTabbedEditor.getTabbedPane().removeTab(this);
+    myTabbedEditor.getTabbedPane().remove(this);
     myComponent = null;
     myLoadableNode = null;
     SwingUtilities.invokeLater(new Runnable() {

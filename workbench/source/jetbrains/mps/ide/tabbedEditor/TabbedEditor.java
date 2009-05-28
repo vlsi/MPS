@@ -93,8 +93,9 @@ public class TabbedEditor implements IEditor {
     myTabbedPane.registerKeyboardAction(anAction, aKeyStroke, aCondition);
   }
 
-  protected void addTab(ILazyTab tab) {
+  protected int addTab(ILazyTab tab) {
     myTabbedPane.add(tab);
+    return myTabbedPane.getTabs().size() - 1;
   }
 
   protected void selectTab(int n) {
