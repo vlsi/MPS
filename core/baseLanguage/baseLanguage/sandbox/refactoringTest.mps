@@ -175,6 +175,11 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="false" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="207142635382810848">
+      <property name="name" value="myField" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="207142635382810849" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="207142635382811729" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3348708091092692784">
       <property name="name" value="method" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3348708091092692785" />
