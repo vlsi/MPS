@@ -175,10 +175,10 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="false" />
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="207142635382810848">
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="4949017686597703110">
       <property name="name" value="myField" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="207142635382810849" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="207142635382811729" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="4949017686597703111" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4949017686597703991" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3348708091092692784">
       <property name="name" value="method" />
@@ -232,6 +232,23 @@
               <link role="baseMethodDeclaration" targetNodeId="29.~PrintStream.println(int):void" resolveInfo="println" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6799030055840835259">
                 <link role="variableDeclaration" targetNodeId="6799030055840835250" resolveInfo="t" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4949017686597703993">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4949017686597703994">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="4949017686597703996">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="4949017686597703997">
+                <link role="classifier" targetNodeId="10.~Runnable" resolveInfo="Runnable" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4949017686597703998" />
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4949017686597703999">
+                  <property name="isAbstract" value="false" />
+                  <property name="name" value="run" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4949017686597704000" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4949017686597704001" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4949017686597704002" />
+                </node>
               </node>
             </node>
           </node>

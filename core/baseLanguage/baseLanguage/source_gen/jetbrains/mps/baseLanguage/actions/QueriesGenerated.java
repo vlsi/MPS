@@ -56,6 +56,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
@@ -1769,6 +1771,52 @@ __switch__:
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1240657999273(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_4949017686597774503(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            List<SNode> result = new ArrayList<SNode>();
+            SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
+            if (anonymousClass == null) {
+              return null;
+            }
+            List<SNode> classifiers = ((List<SNode>)ListSequence.fromList(SNodeOperations.getAncestors(anonymousClass, null, false)).where(new IWhereFilter <SNode>() {
+
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+              }
+            }).toListSequence());
+            for(SNode classifier : ListSequence.fromList(classifiers)) {
+              ClassifierVisibleStaticMembersScope staticMembersScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), _context.getParentNode(), IClassifiersSearchScope.STATIC_FIELD);
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(((List<SNode>)staticMembersScope.getNodes())));
+            }
+            return result;
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+                SLinkOperations.setTarget(result, "variableDeclaration", (item), false);
+                SLinkOperations.setTarget(result, "classifier", SNodeOperations.cast(SNodeOperations.getParent((item)), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
+                return result;
+              }
+            });
+          }
+        }
+      }
+    }
     return result;
   }
 
