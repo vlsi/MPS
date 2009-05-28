@@ -26,4 +26,23 @@ public class RulesUtil {
     return false;
   }
 
+  public static boolean withinCheckingItem(SNode node) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
+      return true;
+    }
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null)) {
+      return true;
+    }
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", false, false) != null)) {
+      return true;
+    }
+    List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);
+    for(SNode annotation : annotations) {
+      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "classifier", false) || SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "classifier", false)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -12,8 +13,8 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   public erasure_SNodeType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode snodeType) {
-    return new _Quotations.QuotationClass_7().createNode();
+  public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_7().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
