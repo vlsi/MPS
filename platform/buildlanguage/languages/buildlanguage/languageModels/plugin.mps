@@ -2588,6 +2588,35 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6409868633850951530">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6409868633850951531">
+                <property name="name" value="node" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6409868633850951532">
+                  <link role="classifier" targetNodeId="36.~SNode" resolveInfo="SNode" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="6409868633850951539">
+              <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="6409868633850951540">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6409868633850951541">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6409868633850951542">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6409868633850951545">
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6409868633850951543">
+                        <link role="variableDeclaration" targetNodeId="6409868633850951531" resolveInfo="node" />
+                      </node>
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409868633850951549">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6409868633850951550">
+                          <link role="variableDeclaration" targetNodeId="1240833723136" resolveInfo="pointer" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6409868633850951551">
+                          <link role="baseMethodDeclaration" targetNodeId="36.~SNodePointer.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1240833723140">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240833723141">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240833723142">
@@ -2612,15 +2641,10 @@
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1240833723150">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240833723151">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240833723152">
-                    <link role="variableDeclaration" targetNodeId="1240833723136" resolveInfo="pointer" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240833723153">
-                    <link role="baseMethodDeclaration" targetNodeId="36.~SNodePointer.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                  </node>
-                </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1240833723154" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6409868633850951553">
+                  <link role="variableDeclaration" targetNodeId="6409868633850951531" resolveInfo="node" />
+                </node>
               </node>
             </node>
           </node>

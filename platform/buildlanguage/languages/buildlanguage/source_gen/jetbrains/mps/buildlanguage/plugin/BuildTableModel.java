@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.event.TableModelEvent;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -124,8 +125,15 @@ public class BuildTableModel implements TableModel {
       return result;
     }
     for(String name : Sequence.fromIterable(MapSequence.fromMap(state).keySet())) {
-      SNodePointer pointer = stringToPointer(name);
-      if (pointer.getNode() != null) {
+      final SNodePointer pointer = stringToPointer(name);
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          node.value = pointer.getNode();
+        }
+      });
+      if (node.value != null) {
         MapSequence.fromMap(result).put(pointer, MapSequence.fromMap(state).get(name));
       }
     }
