@@ -28,7 +28,6 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.PanelWithActionsAndCloseButton;
@@ -850,16 +849,12 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
       if (file == null) {
         final LocalHistoryAction action = startLocalHistoryAction(revision);
         if (getVirtualParent() != null) {
-          ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+          getVirtualParent().refresh(true, true, new Runnable() {
             public void run() {
-              getVirtualParent().refresh(false, true, new Runnable() {
-                public void run() {
-                  myFilePath.refresh();
-                  action.finish();
-                }
-              });
+              myFilePath.refresh();
+              action.finish();
             }
-          }, "Refreshing files...", false, myProject);
+          });
         }
       } else {
         // this line was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299

@@ -22,6 +22,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
@@ -252,12 +253,12 @@ public class MPSEditorOpener implements ProjectComponent {
   private void focus(IEditor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
-      // we do not need to request focus here, since activateEditorComponent already does that
-      // I also do not recommend to call IdeFocusManager.requestFocus by hands
       manager.activateEditorComponent();
+      IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
     } else {
       final InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
       inspectorTool.getToolWindow().activate(null);
+      IdeFocusManager.getInstance(myProject).requestFocus(inspectorTool.getInspector(), false);
     }
   }
 

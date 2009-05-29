@@ -72,7 +72,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     if (!firstTime) {
       FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
       synchronizer.registerCacheUpdater(new MPSUnindexedFilesUpdater(myIndex));
-      synchronizer.executeFileUpdate();
+      synchronizer.execute();
     }
   }
 
