@@ -596,6 +596,19 @@
       </node>
       <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1239364393304">
         <link role="declaration" targetNodeId="1.1199644186266" resolveInfo="copy" />
+        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239364393312">
+          <link role="attributeDeclaration" targetNodeId="1.1199644186328" resolveInfo="todir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239364393313">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393314">
+              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393315">
+                <property name="value" value="/jdom" />
+              </node>
+              <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393316">
+                <link role="propertyDeclaration" targetNodeId="1239364393106" resolveInfo="lib.dir" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239364393305">
           <link role="attributeDeclaration" targetNodeId="1.1199644186280" resolveInfo="file" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239364393306">
@@ -610,19 +623,6 @@
                 <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393311">
                   <property name="value" value="/idea/lib" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1239364393312">
-          <link role="attributeDeclaration" targetNodeId="1.1199644186328" resolveInfo="todir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239364393313">
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393314">
-              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393315">
-                <property name="value" value="/jdom" />
-              </node>
-              <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393316">
-                <link role="propertyDeclaration" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
           </node>

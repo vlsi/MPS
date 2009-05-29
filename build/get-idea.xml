@@ -32,7 +32,7 @@
     <copy file="${tmp}/idea/lib/alloy.jar" todir="${lib.dir}/alloy" overwrite="true" />
     <copy file="${tmp}/idea/lib/commons-codec-1.3.jar" todir="${lib.dir}/commons-codec" overwrite="true" />
     <copy file="${tmp}/idea/lib/commons-collections.jar" todir="${lib.dir}/commons-collections" overwrite="true" />
-    <copy file="${tmp}/idea/lib/jdom.jar" todir="${lib.dir}/jdom" overwrite="true" />
+    <copy todir="${lib.dir}/jdom" file="${tmp}/idea/lib/jdom.jar" overwrite="true" />
     <copy file="${tmp}/idea/lib/jgoodies-forms.jar" todir="${lib.dir}/jgoodies" overwrite="true" />
     <copy file="${tmp}/idea/lib/jh.jar" todir="${lib.dir}/javahelp" overwrite="true" />
     <copy todir="${lib.dir}/jna" overwrite="true">
