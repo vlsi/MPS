@@ -4,26 +4,33 @@ package jetbrains.mps.gtext.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
+import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class GDocument_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+public class GDocument_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
 
   public GDocument_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodePropertyGetter("jetbrains.mps.gtext.structure.GDocument", "name", this);
+    manager.registerNodePropertySetter("jetbrains.mps.gtext.structure.GDocument", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.gtext.structure.GDocument", "name");
+    manager.unRegisterNodePropertySetter("jetbrains.mps.gtext.structure.GDocument", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(node, "documentName");
+  }
+
+  public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
+    // R/O
   }
 
 }
