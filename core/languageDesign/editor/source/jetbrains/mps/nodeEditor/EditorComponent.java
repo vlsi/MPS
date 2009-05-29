@@ -2540,9 +2540,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MySimpleModelListener extends SModelAdapter {
-    public void modelReloaded(SModelDescriptor sm) {
+    public void modelReloaded(final SModelDescriptor sm) {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
+          if (myNode != null) {
+            String name = myNode.getName();
+            if (name != null) {
+              myNode = sm.getSModel().getRootByName(name);
+            }
+          }
           rebuildEditorContent();
         }
       });
