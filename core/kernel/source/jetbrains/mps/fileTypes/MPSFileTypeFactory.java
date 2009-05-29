@@ -24,6 +24,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import jetbrains.mps.ide.xml.XMLFileType;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.fileTypes.MPSFileType;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -88,6 +89,7 @@ public class MPSFileTypeFactory extends FileTypeFactory {
     for (String xmlExt : XML_EXTENSIONS) {
       consumer.consume(XML_FILE_TYPE, xmlExt);
     }
+    consumer.consume(new MPSFileType());
   }
 
 

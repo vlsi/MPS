@@ -86,7 +86,5 @@
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/>
 
-        <fileTypeFactory implementation="jetbrains.mps.vfs.MPSFileTypeFactory" />
-
     </extensions>
 </idea-plugin>
