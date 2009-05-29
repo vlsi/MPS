@@ -16,21 +16,10 @@
 package jetbrains.mps;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.FileNameMatcher;
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.nodeEditor.CaretBlinker;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.MPSFileType;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.Icon;
-import java.util.Arrays;
 
 public class MPSAdapter implements ApplicationComponent {
   private FileTypeManagerEx myFileTypeManager;
