@@ -1,5 +1,6 @@
 package jetbrains.mps.vcs.diff.ui;
 
+
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.NodeEditor;
@@ -32,8 +33,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private static final Color CHANGE_COLOR = new Color(188, 207, 249);
   private static final Color DELETE_COLOR = new Color(203, 203, 203);
 
-  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, String windowTitle) throws HeadlessException {
-    super(parent, windowTitle);
+  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel) throws HeadlessException {
+    super(parent, "Difference");
     myComponent = new JPanel(new GridLayout(1, 2));
     myNewModel = newModel;
     myOldModel = oldModel;

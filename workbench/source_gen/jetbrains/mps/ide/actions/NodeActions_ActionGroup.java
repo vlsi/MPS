@@ -46,6 +46,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
       this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
       this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowDiffererenesWithCurrentRevision_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
