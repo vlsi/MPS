@@ -39,7 +39,6 @@ public final class HyperlinkUtil {
         }
       }
     });
-    editorPane.setCaret(null);
     return editorPane;
   }
 
