@@ -7,13 +7,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.StringReader;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 public class VcsActionsHelper {
@@ -21,10 +21,15 @@ public class VcsActionsHelper {
   public VcsActionsHelper() {
   }
 
-  public static void showDiffrence(Frame frame, IOperationContext context, SModel oldModel, SModel newModel, SNode node) {
-    RootDifferenceDialog dialog = new RootDifferenceDialog(frame, oldModel, newModel);
-    DiffBuilder builder = new DiffBuilder(oldModel, newModel);
-    dialog.init(context, node, builder.getChanges());
+  public static void showDiffrence(Frame frame, final IOperationContext context, final SModel oldModel, final SModel newModel, final SNode node) {
+    final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, newModel, oldModel);
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        DiffBuilder builder = new DiffBuilder(oldModel, newModel);
+        dialog.init(context, node, builder.getChanges());
+      }
+    });
     dialog.showDialog();
   }
 

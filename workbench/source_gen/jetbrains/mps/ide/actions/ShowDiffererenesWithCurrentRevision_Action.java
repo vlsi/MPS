@@ -35,7 +35,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   public ShowDiffererenesWithCurrentRevision_Action() {
     super("Compare with the same repository revision", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()
