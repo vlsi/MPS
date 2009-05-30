@@ -3290,5 +3290,49 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239975698903" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1562714432501166282">
+    <property name="package" value="Actions.Keymaps" />
+    <link role="conceptDeclaration" targetNodeId="1.1562714432501166197" resolveInfo="KeymapAdjustmentsDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1562714432501170038">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1562714432501170041">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1562714432501170042">
+          <property name="flag" value="false" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1562714432501170044" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1562714432501170046">
+          <property name="text" value="keymap changes for " />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1562714432501170048">
+          <link role="relationDeclaration" targetNodeId="1.1562714432501166281" resolveInfo="keymap" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1562714432501170050" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1562714432501170052">
+        <link role="relationDeclaration" targetNodeId="1.1562714432501166199" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="1562714432501170065" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1562714432501170040" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1562714432501170054">
+    <property name="package" value="Actions.Keymaps" />
+    <link role="conceptDeclaration" targetNodeId="1.1562714432501166198" resolveInfo="ShortcutChange" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1562714432501170056">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1562714432501170059">
+        <link role="relationDeclaration" targetNodeId="1.1562714432501166204" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1562714432501170060">
+          <link role="conceptDeclaration" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1562714432501170062">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1562714432501170064">
+        <link role="relationDeclaration" targetNodeId="1.1562714432501166206" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1562714432501170058" />
+    </node>
+  </node>
 </model>
 

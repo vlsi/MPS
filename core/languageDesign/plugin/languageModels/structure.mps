@@ -2514,5 +2514,55 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1562714432501166197">
+    <property name="package" value="Actions.Keymaps" />
+    <property name="name" value="KeymapChangesDeclaration" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1562714432501166281">
+      <property name="name" value="keymap" />
+      <link role="dataType" targetNodeId="1562714432501166200" resolveInfo="Keymaps" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562714432501166199">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="shortcutChange" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1562714432501166198" resolveInfo="ShortcutChangeDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1562714432501166198">
+    <property name="package" value="Actions.Keymaps" />
+    <property name="name" value="ShortcutChange" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562714432501166206">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="keystroke" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1207318242772" resolveInfo="KeyMapKeystroke" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562714432501166204">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="action" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1562714432501166200">
+    <property name="package" value="Actions.Keymaps" />
+    <property name="name" value="Keymap" />
+    <link role="memberDataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166201">
+      <property name="internalValue" value="MacOSX" />
+      <property name="externalValue" value="Mac OS X" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166202">
+      <property name="internalValue" value="Unix_GNOME" />
+      <property name="externalValue" value="GNOME" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166203">
+      <property name="internalValue" value="Unix_KDE" />
+      <property name="externalValue" value="KDE" />
+    </node>
+  </node>
 </model>
 
