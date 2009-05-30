@@ -730,8 +730,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1225128146050">
-    <property name="name" value="PropertyExamples" />
-    <property name="description" value="Find Property Examples" />
+    <property name="name" value="PropertyInstances" />
+    <property name="description" value="Property Instances" />
     <link role="forConcept" targetNodeId="3.1071489288299" resolveInfo="PropertyDeclaration" />
     <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1225128146051">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225128146052">
@@ -846,7 +846,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225128278652">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225128283919">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225128283920">
-            <property name="value" value="Property Examples" />
+            <property name="value" value="Property Instances" />
           </node>
         </node>
       </node>
