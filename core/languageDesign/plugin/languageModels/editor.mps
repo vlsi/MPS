@@ -3300,7 +3300,7 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1562714432501170044" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1562714432501170046">
-          <property name="text" value="keymap changes for " />
+          <property name="text" value="keymap changes for" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1562714432501170048">
           <link role="relationDeclaration" targetNodeId="1.1562714432501166281" resolveInfo="keymap" />
@@ -3326,6 +3326,9 @@
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
           </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1562714432501345799">
+          <property name="value" value="3" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1562714432501170064">

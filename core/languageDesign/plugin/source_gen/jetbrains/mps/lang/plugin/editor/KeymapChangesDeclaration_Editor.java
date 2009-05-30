@@ -50,7 +50,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5128_0(context, node, "keymap changes for "));
+    editorCell.addEditorCell(this.createConstant_5128_0(context, node, "keymap changes for"));
     editorCell.addEditorCell(this.createProperty_5128_1(context, node));
     return editorCell;
   }
