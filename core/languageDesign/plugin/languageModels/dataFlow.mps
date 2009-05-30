@@ -141,8 +141,8 @@
     <link role="conceptDeclaration" targetNodeId="1.1205679047295" resolveInfo="ActionParameterDeclaration" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1241370860092">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241370860093">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="1241370862298">
-          <node role="variable" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1241370864190" />
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement" id="1562714432501063756">
+          <node role="variable" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1562714432501063758" />
         </node>
       </node>
     </node>
