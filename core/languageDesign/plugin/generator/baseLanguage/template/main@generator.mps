@@ -2869,6 +2869,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204044988770">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1204051459085">
           <link role="constructorDeclaration" targetNodeId="19.~BaseTabbedEditor.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode)" resolveInfo="BaseTabbedEditor" />
+          <link role="baseMethodDeclaration" targetNodeId="19.~BaseTabbedEditor.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode)" resolveInfo="BaseTabbedEditor" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204051462430">
             <link role="variableDeclaration" targetNodeId="1204045054085" resolveInfo="operationContext" />
           </node>
@@ -2882,7 +2883,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204730976918">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204045236129" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204730976919">
-                  <link role="baseMethodDeclaration" targetNodeId="30.~TabbedEditor.addTab(jetbrains.mps.ide.tabbedEditor.ILazyTab):void" resolveInfo="addTab" />
+                  <link role="baseMethodDeclaration" targetNodeId="30.~TabbedEditor.addTab(jetbrains.mps.ide.tabbedEditor.ILazyTab):int" resolveInfo="addTab" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216215933092">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216215933094">
                       <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
@@ -2946,7 +2947,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204737334157">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204737334158" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204737334159">
-                  <link role="baseMethodDeclaration" targetNodeId="30.~TabbedEditor.addTab(jetbrains.mps.ide.tabbedEditor.ILazyTab):void" resolveInfo="addTab" />
+                  <link role="baseMethodDeclaration" targetNodeId="30.~TabbedEditor.addTab(jetbrains.mps.ide.tabbedEditor.ILazyTab):int" resolveInfo="addTab" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216215937314">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216215937316">
                       <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
