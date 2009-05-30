@@ -390,13 +390,13 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="3575273646046388929">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="3575273646046388930">
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3575273646046388931">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3575273646046388932">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3575273646046388933">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="3575273646046388934" />
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="3575273646046388935">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement" id="8141776399176630557">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="8141776399176630558">
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8141776399176630559">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8141776399176630560">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8141776399176630561">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="8141776399176630562" />
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="8141776399176630563">
                                     <link role="member" targetNodeId="1203686236523" resolveInfo="createNewLanguage" />
                                   </node>
                                 </node>

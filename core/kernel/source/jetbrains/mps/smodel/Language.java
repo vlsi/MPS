@@ -39,7 +39,6 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -760,24 +759,28 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  //todo move to LanguageDescriptor
+  public ModelRoot createAccessoriesRoot() {
+    ModelRoot modelRoot = new ModelRoot();
+    File languageAccessories = new File(getDescriptorFile().getParent().toFile(), LANGUAGE_ACCESSORIES);
+    modelRoot.setPath(languageAccessories.getAbsolutePath());
+    modelRoot.setPrefix(getNamespace());
+    return modelRoot;
+  }
+
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setUUID(UUID.randomUUID().toString());
 
     File languageModels = new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS);
-    File languageAccessories = new File(descriptorFile.getParent().toFile(), LANGUAGE_ACCESSORIES);
-    if (languageModels.exists() || languageAccessories.exists()) {
+    if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }
 
     // default descriptorModel roots
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPath(languageModels.getAbsolutePath());
-    modelRoot.setPrefix(languageNamespace);
-    languageDescriptor.getModelRoots().add(modelRoot);
-    modelRoot = new ModelRoot();
-    modelRoot.setPath(languageAccessories.getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
