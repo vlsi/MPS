@@ -39,6 +39,7 @@ import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
   private static Logger LOG = Logger.getLogger(CloneModelDialog.class);
@@ -60,24 +61,33 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 400, 200);
+    return new DialogDimensions(100, 100, 500, 170);
   }
 
   private void initUI() {
-    createPathField();
-    createNamespacePanel();
-    createStereoPanel();
+    addComponent(new JLabel("Path:"), adjustConstraints(createLabelConstraints(0, 0), 5));
+    addComponent(createPathField(), adjustConstraints(createFieldConstraints(1, 0), 5));
+
+    addComponent(new JLabel("Name:"), adjustConstraints(createLabelConstraints(0, 1), 8));
+    addComponent(createNamespaceField(), adjustConstraints(createFieldConstraints(1, 1), 8));
+
+    addComponent(new JLabel("Stereotype:"), adjustConstraints(createLabelConstraints(0, 2), 8));
+    GridBagConstraints c = adjustConstraints(createFieldConstraints(1, 2), 8);
+    c.fill = GridBagConstraints.NONE;
+    addComponent(createStereotypeCombo(), c);
 
     addComponent(new JPanel(), createLabelConstraints(0, 4));
     addComponent(new JPanel(), createListConstraints(1, 4));
   }
 
-  private void createPathField() {
-    addComponent(new JLabel("Path:"), createLabelConstraints(0, 0));
+  private GridBagConstraints adjustConstraints(GridBagConstraints c, int topInset) {
+    c.insets.top = topInset;
+    return c;
+  }
 
+  private JComponent createPathField() {
     JTextField tfPath = new JTextField();
     tfPath.setEditable(false);
-    addComponent(tfPath, createFieldConstraints(1, 0));
 
     Property pPath = BeanProperty.create(CloneModelProperties.PROPERTY_PATH);
     Property pPathVar = BeanProperty.create("text");
@@ -95,26 +105,25 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       }
     });
     addBinding(binding);
+    return tfPath;
   }
 
-  public void createNamespacePanel() {
-    addComponent(new JLabel("Name:"), createLabelConstraints(0, 1));
+  private JComponent createNamespaceField() {
     JTextField tfNamespace = new JTextField();
-    addComponent(tfNamespace, createFieldConstraints(1, 1));
 
     Property pNamespace = BeanProperty.create(CloneModelProperties.PROPERTY_NAME);
     Property pNamespaceVar = BeanProperty.create("text");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pNamespace, tfNamespace, pNamespaceVar));
+    return tfNamespace;
   }
 
-  private void createStereoPanel() {
-    addComponent(new JLabel("Stereotype:"), createLabelConstraints(0, 2));
+  private JComponent createStereotypeCombo() {
     JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
-    addComponent(cbStereotype, createFieldConstraints(1, 2));
 
     Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
+    return cbStereotype;
   }
 
   private void collectModelProps() {
