@@ -8,7 +8,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
-  public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_vcs = ID + "vcs";
@@ -18,10 +17,9 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
       this.addAction("jetbrains.mps.ide.actions.GoByCurrentReference_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.HighlightUsagesAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.HighlightInstancesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.nodes.SelectInActionAdapter", "jetbrains.mps.ide");

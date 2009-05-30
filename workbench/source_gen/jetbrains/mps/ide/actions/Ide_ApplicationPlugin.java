@@ -54,7 +54,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Bookmarks_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoByReference_ActionGroup");
     return groups;
   }
 
@@ -73,15 +72,16 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {
-    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
-    DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
+    DefaultActionGroup gTo = (DefaultActionGroup)ActionManager.getInstance().getAction(toId);
+    DefaultActionGroup gWhat = (DefaultActionGroup)ActionManager.getInstance().getAction(whatId);
     if (gTo == null || gWhat == null) {
       return;
     }
     if (labelName != null) {
       Constraints constraints = new Constraints(Anchor.AFTER, labelName);
       gTo.add(gWhat, constraints);
-    } else {
+    } else
+    {
       gTo.add(gWhat);
     }
   }
