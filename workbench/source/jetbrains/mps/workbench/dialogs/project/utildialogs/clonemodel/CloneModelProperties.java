@@ -29,11 +29,9 @@ public class CloneModelProperties {
   public static final String PROPERTY_NAME = "longName";
   public static final String PROPERTY_PATH = "root";
   public static final String PROPERTY_STEREOTYPE = "stereotype";
-  public static final String PROPERTY_LOG = "usesLog";
 
   private String myLongName;
   private String myStereotype;
-  private boolean myUsesLog;
   private int myVersion;
 
   private RootReference myRoot;
@@ -64,14 +62,6 @@ public class CloneModelProperties {
 
   public void setStereotype(String stereotype) {
     myStereotype = stereotype;
-  }
-
-  public boolean isUsesLog() {
-    return myUsesLog;
-  }
-
-  public void setUsesLog(boolean usesLog) {
-    myUsesLog = usesLog;
   }
 
   public int getVersion() {

@@ -67,7 +67,6 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     createPathField();
     createNamespacePanel();
     createStereoPanel();
-    createCheckboxPanel();
 
     addComponent(new JPanel(), createLabelConstraints(0, 4));
     addComponent(new JPanel(), createListConstraints(1, 4));
@@ -116,16 +115,6 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
     addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
-  }
-
-  private void createCheckboxPanel() {
-    JCheckBox cbLog = new JCheckBox("Use log");
-    addComponent(cbLog, createLabelConstraints(0, 3));
-    addComponent(new JPanel(), createFieldConstraints(1, 3));
-
-    Property pLog = BeanProperty.create(CloneModelProperties.PROPERTY_LOG);
-    Property pLogVar = BeanProperty.create("selected");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pLog, cbLog, pLogVar));
   }
 
   private void collectModelProps() {
