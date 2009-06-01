@@ -19,26 +19,29 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="true">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\main\main.msd" />
-      <solutionPath path="${project}\solutions\sandbox\sandbox.msd" />
-      <solutionPath path="${project}\solutions\test\test.msd" />
+      <solutionPath path="${project}/solutions/main/main.msd" />
+      <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
+      <solutionPath path="${project}/solutions/test/test.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\ypath.mpl" />
+      <languagePath path="${project}/ypath.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfSolution name="main" solution="ypath.main" />
-      <genConfSolution name="sandbox" solution="ypath.sandbox" />
-      <genConfSolution name="test" solution="ypath.test" />
+      <genConfModule runnable="false" name="main" moduleRef="ypath.main" />
+      <genConfModule runnable="false" name="sandbox" moduleRef="ypath.sandbox" />
+      <genConfModule runnable="false" name="test" moduleRef="ypath.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="YPath.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
@@ -50,10 +53,29 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="/Volumes/Sparky/Development/MPS-workspace" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
