@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -26,6 +27,25 @@ public class NodeMacro_Behavior {
 
   public static SNode call_getPreviousNodeMacro_1213877290823(SNode thisNode) {
     return NodeMacro_Behavior.call_getEnclosingMacro_1213877290834(thisNode, thisNode, SNodeOperations.getParent(thisNode));
+  }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    StringBuilder builder = new StringBuilder();
+    boolean newWord = false;
+    for(char ch : SConceptPropertyOperations.getString(thisNode, "alias").toCharArray()) {
+      if (ch == '$' || ch == '_') {
+        newWord = true;
+        continue;
+      }
+      if (newWord) {
+        builder.append(Character.toUpperCase(ch));
+      } else
+      {
+        builder.append(Character.toLowerCase(ch));
+      }
+      newWord = false;
+    }
+    return builder.toString();
   }
 
   public static SNode call_getEnclosingMacro_1213877290834(SNode thisNode, SNode currentMacro, SNode currentNode) {
