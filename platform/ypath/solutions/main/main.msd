@@ -12,7 +12,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
-    <usedLanguages>8444a1b3-ade8-47cb-a338-152860c5b461(jetbrains.mps.platform.treewrite)</usedLanguages>
   </usedLanguages>
 </solution>
 
