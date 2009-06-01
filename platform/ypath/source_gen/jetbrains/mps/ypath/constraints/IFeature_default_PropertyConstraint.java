@@ -33,7 +33,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
         }
       }
     }
-    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(propertyValue))));
+    node.setProperty("default", String.valueOf((SPropertyOperations.getBoolean(propertyValue))), false);
   }
 
 }

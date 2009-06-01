@@ -4,7 +4,6 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -14,11 +13,11 @@ public class IParamFeature_Behavior {
   }
 
   public static List<SNode> call_getParameterObjects_1213877340242(SNode thisNode, SNode nodeType) {
-    return FeatureTargetTypeUtil.getParameterObjects(thisNode, nodeType);
+    return FeatureUtil.getParameterObjects(thisNode, nodeType);
   }
 
   public static SNode call_getTargetType_1213877340252(SNode thisNode, Object param) {
-    return FeatureTargetTypeUtil.getTargetType(thisNode, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathAspect", false, false), "treePathType", true), "nodeType", true), param);
+    return FeatureUtil.getTargetType(thisNode, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathAspect", false, false), "treePathType", true), "nodeType", true), param);
   }
 
 }

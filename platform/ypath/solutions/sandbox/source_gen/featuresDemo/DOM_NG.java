@@ -98,36 +98,6 @@ public class DOM_NG extends TreePath<Node> {
       return this.thisNode.getChildNodes().getLength();
     }
 
-    public Node set(int idx, Node value) {
-      if (idx < 0 || idx >= this.size()) {
-        throw new IndexOutOfBoundsException();
-      }
-      Node __oldValue__ = this.get(idx);
-      this.thisNode.replaceChild(this.thisNode.getChildNodes().item(idx), value);
-      return __oldValue__;
-    }
-
-    public void add(int idx, Node value) {
-      if (idx < 0 || idx > this.size()) {
-        throw new IndexOutOfBoundsException();
-      }
-      if (idx < this.thisNode.getChildNodes().getLength()) {
-        this.thisNode.insertBefore(this.thisNode.getChildNodes().item(idx), value);
-      } else
-      {
-        this.thisNode.appendChild(value);
-      }
-    }
-
-    public Node remove(int idx) {
-      if (idx < 0 || idx >= this.size()) {
-        throw new IndexOutOfBoundsException();
-      }
-      Node __oldValue__ = this.get(idx);
-      this.thisNode.removeChild(this.thisNode.getChildNodes().item(idx));
-      return __oldValue__;
-    }
-
 }
   private static class Feature_attributes extends AbstractCollection<Node> {
 
@@ -214,12 +184,6 @@ __switch__:
 
     public int size() {
       return this.thisNode.getAttributes().getLength();
-    }
-
-    public boolean add(Node value) {
-      boolean __alreadyContains__ = this.contains(value);
-      this.thisNode.getAttributes().setNamedItem(value);
-      return __alreadyContains__;
     }
 
 }

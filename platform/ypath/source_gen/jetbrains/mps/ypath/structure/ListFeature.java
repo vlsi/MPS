@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -109,27 +110,27 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     super.setChild(ListFeature.SIZE_FUNCTION, node);
   }
 
-  public FeatureSetFun getSetFunction() {
-    return (FeatureSetFun)this.getChild(FeatureSetFun.class, ListFeature.SET_FUNCTION);
+  public ConceptFunction getSetFunction() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, ListFeature.SET_FUNCTION);
   }
 
-  public void setSetFunction(FeatureSetFun node) {
+  public void setSetFunction(ConceptFunction node) {
     super.setChild(ListFeature.SET_FUNCTION, node);
   }
 
-  public FeatureInsertFun getInsertFunction() {
-    return (FeatureInsertFun)this.getChild(FeatureInsertFun.class, ListFeature.INSERT_FUNCTION);
+  public ConceptFunction getInsertFunction() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, ListFeature.INSERT_FUNCTION);
   }
 
-  public void setInsertFunction(FeatureInsertFun node) {
+  public void setInsertFunction(ConceptFunction node) {
     super.setChild(ListFeature.INSERT_FUNCTION, node);
   }
 
-  public FeatureDeleteFun getDeleteFunction() {
-    return (FeatureDeleteFun)this.getChild(FeatureDeleteFun.class, ListFeature.DELETE_FUNCTION);
+  public ConceptFunction getDeleteFunction() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, ListFeature.DELETE_FUNCTION);
   }
 
-  public void setDeleteFunction(FeatureDeleteFun node) {
+  public void setDeleteFunction(ConceptFunction node) {
     super.setChild(ListFeature.DELETE_FUNCTION, node);
   }
 

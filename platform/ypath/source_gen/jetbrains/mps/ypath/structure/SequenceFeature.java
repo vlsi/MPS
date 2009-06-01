@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -108,19 +109,19 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     super.setChild(SequenceFeature.SIZE_FUNCTION, node);
   }
 
-  public FeatureAddFun getAddFunction() {
-    return (FeatureAddFun)this.getChild(FeatureAddFun.class, SequenceFeature.ADD_FUNCTION);
+  public ConceptFunction getAddFunction() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, SequenceFeature.ADD_FUNCTION);
   }
 
-  public void setAddFunction(FeatureAddFun node) {
+  public void setAddFunction(ConceptFunction node) {
     super.setChild(SequenceFeature.ADD_FUNCTION, node);
   }
 
-  public FeatureRemoveFun getRemoveFunction() {
-    return (FeatureRemoveFun)this.getChild(FeatureRemoveFun.class, SequenceFeature.REMOVE_FUNCTION);
+  public ConceptFunction getRemoveFunction() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, SequenceFeature.REMOVE_FUNCTION);
   }
 
-  public void setRemoveFunction(FeatureRemoveFun node) {
+  public void setRemoveFunction(ConceptFunction node) {
     super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
   }
 

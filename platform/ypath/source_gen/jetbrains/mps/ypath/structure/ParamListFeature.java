@@ -132,46 +132,6 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     super.setChild(ParamListFeature.CARDINAL, node);
   }
 
-  public ParamFeatureGetFun getParamGetFunction() {
-    return this.ensureAdapter(ParamFeatureGetFun.class, "getFunction", this.getGetFunction());
-  }
-
-  public void setParamGetFunction(ParamFeatureGetFun node) {
-    this.setGetFunction(node);
-  }
-
-  public ParamFeatureSizeFun getParamSizeFunction() {
-    return this.ensureAdapter(ParamFeatureSizeFun.class, "sizeFunction", this.getSizeFunction());
-  }
-
-  public void setParamSizeFunction(ParamFeatureSizeFun node) {
-    this.setSizeFunction(node);
-  }
-
-  public ParamFeatureSetFun getParamSetFunction() {
-    return this.ensureAdapter(ParamFeatureSetFun.class, "setFunction", this.getSetFunction());
-  }
-
-  public void setParamSetFunction(ParamFeatureSetFun node) {
-    this.setSetFunction(node);
-  }
-
-  public ParamFeatureInsertFun getParamInsertFunction() {
-    return this.ensureAdapter(ParamFeatureInsertFun.class, "insertFunction", this.getInsertFunction());
-  }
-
-  public void setParamInsertFunction(ParamFeatureInsertFun node) {
-    this.setInsertFunction(node);
-  }
-
-  public ParamFeatureDeleteFun getParamDeleteFunction() {
-    return this.ensureAdapter(ParamFeatureDeleteFun.class, "deleteFunction", this.getDeleteFunction());
-  }
-
-  public void setParamDeleteFunction(ParamFeatureDeleteFun node) {
-    this.setDeleteFunction(node);
-  }
-
 
   public static ParamListFeature newInstance(SModel sm, boolean init) {
     return (ParamListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();

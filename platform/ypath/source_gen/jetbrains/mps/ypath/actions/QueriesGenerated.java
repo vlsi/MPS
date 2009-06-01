@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
@@ -25,11 +24,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
+import jetbrains.mps.ypath.behavior.FeatureUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
@@ -101,10 +98,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.ypath.structure.MatchKindOperation");
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode(), false);
-  }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.ypath.structure.TreePathType");
   }
@@ -120,29 +113,6 @@ public class QueriesGenerated {
     }
     List<SNode> aspects = TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope());
     return ListSequence.fromList(aspects).count() > 0;
-  }
-
-  public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "getter", "jetbrains.mps.ypath.structure.GFGetterParamFun");
-    SLinkOperations.setNewChild(_context.getNewNode(), "cardinal", "jetbrains.mps.ypath.structure.GFCardinalParamFun");
-  }
-
-  public static void nodeFactory_NodeSetup_GFInsertFunWrapper_1197319762200(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(_context.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_GFRemoveFunWrapper_1197319781736(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(_context.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_GFReplaceFunWrapper_1197319789956(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(_context.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
-    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169037620751(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -234,16 +204,6 @@ public class QueriesGenerated {
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature");
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature");
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
     return result;
   }
 
@@ -258,7 +218,7 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode op = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.IterateOperation");
             SNode tpoe = SNodeOperations.cast(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            return FeatureTargetTypeUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true));
+            return FeatureUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true));
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
@@ -280,255 +240,6 @@ public class QueriesGenerated {
             });
           }
         }
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IAnchor_1194436439282(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IndexAnchor");
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode anchor = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ElementAnchor", null);
-            SPropertyOperations.set(anchor, "before", "" + (true));
-            return anchor;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "BEFORE";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode anchor = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ElementAnchor", null);
-            SPropertyOperations.set(anchor, "before", "" + (false));
-            return anchor;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "AFTER";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureFun_1196420410543(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          List<SNode> res = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
-          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-            for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder"), "functions", true))) {
-              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"));
-              } else
-              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"));
-              } else
-              if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                ListSequence.fromList(res).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
-              }
-            }
-          }
-          return res;
-        }
-      };
-      Iterable queryResult = (Iterable)calc.calculate();
-      if (queryResult != null) {
-        for(Object item : queryResult) {
-          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-        }
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.IGenericFeatureFunFragment");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            List<SNode> types = ListSequence.fromList(new ArrayList<SNode>());
-            ListSequence.fromList(types).addSequence(ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"))));
-            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
-              for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder"), "functions", true))) {
-                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), SPropertyOperations.getString_def(SNodeOperations.cast(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment"), "fragmentType", "REPLACE_SINGLE")));
-                } else
-                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace single"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace selection"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace all"));
-                } else
-                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove single"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove selection"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove all"));
-                } else
-                if (SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at start"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at end"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert before"));
-                  ListSequence.fromList(types).removeElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert after"));
-                }
-              }
-            }
-            return types;
-          }
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        if (queryResult != null) {
-          for(final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode fragment = null;
-                SNode type = (item);
-                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace single") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace selection") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "replace all")) {
-                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
-                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
-                  }
-                } else
-                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove single") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove selection") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "remove all")) {
-                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
-                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
-                  }
-                } else
-                if (type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at start") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert at end") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert before") || type == SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)", "FragmentTypeEnum"), "insert after")) {
-                  fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
-                  SPropertyOperations.set(fragment, "fragmentType", SEnumOperations.getEnumMemberValue(type));
-                  if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-                    SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
-                  }
-                }
-                return fragment;
-              }
-
-              public String getMatchingText(String pattern) {
-                return SEnumOperations.getEnumMemberName((item));
-              }
-
-              public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
-              }
-            });
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_GenericFeatureFunHolder_1196424373003(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode hld = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", null);
-            SPropertyOperations.set(hld, "byIndex", "" + (true));
-            return hld;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "by index";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureFunHolder");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode hld = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", null);
-            SPropertyOperations.set(hld, "byIndex", "" + (false));
-            return hld;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "byelement";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1196791152384(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.EmptySequenceExpression");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.EmptySequenceExpression", null);
-          }
-
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.ReplaceWritePathStatement");
-          }
-
-          public String getMatchingText(String pattern) {
-            return "NOTHING";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
       }
     }
     return result;
@@ -625,80 +336,6 @@ public class QueriesGenerated {
           }
         });
       }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1194616742213(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.IsWithinRangeExpression");
-          SLinkOperations.setTarget(res, "range", _context.getSourceNode(), true);
-          return res;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".isWithinRange ()";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "IRange expression";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.IsAtInsertionPointExpression");
-          SLinkOperations.setTarget(res, "range", _context.getSourceNode(), true);
-          return res;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".isAtInsertionPoint ()";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "IRange expression";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.NextElementStatement");
-          SLinkOperations.setTarget(res, "range", _context.getSourceNode(), true);
-          return res;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".next ()";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "IRange statement";
-        }
-      });
     }
     return result;
   }

@@ -15,6 +15,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new TreeNodeKindProperty_default_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new IFeature_default_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericFeature_writable_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenericParamFeature_writable_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ListFeature_writable_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SequenceFeature_writable_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MatchPropertyOperation_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TreePathAspect_defaultFeature_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new IterateOperation_usedFeature_ReferentConstraint());

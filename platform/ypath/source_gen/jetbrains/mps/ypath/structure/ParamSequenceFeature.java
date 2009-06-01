@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -148,19 +149,19 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     this.setSizeFunction(node);
   }
 
-  public ParamFeatureAddFun getParamAddFunction() {
-    return this.ensureAdapter(ParamFeatureAddFun.class, "addFunction", this.getAddFunction());
+  public ConceptFunction getParamAddFunction() {
+    return this.ensureAdapter(ConceptFunction.class, "addFunction", this.getAddFunction());
   }
 
-  public void setParamAddFunction(ParamFeatureAddFun node) {
+  public void setParamAddFunction(ConceptFunction node) {
     this.setAddFunction(node);
   }
 
-  public ParamFeatureRemoveFun getParamRemoveFunction() {
-    return this.ensureAdapter(ParamFeatureRemoveFun.class, "removeFunction", this.getRemoveFunction());
+  public ConceptFunction getParamRemoveFunction() {
+    return this.ensureAdapter(ConceptFunction.class, "removeFunction", this.getRemoveFunction());
   }
 
-  public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
+  public void setParamRemoveFunction(ConceptFunction node) {
     this.setRemoveFunction(node);
   }
 

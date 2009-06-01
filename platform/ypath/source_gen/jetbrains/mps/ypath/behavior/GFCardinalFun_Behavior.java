@@ -10,7 +10,7 @@ public class GFCardinalFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new _Quotations.QuotationClass_9().createNode();
+    return new _Quotations.QuotationClass_6().createNode();
   }
 
 }

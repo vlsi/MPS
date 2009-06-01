@@ -5,8 +5,6 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import java.util.Iterator;
-import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,7 +20,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static final String ASCENDING = "ascending";
   public static final String OPPOSITE = "opposite";
   public static final String GETTER = "getter";
-  public static final String FUN_HOLDERS = "funHolders";
 
   public GenericFeature(SNode node) {
     super(node);
@@ -98,26 +95,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void setGetter(GFGetterFun node) {
     super.setChild(GenericFeature.GETTER, node);
-  }
-
-  public int getFunHoldersesCount() {
-    return this.getChildCount(GenericFeature.FUN_HOLDERS);
-  }
-
-  public Iterator<GenericFeatureFunHolder> funHolderses() {
-    return this.children(GenericFeatureFunHolder.class, GenericFeature.FUN_HOLDERS);
-  }
-
-  public List<GenericFeatureFunHolder> getFunHolderses() {
-    return this.getChildren(GenericFeatureFunHolder.class, GenericFeature.FUN_HOLDERS);
-  }
-
-  public void addFunHolders(GenericFeatureFunHolder node) {
-    this.addChild(GenericFeature.FUN_HOLDERS, node);
-  }
-
-  public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
-    this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
   }
 
 

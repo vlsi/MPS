@@ -634,9 +634,6 @@
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.SequenceFeature" id="1196720900148">
       <property name="name" value="elements" />
-      <node role="removeFunction" type="jetbrains.mps.ypath.structure.FeatureRemoveFun" id="1196720900149">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900150" />
-      </node>
       <node role="sizeFunction" type="jetbrains.mps.ypath.structure.FeatureSizeFun" id="1196720900151">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900152">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196720900153">
@@ -845,9 +842,6 @@
           </node>
         </node>
       </node>
-      <node role="addFunction" type="jetbrains.mps.ypath.structure.FeatureAddFun" id="1196720900236">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900237" />
-      </node>
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.ParamSequenceFeature" id="1196720900238">
       <property name="name" value="child" />
@@ -857,9 +851,6 @@
             <node role="expression" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1196720900242" />
           </node>
         </node>
-      </node>
-      <node role="removeFunction" type="jetbrains.mps.ypath.structure.ParamFeatureRemoveFun" id="1196720900243">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900244" />
       </node>
       <node role="sizeFunction" type="jetbrains.mps.ypath.structure.ParamFeatureSizeFun" id="1196720900245">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900246">
@@ -1008,9 +999,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="addFunction" type="jetbrains.mps.ypath.structure.ParamFeatureAddFun" id="1196720900308">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196720900309" />
       </node>
     </node>
     <node role="childrenBlock" type="jetbrains.mps.ypath.structure.ChildrenBlock" id="1196720900310">

@@ -33,62 +33,6 @@
           <greater-priority-mapping>
             <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
             <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1191841379233" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1197288608511" />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1197288608511" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1195732300474" />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1195732300474" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1196711340877" />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1196711340877" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1190373998785" />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)" />
-            <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" nodeID="1190373998785" />
             </external-mapping>
           </greater-priority-mapping>
