@@ -121,6 +121,15 @@ public class EquationManager {
           setParent(typeOnPath, type);
         }
       }
+      if (type instanceof CopiedTypeWrapper) {
+        CopiedTypeWrapper copiedTypeWrapper = (CopiedTypeWrapper) type;
+        for (IWrapper typeOnPath : path) {
+          if (typeOnPath instanceof VariableWrapper && typeOnPath.equals(copiedTypeWrapper.getRawSourceWrapper())) {
+            copiedTypeWrapper.setEquatedWithSource(true);
+            break;
+          }
+        }
+      }
     }
     LatticeUtil.processMeetsAndJoins(type);
     return type;
