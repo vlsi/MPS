@@ -78,6 +78,7 @@ public class EquationManager {
 
   private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new HashMap<IWrapper, Set<CopiedTypeWrapper>>();
   private Map<VariableWrapper, Set<CopiedTypeWrapper>> myCopiedVars = new HashMap<VariableWrapper, Set<CopiedTypeWrapper>>();
+  private Set<CopiedTypeWrapper> myEquatedWithSource = new HashSet<CopiedTypeWrapper>();
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
@@ -125,7 +126,7 @@ public class EquationManager {
         CopiedTypeWrapper copiedTypeWrapper = (CopiedTypeWrapper) type;
         for (IWrapper typeOnPath : path) {
           if (typeOnPath instanceof VariableWrapper && typeOnPath.equals(copiedTypeWrapper.getRawSourceWrapper())) {
-            copiedTypeWrapper.setEquatedWithSource(true);
+            setEquatedWithSource(copiedTypeWrapper);
             break;
           }
         }
@@ -133,6 +134,14 @@ public class EquationManager {
     }
     LatticeUtil.processMeetsAndJoins(type);
     return type;
+  }
+
+  public boolean isEquatedWithSource(CopiedTypeWrapper copiedTypeWrapper) {
+    return myEquatedWithSource.contains(copiedTypeWrapper);
+  }
+
+  private void setEquatedWithSource(CopiedTypeWrapper copiedTypeWrapper) {
+    myEquatedWithSource.add(copiedTypeWrapper);
   }
 
   public SNode getRepresentator(SNode type_) {
@@ -1282,6 +1291,10 @@ public class EquationManager {
       return null; //todo
     }
     while (wrapper instanceof CopiedTypeWrapper) {
+      if (isEquatedWithSource((CopiedTypeWrapper) wrapper)) {
+        wrapper = ((CopiedTypeWrapper)wrapper).getRawSourceWrapper();
+        break;
+      }
       wrapper = ((CopiedTypeWrapper)wrapper).getSourceWrapper();
     }
     if (wrapper.getNode().isRegistered() && expandChild) {
