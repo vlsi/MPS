@@ -145,4 +145,12 @@ public class VFileSystem {
     }
     return file;
   }
+
+  public static VirtualFile refreshFileAsynchronously(IFile modelFile) {
+    VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(modelFile.toFile());
+    if (file != null) {
+      file.refresh(false, false);
+    }
+    return file;
+  }
 }
