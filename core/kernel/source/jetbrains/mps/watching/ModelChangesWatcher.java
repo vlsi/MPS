@@ -137,7 +137,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
-      
+
       synchronized (myLock) {
 
         if (myReloadSession == null) {
@@ -150,7 +150,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
         for (final VFileEvent event : events) {
           String path = event.getPath();
           File file = new File(path);
-          if (file.isDirectory() && file.exists()) {
+          // last part of condition was added due to MPS-4780 [build:3180] null
+          // (NPE in Arrays.asList())
+          if (file.isDirectory() && file.exists() && (file.listFiles() != null)) {
             FileUtil.processFilesRecursively(file, new Processor<File>() {
               public boolean process(File file) {
                 String filePath = file.getAbsolutePath();
