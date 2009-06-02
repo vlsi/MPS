@@ -14,8 +14,7 @@ import jetbrains.mps.vcs.diff.changes.Change;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.sun.istack.internal.NotNull;
-
+import org.jetbrains.annotations.NotNull;
 
 public class ChangeEditorMessage extends DefaultEditorMessage {
   private String myProperty;
