@@ -195,6 +195,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7490158733013881427">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1667440567442619976">
+            <property name="value" value="5" />
+          </node>
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7490158733013881428">
             <property name="value" value="3" />
           </node>

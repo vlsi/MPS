@@ -68,6 +68,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.vcs.diff.ui.ChangesBlock;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -197,6 +198,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private SearchPanel mySearchPanel = new SearchPanel(this);
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
+
+  private List<ChangesBlock> myChanges = new ArrayList<ChangesBlock>();
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -1756,6 +1759,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myRootCell != null) {
       myRootCell.paint(g);
     }
+
+    for (ChangesBlock block: myChanges) {
+      block.paint(g, getSize());
+    }
   }
 
   public Dimension getPreferredSize() {
@@ -2537,6 +2544,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isEditable) {
       setFocusable(false);
     }
+  }
+
+  public void addChanges(ChangesBlock block) {
+    block.addTo(this);
+    myChanges.add(block);
+  }
+
+  public void removeAllChanges() {
+    for (ChangesBlock block: myChanges) {
+      block.removeFrom(this);
+
+    }
+    myChanges.clear();
   }
 
   private class MySimpleModelListener extends SModelAdapter {

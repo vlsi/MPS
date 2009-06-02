@@ -71,7 +71,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     ClassLoaderManager.getInstance().addReloadHandler(myHandler);
   }
 
-  private void rebuildMessages() {
+  public void rebuildMessages() {
     synchronized (myMessagesLock) {
       myMessagesCache.clear();
       if (myEditor.getRootCell() == null) return;

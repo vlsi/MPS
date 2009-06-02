@@ -26,7 +26,7 @@ public class VcsActionsHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        DiffBuilder builder = new DiffBuilder(oldModel, newModel);
+        DiffBuilder builder = new DiffBuilder(newModel, oldModel);
         dialog.init(context, node, builder.getChanges());
       }
     });
