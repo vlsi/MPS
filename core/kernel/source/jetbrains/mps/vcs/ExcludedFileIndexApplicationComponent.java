@@ -20,7 +20,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vcs.FilePath;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,8 +55,8 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public boolean isExcluded(VirtualFile file) {
     if (myGlobalClassPathIndex.isExcluded(file)) return true;
 
-    for (VirtualFile excludedFile : myGlobalClassPathIndex.getExcludedClassPath()) {
-      if (VfsUtil.isAncestor(excludedFile, file, false)) {
+    for (FilePath excludedFile : myGlobalClassPathIndex.getExcludedClassPath()) {
+      if (VfsUtil.isAncestor(excludedFile.getIOFile(), VFileSystem.toFile(file), false)) {
         return true;
       }
     }

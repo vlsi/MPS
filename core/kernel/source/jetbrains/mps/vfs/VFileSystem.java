@@ -18,6 +18,8 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.FilePath;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -152,5 +154,17 @@ public class VFileSystem {
       file.refresh(false, false);
     }
     return file;
+  }
+
+  public static FilePath getFilePath(IFile file) {
+    return getFilePath(file.toFile());   
+  }
+
+  public static FilePath getFilePath(String file) {
+    return getFilePath(new File(file));   
+  }
+
+  public static FilePath getFilePath(File file) {
+    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
   }
 }
