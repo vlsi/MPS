@@ -2529,22 +2529,23 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1562714432501166198" resolveInfo="ShortcutChangeDeclaration" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6277721878946463785">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1562714432501166198">
     <property name="package" value="Actions.Keymaps" />
-    <property name="name" value="ShortcutChange" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <property name="name" value="SimpleShortcutChange" />
+    <link role="extends" targetNodeId="6193305307616715384" resolveInfo="ShortcutChange" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6193305307616740483">
+      <property name="value" value="simple" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562714432501166206">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="keystroke" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="1207318242772" resolveInfo="KeyMapKeystroke" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562714432501166204">
-      <property name="metaClass" value="reference" />
-      <property name="role" value="action" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1562714432501166200">
@@ -2562,6 +2563,26 @@
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166203">
       <property name="internalValue" value="Unix_KDE" />
       <property name="externalValue" value="KDE" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6193305307616715384">
+    <property name="package" value="Actions.Keymaps" />
+    <property name="name" value="ShortcutChange" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6193305307616734326">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="action" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6193305307616734266">
+    <property name="package" value="Actions.Keymaps" />
+    <property name="name" value="ParameterizedShortcutChange" />
+    <link role="extends" targetNodeId="6193305307616715384" resolveInfo="ShortcutChange" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6193305307616740486">
+      <property name="value" value="parameterized (not implemented)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

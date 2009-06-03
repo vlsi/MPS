@@ -692,5 +692,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6193305307616734335">
+    <property name="package" value="Actions.Keymaps" />
+    <link role="concept" targetNodeId="7.6193305307616715384" resolveInfo="ShortcutChange" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="6193305307616734336">
+      <link role="applicableLink" targetNodeId="7.6193305307616734326" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="6193305307616734337">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6193305307616734338">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6193305307616734339">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6193305307616734340">
+              <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="6193305307616734341" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="6193305307616734342">
+                <link role="concept" targetNodeId="7.1203071646776" resolveInfo="ActionDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

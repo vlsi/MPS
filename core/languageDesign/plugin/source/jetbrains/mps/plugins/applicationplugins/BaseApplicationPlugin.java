@@ -15,14 +15,10 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.LabelledAnchor;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,10 +33,17 @@ public abstract class BaseApplicationPlugin{
     return new ArrayList<BaseGroup>();
   }
 
-  public void preInit() {
+  public void createGroups() {
     List<BaseGroup> groups = initGroups();
     for (BaseGroup group : groups) {
       myGroups.put(group.getId(), group);
+    }
+  }
+
+  public final void adjustGroups() {
+    adjustInterfaceGroups();
+    for (BaseGroup group : myGroups.values()) {
+      group.adjust();
     }
   }
 
@@ -48,19 +51,28 @@ public abstract class BaseApplicationPlugin{
 
   }
 
+  public final void createCustomParts(){
+    myCustomParts = initCustomParts();
+  }
+
   protected List<BaseCustomApplicationPlugin> initCustomParts() {
     return new ArrayList<BaseCustomApplicationPlugin>();
   }
 
-  public final void init() {
-    adjustInterfaceGroups();
-    for (BaseGroup group : myGroups.values()) {
-      group.adjust();
+  public void createKeymaps() {
+    List<BaseKeymapChanges> myKeymaps = initKeymaps();
+    for (BaseKeymapChanges keymap:myKeymaps){
+      ActionFactory.getInstance().registerKeymap(keymap);
     }
-    myCustomParts = initCustomParts();
+  }
+
+  private List<BaseKeymapChanges> initKeymaps() {
+    return new ArrayList<BaseKeymapChanges>();
   }
 
   public final void dispose() {
+    //groups are disposed in ActionFactory
+    //keymaps are unregistered in ActionFactory
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose();
     }
