@@ -1572,6 +1572,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997463">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="6277721878946288459">
+          <property name="labelName" value="mod" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1207318325524">
         <property name="allowEmptyText" value="true" />
@@ -1637,6 +1640,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993669">
           <property name="flag" value="false" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="6277721878946288461">
+          <property name="labelName" value="mod" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219070156570">
         <property name="text" value="+" />
@@ -1657,6 +1663,9 @@
           <property name="flag" value="true" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1219071270339" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="6277721878946288463">
+          <property name="labelName" value="keycode" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1207318325542">
         <property name="noTargetText" value="&lt;keycode&gt;" />
@@ -1732,6 +1741,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995669">
           <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="6277721878946288465">
+          <property name="labelName" value="keycode" />
         </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880362733" />
