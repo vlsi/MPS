@@ -84,6 +84,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     return new Document[0];
   }
 
+  @NotNull
   public MPSNodeVirtualFile getFile() {
     return myFile;
   }

@@ -87,7 +87,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 
-  private void updateWarnings(final MPSFileNodeEditor editor) {
+  private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (myWarnings.containsKey(editor)) {
