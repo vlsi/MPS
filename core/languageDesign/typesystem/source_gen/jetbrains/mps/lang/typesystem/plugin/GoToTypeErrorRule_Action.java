@@ -34,7 +34,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IErrorReporter error = TypeChecker.getInstance().getTypeErrorDontCheck(GoToTypeErrorRule_Action.this.node);
+    IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
@@ -72,7 +72,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      IErrorReporter error = TypeChecker.getInstance().getTypeErrorDontCheck(GoToTypeErrorRule_Action.this.node);
+      IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
       GoToTypeErrorRuleUtil.goToTypeErrorRule(GoToTypeErrorRule_Action.this.operationContext, error);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);

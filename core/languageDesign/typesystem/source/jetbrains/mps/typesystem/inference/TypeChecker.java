@@ -386,7 +386,7 @@ public class TypeChecker implements ApplicationComponent {
     return modelDescriptor.getSModel();
   }
 
-  public IErrorReporter getTypeErrorDontCheck(SNode node) {
+  public IErrorReporter getTypeMessageDontCheck(SNode node) {
     SNode root = node.getContainingRoot();
     if (root == null) return null;
     return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(root).getError(node);

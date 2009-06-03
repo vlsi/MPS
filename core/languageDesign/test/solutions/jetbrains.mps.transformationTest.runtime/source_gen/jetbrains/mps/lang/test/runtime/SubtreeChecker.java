@@ -12,6 +12,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import java.util.Set;
@@ -39,19 +40,20 @@ public class SubtreeChecker {
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
-            Assert.assertTrue(checker.getTypeErrorDontCheck(child) != null);
-            Assert.assertFalse(checker.getTypeErrorDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+            Assert.assertTrue(checker.getTypeMessageDontCheck(child) != null);
+            Assert.assertFalse(checker.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningProperty")) {
-            Assert.assertTrue(checker.getTypeErrorDontCheck(child) != null);
-            Assert.assertTrue(checker.getTypeErrorDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+            Assert.assertTrue(checker.getTypeMessageDontCheck(child) != null);
+            Assert.assertTrue(checker.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
         }
       }
       if (!(isError)) {
-        Assert.assertNull(checker.getTypeErrorDontCheck(child));
+        IErrorReporter reporter = checker.getTypeMessageDontCheck(child);
+        Assert.assertTrue(reporter == null || reporter.getMessageStatus() == MessageStatus.OK);
       }
     }
   }
@@ -90,12 +92,12 @@ public class SubtreeChecker {
             Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
-            Set<Object> vars = initialyzed.get(instruction);
+            Set<Object> vars = (Set<Object>)initialyzed.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
-            Set<Object> vars = live.get(instruction);
+            Set<Object> vars = (Set<Object>)live.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
