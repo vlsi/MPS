@@ -67,7 +67,7 @@ class ModuleFileProcessor extends EventProcessor {
     }
   }
 
-  private IModule getModuleByEvent(final VFileEvent event) {
+  public static IModule getModuleByEvent(final VFileEvent event) {
     return ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
         return MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));

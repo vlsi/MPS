@@ -24,31 +24,22 @@ import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.project.IModule;
 
 import java.util.Collections;
 
-class BeforeEventProcessor extends EventProcessor {
-  private static final BeforeEventProcessor INSTANCE = new BeforeEventProcessor();
+class BeforeModuleEventProcessor extends EventProcessor {
+  private static final BeforeModuleEventProcessor INSTANCE = new BeforeModuleEventProcessor();
 
-  public static BeforeEventProcessor getInstance() {
+  public static BeforeModuleEventProcessor getInstance() {
     return INSTANCE;
   }
 
   @Override
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
-    final SModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
-    if (model == null) {
-      // if model is null, then it was removed by user
-      VirtualFile vfile = getVFile(event);
-      if (vfile == null) return;
-      if (MPSFileTypesManager.instance().isModelFile(vfile)) {
-        Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
-        if (project != null) {
-          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile));
-        }
-      }
-    } else {
-      // if model is not null, than file was deleted externally
+    IModule module = ModuleFileProcessor.getModuleByEvent(event);
+    if (module != null) {
+      reloadSession.addDeletedModule(module);
     }
   }
 }

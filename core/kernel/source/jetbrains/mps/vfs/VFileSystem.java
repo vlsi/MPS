@@ -20,10 +20,13 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.FilePath;
+import com.intellij.util.Processor;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.LinkedList;
+import java.util.Arrays;
 
 public class VFileSystem {
 
@@ -166,5 +169,21 @@ public class VFileSystem {
 
   public static FilePath getFilePath(File file) {
     return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
+  }
+
+  public static boolean processFilesRecursively(final VirtualFile root, final Processor<VirtualFile> processor) {
+    final LinkedList<VirtualFile> queue = new LinkedList<VirtualFile>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      final VirtualFile file = queue.removeFirst();
+      if (!processor.process(file)) return false;
+      if (file.isDirectory()) {
+        final VirtualFile[] children = file.getChildren();
+        if (children != null) {
+          queue.addAll(Arrays.asList(children));
+        }
+      }
+    }
+    return true;
   }
 }

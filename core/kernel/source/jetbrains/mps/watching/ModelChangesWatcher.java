@@ -22,6 +22,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
@@ -30,6 +31,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -126,8 +128,38 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private class BulkFileChangesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
-      for (VFileEvent event : events) {
-        BeforeEventProcessor.getInstance().process(event, null);
+
+      synchronized (myLock) {
+
+        if (myReloadSession == null) {
+          myReloadSession = new ReloadSession();
+        }
+
+        final ReloadSession reloadSession = myReloadSession;
+
+        for (final VFileEvent event : events) {
+          String filePath = event.getPath();
+          VirtualFile file = VFileSystem.getFile(filePath);
+          if (file == null) continue;
+          if (file.isDirectory() && file.exists() && (file.getChildren() != null)) {
+            VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
+              public boolean process(VirtualFile file) {
+                processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
+                return true;
+              }
+            });
+          } else if (!file.isDirectory()) {
+            processBeforeEvent(event, filePath, reloadSession);
+          }
+        }
+      }
+    }
+
+    private void processBeforeEvent(VFileEvent event, String filePath, ReloadSession reloadSession) {
+      if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+        BeforeModelEventProcessor.getInstance().process(event, reloadSession);
+      } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+        BeforeModuleEventProcessor.getInstance().process(event, reloadSession);
       }
     }
 
@@ -155,26 +187,27 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (file.isDirectory() && file.exists() && (file.listFiles() != null)) {
             FileUtil.processFilesRecursively(file, new Processor<File>() {
               public boolean process(File file) {
-                String filePath = file.getAbsolutePath();
-                if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-                  ModelFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-                } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-                  ModuleFileProcessor.getInstance().process(new VFileEventDecorator(event, filePath), reloadSession);
-                }
+                processAfterEvent(file.getAbsolutePath(),
+                  new VFileEventDecorator(event, file.getAbsolutePath()),
+                  reloadSession);
                 return true;
               }
             });
           }
-          if (MPSFileTypesManager.instance().isModelFile(path)) {
-            ModelFileProcessor.getInstance().process(event, reloadSession);
-          } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
-            ModuleFileProcessor.getInstance().process(event, reloadSession);
-          }
+          processAfterEvent(path, event, reloadSession);
         }
 
         if (!isRefreshInProgress) {
           doReload();
         }
+      }
+    }
+
+    private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
+      if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+        ModelFileProcessor.getInstance().process(event, reloadSession);
+      } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+        ModuleFileProcessor.getInstance().process(event, reloadSession);
       }
     }
   }

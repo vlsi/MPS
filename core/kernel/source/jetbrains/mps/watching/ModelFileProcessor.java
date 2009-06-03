@@ -65,11 +65,6 @@ class ModelFileProcessor extends EventProcessor {
     }
   }
 
-  @Override
-  protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
-    fileDeleted(event.getPath(), reloadSession);
-  }
-
   private void fileDeleted(String path, ReloadSession reloadSession) {
     IFile ifile = FileSystem.getFile(path);
     final SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
