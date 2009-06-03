@@ -2550,7 +2550,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     block.addTo(this);
     myChanges.add(block);
   }
-
   public void removeAllChanges() {
     for (ChangesBlock block: myChanges) {
       block.removeFrom(this);

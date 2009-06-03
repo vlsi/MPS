@@ -833,7 +833,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
-      provider.setReadOnly(false);
+      provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_8529_6_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();

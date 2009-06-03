@@ -2089,6 +2089,7 @@
                   <link role="conceptDeclaration" targetNodeId="8.1169125787135" />
                   <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1147110325022">
                     <property name="noTargetText" value="&lt;no name&gt;" />
+                    <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="3.1169194664001" />
                   </node>
                 </node>
