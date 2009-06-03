@@ -628,7 +628,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1174665812299">
-      <property name="value" value="helgins type variable" />
+      <property name="value" value="typesystem's type variable" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>

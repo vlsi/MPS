@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.search.SearchScopeWithNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration;
 
 import java.util.List;
@@ -37,28 +36,58 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TypeVarScope extends SearchScopeWithNode {
 
+  private SNode myCurrentNode = null;
+
   public TypeVarScope(SNode enclosingNode) {
     super(enclosingNode);
+  }
+
+  public TypeVarScope(SNode enclosingNode, SNode currentNode) {
+    super(enclosingNode);
+    myCurrentNode = currentNode;
   }
 
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
+    List<SNode> vars = new ArrayList<SNode>();
+
+    StatementList statementList = BaseAdapter.fromNode(getEnclosingNode()).getParent(StatementList.class);
+    if (statementList != null) {
+      Statement currentStatement;
+      if (BaseAdapter.isInstance(myCurrentNode, Statement.class)) {
+        currentStatement = (Statement) BaseAdapter.fromNode(myCurrentNode);
+      } else {
+        currentStatement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
+      }
+      populateLocalVariables(statementList, currentStatement, vars);
+    }
+    if (condition == TRUE_CONDITION) {
+      return vars;
+    }
     List<SNode> result = new ArrayList<SNode>();
-    Statement statement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
-    while(statement != null) {
-      StatementList statementList = statement.getParent(StatementList.class);
-      if (statementList == null) {
-        return result;
+    for (SNode node : vars) {
+      if (condition.met(node)) {
+        result.add(node);
       }
-      for(Statement aStatement : statementList.getStatements()) {
-        if (aStatement == statement) break;
-        if (aStatement instanceof TypeVarDeclaration) {
-          result.add(aStatement.getNode());
-        }
-      }
-      statement = statementList.getParent(Statement.class);
     }
     return result;
+  }
+
+  private void populateLocalVariables(StatementList statementList, Statement beforeStatement, List<SNode> result) {
+    for (Statement statement : statementList.getStatements()) {
+      if (statement == beforeStatement) {
+        break;
+      }
+      if (statement instanceof TypeVarDeclaration) {
+        result.add(statement.getNode());
+      }
+    }
+
+    Statement containingStatement = statementList.getParent(Statement.class);
+    if (containingStatement != null) {
+      statementList = containingStatement.getParent(StatementList.class);
+      populateLocalVariables(statementList, containingStatement, result);
+    }
   }
 }
