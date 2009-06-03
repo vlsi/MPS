@@ -55,7 +55,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_link_it = ListSequence.fromList(this._3_links).iterator();
+                      this._4_link_it = ListSequence.fromList(_3_links).iterator();
                     case 5:
                       if (!(this._4_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -66,7 +66,7 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 5;
-                      this.yield(this._4_link);
+                      this.yield(_4_link);
                       return true;
                     case 0:
                       this._3_links = SLinkOperations.getTargets(concept, "linkDeclaration", true);

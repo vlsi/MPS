@@ -32,6 +32,9 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     List<Language> extendedLanguages = language.getAllExtendedLanguages();
     for(SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept, GlobalScope.getInstance());
+      if (conceptLanguage == null) {
+        continue;
+      }
       if (conceptLanguage != language && !(ListSequence.fromList(extendedLanguages).contains(conceptLanguage))) {
         {
           BaseIntentionProvider intentionProvider = null;
