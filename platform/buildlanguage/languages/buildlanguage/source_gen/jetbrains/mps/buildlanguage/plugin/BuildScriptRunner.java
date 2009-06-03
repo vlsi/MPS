@@ -27,6 +27,7 @@ public class BuildScriptRunner extends BaseRunner {
   }
 
   public void run(File file, String commandLine) {
+    this.myComponent.setRunnerActions(null);
     List<String> parameters = ListSequence.fromList(new ArrayList<String>());
     BuildScriptRunner.addBasicParameters(parameters, file);
     BuildScriptRunner.addMacroValues(parameters);
@@ -37,7 +38,19 @@ public class BuildScriptRunner extends BaseRunner {
     ProcessBuilder builder = new ProcessBuilder(ListSequence.fromListWithValues(new ArrayList<String>(), parameters));
     builder.directory(file.getParentFile());
     try {
-      Process process = builder.start();
+      final Process process = builder.start();
+      this.myComponent.setRunnerActions(new BuildScriptRunnerComponent.RunnerActions() {
+
+        public void kill() {
+          process.destroy();
+        }
+
+        public void pause() {
+        }
+
+        public void play() {
+        }
+      });
       BaseOutputReader input = new BaseOutputReader(process.getInputStream()) {
 
         protected void addMessage(final String message) {
