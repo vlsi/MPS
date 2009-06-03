@@ -30,9 +30,13 @@ public class NodePropertyConstraint_applicableProperty_ReferentConstraint extend
     // properties declared in specified concept
     SNode applicableConcept = NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(_context.getReferenceNode());
     if (applicableConcept == null) {
-      SNode containingRoot = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
-      assert SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
-      applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(containingRoot, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false);
+      SNode root = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
+      if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
+        applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false);
+      } else
+      {
+        applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
+      }
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(applicableConcept);
   }
