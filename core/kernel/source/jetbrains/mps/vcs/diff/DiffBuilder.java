@@ -144,7 +144,16 @@ public class DiffBuilder {
 
       if (role != null) {
         if (!isToManyCardinality(sNode.getParent().getConceptFqName(), role)) {
-          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId()));
+          SNodeId parentId = sNode.getParent().getSNodeId();
+          SNode oldParent = myOldModel.getNodeById(parentId);
+          SNodeId oldChildId = null;
+          if (oldParent != null) {
+            oldParent.getChild(role);
+            if (oldParent.getChild(role) != null) {
+              oldChildId = oldParent.getChild(role).getSNodeId(); 
+            }
+          }
+          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, parentId, oldChildId));
         } else {
           SNode prevChild = sNode.getParent().getPrevChild(sNode);
           SNodeId prevId = null;

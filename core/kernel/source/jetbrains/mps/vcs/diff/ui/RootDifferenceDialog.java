@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.vcs.diff.DiffBuilder;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -24,6 +25,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private static final Color NEW_COLOR = new Color(186, 238, 186);
   private static final Color CHANGE_COLOR = new Color(188, 207, 249);
   private static final Color DELETE_COLOR = new Color(203, 203, 203);
+  private EditorComponent myNewEditorComponent;
+  private EditorComponent myOldEditorComponent;
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel) throws HeadlessException {
     super(parent, "Difference");
@@ -32,7 +35,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldModel = oldModel;
   }
 
-  public void init(final IOperationContext context, final SNode node, java.util.List<Change> revertChanges) {
+  public void init(final IOperationContext context, final SNode node) {
     final SNode[] oldNode = new SNode[1];
     final SNode[] newNode = new SNode[1];
 
@@ -47,21 +50,36 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     NodeEditor editor;
 
     editor = new NodeEditor(context, oldNode[0]);
-    EditorComponent oldEditorComponent = editor.getCurrentEditorComponent();
-    oldEditorComponent.setEditable(false);
+    myOldEditorComponent = editor.getCurrentEditorComponent();
+    myOldEditorComponent.setEditable(false);
     myComponent.add(new JScrollPane(editor.getComponent()));
     
 
 
     editor = new NodeEditor(context, newNode[0]);
-    EditorComponent newEditorComponent = editor.getCurrentEditorComponent();
-    newEditorComponent.setEditable(false);
+    myNewEditorComponent = editor.getCurrentEditorComponent();
+    myNewEditorComponent.setEditable(false);
 
-    hightlight(revertChanges, newEditorComponent, oldEditorComponent);
-    makeChangeBlocks(newEditorComponent, myNewChanges);
-    makeChangeBlocks(oldEditorComponent, myOldChanges);
+    rebuildChangeBlocks();
 
     myComponent.add(new JScrollPane(editor.getComponent()));
+  }
+
+  private void rebuildChangeBlocks() {
+    for (ChangeEditorMessage message: myNewChanges) {
+      myNewEditorComponent.getHighlightManager().removeMessage(message);
+    }
+    for (ChangeEditorMessage message: myOldChanges) {
+      myOldEditorComponent.getHighlightManager().removeMessage(message);
+    }
+    myNewEditorComponent.removeAllChanges();
+    myOldEditorComponent.removeAllChanges();
+    myNewChanges.clear();
+    myOldChanges.clear();
+    List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
+    hightlight(revertChanges, myNewEditorComponent, myOldEditorComponent);
+    makeChangeBlocks(myNewEditorComponent, new ArrayList<ChangeEditorMessage>(myNewChanges));
+    makeChangeBlocks(myOldEditorComponent, new ArrayList<ChangeEditorMessage>(myOldChanges));
   }
 
   private void makeChangeBlocks(EditorComponent editorComponent, List<ChangeEditorMessage> changes) {
@@ -107,16 +125,41 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            for (ChangeEditorMessage message : getChanges()) {
-              message.getChange().apply(myNewModel);
-              myNewChanges.remove(message);
+            List<ChangeEditorMessage> messages = getChanges();
+            while (!messages.isEmpty()) {
+              ChangeEditorMessage m = messages.get(0);
+              applyMeassage(messages, m);
+
             }
           }
         });
-        editorComponent.removeAllChanges();
-        makeChangeBlocks(editorComponent, changes);
+        ModelAccess.instance().runReadAction(new Runnable() {
+
+          public void run() {
+            rebuildChangeBlocks();
+          }
+        });
       }
     };
+  }
+
+  private void applyMeassage(List<ChangeEditorMessage> messages, ChangeEditorMessage m) {
+    for (SNodeId usedNodeId: m.getChange().getUsedNodes()) {
+      List<ChangeEditorMessage> changes = new ArrayList();
+      changes.addAll(myNewChanges);
+      changes.addAll(myOldChanges);
+      for (ChangeEditorMessage message: changes) {
+        Change change = message.getChange();
+        if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
+          if (change.getAffectedNodeId().equals(usedNodeId)) {
+            applyMeassage(messages, message);
+            break;
+          }
+        }
+      }
+    }
+    m.getChange().apply(myNewModel);
+    messages.remove(m);
   }
 
 

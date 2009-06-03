@@ -18,11 +18,18 @@ package jetbrains.mps.vcs.diff.changes;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public abstract class Change {
 
   public abstract SNodeId getAffectedNodeId();
 
   public abstract boolean apply(SModel m);
+
+  public List<SNodeId> getUsedNodes() {
+    return new ArrayList();
+  }
 
   protected boolean equals(Object o1, Object o2) {
     if (o1 == null) {

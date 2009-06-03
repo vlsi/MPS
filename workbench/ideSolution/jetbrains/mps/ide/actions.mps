@@ -17199,45 +17199,18 @@
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="3586993785403008227">
           <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="3586993785403008228">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3586993785403008229">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3586993785403008231">
-                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3586993785403008232">
-                  <property name="name" value="builder" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3586993785403008233">
-                    <link role="classifier" targetNodeId="187.~DiffBuilder" resolveInfo="DiffBuilder" />
-                  </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3586993785403008234">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3586993785403008235">
-                      <link role="baseMethodDeclaration" targetNodeId="187.~DiffBuilder.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel)" resolveInfo="DiffBuilder" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3586993785403008236">
-                        <link role="variableDeclaration" targetNodeId="8387004208513860528" resolveInfo="oldModel" />
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3586993785403008237">
-                        <link role="variableDeclaration" targetNodeId="8387004208513860530" resolveInfo="newModel" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3586993785403008238">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3586993785403008239">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3586993785403008240">
                     <link role="variableDeclaration" targetNodeId="9124496063422627977" resolveInfo="dialog" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3586993785403008241">
-                    <link role="baseMethodDeclaration" targetNodeId="98.~RootDifferenceDialog.init(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode,java.util.List):void" resolveInfo="init" />
+                    <link role="baseMethodDeclaration" targetNodeId="98.~RootDifferenceDialog.init(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode):void" resolveInfo="init" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3586993785403008242">
                       <link role="variableDeclaration" targetNodeId="9124496063422641063" resolveInfo="context" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3586993785403008243">
                       <link role="variableDeclaration" targetNodeId="9124496063422641066" resolveInfo="node" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3586993785403008244">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3586993785403008245">
-                        <link role="variableDeclaration" targetNodeId="3586993785403008232" resolveInfo="builder" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3586993785403008246">
-                        <link role="baseMethodDeclaration" targetNodeId="187.~DiffBuilder.getChanges():java.util.List" resolveInfo="getChanges" />
-                      </node>
                     </node>
                   </node>
                 </node>

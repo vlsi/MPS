@@ -21,9 +21,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.List;
+import java.util.Arrays;
+
 public class SetNodeChange extends NewNodeChange {
-  public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId) {
+  SNodeId myOldChildId;
+
+  public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId oldChildId) {
     super(nodeType, nodeId, role, parentId);
+    myOldChildId = oldChildId;
   }
 
   public String toString() {
@@ -53,4 +59,8 @@ public class SetNodeChange extends NewNodeChange {
     }
   }
 
+  @Override
+  public List<SNodeId> getUsedNodes() {
+    return Arrays.asList(myOldChildId);
+  }
 }
