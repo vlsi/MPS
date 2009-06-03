@@ -105,7 +105,8 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   @Deprecated
   public NodeTypesComponent createNodeTypesComponent(SNode node) {
-    return createTypeCheckingContext(node).getNodeTypesComponent();
+    TypeCheckingContext context = createTypeCheckingContext(node);
+    return context == null ? null : context.getNodeTypesComponent();
   }
 
   public TypeCheckingContext createTypeCheckingContext(final SNode node) {
