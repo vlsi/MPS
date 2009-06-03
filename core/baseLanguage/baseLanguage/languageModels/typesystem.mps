@@ -2622,25 +2622,26 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1228174029908">
-              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228174029909">
-                <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228174029910">
+            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="7790104442347402833">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7790104442347402834">
+                <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7790104442347402835">
                   <link role="variableDeclaration" targetNodeId="1203432988072" resolveInfo="instanceType" />
                 </node>
               </node>
-              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1228174098574">
-                <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1228174098575">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228174104384">
-                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1228174110839">
-                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="1228174204801">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1228174240923">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7790104442347402836">
+                <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7790104442347402837">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7790104442347410317">
+                    <link role="classifier" targetNodeId="18.~List" resolveInfo="List" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7790104442347410322">
+                      <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.ListAntiquotation" id="7790104442347410323">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7790104442347410325">
                           <link role="variableDeclaration" targetNodeId="1228174212945" resolveInfo="params" />
                         </node>
                       </node>
                     </node>
-                    <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1228174190101">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228174195284">
+                    <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="7790104442347410326">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7790104442347410328">
                         <link role="variableDeclaration" targetNodeId="1203432971226" resolveInfo="genericClassifier" />
                       </node>
                     </node>
