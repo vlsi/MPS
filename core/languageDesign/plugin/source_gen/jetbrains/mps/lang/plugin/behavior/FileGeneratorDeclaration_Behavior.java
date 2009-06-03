@@ -6,6 +6,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 public class FileGeneratorDeclaration_Behavior {
@@ -24,7 +25,7 @@ public class FileGeneratorDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1218038748112(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + FileGeneratorDeclaration_Behavior.call_getGeneratedName_1218038748102(thisNode);
+    return ((SModel)SNodeOperations.getModel(thisNode)).getLongName() + "." + FileGeneratorDeclaration_Behavior.call_getGeneratedName_1218038748102(thisNode);
   }
 
 }

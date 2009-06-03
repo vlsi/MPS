@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.KeyStroke;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,6 @@ public class ActionFactory {
   }
 
   private List<String> myActions = new ArrayList<String>();
-  private List<BaseKeymapChanges> myKeymaps = new ArrayList<BaseKeymapChanges>();
 
   public AnAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
@@ -67,7 +65,7 @@ public class ActionFactory {
 
     AnAction registeredAction = ActionManager.getInstance().getAction(id);
     if (registeredAction == null) {
-      registerAction(newAction,actionId, id, moduleNamespace, params);
+      registerAction(newAction, id, moduleNamespace);
       return newAction;
     } else {
       return registeredAction;
@@ -130,42 +128,21 @@ public class ActionFactory {
     return moduleNamespace + "#" + entity + "#" + actionId;
   }
 
-  private void registerAction(AnAction action,String shortId, String id, String languageNamespace, Object... params) {
-    ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
+  private void registerAction(AnAction action, String id, String languageNamespace) {
     myActions.add(id);
-
-    registerDefaultActionShortcut(action, id);
-    registerKeymapChanges(id,shortId, languageNamespace, params);
-  }
-
-  private void registerKeymapChanges(String actionId,String action, String languageNamespace, Object[] params) {
-    for (BaseKeymapChanges keymapDiff:myKeymaps){
-      Keymap keymap = KeymapManager.getInstance().getKeymap(keymapDiff.getScheme());
+    Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
+    if (shortcuts.length != 0) {
+      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
       if (keymap == null) {
-        LOG.error("keymap "+keymapDiff.getScheme()+" is not found");
-        return;
-      }
-
-      if (keymapDiff.hasShortcutsForAction(action,languageNamespace)){
-        for (KeyStroke stroke:keymapDiff.getShortcutsForAction(action,languageNamespace,params)){
-          keymap.addShortcut(actionId,new KeyboardShortcut(stroke,null));
+        LOG.error("default keymap is not found");
+      } else {
+        keymap.removeAllActionShortcuts(id);
+        for (Shortcut s : shortcuts) {
+          keymap.addShortcut(id, s);
         }
       }
     }
-  }
-
-  private boolean registerDefaultActionShortcut(AnAction action, String id) {
-    Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-    if (keymap == null) {
-      LOG.error("default keymap is not found");
-      return true;
-    }
-
-    keymap.removeAllActionShortcuts(id);
-    for (Shortcut s : action.getShortcutSet().getShortcuts()) {
-      keymap.addShortcut(id, s);
-    }
-    return false;
+    ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
   }
 
   private void registerGroup(BaseGroup group, String id, String languageNamespace) {
@@ -183,10 +160,6 @@ public class ActionFactory {
     ActionManager.getInstance().registerAction(anchor.getId(), anchor);
   }
 
-  public void registerKeymap(BaseKeymapChanges keymap) {
-    myKeymaps.add(keymap);
-  }
-
   public LabelledAnchor getRegisteredAnchor() {
     return null;
   }
@@ -202,10 +175,7 @@ public class ActionFactory {
     for (String actionId : myActions) {
       manager.unregisterAction(actionId);
     }
-    //todo remove shortcuts from all keymaps
-    
     myActions.clear();
-    myKeymaps.clear();
   }
 
   private void unregisterGroups() {

@@ -69,7 +69,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
-        plugin.createKeymaps();
+        plugin.preInit();
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
       }
@@ -77,23 +77,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
-        plugin.createGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.adjustGroups();
-      } catch (Throwable t1) {
-        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
-      }
-    }
-
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.createCustomParts();
+        plugin.init();
       } catch (Throwable t1) {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }

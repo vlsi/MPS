@@ -6,6 +6,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -28,11 +29,11 @@ public class ActionGroupDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1213877494288(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
+    return ((SModel)SNodeOperations.getModel(thisNode)).getLongName() + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
   }
 
   public static String call_getID_1213877494306(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + SPropertyOperations.getString(thisNode, "name");
+    return ((SModel)SNodeOperations.getModel(thisNode)).getLongName() + "." + SPropertyOperations.getString(thisNode, "name");
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
