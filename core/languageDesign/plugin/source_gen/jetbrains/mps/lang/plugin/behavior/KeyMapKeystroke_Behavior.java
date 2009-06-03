@@ -11,12 +11,10 @@ public class KeyMapKeystroke_Behavior {
   }
 
   public static String call_getKeyStroke_1213877278942(SNode thisNode) {
-    String result = "";
     String modifiers = SPropertyOperations.getString(thisNode, "modifiers");
     if (modifiers == null) {
       modifiers = "";
     }
-    result = modifiers.replaceAll("\\+", " ");
     String keyName;
     if (SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
       keyName = SPropertyOperations.getString(thisNode, "keycode").substring(3);
@@ -24,8 +22,7 @@ public class KeyMapKeystroke_Behavior {
     {
       keyName = SPropertyOperations.getString(thisNode, "keycode");
     }
-    result = result + " " + keyName;
-    return result;
+    return modifiers.replaceAll("\\+", " ") + " " + keyName;
   }
 
 }

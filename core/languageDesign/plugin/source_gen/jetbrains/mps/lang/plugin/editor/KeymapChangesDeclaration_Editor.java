@@ -50,7 +50,9 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5128_0(context, node, "keymap changes for"));
+    editorCell.addEditorCell(this.createConstant_5128_0(context, node, "keymap changes"));
+    editorCell.addEditorCell(this.createProperty_5128_3(context, node));
+    editorCell.addEditorCell(this.createConstant_5128_2(context, node, "for"));
     editorCell.addEditorCell(this.createProperty_5128_1(context, node));
     return editorCell;
   }
@@ -67,6 +69,14 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5128_1(editorCell, node, context);
     setupLabel_Constant_5128_1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_5128_2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5128_2(editorCell, node, context);
+    setupLabel_Constant_5128_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,6 +123,35 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createProperty_5128_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_5128_1(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_5128_1((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_5128_3(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createProperty_5128_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_5128_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_5128_0");
@@ -146,6 +185,14 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_shortcutChange");
   }
 
+  private static void setupBasic_Constant_5128_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5128_2");
+  }
+
+  private static void setupBasic_Property_5128_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_name");
+  }
+
   private static void setupLabel_Constant_5128_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -156,6 +203,12 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNodeList_5128_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_5128_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_5128_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class shortcutChangeListHandler_5128_0 extends RefNodeListHandler {

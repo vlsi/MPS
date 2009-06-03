@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -18,7 +17,7 @@ public class TabbedEditorDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1213877237171(SNode thisNode) {
-    return ((SModel)SNodeOperations.getModel(thisNode)).getLongName() + "." + TabbedEditorDeclaration_Behavior.call_getGeneratedName_1213877237161(thisNode);
+    return SNodeOperations.getModel(thisNode).getLongName() + "." + TabbedEditorDeclaration_Behavior.call_getGeneratedName_1213877237161(thisNode);
   }
 
 }

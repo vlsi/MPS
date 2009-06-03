@@ -6,7 +6,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -20,7 +19,7 @@ public class ApplicationPluginDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1215280284501(SNode thisNode) {
-    return ((SModel)SNodeOperations.getModel(thisNode)).getLongName() + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_1215280284491(thisNode);
+    return SNodeOperations.getModel(thisNode).getLongName() + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_1215280284491(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {

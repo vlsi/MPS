@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 public class ShortcutChange extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ShortcutChange";
   public static final String ACTION = "action";
-  public static final String KEYSTROKE = "keystroke";
 
   public ShortcutChange(SNode node) {
     super(node);
@@ -23,14 +22,6 @@ public class ShortcutChange extends BaseConcept {
 
   public void setAction(ActionDeclaration node) {
     super.setReferent(ShortcutChange.ACTION, node);
-  }
-
-  public KeyMapKeystroke getKeystroke() {
-    return (KeyMapKeystroke)this.getChild(KeyMapKeystroke.class, ShortcutChange.KEYSTROKE);
-  }
-
-  public void setKeystroke(KeyMapKeystroke node) {
-    super.setChild(ShortcutChange.KEYSTROKE, node);
   }
 
 
