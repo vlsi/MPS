@@ -251,6 +251,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_MessageStatementWithinCheckingRule_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new erasure_SNodeType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

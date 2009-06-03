@@ -7,6 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -3114,6 +3115,30 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240580117891">
       <property name="name" value="clause" />
       <link role="concept" targetNodeId="1.1185788614172" resolveInfo="NormalTypeClause" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="5049504262569597078">
+    <property name="name" value="check_MessageStatementWithinCheckingRule" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5049504262569597079">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="5049504262569599329">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5049504262569599335">
+          <link role="baseMethodDeclaration" targetNodeId="5239146621999643483" resolveInfo="withinCheckingItem" />
+          <link role="classConcept" targetNodeId="1186407270695" resolveInfo="RulesUtil" />
+          <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5049504262569599336">
+            <link role="applicableNode" targetNodeId="5049504262569597081" resolveInfo="messageStatement" />
+          </node>
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5049504262569599338">
+          <link role="applicableNode" targetNodeId="5049504262569597081" resolveInfo="messageStatement" />
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5049504262569599337">
+          <property name="value" value="this statement should be used only within checking and inference rules" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5049504262569597081">
+      <property name="name" value="messageStatement" />
+      <link role="concept" targetNodeId="1.1227096774658" resolveInfo="MessageStatement" />
     </node>
   </node>
 </model>
