@@ -13,6 +13,9 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.*;
+import java.awt.event.WindowListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.*;
 import java.util.List;
 
@@ -33,6 +36,13 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myComponent = new JPanel(new GridLayout(1, 2));
     myNewModel = newModel;
     myOldModel = oldModel;
+    addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosing(WindowEvent e) {
+        myNewEditorComponent.dispose();
+        myOldEditorComponent.dispose();
+      }
+    });
   }
 
   public void init(final IOperationContext context, final SNode node) {
