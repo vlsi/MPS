@@ -63,10 +63,7 @@
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238662721682">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager.findInstances(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor,boolean):java.util.Set" resolveInfo="findInstances" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238662721684">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239466534429">
-                        <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-                        <node role="leftExpression" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721685" />
-                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1238662721685" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1238662721686" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1238662721688" />
@@ -93,23 +90,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1197635106703">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197635106704">
             <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1200268665345">
-              <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888353583">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888353585">
-                  <link role="baseMethodDeclaration" targetNodeId="11.~SearchResult.&lt;init&gt;(java.lang.Object,java.lang.String)" resolveInfo="SearchResult" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888351687">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888351689">
-                      <link role="baseMethodDeclaration" targetNodeId="7.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200268665881">
-                        <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="node" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1200268665882">
-                    <property name="value" value="Concept Instances" />
-                  </node>
-                </node>
-              </node>
-              <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239466547787">
+              <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1248408370188992562">
                 <link role="variableDeclaration" targetNodeId="1197635106707" resolveInfo="resNode" />
               </node>
             </node>
