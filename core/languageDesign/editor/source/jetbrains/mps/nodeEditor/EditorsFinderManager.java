@@ -71,6 +71,7 @@ public class EditorsFinderManager implements ApplicationComponent {
 
   public INodeEditor loadEditor(EditorContext context, SNode node) {
     synchronized (myLock) {
+      assert context.getOperationContext().getModule() != null: "Illegal state, node " + node.getId() + " " + node.getModel();
       if (node.getLanguage(context.getScope()) == null) {
         return new ErrorNodeEditor();
       }
