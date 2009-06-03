@@ -2553,7 +2553,7 @@
     <property name="name" value="Keymap" />
     <link role="memberDataType" targetNodeId="6.1082983041843" resolveInfo="string" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166201">
-      <property name="internalValue" value="MacOSX" />
+      <property name="internalValue" value="Mac OS X" />
       <property name="externalValue" value="Mac OS X" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166202">

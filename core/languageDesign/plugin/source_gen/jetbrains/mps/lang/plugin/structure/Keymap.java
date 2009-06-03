@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public enum Keymap {
-  Mac_OS_X("Mac OS X", "MacOSX"),
+  Mac_OS_X("Mac OS X", "Mac OS X"),
   GNOME("GNOME", "Unix_GNOME"),
   KDE("KDE", "Unix_KDE");
 

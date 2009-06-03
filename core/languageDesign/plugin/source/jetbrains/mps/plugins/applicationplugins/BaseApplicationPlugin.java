@@ -66,7 +66,7 @@ public abstract class BaseApplicationPlugin{
     }
   }
 
-  private List<BaseKeymapChanges> initKeymaps() {
+  protected List<BaseKeymapChanges> initKeymaps() {
     return new ArrayList<BaseKeymapChanges>();
   }
 
