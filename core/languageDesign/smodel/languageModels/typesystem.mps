@@ -4555,8 +4555,15 @@
                   </node>
                 </node>
               </node>
-              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222433914062">
-                <link role="variableDeclaration" targetNodeId="1222433865511" resolveInfo="superTypesA" />
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8871057671442083223">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="8871057671442084941">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8871057671442084946">
+                    <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  </node>
+                  <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8871057671442084954">
+                    <link role="variableDeclaration" targetNodeId="1222433865511" resolveInfo="superTypesA" />
+                  </node>
+                </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1222433892322">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222433893842" />
@@ -4598,13 +4605,20 @@
                   </node>
                 </node>
               </node>
-              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222433928082">
-                <link role="variableDeclaration" targetNodeId="1222433875865" resolveInfo="superTypesB" />
-              </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1222433917932">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222433917933" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222433924361">
                   <link role="variableDeclaration" targetNodeId="1222433875865" resolveInfo="superTypesB" />
+                </node>
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8871057671442084958">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="8871057671442084959">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8871057671442084960">
+                    <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  </node>
+                  <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8871057671442084965">
+                    <link role="variableDeclaration" targetNodeId="1222433875865" resolveInfo="superTypesB" />
+                  </node>
                 </node>
               </node>
             </node>

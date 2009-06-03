@@ -342,12 +342,12 @@ public class RulesUtil {
     Set<SNode> superTypesA = MapSequence.fromMap(subTypesToSuperTypes).get(a);
     superTypesA = (superTypesA == null ?
       SetSequence.fromSet(new HashSet<SNode>()) :
-      superTypesA
+      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)
     );
     Set<SNode> superTypesB = MapSequence.fromMap(subTypesToSuperTypes).get(b);
     superTypesB = (superTypesB == null ?
       SetSequence.fromSet(new HashSet<SNode>()) :
-      superTypesB
+      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesB)
     );
     SetSequence.fromSet(superTypesA).addElement(a);
     SetSequence.fromSet(superTypesB).addElement(b);
