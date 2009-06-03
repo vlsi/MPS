@@ -21,6 +21,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -28,9 +29,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.constraints.ConstraintsChecker;
+import jetbrains.mps.nodeEditor.EditorMessage;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+import java.util.HashSet;
+
+import com.intellij.util.containers.HashMap;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
@@ -59,13 +68,16 @@ public class NodeExplorerComponent {
 
   private class MyTree extends MPSTree {
     private IOperationContext myOperationContext;
+    private AncestorNodeContext myAncestorNodeContext;
 
     protected MPSTreeNode rebuild() {
+      myAncestorNodeContext = new AncestorNodeContext(myNode, myOperationContext);
       if (myNode == null || myNode.getNode() == null) {
         return new TextTreeNode("no node");
       } else {
+        myAncestorNodeContext.collectModelConstraintsErrors();
         TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext);
+        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext, myAncestorNodeContext);
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
@@ -74,24 +86,93 @@ public class NodeExplorerComponent {
     public void setOperationContext(IOperationContext operationContext) {
       myOperationContext = operationContext;
     }
+
+
+  }
+
+  private class AncestorNodeContext {
+    private Map<SNode, Set<EditorMessage>> myModelConstraintsMessages = new HashMap<SNode, Set<EditorMessage>>();
+    private Map<SNode, Set<EditorMessage>> myModelConstraintsMessagesOfDescendants = new HashMap<SNode, Set<EditorMessage>>();
+    private SNodePointer myNode;
+    private IOperationContext myOperationContext;
+
+    public AncestorNodeContext(SNode ancestorNode, IOperationContext operationContext) {
+      myNode = new SNodePointer(ancestorNode);
+      myOperationContext = operationContext;
+    }
+
+    public AncestorNodeContext(SNodePointer ancestorNode, IOperationContext operationContext) {
+      myNode = ancestorNode;
+      myOperationContext = operationContext;
+    }
+
+    private void collectModelConstraintsErrors() {
+      Set<EditorMessage> messages = new ConstraintsChecker().messagesForNodeAndDescendants(myNode.getNode(), myOperationContext);
+      for (EditorMessage message : messages) {
+        SNode node = message.getNode();
+        if (node != null) {
+          Set<EditorMessage> existingMessages = myModelConstraintsMessages.get(node);
+          if (existingMessages == null) {
+            existingMessages = new HashSet<EditorMessage>();
+            myModelConstraintsMessages.put(node, existingMessages);
+          }
+          existingMessages.add(message);
+          while (node.getParent() != null) {
+            node = node.getParent();
+            Set<EditorMessage> existingMessagesOfDescendants = myModelConstraintsMessagesOfDescendants.get(node);
+            if (existingMessagesOfDescendants == null) {
+              existingMessagesOfDescendants = new HashSet<EditorMessage>();
+              myModelConstraintsMessagesOfDescendants.put(node, existingMessagesOfDescendants);
+            }
+            existingMessagesOfDescendants.add(message);
+          }
+        }
+      }
+    }
   }
 
   private class MySNodeTreeNode extends SNodeTreeNode {
+    AncestorNodeContext myAncestorNodeContext;
 
-    public MySNodeTreeNode(SNode node, IOperationContext operationContext) {
+    public MySNodeTreeNode(SNode node, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
       super(node, operationContext);
+      myAncestorNodeContext = ancestorNodeContext;
+      collectModelConstraintsErrors();
     }
 
-    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
       super(node, role, operationContext);
+      myAncestorNodeContext = ancestorNodeContext;
+      collectModelConstraintsErrors();
     }
 
+
+    private void collectModelConstraintsErrors() {
+      Set<EditorMessage> messages = myAncestorNodeContext.myModelConstraintsMessages.get(getSNode());
+      if (messages == null) {
+        messages = new HashSet<EditorMessage>();
+      }
+      Set<EditorMessage> descendantsMessages = myAncestorNodeContext.myModelConstraintsMessagesOfDescendants.get(getSNode());
+      if (descendantsMessages == null) {
+        descendantsMessages = new HashSet<EditorMessage>();
+      }
+      setErrorState(messages.isEmpty() && descendantsMessages.isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
+      if (messages.isEmpty()) {
+        setTooltipText(null);
+      } else {
+        String result = "<html>";
+        for (EditorMessage editorMessage : messages) {
+          result += editorMessage.getMessage() + "<br>";
+        }
+        setTooltipText(result);
+      }
+    }
 
     protected void doUpdatePresentation() {
       super.doUpdatePresentation();
       String string = getText();
-      String helginsTypeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
-      setText(string + helginsTypeInfo);
+      String typeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
+      setText(string + typeInfo);
     }
 
     protected void doInit() {
@@ -101,7 +182,7 @@ public class NodeExplorerComponent {
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
+        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext(), myAncestorNodeContext));
       }
       add(new MyPropertiesNode(getSNode(), getOperationContext()));
       add(new MyReferentsNode(getSNode(), getOperationContext()));
@@ -122,7 +203,9 @@ public class NodeExplorerComponent {
       for (SReference reference : myNode.getNode().getReferences()) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
-          add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));
+          AncestorNodeContext ancestorNodeContext = new AncestorNodeContext(referent, getOperationContext());
+          ancestorNodeContext.collectModelConstraintsErrors();
+          add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext(), ancestorNodeContext));
         }
       }
       myIsInitialized = true;
