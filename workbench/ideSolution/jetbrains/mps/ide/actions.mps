@@ -6559,6 +6559,7 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1216652708462">
       <property name="keycode" value="VK_F12" />
+      <property name="modifiers" value="alt" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646467">
       <property name="name" value="node" />
