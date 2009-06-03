@@ -1095,7 +1095,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205675355325">
     <property name="package" value="Actions.Groups.GroupMembers" />
     <property name="name" value="ParameterizedActionCreator" />
-    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205675413186">
       <property name="role" value="constructorDeclaration" />
       <property name="sourceCardinality" value="1" />
