@@ -549,11 +549,12 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215615074247">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215615074248">
-            <property name="name" value="initialyzed" />
+            <property name="name" value="initialized" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215615074249">
               <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="7938028138875693018">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7938028138875693023">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452941">
+                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452949">
                   <link role="classifier" targetNodeId="10.~Object" resolveInfo="Object" />
                 </node>
               </node>
@@ -578,8 +579,9 @@
             <property name="name" value="live" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215617240414">
               <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="7938028138875693027">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7938028138875693032">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452953">
+                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452961">
                   <link role="classifier" targetNodeId="10.~Object" resolveInfo="Object" />
                 </node>
               </node>
