@@ -6,8 +6,16 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.history.VcsRevisionNumber;
+import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
@@ -20,15 +28,24 @@ public class VcsActionsHelper {
   public VcsActionsHelper() {
   }
 
-  public static void showDiffrence(Frame frame, final IOperationContext context, SModel oldModel, SModel newModel, final SNode node) {
-    final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, newModel, oldModel);
-    ModelAccess.instance().runReadAction(new Runnable() {
+  public static void showDiffrence(Frame frame, final IOperationContext context, SModel model, final SNode node, Project project) {
+    try {
+      VirtualFile file = VFileSystem.getFile(model.getModelDescriptor().getModelFile());
+      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
+      final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
+      ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
+      SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
+      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, model, oldModel, true);
+      ModelAccess.instance().runReadAction(new Runnable() {
 
-      public void run() {
-        dialog.init(context, node);
-      }
-    });
-    dialog.showDialog();
+        public void run() {
+          dialog.init(context, node, "Local", revisionNumber.asString());
+        }
+      });
+      dialog.showDialog();
+    } catch (VcsException e) {
+      e.printStackTrace();
+    }
   }
 
   public static SModel loadModel(String modelContent, final SModelDescriptor model) {

@@ -26,8 +26,7 @@ public class ChangesBlock {
   private ChangesBlock.RevertMenu myMenu;
 
 
-  public void addChange(ChangeEditorMessage message) {
-    EditorCell cell = message.getCell();
+  public void addChange(ChangeEditorMessage message, EditorCell cell) {   
     if (myChanges.isEmpty()) {
       y1 = cell.getY();
       y2 = cell.getY() + cell.getHeight();

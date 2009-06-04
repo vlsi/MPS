@@ -27,10 +27,12 @@ import java.util.Arrays;
 public class AddNodeChange extends NewNodeChange {
 
   private SNodeId myPreviousNode;
+  private String myPreviousRole;
 
-  public AddNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode) {
+  public AddNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode, String prevRole) {
     super(nodeType, nodeId, role, parentId);
     myPreviousNode = prevNode;
+    myPreviousRole = prevRole;
   }
 
 
@@ -52,6 +54,13 @@ public class AddNodeChange extends NewNodeChange {
     SNode prev = null;
     if (prevNode != null) {
       prev = m.getNodeById(prevNode);
+    } else {
+      if (myPreviousRole != null) {
+        List<SNode> children = parent.getChildren(myPreviousRole);
+        if (children.size() > 0) {
+          prev = children.get(children.size() - 1);
+        }
+      }
     }
 
     SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);

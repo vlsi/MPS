@@ -12,6 +12,9 @@ import jetbrains.mps.vcs.diff.DiffBuilder;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -30,7 +33,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private EditorComponent myNewEditorComponent;
   private EditorComponent myOldEditorComponent;
 
-  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel) throws HeadlessException {
+  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
     super(parent, "Difference");
     myComponent = new JPanel(new GridLayout(1, 2));
     myNewModel = newModel;
@@ -44,7 +47,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     });
   }
 
-  public void init(final IOperationContext context, final SNode node) {
+  public void init(final IOperationContext context, final SNode node, String newRevisionName, String oldRevisionName) {
     final SNode[] oldNode = new SNode[1];
     final SNode[] newNode = new SNode[1];
 
@@ -56,22 +59,36 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       }
     });
 
-    NodeEditor editor;
+    myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName);
+    myNewEditorComponent = addEditor(context, newNode[0], newRevisionName);
 
-    editor = new NodeEditor(context, oldNode[0]);
-    myOldEditorComponent = editor.getCurrentEditorComponent();
-    myOldEditorComponent.setEditable(false);
-    myComponent.add(new JScrollPane(editor.getComponent()));
-    
+    myNewEditorComponent.getViewport().addChangeListener(new ChangeListener() {
 
+      public void stateChanged(ChangeEvent e) {
+        myOldEditorComponent.getViewport().setViewPosition(myNewEditorComponent.getViewport().getViewPosition());
+      }
+    });
 
-    editor = new NodeEditor(context, newNode[0]);
-    myNewEditorComponent = editor.getCurrentEditorComponent();
-    myNewEditorComponent.setEditable(false);
+    myOldEditorComponent.getViewport().addChangeListener(new ChangeListener() {
+
+      public void stateChanged(ChangeEvent e) {
+        myNewEditorComponent.getViewport().setViewPosition(myOldEditorComponent.getViewport().getViewPosition());
+      }
+    });
+
 
     rebuildChangeBlocks();
+  }
 
-    myComponent.add(new JScrollPane(editor.getComponent()));
+  private EditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
+    EditorComponent result = new DiffEditorComponent(context, node);
+    result.editNode(node, context);
+    result.setEditable(false);
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(new JLabel(revisionName), BorderLayout.NORTH);
+    panel.add(result.getExternalComponent(), BorderLayout.CENTER);
+    myComponent.add(panel);
+    return result;
   }
 
   private void rebuildChangeBlocks() {
@@ -94,18 +111,18 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
   private void makeChangeBlocks(EditorComponent editorComponent, List<ChangeEditorMessage> changes) {
     editorComponent.relayout();
-    NodeHighlightManager highlightManager = editorComponent.getHighlightManager();
+    final NodeHighlightManager highlightManager = editorComponent.getHighlightManager();
     highlightManager.rebuildMessages();
     for (Iterator<ChangeEditorMessage> iterator = changes.iterator(); iterator.hasNext();) {
       ChangeEditorMessage change = iterator.next();
-      if (change.getCell() == null) {
+      if (highlightManager.getCell(change) == null) {
         iterator.remove();
       }
     }
     Collections.sort(changes, new Comparator<ChangeEditorMessage>() {
 
       public int compare(ChangeEditorMessage o1, ChangeEditorMessage o2) {
-        return o1.getCell().getY() - o2.getCell().getY();
+        return highlightManager.getCell(o1).getY() - highlightManager.getCell(o2).getY();
       }
     });
 
@@ -113,7 +130,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     for (ChangeEditorMessage m: changes) {
       System.out.println(m.getChange());
-      EditorCell cell = m.getCell();
+      EditorCell cell = highlightManager.getCell(m);
       if (block == null) {
         block = createChangeBlock(editorComponent, changes);
       } else {
@@ -123,7 +140,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
           System.out.println("------");
         }
       }
-      block.addChange(m);
+      block.addChange(m, cell);
     }
     if (block != null) {
       System.out.println("------");

@@ -128,7 +128,7 @@ public class DiffBuilder {
 
     for (SNodeId id : oldNodes) {
       List<SNodeId> childrenIds = new ArrayList<SNodeId>();
-      for (SNode child: myOldModel.getNodeById(id).getChildren()) {
+      for (SNode child : myOldModel.getNodeById(id).getChildren()) {
         childrenIds.add(child.getSNodeId());
       }
       myChanges.add(new DeleteNodeChange(id, childrenIds));
@@ -154,18 +154,30 @@ public class DiffBuilder {
           if (oldParent != null) {
             oldParent.getChild(role);
             if (oldParent.getChild(role) != null) {
-              oldChildId = oldParent.getChild(role).getSNodeId(); 
+              oldChildId = oldParent.getChild(role).getSNodeId();
             }
           }
-          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, parentId, oldChildId));
+
+          String prevRole = null;
+          SNode prevSubling = sNode.prevSibling();
+          if (prevSubling != null) {
+            prevRole = prevSubling.getRole_();
+          }
+          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, parentId, oldChildId, prevRole));
         } else {
           SNode prevChild = sNode.getParent().getPrevChild(sNode);
           SNodeId prevId = null;
+          String prevRole = null;
           if (prevChild != null) {
             prevId = prevChild.getSNodeId();
+          } else {
+            SNode prevSubling = sNode.prevSibling();
+            if (prevSubling != null) {
+              prevRole = prevSubling.getRole_();
+            }
           }
 
-          myChanges.add(new AddNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId(), prevId));
+          myChanges.add(new AddNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId(), prevId, prevRole));
         }
       } else {
         myChanges.add(new AddRootChange(sNode.getConceptFqName(), id));
@@ -208,7 +220,7 @@ public class DiffBuilder {
           }
         }
       }
-      
+
       if (nPrevSibling != null) {
         myChanges.add(new MoveNodeChange(id, nid, nPrevSibling.getSNodeId(), n.getRole_()));
       } else {
@@ -219,7 +231,7 @@ public class DiffBuilder {
 
   private List<Change> getChangesFor(SNodeId sNodeId) {
     List<Change> result = new ArrayList<Change>();
-    for (Change change: myChanges) {
+    for (Change change : myChanges) {
       if (sNodeId.equals(change.getAffectedNodeId())) {
         result.add(change);
       }

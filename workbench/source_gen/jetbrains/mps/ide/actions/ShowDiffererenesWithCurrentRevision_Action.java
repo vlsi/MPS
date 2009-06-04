@@ -14,13 +14,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
-import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.smodel.SModel;
 
 public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -91,12 +84,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      VirtualFile file = VFileSystem.getFile(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(file);
-      VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
-      ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), ShowDiffererenesWithCurrentRevision_Action.this.model);
-      VcsActionsHelper.showDiffrence(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, oldModel, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node);
+      VcsActionsHelper.showDiffrence(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);

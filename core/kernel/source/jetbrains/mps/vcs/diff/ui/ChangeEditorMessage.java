@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 public class ChangeEditorMessage extends DefaultEditorMessage {
   private String myProperty;
   private String myRole;
-  private EditorCell myCell;
   @NotNull
   private Change myChange;
 
@@ -37,9 +36,7 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
     boolean accept = acceptCellInternal(cell, editor);
-    if (accept) {
-      myCell = cell;
-    }
+    
     return accept;
   }
 
@@ -85,10 +82,6 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
 
   public void setRole(String role) {
     myRole = role;
-  }
-
-  public EditorCell getCell() {
-    return myCell;
   }
 
   public Change getChange() {

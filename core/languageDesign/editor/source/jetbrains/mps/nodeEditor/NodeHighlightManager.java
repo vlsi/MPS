@@ -24,11 +24,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.vcs.diff.ui.ChangeEditorMessage;
 
 import java.awt.Color;
 import java.util.*;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
@@ -271,5 +273,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+  }
+
+  public EditorCell getCell(EditorMessage change) {
+    for (Entry<EditorCell, List<EditorMessage>> e: myMessagesCache.entrySet()) {
+      if (e.getValue().contains(change)) {
+        return e.getKey();
+      }
+    }
+    return null;
   }
 }
