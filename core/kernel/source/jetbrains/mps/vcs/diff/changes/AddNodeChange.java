@@ -21,6 +21,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.List;
+import java.util.Arrays;
+
 public class AddNodeChange extends NewNodeChange {
 
   private SNodeId myPreviousNode;
@@ -59,4 +62,8 @@ public class AddNodeChange extends NewNodeChange {
     return true;
   }
 
+  @Override
+  public List<SNodeId> getDependences() {
+    return Arrays.asList(getNodeParent(), getPreviousNode());
+  }
 }

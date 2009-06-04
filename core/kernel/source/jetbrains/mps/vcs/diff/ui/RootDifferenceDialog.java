@@ -13,7 +13,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.*;
-import java.awt.event.WindowListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.*;
@@ -86,10 +85,11 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldEditorComponent.removeAllChanges();
     myNewChanges.clear();
     myOldChanges.clear();
+
     List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
     hightlight(revertChanges, myNewEditorComponent, myOldEditorComponent);
     makeChangeBlocks(myNewEditorComponent, new ArrayList<ChangeEditorMessage>(myNewChanges));
-    makeChangeBlocks(myOldEditorComponent, new ArrayList<ChangeEditorMessage>(myOldChanges));
+    makeChangeBlocks(myOldEditorComponent, new ArrayList<ChangeEditorMessage>(myOldChanges));    
   }
 
   private void makeChangeBlocks(EditorComponent editorComponent, List<ChangeEditorMessage> changes) {
@@ -112,6 +112,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     ChangesBlock block = null;
 
     for (ChangeEditorMessage m: changes) {
+      System.out.println(m.getChange());
       EditorCell cell = m.getCell();
       if (block == null) {
         block = createChangeBlock(editorComponent, changes);
@@ -119,11 +120,13 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         if (block.getY2() < cell.getY()) {
           editorComponent.addChanges(block);
           block = createChangeBlock(editorComponent, changes);
+          System.out.println("------");
         }
       }
       block.addChange(m);
     }
     if (block != null) {
+      System.out.println("------");
       editorComponent.addChanges(block);
     }
   }
@@ -135,11 +138,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            List<ChangeEditorMessage> messages = getChanges();
-            while (!messages.isEmpty()) {
-              ChangeEditorMessage m = messages.get(0);
-              applyMeassage(messages, m);
-
+            List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
+            notAppliedChanges.addAll(myNewChanges);
+            notAppliedChanges.addAll(myOldChanges);
+            
+            for (ChangeEditorMessage m: getChanges()) {
+              applyMeassage(notAppliedChanges, m);
             }
           }
         });
@@ -153,23 +157,23 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     };
   }
 
-  private void applyMeassage(List<ChangeEditorMessage> messages, ChangeEditorMessage m) {
-    for (SNodeId usedNodeId: m.getChange().getUsedNodes()) {
-      List<ChangeEditorMessage> changes = new ArrayList();
-      changes.addAll(myNewChanges);
-      changes.addAll(myOldChanges);
-      for (ChangeEditorMessage message: changes) {
+  private void applyMeassage(List<ChangeEditorMessage> notAppliedChanges, ChangeEditorMessage m) {
+    if (!notAppliedChanges.contains(m)) {
+      return;
+    }
+    for (SNodeId usedNodeId: m.getChange().getDependences()) {
+      for (ChangeEditorMessage message: notAppliedChanges) {
         Change change = message.getChange();
         if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
           if (change.getAffectedNodeId().equals(usedNodeId)) {
-            applyMeassage(messages, message);
+            applyMeassage(notAppliedChanges, message);
             break;
           }
         }
       }
     }
-    m.getChange().apply(myNewModel);
-    messages.remove(m);
+    m.getChange().apply(myNewModel);    
+    notAppliedChanges.remove(m);
   }
 
 

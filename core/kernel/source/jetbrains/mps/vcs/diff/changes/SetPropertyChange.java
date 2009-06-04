@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.List;
+import java.util.Arrays;
+
 public class SetPropertyChange extends Change {
   private SNodeId myNodeId;
   private String myProperty;
@@ -63,4 +66,8 @@ public class SetPropertyChange extends Change {
     return true;
   }
 
+  @Override
+  public List<SNodeId> getDependences() {
+    return Arrays.asList(getNodeId());
+  }
 }

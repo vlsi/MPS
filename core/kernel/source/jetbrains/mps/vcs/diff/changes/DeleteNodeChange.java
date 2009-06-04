@@ -19,11 +19,15 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.List;
+
 public class DeleteNodeChange extends Change {
   private SNodeId myNodeId;
+  private List<SNodeId> myChildren;
 
-  public DeleteNodeChange(SNodeId nodeId) {
+  public DeleteNodeChange(SNodeId nodeId, List<SNodeId> childrenIds) {
     myNodeId = nodeId;
+    myChildren = childrenIds;
   }
 
 
@@ -47,4 +51,8 @@ public class DeleteNodeChange extends Change {
     return true;
   }
 
+  @Override
+  public List<SNodeId> getDependences() {
+    return myChildren;
+  }
 }

@@ -50,7 +50,7 @@ public class MoveNodeChange extends Change {
   }
 
   public String toString() {
-    return "move " + myNodeId + " to " + myNewParent;
+    return "move " + myNodeId + " to " + myNewParent + " before " + myPrevSibling;
   }
 
   public SNodeId getAffectedNodeId() {

@@ -127,7 +127,11 @@ public class DiffBuilder {
     oldNodes.removeAll(newNodeIds);
 
     for (SNodeId id : oldNodes) {
-      myChanges.add(new DeleteNodeChange(id));
+      List<SNodeId> childrenIds = new ArrayList<SNodeId>();
+      for (SNode child: myOldModel.getNodeById(id).getChildren()) {
+        childrenIds.add(child.getSNodeId());
+      }
+      myChanges.add(new DeleteNodeChange(id, childrenIds));
     }
   }
 
