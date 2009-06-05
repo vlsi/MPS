@@ -140,6 +140,7 @@ public class ActionFactory {
   }
 
   private void registerKeymapChanges(String actionId,String action, String languageNamespace, Object[] params) {
+    boolean cleared = false;
     for (BaseKeymapChanges keymapDiff:myKeymaps){
       Keymap keymap = KeymapManager.getInstance().getKeymap(keymapDiff.getScheme());
       if (keymap == null) {
@@ -148,6 +149,10 @@ public class ActionFactory {
       }
 
       if (keymapDiff.hasShortcutsForAction(action,languageNamespace)){
+        if (!cleared){
+          cleared = true;
+          keymap.removeAllActionShortcuts(actionId);
+        }
         for (KeyStroke stroke:keymapDiff.getShortcutsForAction(action,languageNamespace,params)){
           keymap.addShortcut(actionId,new KeyboardShortcut(stroke,null));
         }

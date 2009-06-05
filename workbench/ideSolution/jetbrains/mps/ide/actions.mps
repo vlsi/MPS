@@ -20503,5 +20503,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" id="3734045384533036331">
+    <property name="name" value="Mac" />
+    <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="3734045384533036332">
+      <link role="action" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
+      <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3734045384533036333">
+        <property name="modifiers" value="ctrl" />
+        <property name="keycode" value="VK_H" />
+      </node>
+    </node>
+  </node>
 </model>
 

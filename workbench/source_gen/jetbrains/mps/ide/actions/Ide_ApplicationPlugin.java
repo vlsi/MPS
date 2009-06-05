@@ -12,6 +12,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
@@ -83,6 +84,12 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     {
       gTo.add(gWhat);
     }
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
+    return res;
   }
 
 }
