@@ -91,6 +91,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3314511860152985343">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3314511860152985344">
+            <property name="name" value="z" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3314511860152985345">
+              <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211993062157">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1211993063160">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1211993064242">
@@ -170,7 +178,6 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211992713280" />
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196675409" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
