@@ -22,6 +22,7 @@ import jetbrains.mps.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
@@ -115,9 +116,14 @@ public class PasteNode_Action extends GeneratedAction {
           SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);
+          SwingUtilities.invokeLater(new Runnable() {
+
+            public void run() {
+              PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0), PasteNode_Action.this.context);
+            }
+          });
         }
       });
-      PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0), PasteNode_Action.this.context);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteNode", t);
