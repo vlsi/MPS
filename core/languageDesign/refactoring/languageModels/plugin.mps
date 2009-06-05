@@ -29,9 +29,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.refactoring.plugin(jetbrains.mps.refactoring.plugin@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.lang.refactoring.plugin(jetbrains.mps.lang.refactoring.plugin@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1229259662341">
     <property name="name" value="Refactoring" />
@@ -48,11 +49,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239989677708">
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1239989689569">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239989689570">
-            <node role="creator" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1239989689571">
-              <link role="constructorDeclaration" targetNodeId="10.~RefactoringActionGroup.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringTarget)" resolveInfo="RefactoringActionGroup" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1239989689572">
-                <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3734045384532085608">
+              <link role="baseMethodDeclaration" targetNodeId="10.~RefactoringActionGroup.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringTarget)" resolveInfo="RefactoringActionGroup" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="3734045384532085610">
                 <link role="enumConstantDeclaration" targetNodeId="2.~RefactoringTarget.NODE" resolveInfo="NODE" />
+                <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
               </node>
             </node>
           </node>

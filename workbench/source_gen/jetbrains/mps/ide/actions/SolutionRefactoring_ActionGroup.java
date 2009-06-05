@@ -14,7 +14,7 @@ public class SolutionRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.addAction("jetbrains.mps.refactoring.renameSolution.RenameSolutionAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.RenameSolution_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

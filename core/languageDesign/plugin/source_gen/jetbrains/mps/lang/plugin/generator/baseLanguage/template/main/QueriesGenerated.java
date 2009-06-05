@@ -878,10 +878,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modifier", true)).isNotEmpty() || SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false) != null;
   }
 
-  public static boolean ifMacro_Condition_1228327561636(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator", false)).isEmpty();
-  }
-
   public static boolean ifMacro_Condition_1228331915006(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(ClassConcept_Behavior.call_isDescendant_1213877355812(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "constructorDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")));
   }
@@ -1111,10 +1107,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1228241156059(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "point", false), "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), "pointID", true);
-  }
-
-  public static SNode sourceNodeQuery_1228327910873(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator", false)).first();
   }
 
   public static SNode sourceNodeQuery_1239981928256(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
