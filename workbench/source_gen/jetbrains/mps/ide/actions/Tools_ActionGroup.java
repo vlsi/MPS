@@ -20,7 +20,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.ReloadAllAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ReloadAll_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.InstallIDEAPlugin_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action", "jetbrains.mps.ide");

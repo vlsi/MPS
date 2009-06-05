@@ -19,7 +19,7 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.ide.ui.smodel.RenamePackageAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

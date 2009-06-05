@@ -49,7 +49,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
         this.add(newGroup);
         this.addSeparator();
       }
-      this.addAction("jetbrains.mps.ide.projectPane.GenerateFilesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
