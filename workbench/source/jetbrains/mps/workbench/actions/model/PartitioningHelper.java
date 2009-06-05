@@ -37,30 +37,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Igor Alshannikov
- * Mar 11, 2008
- */
-public class ShowMappingsPartitioningAction extends BaseAction {
-  private List<SModelDescriptor> myModels;
-  private MPSProject myProject;
-  private Frame myFrame;
-  private IScope myScope;
-  private Map<MappingPriorityRule, GeneratorDescriptor> myRule2Generator;
-
-  public ShowMappingsPartitioningAction() {
-    super("Show mappings partitioning");
-  }
-
-  protected void doExecute(AnActionEvent e) {
+public class PartitioningHelper {
+  public static void showMappingPartitioning(MPSProject project, Frame frame, IScope scope, List<SModelDescriptor> models) {
     // no multiple input models
-    SModel inputModel = myModels.get(0).getSModel();
+    SModel inputModel = models.get(0).getSModel();
 
-    List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, myScope);
+    List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
     GenerationPartitioner partitioner = new GenerationPartitioner();
     List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
-    myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
+    Map<MappingPriorityRule, GeneratorDescriptor> myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
     for (Generator generator : generators) {
       GeneratorDescriptor generatorDescriptor = generator.getGeneratorDescriptor();
       for (MappingPriorityRule rule : generatorDescriptor.getPriorityRules()) {
@@ -68,7 +54,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
       }
     }
 
-    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
+    MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
     // print all rules
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {
@@ -84,10 +70,10 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
       messagesView.openToolLater(true);
-      messagesView.add(new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, "Conflicting mapping priority rules encountered:"));
+      messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, "Conflicting mapping priority rules encountered:"));
       List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
-        Message msg = new Message(MessageKind.ERROR, ShowMappingsPartitioningAction.class, message.second);
+        Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.second);
         GeneratorDescriptor generatorDescriptor = myRule2Generator.get(message.first);
         Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
         msg.setHintObject(generatorModule);
@@ -95,7 +81,7 @@ public class ShowMappingsPartitioningAction extends BaseAction {
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 
-      JOptionPane.showMessageDialog(myFrame, "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(frame, "Conflicting mapping priority rules encountered", "Generation plan error", JOptionPane.WARNING_MESSAGE);
     }
 
     // show partitioning
@@ -109,24 +95,11 @@ public class ShowMappingsPartitioningAction extends BaseAction {
       }
       text += "\n";
     }
-    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(myProject);
+    OutputViewTool viewTool = OutputViewTool.getOutputViewTool(project);
     viewTool.clear();
     viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
     viewTool.append(text);
     viewTool.append("---------------------------------------------------------------------------------\n");
     viewTool.openToolLater(true);
-  }
-
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
-    ActionEventData data = new ActionEventData(e);
-    myScope = data.getScope();
-    if (myScope == null) return false;
-    myProject = data.getMPSProject();
-    if (myProject == null) return false;
-    myFrame = data.getFrame();
-    if (myFrame == null) return false;
-    myModels = data.getModels();
-    return myModels.size() == 1;
   }
 }

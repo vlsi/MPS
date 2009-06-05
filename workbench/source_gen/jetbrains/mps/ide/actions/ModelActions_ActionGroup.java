@@ -32,7 +32,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.model.GenerateModelFilesAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.model.GenerateModelTextAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.model.ShowMappingsPartitioningAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action", "jetbrains.mps.ide");
       this.addSeparator();
