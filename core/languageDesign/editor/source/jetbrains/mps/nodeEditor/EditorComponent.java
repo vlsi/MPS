@@ -311,19 +311,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        EditorCell cell = getSelectedCell();
-        if (cell == null) return;
-        if (cell.getSNode() == null) return;
-        Frame frame = (Frame) SwingUtilities.getRoot(EditorComponent.this);
-        Point point = new Point(cell.getX() + cell.getWidth(), cell.getY());
-        SwingUtilities.convertPointToScreen(point, EditorComponent.this);
-
-        new NodeInformationDialog(frame, point, cell.getSNode()).setVisible(true);
-      }
-    }, KeyStroke.getKeyStroke("ctrl Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
