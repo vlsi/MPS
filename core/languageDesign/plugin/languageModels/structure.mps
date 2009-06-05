@@ -2556,13 +2556,17 @@
       <property name="internalValue" value="Mac OS X" />
       <property name="externalValue" value="Mac OS X" />
     </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166202">
-      <property name="internalValue" value="Unix_GNOME" />
-      <property name="externalValue" value="GNOME" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1911082874216608560">
+      <property name="internalValue" value="Default for XWin" />
+      <property name="externalValue" value="XWin" />
     </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1562714432501166203">
-      <property name="internalValue" value="Unix_KDE" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1911082874216608561">
+      <property name="externalValue" value="GNOME" />
+      <property name="internalValue" value="Default for GNOME" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1911082874216608562">
       <property name="externalValue" value="KDE" />
+      <property name="internalValue" value="Default for KDE" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6193305307616715384">

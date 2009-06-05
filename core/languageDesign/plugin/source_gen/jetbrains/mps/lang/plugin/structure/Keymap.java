@@ -8,8 +8,9 @@ import java.util.LinkedList;
 
 public enum Keymap {
   Mac_OS_X("Mac OS X", "Mac OS X"),
-  GNOME("GNOME", "Unix_GNOME"),
-  KDE("KDE", "Unix_KDE");
+  XWin("XWin", "Default for XWin"),
+  GNOME("GNOME", "Default for GNOME"),
+  KDE("KDE", "Default for KDE");
 
   private String myName;
   private String myValue;
@@ -35,6 +36,7 @@ public enum Keymap {
   public static List<Keymap> getConstants() {
     List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
     ListSequence.fromList(list).addElement(Keymap.Mac_OS_X);
+    ListSequence.fromList(list).addElement(Keymap.XWin);
     ListSequence.fromList(list).addElement(Keymap.GNOME);
     ListSequence.fromList(list).addElement(Keymap.KDE);
     return list;
@@ -50,6 +52,9 @@ public enum Keymap {
     }
     if (value.equals(Keymap.Mac_OS_X.getValueAsString())) {
       return Keymap.Mac_OS_X;
+    }
+    if (value.equals(Keymap.XWin.getValueAsString())) {
+      return Keymap.XWin;
     }
     if (value.equals(Keymap.GNOME.getValueAsString())) {
       return Keymap.GNOME;
