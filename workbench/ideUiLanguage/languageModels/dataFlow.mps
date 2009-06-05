@@ -47,5 +47,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="3734045384532546748">
+    <property name="package" value="IDEDialog" />
+    <link role="conceptDeclaration" targetNodeId="1.3734045384532546729" resolveInfo="ReportErrorStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="3734045384532546751">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3734045384532546752">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="3734045384532546753">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3734045384532546754">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="3734045384532546755" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3734045384532546758">
+              <link role="link" targetNodeId="1.3734045384532546730" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="3734045384532546757" />
+      </node>
+    </node>
+  </node>
 </model>
 

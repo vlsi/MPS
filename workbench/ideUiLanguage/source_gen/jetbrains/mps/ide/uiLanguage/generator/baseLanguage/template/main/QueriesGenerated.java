@@ -114,6 +114,16 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
+  public static Object referenceMacro_GetReferent_3734045384532546771(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
+  }
+
+  public static Object referenceMacro_GetReferent_3734045384532546828(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
+  }
+
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {
     return ComponentDeclaration_Behavior.call_getAfterConstruction_1213877495346(_context.getNode()) != null;
   }
@@ -152,6 +162,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216903906306(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(ComponentDeclaration_Behavior.call_getBeforeConstruction_1216902155145(_context.getNode()), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3734045384532546786(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "errorText", true);
   }
 
   public static Iterable sourceNodesQuery_1203593881811(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

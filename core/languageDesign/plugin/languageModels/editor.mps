@@ -1549,9 +1549,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207145751611">
         <property name="text" value=";" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996004">
-          <property name="flag" value="false" />
-        </node>
+        <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812256989" />
     </node>
@@ -3261,9 +3259,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227013095322">
         <property name="text" value=";" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1227013095323">
-          <property name="flag" value="false" />
-        </node>
+        <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812262686" />
     </node>

@@ -247,5 +247,35 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3734045384532546742">
+    <property name="package" value="IDEDialog" />
+    <link role="concept" targetNodeId="2.3734045384532546729" resolveInfo="ReportErrorStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3734045384532546743">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3734045384532546744">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3734045384532546745">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3734045384532546746">
+            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
+            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3734045384532546747" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3734045384532546811">
+    <property name="package" value="IDEDialog" />
+    <link role="concept" targetNodeId="2.3734045384532546800" resolveInfo="DisposeDialogStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3734045384532546812">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3734045384532546813">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3734045384532546814">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3734045384532546815">
+            <link role="baseMethodDeclaration" targetNodeId="1203606524471" resolveInfo="dialogAccessible" />
+            <link role="classConcept" targetNodeId="1203606392881" resolveInfo="DialogUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3734045384532546816" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

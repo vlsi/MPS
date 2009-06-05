@@ -1088,13 +1088,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724974" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877478485">
-    <property name="package" value="Tool.Methods" />
-    <link role="concept" targetNodeId="1.1204471433283" resolveInfo="ToolInstanceExpression" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877478486">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877478487" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877494239">
     <property name="package" value="Actions.Groups" />
     <link role="concept" targetNodeId="1.1203087890642" resolveInfo="ActionGroupDeclaration" />

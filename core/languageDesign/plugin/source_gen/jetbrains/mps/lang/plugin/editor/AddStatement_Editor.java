@@ -13,8 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class AddStatement_Editor extends DefaultNodeEditor {
 
@@ -93,14 +92,7 @@ public class AddStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_4162_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4162_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_4162_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -141,11 +141,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599983023">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203609641409">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203609641410">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203609659284">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203609659285">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609660537">
-                  <property name="value" value="Enter solution directory" />
-                </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741057">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609660537">
+                <property name="value" value="Enter solution directory" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203609667930" />
@@ -169,11 +167,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203609669182">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203609669183">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203609680057">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203609680058">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609680982">
-                  <property name="value" value="Enter solution name" />
-                </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741050">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609680982">
+                <property name="value" value="Enter solution name" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203609685687" />
@@ -197,11 +193,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203609690220">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203609690221">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203609709582">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203609709583">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609710304">
-                  <property name="value" value="Duplicate solution name" />
-                </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741046">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609710304">
+                <property name="value" value="Duplicate solution name" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203609715274" />
@@ -291,11 +285,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203609830761">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203609830762">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203609863406">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203609863407">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609864128">
-                  <property name="value" value="Path should be absolute" />
-                </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741052">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203609864128">
+                <property name="value" value="Path should be absolute" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203609870583" />
@@ -313,11 +305,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237288861919">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237288861920">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237288861921">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1237288861922">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237288861923">
-                  <property name="value" value="The selected folder is not empty. Please select an empty folder to create solution" />
-                </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741051">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237288861923">
+                <property name="value" value="The selected folder is not empty. Please select an empty folder to create solution" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237288861924" />
@@ -351,15 +341,13 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203611190216">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611190217">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203611196959">
-              <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203611196960">
-                <node role="errorText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203611201120">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237289869110">
-                    <link role="variableDeclaration" targetNodeId="1203609799598" resolveInfo="file" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203611198087">
-                    <property name="value" value="Can't create " />
-                  </node>
+            <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" id="3734045384532741056">
+              <node role="errorText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203611201120">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237289869110">
+                  <link role="variableDeclaration" targetNodeId="1203609799598" resolveInfo="file" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203611198087">
+                  <property name="value" value="Can't create " />
                 </node>
               </node>
             </node>
@@ -372,9 +360,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606974763">
-          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606974764" />
-        </node>
+        <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement" id="3734045384532741042" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218128973228">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218128975778">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218128974621">
@@ -484,9 +470,7 @@
       <property name="name" value="onCancel" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599987700" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599986637">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606976985">
-          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606976986" />
-        </node>
+        <node role="statement" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement" id="3734045384532741037" />
       </node>
     </node>
     <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203608542333">
