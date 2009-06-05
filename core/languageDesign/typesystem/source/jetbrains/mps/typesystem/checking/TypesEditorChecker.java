@@ -62,46 +62,48 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
 
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
-
-    //non-typesystem checks
-    if (!wasCheckedOnce || hasDramaticalEvent(events)) {
-      try {
-        typesComponent.applyNonTypesystemRulesToRoot(events);
-      } catch (Throwable t) {
-        LOG.error(t);
+    if (typesComponent != null)  {
+      //non-typesystem checks
+      if (!wasCheckedOnce || hasDramaticalEvent(events)) {
+        try {
+          typesComponent.applyNonTypesystemRulesToRoot(events);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
       }
-    }
 
-    // highlight nodes with errors
-    for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
-      MessageStatus status = errorNode.o2.getMessageStatus();
-      String errorString = errorNode.o2.reportError();
-      HighlighterMessage message = createHighlighterMessage(errorNode.o1, "Typesystem " + status.getPresentation() + ": " + errorString, errorNode.o2);
-      IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
+      // highlight nodes with errors
+      for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
+        MessageStatus status = errorNode.o2.getMessageStatus();
+        String errorString = errorNode.o2.reportError();
+        HighlighterMessage message = createHighlighterMessage(errorNode.o1, "Typesystem " + status.getPresentation() + ": " + errorString, errorNode.o2);
+        IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
 
-      if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
-        final QuickFix_Runtime intention = intentionProvider.getQuickFix();
-        if (intention != null) {
-          if (!myOnceExecutedQuickFixes.contains(intention)) {
-            myOnceExecutedQuickFixes.add(intention);
-            ThreadUtils.runInUIThreadNoWait(new Runnable() {
-              public void run() {
-                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                  public void run() {
-                    intention.execute(node);
-                  }
-                });
-              }
-            });
+        if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
+          final QuickFix_Runtime intention = intentionProvider.getQuickFix();
+          if (intention != null) {
+            if (!myOnceExecutedQuickFixes.contains(intention)) {
+              myOnceExecutedQuickFixes.add(intention);
+              ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                public void run() {
+                  ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                    public void run() {
+                      intention.execute(node);
+                    }
+                  });
+                }
+              });
+            }
           }
+        } else {
+          if (intentionProvider != null) {
+            intentionProvider.setIsError(status == MessageStatus.ERROR);
+          }
+          message.setIntentionProvider(intentionProvider);
         }
-      } else {
-        if (intentionProvider != null) {
-          intentionProvider.setIsError(status == MessageStatus.ERROR);
-        }
-        message.setIntentionProvider(intentionProvider);
+        messages.add(message);
       }
-      messages.add(message);
+
     }
     return messages;
   }
