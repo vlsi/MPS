@@ -18,7 +18,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAction("jetbrains.mps.ide.actions.GoByCurrentReference_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.HighlightUsagesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action", "jetbrains.mps.ide");

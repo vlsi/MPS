@@ -18,7 +18,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.add(new CreateRootNodeGroup());
-      this.addAction("jetbrains.mps.workbench.actions.nodes.PasteNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.DeleteModels_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CloneModel_Action", "jetbrains.mps.ide");

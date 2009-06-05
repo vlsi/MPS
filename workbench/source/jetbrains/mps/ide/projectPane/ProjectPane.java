@@ -74,7 +74,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -1200,7 +1199,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private class MyPasteProvider implements PasteProvider {
-    private PasteNodeAction myAction = new PasteNodeAction();
+    private PasteNode_Action myAction = new PasteNode_Action();
 
     public void performPaste(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);

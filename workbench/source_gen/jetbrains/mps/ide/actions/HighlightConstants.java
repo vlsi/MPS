@@ -8,4 +8,5 @@ public class HighlightConstants {
   public static final Color DEPENDENCY_COLOR = Color.PINK;
   public static final Color NODE_COLOR = Color.MAGENTA;
   public static final Color INSTANCES_COLOR = Color.BLUE;
+  public static final Color USAGES_COLOR = Color.PINK;
 }
