@@ -3,6 +3,22 @@
     <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
     <actions>
+
+        <group id="RunMenu" popup="true">
+          <group id="RunnerActions"/>
+          <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
+          <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="/actions/suspend.png"/>
+
+          <add-to-group group-id="MainMenu" anchor="after" relative-to-action="RefactoringMenu"/>
+        </group>
+
+        <group id="ToolbarRunGroup">
+          <separator/>
+            <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationAction"/>
+
+          <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
+        </group>
+
         <!--add "select in" action to all the editors-->
         <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
             <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
