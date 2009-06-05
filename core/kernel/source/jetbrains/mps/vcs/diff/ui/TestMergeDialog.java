@@ -16,18 +16,27 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.idea.IdeaTestApplication;
 import static jetbrains.mps.TestMain.configureMPS;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import org.jdom.Document;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.io.FileInputStream;
@@ -36,7 +45,7 @@ import java.io.IOException;
 public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
-    configureMPS();
+    configureMPS();        
 
     final SModel baseModel = readModel(args[0]);
     final SModel mineModel = readModel(args[1]);
@@ -47,7 +56,22 @@ public class TestMergeDialog {
       public void run() {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(null, baseModel, mineModel, newModel);
+            IOperationContext context = new StandaloneMPSContext() {
+
+              public MPSProject getMPSProject() {
+                return null;  //To change body of implemented methods use File | Settings | File Templates.
+              }
+
+              public IModule getModule() {
+                return null;  //To change body of implemented methods use File | Settings | File Templates.
+              }
+
+              @NotNull
+              public IScope getScope() {
+                return null;  //To change body of implemented methods use File | Settings | File Templates.
+              }
+            };
+            return new MergeModelsDialog(context, baseModel, mineModel, newModel);
           }
         });
         dialog.showDialog();

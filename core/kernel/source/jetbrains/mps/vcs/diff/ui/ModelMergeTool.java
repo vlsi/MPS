@@ -24,12 +24,16 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.MPSProjectHolder;
 import org.jdom.Document;
 
 import javax.swing.SwingUtilities;
@@ -38,7 +42,7 @@ import java.io.*;
 public class ModelMergeTool implements DiffTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
 
-  public void show(DiffRequest request) {
+  public void show(final DiffRequest request) {
     ModelMergeRequest mrequest = (ModelMergeRequest) request;
 
     try {
@@ -51,7 +55,9 @@ public class ModelMergeTool implements DiffTool {
         mrequest.getFile().getPath());
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {
-          return new MergeModelsDialog(null, baseModel, mineModel, newModel);
+          MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+          IOperationContext context = new ModuleContext(baseModel.getModelDescriptor().getModule(), project);
+          return new MergeModelsDialog(context, baseModel, mineModel, newModel);
         }
       });
 

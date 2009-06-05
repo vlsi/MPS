@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.vcs.diff.ui.ChangeEditorMessage;
 
 import java.awt.Color;
 import java.util.*;

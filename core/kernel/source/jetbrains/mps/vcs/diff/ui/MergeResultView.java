@@ -43,6 +43,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 
 class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
@@ -95,8 +96,19 @@ class MergeResultView extends JPanel {
   };
 
   private final Merger myMerger;
+  private SModel myBaseModel;
+  private SModel myChange1;
+  private SModel myChange2;
+  private Frame myMainFrame;
+  private IOperationContext myContext;
 
-  public MergeResultView(SModel baseModel, SModel change1, SModel change2) {
+  public MergeResultView(Frame mainFrame, SModel baseModel, SModel change1, SModel change2) {
+    myMainFrame = mainFrame;
+    myBaseModel = baseModel;
+    myChange1 = change1;
+    myChange2 = change2;
+    IOperationContext context;
+
     myMerger = new Merger(baseModel, change1, change2);
     myMerger.doRebuild(new Runnable() {
       public void run() {
@@ -140,7 +152,15 @@ class MergeResultView extends JPanel {
     }
 
 
-    public void doubleClick() {
+    public void doubleClick() {      
+      final RootMergeDialog dialog = new RootMergeDialog(myMainFrame, myChange1, myChange2, myBaseModel);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          dialog.init(myContext, getSNode(), "new", "old");
+        }
+      });
+
+      dialog.showDialog();
     }
   }
 

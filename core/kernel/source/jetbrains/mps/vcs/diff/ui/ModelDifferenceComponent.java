@@ -76,11 +76,11 @@ class ModelDifferenceComponent extends JPanel {
   private DefaultActionGroup myModelTreeActionGroup;
   private ActionToolbar myChangesTreeToolBar;
   private DefaultActionGroup myChangesTreeActionGroup;
-  private Frame myParentFrame;
   private IOperationContext myContext;
 
-  public ModelDifferenceComponent() {
+  public ModelDifferenceComponent(IOperationContext context) {
     setLayout(new BorderLayout());
+    myContext = context;
 
     myModelTreeActionGroup = new DefaultActionGroup();
     myModelTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myModelTreeActionGroup, true);
@@ -317,14 +317,6 @@ class ModelDifferenceComponent extends JPanel {
     myModelTreeActionGroup.add(action);
   }
 
-  public void setParentFrame(Frame parentFrame) {
-    myParentFrame = parentFrame;
-  }
-
-  public void setContext(IOperationContext context) {
-    myContext = context;
-  }
-
   private class MySModelTreeNode extends SModelTreeNode {
     private SModel myModel;
 
@@ -385,7 +377,7 @@ class ModelDifferenceComponent extends JPanel {
     }
 
     public void doubleClick() {
-      final RootDifferenceDialog dialog = new RootDifferenceDialog(myParentFrame, myNewModel, myOldModel, false);
+      final RootDifferenceDialog dialog = new RootDifferenceDialog(myContext.getMainFrame(), myNewModel, myOldModel, false);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(myContext, getSNode(), "new", "old");
@@ -432,23 +424,8 @@ class ModelDifferenceComponent extends JPanel {
     protected MPSTreeNode rebuild() {
       if (myNewModel == null) {
         return new TextTreeNode("No Model To Display");
-      } else {
-        // todo where to get context?
-        return new MySModelTreeNode(myNewModel, "", new StandaloneMPSContext() {
-          @Deprecated
-          public MPSProject getMPSProject() {
-            return null;
-          }
-
-          public IModule getModule() {
-            return null;
-          }
-
-          @NotNull
-          public IScope getScope() {
-            return GlobalScope.getInstance();
-          }
-        });
+      } else {      
+        return new MySModelTreeNode(myNewModel, "", myContext);
       }
     }
   }

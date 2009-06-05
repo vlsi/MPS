@@ -21,6 +21,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -32,9 +33,9 @@ class MergeModelsDialog extends BaseDialog {
   private boolean myCanceled;
 
 
-  public MergeModelsDialog(Frame mainFrame, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
-    super(mainFrame, "Merge Model Changes : " + base.getSModelReference());
-    myMergeView = new MergeView(base, mineModel, repoModel);
+  public MergeModelsDialog(IOperationContext context, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
+    super(context.getMainFrame(), "Merge Model Changes : " + base.getSModelReference());
+    myMergeView = new MergeView(context, base, mineModel, repoModel);
   }
 
 
