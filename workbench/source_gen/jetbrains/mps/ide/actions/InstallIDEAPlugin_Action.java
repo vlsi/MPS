@@ -10,11 +10,11 @@ import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import javax.swing.JOptionPane;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.util.FileUtil;
+import javax.swing.JOptionPane;
 import java.io.IOException;
 
 public class InstallIDEAPlugin_Action extends GeneratedAction {
@@ -59,7 +59,6 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "You should restart IDEA before using plugin");
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
       File targetDir;
       if (!(SystemInfo.isMac)) {
@@ -73,11 +72,10 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       }
       try {
         FileUtil.copyFileChecked(pluginFile, targetDir);
+        JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "Plugin Installed\nYou should restart IDEA before using plugin");
       } catch (IOException e) {
         JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        return;
       }
-      JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "Plugin Installed");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);

@@ -18074,21 +18074,6 @@
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="6894430479832140341">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6894430479832140342">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6894430479832189074">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6894430479832198276">
-            <link role="baseMethodDeclaration" targetNodeId="72.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
-            <link role="classConcept" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6894430479832198277">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="6894430479832198278" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="6894430479832198279">
-                <link role="member" targetNodeId="6894430479832161394" resolveInfo="frame" />
-              </node>
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6894430479832198281">
-              <property name="value" value="You should restart IDEA before using plugin" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6894430479832202082">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6894430479832202083">
             <property name="name" value="pluginFile" />
@@ -18281,6 +18266,21 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217259708145185216">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1217259708145185217">
+                <link role="classConcept" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
+                <link role="baseMethodDeclaration" targetNodeId="72.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217259708145185218">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1217259708145185219" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217259708145185220">
+                    <link role="member" targetNodeId="6894430479832161394" resolveInfo="frame" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217259708145219872">
+                  <property name="value" value="Plugin Installed\nYou should restart IDEA before using plugin" />
+                </node>
+              </node>
+            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="6894430479832202916">
             <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6894430479832202917">
@@ -18322,22 +18322,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6894430479832203527" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6894430479832203529">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6894430479832203530">
-            <link role="classConcept" targetNodeId="72.~JOptionPane" resolveInfo="JOptionPane" />
-            <link role="baseMethodDeclaration" targetNodeId="72.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6894430479832203531">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="6894430479832203532" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="6894430479832203533">
-                <link role="member" targetNodeId="6894430479832161394" resolveInfo="frame" />
-              </node>
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6894430479832203540">
-              <property name="value" value="Plugin Installed" />
             </node>
           </node>
         </node>
