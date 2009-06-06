@@ -17,6 +17,7 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAction("jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action", "jetbrains.mps.lang.structure");
+      this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForConcept_Action", "jetbrains.mps.lang.structure");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

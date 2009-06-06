@@ -577,6 +577,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1169125787135">
     <property name="name" value="AbstractConceptDeclaration" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2465654535473034588">
+      <property name="name" value="helpURL" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1169197806875">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>

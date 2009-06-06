@@ -1510,6 +1510,21 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1160492784517">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2465654535473044221">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2465654535473044222">
+          <property name="flag" value="false" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2465654535473044224" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2465654535473044225">
+          <property name="text" value="help URL:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2465654535473044227">
+          <property name="allowEmptyText" value="true" />
+          <property name="emptyNoTargetText" value="false" />
+          <property name="noTargetText" value="&lt;no URL&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.2465654535473034588" resolveInfo="helpURL" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1161165530947">
         <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1161165530948">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1161165530949">
@@ -2683,6 +2698,20 @@
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239877876855" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239877964004" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2465654535473044230">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2465654535473044231">
+        <property name="flag" value="false" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2465654535473044232" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2465654535473044233">
+        <property name="text" value="help URL:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2465654535473044234">
+        <property name="allowEmptyText" value="true" />
+        <property name="noTargetText" value="&lt;no URL&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.2465654535473034588" resolveInfo="helpURL" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1169127648030">
