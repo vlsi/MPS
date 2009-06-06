@@ -30,8 +30,8 @@ public class AddRemoveSeparator_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "withSeparator") ?
-      "Remove separator" :
-      "Add separator"
+      "Remove Separator" :
+      "Add Separator"
     );
   }
 

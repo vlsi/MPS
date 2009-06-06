@@ -126,7 +126,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(SPropertyOperations.getString(this._2_label, "name"));
+                      this.yield(SPropertyOperations.getString(_2_label, "name"));
                       return true;
                     case 0:
                       this.__CP__ = 2;

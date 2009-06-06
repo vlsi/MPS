@@ -35,7 +35,7 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Editor Annotation.";
+    return "Add Editor Annotation";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -30,8 +30,8 @@ public class MakeMethodFinal_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "isFinal") ?
-      "Make method not final" :
-      "Make method final"
+      "Make Method Not Final" :
+      "Make Method Final"
     );
   }
 

@@ -30,8 +30,8 @@ public class MakeRootable_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "rootable") ?
-      "Make not rootable" :
-      "Make rootable"
+      "Make Not Rootable" :
+      "Make Rootable"
     );
   }
 

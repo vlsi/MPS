@@ -31,12 +31,10 @@ public class SetWithIndent_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if (!(AbstractAppendPart_Behavior.call_withIndent_1237466287046(node))) {
-      return "Append with indent";
-    } else
-    {
-      return "Appent without indent";
-    }
+    return "Append " + (AbstractAppendPart_Behavior.call_withIndent_1237466287046(node) ?
+      "without" :
+      "with"
+    ) + " Indent";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -29,7 +29,7 @@ public class add_parameter_to_InternalClassifierType_Intention extends BaseInten
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add type parameters";
+    return "Add Type Parameters";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

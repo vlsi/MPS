@@ -33,7 +33,7 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace deprecated construct";
+    return "Replace Deprecated Construct";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

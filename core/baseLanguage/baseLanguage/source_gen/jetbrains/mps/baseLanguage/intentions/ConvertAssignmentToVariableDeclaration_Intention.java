@@ -31,7 +31,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert To Variable Declaration";
+    return "Convert to Variable Declaration";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

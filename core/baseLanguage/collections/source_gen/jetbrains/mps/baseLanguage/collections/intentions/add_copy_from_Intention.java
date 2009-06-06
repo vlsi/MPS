@@ -29,7 +29,7 @@ public class add_copy_from_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Specify sequence to copy from";
+    return "Specify Sequence to Copy From";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

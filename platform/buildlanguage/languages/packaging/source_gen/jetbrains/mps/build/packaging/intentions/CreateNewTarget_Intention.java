@@ -31,7 +31,7 @@ public class CreateNewTarget_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Create new target in project " + SLinkOperations.getTarget(node, "project", false);
+    return "Create New Target in Project " + SLinkOperations.getTarget(node, "project", false);
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

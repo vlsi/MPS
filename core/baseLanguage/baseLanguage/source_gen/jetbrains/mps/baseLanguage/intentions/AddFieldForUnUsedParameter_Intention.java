@@ -35,7 +35,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Field For Unused Parameter";
+    return "Add Field for Unused Parameter";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

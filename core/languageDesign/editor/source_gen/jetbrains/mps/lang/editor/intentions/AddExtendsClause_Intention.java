@@ -30,7 +30,7 @@ public class AddExtendsClause_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add extends clause";
+    return "Add Extends Clause";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

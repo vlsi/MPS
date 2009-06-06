@@ -29,7 +29,7 @@ public class AddMainMethod_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add main method";
+    return "Add Main Method";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

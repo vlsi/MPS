@@ -29,7 +29,7 @@ public class add_init_values_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add init values";
+    return "Add Init Values";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

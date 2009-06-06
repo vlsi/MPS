@@ -30,8 +30,8 @@ public class MakeFieldVolatile_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "isVolatile") ?
-      "Make field not volatile" :
-      "Make field volatile"
+      "Make Field Not Volatile" :
+      "Make Field Volatile"
     );
   }
 

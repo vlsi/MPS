@@ -36,7 +36,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Create new buildlanguage project";
+    return "Create New BuildLanguage Project";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

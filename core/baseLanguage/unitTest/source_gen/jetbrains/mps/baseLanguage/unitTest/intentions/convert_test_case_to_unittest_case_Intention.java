@@ -34,7 +34,7 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to unitTest case";
+    return "Convert to UnitTest Case";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -31,11 +31,7 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to typeof";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return true;
+    return "Convert to 'typeof'";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

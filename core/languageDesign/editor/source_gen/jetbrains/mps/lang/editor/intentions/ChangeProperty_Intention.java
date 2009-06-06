@@ -35,7 +35,7 @@ public class ChangeProperty_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace concept property by transactional property.";
+    return "Replace Concept Property by Transactional Property";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -29,7 +29,7 @@ public class MakeMethodAbstarct_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Make method abstract";
+    return "Make Method Abstract";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
