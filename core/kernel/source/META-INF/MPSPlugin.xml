@@ -5,33 +5,7 @@
     <extensionPoints>
         <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
         <xi:include href="/META-INF/VcsExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-
-        <extensionPoint name="customScopesProvider"
-                        interface="com.intellij.psi.search.scope.packageSet.CustomScopesProvider"
-                        area="IDEA_PROJECT"/>
-
-        <extensionPoint name="consoleFilterProvider"
-                        interface="com.intellij.execution.filters.ConsoleFilterProvider"/>
-
-        <!--Cut Copy Paste-->
-        <extensionPoint name="filePasteProvider"
-                        interface="com.intellij.ide.PasteProvider"/>
-
-
-        <extensionPoint name="fileBasedIndex" interface="com.intellij.util.indexing.FileBasedIndexExtension"/>
-        <extensionPoint name="cacheBuilder" interface="com.intellij.lang.cacheBuilder.CacheBuilderEP"/>
-
-        <extensionPoint name="indexedRootsProvider" interface="com.intellij.util.indexing.IndexedRootsProvider"/>
-
-        <extensionPoint name="directoryIndexExcludePolicy"
-                        interface="com.intellij.openapi.roots.impl.DirectoryIndexExcludePolicy"
-                        area="IDEA_PROJECT"/>
-
-        <extensionPoint name="roots.watchedRootsProvider" interface="com.intellij.openapi.roots.WatchedRootsProvider"
-                        area="IDEA_PROJECT"/>
-
-        <extensionPoint name="projectExtension" interface="com.intellij.openapi.roots.ProjectExtension"
-                        area="IDEA_PROJECT"/>
+        <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
