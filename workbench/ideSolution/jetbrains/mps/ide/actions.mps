@@ -774,17 +774,8 @@
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148341327">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215010892018" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426685906">
-        <link role="action" targetNodeId="5033107305426684804" resolveInfo="CopyNode" />
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426684803">
         <link role="action" targetNodeId="5033107305426668800" resolveInfo="CopyNodeReference" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5533671870987200980">
-        <link role="action" targetNodeId="5533671870987188872" resolveInfo="PasteNode" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426732736">
-        <link role="action" targetNodeId="5033107305426722313" resolveInfo="CutNode" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204983234438" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229267916515">
