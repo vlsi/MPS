@@ -195,7 +195,7 @@
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1216651579391">
       <link role="modifiedGroup" targetNodeId="13.1204991231476" resolveInfo="EditorPopup" />
-      <link role="point" targetNodeId="13.1216651557982" resolveInfo="structure" />
+      <link role="point" targetNodeId="13.5535460359399672329" resolveInfo="structure" />
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1216651585611">
       <link role="modifiedGroup" targetNodeId="13.1204991215587" resolveInfo="ProjectPaneNodeActions" />
