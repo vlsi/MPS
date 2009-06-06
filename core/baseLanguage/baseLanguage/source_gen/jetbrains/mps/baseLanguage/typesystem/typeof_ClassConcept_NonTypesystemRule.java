@@ -42,7 +42,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", intentionProvider, errorTarget);
+        typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", intentionProvider, errorTarget);
       }
     }
   }

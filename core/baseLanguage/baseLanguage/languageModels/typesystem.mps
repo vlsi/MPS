@@ -12291,7 +12291,7 @@
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221637826070">
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1221637871546">
             <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221637872908">
-              <property name="value" value="Class has not implemented methods (press control+I too see)" />
+              <property name="value" value="Class has unimplemented methods (press Ctrl+I to see)" />
             </node>
             <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1221637883144">
               <link role="applicableNode" targetNodeId="1221637809879" resolveInfo="cls" />
