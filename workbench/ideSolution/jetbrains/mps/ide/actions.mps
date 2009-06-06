@@ -9279,7 +9279,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1229276371805">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1229276371806">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229276371807">
-                    <property name="value" value="Regenereate" />
+                    <property name="value" value="Regenerate" />
                   </node>
                   <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229276371808">
                     <property name="value" value="Generate" />

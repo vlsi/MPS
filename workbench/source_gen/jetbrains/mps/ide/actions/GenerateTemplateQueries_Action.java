@@ -48,7 +48,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     try {
       {
         String text = ((GenerateTemplateQueries_Action.this.regenerate ?
-          "Regenereate" :
+          "Regenerate" :
           "Generate"
         )) + " Generator";
         event.getPresentation().setText(text);
