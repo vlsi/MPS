@@ -10655,7 +10655,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1235660080063">
     <property name="package" value="Menu.EditorPopup.Actions" />
-    <property name="name" value="GenerateCodeAction" />
+    <property name="name" value="GenerateCode" />
     <property name="caption" value="Generate..." />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1235660080064">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235660080065">
