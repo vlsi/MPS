@@ -5,23 +5,24 @@
     <actions>
 
         <group id="RunMenu" popup="true">
-          <group id="RunnerActions"/>
-          <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
-          <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="/actions/suspend.png"/>
+            <group id="RunnerActions"/>
+            <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
+            <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="/actions/suspend.png"/>
 
-          <add-to-group group-id="MainMenu" anchor="after" relative-to-action="RefactoringMenu"/>
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="RefactoringMenu"/>
         </group>
 
         <group id="RunContextGroup" popup="false">
-          <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
+            <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
         </group>
-        
+
 
         <group id="ToolbarRunGroup">
-          <separator/>
+            <separator/>
             <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationAction"/>
+            <reference ref="RunnerActions"/>
 
-          <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
+            <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
         </group>
 
         <!--add "select in" action to all the editors-->
