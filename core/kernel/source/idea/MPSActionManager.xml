@@ -12,6 +12,11 @@
           <add-to-group group-id="MainMenu" anchor="after" relative-to-action="RefactoringMenu"/>
         </group>
 
+        <group id="RunContextGroup" popup="false">
+          <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
+        </group>
+        
+
         <group id="ToolbarRunGroup">
           <separator/>
             <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationAction"/>
