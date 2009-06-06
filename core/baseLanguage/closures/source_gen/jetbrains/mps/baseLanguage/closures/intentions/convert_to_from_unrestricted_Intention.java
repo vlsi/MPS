@@ -34,10 +34,10 @@ public class convert_to_from_unrestricted_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     String type = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ?
-      "unrestricted" :
-      "restricted"
+      "Unrestricted" :
+      "Restricted"
     );
-    return "Convert to " + type + " closure literal";
+    return "Convert to " + type + " Closure Literal";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

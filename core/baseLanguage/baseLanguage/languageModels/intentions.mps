@@ -6744,7 +6744,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221573839235">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221573840705">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221573840706">
-            <property name="value" value="Convert To Variable Declaration" />
+            <property name="value" value="Convert to Variable Declaration" />
           </node>
         </node>
       </node>
@@ -6926,7 +6926,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224168785805">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224168829449">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224168829450">
-            <property name="value" value="Add Field For Unused Parameter" />
+            <property name="value" value="Add Field for Unused Parameter" />
           </node>
         </node>
       </node>
@@ -7493,7 +7493,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230290102488">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230290153750">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230290153751">
-            <property name="value" value="Specify the class" />
+            <property name="value" value="Specify Class" />
           </node>
         </node>
       </node>
@@ -7678,7 +7678,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236007216020">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236007279737">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236007279738">
-            <property name="value" value="Add main method" />
+            <property name="value" value="Add Main Method" />
           </node>
         </node>
       </node>
@@ -7724,7 +7724,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236187435381">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236187505489">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236187505490">
-            <property name="value" value="Make method abstract" />
+            <property name="value" value="Make Method Abstract" />
           </node>
         </node>
       </node>
@@ -7958,10 +7958,10 @@
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240248378710">
-              <property name="value" value="Make method final" />
+              <property name="value" value="Make Method Final" />
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240248382430">
-              <property name="value" value="Make method not final" />
+              <property name="value" value="Make Method Not Final" />
             </node>
           </node>
         </node>
@@ -7998,7 +7998,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240251621723">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240251626667">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240251628121">
-              <property name="value" value="Make field not volatile" />
+              <property name="value" value="Make Field Not Volatile" />
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240251622421">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1240251621724" />
@@ -8007,7 +8007,7 @@
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240251641033">
-              <property name="value" value="Make field volatile" />
+              <property name="value" value="Make Field Volatile" />
             </node>
           </node>
         </node>

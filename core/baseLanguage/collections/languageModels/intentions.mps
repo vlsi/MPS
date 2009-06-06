@@ -603,7 +603,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237739140551">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237739212441">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237739212442">
-            <property name="value" value="Add init values" />
+            <property name="value" value="Add Init Values" />
           </node>
         </node>
       </node>
@@ -662,7 +662,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237739246403">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237739303436">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237739303437">
-            <property name="value" value="Specify sequence to copy from" />
+            <property name="value" value="Specify Sequence to Copy From" />
           </node>
         </node>
       </node>

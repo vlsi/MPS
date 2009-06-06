@@ -252,7 +252,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225963656883">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225963656884">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225963656885">
-            <property name="value" value="Add Editor Annotation." />
+            <property name="value" value="Add Editor Annotation" />
           </node>
         </node>
       </node>
@@ -552,7 +552,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230224371550">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230224704769">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230224704770">
-            <property name="value" value="Add mock annotation" />
+            <property name="value" value="Add Mock Annotation" />
           </node>
         </node>
       </node>

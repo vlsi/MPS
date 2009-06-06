@@ -46,16 +46,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195222030697">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195222104374">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195222105782">
-            <property name="value" value="Convert to typeof" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1195222030698">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195222030699">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195222122159">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195222141120">
-            <property name="value" value="true" />
+            <property name="value" value="Convert to 'typeof'" />
           </node>
         </node>
       </node>

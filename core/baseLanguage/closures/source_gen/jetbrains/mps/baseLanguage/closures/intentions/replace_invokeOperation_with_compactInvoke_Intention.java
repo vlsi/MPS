@@ -30,7 +30,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace with compact invoke expression";
+    return "Replace with Compact Invoke Expression";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

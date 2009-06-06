@@ -52,7 +52,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1228398444442">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228398558440">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228398560514">
-            <property name="value" value="Create new buildlanguage project" />
+            <property name="value" value="Create New BuildLanguage Project" />
           </node>
         </node>
       </node>
@@ -318,7 +318,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228400795053">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1228400808307">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1228400797131">
-              <property name="value" value="Create new target in project " />
+              <property name="value" value="Create New Target in Project " />
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228400818137">
               <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1228400817077" />

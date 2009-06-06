@@ -1190,7 +1190,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212104471754">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212104471755">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212104471756">
-            <property name="value" value="remove obsolete 'link' link" />
+            <property name="value" value="Remove Obsolete 'link' Link" />
           </node>
         </node>
       </node>

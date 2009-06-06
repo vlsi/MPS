@@ -146,10 +146,10 @@
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2799938697970315278">
-              <property name="value" value="Make not rootable" />
+              <property name="value" value="Make Not Rootable" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2799938697970315279">
-              <property name="value" value="Make rootable" />
+              <property name="value" value="Make Rootable" />
             </node>
           </node>
         </node>

@@ -47,7 +47,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2230548360390192820">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2230548360390198539">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2230548360390198540">
-            <property name="value" value="Convert to unitTest case" />
+            <property name="value" value="Convert to UnitTest Case" />
           </node>
         </node>
       </node>

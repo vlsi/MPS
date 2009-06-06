@@ -40,29 +40,29 @@
     <link role="forConcept" targetNodeId="1.1237305115734" resolveInfo="AbstractAppendPart" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1236698667105">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236698667106">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1236698696783">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236698696785">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236698750273">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236698750838">
-                <property name="value" value="Append with indent" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217259708145042641">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217259708145042643">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1217259708145042674">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217259708145042646">
+                <property name="value" value="Append " />
               </node>
-            </node>
-          </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1236698735659">
-            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236698735660">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236698755073">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1236698756122">
-                  <property name="value" value="Appent without indent" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1217259708145042677">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217259708145042678">
+                  <property name="value" value="without" />
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217259708145042679">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1217259708145042680" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1217259708145042681">
+                    <link role="baseMethodDeclaration" targetNodeId="2v.1237466287046" resolveInfo="withIndent" />
+                  </node>
+                </node>
+                <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217259708145042682">
+                  <property name="value" value="with" />
                 </node>
               </node>
             </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237475952294">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237475952295">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1237475952296" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1237475952297">
-                <link role="baseMethodDeclaration" targetNodeId="2v.1237466287046" resolveInfo="withIndent" />
-              </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217259708145042652">
+              <property name="value" value=" Indent" />
             </node>
           </node>
         </node>
@@ -176,10 +176,10 @@
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237984215702">
-              <property name="value" value="Remove separator" />
+              <property name="value" value="Remove Separator" />
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237984223094">
-              <property name="value" value="Add separator" />
+              <property name="value" value="Add Separator" />
             </node>
           </node>
         </node>

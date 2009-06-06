@@ -526,7 +526,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203704393459">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203705008814">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203705008815">
-            <property name="value" value="Replace concept= with Concept List" />
+            <property name="value" value="Replace 'concept=' with Concept List" />
           </node>
         </node>
       </node>
@@ -621,7 +621,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205354609724">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205354609725">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205354609726">
-            <property name="value" value="Replace with nlist &lt; &gt;" />
+            <property name="value" value="Replace with 'nlist &lt; &gt;'" />
           </node>
         </node>
       </node>

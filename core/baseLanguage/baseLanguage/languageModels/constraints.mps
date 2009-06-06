@@ -57,7 +57,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212611479485">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212611479486">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212611479487">
-            <property name="value" value="remove unused assignment" />
+            <property name="value" value="Remove Unused Assignment" />
           </node>
         </node>
       </node>

@@ -160,7 +160,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4234084459084260641">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4234084459084260656">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4234084459084260657">
-            <property name="value" value="Replace deprecated construct" />
+            <property name="value" value="Replace Deprecated Construct" />
           </node>
         </node>
       </node>
@@ -402,7 +402,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="791534949580478522">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="791534949580478525">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="791534949580478526">
-            <property name="value" value="Remove the obsolete children" />
+            <property name="value" value="Remove Obsolete Children" />
           </node>
         </node>
       </node>
@@ -509,7 +509,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="791534949580478630">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="791534949580478633">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="791534949580478634">
-            <property name="value" value="Remove the obsolete children" />
+            <property name="value" value="Remove Obsolete Children" />
           </node>
         </node>
       </node>

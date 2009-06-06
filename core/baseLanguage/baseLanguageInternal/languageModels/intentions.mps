@@ -38,7 +38,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229871155085">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229871173583">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229871173584">
-            <property name="value" value="Add type parameters" />
+            <property name="value" value="Add Type Parameters" />
           </node>
         </node>
       </node>

@@ -30,7 +30,7 @@ public class add_throws_to_FunctionType_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add throws clause";
+    return "Add Throws Clause";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

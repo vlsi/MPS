@@ -43,7 +43,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229717881951">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229717905641">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229717905642">
-            <property name="value" value="Add throws clause" />
+            <property name="value" value="Add Throws Clause" />
           </node>
         </node>
       </node>
@@ -88,7 +88,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229783473292">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229783493612">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229783493613">
-            <property name="value" value="Convert to unrestricted function type" />
+            <property name="value" value="Convert to Unrestricted Function Type" />
           </node>
         </node>
       </node>
@@ -247,7 +247,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229783748459">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229783777136">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1229783777137">
-            <property name="value" value="Convert to restricted function type" />
+            <property name="value" value="Convert to Restricted Function Type" />
           </node>
         </node>
       </node>
@@ -419,10 +419,10 @@
                 </node>
               </node>
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230480612491">
-                <property name="value" value="unrestricted" />
+                <property name="value" value="Unrestricted" />
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230480612492">
-                <property name="value" value="restricted" />
+                <property name="value" value="Restricted" />
               </node>
             </node>
           </node>
@@ -437,7 +437,7 @@
                 <link role="variableDeclaration" targetNodeId="1230480612483" resolveInfo="type" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230480629634">
-                <property name="value" value=" closure literal" />
+                <property name="value" value=" Closure Literal" />
               </node>
             </node>
           </node>
@@ -628,7 +628,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235748072135">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235748097307">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235748097308">
-            <property name="value" value="Replace with compact invoke expression" />
+            <property name="value" value="Replace with Compact Invoke Expression" />
           </node>
         </node>
       </node>

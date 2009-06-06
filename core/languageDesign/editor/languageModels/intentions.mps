@@ -1514,7 +1514,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235489867938">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235489910446">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235489910447">
-            <property name="value" value="Replace concept property by transactional property." />
+            <property name="value" value="Replace Concept Property by Transactional Property" />
           </node>
         </node>
       </node>
@@ -1725,7 +1725,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235490923123">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235490962260">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235490962261">
-            <property name="value" value="Replace transactional property by concept property." />
+            <property name="value" value="Replace Transactional Property by Concept Property" />
           </node>
         </node>
       </node>
@@ -3341,7 +3341,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239368960875">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239369042712">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239369042713">
-            <property name="value" value="Make default editor" />
+            <property name="value" value="Make Default Editor" />
           </node>
         </node>
       </node>
@@ -4150,7 +4150,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239735706421">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239735906186">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239735906187">
-            <property name="value" value="Add extends clause" />
+            <property name="value" value="Add Extends Clause" />
           </node>
         </node>
       </node>

@@ -32,7 +32,7 @@ public class convert_to_unrestricted_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to unrestricted function type";
+    return "Convert to Unrestricted Function Type";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
