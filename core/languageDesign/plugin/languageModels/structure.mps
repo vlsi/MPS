@@ -2771,6 +2771,13 @@
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="DisposeConsoleBlock" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223925732">
+      <property name="value" value="dispose" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223987518">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="678887849223527750">
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
