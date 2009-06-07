@@ -711,5 +711,28 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="678887849223527751">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <link role="concept" targetNodeId="7.678887849223527750" resolveInfo="ExecuteSpecificStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="678887849223527752">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="678887849223527753">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="678887849223536786">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="678887849223536797">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="678887849223536800" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223536788">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="678887849223536787" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="678887849223536792">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="678887849223536793">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="678887849223536796">
+                    <link role="conceptDeclaration" targetNodeId="7.678887849223472884" resolveInfo="ExecuteConfigBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

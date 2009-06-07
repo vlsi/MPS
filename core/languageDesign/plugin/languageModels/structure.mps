@@ -421,6 +421,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -2589,6 +2590,169 @@
       <property name="value" value="parameterized (not implemented)" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562850663">
+    <property name="name" value="ConfigurationTypeDeclaration" />
+    <property name="package" value="RunConfigs" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7035278950562850664">
+      <property name="name" value="iconPath" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7035278950562851063">
+      <property name="name" value="caption" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7035278950562850666">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7035278950562850753">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562851062">
+    <property name="package" value="RunConfigs" />
+    <property name="name" value="ConfigurationDeclaration" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223536804">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="configType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7035278950562850663" resolveInfo="ConfigurationTypeDeclaration" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="678887849223472622">
+      <property name="name" value="iconPath" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="678887849223472623">
+      <property name="name" value="caption" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472878">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="iconBlock" />
+      <link role="target" targetNodeId="678887849223472871" resolveInfo="GetConfigurationIconBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472883">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="checkBlock" />
+      <link role="target" targetNodeId="678887849223472879" resolveInfo="CheckBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472885">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="executeBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="678887849223472884" resolveInfo="ExecuteConfigBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223564240">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472871">
+    <property name="package" value="RunConfigs.Configuration" />
+    <property name="name" value="GetConfigurationIconBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472872">
+      <property name="value" value="getIcon" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472874">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="678887849223472875">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223472877">
+        <link role="classifier" targetNodeId="24.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472879">
+    <property name="package" value="RunConfigs.Configuration" />
+    <property name="name" value="IsCorrectBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="678887849223472880">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="678887849223472882" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472886">
+      <property name="value" value="check" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472888">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472884">
+    <property name="package" value="RunConfigs.Configuration" />
+    <property name="name" value="ExecuteConfigBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472891">
+      <property name="value" value="execute" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472889">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472892">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="name" value="ActionsStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536801">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecificStatement" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223564613">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="action" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="1203088046679" resolveInfo="ActionInstance" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472893">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="name" value="ProcessHandlerStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536803">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223564268">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="processHandler" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472894">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="name" value="ExecutionConsoleStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223524739">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="consoleComponent" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223527748">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="disposeBlock" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="678887849223472895" resolveInfo="DisposeConsoleBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536802">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472895">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="name" value="DisposeConsoleBlock" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="678887849223527750">
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="name" value="ExecuteSpecific" />
   </node>
 </model>
 

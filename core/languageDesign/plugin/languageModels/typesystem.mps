@@ -6,6 +6,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -31,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="31" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -42,6 +43,7 @@
   <import index="27" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.custom(jetbrains.mps.plugins.pluginparts.custom@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="30" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
+  <import index="31" modelUID="f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1204039255253">
     <property name="name" value="typeof_ConceptFunctionParameter_node" />
     <property name="package" value="Shared" />
@@ -899,6 +901,86 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227032301553">
       <property name="name" value="instance" />
       <link role="concept" targetNodeId="4.1203088046679" resolveInfo="ActionInstance" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="678887849223564269">
+    <property name="name" value="typeof_ProcessHandlerStatement" />
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="678887849223564270">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="678887849223564330">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="678887849223564334">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="678887849223564335">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223564603">
+              <link role="classifier" targetNodeId="31.~ProcessHandler" resolveInfo="ProcessHandler" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="678887849223564333">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="678887849223564322">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223564325">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="678887849223564324">
+                <link role="applicableNode" targetNodeId="678887849223564271" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="678887849223564329">
+                <link role="link" targetNodeId="4.678887849223564268" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223564605">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="678887849223564604">
+            <link role="applicableNode" targetNodeId="678887849223564271" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="678887849223564609">
+            <link role="link" targetNodeId="4.678887849223564268" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="678887849223564271">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.678887849223472893" resolveInfo="ProcessHandlerStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="678887849223567597">
+    <property name="name" value="typeof_ExecutionConsoleStatement" />
+    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="678887849223567598">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="678887849223567609">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="678887849223567613">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="678887849223567614">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223567617">
+              <link role="classifier" targetNodeId="18.~JComponent" resolveInfo="JComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="678887849223567612">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="678887849223567601">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223567604">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="678887849223567603">
+                <link role="applicableNode" targetNodeId="678887849223567599" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="678887849223567608">
+                <link role="link" targetNodeId="4.678887849223524739" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223567619">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="678887849223567618">
+            <link role="applicableNode" targetNodeId="678887849223567599" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="678887849223567623">
+            <link role="link" targetNodeId="4.678887849223524739" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="678887849223567599">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.678887849223472894" resolveInfo="ExecutionConsoleStatement" />
     </node>
   </node>
 </model>
