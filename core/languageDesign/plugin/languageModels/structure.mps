@@ -443,7 +443,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="31" />
+  <maxImportIndex value="33" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -458,6 +458,8 @@
   <import index="24" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
+  <import index="32" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#com.intellij.execution.runners(com.intellij.execution.runners@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -2678,7 +2680,7 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="678887849223472882" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472886">
-      <property name="value" value="check" />
+      <property name="value" value="isCorrect" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472888">
@@ -2696,11 +2698,23 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472889">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="678887849223882677">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="678887849223882678" resolveInfo="Executor_FunctionParameter" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="678887849223883841">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="678887849223882679" resolveInfo="Environment_FunctionParameter" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472892">
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="ActionsStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882661">
+      <property name="value" value="actions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536801">
       <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecificStatement" />
     </node>
@@ -2715,6 +2729,10 @@
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="ProcessHandlerStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882657">
+      <property name="value" value="process handler" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536803">
       <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
     </node>
@@ -2729,6 +2747,10 @@
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="ExecutionConsoleStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882659">
+      <property name="value" value="console" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223524739">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="consoleComponent" />
@@ -2748,11 +2770,41 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472895">
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="DisposeConsoleBlock" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="678887849223527750">
     <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
     <property name="name" value="ExecuteSpecific" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223882678">
+    <property name="package" value="RunConfigs.Configuration" />
+    <property name="name" value="Executor_FunctionParameter" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882682">
+      <property name="value" value="executor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="678887849223882684">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223883472">
+        <link role="classifier" targetNodeId="32.~Executor" resolveInfo="Executor" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223882679">
+    <property name="package" value="RunConfigs.Configuration" />
+    <property name="name" value="Environment_FunctionParameter" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223883473">
+      <property name="value" value="environment" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="678887849223883474">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223883839">
+        <link role="classifier" targetNodeId="33.~ExecutionEnvironment" resolveInfo="ExecutionEnvironment" />
+      </node>
+    </node>
   </node>
 </model>
 

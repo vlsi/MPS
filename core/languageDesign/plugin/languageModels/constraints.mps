@@ -722,6 +722,7 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="678887849223536788">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="678887849223536787" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="678887849223536792">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="678887849223773476" />
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="678887849223536793">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="678887849223536796">
                     <link role="conceptDeclaration" targetNodeId="7.678887849223472884" resolveInfo="ExecuteConfigBlock" />
