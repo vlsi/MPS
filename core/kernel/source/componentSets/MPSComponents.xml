@@ -457,6 +457,14 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.runconfigs.RunConfigInitializer</implementation-class>
+        </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.runconfigs.RunConfigManager</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
         </component>
 
