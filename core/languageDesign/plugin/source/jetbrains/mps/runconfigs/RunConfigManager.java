@@ -134,7 +134,8 @@ public class RunConfigManager implements ProjectComponent {
         SModel model = language.getPluginModelDescriptor().getSModel();
         List<ConfigurationTypeDeclaration> configTypeAdapters = model.getRootsAdapters(ConfigurationTypeDeclaration.class);
         if (configTypeAdapters.isEmpty()) continue;
-        String configName = configTypeAdapters.get(0).getName();
+        //todo
+        String configName = configTypeAdapters.get(0).getName()+"_ConfigurationType";
         String confName=language.getPluginModelDescriptor().getLongName()+"."+ configName;
         ConfigurationType configurationType = createConfig(language, confName);
         if (configurationType == null) continue;
