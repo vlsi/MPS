@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
-public class ProgramRunner extends DefaultProgramRunner{
+public class MPSProgramRunner extends DefaultProgramRunner{
   @NotNull
   public String getRunnerId() {
     return "Default Runner";

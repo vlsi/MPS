@@ -26,10 +26,7 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.impl.ExecutionManagerImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.conf.exec.MyExecutorRun;
-import jetbrains.mps.baseLanguage.conf.exec.MyExecutorDebug;
-import jetbrains.mps.baseLanguage.conf.run.MyProgramRunner;
-import jetbrains.mps.baseLanguage.conf.run.MyProgramRunner2;
+import jetbrains.mps.runconfigs.runner.MPSProgramRunner;
 
 public class RunConfigInitializer implements ProjectComponent {
   private Project myProject;
@@ -52,8 +49,7 @@ public class RunConfigInitializer implements ProjectComponent {
     er.initComponent();
 
     ExtensionPoint<ProgramRunner> epRunner = Extensions.getArea(null).getExtensionPoint(ProgramRunner.PROGRAM_RUNNER_EP);
-    epRunner.registerExtension(new MyProgramRunner());
-    epRunner.registerExtension(new MyProgramRunner2());
+    epRunner.registerExtension(new MPSProgramRunner());
     RunnerRegistry.getInstance().initComponent();
   }
 
