@@ -137,6 +137,7 @@ public class Resolver {
           return node.isInstanceOfConcept(referentConcept);
         }
       });
+
       Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
         public boolean met(SNode object) {
           String resolveInfo = reference.getResolveInfo();
@@ -151,44 +152,6 @@ public class Resolver {
           resolveResult.setTarget();
         }
         return true;
-      }
-
-      //smart refs:
-      if (referenceNode.getParent() == null) {
-        return false;
-      }
-      if (referenceNode.getReferences().size() > 1) {
-        return false;
-      }
-      SNode parent = referenceNode.getParent();
-      LinkDeclaration parentLinkDeclaration = SModelSearchUtil.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
-        referenceNode.getRole_());
-      if (parentLinkDeclaration == null) {
-        return false;
-      }
-      final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
-
-      ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
-      List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
-        public boolean met(SNode object) {
-          return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
-        }
-      });
-      for (SNode node : applicableConcepts) {
-        ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-        LinkDeclaration smartReference = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
-        if (smartReference == null) continue;
-        List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext);
-        List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
-        if (!filteredRefTargets.isEmpty()) {
-          SNode target = filteredRefTargets.get(0);
-          ResolveResult resolveResult = new ResolveResult(referenceNode, target, SModelUtil_new.getGenuineLinkRole(smartReference), applicableConcept);
-          results.add(resolveResult);
-          if (forceResolve) {
-            resolveResult.setTarget();
-          }
-          return true;
-        }
       }
 
       return false;
