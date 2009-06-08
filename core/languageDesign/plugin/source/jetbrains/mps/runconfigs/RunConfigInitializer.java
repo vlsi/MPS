@@ -42,6 +42,7 @@ public class RunConfigInitializer implements ProjectComponent {
   }
 
   public void initComponent() {
+/*
     ExtensionPoint<Executor> epExecutor = Extensions.getArea(null).getExtensionPoint(Executor.EXECUTOR_EXTENSION_NAME);
     epExecutor.registerExtension(new DefaultRunExecutor());
     epExecutor.registerExtension(new DefaultDebugExecutor());
@@ -51,6 +52,7 @@ public class RunConfigInitializer implements ProjectComponent {
     ExtensionPoint<ProgramRunner> epRunner = Extensions.getArea(null).getExtensionPoint(ProgramRunner.PROGRAM_RUNNER_EP);
     epRunner.registerExtension(new MPSProgramRunner());
     RunnerRegistry.getInstance().initComponent();
+*/
   }
 
   public void disposeComponent() {
@@ -58,7 +60,9 @@ public class RunConfigInitializer implements ProjectComponent {
   }
 
   public void projectOpened() {
+/*
     ((ExecutionManagerImpl) myProject.getComponent(ExecutionManager.class)).projectOpened();
+*/
   }
 
   public void projectClosed() {
