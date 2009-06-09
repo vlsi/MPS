@@ -180,10 +180,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215607151414" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608521838">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215608402260">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215608404747">
-            <link role="baseMethodDeclaration" targetNodeId="8.~SubtreeChecker.checkNodeForErrors(jetbrains.mps.smodel.SNode):void" resolveInfo="checkNodeForErrors" />
-            <link role="classConcept" targetNodeId="8.~SubtreeChecker" resolveInfo="SubtreeChecker" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215608407591">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="95706764259112901">
+            <link role="baseMethodDeclaration" targetNodeId="9.1215078294635" resolveInfo="checkNodeForErrors" />
+            <link role="classConcept" targetNodeId="9.1215078243118" resolveInfo="SubtreeChecker" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="95706764259112902">
               <link role="variableDeclaration" targetNodeId="1215607151412" resolveInfo="node" />
             </node>
           </node>

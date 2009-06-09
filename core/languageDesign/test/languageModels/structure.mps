@@ -595,5 +595,20 @@
     <link role="source" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="1230224281548" resolveInfo="MockAnnotation" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="95706764259116183">
+    <property name="package" value="nodeProperties" />
+    <property name="name" value="NodeTypeSetProperty" />
+    <link role="extends" targetNodeId="1215507599032" resolveInfo="NodeProperty" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="95706764259116184">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="7.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="95706764259116185">
+      <property name="value" value="type in" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

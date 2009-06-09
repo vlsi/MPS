@@ -974,5 +974,22 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880411993" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="95706764259118090">
+    <property name="package" value="nodeProperties" />
+    <link role="conceptDeclaration" targetNodeId="1.95706764259116183" resolveInfo="NodeTypeSetProperty" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="95706764259118092">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="95706764259118096">
+        <link role="relationDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="95706764259118097">
+        <property name="separatorText" value="|" />
+        <link role="relationDeclaration" targetNodeId="1.95706764259116184" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="95706764259118098" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="95706764259118095" />
+    </node>
+  </node>
 </model>
 

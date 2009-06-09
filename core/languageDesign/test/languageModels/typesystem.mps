@@ -211,37 +211,6 @@
       <link role="concept" targetNodeId="1.1211979288880" resolveInfo="AssertMatch" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215526777577">
-    <property name="name" value="typeof_NodeTypeProperty" />
-    <property name="package" value="nodeProperties" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215526777578">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1215526788736">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215526788737">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1215526788738">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215526788739">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1215526788740">
-                <link role="applicableNode" targetNodeId="1215526777579" resolveInfo="nodeToCheck" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215526796854">
-                <link role="link" targetNodeId="1.1215526393912" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215526788742">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215526788743">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215526788744">
-              <link role="concept" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1215526777579">
-      <property name="name" value="nodeToCheck" />
-      <link role="concept" targetNodeId="1.1215526290564" resolveInfo="NodeTypeProperty" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1217855694003">
     <property name="name" value="CheckTestMethodDataflow" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217855694004">
