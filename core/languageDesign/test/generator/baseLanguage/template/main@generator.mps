@@ -93,6 +93,12 @@
       <link role="applicableConcept" targetNodeId="1.1229187653856" resolveInfo="EditorTestCase" />
       <link role="template" targetNodeId="1229198536781" resolveInfo="EditorTestCaseName" />
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="2685915532175065954">
+      <link role="applicableConcept" targetNodeId="1.2685915532175039858" resolveInfo="ExpressionContainer" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="2685915532175065956">
+        <link role="template" targetNodeId="2685915532175064259" resolveInfo="reduce_ExpressionContainer" />
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1210689312859">
       <link role="applicableConcept" targetNodeId="1.1210674524691" resolveInfo="TestNodeReference" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1210689616523">
@@ -1928,6 +1934,13 @@
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230133994058">
         <link role="classifier" targetNodeId="26.1225981767950" resolveInfo="BaseEditorTestBody" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="2685915532175064259">
+    <property name="name" value="reduce_ExpressionContainer" />
+    <link role="applicableConcept" targetNodeId="1.2685915532175039858" resolveInfo="ExpressionContainer" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2685915532175065953">
+      <property name="value" value="an expression container was here" />
     </node>
   </node>
 </model>

@@ -262,7 +262,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="7.1068431790189" resolveInfo="Type" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215526324566">
       <property name="value" value="has type" />
@@ -603,11 +603,29 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
       <property name="sourceCardinality" value="1..n" />
-      <link role="target" targetNodeId="7.1068431790189" resolveInfo="Type" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="95706764259116185">
       <property name="value" value="type in" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2685915532175039858">
+    <property name="name" value="ExpressionContainer" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2685915532175039859">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2685915532175039860">
+      <property name="value" value="{ expr }" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2685915532175065958">
+      <property name="value" value="expression container (used inside test nodes)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>

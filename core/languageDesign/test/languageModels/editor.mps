@@ -991,5 +991,20 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="95706764259118095" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2685915532175039861">
+    <link role="conceptDeclaration" targetNodeId="1.2685915532175039858" resolveInfo="ExpressionContainer" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2685915532175039864">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2685915532175039865">
+        <property name="text" value="{" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2685915532175039868">
+        <link role="relationDeclaration" targetNodeId="1.2685915532175039859" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2685915532175039870">
+        <property name="text" value="}" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2685915532175039866" />
+    </node>
+  </node>
 </model>
 

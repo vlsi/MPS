@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.structure;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,19 +22,19 @@ public class NodeTypeSetProperty extends NodeProperty {
     return this.getChildCount(NodeTypeSetProperty.TYPE);
   }
 
-  public Iterator<Type> types() {
-    return this.children(Type.class, NodeTypeSetProperty.TYPE);
+  public Iterator<BaseConcept> types() {
+    return this.children(BaseConcept.class, NodeTypeSetProperty.TYPE);
   }
 
-  public List<Type> getTypes() {
-    return this.getChildren(Type.class, NodeTypeSetProperty.TYPE);
+  public List<BaseConcept> getTypes() {
+    return this.getChildren(BaseConcept.class, NodeTypeSetProperty.TYPE);
   }
 
-  public void addType(Type node) {
+  public void addType(BaseConcept node) {
     this.addChild(NodeTypeSetProperty.TYPE, node);
   }
 
-  public void insertType(Type prev, Type node) {
+  public void insertType(BaseConcept prev, BaseConcept node) {
     this.insertChild(prev, NodeTypeSetProperty.TYPE, node);
   }
 

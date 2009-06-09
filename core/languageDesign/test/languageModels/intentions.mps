@@ -110,13 +110,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1215508253864">
-    <property name="name" value="AddProperiesMark" />
+    <property name="name" value="AddPropertiesMark" />
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1215508253865">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215508253866">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215508395400">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215508395401">
-            <property name="value" value="Add Node Propeties Annotation" />
+            <property name="value" value="Add Node Properties Annotation" />
           </node>
         </node>
       </node>

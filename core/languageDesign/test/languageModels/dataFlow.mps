@@ -81,5 +81,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230135277007" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="5374109160289271585">
+    <link role="conceptDeclaration" targetNodeId="1.2685915532175039858" resolveInfo="ExpressionContainer" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="5374109160289271586">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5374109160289271587">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="5374109160289271590">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5374109160289271593">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="5374109160289271592" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5374109160289271597">
+              <link role="link" targetNodeId="1.2685915532175039859" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
