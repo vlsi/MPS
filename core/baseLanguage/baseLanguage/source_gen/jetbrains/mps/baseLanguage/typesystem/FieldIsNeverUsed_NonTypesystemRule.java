@@ -23,17 +23,35 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false);
-      if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter <SNode>() {
+      if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
+        final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
+        List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false);
+        if (ListSequence.fromList(memberOperations).where(new IWhereFilter <SNode>() {
 
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, "fieldDeclaration", false) == fieldDeclaration;
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "member", false) == member;
+          }
+        }).isEmpty()) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8706754199947716227", intentionProvider, errorTarget);
+          }
         }
-      }).isEmpty()) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239632386980", intentionProvider, errorTarget);
+      } else
+      {
+        List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false);
+        if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter <SNode>() {
+
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "fieldDeclaration", false) == fieldDeclaration;
+          }
+        }).isEmpty()) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8706754199947716162", intentionProvider, errorTarget);
+          }
         }
       }
     }
