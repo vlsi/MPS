@@ -32,25 +32,23 @@ public class GenerateTaskTest extends BuildFileTest {
   }
 
   public void testFailOnGeneration() {
-    String targetName = "testFailOnGenerationError";
+    runTestForBuildExceptionOnTarget("testFailOnGenerationError");
+  }
+
+  public void testBuildException() {
+    runTestForBuildExceptionOnTarget("testBuildException");
+  }
+
+  public void testBuildExceptionInModelsDir() {
+    expectBuildException("testModelsWithBuildException", Models.getRequiredAttributeMessage("srcdir"));
+  }
+
+  private void runTestForBuildExceptionOnTarget(String targetName) {
     try {
       executeTarget(targetName);
     } catch (BuildException e) {
       return;
     }
     fail("BuildException in target " + targetName + " expected.");
-  }
-
-  public void testBuildException() {
-    try {
-      executeTarget("testBuildException");
-    } catch (BuildException e) {
-      return;
-    }
-    fail("BuildException expected.");
-  }
-
-  public void testBuildExceptionInModelsDir() {
-    expectBuildException("testModelsWithBuildException", Models.getRequiredAttributeMessage("srcdir"));
   }
 }
