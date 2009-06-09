@@ -83,9 +83,9 @@ public class DevKit extends AbstractModule {
   }
 
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     if (moduleDescriptor instanceof DevkitDescriptor) {
-      setDevKitDescriptor((DevkitDescriptor) moduleDescriptor);
+      setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
     } else {
       LOG.error("not a devkit descriptor", new Throwable());
     }

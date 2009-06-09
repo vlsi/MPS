@@ -86,6 +86,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
+
   String getGeneratorOutputPath();
 
   IFile getClassesGen();
@@ -125,7 +127,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<String> validate();
 
-  void reloadFromDisk();
+  void reloadFromDisk(boolean reloadClasses);
 
   boolean needReloading();
 

@@ -770,11 +770,14 @@ public abstract class AbstractModule implements IModule {
     return timestamp != myDescriptorFile.lastModified();
   }
 
-  public final void reloadFromDisk() {
-    // TODO listeners?
+  public void setModuleDescriptor(ModuleDescriptor descriptor) {
+    setModuleDescriptor(descriptor, true);
+  }
+
+  public final void reloadFromDisk(boolean reloadClasses) {
     try {
       ModuleDescriptor descriptor = loadDescriptor();
-      setModuleDescriptor(descriptor);
+      setModuleDescriptor(descriptor, reloadClasses);
     } catch (ModuleReadException e) {
       handleReadProblem(e, false);
     }

@@ -237,7 +237,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     public void reloadFromDisk() {
-      myModule.reloadFromDisk();
+      myModule.reloadFromDisk(true);
     }
 
     public boolean needReloading() {

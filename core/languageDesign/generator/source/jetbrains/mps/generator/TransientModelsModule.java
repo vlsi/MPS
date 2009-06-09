@@ -95,7 +95,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return null;
   }
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     throw new UnsupportedOperationException();
   }
 

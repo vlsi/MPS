@@ -419,9 +419,9 @@ public class Language extends AbstractModule {
   }
 
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     if (moduleDescriptor instanceof LanguageDescriptor) {
-      setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
+      setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
     } else {
       LOG.error("not a language descriptor", new Throwable());
     }

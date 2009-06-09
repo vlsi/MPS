@@ -176,14 +176,14 @@ public class Generator extends AbstractModule {
   }
 
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
     LanguageDescriptor languageDescriptor = getSourceLanguage().getLanguageDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(this.getGeneratorDescriptor());
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
-    getSourceLanguage().setLanguageDescriptor(languageDescriptor);
+    getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
   }
 
   public String getName() {

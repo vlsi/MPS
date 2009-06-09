@@ -106,7 +106,7 @@ class ReloadSession {
           String text = "Reloading " + module.getModuleFqName();
           LOG.info(text);
           progressIndicator.setText2(text);
-          module.reloadFromDisk();
+          module.reloadFromDisk(false);
         }
       });
       isUpdated = true;
