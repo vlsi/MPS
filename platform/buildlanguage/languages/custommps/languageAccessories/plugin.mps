@@ -854,6 +854,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241450126383">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1241450214700">
           <link role="constructorDeclaration" targetNodeId="3v.1223050119438" resolveInfo="GenerateBuildWizard" />
+          <link role="baseMethodDeclaration" targetNodeId="3v.1223050119438" resolveInfo="GenerateBuildWizard" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241450215985">
             <link role="variableDeclaration" targetNodeId="1241450198075" resolveInfo="title" />
           </node>
