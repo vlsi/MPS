@@ -780,6 +780,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myLeft.setForeground(list.getForeground());
         myRight.setForeground(list.getForeground());
       }
+
+      //todo hack
+      myLeft.setPreferredSize(null);
+      Dimension oldPreferredSize = myLeft.getPreferredSize();
+      myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
     }
   }
 }
