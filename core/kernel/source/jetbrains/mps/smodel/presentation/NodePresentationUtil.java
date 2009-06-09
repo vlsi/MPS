@@ -21,9 +21,13 @@ import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.Icon;
+import java.awt.Font;
 
 public class NodePresentationUtil {
   public static Icon getIcon(SNode node, boolean referent_presentation) {
@@ -35,6 +39,31 @@ public class NodePresentationUtil {
       return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeAdapter));
     }
     return IconManager.getIconFor(nodeAdapter.getNode());
+  }
+
+  public static boolean isLocalTo(SNode referenceNode, SNode referentNode) {
+    IModule referenceModule = toLanguage(referenceNode.getModel().getModelDescriptor().getModule());
+    if (referenceModule instanceof Language) {
+      IModule referentModule = toLanguage(referentNode.getModel().getModelDescriptor().getModule());
+      return referentModule == referenceModule;
+    } else {
+      return referentNode.getModel() == referenceNode.getModel();
+    }
+  }
+
+  public static int getFontStyle(SNode referenceNode, SNode referentNode) {
+    return isLocalTo(referenceNode, referentNode) ? Font.BOLD : Font.PLAIN;
+  }
+
+  public static int getSortPriority(SNode referenceNode, SNode referentNode) {
+    return isLocalTo(referenceNode, referentNode) ? -1 : 0;
+  }
+
+  private static IModule toLanguage(IModule m) {
+    if (m instanceof Generator) {
+      return ((Generator) m).getSourceLanguage();
+    }
+    return m;
   }
 
   public static String matchingText(SNode node) {

@@ -20,8 +20,11 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.nodeEditor.EditorManager;
+
+import java.awt.Font;
 
 /**
  * Igor Alshannikov
@@ -77,6 +80,24 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       return mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
     }
     return null;
+  }
+
+  @Override
+  public int getFontStyleFor(String pattern) {
+    if (getParameterObject() instanceof SNode) {
+      SNode parameterNode = (SNode) getParameterObject();
+      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());      
+    }
+    return Font.PLAIN;
+  }
+
+  @Override
+  public int getSortPriority(String pattern) {
+    if (getParameterObject() instanceof SNode) {
+      SNode parameterNode = (SNode) getParameterObject();
+      return NodePresentationUtil.getSortPriority(parameterNode, getSourceNode());
+    }
+    return 0;
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

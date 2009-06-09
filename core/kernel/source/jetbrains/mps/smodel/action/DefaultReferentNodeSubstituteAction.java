@@ -24,10 +24,12 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
+import java.awt.Font;
 
 /**
  * Igor Alshannikov
@@ -60,6 +62,16 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   public Icon getIconFor(String pattern) {
     return super.getIconFor(pattern, true);
+  }
+
+  @Override
+  public int getFontStyleFor(String pattern) {
+    return NodePresentationUtil.getFontStyle(getSourceNode(), (SNode) getParameterObject());
+  }
+
+  @Override
+  public int getSortPriority(String pattern) {
+    return NodePresentationUtil.getSortPriority(getSourceNode(), (SNode) getParameterObject());
   }
 
   public SNode doSubstitute(String pattern) {

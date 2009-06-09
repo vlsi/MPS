@@ -734,27 +734,36 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     private void setupThis(JList list, Object value, boolean isSelected) {
       INodeSubstituteAction action = (INodeSubstituteAction) value;
-      myLeft.setIcon(action.getIconFor(getPatternEditor().getPattern()));
+      String pattern = getPatternEditor().getPattern();
+
       try {
-        myLeft.setText(action.getVisibleMatchingText(getPatternEditor().getPattern()));
+        myLeft.setIcon(action.getIconFor(pattern));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      try {
+        int style = action.getFontStyleFor(pattern);
+        int oldStyle = myLeft.getFont().getStyle();
+
+        if (oldStyle != style) {
+          myLeft.setFont(myLeft.getFont().deriveFont(style));
+          myRight.setFont(myRight.getFont().deriveFont(style));
+        }
+
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      try {
+        myLeft.setText(action.getVisibleMatchingText(pattern));
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
         LOG.error(t);
       }
 
       try {
-        int newFontStyle = action.getFontStyleFor(getPatternEditor().getPattern());
-        if (newFontStyle != myRight.getFont().getStyle()) {
-          Font newFont = myRight.getFont().deriveFont(newFontStyle);
-          myRight.setFont(newFont);
-          myLeft.setFont(newFont);
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
-      try {
-        myRight.setText(action.getDescriptionText(getPatternEditor().getPattern()));
+        myRight.setText(action.getDescriptionText(pattern));
       } catch (Throwable t) {
         myRight.setText("!Exception was thrown!");
         LOG.error(t);

@@ -485,6 +485,16 @@ public class ChildSubstituteActionsHelper {
       return NodePresentationUtil.getIcon(myReferentNode, true);
     }
 
+    @Override
+    public int getFontStyleFor(String pattern) {
+      return NodePresentationUtil.getFontStyle(myParentNode, myReferentNode);
+    }
+
+    @Override
+    public int getSortPriority(String pattern) {
+      return NodePresentationUtil.getSortPriority(myParentNode, myReferentNode);
+    }
+
     public String getDescriptionText(String pattern) {
       BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode(myReferentNode);
       String result = NodePresentationUtil.descriptionText(parameterNode, true);
