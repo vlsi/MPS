@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.generationContext.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_GenerationContextType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -12,8 +13,8 @@ public class supertypesOf_GenerationContextType_SubtypingRule extends SubtypingR
   public supertypesOf_GenerationContextType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode generationContextType) {
-    return new _Quotations.QuotationClass_0().createNode();
+  public SNode getSubOrSuperType(SNode generationContextType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
