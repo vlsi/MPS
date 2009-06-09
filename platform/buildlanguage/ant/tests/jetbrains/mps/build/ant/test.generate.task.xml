@@ -20,10 +20,8 @@
         <pathelement path="${module.home}/classes"/>
     </path>
 
-    <!--todo should not require to do typedefs manually-->
-    <taskdef name="generate" classname="jetbrains.mps.build.ant.Generate" classpathref="tasks.class.path"/>
-    <typedef name="models" classname="jetbrains.mps.build.ant.Models" classpathref="tasks.class.path"/>
-    <typedef name="project" classname="jetbrains.mps.build.ant.Project" classpathref="tasks.class.path"/>
+    <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
+             classpathref="tasks.class.path"/>
 
     <target name="testBuildException">
         <generate/>
