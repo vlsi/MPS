@@ -6171,33 +6171,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199012070333">
           <property name="vertical" value="true" />
           <property name="usesFolding" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199012070334">
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199012070335">
-              <property name="text" value="writable" />
-              <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996225">
-              <property name="flag" value="false" />
-            </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884359915" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199012070336">
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199012070337">
-              <property name="text" value="  " />
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994012">
-                <property name="flag" value="false" />
-              </node>
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1199012070338">
-              <link role="relationDeclaration" targetNodeId="1.1184066216986" resolveInfo="writable" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995536">
-              <property name="flag" value="false" />
-            </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884359654" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199012143817">
             <property name="vertical" value="false" />
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199012146226">
@@ -6268,33 +6241,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199037532216">
           <property name="vertical" value="true" />
           <property name="usesFolding" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199037480438">
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199037480439">
-              <property name="text" value="writable" />
-              <link role="styleClass" targetNodeId="40.1186415544875" resolveInfo="KeyWord" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997402">
-              <property name="flag" value="false" />
-            </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884358888" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199037480440">
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199037480441">
-              <property name="text" value="  " />
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994792">
-                <property name="flag" value="false" />
-              </node>
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1199037480442">
-              <link role="relationDeclaration" targetNodeId="1.1184066216986" resolveInfo="writable" />
-            </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996034">
-              <property name="flag" value="false" />
-            </node>
-            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239884360235" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199108058320">
             <property name="vertical" value="false" />
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199108058321">

@@ -616,24 +616,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1183978693009" resolveInfo="FeatureSizeFun" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1183979813837">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="setFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1183979833129">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="insertFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1183979849670">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="deleteFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1183979877584">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
@@ -767,18 +749,6 @@
       <property name="role" value="sizeFunction" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1183978693009" resolveInfo="FeatureSizeFun" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1184066542561">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="addFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1184066550942">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="removeFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1184066496864">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -943,20 +913,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1184658208019" resolveInfo="ParamFeatureSizeFun" />
       <link role="specializedLink" targetNodeId="1184066532681" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1184658934565">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="paramAddFunction" />
-      <property name="sourceCardinality" value="1" />
-      <link role="specializedLink" targetNodeId="1184066542561" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1184658938633">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="paramRemoveFunction" />
-      <property name="sourceCardinality" value="1" />
-      <link role="specializedLink" targetNodeId="1184066550942" />
-      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1184658902258">
       <property name="value" value="parameterized sequence feature" />
