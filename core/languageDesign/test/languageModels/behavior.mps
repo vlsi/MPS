@@ -186,6 +186,18 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="95706764259112902">
               <link role="variableDeclaration" targetNodeId="1215607151412" resolveInfo="node" />
             </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="852155438141023904">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="852155438141023901" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="852155438141023908">
+                <link role="property" targetNodeId="1.852155438140865197" resolveInfo="allowErrors" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="852155438141023911">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="852155438141023910" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="852155438141023915">
+                <link role="property" targetNodeId="1.852155438140865198" resolveInfo="allowWarnings" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

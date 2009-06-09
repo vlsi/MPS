@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TypesCheckOperation_Behavior {
 
@@ -11,7 +12,7 @@ public class TypesCheckOperation_Behavior {
   }
 
   public static void virtual_perform_1215601182156(SNode thisNode, SNode node) {
-    SubtreeChecker.checkNodeForErrors(node);
+    SubtreeChecker.checkNodeForErrors(node, SPropertyOperations.getBoolean(thisNode, "allowErrors"), SPropertyOperations.getBoolean(thisNode, "allowWarnings"));
   }
 
   public static String virtual_getName_1217435265700(SNode thisNode) {

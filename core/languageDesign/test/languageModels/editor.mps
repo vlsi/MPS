@@ -305,6 +305,27 @@
       <property name="text" value="check types" />
       <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="852155438140865204">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="852155438140865207">
+        <property name="text" value="allow errors:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="852155438140865209">
+        <link role="relationDeclaration" targetNodeId="1.852155438140865197" resolveInfo="allowErrors" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="852155438140865210">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="852155438140946398">
+        <property name="text" value="allow warnings:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="852155438140946399">
+        <link role="relationDeclaration" targetNodeId="1.852155438140865198" resolveInfo="allowWarnings" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="852155438140946400">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="852155438140865206" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1215611856135">
     <property name="package" value="nodeOperation" />

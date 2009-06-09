@@ -304,6 +304,14 @@
     <property name="package" value="nodeOperation" />
     <property name="name" value="TypesCheckOperation" />
     <link role="extends" targetNodeId="1215601147424" resolveInfo="NodeOperation" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="852155438140865197">
+      <property name="name" value="allowErrors" />
+      <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="852155438140865198">
+      <property name="name" value="allowWarnings" />
+      <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215608592451">
       <property name="value" value="check types" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />

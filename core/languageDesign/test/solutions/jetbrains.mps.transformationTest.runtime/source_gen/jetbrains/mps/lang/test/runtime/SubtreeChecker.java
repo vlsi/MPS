@@ -11,6 +11,7 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.dataFlow.framework.Program;
@@ -27,6 +28,10 @@ import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
 public class SubtreeChecker {
 
   public static void checkNodeForErrors(SNode node) {
+    checkNodeForErrors(node, false, false);
+  }
+
+  public static void checkNodeForErrors(SNode node, boolean allowErrors, boolean allowWarnings) {
     TypeChecker checker = TypeChecker.getInstance();
     checker.checkIfNotChecked(node);
     for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false)) {
@@ -38,6 +43,17 @@ public class SubtreeChecker {
             SNode type1 = checker.getTypeOf(child);
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
+          }
+          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty")) {
+            SNode type1 = checker.getTypeOf(child);
+            boolean hasType = false;
+            for(SNode type2 : SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true)) {
+              if (MatchingUtil.matchNodes(type1, type2)) {
+                hasType = true;
+                break;
+              }
+            }
+            Assert.assertTrue(hasType);
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
             Assert.assertTrue(checker.getTypeMessageDontCheck(child) != null);
@@ -53,7 +69,14 @@ public class SubtreeChecker {
       }
       if (!(isError)) {
         IErrorReporter reporter = checker.getTypeMessageDontCheck(child);
-        Assert.assertTrue(reporter == null || reporter.getMessageStatus() == MessageStatus.OK);
+        if (reporter != null) {
+          if (!(allowErrors)) {
+            Assert.assertTrue(reporter.getMessageStatus() != MessageStatus.ERROR);
+          }
+          if (!(allowWarnings)) {
+            Assert.assertTrue(reporter.getMessageStatus() != MessageStatus.WARNING);
+          }
+        }
       }
     }
   }
