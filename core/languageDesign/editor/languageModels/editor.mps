@@ -2031,7 +2031,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214480588642" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1088069661255">
-        <property name="text" value="Ref.cell cell:" />
+        <property name="text" value="Referent node cell:" />
         <property name="name" value="headerCell" />
         <link role="styleClass" targetNodeId="1214478266312" resolveInfo="header" />
       </node>

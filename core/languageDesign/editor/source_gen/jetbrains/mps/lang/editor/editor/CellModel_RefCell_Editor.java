@@ -63,7 +63,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_8529_2(context, node));
     editorCell.addEditorCell(this.createConstant_8529_6(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_8529_0(context, node, "Ref.cell cell:"));
+    editorCell.addEditorCell(this.createConstant_8529_0(context, node, "Referent node cell:"));
     editorCell.addEditorCell(this.createCollection_8529_5(context, node));
     return editorCell;
   }
