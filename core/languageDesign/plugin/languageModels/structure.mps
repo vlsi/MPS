@@ -2594,7 +2594,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562850663">
-    <property name="name" value="ConfigurationTypeDeclaration" />
+    <property name="name" value="RunConfigurationTypeDeclaration" />
     <property name="package" value="RunConfigs" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
@@ -2616,7 +2616,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562851062">
     <property name="package" value="RunConfigs" />
-    <property name="name" value="ConfigurationDeclaration" />
+    <property name="name" value="RunConfigurationDeclaration" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223536804">
@@ -2632,6 +2632,12 @@
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="678887849223472623">
       <property name="name" value="caption" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8294332872984117193">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1210179190070" resolveInfo="PersistentPropertyDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472878">
       <property name="metaClass" value="aggregation" />
@@ -2651,6 +2657,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223564240">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8294332872984075963">
+      <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472871">

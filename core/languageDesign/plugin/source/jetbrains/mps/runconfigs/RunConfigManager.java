@@ -24,7 +24,7 @@ import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.lang.plugin.structure.ConfigurationTypeDeclaration;
+import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -132,7 +132,7 @@ public class RunConfigManager implements ProjectComponent {
     for (Language language : languages) {
       if (language.getPluginModelDescriptor() != null) {
         SModel model = language.getPluginModelDescriptor().getSModel();
-        List<ConfigurationTypeDeclaration> configTypeAdapters = model.getRootsAdapters(ConfigurationTypeDeclaration.class);
+        List<RunConfigurationTypeDeclaration> configTypeAdapters = model.getRootsAdapters(RunConfigurationTypeDeclaration.class);
         if (configTypeAdapters.isEmpty()) continue;
         //todo
         String configName = configTypeAdapters.get(0).getName()+"_ConfigurationType";

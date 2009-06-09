@@ -3863,6 +3863,15 @@
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="678887849223564076" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8294332872984122745">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="8294332872984122746">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="8294332872984122742">
+          <link role="relationDeclaration" targetNodeId="1.8294332872984117193" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="8294332872984122743" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="678887849223564077">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="678887849223564078">
             <property name="flag" value="false" />

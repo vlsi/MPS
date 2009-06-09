@@ -91,7 +91,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1210186559498(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference") && (SNodeOperations.getAncestor(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1210697805591(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
