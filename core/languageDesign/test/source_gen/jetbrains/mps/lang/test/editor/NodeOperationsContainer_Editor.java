@@ -208,7 +208,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+            this.set(StyleAttributes.PUNCTUATION_LEFT, false);
           }
         };
         inlineStyle.apply(editorCell);

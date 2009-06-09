@@ -279,7 +279,7 @@
           <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
           <link role="actionMap" targetNodeId="1215524000577" resolveInfo="Annotation_Actions" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234461452186">
-            <property name="flag" value="true" />
+            <property name="flag" value="false" />
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234461452275">
