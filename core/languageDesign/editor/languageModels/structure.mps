@@ -3458,7 +3458,7 @@
       <link role="dataType" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1214320119175">
-      <property name="value" value="side transform anchor tag" />
+      <property name="value" value="side-transform-anchor-tag" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
