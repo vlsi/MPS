@@ -1080,6 +1080,102 @@
             </node>
           </node>
         </node>
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="3958529467169545038">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="3958529467169545039">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3958529467169545040">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3958529467169545050">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3958529467169545051">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3958529467169545052">
+                    <link role="concept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3958529467169545053">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="3958529467169545054" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="3958529467169545055">
+                      <link role="concept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
+                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="3958529467169545056" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3958529467169545057">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3958529467169545058">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3958529467169545059">
+                    <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="3958529467169545060">
+                      <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3958529467169545061">
+                        <link role="concept" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3958529467169545062">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3958529467169545063">
+                      <link role="variableDeclaration" targetNodeId="3958529467169545051" resolveInfo="result" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3958529467169545064">
+                      <link role="link" targetNodeId="1.1140524464360" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3958529467169545065">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3958529467169545066">
+                  <link role="variableDeclaration" targetNodeId="3958529467169545051" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="3958529467169545047">
+            <property name="text" value="child node cell list (indent)" />
+          </node>
+        </node>
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="3958529467169805919">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="3958529467169805920">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3958529467169805921">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3958529467169805922">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3958529467169805923">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3958529467169805924">
+                    <link role="concept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3958529467169805925">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="3958529467169805926" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="3958529467169805927">
+                      <link role="concept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
+                      <node role="prototypeNode" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="3958529467169805928" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3958529467169805929">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3958529467169805930">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3958529467169805931">
+                    <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="3958529467169805932">
+                      <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3958529467169805933">
+                        <link role="concept" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3958529467169805934">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3958529467169805935">
+                      <link role="variableDeclaration" targetNodeId="3958529467169805923" resolveInfo="result" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3958529467169805936">
+                      <link role="link" targetNodeId="1.1140524464360" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3958529467169805937">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3958529467169805938">
+                  <link role="variableDeclaration" targetNodeId="3958529467169805923" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="3958529467169805939">
+            <property name="text" value="(-" />
+          </node>
+        </node>
         <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="1177680474955">
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="1177680474956">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680474957">
