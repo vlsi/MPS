@@ -42,6 +42,7 @@ public class ConvertToArrayType_Intention extends BaseIntention {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
     SLinkOperations.setTarget(result, "componentType", SNodeOperations.copyNode(node), true);
     SNodeOperations.replaceWithAnother(node, result);
+    editorContext.selectWRTFocusPolicy(result);
   }
 
   public String getLocationString() {

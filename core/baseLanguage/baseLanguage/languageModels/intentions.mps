@@ -7354,6 +7354,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7875861893709140578">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7875861893709140580">
+            <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="7875861893709140579" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7875861893709143147">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7875861893709143148">
+                <link role="variableDeclaration" targetNodeId="1226917984151" resolveInfo="result" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1241450324705">
