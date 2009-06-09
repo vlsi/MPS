@@ -94,6 +94,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "iconPath") != null;
   }
 
+  public static boolean ifMacro_Condition_8821770403474041673(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "checkBlock", true) != null;
+  }
+
   public static SNode sourceNodeQuery_7840798570675188757(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeBlock", true), "body", true);
   }
@@ -108,6 +112,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7840798570675189719(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "disposeBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8821770403474041647(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "checkBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8821770403474041737(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "error", true);
   }
 
   public static Iterable sourceNodesQuery_7840798570674946693(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

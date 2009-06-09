@@ -3922,7 +3922,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="678887849223564260">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="conceptDeclaration" targetNodeId="1.678887849223472893" resolveInfo="ProcessHandlerStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="678887849223564263">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="678887849223564264" />
@@ -3939,7 +3939,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="678887849223564614">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="conceptDeclaration" targetNodeId="1.678887849223472892" resolveInfo="ActionsStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="678887849223564619">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="678887849223564620" />
@@ -3957,7 +3957,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="678887849223564630">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="conceptDeclaration" targetNodeId="1.678887849223472894" resolveInfo="ExecutionConsoleStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="678887849223567586">
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="678887849223567587" />
@@ -3982,6 +3982,19 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="678887849223567589">
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8821770403474030755">
+    <property name="package" value="RunConfigs.Configuration.IsCorrect" />
+    <link role="conceptDeclaration" targetNodeId="1.8821770403474030735" resolveInfo="ReportErrorStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8821770403474038483">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="8821770403474038484" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8821770403474038482">
+        <property name="text" value="report error" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8821770403474038486">
+        <link role="relationDeclaration" targetNodeId="1.8821770403474030754" />
       </node>
     </node>
   </node>

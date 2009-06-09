@@ -2672,15 +2672,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472879">
-    <property name="package" value="RunConfigs.Configuration" />
-    <property name="name" value="IsCorrectBlock" />
+    <property name="package" value="RunConfigs.Configuration.IsCorrect" />
+    <property name="name" value="CheckConfigurationBlock" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="678887849223472880">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="678887849223472882" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472886">
-      <property name="value" value="isCorrect" />
+      <property name="value" value="check" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="678887849223472888">
@@ -2688,7 +2684,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472884">
-    <property name="package" value="RunConfigs.Configuration" />
+    <property name="package" value="RunConfigs.Configuration.Execute" />
     <property name="name" value="ExecuteConfigBlock" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223472891">
@@ -2708,7 +2704,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472892">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name" value="ActionsStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882661">
@@ -2726,7 +2722,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472893">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name" value="ProcessHandlerStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882657">
@@ -2744,7 +2740,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472894">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name" value="ExecutionConsoleStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882659">
@@ -2768,7 +2764,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472895">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name" value="DisposeConsoleBlock" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223925732">
@@ -2780,11 +2776,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="678887849223527750">
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name" value="ExecuteSpecific" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223882678">
-    <property name="package" value="RunConfigs.Configuration" />
+    <property name="package" value="RunConfigs.Configuration.Execute" />
     <property name="name" value="Executor_FunctionParameter" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223882682">
@@ -2799,7 +2795,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223882679">
-    <property name="package" value="RunConfigs.Configuration" />
+    <property name="package" value="RunConfigs.Configuration.Execute" />
     <property name="name" value="Environment_FunctionParameter" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="678887849223883473">
@@ -2811,6 +2807,21 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="678887849223883839">
         <link role="classifier" targetNodeId="33.~ExecutionEnvironment" resolveInfo="ExecutionEnvironment" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8821770403474030735">
+    <property name="package" value="RunConfigs.Configuration.IsCorrect" />
+    <property name="name" value="ReportErrorStatement" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8821770403474030754">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="error" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8821770403474038541">
+      <property name="value" value="report error" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

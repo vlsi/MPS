@@ -905,7 +905,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="678887849223564269">
     <property name="name" value="typeof_ProcessHandlerStatement" />
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="678887849223564270">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="678887849223564330">
         <property name="checkOnly" value="true" />
@@ -945,7 +945,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="678887849223567597">
     <property name="name" value="typeof_ExecutionConsoleStatement" />
-    <property name="package" value="RunConfigs.Configuration.ExecuteStatements" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="678887849223567598">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="678887849223567609">
         <property name="checkOnly" value="true" />
@@ -981,6 +981,44 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="678887849223567599">
       <property name="name" value="statement" />
       <link role="concept" targetNodeId="4.678887849223472894" resolveInfo="ExecutionConsoleStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="8821770403474038487">
+    <property name="name" value="typeof_ReportErrorStatement" />
+    <property name="package" value="RunConfigs.Configuration.IsCorrect" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8821770403474038488">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="8821770403474038527">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8821770403474038531">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8821770403474038532">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8821770403474038534" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8821770403474038530">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="8821770403474038519">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8821770403474038522">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8821770403474038521">
+                <link role="applicableNode" targetNodeId="8821770403474038489" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8821770403474038526">
+                <link role="link" targetNodeId="4.8821770403474030754" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8821770403474038536">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8821770403474038535">
+            <link role="applicableNode" targetNodeId="8821770403474038489" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8821770403474038540">
+            <link role="link" targetNodeId="4.8821770403474030754" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8821770403474038489">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.8821770403474030735" resolveInfo="ReportErrorStatement" />
     </node>
   </node>
 </model>
