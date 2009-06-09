@@ -743,6 +743,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       try {
+        int newFontStyle = action.getFontStyleFor(getPatternEditor().getPattern());
+        if (newFontStyle != myRight.getFont().getStyle()) {
+          Font newFont = myRight.getFont().deriveFont(newFontStyle);
+          myRight.setFont(newFont);
+          myLeft.setFont(newFont);
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      try {
         myRight.setText(action.getDescriptionText(getPatternEditor().getPattern()));
       } catch (Throwable t) {
         myRight.setText("!Exception was thrown!");

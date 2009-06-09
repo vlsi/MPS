@@ -25,7 +25,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="structure language" moduleRef="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+      <genConfModule runnable="false" name="structure language" moduleRef="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

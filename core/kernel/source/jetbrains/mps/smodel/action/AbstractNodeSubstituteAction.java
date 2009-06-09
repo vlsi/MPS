@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import java.awt.Font;
 
 /**
  * Igor Alshannikov
@@ -88,6 +89,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   public Icon getIconFor(String pattern) {
     return getIconFor(pattern, false);
+  }
+
+  public int getFontStyleFor(String pattern) {
+    return Font.PLAIN;
   }
 
   public SNode getActionType(String pattern) {

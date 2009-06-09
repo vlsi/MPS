@@ -49,6 +49,10 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getIconFor(pattern);
   }
 
+  public int getFontStyleFor(String pattern) {
+    return mySubstituteAction.getFontStyleFor(pattern);
+  }
+
   public String getMatchingText(String pattern) {
     return mySubstituteAction.getMatchingText(pattern);
   }

@@ -37,10 +37,12 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.*;
+import java.awt.Font;
 
 /**
  * Igor Alshannikov

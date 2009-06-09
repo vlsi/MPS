@@ -39,6 +39,8 @@ public interface INodeSubstituteAction {
 
   Icon getIconFor(String pattern);
 
+  int getFontStyleFor(String pattern);
+
   int getSortPriority(String pattern);
 
   boolean canSubstituteStrictly(String pattern);
