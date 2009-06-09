@@ -87,7 +87,7 @@ __switch__:
       }
     });
     for(SNode link : Sequence.fromIterable(linksInSupers)) {
-      if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role"))) {
+      if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

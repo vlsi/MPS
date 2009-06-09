@@ -157,23 +157,38 @@
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181840072">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212181840073">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840074">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840075">
-                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1212181840076">
-                  <link role="applicableNode" targetNodeId="1212181808765" resolveInfo="linkToCheck" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8491417075977785218">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="8491417075977787011">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="8491417075977787014">
+                  <link role="variable" targetNodeId="1212181840070" resolveInfo="link" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212181840077">
-                  <link role="property" targetNodeId="5.1071599776563" resolveInfo="role" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8491417075977787006">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8491417075977787005">
+                    <link role="applicableNode" targetNodeId="1212181808765" resolveInfo="linkToCheck" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8491417075977787010">
+                    <link role="link" targetNodeId="5.1071599698500" />
+                  </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212181840078">
-                <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840079">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1212181840080">
-                    <link role="variable" targetNodeId="1212181840070" resolveInfo="link" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840074">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840075">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1212181840076">
+                    <link role="applicableNode" targetNodeId="1212181808765" resolveInfo="linkToCheck" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212181840081">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212181840077">
                     <link role="property" targetNodeId="5.1071599776563" resolveInfo="role" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212181840078">
+                  <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212181840079">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1212181840080">
+                      <link role="variable" targetNodeId="1212181840070" resolveInfo="link" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212181840081">
+                      <link role="property" targetNodeId="5.1071599776563" resolveInfo="role" />
+                    </node>
                   </node>
                 </node>
               </node>
