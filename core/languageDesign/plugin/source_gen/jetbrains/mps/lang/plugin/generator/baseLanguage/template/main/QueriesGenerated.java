@@ -150,6 +150,10 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false) != null;
   }
 
+  public static boolean baseMappingRule_Condition_8294332872984943608(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false) != null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1203086899089(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(_context.getNode());
   }

@@ -7317,6 +7317,25 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1210180769332">
         <link role="template" targetNodeId="1210180591677" resolveInfo="reduce_PersistenPropertyDeclaration" />
       </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="8294332872984943608">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8294332872984943609">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8294332872984943610">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8294332872984943611">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8294332872984943612">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8294332872984943613" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8294332872984943614">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8294332872984943615">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8294332872984943618">
+                      <link role="conceptDeclaration" targetNodeId="1.1210179134063" resolveInfo="PreferencesComponentDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8294332872984943617" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1210186554150">
       <link role="applicableConcept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
@@ -8970,6 +8989,7 @@
     <property name="package" value="Preference" />
     <link role="applicableConcept" targetNodeId="1.1210684385183" resolveInfo="PreferencePage" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1217679093772">
+      <property name="name" value="someClass" />
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217679107326">
         <property name="name" value="createPages" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217679107327" />
@@ -9041,11 +9061,6 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217679093773" />
-      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1217679093774">
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217679093775" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217679093776" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217679093777" />
-      </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217687809458">
         <link role="classifier" targetNodeId="76.~BaseProjectPrefsComponent" resolveInfo="BaseProjectPrefsComponent" />
       </node>
@@ -9677,7 +9692,9 @@
     <property name="name" value="reduce_ThisClassifierExpresson_PreferencePage" />
     <link role="applicableConcept" targetNodeId="38.1205752633985" resolveInfo="ThisClassifierExpresson" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1217682435040">
+      <property name="name" value="someClass" />
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217689981640">
+        <property name="name" value="someMethod" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217689981641" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217689981642" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217689981643">
@@ -9724,11 +9741,6 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217682435041" />
-      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1217682435042">
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1217682435043" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217682435044" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217682435045" />
-      </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217682440062">
         <link role="classifier" targetNodeId="76.~BasePrefsPage" resolveInfo="BasePrefsPage" />
       </node>
