@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
+import org.apache.tools.ant.BuildException;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class Generator {
@@ -58,7 +59,9 @@ public class Generator {
   }
 
   private void showStatistic() {
-    //To change body of created methods use File | Settings | File Templates.
+    if (!myMessageHandler.getErrors().isEmpty() && myWhatToGenerate.getFailOnError()) {
+      throw new BuildException(myMessageHandler.getErrors().size() + " errors during generation.");
+    }
   }
 
   private void generateProjects() {

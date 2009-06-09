@@ -115,7 +115,7 @@ public class Generate extends org.apache.tools.ant.Task {
     } catch (NoSuchMethodException e) {
       throw new BuildException(e);
     } catch (InvocationTargetException e) {
-      throw new BuildException(e);
+      throw new BuildException(e.getTargetException());
     } catch (IllegalAccessException e) {
       throw new BuildException(e);
     } catch (InstantiationException e) {

@@ -33,6 +33,12 @@
         </generate>
     </target>
 
+    <target name="testFailOnGenerationError">
+        <generate mpshome="${module.home}/../../../" failonerror="true">
+            <project file="${module.home}/testProjects/failedProject/FailedProject.mpr"/>
+        </generate>
+    </target>
+
     <target name="testModelsWithBuildException">
         <generate>
             <models/>

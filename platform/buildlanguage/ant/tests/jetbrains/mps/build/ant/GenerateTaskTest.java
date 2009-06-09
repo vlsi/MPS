@@ -1,4 +1,5 @@
-package jetbrains.mps.build.ant;/*
+package jetbrains.mps.build.ant;
+/*
  * Copyright 2003-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +27,18 @@ public class GenerateTaskTest extends BuildFileTest {
     configureProject(GenerateTaskTest.class.getResource("test.generate.task.xml").getFile());
   }
 
-  public void testMessage() {
+  public void testNormalWork() {
     executeTarget("testNormalWork");
+  }
+
+  public void testFailOnGeneration() {
+    String targetName = "testFailOnGenerationError";
+    try {
+      executeTarget(targetName);
+    } catch (BuildException e) {
+      return;
+    }
+    fail("BuildException in target " + targetName + " expected.");
   }
 
   public void testBuildException() {
