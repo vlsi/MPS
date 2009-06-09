@@ -1731,7 +1731,7 @@
                     <link role="variableDeclaration" targetNodeId="601770054192129973" resolveInfo="module" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="601770054192132191">
-                    <link role="baseMethodDeclaration" targetNodeId="22.~Solution.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolveInfo="setModuleDescriptor" />
+                    <link role="baseMethodDeclaration" targetNodeId="22.~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolveInfo="setModuleDescriptor" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="601770054192132199">
                       <link role="variableDeclaration" targetNodeId="601770054192132171" resolveInfo="moduleDescriptor" />
                     </node>
