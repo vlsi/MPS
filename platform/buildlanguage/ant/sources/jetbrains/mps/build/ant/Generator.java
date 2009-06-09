@@ -18,78 +18,115 @@ package jetbrains.mps.build.ant;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.util.misc.hash.LinkedHashSet;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.IdeMain.TestMode;
 
 import java.io.File;
 import java.util.Set;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-import org.apache.tools.ant.BuildException;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class Generator {
+  private final GenerateFilesAndClassesGenerationType myGenerationType = getGenerationType();
+  private final MyMessageHandler myMessageHandler = new MyMessageHandler();
+  private final WhatToGenerate myWhatToGenerate;
 
-  public static void generate(WhatToGenerate whatToGenerate) {
+  public Generator(WhatToGenerate whatToGenerate) {
+    myWhatToGenerate = whatToGenerate;
+  }
+
+  public void generate() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
-    Set<File> files = whatToGenerate.getMPSProjectFiles();
+    generateProjects();
 
-    final StringBuffer errorMessages = new StringBuffer();
+    showStatistic();
+  }
 
+  private void showStatistic() {
+    //To change body of created methods use File | Settings | File Templates.
+  }
+
+  private void generateProjects() {
+    Set<File> files = myWhatToGenerate.getMPSProjectFiles();
     for (File projectFile : files) {
       final MPSProject project = TestMain.loadProject(projectFile);
+
       GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+
       List<SModelDescriptor> models = project.getProjectModels();
-
-      GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(true) {
-        public boolean requiresReloading() {
-          return false;
-        }
-
-        public boolean requiresCompilationBeforeGeneration() {
-          return false;
-        }
-
-        public boolean requiresCompilationAfterGeneration() {
-          return false;
-        }
-
-        protected boolean isPutClassesOnTheDisk() {
-          return false;
-        }
-      };
 
       gm.generateModels(models,
         new ProjectOperationContext(project),
-        generationType, 
+        myGenerationType,
         new EmptyProgressIndicator(),
-        new IMessageHandler() {
-          public void handle(Message msg) {
-            System.out.println(msg.getKind() + ": " + msg.getText());
-          }
-        });
+        myMessageHandler);
+    }
+  }
+
+  private class MyMessageHandler implements IMessageHandler {
+    private List<String> myErrors = new ArrayList<String>();
+    private List<String> myWarnings = new ArrayList<String>();
+
+    public void handle(Message msg) {
+      switch (msg.getKind()) {
+        case ERROR:
+          System.out.println("ERROR: " + msg.getText());
+          myErrors.add(msg.getText());
+          break;
+
+        case WARNING:
+          System.out.println("WARN:  " + msg.getText());
+          myWarnings.add(msg.getText());
+          break;
+
+        case INFORMATION:
+          System.out.println("INFO:  " + msg.getText());
+          break;
+
+      }
     }
 
-    String finalMessage = errorMessages.toString();
-    if (!finalMessage.equals("")) {
-      System.err.println(finalMessage);
-      throw new BuildException(finalMessage);
+    public List<String> getErrors() {
+      return myErrors;
     }
+
+    public List<String> getWarnings() {
+      return myWarnings;
+    }
+  }
+
+  private static GenerateFilesAndClassesGenerationType getGenerationType() {
+    return new GenerateFilesAndClassesGenerationType(true) {
+      public boolean requiresReloading() {
+        return false;
+      }
+
+      public boolean requiresCompilationBeforeGeneration() {
+        return false;
+      }
+
+      public boolean requiresCompilationAfterGeneration() {
+        return false;
+      }
+
+      protected boolean isPutClassesOnTheDisk() {
+        return false;
+      }
+    };
   }
 }

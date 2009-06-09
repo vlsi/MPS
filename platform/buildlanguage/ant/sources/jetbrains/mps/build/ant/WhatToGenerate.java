@@ -27,6 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 public class WhatToGenerate {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
+  private boolean myFailOnError = false;
 
   public void addModelDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
@@ -52,6 +53,14 @@ public class WhatToGenerate {
 
   public void updateMPSProjectFiles(Set<File> mpsProjects){
     myMPSProjects.addAll(mpsProjects);
+  }
+
+  public boolean getFailOnError() {
+    return myFailOnError;
+  }
+
+  public void updateFailOnError(boolean showError) {
+    myFailOnError = showError;
   }
 
   public void cloneTo(Object dest) {
