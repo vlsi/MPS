@@ -3872,6 +3872,23 @@
           <link role="relationDeclaration" targetNodeId="1.8294332872984117193" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="8294332872984122743" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="162872405267677681">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="162872405267677682">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="162872405267677839">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="162872405267677840">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="162872405267677843">
+            <property name="text" value="editor" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="162872405267681140">
+            <link role="relationDeclaration" targetNodeId="1.162872405267681133" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="162872405267677842" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="678887849223564077">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="678887849223564078">
             <property name="flag" value="false" />
@@ -4005,6 +4022,34 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8821770403474038486">
         <link role="relationDeclaration" targetNodeId="1.8821770403474030754" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="162872405267681137">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <link role="conceptDeclaration" targetNodeId="1.162872405267681132" resolveInfo="ConfigurationEditorDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="162872405267681141">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="162872405267681144">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="162872405267681145">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="162872405267681148">
+          <property name="text" value="component:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="162872405267681150">
+          <link role="relationDeclaration" targetNodeId="1.162872405267681134" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="162872405267681147" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="162872405267681163">
+        <link role="relationDeclaration" targetNodeId="1.162872405267681159" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="162872405267681165">
+        <link role="relationDeclaration" targetNodeId="1.162872405267681160" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="162872405267681167">
+        <link role="relationDeclaration" targetNodeId="1.162872405267681161" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="162872405267681143" />
     </node>
   </node>
 </model>

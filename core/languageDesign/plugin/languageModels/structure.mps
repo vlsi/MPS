@@ -2639,6 +2639,11 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1210179190070" resolveInfo="PersistentPropertyDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681133">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="editor" />
+      <link role="target" targetNodeId="162872405267681132" resolveInfo="ConfigurationEditorDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472878">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="iconBlock" />
@@ -2830,6 +2835,59 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8821770403474038541">
       <property name="value" value="report error" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="162872405267681132">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <property name="name" value="ConfigurationEditorDeclaration" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681134">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="editor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681159">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="applyBlock" />
+      <link role="target" targetNodeId="162872405267681153" resolveInfo="ApplyBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681160">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="resetBlock" />
+      <link role="target" targetNodeId="162872405267681154" resolveInfo="ResetBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681161">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="disposeBlock" />
+      <link role="target" targetNodeId="162872405267681155" resolveInfo="DisposeEditorBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="162872405267681153">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <property name="name" value="ApplyEditorBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="162872405267681158">
+      <property name="value" value="apply" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="162872405267681154">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <property name="name" value="ResetEditorBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="162872405267681157">
+      <property name="value" value="reset" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="162872405267681155">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <property name="name" value="DisposeEditorBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="162872405267681156">
+      <property name="value" value="dispose" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>

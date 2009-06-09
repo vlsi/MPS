@@ -21,6 +21,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONFIG_TYPE = "configType";
+  public static final String EDITOR = "editor";
   public static final String ICON_BLOCK = "iconBlock";
   public static final String CHECK_BLOCK = "checkBlock";
   public static final String EXECUTE_BLOCK = "executeBlock";
@@ -84,6 +85,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void setConfigType(RunConfigurationTypeDeclaration node) {
     super.setReferent(RunConfigurationDeclaration.CONFIG_TYPE, node);
+  }
+
+  public ConfigurationEditorDeclaration getEditor() {
+    return (ConfigurationEditorDeclaration)this.getChild(ConfigurationEditorDeclaration.class, RunConfigurationDeclaration.EDITOR);
+  }
+
+  public void setEditor(ConfigurationEditorDeclaration node) {
+    super.setChild(RunConfigurationDeclaration.EDITOR, node);
   }
 
   public GetConfigurationIconBlock getIconBlock() {

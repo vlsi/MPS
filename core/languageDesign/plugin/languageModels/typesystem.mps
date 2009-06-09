@@ -1021,5 +1021,45 @@
       <link role="concept" targetNodeId="4.8821770403474030735" resolveInfo="ReportErrorStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="162872405267677846">
+    <property name="name" value="typeof_ConfigurationEditorDeclaration" />
+    <property name="package" value="RunConfigs" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="162872405267677847">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="162872405267677886">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="162872405267677890">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="162872405267677891">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="162872405267677894">
+              <link role="classifier" targetNodeId="18.~JComponent" resolveInfo="JComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="162872405267677889">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="162872405267677878">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="162872405267677881">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="162872405267677880">
+                <link role="applicableNode" targetNodeId="162872405267677848" resolveInfo="declaration" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="162872405267681135">
+                <link role="link" targetNodeId="4.162872405267681134" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="162872405267677896">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="162872405267677895">
+            <link role="applicableNode" targetNodeId="162872405267677848" resolveInfo="declaration" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="162872405267681136">
+            <link role="link" targetNodeId="4.162872405267681134" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="162872405267677848">
+      <property name="name" value="editor" />
+      <link role="concept" targetNodeId="4.162872405267681132" resolveInfo="ConfigurationEditorDeclaration" />
+    </node>
+  </node>
 </model>
 
