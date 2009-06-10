@@ -758,5 +758,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3452826078638187868">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <link role="concept" targetNodeId="7.3452826078638178132" resolveInfo="ComponentReference" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3452826078638187869">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3452826078638187870">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3452826078638187871">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078638188016">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078638187873">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3452826078638187872" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3452826078638187877">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="3452826078638188024">
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3452826078638188025">
+                    <link role="concept" targetNodeId="7.162872405267681153" resolveInfo="ApplyEditorBlock" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3452826078638188027">
+                    <link role="concept" targetNodeId="7.162872405267681154" resolveInfo="ResetEditorBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3452826078638188020" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

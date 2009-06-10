@@ -4052,5 +4052,13 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="162872405267681143" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3452826078638183468">
+    <property name="package" value="RunConfigs.Configuration.Editor" />
+    <link role="conceptDeclaration" targetNodeId="1.3452826078638178132" resolveInfo="ComponentReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3452826078638187867">
+      <property name="text" value="component" />
+      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
