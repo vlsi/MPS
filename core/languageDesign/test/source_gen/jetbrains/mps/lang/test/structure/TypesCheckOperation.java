@@ -9,11 +9,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypesCheckOperation extends NodeOperation {
   public static final String concept = "jetbrains.mps.lang.test.structure.TypesCheckOperation";
+  public static final String OPERATION_NAME = "operationName";
   public static final String ALLOW_ERRORS = "allowErrors";
   public static final String ALLOW_WARNINGS = "allowWarnings";
 
   public TypesCheckOperation(SNode node) {
     super(node);
+  }
+
+  public String getOperationName() {
+    return this.getProperty(TypesCheckOperation.OPERATION_NAME);
+  }
+
+  public void setOperationName(String value) {
+    this.setProperty(TypesCheckOperation.OPERATION_NAME, value);
   }
 
   public boolean getAllowErrors() {

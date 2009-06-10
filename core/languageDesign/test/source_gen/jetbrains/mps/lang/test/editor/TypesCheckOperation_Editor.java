@@ -33,10 +33,12 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5668_1(context, node, "allow errors:"));
+    editorCell.addEditorCell(this.createConstant_5668_1(context, node, "operation name:"));
     editorCell.addEditorCell(this.createProperty_5668_1(context, node));
-    editorCell.addEditorCell(this.createConstant_5668_2(context, node, "allow warnings:"));
+    editorCell.addEditorCell(this.createConstant_5668_2(context, node, "allow errors:"));
     editorCell.addEditorCell(this.createProperty_5668_3(context, node));
+    editorCell.addEditorCell(this.createConstant_5668_3(context, node, "allow warnings:"));
+    editorCell.addEditorCell(this.createProperty_5668_5(context, node));
     return editorCell;
   }
 
@@ -64,6 +66,14 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstant_5668_3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5668_3(editorCell, node, context);
+    setupLabel_Constant_5668_3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createProperty_5668_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -78,10 +88,10 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_5668_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("allowErrors");
-    provider.setNoTargetText("<no allowErrors>");
+    provider.setRole("operationName");
+    provider.setNoTargetText("default");
     provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
+    provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_5668_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,11 +117,40 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_5668_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("allowErrors");
+    provider.setNoTargetText("<no allowErrors>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createProperty_5668_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createProperty_5668_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_5668_2(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_5668_2((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_5668_5(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("allowWarnings");
     provider.setNoTargetText("<no allowWarnings>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty_5668_2_internal(context, node, provider);
+    EditorCell cellWithRole = this.createProperty_5668_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -128,15 +167,31 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_Collection_5668_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5668_0");
+  private static void setupBasic_Property_5668_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_operationName");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_5668_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5668_1");
   }
 
-  private static void setupBasic_Property_5668_0(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Collection_5668_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_5668_0");
+  }
+
+  private static void setupBasic_Constant_5668_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5668_2");
+  }
+
+  private static void setupBasic_Property_5668_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_allowErrors");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -148,11 +203,11 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_5668_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5668_2");
+  private static void setupBasic_Constant_5668_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5668_3");
   }
 
-  private static void setupBasic_Property_5668_1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Property_5668_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_allowWarnings");
     {
       Style inlineStyle = new Style(editorCell) {
@@ -167,16 +222,22 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_5668_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_5668_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_5668_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_5668_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_5668_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_5668_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Property_5668_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_5668_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_5668_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

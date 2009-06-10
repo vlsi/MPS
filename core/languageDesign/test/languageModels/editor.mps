@@ -306,6 +306,18 @@
       <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="852155438140865204">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="501631557342352978">
+        <property name="text" value="operation name:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="501631557342352975">
+        <property name="emptyNoTargetText" value="false" />
+        <property name="allowEmptyText" value="true" />
+        <property name="noTargetText" value="default" />
+        <link role="relationDeclaration" targetNodeId="1.501631557342352972" resolveInfo="operationName" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="501631557342352976">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="852155438140865207">
         <property name="text" value="allow errors:" />
       </node>

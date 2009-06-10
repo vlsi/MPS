@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.test.runtime.SubtreeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
 public class TypesCheckOperation_Behavior {
 
@@ -17,6 +18,15 @@ public class TypesCheckOperation_Behavior {
 
   public static String virtual_getName_1217435265700(SNode thisNode) {
     return "TypesCheck";
+  }
+
+  public static String virtual_getTestName_1216136419751(SNode thisNode) {
+    if (SPropertyOperations.getString(thisNode, "operationName") == null || SPropertyOperations.getString(thisNode, "operationName").length() == 0) {
+      return ITestMethod_Behavior.callSuper_getTestName_1216136419751(thisNode, "jetbrains.mps.lang.test.structure.TypesCheckOperation");
+    } else
+    {
+      return SPropertyOperations.getString(thisNode, "operationName");
+    }
   }
 
 }
