@@ -21,8 +21,8 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToRulesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.goTo.GoToModelAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.goTo.GoToLanguageAction", "jetbrains.mps.ide");

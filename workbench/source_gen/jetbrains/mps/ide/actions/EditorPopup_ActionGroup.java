@@ -30,8 +30,8 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.nodes.GoToRulesAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction", "jetbrains.mps.ide");

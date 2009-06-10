@@ -41,55 +41,24 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToRulesAction extends BaseAction {
-  private SNode myNode;
-  private Frame myFrame;
-  private IOperationContext myContext;
-  private EditorCell myCell;
-
-  public GoToRulesAction() {
-    super("Go To Typesystem Rules");
-    setIsAlwaysVisible(false);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl alt R";
-  }
-
-  protected void doExecute(AnActionEvent e) {
-    final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) myNode.getAdapter();
-    List<SNode> rules = getHelginsRules(conceptDeclaration, myContext);
+public class GoToRulesHelper {
+  public static void go(Frame frame, EditorCell cell, IOperationContext context, AbstractConceptDeclaration concept) {
+    List<SNode> rules = getHelginsRules(concept, context);
 
     if (rules.size() == 1) {// single rule
-      myContext.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
+      context.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
       return;
     }
 
     // multiple rules
-    MyMenu m = new MyMenu(rules, myContext);
+    MyMenu m = new MyMenu(rules, context);
     int x = 0;
     int y = 0;
-    if (myCell != null) {
-      x = myCell.getX();
-      y = myCell.getY();
+    if (cell != null) {
+      x = cell.getX();
+      y = cell.getY();
     }
-    m.show(myFrame, x, y);
-  }
-
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
-    ActionEventData data = new ActionEventData(e);
-    myNode = data.getNode();
-    if (myNode == null) return false;
-    if (!(myNode.getAdapter() instanceof AbstractConceptDeclaration)) return false;
-    myFrame = data.getFrame();
-    if (myFrame == null) return false;
-    myContext = data.getOperationContext();
-    if (myContext == null) return false;
-    myCell = data.getEditorCell();
-    if (myCell == null) return false;
-    return true;
+    m.show(frame, x, y);
   }
 
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
@@ -129,8 +98,7 @@ public class GoToRulesAction extends BaseAction {
     return false;
   }
 
-  private class MyMenu extends JPopupMenu {
-
+  private static class MyMenu extends JPopupMenu {
     public MyMenu(List<SNode> list, final IOperationContext operationContext) {
       setBackground(Color.WHITE);
 
