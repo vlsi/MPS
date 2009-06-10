@@ -4022,6 +4022,10 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8821770403474038486">
         <link role="relationDeclaration" targetNodeId="1.8821770403474030754" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3452826078639079964">
+        <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="162872405267681137">

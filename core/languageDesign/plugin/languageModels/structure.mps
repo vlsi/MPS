@@ -2826,7 +2826,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8821770403474030735">
     <property name="package" value="RunConfigs.Configuration.IsCorrect" />
     <property name="name" value="ReportErrorStatement" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8821770403474030754">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="error" />
