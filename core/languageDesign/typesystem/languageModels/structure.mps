@@ -857,9 +857,6 @@
       <property name="role" value="variable" />
       <link role="target" targetNodeId="2.1068581242863" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3028181473776735327">
-      <property name="metaClass" value="aggregation" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1176547896901">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
