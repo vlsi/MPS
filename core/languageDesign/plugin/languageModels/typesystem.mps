@@ -7,6 +7,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -1099,6 +1100,42 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3452826078638187888">
       <property name="name" value="reference" />
       <link role="concept" targetNodeId="4.3452826078638178132" resolveInfo="ComponentReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3452826078639226163">
+    <property name="name" value="check_executeBlock_returns" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3452826078639226164">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3452826078639227291">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078639227308">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078639227295">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3452826078639227294">
+              <link role="applicableNode" targetNodeId="3452826078639227290" resolveInfo="executeBlock" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="3452826078639227299">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3452826078639227300">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3452826078639227303">
+                  <link role="conceptDeclaration" targetNodeId="4.678887849223472894" resolveInfo="ExecutionConsoleStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="3452826078639227312" />
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3452826078639227293">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="3452826078639231286">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3452826078639231290">
+              <property name="value" value="Execute block does not specify a console. Use 'console statement'" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3452826078639231289">
+              <link role="applicableNode" targetNodeId="3452826078639227290" resolveInfo="executeBlock" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3452826078639227290">
+      <property name="name" value="executeBlock" />
+      <link role="concept" targetNodeId="4.678887849223472884" resolveInfo="ExecuteConfigBlock" />
     </node>
   </node>
 </model>
