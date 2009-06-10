@@ -2016,7 +2016,9 @@
           </node>
         </node>
         <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="6017652711700376551">
-          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="6017652711700376553" />
+          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="6017652711700376553">
+            <property name="operationName" value="testBinaryOp" />
+          </node>
         </node>
       </node>
     </node>
@@ -2085,7 +2087,9 @@
           </node>
         </node>
         <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="6846030807779035849">
-          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="6846030807779035850" />
+          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="6846030807779035850">
+            <property name="operationName" value="testTernaryOp" />
+          </node>
         </node>
       </node>
     </node>
@@ -2375,7 +2379,9 @@
           </node>
         </node>
         <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="6846030807779035851">
-          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065076" />
+          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065076">
+            <property name="operationName" value="testGenericFields" />
+          </node>
         </node>
       </node>
     </node>
@@ -2439,7 +2445,9 @@
           </node>
         </node>
         <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="454440546580065077">
-          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065078" />
+          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065078">
+            <property name="operationName" value="testGenericInstanceMethods" />
+          </node>
         </node>
       </node>
     </node>
@@ -2523,7 +2531,9 @@
           </node>
         </node>
         <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="454440546580065079">
-          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065080" />
+          <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="454440546580065080">
+            <property name="operationName" value="testGenericMethods" />
+          </node>
         </node>
       </node>
     </node>

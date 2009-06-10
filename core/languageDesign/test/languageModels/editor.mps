@@ -301,9 +301,15 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1215607090776">
     <property name="package" value="nodeOperation" />
     <link role="conceptDeclaration" targetNodeId="1.1215607067978" resolveInfo="NodeErrorCheck" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215607094699">
-      <property name="text" value="check types" />
-      <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1381629087548445812">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1381629087548445813">
+        <property name="text" value="check types" />
+        <link role="styleClass" targetNodeId="3.1198596447279" resolveInfo="Annotation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty" id="1381629087548449153">
+        <link role="relationDeclaration" targetNodeId="1.501631557342352972" resolveInfo="operationName" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1381629087548445814" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="852155438140865204">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="501631557342352978">

@@ -76,13 +76,25 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7577207774203486135">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7577207774203486136">
-            <property name="name" value="i" />
+            <property name="name" value="i1" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7577207774203486137" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7577207774203486138">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7577207774203486145">
                 <link role="variableDeclaration" targetNodeId="7577207774203486143" resolveInfo="str" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="7577207774203486140" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2443410020333612631">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2443410020333612632">
+            <property name="name" value="i2" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2443410020333612633" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2443410020333612634">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2443410020333612635">
+                <link role="variableDeclaration" targetNodeId="7577207774203486143" resolveInfo="str" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="2443410020333612636" />
             </node>
           </node>
         </node>
