@@ -20842,8 +20842,8 @@
               <link role="classifier" targetNodeId="40.~SNode" resolveInfo="SNode" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3125192926426105504">
-              <link role="baseMethodDeclaration" targetNodeId="1.~GoToEditorDeclarationHelper.getOrCreateEditorForConcept(jetbrains.mps.smodel.Language,jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.lang.structure.structure.ConceptDeclaration,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="getOrCreateEditorForConcept" />
               <link role="classConcept" targetNodeId="1.~GoToEditorDeclarationHelper" resolveInfo="GoToEditorDeclarationHelper" />
+              <link role="baseMethodDeclaration" targetNodeId="1.~GoToEditorDeclarationHelper.getOrCreateEditorForConcept(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.lang.structure.structure.ConceptDeclaration,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="getOrCreateEditorForConcept" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3125192926426105506">
                 <link role="variableDeclaration" targetNodeId="3125192926426105445" resolveInfo="editorModel" />
               </node>
