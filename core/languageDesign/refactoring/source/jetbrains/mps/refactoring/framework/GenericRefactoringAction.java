@@ -37,7 +37,6 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
 
-
   protected void doExecute(AnActionEvent e) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -72,24 +71,24 @@ public class GenericRefactoringAction extends BaseAction {
     return myRefactoring.getKeyStroke();
   }
 
-  private List<SNode> getNodes(ActionEventData data) {
-    if (data.getNode() != null) {
-      return CollectionUtil.list(data.getNode());
+  private List<SNode> getNodes(AnActionEvent e) {
+    SNode node = MPSDataKeys.SNODE.getData(e.getDataContext());
+    if (node != null) {
+      return CollectionUtil.list(node);
     }
-    List<SNode> list = data.getNodes();
-    if (list.isEmpty()) return new ArrayList<SNode>();
+    List<SNode> list = MPSDataKeys.SNODES.getData(e.getDataContext());
+    if (list == null || list.isEmpty()) return new ArrayList<SNode>();
     return list;
   }
 
   protected void doUpdate(AnActionEvent e) {
-    ActionEventData data = new ActionEventData(e);
     boolean enabled = true;
-    List<SNode> nodes = getNodes(data);
+    List<SNode> nodes = getNodes(e);
 
     if (myRefactoring.getRefactoringTarget() == RefactoringTarget.NODE) {
       enabled = RefactoringUtil.isApplicableInContext(myRefactoring, nodes);
     } else if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
-      SModelDescriptor modelDescriptor = data.getModelDescriptor();
+      SModelDescriptor modelDescriptor = MPSDataKeys.MODEL.getData(e.getDataContext());
       if (modelDescriptor != null) {
         enabled = myRefactoring.isApplicableToModel(modelDescriptor);
       }

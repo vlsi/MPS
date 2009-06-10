@@ -15,30 +15,18 @@
  */
 package jetbrains.mps.workbench.actions.nodes;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 /**
  * @author Kostik
  */
-public class GoToEditorDeclarationHelper{
+public class GoToEditorDeclarationHelper {
   public static SNode getOrCreateEditorForConcept(final SModelDescriptor languageEditor, final ConceptDeclaration concept, final SNode node, final IScope scope) {
     ConceptEditorDeclaration editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
       public ConceptEditorDeclaration compute() {

@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 
@@ -62,19 +61,18 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    ActionEventData data = new ActionEventData(event);
-    SModelDescriptor modelDescriptor = data.getModelDescriptor();
-    if (modelDescriptor==null){
+    SModelDescriptor modelDescriptor = MPSDataKeys.MODEL.getData(event.getDataContext());
+    if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
 
-    IScope scope = data.getScope();
-    IOperationContext context = data.getOperationContext();
+    IScope scope = MPSDataKeys.SCOPE.getData(event.getDataContext());
+    IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext());
     Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
     boolean isJavaStubModel = SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype());
     boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
-    if (scope == null || context == null  || isJavaStubModel || !singleItemSelected) {
+    if (scope == null || context == null || isJavaStubModel || !singleItemSelected) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
@@ -166,9 +164,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       protected void doExecute(AnActionEvent e) {
-        ActionEventData data = new ActionEventData(e);
-        IOperationContext operationContext = data.getOperationContext();
-        final IScope scope = data.getScope();
+        IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+        final IScope scope = MPSDataKeys.SCOPE.getData(e.getDataContext());
         ProjectPane pane = operationContext.getComponent(ProjectPane.class);
 
         SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {

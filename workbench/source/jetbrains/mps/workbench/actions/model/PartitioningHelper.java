@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
@@ -27,8 +26,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;

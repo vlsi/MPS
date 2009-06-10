@@ -31,7 +31,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfig
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
@@ -80,17 +80,16 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    ActionEventData data = new ActionEventData(e);
-    myProject = data.getMPSProject();
-    myOperationContext = data.getOperationContext();
+    myProject = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
+    myOperationContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
     if (myOperationContext == null) return false;
-    myModules = new HashSet(data.getModules());
+    myModules = new HashSet(MPSDataKeys.MODULES.getData(e.getDataContext()));
     if (myModules.isEmpty()) {
-      IModule contextModule = data.getContextModule();
+      IModule contextModule = MPSDataKeys.CONTEXT_MODULE.getData(e.getDataContext());
       if (contextModule == null) return false;
       myModules.add(contextModule);
     }
-    myFrame = data.getFrame();
+    myFrame = MPSDataKeys.FRAME.getData(e.getDataContext());
     if (myFrame == null) return false;
     return true;
   }

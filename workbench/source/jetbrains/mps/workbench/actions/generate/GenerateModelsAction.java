@@ -22,7 +22,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
@@ -63,8 +62,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   @Override
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    ActionEventData data = new ActionEventData(e);
-    MPSProject project = data.getMPSProject();
+    MPSProject project = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
     myGenManager = project.getComponentSafe(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null || myModels.isEmpty()) {
@@ -75,7 +73,7 @@ public abstract class GenerateModelsAction extends BaseAction {
       }
     }
     if (myModels.isEmpty()) return false;
-    myContext = data.getOperationContext();
+    myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
     if (myContext == null) return false;
     return true;
   }

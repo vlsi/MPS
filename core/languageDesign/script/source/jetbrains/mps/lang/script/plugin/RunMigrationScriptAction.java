@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,13 +58,12 @@ public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
 
-    ActionEventData eventData = new ActionEventData(e);
-    myContext = eventData.getOperationContext();
+    myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
     if (myContext == null) return false;
-    myProject = eventData.getProject();
+    myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
     if (myProject == null) return false;
-    myModels = eventData.getModels();
-    myModules = eventData.getModules();
+    myModels = MPSDataKeys.MODELS.getData(e.getDataContext());
+    myModules = MPSDataKeys.MODULES.getData(e.getDataContext());
 
     return true;
   }
