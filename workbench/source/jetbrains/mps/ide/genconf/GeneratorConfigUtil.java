@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
 
 public class GeneratorConfigUtil {
   public static List<SModelDescriptor> getLanguageModels(Language lang) {
@@ -35,7 +35,7 @@ public class GeneratorConfigUtil {
 
 
     Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(lang.getOwnModelDescriptors());
-    for (SModelDescriptor sm : lang.getAccessoryModels()) {      
+    for (SModelDescriptor sm : lang.getAccessoryModels()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
       if (ownModels.contains(sm)) {

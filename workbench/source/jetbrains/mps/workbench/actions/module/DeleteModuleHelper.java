@@ -18,10 +18,13 @@ package jetbrains.mps.workbench.actions.module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 import javax.swing.JOptionPane;
@@ -38,7 +41,7 @@ public class DeleteModuleHelper {
   }
 
   private static void delete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
-    if (!mpsProject.isProjectModule(module) && !deleteFiles){
+    if (!mpsProject.isProjectModule(module) && !deleteFiles) {
       JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }
 
@@ -56,9 +59,9 @@ public class DeleteModuleHelper {
       project.save();
     }
 
-    if (deleteFiles){
-      for(SModelDescriptor model:module.getOwnModelDescriptors()){
-        DeleteModelHelper.delete(module,model,true);
+    if (deleteFiles) {
+      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+        DeleteModelHelper.delete(module, model, true);
       }
       module.getDescriptorFile().delete();
       MPSModuleRepository.getInstance().removeModule(module);

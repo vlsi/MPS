@@ -53,7 +53,7 @@ public class IdeMain {
     return ourUILoaded;
   }
 
-  public enum TestMode{
+  public enum TestMode {
     NO_TEST, CORE_TEST, UI_TEST
   }
 }

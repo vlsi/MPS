@@ -157,7 +157,7 @@ public class ImportProperties {
     for (IModule owner : owners) {
       if (deps.contains(owner)) return null;
     }
-    if (owners.contains(mySourceModule)){
+    if (owners.contains(mySourceModule)) {
       return mySourceModule.getModuleReference();
     }
     for (IModule owner : owners) {
@@ -216,7 +216,7 @@ public class ImportProperties {
 
     //if there are new module dependencies, class reloading is needed
     List<Dependency> deps = getNewModuleDependencies(all);
-    if (!deps.isEmpty()){
+    if (!deps.isEmpty()) {
       ModuleDescriptor descriptor = targetModule.getModuleDescriptor();
       for (Dependency dep : deps) {
         descriptor.getDependencies().add(dep);

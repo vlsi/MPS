@@ -17,8 +17,8 @@ package jetbrains.mps.ide.dependency;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -35,8 +36,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.LayoutManager;
-
-import org.jetbrains.annotations.NonNls;
 
 public class DependencyViewer extends BaseProjectTool {
   private DependencyTree myTree;
@@ -112,7 +111,7 @@ public class DependencyViewer extends BaseProjectTool {
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
   }
 
-  public class MyPanel extends JPanel  implements DataProvider {
+  public class MyPanel extends JPanel implements DataProvider {
     public MyPanel(LayoutManager layout) {
       super(layout);
     }

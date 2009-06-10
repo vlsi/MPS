@@ -17,7 +17,10 @@ package jetbrains.mps.ide.dialogs;
 
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.Border;
 import java.awt.*;
 
@@ -44,7 +47,7 @@ public class BaseScrollingTextDialog extends BaseDialog {
     setSize(d);
   }
 
-  public void setContentBorder(Border border){
+  public void setContentBorder(Border border) {
     myScrollPane.setBorder(border);
   }
 

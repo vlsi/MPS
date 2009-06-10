@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.util.ArrayList;

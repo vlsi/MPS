@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.genconf;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Collections;

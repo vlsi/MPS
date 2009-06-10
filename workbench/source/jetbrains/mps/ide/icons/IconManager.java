@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -37,8 +38,6 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -67,7 +66,7 @@ public class IconManager {
       public Icon compute() {
         Icon result = null;
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
-          result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());  
+          result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
         }
 
         if (result == null) {
@@ -179,7 +178,7 @@ public class IconManager {
   public static Icon getIconFor(IFile file) {
     Icon icon = null;
     if (file.exists()) {
-      byte[] image = new byte[(int) file.length()];                                          
+      byte[] image = new byte[(int) file.length()];
       InputStream is = null;
       try {
         is = file.openInputStream();

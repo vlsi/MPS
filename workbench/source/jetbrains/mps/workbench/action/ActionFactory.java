@@ -67,7 +67,7 @@ public class ActionFactory {
 
     AnAction registeredAction = ActionManager.getInstance().getAction(id);
     if (registeredAction == null) {
-      registerAction(newAction,actionId, id, moduleNamespace, params);
+      registerAction(newAction, actionId, id, moduleNamespace, params);
       return newAction;
     } else {
       return registeredAction;
@@ -130,31 +130,31 @@ public class ActionFactory {
     return moduleNamespace + "#" + entity + "#" + actionId;
   }
 
-  private void registerAction(AnAction action,String shortId, String id, String languageNamespace, Object... params) {
+  private void registerAction(AnAction action, String shortId, String id, String languageNamespace, Object... params) {
     myActions.add(id);
 
     registerDefaultActionShortcut(action, id);
-    registerKeymapChanges(id,shortId, languageNamespace, params);
+    registerKeymapChanges(id, shortId, languageNamespace, params);
 
     ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
   }
 
-  private void registerKeymapChanges(String actionId,String action, String languageNamespace, Object[] params) {
+  private void registerKeymapChanges(String actionId, String action, String languageNamespace, Object[] params) {
     boolean cleared = false;
-    for (BaseKeymapChanges keymapDiff:myKeymaps){
+    for (BaseKeymapChanges keymapDiff : myKeymaps) {
       Keymap keymap = KeymapManager.getInstance().getKeymap(keymapDiff.getScheme());
       if (keymap == null) {
-        LOG.error("keymap "+keymapDiff.getScheme()+" is not found");
+        LOG.error("keymap " + keymapDiff.getScheme() + " is not found");
         return;
       }
 
-      if (keymapDiff.hasShortcutsForAction(action,languageNamespace)){
-        if (!cleared){
+      if (keymapDiff.hasShortcutsForAction(action, languageNamespace)) {
+        if (!cleared) {
           cleared = true;
           keymap.removeAllActionShortcuts(actionId);
         }
-        for (KeyStroke stroke:keymapDiff.getShortcutsForAction(action,languageNamespace,params)){
-          keymap.addShortcut(actionId,new KeyboardShortcut(stroke,null));
+        for (KeyStroke stroke : keymapDiff.getShortcutsForAction(action, languageNamespace, params)) {
+          keymap.addShortcut(actionId, new KeyboardShortcut(stroke, null));
         }
       }
     }
@@ -208,7 +208,7 @@ public class ActionFactory {
       manager.unregisterAction(actionId);
     }
     //todo remove shortcuts from all keymaps
-    
+
     myActions.clear();
     myKeymaps.clear();
   }

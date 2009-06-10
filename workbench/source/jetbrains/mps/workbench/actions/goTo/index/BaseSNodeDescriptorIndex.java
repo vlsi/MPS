@@ -15,32 +15,30 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import com.intellij.util.indexing.ScalarIndexExtension;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.DataIndexer;
-import com.intellij.util.indexing.FileBasedIndex.InputFilter;
-import com.intellij.util.io.KeyDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.indexing.DataIndexer;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndex.InputFilter;
+import com.intellij.util.indexing.FileContent;
+import com.intellij.util.indexing.ScalarIndexExtension;
+import com.intellij.util.io.KeyDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.SuspiciousModelIndex;
+import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-import java.io.IOException;
-
-import org.jetbrains.annotations.NotNull;
-import org.jdom.JDOMException;
 
 public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNodeDescriptor> {
 
