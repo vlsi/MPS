@@ -21,9 +21,15 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
         return new _Quotations.QuotationClass_40().createNode(typeCheckingContext);
       }
-      if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-        return new _Quotations.QuotationClass_41().createNode(typeCheckingContext);
-      }
+      // commented out because:
+      // in a node of type concept<SomeInterfaceConcept> could be stored a value node<SomeConcreteConcept>
+      // if SomeConcreteConcept is a subconcept of SomeInterfaceConcept.
+      // (see rule supertypesOf_SConceptTypeType_SConceptTypeType)
+      /*
+        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+          return new _Quotations.QuotationClass_41().createNode(typeCheckingContext);
+        }
+      */
     }
     return new _Quotations.QuotationClass_42().createNode(typeCheckingContext);
   }
