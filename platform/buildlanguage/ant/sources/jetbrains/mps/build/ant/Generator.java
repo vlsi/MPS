@@ -16,6 +16,8 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
@@ -24,6 +26,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.IdeMain.TestMode;
 
 import java.io.File;
@@ -31,9 +34,8 @@ import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
+import org.apache.log4j.*;
+import org.apache.log4j.spi.LoggingEvent;
 import org.apache.tools.ant.BuildException;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -49,6 +51,7 @@ public class Generator {
   public void generate() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
+    jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
@@ -78,6 +81,29 @@ public class Generator {
         myGenerationType,
         new EmptyProgressIndicator(),
         myMessageHandler);
+    }
+  }
+
+  private class MyMessageHandlerAppender implements ILoggingHandler {
+
+    public void info(LogEntry e) {
+      myMessageHandler.handle(new Message(MessageKind.INFORMATION, e.getMessage()));
+    }
+
+    public void warning(LogEntry e) {
+      myMessageHandler.handle(new Message(MessageKind.WARNING, e.getMessage()));
+    }
+
+    public void debug(LogEntry e) {
+      myMessageHandler.handle(new Message(MessageKind.INFORMATION, e.getMessage()));
+    }
+
+    public void error(LogEntry e) {
+      myMessageHandler.handle(new Message(MessageKind.ERROR, e.getMessage()));
+    }
+
+    public void fatal(LogEntry e) {
+      myMessageHandler.handle(new Message(MessageKind.ERROR, e.getMessage()));
     }
   }
 
