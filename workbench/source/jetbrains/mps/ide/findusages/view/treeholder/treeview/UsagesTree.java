@@ -606,7 +606,12 @@ public abstract class UsagesTree extends MPSTree {
   public void navigateToNode(final SNode node, boolean focus) {
     MPSProject mpsProject = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
     ModuleContext context = ModuleContext.create(node, mpsProject, false);
-    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, context, focus, true);
+    boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return !node.isRoot();
+      }
+    });
+    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, context, focus, select);
   }
 
   private void navigateInTree(Object o, boolean focus) {
