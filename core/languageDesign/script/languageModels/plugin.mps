@@ -28,6 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="17" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -64,7 +65,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207490769340">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207492364648">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207492365541">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215784376204" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1215784376204" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207492366480">
                 <link role="baseMethodDeclaration" targetNodeId="9.~DefaultActionGroup.removeAll():void" resolveInfo="removeAll" />
               </node>
@@ -615,7 +616,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215715702636">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215715702637">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215715702638">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1215715702639" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1215715702639" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215715702640">
                 <link role="baseMethodDeclaration" targetNodeId="9.~DefaultActionGroup.removeAll():void" resolveInfo="removeAll" />
               </node>

@@ -38,6 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="40" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
@@ -133,7 +134,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105385973">
                 <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105385974">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105385975" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206105385975" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649642">
                     <link role="member" targetNodeId="1217420649641" resolveInfo="node" />
                   </node>
@@ -147,7 +148,7 @@
             <link role="classConcept" targetNodeId="1206108391540" resolveInfo="GoToTypeErrorRuleUtil" />
             <link role="baseMethodDeclaration" targetNodeId="1206108407495" resolveInfo="goToTypeErrorRule" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206108601395">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206108601396" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206108601396" />
               <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647247">
                 <link role="member" targetNodeId="1217420647246" resolveInfo="operationContext" />
               </node>
@@ -175,7 +176,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105159032">
                 <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105163612">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105161221" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206105161221" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649643">
                     <link role="member" targetNodeId="1217420649641" resolveInfo="node" />
                   </node>
@@ -514,7 +515,7 @@
             <link role="baseMethodDeclaration" targetNodeId="2.~RefactorModelUtil.refactorModel(jetbrains.mps.smodel.SModelDescriptor):void" resolveInfo="refactorModel" />
             <link role="classConcept" targetNodeId="2.~RefactorModelUtil" resolveInfo="RefactorModelUtil" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206109731613">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206109731614" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206109731614" />
               <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647890">
                 <link role="member" targetNodeId="1217420647889" resolveInfo="model" />
               </node>
@@ -535,7 +536,7 @@
               <link role="baseMethodDeclaration" targetNodeId="8.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
               <link role="classConcept" targetNodeId="8.~Language" resolveInfo="Language" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206109309968">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206109308638" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206109308638" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647891">
                   <link role="member" targetNodeId="1217420647889" resolveInfo="model" />
                 </node>
@@ -583,7 +584,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponentsRepository.getNodeTypesComponent(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.NodeTypesComponent" resolveInfo="getNodeTypesComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184203988">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184203157">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206184203158" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206184203158" />
                     <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1206184203159">
                       <link role="member" targetNodeId="1206184077195" resolveInfo="node" />
                     </node>
@@ -626,7 +627,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206184275151">
                 <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponent.getRulesWhichAffectNodeType(jetbrains.mps.smodel.SNode):java.util.Set" resolveInfo="getRulesWhichAffectNodeType" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184280668">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206184280669" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206184280669" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1206184280670">
                     <link role="member" targetNodeId="1206184077195" resolveInfo="node" />
                   </node>
@@ -771,7 +772,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211456171425">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211456159279">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211456148799">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1211456148800" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1211456148800" />
                     <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648380">
                       <link role="member" targetNodeId="1217420648379" resolveInfo="operationContext" />
                     </node>
@@ -826,7 +827,7 @@
                   <link role="variableDeclaration" targetNodeId="1206184308309" resolveInfo="rules" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184368137">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206184368138" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1206184368138" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648381">
                     <link role="member" targetNodeId="1217420648379" resolveInfo="operationContext" />
                   </node>
@@ -859,7 +860,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206184669166">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184671421">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213875495525">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875495526" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1213875495526" />
                     <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420645714">
                       <link role="member" targetNodeId="1217420645713" resolveInfo="cell" />
                     </node>
@@ -877,7 +878,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206184678035">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184680258">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213875496325">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875496326" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1213875496326" />
                     <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420645715">
                       <link role="member" targetNodeId="1217420645713" resolveInfo="cell" />
                     </node>
@@ -895,7 +896,7 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1206184663300">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206184664381" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213875494460">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875494461" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1213875494461" />
               <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420645716">
                 <link role="member" targetNodeId="1217420645713" resolveInfo="cell" />
               </node>
@@ -910,7 +911,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206184750842">
               <link role="baseMethodDeclaration" targetNodeId="20.~JPopupMenu.show(java.awt.Component,int,int):void" resolveInfo="show" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213875501423">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875501424" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1213875501424" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648978">
                   <link role="member" targetNodeId="1217420648961" resolveInfo="frame" />
                 </node>
@@ -978,7 +979,7 @@
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211475061621">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1211475061622" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1211475061622" />
               <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1215438809493">
                 <link role="member" targetNodeId="1215438799718" resolveInfo="myChecker" />
               </node>
@@ -1012,7 +1013,7 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211475061636">
                   <link role="baseMethodDeclaration" targetNodeId="10.~Highlighter.addChecker(jetbrains.mps.nodeEditor.IEditorChecker):void" resolveInfo="addChecker" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211475061637">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1211475061638" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1211475061638" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1215438812447">
                       <link role="member" targetNodeId="1215438799718" resolveInfo="myChecker" />
                     </node>
@@ -1059,7 +1060,7 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211475120413">
                   <link role="baseMethodDeclaration" targetNodeId="10.~Highlighter.removeChecker(jetbrains.mps.nodeEditor.IEditorChecker):void" resolveInfo="removeChecker" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211475120414">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1211475120415" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1211475120415" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1215438817248">
                       <link role="member" targetNodeId="1215438799718" resolveInfo="myChecker" />
                     </node>
@@ -1070,7 +1071,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219142075783">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219142077661">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219142076094">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219142075784" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1219142075784" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1219142076301">
                     <link role="member" targetNodeId="1215438799718" resolveInfo="myChecker" />
                   </node>
@@ -1118,7 +1119,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207228241838">
               <link role="baseMethodDeclaration" targetNodeId="25.~ModelChecker.checkModel(jetbrains.mps.smodel.SModel):void" resolveInfo="checkModel" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207228244995">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1207228244996" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1207228244996" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1207228244997">
                   <link role="member" targetNodeId="1207228174490" resolveInfo="m" />
                 </node>
@@ -1150,7 +1151,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239190682272">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239190644390">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239190641635">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1239190638087" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1239190638087" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1239190643108">
                   <link role="member" targetNodeId="1217420646387" resolveInfo="project" />
                 </node>
@@ -1215,7 +1216,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837076576">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837020714">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228837017561">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228837017562" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1228837017562" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1228837017563">
                   <link role="member" targetNodeId="1228837001272" resolveInfo="project" />
                 </node>
@@ -1252,7 +1253,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228847408930">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228847408931">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228847408932" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1228847408932" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1228847408933">
                   <link role="member" targetNodeId="1228846534038" resolveInfo="project" />
                 </node>
@@ -1295,7 +1296,7 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228846629847">
               <link role="baseMethodDeclaration" targetNodeId="2.~TypecheckerStateViewComponent.sliceWithNode(jetbrains.mps.smodel.SNode):void" resolveInfo="sliceWithNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228846634272">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1228846634273" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1228846634273" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1228846634274">
                   <link role="member" targetNodeId="1228846446736" resolveInfo="n" />
                 </node>
@@ -1346,7 +1347,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214614448">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214614449">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1230214614450" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1230214614450" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1230214614451">
                   <link role="member" targetNodeId="1230214590204" resolveInfo="selectedCell" />
                 </node>
@@ -1370,7 +1371,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230214997216">
                 <link role="baseMethodDeclaration" targetNodeId="38.~NodeSubstituteInfo.getInequationSystem(jetbrains.mps.nodeEditor.cells.EditorCell):jetbrains.mps.typesystem.inference.InequationSystem" resolveInfo="getInequationSystem" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230214997217">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1230214997218" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1230214997218" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1230214997219">
                     <link role="member" targetNodeId="1230214590204" resolveInfo="selectedCell" />
                   </node>
@@ -1620,7 +1621,7 @@
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7796696880649590304">
                       <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTypeDontCheck" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7796696880649590306">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="7796696880649590307" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="7796696880649590307" />
                         <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="7796696880649590308">
                           <link role="member" targetNodeId="7796696880649589044" resolveInfo="node" />
                         </node>
@@ -1642,7 +1643,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="20.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolveInfo="showMessageDialog" />
                 <link role="classConcept" targetNodeId="20.~JOptionPane" resolveInfo="JOptionPane" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7796696880649594549">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="7796696880649594550" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="7796696880649594550" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="7796696880649594551">
                     <link role="member" targetNodeId="7796696880649594548" resolveInfo="frame" />
                   </node>
@@ -1686,7 +1687,7 @@
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5501636852285516690">
                       <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5501636852285516691">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="5501636852285516692" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5501636852285516692" />
                         <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="5501636852285516693">
                           <link role="member" targetNodeId="7796696880649589044" resolveInfo="node" />
                         </node>
@@ -1701,13 +1702,13 @@
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5501636852285516709">
                       <link role="baseMethodDeclaration" targetNodeId="3.~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.IErrorReporter)" resolveInfo="MyBaseNodeDialog" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5501636852285516710">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="5501636852285516711" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5501636852285516711" />
                         <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="5501636852285516712">
                           <link role="member" targetNodeId="7796696880649589046" resolveInfo="context" />
                         </node>
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5501636852285516713">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="5501636852285516714" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5501636852285516714" />
                         <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="5501636852285516715">
                           <link role="member" targetNodeId="7796696880649589044" resolveInfo="node" />
                         </node>

@@ -26,6 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" version="-1" />
@@ -49,7 +50,7 @@
                   <link role="classifier" targetNodeId="11.~Method" resolveInfo="Method" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241368731003">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241368740364" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241368740364" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1241368731005">
                     <link role="member" targetNodeId="1241368401211" resolveInfo="getMainMethod" />
                   </node>
@@ -199,7 +200,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1241368458523">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1241368459385" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241368452582">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241368452583" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241368452583" />
               <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1241368452584">
                 <link role="member" targetNodeId="1241368401211" resolveInfo="getMainMethod" />
               </node>
@@ -222,7 +223,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1241367275637" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275638">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275639">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241367275640" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241367275640" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1241367275641">
                   <link role="member" targetNodeId="1241364981992" resolveInfo="calcNode" />
                 </node>
@@ -250,7 +251,7 @@
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1241367275651">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275652">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275653">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241367275654" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241367275654" />
                       <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1241367275655">
                         <link role="member" targetNodeId="1241364981992" resolveInfo="calcNode" />
                       </node>
@@ -272,7 +273,7 @@
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1241367275664">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275665">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241367275666">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241367275667" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241367275667" />
                       <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1241367275668">
                         <link role="member" targetNodeId="1241364981992" resolveInfo="calcNode" />
                       </node>
@@ -312,7 +313,7 @@
               <link role="classifier" targetNodeId="8.~Class" resolveInfo="Class" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241368470984">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1241368470985" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1241368470985" />
               <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1241368470986">
                 <link role="member" targetNodeId="1241367275631" resolveInfo="getCalcClass" />
               </node>
