@@ -34,7 +34,9 @@ import java.util.regex.Pattern;
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   public static final String STRUCTURE = "structure";
+
   private static final HashSet<String> PREPOSITIONS;
+  private static final HashSet<String> PARTICLES;
   private static final HashSet<String> ARTICLES;
 
   static {
@@ -47,8 +49,11 @@ public class NameUtil {
       "under", "underneath", "until", "up", "upon", "with", "within", "without"};
     PREPOSITIONS = new HashSet<String>(Arrays.asList(preps));
 
-    String[] articles = {"a","the"};
+    String[] articles = {"a", "the"};
     ARTICLES = new HashSet<String>(Arrays.asList(articles));
+
+    String[] particles = {"and", "or", "not"};
+    PARTICLES = new HashSet<String>(Arrays.asList(particles));
   }
 
   //todo make it returRn textual representation of an error
@@ -74,16 +79,23 @@ public class NameUtil {
   public static String wordWithNamingPolicy(@NotNull String s) {
     if (s.length() == 0) return s;
     if (s.matches("'.*'")) return s;
-    if (isPreposition(s)) return decapitalize(s);
-    if (isArticle(s)) return decapitalize(s);
+    if (isAuxiluaryWord(s)) return decapitalize(s);
     return capitalize(s);
+  }
+
+  public static boolean isAuxiluaryWord(String s) {
+    return isPreposition(s) || isParticle(s) || isArticle(s);
   }
 
   public static boolean isPreposition(String s) {
     return PREPOSITIONS.contains(s);
   }
 
-  public static boolean isArticle(String s){
+  public static boolean isParticle(String s) {
+    return PARTICLES.contains(s);
+  }
+
+  public static boolean isArticle(String s) {
     return ARTICLES.contains(s);
   }
 
