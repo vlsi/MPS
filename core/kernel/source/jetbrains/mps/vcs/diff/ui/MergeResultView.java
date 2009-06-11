@@ -46,26 +46,7 @@ import java.awt.BorderLayout;
 import java.awt.Frame;
 
 class MergeResultView extends JPanel {
-  private MPSTree myResultTree = new MPSTree() {
-    protected MPSTreeNode rebuild() {
-      // TODO ?
-      return new MySModelTreeNode(myMerger.getResultModel(), "", new StandaloneMPSContext() {
-        @Deprecated
-        public MPSProject getMPSProject() {
-          return null;
-        }
-
-        public IModule getModule() {
-          return null;
-        }
-
-        @NotNull
-        public IScope getScope() {
-          return GlobalScope.getInstance();
-        }
-      });
-    }
-  };
+  private MPSTree myResultTree;
 
   private MPSTree myConflictsAndWarningsTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
@@ -99,15 +80,19 @@ class MergeResultView extends JPanel {
   private SModel myBaseModel;
   private SModel myChange1;
   private SModel myChange2;
-  private Frame myMainFrame;
   private IOperationContext myContext;
 
-  public MergeResultView(Frame mainFrame, SModel baseModel, SModel change1, SModel change2) {
-    myMainFrame = mainFrame;
+  public MergeResultView(IOperationContext context, SModel baseModel, SModel change1, SModel change2) {
+    myContext = context;
     myBaseModel = baseModel;
     myChange1 = change1;
     myChange2 = change2;
-    IOperationContext context;
+
+    myResultTree = new MPSTree() {
+      protected MPSTreeNode rebuild() {
+        return new MySModelTreeNode(myMerger.getResultModel(), "", myContext);
+      }
+    };
 
     myMerger = new Merger(baseModel, change1, change2);
     myMerger.doRebuild(new Runnable() {
@@ -152,11 +137,12 @@ class MergeResultView extends JPanel {
     }
 
 
-    public void doubleClick() {      
-      final RootMergeDialog dialog = new RootMergeDialog(myMainFrame, myChange1, myChange2, myBaseModel);
+    public void doubleClick() {
+      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, myMerger.getResultModel());
+      //final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, myBaseModel);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.init(myContext, getSNode(), "new", "old");
+          dialog.init(getSNode(), "new", "old");
         }
       });
 

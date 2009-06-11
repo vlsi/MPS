@@ -30,8 +30,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private static final Color NEW_COLOR = new Color(186, 238, 186);
   private static final Color CHANGE_COLOR = new Color(188, 207, 249);
   private static final Color DELETE_COLOR = new Color(203, 203, 203);
-  private EditorComponent myNewEditorComponent;
-  private EditorComponent myOldEditorComponent;
+  private DiffEditorComponent myNewEditorComponent;
+  private DiffEditorComponent myOldEditorComponent;
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
     super(parent, "Difference");
@@ -80,8 +80,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     rebuildChangeBlocks();
   }
 
-  private EditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    EditorComponent result = new DiffEditorComponent(context, node);
+  private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
+    DiffEditorComponent result = new DiffEditorComponent(context, node);
     result.editNode(node, context);
     result.setEditable(false);
     JPanel panel = new JPanel(new BorderLayout());
@@ -104,7 +104,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldChanges.clear();
 
     List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
-    hightlight(revertChanges, myNewEditorComponent, myOldEditorComponent);
+    myNewChanges = hightlight(revertChanges, myNewEditorComponent, myNewModel, true);
+    myOldChanges = hightlight(revertChanges, myOldEditorComponent, myOldModel, false);
     makeChangeBlocks(myNewEditorComponent, new ArrayList<ChangeEditorMessage>(myNewChanges));
     makeChangeBlocks(myOldEditorComponent, new ArrayList<ChangeEditorMessage>(myOldChanges));    
   }
@@ -128,22 +129,19 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     ChangesBlock block = null;
 
-    for (ChangeEditorMessage m: changes) {
-      System.out.println(m.getChange());
+    for (ChangeEditorMessage m: changes) {    
       EditorCell cell = highlightManager.getCell(m);
       if (block == null) {
         block = createChangeBlock(editorComponent, changes);
       } else {
         if (block.getY2() < cell.getY()) {
           editorComponent.addChanges(block);
-          block = createChangeBlock(editorComponent, changes);
-          System.out.println("------");
+          block = createChangeBlock(editorComponent, changes);          
         }
       }
       block.addChange(m, cell);
     }
     if (block != null) {
-      System.out.println("------");
       editorComponent.addChanges(block);
     }
   }
@@ -194,7 +192,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   }
 
 
-  private void hightlight(final List<Change> revertChanges, final EditorComponent newEditorComponent, final EditorComponent oldEditorComponent) {
+  private List hightlight(final List<Change> revertChanges, final EditorComponent editorComponent, final SModel model, final boolean isNew) {
+    final List resultChanges = new ArrayList<Change>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
@@ -203,61 +202,51 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
           if (change instanceof SetReferenceChange) {
             SetReferenceChange referenceChange = (SetReferenceChange)change;            
 
-            ChangeEditorMessage message = new ChangeEditorMessage(change, myNewModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
+            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
             message.setRole(referenceChange.getRole());
 
-            myNewChanges.add(message);
-            newEditorComponent.getHighlightManager().mark(message);
-
-            message = new ChangeEditorMessage(change, myOldModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
-            message.setRole(referenceChange.getRole());
-            myOldChanges.add(message);
-            oldEditorComponent.getHighlightManager().mark(message);
-
+            resultChanges.add(message);
+            editorComponent.getHighlightManager().mark(message);
           }
 
           if (change instanceof MoveNodeChange || change instanceof ChangeConceptChange) {            
-            ChangeEditorMessage message = new ChangeEditorMessage(change, myNewModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
-            myNewChanges.add(message);
-            newEditorComponent.getHighlightManager().mark(message);
-
-            message = new ChangeEditorMessage(change, myOldModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
-            myOldChanges.add(message);
-            oldEditorComponent.getHighlightManager().mark(message);
+            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
+            resultChanges.add(message);
+            editorComponent.getHighlightManager().mark(message);
           }
 
           if (change instanceof NewNodeChange) {
-            SNode removedNode = myOldModel.getNodeById(change.getAffectedNodeId());
+            if (!isNew) {
+            SNode removedNode = model.getNodeById(change.getAffectedNodeId());
 
             ChangeEditorMessage message = new ChangeEditorMessage(change, removedNode, DELETE_COLOR, "", RootDifferenceDialog.this);
-            myOldChanges.add(message);
-            oldEditorComponent.getHighlightManager().mark(message);
+            resultChanges.add(message);
+            editorComponent.getHighlightManager().mark(message);
+            }
           }
 
           if (change instanceof SetPropertyChange) {
             SetPropertyChange propertyChange = (SetPropertyChange)change;
-            ChangeEditorMessage message = new ChangeEditorMessage(change, myNewModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
+            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
             message.setProperty(propertyChange.getProperty());
-            myNewChanges.add(message);
-            newEditorComponent.getHighlightManager().mark(message);
-
-            message = new ChangeEditorMessage(change, myOldModel.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", RootDifferenceDialog.this);
-            message.setProperty(propertyChange.getProperty());
-            myOldChanges.add(message);
-            oldEditorComponent.getHighlightManager().mark(message);
+            resultChanges.add(message);
+            editorComponent.getHighlightManager().mark(message);
           }
 
           if (change instanceof DeleteNodeChange) {
-            SNode removedNode = myNewModel.getNodeById(change.getAffectedNodeId());
-            ChangeEditorMessage message = new ChangeEditorMessage(change, removedNode, NEW_COLOR, "", RootDifferenceDialog.this);
-            myNewChanges.add(message);
-            newEditorComponent.getHighlightManager().mark(message);
+            if (isNew) {
+              SNode removedNode = model.getNodeById(change.getAffectedNodeId());
+              ChangeEditorMessage message = new ChangeEditorMessage(change, removedNode, NEW_COLOR, "", RootDifferenceDialog.this);
+              resultChanges.add(message);
+              editorComponent.getHighlightManager().mark(message);
+            }
           }
           
         }
       }
     });
 
+    return resultChanges;
   }
 
   protected JComponent getMainComponent() {

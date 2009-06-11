@@ -16,8 +16,10 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.openapi.graph.base.DataProvider;
 import com.intellij.idea.IdeaTestApplication;
 import static jetbrains.mps.TestMain.configureMPS;
 import jetbrains.mps.ide.IdeMain;
@@ -31,9 +33,11 @@ import jetbrains.mps.util.JDOMUtil;
 import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.MPSProject.ProjectScope;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -41,8 +45,11 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.File;
 
 public class TestMergeDialog {
+  private static EditorManager myEditorManager = new EditorManager();
+
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();        
@@ -68,9 +75,18 @@ public class TestMergeDialog {
 
               @NotNull
               public IScope getScope() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
+                return GlobalScope.getInstance();
+              }
+
+              @Override
+              public <T> T getComponent(Class<T> clazz) {
+                if (clazz == EditorManager.class) {
+                  return (T)myEditorManager;
+                }
+                return null;
               }
             };
+
             return new MergeModelsDialog(context, baseModel, mineModel, newModel);
           }
         });

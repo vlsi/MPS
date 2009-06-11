@@ -32,7 +32,7 @@ class MergeView extends JPanel {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         add(new HeaderWrapper("Mine Version", new ModelDifferenceComponent(context).showDifference(baseModel, mine)));
-        myMergeResult = new MergeResultView(null, baseModel, mine, repo);
+        myMergeResult = new MergeResultView(context, baseModel, mine, repo);
         add(new HeaderWrapper("Merge Result", myMergeResult));
         add(new HeaderWrapper("Repository Version", new ModelDifferenceComponent(context).showDifference(baseModel, repo)));
       }
