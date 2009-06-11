@@ -134,15 +134,15 @@ public class NameUtil {
   }
 
   public static boolean isPreposition(String s) {
-    return PREPOSITIONS.contains(s);
+    return PREPOSITIONS.contains(s.toLowerCase());
   }
 
   public static boolean isParticle(String s) {
-    return PARTICLES.contains(s);
+    return PARTICLES.contains(s.toLowerCase());
   }
 
   public static boolean isArticle(String s) {
-    return ARTICLES.contains(s);
+    return ARTICLES.contains(s.toLowerCase());
   }
 
   public static String capitalize(String s) {
