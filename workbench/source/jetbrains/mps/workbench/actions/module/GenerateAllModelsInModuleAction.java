@@ -83,7 +83,9 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     myProject = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
     myOperationContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
     if (myOperationContext == null) return false;
-    myModules = new HashSet(MPSDataKeys.MODULES.getData(e.getDataContext()));
+    List<IModule> moduleList = MPSDataKeys.MODULES.getData(e.getDataContext());
+    if (moduleList == null) moduleList = new ArrayList<IModule>();
+    myModules = new HashSet(moduleList);
     if (myModules.isEmpty()) {
       IModule contextModule = MPSDataKeys.CONTEXT_MODULE.getData(e.getDataContext());
       if (contextModule == null) return false;

@@ -62,7 +62,9 @@ public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
     myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
     if (myProject == null) return false;
     myModels = MPSDataKeys.MODELS.getData(e.getDataContext());
+    if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
     myModules = MPSDataKeys.MODULES.getData(e.getDataContext());
+    if (myModules == null) myModules = new ArrayList<IModule>();
 
     return true;
   }

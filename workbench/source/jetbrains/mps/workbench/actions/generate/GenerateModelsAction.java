@@ -65,8 +65,8 @@ public abstract class GenerateModelsAction extends BaseAction {
     MPSProject project = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
     myGenManager = project.getComponentSafe(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
-    if (myModels == null || myModels.isEmpty()) {
-      myModels = new ArrayList<SModelDescriptor>();
+    if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
+    if (myModels.isEmpty()) {
       SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
       if (model != null) {
         myModels.add(model);
