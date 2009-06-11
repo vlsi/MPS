@@ -61,7 +61,15 @@ public class NameUtil {
     return captionWithNamingPolicy(s).equals(s);
   }
 
+  public static boolean satisfiesPartNamingPolicy(@NotNull String s) {
+    return captionPartWithNamingPolicy(s).equals(s);
+  }
+
   public static String captionWithNamingPolicy(@NotNull String s) {
+    return captionPartWithNamingPolicy(s).trim();
+  }
+
+  public static String captionPartWithNamingPolicy(@NotNull String s) {
     if (s.length() == 0) return s;
 
     final String quote = "'";
@@ -79,7 +87,7 @@ public class NameUtil {
         if (inQuoted){
           result.append(token);
         }else{
-          result.append(captionWithNamingPolicyNoQuoting(token));
+          result.append(captionPartWithNamingPolicyNoQuoting(token));
         }
       }
     }
@@ -87,7 +95,7 @@ public class NameUtil {
     return removeDoubleSpaces(result.toString());
   }
 
-  public static String captionWithNamingPolicyNoQuoting(String s) {
+  private static String captionPartWithNamingPolicyNoQuoting(String s) {
     if (s.length() == 0) return s;
 
     StringBuilder result = new StringBuilder(s.length());

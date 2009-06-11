@@ -221,14 +221,14 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5234501652636703430">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5234501652636703442">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5234501652636703445">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="99724900834449904">
-                <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.satisfiesNamingPolicy(java.lang.String):boolean" resolveInfo="satisfiesNamingPolicy" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="214376853586295943">
+                <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.satisfiesPartNamingPolicy(java.lang.String):boolean" resolveInfo="satisfiesPartNamingPolicy" />
                 <link role="classConcept" targetNodeId="11.~NameUtil" resolveInfo="NameUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="99724900834449905">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="214376853585979128">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853586295944">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="214376853586295945">
                     <link role="variableDeclaration" targetNodeId="214376853585979125" resolveInfo="s" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="99724900834449907">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="214376853586295946">
                     <link role="property" targetNodeId="2v.1070475926801" resolveInfo="value" />
                   </node>
                 </node>
@@ -433,14 +433,14 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="5234501652636848216">
-                  <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5234501652636849619">
-                    <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolveInfo="captionWithNamingPolicy" />
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="214376853586295957">
+                    <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolveInfo="captionPartWithNamingPolicy" />
                     <link role="classConcept" targetNodeId="11.~NameUtil" resolveInfo="NameUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5234501652636849623">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="214376853585979036">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853586295958">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="214376853586295959">
                         <link role="variableDeclaration" targetNodeId="214376853585979032" resolveInfo="s" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5234501652636849629">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="214376853586295960">
                         <link role="property" targetNodeId="2v.1070475926801" resolveInfo="value" />
                       </node>
                     </node>
@@ -657,14 +657,14 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="214376853585725506">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853585725507">
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="214376853585725508">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="214376853585725509">
-                <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolveInfo="captionWithNamingPolicy" />
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="214376853586295947">
+                <link role="baseMethodDeclaration" targetNodeId="11.~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolveInfo="captionPartWithNamingPolicy" />
                 <link role="classConcept" targetNodeId="11.~NameUtil" resolveInfo="NameUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853585725510">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="214376853585725511">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853586295948">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="214376853586295949">
                     <link role="quickFixArgument" targetNodeId="214376853585725345" resolveInfo="literal" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="214376853585725512">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="214376853586295950">
                     <link role="property" targetNodeId="2v.1070475926801" resolveInfo="value" />
                   </node>
                 </node>
