@@ -7,8 +7,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_1240406910049 = {SNode.class};
@@ -26,6 +27,14 @@ public class IntentionDeclaration_Behavior {
 
   public static boolean virtual_isParameterized_1240406910049(SNode thisNode) {
     return false;
+  }
+
+  public static List<SNode> virtual_getDescendantsToCheck_2180200154984979528(SNode thisNode) {
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "body", true), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
+  }
+
+  public static String virtual_getFixIntentionCaption_2180200154984979537(SNode thisNode) {
+    return "Fix Intention Description";
   }
 
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {

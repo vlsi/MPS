@@ -51,7 +51,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193396656622">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193396722872">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193396722873">
-            <property name="value" value="Convert to \&quot;for (Type var: iterable)\&quot;" />
+            <property name="value" value="Convert to 'for (Type var: iterable)'" />
           </node>
         </node>
       </node>
@@ -316,7 +316,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204741875294">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204741895869">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204741895870">
-            <property name="value" value="Convert to \&quot;foreach &lt;e&gt; in &lt;sequence&gt;\&quot;" />
+            <property name="value" value="Convert to 'foreach &lt;e&gt; in &lt;sequence&gt;'" />
           </node>
         </node>
       </node>

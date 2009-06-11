@@ -1084,7 +1084,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238684449205">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238684450300">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238684450677">
-                  <property name="value" value="Convert to As Cast" />
+                  <property name="value" value="Convert to 'as' Cast" />
                 </node>
               </node>
             </node>

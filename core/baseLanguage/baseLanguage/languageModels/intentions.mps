@@ -2206,20 +2206,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199580088706">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199580088707">
-            <property name="name" value="falseStmt" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1199580088708">
-              <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963910">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199580088711">
-                <link role="variableDeclaration" targetNodeId="1199562466832" resolveInfo="stmtNode" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="1199580088710" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199580133027">
           <property name="value" value="make the best - block ever" />
         </node>

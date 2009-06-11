@@ -2636,13 +2636,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237485920293">
-    <property name="name" value="MigrateToIngendLayout" />
+    <property name="name" value="MigrateToIndentLayout" />
     <link role="forConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237485920294">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237485920295">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237485977546">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237485977547">
-            <property name="value" value="Migration to Indent layout" />
+            <property name="value" value="Migrate to Indent Layout" />
           </node>
         </node>
       </node>

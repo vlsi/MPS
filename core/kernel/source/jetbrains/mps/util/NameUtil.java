@@ -52,11 +52,11 @@ public class NameUtil {
     String[] articles = {"a", "the"};
     ARTICLES = new HashSet<String>(Arrays.asList(articles));
 
-    String[] particles = {"and", "or", "not"};
+    String[] particles = {"and", "or", "not", "as"};
     PARTICLES = new HashSet<String>(Arrays.asList(particles));
   }
 
-  //todo make it returRn textual representation of an error
+  //todo make it return textual representation of an error
   public static boolean satisfiesNamingPolicy(@NotNull String s) {
     return captionWithNamingPolicy(s).equals(s);
   }
@@ -64,16 +64,62 @@ public class NameUtil {
   public static String captionWithNamingPolicy(@NotNull String s) {
     if (s.length() == 0) return s;
 
+    final String quote = "'";
+
+    StringBuilder result = new StringBuilder(s.length());
+    StringTokenizer st = new StringTokenizer(s, quote + " ", true);
+
+    boolean inQuoted = false;
+    while (st.hasMoreTokens()) {
+      String token = st.nextToken();
+      if (token.equals(quote)) {
+        result.append(token);
+        inQuoted = !inQuoted;
+      } else {
+        if (inQuoted){
+          result.append(token);
+        }else{
+          result.append(captionWithNamingPolicyNoQuoting(token));
+        }
+      }
+    }
+
+    return removeDoubleSpaces(result.toString());
+  }
+
+  public static String captionWithNamingPolicyNoQuoting(String s) {
+    if (s.length() == 0) return s;
+
     StringBuilder result = new StringBuilder(s.length());
     StringTokenizer st = new StringTokenizer(s);
+
+    if (s.startsWith(" ")) result.append(" ");
 
     while (st.hasMoreTokens()) {
       result.append(wordWithNamingPolicy(st.nextToken())).append(" ");
     }
 
-    result.delete(result.length() - 1, result.length());
+    if (!s.endsWith(" ")){
+      result.delete(result.length() - 1, result.length());
+    }
 
-    return result.toString();
+    return removeDoubleSpaces(result.toString());
+  }
+
+  public static String removeDoubleSpaces(String s) {
+    char[] chars = new char[s.length()];
+    int charNum = 0;
+
+    boolean space = false;
+    for (char c : s.toCharArray()) {
+      boolean add = (c != ' ' || !space);
+      space = (c == ' ');
+      if (add){
+        chars[charNum++]=c;
+      }
+    }
+
+    return new String(chars,0,charNum);
   }
 
   public static String wordWithNamingPolicy(@NotNull String s) {
