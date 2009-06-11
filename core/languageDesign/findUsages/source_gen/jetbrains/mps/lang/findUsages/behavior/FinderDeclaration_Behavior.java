@@ -9,6 +9,10 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.checkedName.PropertyReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class FinderDeclaration_Behavior {
 
@@ -25,6 +29,16 @@ public class FinderDeclaration_Behavior {
 
   public static String call_getGeneratedClassLongName_1213877240120(SNode thisNode) {
     return ((SModel)SNodeOperations.getModel(thisNode)).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
+  }
+
+  public static String virtual_getFixIntentionCaption_2180200154984979537(SNode thisNode) {
+    return "Fix Finder Name";
+  }
+
+  public static List<PropertyReference> virtual_getPropertiesToCheck_216263776404500459(SNode thisNode) {
+    List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
+    ListSequence.fromList(result).addElement(new PropertyReference(thisNode, "description"));
+    return result;
   }
 
 }

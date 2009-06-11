@@ -110,6 +110,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488845">
     <property name="rootable" value="true" />
     <property name="name" value="FinderDeclaration" />
@@ -130,6 +131,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1197044488851">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="214376853586011699">
+      <link role="intfc" targetNodeId="2v.2180200154984979524" resolveInfo="ICheckedNamePolicy" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488852">
