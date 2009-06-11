@@ -7,6 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -267,6 +268,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2180200154984979525">
+    <property name="package" value="CheckedName" />
     <link role="concept" targetNodeId="1.2180200154984979524" resolveInfo="ICheckedNamePolicy" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2180200154984979526">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2180200154984979527" />
@@ -274,12 +276,39 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2180200154984979528">
       <property name="name" value="getDescendantsToCheck" />
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
+      <property name="isAbstract" value="false" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2180200154984979529" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2180200154984979532">
         <link role="elementConcept" targetNodeId="2v.1070475926800" resolveInfo="StringLiteral" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2180200154984979531" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2180200154984979531">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="99724900834486179">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="99724900834486181">
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="99724900834491086">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="99724900834491087">
+                <link role="elementConcept" targetNodeId="2v.1070475926800" resolveInfo="StringLiteral" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="216263776404500459">
+      <property name="name" value="getPropertiesToCheck" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="216263776404500460" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="216263776404500462">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="216263776404500468">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="216263776404500470">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="216263776404500471">
+              <node role="elementType" type="jetbrains.mps.lang.intentions.structure.PropertyRefType" id="216263776404500472" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="216263776404500464">
+        <node role="elementType" type="jetbrains.mps.lang.intentions.structure.PropertyRefType" id="216263776404500467" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2180200154984979537">
       <property name="name" value="getFixIntentionCaption" />

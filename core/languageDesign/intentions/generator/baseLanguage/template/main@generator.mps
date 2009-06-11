@@ -723,5 +723,66 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="214376853585892558">
+    <property name="name" value="mc_CheckedName" />
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="214376853585892559">
+      <link role="applicableConcept" targetNodeId="1.99724900834491666" resolveInfo="PropertyRefExpression" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="214376853585892560">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="214376853585892561">
+          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="214376853585892562">
+            <link role="baseMethodDeclaration" targetNodeId="2v.~PropertyReference.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.lang.String)" resolveInfo="PropertyReference" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="214376853585892563">
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="214376853585892564">
+                <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="214376853585892565">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="214376853585892566">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="214376853585892567">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853585892568">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="214376853585892569" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="214376853585892570">
+                          <link role="link" targetNodeId="1.99724900834491696" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="214376853585892571">
+              <property name="value" value="" />
+              <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="214376853585892572">
+                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="214376853585892573">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="214376853585892574">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="214376853585892575">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853585892576">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="214376853585892577">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="214376853585892578" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="214376853585892579">
+                            <link role="link" targetNodeId="1.99724900834491668" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="214376853585892580">
+                          <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="214376853585892581">
+      <link role="applicableConcept" targetNodeId="1.99724900834499790" resolveInfo="PropertyRefType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="214376853585892582">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="214376853585892583">
+          <link role="classifier" targetNodeId="2v.~PropertyReference" resolveInfo="PropertyReference" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
