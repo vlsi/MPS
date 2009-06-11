@@ -7757,7 +7757,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238764345598">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238764448898">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238764450224">
-            <property name="value" value="Iterate Over Iterable" />
+            <property name="value" value="Iterate over Iterable" />
           </node>
         </node>
       </node>

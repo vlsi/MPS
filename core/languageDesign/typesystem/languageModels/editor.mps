@@ -2912,9 +2912,6 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216391168789">
-        <property name="text" value="description:" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1216391182260">
         <link role="relationDeclaration" targetNodeId="1.1216391046856" />
       </node>

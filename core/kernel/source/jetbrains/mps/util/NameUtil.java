@@ -23,9 +23,7 @@ import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Pattern;
 
 
@@ -36,6 +34,58 @@ import java.util.regex.Pattern;
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   public static final String STRUCTURE = "structure";
+  private static final HashSet<String> PREPOSITIONS;
+  private static final HashSet<String> ARTICLES;
+
+  static {
+    String[] preps = {
+      "about", "above", "across", "after", "against", "along", "among", "around", "at",
+      "before", "behind", "below", "beneath", "beside", "between", "by", "down",
+      "during", "except", "for", "from", "in", "in front of", "inside", "instead of",
+      "into", "like", "near", "of", "off", "on", "onto", "on top of",
+      "out of", "outside", "over", "past", "since", "through", "to", "toward",
+      "under", "underneath", "until", "up", "upon", "with", "within", "without"};
+    PREPOSITIONS = new HashSet<String>(Arrays.asList(preps));
+
+    String[] articles = {"a","the"};
+    ARTICLES = new HashSet<String>(Arrays.asList(articles));
+  }
+
+  //todo make it returRn textual representation of an error
+  public static boolean satisfiesNamingPolicy(@NotNull String s) {
+    return captionWithNamingPolicy(s).equals(s);
+  }
+
+  public static String captionWithNamingPolicy(@NotNull String s) {
+    if (s.length() == 0) return s;
+
+    StringBuilder result = new StringBuilder(s.length());
+    StringTokenizer st = new StringTokenizer(s);
+
+    while (st.hasMoreTokens()) {
+      result.append(wordWithNamingPolicy(st.nextToken())).append(" ");
+    }
+
+    result.delete(result.length() - 1, result.length());
+
+    return result.toString();
+  }
+
+  public static String wordWithNamingPolicy(@NotNull String s) {
+    if (s.length() == 0) return s;
+    if (s.matches("'.*'")) return s;
+    if (isPreposition(s)) return decapitalize(s);
+    if (isArticle(s)) return decapitalize(s);
+    return capitalize(s);
+  }
+
+  public static boolean isPreposition(String s) {
+    return PREPOSITIONS.contains(s);
+  }
+
+  public static boolean isArticle(String s){
+    return ARTICLES.contains(s);
+  }
 
   public static String capitalize(String s) {
     if (s == null || s.length() == 0 || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {

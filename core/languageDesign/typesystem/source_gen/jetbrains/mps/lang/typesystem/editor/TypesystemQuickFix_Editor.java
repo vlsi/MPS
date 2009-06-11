@@ -44,9 +44,8 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6837_0(context, node, "arguments:"));
     editorCell.addEditorCell(this.createRefNodeList_6837_0(context, node));
     editorCell.addEditorCell(this.createConstant_6837_1(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_6837_4(context, node, "description:"));
     editorCell.addEditorCell(this.createRefNode_6837_3(context, node));
-    editorCell.addEditorCell(this.createConstant_6837_5(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_6837_4(context, node, ""));
     editorCell.addEditorCell(this.createRefNode_6837_1(context, node));
     return editorCell;
   }
@@ -98,14 +97,6 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6837_4(editorCell, node, context);
     setupLabel_Constant_6837_4(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_6837_5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6837_5(editorCell, node, context);
-    setupLabel_Constant_6837_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -271,15 +262,11 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_6837_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_6837_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6837_4");
-  }
-
   private static void setupBasic_RefNode_6837_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Constant_6837_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6837_5");
+  private static void setupBasic_Constant_6837_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6837_4");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -311,13 +298,10 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   private static void setupLabel_RefNode_6837_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_6837_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_RefNode_6837_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_6837_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_6837_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class quickFixArgumentListHandler_6837_0 extends RefNodeListHandler {
