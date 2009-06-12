@@ -22,7 +22,10 @@ import java.util.*;
 import jetbrains.mps.generator.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.runtime.BundleClassLoader;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -66,6 +69,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
       Map<MappingConfiguration, PriorityData> joinedLocks = new HashMap<MappingConfiguration, PriorityData>();
       for (MappingConfiguration coherentMapping : coherentMappingSet) {
         Map<MappingConfiguration, PriorityData> locks = priorityMap.get(coherentMapping);
+        if(locks == null) {
+          // trying to fix NPE here
+          throw new RuntimeException(createKeyNotFoundInProirityMapErrorMessage(coherentMapping, priorityMap, null));
+        }
         for (Map.Entry<MappingConfiguration, PriorityData> entry : locks.entrySet()) {
           MappingConfiguration lockMapping = entry.getKey();
           PriorityData priorityData = entry.getValue();
@@ -199,6 +206,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
     locksToUpdate.remove(weakLockMapping);
 
     Map<MappingConfiguration, PriorityData> locksToAdd = priorityMap.get(weakLockMapping);
+    if(locksToAdd == null) {
+      // trying to fix NPE here
+      throw new RuntimeException(createKeyNotFoundInProirityMapErrorMessage(weakLockMapping, priorityMap, null));
+    }
     for (MappingConfiguration lockMappingToAdd : locksToAdd.keySet()) {
       PriorityData priorityData = locksToUpdate.get(lockMappingToAdd);
       if (priorityData != null) {
@@ -211,4 +222,36 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
       }
     }
   }
+
+  /*package*/
+  static String createKeyNotFoundInProirityMapErrorMessage(MappingConfiguration key, Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> priorityMap, @Nullable MappingPriorityRule rule) {
+    String message = "Internal error occurred while processing mapping priority rule:\n" +
+      (rule != null ? GenerationPartitioningUtil.asString(rule, true) : "<unknown>") +
+      "\nmapping config\n'" + NameUtil.nodeFQName(key) + "'\nis not in priority map.";
+    //
+    message += "\ndisposed: " + (key.getClass().getClassLoader() instanceof BundleClassLoader ? "" + ((BundleClassLoader)key.getClass().getClassLoader()).isDisposed() : "n/a");
+    message += "\n---------------------------";
+    message += "\ncheck priority map (mappings with equal short name): ";
+    // check priority map
+    for (MappingConfiguration mappingConfig : priorityMap.keySet()) {
+      if (mappingConfig.getName().equals(key.getName())) {
+        message += "\n" + NameUtil.nodeFQName(mappingConfig);
+        message += "\n  disposed: " + (key.getClass().getClassLoader() instanceof BundleClassLoader ? "" + ((BundleClassLoader)key.getClass().getClassLoader()).isDisposed() : "n/a");
+        message += "\n  same adapter: " + (mappingConfig == key);
+        message += "\n  same node: " + (mappingConfig.getNode() == key.getNode());
+        message += "\n  same model: " + (mappingConfig.getModel() == key.getModel());
+      }
+    }
+    message += "\n---------------------------";
+    String model_name = key.getModel().getLongName();
+    message += "\nmappings from model '" + model_name + "' in priority map: ";
+    for (MappingConfiguration mappingConfig : priorityMap.keySet()) {
+      if (mappingConfig.getModel().getLongName().equals(model_name)) {
+        message += "\n" + NameUtil.nodeFQName(mappingConfig);
+      }
+    }
+    message += "\n---------------------------";
+    return message;
+  }
+
 }
