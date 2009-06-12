@@ -37,10 +37,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GenerateAllModelsInModuleAction extends BaseAction {
   private boolean myRegenerate;
@@ -111,6 +108,12 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
       }
       modelsToGenerate.addAll(getModelsToGenerate(module));
     }
+
+    Collections.sort(modelsToGenerate, new Comparator<SModelDescriptor>() {
+      public int compare(SModelDescriptor o1, SModelDescriptor o2) {
+        return o1.getLongName().compareTo(o2.getLongName());
+      }
+    });
 
     if (modelsToGenerate.isEmpty()) {
       Project project = e.getData(PlatformDataKeys.PROJECT);
