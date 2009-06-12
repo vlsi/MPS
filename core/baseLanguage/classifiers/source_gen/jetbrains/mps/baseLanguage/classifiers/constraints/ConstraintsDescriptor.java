@@ -14,7 +14,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new IMemberOperation_member_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ThisClassifierExpresson_classifier_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ThisClassifierExpression_classifier_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DefaultClassifierType_classifier_ReferentConstraint());
   }
 

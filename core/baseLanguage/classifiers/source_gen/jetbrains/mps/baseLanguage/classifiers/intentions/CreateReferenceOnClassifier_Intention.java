@@ -14,7 +14,7 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson";
+    return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression";
   }
 
   public boolean isParameterized() {

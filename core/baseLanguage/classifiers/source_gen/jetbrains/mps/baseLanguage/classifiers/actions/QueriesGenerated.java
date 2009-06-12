@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ThisClassifierExpresson_1219068300393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ThisClassifierExpression_1219068300393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false) == null);
   }
 
@@ -80,9 +80,9 @@ public class QueriesGenerated {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
+                SLinkOperations.setNewChild(result, "operand", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
                 if (multipleClassifiers) {
-                  SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "operand", true), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"), "classifier", contextClassifier, false);
+                  SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "operand", true), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"), "classifier", contextClassifier, false);
                 }
                 SLinkOperations.setTarget(result, "operation", IMember_Behavior.call_createOperation_1213877353000((item)), true);
                 return result;
@@ -95,14 +95,14 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpresson_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpression_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson");
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return ThisClassifierExpresson_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
+          return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
@@ -111,7 +111,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", null);
+            SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null);
             SLinkOperations.setTarget(expr, "classifier", (item), false);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
             return expr;

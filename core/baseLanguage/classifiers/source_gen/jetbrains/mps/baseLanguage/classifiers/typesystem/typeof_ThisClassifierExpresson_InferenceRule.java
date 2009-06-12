@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -19,7 +19,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    SNode classifier = ThisClassifierExpresson_Behavior.call_getClassifier_1213877512819(nodeToCheck);
+    SNode classifier = ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(nodeToCheck);
     if (classifier != null) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -37,7 +37,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson";
+    return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression";
   }
 
   public boolean isApplicable(SNode argument) {

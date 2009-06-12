@@ -90,7 +90,7 @@ public class IClassifier_Behavior {
         SLinkOperations.setTarget(call, "member", SNodeOperations.cast(methodDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), false);
         SLinkOperations.addAll(call, "actualArgument", parameteres);
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-        SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson", null), true);
+        SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null), true);
         SLinkOperations.setTarget(result, "operation", call, true);
         return result;
       }
