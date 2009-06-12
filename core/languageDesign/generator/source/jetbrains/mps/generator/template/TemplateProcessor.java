@@ -456,7 +456,7 @@ public class TemplateProcessor {
       }
 */
       List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(includeTemplate);
-      if (!GeneratorUtil.assertOneOrMaryAdjacentFragments(fragments, includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator)) {
+      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
         return null;
       }

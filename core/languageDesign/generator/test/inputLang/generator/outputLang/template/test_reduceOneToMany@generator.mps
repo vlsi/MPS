@@ -111,7 +111,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="3893401255414100167">
-    <property name="name" value="reduce_InputNode_A_using_LOOP" />
+    <property name="name" value="reduce_InputNode_A" />
     <link role="applicableConcept" targetNodeId="2.1195171011194" resolveInfo="InputNode_A" />
     <node role="contentNode" type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="3893401255414100170">
       <property name="name" value="_context_" />
@@ -137,10 +137,6 @@
       <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1391450457158185608">
         <property name="text" value="child #2" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1391450457158185609" />
-      </node>
-      <node role="specialChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1391450457158185614">
-        <property name="text" value="bad child" />
-        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1391450457158185619" />
       </node>
     </node>
   </node>

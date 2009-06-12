@@ -493,16 +493,19 @@ public class GeneratorUtil {
 
   /*package*/
 
-  static boolean assertOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+  static boolean checkIfOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (fragments.isEmpty()) {
       generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
       return false;
     }
     if (fragments.size() > 1) {
-      // check if all fragment nodes have the same parent node (same context)
-      INodeAdapter parent = fragments.get(0).getParent().getParent();
+      // check if all fragment nodes have the same parent node (same context) and same role in parent
+      INodeAdapter templateNode = fragments.get(0).getParent();
+      INodeAdapter parent = templateNode.getParent();
+      String role = templateNode.getRole_();
       for (TemplateFragment fragment : fragments) {
-        if (parent != fragment.getParent().getParent()) {
+        templateNode = fragment.getParent();
+        if (!(parent == templateNode.getParent() && role.equals(templateNode.getRole_()))) {
           generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
           return false;
         }
@@ -623,7 +626,7 @@ public class GeneratorUtil {
       }
 */
       List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(template);
-      if (assertOneOrMaryAdjacentFragments(fragments, template, inputNode, ruleNode, generator)) {
+      if (checkIfOneOrMaryAdjacentFragments(fragments, template, inputNode, ruleNode, generator)) {
         List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
         for (TemplateFragment fragment : fragments) {
           result.add(new Pair<SNode, String>(fragment.getParent().getNode(), GeneratorUtil.getMappingName(fragment, null)));
