@@ -35,7 +35,7 @@ public class IterateOverIterable_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Iterate Over Iterable";
+    return "Iterate over Iterable";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

@@ -66,7 +66,6 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention {
     SNode trueStmt = SNodeOperations.copyNode(stmtNode);
     // make - node
     SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));
-    SNode falseStmt = SNodeOperations.copyNode(stmtNode);
     // make the best - block ever
     SNode falseBlockStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SLinkOperations.setNewChild(falseBlockStmt, "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
