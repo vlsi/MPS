@@ -24,7 +24,6 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -174,7 +173,7 @@ public class GeneratorUtil {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
-    } 
+    }
   }
 
   /**
@@ -465,7 +464,8 @@ public class GeneratorUtil {
     }
   }
 
-  private static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
+  /*package*/
+  static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new ArrayList<TemplateFragment>(1);
     for (INodeAdapter subnode : template.getDescendants()) {
       if (subnode instanceof TemplateFragment) {
@@ -476,6 +476,7 @@ public class GeneratorUtil {
   }
 
   /*package*/
+/*
   static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
@@ -487,6 +488,27 @@ public class GeneratorUtil {
       return null;
     }
     return templateFragments.get(0);
+  }
+*/
+
+  /*package*/
+
+  static boolean assertOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+    if (fragments.isEmpty()) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
+      return false;
+    }
+    if (fragments.size() > 1) {
+      // check if all fragment nodes have the same parent node (same context)
+      INodeAdapter parent = fragments.get(0).getParent().getParent();
+      for (TemplateFragment fragment : fragments) {
+        if (parent != fragment.getParent().getParent()) {
+          generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   private static SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode, TemplateGenerator generator) {
@@ -577,7 +599,7 @@ public class GeneratorUtil {
 
 
   @Nullable
-  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+  /*package*/ static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
@@ -594,15 +616,28 @@ public class GeneratorUtil {
 
     } else if (ruleConsequence instanceof TemplateDeclarationReference) {
       TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+/*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, inputNode, ruleNode, generator);
       if (fragment != null) {
         return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
+      }
+*/
+      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(template);
+      if (assertOneOrMaryAdjacentFragments(fragments, template, inputNode, ruleNode, generator)) {
+        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
+        for (TemplateFragment fragment : fragments) {
+          result.add(new Pair<SNode, String>(fragment.getParent().getNode(), GeneratorUtil.getMappingName(fragment, null)));
+        }
+        return result;
       }
 
     } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
       BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
       if (templateNode != null) {
-        return new Pair<SNode, String>(templateNode.getNode(), null);
+//        return new Pair<SNode, String>(templateNode.getNode(), null);
+        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(1);
+        result.add(new Pair<SNode, String>(templateNode.getNode(), null));
+        return result;
       } else {
         generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
       }
@@ -611,14 +646,14 @@ public class GeneratorUtil {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
         if (GeneratorUtil.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
-          return getTemplateNodeFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
+          return getTemplateNodesFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
         }
       }
       RuleConsequence defaultConsequence = inlineSwitch.getDefaultConsequence();
       if (defaultConsequence == null) {
         generator.showErrorMessage(inputNode, null, inlineSwitch.getNode(), "no default consequence in switch");
       } else {
-        return getTemplateNodeFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence.getNode(), generator);
+        return getTemplateNodesFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence.getNode(), generator);
       }
 
     } else {
@@ -669,34 +704,42 @@ public class GeneratorUtil {
       return null;
     }
 
-    Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
-    if (nodeAndMappingName == null) {
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
+    if (nodeAndMappingNamePairs == null) {
       generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
       return null;
     }
-    SNode reductionTemplateNode = nodeAndMappingName.o1;
-    String mappingName = nodeAndMappingName.o2 != null ? nodeAndMappingName.o2 : ruleMappingName;
+/*
+    SNode reductionTemplateNode = nodeAndMappingNamePairs.o1;
+    String mappingName = nodeAndMappingNamePairs.o2 != null ? nodeAndMappingNamePairs.o2 : ruleMappingName;
 
     if (reductionTemplateNode == null) {
       generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule");
       return new ArrayList<SNode>();
     }
+*/
 
-    try {
-      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, reductionTemplateNode, inputNode, generator);
-    } catch (DismissTopMappingRuleException e) {
-      throw e;
-    } catch (TemplateProcessingFailureException e) {
-      generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
-    } catch (GenerationFailureException e) {
-      throw e;
-    } catch (GenerationCanceledException e) {
-      throw e;
-    } catch (Throwable t) {
-      LOG.error(t, BaseAdapter.fromNode(reductionTemplateNode));
-      generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
+    List<SNode> result = new ArrayList<SNode>(1);
+    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+      SNode templateNode = nodeAndMappingNamePair.o1;
+      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
+      try {
+//      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, reductionTemplateNode, inputNode, generator);
+        result.addAll(TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator));
+      } catch (DismissTopMappingRuleException e) {
+        throw e;
+      } catch (TemplateProcessingFailureException e) {
+        generator.showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
+      } catch (GenerationFailureException e) {
+        throw e;
+      } catch (GenerationCanceledException e) {
+        throw e;
+      } catch (Throwable t) {
+        LOG.error(t, BaseAdapter.fromNode(templateNode));
+        generator.showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
+      }
     }
-    return new ArrayList<SNode>(1);
+    return result;
   }
 
   /*package*/

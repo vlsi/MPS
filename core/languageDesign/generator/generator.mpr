@@ -19,8 +19,8 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="generator" moduleRef="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-      <genConfModule name="generator.generationContext" moduleRef="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
+      <genConfModule runnable="false" name="generator" moduleRef="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+      <genConfModule runnable="false" name="generator.generationContext" moduleRef="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

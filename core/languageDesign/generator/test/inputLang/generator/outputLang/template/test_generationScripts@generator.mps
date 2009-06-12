@@ -98,6 +98,7 @@
                     <link role="property" targetNodeId="1.1202243304949" resolveInfo="useInTest" />
                   </node>
                   <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1206461391593">
+                    <property name="asCast" value="true" />
                     <link role="concept" targetNodeId="1.1195168316083" resolveInfo="InputRoot" />
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206461391594">
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1206461391595">

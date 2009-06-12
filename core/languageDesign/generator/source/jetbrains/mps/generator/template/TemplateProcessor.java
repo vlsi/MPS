@@ -23,6 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +44,7 @@ public class TemplateProcessor {
   }
 
 
+  @NotNull
   public static List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                              SNode templateNode,
                                                              SNode inputNode,
@@ -110,6 +112,7 @@ public class TemplateProcessor {
     }
   }
 
+  @Nullable
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
                                                        @Nullable SNode inputNode,
@@ -226,6 +229,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
+  @Nullable
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
@@ -258,7 +262,7 @@ public class TemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes = copyNodeFromInputNode(mappingName, templateNode, newInputNode);
         if (_outputNodes != null) {
-          // check node languages : prevent 'input node' query from returnning node, which language was not counted when
+          // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
           for (SNode outputNode : _outputNodes) {
             Language outputNodeLang = outputNode.getNodeLanguage();
@@ -286,16 +290,28 @@ public class TemplateProcessor {
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
         if (altConsequence != null) {
           try {
-            Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
-            if (nodeAndMappingName == null) {
+            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
+            if (nodeAndMappingNamePairs == null) {
               myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
             }
-            SNode altTemplateNode = nodeAndMappingName.o1;
-            if (nodeAndMappingName.o2 != null) {
-              mappingName = nodeAndMappingName.o2;
+//            SNode altTemplateNode = nodeAndMappingNamePairs.o1;
+//            if (nodeAndMappingNamePairs.o2 != null) {
+//              mappingName = nodeAndMappingNamePairs.o2;
+//            }
+//            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
+            for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+              SNode altTemplateNode = nodeAndMappingNamePair.o1;
+              if (nodeAndMappingNamePair.o2 != null) {
+                mappingName = nodeAndMappingNamePair.o2;
+              }
+
+              List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
+              if (__outputNodes != null) {
+                if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
+                _outputNodes.addAll(__outputNodes);
+              }
             }
-            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
           } catch (AbandonRuleInputException e) {
             // it's ok. just ignore
           }
@@ -381,28 +397,34 @@ public class TemplateProcessor {
       }
       generationTracer.pushSwitch(templateSwitch.getNode());
       try {
+        List<SNode> _outputNodes = null;
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
-        SNode templateNodeForCase = null;
-        if (consequenceForCase != null) {
-          Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
-          if (nodeAndMappingName == null) {
+        if(consequenceForCase == null) {
+          // no switch-case found for the inputNode - continue with templateNode under the $switch$
+          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
+
+        } else {
+          List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
+          if (nodeAndMappingNamePairs == null) {
             myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
             return null;
           }
-          templateNodeForCase = nodeAndMappingName.o1;
-          if (nodeAndMappingName.o2 != null) {
-            mappingName = nodeAndMappingName.o2;
+
+          for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+            SNode templateNodeForCase = nodeAndMappingNamePair.o1;
+            if (nodeAndMappingNamePair.o2 != null) {
+              mappingName = nodeAndMappingNamePair.o2;
+            }
+            List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode);
+            if(__outputNodes != null) {
+              if(_outputNodes == null) _outputNodes = new ArrayList<SNode>();
+              _outputNodes.addAll(__outputNodes);
+            }
           }
         }
 
-        List<SNode> _outputNodes;
-        if (templateNodeForCase != null) {
-          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode);
-        } else {
-          // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
-        }
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+
       } catch (AbandonRuleInputException e) {
         // it's ok. just ignore.
       } finally {
@@ -426,8 +448,15 @@ public class TemplateProcessor {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
         return null;
       }
+/*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
       if (fragment == null) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
+        return null;
+      }
+*/
+      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(includeTemplate);
+      if (!GeneratorUtil.assertOneOrMaryAdjacentFragments(fragments, includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
         return null;
       }
@@ -440,10 +469,12 @@ public class TemplateProcessor {
       generationTracer.pushTemplateNode(includeTemplate.getNode());
 
       try {
-        SNode templateForInclude = fragment.getParent().getNode();
-        mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-        List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode);
-        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        for (TemplateFragment fragment : fragments) {
+          SNode templateForInclude = fragment.getParent().getNode();
+          mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        }
       } finally {
         if (inputChanged) {
           popInputHistory();
@@ -556,6 +587,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
+  @Nullable
   private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
                                                                SNode templateNode,
                                                                SNode inputNode)

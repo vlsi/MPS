@@ -108,6 +108,10 @@
       <property name="externalValue" value="weaveManyToSingularChild" />
       <property name="internalValue" value="weaveManyToSingularChild" />
     </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="341670684286865622">
+      <property name="externalValue" value="reduceOneToMany" />
+      <property name="internalValue" value="reduceOneToMany" />
+    </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />
       <property name="internalValue" value="none" />
