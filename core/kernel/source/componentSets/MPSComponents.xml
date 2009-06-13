@@ -308,6 +308,10 @@
         <component>
             <implementation-class>jetbrains.mps.build.SamplesExtractor</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.smodel.MPSFileSynchronizer</implementation-class>
+        </component>
     </application-components>
 
     <project-components>

@@ -265,7 +265,7 @@ public class GenerationController {
         } else if (!(status.isCanceled() || status.isError())) {
           myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
         }
-        generationSession.discardTransients();        
+        generationSession.discardTransients();
         CleanupManager.getInstance().cleanup();
 
         // myProgress.finishTask(taskName);

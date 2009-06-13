@@ -332,7 +332,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     IFile modelFile = getModelFile();
     if (modelFile != null && !modelFile.isReadOnly()) {
-      VFileSystem.refreshFileSynchronously(modelFile);
+      MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
     mySModel.fireModelSaved();
