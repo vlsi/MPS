@@ -273,7 +273,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   public boolean isExcluded(VirtualFile file) {
-    return myExcludedClassPath.contains(file);
+    return myExcludedClassPath.contains(VFileSystem.getFilePath(file));
   }
 
   public Set<FilePath> getExcludedClassPath() {

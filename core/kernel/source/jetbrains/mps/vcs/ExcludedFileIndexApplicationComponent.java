@@ -26,6 +26,8 @@ import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Set;
+
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final GlobalClassPathIndex myGlobalClassPathIndex;
@@ -55,7 +57,8 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public boolean isExcluded(VirtualFile file) {
     if (myGlobalClassPathIndex.isExcluded(file)) return true;
 
-    for (FilePath excludedFile : myGlobalClassPathIndex.getExcludedClassPath()) {
+    Set<FilePath> excludedPaths = myGlobalClassPathIndex.getExcludedClassPath();
+    for (FilePath excludedFile : excludedPaths) {
       if (VfsUtil.isAncestor(excludedFile.getIOFile(), VFileSystem.toFile(file), false)) {
         return true;
       }

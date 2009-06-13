@@ -167,6 +167,10 @@ public class VFileSystem {
     return getFilePath(new File(file));   
   }
 
+  public static FilePath getFilePath(VirtualFile file) {
+    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);   
+  }
+
   public static FilePath getFilePath(File file) {
     return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
   }
