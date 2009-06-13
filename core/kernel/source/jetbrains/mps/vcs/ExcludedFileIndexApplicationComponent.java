@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
+import java.util.HashSet;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
@@ -57,21 +58,22 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public boolean isExcluded(VirtualFile file) {
     if (myGlobalClassPathIndex.isExcluded(file)) return true;
 
-    Set<FilePath> excludedPaths = myGlobalClassPathIndex.getExcludedClassPath();
-    for (FilePath excludedFile : excludedPaths) {
-      if (VfsUtil.isAncestor(excludedFile.getIOFile(), VFileSystem.toFile(file), false)) {
-        return true;
-      }
-    }
-
     String filePath = file.getPath();
     for (String regexp : myExcludedRegexps) {
       if (filePath.matches(regexp)) {
         return true;
       }
-
     }
 
-    return FileTypeManager.getInstance().isFileIgnored(file.getPath());
+    if (FileTypeManager.getInstance().isFileIgnored(file.getPath())) {
+      return true;
+    }
+
+    VirtualFile parent = file.getParent();
+    while (true) {
+      if (parent == null) return false;
+      if (myGlobalClassPathIndex.isExcluded(parent)) return true;      
+      parent = parent.getParent();
+    }
   }
 }
