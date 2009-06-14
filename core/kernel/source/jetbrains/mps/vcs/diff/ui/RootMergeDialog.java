@@ -7,21 +7,16 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.vcs.diff.changes.*;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JTabbedPane;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.util.List;
 
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private JPanel myComponent;
-  private EditorComponent myBaseEditorComponent;
+  private EditorComponent myResultEditorComponent;
   private EditorComponent myChange1EditorComponent;
   private EditorComponent myChange2EditorComponent;
   private SModel myResultModel;
@@ -41,8 +36,8 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     return myComponent;  
   }
 
-  private EditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    EditorComponent result = new DiffEditorComponent(context, node);
+  private EditorComponent addEditor(IOperationContext context, SNode node, String revisionName, SModel model) {
+    EditorComponent result = new DiffEditorComponent(context, node, model);
     result.editNode(node, context);
     result.setEditable(false);
     JPanel panel = new JPanel(new BorderLayout());
@@ -67,9 +62,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     });
 
     myComponent = new JPanel(new GridLayout(1, 3));
-    myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
-    myBaseEditorComponent = addEditor(myContext, resultNode[0], "");
-    myChange2EditorComponent = addEditor(myContext, change2Node[0], "");    
+    myChange1EditorComponent = addEditor(myContext, change1Node[0], "", myChange1Model);
+    myResultEditorComponent = addEditor(myContext, resultNode[0], "", myResultModel);
+    myChange2EditorComponent = addEditor(myContext, change2Node[0], "", myChange2Model);
   }
 
 }

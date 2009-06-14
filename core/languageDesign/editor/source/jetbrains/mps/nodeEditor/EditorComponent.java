@@ -199,7 +199,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
 
-  private List<ChangesBlock> myChanges = new ArrayList<ChangesBlock>();
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -1747,7 +1746,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.paint(g);
     }
 
-    for (ChangesBlock block: myChanges) {
+    for (ChangesBlock block: myHighlightManager.getChangesBlocks()) {
       block.paint(g, getSize());
     }
   }
@@ -2531,17 +2530,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isEditable) {
       setFocusable(false);
     }
-  }
-
-  public void addChanges(ChangesBlock block) {
-    block.addTo(this);
-    myChanges.add(block);
-  }
-  public void removeAllChanges() {
-    for (ChangesBlock block: myChanges) {
-      block.removeFrom(this);
-    }
-    myChanges.clear();
   }
 
   private class MySimpleModelListener extends SModelAdapter {

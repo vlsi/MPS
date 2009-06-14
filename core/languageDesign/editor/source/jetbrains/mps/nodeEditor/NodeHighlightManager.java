@@ -24,6 +24,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.vcs.diff.ui.ChangesBlock;
+import jetbrains.mps.vcs.diff.ui.DiffEditorComponent;
 
 import java.awt.Color;
 import java.util.*;
@@ -41,6 +43,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private ManyToManyMap<EditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<EditorMessage, SNode>();
 
   private Map<EditorCell, List<EditorMessage>> myMessagesCache = new HashMap<EditorCell, List<EditorMessage>>();
+  private List<ChangesBlock> myChangeBlocks = new ArrayList<ChangesBlock>();
   public ReloadAdapter myHandler;
 
   public NodeHighlightManager(EditorComponent edtitor) {
@@ -281,5 +284,20 @@ public class NodeHighlightManager implements EditorMessageOwner {
       }
     }
     return null;
+  }
+
+  public void addChanges(EditorComponent component, ChangesBlock block) {
+    block.addTo(component);
+    myChangeBlocks.add(block);
+  }
+  public void removeAllChanges(EditorComponent component) {
+    for (ChangesBlock block: myChangeBlocks) {
+      block.removeFrom(component);
+    }
+    myChangeBlocks.clear();
+  }
+
+  public List<ChangesBlock> getChangesBlocks() {
+    return myChangeBlocks;
   }
 }
