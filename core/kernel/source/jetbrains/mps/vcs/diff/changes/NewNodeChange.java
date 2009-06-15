@@ -31,16 +31,14 @@ public abstract class NewNodeChange extends Change {
   }
 
   public SNodeId getAffectedNodeId() {
-    return getNodeId();
+    return myNodeId;
   }
 
   public String getConceptFqName() {
     return myConceptFqName;
   }
 
-  public SNodeId getNodeId() {
-    return myNodeId;
-  }
+
 
   public String getNodeRole() {
     return myNodeRole;

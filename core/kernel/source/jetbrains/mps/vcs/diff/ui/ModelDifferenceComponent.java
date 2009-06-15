@@ -29,10 +29,9 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
+import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -43,15 +42,14 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.ArrayList;
 
 class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MyMPSTree();
@@ -68,8 +66,9 @@ class ModelDifferenceComponent extends JPanel {
 
   private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
+  private Set<SNodeId> myDeletedNodes = new HashSet<SNodeId>();
+  private Set<SNodeId> myChangedSubtree = new HashSet<SNodeId>();
   private SModel myNewModel;
-  private SModel myOldModel;
   private List<Change> myChanges;
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private ActionToolbar myModelTreeToolBar;
@@ -123,37 +122,42 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
-    myOldModel = oldModel;
     myNewModel = newModel;
 
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
     final List<Change> changes = builder.getChanges();
     myChanges = changes;
+    for (Change change: changes) {
+      addToChangeSubtree(change.getAffectedNodeId(), newModel, oldModel);
+    }
 
     for (AddRootChange ar : CollectionUtil.filter(AddRootChange.class, changes)) {
-      myAddedNodes.add(ar.getNodeId());
+      myAddedNodes.add(ar.getAffectedNodeId());
     }
 
     for (AddNodeChange an : CollectionUtil.filter(AddNodeChange.class, changes)) {
-      myAddedNodes.add(an.getNodeId());
+      myAddedNodes.add(an.getAffectedNodeId());
     }
 
     for (SetNodeChange c : CollectionUtil.filter(SetNodeChange.class, changes)) {
-      myAddedNodes.add(c.getNodeId());
+      myAddedNodes.add(c.getAffectedNodeId());
     }
 
     for (SetPropertyChange p : CollectionUtil.filter(SetPropertyChange.class, changes)) {
-      myChangedNodes.add(p.getNodeId());
+      myChangedNodes.add(p.getAffectedNodeId());
     }
 
     for (SetReferenceChange r : CollectionUtil.filter(SetReferenceChange.class, changes)) {
-      myChangedNodes.add(r.getNodeId());
+      myChangedNodes.add(r.getAffectedNodeId());
     }
 
     for (ChangeConceptChange ch : CollectionUtil.filter(ChangeConceptChange.class, changes)) {
       myChangedNodes.add(ch.getAffectedNodeId());
     }
 
+    for (DeleteNodeChange ch : CollectionUtil.filter(DeleteNodeChange.class, changes)) {
+      myDeletedNodes.add(ch.getAffectedNodeId());
+    }
     updateView();
 
 
@@ -181,6 +185,22 @@ class ModelDifferenceComponent extends JPanel {
     });
 
     return this;
+  }
+
+  private void addToChangeSubtree(SNodeId nodeId, SModel newModel, SModel oldModel) {
+    if (myChangedSubtree.contains(nodeId)) {
+      return;
+    }
+    SNode node = myNewModel.getNodeById(nodeId);
+    if (node != null) {
+      node = oldModel.getNodeById(nodeId);
+    }
+    if (node != null) {
+      myChangedSubtree.add(nodeId);
+      if (node.getParent() != null) {
+        addToChangeSubtree(node.getParent().getSNodeId(), newModel, oldModel);
+      }
+    }
   }
 
   private void updateView() {
@@ -313,6 +333,9 @@ class ModelDifferenceComponent extends JPanel {
 
   }
 
+  protected void doubleClickOnNode(final SNode node) {
+  }
+
   public void addAction(AnAction action) {
     myModelTreeActionGroup.add(action);
   }
@@ -321,7 +344,12 @@ class ModelDifferenceComponent extends JPanel {
     private SModel myModel;
 
     public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
-      super(null, label, operationContext);
+      super(null, label, operationContext, new Condition<SNode>() {
+
+        public boolean met(SNode object) {
+          return myChangedSubtree.contains(object.getSNodeId());
+        }
+      });
       myModel = model;
       updatePresentation();
     }
@@ -334,7 +362,7 @@ class ModelDifferenceComponent extends JPanel {
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-      return new MySNodeTreeNode(node, role, operationContext);
+      return new MySNodeTreeNode(node, role, operationContext, condition);
     }
 
     public SModel getSModel() {
@@ -354,8 +382,8 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   private class MySNodeTreeNode extends SNodeTreeNode {
-    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-      super(node, role, operationContext);
+    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
+      super(node, role, operationContext, condition);
     }
 
     public void doUpdatePresentation() {
@@ -367,9 +395,37 @@ class ModelDifferenceComponent extends JPanel {
         setColor(new Color(0, 0, 120));
       } else {
         setColor(Color.BLACK);
-      }
+      }      
 
       setText(getText() + " " + getSNode().getId());
+    }
+
+    @Override
+    protected void doInit() {
+      this.removeAllChildren();
+      SNode n = getSNode();
+      if (n == null) return;
+
+
+      add(new PropertiesTreeNode(getOperationContext(), n));
+      add(new ReferencesTreeNode(getOperationContext(), n));
+
+
+      List<SNode> children = n.getChildren();
+      List<SNode> filteredChildren = CollectionUtil.filter(children, new Condition<SNode>() {
+
+        public boolean met(SNode object) {
+          return myChangedSubtree.contains(object.getSNodeId());
+        }
+      });
+      for (SNode childNode : filteredChildren) {
+        SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRole_(), getOperationContext());
+        add(child);
+      }      
+
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      treeModel.nodeStructureChanged(this);
+      myInitialized = true;
     }
 
     public ActionGroup getActionGroup() {
@@ -378,16 +434,7 @@ class ModelDifferenceComponent extends JPanel {
 
     public void doubleClick() {
       final SNode node = getSNode();
-      if (node.isRoot()) {
-        final RootDifferenceDialog dialog = new RootDifferenceDialog(myContext.getMainFrame(), myNewModel, myOldModel, false);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            dialog.init(myContext, node, "new", "old");
-          }
-        });
-
-        dialog.showDialog();
-      }
+      doubleClickOnNode(node);
     }
   }
 

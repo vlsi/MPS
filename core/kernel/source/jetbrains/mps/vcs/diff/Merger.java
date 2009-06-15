@@ -32,6 +32,7 @@ import java.util.*;
 public class Merger {
   private final SModel[] mySourceModels = new SModel[VERSION.values().length];
   private SModel myResultModel;
+
   private List<Change> myBaseMyneChange;
   private List<Change> myBaseRepoChange;
 
@@ -173,7 +174,7 @@ public class Merger {
     myWarnings.clear();
     for (SetReferenceChange srf : getChanges(SetReferenceChange.class)) {
       if (srf.isBrokenReference()) {
-        myWarnings.add(new Warning(srf.getNodeId(), "Maybe broken reference to " + srf.getResolveInfo() + " at " + srf.getNodeId()));
+        myWarnings.add(new Warning(srf.getAffectedNodeId(), "Maybe broken reference to " + srf.getResolveInfo() + " at " + srf.getAffectedNodeId()));
       }
     }
 
@@ -324,7 +325,7 @@ public class Merger {
       MoveNodeChange mnc1 = moves.get(i);
       for (int j = i + 1; j < moves.size(); j++) {
         MoveNodeChange mnc2 = moves.get(j);
-        if (mnc1.getNode().equals(mnc2.getNode())) {
+        if (mnc1.getAffectedNodeId().equals(mnc2.getAffectedNodeId())) {
           myConflicts.add(new Conflict(mnc1, mnc2));
           myConflicted.add(mnc1);
           myConflicted.add(mnc2);
@@ -371,7 +372,7 @@ public class Merger {
 
       //move all nodes which are to move into tmp root
       for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
-        SNode node = myResultModel.getNodeById(mnc.getNode());
+        SNode node = myResultModel.getNodeById(mnc.getAffectedNodeId());
         if (node != null) {
           if (node.isRoot()) {
             myResultModel.removeRoot(node);
@@ -437,7 +438,7 @@ public class Merger {
     Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
       if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) continue;
-      changesMap.put(c.getNodeId(), c);
+      changesMap.put(c.getAffectedNodeId(), c);
     }
 
     for (NewNodeChange c : newNodeChanges) {
@@ -450,7 +451,7 @@ public class Merger {
       return;
     }
 
-    if (myResultModel.getNodeById(c.getNodeId()) != null) {
+    if (myResultModel.getNodeById(c.getAffectedNodeId()) != null) {
       return;
     }
 
@@ -484,7 +485,7 @@ public class Merger {
       }
     }
 
-    assert myResultModel.getNodeById(c.getNodeId()) == null;
+    assert myResultModel.getNodeById(c.getAffectedNodeId()) == null;
     boolean result = c.apply(myResultModel);
 
     assert result;
@@ -527,7 +528,7 @@ public class Merger {
 
     Map<SNodeId, MoveNodeChange> idsToMoves = new HashMap<SNodeId, MoveNodeChange>();
     for (MoveNodeChange mnc : moves) {
-      idsToMoves.put(mnc.getNode(), mnc);
+      idsToMoves.put(mnc.getAffectedNodeId(), mnc);
     }
 
     while (!moves.isEmpty()) {

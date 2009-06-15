@@ -41,7 +41,7 @@ public class AddNodeChange extends NewNodeChange {
   }
 
   public String toString() {
-    return "add node  " + getNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode();
+    return "add node  " + getAffectedNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode();
   }
 
   public boolean apply(SModel m) {
@@ -65,7 +65,7 @@ public class AddNodeChange extends NewNodeChange {
 
     SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
-    n.setId(getNodeId());
+    n.setId(getAffectedNodeId());
 
     parent.insertChild(prev, getNodeRole(), n);
     return true;

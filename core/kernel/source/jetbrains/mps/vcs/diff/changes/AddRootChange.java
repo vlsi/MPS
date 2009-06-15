@@ -27,13 +27,13 @@ public class AddRootChange extends NewNodeChange {
   }
 
   public String toString() {
-    return "add root " + getNodeId();
+    return "add root " + getAffectedNodeId();
   }
 
   public boolean apply(SModel m) {
     SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
-    n.setId(getNodeId());
+    n.setId(getAffectedNodeId());
     m.addRoot(n);
     return true;
   }

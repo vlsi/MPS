@@ -98,8 +98,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldChanges.clear();
 
     List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
-    myNewChanges = myNewEditorComponent.hightlight(revertChanges, myNewModel, true);
-    myOldChanges = myOldEditorComponent.hightlight(revertChanges, myOldModel, false);
+    myNewChanges = myNewEditorComponent.hightlight(revertChanges, true);
+    myOldChanges = myOldEditorComponent.hightlight(revertChanges, false);
     Runnable rebuild = new Runnable() {
       public void run() {
         rebuildChangeBlocks();

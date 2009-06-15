@@ -35,7 +35,7 @@ public class SetNodeChange extends NewNodeChange {
   }
 
   public String toString() {
-    return "set node " + getNodeId() + " in role " + getNodeRole();
+    return "set node " + getAffectedNodeId() + " in role " + getNodeRole();
   }
 
   public boolean apply(SModel m) {
@@ -45,7 +45,7 @@ public class SetNodeChange extends NewNodeChange {
     }
     SNode n = SModelUtil_new.instantiateConceptDeclaration(getConceptFqName(), m, GlobalScope.getInstance(), false);
     assert n != null;
-    n.setId(getNodeId());
+    n.setId(getAffectedNodeId());
     SNode prevNode = null;
     if (myPrevRole != null) {
       List<SNode> children = parent.getChildren(myPrevRole);
@@ -58,7 +58,7 @@ public class SetNodeChange extends NewNodeChange {
   }
 
   public void secondApply(SModel m) {
-    SNode n = m.getNodeById(getNodeId());
+    SNode n = m.getNodeById(getAffectedNodeId());
     if (n == null) return;
     SNode parent = n.getParent();
     for (SNode pc : parent.getChildren(getNodeRole())) {

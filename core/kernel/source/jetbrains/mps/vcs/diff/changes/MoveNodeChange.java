@@ -33,9 +33,6 @@ public class MoveNodeChange extends Change {
     myPrevSibling = prevSibling;
   }
 
-  public SNodeId getNode() {
-    return myNodeId;
-  }
 
   public SNodeId getNewParent() {
     return myNewParent;

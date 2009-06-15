@@ -30,11 +30,6 @@ public class DeleteNodeChange extends Change {
     myChildren = childrenIds;
   }
 
-
-  public SNodeId getNodeId() {
-    return myNodeId;
-  }
-
   public String toString() {
     return "delete " + myNodeId;
   }
@@ -44,7 +39,7 @@ public class DeleteNodeChange extends Change {
   }
 
   public boolean apply(SModel m) {
-    SNode node = m.getNodeById(getNodeId());
+    SNode node = m.getNodeById(getAffectedNodeId());
     if (node != null) {
       node.delete();
     }

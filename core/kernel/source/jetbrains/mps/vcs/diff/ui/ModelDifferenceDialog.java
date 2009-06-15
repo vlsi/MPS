@@ -36,7 +36,28 @@ public class ModelDifferenceDialog extends BaseDialog {
     setModal(modal);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myDifferenceComponent = new ModelDifferenceComponent(context);
+        myDifferenceComponent = new ModelDifferenceComponent(context) {
+          @Override
+          protected void doubleClickOnNode(final SNode node) {
+            final boolean[] isRoot = new boolean[1];
+            ModelAccess.instance().runReadAction(new Runnable() {
+
+              public void run() {
+                isRoot[0] = node.isRoot();
+              }
+            });
+            if (isRoot[0]) {
+              final RootDifferenceDialog dialog = new RootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false);
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  dialog.init(context, node, "new", "old");
+                }
+              });
+
+              dialog.showDialog();
+            }
+          }
+        };
         myDifferenceComponent.showDifference(oldModel, newModel);
       }
     });

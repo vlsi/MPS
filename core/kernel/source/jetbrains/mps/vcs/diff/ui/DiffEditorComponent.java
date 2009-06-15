@@ -41,8 +41,9 @@ public class DiffEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public List hightlight(final List<Change> revertChanges, final SModel model, final boolean isNew) {
+  public List hightlight(final List<Change> revertChanges, final boolean isNew) {
     final List<ChangeEditorMessage> resultChanges = new ArrayList<ChangeEditorMessage>();
+    final SModel model = getRootCell().getSNode().getModel();
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {

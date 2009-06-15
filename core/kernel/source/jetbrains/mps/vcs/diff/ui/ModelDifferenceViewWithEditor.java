@@ -73,31 +73,31 @@ class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner
     SModel newModel = newRoot.getModel();
     myNewRoot = newRoot;
     for (AddRootChange ar : CollectionUtil.filter(AddRootChange.class, changes)) {
-      myAddedNodes.add(ar.getNodeId());
+      myAddedNodes.add(ar.getAffectedNodeId());
     }
 
     for (AddNodeChange an : CollectionUtil.filter(AddNodeChange.class, changes)) {
-      myAddedNodes.add(an.getNodeId());
+      myAddedNodes.add(an.getAffectedNodeId());
     }
 
     for (SetNodeChange c : CollectionUtil.filter(SetNodeChange.class, changes)) {
-      SNode sNode = newModel.getNodeById(c.getNodeId());
+      SNode sNode = newModel.getNodeById(c.getAffectedNodeId());
       if (sNode != null && sNode.getContainingRoot() == newRoot) {
-        myAddedNodes.add(c.getNodeId());
+        myAddedNodes.add(c.getAffectedNodeId());
       }
     }
 
     for (SetPropertyChange p : CollectionUtil.filter(SetPropertyChange.class, changes)) {
-      SNode sNode = newModel.getNodeById(p.getNodeId());
+      SNode sNode = newModel.getNodeById(p.getAffectedNodeId());
       if (sNode != null && sNode.getContainingRoot() == newRoot) {
-        myChangedNodes.add(p.getNodeId());
+        myChangedNodes.add(p.getAffectedNodeId());
       }
     }
 
     for (SetReferenceChange r : CollectionUtil.filter(SetReferenceChange.class, changes)) {
-      SNode sNode = newModel.getNodeById(r.getNodeId());
+      SNode sNode = newModel.getNodeById(r.getAffectedNodeId());
       if (sNode != null && sNode.getContainingRoot() == newRoot) {
-        myChangedNodes.add(r.getNodeId());
+        myChangedNodes.add(r.getAffectedNodeId());
       }
     }
 

@@ -35,10 +35,6 @@ public class SetPropertyChange extends Change {
   }
 
 
-  public SNodeId getNodeId() {
-    return myNodeId;
-  }
-
   public String getProperty() {
     return myProperty;
   }
@@ -68,6 +64,6 @@ public class SetPropertyChange extends Change {
 
   @Override
   public List<SNodeId> getDependences() {
-    return Arrays.asList(getNodeId());
+    return Arrays.asList(getAffectedNodeId());
   }
 }
