@@ -138,7 +138,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should exclude classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(m, classPathFile.getPath(), true);
+        m.excludeClassPath(classPathFile.getPath(), true);
       }
       myExcludedClassPath.add(classPathFile);
       myIsChanged = true;
@@ -146,7 +146,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(m, classPathFile.getPath(), false);
+        m.excludeClassPath(classPathFile.getPath(), false);
       }
       myExcludedClassPath.remove(classPathFile);
       myIsChanged = true;
@@ -211,7 +211,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // we only need to update this module if classPath is included in other modules
       ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
       if (!myExcludedClassPath.contains(classPathFile) && (modules != null) && !modules.isEmpty()) {
-        module.excludeClassPath(module, classPathFile.getPath(), false);
+        module.excludeClassPath(classPathFile.getPath(), false);
         modules.add(module);
       } else if (modules == null) {
         putModuleInIndex(module, classPathFile);
@@ -229,7 +229,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         // we only need update all existing modules if the classPath is excluded
         if (myExcludedClassPath.remove(classPathFile)) {
           for (IModule m : modules) {
-            m.excludeClassPath(m, classPathFile.getPath(), false);
+            m.excludeClassPath(classPathFile.getPath(), false);
           }
         }
         modules.add(module);

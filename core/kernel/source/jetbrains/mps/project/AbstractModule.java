@@ -547,7 +547,7 @@ public abstract class AbstractModule implements IModule {
     return !myIncludedClassPath.contains(path);
   }
 
-  public boolean excludeClassPath(IModule m, String path, boolean exclude) {
+  public boolean excludeClassPath(String path, boolean exclude) {
     boolean changed;
     if (exclude) {
       changed = myIncludedClassPath.remove(path);
