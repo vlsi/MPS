@@ -20,6 +20,9 @@
         <applicationService serviceInterface="com.intellij.openapi.project.ProjectLocator"
                             serviceImplementation="com.intellij.openapi.project.impl.DefaultProjectLocator"/>
 
+        <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
+                            serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
+
         <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                         serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
         <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
