@@ -234,9 +234,10 @@ public class GenerationController {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().setIsGeneration(true);
-      
+
       for (SModelDescriptor inputModel : inputModels) {
+        TypeChecker.getInstance().setIsGeneration(true);
+
         if (!myGenerationType.isApplicable(inputModel)) {
           LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
           continue;
