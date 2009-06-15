@@ -37,8 +37,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     return ApplicationManager.getApplication().getComponent(ExcludedFileIndexApplicationComponent.class);
   }
 
-  private final String[] myExcludedRegexps = new String[]{".*\\.svn.*"};
-
   public ExcludedFileIndexApplicationComponent(GlobalClassPathIndex globalClassPathIndex) {
     myGlobalClassPathIndex = globalClassPathIndex;
   }
@@ -58,14 +56,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public boolean isExcluded(VirtualFile file) {
     if (myGlobalClassPathIndex.isExcluded(file)) return true;
 
-    String filePath = file.getPath();
-    for (String regexp : myExcludedRegexps) {
-      if (filePath.matches(regexp)) {
-        return true;
-      }
-    }
-
-    if (FileTypeManager.getInstance().isFileIgnored(file.getPath())) {
+    if (FileTypeManager.getInstance().isFileIgnored(file.getName()) || FileTypeManager.getInstance().isFileIgnored(file.getPath())) {
       return true;
     }
 
