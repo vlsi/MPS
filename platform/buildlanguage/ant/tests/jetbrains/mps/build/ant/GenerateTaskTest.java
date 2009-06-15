@@ -18,9 +18,6 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.BuildFileTest;
 import org.apache.tools.ant.BuildException;
 
-import java.io.File;
-import java.io.IOException;
-
 public class GenerateTaskTest extends BuildFileTest {
 
   public void setUp() {
@@ -35,6 +32,10 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testNormalWorkWithModels");
   }
 
+  public void testNormalWorkWithModules() {
+    executeTarget("testNormalWorkWithModules");
+  }
+
   public void testFailOnGeneration() {
     runTestForBuildExceptionOnTarget("testFailOnGenerationError");
   }
@@ -44,7 +45,7 @@ public class GenerateTaskTest extends BuildFileTest {
   }
 
   public void testBuildExceptionInModelsDir() {
-    expectBuildException("testModelsWithBuildException", Models.getRequiredAttributeMessage("srcdir"));
+    expectBuildException("testModelsWithBuildException", AllItemsInDirectory.getRequiredAttributeMessage("srcdir"));
   }
 
   private void runTestForBuildExceptionOnTarget(String targetName) {

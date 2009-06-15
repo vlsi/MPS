@@ -18,16 +18,20 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.BuildException;
 
 import java.io.File;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import java.util.Collections;
+import java.util.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
 public class WhatToGenerate {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
+  private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
+
+  public void addModuleDirectory(File dir) {
+    assert dir.exists() && dir.isDirectory();
+    myModuleDirectories.add(dir);
+  }
 
   public void addModelDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
@@ -39,19 +43,27 @@ public class WhatToGenerate {
     myMPSProjects.add(projectFile);
   }
 
-  public Set<File> getModelDirectories(){
+  public Set<File> getModelDirectories() {
     return Collections.unmodifiableSet(myModelDirectories);
   }
 
-  public void updateModelDirectories(Set<File> modelDirectories){
+  public void updateModelDirectories(Set<File> modelDirectories) {
     myModelDirectories.addAll(modelDirectories);
   }
 
-  public Set<File> getMPSProjectFiles(){
+  public Set<File> getModuleDirectories() {
+    return Collections.unmodifiableSet(myModuleDirectories);
+  }
+
+  public void updateModuleDirectories(Set<File> moduleDirectories) {
+    myModuleDirectories.addAll(moduleDirectories);
+  }
+
+  public Set<File> getMPSProjectFiles() {
     return Collections.unmodifiableSet(myMPSProjects);
   }
 
-  public void updateMPSProjectFiles(Set<File> mpsProjects){
+  public void updateMPSProjectFiles(Set<File> mpsProjects) {
     myMPSProjects.addAll(mpsProjects);
   }
 

@@ -24,7 +24,6 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Field;
 import java.lang.reflect.Constructor;
 
 import jetbrains.mps.util.Macros;
@@ -45,9 +44,14 @@ public class Generate extends org.apache.tools.ant.Task {
     myWhatToGenerate.updateFailOnError(failOnError);
   }
 
-  public void addConfiguredModels(Models modelsInner) {
+  public void addConfiguredModels(AllItemsInDirectory modelsInner) {
     modelsInner.check();
     myWhatToGenerate.addModelDirectory(modelsInner.getSrcDir());
+  }
+
+  public void addConfiguredModules(AllItemsInDirectory modulesInner) {
+    modulesInner.check();
+    myWhatToGenerate.addModuleDirectory(modulesInner.getSrcDir());
   }
 
   public void addConfiguredProject(Project projectInner) {

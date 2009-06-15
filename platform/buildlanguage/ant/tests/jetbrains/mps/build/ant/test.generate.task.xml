@@ -39,6 +39,12 @@
         </generate>
     </target>
 
+    <target name="testNormalWorkWithModules">
+        <generate mpshome="${module.home}/../../../">
+            <modules srcdir="${module.home}/../../../samples/complexLanguage"/>
+        </generate>
+    </target>
+
     <target name="testFailOnGenerationError">
         <generate mpshome="${module.home}/../../../" failonerror="true">
             <project file="${module.home}/testProjects/failedProject/FailedProject.mpr"/>
