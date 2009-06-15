@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.wizard.StepAdapter;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +34,8 @@ import java.io.IOException;
 import java.net.URL;
 
 public abstract class BaseStep extends StepAdapter {
+  private static final Logger LOG = Logger.getLogger(BaseStep.class);
+
   private JPanel myComponent;
 
   public BaseStep() {
@@ -99,21 +102,19 @@ public abstract class BaseStep extends StepAdapter {
     URL imageUrl = getImageURL();
     String imageText = getImageText();
 
-    JLabel imageComponent = imageUrl == null ? null : new JLabel();
     GridBagLayout bagLayout = new GridBagLayout();
     JPanel imagePanel = new JPanel(bagLayout);
 
     if (imageUrl != null) {
-      GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
       ImageIcon info = new ImageIcon(imageUrl);
 
       BufferedImage bim = null;
       try {
         bim = ImageIO.read(imageUrl);
       } catch (IOException e) {
-        /*should not happen*/
+        LOG.error("Can't read image: ", e);
       }
-      assert bim != null;
+      assert bim != null : "Icon was not read. The possible reason is that PNG format was not recognized";
       Graphics graphics = bim.getGraphics();
       graphics.setColor(new Color(0x7e, 0x7c, 0x7c));
       graphics.setFont(new Font("Helvetica", Font.BOLD, 18));
@@ -122,8 +123,9 @@ public abstract class BaseStep extends StepAdapter {
       int y = 288;
       graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
 
-      imageComponent.setIcon(new ImageIcon(bim));
-      imagePanel.add(imageComponent, cImage);
+      GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+      JLabel image = new JLabel(new ImageIcon(bim));
+      imagePanel.add(image, cImage);
     }
 
     return imagePanel;
@@ -133,8 +135,7 @@ public abstract class BaseStep extends StepAdapter {
     if (cmd != null && cmd.trim().length() > 0) {
       try {
         BrowserUtil.launchBrowser(prefix + cmd.trim());
-      }
-      catch (IllegalThreadStateException ex) {/* not a problem */}
+      } catch (IllegalThreadStateException ex) {/* not a problem */}
     }
   }
 

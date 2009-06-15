@@ -11,7 +11,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="false" name="pluginLanguage" moduleRef="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+      <genConfModule name="pluginLanguage" moduleRef="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -44,6 +44,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="C:/mpswopl" vcs="svn" />
   </component>
