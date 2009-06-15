@@ -238,49 +238,55 @@ public class GenerationController {
       for (SModelDescriptor inputModel : inputModels) {
         TypeChecker.getInstance().setIsGeneration(true);
 
-        if (!myGenerationType.isApplicable(inputModel)) {
-          LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
-          continue;
-        }
-
-        info("");
-        String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-
-        //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-        setText2("model " + inputModel.getSModelFqName(), totalJob, startJobTime);
         TaskProgressHelper progress = new TaskProgressHelper(this);
-        progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
-
-        GenerationStatus status = generationSession.generateModel(inputModel);
-        currentGenerationOK = currentGenerationOK && status.isOk();
-
-        info("handling output...");
-        checkMonitorCanceled();
-        if (status.getOutputModel() != null) {
-          boolean result = myGenerationType.handleOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
-
-          if (!result) {
-            info("there were errors.");
-            currentGenerationOK = false;
+        try {
+          if (!myGenerationType.isApplicable(inputModel)) {
+            LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
+            continue;
           }
-        } else if (!(status.isCanceled() || status.isError())) {
-          myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+
+          info("");
+          String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
+
+          //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
+          setText2("model " + inputModel.getSModelFqName(), totalJob, startJobTime);
+          progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
+
+          GenerationStatus status = generationSession.generateModel(inputModel);
+          currentGenerationOK = currentGenerationOK && status.isOk();
+
+          info("handling output...");
+          checkMonitorCanceled();
+          if (status.getOutputModel() != null) {
+            boolean result = myGenerationType.handleOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+
+            if (!result) {
+              info("there were errors.");
+              currentGenerationOK = false;
+            }
+          } else if (!(status.isCanceled() || status.isError())) {
+            myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+          }
+        } finally {
+          generationSession.discardTransients();
+          CleanupManager.getInstance().cleanup();
+
+          // myProgress.finishTask(taskName);
+
+          progress.finishTask();
+
+          //We need this in order to clean subtyping cache which might occupy too much memory
+          //if we generate a lot of models. For example, Charisma generation wasn't possible
+          //with -Xmx1200 before this change
+          TypeChecker.getInstance().setIsGeneration(false);
+          setText2("", totalJob, startJobTime);
         }
-        generationSession.discardTransients();
-        CleanupManager.getInstance().cleanup();
-
-        // myProgress.finishTask(taskName);
-
-        progress.finishTask();
-
-        setText2("", totalJob, startJobTime);
       }
     } finally {
       if (wasLoggingThreshold != null) {
         Logger.setThreshold(wasLoggingThreshold);
       }
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().setIsGeneration(false);
     }
 
     checkMonitorCanceled();
