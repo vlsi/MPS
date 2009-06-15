@@ -31,6 +31,10 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testNormalWork");
   }
 
+  public void testNormalWorkWithModels() {
+    executeTarget("testNormalWorkWithModels");
+  }
+
   public void testFailOnGeneration() {
     runTestForBuildExceptionOnTarget("testFailOnGenerationError");
   }

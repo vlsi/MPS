@@ -16,13 +16,26 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.misc.hash.LinkedHashSet;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
+import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -38,6 +51,10 @@ import org.apache.log4j.*;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.tools.ant.BuildException;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.impl.ProjectImpl;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.util.Computable;
+import com.intellij.util.Processor;
 
 public class Generator {
   private final GenerateFilesAndClassesGenerationType myGenerationType = getGenerationType();
@@ -57,6 +74,7 @@ public class Generator {
     TestMain.configureMPS();
 
     generateProjects();
+    generateModels();
 
     showStatistic();
   }
@@ -67,21 +85,61 @@ public class Generator {
     }
   }
 
+  private void generateModels() {
+    File projectFile = FileUtil.createTmpFile();
+    MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ProjectManager.getInstance().getDefaultProject());
+    ArrayList<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
+
+    final Set<File> probablyModelFiles = new LinkedHashSet<File>();
+    for (File f : myWhatToGenerate.getModelDirectories()) {
+      com.intellij.openapi.util.io.FileUtil.processFilesRecursively(f, new Processor<File>() {
+        public boolean process(File file) {
+          if (file.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
+            probablyModelFiles.add(file);
+          }
+          return true;
+        }
+      });
+    }
+
+    for (File f : probablyModelFiles) {
+      final IFile ifile = FileSystem.getFile(f);
+      try {
+        SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+          public SModel compute() {
+            return ModelPersistence.readModel(ifile);
+          }
+        });
+        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Loaded model " + smodel));
+        SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
+        modelDescriptors.add(smodelDescriptor);
+      } catch (ModelFileReadException e) {
+        myMessageHandler.handle(e);
+      }
+    }
+
+    generateModels(project, modelDescriptors);
+  }
+
   private void generateProjects() {
     Set<File> files = myWhatToGenerate.getMPSProjectFiles();
     for (File projectFile : files) {
       final MPSProject project = TestMain.loadProject(projectFile);
 
-      GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
-
       List<SModelDescriptor> models = project.getProjectModels();
+      if (models.isEmpty()) continue;
 
-      gm.generateModels(models,
-        new ProjectOperationContext(project),
-        myGenerationType,
-        new EmptyProgressIndicator(),
-        myMessageHandler);
+      generateModels(project, models);
     }
+  }
+
+  private void generateModels(MPSProject project, List<SModelDescriptor> models) {
+    GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+    gm.generateModels(models,
+      new ProjectOperationContext(project),
+      myGenerationType,
+      new EmptyProgressIndicator(),
+      myMessageHandler);
   }
 
   private class MyMessageHandlerAppender implements ILoggingHandler {
@@ -136,6 +194,10 @@ public class Generator {
 
     public List<String> getWarnings() {
       return myWarnings;
+    }
+
+    public void handle(ModelFileReadException e) {
+      this.handle(new Message(MessageKind.ERROR, e.getMessage()));
     }
   }
 
