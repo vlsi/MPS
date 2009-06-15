@@ -20498,6 +20498,13 @@
         <property name="keycode" value="VK_Q" />
       </node>
     </node>
+    <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="6074180103675879660">
+      <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCode" />
+      <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="6074180103675879661">
+        <property name="modifiers" value="ctrl" />
+        <property name="keycode" value="VK_N" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="5535460359399556383">
     <property name="package" value="Menu.EditorPopup.Actions" />

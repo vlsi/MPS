@@ -61,6 +61,7 @@ import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vcs.diff.ui.ChangesBlock;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
@@ -68,7 +69,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.vcs.diff.ui.ChangesBlock;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -558,7 +558,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }.goToNextCell(backwards);
   }
 
-  public SNode getEditedNode() {    
+  public SNode getEditedNode() {
     return myNode;
   }
 
@@ -904,7 +904,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
     }
-    ((EditorCell_Basic)myRootCell).onRemove();
+    ((EditorCell_Basic) myRootCell).onRemove();
   }
 
   private void addOurListeners(SModelDescriptor sm) {
@@ -1441,7 +1441,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       goByCurrentReference();
     }
 
-    if (mouseEvent.isControlDown()) {
+    boolean ctrlDown = SystemInfo.isMac ? mouseEvent.isMetaDown() : mouseEvent.isControlDown();
+    if (ctrlDown) {
       if (mouseEvent.isAltDown()) {
         showCellError();
       } else {
@@ -1746,7 +1747,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.paint(g);
     }
 
-    for (ChangesBlock block: myHighlightManager.getChangesBlocks()) {
+    for (ChangesBlock block : myHighlightManager.getChangesBlocks()) {
       block.paint(g, getSize());
     }
   }
