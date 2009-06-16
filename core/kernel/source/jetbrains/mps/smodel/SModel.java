@@ -552,6 +552,7 @@ public class SModel implements Iterable<SNode> {
     synchronized (myListenersLock) {
       List<SModelListener> result = new ArrayList<SModelListener>(myListeners);
       for (SModelListener l : myWeakListeners) {
+        if (l == null) continue;
         result.add(l);
       }
       return result;
@@ -591,9 +592,8 @@ public class SModel implements Iterable<SNode> {
       List<SModelListener> result = new ArrayList<SModelListener>();
 
       for (SModelListener l : myWeakListeners) {
-        if (l != null) {
-          result.add(l);
-        }
+        if (l == null) continue;
+        result.add(l);
       }
 
       return result;
@@ -611,7 +611,7 @@ public class SModel implements Iterable<SNode> {
     return getLanguageRefs(GlobalScope.getInstance()).contains(ref);
   }
 
-  public boolean  hasLanguage(String namespace) {
+  public boolean hasLanguage(String namespace) {
     for (ModuleReference ref : getLanguageRefs(GlobalScope.getInstance())) {
       if (namespace.equals(ref.getModuleFqName())) {
         return true;

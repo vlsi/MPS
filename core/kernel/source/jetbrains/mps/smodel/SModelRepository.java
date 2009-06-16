@@ -105,8 +105,13 @@ public class SModelRepository implements ApplicationComponent {
 
   private List<SModelRepositoryListener> listeners() {
     List<SModelRepositoryListener> result = new ArrayList<SModelRepositoryListener>();
+
     result.addAll(mySModelRepositoryListeners);
-    result.addAll(myWeakSModelRepositoryListeners);
+    for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
+      if (l == null) continue;
+      result.add(l);
+    }
+
     return result;
   }
 
