@@ -5881,7 +5881,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1223981485048">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777955176">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.FloatType" id="1196777955177" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="7412598673151573315" />
           </node>
         </node>
       </node>
