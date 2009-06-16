@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import java.awt.Frame;
 import java.awt.HeadlessException;
 
 class MergeModelsDialog extends BaseDialog {
@@ -76,6 +75,6 @@ class MergeModelsDialog extends BaseDialog {
     if (myCanceled) {
       return null;
     }
-    return myMergeView.getResultModel();
+    return null;//myMergeView.getResultModel();
   }
 }

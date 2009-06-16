@@ -71,6 +71,16 @@ public class Merger {
     return Collections.unmodifiableList(myConflicts);
   }
 
+  public List<Conflict> getUnresolvedConflicts() {
+    ArrayList<Conflict> result = new ArrayList<Conflict>();
+    for (Conflict conflict: myConflicts) {
+      if (!getExcludedChanges().contains(conflict.getC1()) && !getExcludedChanges().contains(conflict.getC2())) {
+        result.add(conflict);
+      }
+    }
+    return result;
+  }
+
   public void includeChange(Change change) {
     myExcludedChanges.remove(change);
   }
@@ -90,6 +100,14 @@ public class Merger {
         runnable.run();
       }
     });
+  }
+
+  public List<Change> getBaseMyneChange() {
+    return myBaseMyneChange;
+  }
+
+  public List<Change> getBaseRepoChange() {
+    return myBaseRepoChange;
   }
 
   private SModel getRepo(SModel[] models) {
