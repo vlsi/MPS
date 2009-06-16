@@ -135,10 +135,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Nullable
   public IModule getModule() {
     Set<IModule> modules = getModules();
-    if (!modules.isEmpty()) {
-      return modules.iterator().next();
-    }
-    return null;
+    if (modules.isEmpty()) return null;
+    return modules.iterator().next();
   }
 
   public long structuralState() {
