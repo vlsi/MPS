@@ -2046,13 +2046,21 @@
                 <property name="value" value="true" />
               </node>
               <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="6846030807779017547">
-                <node role="properties" type="jetbrains.mps.lang.test.structure.NodeTypeProperty" id="6846030807779017548">
-                  <node role="type" type="jetbrains.mps.lang.typesystem.structure.MeetType" id="6846030807779017549">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6846030807779017550">
+                <node role="properties" type="jetbrains.mps.lang.test.structure.NodeTypeSetProperty" id="6835053503248404233">
+                  <node role="type" type="jetbrains.mps.lang.typesystem.structure.MeetType" id="6835053503248404235">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6835053503248404236">
                       <link role="classifier" targetNodeId="32.~Serializable" resolveInfo="Serializable" />
                     </node>
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6846030807779017551">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6835053503248404237">
                       <link role="classifier" targetNodeId="5.~Comparable" resolveInfo="Comparable" />
+                    </node>
+                  </node>
+                  <node role="type" type="jetbrains.mps.lang.typesystem.structure.MeetType" id="6835053503248405932">
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6835053503248405935">
+                      <link role="classifier" targetNodeId="5.~Comparable" resolveInfo="Comparable" />
+                    </node>
+                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6835053503248405936">
+                      <link role="classifier" targetNodeId="32.~Serializable" resolveInfo="Serializable" />
                     </node>
                   </node>
                 </node>
