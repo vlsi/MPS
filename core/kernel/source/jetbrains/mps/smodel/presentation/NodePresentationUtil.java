@@ -19,10 +19,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.IModule;
 
@@ -52,6 +49,7 @@ public class NodePresentationUtil {
   }
 
   public static int getFontStyle(SNode referenceNode, SNode referentNode) {
+    if (!SModelStereotype.isUserModel(referentNode.getModel())) return Font.PLAIN;
     return isLocalTo(referenceNode, referentNode) ? Font.BOLD : Font.PLAIN;
   }
 
