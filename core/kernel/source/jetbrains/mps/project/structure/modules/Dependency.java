@@ -15,18 +15,22 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Dependency {
   public static final String MODULEREF = "moduleRef";
   public static final String REEXPORT = "reexport";
 
+  @NotNull
   private ModuleReference myModuleRef;
   private boolean myReexport;
 
+  @NotNull
   public ModuleReference getModuleRef() {
     return myModuleRef;
   }
 
-  public void setModuleRef(ModuleReference moduleRef) {
+  public void setModuleRef(@NotNull ModuleReference moduleRef) {
     myModuleRef = moduleRef;
   }
 

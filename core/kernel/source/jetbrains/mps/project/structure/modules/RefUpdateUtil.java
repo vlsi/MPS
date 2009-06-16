@@ -20,6 +20,8 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class RefUpdateUtil {
   public static boolean updateModelRefs(List<SModelReference> refs) {
     boolean changed = false;
@@ -53,7 +55,7 @@ public class RefUpdateUtil {
     boolean changed = false;
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();
-      ModuleReference newRef = ref.update();
+      @NotNull ModuleReference newRef = ref.update();
       if (ref.differs(newRef)) {
         changed = true;
         ref.update();

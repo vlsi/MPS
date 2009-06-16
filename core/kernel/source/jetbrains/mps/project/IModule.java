@@ -32,6 +32,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   @Deprecated
   String getModuleUID();
 
+  @NotNull
   ModuleReference getModuleReference();
 
   ModuleId getModuleId();

@@ -85,6 +85,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @NotNull
   public ModuleReference getModuleReference() {
     return myModuleReference;
   }
@@ -197,7 +198,7 @@ public abstract class AbstractModule implements IModule {
     return validate().isEmpty();
   }
 
-  public void addDependency(ModuleReference moduleRef, boolean reexport) {
+  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     Dependency dep = new Dependency();
     dep.setModuleRef(moduleRef);
@@ -704,7 +705,7 @@ public abstract class AbstractModule implements IModule {
     return true;
   }
 
-  public void addModuleImport(final ModuleReference moduleRef) {
+  public void addModuleImport(@NotNull final ModuleReference moduleRef) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();

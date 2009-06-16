@@ -24,6 +24,8 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jetbrains.annotations.NotNull;
+
 @ImmutableObject
 public class ModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
@@ -61,6 +63,7 @@ public class ModuleReference {
     return myModuleId;
   }
 
+  @NotNull
   public ModuleReference update() {
     IModule module = MPSModuleRepository.getInstance().getModule(this);
     if (module == null) return this;

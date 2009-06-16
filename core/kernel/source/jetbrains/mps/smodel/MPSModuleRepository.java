@@ -225,7 +225,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     myFqNameToModulesMap.put(module.getModuleFqName(), module);
   }
 
-  public IModule getModule(ModuleReference ref) {
+  public IModule getModule(@NotNull ModuleReference ref) {
     if (ref.getModuleId() != null) {
       return myIdToModuleMap.get(ref.getModuleId());
     }
