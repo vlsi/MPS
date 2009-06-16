@@ -213,11 +213,11 @@ public class GeneratorManager {
             message += "\n" + sm.getSModelFqName();
           }
 
-
           int result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
-          if (result == 2) {
-            return false;
-          } else if (result == 0) { //idea don't have constants for YES/NO
+
+          //idea don't have constants for YES/NO
+          if (result == -1 || result == 2) return false;
+          if (result == 0) {
             generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);
           }
         }
