@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -370,7 +371,13 @@ public class TypeCheckingContext {
   }
 
   public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    return myTypeChecker.getRulesManager().getOverloadedOperationsManager().getOperationType(operation, leftOperandType, rightOperandType);
+    EquationManager equationManager = getEquationManager();
+    IWrapper leftWrapper = equationManager.expandWrapper(null, NodeWrapper.fromNode(CopyUtil.copy(leftOperandType),
+      equationManager), getRuntimeTypesModel());
+    IWrapper rightWrapper = equationManager.expandWrapper(null, NodeWrapper.fromNode(CopyUtil.copy(rightOperandType),
+      equationManager), getRuntimeTypesModel());
+    return myTypeChecker.getRulesManager().
+      getOverloadedOperationsManager().getOperationType(operation, leftWrapper.getNode(), rightWrapper.getNode());
   }
 
   //---------------------------- when concrete
