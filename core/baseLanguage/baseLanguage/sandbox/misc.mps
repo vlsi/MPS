@@ -98,6 +98,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7840982349751826459">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7840982349751826460">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="7840982349751826461" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" id="7840982349751826487">
+              <property name="value" value="12.3f" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7840982349751826476">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7840982349751826477">
+            <property name="name" value="l" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.LongType" id="7840982349751826478" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7840982349751826485">
+              <property name="value" value="12" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5269669296222505063">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5269669296222505064">
             <link role="variableDeclaration" targetNodeId="7577207774203486136" resolveInfo="i" />

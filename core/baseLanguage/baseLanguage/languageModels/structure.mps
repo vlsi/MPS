@@ -1398,11 +1398,11 @@
       <link role="dataType" targetNodeId="1113006251687" resolveInfo="_FPNumber_String" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1111509061468">
-      <property name="value" value="floating point constant" />
+      <property name="value" value="floating point constant (double)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1180108448940">
-      <property name="value" value="floating point constant" />
+      <property name="value" value="floating point constant (double)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1180108427124">
@@ -3338,6 +3338,32 @@
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="4269842503726207818">
     <property name="name" value="_LongType_String" />
     <property name="constraint" value="[0-9]+(l|L)" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5279705229678483897">
+    <property name="name" value="FloatingPointFloatConstant" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5279705229678483900">
+      <property name="value" value="floating point constant (float)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5279705229678483901">
+      <property name="value" value="floating point constant (float)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5279705229678483902">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5279705229678483903">
+      <link role="conceptPropertyDeclaration" targetNodeId="1238860354371" resolveInfo="constant" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5279705229678483899">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="5279705229678483898" resolveInfo="_FloatNumberValue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="5279705229678483898">
+    <property name="name" value="_FloatNumberValue" />
+    <property name="constraint" value="-?[0-9]+\\.[0-9]*f" />
   </node>
 </model>
 

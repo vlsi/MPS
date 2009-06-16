@@ -16897,5 +16897,28 @@
       <link role="concept" targetNodeId="1.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5279705229678487849">
+    <property name="name" value="typeof_FloatingPointFloatConstant" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5279705229678487850">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5279705229678487852">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5279705229678487853">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5279705229678487854">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5279705229678492354">
+              <link role="applicableNode" targetNodeId="5279705229678487851" resolveInfo="constant" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5279705229678487856">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5279705229678487857">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.FloatType" id="5279705229678492355" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5279705229678487851">
+      <property name="name" value="floatConstant" />
+      <link role="concept" targetNodeId="1.5279705229678483897" resolveInfo="FloatingPointFloatConstant" />
+    </node>
+  </node>
 </model>
 

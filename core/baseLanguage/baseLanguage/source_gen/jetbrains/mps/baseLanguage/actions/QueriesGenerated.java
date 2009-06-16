@@ -580,9 +580,9 @@ __switch__:
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode boolConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
-            SPropertyOperations.set(boolConst, "value", pattern);
-            return boolConst;
+            SNode doubleConstant = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
+            SPropertyOperations.set(doubleConstant, "value", pattern);
+            return doubleConstant;
           }
 
           public boolean hasSubstitute() {
@@ -604,6 +604,36 @@ __switch__:
       }
     }
     {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode floatConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
+            SPropertyOperations.set(floatConst, "value", pattern);
+            return floatConst;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return _PrecompiledPatterns.REGEXP4.matcher(pattern).matches();
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
@@ -612,7 +642,7 @@ __switch__:
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
-              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP4;
+              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP5;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -626,7 +656,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP5.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP6.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {

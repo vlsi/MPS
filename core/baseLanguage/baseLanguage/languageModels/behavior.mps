@@ -13349,5 +13349,35 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8008512149545173649" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5279705229678483908">
+    <link role="concept" targetNodeId="1.5279705229678483897" resolveInfo="FloatingPointFloatConstant" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5279705229678483911">
+      <property name="name" value="getCompileTimeConstantValue" />
+      <link role="overriddenMethod" targetNodeId="1238860310638" resolveInfo="getCompileTimeConstantValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5279705229678483914">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5279705229678487842">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5279705229678487844">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5279705229678487843" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5279705229678487848">
+              <link role="property" targetNodeId="1.5279705229678483899" resolveInfo="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5279705229678483915">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5279705229678483916">
+          <link role="classifier" targetNodeId="3.~IModule" resolveInfo="IModule" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5279705229678483917">
+        <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5279705229678483918" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5279705229678483909">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5279705229678483910" />
+    </node>
+  </node>
 </model>
 
