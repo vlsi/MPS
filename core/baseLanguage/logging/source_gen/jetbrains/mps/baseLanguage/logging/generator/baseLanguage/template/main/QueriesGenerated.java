@@ -49,10 +49,16 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1232620749768(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
+      return false;
+    }
     return !(LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel()));
   }
 
   public static boolean baseMappingRule_Condition_1232620763765(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
+      return false;
+    }
     return LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel());
   }
 

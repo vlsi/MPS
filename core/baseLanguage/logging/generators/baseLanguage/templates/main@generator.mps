@@ -210,6 +210,28 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1232620749768">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232620749769">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="330349130603326837">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="330349130603326838">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="330349130603326859">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="330349130603326861">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="330349130603326854">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="330349130603326842">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="330349130603326841" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="330349130603326846">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="330349130603326847">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="330349130603326850">
+                      <link role="conceptDeclaration" targetNodeId="2.1068390468198" resolveInfo="ClassConcept" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="330349130603326858" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232620753068">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1232620754007">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232620754008">
@@ -232,6 +254,28 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1232620763765">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232620763766">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="330349130603326863">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="330349130603326864">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="330349130603326865">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="330349130603326866">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="330349130603326867">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="330349130603326868">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="330349130603326869" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="330349130603326870">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="330349130603326871">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="330349130603326872">
+                      <link role="conceptDeclaration" targetNodeId="2.1068390468198" resolveInfo="ClassConcept" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="330349130603326873" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1232620763767">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1232620763769">
               <link role="classConcept" targetNodeId="20.1210176650661" resolveInfo="LoggingGenerationUtil" />
