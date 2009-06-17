@@ -712,22 +712,12 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
       return null;
     }
-/*
-    SNode reductionTemplateNode = nodeAndMappingNamePairs.o1;
-    String mappingName = nodeAndMappingNamePairs.o2 != null ? nodeAndMappingNamePairs.o2 : ruleMappingName;
-
-    if (reductionTemplateNode == null) {
-      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule");
-      return new ArrayList<SNode>();
-    }
-*/
 
     List<SNode> result = new ArrayList<SNode>(1);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
       try {
-//      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, reductionTemplateNode, inputNode, generator);
         result.addAll(TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator));
       } catch (DismissTopMappingRuleException e) {
         throw e;

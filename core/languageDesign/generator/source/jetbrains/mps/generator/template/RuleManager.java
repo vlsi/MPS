@@ -142,8 +142,9 @@ public class RuleManager {
     /*package*/List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
     boolean wasChanged = myGenerator.isChanged();
+    Reduction_MappingRule reductionRule = null;
     try {
-      Reduction_MappingRule reductionRule = myRuleFinder.findReductionRule(inputNode);
+      reductionRule = myRuleFinder.findReductionRule(inputNode);
       if (reductionRule != null) {
         myGenerator.setChanged(true);
         needStopReductionBlocking = startReductionBlockingForInput(inputNode);
@@ -166,6 +167,7 @@ public class RuleManager {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       myGenerator.setChanged(wasChanged);
+      myGenerator.showInformationMessage(reductionRule.getNode(), "-- dismissed reduction rule: " + reductionRule.getDebugText());
     } finally {
       if (needStopReductionBlocking) {
         stopReductionBlockingForInput(inputNode);
