@@ -100,7 +100,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
-    exception.printStackTrace();
     return newModel;
   }
 

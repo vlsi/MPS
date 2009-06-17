@@ -24,14 +24,18 @@ import java.util.List;
 abstract class TaskQueue<T> {
   private final static Logger LOG = Logger.getLogger(TaskQueue.class);
   private final List<T> myTasks = new LinkedList<T>();
-  private boolean myIsProcessingAllowed = true;
+  private int myProcessingBans;
 
   public TaskQueue(boolean isProcessingAllowed) {
-    myIsProcessingAllowed = isProcessingAllowed;
+    if (isProcessingAllowed) {
+      myProcessingBans = 0;
+    } else {
+      myProcessingBans = 1;
+    }
   }
 
   public final synchronized void invokeLater(T task) {
-    if (myIsProcessingAllowed) {
+    if (myProcessingBans == 0) {
       LOG.assertLog(myTasks.size() == 0, "Task queue has not processed tasks:\n" + myTasks + "\nThat's weird cause processing is allowed.");
       processTask(Collections.singletonList(task));
     } else {
@@ -41,15 +45,17 @@ abstract class TaskQueue<T> {
   }
 
   public final synchronized void allowAccessAndProcessAllTasks() {
-    myIsProcessingAllowed = true;
-    if (!myTasks.isEmpty()) {
-      processTask(new LinkedList<T>(myTasks));
-      myTasks.clear();
+    myProcessingBans--;
+    if (myProcessingBans == 0) {
+      if (!myTasks.isEmpty()) {
+        processTask(new LinkedList<T>(myTasks));
+        myTasks.clear();
+      }
     }
   }
 
   public final synchronized void prohibitAccess() {
-    myIsProcessingAllowed = false;
+    myProcessingBans++;
   }
 
   public abstract void processTask(List<T> tasks);

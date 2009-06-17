@@ -32,6 +32,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -48,6 +49,11 @@ class ReloadSession {
   private final Set<Project> myChangedProjects = new LinkedHashSet<Project>();
   private Set<String> myDeletedModels = new HashSet<String>();
   private final Set<IModule> myDeletedModules = new HashSet<IModule>();
+  private final Set<IReloadListener> myReloadListeners;
+
+  public ReloadSession(Set<IReloadListener> reloadListeners) {
+    myReloadListeners = reloadListeners;
+  }
 
   public void doReload() {
     if (hasAnythingToDo()) {
@@ -55,27 +61,46 @@ class ReloadSession {
       ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
 
         public void run(@NotNull final ProgressIndicator progressIndicator) {
-          if (!myNewModuleVFiles.isEmpty()) {
-            LOG.info("Reloading libraries.");
-            progressIndicator.setText("Reloading libraries... Please wait.");
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                LibraryManager.getInstance().update();
-              }
-            });
-          }
+          fireReloadStarted();
 
-          preprocess();
+          try {
+            if (!myNewModuleVFiles.isEmpty()) {
+              LOG.info("Reloading libraries.");
+              progressIndicator.setText("Reloading libraries... Please wait.");
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  LibraryManager.getInstance().update();
+                }
+              });
+            }
 
-          boolean areModulesUpdated = updateModules(progressIndicator);
-          updateModels(progressIndicator);
+            preprocess();
 
-          if (areModulesUpdated || !myNewModuleVFiles.isEmpty()) {
-            progressIndicator.setText("Reloading classes... Please wait.");
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+            boolean areModulesUpdated = updateModules(progressIndicator);
+            updateModels(progressIndicator);
+
+            if (areModulesUpdated || !myNewModuleVFiles.isEmpty()) {
+              progressIndicator.setText("Reloading classes... Please wait.");
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+            }
+
+          } finally {
+            fireReloadFinished();
           }
         }
       });
+    }
+  }
+
+  private void fireReloadStarted() {
+    for (IReloadListener l : myReloadListeners) {
+      l.reloadStarted();
+    }
+  }
+
+  private void fireReloadFinished() {
+    for (IReloadListener l : myReloadListeners) {
+      l.reloadFinished();
     }
   }
 

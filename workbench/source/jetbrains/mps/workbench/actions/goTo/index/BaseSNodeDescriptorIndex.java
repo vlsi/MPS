@@ -108,7 +108,6 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
       if (MPSFileTypesManager.instance().isModelFile(file)) {
         SuspiciousModelIndex.instance().addModelFile(file);
         LOG.error(e.getMessage());
-        e.printStackTrace();
       } else {
         LOG.warning("Can't index file " + file.getPresentableUrl());
       }

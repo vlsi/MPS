@@ -28,17 +28,22 @@ import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
+import com.thoughtworks.xstream.converters.ErrorWriter;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.Timer;
 import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -50,13 +55,17 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final MessageBus myBus;
 
   private final Set<MetadataCreationListener> myMetadataListeners = new LinkedHashSet<MetadataCreationListener>();
+
   private final VirtualFileManager myVirtualFileManager;
   private boolean isRefreshInProgress = false;
   private ReloadSession myReloadSession;
   private final Object myLock = new Object();
+  private final Set<IReloadListener> myReloadListeners = new HashSet<IReloadListener>();
+  private final Timer myTimer;
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
     public void beforeRefreshStart(boolean asynchonous) {
       synchronized (myLock) {
+        myTimer.stop();
         isRefreshInProgress = true;
       }
     }
@@ -64,9 +73,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
     public void afterRefreshFinish(boolean asynchonous) {
       synchronized (myLock) {
         isRefreshInProgress = false;
-        if (myReloadSession != null) {
-          doReload();
+        if (myReloadSession == null || !myReloadSession.hasAnythingToDo()) {
+          return;
         }
+        myTimer.restart();
       }
     }
   };
@@ -77,6 +87,18 @@ public class ModelChangesWatcher implements ApplicationComponent {
   public ModelChangesWatcher(MessageBus bus, VirtualFileManager manager) {
     myBus = bus;
     myVirtualFileManager = manager;
+    myTimer = new Timer(10, null);
+    myTimer.setRepeats(false);
+    myTimer.stop();
+    myTimer.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        synchronized (myLock) {
+          if (myReloadSession != null) {
+            doReload();
+          }
+        }
+      }
+    });
   }
 
   @NonNls
@@ -132,7 +154,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       synchronized (myLock) {
 
         if (myReloadSession == null) {
-          myReloadSession = new ReloadSession();
+          myReloadSession = new ReloadSession(getReloadListeners());
         }
 
         final ReloadSession reloadSession = myReloadSession;
@@ -173,7 +195,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       synchronized (myLock) {
 
         if (myReloadSession == null) {
-          myReloadSession = new ReloadSession();
+          myReloadSession = new ReloadSession(getReloadListeners());
         }
 
         final ReloadSession reloadSession = myReloadSession;
@@ -198,7 +220,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
 
         if (!isRefreshInProgress) {
-          doReload();
+          myTimer.restart();
         }
       }
     }
@@ -210,5 +232,31 @@ public class ModelChangesWatcher implements ApplicationComponent {
         ModuleFileProcessor.getInstance().process(event, reloadSession);
       }
     }
+  }
+
+  public void addReloadListener(IReloadListener listener) {
+    synchronized (myReloadListeners) {
+      myReloadListeners.add(listener);
+    }
+  }
+
+  public void removeReloadListener(IReloadListener listener) {
+    synchronized (myReloadListeners) {
+      myReloadListeners.remove(listener);
+    }
+  }
+
+  private Set<IReloadListener> getReloadListeners() {
+    synchronized (myReloadListeners) {
+      HashSet<IReloadListener> listeners = new HashSet<IReloadListener>();
+      listeners.addAll(myReloadListeners);
+      return listeners;
+    }
+  }
+
+  public interface IReloadListener {
+    public void reloadStarted();
+
+    public void reloadFinished();
   }
 }

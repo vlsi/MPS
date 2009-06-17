@@ -24,6 +24,8 @@ import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,6 +33,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,6 +47,9 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   private final ProjectManager myProjectManager;
   private final ApplicationLevelVcsManager myVcsManager;
+  private final ModelChangesWatcher myWatcher;
+  private final VirtualFileManager myVirtualFileManager;
+
   private final SuspiciousModelIndex.ProjectOpenedListener myProjectManagerListener;
   private final TaskQueue<Conflictable> myTaskQueue = new TaskQueue<Conflictable>(false) {
     public void processTask(final List<Conflictable> tasks) {
@@ -53,11 +60,35 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }, ModalityState.NON_MODAL);
     }
   };
+  private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
+    public void beforeRefreshStart(boolean asynchonous) {
+      if (!asynchonous) {
+        myTaskQueue.prohibitAccess();
+      }
+    }
 
-  public SuspiciousModelIndex(ProjectManager manager, ApplicationLevelVcsManager vcsManager) {
+    public void afterRefreshFinish(boolean asynchonous) {
+      if (!asynchonous) {
+        myTaskQueue.allowAccessAndProcessAllTasks();
+      }
+    }
+  };
+  private final IReloadListener myReloadListener = new IReloadListener() {
+    public void reloadStarted() {
+      myTaskQueue.prohibitAccess();
+    }
+
+    public void reloadFinished() {
+      myTaskQueue.allowAccessAndProcessAllTasks();
+    }
+  };
+
+  public SuspiciousModelIndex(ProjectManager manager, ApplicationLevelVcsManager vcsManager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
     myProjectManager = manager;
     myProjectManagerListener = new ProjectOpenedListener();
     myVcsManager = vcsManager;
+    myWatcher = watcher;
+    myVirtualFileManager = vfManager;
   }
 
   public void addModel(SModelDescriptor model, boolean isInConflict) {
@@ -76,10 +107,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   public void initComponent() {
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
+    myWatcher.addReloadListener(myReloadListener);
+    myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
   public void disposeComponent() {
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
+    myWatcher.removeReloadListener(myReloadListener);
+    myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
   public void addModelFile(VirtualFile file) {
@@ -243,5 +278,11 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     public boolean needReloading() {
       return myModule.needReloading();
     }
+  }
+
+  public interface IModelsMergeListener {
+    public void mergeStarted();
+
+    public void mergeEnded();
   }
 }
