@@ -46,7 +46,7 @@ public class PostponedReference extends SReference {
   @Nullable
   public SModelReference getTargetSModelReference() {
     if (myReferenceInfo != null) {
-      return myReferenceInfo.getTargetModelUID(myGenerator);
+      return myReferenceInfo.getTargetModelReference(myGenerator);
     } else if (myReplacementReference != null) {
       return myReplacementReference.getTargetSModelReference();
     }
@@ -79,7 +79,7 @@ public class PostponedReference extends SReference {
 
     String role = myReferenceInfo.getReferenceRole();
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
-    SModelReference targetModelReference = myReferenceInfo.getTargetModelUID(myGenerator);
+    SModelReference targetModelReference = myReferenceInfo.getTargetModelReference(myGenerator);
 
     SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
     if (outputTargetNode != null) {

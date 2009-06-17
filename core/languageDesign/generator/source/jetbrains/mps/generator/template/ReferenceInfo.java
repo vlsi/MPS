@@ -39,7 +39,7 @@ public abstract class ReferenceInfo {
     return myOutputSourceNode;
   }
 
-  public SModelReference getTargetModelUID(TemplateGenerator generator) {
+  public SModelReference getTargetModelReference(TemplateGenerator generator) {
     // local references only
     return generator.getOutputModel().getSModelReference();
   }

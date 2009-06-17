@@ -24,44 +24,28 @@ import org.jetbrains.annotations.Nullable;
  * Sep 26, 2007
  */
 public class StaticReference extends SReferenceBase {
-  private SNode myTargetNode;        // young
+  private SNode myImmatureTargetNode;        // young
   private SNodeId myTargetNodeId;    // mature
 
-  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
+  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     // 'young' reference
     super(role, sourceNode, null, false);
-    myTargetNode = targetNode;
+    myImmatureTargetNode = immatureTargetNode;
   }
 
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
     // 'mature' reference
+
+    // 'targetModelReference' can be null only if it is broken external reference
     super(role, sourceNode, targetModelReference, true);
     setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
   }
 
-  public SModelReference getTargetSModelReference() {
-    if (mature()) {
-      return super.getTargetSModelReference();
-    } else if (myTargetNode != null) {
-      return myTargetNode.getModel().getSModelReference();
-    }
-    return null;
-  }
-
-  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (!mature()) makeMature();
-    super.setTargetSModelReference(modelReference);
-  }
-
   @Nullable
   public SNodeId getTargetNodeId() {
-    if (mature()) {
-      return myTargetNodeId;
-    } else if (myTargetNode != null) {
-      return myTargetNode.getSNodeId();
-    }
-    return null;
+    if (mature()) return myTargetNodeId;
+    return myImmatureTargetNode.getSNodeId();
   }
 
   public void setTargetNodeId(SNodeId nodeId) {
@@ -73,7 +57,7 @@ public class StaticReference extends SReferenceBase {
     NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
     if (!mature()) {
-      return myTargetNode;
+      return myImmatureTargetNode;
     }
 
     SNodeId targetNodeId = getTargetNodeId();
@@ -85,26 +69,52 @@ public class StaticReference extends SReferenceBase {
 
     SModel targetModel = getTargetModel();
     if (targetModel == null) return null;
+
     SNode targetNode = targetModel.getNodeById(targetNodeId);
     if (targetNode != null) return targetNode;
     targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + getTargetSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;
   }
 
-  protected boolean canMakeMature() {
-    // both source and target should be registered
-    return getSourceNode().isRegistered() && myTargetNode.isRegistered();
+  private SModel getTargetModel() {
+    if (!isExternal()) {
+      return getSourceNode().getModel();
+    }
+
+    // external
+    SModelReference targetModelReference = getTargetSModelReference();
+    if (targetModelReference == null) {
+      // 'unresolved' actually.
+      // It can be tmp reference created while copy/pasting a node
+      return null;
+    }
+
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+    if (modelDescriptor == null) {
+      error("couldn't access model '" + targetModelReference + "'");
+      return null;
+    }
+
+    SModel model = modelDescriptor.getSModel();
+    if (model == null) {
+      error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
+    }
+    return model;
+  }
+
+  protected SNode getImmatureTargetNode() {
+    return myImmatureTargetNode;
   }
 
   protected void makeMature() {
     super.makeMature();
-    myTargetNodeId = myTargetNode.getSNodeId();
-    setTargetSModelReference(myTargetNode.getModel().getSModelReference());
-    setResolveInfo(myTargetNode.getName());
-    myTargetNode = null;
+    myTargetNodeId = myImmatureTargetNode.getSNodeId();
+    setTargetSModelReference(myImmatureTargetNode.getModel().getSModelReference());
+    setResolveInfo(myImmatureTargetNode.getName());
+    myImmatureTargetNode = null;
   }
 }

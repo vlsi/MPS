@@ -47,15 +47,12 @@ import org.jetbrains.annotations.Nullable;
 
   private boolean myMature;
   private SModelReference myTargetModelReference;
-  private boolean myExternal;
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, boolean mature) {
     super(role, sourceNode);
-    if (!sourceNode.getModel().getSModelReference().equals(targetModelReference)) {
-      myExternal = true;
-      myTargetModelReference = targetModelReference;
-    }
 
+    // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
+    myTargetModelReference = targetModelReference;
     myMature = mature;
 
     // 'young' reference
@@ -67,58 +64,30 @@ import org.jetbrains.annotations.Nullable;
   }
 
   public boolean isExternal() {
-    return myExternal;
+    return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
   }
 
   public SModelReference getTargetSModelReference() {
-    return myExternal ? myTargetModelReference : getSourceNode().getModel().getSModelReference();
+    if (mature()) return myTargetModelReference;
+    return getImmatureTargetNode().getModel().getSModelReference();
   }
 
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (getSourceNode().getModel().getSModelReference().equals(modelReference)) {
-      myExternal = false;
-      myTargetModelReference = null;
-    } else {
-      myExternal = true;
-      myTargetModelReference = modelReference;
-    }
-  }
-
-  protected SModel getTargetModel() {
-    if (!myExternal) {
-      return getSourceNode().getModel();
-    }
-
-    // external
-    SModelReference targetModelReference = getTargetSModelReference();
-    if (targetModelReference == null) {
-      // 'unresolved' actually.
-      // It can be tmp reference created while copy/pasting a node
-      return null;
-    }
-
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-    if (modelDescriptor == null) {
-      error("couldn't access model '" + targetModelReference + "'");
-      return null;
-    }
-
-    SModel model = modelDescriptor.getSModel();
-    if (model == null) {
-      error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
-    }
-    return model;
+    if (!mature()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
+    myTargetModelReference = modelReference;
   }
 
   protected final boolean mature() {
-    if (!myMature && canMakeMature()) {
-      // convert 'young' reference to 'mature'
-      makeMature();
+    if (!myMature) {
+      if (getSourceNode().isRegistered() && getImmatureTargetNode().isRegistered()) {
+        // convert 'young' reference to 'mature'
+        makeMature();
+      }
     }
     return myMature;
   }
 
-  protected abstract boolean canMakeMature();
+  protected abstract SNode getImmatureTargetNode();
 
   protected void makeMature() {
     myMature = true;

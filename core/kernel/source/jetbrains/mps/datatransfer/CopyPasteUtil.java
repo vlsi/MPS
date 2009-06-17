@@ -169,6 +169,7 @@ public class CopyPasteUtil {
         if (oldTargetNode != null) {
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else if (sourceReference.getResolveInfo() != null) {
+          // broken reference. to be resolved later?
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
         } else {
           continue;
@@ -193,10 +194,12 @@ public class CopyPasteUtil {
         //otherwise it points out of our node's subtree
         //prefer resolveInfo over direct reference
         if (BaseAdapter.isInstance(newSourceNode, IMethodCall.class) && oldTargetNode != null) {
+          // hack: handle ref to methods in a special manner
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
           if (resolveInfo != null) {
+            // intentionally broken reference : to be resolved after pasting, in new context 
             newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
             referencesRequireResolve.add(newReference);
           } else if (oldTargetNode != null) {

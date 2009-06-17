@@ -62,10 +62,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return linkRole;
   }
 
-  public SModelReference getTargetModelUID(TemplateGenerator generator) {
+  public SModelReference getTargetModelReference(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
     if (myExternalTargetModelReference != null) return myExternalTargetModelReference;
-    return super.getTargetModelUID(generator);
+    return super.getTargetModelReference(generator);
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
