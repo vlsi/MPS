@@ -17,37 +17,31 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.vcs.diff.Conflict;
 import jetbrains.mps.vcs.diff.changes.Change;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import java.util.List;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.*;
 
 public class NewMergeView extends JPanel {
   private Merger myMerger;
-  private DiffEditorComponent myEditorComponent;
   private IOperationContext myContext;
-  private ChangesTree myMineChangesTree;
-  private ChangesTree myRepoChangesTree;
-  private SNode mySelectedNode;
-  private JLabel myStatusPanel;
+  private ModelChangesTree myMineChangesTree;
+  private ModelChangesTree myRepoChangesTree;
 
   public NewMergeView(final IOperationContext context, final SModel baseModel, final SModel mine, final SModel repo) {
     setLayout(new BorderLayout());
     myContext = context;
-    myStatusPanel = new JLabel();
+    JPanel controlsPanel = createControlsPanel();
     final JPanel panel = new JPanel(new GridLayout(1, 2));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -58,24 +52,38 @@ public class NewMergeView extends JPanel {
         });
 
         myMineChangesTree = new MyChangesTree(context);
-        myMineChangesTree.showDifference(baseModel, mine, myMerger.getBaseMyneChange());
+        myMineChangesTree.showDifference(baseModel, mine, myMerger.getBaseMyneChange(), myMerger);
         panel.add(new HeaderWrapper("Mine Changes", new JScrollPane(myMineChangesTree)));
+        panel.add(new HeaderWrapper("Merge Result", new MergeResultView(context, baseModel, mine, repo)));
         myRepoChangesTree = new MyChangesTree(context);
-        myRepoChangesTree.showDifference(baseModel, repo, myMerger.getBaseRepoChange());
+        myRepoChangesTree.showDifference(baseModel, repo, myMerger.getBaseRepoChange(), myMerger);
         panel.add(new HeaderWrapper("Repository Changes", new JScrollPane(myRepoChangesTree)));
 
         updateView();
       }
     });
 
-    SModel resultModel = myMerger.getResultModel();
+    add(panel);    
+    add(controlsPanel, BorderLayout.PAGE_END);
+  }
 
-    SNode node = resultModel.getRoots().get(0);
+  private JPanel createControlsPanel() {
+    final JCheckBox showOnlyConflicts = new JCheckBox();
+    showOnlyConflicts.setAction(new AbstractAction("Show conflicts only") {
 
-    myEditorComponent = new DiffEditorComponent(context, node, resultModel);
-    JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panel, myEditorComponent.getExternalComponent());
-    add(splitPane);
-    add(myStatusPanel, BorderLayout.PAGE_END);
+      public void actionPerformed(ActionEvent e) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myMineChangesTree.setShowOnlyConflicts(showOnlyConflicts.getModel().isSelected());
+            myRepoChangesTree.setShowOnlyConflicts(showOnlyConflicts.getModel().isSelected());
+          }
+        });
+        updateView();
+      }
+    });
+    JPanel myBottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    myBottomPanel.add(showOnlyConflicts);
+    return myBottomPanel;
   }
 
   private void updateView() {
@@ -85,50 +93,27 @@ public class NewMergeView extends JPanel {
       myRepoChangesTree.getConflicts().add(conflict.getC1().getAffectedNodeId());
       myMineChangesTree.getConflicts().add(conflict.getC2().getAffectedNodeId());
     }
-    selectNodeInEditor(mySelectedNode);
     myRepoChangesTree.rebuildNow();
     myMineChangesTree.rebuildNow();
-    myStatusPanel.setText("You have "+ myMerger.getUnresolvedConflicts().size() + " unresolved conflicts.");
   }
 
-  private void selectNodeInEditor(final SNode node) {
-    if (node == null) {
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModel resultModel = myMerger.getResultModel();
-
-        SNode root = node;
-
-        while (root.getParent() != null) {
-          root = root.getParent();
-        }
-
-        myEditorComponent.editNode(resultModel.getNodeById(root.getSNodeId()), myContext);
-        SNode nodeToSelect = resultModel.getNodeById(node.getSNodeId());
-        if (nodeToSelect != null) {
-          myEditorComponent.selectNode(nodeToSelect);
-        }
-      }
-    });
-
-  }
 
   public boolean isResolved() {
-    return true;
+    return myMerger.isResolved();
   }
 
-  private class MyChangesTree extends ChangesTree {
+  public SModel getResultModel() {
+    return myMerger.getResultModel(); 
+  }
+
+  private class MyChangesTree extends ModelChangesTree {
 
     MyChangesTree(IOperationContext context) {
       super(context);
     }
 
     @Override
-    protected void doubleClickOnNode(final SNode node) {
-      mySelectedNode = node;
-      selectNodeInEditor(mySelectedNode);
+    protected void doubleClickOnNode(final SNode node) {      
     }
 
     @Override

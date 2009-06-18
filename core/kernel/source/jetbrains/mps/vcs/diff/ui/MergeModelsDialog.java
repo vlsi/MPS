@@ -28,13 +28,13 @@ import javax.swing.JOptionPane;
 import java.awt.HeadlessException;
 
 class MergeModelsDialog extends BaseDialog {
-  private MergeView myMergeView;
+  private NewMergeView myMergeView;
   private boolean myCanceled;
 
 
   public MergeModelsDialog(IOperationContext context, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
     super(context.getMainFrame(), "Merge Model Changes : " + base.getSModelReference());
-    myMergeView = new MergeView(context, base, mineModel, repoModel);
+    myMergeView = new NewMergeView(context, base, mineModel, repoModel);
   }
 
 
@@ -75,6 +75,6 @@ class MergeModelsDialog extends BaseDialog {
     if (myCanceled) {
       return null;
     }
-    return null;//myMergeView.getResultModel();
+    return myMergeView.getResultModel();
   }
 }

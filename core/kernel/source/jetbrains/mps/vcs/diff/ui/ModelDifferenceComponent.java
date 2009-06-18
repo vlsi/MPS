@@ -34,7 +34,7 @@ import java.awt.BorderLayout;
 import java.util.List;
 
 class ModelDifferenceComponent extends JPanel {
-  private ChangesTree myModelTree;
+  private ModelChangesTree myModelTree;
 
   private MPSTree myChangesTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
@@ -57,7 +57,7 @@ class ModelDifferenceComponent extends JPanel {
   public ModelDifferenceComponent(IOperationContext context) {
     setLayout(new BorderLayout());
     myContext = context;
-    myModelTree = new ChangesTree(context) {
+    myModelTree = new ModelChangesTree(context) {
       @Override
       protected void doubleClickOnNode(SNode node) {
         ModelDifferenceComponent.this.doubleClickOnNode(node);
@@ -86,7 +86,7 @@ class ModelDifferenceComponent extends JPanel {
       changesPanel);
     splitter.setDividerLocation(500);
 
-    add(splitter, BorderLayout.CENTER);
+    add(modelPanel, BorderLayout.CENTER);
     updateView();
   }
 
@@ -109,7 +109,7 @@ class ModelDifferenceComponent extends JPanel {
 
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
     final List<Change> changes = builder.getChanges();
-    myModelTree.showDifference(oldModel, newModel, changes);
+    myModelTree.showDifference(oldModel, newModel, changes, null);
     myChanges = changes;
     updateView();
 

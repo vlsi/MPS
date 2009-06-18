@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.vcs.diff.Merger;
@@ -69,26 +70,19 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
 
     myComponent = new JPanel(new GridLayout(1, 3));
     myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
-    List<Change> revert1Changes = new DiffBuilder(myResultModel, myChange1Model).getChanges();
-    myChange1EditorComponent.hightlight(revert1Changes, false);
-    myChange1EditorComponent.makeChangeBlocks(new Runnable() {
+    List<Change> revert1Changes = new DiffBuilder(myChange1Model, myBaseModel).getChanges();
+    myChange1EditorComponent.hightlight(revert1Changes, true);
 
-      public void run() {
-        //To change body of implemented methods use File | Settings | File Templates.
-      }
-    });
     myResultEditorComponent = addEditor(myContext, resultNode[0], "");
     List<Change> baseChanges = new DiffBuilder(myResultModel, myBaseModel).getChanges();
     myResultEditorComponent.hightlight(baseChanges, true);
     myChange2EditorComponent = addEditor(myContext, change2Node[0], "");
     List<Change> revert2Changes = new DiffBuilder(myChange2Model, myBaseModel).getChanges();
-    myChange2EditorComponent.hightlight(revert2Changes, true);
-    myChange2EditorComponent.makeChangeBlocks(new Runnable() {
+    myChange2EditorComponent.hightlight(revert2Changes, true);    
+  }
 
-      public void run() {
-        //To change body of implemented methods use File | Settings | File Templates.
-      }
-    });
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
   }
 
 }

@@ -8,8 +8,9 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
@@ -22,9 +23,11 @@ import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.MutableTreeNode;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Component;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
@@ -32,7 +35,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import org.jetbrains.annotations.NotNull;
 
-class ChangesTree extends MPSTree {
+class ModelChangesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private SModel myNewModel;
   private SModel myOldModel;
@@ -44,8 +47,11 @@ class ChangesTree extends MPSTree {
   private Map<SNodeId, List<Change>> myChangesMap = new HashMap();
   private Set<SNodeId> myExcludetNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myConflicts = new HashSet<SNodeId>();
+  private List<Change> myChanges;
+  private Merger myMerger;
+  private boolean myShowOnlyConflicts;
 
-  ChangesTree(IOperationContext context) {
+  ModelChangesTree(IOperationContext context) {
     myContext = context;
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
 
@@ -98,17 +104,15 @@ class ChangesTree extends MPSTree {
     }
   }
 
-  public ChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {
+  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes, Merger merger) {
+    myMerger = merger;
+    myChanges = changes;
     myOldModel = oldModel;
     myNewModel = newModel;
     for (Change change: changes) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null) {
-        if (!myChangesMap.containsKey(id)) {
-          myChangesMap.put(id, new ArrayList<Change>());
-        }
-        myChangesMap.get(id).add(change);
-        addToChangeSubtree(change.getAffectedNodeId(), newModel, oldModel);
+        addToChangeSubtree(change, change.getAffectedNodeId(), newModel, oldModel);
       }
     }
 
@@ -177,10 +181,12 @@ class ChangesTree extends MPSTree {
     }
   }
 
-  private void addToChangeSubtree(SNodeId nodeId, SModel newModel, SModel oldModel) {
-    if (myChangedSubtree.contains(nodeId)) {
-      return;
+  private void addToChangeSubtree(Change change, SNodeId nodeId, SModel newModel, SModel oldModel) {
+    if (!myChangesMap.containsKey(nodeId)) {
+          myChangesMap.put(nodeId, new ArrayList<Change>());
     }
+    myChangesMap.get(nodeId).add(change);
+
     SNode node = myNewModel.getNodeById(nodeId);
     if (node == null) {
       node = oldModel.getNodeById(nodeId);
@@ -188,12 +194,23 @@ class ChangesTree extends MPSTree {
     if (node != null) {
       myChangedSubtree.add(nodeId);
       if (node.getParent() != null) {
-        addToChangeSubtree(node.getParent().getSNodeId(), newModel, oldModel);
+        addToChangeSubtree(change, node.getParent().getSNodeId(), newModel, oldModel);
       }
     }
   }
   
   protected void doubleClickOnNode(SNode node) {
+  }
+
+  public void setShowOnlyConflicts(boolean b) {
+    myShowOnlyConflicts = b;
+    myChangedSubtree.clear();
+    for (Change change: myChanges) {
+      SNodeId id = change.getAffectedNodeId();
+      if (id != null && (!b || myConflicts.contains(id))) {
+        addToChangeSubtree(change, change.getAffectedNodeId(), myNewModel, myOldModel);
+      }
+    }
   }
 
 
@@ -216,6 +233,12 @@ class ChangesTree extends MPSTree {
         return;
       }
       super.updatePresentation();
+    }
+
+    @Override
+    protected void doInit() {
+      super.doInit();
+      insert(new MyModelAspectsNode(myContext, myModel), 0);
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
@@ -275,10 +298,10 @@ class ChangesTree extends MPSTree {
       if (n == null) return;
 
       if (!n.getProperties().isEmpty()) {
-        add(new PropertiesTreeNode(getOperationContext(), n));
+//        add(new PropertiesTreeNode(getOperationContext(), n));
       }
       if (!n.getReferences().isEmpty()) {
-        add(new ReferencesTreeNode(getOperationContext(), n));
+//        add(new ReferencesTreeNode(getOperationContext(), n));
       }
 
       SNodeId id = n.getSNodeId();
@@ -327,4 +350,67 @@ class ChangesTree extends MPSTree {
     return null;
   }
 
+  private class MyModelAspectsNode extends MPSTreeNode {
+    public MyModelAspectsNode(IOperationContext operationContext, SModel model) {
+      super(operationContext);
+      setIcon(Icons.PROPERTIES_ICON);
+      setNodeIdentifier("model properties");
+      doInit();
+    }
+
+    @Override
+    protected void doInit() {
+      List<ImportLanguageChange> importLanguageChanges = CollectionUtil.filter(ImportLanguageChange.class, myChanges);
+      for (ImportLanguageChange change : importLanguageChanges) {
+        add(new ChangeNode(change));
+      }
+      List<ModelImportChange> modelImportChanges = CollectionUtil.filter(ModelImportChange.class, myChanges);
+      for (ModelImportChange change : modelImportChanges) {
+        add(new ChangeNode(change));
+      }
+      List<AddLanguageAspectChange> addLanguageAspectChanges = CollectionUtil.filter(AddLanguageAspectChange.class, myChanges);
+      for (AddLanguageAspectChange change : addLanguageAspectChanges) {
+        add(new ChangeNode(change));
+      }
+
+    }
+
+  }
+
+  private class ChangeNode extends MPSTreeNode {
+    private Change myChange;
+
+    public void updatePresentation() {
+      if (myMerger.getUnresolvedConflicts().contains(myChange)) {
+        setColor(Color.RED);
+      }
+
+      if (myMerger.getExcludedChanges().contains(myChange)) {
+        String text = myChange.toString();
+        setText("<html><s>" + TreeTextUtil.toHtml(text) + "</s></html>");
+      } else {
+        setText(myChange.toString());
+      }
+    }
+
+    public ChangeNode(Change change) {
+      super(change, null);
+      myChange = change;
+
+      setNodeIdentifier(myChange.toString());
+      setIcon(Icons.DEFAULT_ICON);
+      updatePresentation();
+    }
+
+    public ActionGroup getActionGroup() {
+      return getActionGroupForChanges(Collections.singletonList(myChange));
+    }
+
+    public void doubleClick() {      
+    }
+
+    public boolean isLeaf() {
+      return true;
+    }
+  }
 }
