@@ -20,6 +20,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
@@ -34,10 +36,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -111,7 +110,53 @@ public final class BehaviorManager implements ApplicationComponent {
     if (myConstructors.containsKey(conceptFqName)) {
       methodsToCall = myConstructors.get(conceptFqName);
     } else {
-      while (concept != null) {
+      List<AbstractConceptDeclaration> concepts = new ArrayList<AbstractConceptDeclaration>();
+      List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
+      Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
+      concepts.add(concept);
+      while (!concepts.isEmpty()) {
+        for (AbstractConceptDeclaration currentConcept : concepts) {
+          if (processed.contains(currentConcept)) {
+            continue;
+          }
+          String fqName = NameUtil.nodeFQName(currentConcept);
+          String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+          try {
+            Class cls = language.getClass(behaviorClass);
+            if (cls != null) {
+              Method method = cls.getMethod("init", SNode.class);
+              method.setAccessible(true);
+              methodsToCall.add(method);
+            }
+          } catch (NoSuchMethodException e) {
+            //ignore
+          }
+
+          if (currentConcept instanceof ConceptDeclaration) {
+            ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
+            List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
+            for (InterfaceConceptReference reference : references) {
+              newFrontier.add(reference.getIntfc());
+            }
+            ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
+            if (parentConcept != null) {
+              newFrontier.add(parentConcept);
+            }
+          } else if (currentConcept instanceof InterfaceConceptDeclaration) {
+            InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
+            List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
+            for (InterfaceConceptReference reference : references) {
+              newFrontier.add(reference.getIntfc());
+            }
+          }
+          processed.add(currentConcept);
+        }
+        concepts = newFrontier;
+        newFrontier = new ArrayList<AbstractConceptDeclaration>();
+      }
+
+    /*  while (concept != null) {
         String fqName = NameUtil.nodeFQName(concept);
         String behaviorClass = behaviorClassByConceptFqName(fqName);
 
@@ -127,7 +172,7 @@ public final class BehaviorManager implements ApplicationComponent {
         }
 
         concept = ((ConceptDeclaration) concept).getExtends();
-      }
+      }*/
 
       myConstructors.put(conceptFqName, methodsToCall);
     }
