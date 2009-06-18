@@ -28,10 +28,7 @@ import com.intellij.idea.IdeaTestApplication;
 import static jetbrains.mps.TestMain.configureMPS;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
@@ -47,9 +44,11 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.File;
+import java.util.List;
 
 public class TestMergeDialog {
   private static EditorManager myEditorManager = new EditorManager();
@@ -62,6 +61,12 @@ public class TestMergeDialog {
     final SModel mineModel = readModel(args[1]);
     final SModel newModel = readModel(args[2]);
 
+    ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
+        public List<IModule> compute() {
+          return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile("/media/d/devel/webr-dnq"), new MPSModuleOwner() {
+          });
+        }
+      });
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -94,6 +99,7 @@ public class TestMergeDialog {
             return new MergeModelsDialog(context, baseModel, mineModel, newModel);
           }
         });
+        dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.showDialog();
 
         final SModel result = dialog.getResultModel();

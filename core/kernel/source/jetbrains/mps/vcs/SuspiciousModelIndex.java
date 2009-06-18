@@ -23,6 +23,9 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
+import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -83,6 +86,16 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
   };
 
+  private final IBackgroundVcsOperationsListener myVcsListener = new IBackgroundVcsOperationsListener() {
+    public void backgroundOperationStarted() {
+      myTaskQueue.prohibitAccess();
+    }
+
+    public void allBackgroundOperationsStopped() {
+      myTaskQueue.allowAccessAndProcessAllTasks();
+    }
+  };
+
   public SuspiciousModelIndex(ProjectManager manager, ApplicationLevelVcsManager vcsManager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
     myProjectManager = manager;
     myProjectManagerListener = new ProjectOpenedListener();
@@ -132,6 +145,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
           myTaskQueue.allowAccessAndProcessAllTasks();
         }
       });
+      ProjectLevelVcsManagerImpl manager = (ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class);
+      manager.addBackgroundOperationsListener(myVcsListener);
     }
 
     public boolean canCloseProject(Project project) {
@@ -145,23 +160,32 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     public void projectClosing(Project project) {
+      ProjectLevelVcsManagerImpl manager = (ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class);
+      manager.removeBackgroundOperationsListener(myVcsListener);
     }
   }
 
   public synchronized void mergeModels(List<Conflictable> models) {
     final Collection<Conflictable> merged = showMergeDialog(models);
 
-    if (merged.isEmpty()) return;
+    if (merged.isEmpty()) {
+      ModelChangesWatcher.instance().tryToResumeTasksProcessing();
+      return;
+    }
 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (Conflictable conflictable : merged) {
-              conflictable.reloadFromDisk();
+        try {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              for (Conflictable conflictable : merged) {
+                conflictable.reloadFromDisk();
+              }
             }
-          }
-        });
+          });
+        } finally {
+          ModelChangesWatcher.instance().tryToResumeTasksProcessing();
+        }
       }
     }, ModalityState.NON_MODAL);
   }
@@ -195,6 +219,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     }
 
+    ModelChangesWatcher.instance().suspendTasksProcessing();
     for (Project project : toMerge.keySet()) {
       List<VirtualFile> virtualFileList = AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
       for (VirtualFile vfile : virtualFileList) {
