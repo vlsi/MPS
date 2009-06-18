@@ -63,7 +63,10 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
       }
 
       ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
-      return myProperty.equals(((PropertyAccessor)modelAccessor).getPropertyName());
+      if (modelAccessor instanceof PropertyAccessor) {
+        return myProperty.equals(((PropertyAccessor)modelAccessor).getPropertyName());
+      }
+      return true;
     }
     if (myRole != null) {
       return myRole.equals(cell.getRole());
@@ -84,6 +87,7 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
     myRole = role;
   }
 
+  @NotNull
   public Change getChange() {
     return myChange;
   }

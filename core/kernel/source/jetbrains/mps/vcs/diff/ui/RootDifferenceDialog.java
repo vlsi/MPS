@@ -4,12 +4,14 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.vcs.diff.changes.*;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JSplitPane;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.*;
@@ -19,17 +21,20 @@ import java.util.*;
 import java.util.List;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
-  private JPanel myComponent;
+  private JSplitPane myContainer;
   private SModel myNewModel;
-  private SModel myOldModel;
-  private List<ChangeEditorMessage> myNewChanges = new ArrayList<ChangeEditorMessage>();
-  private List<ChangeEditorMessage> myOldChanges = new ArrayList<ChangeEditorMessage>();
+  private SModel myOldModel;  
   private DiffEditorComponent myNewEditorComponent;
   private DiffEditorComponent myOldEditorComponent;
+  private JPanel myTopPanel;
+  private JPanel myBottomPanel;
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
     super(parent, "Difference");
-    myComponent = new JPanel(new GridLayout(1, 2));
+    myTopPanel = new JPanel(new GridLayout(1, 2));
+    myBottomPanel = new JPanel(new GridLayout(1, 2));
+    myContainer = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
+    myContainer.setResizeWeight(1.0);
     myNewModel = newModel;
     myOldModel = oldModel;
     addWindowListener(new WindowAdapter() {
@@ -56,6 +61,27 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName, myNewModel);
     myNewEditorComponent = addEditor(context, newNode[0], newRevisionName, myNewModel);
 
+    myNewEditorComponent.addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
+            myOldEditorComponent.inspect(sNode);
+          }
+        });
+      }
+    });
+    myOldEditorComponent.addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
+            myNewEditorComponent.inspect(sNode);
+          }
+        });
+
+      }
+    });
     myNewEditorComponent.getViewport().addChangeListener(new ChangeListener() {
 
       public void stateChanged(ChangeEvent e) {
@@ -75,41 +101,35 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName, SModel model) {
-    DiffEditorComponent result = new DiffEditorComponent(context, node, model);
-    result.editNode(node, context);
-    result.setEditable(false);
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.add(new JLabel(revisionName), BorderLayout.NORTH);
-    panel.add(result.getExternalComponent(), BorderLayout.CENTER);
-    myComponent.add(panel);
-    return result;
-  }
-
-  private void rebuildChangeBlocks() {
-    for (ChangeEditorMessage message : myNewChanges) {
-      myNewEditorComponent.getHighlightManager().removeMessage(message);
-    }
-    for (ChangeEditorMessage message : myOldChanges) {
-      myOldEditorComponent.getHighlightManager().removeMessage(message);
-    }
-    myNewEditorComponent.removeAllChanges();
-    myOldEditorComponent.removeAllChanges();
-    myNewChanges.clear();
-    myOldChanges.clear();
-
-    List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
-    myNewChanges = myNewEditorComponent.hightlight(revertChanges, true);
-    myOldChanges = myOldEditorComponent.hightlight(revertChanges, false);
     Runnable rebuild = new Runnable() {
       public void run() {
         rebuildChangeBlocks();
       }
     };
-    myNewEditorComponent.makeChangeBlocks(rebuild);
-    myOldEditorComponent.makeChangeBlocks(rebuild);
+    DiffEditorComponent result = new DiffEditorComponent(context, node, model, rebuild);
+    result.editNode(node, context);
+    result.setEditable(false);
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(new JLabel(revisionName), BorderLayout.PAGE_START);
+    panel.add(result.getExternalComponent(), BorderLayout.CENTER);
+    myTopPanel.add(panel);
+    myBottomPanel.add(result.getInspector().getExternalComponent());
+    return result;
+  }
+
+  private void rebuildChangeBlocks() {
+    myNewEditorComponent.removeAllChanges();
+    myOldEditorComponent.removeAllChanges();
+
+    List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
+    myNewEditorComponent.hightlight(revertChanges, true);
+    myOldEditorComponent.hightlight(revertChanges, false);
+
+    myNewEditorComponent.makeChangeBlocks();
+    myOldEditorComponent.makeChangeBlocks();
   }
 
   protected JComponent getMainComponent() {
-    return myComponent;
+    return myContainer;
   }
 }

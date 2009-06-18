@@ -1,9 +1,7 @@
 package jetbrains.mps.vcs.diff.ui;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.*;
@@ -12,6 +10,8 @@ import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
 import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class DiffEditorComponent extends EditorComponent {
   private static final Color NEW_COLOR = new Color(186, 238, 186);
@@ -20,17 +20,61 @@ public class DiffEditorComponent extends EditorComponent {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
 
   };
-  private ArrayList<ChangeEditorMessage> myChanges;
+  private ArrayList<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
   private SModel myResutlModel;
+  private InspectorEditorComponent myInspector;
+  private Runnable myRebuild;
 
-  public DiffEditorComponent(IOperationContext context, SNode node, SModel model) {
+  public DiffEditorComponent(IOperationContext context, SNode node, SModel model, Runnable rebuild) {
     super(context);
+    myRebuild = rebuild;
+    myInspector = new InspectorEditorComponent();
     myResutlModel = model;
     editNode(node, context);
+
+    addCellSelectionListener(new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+        final SNode[] toSelect = new SNode[1];
+        if (newSelection != null) {
+          toSelect[0] = newSelection.getSNode();
+        }
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (isDisplayable()) {
+              inspect(toSelect[0]);
+            }
+          }
+        });
+      }
+    });
+
+    addFocusListener(new FocusAdapter() {
+      public void focusGained(FocusEvent e) {
+        if (getSelectedNode() != null) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              inspect(getSelectedNode());
+            }
+          });
+        }
+      }
+    });
+  }
+
+  public void inspect(SNode node) {
+    myInspector.inspectNode(node, getOperationContext());
+    myInspector.getHighlightManager().removeAllChanges(this);
+    myInspector.getHighlightManager().rebuildMessages();
+    makeChangeBlocks(myInspector, new ArrayList(myChanges));
   }
 
   public EditorCell createRootCell() {
     return createRootCell(null);
+  }
+
+
+  public InspectorEditorComponent getInspector() {
+    return myInspector;
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
@@ -41,7 +85,7 @@ public class DiffEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public List hightlight(final List<Change> revertChanges, final boolean isNew) {
+  public void hightlight(final List<Change> revertChanges, final boolean isNew) {
     final List<ChangeEditorMessage> resultChanges = new ArrayList<ChangeEditorMessage>();
     final SModel model = getRootCell().getSNode().getModel();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -95,21 +139,28 @@ public class DiffEditorComponent extends EditorComponent {
         }
       }
     });
+    for (ChangeEditorMessage editorMessage: resultChanges) {
+      getInspector().getHighlightManager().mark(editorMessage);
+    }
     myChanges = new ArrayList<ChangeEditorMessage>(resultChanges);
-    return resultChanges;
   }
 
-  public void makeChangeBlocks(Runnable rebuild) {
+  public void makeChangeBlocks() {
+    makeChangeBlocks(this, new ArrayList(myChanges));
+    makeChangeBlocks(myInspector, new ArrayList(myChanges));
+  }
+
+  public void makeChangeBlocks(EditorComponent component, List<ChangeEditorMessage> changeEditorMessages) {
     relayout();
-    final NodeHighlightManager highlightManager = getHighlightManager();
+    final NodeHighlightManager highlightManager = component.getHighlightManager();
     highlightManager.rebuildMessages();
-    for (Iterator<ChangeEditorMessage> iterator = myChanges.iterator(); iterator.hasNext();) {
+    for (Iterator<ChangeEditorMessage> iterator = changeEditorMessages.iterator(); iterator.hasNext();) {
       ChangeEditorMessage change = iterator.next();
       if (highlightManager.getCell(change) == null) {
         iterator.remove();
       }
     }
-    Collections.sort(myChanges, new Comparator<ChangeEditorMessage>() {
+    Collections.sort(changeEditorMessages, new Comparator<ChangeEditorMessage>() {
 
       public int compare(ChangeEditorMessage o1, ChangeEditorMessage o2) {
         return highlightManager.getCell(o1).getY() - highlightManager.getCell(o2).getY();
@@ -118,20 +169,20 @@ public class DiffEditorComponent extends EditorComponent {
 
     ChangesBlock block = null;
 
-    for (ChangeEditorMessage m: myChanges) {
+    for (ChangeEditorMessage m: changeEditorMessages) {
       EditorCell cell = highlightManager.getCell(m);
       if (block == null) {
-        block = createChangeBlock(rebuild);
+        block = createChangeBlock(myRebuild);
       } else {
         if (block.getY2() < cell.getY()) {
-          highlightManager.addChanges(this, block);
-          block = createChangeBlock(rebuild);
+          highlightManager.addChanges(component, block);
+          block = createChangeBlock(myRebuild);
         }
       }
       block.addChange(m, cell);
     }
     if (block != null) {
-      highlightManager.addChanges(this, block);
+      highlightManager.addChanges(component, block);
     }
   }
 
@@ -143,7 +194,7 @@ public class DiffEditorComponent extends EditorComponent {
 
           public void run() {
             List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
-            notAppliedChanges.addAll(myChanges);            
+            notAppliedChanges.addAll(myChanges);
 
             for (ChangeEditorMessage m: getChanges()) {
               applyMeassage(notAppliedChanges, m);
@@ -178,6 +229,12 @@ public class DiffEditorComponent extends EditorComponent {
 
 
   public void removeAllChanges() {
+    for (ChangeEditorMessage message : myChanges) {
+      getHighlightManager().removeMessage(message);    
+      myInspector.getHighlightManager().removeMessage(message);
+    }
+    myInspector.getHighlightManager().rebuildMessages();
     getHighlightManager().removeAllChanges(this);
+    myInspector.getHighlightManager().removeAllChanges(myInspector);
   }
 }

@@ -44,7 +44,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    DiffEditorComponent result = new DiffEditorComponent(context, node, myResultModel);
+    DiffEditorComponent result = new DiffEditorComponent(context, node, myResultModel, null);
     result.editNode(node, context);
     result.setEditable(false);
     JPanel panel = new JPanel(new BorderLayout());
