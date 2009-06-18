@@ -137,6 +137,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
     };
+    myTimer.setTakeInitialDelay(true);
     myTimer.suspend();
   }
 
