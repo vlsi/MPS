@@ -21,13 +21,13 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 
 public class MPSExcludedFileIndex extends ExcludedFileIndex {
-  private final Project myProject;
   private final VirtualFile myProjectBasedir;
+  private final ExcludedFileIndexApplicationComponent myExcludedFileIndex;
 
-  public MPSExcludedFileIndex(Project project) {
+  public MPSExcludedFileIndex(Project project, ExcludedFileIndexApplicationComponent excludedFileIndex) {
     super(project);
-    myProject = project;
     myProjectBasedir = project.getBaseDir();
+    myExcludedFileIndex = excludedFileIndex;
   }
 
   public boolean isInContent(VirtualFile file) {
@@ -38,7 +38,7 @@ public class MPSExcludedFileIndex extends ExcludedFileIndex {
   }
 
   public boolean isExcludedFile(VirtualFile file) {
-    return ExcludedFileIndexApplicationComponent.getInstance().isExcluded(file);
+    return myExcludedFileIndex.isExcluded(file);
   }
 
   public boolean isValidAncestor(VirtualFile baseDir, VirtualFile childDir) {
