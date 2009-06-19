@@ -2098,6 +2098,9 @@
       <property name="value" value="/*" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1244292059682911434">
+      <link role="intfc" targetNodeId="1238805530342" resolveInfo="ILocalVariableElementList" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1177666668936">
     <property name="name" value="DoWhileStatement" />

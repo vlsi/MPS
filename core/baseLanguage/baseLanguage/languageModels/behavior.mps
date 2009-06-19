@@ -13379,5 +13379,29 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5279705229678483910" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1244292059682911437">
+    <link role="concept" targetNodeId="1.1177326519037" resolveInfo="CommentedStatementsBlock" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1244292059682911438">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1244292059682911439" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1244292059682911440">
+      <property name="name" value="getLocalVariableElements" />
+      <link role="overriddenMethod" targetNodeId="1238805763253" resolveInfo="getLocalVariableElements" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1244292059682911443">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1244292059682912441">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1244292059682912443">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1244292059682912442" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1244292059682912447">
+              <link role="link" targetNodeId="1.1177326540772" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1244292059682911444">
+        <link role="elementConcept" targetNodeId="1.1238803202705" resolveInfo="ILocalVariableElement" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1244292059682911445" />
+    </node>
+  </node>
 </model>
 
