@@ -16,6 +16,9 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.library.*;
+import jetbrains.mps.library.Library;
+import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
@@ -39,17 +42,18 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.IdeMain.TestMode;
 
 import java.io.File;
-import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.*;
 
 import org.apache.log4j.*;
 import org.apache.tools.ant.BuildException;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.application.PathMacros;
 import com.intellij.util.Processor;
+import com.intellij.util.PathUtil;
 
 public class Generator {
   private final GenerateFilesAndClassesGenerationType myGenerationType = getGenerationType();
@@ -68,11 +72,44 @@ public class Generator {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
+    setMacro();
+    loadLibraries();
+
     File projectFile = FileUtil.createTmpFile();
     MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ProjectManager.getInstance().getDefaultProject());
     generateModels(project, collectModelsToGenerate());
 
     showStatistic();
+  }
+
+  private void setMacro() {
+    Map<String, String> macro = myWhatToGenerate.getMacro();
+    for (String macroName : macro.keySet()) {
+      String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
+      File file = new File(canonicalPath);
+      if (file.exists() && file.isDirectory()) {
+        PathMacros.getInstance().setMacro(macroName, canonicalPath, "");
+      }
+    }
+  }
+
+  private void loadLibraries() {
+    MyState state = LibraryManager.getInstance().getState();
+    Map<String, Library> libraries = state.getLibraries();
+
+    for (String libName : myWhatToGenerate.getLibraries().keySet()) {
+      Library library = new Library();
+      library.setName(libName);
+      library.setPath(myWhatToGenerate.getLibraries().get(libName).getAbsolutePath());
+      libraries.put(libName, library);
+    }
+
+    LibraryManager.getInstance().loadState(state);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryManager.getInstance().update();
+      }
+    });
   }
 
   public List<SModelDescriptor> collectModelsToGenerate() {

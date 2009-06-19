@@ -28,11 +28,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Constructor;
 
-import jetbrains.mps.util.Macros;
-
 public class Generate extends org.apache.tools.ant.Task {
   private File myMpsHome;
   private final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
+  private boolean myUsePropertiesAsMacro = false;
 
   public void setMpsHome(File mpsHome) {
     myMpsHome = mpsHome;
@@ -66,18 +65,30 @@ public class Generate extends org.apache.tools.ant.Task {
     myWhatToGenerate.addProjectFile(projectInner.getFile());
   }
 
+  public void addConfiguredLibrary(Library libraryInner) {
+    myWhatToGenerate.addLibrary(libraryInner.getName(), libraryInner.getDir());
+  }
+
+  public boolean getUsePropertiesAsMacro() {
+    return myUsePropertiesAsMacro;
+  }
+
+  public void setUsePropertiesAsMacro(boolean usePropertiesAsMacro) {
+    myUsePropertiesAsMacro = usePropertiesAsMacro;
+  }
+
   @Override
   public void execute() throws BuildException {
     if (myMpsHome == null) {
-      String mpsHomePath = getProject().getProperty(Macros.MPS_HOME_NAKED);
+      String mpsHomePath = getProject().getProperty("mps.home");
       if (mpsHomePath == null || !new File(mpsHomePath).exists()) {
-        throw new BuildException("Path to mps home expected. Specify mps_home property or mpshome attribute.");
+        throw new BuildException("Path to mps home expected. Specify mps.home property or mpshome attribute.");
       }
       myMpsHome = new File(mpsHomePath);
     }
 
-    File[] pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-      new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+    File[] pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+      new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
       new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
       new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
       new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
@@ -105,6 +116,14 @@ public class Generate extends org.apache.tools.ant.Task {
         classPathUrls.add(new URL("file://" + mpsClasses.getAbsolutePath() + "/"));
       } catch (MalformedURLException e) {
         throw new BuildException(e);
+      }
+    }
+
+    if (myUsePropertiesAsMacro) {
+      Hashtable properties = getProject().getProperties();
+      for (Object name : properties.keySet()) {
+        Object value = properties.get(name);
+        myWhatToGenerate.addMacro((String) name, (String) value);
       }
     }
 

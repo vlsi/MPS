@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <project name="TestGenerateTask">
-    <property name="module.home" value="${ant.file}/../../../../.."/>
+    <property name="module.home" value="${ant.file}/../../../../../.."/>
 
     <path id="tasks.class.path">
         <pathelement path="${module.home}/classes"/>
@@ -28,25 +28,25 @@
     </target>
 
     <target name="testNormalWork">
-        <generate mpshome="${module.home}/../../../">
+        <generate mpshome="${module.home}/../../..">
             <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
         </generate>
     </target>
 
     <target name="testNormalWorkWithModels">
-        <generate mpshome="${module.home}/../../../">
+        <generate mpshome="${module.home}/../../..">
             <models dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
     </target>
 
     <target name="testNormalWorkWithModules">
-        <generate mpshome="${module.home}/../../../">
+        <generate mpshome="${module.home}/../../..">
             <modules dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
     </target>
 
     <target name="testFailOnGenerationError">
-        <generate mpshome="${module.home}/../../../" failonerror="true">
+        <generate mpshome="${module.home}/../../.." failonerror="true">
             <project file="${module.home}/testProjects/failedProject/FailedProject.mpr"/>
         </generate>
     </target>
@@ -54,6 +54,14 @@
     <target name="testModelsWithBuildException">
         <generate>
             <models/>
+        </generate>
+    </target>
+
+    <target name="testLibraries">
+        <property name="mps.webr-dnq" value="${module.home}/../../../../webr-dnq"/>
+        <generate mpshome="${module.home}/../../.." usepropertiesasmacro="true">
+            <library name="webr-dnq" dir="${mps.webr-dnq}"/>
+            <modules dir="${module.home}/../../../../charisma"/>
         </generate>
     </target>
 

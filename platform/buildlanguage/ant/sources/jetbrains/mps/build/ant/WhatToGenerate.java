@@ -22,11 +22,15 @@ import java.util.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
+import com.intellij.util.containers.ConcurrentSoftHashMap;
+
 public class WhatToGenerate {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
   private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
+  private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
+  private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
 
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
@@ -73,6 +77,30 @@ public class WhatToGenerate {
 
   public void updateFailOnError(boolean showError) {
     myFailOnError = showError;
+  }
+
+  public void addLibrary(String name, File dir) {
+    myLibraries.put(name, dir);
+  }
+
+  public Map<String, File> getLibraries() {
+    return Collections.unmodifiableMap(myLibraries);
+  }
+
+  public void updateLibraries(Map<String, File> libraries) {
+    myLibraries.putAll(libraries);
+  }
+
+  public void addMacro(String name, String value) {
+    myMacro.put(name, value);
+  }
+
+  public Map<String, String> getMacro() {
+    return Collections.unmodifiableMap(myMacro);
+  }
+
+  public void updateMacro(Map<String, String> macro) {
+    myMacro.putAll(macro);
   }
 
   public void cloneTo(Object dest) {

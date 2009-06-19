@@ -18,4 +18,5 @@
     <typedef name="models" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="modules" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="project" classname="jetbrains.mps.build.ant.Project"/>
+    <typedef name="library" classname="jetbrains.mps.build.ant.Library"/>
 </antlib>
