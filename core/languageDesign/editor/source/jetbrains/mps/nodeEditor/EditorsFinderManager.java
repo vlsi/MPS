@@ -134,6 +134,7 @@ public class EditorsFinderManager implements ApplicationComponent {
         List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
         Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
         currentConcepts.add(abstractConcept);
+        ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
         while (!currentConcepts.isEmpty()) {
           for (AbstractConceptDeclaration currentConcept : currentConcepts) {
             if (processed.contains(currentConcept)) {
@@ -147,7 +148,7 @@ public class EditorsFinderManager implements ApplicationComponent {
             if (currentConcept instanceof ConceptDeclaration) {
               ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
               ConceptDeclaration anExtends = conceptDeclaration.getExtends();
-              if (anExtends != null && !(anExtends == SModelUtil_new.getBaseConcept())) {
+              if (anExtends != null && !(anExtends == baseConcept)) {
                 newFrontier.add(anExtends);
               }
               for (InterfaceConceptReference reference : conceptDeclaration.getImplementses()) {
@@ -164,7 +165,7 @@ public class EditorsFinderManager implements ApplicationComponent {
           currentConcepts = newFrontier;
           newFrontier = new ArrayList<AbstractConceptDeclaration>();
         }
-        return findEditor(SModelUtil_new.getBaseConcept(), scope);
+        return findEditor(baseConcept, scope);
         //LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
         //return null;
       }
