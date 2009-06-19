@@ -22,6 +22,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -36,7 +37,7 @@ import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class EditorsFinderManager implements ApplicationComponent {  
+public class EditorsFinderManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   public static EditorsFinderManager getInstance() {
@@ -121,20 +122,47 @@ public class EditorsFinderManager implements ApplicationComponent {
         AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
         if (abstractConcept == null) {
           LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
-                  "couldn't find node concept in scope " + scope);
+            "couldn't find node concept in scope " + scope);
           return null;
         }
+
         if (abstractConcept instanceof InterfaceConceptDeclaration) {
-          return new DefaultInterfaceEditor();
+          return new DefaultInterfaceEditor();      //todo what is this special case for?
         }
 
-        ConceptDeclaration concept = (ConceptDeclaration) abstractConcept;
-        while (concept != null) {
-          INodeEditor nodeEditor = findEditor(concept, /*stereotype*/ scope);
-          if (nodeEditor != null) {
-            return nodeEditor;
+        List<AbstractConceptDeclaration> currentConcepts = new ArrayList<AbstractConceptDeclaration>();
+        List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
+        Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
+        currentConcepts.add(abstractConcept);
+        while (!currentConcepts.isEmpty()) {
+          for (AbstractConceptDeclaration currentConcept : currentConcepts) {
+            if (processed.contains(currentConcept)) {
+              continue;
+            }
+            INodeEditor nodeEditor = findEditor(currentConcept, scope);
+            if (nodeEditor != null) {
+              return nodeEditor;
+            }
+
+            if (currentConcept instanceof ConceptDeclaration) {
+              ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
+              ConceptDeclaration anExtends = conceptDeclaration.getExtends();
+              if (anExtends != null) {
+                newFrontier.add(anExtends);
+              }
+              for (InterfaceConceptReference reference : conceptDeclaration.getImplementses()) {
+                newFrontier.add(reference.getIntfc());
+              }
+            } else if (currentConcept instanceof InterfaceConceptDeclaration) {
+              InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
+              for (InterfaceConceptReference reference : interfaceConcept.getExtendses()) {
+                newFrontier.add(reference.getIntfc());
+              }
+            }
+            processed.add(currentConcept);
           }
-          concept = concept.getExtends();
+          currentConcepts = newFrontier;
+          newFrontier = new ArrayList<AbstractConceptDeclaration>();
         }
         LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
         return null;
@@ -142,7 +170,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     });
   }
 
-  private INodeEditor findEditor(ConceptDeclaration nodeConcept, IScope scope) {
+  private INodeEditor findEditor(AbstractConceptDeclaration nodeConcept, IScope scope) {
     Language language = SModelUtil_new.getDeclaringLanguage(nodeConcept, scope);
     if (language == null) {
       return null;
