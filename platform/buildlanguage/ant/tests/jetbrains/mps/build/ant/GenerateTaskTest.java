@@ -45,7 +45,7 @@ public class GenerateTaskTest extends BuildFileTest {
   }
 
   public void testBuildExceptionInModelsDir() {
-    expectBuildException("testModelsWithBuildException", AllItemsInDirectory.getRequiredAttributeMessage("srcdir"));
+    runTestForBuildExceptionOnTarget("testModelsWithBuildException");
   }
 
   private void runTestForBuildExceptionOnTarget(String targetName) {

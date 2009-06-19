@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <project name="TestGenerateTask">
-    <property name="module.home" value="${ant.file}/../../../../../.."/>
+    <property name="module.home" value="${ant.file}/../../../../.."/>
 
     <path id="tasks.class.path">
         <pathelement path="${module.home}/classes"/>
@@ -35,13 +35,13 @@
 
     <target name="testNormalWorkWithModels">
         <generate mpshome="${module.home}/../../../">
-            <models srcdir="${module.home}/../../../samples/complexLanguage"/>
+            <models dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
     </target>
 
     <target name="testNormalWorkWithModules">
         <generate mpshome="${module.home}/../../../">
-            <modules srcdir="${module.home}/../../../samples/complexLanguage"/>
+            <modules dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
     </target>
 

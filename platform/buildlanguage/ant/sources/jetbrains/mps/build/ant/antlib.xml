@@ -15,7 +15,7 @@
   -->
 <antlib>
     <taskdef name="generate" classname="jetbrains.mps.build.ant.Generate"/>
-    <typedef name="models" classname="jetbrains.mps.build.ant.AllItemsInDirectory"/>
-    <typedef name="modules" classname="jetbrains.mps.build.ant.AllItemsInDirectory"/>
+    <typedef name="models" classname="org.apache.tools.ant.types.DirSet"/>
+    <typedef name="modules" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="project" classname="jetbrains.mps.build.ant.Project"/>
 </antlib>

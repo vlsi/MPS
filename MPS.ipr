@@ -1450,7 +1450,9 @@
         <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/ant-1.7.0/ant-src.zip!/" />
+      </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
     <library name="Beansbinding">

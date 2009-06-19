@@ -16,6 +16,8 @@
 package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.types.DirSet;
+import org.apache.tools.ant.types.resources.FileResource;
 
 import java.io.File;
 import java.util.*;
@@ -44,14 +46,20 @@ public class Generate extends org.apache.tools.ant.Task {
     myWhatToGenerate.updateFailOnError(failOnError);
   }
 
-  public void addConfiguredModels(AllItemsInDirectory modelsInner) {
-    modelsInner.check();
-    myWhatToGenerate.addModelDirectory(modelsInner.getSrcDir());
+  public void addConfiguredModels(DirSet modelsInner) {
+    Iterator it = modelsInner.iterator();
+    while (it.hasNext()) {
+      FileResource next = (FileResource) it.next();
+      myWhatToGenerate.addModelDirectory(next.getFile());
+    }
   }
 
-  public void addConfiguredModules(AllItemsInDirectory modulesInner) {
-    modulesInner.check();
-    myWhatToGenerate.addModuleDirectory(modulesInner.getSrcDir());
+  public void addConfiguredModules(DirSet modulesInner) {
+    Iterator it = modulesInner.iterator();
+    while (it.hasNext()) {
+      FileResource next = (FileResource) it.next();
+      myWhatToGenerate.addModuleDirectory(next.getFile());
+    }
   }
 
   public void addConfiguredProject(Project projectInner) {
