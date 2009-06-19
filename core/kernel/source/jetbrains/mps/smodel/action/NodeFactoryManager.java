@@ -19,10 +19,7 @@ import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.actions.structure.NodeFactories;
 import jetbrains.mps.lang.actions.structure.NodeFactory;
 import jetbrains.mps.lang.actions.structure.NodeSetupFunction;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -36,6 +33,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
@@ -97,23 +96,53 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     // find node factory
     List<NodeFactory> nodeFactories = new ArrayList<NodeFactory>();
-    ConceptDeclaration concept = nodeConcept;
-    while (concept != null && nodeFactories.isEmpty()) {
-      Language language = SModelUtil_new.getDeclaringLanguage(concept, scope);
-      if (language == null) break;
-      final ConceptDeclaration conceptF = concept;
-      SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
-      if (actionsModelDescriptor != null) {
-        List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
-        for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
-          for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
-            if (nodeFactory.getApplicableConcept() == conceptF) {
-              nodeFactories.add(nodeFactory);
+
+    List<AbstractConceptDeclaration> currentConcepts = new ArrayList<AbstractConceptDeclaration>();
+    List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
+    Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
+    currentConcepts.add(nodeConcept);
+
+    outer : while (!currentConcepts.isEmpty()) {
+      for (AbstractConceptDeclaration currentConcept : currentConcepts) {
+        if (processed.contains(currentConcept)) {
+          continue;
+        }
+        Language language = SModelUtil_new.getDeclaringLanguage(currentConcept, scope);
+        if (language == null) break;
+        SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
+        if (actionsModelDescriptor != null) {
+          List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
+          for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
+            for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
+              if (nodeFactory.getApplicableConcept() == currentConcept) {
+                nodeFactories.add(nodeFactory);
+              }
             }
           }
         }
+        if (!nodeFactories.isEmpty()) {
+          break outer;
+        }
+        processed.add(currentConcept);
+
+        if (currentConcept instanceof ConceptDeclaration) {
+          ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
+          ConceptDeclaration anExtends = conceptDeclaration.getExtends();
+          if (anExtends != null) {
+            newFrontier.add(anExtends);
+          }
+          for (InterfaceConceptReference reference : conceptDeclaration.getImplementses()) {
+            newFrontier.add(reference.getIntfc());
+          }
+        } else if (currentConcept instanceof InterfaceConceptDeclaration) {
+          InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
+          for (InterfaceConceptReference reference : interfaceConcept.getExtendses()) {
+            newFrontier.add(reference.getIntfc());
+          }
+        }
       }
-      concept = concept.getExtends();
+      currentConcepts = newFrontier;
+      newFrontier = new ArrayList<AbstractConceptDeclaration>();
     }
 
     if (nodeFactories.isEmpty()) return false;

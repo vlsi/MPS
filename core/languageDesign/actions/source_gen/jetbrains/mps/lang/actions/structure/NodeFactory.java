@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,11 +27,11 @@ public class NodeFactory extends BaseConcept {
     this.setProperty(NodeFactory.DESCRIPTION, value);
   }
 
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, NodeFactory.APPLICABLE_CONCEPT);
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeFactory.APPLICABLE_CONCEPT);
   }
 
-  public void setApplicableConcept(ConceptDeclaration node) {
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
     super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
   }
 
