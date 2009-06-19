@@ -74,15 +74,6 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="js">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="txt">
           <option name="INDENT_SIZE" value="4" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
@@ -449,9 +440,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
@@ -545,9 +534,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -696,9 +683,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -887,7 +872,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="http://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
+    <option name="state" value="https://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -905,6 +890,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actions/actions.iml" filepath="$PROJECT_DIR$/core/languageDesign/actions/actions.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/samples/agreement/agreement.iml" filepath="$PROJECT_DIR$/samples/agreement/agreement.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" filepath="$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/ant/ant.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/ant/ant.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/runtime/baseLanguage-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/runtime/baseLanguage-runtime.iml" group="core/baseLanguage/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/baseLanguage.test.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/baseLanguage.test.iml" group="core/baseLanguage/baseLanguage" />
@@ -989,7 +975,7 @@
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -Xss1024k -XX:MaxPermSize=92m -XX:+UseConcMarkSweepGC  -XX:+CMSClassUnloadingEnabled -Dmps.internal=true -agentlib:yjpagent " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.6.0_03" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
