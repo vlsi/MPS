@@ -39,6 +39,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  private Set<SNode> myInputNodesWithNotUniqueCopiedOutputNode = new HashSet<SNode>();
   private HashMap<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
@@ -78,6 +79,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public void reset(SModel inputModel, SModel outputModel) {
     myRootsNotToCopy.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
+    myInputNodesWithNotUniqueCopiedOutputNode.clear();
     myMappingNameAndInputNodeToOutputNodeMap.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
@@ -322,14 +324,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
   }
 
+  /*package*/ SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
+    SNode node = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
+    if (!myInputNodesWithNotUniqueCopiedOutputNode.contains(inputNode)) return node;
+    return null;
+  }
+
   /*package*/ void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
-    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(inputNode, inputNode), outputNode);
+    // todo: can be several copied output nodes for one input node
+    Pair key = new Pair(inputNode, inputNode);
+    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
+      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+    } else {
+      myInputNodesWithNotUniqueCopiedOutputNode.add(inputNode);
+    }
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
     if (outputNode == null) {
-      // input node has been copied?
+      // input node has been cloned?
       if (inputNode == templateNode) {
         outputNode = findOutputNodeById(inputNode.getSNodeId());
       }

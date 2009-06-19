@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -50,15 +47,14 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // output target node might has been copied (reduced) from the input target node
-    SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
-    if (outputTargetNode != null) {
-      return outputTargetNode;
-    }
-    return null;
+    // here accept only one-to-one copying
+    return generator.findCopiedOutputNodeForInputNode_unique(myInputTargetNode);
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
-    return null;
+    // if input was copied - return one of its copies
+    // this can easy produce incorrect references
+    return generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
   }
 
   public String getResolveInfoForDynamicResolve() {
