@@ -613,52 +613,6 @@ public final class ProjectViewImpl extends ProjectView implements JDOMExternaliz
   @Patch
   private void createToolbarActions() {
     myActionGroup.removeAll();
-    myActionGroup.add(new PaneOptionAction(myFlattenPackages, IdeBundle.message("action.flatten.packages"),
-                                           IdeBundle.message("action.flatten.packages"), Icons.FLATTEN_PACKAGES_ICON,
-                                           ourFlattenPackagesDefaults) {
-      public void setSelected(AnActionEvent event, boolean flag) {
-        final AbstractProjectViewPane viewPane = getCurrentProjectViewPane();
-        final SelectionInfo selectionInfo = SelectionInfo.create(viewPane);
-
-        super.setSelected(event, flag);
-
-        selectionInfo.apply(viewPane);
-      }
-    });
-
-    class FlattenPackagesDependableAction extends PaneOptionAction {
-      public FlattenPackagesDependableAction(Map<String, Boolean> optionsMap,
-                                             final String text,
-                                             final String description,
-                                             final Icon icon,
-                                             boolean optionDefaultValue) {
-        super(optionsMap, text, description, icon, optionDefaultValue);
-      }
-
-      public void update(AnActionEvent e) {
-        super.update(e);
-        final Presentation presentation = e.getPresentation();
-        presentation.setEnabled(isFlattenPackages(myCurrentViewId));
-      }
-    }
-    myActionGroup.add(new HideEmptyMiddlePackagesAction());
-    myActionGroup.add(new FlattenPackagesDependableAction(myAbbreviatePackageNames,
-                                                          IdeBundle.message("action.abbreviate.qualified.package.names"),
-                                                          IdeBundle.message("action.abbreviate.qualified.package.names"),
-                                                          IconLoader.getIcon("/objectBrowser/abbreviatePackageNames.png"),
-                                                          ourAbbreviatePackagesDefaults) {
-      public boolean isSelected(AnActionEvent event) {
-        return super.isSelected(event) && isAbbreviatePackageNames(myCurrentViewId);
-      }
-
-
-      public void update(AnActionEvent e) {
-        super.update(e);
-        if (ScopeViewPane.ID.equals(myCurrentViewId)) {
-          e.getPresentation().setEnabled(false);
-        }
-      }
-    });
     myActionGroup.add(myAutoScrollToSourceHandler.createToggleAction());
     myActionGroup.add(myAutoScrollFromSourceHandler.createToggleAction());
 
