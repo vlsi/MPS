@@ -32,15 +32,13 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.plugins.PluginSorter;
+import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionFactory;
@@ -55,16 +53,11 @@ import java.util.*;
 
 public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
-  private static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
   private BaseApplicationPlugin myIDEPlugin;
 
-  private ReloadListener myReloadListener = new MyReloadListener();
-
-  //----------------RELOAD STUFF---------------------
-
-  private void loadPlugins() {
+  public void loadPlugins() {
     mySortedPlugins = createPlugins();
 
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
@@ -103,30 +96,26 @@ public class ApplicationPluginManager implements ApplicationComponent {
     refreshCustomizations();
   }
 
-  private ArrayList<BaseApplicationPlugin> createPlugins() {
-    Map<IModule, BaseApplicationPlugin> plugins = new HashMap<IModule, BaseApplicationPlugin>(100);
+  private List<BaseApplicationPlugin> createPlugins() {
+    Set<IModule> modules = new HashSet<IModule>();
+    modules.add(PluginUtil.getIDEModule());
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      MPSProject mpsProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
+      modules.addAll(PluginUtil.collectPluginModules(mpsProject));
+    }
 
-    for (Language language : collectLanguages()) {
-      if (language.getPluginModelDescriptor() == null) continue;
-      String pluginClassName = language.getGeneratedApplicationPluginClassLongName();
-      Class pluginClass = language.getClass(pluginClassName);
-      if (pluginClass == null) continue;
-
-      try {
-        BaseApplicationPlugin plugin = (BaseApplicationPlugin) pluginClass.newInstance();
-        plugins.put(language, plugin);
-      } catch (Throwable t) {
-        LOG.error(t);
+    List<BaseApplicationPlugin> plugins = PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
+    for (BaseApplicationPlugin p:plugins){
+      if (p instanceof Ide_ApplicationPlugin){
+        myIDEPlugin = p;
+        break;
       }
     }
 
-    myIDEPlugin = new Ide_ApplicationPlugin();
-    plugins.put(MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID), myIDEPlugin);
-
-    return PluginSorter.sortByDependencies(plugins);
+    return plugins;
   }
 
-  private void disposePlugins() {
+  public void disposePlugins() {
     Collections.reverse(mySortedPlugins);
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
@@ -137,24 +126,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
     ActionFactory.getInstance().unregisterActions();
     mySortedPlugins.clear();
-  }
-
-  private Set<Language> collectLanguages() {
-    Set<Language> languages = new HashSet<Language>(LibraryManager.getInstance().getGlobalModules(Language.class));
-
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      MPSProject mpsProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
-
-      for (Solution s : mpsProject.getProjectSolutions()) {
-        languages.addAll(s.getScope().getVisibleLanguages());
-      }
-
-      for (Language l : mpsProject.getProjectLanguages()) {
-        languages.add(l);
-      }
-    }
-
-    return languages;
   }
 
   private void adjustTopLevelGroups() {
@@ -242,31 +213,10 @@ public class ApplicationPluginManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+
   }
 
   public void disposeComponent() {
-    disposePlugins();
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-  }
 
-  private class MyReloadListener extends ReloadAdapter {
-    @Override
-    public void onBeforeReload() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          disposePlugins();
-        }
-      });
-    }
-
-    @Override
-    public void onReload() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          loadPlugins();
-        }
-      });
-    }
   }
 }

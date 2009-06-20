@@ -286,6 +286,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.plugins.PluginReloader</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.runconfigs.RunConfigInitializer</implementation-class>
         </component>
 

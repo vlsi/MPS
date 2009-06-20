@@ -21,10 +21,10 @@ import java.util.*;
 
 public class PluginSorter {
   //todo for now, the cycle will be broken in unknown place
-  public static <T> ArrayList<T> sortByDependencies(Map<IModule, T> plugins) {
+  public static List<IModule> sortByDependencies(Collection<IModule> modules) {
     List <Item> items = new ArrayList<Item>();
     Map<IModule,Item> module2Item = new HashMap<IModule, Item>();
-    for (IModule module:plugins.keySet()){
+    for (IModule module:modules){
       Item item = new Item(module, -1);
       items.add(item);
       module2Item.put(module,item);
@@ -36,11 +36,12 @@ public class PluginSorter {
       }
     }
 
-    T[] result = (T[]) new Object[initIndex];
+    IModule[] result = new IModule[initIndex];
+
     for (Item item:items){
-      result[item.myInitIndex]=plugins.get(item.myModule);
+      result[item.myInitIndex]=item.myModule;
     }
-    return new ArrayList<T>(Arrays.asList(result));
+    return Arrays.asList(result);
   }
 
   private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {

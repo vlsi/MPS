@@ -26,21 +26,15 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.PluginSorter;
+import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -48,7 +42,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 @State(
@@ -62,16 +55,13 @@ import java.util.*;
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
-  private static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
   private final Object myPluginsLock = new Object();
   private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
-  private Ide_ProjectPlugin myIdePlugin;
 
-  private MyReloadListener myReloadListener;
   private EditorsProvider myEditorsProvider;
 
   public ProjectPluginManager(Project project) {
@@ -79,15 +69,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void projectOpened() {
-    myReloadListener = new MyReloadListener();
-    myEditorsProvider=new EditorsProvider(myProject);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    myEditorsProvider = new EditorsProvider(myProject);
   }
 
   public void projectClosed() {
-    myReloadListener.dispose();
-    disposePlugins();
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+
   }
 
   @Nullable
@@ -116,16 +102,19 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //----------------RELOAD STUFF---------------------  
 
-  private void loadPlugins() {
+  public void loadPlugins() {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-    if (myProject.isDisposed()) return;
+    assert !myProject.isDisposed();
     if (myLoaded) return;
 
     final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          mySortedPlugins = createPlugins(mpsProject);
+          Set<IModule> modules = new HashSet<IModule>();
+          modules.addAll(PluginUtil.collectPluginModules(mpsProject));
+          modules.add(PluginUtil.getIDEModule());
+          mySortedPlugins = PluginUtil.createPlugins(modules,new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.init(mpsProject);
@@ -138,10 +127,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       });
     }
 
+    recreateEditors();
+
     myLoaded = true;
   }
 
-  private void disposePlugins() {
+  public void disposePlugins() {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
     if (!myLoaded) return;
@@ -164,62 +155,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       mySortedPlugins.clear();
     }
     myLoaded = false;
-  }
-
-  private ArrayList<BaseProjectPlugin> createPlugins(MPSProject project) {
-    final Map<IModule, BaseProjectPlugin> plugins = new HashMap<IModule, BaseProjectPlugin>();
-
-    Set<Language> languages = new HashSet<Language>();
-    Set<DevKit> devkits = new HashSet<DevKit>();
-    for (Solution s : project.getProjectSolutions()) {
-      languages.addAll(s.getScope().getVisibleLanguages());
-      devkits.addAll(s.getScope().getVisibleDevkits());
-    }
-
-    for (Language l : project.getProjectLanguages()) {
-      languages.add(l);
-    }
-
-    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
-    devkits.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
-
-    for (DevKit dk : project.getProjectDevKits()) {
-      devkits.add(dk);
-    }
-
-    for (Language language : languages) {
-      if (language.getPluginModelDescriptor() != null) {
-        BaseProjectPlugin plugin = createPlugin(language, language.getGeneratedPluginClassLongName());
-        if (plugin == null) continue;
-        plugins.put(language, plugin);
-      }
-    }
-
-    for (DevKit dk : devkits) {
-      if (dk.getDevKitPluginClass() != null) {
-        BaseProjectPlugin plugin = createPlugin(dk, dk.getDevKitPluginClass());
-        if (plugin == null) continue;
-        plugins.put(dk, plugin);
-      }
-    }
-
-    myIdePlugin = new Ide_ProjectPlugin();
-    IModule ideModule = MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID);
-    plugins.put(ideModule, myIdePlugin);
-
-    return PluginSorter.sortByDependencies(plugins);
-  }
-
-  private BaseProjectPlugin createPlugin(IModule module, String className) {
-    try {
-      Class pluginClass = module.getClass(className);
-      if (pluginClass == null) return null;
-
-      return (BaseProjectPlugin) pluginClass.newInstance();
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -275,44 +210,15 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  private void recreateEditors(){
+  private void recreateEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IEditor editor: myEditorsProvider.getAllEditors()){
-          if (editor instanceof MPSFileNodeEditor){
-            ((MPSFileNodeEditor)editor).recreateEditor();
+        for (IEditor editor : myEditorsProvider.getAllEditors()) {
+          if (editor instanceof MPSFileNodeEditor) {
+            ((MPSFileNodeEditor) editor).recreateEditor();
           }
         }
       }
     });
-  }
-
-  //--------------RELOADING----------------
-
-  private class MyReloadListener extends ReloadAdapter {
-    private volatile boolean myIsDisposed = false;
-
-    public void onBeforeReload() {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myIsDisposed) return;
-          disposePlugins();
-        }
-      });
-    }
-
-    public void onReload() {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myIsDisposed) return;
-          loadPlugins();
-          recreateEditors();
-        }
-      });
-    }
-
-    public void dispose() {
-      myIsDisposed = true;
-    }
   }
 }
