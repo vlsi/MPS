@@ -82,7 +82,7 @@ class MergeResultView extends JPanel {
   private SModel myChange2;
   private IOperationContext myContext;
 
-  public MergeResultView(IOperationContext context, SModel baseModel, SModel change1, SModel change2) {
+  public MergeResultView(IOperationContext context, SModel baseModel, SModel change1, SModel change2, Merger merger) {
     myContext = context;
     myBaseModel = baseModel;
     myChange1 = change1;
@@ -94,7 +94,7 @@ class MergeResultView extends JPanel {
       }
     };
 
-    myMerger = new Merger(baseModel, change1, change2);
+    myMerger = merger;
     myMerger.doRebuild(new Runnable() {
       public void run() {
         updateView();
@@ -138,11 +138,19 @@ class MergeResultView extends JPanel {
 
 
     public void doubleClick() {
-      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, myBaseModel, myMerger.getResultModel());
-      //final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, myBaseModel);
+      final boolean[] isRoot = new boolean[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.init(getSNode(), "new", "old");
+          isRoot[0] = getSNode().getParent() == null;
+        }
+      });
+      if (!isRoot[0]) {
+        return;
+      }
+      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, myBaseModel, myMerger.getResultModel());      
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          dialog.init(getSNode(), "new", "old", myMerger);
         }
       });
 
@@ -190,9 +198,11 @@ class MergeResultView extends JPanel {
 
 
   private class ConflictNode extends MPSTreeNode {
+    private Conflict myConflict;
+
     public ConflictNode(Conflict conflict) {
       super(null);
-
+      myConflict = conflict;
       addNode(conflict.getC1());
       addNode(conflict.getC2());
 
@@ -200,9 +210,17 @@ class MergeResultView extends JPanel {
       setText("Conflict");
     }
 
+    @Override
+    public void doubleClick() {
+      showConflict(myConflict);
+    }
+
     private void addNode(Change change) {
       add(new ChangeNode(change, myMerger.isMyne(change) ? "mine" : "theirs"));
     }
+  }
+
+  protected void showConflict(Conflict conflict) {
   }
 
   private class WarningNode extends MPSTreeNode {

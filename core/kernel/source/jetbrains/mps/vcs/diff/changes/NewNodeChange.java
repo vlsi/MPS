@@ -47,4 +47,9 @@ public abstract class NewNodeChange extends Change {
   public SNodeId getNodeParent() {
     return myNodeParent;
   }
+
+  @Override
+  public ChangeType getChangeType() {
+    return ChangeType.ADD;
+  }
 }

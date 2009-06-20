@@ -1593,7 +1593,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         mySelectedCell.setSelected(false);
       }
       mySelectedCell = newSelectedCell;
-      if (mySelectedCell != null) {
+      if (mySelectedCell != null && isEditable()) {
         mySelectedCell.setSelected(true);
       }
 

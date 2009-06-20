@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class Change {
+  private boolean myIsError;
 
   public abstract SNodeId getAffectedNodeId();
 
@@ -29,6 +30,18 @@ public abstract class Change {
 
   public List<SNodeId> getDependences() {
     return new ArrayList();
+  }
+
+  public ChangeType getChangeType() {
+    return ChangeType.CHANGE;
+  }
+
+  public boolean isError() {
+    return myIsError;
+  }
+
+  public void setError(boolean b) {
+    myIsError = b;
   }
 
   protected boolean equals(Object o1, Object o2) {

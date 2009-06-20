@@ -6,21 +6,23 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.vcs.diff.DiffBuilder;
+import jetbrains.mps.vcs.diff.Conflict;
 import jetbrains.mps.vcs.diff.changes.Change;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JSplitPane;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.util.List;
 
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
-  private JPanel myComponent;
+  private JPanel myTopComponent;
+  private JPanel myBottomComponent;
   private DiffEditorComponent myResultEditorComponent;
   private DiffEditorComponent myChange1EditorComponent;
   private DiffEditorComponent myChange2EditorComponent;
@@ -29,6 +31,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private SModel myChange2Model;
   private SModel myBaseModel;
   private IOperationContext myContext;
+  private JSplitPane myContainer;
 
   public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, SModel baseModel, SModel resultModel) {
     super(context.getMainFrame(), "Merge");
@@ -40,7 +43,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   }
 
   protected JComponent getMainComponent() {
-    return myComponent;  
+    return myContainer;
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
@@ -50,11 +53,12 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.NORTH);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
-    myComponent.add(panel);
+    myTopComponent.add(panel);
+    myBottomComponent.add(result.getInspector().getExternalComponent());
     return result;
   }
 
-  public void init(final SNode node, String oldName, String newName) {
+  public void init(final SNode node, String oldName, String newName, Merger merger) {
     final SNode[] change1Node = new SNode[1];
     final SNode[] resultNode = new SNode[1];
     final SNode[] change2Node = new SNode[1];
@@ -68,21 +72,33 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
       }
     });
 
-    myComponent = new JPanel(new GridLayout(1, 3));
+    myTopComponent = new JPanel(new GridLayout(1, 3));
+    myBottomComponent = new JPanel(new GridLayout(1, 3));
+
+    for (Conflict conflict : merger.getUnresolvedConflicts()) {
+      conflict.getC1().setError(true);
+      conflict.getC2().setError(true);
+    }
+
     myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
-    List<Change> revert1Changes = new DiffBuilder(myChange1Model, myBaseModel).getChanges();
-    myChange1EditorComponent.hightlight(revert1Changes, true);
+    myChange1EditorComponent.hightlight(merger.getBaseMyneChange(), false, false);
 
     myResultEditorComponent = addEditor(myContext, resultNode[0], "");
-    List<Change> baseChanges = new DiffBuilder(myResultModel, myBaseModel).getChanges();
-    myResultEditorComponent.hightlight(baseChanges, true);
+    List<Change> baseChanges = new DiffBuilder(myBaseModel, myResultModel).getChanges();    
+    myResultEditorComponent.hightlight(baseChanges, false, false);
     myChange2EditorComponent = addEditor(myContext, change2Node[0], "");
-    List<Change> revert2Changes = new DiffBuilder(myChange2Model, myBaseModel).getChanges();
-    myChange2EditorComponent.hightlight(revert2Changes, true);    
+    myChange2EditorComponent.hightlight(merger.getBaseRepoChange(), false, false);
+
+    myContainer = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
+    myContainer.setResizeWeight(1);    
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
   }
 
+  @Button(name = "Close", position = 0, defaultButton = true)
+  public void onClose() {
+    dispose();
+  }
 }

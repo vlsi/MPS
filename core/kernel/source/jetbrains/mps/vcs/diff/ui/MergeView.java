@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vcs.diff.Conflict;
 
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
@@ -36,7 +37,7 @@ class MergeView extends JPanel {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         add(new HeaderWrapper("Mine Version", new ModelDifferenceComponent(context).showDifference(baseModel, mine)));
-        myMergeResult = new MergeResultView(context, baseModel, mine, repo);
+        myMergeResult = new MergeResultView(context, baseModel, mine, repo, null);
         add(new HeaderWrapper("Merge Result", myMergeResult));
         add(new HeaderWrapper("Repository Version", new ModelDifferenceComponent(context).showDifference(baseModel, repo)));
       }

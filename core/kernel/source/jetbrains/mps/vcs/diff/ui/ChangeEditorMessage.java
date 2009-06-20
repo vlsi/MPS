@@ -76,7 +76,9 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
 
   @Override
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-    cell.paintSelection(g, getColor(), false);
+    if (getColor() != null) {
+      cell.paintSelection(g, getColor(), false);
+    }
   }
 
   public void setProperty(String property) {

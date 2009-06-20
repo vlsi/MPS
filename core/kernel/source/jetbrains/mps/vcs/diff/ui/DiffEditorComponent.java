@@ -14,16 +14,14 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
 public class DiffEditorComponent extends EditorComponent {
-  private static final Color NEW_COLOR = new Color(186, 238, 186);
-  private static final Color CHANGE_COLOR = new Color(188, 207, 249);
-  private static final Color DELETE_COLOR = new Color(203, 203, 203);
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
 
   };
   private ArrayList<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
   private SModel myResutlModel;
   private InspectorEditorComponent myInspector;
-  private Runnable myRebuild;
+  private Runnable myRebuild;  
+  private static final Color ERROR_COLOR = new Color(255, 220, 220);
 
   public DiffEditorComponent(IOperationContext context, SNode node, SModel model, Runnable rebuild) {
     super(context);
@@ -85,18 +83,21 @@ public class DiffEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public void hightlight(final List<Change> revertChanges, final boolean isNew) {
+  public void hightlight(final List<Change> changes, final boolean isNew, final boolean revertedChanges) {
     final List<ChangeEditorMessage> resultChanges = new ArrayList<ChangeEditorMessage>();
     final SModel model = getRootCell().getSNode().getModel();
+
+    final Set<Change> newChanges = getNewChanges(changes);
+
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        for (Change change : revertChanges) {
+        for (Change change : changes) {
 
           if (change instanceof SetReferenceChange) {
             SetReferenceChange referenceChange = (SetReferenceChange) change;
 
-            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", myOwner);
+            ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
             message.setRole(referenceChange.getRole());
 
             resultChanges.add(message);
@@ -104,16 +105,14 @@ public class DiffEditorComponent extends EditorComponent {
           }
 
           if (change instanceof MoveNodeChange || change instanceof ChangeConceptChange) {
-            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", myOwner);
+            ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
             resultChanges.add(message);
             getHighlightManager().mark(message);
           }
 
           if (change instanceof NewNodeChange) {
             if (!isNew) {
-              SNode removedNode = model.getNodeById(change.getAffectedNodeId());
-
-              ChangeEditorMessage message = new ChangeEditorMessage(change, removedNode, DELETE_COLOR, "", myOwner);
+              ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
               getHighlightManager().mark(message);
             }
@@ -121,16 +120,15 @@ public class DiffEditorComponent extends EditorComponent {
 
           if (change instanceof SetPropertyChange) {
             SetPropertyChange propertyChange = (SetPropertyChange) change;
-            ChangeEditorMessage message = new ChangeEditorMessage(change, model.getNodeById(change.getAffectedNodeId()), CHANGE_COLOR, "", myOwner);
+            ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
             message.setProperty(propertyChange.getProperty());
             resultChanges.add(message);
             getHighlightManager().mark(message);
           }
 
           if (change instanceof DeleteNodeChange) {
-            if (isNew) {
-              SNode removedNode = model.getNodeById(change.getAffectedNodeId());
-              ChangeEditorMessage message = new ChangeEditorMessage(change, removedNode, NEW_COLOR, "", myOwner);
+            if (isNew) {             
+              ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
               getHighlightManager().mark(message);
             }
@@ -139,10 +137,50 @@ public class DiffEditorComponent extends EditorComponent {
         }
       }
     });
-    for (ChangeEditorMessage editorMessage: resultChanges) {
+    for (ChangeEditorMessage editorMessage : resultChanges) {
       getInspector().getHighlightManager().mark(editorMessage);
     }
     myChanges = new ArrayList<ChangeEditorMessage>(resultChanges);
+  }
+
+  private Set<Change> getNewChanges(List<Change> changes) {
+    Set<SNodeId> newNodes = new HashSet<SNodeId>();
+    for (Change change : changes) {
+      if (change instanceof NewNodeChange) {
+        newNodes.add(change.getAffectedNodeId());
+      }
+    }
+    Set<Change> newChanges = new HashSet<Change>();
+    for (Change change : changes) {
+      if (change instanceof NewNodeChange) {
+        SNodeId id = ((NewNodeChange)change).getNodeParent();
+        if (id != null && newNodes.contains(id)) {
+          newChanges.add(change);
+        }        
+      } else {
+        SNodeId id = change.getAffectedNodeId();
+        if (id != null && newNodes.contains(id)) {
+          newChanges.add(change);
+        }
+      }
+    }
+    return newChanges;
+  }
+
+  private ChangeEditorMessage createEditorMessage(Change change, SModel model, boolean revertChanges, boolean show) {
+    Color color = null;
+    if (show) {
+      if (revertChanges) {
+        color = change.getChangeType().getOpositeChange().getColor();
+      } else {
+        color = change.getChangeType().getColor();
+      }
+      if (change.isError()) {
+        color = ERROR_COLOR;
+      }
+    }
+    SNode id = model.getNodeById(change.getAffectedNodeId());
+    return new ChangeEditorMessage(change, id, color, "", myOwner);
   }
 
   public void makeChangeBlocks() {
@@ -169,7 +207,7 @@ public class DiffEditorComponent extends EditorComponent {
 
     ChangesBlock block = null;
 
-    for (ChangeEditorMessage m: changeEditorMessages) {
+    for (ChangeEditorMessage m : changeEditorMessages) {
       EditorCell cell = highlightManager.getCell(m);
       if (block == null) {
         block = createChangeBlock(myRebuild);
@@ -196,7 +234,7 @@ public class DiffEditorComponent extends EditorComponent {
             List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
             notAppliedChanges.addAll(myChanges);
 
-            for (ChangeEditorMessage m: getChanges()) {
+            for (ChangeEditorMessage m : getChanges()) {
               applyMeassage(notAppliedChanges, m);
             }
           }
@@ -212,8 +250,8 @@ public class DiffEditorComponent extends EditorComponent {
     if (!notAppliedChanges.contains(m)) {
       return;
     }
-    for (SNodeId usedNodeId: m.getChange().getDependences()) {
-      for (ChangeEditorMessage message: notAppliedChanges) {
+    for (SNodeId usedNodeId : m.getChange().getDependences()) {
+      for (ChangeEditorMessage message : notAppliedChanges) {
         Change change = message.getChange();
         if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
           if (change.getAffectedNodeId().equals(usedNodeId)) {
@@ -230,11 +268,15 @@ public class DiffEditorComponent extends EditorComponent {
 
   public void removeAllChanges() {
     for (ChangeEditorMessage message : myChanges) {
-      getHighlightManager().removeMessage(message);    
+      getHighlightManager().removeMessage(message);
       myInspector.getHighlightManager().removeMessage(message);
     }
     myInspector.getHighlightManager().rebuildMessages();
     getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().removeAllChanges(myInspector);
+  }
+
+  public void addConflicts() {
+    //To change body of created methods use File | Settings | File Templates.
   }
 }

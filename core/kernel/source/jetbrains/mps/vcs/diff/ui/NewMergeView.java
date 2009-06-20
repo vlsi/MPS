@@ -24,6 +24,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.*;
+import javax.swing.tree.TreeNode;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -37,6 +38,7 @@ public class NewMergeView extends JPanel {
   private IOperationContext myContext;
   private ModelChangesTree myMineChangesTree;
   private ModelChangesTree myRepoChangesTree;
+  private MergeResultView myResultView;
 
   public NewMergeView(final IOperationContext context, final SModel baseModel, final SModel mine, final SModel repo) {
     setLayout(new BorderLayout());
@@ -54,7 +56,26 @@ public class NewMergeView extends JPanel {
         myMineChangesTree = new MyChangesTree(context);
         myMineChangesTree.showDifference(baseModel, mine, myMerger.getBaseMyneChange(), myMerger);
         panel.add(new HeaderWrapper("Mine Changes", new JScrollPane(myMineChangesTree)));
-        panel.add(new HeaderWrapper("Merge Result", new MergeResultView(context, baseModel, mine, repo)));
+        myResultView = new MergeResultView(context, baseModel, mine, repo, myMerger) {
+          @Override
+          protected void showConflict(Conflict conflict) {
+            SNode node;
+            node= mine.getNodeById(conflict.getC2().getAffectedNodeId());
+            if (node == null) {
+              node = baseModel.getNodeById(conflict.getC2().getAffectedNodeId());
+            }
+            TreeNode treeNode1 = myMineChangesTree.findNodeWith(node);
+            myMineChangesTree.selectNode(treeNode1);
+
+            node = repo.getNodeById(conflict.getC1().getAffectedNodeId());
+            if (node == null) {
+              node = baseModel.getNodeById(conflict.getC1().getAffectedNodeId());
+            }
+            TreeNode treeNode2 = myRepoChangesTree.findNodeWith(node);
+            myRepoChangesTree.selectNode(treeNode2);
+          }
+        };
+        panel.add(new HeaderWrapper("Merge Result", myResultView));
         myRepoChangesTree = new MyChangesTree(context);
         myRepoChangesTree.showDifference(baseModel, repo, myMerger.getBaseRepoChange(), myMerger);
         panel.add(new HeaderWrapper("Repository Changes", new JScrollPane(myRepoChangesTree)));
@@ -93,6 +114,7 @@ public class NewMergeView extends JPanel {
       myRepoChangesTree.getConflicts().add(conflict.getC1().getAffectedNodeId());
       myMineChangesTree.getConflicts().add(conflict.getC2().getAffectedNodeId());
     }
+    myResultView.updateView();
     myRepoChangesTree.rebuildNow();
     myMineChangesTree.rebuildNow();
   }

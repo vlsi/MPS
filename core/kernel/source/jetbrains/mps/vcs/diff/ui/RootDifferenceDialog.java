@@ -75,8 +75,10 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
-            myNewEditorComponent.inspect(sNode);
+            if (newSelection != null && newSelection.getSNode() != null) {
+              SNode sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
+              myNewEditorComponent.inspect(sNode);
+            }
           }
         });
 
@@ -122,8 +124,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldEditorComponent.removeAllChanges();
 
     List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
-    myNewEditorComponent.hightlight(revertChanges, true);
-    myOldEditorComponent.hightlight(revertChanges, false);
+    myNewEditorComponent.hightlight(revertChanges, true, true);
+    myOldEditorComponent.hightlight(revertChanges, false, true);
 
     myNewEditorComponent.makeChangeBlocks();
     myOldEditorComponent.makeChangeBlocks();
@@ -131,5 +133,10 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
   protected JComponent getMainComponent() {
     return myContainer;
+  }
+
+  @Button(name = "Close", position = 0, defaultButton = true)
+  public void onClose() {
+    dispose();
   }
 }
