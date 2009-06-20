@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -188,34 +189,32 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private boolean tryToInitComponent() {
     List<Pair<SNode, IOperationContext>> loadableNodes = tryToLoadNodes();
 
-    if (!loadableNodes.isEmpty()) {
-      myComponent = new JPanel(new BorderLayout());
-      myInnerTabbedPane = new JTabbedPane();
-      try {
-        myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex, 0));
-      } catch (IndexOutOfBoundsException e) {
-      }
+    if (loadableNodes.isEmpty()) return false;
 
-      for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
-        addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
-      }
-
-      myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
-
-      if (canCreate()) {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(new JButton(new AbstractAction("Create new") {
-          public void actionPerformed(ActionEvent e) {
-            createNewInnerTab();
-          }
-        }), BorderLayout.WEST);
-        myComponent.add(panel, BorderLayout.NORTH);
-      }
-
-      return true;
+    myComponent = new JPanel(new BorderLayout());
+    myInnerTabbedPane = new JTabbedPane();
+    try {
+      myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex, 0));
+    } catch (IndexOutOfBoundsException e) {
     }
 
-    return false;
+    for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
+      addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
+    }
+
+    myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
+
+    if (canCreate()) {
+      JPanel panel = new JPanel(new BorderLayout());
+      panel.add(new JButton(new AbstractAction("Create new") {
+        public void actionPerformed(ActionEvent e) {
+          createNewInnerTab();
+        }
+      }), BorderLayout.WEST);
+      myComponent.add(panel, BorderLayout.NORTH);
+    }
+
+    return true;
   }
 
   private void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
@@ -234,6 +233,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     JComponent jComponent = component.getExternalComponent();
     myInnerTabbedPane.add(loadableNode.getName(), jComponent);
     myEditors.add(component);
+    ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     SModel sModel = loadableNode.getModel();
     if (!sModel.hasModelListener(myListener)) {
       sModel.addWeakSModelListener(myListener);
