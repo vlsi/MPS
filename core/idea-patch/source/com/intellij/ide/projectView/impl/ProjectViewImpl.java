@@ -98,6 +98,8 @@ import java.awt.event.FocusListener;
 import java.util.*;
 import java.util.List;
 
+import jetbrains.mps.util.annotation.Patch;
+
 public final class ProjectViewImpl extends ProjectView implements JDOMExternalizable, ProjectComponent, Disposable {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.projectView.impl.ProjectViewImpl");
   private final CopyPasteDelegator myCopyPasteDelegator;
@@ -608,6 +610,7 @@ public final class ProjectViewImpl extends ProjectView implements JDOMExternaliz
     return true;
   }
 
+  @Patch
   private void createToolbarActions() {
     myActionGroup.removeAll();
     myActionGroup.add(new PaneOptionAction(myFlattenPackages, IdeBundle.message("action.flatten.packages"),
@@ -668,11 +671,12 @@ public final class ProjectViewImpl extends ProjectView implements JDOMExternaliz
         return false;
       }
 
+      @Patch
       public void collapseAll() {
         AbstractProjectViewPane pane = getCurrentProjectViewPane();
         JTree tree = pane.myTree;
         if (tree != null) {
-          TreeUtil.collapseAll(tree, -1);
+          TreeUtil.collapseAll(tree, 2);
         }
       }
 
