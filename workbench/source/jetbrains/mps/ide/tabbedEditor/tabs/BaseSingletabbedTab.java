@@ -27,11 +27,16 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.util.Collections;
 import java.util.List;
+
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.ide.DataManager;
 
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
@@ -150,6 +155,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     }
 
     if (myComponent == null) return null;
+
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
+
     return myComponent.getExternalComponent();
   }
 

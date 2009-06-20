@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.ide.tabbedEditor;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -109,17 +113,18 @@ public class LazyTabbedPane extends JPanel {
       panel.repaint();
       updateTabColor(tab);
       return;
-    }
-    updateTabColor(tab);
-    panel.removeAll();
-    panel.add(component, BorderLayout.CENTER);
-    panel.validate();
-    panel.repaint();
-    myInitializedTabs.add(tab);
+    } else {
+      updateTabColor(tab);
+      panel.removeAll();
+      panel.add(component, BorderLayout.CENTER);
+      panel.validate();
+      panel.repaint();
+      myInitializedTabs.add(tab);
 
-    for (EditorComponent c : tab.getEditorComponents()) {
-      for (CellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
-        c.addCellSelectionListener(listener);
+      for (EditorComponent c : tab.getEditorComponents()) {
+        for (CellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
+          c.addCellSelectionListener(listener);
+        }
       }
     }
   }
