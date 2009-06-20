@@ -24,16 +24,18 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
+
+import com.intellij.openapi.util.Pair;
 
 public class Merger {
   private final SModel[] mySourceModels = new SModel[VERSION.values().length];
   private SModel myResultModel;
 
   private List<Change> myBaseMyneChange;
+  private Map<Change, SNodeId> myBaseMyneChangeGroups;
   private List<Change> myBaseRepoChange;
 
   private Set<Change> myExcludedChanges = new HashSet<Change>();
@@ -49,7 +51,9 @@ public class Merger {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myBaseMyneChange = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels)).getChanges();
+        DiffBuilder myneDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
+        myBaseMyneChange = myneDiffBuilder.getChanges();
+        myBaseMyneChangeGroups = myneDiffBuilder.getChangeGroups();
         myBaseRepoChange = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels)).getChanges();
       }
     });
@@ -132,6 +136,21 @@ public class Merger {
     collectAddAndDeleteConflicts();
     collectMoveConflicts();
     collectConceptConflicts();
+
+    for (Change change: new ArrayList<Change>(myConflicted)) {
+      if (myBaseMyneChangeGroups.get(change) != null) {
+        SNodeId group = myBaseMyneChangeGroups.get(change);
+        for (Map.Entry<Change, SNodeId> e: myBaseMyneChangeGroups.entrySet()) {
+          if (e.getValue().equals(group)) {
+            myConflicted.add(e.getKey());
+          }
+        }
+      }
+    }
+  }
+
+  public Set<Change> getConflictedChanges() {
+    return myConflicted;
   }
 
   private void collectLanguageAspectChangeConflict() {
@@ -565,7 +584,7 @@ public class Merger {
   private boolean isChangeUnResolved(Change ch) {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
-    return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
+    return myConflicted.contains(ch); //&& myUnresolded.contains(ch); //&& myBaseRepoChange.contains(ch);
   }
 
   public boolean isResolved() {

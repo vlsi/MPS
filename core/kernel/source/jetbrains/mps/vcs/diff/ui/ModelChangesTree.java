@@ -237,8 +237,7 @@ class ModelChangesTree extends MPSTree {
 
     @Override
     protected void doInit() {
-      super.doInit();
-      insert(new MyModelAspectsNode(myContext, myModel), 0);
+      super.doInit();      
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
@@ -348,33 +347,6 @@ class ModelChangesTree extends MPSTree {
 
   protected ActionGroup getActionGroupForChanges(List<Change> changes) {
     return null;
-  }
-
-  private class MyModelAspectsNode extends MPSTreeNode {
-    public MyModelAspectsNode(IOperationContext operationContext, SModel model) {
-      super(operationContext);
-      setIcon(Icons.PROPERTIES_ICON);
-      setNodeIdentifier("model properties");
-      doInit();
-    }
-
-    @Override
-    protected void doInit() {
-      List<ImportLanguageChange> importLanguageChanges = CollectionUtil.filter(ImportLanguageChange.class, myChanges);
-      for (ImportLanguageChange change : importLanguageChanges) {
-        add(new ChangeNode(change));
-      }
-      List<ModelImportChange> modelImportChanges = CollectionUtil.filter(ModelImportChange.class, myChanges);
-      for (ModelImportChange change : modelImportChanges) {
-        add(new ChangeNode(change));
-      }
-      List<AddLanguageAspectChange> addLanguageAspectChanges = CollectionUtil.filter(AddLanguageAspectChange.class, myChanges);
-      for (AddLanguageAspectChange change : addLanguageAspectChanges) {
-        add(new ChangeNode(change));
-      }
-
-    }
-
   }
 
   private class ChangeNode extends MPSTreeNode {

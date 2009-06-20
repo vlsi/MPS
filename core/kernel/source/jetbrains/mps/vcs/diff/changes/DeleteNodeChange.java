@@ -47,6 +47,11 @@ public class DeleteNodeChange extends Change {
   }
 
   @Override
+  public ChangeType getChangeType() {
+    return ChangeType.DELETE;
+  }
+
+  @Override
   public List<SNodeId> getDependences() {
     return myChildren;
   }

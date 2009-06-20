@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.vcs.diff.changes.*;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -32,6 +33,7 @@ public class DiffBuilder {
   private SModel myOldModel;
   private SModel myNewModel;
 
+  private Map<Change, SNodeId> myChangeGroups = new HashMap<Change, SNodeId>();
   private List<Change> myChanges = new ArrayList<Change>();
 
 
@@ -52,6 +54,28 @@ public class DiffBuilder {
     collectPropertyChanges();
     collectReferenceChanges();
     collectConceptChanges();
+    makeChangeGroups();
+  }
+
+  private void makeChangeGroups() {
+    Set<SNodeId> deletedNodes = new HashSet<SNodeId>();
+    for (Change change : CollectionUtil.filter(DeleteNodeChange.class, myChanges)) {
+        deletedNodes.add(change.getAffectedNodeId());
+    }
+    for (Change change : CollectionUtil.filter(DeleteNodeChange.class, myChanges)) {
+      SNode deleted = myOldModel.getNodeById(change.getAffectedNodeId());
+      assert deleted != null;
+      SNode deleteRoot = deleted;
+      while (deleteRoot.getParent() != null && deletedNodes.contains(deleteRoot.getParent().getSNodeId())) {
+        deleteRoot = deleteRoot.getParent();
+      }
+      myChangeGroups.put(change, deleteRoot.getSNodeId());
+    }
+
+  }
+
+  public Map<Change, SNodeId> getChangeGroups() {
+    return myChangeGroups;
   }
 
   private void collectAddedModelImport() {

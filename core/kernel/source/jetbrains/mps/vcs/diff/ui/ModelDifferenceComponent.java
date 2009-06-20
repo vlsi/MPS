@@ -86,8 +86,12 @@ class ModelDifferenceComponent extends JPanel {
       changesPanel);
     splitter.setDividerLocation(500);
 
-    add(modelPanel, BorderLayout.CENTER);
+    add(splitter, BorderLayout.CENTER);
     updateView();
+  }
+
+  public ModelChangesTree getModelTree() {
+    return myModelTree;
   }
 
   private void createToolBarAndActions(MPSTree tree, DefaultActionGroup actionGroup, String name) {

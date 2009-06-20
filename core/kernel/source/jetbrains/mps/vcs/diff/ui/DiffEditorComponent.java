@@ -63,7 +63,7 @@ public class DiffEditorComponent extends EditorComponent {
     myInspector.inspectNode(node, getOperationContext());
     myInspector.getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().rebuildMessages();
-    makeChangeBlocks(myInspector, new ArrayList(myChanges));
+    //makeChangeBlocks(myInspector, new ArrayList(myChanges));
   }
 
   public EditorCell createRootCell() {

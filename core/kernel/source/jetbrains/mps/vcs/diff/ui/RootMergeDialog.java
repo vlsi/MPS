@@ -19,6 +19,7 @@ import javax.swing.JSplitPane;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.util.List;
+import java.util.ArrayList;
 
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private JPanel myTopComponent;
@@ -32,6 +33,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private SModel myBaseModel;
   private IOperationContext myContext;
   private JSplitPane myContainer;
+  private Merger myMerger;
 
   public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, SModel baseModel, SModel resultModel) {
     super(context.getMainFrame(), "Merge");
@@ -59,6 +61,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   }
 
   public void init(final SNode node, String oldName, String newName, Merger merger) {
+    myMerger = merger;
     final SNode[] change1Node = new SNode[1];
     final SNode[] resultNode = new SNode[1];
     final SNode[] change2Node = new SNode[1];
@@ -75,17 +78,16 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     myTopComponent = new JPanel(new GridLayout(1, 3));
     myBottomComponent = new JPanel(new GridLayout(1, 3));
 
-    for (Conflict conflict : merger.getUnresolvedConflicts()) {
-      conflict.getC1().setError(true);
-      conflict.getC2().setError(true);
+    for (Change conflict : merger.getConflictedChanges()) {
+      conflict.setError(true);      
     }
 
     myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
     myChange1EditorComponent.hightlight(merger.getBaseMyneChange(), false, false);
 
     myResultEditorComponent = addEditor(myContext, resultNode[0], "");
-    List<Change> baseChanges = new DiffBuilder(myBaseModel, myResultModel).getChanges();    
-    myResultEditorComponent.hightlight(baseChanges, false, false);
+    myResultEditorComponent.hightlight(new ArrayList<Change>(myMerger.getConflictedChanges()), true, false);
+
     myChange2EditorComponent = addEditor(myContext, change2Node[0], "");
     myChange2EditorComponent.hightlight(merger.getBaseRepoChange(), false, false);
 
