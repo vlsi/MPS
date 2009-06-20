@@ -293,6 +293,22 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="214376853585979042">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="216263776404631101">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="819079568103302217">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="819079568103302218">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="819079568103302231" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="819079568103302227">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="819079568103302230" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="819079568103302222">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="819079568103302221">
+                  <link role="variableDeclaration" targetNodeId="214376853585979081" resolveInfo="p" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="819079568103302226">
+                  <link role="baseMethodDeclaration" targetNodeId="12.~PropertyReference.getValue():java.lang.String" resolveInfo="getValue" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="216263776404631102">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="216263776404631103">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="216263776404631104">
