@@ -34,20 +34,28 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1210626400306">
             <property name="name" value="expr" />
           </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210626406328">
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7910522704535779635">
             <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1210626404967" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1210626411645">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1210626411646">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1210626416977">
-                  <link role="conceptDeclaration" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-                </node>
-              </node>
-            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" id="7910522704535779640" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210626400308">
-            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1210626429651">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1210626432153">
-                <link role="variable" targetNodeId="1210626400306" resolveInfo="expr" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7910522704535779643">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7910522704535779644">
+                <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="7910522704535779665">
+                  <node role="codeFor" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7910522704535779666">
+                    <link role="variable" targetNodeId="1210626400306" resolveInfo="expr" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7910522704535779653">
+                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7910522704535779649">
+                  <link role="variable" targetNodeId="1210626400306" resolveInfo="expr" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="7910522704535779660">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7910522704535779663">
+                    <link role="conceptDeclaration" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

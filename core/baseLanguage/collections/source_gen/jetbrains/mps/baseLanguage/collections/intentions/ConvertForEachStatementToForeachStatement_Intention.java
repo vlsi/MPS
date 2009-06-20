@@ -34,7 +34,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Convert to \"for (Type var: iterable)\"";
+    return "Convert to 'for (Type var: iterable)'";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

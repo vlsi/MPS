@@ -33,7 +33,7 @@ public class ChangeAsCast_Intention extends BaseIntention {
       return "Convert to Regular Cast";
     } else
     {
-      return "Convert to As Cast";
+      return "Convert to 'as' Cast";
     }
   }
 
