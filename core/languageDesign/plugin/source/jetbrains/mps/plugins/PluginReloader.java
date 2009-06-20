@@ -53,16 +53,6 @@ public class PluginReloader implements ApplicationComponent {
         }
       });
     }
-
-    @Override
-    //todo do we need this? there will be a reloading action after project close
-    public void projectClosed(Project project) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          loadPlugins();
-        }
-      });
-    }
   };
 
   private void reloadAllPlugins() {
