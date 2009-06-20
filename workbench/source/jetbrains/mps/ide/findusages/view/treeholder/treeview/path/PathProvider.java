@@ -21,10 +21,13 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
 public class PathProvider {
+  private static final Logger LOG = Logger.getLogger(PathProvider.class);
+
   public static List<PathItem> getPathForSearchResult(SearchResult result) {
     List<PathItem> res = new ArrayList<PathItem>();
     Object o = result.getObject();
@@ -68,7 +71,15 @@ public class PathProvider {
       appendNodePathThroughNamedConcepts(path, node.getParent());
     }
 
-    if (node.getName() != null) {
+
+    String name;
+    try{
+      name = node.getName();
+    }catch (Throwable t){
+      LOG.error(t);
+      name = "<getName() caused an exception on this node>";
+    }
+    if (name != null) {
       if (node != node.getContainingRoot()) {
         path.add(new PathItem(PathItemRole.ROLE_ROOT_TO_TARGET_NODE, node));
       }
