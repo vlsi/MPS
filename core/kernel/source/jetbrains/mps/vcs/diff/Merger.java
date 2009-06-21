@@ -35,10 +35,11 @@ public class Merger {
   private SModel myResultModel;
 
   private List<Change> myBaseMyneChange;
-  private Map<Change, SNodeId> myBaseMyneChangeGroups;
+  private Map<Change, SNode> myChangeGroups = new HashMap<Change, SNode>();
   private List<Change> myBaseRepoChange;
 
   private Set<Change> myExcludedChanges = new HashSet<Change>();
+  private Set<Change> myApplyedChanges = new HashSet<Change>();
   private List<Conflict> myConflicts = new ArrayList<Conflict>();
   private List<Warning> myWarnings = new ArrayList<Warning>();
   private Set<Change> myUnresolded;
@@ -54,8 +55,10 @@ public class Merger {
       public void run() {
         DiffBuilder myneDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
         myBaseMyneChange = myneDiffBuilder.getChanges();
-        myBaseMyneChangeGroups = myneDiffBuilder.getChangeGroups();
-        myBaseRepoChange = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels)).getChanges();
+        myChangeGroups.putAll(myneDiffBuilder.getChangeGroups());
+        DiffBuilder repoDiffBuilder = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels));
+        myBaseRepoChange = repoDiffBuilder.getChanges();
+        myChangeGroups.putAll(repoDiffBuilder.getChangeGroups());
       }
     });
   }
@@ -78,7 +81,7 @@ public class Merger {
 
   public List<Conflict> getUnresolvedConflicts() {
     ArrayList<Conflict> result = new ArrayList<Conflict>();
-    for (Conflict conflict: myConflicts) {
+    for (Conflict conflict : myConflicts) {
       if (!getExcludedChanges().contains(conflict.getC1()) && !getExcludedChanges().contains(conflict.getC2())) {
         result.add(conflict);
       }
@@ -129,6 +132,7 @@ public class Merger {
 
   private void collectConflicts() {
     myConflicts.clear();
+    myConflicted.clear();
 
     collectLanguageAspectChangeConflict();
     collectPropertyConflicts();
@@ -138,16 +142,22 @@ public class Merger {
     collectMoveConflicts();
     collectConceptConflicts();
 
-    for (Change change: new ArrayList<Change>(myConflicted)) {
-      if (myBaseMyneChangeGroups.get(change) != null) {
-        SNodeId group = myBaseMyneChangeGroups.get(change);
-        for (Map.Entry<Change, SNodeId> e: myBaseMyneChangeGroups.entrySet()) {
-          if (e.getValue().equals(group)) {
-            myConflicted.add(e.getKey());
-          }
+    for (Change change : new ArrayList<Change>(myConflicted)) {
+      myConflicted.addAll(getChangeGroupOf(change));
+    }
+  }
+
+  public List<Change> getChangeGroupOf(Change change) {
+    List<Change> result = new ArrayList<Change>();
+    if (myChangeGroups.get(change) != null) {
+      SNode group = myChangeGroups.get(change);
+      for (Map.Entry<Change, SNode> e : myChangeGroups.entrySet()) {
+        if (e.getValue().equals(group)) {
+          result.add(e.getKey());
         }
       }
     }
+    return result;
   }
 
   public Set<Change> getConflictedChanges() {
@@ -400,6 +410,9 @@ public class Merger {
           myUnresolded.add(conflict.getC2());
         }
       }
+      for (Change change : new ArrayList<Change>(myUnresolded)) {
+        myUnresolded.addAll(getChangeGroupOf(change));
+      }
 
       applyImportLanguages();
       applyImportModels();
@@ -455,6 +468,7 @@ public class Merger {
     List<ChangeConceptChange> conceptChangeList = getChanges(ChangeConceptChange.class);
     for (ChangeConceptChange ch : conceptChangeList) {
       if (!myExcludedChanges.contains(ch)) {
+        if (myPreviewMode && !myApplyedChanges.contains(ch)) continue;
         if (isChangeUnResolved(ch)) continue;
         ch.apply(myResultModel);
       }
@@ -475,6 +489,7 @@ public class Merger {
 
     Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
+      if (myPreviewMode && !myApplyedChanges.contains(c)) continue;
       if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) continue;
       changesMap.put(c.getAffectedNodeId(), c);
     }
@@ -485,6 +500,9 @@ public class Merger {
   }
 
   private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
+    if (myPreviewMode && !myApplyedChanges.contains(c)) {
+      return;
+    }
     if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) {
       return;
     }
@@ -532,6 +550,7 @@ public class Merger {
   private void applyProperties() {
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
+      if (myPreviewMode && !myApplyedChanges.contains(sp)) continue;
       if (myExcludedChanges.contains(sp)) continue;
       if (isChangeUnResolved(sp)) continue;
       sp.apply(myResultModel);
@@ -541,6 +560,7 @@ public class Merger {
   private void applyReferences() {
     List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
+      if (myPreviewMode && !myApplyedChanges.contains(ref)) continue;
       if (myExcludedChanges.contains(ref)) continue;
       if (isChangeUnResolved(ref)) continue;
       ref.apply(myResultModel);
@@ -550,6 +570,7 @@ public class Merger {
 
   private void applyDeletes() {
     for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
+      if (myPreviewMode && !myApplyedChanges.contains(del)) continue;
       if (myExcludedChanges.contains(del)) continue;
       if (isChangeUnResolved(del)) continue;
       del.apply(myResultModel);
@@ -586,7 +607,7 @@ public class Merger {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
     if (myPreviewMode) {
-      return myConflicted.contains(ch);
+      return myConflicted.contains(ch) && myUnresolded.contains(ch);
     } else {
       return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
     }
@@ -602,6 +623,32 @@ public class Merger {
 
   public void setPreviewMode(boolean b) {
     myPreviewMode = b;
+  }
+
+  public Set<Change> getApplyedChanges() {
+    return myApplyedChanges;
+  }
+
+  public Set<Change> getConflictsOf(Change change) {
+    Set<Change> result = new HashSet<Change>();
+    if (!myConflicted.contains(change)) {
+      return result;
+    }
+    for (Conflict c : myConflicts) {
+      if (c.getC1() == change) {
+        result.add(c.getC2());
+        result.addAll(getChangeGroupOf(c.getC2()));
+      }
+      if (c.getC2() == change) {
+        result.add(c.getC1());
+        result.addAll(getChangeGroupOf(c.getC1()));
+      }
+    }
+    return result;
+  }
+
+  public Set<Change> getUnresolvedChanges() {
+    return myUnresolded;
   }
 
   public static enum VERSION {

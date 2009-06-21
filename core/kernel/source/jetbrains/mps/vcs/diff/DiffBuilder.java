@@ -33,7 +33,7 @@ public class DiffBuilder {
   private SModel myOldModel;
   private SModel myNewModel;
 
-  private Map<Change, SNodeId> myChangeGroups = new HashMap<Change, SNodeId>();
+  private Map<Change, SNode> myChangeGroups = new HashMap<Change, SNode>();
   private List<Change> myChanges = new ArrayList<Change>();
 
 
@@ -69,12 +69,28 @@ public class DiffBuilder {
       while (deleteRoot.getParent() != null && deletedNodes.contains(deleteRoot.getParent().getSNodeId())) {
         deleteRoot = deleteRoot.getParent();
       }
-      myChangeGroups.put(change, deleteRoot.getSNodeId());
+      myChangeGroups.put(change, deleteRoot);
+    }
+
+    Set<SNodeId> addedNodes = new HashSet<SNodeId>();
+    for (Change change : CollectionUtil.filter(NewNodeChange.class, myChanges)) {
+      addedNodes.add(change.getAffectedNodeId());
+    }
+    for (Change change : myChanges) {
+      SNode added = myNewModel.getNodeById(change.getAffectedNodeId());
+      if (added == null) {
+        continue;
+      }
+      SNode addRoot = added;
+      while (addRoot.getParent() != null && addedNodes.contains(addRoot.getParent().getSNodeId())) {
+        addRoot = addRoot.getParent();
+      }
+      myChangeGroups.put(change, addRoot);
     }
 
   }
 
-  public Map<Change, SNodeId> getChangeGroups() {
+  public Map<Change, SNode> getChangeGroups() {
     return myChangeGroups;
   }
 

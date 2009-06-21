@@ -61,9 +61,11 @@ public class ChangesBlock {
     g.drawLine(0, y2, (int) size.getWidth(), y2);
   }
 
-  public void addTo(JComponent component) {       
-    component.add(myMenu);
-    myMenu.setLocation(1, y1 + 1);
+  public void addTo(JComponent component) {
+    if (myMenu != null) {
+      component.add(myMenu);
+      myMenu.setLocation(1, y1 + 1);
+    }
   }
 
   public List<ChangeEditorMessage> getChanges() {
@@ -75,7 +77,9 @@ public class ChangesBlock {
   }
 
   public void removeFrom(EditorComponent component) {
-    component.remove(myMenu);
+    if (myMenu != null) {
+      component.remove(myMenu);
+    }
   }
 
 
