@@ -18,16 +18,12 @@ public class DiffEditorComponent extends EditorComponent {
 
   };
   private ArrayList<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
-  private SModel myResutlModel;
   private InspectorEditorComponent myInspector;
-  private Runnable myRebuild;  
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
 
-  public DiffEditorComponent(IOperationContext context, SNode node, SModel model, Runnable rebuild) {
+  public DiffEditorComponent(IOperationContext context, SNode node) {
     super(context);
-    myRebuild = rebuild;
     myInspector = new InspectorEditorComponent();
-    myResutlModel = model;
     editNode(node, context);
 
     addCellSelectionListener(new CellSelectionListener() {
@@ -210,13 +206,15 @@ public class DiffEditorComponent extends EditorComponent {
     for (ChangeEditorMessage m : changeEditorMessages) {
       EditorCell cell = highlightManager.getCell(m);
       if (block == null) {
-        block = createChangeBlock(myRebuild);
+        block = new ChangesBlock();
       } else {
         if (block.getY2() < cell.getY()) {
+          configureBlock(block);
           highlightManager.addChanges(component, block);
-          block = createChangeBlock(myRebuild);
+          block = new ChangesBlock();
         }
       }
+      configureBlock(block);
       block.addChange(m, cell);
     }
     if (block != null) {
@@ -224,46 +222,8 @@ public class DiffEditorComponent extends EditorComponent {
     }
   }
 
-  private ChangesBlock createChangeBlock(final Runnable rebuild) {
-    return new ChangesBlock() {
-
-      protected void revert() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
-          public void run() {
-            List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
-            notAppliedChanges.addAll(myChanges);
-
-            for (ChangeEditorMessage m : getChanges()) {
-              applyMeassage(notAppliedChanges, m);
-            }
-          }
-        });
-
-        ModelAccess.instance().runReadAction(rebuild);
-
-      }
-    };
-  }
-
-  private void applyMeassage(List<ChangeEditorMessage> notAppliedChanges, ChangeEditorMessage m) {
-    if (!notAppliedChanges.contains(m)) {
-      return;
-    }
-    for (SNodeId usedNodeId : m.getChange().getDependences()) {
-      for (ChangeEditorMessage message : notAppliedChanges) {
-        Change change = message.getChange();
-        if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
-          if (change.getAffectedNodeId().equals(usedNodeId)) {
-            applyMeassage(notAppliedChanges, message);
-            break;
-          }
-        }
-      }
-    }
-    m.getChange().apply(myResutlModel);
-    notAppliedChanges.remove(m);
-  }
+  public void configureBlock(ChangesBlock block) {
+  }  
 
 
   public void removeAllChanges() {
@@ -275,8 +235,5 @@ public class DiffEditorComponent extends EditorComponent {
     getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().removeAllChanges(myInspector);
   }
-
-  public void addConflicts() {
-    //To change body of created methods use File | Settings | File Templates.
-  }
+  
 }

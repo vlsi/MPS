@@ -2,6 +2,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -12,18 +13,21 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JSplitPane;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
   private JSplitPane myContainer;
   private SModel myNewModel;
-  private SModel myOldModel;  
+  private SModel myOldModel;
   private DiffEditorComponent myNewEditorComponent;
   private DiffEditorComponent myOldEditorComponent;
   private JPanel myTopPanel;
@@ -58,8 +62,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       }
     });
 
-    myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName, myNewModel);
-    myNewEditorComponent = addEditor(context, newNode[0], newRevisionName, myNewModel);
+    myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName);
+    myNewEditorComponent = addEditor(context, newNode[0], newRevisionName);
 
     myNewEditorComponent.addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
@@ -102,13 +106,13 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     rebuildChangeBlocks();
   }
 
-  private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName, SModel model) {
-    Runnable rebuild = new Runnable() {
-      public void run() {
-        rebuildChangeBlocks();
+  private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
+    DiffEditorComponent result = new DiffEditorComponent(context, node) {
+      @Override
+      public void configureBlock(ChangesBlock block) {
+        block.addMenu(new RevertMenu(block.getChanges()));
       }
     };
-    DiffEditorComponent result = new DiffEditorComponent(context, node, model, rebuild);
     result.editNode(node, context);
     result.setEditable(false);
     JPanel panel = new JPanel(new BorderLayout());
@@ -138,5 +142,77 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   @Button(name = "Close", position = 0, defaultButton = true)
   public void onClose() {
     dispose();
+  }
+
+  private void applyMeassage(List<ChangeEditorMessage> notAppliedChanges, ChangeEditorMessage m) {
+    if (!notAppliedChanges.contains(m)) {
+      return;
+    }
+    for (SNodeId usedNodeId : m.getChange().getDependences()) {
+      for (ChangeEditorMessage message : notAppliedChanges) {
+        Change change = message.getChange();
+        if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
+          if (change.getAffectedNodeId().equals(usedNodeId)) {
+            applyMeassage(notAppliedChanges, message);
+            break;
+          }
+        }
+      }
+    }
+    m.getChange().apply(myNewModel);
+    notAppliedChanges.remove(m);
+  }
+
+  class RevertMenu extends JLabel {
+    private List<ChangeEditorMessage> myChanges;
+
+    public RevertMenu(List<ChangeEditorMessage> changes) {
+      super(Icons.REVERT);
+      myChanges = changes;
+
+      setBorder(new EmptyBorder(0, 2, 1, 2));
+      setBackground(Color.WHITE);
+
+      setToolTipText("revert changes");
+
+      setPreferredSize(new Dimension(getWidth(), getHeight()));
+      setSize(getWidth(), getHeight());
+
+      addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+          revert();
+        }
+      });
+    }
+
+    public int getWidth() {
+      return getIcon().getIconWidth() + 6;
+    }
+
+    public int getHeight() {
+      return getIcon().getIconHeight();
+    }
+
+    protected void revert() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+        public void run() {
+          List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
+          notAppliedChanges.addAll(myChanges);
+
+          for (ChangeEditorMessage m : myChanges) {
+            applyMeassage(notAppliedChanges, m);
+          }
+        }
+      });
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          rebuildChangeBlocks();
+        }
+      });
+
+    }
+
   }
 }

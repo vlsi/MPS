@@ -109,11 +109,14 @@ class ModelDifferenceComponent extends JPanel {
   }
 
   public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
-    myNewModel = newModel;
-
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
     final List<Change> changes = builder.getChanges();
-    myModelTree.showDifference(oldModel, newModel, changes, null);
+    return showDifference(oldModel, newModel, changes);
+  }
+
+  public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel, List<Change> changes) {
+    myNewModel = newModel;
+    myModelTree.showDifference(oldModel, newModel, changes);
     myChanges = changes;
     updateView();
 

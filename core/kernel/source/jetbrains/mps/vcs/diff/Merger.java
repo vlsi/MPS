@@ -43,6 +43,7 @@ public class Merger {
   private List<Warning> myWarnings = new ArrayList<Warning>();
   private Set<Change> myUnresolded;
   private Set<Change> myConflicted = new HashSet<Change>();
+  private boolean myPreviewMode = false;
 
   public Merger(SModel base, SModel myne, SModel repo) {
     mySourceModels[VERSION.BASE.ordinal()] = base;
@@ -378,7 +379,7 @@ public class Merger {
     return result;
   }
 
-  private void rebuldResultModel() {
+  public void rebuldResultModel() {
     myResultModel = ModelPersistence.copyModel(getBase(mySourceModels));
     boolean wasLoading = myResultModel.setLoading(true);
 
@@ -584,7 +585,11 @@ public class Merger {
   private boolean isChangeUnResolved(Change ch) {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
-    return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
+    if (myPreviewMode) {
+      return myConflicted.contains(ch);
+    } else {
+      return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
+    }
   }
 
   public boolean isResolved() {
@@ -593,6 +598,10 @@ public class Merger {
 
   public boolean isMyne(Change change) {
     return myBaseMyneChange.contains(change);
+  }
+
+  public void setPreviewMode(boolean b) {
+    myPreviewMode = b;
   }
 
   public static enum VERSION {

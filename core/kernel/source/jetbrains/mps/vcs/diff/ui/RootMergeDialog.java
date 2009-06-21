@@ -27,19 +27,15 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private DiffEditorComponent myResultEditorComponent;
   private DiffEditorComponent myChange1EditorComponent;
   private DiffEditorComponent myChange2EditorComponent;
-  private SModel myResultModel;
   private SModel myChange1Model;
   private SModel myChange2Model;
-  private SModel myBaseModel;
   private IOperationContext myContext;
   private JSplitPane myContainer;
   private Merger myMerger;
 
-  public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, SModel baseModel, SModel resultModel) {
+  public RootMergeDialog(IOperationContext context, SModel change1, SModel change2) {
     super(context.getMainFrame(), "Merge");
     myContext = context;
-    myResultModel = resultModel;
-    myBaseModel = baseModel;
     myChange1Model = change1;
     myChange2Model = change2;
   }
@@ -49,7 +45,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    DiffEditorComponent result = new DiffEditorComponent(context, node, myResultModel, null);
+    DiffEditorComponent result = new DiffEditorComponent(context, node);
     result.editNode(node, context);
     result.setEditable(false);
     JPanel panel = new JPanel(new BorderLayout());
@@ -65,6 +61,11 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     final SNode[] change1Node = new SNode[1];
     final SNode[] resultNode = new SNode[1];
     final SNode[] change2Node = new SNode[1];
+
+    merger.setPreviewMode(true);
+    merger.rebuldResultModel();
+
+    final SModel myResultModel = merger.getResultModel();
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
@@ -84,12 +85,15 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
 
     myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
     myChange1EditorComponent.hightlight(merger.getBaseMyneChange(), false, false);
+    myChange1EditorComponent.makeChangeBlocks();
 
     myResultEditorComponent = addEditor(myContext, resultNode[0], "");
     myResultEditorComponent.hightlight(new ArrayList<Change>(myMerger.getConflictedChanges()), true, false);
+    myResultEditorComponent.makeChangeBlocks();
 
     myChange2EditorComponent = addEditor(myContext, change2Node[0], "");
     myChange2EditorComponent.hightlight(merger.getBaseRepoChange(), false, false);
+    myChange2EditorComponent.makeChangeBlocks();
 
     myContainer = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
     myContainer.setResizeWeight(1);    

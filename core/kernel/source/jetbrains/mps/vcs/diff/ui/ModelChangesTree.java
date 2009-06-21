@@ -48,8 +48,6 @@ class ModelChangesTree extends MPSTree {
   private Set<SNodeId> myExcludetNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myConflicts = new HashSet<SNodeId>();
   private List<Change> myChanges;
-  private Merger myMerger;
-  private boolean myShowOnlyConflicts;
 
   ModelChangesTree(IOperationContext context) {
     myContext = context;
@@ -104,8 +102,7 @@ class ModelChangesTree extends MPSTree {
     }
   }
 
-  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes, Merger merger) {
-    myMerger = merger;
+  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {    
     myChanges = changes;
     myOldModel = oldModel;
     myNewModel = newModel;
@@ -203,7 +200,6 @@ class ModelChangesTree extends MPSTree {
   }
 
   public void setShowOnlyConflicts(boolean b) {
-    myShowOnlyConflicts = b;
     myChangedSubtree.clear();
     for (Change change: myChanges) {
       SNodeId id = change.getAffectedNodeId();
@@ -353,16 +349,11 @@ class ModelChangesTree extends MPSTree {
     private Change myChange;
 
     public void updatePresentation() {
-      if (myMerger.getUnresolvedConflicts().contains(myChange)) {
+      if (myChange.isError()) {
         setColor(Color.RED);
       }
 
-      if (myMerger.getExcludedChanges().contains(myChange)) {
-        String text = myChange.toString();
-        setText("<html><s>" + TreeTextUtil.toHtml(text) + "</s></html>");
-      } else {
-        setText(myChange.toString());
-      }
+      setText(myChange.toString());
     }
 
     public ChangeNode(Change change) {

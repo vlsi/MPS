@@ -53,9 +53,10 @@ public class NewMergeView extends JPanel {
           }
         });
 
-        myMineChangesTree = new MyChangesTree(context);
-        myMineChangesTree.showDifference(baseModel, mine, myMerger.getBaseMyneChange(), myMerger);
-        panel.add(new HeaderWrapper("Mine Changes", new JScrollPane(myMineChangesTree)));
+        ModelDifferenceComponent mineModelDiff = new ModelDifferenceComponent(context);
+        mineModelDiff.showDifference(baseModel, mine, myMerger.getBaseMyneChange());
+        myMineChangesTree = mineModelDiff.getModelTree();
+        panel.add(new HeaderWrapper("Mine Changes", mineModelDiff));
         myResultView = new MergeResultView(context, baseModel, mine, repo, myMerger) {
           @Override
           protected void showConflict(Conflict conflict) {
@@ -76,9 +77,11 @@ public class NewMergeView extends JPanel {
           }
         };
         panel.add(new HeaderWrapper("Merge Result", myResultView));
-        myRepoChangesTree = new MyChangesTree(context);
-        myRepoChangesTree.showDifference(baseModel, repo, myMerger.getBaseRepoChange(), myMerger);
-        panel.add(new HeaderWrapper("Repository Changes", new JScrollPane(myRepoChangesTree)));
+
+        ModelDifferenceComponent repoModelDiff = new ModelDifferenceComponent(context);
+        repoModelDiff.showDifference(baseModel, repo, myMerger.getBaseRepoChange());
+        myRepoChangesTree = repoModelDiff.getModelTree();
+        panel.add(new HeaderWrapper("Repository Changes", repoModelDiff));
 
         updateView();
       }
