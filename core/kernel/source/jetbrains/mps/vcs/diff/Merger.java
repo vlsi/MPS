@@ -584,7 +584,7 @@ public class Merger {
   private boolean isChangeUnResolved(Change ch) {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
-    return myConflicted.contains(ch); //&& myUnresolded.contains(ch); //&& myBaseRepoChange.contains(ch);
+    return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
   }
 
   public boolean isResolved() {
