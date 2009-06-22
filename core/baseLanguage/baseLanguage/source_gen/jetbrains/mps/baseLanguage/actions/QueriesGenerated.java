@@ -2911,7 +2911,7 @@ __switch__:
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true));
+          return (SNode)TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true));
         }
       };
       type = (SNode)calculable.calculate();
