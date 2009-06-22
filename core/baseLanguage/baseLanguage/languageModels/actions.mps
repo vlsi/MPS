@@ -8457,16 +8457,21 @@
         <node role="initializerBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer" id="1221572882985">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221572882986">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221572893240">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221572893241">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221572893242">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.SideTransformVariableReference" id="1221572893243">
-                    <link role="variableDeclaration" targetNodeId="1221572492423" resolveInfo="assignment" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="3910866984136040274">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3910866984136040275">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3910866984136040276">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.SideTransformVariableReference" id="3910866984136040277">
+                      <link role="variableDeclaration" targetNodeId="1221572492423" resolveInfo="assignment" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3910866984136040278">
+                      <link role="link" targetNodeId="1.1068498886297" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1221572893244">
-                    <link role="link" targetNodeId="1.1068498886297" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="3910866984136040279" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1221572893245" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3910866984136040280">
+                  <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+                </node>
               </node>
             </node>
           </node>
