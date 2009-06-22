@@ -7,21 +7,19 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
@@ -42,18 +40,6 @@ public class BuildGeneratorUtil {
     if (modelDescriptor == null) {
       modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
     }
-    final SModelDescriptor descriptor = modelDescriptor;
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
-          public void run() {
-            descriptor.getSModel().addLanguage(getPackagingLanguageReference());
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
     return modelDescriptor;
   }
 
@@ -75,28 +61,19 @@ public class BuildGeneratorUtil {
       if (module instanceof Solution) {
         solution = (Solution)module;
       } else if (module == null) {
-        solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
+        solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
       } else
       {
         return null;
       }
     } else
     {
-      solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
+      solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
     }
-    final ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-
-      public void run() {
-        SolutionDescriptor moduleDescriptor = solution.getModuleDescriptor();
-        moduleDescriptor.getUsedLanguages().add(packagingLanguageRef);
-        solution.setSolutionDescriptor(moduleDescriptor);
-      }
-    });
     return solution;
   }
 
-  public static Solution createSolutionFormFile(final MPSProject mpsProject, final IFile solutionDescriptorFile) {
+  public static Solution createSolutionFromFile(final MPSProject mpsProject, final IFile solutionDescriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setExternallyVisible(true);
     descriptor.setCompileInMPS(true);
@@ -110,12 +87,12 @@ public class BuildGeneratorUtil {
     return ModelAccess.instance().runWriteAction(new Computable <Solution>() {
 
       public Solution compute() {
-        return mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+        return MPSModuleRepository.getInstance().registerSolution(solutionDescriptorFile, mpsProject);
       }
     });
   }
 
-  private static ModuleReference getPackagingLanguageReference() {
+  public static ModuleReference getPackagingLanguageReference() {
     Language packagingLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging");
     return packagingLanguage.getModuleReference();
   }

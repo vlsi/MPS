@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
-import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -28,7 +27,7 @@ public abstract class AbstractBuildGenerator {
   public AbstractBuildGenerator() {
   }
 
-  public abstract void generate(ProgressIndicator indicator);
+  public abstract void generate();
 
   public void setProjectName(String projectName) {
     this.myProjectName = projectName;

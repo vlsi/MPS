@@ -4,24 +4,30 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vfs.MPSExtentions;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.Solution;
-import com.intellij.openapi.vfs.VirtualFile;
-import java.io.File;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
+import com.intellij.openapi.application.ModalityState;
+import java.util.Arrays;
+import com.intellij.openapi.vfs.VirtualFile;
+import java.io.File;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -45,28 +51,64 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setValidDefaultSolutionName(projectName);
   }
 
-  public void generate(ProgressIndicator indicator) {
-    this.generateInternal(indicator);
-  }
+  public void generate() {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject, "Generating Build Script", false) {
 
-  private void generateInternal(ProgressIndicator indicator) {
-    indicator.setText("Preparing...");
-    final SModelDescriptor descriptor = this.getSModelDescriptor(indicator);
-    final String projectName = this.getProjectName();
-    final String projectBasedirPath = this.myProject.getBaseDir().getPath();
-    final List<NodeData> modules = this.getModules();
-    indicator.setText("Creating Script...");
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run(@NotNull() ProgressIndicator progressIndicator) {
+        progressIndicator.setIndeterminate(true);
+        progressIndicator.setText("Preparing...");
+        final SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(progressIndicator);
+        final String projectName = BuildGeneratorImpl.this.getProjectName();
+        final String projectBasedirPath = this.myProject.getBaseDir().getPath();
+        final List<NodeData> modules = BuildGeneratorImpl.this.getModules();
+        progressIndicator.setText("Creating Script...");
+        final List<ModuleReference> moduleReferencesToAdd = BuildGeneratorImpl.this.getModuleReferencesToAdd();
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
 
           public void run() {
-            BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
+            final Wrappers._T<Runnable> runnable = new Wrappers._T<Runnable>();
+            final Solution solution = (Solution)descriptor.getModule();
+            ModelAccess.instance().runWriteAction(new Runnable() {
+
+              public void run() {
+                for(ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+                  (solution).getSolutionDescriptor().getUsedLanguages().add(ref);
+                }
+              }
+            });
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+              public void run() {
+                for(ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+                  descriptor.getSModel().addLanguage(ref);
+                }
+                runnable.value = BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
+              }
+            });
+            runnable.value.run();
+            final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+            project.getProjectDescriptor().addSolution(solution.getDescriptorFile().getAbsolutePath());
+            ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
+
+              public void run(@NotNull() ProgressIndicator progressIndicator) {
+                progressIndicator.setIndeterminate(true);
+                progressIndicator.setText("Realoding Classes... Please Wait");
+                ModelAccess.instance().runWriteAction(new Runnable() {
+
+                  public void run() {
+                    project.update();
+                  }
+                });
+              }
+            });
           }
-        });
+        }, ModalityState.NON_MODAL);
       }
-    }, ModalityState.NON_MODAL);
+    });
+  }
+
+  protected List<ModuleReference> getModuleReferencesToAdd() {
+    return Arrays.asList(BuildGeneratorUtil.getPackagingLanguageReference());
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
@@ -103,9 +145,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-  public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
-    SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
-    this.finishGeneration(targetModelDescriptor, mpsLayout);
+  public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+    final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
+    return new Runnable() {
+
+      public void run() {
+        BuildGeneratorImpl.this.finishGeneration(targetModelDescriptor, mpsLayout);
+      }
+    };
   }
 
   protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
@@ -143,9 +190,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return mpsLayout;
   }
 
-  protected void finishGeneration(SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
+  protected void finishGeneration(final SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
     targetModelDescriptor.getModule().save();
-    targetModelDescriptor.save();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      public void run() {
+        targetModelDescriptor.save();
+      }
+    });
     MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
     editorOpener.openNode(mpsLayout);
   }

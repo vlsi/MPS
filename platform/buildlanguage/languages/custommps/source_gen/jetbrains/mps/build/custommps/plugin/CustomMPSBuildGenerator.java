@@ -13,8 +13,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
+import java.util.Arrays;
+import jetbrains.mps.build.packaging.plugin.BuildGeneratorUtil;
 import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -57,26 +58,18 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
         Solution module = (Solution)descriptor.getModule();
         SolutionDescriptor moduleDescriptor = module.getModuleDescriptor();
         moduleDescriptor.getUsedLanguages().add(moduleReference);
-        module.setModuleDescriptor(moduleDescriptor);
-      }
-    });
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-
-      public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
-          public void run() {
-            ModuleReference moduleReference = custommpsLanguage.getModuleReference();
-            descriptor.getSModel().addLanguage(moduleReference);
-          }
-        });
+        module.setModuleDescriptor(moduleDescriptor, false);
       }
     });
     return descriptor;
   }
 
-  public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
-    SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
+  protected List<ModuleReference> getModuleReferencesToAdd() {
+    return Arrays.asList(BuildGeneratorUtil.getPackagingLanguageReference(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getModuleReference());
+  }
+
+  public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+    final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
     // 
     SNode zipNode = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");
     SNode rootFolder = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(zipNode, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder");
@@ -112,7 +105,12 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     }
     SLinkOperations.setTarget(mpsBuild, "pathToBuildToolsZip", buildToolsPath, true);
     SPropertyOperations.set(mpsLayout, "scriptsFolder", "build");
-    this.finishGeneration(targetModelDescriptor, mpsLayout);
+    return new Runnable() {
+
+      public void run() {
+        CustomMPSBuildGenerator.this.finishGeneration(targetModelDescriptor, mpsLayout);
+      }
+    };
   }
 
 
