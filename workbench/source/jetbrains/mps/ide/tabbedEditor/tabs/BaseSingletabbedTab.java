@@ -152,12 +152,11 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
           tryToInitComponent();
         }
       });
+      Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+      ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
     }
 
     if (myComponent == null) return null;
-
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
 
     return myComponent.getExternalComponent();
   }
