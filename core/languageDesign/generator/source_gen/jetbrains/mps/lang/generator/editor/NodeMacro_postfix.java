@@ -18,14 +18,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
 
@@ -52,6 +55,9 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
     if (renderingCondition9824_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_9824_1(context, node));
+    }
+    if (renderingCondition9824_2(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_9824_3(context, node));
     }
     editorCell.addEditorCell(this.createAttributedNodeCell_9824_0(context, node));
     return editorCell;
@@ -133,6 +139,35 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return cellWithRole;
   }
 
+  public EditorCell createProperty_9824_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_Property_9824_1(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_Property_9824_1((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createProperty_9824_3(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("description");
+    provider.setNoTargetText("<no description>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(true);
+    EditorCell cellWithRole = this.createProperty_9824_2_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9824_0");
@@ -140,6 +175,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
         }
       };
       inlineStyle.apply(editorCell);
@@ -173,6 +209,11 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
   }
 
+  private static void setupBasic_Property_9824_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("property_description");
+    Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_Constant_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -180,6 +221,9 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupLabel_ReadOnlyModelAccessor_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Property_9824_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9824_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -190,6 +234,10 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public static boolean renderingCondition9824_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
+  }
+
+  public static boolean renderingCondition9824_2(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "description") != null;
   }
 
   public static class _Inline9824_0 extends AbstractCellProvider {
@@ -238,14 +286,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
     private static void setupBasic_Property_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-      {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-          }
-        };
-        inlineStyle.apply(editorCell);
-      }
+      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
     }
 
     private static void setupLabel_Property_9824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

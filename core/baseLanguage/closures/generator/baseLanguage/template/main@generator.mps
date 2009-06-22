@@ -5202,6 +5202,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199624928352">
               <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1199624928353" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1215457391281">
+                <property name="description" value="no LT" />
                 <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1215457391282">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215457391283">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925194628">
@@ -5250,6 +5251,7 @@
                 </node>
               </node>
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1199624932348">
+                <property name="description" value="parm types -&gt; parm decl" />
                 <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1199624932349">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199624932350">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201526799412">
@@ -5436,6 +5438,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215457383978">
               <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1215457383979" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1215457429073">
+                <property name="description" value="has LT" />
                 <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1215457429074">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215457429075">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925193652">
@@ -5484,6 +5487,7 @@
                 </node>
               </node>
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1215457425733">
+                <property name="description" value="parm from LT -&gt; parm decl" />
                 <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1215457425734">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215457425735">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215458208408">
@@ -5812,6 +5816,7 @@
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1199624907451">
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1199624915149">
+                <property name="description" value="result type" />
                 <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1199624915150">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199624915151">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925194105">
@@ -6085,6 +6090,7 @@
             </node>
             <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.Type" id="1215429251413">
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1215429255566">
+                <property name="description" value="throw types (may be from LT)" />
                 <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1215429255567">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215429255568">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925193835">
@@ -6258,6 +6264,7 @@
                 </node>
               </node>
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1215429260857">
+                <property name="description" value="it" />
                 <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1215429260858">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215429260859">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215429538789">
@@ -6350,6 +6357,7 @@
           </node>
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1203249917083">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1203249920932">
+              <property name="description" value="no LT" />
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1203249920933">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203249920934">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925193741">
@@ -6398,6 +6406,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1203249946365">
+              <property name="description" value="has result type" />
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1203249962201">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203249962202">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203249962203">
@@ -6455,6 +6464,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1203249949504">
+              <property name="description" value="result type" />
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1203249955325">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203249955326">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203249955327">
@@ -6481,6 +6491,7 @@
           </node>
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1203250554767">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1203250562735">
+              <property name="description" value="no LT" />
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1203250587999">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203250588000">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925195217">
@@ -6529,6 +6540,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203250566951">
+              <property name="description" value="parm types" />
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1203250582108">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203250582109">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203250582110">
@@ -6549,6 +6561,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1203250571868">
+              <property name="description" value="parm type" />
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1203250576826">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203250576827">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203250576828">
@@ -6564,6 +6577,7 @@
           </node>
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1215429169536">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1215429172223">
+              <property name="description" value="no LT" />
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1215429196709">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215429196710">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925194880">
@@ -6612,6 +6626,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1231260332200">
+              <property name="description" value="throw types" />
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1231260332201">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231260332202">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1231260337903">
@@ -6634,6 +6649,7 @@
           </node>
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1203268192173">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1203268194222">
+              <property name="description" value="has LT" />
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1203268216179">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203268216180">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925194022">
@@ -6682,6 +6698,7 @@
               </node>
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1203268199327">
+              <property name="description" value="parms from LT" />
               <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1203268224153">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203268224154">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240925195049">

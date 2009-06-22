@@ -727,6 +727,21 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227219853408" />
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1227219853409" />
+    <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="8696125237882395329">
+      <property name="description" value="Comment" />
+      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="8696125237882395330">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8696125237882395331" />
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5791339294397523174">
+      <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+      <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="5791339294397523175">
+        <property name="description" value="Comment" />
+        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="5791339294397523176">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5791339294397523177" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

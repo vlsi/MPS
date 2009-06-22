@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import java.awt.Color;
 
 public class Styles_StyleSheet {
 
@@ -69,6 +70,15 @@ public class Styles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+      }
+    };
+  }
+
+  public static Style getMacroDescriptionText(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(13497546));
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
       }
     };
   }
