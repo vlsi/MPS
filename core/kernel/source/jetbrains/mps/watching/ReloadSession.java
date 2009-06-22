@@ -188,6 +188,7 @@ class ReloadSession {
           myChangedModules.add(gen.getSourceLanguage());
         }
 
+        myChangedModules.removeAll(myDeletedModules);
         myChangedModels.removeAll(skip);
       }
     });
