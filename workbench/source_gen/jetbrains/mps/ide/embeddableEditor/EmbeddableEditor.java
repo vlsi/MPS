@@ -32,10 +32,10 @@ public class EmbeddableEditor {
     this.myNode = node;
     this.myOwner = owner;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
-    this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.myModel.getSModel().runLoadingAction(new Runnable() {
 
       public void run() {
+        EmbeddableEditor.this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
         EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myNode);
       }
     });
