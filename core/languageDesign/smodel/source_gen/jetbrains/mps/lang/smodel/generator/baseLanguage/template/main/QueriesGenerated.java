@@ -676,6 +676,19 @@ public class QueriesGenerated {
     return QueriesUtil.get_SPropertyAccess_enum_getterMethod(_context.getNode(), _context.getScope());
   }
 
+  public static Object referenceMacro_GetReferent_140804109732586753(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196403920(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
+  }
+
+  public static Object referenceMacro_GetReferent_6137448016766001334(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    String bfqn = INamedConcept_Behavior.call_getFqName_1213877404258(StaticConceptMethodDeclaration_Behavior.call_getBehavior_1225196403935(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)));
+    int lastDot = bfqn.lastIndexOf(".");
+    if (lastDot >= 0) {
+      bfqn = "[" + bfqn.subSequence(0, lastDot) + "]" + bfqn.substring(lastDot + 1);
+    }
+    return bfqn;
+  }
+
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
     return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
@@ -1389,6 +1402,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_140804109732661928(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
