@@ -489,7 +489,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6752_1(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
+    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
   public static Color _StyleParameter_QueryFunction_1221237912391(SNode node, EditorContext editorContext) {

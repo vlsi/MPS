@@ -934,8 +934,8 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340529827">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340526682">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1220340526353" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220340529123">
-                      <link role="baseMethodDeclaration" targetNodeId="30.1220340471382" resolveInfo="getOpeningTag" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8696125237882419342">
+                      <link role="baseMethodDeclaration" targetNodeId="30.1220340488560" resolveInfo="getClosingTag" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220340533861">
