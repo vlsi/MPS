@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept, IStructureDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static final String HELP_U_R_L = "helpURL";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -26,6 +27,14 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public AbstractConceptDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getHelpURL() {
+    return this.getProperty(AbstractConceptDeclaration.HELP_U_R_L);
+  }
+
+  public void setHelpURL(String value) {
+    this.setProperty(AbstractConceptDeclaration.HELP_U_R_L, value);
   }
 
   public String getName() {

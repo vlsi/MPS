@@ -58,6 +58,7 @@
       <link role="labelDeclaration" targetNodeId="1215475935865" resolveInfo="javaClass" />
     </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1169126526404">
+      <property name="applyToConceptInheritors" value="true" />
       <link role="applicableConcept" targetNodeId="18.1169125989551" />
       <link role="template" targetNodeId="1169126581801" resolveInfo="interface_ConceptAdaptorDeclaration" />
       <link role="labelDeclaration" targetNodeId="1215475935865" resolveInfo="javaClass" />

@@ -605,7 +605,7 @@ public class Language extends AbstractModule {
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
-          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;
+          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;   //what is this check for?!
           if (node.getAdapter() instanceof AbstractConceptDeclaration) {
             myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
           }
