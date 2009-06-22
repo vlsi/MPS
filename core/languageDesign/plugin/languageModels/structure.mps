@@ -2597,7 +2597,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562850663">
     <property name="name" value="RunConfigurationTypeDeclaration" />
     <property name="package" value="RunConfigs" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7035278950562850664">
       <property name="name" value="iconPath" />
@@ -2618,7 +2618,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562851062">
     <property name="package" value="RunConfigs" />
     <property name="name" value="RunConfigurationDeclaration" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223536804">
       <property name="metaClass" value="reference" />
