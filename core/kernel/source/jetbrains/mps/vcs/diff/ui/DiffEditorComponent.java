@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
-public class DiffEditorComponent extends EditorComponent {
+public abstract class DiffEditorComponent extends EditorComponent {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
 
   };
@@ -32,7 +32,9 @@ public class DiffEditorComponent extends EditorComponent {
     myInspector.inspectNode(node, getOperationContext());
     myInspector.getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().rebuildMessages();
-    //makeChangeBlocks(myInspector, new ArrayList(myChanges));
+    if (myInspector.getHighlightManager().getMessageFor(node) == null) {
+      makeChangeBlocks(myInspector, new ArrayList(myChanges));
+    }
   }
 
   public EditorCell createRootCell() {
@@ -54,7 +56,11 @@ public class DiffEditorComponent extends EditorComponent {
 
   public void hightlight(final List<Change> changes, final boolean isNew, final boolean revertedChanges) {
     final List<ChangeEditorMessage> resultChanges = new ArrayList<ChangeEditorMessage>();
-    final SModel model = getRootCell().getSNode().getModel();
+    SNode sNode = getRootCell().getSNode();
+    if (sNode == null) {
+      return;
+    }
+    final SModel model = sNode.getModel();
 
     final Set<Change> newChanges = getNewChanges(changes);
 
@@ -154,7 +160,9 @@ public class DiffEditorComponent extends EditorComponent {
 
   public void makeChangeBlocks() {
     makeChangeBlocks(this, new ArrayList(myChanges));
-    makeChangeBlocks(myInspector, new ArrayList(myChanges));
+    if (myInspector.getHighlightManager().getMessageFor(myInspector.getEditedNode()) == null) {
+      makeChangeBlocks(myInspector, new ArrayList(myChanges));
+    }
   }
 
   public void makeChangeBlocks(EditorComponent component, List<ChangeEditorMessage> changeEditorMessages) {
@@ -195,9 +203,7 @@ public class DiffEditorComponent extends EditorComponent {
     }
   }
 
-  public void configureBlock(ChangesBlock block) {
-  }  
-
+  public abstract void configureBlock(ChangesBlock block);    
 
   public void removeAllChanges() {
     for (ChangeEditorMessage message : myChanges) {

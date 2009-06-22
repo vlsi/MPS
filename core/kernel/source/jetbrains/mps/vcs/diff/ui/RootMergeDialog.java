@@ -1,9 +1,6 @@
 package jetbrains.mps.vcs.diff.ui;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -12,25 +9,17 @@ import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.vcs.diff.Merger;
-import jetbrains.mps.vcs.diff.DiffBuilder;
-import jetbrains.mps.vcs.diff.Conflict;
 import jetbrains.mps.vcs.diff.changes.Change;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JSplitPane;
-import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.ArrayList;
 
-public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
+public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   private JPanel myTopComponent;
   private JPanel myBottomComponent;
   private DiffEditorComponent myResultEditorComponent;
@@ -40,27 +29,27 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   private SModel myChange2Model;
   private SModel myResultModel;
   private IOperationContext myContext;
-  private JSplitPane myContainer;
+  private JPanel myContainer;
   private Merger myMerger;
-  private SNode myNode;
+  private SNode myRoot;
   private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (newSelection != null && newSelection.getSNode() != null) {
-              SNode sNode;
-              sNode = myChange1Model.getNodeById(newSelection.getSNode().getSNodeId());
-              myChange1EditorComponent.inspect(sNode);
-              sNode = myResultModel.getNodeById(newSelection.getSNode().getSNodeId());
-              myResultEditorComponent.inspect(sNode);
-              sNode = myChange2Model.getNodeById(newSelection.getSNode().getSNodeId());
-              myChange2EditorComponent.inspect(sNode);
-            }
+    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (newSelection != null && newSelection.getSNode() != null) {
+            SNode sNode;
+            sNode = myChange1Model.getNodeById(newSelection.getSNode().getSNodeId());
+            myChange1EditorComponent.inspect(sNode);
+            sNode = myResultModel.getNodeById(newSelection.getSNode().getSNodeId());
+            myResultEditorComponent.inspect(sNode);
+            sNode = myChange2Model.getNodeById(newSelection.getSNode().getSNodeId());
+            myChange2EditorComponent.inspect(sNode);
           }
-        });
+        }
+      });
 
-      }
-    };
+    }
+  };
 
 
   public RootMergeDialog(IOperationContext context, SModel change1, SModel change2) {
@@ -98,7 +87,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
   }
 
   public void init(final SNode node, Merger merger) {
-    myNode = node;
+    myRoot = node;
     myMerger = merger;
     final SNode[] change1Node = new SNode[1];
     final SNode[] resultNode = new SNode[1];
@@ -122,7 +111,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     myBottomComponent = new JPanel(new GridLayout(1, 3));
 
     for (Change conflict : merger.getConflictedChanges()) {
-      conflict.setError(true);      
+      conflict.setError(true);
     }
 
     myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
@@ -131,8 +120,51 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
 
     rebuildChangeBlocks();
 
-    myContainer = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
-    myContainer.setResizeWeight(1);    
+    JSplitPane modelsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
+    modelsPane.setResizeWeight(1);
+    myContainer = new JPanel(new BorderLayout());
+    myContainer.add(modelsPane);
+    myContainer.add(createControlsPanel(), BorderLayout.PAGE_START);
+  }
+
+  private Component createControlsPanel() {
+    JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    controlPanel.add(new JButton(new AbstractAction("Revert all") {
+
+      public void actionPerformed(ActionEvent e) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            List<SNodeId> ids = new ArrayList<SNodeId>();
+            addNodeIds(ids, myChange1Model);
+            addNodeIds(ids, myResultModel);
+            addNodeIds(ids, myChange2Model);
+            for (Change change: new ArrayList<Change>(myMerger.getExcludedChanges())) {
+              if (ids.contains(change.getAffectedNodeId())) {
+                myMerger.includeChange(change);
+              }
+            }
+
+            for (Change change: new ArrayList<Change>(myMerger.getApplyedChanges())) {
+              if (ids.contains(change.getAffectedNodeId())) {
+                myMerger.getApplyedChanges().remove(change);
+              }
+            }
+            rebuildChangeBlocks();
+          }
+        });
+      }
+    }));
+    return controlPanel;
+  }
+
+  private void addNodeIds(List<SNodeId> ids, SModel model) {
+    SNode change1Node = model.getRootByName(myRoot.getName());
+    if (change1Node != null) {
+      for (SNode node: change1Node.getDescendants()) {
+        ids.add(node.getSNodeId());
+      }
+    }
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -177,7 +209,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
         public void run() {
           for (ChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictedChanges().contains(m.getChange())) {
-              for (Change ch: myMerger.getConflictsOf(m.getChange())) {
+              for (Change ch : myMerger.getConflictsOf(m.getChange())) {
                 myMerger.excludeChange(ch);
               }
             }
@@ -229,7 +261,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
         public void run() {
           for (ChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictedChanges().contains(m.getChange())) {
-              for (Change ch: myMerger.getConflictsOf(m.getChange())) {
+              for (Change ch : myMerger.getConflictsOf(m.getChange())) {
                 myMerger.getApplyedChanges().add(ch);
               }
             }
@@ -257,7 +289,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
       public void run() {
       }
     });
-    
+
     myResultModel = myMerger.getResultModel();
 
     final SNode[] resultNode = new SNode[1];
@@ -265,7 +297,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner{
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        resultNode[0] = myResultModel.getRootByName(myNode.getName());
+        resultNode[0] = myResultModel.getRootByName(myRoot.getName());
       }
     });
 
