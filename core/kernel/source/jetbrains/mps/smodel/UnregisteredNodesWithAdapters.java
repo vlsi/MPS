@@ -31,24 +31,31 @@ class UnregisteredNodesWithAdapters {
     return ourInstance;
   }
 
+  private final Object myLock = new Object();
   private WeakSet<SNode> myNodes = new WeakSet<SNode>();
 
   UnregisteredNodesWithAdapters() {
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
       public void onReload() {
-        for (SNode node : myNodes) {
-          node.clearAdapters();
+        synchronized (myLock) {
+          for (SNode node : myNodes) {
+            node.clearAdapters();
+          }
+          myNodes.clear();
         }
-        myNodes.clear();
       }
     });
   }
 
   void add(SNode node) {
-    myNodes.add(node);
+    synchronized (myLock) {
+      myNodes.add(node);
+    }
   }
 
   void remove(SNode node) {
-    myNodes.remove(node);
+    synchronized (myLock) {
+      myNodes.remove(node);
+    }
   }
 }
