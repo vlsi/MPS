@@ -16,6 +16,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -58,6 +60,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     }
   };
+  private boolean veiwportSetInPorgress = false;
 
 
   public RootMergeDialog(IOperationContext context, SModel change1, SModel change2) {
@@ -72,7 +75,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    DiffEditorComponent result = new DiffEditorComponent(context, node) {
+    final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
         JComponent panel = new JPanel();
@@ -91,6 +94,23 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     myTopComponent.add(panel);
     myBottomComponent.add(result.getInspector().getExternalComponent());
     result.addCellSelectionListener(myCellSelectionListener);
+
+    result.getViewport().addChangeListener(new ChangeListener() {
+
+      public void stateChanged(ChangeEvent e) {
+        if (veiwportSetInPorgress) {
+          return;
+        }
+        veiwportSetInPorgress = true;
+
+        result.synchronizeViewWith(myChange1EditorComponent);
+        result.synchronizeViewWith(myResultEditorComponent);
+        result.synchronizeViewWith(myChange2EditorComponent);
+
+        veiwportSetInPorgress = false;
+      }
+    });
+
     return result;
   }
 
@@ -122,9 +142,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
       conflict.setError(true);
     }
 
-    myChange1EditorComponent = addEditor(myContext, change1Node[0], "");
-    myResultEditorComponent = addEditor(myContext, resultNode[0], "");
-    myChange2EditorComponent = addEditor(myContext, change2Node[0], "");
+    myChange1EditorComponent = addEditor(myContext, change1Node[0], "Mine Changes");
+    myResultEditorComponent = addEditor(myContext, resultNode[0], "Merge Result");
+    myChange2EditorComponent = addEditor(myContext, change2Node[0], "Repository Changes");
 
     rebuildChangeBlocks();
 

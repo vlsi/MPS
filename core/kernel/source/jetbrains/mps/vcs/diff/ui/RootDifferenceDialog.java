@@ -33,21 +33,22 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private JPanel myTopPanel;
   private JPanel myBottomPanel;
   private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (newSelection != null && newSelection.getSNode() != null) {
-              SNode sNode;
-              sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
-              myNewEditorComponent.inspect(sNode);
-              sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
-              myOldEditorComponent.inspect(sNode);
-            }
+    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (newSelection != null && newSelection.getSNode() != null) {
+            SNode sNode;
+            sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
+            myNewEditorComponent.inspect(sNode);
+            sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
+            myOldEditorComponent.inspect(sNode);
           }
-        });
+        }
+      });
 
-      }
-    };
+    }
+  };
+  private boolean veiwportSetInPorgress;
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
     super(parent, "Difference");
@@ -80,27 +81,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName);
     myNewEditorComponent = addEditor(context, newNode[0], newRevisionName);
-    
-    myNewEditorComponent.getViewport().addChangeListener(new ChangeListener() {
-
-      public void stateChanged(ChangeEvent e) {
-        myOldEditorComponent.getViewport().setViewPosition(myNewEditorComponent.getViewport().getViewPosition());
-      }
-    });
-
-    myOldEditorComponent.getViewport().addChangeListener(new ChangeListener() {
-
-      public void stateChanged(ChangeEvent e) {
-        myNewEditorComponent.getViewport().setViewPosition(myOldEditorComponent.getViewport().getViewPosition());
-      }
-    });
-
 
     rebuildChangeBlocks();
   }
 
   private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    DiffEditorComponent result = new DiffEditorComponent(context, node) {
+    final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
         block.addMenu(new RevertMenu(block.getChanges()));
@@ -114,6 +100,20 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myTopPanel.add(panel);
     myBottomPanel.add(result.getInspector().getExternalComponent());
     result.addCellSelectionListener(myCellSelectionListener);
+
+    result.getViewport().addChangeListener(new ChangeListener() {
+
+      public void stateChanged(ChangeEvent e) {
+        if (veiwportSetInPorgress) {
+          return;
+        }
+        veiwportSetInPorgress = true;
+        result.synchronizeViewWith(myNewEditorComponent);
+        result.synchronizeViewWith(myOldEditorComponent);
+        veiwportSetInPorgress = false;
+      }
+    });
+
     return result;
   }
 

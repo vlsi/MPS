@@ -10,8 +10,8 @@ import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
 import java.awt.Color;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.Point;
+import java.awt.Rectangle;
 
 public abstract class DiffEditorComponent extends EditorComponent {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
@@ -214,5 +214,54 @@ public abstract class DiffEditorComponent extends EditorComponent {
     getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().removeAllChanges(myInspector);
   }
-  
+
+  public SNode getFirtsVisibleNode() {
+    return getFirtsVisibleNode(getEditedNode());
+  }
+
+  private SNode getFirtsVisibleNode(SNode node) {
+    EditorCell cell = findNodeCell(node);
+    if (cell == null) {
+      return null;
+    }
+    if (cell.getY() > getViewport().getViewPosition().y) {
+      return node;
+    }
+    for (SNode child: node.getChildrenArray()) {
+        SNode result = getFirtsVisibleNode(child);
+        if (result != null) {
+          return result;
+        }
+
+    }
+    return null;
+}
+
+  public void synchronizeViewWith(final DiffEditorComponent otherComponent) {
+    if (this == otherComponent) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        SNode visibleNode = getFirtsVisibleNode();
+        if (visibleNode != null) {
+          SNodeId id = visibleNode.getSNodeId();
+          int newRelativePos = getViewport().getViewPosition().y - findNodeCell(visibleNode).getY();
+
+          SNode nodeById = otherComponent.getEditedNode().getModel().getNodeById(id);
+          EditorCell oldCell = otherComponent.findNodeCell(nodeById);
+          Point position = getViewport().getViewPosition();
+          if (oldCell != null) {
+            otherComponent.getViewport().setViewPosition(new Point((int) position.getX(), newRelativePos + oldCell.getY()));
+            Rectangle viewRect = otherComponent.getViewport().getViewRect();
+            if (viewRect.y + viewRect.height > otherComponent.getHeight()) {
+              otherComponent.getViewport().setViewPosition(new Point(viewRect.x, otherComponent.getHeight() - viewRect.height));
+            }
+          }
+        }
+
+      }
+    });
+  }
 }
