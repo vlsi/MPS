@@ -74,7 +74,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_6059_4(context, node, "description"));
+    editorCell.addEditorCell(this.createConstant_6059_4(context, node, "comment"));
     editorCell.addEditorCell(this.createConstant_6059_5(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_6059_1(context, node));
     return editorCell;
@@ -179,7 +179,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_6059_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("description");
+    provider.setRole("comment");
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
@@ -208,8 +208,8 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_6059_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("description");
-    provider.setNoTargetText("<no description>");
+    provider.setRole("comment");
+    provider.setNoTargetText("<no comment>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_6059_2_internal(context, node, provider);
@@ -340,11 +340,11 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_6059_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_description");
+    editorCell.setCellId("property_comment");
   }
 
   private static void setupBasic_Property_6059_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_description_1");
+    editorCell.setCellId("property_comment_1");
     Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
   }
 
@@ -376,7 +376,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6059_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "description") != null;
+    return SPropertyOperations.getString(node, "comment") != null;
   }
 
 }

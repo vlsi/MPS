@@ -116,7 +116,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_3956_10(context, node, "description"));
+    editorCell.addEditorCell(this.createConstant_3956_10(context, node, "comment"));
     editorCell.addEditorCell(this.createConstant_3956_11(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_3956_5(context, node));
     return editorCell;
@@ -329,7 +329,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_3956_5(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("description");
+    provider.setRole("comment");
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
@@ -561,7 +561,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_3956_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_description");
+    editorCell.setCellId("property_comment");
   }
 
   private static void setupLabel_Constant_3956_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -72,7 +72,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104171">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104172">
-          <property name="text" value="description" />
+          <property name="text" value="comment" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104173">
           <property name="text" value=":" />
@@ -260,7 +260,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104178">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104179">
-          <property name="text" value="description" />
+          <property name="text" value="comment" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104180">
           <property name="text" value=":" />
@@ -1157,7 +1157,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104164">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104165">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104166">
             <property name="text" value=":" />
@@ -1461,7 +1461,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104122">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104123">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104124">
             <property name="text" value=":" />
@@ -1649,7 +1649,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104129">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104130">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104131">
             <property name="text" value=":" />
@@ -1804,7 +1804,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104143">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104144">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104145">
             <property name="text" value=":" />
@@ -1932,7 +1932,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104157">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104158">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104159">
             <property name="text" value=":" />
@@ -2103,7 +2103,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104150">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104151">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104152">
             <property name="text" value=":" />
@@ -3933,7 +3933,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3265704088513291246">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3265704088513291247">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3265704088513291248">
             <property name="text" value=":" />
@@ -4208,7 +4208,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8696125237882104136">
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104137">
-            <property name="text" value="description" />
+            <property name="text" value="comment" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8696125237882104138">
             <property name="text" value=":" />

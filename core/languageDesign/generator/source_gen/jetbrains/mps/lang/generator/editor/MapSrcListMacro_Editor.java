@@ -128,7 +128,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_2762_11(context, node, "description"));
+    editorCell.addEditorCell(this.createConstant_2762_11(context, node, "comment"));
     editorCell.addEditorCell(this.createConstant_2762_12(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_2762_3(context, node));
     return editorCell;
@@ -378,7 +378,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_2762_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("description");
+    provider.setRole("comment");
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
@@ -637,7 +637,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Property_2762_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_description");
+    editorCell.setCellId("property_comment");
   }
 
   private static void setupLabel_Constant_2762_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

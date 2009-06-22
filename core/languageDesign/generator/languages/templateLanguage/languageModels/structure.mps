@@ -1539,7 +1539,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" resolveInfo="abstract" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3265704088513289864">
-      <property name="name" value="description" />
+      <property name="name" value="comment" />
       <link role="dataType" targetNodeId="2.1082983041843" resolveInfo="string" />
     </node>
   </node>

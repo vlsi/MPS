@@ -153,8 +153,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public EditorCell createProperty_9824_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("description");
-    provider.setNoTargetText("<no description>");
+    provider.setRole("comment");
+    provider.setNoTargetText("<no comment>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_9824_2_internal(context, node, provider);
@@ -210,7 +210,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupBasic_Property_9824_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_description");
+    editorCell.setCellId("property_comment");
     Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
   }
 
@@ -237,7 +237,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public static boolean renderingCondition9824_2(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "description") != null;
+    return SPropertyOperations.getString(node, "comment") != null;
   }
 
   public static class _Inline9824_0 extends AbstractCellProvider {

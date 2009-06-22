@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractMacro extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.AbstractMacro";
-  public static final String DESCRIPTION = "description";
+  public static final String COMMENT = "comment";
 
   public AbstractMacro(SNode node) {
     super(node);
   }
 
-  public String getDescription() {
-    return this.getProperty(AbstractMacro.DESCRIPTION);
+  public String getComment() {
+    return this.getProperty(AbstractMacro.COMMENT);
   }
 
-  public void setDescription(String value) {
-    this.setProperty(AbstractMacro.DESCRIPTION, value);
+  public void setComment(String value) {
+    this.setProperty(AbstractMacro.COMMENT, value);
   }
 
 
