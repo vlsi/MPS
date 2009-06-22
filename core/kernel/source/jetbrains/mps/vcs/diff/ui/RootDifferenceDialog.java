@@ -32,6 +32,22 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private DiffEditorComponent myOldEditorComponent;
   private JPanel myTopPanel;
   private JPanel myBottomPanel;
+  private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
+      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (newSelection != null && newSelection.getSNode() != null) {
+              SNode sNode;
+              sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
+              myNewEditorComponent.inspect(sNode);
+              sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
+              myOldEditorComponent.inspect(sNode);
+            }
+          }
+        });
+
+      }
+    };
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
     super(parent, "Difference");
@@ -64,30 +80,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     myOldEditorComponent = addEditor(context, oldNode[0], oldRevisionName);
     myNewEditorComponent = addEditor(context, newNode[0], newRevisionName);
-
-    myNewEditorComponent.addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
-            myOldEditorComponent.inspect(sNode);
-          }
-        });
-      }
-    });
-    myOldEditorComponent.addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (newSelection != null && newSelection.getSNode() != null) {
-              SNode sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
-              myNewEditorComponent.inspect(sNode);
-            }
-          }
-        });
-
-      }
-    });
+    
     myNewEditorComponent.getViewport().addChangeListener(new ChangeListener() {
 
       public void stateChanged(ChangeEvent e) {
@@ -120,6 +113,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
     myTopPanel.add(panel);
     myBottomPanel.add(result.getInspector().getExternalComponent());
+    result.addCellSelectionListener(myCellSelectionListener);
     return result;
   }
 

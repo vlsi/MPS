@@ -25,34 +25,7 @@ public class DiffEditorComponent extends EditorComponent {
     super(context);
     myInspector = new InspectorEditorComponent();
     editNode(node, context);
-
-    addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        final SNode[] toSelect = new SNode[1];
-        if (newSelection != null) {
-          toSelect[0] = newSelection.getSNode();
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (isDisplayable()) {
-              inspect(toSelect[0]);
-            }
-          }
-        });
-      }
-    });
-
-    addFocusListener(new FocusAdapter() {
-      public void focusGained(FocusEvent e) {
-        if (getSelectedNode() != null) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              inspect(getSelectedNode());
-            }
-          });
-        }
-      }
-    });
+    
   }
 
   public void inspect(SNode node) {
