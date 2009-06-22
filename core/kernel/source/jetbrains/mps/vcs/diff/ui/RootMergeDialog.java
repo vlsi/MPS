@@ -9,7 +9,11 @@ import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.vcs.diff.Merger;
+import jetbrains.mps.vcs.diff.Conflict;
 import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +22,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+
+import com.intellij.ui.ListUtil;
+import org.apache.commons.collections.ListUtils;
 
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   private JPanel myTopComponent;
@@ -135,10 +143,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            List<SNodeId> ids = new ArrayList<SNodeId>();
-            addNodeIds(ids, myChange1Model);
-            addNodeIds(ids, myResultModel);
-            addNodeIds(ids, myChange2Model);
+            Set<SNodeId> ids = collectRootIds();
             for (Change change: new ArrayList<Change>(myMerger.getExcludedChanges())) {
               if (ids.contains(change.getAffectedNodeId())) {
                 myMerger.includeChange(change);
@@ -155,12 +160,51 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
         });
       }
     }));
+
+    controlPanel.add(new JButton(new AbstractAction("Apply all") {
+
+      public void actionPerformed(ActionEvent e) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            Set<SNodeId> ids = collectRootIds();
+
+            ArrayList<Change> changes = new ArrayList<Change>();
+            changes.addAll(myMerger.getBaseMyneChange());
+            changes.addAll(myMerger.getBaseRepoChange());
+
+            changes.removeAll(myMerger.getExcludedChanges());
+            for (Conflict conflict: myMerger.getUnresolvedConflicts()) {
+              changes.remove(conflict.getC1());
+              changes.remove(conflict.getC2());
+            }
+
+            for (Change change: changes) {
+              if (ids.contains(change.getAffectedNodeId())) {
+                myMerger.getApplyedChanges().add(change);
+              }
+            }
+            rebuildChangeBlocks();
+          }
+        });
+      }
+    }));
+
     return controlPanel;
   }
 
-  private void addNodeIds(List<SNodeId> ids, SModel model) {
+  private Set<SNodeId> collectRootIds() {
+    Set<SNodeId> ids = new HashSet<SNodeId>();
+    addNodeIds(ids, myChange1Model);
+    addNodeIds(ids, myResultModel);
+    addNodeIds(ids, myChange2Model);
+    return ids;
+  }
+
+  private void addNodeIds(Set<SNodeId> ids, SModel model) {
     SNode change1Node = model.getRootByName(myRoot.getName());
     if (change1Node != null) {
+      ids.add(change1Node.getSNodeId());
       for (SNode node: change1Node.getDescendants()) {
         ids.add(node.getSNodeId());
       }
@@ -309,7 +353,11 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     myChange1EditorComponent.hightlight(myneChange, false, false);
     myChange1EditorComponent.makeChangeBlocks();
 
-    myResultEditorComponent.hightlight(new ArrayList<Change>(myMerger.getUnresolvedChanges()), true, false);
+    ArrayList<Change> removedNodes = new ArrayList<Change>();
+    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseMyneChange()));
+    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseRepoChange()));
+    removedNodes.removeAll(myMerger.getExcludedChanges());
+    myResultEditorComponent.hightlight(removedNodes, true, false);
     myResultEditorComponent.makeChangeBlocks();
 
     List<Change> repoChange = new ArrayList<Change>(myMerger.getBaseRepoChange());
