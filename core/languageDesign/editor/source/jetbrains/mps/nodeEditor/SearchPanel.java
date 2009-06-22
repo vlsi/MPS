@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
@@ -47,8 +48,11 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   protected SearchHistoryComponent getSearchHistory() {
-    return myEditor.getOperationContext().getProject().
-      getComponent(SearchHistoryComponent.class);
+    IOperationContext operationContext = myEditor.getOperationContext();
+    if (operationContext == null) {
+      return new SearchHistoryComponent();
+    }
+    return operationContext.getProject().getComponent(SearchHistoryComponent.class);
   }
 
   private List<EditorCell_Label> allCells() {
@@ -75,12 +79,13 @@ public class SearchPanel extends AbstractSearchPanel {
       while (myEditor.getSelectedCell().equals(myCells.get(index))) {
         if (index <= 0) {
           index = myCells.size() - 1;
+          break;
         } else {
           index--;
         }
       }
     }
-    myEditor.changeSelection(myCells.get(index));
+    changeSelection(index);
   }
 
   protected void goDown() {
@@ -94,12 +99,13 @@ public class SearchPanel extends AbstractSearchPanel {
       while (myEditor.getSelectedCell().equals(myCells.get(index))) {
         if (index >= myCells.size() - 1) {
           index = 0;
+          break;
         } else {
           index++;
         }
       }
     }
-    myEditor.changeSelection(myCells.get(index));
+    changeSelection(index);
   }
 
   private void clearHighlight() {
@@ -134,6 +140,12 @@ public class SearchPanel extends AbstractSearchPanel {
 
   public void update(AnActionEvent e) {
 
+  }
+
+  private void changeSelection(int index) {
+    if (!myEditor.getSelectedCell().equals(myCells.get(index))) {
+      myEditor.changeSelection(myCells.get(index));
+    }
   }
 
   private void selectCell() {
@@ -175,7 +187,8 @@ public class SearchPanel extends AbstractSearchPanel {
       }
       EditorCell_Label currentCell = cells.get(index);
       myCells.add(currentCell);
-      CellLayout cellLayout = currentCell.getParent().getCellLayout();
+      EditorCell_Collection parentCell = currentCell.getParent();
+      CellLayout cellLayout = (parentCell != null)? parentCell.getCellLayout() : null;
       int highlightLength = 0;
       needChangeSelection = index >= cells.indexOf(myEditor.getSelectedCell());
       if (needChangeSelection && !selected) {
@@ -192,8 +205,9 @@ public class SearchPanel extends AbstractSearchPanel {
         }
         index--;
       }
-      if (cellLayout instanceof CellLayout_Horizontal
-        && !cellLayout.equals(cells.get(index).getParent().getCellLayout())) {
+      if ((cellLayout instanceof CellLayout_Horizontal
+        && !cellLayout.equals(cells.get(index).getParent().getCellLayout()))
+        || cellLayout == null) {
         if (!needChangeSelection && myCells.size() > 100) {
           for (int i = 0; i < highlightLength; i++) {
             resultIndex.remove(resultIndex.size() - 1);
@@ -201,7 +215,9 @@ public class SearchPanel extends AbstractSearchPanel {
             endHighlightPosition.remove(endHighlightPosition.size() - 1);
           }
         }
-        myCells.remove(myCells.size() - 1);
+        if (cellLayout != null) {
+          myCells.remove(myCells.size() - 1);
+        }
       }
     }
     myOwner = new EditorMessageOwner() {};
