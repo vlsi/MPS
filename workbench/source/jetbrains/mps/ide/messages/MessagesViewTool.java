@@ -89,7 +89,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   });
 
   private Queue<Message> myMessages = new LinkedList<Message>();
-  private DefaultListModel myModel = new DefaultListModel();
+  private FastListModel myModel = new FastListModel(MAX_MESSAGES_SIZE);
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
@@ -180,7 +180,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
         Message item = null;
         if (index != -1) {
-          item = (Message) myModel.get(index);
+          item = (Message) myModel.getElementAt(index);
         }
 
         if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
@@ -212,8 +212,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   public void openToolLater(boolean setActive) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        if (myModel.size() > 0) {
-          myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
+        if (myModel.getSize() > 0) {
+          myList.setSelectedValue(myModel.getElementAt(myModel.getSize() - 1), true);
         }
       }
     });
@@ -373,7 +373,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.setFixedCellWidth(width);
 
     for (Message m : messagesToAdd) {
-      myModel.addElement(m);
+      myModel.add(m);
     }
   }
 
@@ -402,13 +402,13 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
           Message toRemove = myMessages.remove();
           if (isVisible(toRemove)) {
-            myModel.removeElement(toRemove);
+            myModel.removeFirst();
           }
         }
 
         if (isVisible(message)) {
-          myModel.addElement(message);
-          int index = myModel.size() - 1;
+          myModel.add(message);
+          int index = myModel.getSize() - 1;
           myList.getSelectionModel().setSelectionInterval(index, index);
           if (messages == 0) {
             myList.ensureIndexIsVisible(index);
@@ -523,6 +523,55 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         boolean enabled = myEnabled.compute();
         Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
         e.getPresentation().setIcon(icon);
+      }
+    }
+  }
+
+  static class FastListModel extends AbstractListModel {
+    private int myStart;
+    private int myEnd;
+    private int mySize;
+    private Object[] myItems;
+
+    FastListModel(int size) {
+      myItems = new Object[size];
+      myStart = 0;
+      myEnd = 0;
+    }
+
+    public int getSize() {
+      return mySize;
+    }
+
+    public Object getElementAt(int index) {
+      return myItems[(myStart + index) % myItems.length];
+    }
+
+    public void add(Object item) {
+      if (mySize == myItems.length) throw new RuntimeException("Buffer overflow");
+      myItems[myEnd] = item;
+      myEnd = (myEnd + 1) % myItems.length;
+      mySize++;      
+      fireIntervalAdded(this, mySize - 1, mySize - 1);
+    }
+
+    public void removeFirst() {
+      if (mySize == 0) {
+        throw new RuntimeException("Buffer underflow");
+      }
+      myItems[myStart] = null;
+      myStart = (myStart + 1) % myItems.length;
+      mySize--;
+      fireIntervalRemoved(this, 0, 0);
+    }
+
+    public void clear() {
+      myStart = 0;
+      myEnd = 0;
+      int oldSize = mySize;
+      mySize = 0;
+      if (oldSize > 0) {
+        fireIntervalRemoved(this, 0, oldSize - 1);
       }
     }
   }
