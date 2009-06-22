@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,13 +35,9 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention {
     return "Split String into Concatenation";
   }
 
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return true;
-  }
-
   public void execute(final SNode node, final EditorContext editorContext) {
-    EditorCell_Property ecProperty = (EditorCell_Property)editorContext.getContextCell();
-    int caretPosition = ecProperty.getCaretPosition();
+    EditorCell_Label cell = ((EditorCell_Label)editorContext.getContextCell());
+    int caretPosition = cell.getCaretPosition();
     String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
     String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);
     SNode plusExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");

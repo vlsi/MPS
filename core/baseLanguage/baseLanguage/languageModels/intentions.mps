@@ -323,38 +323,31 @@
     <link role="forConcept" targetNodeId="1.1070475926800" resolveInfo="StringLiteral" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1195647385838">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647385839">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647385840">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195647385841">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3714404449448598524">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3714404449448598525">
             <property name="value" value="Split String into Concatenation" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1195647385857">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647385858">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647385859">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195647385860">
-            <property name="value" value="true" />
           </node>
         </node>
       </node>
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1195647385877">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647385878">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1195647385879">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195647385880">
-            <property name="name" value="ecProperty" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195647385881">
-              <link role="classifier" targetNodeId="25.~EditorCell_Property" resolveInfo="EditorCell_Property" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3714404449448597993">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3714404449448597994">
+            <property name="name" value="cell" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3714404449448598522">
+              <link role="classifier" targetNodeId="25.~EditorCell_Label" resolveInfo="EditorCell_Label" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1195647385882">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195647385883">
-                <link role="classifier" targetNodeId="25.~EditorCell_Property" resolveInfo="EditorCell_Property" />
-              </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444533">
-                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1199914529086" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444534">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3714404449448598057">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="3714404449448598058">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3714404449448598059">
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="3714404449448598060" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3714404449448598061">
+                    <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
+                  </node>
+                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3714404449448598521">
+                  <link role="classifier" targetNodeId="25.~EditorCell_Label" resolveInfo="EditorCell_Label" />
                 </node>
               </node>
             </node>
@@ -366,9 +359,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1195647385888" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445670">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195647385891">
-                <link role="variableDeclaration" targetNodeId="1195647385880" resolveInfo="ecProperty" />
+                <link role="variableDeclaration" targetNodeId="3714404449448597994" resolveInfo="ecProperty" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332445671">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3714404449448598523">
                 <link role="baseMethodDeclaration" targetNodeId="25.~EditorCell_Label.getCaretPosition():int" resolveInfo="getCaretPosition" />
               </node>
             </node>
