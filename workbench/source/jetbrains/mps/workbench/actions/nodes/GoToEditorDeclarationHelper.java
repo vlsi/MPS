@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.nodes;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
@@ -79,7 +80,7 @@ public class GoToEditorDeclarationHelper {
     return language.getEditorModelDescriptor();
   }
 
-  public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
+  public static ConceptEditorDeclaration createEditorDeclaration(AbstractConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
     SModel editorModel = editorModelDescriptor.getSModel();
     ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration(ConceptEditorDeclaration.concept, editorModel, scope).getAdapter();
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
