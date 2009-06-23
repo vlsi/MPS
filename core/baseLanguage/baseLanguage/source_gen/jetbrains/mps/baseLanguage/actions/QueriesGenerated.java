@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.workbench.action.InternalFlag;
+import jetbrains.mps.workbench.InternalFlag;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -140,15 +140,15 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_1240657927808(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalModel());
+    return !(InternalFlag.isInternalMode());
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1240657991451(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalModel());
+    return !(InternalFlag.isInternalMode());
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1240658015500(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalModel());
+    return !(InternalFlag.isInternalMode());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {

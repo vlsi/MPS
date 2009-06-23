@@ -655,9 +655,9 @@
       <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1240665767493">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240665767494">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240665816573">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240665818435">
-              <link role="baseMethodDeclaration" targetNodeId="32.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
-              <link role="classConcept" targetNodeId="32.~InternalFlag" resolveInfo="InternalFlag" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="68924901662832911">
+              <link role="baseMethodDeclaration" targetNodeId="24.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+              <link role="classConcept" targetNodeId="24.~InternalFlag" resolveInfo="InternalFlag" />
             </node>
           </node>
         </node>

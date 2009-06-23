@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="67" />
+  <maxImportIndex value="68" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -68,6 +68,7 @@
   <import index="64" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="66" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
   <import index="67" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
+  <import index="68" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="sideTransforms" />
@@ -11241,9 +11242,9 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240658015501">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240658015502">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240658015503">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240658015504">
-                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
-                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="68924901662856509">
+                <link role="baseMethodDeclaration" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+                <link role="classConcept" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
               </node>
             </node>
           </node>
@@ -11259,9 +11260,9 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240657991452">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240657991453">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240657991454">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240657991455">
-                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
-                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="68924901662856508">
+                <link role="baseMethodDeclaration" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+                <link role="classConcept" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
               </node>
             </node>
           </node>
@@ -11280,9 +11281,9 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240657927809">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240657936466">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240657975768">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240657975769">
-                <link role="baseMethodDeclaration" targetNodeId="67.~InternalFlag.isInternalModel():boolean" resolveInfo="isInternalModel" />
-                <link role="classConcept" targetNodeId="67.~InternalFlag" resolveInfo="InternalFlag" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="68924901662856507">
+                <link role="baseMethodDeclaration" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+                <link role="classConcept" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
               </node>
             </node>
           </node>

@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.workbench.action.InternalFlag;
+import jetbrains.mps.workbench.InternalFlag;
 
 public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
 
@@ -683,7 +683,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition7595_2(SNode node, EditorContext editorContext, IScope scope) {
-    return InternalFlag.isInternalModel();
+    return InternalFlag.isInternalMode();
   }
 
 }

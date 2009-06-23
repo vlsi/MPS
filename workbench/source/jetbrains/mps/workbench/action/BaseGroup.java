@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.InternalFlag;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -83,7 +84,7 @@ public class BaseGroup extends DefaultActionGroup {
 
   public void update(final AnActionEvent e) {
     super.update(e);
-    if (myIsInternal && !InternalFlag.isInternalModel()) {
+    if (myIsInternal && !InternalFlag.isInternalMode()) {
       e.getPresentation().setEnabled(false);
       e.getPresentation().setVisible(false);
     } else {

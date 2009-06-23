@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.workbench.action.InternalFlag;
+import jetbrains.mps.workbench.InternalFlag;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -82,7 +82,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       }
     });
 
-    if (InternalFlag.isInternalModel()) {
+    if (InternalFlag.isInternalMode()) {
       myBootstrapScopeButton = new JRadioButton(new AbstractAction(BOOTSTRAP_SCOPE) {
         public void actionPerformed(ActionEvent e) {
           setCompletionFieldsState(false, false);
@@ -146,7 +146,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     row.add(myGlobalScopeButton, BorderLayout.WEST);
     myPanel.add(row);
 
-    if (InternalFlag.isInternalModel()) {
+    if (InternalFlag.isInternalMode()) {
       row = new JPanel();
       row.setLayout(new BorderLayout());
       row.add(myBootstrapScopeButton, BorderLayout.WEST);

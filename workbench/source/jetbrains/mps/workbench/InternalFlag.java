@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.action;
+package jetbrains.mps.workbench;
 
 public class InternalFlag {
 
-  public static boolean isInternalModel() {
+  public static boolean isInternalMode() {
     return "true".equals(System.getProperty("mps.internal"));
   }
 }
