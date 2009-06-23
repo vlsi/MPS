@@ -31,11 +31,10 @@ import javax.swing.SwingUtilities;
 import java.util.List;
 import java.util.ArrayList;
 
-//todo rename to RefactoringView
-public class NewRefactoringView extends BaseProjectTool implements INavigateableUsagesTool {
+public class RefactoringView extends BaseProjectTool implements INavigateableUsagesTool {
   private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
 
-  protected NewRefactoringView(Project project) {
+  protected RefactoringView(Project project) {
     super(project, "RefactoringView", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
@@ -67,7 +66,7 @@ public class NewRefactoringView extends BaseProjectTool implements INavigateable
     addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
-    refactoringViewItem.requestFocus();
+    refactoringViewItem.getOkButton().requestFocus();
   }
 
   void closeRefactoringView(final RefactoringViewItem refactoringViewItem) {

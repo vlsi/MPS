@@ -399,7 +399,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.refactoring.NewRefactoringView</implementation-class>
+            <implementation-class>jetbrains.mps.refactoring.RefactoringView</implementation-class>
             <skipForDummyProject/>
         </component>
 

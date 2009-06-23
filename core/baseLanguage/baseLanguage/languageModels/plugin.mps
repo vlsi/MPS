@@ -22377,13 +22377,13 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224076264773">
                 <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1224076467904">
-                  <link role="classifier" targetNodeId="84.~NewRefactoringView" resolveInfo="NewRefactoringView" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="68924901662995235">
+                  <link role="classifier" targetNodeId="84.~RefactoringView" resolveInfo="RefactoringView" />
                 </node>
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224076826889">
-              <link role="baseMethodDeclaration" targetNodeId="84.~NewRefactoringView.showRefactoringView(jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
+              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224077049303">
                 <link role="variableDeclaration" targetNodeId="1224077049262" resolveInfo="refactoringViewAction" />
               </node>

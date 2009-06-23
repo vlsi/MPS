@@ -18,14 +18,14 @@ package jetbrains.mps.refactoring;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder.ConstantHolder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
@@ -44,13 +44,13 @@ public class RefactoringViewItem {
   private JPanel myButtonsPanel;
   private JButton myDoRefactorButton;
   private JButton myCancelButton;
-  private NewRefactoringView myNewRefactoringView;
+  private RefactoringView myRefactoringView;
 
   public RefactoringViewItem(
     @NotNull RefactoringViewAction refactoringViewAction,
     SearchResults searchResults,
-    NewRefactoringView refactoringView) {
-    myNewRefactoringView = refactoringView;
+    RefactoringView refactoringView) {
+    myRefactoringView = refactoringView;
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
     if (mySearchResults == null) {
@@ -98,6 +98,10 @@ public class RefactoringViewItem {
     return myPanel;
   }
 
+  public JButton getOkButton(){
+    return myDoRefactorButton;
+  }
+
   public UsagesView getUsagesView() {
     return myUsagesView;
   }
@@ -127,12 +131,12 @@ public class RefactoringViewItem {
     myRefactoringViewAction.performAction(this);
   }
 
-  public NewRefactoringView getRefactoringView() {
-    return myNewRefactoringView;
+  public RefactoringView getRefactoringView() {
+    return myRefactoringView;
   }
 
   public void close() {
-    myNewRefactoringView.closeRefactoringView(this);
+    myRefactoringView.closeRefactoringView(this);
   }
 
   public void requestFocus() {

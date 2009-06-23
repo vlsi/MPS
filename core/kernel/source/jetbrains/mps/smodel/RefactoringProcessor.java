@@ -34,7 +34,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.LoggableRefactoringViewAction;
-import jetbrains.mps.refactoring.NewRefactoringView;
+import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -46,8 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.util.*;
-
-import smodelLanguage.samples.Model;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
@@ -99,7 +97,9 @@ public class RefactoringProcessor {
                   public void run() {
                     ModelAccess.instance().runReadAction(new Runnable() {
                       public void run() {
-                        refactoringContext.getCurrentOperationContext().getComponent(NewRefactoringView.class).showRefactoringView(new LoggableRefactoringViewAction(refactoringContext), refactoringContext.getUsages());
+                        RefactoringView refactorintView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
+                        LoggableRefactoringViewAction okAction = new LoggableRefactoringViewAction(refactoringContext);
+                        refactorintView.showRefactoringView(okAction, refactoringContext.getUsages());
                       }
                     });
                   }
