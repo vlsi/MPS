@@ -188,10 +188,6 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1240993661261(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1240993720607(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
   }
@@ -201,6 +197,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1241015690726(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_251121617073503091(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
   }
 
@@ -418,10 +418,6 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1240927270388(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
-  }
-
-  public static boolean ifMacro_Condition_1240931158726(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 

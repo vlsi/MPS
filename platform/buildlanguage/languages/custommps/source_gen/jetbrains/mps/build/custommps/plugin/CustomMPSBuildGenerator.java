@@ -5,17 +5,12 @@ package jetbrains.mps.build.custommps.plugin;
 import jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl;
 import com.intellij.openapi.project.Project;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import java.util.List;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Arrays;
 import jetbrains.mps.build.packaging.plugin.BuildGeneratorUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,22 +41,6 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
 
   public boolean isValid() {
     return super.isValid() && StringUtils.isNotEmpty(this.myPathToBuildTools);
-  }
-
-  public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
-    final SModelDescriptor descriptor = super.getSModelDescriptor(indicator);
-    final Language custommpsLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps");
-    ModelAccess.instance().runWriteAction(new Runnable() {
-
-      public void run() {
-        ModuleReference moduleReference = custommpsLanguage.getModuleReference();
-        Solution module = (Solution)descriptor.getModule();
-        SolutionDescriptor moduleDescriptor = module.getModuleDescriptor();
-        moduleDescriptor.getUsedLanguages().add(moduleReference);
-        module.setModuleDescriptor(moduleDescriptor, false);
-      }
-    });
-    return descriptor;
   }
 
   protected List<ModuleReference> getModuleReferencesToAdd() {

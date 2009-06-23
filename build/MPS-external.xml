@@ -57,8 +57,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
-    <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/help-build.fix.samples.classpath/MPSSamples" />
-    <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/help-build.fix.samples.classpath" />
+    <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/core/devkits" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
@@ -234,16 +233,9 @@
     <copy todir="${deploy.dir}/MPS/plugins">
       <fileset dir="${mps_home}/plugins" excludes="**/*.iml, **/*.iws" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/samples.zip.tmp/help-build.fix.samples.classpath/MPSSamples">
+    <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />
     </copy>
-    <antcall target="help-build.fix.samples.classpath" inheritall="true">
-      <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/MPS/samples.zip.tmp/help-build.fix.samples.classpath" />
-      <param name="output.dir" value="${deploy.dir}/MPS/samples.zip.tmp" />
-      <param name="basedir" value="${basedir}" />
-    </antcall>
-    <delete dir="${deploy.dir}/MPS/samples.zip.tmp/help-build.fix.samples.classpath" />
     <zip destfile="${deploy.dir}/MPS/samples.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS/samples.zip.tmp" excludes="**/*.iml, **/*.iws" />
     </zip>

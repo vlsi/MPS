@@ -1789,33 +1789,27 @@
           </node>
         </node>
         <node role="entry" type="jetbrains.mps.build.packaging.structure.Zip" id="1240917839810">
-          <node role="entry" type="jetbrains.mps.build.packaging.structure.Antcall" id="1240931245830">
-            <link role="project" targetNodeId="1233668931882" resolveInfo="help-build" />
-            <link role="targetDeclaration" targetNodeId="1240930717938" resolveInfo="fix.samples.classpath" />
-            <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="1240931245831" />
-            <node role="targetReference" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" id="1240931245832" />
-            <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1240917850289">
-              <property name="file" value="false" />
-              <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1240917850290">
-                <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1240917850291">
-                  <property name="name" value="mps_home" />
-                </node>
-                <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1240917850292">
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1240917850293">
-                    <property name="path" value="samples" />
-                  </node>
+          <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="251121617073503084">
+            <property name="file" value="false" />
+            <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="251121617073503085">
+              <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="251121617073503086">
+                <property name="name" value="mps_home" />
+              </node>
+              <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="251121617073503087">
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="251121617073503088">
+                  <property name="path" value="samples" />
                 </node>
               </node>
-              <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1240917850295">
-                <property name="name" value="MPSSamples" />
-                <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1240993661260">
-                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240993661261">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240993661262">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240993690060">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1240993690061">
-                          <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
-                          <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
-                        </node>
+            </node>
+            <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="251121617073503089">
+              <property name="name" value="MPSSamples" />
+              <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="251121617073503090">
+                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="251121617073503091">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="251121617073503092">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="251121617073503093">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="251121617073503094">
+                        <link role="classifier" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
+                        <link role="variableDeclaration" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
                       </node>
                     </node>
                   </node>
@@ -3556,83 +3550,6 @@
           <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1233749194392">
             <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1240930717938">
-      <property name="name" value="fix.samples.classpath" />
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240932416640">
-        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416641">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240932416642">
-            <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416643">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416644">
-            <property name="value" value="$${mps_home}/samples/dslbook_example" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240932416645">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240932416646">
-            <property name="value" value="$${language_descriptor}/../../../dslbook_example" />
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240930844846">
-        <link role="declaration" targetNodeId="21.1199644188188" resolveInfo="replace" />
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930870281">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188190" resolveInfo="dir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240930873435">
-            <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930921928">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188214" resolveInfo="token" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240930928097">
-            <property name="value" value="$${mps_home}/samples" />
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240930976730">
-          <link role="attributeDeclaration" targetNodeId="21.1199644188218" resolveInfo="value" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1240930980731">
-            <property name="value" value="$${language_descriptor}/../.." />
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240931016538">
-        <link role="declaration" targetNodeId="21.1199644186266" resolveInfo="copy" />
-        <node role="nested" type="jetbrains.mps.buildlanguage.structure.GenericCall" id="1240931062952">
-          <link role="declaration" targetNodeId="21.1199644187604" resolveInfo="fileset" />
-          <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240931065495">
-            <link role="attributeDeclaration" targetNodeId="21.1199644187633" resolveInfo="dir" />
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240931068157">
-              <link role="propertyDeclaration" targetNodeId="1233673101173" resolveInfo="input.dir" />
-            </node>
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1240931021759">
-          <link role="attributeDeclaration" targetNodeId="21.1199644186328" resolveInfo="todir" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1240931023237">
-            <link role="propertyDeclaration" targetNodeId="1233673111665" resolveInfo="output.dir" />
-          </node>
-        </node>
-      </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1240931158725">
-        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1240931158726">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240931158727">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240931179127">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240931185228">
-                <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1240931179128">
-                  <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
-                  <link role="baseMethodDeclaration" targetNodeId="4.1239995424995" resolveInfo="isInMPSBuild" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>
