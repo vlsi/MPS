@@ -45,6 +45,7 @@ import java.io.File;
 import java.util.*;
 
 import org.apache.log4j.*;
+import org.apache.log4j.varia.NullAppender;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
@@ -69,7 +70,7 @@ public class Generator {
   }
 
   public void generate() {
-    BasicConfigurator.configure();
+    BasicConfigurator.configure(new NullAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
 

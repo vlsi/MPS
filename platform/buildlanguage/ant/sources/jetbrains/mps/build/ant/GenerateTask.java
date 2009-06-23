@@ -47,7 +47,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     myWhatToGenerate.updateFailOnError(failOnError);
   }
 
-  public void setLogLevel(LogLevelAttrbute logLevel) {
+  public void setLogLevel(LogLevelAttribute logLevel) {
     myWhatToGenerate.updateLogLevel(logLevel.getLevel());
   }
 
@@ -194,12 +194,8 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     }
   }
 
-  public static class LogLevelAttrbute extends EnumeratedAttribute {
+  public static class LogLevelAttribute extends EnumeratedAttribute {
     private static final List<String> myLevels = new ArrayList<String>();
-
-    public LogLevelAttrbute(LogLevel level) {
-      setValue(getLevelText(level));
-    }
 
     static {
       for (LogLevel l : LogLevel.values()) {
