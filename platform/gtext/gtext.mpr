@@ -19,21 +19,24 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\runtime\jetbrains.mps.gtext.runtime.msd" />
-      <solutionPath path="${project}\tests\jetbrains.mps.gtext.tests.msd" />
+      <solutionPath path="${project}/runtime/jetbrains.mps.gtext.runtime.msd" />
+      <solutionPath path="${project}/tests/jetbrains.mps.gtext.tests.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\gtext.mpl" />
+      <languagePath path="${project}/gtext.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="gtext.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="Shalom">
     <subPane>
       <PATH>
@@ -46,6 +49,7 @@
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="123" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
