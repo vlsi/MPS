@@ -3334,14 +3334,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1239368960873">
-    <property name="name" value="MakeDefaultEditor" />
+    <property name="name" value="GenerateDefaultEditor" />
     <property name="isAvailableInChildNodes" value="true" />
     <link role="forConcept" targetNodeId="1.1071666914219" resolveInfo="ConceptEditorDeclaration" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1239368960874">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239368960875">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239369042712">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239369042713">
-            <property name="value" value="Make Default Editor" />
+            <property name="value" value="Generate Default Editor" />
           </node>
         </node>
       </node>
