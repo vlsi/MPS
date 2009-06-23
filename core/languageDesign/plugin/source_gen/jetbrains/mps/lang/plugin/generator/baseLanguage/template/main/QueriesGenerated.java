@@ -46,6 +46,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
 
@@ -1307,6 +1308,17 @@ public class QueriesGenerated {
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1217678861866(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "map_CreatePages");
+  }
+
+  public static void mappingScript_CodeBlock_466361829302878438(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for(SNode component : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"))) {
+      SNode newNode = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+      SNode typecastNode = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.CastExpression", null);
+      SLinkOperations.setTarget(newNode, "expression", typecastNode, true);
+      SLinkOperations.setTarget(typecastNode, "type", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(component)), true);
+      SNodeOperations.replaceWithAnother(component, newNode);
+      SLinkOperations.setTarget(typecastNode, "expression", component, true);
+    }
   }
 
 }
