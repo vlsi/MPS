@@ -65,13 +65,15 @@ class ModelDifferenceComponent extends JPanel {
     };
 
     myModelTreeActionGroup = new DefaultActionGroup();
-    myModelTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myModelTreeActionGroup, true);
-
     myChangesTreeActionGroup = new DefaultActionGroup();
-    myChangesTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myChangesTreeActionGroup, true);
 
     createToolBarAndActions(myModelTree, myModelTreeActionGroup, "Model");
     createToolBarAndActions(myChangesTree, myChangesTreeActionGroup, "Changes");
+
+    myModelTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myModelTreeActionGroup, true);
+    myChangesTreeToolBar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myChangesTreeActionGroup, true);
+    myModelTreeToolBar.setLayoutPolicy(ActionToolbar.AUTO_LAYOUT_POLICY);
+    myChangesTreeToolBar.setLayoutPolicy(ActionToolbar.AUTO_LAYOUT_POLICY);
 
     JPanel modelPanel = new JPanel(new BorderLayout());
     modelPanel.add(myModelTreeToolBar.getComponent(), BorderLayout.NORTH);
@@ -224,6 +226,7 @@ class ModelDifferenceComponent extends JPanel {
 
   public void addAction(AnAction action) {
     myModelTreeActionGroup.add(action);
+    myModelTreeToolBar.updateActionsImmediately();
   }
 
   private class ChangeNode extends MPSTreeNode {
