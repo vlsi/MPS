@@ -31,6 +31,7 @@ import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
 import jetbrains.mps.lang.behavior.structure.Behavior_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mpslite.behavior.Mpslite_Language;
 
@@ -218,7 +219,14 @@ public enum LanguageAspect {
   public SModelDescriptor createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
 
-    final SModelDescriptor model = l.createModel(getModuleUID(l), l.getSModelRoots().get(0));
+    SModelRoot modelRoot;
+    SModelDescriptor structureModel = l.getStructureModelDescriptor();
+    if (structureModel==null){
+      modelRoot = l.getSModelRoots().get(0);
+    }else{
+      modelRoot = structureModel.getSModelRoot();
+    }
+    final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
 
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
