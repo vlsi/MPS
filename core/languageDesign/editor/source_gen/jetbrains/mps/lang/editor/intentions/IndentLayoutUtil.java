@@ -42,6 +42,9 @@ public class IndentLayoutUtil {
     } else
     {
       ListSequence.fromList(result).addElement(node);
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
+        SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+      }
       if (isLast) {
         SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
         SPropertyOperations.set(classItem, "flag", "" + true);
@@ -52,7 +55,7 @@ public class IndentLayoutUtil {
   }
 
   public static void moveToIndentLayout(SNode node) {
-    if (SLinkOperations.getTarget(node, "cellLayout", true) == null) {
+    if (SLinkOperations.getTarget(node, "cellLayout", true) == null || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       List<SNode> children = new ArrayList<SNode>();
       for(SNode cellModel : ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true))) {
         ListSequence.fromList(children).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(cellModel, CellModel_Collection_Behavior.call_isVertical_1237380214915(node))));
