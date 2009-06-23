@@ -46,6 +46,8 @@ import java.util.*;
 
 import org.apache.log4j.*;
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.Project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
@@ -59,14 +61,16 @@ public class Generator {
   private final GenerateFilesAndClassesGenerationType myGenerationType = getGenerationType();
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final WhatToGenerate myWhatToGenerate;
+  private final ProjectComponent myProjectComponent;
 
-  public Generator(WhatToGenerate whatToGenerate) {
+  public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
     myWhatToGenerate = whatToGenerate;
+    myProjectComponent = component;
   }
 
   public void generate() {
     BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
+    Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
@@ -80,6 +84,21 @@ public class Generator {
     generateModels(project, collectModelsToGenerate());
 
     showStatistic();
+  }
+
+  private Level getLog4jLevel() {
+    switch (myWhatToGenerate.getLogLevel()) {
+      case Project.MSG_DEBUG:
+        return Level.DEBUG;
+      case Project.MSG_ERR:
+        return Level.ERROR;
+      case Project.MSG_INFO:
+        return Level.INFO;
+      case Project.MSG_WARN:
+        return Level.WARN;
+      default:
+        return null;
+    }
   }
 
   private void setMacro() {
@@ -127,7 +146,7 @@ public class Generator {
   private void collectFromProjects(Set<SModelDescriptor> modelDescriptors) {
     for (File projectFile : myWhatToGenerate.getMPSProjectFiles()) {
       final MPSProject project = TestMain.loadProject(projectFile);
-      myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Loaded project " + project));
+      info("Loaded project " + project);
 
       modelDescriptors.addAll(project.getProjectModels());
     }
@@ -143,7 +162,7 @@ public class Generator {
       });
 
       for (IModule module : modules) {
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Loaded module " + module));
+        info("Loaded module " + module);
         List<SModelDescriptor> models = module.getOwnModelDescriptors();
         modelDescriptors.addAll(models);
       }
@@ -171,7 +190,7 @@ public class Generator {
       SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
       if (model != null) {
         modelDescriptors.add(model);
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Found model " + model));
+        info("Found model " + model);
         continue;
       }
 
@@ -182,11 +201,11 @@ public class Generator {
             return ModelPersistence.readModel(ifile);
           }
         });
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Read model " + smodel));
+        info("Read model " + smodel);
         SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
         modelDescriptors.add(smodelDescriptor);
       } catch (ModelFileReadException e) {
-        myMessageHandler.handle(e);
+        log(e);
       }
     }
   }
@@ -206,47 +225,73 @@ public class Generator {
       myMessageHandler);
   }
 
+  private void log(String text, int level) {
+    if (level <= myWhatToGenerate.getLogLevel()) myProjectComponent.log(text, level);
+  }
+
+  public void info(String text) {
+    log(text, Project.MSG_INFO);
+  }
+
+  public void warning(String text) {
+    log(text, Project.MSG_WARN);
+  }
+
+  public void debug(String text) {
+    log(text, Project.MSG_DEBUG);
+  }
+
+  public void error(String text) {
+    log(text, Project.MSG_ERR);
+  }
+
+  public void log(Exception e) {
+    error(e.getMessage());
+  }
+
   public class MyMessageHandlerAppender implements ILoggingHandler {
 
     public void info(LogEntry e) {
-      myMessageHandler.handle(new Message(MessageKind.INFORMATION, e.getMessage()));
+      Generator.this.info(e.getMessage());
     }
 
     public void warning(LogEntry e) {
-      myMessageHandler.handle(new Message(MessageKind.WARNING, e.getMessage()));
+      Generator.this.warning(e.getMessage());
     }
 
     public void debug(LogEntry e) {
-      myMessageHandler.handle(new Message(MessageKind.INFORMATION, e.getMessage()));
+      Generator.this.debug(e.getMessage());
     }
 
     public void error(LogEntry e) {
-      myMessageHandler.handle(new Message(MessageKind.ERROR, e.getMessage()));
+      Generator.this.error(e.getMessage());
     }
 
     public void fatal(LogEntry e) {
-      myMessageHandler.handle(new Message(MessageKind.ERROR, e.getMessage()));
+      Generator.this.error(e.getMessage());
     }
   }
 
   /*package private*/ class MyMessageHandler implements IMessageHandler {
+
     private List<String> myErrors = new ArrayList<String>();
+
     private List<String> myWarnings = new ArrayList<String>();
 
     public void handle(Message msg) {
       switch (msg.getKind()) {
         case ERROR:
-          System.out.println("ERROR: " + msg.getText());
+          Generator.this.error(msg.getText());
           myErrors.add(msg.getText());
           break;
 
         case WARNING:
-          System.out.println("WARN:  " + msg.getText());
+          Generator.this.warning(msg.getText());
           myWarnings.add(msg.getText());
           break;
 
         case INFORMATION:
-          System.out.println("INFO:  " + msg.getText());
+          Generator.this.info(msg.getText());
           break;
 
       }
@@ -258,10 +303,6 @@ public class Generator {
 
     public List<String> getWarnings() {
       return myWarnings;
-    }
-
-    public void handle(ModelFileReadException e) {
-      this.handle(new Message(MessageKind.ERROR, e.getMessage()));
     }
   }
 

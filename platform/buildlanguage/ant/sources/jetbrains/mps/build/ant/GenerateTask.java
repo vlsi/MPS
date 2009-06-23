@@ -16,7 +16,9 @@
 package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.types.DirSet;
+import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.resources.FileResource;
 
 import java.io.File;
@@ -28,7 +30,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Constructor;
 
-public class Generate extends org.apache.tools.ant.Task {
+public class GenerateTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
   private final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
   private boolean myUsePropertiesAsMacro = false;
@@ -43,6 +45,10 @@ public class Generate extends org.apache.tools.ant.Task {
 
   public void setFailOnError(boolean failOnError) {
     myWhatToGenerate.updateFailOnError(failOnError);
+  }
+
+  public void setLogLevel(LogLevelAttrbute logLevel) {
+    myWhatToGenerate.updateLogLevel(logLevel.getLevel());
   }
 
   public void addConfiguredModels(DirSet modelsInner) {
@@ -61,11 +67,11 @@ public class Generate extends org.apache.tools.ant.Task {
     }
   }
 
-  public void addConfiguredProject(Project projectInner) {
+  public void addConfiguredProject(ProjectDataType projectInner) {
     myWhatToGenerate.addProjectFile(projectInner.getFile());
   }
 
-  public void addConfiguredLibrary(Library libraryInner) {
+  public void addConfiguredLibrary(LibraryDataType libraryInner) {
     myWhatToGenerate.addLibrary(libraryInner.getName(), libraryInner.getDir());
   }
 
@@ -135,8 +141,8 @@ public class Generate extends org.apache.tools.ant.Task {
       myWhatToGenerate.cloneTo(whatToGenerate);
 
       Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
-      Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass);
-      Object generator = constructor.newInstance(whatToGenerate);
+      Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
+      Object generator = constructor.newInstance(whatToGenerate, this);
 
       Method method = generatorClass.getMethod("generate");
       method.invoke(generator);
@@ -168,6 +174,49 @@ public class Generate extends org.apache.tools.ant.Task {
           result.add(f);
         }
       }
+    }
+  }
+
+  private static enum LogLevel {
+    ERROR(org.apache.tools.ant.Project.MSG_ERR),
+    WARNING(org.apache.tools.ant.Project.MSG_WARN),
+    INFO(org.apache.tools.ant.Project.MSG_INFO),
+    DEBUG(org.apache.tools.ant.Project.MSG_DEBUG);
+
+    private int myLevel;
+
+    private LogLevel(int level) {
+      myLevel = level;
+    }
+
+    public int getLevel() {
+      return myLevel;
+    }
+  }
+
+  public static class LogLevelAttrbute extends EnumeratedAttribute {
+    private static final List<String> myLevels = new ArrayList<String>();
+
+    public LogLevelAttrbute(LogLevel level) {
+      setValue(getLevelText(level));
+    }
+
+    static {
+      for (LogLevel l : LogLevel.values()) {
+        myLevels.add(getLevelText(l));
+      }
+    }
+
+    private static String getLevelText(LogLevel l) {
+      return l.name().toLowerCase();
+    }
+
+    public String[] getValues() {
+      return myLevels.toArray(new String[myLevels.size()]);
+    }
+
+    public int getLevel() {
+      return LogLevel.values()[myLevels.indexOf(getValue())].getLevel();
     }
   }
 

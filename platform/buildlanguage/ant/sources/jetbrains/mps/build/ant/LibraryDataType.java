@@ -19,7 +19,7 @@ import org.apache.tools.ant.types.DataType;
 
 import java.io.File;
 
-public class Library extends DataType {
+public class LibraryDataType extends DataType {
   private String myName;
   private File myDir;
 
