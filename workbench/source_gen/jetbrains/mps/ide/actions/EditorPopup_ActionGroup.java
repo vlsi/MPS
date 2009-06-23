@@ -36,7 +36,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GenerateCode_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.lang.generator.plugin.actions.GoToUsageInMappingConfigAction", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");
