@@ -44,7 +44,6 @@ public class EditorsProvider {
 
   public EditorsProvider(Project project) {
     myProject = project;
-    updateInformation();
     FileEditorManager manager = FileEditorManager.getInstance(project);
     manager.addFileEditorManagerListener(new FileEditorManagerListener() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
