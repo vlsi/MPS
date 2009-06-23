@@ -1940,7 +1940,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237386546176">
     <property name="package" value="CellModel" />
-    <property name="name" value="MakeIndentLayoutInCollection" />
+    <property name="name" value="UseIndentLayoutInCollection" />
     <link role="forConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237386546177">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386546178">
@@ -1948,7 +1948,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386674646">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237386698258">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237386698807">
-                <property name="value" value="Make Indent Layout" />
+                <property name="value" value="Use Indent Layout" />
               </node>
             </node>
           </node>
@@ -1956,7 +1956,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386680380">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237386702589">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237386703154">
-                  <property name="value" value="Make Horizontal Layout" />
+                  <property name="value" value="Use Horizontal Layout" />
                 </node>
               </node>
             </node>
@@ -2035,7 +2035,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1237386846745">
     <property name="package" value="CellModel" />
-    <property name="name" value="MakeIndentLayoutInRefNodeList" />
+    <property name="name" value="UseIndentLayoutInRefNodeList" />
     <link role="forConcept" targetNodeId="1.1073390211982" resolveInfo="CellModel_RefNodeList" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1237386846746">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386846747">
@@ -2043,7 +2043,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386846749">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237386846750">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237386846751">
-                <property name="value" value="Make Indent Layout" />
+                <property name="value" value="Use Indent Layout" />
               </node>
             </node>
           </node>
@@ -2051,7 +2051,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237386846758">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237386846759">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237386846760">
-                  <property name="value" value="Make Horizontal Layout" />
+                  <property name="value" value="Use Horizontal Layout" />
                 </node>
               </node>
             </node>
