@@ -15,6 +15,7 @@
   -->
 <project name="TestGenerateTask">
     <property name="module.home" value="${ant.file}/../../../../../.."/>
+    <property name="test.projects.home" value="${module.home}/testProjects"/>
 
     <path id="tasks.class.path">
         <pathelement path="${module.home}/classes"/>
@@ -46,11 +47,19 @@
     </target>
 
     <target name="testFailOnGenerationError">
-        <unzip src="${module.home}/testProjects/failedProject.zip" dest="${module.home}/testProjects"/>
-        <generate mpshome="${module.home}/../../.." failonerror="true">
-            <project file="${module.home}/testProjects/failedProject/FailedProject.mpr"/>
+        <unzip src="${test.projects.home}/failedProject.zip" dest="${test.projects.home}"/>
+        <generate mpshome="${module.home}/../../.." failonerror="true" loglevel="info">
+            <project file="${test.projects.home}/failedProject/FailedProject.mpr"/>
         </generate>
-        <delete dir="${module.home}/testProjects/failedProject"/>
+        <delete dir="${test.projects.home}/failedProject"/>
+    </target>
+
+    <target name="testSuccess">
+        <unzip src="${test.projects.home}/successfulProject.zip" dest="${test.projects.home}"/>
+        <generate mpshome="${module.home}/../../.." failonerror="true" loglevel="debug">
+            <project file="${test.projects.home}/SuccessfulProject/SuccessfulProject.mpr"/>
+        </generate>
+        <delete dir="${test.projects.home}/SuccessfulProject"/>
     </target>
 
     <target name="testModelsWithBuildException">

@@ -63,6 +63,9 @@ public class Generator {
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final WhatToGenerate myWhatToGenerate;
   private final ProjectComponent myProjectComponent;
+  private final List<String> myErrors = new ArrayList<String>();
+  private final List<String> myWarnings = new ArrayList<String>();
+
 
   public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
     myWhatToGenerate = whatToGenerate;
@@ -89,14 +92,16 @@ public class Generator {
 
   private Level getLog4jLevel() {
     switch (myWhatToGenerate.getLogLevel()) {
-      case Project.MSG_DEBUG:
-        return Level.DEBUG;
       case Project.MSG_ERR:
         return Level.ERROR;
-      case Project.MSG_INFO:
-        return Level.INFO;
       case Project.MSG_WARN:
         return Level.WARN;
+      case Project.MSG_INFO:
+        return Level.WARN; // still warn, info only for messages from this task
+      case Project.MSG_VERBOSE:
+        return Level.INFO; // now we have info
+      case Project.MSG_DEBUG:
+        return Level.DEBUG;
       default:
         return null;
     }
@@ -152,7 +157,7 @@ public class Generator {
       List<SModelDescriptor> models = project.getProjectModels();
       for (SModelDescriptor modelDescriptor : models) {
         if (!SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) {
-          modelDescriptors.add(modelDescriptor);          
+          modelDescriptors.add(modelDescriptor);
         }
       }
     }
@@ -217,8 +222,8 @@ public class Generator {
   }
 
   private void showStatistic() {
-    if (!myMessageHandler.getErrors().isEmpty() && myWhatToGenerate.getFailOnError()) {
-      throw new BuildException(myMessageHandler.getErrors().size() + " errors during generation.");
+    if (!myErrors.isEmpty() && myWhatToGenerate.getFailOnError()) {
+      throw new BuildException(myErrors.size() + " errors during generation.");
     }
   }
 
@@ -245,8 +250,13 @@ public class Generator {
     log(text, Project.MSG_INFO);
   }
 
+  public void verbose(String text) {
+    log(text, Project.MSG_VERBOSE);
+  }
+
   public void warning(String text) {
     log(text, Project.MSG_WARN);
+    myWarnings.add(text);
   }
 
   public void debug(String text) {
@@ -255,6 +265,7 @@ public class Generator {
 
   public void error(String text) {
     log(text, Project.MSG_ERR);
+    myErrors.add(text);
   }
 
   public void log(Exception e) {
@@ -264,7 +275,7 @@ public class Generator {
   public class MyMessageHandlerAppender implements ILoggingHandler {
 
     public void info(LogEntry e) {
-      Generator.this.info(e.getMessage());
+      Generator.this.verbose(e.getMessage());
     }
 
     public void warning(LogEntry e) {
@@ -286,35 +297,22 @@ public class Generator {
 
   /*package private*/ class MyMessageHandler implements IMessageHandler {
 
-    private List<String> myErrors = new ArrayList<String>();
-
-    private List<String> myWarnings = new ArrayList<String>();
 
     public void handle(Message msg) {
       switch (msg.getKind()) {
         case ERROR:
           Generator.this.error(msg.getText());
-          myErrors.add(msg.getText());
           break;
 
         case WARNING:
           Generator.this.warning(msg.getText());
-          myWarnings.add(msg.getText());
           break;
 
         case INFORMATION:
-          Generator.this.info(msg.getText());
+          Generator.this.verbose(msg.getText());
           break;
 
       }
-    }
-
-    public List<String> getErrors() {
-      return myErrors;
-    }
-
-    public List<String> getWarnings() {
-      return myWarnings;
     }
   }
 

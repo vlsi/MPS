@@ -31,7 +31,7 @@ public class WhatToGenerate {
   private boolean myFailOnError = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
-  private int myLogLevel = org.apache.tools.ant.Project.MSG_WARN;
+  private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
 
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
