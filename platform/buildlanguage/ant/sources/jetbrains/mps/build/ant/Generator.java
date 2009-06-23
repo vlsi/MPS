@@ -149,7 +149,12 @@ public class Generator {
       final MPSProject project = TestMain.loadProject(projectFile);
       info("Loaded project " + project);
 
-      modelDescriptors.addAll(project.getProjectModels());
+      List<SModelDescriptor> models = project.getProjectModels();
+      for (SModelDescriptor modelDescriptor : models) {
+        if (!SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) {
+          modelDescriptors.add(modelDescriptor);          
+        }
+      }
     }
   }
 
@@ -218,6 +223,12 @@ public class Generator {
   }
 
   private void generateModels(MPSProject project, List<SModelDescriptor> models) {
+    StringBuffer s = new StringBuffer("Generating models:");
+    for (SModelDescriptor m : models) {
+      s.append("\n    ");
+      s.append(m);
+    }
+    info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
     gm.generateModels(models,
       new ProjectOperationContext(project),

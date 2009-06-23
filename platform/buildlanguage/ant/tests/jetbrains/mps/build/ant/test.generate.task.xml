@@ -28,7 +28,7 @@
     </target>
 
     <target name="testNormalWork">
-        <generate mpshome="${module.home}/../../.." loglevel="debug">
+        <generate mpshome="${module.home}/../../.." loglevel="info">
             <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
         </generate>
     </target>
