@@ -62,14 +62,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
 
-  private EditorsProvider myEditorsProvider;
-
   public ProjectPluginManager(Project project) {
     myProject = project;
   }
 
   public void projectOpened() {
-    myEditorsProvider = new EditorsProvider(myProject);
+
   }
 
   public void projectClosed() {
@@ -213,7 +211,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IEditor editor : myEditorsProvider.getAllEditors()) {
+        EditorsProvider editorsProvider = new EditorsProvider(myProject);
+        for (IEditor editor : editorsProvider.getAllEditors()) {
           if (editor instanceof MPSFileNodeEditor) {
             ((MPSFileNodeEditor) editor).recreateEditor();
           }
