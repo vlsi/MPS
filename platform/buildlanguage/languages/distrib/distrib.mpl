@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false">
+<language namespace="jetbrains.mps.build.distrib" uuid="02824ec0-c6a4-4517-a484-12d85172bbaa" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.build.distrib" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.build.distrib" />
