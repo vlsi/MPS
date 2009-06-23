@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.secretCompartmentLanguage" uuid="6986543d-8218-4ebf-a2e9-565e5049c1ce" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
   </models>
   <accessoryModels />
   <generators>
@@ -22,10 +22,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/samples/dslbook_example/classes" include="false" />
+    <entry path="${samples_home}/dslbook_example/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${mps_home}/samples/dslbook_example/classes" />
+    <entry path="${samples_home}/dslbook_example/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />

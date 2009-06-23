@@ -34,6 +34,7 @@ public abstract class Macros {
 
   public static final String MPS_HOME_NAKED = "mps_home";
   public static final String MPS_HOME = "${" + MPS_HOME_NAKED + "}";
+  public static final String SAMPLES_HOME = "${samples_home}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
@@ -98,35 +99,43 @@ public abstract class Macros {
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
-    IFile result = null;
-    if (path.startsWith(MPS_HOME)) {
-      String relativePath = removePrefix(path, MPS_HOME);
-      result = FileSystem.getFile(PathManager.getHomePath()).child(relativePath);
-    } else {
-      Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
-      for (String macro : macroNames) {
-        String prefix = "${" + macro + "}";
-        if (path.startsWith(prefix)) {
-          String relativePath = removePrefix(path, prefix);
-          result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
-          break;
-        }
-      }
-
+    IFile result = tryToExpandWith(path, SAMPLES_HOME, PathManager.getSamplesPath());
+    if (result == null) {
+      result = tryToExpandWith(path, MPS_HOME, PathManager.getHomePath());
       if (result == null) {
-        if (path.startsWith("${")) {
-          int end = path.indexOf("}");
-          if (end != -1) {
-            LOG.error("Wasn't able to expand path " + path);
-            LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
+        Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+        for (String macro : macroNames) {
+          String prefix = "${" + macro + "}";
+          if (path.startsWith(prefix)) {
+            String relativePath = removePrefix(path, prefix);
+            result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
+            break;
           }
-          return path;
         }
 
-        result = FileSystem.getFile(path);
+        if (result == null) {
+          if (path.startsWith("${")) {
+            int end = path.indexOf("}");
+            if (end != -1) {
+              LOG.error("Wasn't able to expand path " + path);
+              LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
+            }
+            return path;
+          }
+
+          result = FileSystem.getFile(path);
+        }
       }
     }
     return result.getCanonicalPath();
+  }
+
+  private IFile tryToExpandWith(String path, String macroName, String macroValue) {
+    if (path.startsWith(macroName)) {
+      String relativePath = removePrefix(path, macroName);
+      return FileSystem.getFile(macroValue).child(relativePath);
+    }
+    return null;
   }
 
   public final String shrinkPath(String path, File anchor) {
@@ -141,7 +150,10 @@ public abstract class Macros {
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
-    if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
+    if (pathStartsWith(absolutePath, PathManager.getSamplesPath())) {
+      String relationalPath = shrink(absolutePath, PathManager.getSamplesPath());
+      fileName = SAMPLES_HOME + relationalPath;
+    } else if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = MPS_HOME + relationalPath;
     } else {

@@ -11,7 +11,7 @@
     <projectLanguages>
       <languagePath path="${project}/languages/demoLang1/demoLang1.mpl" />
       <languagePath path="${project}/languages/demoLang2/demoLang2.mpl" />
-      <languagePath path="${mps_home}/samples/sampleXML/languages/sampleXML/sampleXML.mpl" />
+      <languagePath path="${samples_home}/sampleXML/languages/sampleXML/sampleXML.mpl" />
       <languagePath path="${project}/languages/demoLang3/demoLang3.mpl" folder="" />
       <languagePath path="${project}/languages/demoLang4/demoLang4.mpl" folder="" />
     </projectLanguages>
@@ -21,8 +21,13 @@
   <component name="ProjectDetails">
     <option name="projectName" value="generator_demo" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

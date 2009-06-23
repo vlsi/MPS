@@ -22,7 +22,7 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
-      <languagePath path="${mps_home}/samples/formulaLanguage/language/formulaLanguage.mpl" />
+      <languagePath path="${samples_home}/formulaLanguage/language/formulaLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />

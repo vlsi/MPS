@@ -22,11 +22,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/samples/agreement/classes" include="false" />
+    <entry path="${samples_home}/agreement/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${mps_home}/samples/agreement/classes" />
-    <entry path="${mps_home}/samples/formulaLanguage/classes" />
+    <entry path="${samples_home}/agreement/classes" />
+    <entry path="${samples_home}/formulaLanguage/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>

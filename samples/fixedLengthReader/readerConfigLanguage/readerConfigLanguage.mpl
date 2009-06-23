@@ -30,10 +30,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/samples/fixedLengthReader/classes" include="false" />
+    <entry path="${samples_home}/fixedLengthReader/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${mps_home}/samples/fixedLengthReader/classes" />
+    <entry path="${samples_home}/fixedLengthReader/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />
