@@ -46,9 +46,11 @@
     </target>
 
     <target name="testFailOnGenerationError">
+        <unzip src="${module.home}/testProjects/failedProject.zip" dest="${module.home}/testProjects"/>
         <generate mpshome="${module.home}/../../.." failonerror="true">
             <project file="${module.home}/testProjects/failedProject/FailedProject.mpr"/>
         </generate>
+        <delete dir="${module.home}/testProjects/failedProject"/>
     </target>
 
     <target name="testModelsWithBuildException">
