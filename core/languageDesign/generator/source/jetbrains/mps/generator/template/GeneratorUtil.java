@@ -181,17 +181,23 @@ public class GeneratorUtil {
    */
   public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
-    long startTime = System.currentTimeMillis();
     try {
       Object result = QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
         new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, generator),
         query.getModel());
+
+      List<SNode> resultList;
       if (result instanceof List) {
-        return (List<SNode>) result;
+        resultList = (List<SNode>) result;
+      } else {
+        resultList = CollectionUtil.asList((Iterable<SNode>) result);
       }
-      return CollectionUtil.asList((Iterable<SNode>) result);
+
+      checkForNulls(resultList);
+
+      return resultList;
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to empty list");
       return new ArrayList<SNode>();
@@ -199,6 +205,14 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
       return new LinkedList<SNode>();
+    }
+  }
+
+  private static void checkForNulls(List<SNode> resultList) {
+    for (SNode node : resultList) {
+      if (node == null) {
+        throw new RuntimeException("null are not allowed in lists returned by sourceNodeQueries");
+      }
     }
   }
 
