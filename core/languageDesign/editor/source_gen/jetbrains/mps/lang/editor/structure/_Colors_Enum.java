@@ -23,8 +23,7 @@ public enum _Colors_Enum {
   gray("gray", "gray"),
   lightGray("lightGray", "lightGray"),
   darkGray("darkGray", "darkGray"),
-  white("white", "WHITE"),
-  query("query", "query");
+  white("white", "WHITE");
 
   private String myName;
   private String myValue;
@@ -66,7 +65,6 @@ public enum _Colors_Enum {
     ListSequence.fromList(list).addElement(_Colors_Enum.lightGray);
     ListSequence.fromList(list).addElement(_Colors_Enum.darkGray);
     ListSequence.fromList(list).addElement(_Colors_Enum.white);
-    ListSequence.fromList(list).addElement(_Colors_Enum.query);
     return list;
   }
 
@@ -128,9 +126,6 @@ public enum _Colors_Enum {
     }
     if (value.equals(_Colors_Enum.white.getValueAsString())) {
       return _Colors_Enum.white;
-    }
-    if (value.equals(_Colors_Enum.query.getValueAsString())) {
-      return _Colors_Enum.query;
     }
     return _Colors_Enum.getDefault();
   }

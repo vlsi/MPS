@@ -1155,10 +1155,6 @@
       <property name="externalValue" value="white" />
       <property name="internalValue" value="WHITE" />
     </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1139246571096">
-      <property name="externalValue" value="query" />
-      <property name="internalValue" value="query" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1088013125922">
     <property name="name" value="CellModel_RefCell" />
