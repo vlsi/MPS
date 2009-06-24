@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.event.SModelEvent;
 
 import java.util.*;
 
+import com.intellij.openapi.command.CommandProcessor;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -61,9 +63,13 @@ public class AutoResolver extends EditorCheckerAdapter {
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            for (ResolveResult resolveResult : resolveResultArrayList) {
-              resolveResult.setTarget();
-            }
+            CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
+              public void run() {
+                for (ResolveResult resolveResult : resolveResultArrayList) {
+                  resolveResult.setTarget();
+                }
+              }
+            });
           }
         });
       }

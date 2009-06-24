@@ -33,6 +33,8 @@ import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 import java.util.*;
 
+import com.intellij.openapi.command.CommandProcessor;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -88,7 +90,11 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                 public void run() {
                   ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                     public void run() {
-                      intention.execute(node);
+                      CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
+                        public void run() {
+                          intention.execute(node);
+                        }
+                      });
                     }
                   });
                 }
