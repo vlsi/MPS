@@ -52,6 +52,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object CHECKERS_LOCK = new Object();
 
   private static final Object UPDATE_EDITOR_LOCK = new Object();
+  private static final Object ADD_EDITORS_LOCK = new Object();
 
   private boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
@@ -65,10 +66,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
 
+  private List<IEditor> myAdditionalEditors = new ArrayList<IEditor>();
+
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onReload() {
       myCheckedOnceEditors.clear();
       myCheckedOnceInspectors.clear();
+      clearAdditionalEditors();
     }
   };
   private SModelCommandListener myCommandListener = new SModelCommandListener() {
@@ -158,6 +162,24 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
+  public void addAdditionalEditor(IEditor additionalEditor) {
+    synchronized (ADD_EDITORS_LOCK) {
+      myAdditionalEditors.add(additionalEditor);
+    }
+  }
+
+  public void removeAdditionalEditor(IEditor additionalEditor) {
+    synchronized (ADD_EDITORS_LOCK) {
+      myAdditionalEditors.remove(additionalEditor);
+    }
+  }
+
+  public void clearAdditionalEditors() {
+    synchronized (ADD_EDITORS_LOCK) {
+      myAdditionalEditors.clear();
+    }
+  }
+
   public void initComponent() {
 
 
@@ -241,7 +263,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   protected List<IEditor> getAllEditors() {
-    return myEditorsProvider.getAllEditors();
+    synchronized (ADD_EDITORS_LOCK) {
+      List<IEditor> list = myEditorsProvider.getAllEditors();
+      if (!myAdditionalEditors.isEmpty()) {
+        list.addAll(myAdditionalEditors);
+      }
+      return list;
+    }
   }
 
   protected IEditor getCurrentEditor() {

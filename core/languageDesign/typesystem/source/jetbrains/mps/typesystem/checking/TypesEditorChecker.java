@@ -76,7 +76,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
         MessageStatus status = errorNode.o2.getMessageStatus();
         String errorString = errorNode.o2.reportError();
-        HighlighterMessage message = createHighlighterMessage(errorNode.o1, "Typesystem " + status.getPresentation() + ": " + errorString, errorNode.o2);
+        HighlighterMessage message = createHighlighterMessage(errorNode.o1, "Semantic " + status.getPresentation() + ": " + errorString, errorNode.o2);
         IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
 
         if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
