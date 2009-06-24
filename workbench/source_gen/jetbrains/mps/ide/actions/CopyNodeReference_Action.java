@@ -73,7 +73,7 @@ public class CopyNodeReference_Action extends GeneratedAction {
       for(SNode node : ListSequence.fromList(CopyNodeReference_Action.this.nodes)) {
         builder.append(NameUtil.nodeFQName(node)).append("\n");
       }
-      builder.deleteCharAt(builder.length());
+      builder.deleteCharAt(builder.length() - 1);
       CopyPasteUtil.copyTextToClipboard(builder.toString());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

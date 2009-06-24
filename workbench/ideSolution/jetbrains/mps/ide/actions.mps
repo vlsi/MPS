@@ -12584,12 +12584,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684786">
               <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.deleteCharAt(int):java.lang.StringBuilder" resolveInfo="deleteCharAt" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684788">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684787">
-                  <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="6894563122891831427">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6894563122891912605">
+                  <property name="value" value="1" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684792">
-                  <link role="baseMethodDeclaration" targetNodeId="73.~AbstractStringBuilder.length():int" resolveInfo="length" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5033107305426684788">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5033107305426684787">
+                    <link role="variableDeclaration" targetNodeId="5033107305426684728" resolveInfo="builder" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426684792">
+                    <link role="baseMethodDeclaration" targetNodeId="73.~AbstractStringBuilder.length():int" resolveInfo="length" />
+                  </node>
                 </node>
               </node>
             </node>
