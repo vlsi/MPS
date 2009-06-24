@@ -121,48 +121,6 @@
     <property name="title" value="remove enum item &quot;query&quot;" />
     <property name="migrationFromBuild" value="1020" />
     <property name="category" value="editor language" />
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1221476909752">
-      <property name="description" value="color query" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1186403694788" resolveInfo="ColorStyleClassItem" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1221476909753">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221476909754">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221477003134">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221477008437">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221477004464">
-                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1221477003135" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1221477007420">
-                  <link role="property" targetNodeId="1.1186403713874" resolveInfo="color" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1221477009643">
-                <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1221477015192">
-                  <link role="enumMember" targetNodeId="1.1083952545110" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1221476957602">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221476957603">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221476987967">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221476993176">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221476988266">
-                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1221476987968" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1221476992097">
-                  <link role="property" targetNodeId="1.1186403713874" resolveInfo="color" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1221476995101">
-                <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1221476995102">
-                  <link role="enumMember" targetNodeId="1.1139246571096" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1221476959651">
       <property name="description" value="font style query" />
       <link role="affectedInstanceConcept" targetNodeId="1.1186403751766" resolveInfo="FontStyleStyleClassItem" />

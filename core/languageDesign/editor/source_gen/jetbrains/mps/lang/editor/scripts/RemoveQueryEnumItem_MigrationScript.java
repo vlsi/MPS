@@ -15,32 +15,6 @@ public class RemoveQueryEnumItem_MigrationScript extends BaseMigrationScript {
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
 
       public String getName() {
-        return "color query";
-      }
-
-      public String getAdditionalInfo() {
-        return "color query";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.editor.structure.ColorStyleClassItem";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SPropertyOperations.hasValue(node, "color", "query", null);
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, "color", null);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
-      public String getName() {
         return "font style query";
       }
 

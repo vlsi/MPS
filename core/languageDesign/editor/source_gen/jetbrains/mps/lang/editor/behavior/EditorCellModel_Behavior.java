@@ -70,7 +70,7 @@ public class EditorCellModel_Behavior {
     if ((firstItem == null)) {
       return null;
     }
-    if (SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
+    if (SPropertyOperations.getString_def(firstItem, "color", null) == null) {
       if ((SLinkOperations.getTarget(firstItem, "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(firstItem, "query", true)))) {
         try {
           return new Color(Integer.parseInt(IQueryFunction_Color_Behavior.call_getRGBValue_1225468086082(SLinkOperations.getTarget(firstItem, "query", true)), 16));
