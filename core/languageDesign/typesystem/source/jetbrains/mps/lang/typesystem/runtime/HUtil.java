@@ -53,8 +53,10 @@ public class HUtil {
        // so it should not copy attributes, for instance generator macros of a certain type
        SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false); 
 
-       if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
-         typeCheckingContext.registerTypeVariable(copy);
+       if (typeCheckingContext != null) {
+         if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
+           typeCheckingContext.registerTypeVariable(copy);
+         }
        }
        return copy;
      } else {
