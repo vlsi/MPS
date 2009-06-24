@@ -2250,33 +2250,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223307169003">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223307169004">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223307169005">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223307169006">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1223307169007">
-                      <link role="concept" targetNodeId="1.1172420572800" resolveInfo="SConceptType" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223307169008">
-                        <link role="variableDeclaration" targetNodeId="1223307168984" resolveInfo="type" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223307169009">
-                      <link role="link" targetNodeId="1.1180481110358" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223307169010">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223307169011">
-                  <link role="variableDeclaration" targetNodeId="1223307168984" resolveInfo="type" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1223307169012">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1223307169013">
-                    <link role="conceptDeclaration" targetNodeId="1.1172420572800" resolveInfo="SConceptType" />
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223307169014">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223307180620">
