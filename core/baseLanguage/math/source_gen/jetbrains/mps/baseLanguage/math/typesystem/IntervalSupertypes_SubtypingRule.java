@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.math.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -13,8 +14,8 @@ public class IntervalSupertypes_SubtypingRule extends SubtypingRule_Runtime impl
   public IntervalSupertypes_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode intervalType) {
-    return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(intervalType, "elementType", true));
+  public SNode getSubOrSuperType(SNode intervalType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(intervalType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

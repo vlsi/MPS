@@ -67,7 +67,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      if (this._5_output != null) {
+                      if (_5_output != null) {
                         this.__CP__ = 7;
                         break;
                       }
@@ -82,7 +82,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 9;
-                      this.yield(this._5_output);
+                      this.yield(_5_output);
                       return true;
                     case 2:
                       this._5_output = genctx.getOutputNodeByInputNodeAndMappingLabel(it, "generatedClass");

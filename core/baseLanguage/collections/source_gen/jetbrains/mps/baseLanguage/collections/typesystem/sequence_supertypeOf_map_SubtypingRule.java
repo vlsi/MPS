@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -13,9 +14,9 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
   public sequence_supertypeOf_map_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode mapType) {
-    SNode mappingType = new _Quotations.QuotationClass_182().createNode(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
-    return new _Quotations.QuotationClass_183().createNode(mappingType);
+  public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext) {
+    SNode mappingType = new _Quotations.QuotationClass_182().createNode(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_183().createNode(mappingType, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

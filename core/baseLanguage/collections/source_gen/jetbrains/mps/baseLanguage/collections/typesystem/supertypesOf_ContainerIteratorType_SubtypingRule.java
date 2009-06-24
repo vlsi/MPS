@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -13,8 +14,8 @@ public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingR
   public supertypesOf_ContainerIteratorType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode cit) {
-    return new _Quotations.QuotationClass_149().createNode(SLinkOperations.getTarget(cit, "elementType", true));
+  public SNode getSubOrSuperType(SNode cit, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_149().createNode(SLinkOperations.getTarget(cit, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

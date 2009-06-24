@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -19,7 +20,7 @@ public class interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRu
   public interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode classifierType) {
+  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     if (false && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface") && TupleIntefaceUtils.isTupleInterface(SNodeOperations.cast(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SNode tupleType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.InterfaceTupleType", null);

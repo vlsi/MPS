@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -13,8 +14,8 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode node) {
-    return new _Quotations.QuotationClass_37().createNode(this.myMatchingPattern.PatternVar0);
+  public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_37().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

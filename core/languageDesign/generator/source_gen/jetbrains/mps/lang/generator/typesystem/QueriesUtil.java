@@ -122,7 +122,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      if (this._5_TF != null) {
+                      if (_5_TF != null) {
                         this.__CP__ = 7;
                         break;
                       }
@@ -137,7 +137,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 9;
-                      this.yield(this._5_TF);
+                      this.yield(_5_TF);
                       return true;
                     case 2:
                       this._5_TF = SLinkOperations.getTarget(((SNode)it), AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);

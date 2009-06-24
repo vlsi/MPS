@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +18,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
   public extended_interfaces_supertypesOf_namedTupleType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode namedTupleType) {
+  public List<SNode> getSubOrSuperTypes(SNode namedTupleType, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode ct : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleType, "classifier", false), "extends", true))) {
       List<SNode> paramTypes = new ArrayList<SNode>();
@@ -29,7 +30,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
           ListSequence.fromList(paramTypes).addElement(pt);
         }
       }
-      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_6().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false)));
+      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_6().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
     }
     return result;
   }

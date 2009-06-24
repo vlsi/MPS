@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
@@ -13,8 +14,8 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode sortedMap) {
-    return new _Quotations.QuotationClass_166().createNode(this.myMatchingPattern.PatternVar10, this.myMatchingPattern.PatternVar9);
+  public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_166().createNode(this.myMatchingPattern.PatternVar10, this.myMatchingPattern.PatternVar9, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
@@ -19,7 +20,7 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
   public indexedTupleType_supertypeOf_namedTupleType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode ntt) {
+  public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext) {
     final List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
     return new _Quotations.QuotationClass_5().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector <SNode, SNode>() {
@@ -45,7 +46,7 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
         }
         return SLinkOperations.getTarget(tmp, "componentType", true);
       }
-    }).toListSequence());
+    }).toListSequence(), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

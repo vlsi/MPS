@@ -169,7 +169,7 @@ __switch__:
                       return true;
                     case 14:
                       this.__CP__ = 12;
-                      this.yield(this._11_yieldStmt);
+                      this.yield(_11_yieldStmt);
                       return true;
                     case 2:
                       this.__CP__ = 4;

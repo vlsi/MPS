@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -16,14 +17,14 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
   public supertypesOf_ISequence_class_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode ct) {
+  public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    if (SLinkOperations.getTarget(new _Quotations.QuotationClass_73().createNode(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
+    if (SLinkOperations.getTarget(new _Quotations.QuotationClass_73().createNode(typeCheckingContext), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
       res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
       if (ListSequence.fromList(ptypes).count() > 0) {
         SNode elType = ListSequence.fromList(ptypes).getElement(0);
-        ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_72().createNode(elType));
+        ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_72().createNode(elType, typeCheckingContext));
       }
     }
     return res;
