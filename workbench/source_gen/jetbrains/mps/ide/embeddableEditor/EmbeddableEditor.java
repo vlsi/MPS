@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -27,6 +28,7 @@ public class EmbeddableEditor {
   private SModelDescriptor myModel;
   private ModelOwner myOwner;
   private SNode myNode;
+  private Highlighter myHighlighter;
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
     this.myNode = node;
@@ -42,6 +44,8 @@ public class EmbeddableEditor {
     this.myFileNodeEditor = new MPSFileNodeEditor(context, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
     this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
     this.myContext = context;
+    this.myHighlighter = this.myContext.getComponent(Highlighter.class);
+    this.myHighlighter.addAdditionalEditor(this.myFileNodeEditor.getNodeEditor());
   }
 
   public JComponent getComponenet() {
@@ -83,6 +87,7 @@ public class EmbeddableEditor {
 
   public void disposeEditor() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this.myOwner);
+    this.myHighlighter.removeAdditionalEditor(this.myFileNodeEditor.getNodeEditor());
     this.myFileNodeEditor.dispose();
   }
 
