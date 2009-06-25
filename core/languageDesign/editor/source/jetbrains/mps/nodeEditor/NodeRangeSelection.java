@@ -231,7 +231,14 @@ public class NodeRangeSelection implements KeyboardHandler {
 
         deactivate();
       }
-      // eat it anyway
+      if (keyEvent.getKeyCode() == KeyEvent.VK_CONTROL || keyEvent.getKeyCode() == KeyEvent.VK_SHIFT) {
+        return false;
+      }
+
+      SNode nodeToSelect = myFirstNode;
+      deactivate();
+      myEditorComponent.selectNode(nodeToSelect);
+      myEditorComponent.peekKeyboardHandler().processKeyPressed(editorContext, keyEvent);
       return false;
     }
 
