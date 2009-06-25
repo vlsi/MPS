@@ -39,6 +39,8 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 public enum LanguageAspect {
   STRUCTURE("structure") {
     public ModuleReference getMainLanguage() {
@@ -47,6 +49,10 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.STRUCTURE_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Structure";
     }
   },
 
@@ -58,6 +64,10 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.EDITOR_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Editor";
+    }
   },
 
   ACTIONS("actions") {
@@ -67,6 +77,10 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.ACTIONS_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Editor+Actions";
     }
   },
 
@@ -78,6 +92,10 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.CONSTRAINTS_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Constraints";
+    }
   },
 
   BEHAVIOR("behavior") {
@@ -87,6 +105,10 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.BEHAVIOR_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Behavior";
     }
   },
 
@@ -107,11 +129,19 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.TYPESYSTEM_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Typesystem";
+    }
   },
 
   SCRIPTS("scripts") {
     public ModuleReference getMainLanguage() {
       return Script_Language.MODULE_REFERENCE;
+    }
+
+    public String getHelpURL() {
+      return "";
     }
   },
 
@@ -123,6 +153,10 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.INTENTIONS_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Intentions";
+    }
   },
 
   FIND_USAGES("findUsages") {
@@ -132,6 +166,10 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.FIND_USAGES_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Find+usages";
     }
   },
 
@@ -143,7 +181,11 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.PLUGIN_MODEL_ICON;
     }
-    },                                                                      
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Plugin";
+    }
+  },
 
   DATA_FLOW("dataFlow") {
     public ModuleReference getMainLanguage() {
@@ -153,6 +195,10 @@ public enum LanguageAspect {
     @Override
     public Icon getIcon() {
       return Icons.DATA_FLOW_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Data+flow#Dataflow-intermediatelanguage";
     }
   },
 
@@ -165,6 +211,10 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.TEST_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "http://www.jetbrains.net/confluence/display/MPS/Language+tests+language#Languagetestslanguage-introduction";
+    }
   },
 
   TEXT_GEN("textGen") {
@@ -176,11 +226,19 @@ public enum LanguageAspect {
     public Icon getIcon() {
       return Icons.TEXT_GEN_MODEL_ICON;
     }
+
+    public String getHelpURL() {
+      return "";
+    }
   },
 
   MPSLITE("mpslite") {
     public ModuleReference getMainLanguage() {
       return Mpslite_Language.MODULE_REFERENCE;
+    }
+
+    public String getHelpURL() {
+      return "";
     }
   },;
 
@@ -260,6 +318,9 @@ public enum LanguageAspect {
     }
     return result;
   }
+
+  @Nullable
+  public abstract String getHelpURL();
 
   public abstract ModuleReference getMainLanguage();
 
