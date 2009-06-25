@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jdom.Element;
-import com.sun.istack.internal.NotNull;
 
 
 public class DefaultCellInfo implements CellInfo {
