@@ -10,6 +10,7 @@ import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 public class Structure_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.structure.plugin.Structure";
+  public static final String LABEL_ID_showHelp = ID + "showHelp";
 
   public Structure_ActionGroup() {
     super("Structure", ID);
@@ -17,7 +18,7 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAction("jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action", "jetbrains.mps.lang.structure");
-      this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForConcept_Action", "jetbrains.mps.lang.structure");
+      this.addAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

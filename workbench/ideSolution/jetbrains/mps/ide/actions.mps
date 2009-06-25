@@ -259,6 +259,9 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="7796696880649580093">
         <link role="action" targetNodeId="200443176057274802" resolveInfo="ShowReferencesToMissingStuff" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="2510134983999478400">
+        <property name="name" value="showHelp" />
+      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204909245350" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215873561807">
         <link role="action" targetNodeId="1215873275289" resolveInfo="CheckModel" />

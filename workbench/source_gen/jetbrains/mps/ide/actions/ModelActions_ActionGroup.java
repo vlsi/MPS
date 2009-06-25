@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ModelActions";
+  public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
@@ -27,6 +28,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.OptimizeModelImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AddMissingImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action", "jetbrains.mps.ide");
+      this.addAnchor(ModelActions_ActionGroup.LABEL_ID_showHelp);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
       this.addSeparator();

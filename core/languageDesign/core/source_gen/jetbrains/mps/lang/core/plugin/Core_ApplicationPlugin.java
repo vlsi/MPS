@@ -17,7 +17,6 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.ShowHelpForAspect_ActionGroup");
     return groups;
   }
 
