@@ -25,15 +25,10 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.ConceptDeclarationEditor.ConceptEditorOpenHandler;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -77,40 +72,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   public void initComponent() {
-    myEditorOpenHandlers.add(new MPSEditorOpenHandler() {
-      public SNode getBaseNode(IOperationContext context, SNode node) {
-        if (node == null) return null;
-        AbstractConceptDeclaration baseNode = null;
-        if (node.getAdapter() instanceof ConceptEditorDeclaration) {
-          baseNode = ((ConceptEditorDeclaration) node.getAdapter()).getConceptDeclaration();
-        } else if (node.getAdapter() instanceof ConceptConstraints) {
-          baseNode = ((ConceptConstraints) node.getAdapter()).getConcept();
-        } else if (node.getAdapter() instanceof ConceptBehavior) {
-          baseNode = ((ConceptBehavior) node.getAdapter()).getConcept();
-        } else if (node.getAdapter() instanceof DataFlowBuilderDeclaration) {
-          baseNode = ((DataFlowBuilderDeclaration) node.getAdapter()).getConceptDeclaration();
-        }
-
-        if (baseNode != null &&
-          SModelUtil_new.getDeclaringLanguage(baseNode, context.getScope()) != null &&
-          (Language.getModelAspect(node.getModel().getModelDescriptor()) != null
-            || SModelStereotype.isGeneratorModel(node.getModel()))) {
-          return baseNode.getNode();
-        }
-        return null;
-      }
-
-      public boolean canOpen(IOperationContext context, SNode node) {
-        INodeAdapter concept = BaseAdapter.fromNode(node);
-        return concept instanceof AbstractConceptDeclaration &&
-          SModelUtil_new.getDeclaringLanguage((AbstractConceptDeclaration) concept, context.getScope()) != null &&
-          Language.getModelAspect(node.getModel().getModelDescriptor()) != null;
-      }
-
-      public IEditor open(IOperationContext context, SNode node) {
-        return new ConceptDeclarationEditor(context, node);
-      }
-    });
+    registerOpenHandler(new ConceptEditorOpenHandler(), null);
   }
 
   public void disposeComponent() {
@@ -323,4 +285,5 @@ public class MPSEditorOpener implements ProjectComponent {
 
     return nodeEditor;
   }
+
 }
