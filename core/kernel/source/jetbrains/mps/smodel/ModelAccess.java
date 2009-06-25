@@ -280,7 +280,7 @@ public class ModelAccess {
         return;
       }
 
-      throw new IllegalModelAccessError("You can read model only inside read actions.l");
+      throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
 }
