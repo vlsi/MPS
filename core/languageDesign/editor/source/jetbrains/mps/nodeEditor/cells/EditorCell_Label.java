@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoUtil;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
@@ -508,7 +509,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       }
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = getRenderedTextOn(keyEvent);
+      String pattern = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return getRenderedTextOn(keyEvent);
+        }
+      });
       if (!pattern.equals(getRenderedText())) {
         return IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
       }
