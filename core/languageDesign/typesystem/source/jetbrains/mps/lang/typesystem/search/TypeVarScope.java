@@ -74,7 +74,7 @@ public class TypeVarScope extends SearchScopeWithNode {
     return result;
   }
 
-  private void populateLocalVariables(StatementList statementList, Statement beforeStatement, List<SNode> result) {
+  private void populateLocalVariables(@NotNull StatementList statementList, Statement beforeStatement, List<SNode> result) {
     for (Statement statement : statementList.getStatements()) {
       if (statement == beforeStatement) {
         break;
@@ -87,7 +87,9 @@ public class TypeVarScope extends SearchScopeWithNode {
     Statement containingStatement = statementList.getParent(Statement.class);
     if (containingStatement != null) {
       statementList = containingStatement.getParent(StatementList.class);
-      populateLocalVariables(statementList, containingStatement, result);
+      if (statementList != null) {
+        populateLocalVariables(statementList, containingStatement, result);
+      }
     }
   }
 }
