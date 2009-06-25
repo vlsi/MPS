@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -43,7 +43,13 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       {
         GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer();
         event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).first()).getSModelReference()));
+        if (ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).isEmpty()) {
+          event.getPresentation().setEnabled(false);
+        } else
+        {
+          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).first()).getSModelReference());
+          event.getPresentation().setEnabled(hasTraceInputData);
+        }
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
