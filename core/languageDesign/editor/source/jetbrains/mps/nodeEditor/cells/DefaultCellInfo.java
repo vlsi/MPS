@@ -54,7 +54,6 @@ public class DefaultCellInfo implements CellInfo {
         myCellNumber = parent.getCellNumber(cell);
       }
     }
-    assert myCellId != null || myParentInfo != null;
   }
 
   public DefaultCellInfo(Element cellElement, IScope scope) {
@@ -74,7 +73,6 @@ public class DefaultCellInfo implements CellInfo {
       }
       myParentInfo = new DefaultCellInfo(parentInfoElement, scope);
     }
-    assert myCellId != null || myParentInfo != null;
   }
 
   public int hashCode() {
@@ -88,10 +86,11 @@ public class DefaultCellInfo implements CellInfo {
     }
     if (myCellId != null) {
       return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
-    } else {
+    } else if (myParentInfo != null) {
       EditorCell parent = myParentInfo.findCell(editorComponent);
       return ((EditorCell_Collection)parent).getChildAt(myCellNumber);
     }
+    return null;
   }
 
   public EditorCell findClosestCell(EditorComponent editorComponent) {
