@@ -1028,6 +1028,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="5304602270049664352">
       <property name="name" value="node" />
+      <property name="isOptional" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5304602270049664353" />
       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5304602270049664354" />
     </node>
@@ -1133,22 +1134,33 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668067">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668068">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668069">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668070">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5304602270049668071" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="5304602270049668072">
-                    <link role="member" targetNodeId="5304602270049664352" resolveInfo="node" />
-                  </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="267826487290303171">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="267826487290303177">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="267826487290303180" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="267826487290303174">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="267826487290303175" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="267826487290303176">
+                  <link role="member" targetNodeId="5304602270049664352" resolveInfo="node" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="5304602270049668073" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5304602270049668074">
-                <link role="property" targetNodeId="22.2465654535473034588" resolveInfo="helpURL" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="5304602270049668075" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668067">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668068">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668069">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668070">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5304602270049668071" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="5304602270049668072">
+                      <link role="member" targetNodeId="5304602270049664352" resolveInfo="node" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="5304602270049668073" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5304602270049668074">
+                  <link role="property" targetNodeId="22.2465654535473034588" resolveInfo="helpURL" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="5304602270049668075" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8387239830410543471">
