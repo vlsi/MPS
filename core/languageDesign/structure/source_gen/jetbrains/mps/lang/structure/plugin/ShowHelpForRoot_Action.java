@@ -32,7 +32,7 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return HelpHelper.helpForRootIsAvailable(ShowHelpForRoot_Action.this.node) && HelpHelper.getDefaultHelpFor(null, null, ShowHelpForRoot_Action.this.node) != HelpHelper.HelpType.ROOT_NODE;
+    return HelpHelper.helpForRootIsAvailable(ShowHelpForRoot_Action.this.node) && HelpHelper.getDefaultHelpFor(ShowHelpForRoot_Action.this.module, ShowHelpForRoot_Action.this.model, ShowHelpForRoot_Action.this.node) != HelpHelper.HelpType.ROOT_NODE;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {

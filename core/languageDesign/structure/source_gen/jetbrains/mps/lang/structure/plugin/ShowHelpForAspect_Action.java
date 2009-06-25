@@ -32,7 +32,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return HelpHelper.helpForAspectIsAvailable(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model) && HelpHelper.getDefaultHelpFor(null, null, ShowHelpForAspect_Action.this.node) != HelpHelper.HelpType.ASPECT;
+    return HelpHelper.helpForAspectIsAvailable(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model) && HelpHelper.getDefaultHelpFor(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model, ShowHelpForAspect_Action.this.node) != HelpHelper.HelpType.ASPECT;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
