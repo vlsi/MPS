@@ -1278,7 +1278,6 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5304602270049444692">
       <property name="keycode" value="VK_F1" />
-      <property name="modifiers" value="shift" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="8387239830410561344">
