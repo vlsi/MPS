@@ -205,7 +205,7 @@ public enum LanguageAspect {
   }
 
   public SModelDescriptor get(Language l) {
-    return SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(l.getNamespace() + "." + myName), l);
+    return SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getNamespace() + "." + myName, null), l);
   }
 
   public String getName() {
