@@ -27,6 +27,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private DevKit myDevKit;
   private boolean myShortNameOnly;
+  private boolean myInitialized;
 
   public ProjectDevKitTreeNode(DevKit devkit, MPSProject project) {
     this(devkit, project, false);
@@ -38,7 +39,6 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     myDevKit = devkit;
 
     updatePresentation();
-    populate();
   }
 
   protected void updatePresentation() {
@@ -53,6 +53,17 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
 
   public DevKit getDevKit() {
     return myDevKit;
+  }
+
+  @Override
+  public boolean isInitialized() {
+    return myInitialized;
+  }
+
+  @Override
+  public void init() {
+    populate();
+    myInitialized = true;
   }
 
   public String calculateNodeIdentifier() {

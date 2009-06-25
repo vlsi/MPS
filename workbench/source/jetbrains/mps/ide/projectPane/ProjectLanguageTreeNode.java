@@ -40,6 +40,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
   private MPSProject myProject;
   private boolean myShortNameOnly;
+  private boolean myInitialized;
 
   public ProjectLanguageTreeNode(Language language, MPSProject project) {
     this(language, project, false);
@@ -50,7 +51,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myShortNameOnly = shortNameOnly;
     myLanguage = language;
     myProject = project;
-    populate();
     updatePresentation();
   }
 
@@ -58,6 +58,16 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     super.updatePresentation();
     setIcon(Icons.PROJECT_LANGUAGE_ICON);
     setNodeIdentifier(myLanguage.getModuleReference().toString());
+  }
+
+  @Override
+  public boolean isInitialized() {
+    return myInitialized;
+  }
+
+  public void init() {
+    populate();
+    myInitialized = true;
   }
 
   public IModule getModule() {
@@ -130,8 +140,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     allModels.setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     SModelsSubtree.create(allModels, getOperationContext());
     add(allModels);
-
-
   }
 
   public class AccessoriesModelTreeNode extends TextTreeNode {

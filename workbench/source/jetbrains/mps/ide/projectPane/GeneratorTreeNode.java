@@ -23,9 +23,10 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 class GeneratorTreeNode extends ProjectModuleTreeNode {
+  private boolean myInitialized;
+
   public GeneratorTreeNode(Generator generator, MPSProject project) {
     super(new ModuleContext(generator, project));
-    populate();
     updatePresentation();
   }
 
@@ -55,6 +56,17 @@ class GeneratorTreeNode extends ProjectModuleTreeNode {
     return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS);
   }
 
+
+  @Override
+  public boolean isInitialized() {
+    return myInitialized;
+  }
+
+  @Override
+  public void init() {
+    populate();
+    myInitialized = true;
+  }
 
   private void populate() {
     SModelsSubtree.create(this, getOperationContext());

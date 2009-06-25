@@ -28,6 +28,8 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private Solution mySolution;
   private boolean myShortNameOnly;
 
+  private boolean myInitialized;
+
   public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
     this(solution, project, false);
   }
@@ -36,8 +38,6 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
-    populate();
-
     updatePresentation();
   }
 
@@ -78,6 +78,17 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
       return name;
     }
     return "solution";
+  }
+
+  @Override
+  public boolean isInitialized() {
+    return myInitialized;
+  }
+
+  @Override
+  public void init() {
+    populate();
+    myInitialized = true;
   }
 
   private void populate() {
