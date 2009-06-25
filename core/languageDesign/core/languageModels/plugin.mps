@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
@@ -37,6 +37,7 @@
   <import index="19" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
+  <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1209308509191">
     <property name="name" value="FindModelUsages" />
     <property name="caption" value="Find Usages" />
@@ -1025,6 +1026,11 @@
       <property name="name" value="model" />
       <link role="key" targetNodeId="19.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="5304602270049664352">
+      <property name="name" value="node" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5304602270049664353" />
+      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5304602270049664354" />
+    </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="8387239830410543444">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8387239830410543445">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5304602270049375508">
@@ -1116,6 +1122,35 @@
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="8387239830410543469">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8387239830410543470">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="5304602270049668082">
+          <property name="value" value="not to conflict with ShowHelpForConcept action" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5304602270049668063">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5304602270049668064">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5304602270049668078">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5304602270049668080">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668067">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668068">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668069">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5304602270049668070">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5304602270049668071" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="5304602270049668072">
+                    <link role="member" targetNodeId="5304602270049664352" resolveInfo="node" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="5304602270049668073" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5304602270049668074">
+                <link role="property" targetNodeId="22.2465654535473034588" resolveInfo="helpURL" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="5304602270049668075" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8387239830410543471">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="8387239830410543473">
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8387239830410543474">
@@ -1242,8 +1277,8 @@
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5304602270049444692">
-      <property name="keycode" value="VK_H" />
-      <property name="modifiers" value="alt" />
+      <property name="keycode" value="VK_F1" />
+      <property name="modifiers" value="shift" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="8387239830410561344">
