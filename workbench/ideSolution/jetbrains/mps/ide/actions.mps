@@ -20798,23 +20798,36 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3125192926426252506">
               <link role="classifier" targetNodeId="192.~ConceptDeclaration" resolveInfo="ConceptDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3125192926426252510">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="3125192926426252511">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3125192926426252512">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="3125192926426252513">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3125192926426252514">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3125192926426252515" />
-                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="3125192926426252516">
-                        <link role="member" targetNodeId="3812525277597542272" resolveInfo="node" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1273232933148629076">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1273232933148629077">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1273232933148629078">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1273232933148629080">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1273232933148629081">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1273232933148629082">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1273232933148629083">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1273232933148629084">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1273232933148629085">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1273232933148629086">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1273232933148629087" />
+                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1273232933148629088">
+                              <link role="member" targetNodeId="3812525277597542272" resolveInfo="node" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1273232933148629089">
+                          <link role="baseMethodDeclaration" targetNodeId="40.~SNode.getConceptDeclarationAdapter():jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" resolveInfo="getConceptDeclarationAdapter" />
+                        </node>
+                      </node>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1273232933148629090">
+                        <link role="classifier" targetNodeId="192.~ConceptDeclaration" resolveInfo="ConceptDeclaration" />
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3125192926426252517">
-                    <link role="baseMethodDeclaration" targetNodeId="40.~SNode.getConceptDeclarationAdapter():jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" resolveInfo="getConceptDeclarationAdapter" />
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1273232933148629091">
+                    <link role="variableDeclaration" targetNodeId="3125192926426252484" resolveInfo="conceptDeclaration" />
                   </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3125192926426252518">
-                  <link role="classifier" targetNodeId="192.~ConceptDeclaration" resolveInfo="ConceptDeclaration" />
                 </node>
               </node>
             </node>

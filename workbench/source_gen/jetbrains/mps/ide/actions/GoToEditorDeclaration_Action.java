@@ -128,12 +128,18 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(GoToEditorDeclaration_Action.this.frame, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(GoToEditorDeclaration_Action.this.node), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-      ConceptDeclaration conceptDeclaration = ((ConceptDeclaration)GoToEditorDeclaration_Action.this.node.getConceptDeclarationAdapter());
-      SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration, GoToEditorDeclaration_Action.this.scope);
+      final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          conceptDeclaration.value = ((ConceptDeclaration)GoToEditorDeclaration_Action.this.node.getConceptDeclarationAdapter());
+        }
+      });
+      SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration.value, GoToEditorDeclaration_Action.this.scope);
       if (editorModel == null) {
         return;
       }
-      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration, GoToEditorDeclaration_Action.this.node, GoToEditorDeclaration_Action.this.scope);
+      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration.value, GoToEditorDeclaration_Action.this.node, GoToEditorDeclaration_Action.this.scope);
       if (editorNode == null) {
         return;
       }
