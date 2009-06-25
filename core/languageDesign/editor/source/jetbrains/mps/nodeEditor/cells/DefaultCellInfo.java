@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jdom.Element;
+import com.sun.istack.internal.NotNull;
 
 
 public class DefaultCellInfo implements CellInfo {
@@ -84,7 +85,12 @@ public class DefaultCellInfo implements CellInfo {
     if (myNodePointer == null) {
       return null;
     }
-    return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
+    if (myCellId != null) {
+      return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
+    } else {
+      EditorCell parent = myParentInfo.findCell(editorComponent);
+      return ((EditorCell_Collection)parent).getChildAt(myCellNumber);
+    }
   }
 
   public EditorCell findClosestCell(EditorComponent editorComponent) {

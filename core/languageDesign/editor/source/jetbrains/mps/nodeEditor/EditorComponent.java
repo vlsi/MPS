@@ -1325,7 +1325,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  public EditorCell findCellWithId(SNode node, String id) {
+  public EditorCell findCellWithId(SNode node, @NotNull String id) {
     EditorCell bigCell = findNodeCell(node);
 
     if (bigCell == null) {
