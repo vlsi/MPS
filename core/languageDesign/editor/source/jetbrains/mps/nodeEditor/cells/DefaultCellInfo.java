@@ -54,6 +54,7 @@ public class DefaultCellInfo implements CellInfo {
         myCellNumber = parent.getCellNumber(cell);
       }
     }
+    assert myCellId != null || myParentInfo != null;
   }
 
   public DefaultCellInfo(Element cellElement, IScope scope) {
@@ -73,6 +74,7 @@ public class DefaultCellInfo implements CellInfo {
       }
       myParentInfo = new DefaultCellInfo(parentInfoElement, scope);
     }
+    assert myCellId != null || myParentInfo != null;
   }
 
   public int hashCode() {

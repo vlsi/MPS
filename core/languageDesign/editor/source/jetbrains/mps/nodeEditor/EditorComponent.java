@@ -2155,6 +2155,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void setEditorContext(EditorContext editorContext) {
+    assert editorContext == null || editorContext.getOperationContext() == null || editorContext.getOperationContext().getModule() != null;
     myEditorContext = editorContext;
   }
 
