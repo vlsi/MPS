@@ -69,7 +69,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void refreshModels() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LOG.debug("Model refresh");
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
