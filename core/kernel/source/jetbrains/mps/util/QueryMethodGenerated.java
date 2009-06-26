@@ -40,7 +40,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
   private static Map<Pair<SModelReference, String>, Method> ourMethods = new HashMap<Pair<SModelReference, String>, Method>();
   private static Map<String, Constructor> ourAdaptorsConstructors = new HashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new HashSet<String>();
-
+  private static Set<String> ourLanguagesReportedAsNotFound = new HashSet<String>();
 
   public static IModule findModuleForModel(SModel sourceModel) {
     SModelDescriptor smd = sourceModel.getModelDescriptor();
@@ -63,6 +63,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
     ourMethods.clear();
     ourClassesReportedAsNotFound.clear();
     ourAdaptorsConstructors.clear();
+    ourLanguagesReportedAsNotFound.clear();
   }
 
   public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
@@ -159,7 +160,10 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
         Class cls;
         if (l == null) {
-          LOG.error("Can't find a language " + namespace);
+          if (!ourLanguagesReportedAsNotFound.contains(namespace)) {
+            LOG.error("Can't find a language " + namespace);
+            ourLanguagesReportedAsNotFound.add(namespace);
+          }
           return null;
         }
         cls = l.getClass(adapterName);
