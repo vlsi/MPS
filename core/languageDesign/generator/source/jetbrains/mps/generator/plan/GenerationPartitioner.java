@@ -223,10 +223,6 @@ public class GenerationPartitioner {
 
       for (MappingConfiguration lesserPriMapping : lesserPriMappings) {
         Map<MappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
-        if (grtPriMappingsFromMap == null) {
-          // trying to fix NPE here
-          throw new RuntimeException(PriorityMapUtil.createKeyNotFoundInProirityMapErrorMessage(lesserPriMapping, myPriorityMap, rule));
-        }
 
         for (MappingConfiguration grtPriMapping : greaterPriMappings) {
           boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
