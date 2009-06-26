@@ -44,7 +44,7 @@ public class PrintNodeID_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.SNODE);
+    this.node = event.getData(MPSDataKeys.NODE);
     if (this.node == null) {
       return false;
     }

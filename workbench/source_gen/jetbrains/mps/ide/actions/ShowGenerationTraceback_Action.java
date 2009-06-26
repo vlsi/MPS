@@ -63,7 +63,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.SNODE);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
       this.node = node;
@@ -72,7 +72,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
+      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }

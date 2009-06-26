@@ -11796,7 +11796,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224850966969">
       <property name="name" value="currentNode" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="11.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224851217094">
       <property name="name" value="currentModel" />

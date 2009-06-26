@@ -684,7 +684,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648896">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="19.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="19.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648994">
       <property name="name" value="editorComponent" />

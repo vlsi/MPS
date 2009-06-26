@@ -237,7 +237,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649641">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="34.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="34.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206108391540">
@@ -1596,7 +1596,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="7796696880649589044">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="34.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="34.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="7796696880649589010">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7796696880649589011">

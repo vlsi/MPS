@@ -389,8 +389,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   @Nullable
   public Object getData(@NonNls String dataId) {
     //MPSDK
-    if (dataId.equals(MPSDataKeys.SNODE.getName())) return getSelectedSNode();
-    if (dataId.equals(MPSDataKeys.SNODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSDataKeys.NODE.getName())) return getSelectedSNode();
+    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
 
     if (dataId.equals(MPSDataKeys.MODEL.getName())) return getSelectedModel();
     if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return getCurrentModel();

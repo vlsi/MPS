@@ -65,7 +65,7 @@ public class DeleteNode_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.nodes = event.getData(MPSDataKeys.SNODES);
+    this.nodes = event.getData(MPSDataKeys.NODES);
     if (this.nodes == null) {
       return false;
     }

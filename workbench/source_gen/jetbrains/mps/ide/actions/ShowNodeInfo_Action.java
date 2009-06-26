@@ -65,7 +65,7 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     if (this.cell == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.SNODE);
+    this.node = event.getData(MPSDataKeys.NODE);
     if (this.node == null) {
       return false;
     }

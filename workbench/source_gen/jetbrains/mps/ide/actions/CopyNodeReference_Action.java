@@ -50,7 +50,7 @@ public class CopyNodeReference_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
+      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }

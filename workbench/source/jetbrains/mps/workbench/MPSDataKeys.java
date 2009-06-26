@@ -40,10 +40,16 @@ public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
 
-  @Description(description = "selected node")
+  //todo: remove, was deprecated before 1.0
+  @Deprecated
   public static final DataKey<SNode> SNODE = DataKey.create("MPS_SNode");
-  @Description(description = "selected nodes")
+  @Deprecated
   public static final DataKey<List<SNode>> SNODES = DataKey.create("MPS_SNode_List");
+
+  @Description(description = "selected node")
+  public static final DataKey<SNode> NODE = DataKey.create("MPS_SNode");
+  @Description(description = "selected nodes")
+  public static final DataKey<List<SNode>> NODES = DataKey.create("MPS_SNode_List");
 
   @Description(description = "selected model")
   public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");

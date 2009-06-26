@@ -17,7 +17,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -77,7 +76,7 @@ public class SetNodePackage_Action extends GeneratedAction {
       return false;
     }
     {
-      List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
+      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
       }
@@ -110,7 +109,7 @@ public class SetNodePackage_Action extends GeneratedAction {
 
         public void run() {
           packages.value = SetNodePackage_Action.this.fetchExistingPackages(SetNodePackage_Action.this.nodes);
-          oldPackage.value = Sequence.fromIterable(SetNodePackage_Action.this.nodes).first().getProperty(SModelTreeNode.PACK);
+          oldPackage.value = ListSequence.fromList(SetNodePackage_Action.this.nodes).first().getProperty(SModelTreeNode.PACK);
         }
       });
       final SetNodePackageDialog dialog = new SetNodePackageDialog(SetNodePackage_Action.this.frame, "Set Virtual Package...", packages.value);

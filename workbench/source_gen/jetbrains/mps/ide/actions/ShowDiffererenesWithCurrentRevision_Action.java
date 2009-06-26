@@ -63,7 +63,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     if (this.frame == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.SNODE);
+    this.node = event.getData(MPSDataKeys.NODE);
     if (this.node == null) {
       return false;
     }

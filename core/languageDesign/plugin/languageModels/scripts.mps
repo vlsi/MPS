@@ -5,6 +5,8 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -29,10 +31,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1217592749201">
     <property name="name" value="DeleteOldLinks" />
     <property name="title" value="Delete Old Links" />
@@ -304,6 +310,123 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1239976553047">
                 <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239976554674">
                   <link role="variableDeclaration" targetNodeId="1239976508273" resolveInfo="newNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1171743928472194518">
+    <property name="migrationFromBuild" value="4068" />
+    <property name="name" value="Rename_S_ActionParameters" />
+    <property name="title" value="rename &quot;S...&quot; action parameters" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1171743928472218635">
+      <property name="description" value="rename &quot;SNODE&quot; action parameters" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1217252042208" resolveInfo="ActionDataParameterDeclaration" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1171743928472218636">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928472218637">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472218664">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218672">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218666">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1171743928472218665" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218671">
+                  <link role="link" targetNodeId="1.1217252646389" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1171743928472218676">
+                <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218686">
+                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472218679">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472218682">
+                      <link role="classifier" targetNodeId="6.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                      <link role="variableDeclaration" targetNodeId="6.~MPSDataKeys.NODE" resolveInfo="NODE" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218691">
+                    <link role="link" targetNodeId="5.1070568178160" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1171743928472218638">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928472218639">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472218640">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1171743928472218653">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218659">
+                <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472218656">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472218658">
+                    <link role="classifier" targetNodeId="6.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                    <link role="variableDeclaration" targetNodeId="6.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218663">
+                  <link role="link" targetNodeId="5.1070568178160" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218642">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1171743928472218641" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218646">
+                  <link role="link" targetNodeId="1.1217252646389" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1171743928472218693">
+      <property name="description" value="rename &quot;SNODES&quot; action parameters" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1217252042208" resolveInfo="ActionDataParameterDeclaration" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1171743928472218694">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928472218695">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472218696">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218697">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218698">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1171743928472218699" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218700">
+                  <link role="link" targetNodeId="1.1217252646389" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1171743928472218701">
+                <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218702">
+                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472218703">
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472218704">
+                      <link role="classifier" targetNodeId="6.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                      <link role="variableDeclaration" targetNodeId="6.~MPSDataKeys.NODES" resolveInfo="NODES" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218705">
+                    <link role="link" targetNodeId="5.1070568178160" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1171743928472218706">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928472218707">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472218708">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1171743928472218709">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218710">
+                <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472218711">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472218712">
+                    <link role="classifier" targetNodeId="6.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                    <link role="variableDeclaration" targetNodeId="6.~MPSDataKeys.SNODES" resolveInfo="SNODES" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218713">
+                  <link role="link" targetNodeId="5.1070568178160" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472218714">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1171743928472218715" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472218716">
+                  <link role="link" targetNodeId="1.1217252646389" />
                 </node>
               </node>
             </node>

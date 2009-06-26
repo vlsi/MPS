@@ -52,7 +52,7 @@ public class UncommentStatements_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.SNODE);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
           node = null;

@@ -112,8 +112,8 @@ public class DeleteNodesHelper {
 
       @Nullable
       public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.SNODE.getName())) return node;
-        else if (dataId.equals(MPSDataKeys.SNODES.getName())) return Collections.singletonList(node);
+        if (dataId.equals(MPSDataKeys.NODE.getName())) return node;
+        else if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(node);
         else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return context;
         else return myRealContext.getData(dataId);
       }

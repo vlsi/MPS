@@ -2198,7 +2198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   public Object getData(@NonNls String dataId) {
     //MPSDK
-    if (dataId.equals(MPSDataKeys.SNODE.getName())) {
+    if (dataId.equals(MPSDataKeys.NODE.getName())) {
       EditorCell selectedCell = getSelectedCell();
       if (selectedCell != null) {
         return selectedCell.getSNode();
@@ -2206,7 +2206,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return getRootCell().getSNode();
       }
     }
-    if (dataId.equals(MPSDataKeys.SNODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
     if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
         public Object compute() {

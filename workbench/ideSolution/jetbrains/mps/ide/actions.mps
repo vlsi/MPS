@@ -3784,7 +3784,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646035">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215905183111">
@@ -5690,7 +5690,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420649084">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216125431295">
@@ -5763,7 +5763,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420647196">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420648311">
       <property name="name" value="editor" />
@@ -6564,7 +6564,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646467">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420646861">
       <property name="name" value="project" />
@@ -8080,7 +8080,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229266413917">
       <property name="name" value="nodes" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODES" resolveInfo="SNODES" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODES" resolveInfo="NODES" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229266423997">
       <property name="name" value="context" />
@@ -9478,7 +9478,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014075577">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014092803">
       <property name="name" value="project" />
@@ -9540,7 +9540,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014202147">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014202148">
       <property name="name" value="project" />
@@ -9602,7 +9602,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014205431">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014205432">
       <property name="name" value="project" />
@@ -9664,7 +9664,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014207875">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014207876">
       <property name="name" value="project" />
@@ -9726,7 +9726,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014210047">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014210048">
       <property name="name" value="project" />
@@ -9788,7 +9788,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014212966">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014212967">
       <property name="name" value="project" />
@@ -9850,7 +9850,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014214990">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014214991">
       <property name="name" value="project" />
@@ -9912,7 +9912,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014219480">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014219481">
       <property name="name" value="project" />
@@ -9974,7 +9974,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014224454">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014224455">
       <property name="name" value="project" />
@@ -10036,7 +10036,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014232850">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1234014232851">
       <property name="name" value="project" />
@@ -10800,7 +10800,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236184719860">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1236184762076">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236184762077">
@@ -10826,7 +10826,7 @@
     <property name="caption" value="Set Bookmark" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236342933122">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1236342914775">
       <property name="name" value="project" />
@@ -16192,7 +16192,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5357294907628538961">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5357294907628536184">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5357294907628536185">
@@ -17012,7 +17012,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4215104504640602528">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4215104504640602529">
       <property name="name" value="project" />
@@ -19183,7 +19183,7 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5533671870987188877">
       <property name="name" value="node" />
       <property name="isOptional" value="true" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5533671870987188873">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5533671870987188874">
@@ -20673,7 +20673,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5535460359399559193">
       <property name="name" value="node" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5535460359399605857">
       <property name="modifiers" value="ctrl" />

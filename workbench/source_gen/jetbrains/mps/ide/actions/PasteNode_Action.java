@@ -78,7 +78,7 @@ public class PasteNode_Action extends GeneratedAction {
     if (this.contextModel == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.SNODE);
+    this.node = event.getData(MPSDataKeys.NODE);
     return true;
   }
 

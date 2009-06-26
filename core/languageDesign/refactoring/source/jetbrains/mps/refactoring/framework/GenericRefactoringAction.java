@@ -46,8 +46,8 @@ public class GenericRefactoringAction extends BaseAction {
     RefactoringContext context = new RefactoringContext(myRefactoring);
     context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
     context.setSelectedModel(e.getData(MPSDataKeys.MODEL));
-    context.setSelectedNode(e.getData(MPSDataKeys.SNODE));
-    context.setSelectedNodes(e.getData(MPSDataKeys.SNODES));
+    context.setSelectedNode(e.getData(MPSDataKeys.NODE));
+    context.setSelectedNodes(e.getData(MPSDataKeys.NODES));
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
     context.setSelectedMPSProject(e.getData(MPSDataKeys.MPS_PROJECT));
     context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
@@ -71,11 +71,11 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   private List<SNode> getNodes(AnActionEvent e) {
-    SNode node = MPSDataKeys.SNODE.getData(e.getDataContext());
+    SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
     if (node != null) {
       return CollectionUtil.list(node);
     }
-    List<SNode> list = MPSDataKeys.SNODES.getData(e.getDataContext());
+    List<SNode> list = MPSDataKeys.NODES.getData(e.getDataContext());
     if (list == null || list.isEmpty()) return new ArrayList<SNode>();
     return list;
   }

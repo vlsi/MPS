@@ -37,7 +37,7 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   }
 
   private void commit(Project project, AntRunnerPreferencesPage component) {
-    ((AntRunnerPreferences_PreferencesComponent)this.getPrefsComponent()).getStateObject().data = component.getState();
+    ((AntRunnerPreferences_PreferencesComponent)this.getPrefsComponent()).getStateObject().data = ((AntRunnerPreferencesPage)component).getState();
   }
 
   public JComponent createComponent() {
@@ -48,7 +48,7 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   }
 
   private boolean isModified(Project project, AntRunnerPreferencesPage component) {
-    return component.isModified();
+    return ((AntRunnerPreferencesPage)component).isModified();
   }
 
   public void disposeUIResources() {
@@ -62,7 +62,7 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   }
 
   private void reset(Project project, AntRunnerPreferencesPage component) {
-    component.updateState(((AntRunnerPreferences_PreferencesComponent)this.getPrefsComponent()).getStateObject().data);
+    ((AntRunnerPreferencesPage)component).updateState(((AntRunnerPreferences_PreferencesComponent)this.getPrefsComponent()).getStateObject().data);
   }
 
 }

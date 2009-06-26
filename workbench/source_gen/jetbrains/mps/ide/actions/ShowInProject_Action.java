@@ -53,7 +53,7 @@ public class ShowInProject_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.SNODE);
+    this.node = event.getData(MPSDataKeys.NODE);
     if (this.node == null) {
       return false;
     }

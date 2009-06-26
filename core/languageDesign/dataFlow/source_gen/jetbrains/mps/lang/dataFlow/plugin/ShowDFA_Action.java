@@ -49,7 +49,7 @@ public class ShowDFA_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.SNODE);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
       this.node = node;

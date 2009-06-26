@@ -48,7 +48,7 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.SNODE);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
           node = null;

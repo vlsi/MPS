@@ -71,7 +71,7 @@
     <property name="package" value="runner" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1240828335941">
       <property name="name" value="currentNode" />
-      <link role="key" targetNodeId="2.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+      <link role="key" targetNodeId="2.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1240828335942">
       <property name="name" value="currentModel" />
