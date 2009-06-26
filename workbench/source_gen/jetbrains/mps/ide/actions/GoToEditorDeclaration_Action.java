@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
@@ -125,7 +125,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         }
       });
       if (l.value == null) {
-        JOptionPane.showMessageDialog(GoToEditorDeclaration_Action.this.frame, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(GoToEditorDeclaration_Action.this.node), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(GoToEditorDeclaration_Action.this.frame, "Couldn't find declaring language for concept " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(GoToEditorDeclaration_Action.this.node)), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();

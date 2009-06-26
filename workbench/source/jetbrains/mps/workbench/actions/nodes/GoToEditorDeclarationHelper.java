@@ -38,7 +38,7 @@ public class GoToEditorDeclarationHelper {
 
     String message = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return "Concept \"" + NameUtil.nodeFQName(node) + "\" has no editor.\n" +
+        return "Concept \"" + node.getConceptFqName() + "\" has no editor.\n" +
           "Create new editor?";
       }
     });
