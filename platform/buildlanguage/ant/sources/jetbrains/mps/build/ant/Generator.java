@@ -156,7 +156,7 @@ public class Generator {
 
       List<SModelDescriptor> models = project.getProjectModels();
       for (SModelDescriptor modelDescriptor : models) {
-        if (!SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) {
+        if (SModelStereotype.isUserModel(modelDescriptor)) {
           modelDescriptors.add(modelDescriptor);
         }
       }
