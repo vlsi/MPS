@@ -61,6 +61,6 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(type);
+    return type.getPresentation();
   }
 }
