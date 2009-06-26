@@ -772,6 +772,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public final void reloadFromDisk(boolean reloadClasses) {
+    ModelAccess.instance().checkWriteAccess();
     try {
       ModuleDescriptor descriptor = loadDescriptor();
       setModuleDescriptor(descriptor, reloadClasses);

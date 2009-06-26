@@ -198,7 +198,7 @@ public class MPSVCSManager implements ProjectComponent {
     ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
-    myTasksQueue.allowAccessAndProcessAllTasks();
+    myTasksQueue.removeProcessingBan();
   }
 
   private class ModelSavedListener extends SModelAdapter {
@@ -229,11 +229,11 @@ public class MPSVCSManager implements ProjectComponent {
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
-      myTasksQueue.prohibitAccess();
+      myTasksQueue.banProcessing();
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      myTasksQueue.allowAccessAndProcessAllTasks();
+      myTasksQueue.removeProcessingBan();
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
@@ -243,7 +243,7 @@ public class MPSVCSManager implements ProjectComponent {
   private class CompilationWatcher implements CompilationListener {
 
     public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      myTasksQueue.allowAccessAndProcessAllTasks();
+      myTasksQueue.removeProcessingBan();
     }
 
     public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {

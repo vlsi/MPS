@@ -296,8 +296,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     public void projectOpened(Project project) {
       StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
         public void run() {
-          myFilesToAddQueue.allowAccessAndProcessAllTasks();
-          myFilesToRemoveQueue.allowAccessAndProcessAllTasks();
+          myFilesToAddQueue.removeProcessingBan();
+          myFilesToRemoveQueue.removeProcessingBan();
         }
       });
     }
@@ -308,8 +308,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
     public void projectClosed(Project project) {
       if (myProjectManager.getOpenProjects().length == 0) {
-        myFilesToAddQueue.prohibitAccess();
-        myFilesToRemoveQueue.prohibitAccess();
+        myFilesToAddQueue.banProcessing();
+        myFilesToRemoveQueue.banProcessing();
       }
     }
 

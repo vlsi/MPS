@@ -66,33 +66,33 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
     public void beforeRefreshStart(boolean asynchonous) {
       if (!asynchonous) {
-        myTaskQueue.prohibitAccess();
+        myTaskQueue.banProcessing();
       }
     }
 
     public void afterRefreshFinish(boolean asynchonous) {
       if (!asynchonous) {
-        myTaskQueue.allowAccessAndProcessAllTasks();
+        myTaskQueue.removeProcessingBan();
       }
     }
   };
   private final IReloadListener myReloadListener = new IReloadListener() {
     public void reloadStarted() {
-      myTaskQueue.prohibitAccess();
+      myTaskQueue.banProcessing();
     }
 
     public void reloadFinished() {
-      myTaskQueue.allowAccessAndProcessAllTasks();
+      myTaskQueue.removeProcessingBan();
     }
   };
 
   private final IBackgroundVcsOperationsListener myVcsListener = new IBackgroundVcsOperationsListener() {
     public void backgroundOperationStarted() {
-      myTaskQueue.prohibitAccess();
+      myTaskQueue.banProcessing();
     }
 
     public void allBackgroundOperationsStopped() {
-      myTaskQueue.allowAccessAndProcessAllTasks();
+      myTaskQueue.removeProcessingBan();
     }
   };
 
@@ -142,7 +142,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     public void projectOpened(Project project) {
       StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
         public void run() {
-          myTaskQueue.allowAccessAndProcessAllTasks();
+          myTaskQueue.removeProcessingBan();
         }
       });
       ProjectLevelVcsManagerImpl manager = (ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class);
@@ -155,7 +155,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
     public void projectClosed(Project project) {
       if (myProjectManager.getOpenProjects().length == 0) {
-        myTaskQueue.prohibitAccess();
+        myTaskQueue.banProcessing();
       }
     }
 
@@ -176,7 +176,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         try {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               for (Conflictable conflictable : merged) {
                 conflictable.reloadFromDisk();

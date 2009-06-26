@@ -28,6 +28,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.VFileSystem;
@@ -65,7 +66,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
       return myFile;
     }
 
-    public void resolved(byte[] result) {
+    public void resolved(final byte[] result) {
       ((SimpleContent) getContents()[ORIGINAL]).setBOM(result);
       setResult(DialogWrapper.OK_EXIT_CODE);
       try {
@@ -75,7 +76,11 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
       } catch (IOException e) {
         LOG.error(e);
       }
-      reloadModel(result);
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          reloadModel(result);
+        }
+      });
     }
 
     private void reloadModel(byte[] result) {

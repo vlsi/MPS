@@ -44,17 +44,26 @@ abstract class TaskQueue<T> {
     }
   }
 
-  public final synchronized void allowAccessAndProcessAllTasks() {
+  public final synchronized void removeProcessingBan() {
     myProcessingBans--;
-    if (myProcessingBans == 0) {
-      if (!myTasks.isEmpty()) {
-        processTask(new LinkedList<T>(myTasks));
-        myTasks.clear();
-      }
+    if (myProcessingBans <= 0) {
+      doProcess();
     }
   }
 
-  public final synchronized void prohibitAccess() {
+  public final synchronized void removeAllProcessingBans() {
+    doProcess();
+  }
+
+  private synchronized void doProcess() {
+    myProcessingBans = 0;
+    if (!myTasks.isEmpty()) {
+      processTask(new LinkedList<T>(myTasks));
+      myTasks.clear();
+    }
+  }
+
+  public final synchronized void banProcessing() {
     myProcessingBans++;
   }
 
