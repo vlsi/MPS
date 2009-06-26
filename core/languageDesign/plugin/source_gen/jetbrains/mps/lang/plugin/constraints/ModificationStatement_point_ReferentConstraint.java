@@ -33,7 +33,7 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
       return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ExtentionPoint");
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ExtensionPoint");
         }
       }).toListSequence();
     }

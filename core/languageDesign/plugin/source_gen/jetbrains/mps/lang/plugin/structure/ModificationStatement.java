@@ -25,11 +25,11 @@ public class ModificationStatement extends BaseConcept {
     super.setReferent(ModificationStatement.MODIFIED_GROUP, node);
   }
 
-  public ExtentionPoint getPoint() {
-    return (ExtentionPoint)this.getReferent(ExtentionPoint.class, ModificationStatement.POINT);
+  public ExtensionPoint getPoint() {
+    return (ExtensionPoint)this.getReferent(ExtensionPoint.class, ModificationStatement.POINT);
   }
 
-  public void setPoint(ExtentionPoint node) {
+  public void setPoint(ExtensionPoint node) {
     super.setReferent(ModificationStatement.POINT, node);
   }
 

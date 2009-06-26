@@ -11,7 +11,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="20" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
@@ -208,14 +208,14 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426736158">
         <link role="action" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990522669">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1237990522669">
         <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207744603855" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216120312761">
         <link role="action" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1216651568906">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1216651568906">
         <property name="name" value="structure" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216119982896">
@@ -260,7 +260,7 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="7796696880649580093">
         <link role="action" targetNodeId="200443176057274802" resolveInfo="ShowReferencesToMissingStuff" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="2510134983999478400">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="2510134983999478400">
         <property name="name" value="showHelp" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204909245350" />
@@ -289,11 +289,11 @@
         <link role="action" targetNodeId="1215889706327" resolveInfo="SaveModel" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222173593116" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1222173595836">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1222173595836">
         <property name="name" value="refactoring" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1221757534230" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1221757535813">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1221757535813">
         <property name="name" value="vcs" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204909603015" />
@@ -306,7 +306,7 @@
     <property name="name" value="ProjectActions" />
     <property name="package" value="Menu.ProjectPane.Project" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148416040">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1204910715381">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1204910715381">
         <property name="name" value="projectNew" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204910765604" />
@@ -360,7 +360,7 @@
     <property name="name" value="LanguageActions" />
     <property name="package" value="Menu.ProjectPane.Module.Language" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148410459">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1204911159306">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1204911159306">
         <property name="name" value="newGroup" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204911304334" />
@@ -423,18 +423,18 @@
         <link role="action" targetNodeId="1216128015035" resolveInfo="SetModuleFolder" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1237990723878" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237991719437">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1237991719437">
         <property name="name" value="find_usages" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990726036">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1237990726036">
         <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222348083067" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1222348086225">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1222348086225">
         <property name="name" value="refactoring" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1222348864979" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1234535901004">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1234535901004">
         <property name="name" value="vcs" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1234535904313" />
@@ -465,7 +465,7 @@
     <property name="name" value="SolutionActions" />
     <property name="package" value="Menu.ProjectPane.Module.Solution" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148457205">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1204911787238">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1204911787238">
         <property name="name" value="solutionNew" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204912155146" />
@@ -528,7 +528,7 @@
         <link role="action" targetNodeId="1216126715578" resolveInfo="SolutionProperties" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1223018935695" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1223018940901">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1223018940901">
         <property name="name" value="refactoring" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1223020731536" />
@@ -599,7 +599,7 @@
     <property name="name" value="GeneratorActions" />
     <property name="package" value="Menu.ProjectPane.Module.Generator" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148353999">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1204980550723">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1204980550723">
         <property name="name" value="generatorNew" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1229274239061">
@@ -677,7 +677,7 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5535460359399672328">
         <link role="action" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="5535460359399672329">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="5535460359399672329">
         <property name="name" value="structure" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215112822585" />
@@ -717,7 +717,7 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426736160">
         <link role="action" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1237990503495">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1237990503495">
         <property name="name" value="find_instances" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204981009795" />
@@ -734,7 +734,7 @@
         <link role="action" targetNodeId="1235248353146" resolveInfo="ModelPropertiesWOShortcut" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1214581695123" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1221753146354">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1221753146354">
         <property name="name" value="vcs" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1221753156362" />
@@ -795,7 +795,7 @@
         <link role="action" targetNodeId="1229269032161" resolveInfo="AddLanguageImport" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215010700512" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1207910902706">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1207910902706">
         <property name="name" value="custom" />
       </node>
     </node>
@@ -895,7 +895,7 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1234190474703">
         <link role="action" targetNodeId="1234190163902" resolveInfo="ShowBookmarks" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217598172089">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1217598172089">
         <property name="name" value="customTools" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1216662587333" />
@@ -7423,7 +7423,7 @@
         <link role="constructorDeclaration" targetNodeId="129.~FileDeleteActionFixed.&lt;init&gt;()" resolveInfo="FileDeleteActionFixed" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1221761396218" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431278099">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1217431278099">
         <property name="name" value="vcs" />
       </node>
     </node>
@@ -7444,7 +7444,7 @@
     <property name="package" value="Menu.FileView" />
     <property name="name" value="FileActions" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431748083">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431753059">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1217431753059">
         <property name="name" value="abstractFileActions" />
       </node>
     </node>
@@ -7453,7 +7453,7 @@
     <property name="package" value="Menu.FileView" />
     <property name="name" value="FolderActions" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431771936">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431771937">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1217431771937">
         <property name="name" value="abstractFileActions" />
       </node>
     </node>
@@ -7462,7 +7462,7 @@
     <property name="package" value="Menu.FileView" />
     <property name="name" value="ModuleActions" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431777693">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431777694">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1217431777694">
         <property name="name" value="abstractFileActions" />
       </node>
     </node>
@@ -7604,7 +7604,7 @@
     <property name="package" value="Menu.ProjectPane.Packages" />
     <property name="name" value="NamespaceActions" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1226502139629">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1226502142427">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtensionPoint" id="1226502142427">
         <property name="name" value="namespaceInternal" />
       </node>
     </node>
