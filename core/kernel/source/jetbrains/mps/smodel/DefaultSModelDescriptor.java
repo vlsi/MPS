@@ -102,6 +102,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       SModel oldModel = mySModel;
       mySModel = loadModel();
+
+      if (myFastNodeFinder != null) {
+        myFastNodeFinder.dispose();
+        myFastNodeFinder = null;
+      }
+
       updateLastChange();
 
       doPostLoadStuff();
@@ -379,8 +385,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (isInitialized()) {
       if (myFastNodeFinder != null) {
         myFastNodeFinder.dispose();
+        myFastNodeFinder = null;
       }
-      myFastNodeFinder = null;
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
         myModelListeners.addAll(mySModel.getModelListeners());
