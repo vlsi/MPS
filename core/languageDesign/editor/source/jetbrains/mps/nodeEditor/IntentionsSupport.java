@@ -15,22 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.RuntimeInterruptedException;
-import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.ide.DataManager;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.intentions.*;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.intentions.IntentionsManager;
+import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -57,9 +61,10 @@ public class IntentionsSupport {
 
   private AtomicReference<Thread> myShowIntentionsThread = new AtomicReference<Thread>();
 
+  @NotNull
   private EditorComponent myEditor;
 
-  public IntentionsSupport(EditorComponent editor) {
+  public IntentionsSupport(@NotNull EditorComponent editor) {
     myEditor = editor;
 
     myLightBulb = new LightBulbMenu() {
@@ -279,7 +284,8 @@ public class IntentionsSupport {
       public void run() {
         if (value) {
           Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions();
-          if ((!enabledIntentions.isEmpty()) && (!myEditor.getEditedNode().getModel().isNotEditable())) {
+          SNode node = myEditor.getEditedNode();
+          if ((!enabledIntentions.isEmpty()) && (node == null || !node.getModel().isNotEditable())) {
             IntentionType typeToShow = IntentionType.getLowestPriorityType();
             for (Pair<Intention, SNode> pair : enabledIntentions) {
               if (pair.first.getType().getPriority() < typeToShow.getPriority()) {
