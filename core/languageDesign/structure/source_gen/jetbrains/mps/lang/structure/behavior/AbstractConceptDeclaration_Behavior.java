@@ -224,6 +224,25 @@ public class AbstractConceptDeclaration_Behavior {
     return (List<SNode>)BaseAdapter.toNodes(list);
   }
 
+  public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {
+    if (ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(thisNode)).contains(link) && !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "linkDeclaration", true)).contains(link))) {
+      for(SNode linkDeclarationOfMine : SLinkOperations.getTargets(thisNode, "linkDeclaration", true)) {
+        if (SLinkOperations.getTarget(linkDeclarationOfMine, "specializedLink", false) == link) {
+          return null;
+        }
+      }
+      if (SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(targetConcept))) {
+        SNode result = SLinkOperations.addNewChild(thisNode, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+        SLinkOperations.setTarget(result, "target", targetConcept, false);
+        SLinkOperations.setTarget(result, "specializedLink", link, false);
+        SPropertyOperations.set(result, "metaClass", SPropertyOperations.getString_def(link, "metaClass", "reference"));
+        SPropertyOperations.set(result, "role", SPropertyOperations.getString(link, "role"));
+        return result;
+      }
+    }
+    return null;
+  }
+
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept, IScope scope) {
     if (!(SConceptPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptPropertyOperations.getBoolean(thisNode, "dontSubstituteByDefault"))) {
       return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
