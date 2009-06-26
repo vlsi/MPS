@@ -2310,7 +2310,7 @@
                 <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928471867307">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928471867308">
                     <link role="classifier" targetNodeId="23.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                    <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+                    <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.NODE" resolveInfo="NODE" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928471867313">
@@ -2369,7 +2369,7 @@
                   <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928471867321">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928471867322">
                       <link role="classifier" targetNodeId="23.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                      <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.SNODES" resolveInfo="SNODES" />
+                      <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.NODES" resolveInfo="NODES" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928471867323">
