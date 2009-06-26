@@ -4059,7 +4059,11 @@
     <property name="name" value="ActionParameter_IsOptional" />
     <link role="conceptDeclaration" targetNodeId="1.1217413147516" resolveInfo="ActionParameter" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="5881611836528173479">
+      <property name="attractsFocus" value="0" />
       <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="5881611836528448619">
+        <property name="flag" value="false" />
+      </node>
       <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="5881611836528173480">
         <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="5881611836528173481">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5881611836528173482">

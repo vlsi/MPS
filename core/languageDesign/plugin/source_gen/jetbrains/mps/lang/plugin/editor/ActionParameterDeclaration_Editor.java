@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellProvider myActionParameter_IsOptional6987_0;
+  /* package */AbstractCellProvider myActionParameter_IsOptional6987_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6987_0(context, node);
@@ -73,7 +73,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6987_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6987_0((EditorCell_Label) editorCell, node, context);
+      setupLabel_RefNode_6987_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -93,7 +93,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createProperty_6987_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -102,7 +102,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6987_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6987_0((EditorCell_Label) editorCell, node, context);
+      setupLabel_Property_6987_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -122,7 +122,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 
