@@ -19,9 +19,7 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,14 +30,14 @@ import java.io.OutputStream;
 import java.lang.ref.WeakReference;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
-  private WeakReference<SNode> myNode;
+  private SNodePointer myNode;
   private String myPath;
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp;
 
   MPSNodeVirtualFile(@NotNull SNode node) {
-    myNode = new WeakReference<SNode>(node);
+    myNode = new SNodePointer(node);
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor != null) {
       myTimeStamp = modelDescriptor.lastChangeTime();
@@ -50,15 +48,15 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   void updateFields() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myName = "" + myNode.get().getPresentation();
-        myPath = myNode.get().getModel().getSModelFqName() + "/" + myName;
+        myName = "" + myNode.getNode().getPresentation();
+        myPath = myNode.getNode().getModel().getSModelFqName() + "/" + myName;
       }
     });
   }
 
   @NotNull
   public SNode getNode() {
-    return myNode.get();
+    return myNode.getNode();
   }
 
   public String getPath() {
@@ -118,7 +116,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public boolean isValid() {
-    SNode node = myNode.get();
+    SNode node = myNode.getNode();
     if (node == null) {
       return false;
     }

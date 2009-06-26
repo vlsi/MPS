@@ -143,8 +143,4 @@ public class SNodePointer {
     }
     return ourPointersTimestamp;
   }
-
-  public SNodePointer getCopy() {
-    return new SNodePointer(myModelReference.toString(), myNodeId.toString());
-  }
 }

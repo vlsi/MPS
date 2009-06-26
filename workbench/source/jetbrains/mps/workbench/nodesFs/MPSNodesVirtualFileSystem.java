@@ -32,6 +32,9 @@ import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.List;
 import java.util.WeakHashMap;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,16 +47,17 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
-  private WeakHashMap<SNode, MPSNodeVirtualFile> myVirtualFiles = new WeakHashMap<SNode, MPSNodeVirtualFile>();
+  private Map<SNodePointer, MPSNodeVirtualFile> myVirtualFiles = new HashMap<SNodePointer, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile compute() {
-        if (myVirtualFiles.containsKey(node)) {
-          return myVirtualFiles.get(node);
+        SNodePointer nodePointer = new SNodePointer(node);
+        if (myVirtualFiles.containsKey(nodePointer)) {
+          return myVirtualFiles.get(nodePointer);
         }
         MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node);
-        myVirtualFiles.put(node, vf);
+        myVirtualFiles.put(nodePointer, vf);
         return vf;
       }
     });
@@ -146,34 +150,35 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private void updateModificationStamp(SNode rootNode) {
-    MPSNodeVirtualFile vf = myVirtualFiles.get(rootNode.getContainingRoot());
+    MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(rootNode.getContainingRoot()));
     if (vf != null) {
       vf.setModificationStamp(LocalTimeCounter.currentTime());
       vf.setTimeStamp(System.currentTimeMillis());
     }
   }
 
+
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               for (SModelEvent e : events) {
                 e.accept(new SModelEventVisitorAdapter() {
                   public void visitRootEvent(SModelRootEvent event) {
                     if (event.isRemoved()) {
-                      VirtualFile vf = myVirtualFiles.get(event.getRoot());
+                      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getRoot()));
                       if (vf != null) {
                         fireBeforeFileDeletion(this, vf);
                         fireFileDeleted(this, vf, vf.getName(), null);
-                        myVirtualFiles.remove(event.getRoot());
+                        myVirtualFiles.remove(new SNodePointer(event.getRoot()));
                       }
                     }
                   }
 
                   public void visitPropertyEvent(SModelPropertyEvent event) {
-                    VirtualFile vf = myVirtualFiles.get(event.getNode());
+                    VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
                     if (event.getNode().isRoot() && vf != null) {
                       fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
                       ((MPSNodeVirtualFile) vf).updateFields();
@@ -194,13 +199,13 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (!modelDescriptor.isInitialized()) return;
 
       for (final SNode root : modelDescriptor.getSModel().getRoots()) {
-        final VirtualFile vf = myVirtualFiles.get(root);
+        final VirtualFile vf = myVirtualFiles.get(new SNodePointer(root));
         if (vf != null) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
             public void run() {
               fireBeforeFileDeletion(this, vf);
               fireFileDeleted(this, vf, vf.getName(), null);
-              myVirtualFiles.remove(root);
+              myVirtualFiles.remove(new SNodePointer(root));
             }
           });
         }
@@ -213,6 +218,40 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (event.getAffectedRoot() != null) {
         updateModificationStamp(event.getAffectedRoot());
       }
+    }
+
+    @Override
+    public void modelReloaded(final SModelDescriptor sm) {
+      for (SNode root : sm.getSModel().getRoots()) {
+        updateModificationStamp(root);
+      }
+
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              for (Entry<SNodePointer, MPSNodeVirtualFile> entry : myVirtualFiles.entrySet()) {
+                if (entry.getKey().getModel() != sm) continue;
+
+                SNode node = entry.getKey().getNode();
+                MPSNodeVirtualFile file = entry.getValue();
+                if (node == null) {
+                  fireBeforeFileDeletion(this, file);
+                  fireFileDeleted(this, file, file.getName(), null);
+                } else {
+                  String oldName = file.getName();
+                  String newName = node.getName();
+                  if (!oldName.equals(newName)) {
+                    fireBeforePropertyChange(this, file, VirtualFile.PROP_NAME, oldName, newName);
+                    ((MPSNodeVirtualFile) file).updateFields();
+                    firePropertyChanged(this, file, VirtualFile.PROP_NAME, oldName, newName);
+                  }
+                }
+              }
+            }
+          });
+        }
+      });
     }
   }
 }
