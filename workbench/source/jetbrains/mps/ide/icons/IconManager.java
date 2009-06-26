@@ -65,6 +65,12 @@ public class IconManager {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
         Icon result = null;
+
+        if (node.isUnknown()) {
+          return Icons.UNKNOWN_ICON;
+        }
+
+        
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
           result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
         }

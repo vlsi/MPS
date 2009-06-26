@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 public class Icons {
   public static final Icon DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/default.png"));
   public static final Icon DEFAULT_ROOT_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultRootNode.png"));
+  public static final Icon UNKNOWN_ICON = new ImageIcon(Icons.class.getResource("nodes/unknown.png"));
   public static final Icon DEFAULT_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/defaultNode.png"));
   public static final Icon MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/model.png"));
   public static final Icon LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/language.png"));
