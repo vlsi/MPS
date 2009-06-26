@@ -9,6 +9,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -36,8 +44,8 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_6987_1(context, node));
     editorCell.addEditorCell(this.createComponent_6987_0(context, node));
-    editorCell.addEditorCell(this.createConstant_6987_0(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_6987_1(context, node, ""));
+    editorCell.addEditorCell(this.createConstant_6987_0(context, node, "key:"));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6987_0(context, node));
     editorCell.addEditorCell(this.createComponent_6987_1(context, node));
     return editorCell;
   }
@@ -68,11 +76,32 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6987_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6987_1(editorCell, node, context);
-    setupLabel_Constant_6987_1(editorCell, node, context);
-    editorCell.setDefaultText("");
+  public EditorCell createReadOnlyModelAccessor_6987_0(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+
+      public String getText() {
+        SNode fieldReference = null;
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
+          fieldReference = new _Quotations.QuotationClass_0().createNode();
+        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SModelType")) {
+          fieldReference = new _Quotations.QuotationClass_1().createNode();
+        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+          fieldReference = new _Quotations.QuotationClass_2().createNode();
+        }
+        assert fieldReference != null;
+        return SPropertyOperations.getString(SLinkOperations.getTarget(fieldReference, "variableDeclaration", false), "name");
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_6987_0(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_6987_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -109,6 +138,10 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Component_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_ReadOnlyModelAccessor_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_6987_0");
+  }
+
   private static void setupBasic_Collection_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6987_0");
   }
@@ -129,29 +162,16 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6987_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ReadOnlyModelAccessor_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_RefNode_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6987_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
