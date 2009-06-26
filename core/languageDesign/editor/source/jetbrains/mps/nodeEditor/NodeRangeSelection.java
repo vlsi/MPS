@@ -231,7 +231,9 @@ public class NodeRangeSelection implements KeyboardHandler {
 
         deactivate();
       }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_CONTROL || keyEvent.getKeyCode() == KeyEvent.VK_SHIFT) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_CONTROL
+        || keyEvent.getKeyCode() == KeyEvent.VK_SHIFT
+        || keyEvent.getKeyCode() == KeyEvent.VK_ALT) {
         return false;
       }
 
