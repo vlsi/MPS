@@ -18,16 +18,20 @@ package jetbrains.mps.refactoring;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
+import javax.swing.JRootPane;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -61,12 +65,11 @@ public class RefactoringView extends BaseProjectTool implements INavigateableUsa
 
   public void showRefactoringView(@NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
-    RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
+    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
     myRefactoringViewItems.add(refactoringViewItem);
     addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
-    refactoringViewItem.getOkButton().requestFocus();
   }
 
   void closeRefactoringView(final RefactoringViewItem refactoringViewItem) {

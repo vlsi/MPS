@@ -32,9 +32,10 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class RefactoringViewItem {
   private RefactoringViewAction myRefactoringViewAction;
@@ -82,6 +83,15 @@ public class RefactoringViewItem {
         doRefactor();
       }
     });
+    myDoRefactorButton.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyTyped(KeyEvent e) {
+        if (e.getKeyChar() == '\n') {
+          doRefactor();
+        }
+      }
+    });
+
     myCancelButton = new JButton(new AbstractAction("Cancel") {
       public void actionPerformed(ActionEvent e) {
         cancel();
@@ -92,13 +102,37 @@ public class RefactoringViewItem {
 
     myPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
+
+    final FocusTraversalPolicy ftp = myPanel.getFocusTraversalPolicy();
+    myPanel.setFocusTraversalPolicy(new FocusTraversalPolicy() {
+      public Component getComponentAfter(Container aContainer, Component aComponent) {
+        return ftp.getComponentAfter(aContainer, aComponent);
+      }
+
+      public Component getComponentBefore(Container aContainer, Component aComponent) {
+        return ftp.getComponentBefore(aContainer, aComponent);
+      }
+
+      public Component getFirstComponent(Container aContainer) {
+        return ftp.getFirstComponent(aContainer);
+      }
+
+      public Component getLastComponent(Container aContainer) {
+        return ftp.getLastComponent(aContainer);
+      }
+
+      @Override
+      public Component getDefaultComponent(Container aContainer) {
+        return myDoRefactorButton;
+      }
+    });
   }
 
   public JComponent getComponent() {
     return myPanel;
   }
 
-  public JButton getOkButton(){
+  public JButton getOkButton() {
     return myDoRefactorButton;
   }
 
