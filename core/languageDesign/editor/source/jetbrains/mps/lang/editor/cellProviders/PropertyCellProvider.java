@@ -44,6 +44,9 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
+      if (!getSNode().isUnknown()) {
+        LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
+      }
       myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
     }
   }
