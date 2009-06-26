@@ -199,8 +199,8 @@
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218984772550">
                                 <link role="variableDeclaration" targetNodeId="1218984772537" resolveInfo="module" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218984772551">
-                                <link role="baseMethodDeclaration" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1171743928472749784">
+                                <link role="baseMethodDeclaration" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                               </node>
                             </node>
                           </node>

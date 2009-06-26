@@ -26,6 +26,8 @@ public class ActionDataParameterDeclaration_Behavior {
     List<SNode> dataKeys = new ArrayList<SNode>();
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+    ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "variableDeclaration", false));
+    ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "variableDeclaration", false));
     return dataKeys;
   }
 

@@ -178,7 +178,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0824_7(context, node, "icon:"));
     editorCell.addEditorCell(this.createAlternation_0824_0(context, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, ActionDeclaration_Editor._QueryFunction_JComponent_1171743928472040374(node, context), "_1171743928472040373"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, ActionDeclaration_Editor._QueryFunction_JComponent_1171743928472749994(node, context), "_1171743928472749993"));
     return editorCell;
   }
 
@@ -462,7 +462,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createImage_0824_0(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_1171743928472040363(node, context));
+    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_1171743928472749983(node, context));
     setupBasic_Image_0824_0(editorCell, node, context);
     editorCell.setDescent(0);
     return editorCell;
@@ -1411,7 +1411,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_0824_23(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static String _image_provider_1171743928472040363(SNode node, EditorContext editorContext) {
+  public static String _image_provider_1171743928472749983(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "iconPath");
   }
 
@@ -1419,7 +1419,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     String path = null;
     IModule module = EditorUtil.findAnchorModule(node);
     if (module != null) {
-      path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "iconPath"), module.getModuleUID());
+      path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "iconPath"), module.getModuleFqName());
     }
     return path != null && FileSystem.getFile(path).exists();
   }
@@ -1432,7 +1432,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static JComponent _QueryFunction_JComponent_1171743928472040374(SNode node, EditorContext editorContext) {
+  public static JComponent _QueryFunction_JComponent_1171743928472749994(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "iconPath", editorContext);
   }
 

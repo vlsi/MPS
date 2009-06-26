@@ -8,6 +8,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -1658,6 +1659,46 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1227641889591">
                   <link role="link" targetNodeId="6.1128555889557" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472823389">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472823391">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1171743928472823390">
+              <link role="variableDeclaration" targetNodeId="1227641889565" resolveInfo="dataKeys" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1171743928472823395">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472823405">
+                <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472823398">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472823401">
+                    <link role="classifier" targetNodeId="23.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                    <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.SNODE" resolveInfo="SNODE" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472823410">
+                  <link role="link" targetNodeId="6.1070568178160" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171743928472823413">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472823414">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1171743928472823415">
+              <link role="variableDeclaration" targetNodeId="1227641889565" resolveInfo="dataKeys" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1171743928472823416">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1171743928472823417">
+                <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928472823418">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928472823419">
+                    <link role="classifier" targetNodeId="23.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                    <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.SNODES" resolveInfo="SNODES" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928472823420">
+                  <link role="link" targetNodeId="6.1070568178160" />
                 </node>
               </node>
             </node>
