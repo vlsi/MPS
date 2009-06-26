@@ -11,9 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -30,10 +29,15 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myActionParameter_NameCellComponent6987_0;
+  /* package */AbstractCellProvider myActionParameter_Hint6987_0;
   /* package */AbstractCellProvider myActionParameter_IsOptional6987_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6987_0(context, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext context, SNode node) {
+    return this.createComponent_6987_1(context, node);
   }
 
   public EditorCell createCollection_6987_0(EditorContext context, SNode node) {
@@ -46,7 +50,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_6987_0(context, node));
     editorCell.addEditorCell(this.createConstant_6987_0(context, node, "key:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6987_0(context, node));
-    editorCell.addEditorCell(this.createComponent_6987_1(context, node));
+    editorCell.addEditorCell(this.createComponent_6987_2(context, node));
     return editorCell;
   }
 
@@ -60,11 +64,20 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createComponent_6987_1(EditorContext context, SNode node) {
+    if (this.myActionParameter_Hint6987_0 == null) {
+      this.myActionParameter_Hint6987_0 = new ActionParameter_Hint(node);
+    }
+    EditorCell editorCell = this.myActionParameter_Hint6987_0.createEditorCell(context);
+    setupBasic_Component_6987_1(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent_6987_2(EditorContext context, SNode node) {
     if (this.myActionParameter_IsOptional6987_0 == null) {
       this.myActionParameter_IsOptional6987_0 = new ActionParameter_IsOptional(node);
     }
     EditorCell editorCell = this.myActionParameter_IsOptional6987_0.createEditorCell(context);
-    setupBasic_Component_6987_1(editorCell, node, context);
+    setupBasic_Component_6987_2(editorCell, node, context);
     return editorCell;
   }
 
@@ -80,16 +93,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
-        SNode fieldReference = null;
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-          fieldReference = new _Quotations.QuotationClass_0().createNode();
-        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SModelType")) {
-          fieldReference = new _Quotations.QuotationClass_1().createNode();
-        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
-          fieldReference = new _Quotations.QuotationClass_2().createNode();
-        }
-        assert fieldReference != null;
-        return SPropertyOperations.getString(SLinkOperations.getTarget(fieldReference, "variableDeclaration", false), "name");
+        return SPropertyOperations.getString(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "name");
       }
 
       public void setText(String s) {
@@ -142,6 +146,9 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_6987_0");
   }
 
+  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupBasic_Collection_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6987_0");
   }
@@ -162,7 +169,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Component_6987_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ReadOnlyModelAccessor_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

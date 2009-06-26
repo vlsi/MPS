@@ -4,6 +4,8 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ActionParameterDeclaration_Behavior {
 
@@ -12,6 +14,17 @@ public class ActionParameterDeclaration_Behavior {
 
   public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "type", true);
+  }
+
+  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "variableDeclaration", false);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SModelType")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "variableDeclaration", false);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "variableDeclaration", false);
+    }
+    throw new IllegalStateException("Action parameter has wrong type: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "type", true)));
   }
 
 }

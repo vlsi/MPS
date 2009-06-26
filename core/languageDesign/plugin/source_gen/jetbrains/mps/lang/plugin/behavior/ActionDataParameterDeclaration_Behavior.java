@@ -18,6 +18,10 @@ public class ActionDataParameterDeclaration_Behavior {
     return SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "key", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first(), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
 
+  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "key", false);
+  }
+
   public static List<SNode> getVariants_1227641865136() {
     List<SNode> dataKeys = new ArrayList<SNode>();
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
