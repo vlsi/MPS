@@ -1358,6 +1358,14 @@ public final class SNode {
   }
 
   public String getPresentation() {
+    if (isUnknown(GlobalScope.getInstance())) {
+      String persistentName = getPersistentProperty(INamedConcept.NAME);
+      if (persistentName == null) {
+        return "?unknown node?";
+      }
+      return "?" + persistentName + "?";
+    }
+
     try {
       return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
     } catch (Throwable t) {
@@ -1487,6 +1495,10 @@ public final class SNode {
       return myLanguageNamespace;
     }
     return (myLanguageNamespace = InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName)));
+  }
+
+  public boolean isUnknown(IScope scope) {
+    return scope.getLanguage(getLanguageNamespace()) == null;
   }
 
   @UseCarefully
