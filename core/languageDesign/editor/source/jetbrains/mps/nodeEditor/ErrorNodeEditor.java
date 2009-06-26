@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 public class ErrorNodeEditor implements INodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, "?" + node.getConceptShortName() + "?");
+    return new EditorCell_Error(editorContext, node, node.getPresentation());
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {

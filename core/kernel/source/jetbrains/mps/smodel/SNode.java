@@ -1361,7 +1361,7 @@ public final class SNode {
     if (isUnknown()) {
       String persistentName = getPersistentProperty(INamedConcept.NAME);
       if (persistentName == null) {
-        return "?unknown node?";
+        return "?" + getConceptShortName() + "?";
       }
       return "?" + persistentName + "?";
     }
