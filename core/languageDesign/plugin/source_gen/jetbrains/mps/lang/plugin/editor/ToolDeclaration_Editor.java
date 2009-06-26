@@ -36,7 +36,9 @@ import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.BlockCells;
+
 import javax.swing.JComponent;
+
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -46,8 +48,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4170_0;
-  /* package */AbstractCellListHandler myListHandler_4170_1;
+  /* package */ AbstractCellListHandler myListHandler_4170_0;
+  /* package */ AbstractCellListHandler myListHandler_4170_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4170_7(context, node);
@@ -59,8 +61,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_4170_6(context, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_4170_7(context, node, "<no icon>");
     }
     setupBasic_Alternation_4170_0(editorCell, node, context);
@@ -146,7 +147,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4170_6(context, node, "icon:"));
     editorCell.addEditorCell(this.createAlternation_4170_0(context, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, ToolDeclaration_Editor._QueryFunction_JComponent_5234829159124430295(node, context), "_5234829159124430294"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, ToolDeclaration_Editor._QueryFunction_JComponent_5881611836528314215(node, context), "_5881611836528314214"));
     return editorCell;
   }
 
@@ -321,7 +322,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createImage_4170_0(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_5234829159124430284(node, context));
+    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_5881611836528314204(node, context));
     setupBasic_Image_4170_0(editorCell, node, context);
     editorCell.setDescent(0);
     return editorCell;
@@ -384,7 +385,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4170_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4170_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4170_0((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -404,7 +405,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty_4170_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -413,7 +414,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4170_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4170_1((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4170_1((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -433,7 +434,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty_4170_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -442,7 +443,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4170_2(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4170_2((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4170_2((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -462,7 +463,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty_4170_6_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -471,7 +472,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4170_3(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4170_3((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_4170_3((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -491,7 +492,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_4170_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -500,7 +501,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4170_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4170_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4170_0((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -520,7 +521,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_4170_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -529,7 +530,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4170_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4170_1((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4170_1((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -549,7 +550,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_4170_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -558,7 +559,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4170_2(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4170_2((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_4170_2((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -578,7 +579,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
 
@@ -949,7 +950,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_4170_14(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static String _image_provider_5234829159124430284(SNode node, EditorContext editorContext) {
+  public static String _image_provider_5881611836528314204(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "icon");
   }
 
@@ -974,7 +975,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static JComponent _QueryFunction_JComponent_5234829159124430295(SNode node, EditorContext editorContext) {
+  public static JComponent _QueryFunction_JComponent_5881611836528314215(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 
@@ -1020,7 +1021,8 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
+
   public static class methodDeclarationListHandler_4170_0 extends RefNodeListHandler {
 
     public methodDeclarationListHandler_4170_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -1070,6 +1072,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-}
+  }
 
 }

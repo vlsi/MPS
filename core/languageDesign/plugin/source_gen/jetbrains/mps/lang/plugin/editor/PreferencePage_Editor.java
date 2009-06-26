@@ -30,6 +30,7 @@ import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.BlockCells;
+
 import javax.swing.JComponent;
 
 public class PreferencePage_Editor extends DefaultNodeEditor {
@@ -44,8 +45,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_6322_4(context, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_6322_5(context, node, "<no icon>");
     }
     setupBasic_Alternation_6322_0(editorCell, node, context);
@@ -101,7 +101,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6322_3(context, node, "icon"));
     editorCell.addEditorCell(this.createConstant_6322_4(context, node, ":"));
     editorCell.addEditorCell(this.createAlternation_6322_0(context, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_5234829159124430520(node, context), "_5234829159124430519"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_5881611836528314440(node, context), "_5881611836528314439"));
     return editorCell;
   }
 
@@ -244,7 +244,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   public EditorCell createImage_6322_0(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_5234829159124430509(node, context));
+    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_5881611836528314429(node, context));
     setupBasic_Image_6322_0(editorCell, node, context);
     editorCell.setDescent(0);
     return editorCell;
@@ -261,7 +261,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6322_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6322_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_6322_0((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -281,7 +281,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_6322_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -290,7 +290,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6322_0(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6322_0((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_6322_0((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -310,7 +310,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty_6322_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -319,7 +319,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6322_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6322_1((EditorCell_Label)editorCell, node, context);
+      setupLabel_Property_6322_1((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -339,7 +339,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_6322_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -348,7 +348,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6322_1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6322_1((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_6322_1((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -368,7 +368,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_6322_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -377,7 +377,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6322_2(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6322_2((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_6322_2((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -397,7 +397,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createRefNode_6322_6_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -406,7 +406,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6322_3(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6322_3((EditorCell_Label)editorCell, node, context);
+      setupLabel_RefNode_6322_3((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -426,7 +426,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
 
@@ -719,7 +719,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_6322_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static String _image_provider_5234829159124430509(SNode node, EditorContext editorContext) {
+  public static String _image_provider_5881611836528314429(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "icon");
   }
 
@@ -740,7 +740,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static JComponent _QueryFunction_JComponent_5234829159124430520(SNode node, EditorContext editorContext) {
+  public static JComponent _QueryFunction_JComponent_5881611836528314440(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 
