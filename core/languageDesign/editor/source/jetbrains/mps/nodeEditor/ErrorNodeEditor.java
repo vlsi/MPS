@@ -19,16 +19,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.annotations.NotNull;
 
 public class ErrorNodeEditor implements INodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, "Can't find an editor. Language " + node.getLanguageNamespace() + " isn't visible in scope of module");
+    return new EditorCell_Error(editorContext, node, node.getPresentation());
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new DefaultInspectorCell(editorContext, node, node.getDebugText(), true);
+    EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
+    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Can't find an editor."));
+    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Concept = " + node.getConceptFqName()));    
+    return collection;
+
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {
