@@ -712,17 +712,12 @@ public class SModel implements Iterable<SNode> {
 
     for (ModuleReference lang : myLanguages) {
       Language language = scope.getLanguage(lang);
+
       if (language != null) {
         languages.add(language);
         languages.addAll(language.getAllExtendedLanguages());
         //addAspectModelsVersions(languageNamespace, language);
-      } else {
-        if (!isLoading()) {
-          LOG.error("Language \"" + lang.getModuleFqName() + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelFqName() +
-            "\"\nAdd this language to the LANGUAGES section of the module properties");
-        }
-      }
-
+      } 
     }
 
     for (ModuleReference dk : getDevKitRefs()) {
