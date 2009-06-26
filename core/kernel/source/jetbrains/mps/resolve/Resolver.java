@@ -116,7 +116,6 @@ public class Resolver {
     ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + reference.getRole() + "'", referenceNode);
       return false;
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();

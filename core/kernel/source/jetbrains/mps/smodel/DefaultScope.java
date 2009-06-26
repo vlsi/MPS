@@ -122,9 +122,7 @@ public abstract class DefaultScope extends BaseScope {
         IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
         if (dependency != null) {
           visibleModules.add(dependency);
-        } else {
-          LOG.error("Can't find module " + d.getModuleRef().getModuleFqName() + " in " + this);
-        }
+        } 
       }
     }
 
@@ -198,8 +196,6 @@ public abstract class DefaultScope extends BaseScope {
               visibleModules.add(dependency);
               changed = true;
             }
-          } else {
-            LOG.error("Can't load " + dep.getModuleRef().getModuleFqName() + " from " + language);
           }
         }
       }

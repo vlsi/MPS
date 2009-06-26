@@ -573,7 +573,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
 
     if (topConcept == null) {
-      LOG.error("Can't find a concept " + conceptFqName);
       myCanBeChildMethods.put(conceptFqName, null);
       return null;
     }
@@ -585,7 +584,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
       String namespace = NameUtil.namespaceFromConcept(concept);
       Language language = scope.getLanguage(namespace);
       if (language == null) {
-        LOG.error("Can't find a language " + namespace);
         continue;
       }
 
@@ -640,7 +638,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
 
     if (concept == null) {
-      LOG.error("Can't find a concept " + conceptFqName);
       myCanBeRootMethods.put(conceptFqName, null);
       return null;
     }
@@ -649,7 +646,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String namespace = NameUtil.namespaceFromConcept(concept);
     Language language = scope.getLanguage(namespace);
     if (language == null) {
-      LOG.error("Can't find a language " + namespace);
       myCanBeRootMethods.put(conceptFqName, null);
       return null;
     }

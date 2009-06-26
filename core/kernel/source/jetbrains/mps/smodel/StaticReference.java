@@ -95,7 +95,6 @@ public class StaticReference extends SReferenceBase {
 
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     if (modelDescriptor == null) {
-      error("couldn't access model '" + targetModelReference + "'");
       return null;
     }
 

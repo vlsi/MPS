@@ -322,9 +322,7 @@ public abstract class AbstractModule implements IModule {
       IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       if (m != null) {
         result.add(m);
-      } else {
-        LOG.error("Can't load module " + dep.getModuleRef().getModuleFqName() + " from " + this);
-      }
+      } 
     }
     return result;
   }
@@ -353,8 +351,6 @@ public abstract class AbstractModule implements IModule {
       Language l = MPSModuleRepository.getInstance().getLanguage(ref);
       if (l != null) {
         result.add(l);
-      } else {
-        LOG.error("Can't load language " + ref.getModuleFqName() + " from " + this);
       }
     }
 

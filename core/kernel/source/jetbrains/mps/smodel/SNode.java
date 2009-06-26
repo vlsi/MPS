@@ -1529,9 +1529,6 @@ public final class SNode {
   public AbstractConceptDeclaration getConceptDeclarationAdapter() {
     String conceptFQName = getConceptFqName();
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    if (concept == null) {
-      LOG.error("couldn't find concept declaration '" + conceptFQName + "' for node " + getId() + " in model " + getModel().getSModelFqName(), this);
-    }
     return concept;
   }
 
@@ -1664,12 +1661,7 @@ public final class SNode {
 
   public Language getLanguage(@NotNull IScope scope) {
     String languageNamespace = getLanguageNamespace();
-    Language language = scope.getLanguage(languageNamespace);
-    if (language == null) {
-      LOG.error("couldn't find language for namespace '" + languageNamespace + "' in scope: " + scope);
-      return null;
-    }
-    return language;
+    return scope.getLanguage(languageNamespace);
   }
 
   public synchronized BaseAdapter getAdapter() {

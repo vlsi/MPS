@@ -942,9 +942,7 @@ public class SModel implements Iterable<SNode> {
 
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
-      } else {
-        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference.getSModelFqName() + "\" in: \"" + getSModelReference().getSModelFqName() + "\"");
-      }
+      } 
     }
     return modelsList;
   }
@@ -1465,9 +1463,7 @@ public class SModel implements Iterable<SNode> {
         ModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
         changed = changed || changed(ref, newRef);
-      } else {
-        LOG.error("Can't load module " + ref.getModuleFqName() + " in model " + getSModelReference().getLongName());
-      }
+      } 
     }
     return changed;
   }
