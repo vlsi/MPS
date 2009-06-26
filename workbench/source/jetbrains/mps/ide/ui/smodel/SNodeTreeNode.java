@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -96,6 +97,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier("null");
     } else {
       setNodeIdentifier(getSNode().getId());
+    }
+
+    if (getSNode().isUnknown()) {
+      setErrorState(ErrorState.ERROR);     
     }
 
     setText(caclulateNodeTextPresentation());
