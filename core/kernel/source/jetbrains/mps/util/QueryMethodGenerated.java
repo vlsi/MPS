@@ -160,7 +160,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
         Class cls;
         if (l == null) {
           LOG.error("Can't find a language " + namespace);
-          throw new RuntimeException("Can't find a language " + namespace);
+          return null;
         }
         cls = l.getClass(adapterName);
 

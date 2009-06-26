@@ -1358,7 +1358,7 @@ public final class SNode {
   }
 
   public String getPresentation() {
-    if (isUnknown(GlobalScope.getInstance())) {
+    if (isUnknown()) {
       String persistentName = getPersistentProperty(INamedConcept.NAME);
       if (persistentName == null) {
         return "?unknown node?";
@@ -1382,7 +1382,7 @@ public final class SNode {
     try {
       s = getProperty(BaseConcept.ALIAS);
       if (s == null) {
-        s = BaseConcept_Behavior.call_getPresentation_1213877396640(this);
+        s = getPresentation();
       }
     } catch (Throwable t) {
       LOG.error(t, this);
@@ -1497,9 +1497,11 @@ public final class SNode {
     return (myLanguageNamespace = InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName)));
   }
 
-  public boolean isUnknown(IScope scope) {
-    return scope.getLanguage(getLanguageNamespace()) == null;
+  public boolean isUnknown() {
+    Language language = GlobalScope.getInstance().getLanguage(getLanguageNamespace());
+    return language == null || language.findConceptDeclaration(getConceptShortName()) == null;
   }
+
 
   @UseCarefully
   void setConceptFqName(String conceptFQName) {
@@ -1694,8 +1696,7 @@ public final class SNode {
       LOG.error(t);
     }
 
-    return new BaseConcept(this) {
-    };
+    return new BaseConcept(this);
   }
 
   void clearAdapters() {
