@@ -83,7 +83,6 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return NodeReadAccessCaster.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
       public NodeSubstituteInfo compute() {
         if (myPropertyDeclaration == null) {
-          LOG.error("no property declaration to create substitute info");
           return null;
         }
         DataTypeDeclaration dataType = myPropertyDeclaration.getDataType();
