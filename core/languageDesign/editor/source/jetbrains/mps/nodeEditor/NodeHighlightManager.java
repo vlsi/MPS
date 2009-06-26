@@ -154,6 +154,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void removeMessage(EditorMessage m) {
+    if (m == null) {
+      return;
+    }
     EditorMessageOwner owner = m.getOwner();
     Set<EditorMessage> messages = myOwnerToMessages.get(owner);
     messages.remove(m);
