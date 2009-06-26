@@ -14,7 +14,7 @@ public class ActionDataParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_getType_1217257091542(SNode thisNode) {
+  public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
     return SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "key", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first(), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ActionDataParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +19,7 @@ public class typeof_ActionDataParameterDeclaration_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = declaration;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(declaration, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412020643", true), (SNode)ActionDataParameterDeclaration_Behavior.call_getType_1217257091542(declaration), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412036054", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(declaration, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412020643", true), (SNode)ActionParameter_Behavior.call_getType_1171743928471337193(declaration), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412036054", intentionProvider);
     }
   }
 

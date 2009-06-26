@@ -43,7 +43,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -1083,7 +1083,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1227009901442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ActionDataParameterDeclaration_Behavior.call_getType_1217257091542(_context.getNode());
+    return ActionParameter_Behavior.call_getType_1171743928471337193(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1227015265334(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1123,7 +1123,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5834814271541225961(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ActionDataParameterDeclaration_Behavior.call_getType_1217257091542(SLinkOperations.getTarget(_context.getNode(), "member", false));
+    return ActionParameter_Behavior.call_getType_1171743928471337193(SLinkOperations.getTarget(_context.getNode(), "member", false));
   }
 
   public static Iterable sourceNodesQuery_1204045442068(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
