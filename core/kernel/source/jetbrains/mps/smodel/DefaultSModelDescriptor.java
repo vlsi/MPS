@@ -149,7 +149,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
-
+    
+    tryFixingVersion();
     updateModelWithRefactorings();
 
     myDiskTimestamp = fileTimestamp();
@@ -179,6 +180,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myIsTestRefactoringMode = isTestRefactoringMode;
   }
 
+  private void tryFixingVersion() {
+    if (getVersion() != -1) return;
+
+    int maxVersion = -1;
+    for (RefactoringContext context : mySModel.getRefactoringHistory().getRefactoringContexts()) {
+      maxVersion = Math.max(maxVersion, context.getModelVersion());
+    }
+
+    if (maxVersion != -1) {
+      setVersion(maxVersion);
+      LOG.error("Metadata file for model " + getSModelFqName() + " wasn't present. Recreated a new one.");
+    }
+  }
+
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
@@ -206,19 +221,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
-        int maxVersion = -1;
-        for (RefactoringContext context : modelDescriptor.getSModel().getRefactoringHistory().getRefactoringContexts()) {
-          maxVersion = Math.max(maxVersion, context.getModelVersion());
+        if (modelDescriptor instanceof DefaultSModelDescriptor) {
+          ((DefaultSModelDescriptor) modelDescriptor).tryFixingVersion();
         }
 
-        if (maxVersion != -1) {
-          modelDescriptor.setVersion(maxVersion);
-          currentVersion = maxVersion;
-        }
-
-        if (currentVersion == usedVersion) {
-          return;
-        }
+        if (modelDescriptor.getVersion() == usedVersion) return;
       }
 
       LOG.error("Model version mismatch for import " + modelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
