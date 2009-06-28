@@ -199,6 +199,31 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
       SModelRepository.getInstance().markChanged(mySModel);
     }
+
+
+    // broken model fixing code
+    if (currentVersion < usedVersion) {
+
+      //user might have forgotten to commit .metadata file
+      if (currentVersion == -1) {
+        int maxVersion = -1;
+        for (RefactoringContext context : modelDescriptor.getSModel().getRefactoringHistory().getRefactoringContexts()) {
+          maxVersion = Math.max(maxVersion, context.getModelVersion());
+        }
+
+        if (maxVersion != -1) {
+          modelDescriptor.setVersion(maxVersion);
+          currentVersion = maxVersion;
+        }
+      }
+
+      LOG.error("Model version mismatch for import " + modelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
+      LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
+      mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
+      SModelRepository.getInstance().markChanged(mySModel);
+      LOG.error("Mismatch fixed");
+    }
+
     return;
   }
 
