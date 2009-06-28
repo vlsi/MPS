@@ -51,6 +51,8 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
+  private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
+
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelReference myReference;
 
@@ -62,7 +64,7 @@ public class SModel implements Iterable<SNode> {
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
   private List<ModuleReference> myDevKits = new ArrayList<ModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
-  private List<ImportElement> myAspectModelsVersions = new ArrayList<ImportElement>();
+  private List<ImportElement> myAdditionalModelsVersions = new ArrayList<ImportElement>();
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
@@ -632,10 +634,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addAspectModelsVersions(@NotNull Language language) {
-    for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      setLanguageAspectModelVersion(modelDescriptor.getSModelReference(), modelDescriptor.getVersion());
+    if (myVersionedLanguages.contains(language.getModuleReference())) {
+      return;
     }
-    for (Language l : language.getAllExtendedLanguages()) {
+    for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
+      addAdditionalModelVersion(modelDescriptor.getSModelReference(), modelDescriptor.getVersion());
+    }
+    myVersionedLanguages.add(language.getModuleReference());
+    for (Language l : language.getExtendedLanguages()) {
       addAspectModelsVersions(l);
     }
   }
@@ -668,6 +674,7 @@ public class SModel implements Iterable<SNode> {
 
   public void deleteLanguage(@NotNull ModuleReference ref) {
     myLanguages.remove(ref);
+    myVersionedLanguages.remove(ref);
     fireLanguageRemovedEvent(ref);
   }
 
@@ -815,18 +822,9 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelReference);
   }
 
-  public void setLanguageAspectModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    if (usedVersion == -1) return;
-
-    for (ImportElement importElement : myAspectModelsVersions) {
-      if (modelReference.equals(importElement.getModelReference())) {
-        importElement.myUsedVersion = usedVersion;
-        return;
-      }
-    }
-
+  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
     ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
-    myAspectModelsVersions.add(importElement);
+    myAdditionalModelsVersions.add(importElement);
   }
 
   @Nullable
@@ -840,8 +838,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   @Nullable
-  ImportElement getAspectModelVersions(@NotNull SModelReference modelReference) {
-    for (ImportElement importElement : myAspectModelsVersions) {
+  ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
+    for (ImportElement importElement : myAdditionalModelsVersions) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
@@ -850,7 +848,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<ImportElement> getLanguageAspectModelElements() {
-    return new ArrayList<ImportElement>(myAspectModelsVersions);
+    return new ArrayList<ImportElement>(myAdditionalModelsVersions);
   }
 
 
@@ -1199,7 +1197,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public int getLanguageAspectModelVersion(SModelReference sModelReference) {
-    ImportElement importElement = getAspectModelVersions(sModelReference);
+    ImportElement importElement = getAdditionalModelElement(sModelReference);
     if (importElement == null) return -1;
     return importElement.getUsedVersion();
   }
@@ -1210,11 +1208,11 @@ public class SModel implements Iterable<SNode> {
       importElement.myUsedVersion = currentVersion;
     }
 
-    importElement = getAspectModelVersions(sModelReference);
+    importElement = getAdditionalModelElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
-      setLanguageAspectModelVersion(sModelReference, currentVersion);
+      addAdditionalModelVersion(sModelReference, currentVersion);
     }
     fireImportAddedEvent(myReference);
   }
@@ -1417,7 +1415,7 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-    for (ImportElement e : myAspectModelsVersions) {
+    for (ImportElement e : myAdditionalModelsVersions) {
       SModelReference oldReference = e.myModelDescriptor;
       SModelReference newRef = oldReference.update();
       if (newRef.differs(oldReference)) {
@@ -1446,6 +1444,10 @@ public class SModel implements Iterable<SNode> {
     }
 
     if (updateRefs(myLanguagesEngagedOnGeneration)) {
+      changed = true;
+    }
+
+    if (updateRefs(myVersionedLanguages)) {
       changed = true;
     }
 

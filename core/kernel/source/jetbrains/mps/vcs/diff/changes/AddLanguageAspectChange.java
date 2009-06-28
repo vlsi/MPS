@@ -32,7 +32,7 @@ public class AddLanguageAspectChange extends Change {
   }
 
   public boolean apply(SModel m) {
-    m.setLanguageAspectModelVersion(myImportElement.getModelReference(), myImportElement.getUsedVersion());
+    m.addAdditionalModelVersion(myImportElement.getModelReference(), myImportElement.getUsedVersion());
     return true;
   }
 

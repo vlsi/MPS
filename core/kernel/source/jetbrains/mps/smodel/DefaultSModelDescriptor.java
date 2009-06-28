@@ -23,7 +23,6 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -152,7 +151,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
 
     updateModelWithRefactorings();
-//    updateAspectModelVersions();
 
     myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
@@ -177,37 +175,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
-//  private void updateAspectModelVersions() {
-//    boolean wasLoading = mySModel.setLoading(true);
-//    try {
-//      boolean changed = false;
-//      for (ModuleReference mr : mySModel.getExplicitlyImportedLanguages()) {
-//        Language l = GlobalScope.getInstance().getLanguage(mr);
-//        if (l == null) continue;
-//
-//        List<Language> languages = new ArrayList<Language>();
-//        languages.add(l);
-//        languages.addAll(l.getAllExtendedLanguages());
-//        for (Language lang : languages) {
-//          for (SModelDescriptor aspect : lang.getAspectModelDescriptors()) {
-//            int newVersion = aspect.getVersion();
-//            int oldVersion = mySModel.getLanguageAspectModelVersion(aspect.getSModelReference());
-//            if (newVersion != oldVersion) {
-//              mySModel.setLanguageAspectModelVersion(aspect.getSModelReference(), newVersion);
-//              changed = true;
-//            }
-//          }
-//        }
-//
-//        if (changed) {
-//          SModelRepository.getInstance().markChanged(mySModel);
-//        }
-//      }
-//    } finally {
-//      mySModel.setLoading(wasLoading);
-//    }
-//  }
-//
   public void setTestRefactoringMode(boolean isTestRefactoringMode) {
     myIsTestRefactoringMode = isTestRefactoringMode;
   }
@@ -232,6 +199,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
       SModelRepository.getInstance().markChanged(mySModel);
     }
+    return;
   }
 
   private void addListenersToNewModel() {
