@@ -215,6 +215,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           modelDescriptor.setVersion(maxVersion);
           currentVersion = maxVersion;
         }
+
+        if (currentVersion == usedVersion) {
+          return;
+        }
       }
 
       LOG.error("Model version mismatch for import " + modelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
@@ -223,8 +227,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       SModelRepository.getInstance().markChanged(mySModel);
       LOG.error("Mismatch fixed");
     }
-
-    return;
   }
 
   private void addListenersToNewModel() {
