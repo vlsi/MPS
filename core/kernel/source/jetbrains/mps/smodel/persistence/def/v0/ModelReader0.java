@@ -209,7 +209,7 @@ public class ModelReader0 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(upgradeModelUID(SModelReference.fromString(aspectModelUID)), version);
+        model.setLanguageAspectModelVersion(upgradeModelUID(SModelReference.fromString(aspectModelUID)), version);
       }
     }
   }
