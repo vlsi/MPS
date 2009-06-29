@@ -87,8 +87,13 @@ public class DefaultCellInfo implements CellInfo {
     if (myCellId != null) {
       return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
     } else if (myParentInfo != null) {
-      EditorCell parent = myParentInfo.findCell(editorComponent);
-      return ((EditorCell_Collection)parent).getChildAt(myCellNumber);
+      EditorCell_Collection parent = (EditorCell_Collection) myParentInfo.findCell(editorComponent);
+      if (myCellNumber < parent.getChildCount()) {
+        return parent.getChildAt(myCellNumber);
+      } else {
+        return null;
+      }
+
     }
     return null;
   }
