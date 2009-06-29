@@ -17,6 +17,7 @@ package jetbrains.mps.lang.generator.plugin.debug;
 
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.ArrayWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,11 +51,16 @@ public class TracerNode {
     }
   }
 
+  /**
+   * When you save transient models, TracerNodes can take up a lot of memory, so
+   * instead of using ArrayList, we use ArrayWrappers here
+   */
+  private static TracerNode[] EMPTY_ARRAY = new TracerNode[0];
 
   private Kind myKind;
   private SNodePointer myNodePointer;
   private TracerNode myParent;
-  private List<TracerNode> myChildren = new ArrayList<TracerNode>(3);
+  private TracerNode[] myChildren = EMPTY_ARRAY;
 
   public TracerNode(Kind kind, SNodePointer nodePointer) {
     myKind = kind;
@@ -77,19 +83,35 @@ public class TracerNode {
     myParent = tracerNode;
   }
 
+  private List<TracerNode> _children() {
+    return new ArrayWrapper<TracerNode>() {
+      protected TracerNode[] getArray() {
+        return myChildren;
+      }
+
+      protected void setArray(TracerNode[] newArray) {
+        myChildren = newArray;
+      }
+
+      protected TracerNode[] newArray(int size) {
+        return new TracerNode[size];
+      }
+    };
+  }
+
   public void addChild(TracerNode tracerNode) {
-    myChildren.add(tracerNode);
+    _children().add(tracerNode);
     tracerNode.setParent(this);
   }
 
   public void removeChild(TracerNode tracerNode) {
-    assert myChildren.contains(tracerNode) : "no such child";
-    myChildren.remove(tracerNode);
+    assert _children().contains(tracerNode) : "no such child";
+    _children().remove(tracerNode);
     tracerNode.setParent(null);
   }
 
   public List<TracerNode> getChildren() {
-    return myChildren;
+    return _children();
   }
 
   public boolean isThis(Kind kind, SNode node) {
