@@ -697,9 +697,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518715931">
         <link role="constructorDeclaration" targetNodeId="14.~GenerateTextFromModelsAction.&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5535460359399672325">
-        <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCodeAction" />
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1227147966966">
         <link role="constructorDeclaration" targetNodeId="131.~GoToUsageInMappingConfigAction.&lt;init&gt;()" resolveInfo="GoToUsageInMappingConfigAction" />
       </node>
@@ -756,6 +753,9 @@
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215870456938">
         <link role="action" targetNodeId="1215870087530" resolveInfo="CellProperties" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5341681982029103227">
+        <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCode" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216124026098">
         <link role="action" targetNodeId="1216123841989" resolveInfo="ShowCellInExplorer" />
@@ -20547,13 +20547,6 @@
       <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2628837543478196868">
         <property name="modifiers" value="ctrl" />
         <property name="keycode" value="VK_Q" />
-      </node>
-    </node>
-    <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="6074180103675879660">
-      <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCode" />
-      <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="6074180103675879661">
-        <property name="modifiers" value="ctrl" />
-        <property name="keycode" value="VK_N" />
       </node>
     </node>
   </node>
