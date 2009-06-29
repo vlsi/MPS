@@ -342,7 +342,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
     //write access listeners
     removeOurListener();
-    for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
+    Set<SNode> nodesToDependOn = new HashSet<SNode>(myNodesToDependentNodes.keySet());
+    nodesToDependOn.add(myRootNode);
+    for (SNode nodeToDependOn : nodesToDependOn) {
       final SModel sModel = nodeToDependOn.getModel();
       final SModelDescriptor sm = sModel.getModelDescriptor();
       if (sm != null) {
@@ -603,10 +605,10 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
   }
 
-  public void applyNonTypesystemRulesToRoot(List<SModelEvent> events) {
+  public void applyNonTypesystemRulesToRoot() {
     SNode root = myRootNode;
     if (root == null) return;
-    doInvalidateNonTypesystem(events);
+    doInvalidateNonTypesystem();
     myIsNonTypesystemCheckingInProgress = true;
     try {
       Set<SNode> frontier = new LinkedHashSet<SNode>();
@@ -773,7 +775,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return result;
   }
 
-  private void doInvalidateNonTypesystem(List<SModelEvent> events) {
+  private void doInvalidateNonTypesystem() {
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
     //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
