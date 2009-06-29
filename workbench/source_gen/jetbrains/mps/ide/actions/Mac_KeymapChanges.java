@@ -9,7 +9,6 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide", "ctrl H");
     this.addAction("jetbrains.mps.ide.actions.ShowNodeInfo_Action", "jetbrains.mps.ide", "ctrl Q");
-    this.addAction("jetbrains.mps.ide.actions.GenerateCode_Action", "jetbrains.mps.ide", "ctrl N");
   }
 
   public String getScheme() {

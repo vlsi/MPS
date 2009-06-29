@@ -16,6 +16,7 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAction("jetbrains.mps.ide.actions.TestNodePath_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CellProperties_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GenerateCode_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowCellInExplorer_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action", "jetbrains.mps.ide");
