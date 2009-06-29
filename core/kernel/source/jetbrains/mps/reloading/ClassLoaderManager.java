@@ -126,9 +126,6 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Rebuilding ui...");
       callAfterReloadHandlers();
-
-      indicator.setText2("Collecting garbage...");
-      System.gc();
     } finally {
       indicator.popState();
     }
