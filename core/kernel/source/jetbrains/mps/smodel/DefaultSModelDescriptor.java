@@ -181,7 +181,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   private void tryFixingVersion() {
-    /*
     if (getVersion() != -1) return;
 
     int maxVersion = -1;
@@ -193,7 +192,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       setVersion(maxVersion);
       LOG.error("Metadata file for model " + getSModelFqName() + " wasn't present. Recreated a new one.");
     }
-    */
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
@@ -217,14 +215,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       SModelRepository.getInstance().markChanged(mySModel);
     }
 
-    /*
     // broken model fixing code
     if (currentVersion < usedVersion) {
 
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
         if (modelDescriptor instanceof DefaultSModelDescriptor) {
-          ((DefaultSModelDescriptor) modelDescriptor).tryFixingVersion();
+          modelDescriptor.getSModel();
         }
 
         if (modelDescriptor.getVersion() == usedVersion) return;
@@ -236,7 +233,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       SModelRepository.getInstance().markChanged(mySModel);
       LOG.error("Mismatch fixed");
     }
-    */
   }
 
   private void addListenersToNewModel() {
