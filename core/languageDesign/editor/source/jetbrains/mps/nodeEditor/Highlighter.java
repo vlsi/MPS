@@ -246,16 +246,15 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
     }
 
-    if (isUpdated) { //why do we need this code? it's looks like a hack.
-      IEditor currentEditor = getCurrentEditor();
-      if (currentEditor != null) {
-        currentEditor.repaint();
-        EditorComponent component = currentEditor.getCurrentEditorComponent();
+    if (isUpdated) {
+      for (IEditor editor : allEditors) {
+        editor.repaint();
+        EditorComponent component = editor.getCurrentEditorComponent();
         if (component != null) {
           component.getMessagesGutter().repaint();
         }
       }
-    }
+    }        
 
     for (IEditorChecker checker : checkers) {
       checker.checkingIterationFinished();
@@ -270,10 +269,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
       return list;
     }
-  }
-
-  protected IEditor getCurrentEditor() {
-    return myEditorsProvider.getCurrentEditor();
   }
 
   public static void runUpdateMessagesAction(Runnable updateAction) {

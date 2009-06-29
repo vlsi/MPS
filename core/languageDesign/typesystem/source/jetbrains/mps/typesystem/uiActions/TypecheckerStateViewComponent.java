@@ -79,7 +79,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        IEditor currentEditor = myEditorsProvider.getCurrentEditor();
+        IEditor currentEditor = myEditorsProvider.getAllEditors().get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {

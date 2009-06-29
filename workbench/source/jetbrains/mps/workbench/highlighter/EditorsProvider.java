@@ -38,7 +38,6 @@ public class EditorsProvider {
   private Project myProject;
 
   private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
-  private MPSFileNodeEditor myCurrentEditor;
 
   private final Object myLock = new Object();
 
@@ -63,25 +62,15 @@ public class EditorsProvider {
   private void updateInformation() {
     synchronized (myLock) {
       myEditors.clear();
-      myCurrentEditor = null;
 
       FileEditorManager fileEditorManager = FileEditorManager.getInstance(myProject);
-      for (FileEditor fileEditor : fileEditorManager.getAllEditors()) {
+      for (FileEditor fileEditor : fileEditorManager.getSelectedEditors()) {
         if (fileEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
           IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
           if (nodeEditor != null) {
             myEditors.add(mpsFileNodeEditor);
           }
-        }
-      }
-
-      FileEditor[] selectedEditors = fileEditorManager.getSelectedEditors();
-      if (selectedEditors.length > 0) {
-        FileEditor fileEditor = selectedEditors[0];
-        if (fileEditor instanceof MPSFileNodeEditor) {
-          MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
-          myCurrentEditor = mpsFileNodeEditor;
         }
       }
     }
@@ -94,13 +83,6 @@ public class EditorsProvider {
         result.add(e.getNodeEditor());
       }
       return result;
-    }
-  }
-
-  public IEditor getCurrentEditor() {
-    synchronized (myLock) {
-      if (myCurrentEditor == null) return null;
-      return myCurrentEditor.getNodeEditor();
     }
   }
 }
