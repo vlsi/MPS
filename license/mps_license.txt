@@ -21,7 +21,7 @@ IMPORTANT! READ CAREFULLY: THIS IS A LEGAL AGREEMENT. BY DOWNLOADING, INSTALLING
 (a)	All content of MPS except Third Party Software and IDE Framework is provided to You under the terms and conditions of the Apache License, Version 2.0. You may obtain a copy of the Apache License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed in writing, MPS is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the Apache License for the specific language governing permissions and limitations under the Apache License.
 
 (b)	Licensor grants You the right to use and distribute IDE Framework without limitations, provided that:
- - You don't alternate the content of IDE Framework
+ - You don't alter the content of IDE Framework
  - You redistribute it only as the part of MPS or any software, derived from MPS
 Unless required by applicable law or agreed in writing, IDE framework is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  - Redistributions reproduce conditions of this paragraph 3(b), the disclaimer included in Paragraph 4 hereunder and the following copyright notice:
