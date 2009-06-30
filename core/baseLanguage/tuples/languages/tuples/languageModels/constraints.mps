@@ -447,11 +447,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1240573261781" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1240573261782">
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240573261783">
-                          <property name="value" value="0" />
-                        </node>
-                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="3155587046936690291" />
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240573261784">
