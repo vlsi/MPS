@@ -50,7 +50,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
-    setPopup(true);
+    setPopup(false);
   }
 
   public CreateRootNodeGroup(boolean plain) {

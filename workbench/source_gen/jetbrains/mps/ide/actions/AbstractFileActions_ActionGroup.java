@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractFileActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions";
+  public static final String LABEL_ID_fileManipulations = ID + "fileManipulations";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public AbstractFileActions_ActionGroup() {
@@ -15,10 +16,7 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.ide.projectPane.fileSystem.actions.FileCutAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.projectPane.fileSystem.actions.FileCopyAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.projectPane.fileSystem.actions.FilePasteAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed", "jetbrains.mps.ide");
+      this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_fileManipulations);
       this.addSeparator();
       this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     } catch (Throwable t) {
