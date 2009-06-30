@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
+import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponentNew;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
