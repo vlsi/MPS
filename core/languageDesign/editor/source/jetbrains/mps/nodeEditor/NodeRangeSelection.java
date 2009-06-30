@@ -105,36 +105,21 @@ public class NodeRangeSelection implements KeyboardHandler {
   }
 
   public boolean activate(KeyEvent keyEvent) {
-    // find appropriate node
     EditorCell selectedCell = myEditorComponent.getSelectedCell();
-    SNode childNode = selectedCell.getSNode();
-    SNode parentNode = childNode.getParent();
-    String role = null;
-    while (parentNode != null) {
-      role = childNode.getRole_();
-      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);      
+    SNode childNode = findAppropriateNode(selectedCell);
 
-      if (childDeclaration == null) {
-        if (! AttributesRolesUtil.isAttributeRole(role)) {
-          break;
-        }
-      } else {
-        Cardinality cardinality = childDeclaration.getSourceCardinality();
-        if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
-          break;
-        }
-      }
-      childNode = parentNode;
-      parentNode = childNode.getParent();
+    if (childNode != selectedCell.getSNode()) {
+      myEditorComponent.selectNode(childNode);
+      return true;
     }
 
-    if (parentNode == null) {
+    if (childNode.getParent() == null) {
       return false;
     }
 
     myActive = true;
-    myRole = role;
-    myParentNode = parentNode;
+    myRole = childNode.getRole_();
+    myParentNode = childNode.getParent();
     myFirstNode = childNode;
     myLastNode = childNode;
     myEditorComponent.repaint();
@@ -148,6 +133,30 @@ public class NodeRangeSelection implements KeyboardHandler {
 
     processKeyPressed(myEditorComponent.getEditorContext(), keyEvent);
     return true;
+  }
+
+  private SNode findAppropriateNode(EditorCell selectedCell) {
+    SNode childNode = selectedCell.getSNode();
+    SNode parentNode = childNode.getParent();
+    String role = null;
+    while (parentNode != null) {
+      role = childNode.getRole_();
+      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);
+
+      if (childDeclaration == null) {
+        if (!AttributesRolesUtil.isAttributeRole(role)) {
+          break;
+        }
+      } else {
+        Cardinality cardinality = childDeclaration.getSourceCardinality();
+        if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
+          break;
+        }
+      }
+      childNode = parentNode;
+      parentNode = childNode.getParent();
+    }
+    return childNode;
   }
 
   public List<SNode> getNodes() {
@@ -231,22 +240,13 @@ public class NodeRangeSelection implements KeyboardHandler {
 
         deactivate();
       }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_CONTROL
-        || keyEvent.getKeyCode() == KeyEvent.VK_SHIFT
-        || keyEvent.getKeyCode() == KeyEvent.VK_ALT) {
-        return false;
-      }
-
-      SNode nodeToSelect = myFirstNode;
-      deactivate();
-      myEditorComponent.selectNode(nodeToSelect);
-      myEditorComponent.peekKeyboardHandler().processKeyPressed(editorContext, keyEvent);
+      // eat it anyway
       return false;
     }
 
     boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);
     SNode newLastNode = null;
-    List<SNode> children = ModelAccess.instance(). runReadAction(new Computable<List<SNode>>() {
+    List<SNode> children = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
         return myParentNode.getChildren(myRole);
       }
@@ -291,7 +291,7 @@ public class NodeRangeSelection implements KeyboardHandler {
           new DeleteNodesHelper(getNodes(), editorContext.getOperationContext(), false).deleteNodes(false);
         }
       });
-    } else if (getNodes().size() == 1){
+    } else if (getNodes().size() == 1) {
       SNode semanticNode = getNodes().get(0);
 
       EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);

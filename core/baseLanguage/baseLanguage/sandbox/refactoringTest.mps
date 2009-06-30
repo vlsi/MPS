@@ -64,6 +64,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1452412866770392992">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1452412866770392993">
+            <property name="value" value="3" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2838174361596911146">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8653018021044929206">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="8653018021044982313">
