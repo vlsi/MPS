@@ -15,8 +15,8 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext) {
-    SNode mappingType = new _Quotations.QuotationClass_182().createNode(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true), typeCheckingContext);
-    return new _Quotations.QuotationClass_183().createNode(mappingType, typeCheckingContext);
+    SNode mappingType = new _Quotations.QuotationClass_171().createNode(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_172().createNode(mappingType, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

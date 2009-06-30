@@ -21,7 +21,7 @@ public class typeof_AddFirstElementOperation_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(operation), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227022664189", true), (SNode)new _Quotations.QuotationClass_116().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1227022664180), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227022664181", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(operation), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227022664189", true), (SNode)new _Quotations.QuotationClass_105().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1227022664180), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227022664181", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;

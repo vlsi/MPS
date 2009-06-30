@@ -14,7 +14,7 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_43().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_36().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

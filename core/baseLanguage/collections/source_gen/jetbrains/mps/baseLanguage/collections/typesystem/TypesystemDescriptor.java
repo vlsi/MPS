@@ -17,14 +17,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_SequenceCreatorWithSupplier_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ValueSupplierBlock_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_SkipOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -34,18 +26,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_PageOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new check_TraversalYieldStatement_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new check_TraversalStopStatement_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new check_TraversalSkipStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -66,30 +46,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ContainsOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MapOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MapperBlock_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_DefaultInputElement_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_WhereOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SortOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SelectOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -146,14 +102,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ToArrayOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ToSetListOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_CountOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -556,26 +504,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
 
         public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          if (targetNode.getRole_().equals("supplier")) {
-            return SNodeOperations.getParent(targetNode);
-          }
-          return null;
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.ValueSupplierBlock";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
-        public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.SkipOperation";
         }
 
@@ -628,57 +556,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.ToListOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.MappingOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return SNodeOperations.getParent(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.MapperBlock";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.WhereOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.SortOperation";
         }
 
         public SNode getSourceNode(SNode targetNode) {

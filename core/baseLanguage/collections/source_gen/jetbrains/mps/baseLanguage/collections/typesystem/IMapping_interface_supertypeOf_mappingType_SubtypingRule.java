@@ -15,7 +15,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode mappingType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_175().createNode(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_164().createNode(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -15,7 +15,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_176().createNode(this.myMatchingPattern.PatternVar12, this.myMatchingPattern.PatternVar13, typeCheckingContext);
+    return new _Quotations.QuotationClass_165().createNode(this.myMatchingPattern.PatternVar12, this.myMatchingPattern.PatternVar13, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

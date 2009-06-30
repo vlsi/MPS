@@ -23,7 +23,7 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
       {
         SNode _nodeToCheck_1029348928467 = forEachStatement;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createGreaterThanInequation((SNode)new _Quotations.QuotationClass_19().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184771826645), typeCheckingContext), (SNode)typeCheckingContext.typeOf(inputSequence, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184772149783", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184772149777", false, 0, intentionProvider);
+        typeCheckingContext.createGreaterThanInequation((SNode)new _Quotations.QuotationClass_12().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184771826645), typeCheckingContext), (SNode)typeCheckingContext.typeOf(inputSequence, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184772149783", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184772149777", false, 0, intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = forEachStatement;

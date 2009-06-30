@@ -69,21 +69,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207061041902">
-    <link role="conceptDeclaration" targetNodeId="1.1153760737019" resolveInfo="WhereOperation" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1207061041903">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207061041904">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1207061043639">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207061044970">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1207061044688" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207061046285">
-              <link role="link" targetNodeId="1.1153760925150" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207062862628">
     <link role="conceptDeclaration" targetNodeId="1.1160666733551" resolveInfo="AddAllElementsOperation" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1207062862629">
