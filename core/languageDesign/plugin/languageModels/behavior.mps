@@ -796,19 +796,6 @@
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392391" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392392" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305149010">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305149013">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305153840">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305153841">
-            <property name="value" value="Fix Action Caption" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305153838" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305153839" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877425710">
     <property name="package" value="Tool" />
@@ -1035,19 +1022,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392458" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392459" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305280441">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305280444">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305280448">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305280449">
-            <property name="value" value="Fix Caption" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305280446" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305280447" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877431630">
@@ -1377,19 +1351,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392407" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392408" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305156395">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305156398">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305156402">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305156403">
-            <property name="value" value="Fix Group Caption" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305156400" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305156401" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877531574">
@@ -1985,19 +1946,6 @@
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392420" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392421" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305175519">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305175522">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305181068">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305181069">
-            <property name="value" value="Fix Name" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305175523" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305175524" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1218036145468">
     <property name="package" value="FileGenerator" />
@@ -2315,19 +2263,6 @@
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392444" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392445" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305278392">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305278395">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305278399">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305278400">
-            <property name="value" value="Fix Caption" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305278397" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305278398" />
-    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7840798570674946776">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7840798570674946777" />
     </node>
@@ -2466,19 +2401,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="5003188907305392435" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305392436" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305279285">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305279288">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305279292">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305279293">
-            <property name="value" value="Fix Caption" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5003188907305279290" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5003188907305279291" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7840798570674951625">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7840798570674951626" />
@@ -2756,20 +2678,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907305392325">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5003188907305392328">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5003188907305392330" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1628770029971140579">
-      <property name="name" value="getFixIntentionCaption" />
-      <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="false" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1628770029971140580" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1628770029971140581" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140582">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305277213">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305277214">
-            <property name="value" value="Fix Naming Issues" />
-          </node>
         </node>
       </node>
     </node>

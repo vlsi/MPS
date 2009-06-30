@@ -134,19 +134,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724986" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="214376853586011700">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="8.1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="214376853586011703">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="214376853586011720">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="214376853586011721">
-            <property name="value" value="Fix Finder Name" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="214376853586011704" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="214376853586011705" />
-    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5003188907305392372">
       <property name="name" value="getPropertyToCheck" />
       <link role="overriddenMethod" targetNodeId="8.5003188907305392322" resolveInfo="getPropertyToCheck" />

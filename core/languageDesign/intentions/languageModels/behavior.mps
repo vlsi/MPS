@@ -141,19 +141,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2180200154984979549" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2180200154984979573">
-      <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="7.1628770029971140579" resolveInfo="getFixIntentionCaption" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2180200154984979576">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2180200154984979580">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2180200154984979581">
-            <property name="value" value="Fix Intention Description" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="2180200154984979578" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2180200154984979579" />
-    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877237647">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877237648" />
     </node>

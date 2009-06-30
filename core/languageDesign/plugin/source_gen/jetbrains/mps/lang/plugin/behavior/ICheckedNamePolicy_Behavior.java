@@ -14,7 +14,6 @@ public class ICheckedNamePolicy_Behavior {
   private static Class[] PARAMETERS_1628770029971140562 = {SNode.class};
   private static Class[] PARAMETERS_1628770029971140570 = {SNode.class};
   private static Class[] PARAMETERS_5003188907305392322 = {SNode.class};
-  private static Class[] PARAMETERS_1628770029971140579 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -36,10 +35,6 @@ public class ICheckedNamePolicy_Behavior {
     return null;
   }
 
-  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
-    return "Fix Naming Issues";
-  }
-
   public static List<SNode> call_getDescendantsToCheck_1628770029971140562(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), "virtual_getDescendantsToCheck_1628770029971140562", PARAMETERS_1628770029971140562);
   }
@@ -52,10 +47,6 @@ public class ICheckedNamePolicy_Behavior {
     return (PropertyReference)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), "virtual_getPropertyToCheck_5003188907305392322", PARAMETERS_5003188907305392322);
   }
 
-  public static String call_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), "virtual_getFixIntentionCaption_1628770029971140579", PARAMETERS_1628770029971140579);
-  }
-
   public static List<SNode> callSuper_getDescendantsToCheck_1628770029971140562(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantsToCheck_1628770029971140562", PARAMETERS_1628770029971140562);
   }
@@ -66,10 +57,6 @@ public class ICheckedNamePolicy_Behavior {
 
   public static PropertyReference callSuper_getPropertyToCheck_5003188907305392322(SNode thisNode, String callerConceptFqName) {
     return (PropertyReference)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertyToCheck_5003188907305392322", PARAMETERS_5003188907305392322);
-  }
-
-  public static String callSuper_getFixIntentionCaption_1628770029971140579(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getFixIntentionCaption_1628770029971140579", PARAMETERS_1628770029971140579);
   }
 
 }

@@ -33,10 +33,6 @@ public class IntentionDeclaration_Behavior {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "body", true), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
   }
 
-  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
-    return "Fix Intention Description";
-  }
-
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
   }

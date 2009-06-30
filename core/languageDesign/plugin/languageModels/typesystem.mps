@@ -1284,14 +1284,9 @@
     </node>
     <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="1628770029971140668">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140669">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1628770029971140670">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1628770029971140671">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="1628770029971140672">
-              <link role="quickFixArgument" targetNodeId="1628770029971140614" resolveInfo="nodeToFix" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1628770029971140673">
-              <link role="baseMethodDeclaration" targetNodeId="30.1628770029971140579" resolveInfo="getFixIntentionCaption" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5003188907305524502">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5003188907305524503">
+            <property name="value" value="Fix Naming Issues" />
           </node>
         </node>
       </node>
@@ -1446,7 +1441,7 @@
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1628770029971140735">
                     <link role="quickFixArgument" targetNodeId="1628770029971140675" resolveInfo="caption" />
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140736">
-                      <property name="value" value="Adopt String for Naming Policy" />
+                      <property name="value" value="Fix String" />
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1628770029971140737">
@@ -1548,12 +1543,16 @@
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1628770029971140776">
                     <link role="quickFixArgument" targetNodeId="1628770029971140675" resolveInfo="caption" />
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1628770029971140777">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1628770029971140778">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1628770029971140779">
-                          <link role="variableDeclaration" targetNodeId="1628770029971140794" resolveInfo="p" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1628770029971140780">
-                          <link role="baseMethodDeclaration" targetNodeId="33.~PropertyReference.getProperty():java.lang.String" resolveInfo="getProperty" />
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5003188907305524097">
+                        <link role="baseMethodDeclaration" targetNodeId="32.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
+                        <link role="classConcept" targetNodeId="32.~NameUtil" resolveInfo="NameUtil" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5003188907305524098">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5003188907305524099">
+                            <link role="variableDeclaration" targetNodeId="1628770029971140794" resolveInfo="p" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5003188907305524100">
+                            <link role="baseMethodDeclaration" targetNodeId="33.~PropertyReference.getProperty():java.lang.String" resolveInfo="getProperty" />
+                          </node>
                         </node>
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140781">
