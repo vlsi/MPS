@@ -159,12 +159,6 @@
                     <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1201777195138">
                       <link role="concept" targetNodeId="1.1199569711397" resolveInfo="ClosureLiteral" />
                     </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1201777195139">
-                      <link role="concept" targetNodeId="6.1153509719989" resolveInfo="ClosureWithInputElement" />
-                    </node>
-                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1201777195140">
-                      <link role="concept" targetNodeId="6.1152125346253" resolveInfo="ValueSupplierBlock" />
-                    </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1201777226467" />
                 </node>
