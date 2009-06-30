@@ -81,11 +81,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="16" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
+  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488840">
     <property name="name" value="FindBlock" />
     <property name="package" value="Methods" />
@@ -110,7 +111,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488845">
     <property name="rootable" value="true" />
     <property name="name" value="FinderDeclaration" />
@@ -133,7 +133,7 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="214376853586011699">
-      <link role="intfc" targetNodeId="2v.2180200154984979524" resolveInfo="ICheckedNamePolicy" />
+      <link role="intfc" targetNodeId="16.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488852">

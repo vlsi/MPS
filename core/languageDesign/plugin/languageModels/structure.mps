@@ -2930,5 +2930,43 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1628770029971140533">
+    <property name="name" value="ICheckedNamePolicy" />
+    <property name="package" value="CheckedName" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1628770029971140534">
+    <property name="name" value="PropertyRefExpression" />
+    <property name="package" value="CheckedName" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1628770029971140535">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nodeExpr" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1628770029971140536">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="propertyDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="8.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1628770029971140537">
+      <property name="value" value="property/&lt;node&gt;,&lt;role&gt;/" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1628770029971140538">
+      <property name="value" value="property reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1628770029971140539">
+    <property name="package" value="CheckedName" />
+    <property name="name" value="PropertyRefType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1628770029971140540">
+      <property name="value" value="propRef" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -529,6 +529,10 @@ public class QueriesGenerated {
     return KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_5003188907304823222(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_6277721878946467558(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return KeymapChangesDeclaration_Behavior.call_getGeneratedName_6277721878946468943(_context.getNode());
   }
@@ -1120,6 +1124,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3734045384532260919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "item", true);
+  }
+
+  public static SNode sourceNodeQuery_5003188907304823214(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeExpr", true);
   }
 
   public static SNode sourceNodeQuery_5834814271541225961(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

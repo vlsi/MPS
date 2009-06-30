@@ -9,6 +9,8 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -41,7 +43,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="25" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -57,6 +60,7 @@
   <import index="23" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877188145">
     <property name="package" value="Actions.Action" />
     <link role="concept" targetNodeId="1.1205852320419" resolveInfo="ActionType" />
@@ -2452,6 +2456,58 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1171743928471337369">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471337370" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1628770029971140559">
+    <property name="package" value="CheckedName" />
+    <link role="concept" targetNodeId="1.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1628770029971140560">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140561" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1628770029971140562">
+      <property name="name" value="getDescendantsToCheck" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="false" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1628770029971140563" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1628770029971140564">
+        <link role="elementConcept" targetNodeId="6.1070475926800" resolveInfo="StringLiteral" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140565">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1628770029971140566">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1628770029971140567">
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1628770029971140568">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1628770029971140569">
+                <link role="elementConcept" targetNodeId="6.1070475926800" resolveInfo="StringLiteral" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1628770029971140570">
+      <property name="name" value="getPropertiesToCheck" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1628770029971140571" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140572">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1628770029971140573">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1628770029971140574">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1628770029971140575">
+              <node role="elementType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="1628770029971140576" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1628770029971140577">
+        <node role="elementType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="1628770029971140578" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1628770029971140579">
+      <property name="name" value="getFixIntentionCaption" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1628770029971140580" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1628770029971140581" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1628770029971140582" />
     </node>
   </node>
 </model>

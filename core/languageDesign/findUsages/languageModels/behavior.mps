@@ -5,8 +5,8 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
-  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -31,14 +31,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877240100">
     <link role="concept" targetNodeId="1.1197044488845" resolveInfo="FinderDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877240101">
@@ -133,7 +136,7 @@
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="214376853586011700">
       <property name="name" value="getFixIntentionCaption" />
-      <link role="overriddenMethod" targetNodeId="2v.2180200154984979537" resolveInfo="getFixIntentionCaption" />
+      <link role="overriddenMethod" targetNodeId="8.1628770029971140579" resolveInfo="getFixIntentionCaption" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="214376853586011703">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="214376853586011720">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="214376853586011721">
@@ -146,17 +149,17 @@
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="214376853586011713">
       <property name="name" value="getPropertiesToCheck" />
-      <link role="overriddenMethod" targetNodeId="2v.216263776404500459" resolveInfo="getPropertiesToCheck" />
+      <link role="overriddenMethod" targetNodeId="8.1628770029971140570" resolveInfo="getPropertiesToCheck" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="214376853586011716">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="214376853586029972">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="214376853586029973">
             <property name="name" value="result" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="214376853586029974">
-              <node role="elementType" type="jetbrains.mps.lang.intentions.structure.PropertyRefType" id="214376853586029975" />
+              <node role="elementType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="214376853586029975" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="214376853586029976">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="214376853586029977">
-                <node role="elementType" type="jetbrains.mps.lang.intentions.structure.PropertyRefType" id="214376853586029978" />
+                <node role="elementType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="214376853586029978" />
               </node>
             </node>
           </node>
@@ -167,7 +170,7 @@
               <link role="variableDeclaration" targetNodeId="214376853586029973" resolveInfo="result" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="214376853586029987">
-              <node role="argument" type="jetbrains.mps.lang.intentions.structure.PropertyRefExpression" id="214376853586029990">
+              <node role="argument" type="jetbrains.mps.lang.plugin.structure.PropertyRefExpression" id="214376853586029990">
                 <link role="propertyDeclaration" targetNodeId="1.1197385993272" resolveInfo="description" />
                 <node role="nodeExpr" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="214376853586029991" />
               </node>
@@ -181,7 +184,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="214376853586011717">
-        <node role="elementType" type="jetbrains.mps.lang.intentions.structure.PropertyRefType" id="214376853586011718" />
+        <node role="elementType" type="jetbrains.mps.lang.plugin.structure.PropertyRefType" id="214376853586011718" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="214376853586011719" />
     </node>

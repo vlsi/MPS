@@ -29,11 +29,11 @@ public class IntentionDeclaration_Behavior {
     return false;
   }
 
-  public static List<SNode> virtual_getDescendantsToCheck_2180200154984979528(SNode thisNode) {
+  public static List<SNode> virtual_getDescendantsToCheck_1628770029971140562(SNode thisNode) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "body", true), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
   }
 
-  public static String virtual_getFixIntentionCaption_2180200154984979537(SNode thisNode) {
+  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
     return "Fix Intention Description";
   }
 

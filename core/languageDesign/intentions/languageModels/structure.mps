@@ -52,11 +52,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192794744107">
     <property name="rootable" value="true" />
     <property name="name" value="IntentionDeclaration" />
@@ -97,7 +98,7 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2180200154984979542">
-      <link role="intfc" targetNodeId="2180200154984979524" resolveInfo="ICheckedNamePolicy" />
+      <link role="intfc" targetNodeId="10.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192794782375">
@@ -244,44 +245,6 @@
       <property name="role" value="queryBlock" />
       <link role="target" targetNodeId="1240316299033" resolveInfo="QueryBlock" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="99724900834499790">
-    <property name="package" value="CheckedName" />
-    <property name="name" value="PropertyRefType" />
-    <link role="extends" targetNodeId="3.1068431790189" resolveInfo="Type" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8876036231953989304">
-      <property name="value" value="propRef" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="99724900834491666">
-    <property name="name" value="PropertyRefExpression" />
-    <property name="package" value="CheckedName" />
-    <link role="extends" targetNodeId="3.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="99724900834491696">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeExpr" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="99724900834491668">
-      <property name="metaClass" value="reference" />
-      <property name="role" value="propertyDeclaration" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1071489288299" resolveInfo="PropertyDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="99724900834491669">
-      <property name="value" value="property/&lt;node&gt;,&lt;role&gt;/" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="99724900834491670">
-      <property name="value" value="property reference" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="2180200154984979524">
-    <property name="name" value="ICheckedNamePolicy" />
-    <property name="package" value="CheckedName" />
   </node>
 </model>
 

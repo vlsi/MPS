@@ -31,11 +31,11 @@ public class FinderDeclaration_Behavior {
     return ((SModel)SNodeOperations.getModel(thisNode)).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
   }
 
-  public static String virtual_getFixIntentionCaption_2180200154984979537(SNode thisNode) {
+  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
     return "Fix Finder Name";
   }
 
-  public static List<PropertyReference> virtual_getPropertiesToCheck_216263776404500459(SNode thisNode) {
+  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
     List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
     ListSequence.fromList(result).addElement(new PropertyReference(thisNode, "description"));
     return result;

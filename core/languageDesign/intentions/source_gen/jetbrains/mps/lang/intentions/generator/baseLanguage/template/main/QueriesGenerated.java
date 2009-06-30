@@ -40,10 +40,6 @@ public class QueriesGenerated {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_214376853585892573(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false), "name");
-  }
-
   public static Object referenceMacro_GetReferent_4945049520561168160(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
   }
@@ -82,10 +78,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2011896947621803615(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
-  }
-
-  public static SNode sourceNodeQuery_214376853585892565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeExpr", true);
   }
 
   public static SNode sourceNodeQuery_4945049520561168189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
