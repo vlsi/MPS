@@ -1358,11 +1358,8 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207145771679">
-      <property name="value" value="add" />
+      <property name="value" value="addJavaAction" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1227452193184">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1227012987922" />
   </node>
@@ -2548,8 +2545,8 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1239975563671">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1239976806302">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239976867257">
-          <link role="classifier" targetNodeId="31.~BaseAction" resolveInfo="BaseAction" />
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5859946286846038622">
+          <link role="classifier" targetNodeId="22.~AnAction" resolveInfo="AnAction" />
         </node>
       </node>
     </node>

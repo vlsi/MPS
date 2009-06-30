@@ -26,6 +26,9 @@ import jetbrains.mps.workbench.InternalFlag;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class BaseGroup extends DefaultActionGroup {
   private String myId = "";
@@ -101,7 +104,20 @@ public class BaseGroup extends DefaultActionGroup {
   }
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> condition) {
-    for (AnAction child : getChildren(null)) {
+    List actionList = Arrays.asList(getChildren(null));
+    addPlaceToActionList(actionList, place, condition);
+  }
+
+  public void adjust() {
+
+  }
+
+  protected void doUpdate(AnActionEvent e) {
+
+  }
+
+  protected static void addPlaceToActionList(List<AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {
+    for (AnAction child : actions) {
       if (child instanceof BaseGroup) {
         ((BaseGroup) child).addPlace(place, condition);
       } else if (child instanceof BaseAction) {
@@ -111,13 +127,5 @@ public class BaseGroup extends DefaultActionGroup {
         }
       }
     }
-  }
-
-  public void adjust() {
-
-  }
-
-  protected void doUpdate(AnActionEvent e) {
-
   }
 }

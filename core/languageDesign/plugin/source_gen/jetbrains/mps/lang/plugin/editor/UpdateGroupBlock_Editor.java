@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 
 public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
 
@@ -28,12 +27,8 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_9179_1(context, node));
-    if (renderingCondition9179_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_9179_0(context, node, ""));
-    }
-    if (renderingCondition9179_1(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_9179_3(context, node));
-    }
+    editorCell.addEditorCell(this.createConstant_9179_0(context, node, ""));
+    editorCell.addEditorCell(this.createRefNode_9179_3(context, node));
     return editorCell;
   }
 
@@ -125,14 +120,6 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_RefNode_9179_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean renderingCondition9179_0(SNode node, EditorContext editorContext, IScope scope) {
-    return false;
-  }
-
-  public static boolean renderingCondition9179_1(SNode node, EditorContext editorContext, IScope scope) {
-    return false;
   }
 
 }

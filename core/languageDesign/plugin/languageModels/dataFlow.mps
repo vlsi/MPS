@@ -203,5 +203,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="5003188907306360695">
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.1207145475354" resolveInfo="AddElementStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="5003188907306360696">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907306360697">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="5003188907306360698">
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5003188907306360701">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="5003188907306360700" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5003188907306360705">
+              <link role="link" targetNodeId="1.1207145494930" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

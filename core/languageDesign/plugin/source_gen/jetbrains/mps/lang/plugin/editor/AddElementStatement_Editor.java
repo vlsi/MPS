@@ -27,7 +27,7 @@ public class AddElementStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_3560_0(context, node, "add"));
+    editorCell.addEditorCell(this.createConstant_3560_0(context, node, "addJavaAction"));
     editorCell.addEditorCell(this.createRefNode_3560_1(context, node));
     editorCell.addEditorCell(this.createConstant_3560_1(context, node, ";"));
     return editorCell;

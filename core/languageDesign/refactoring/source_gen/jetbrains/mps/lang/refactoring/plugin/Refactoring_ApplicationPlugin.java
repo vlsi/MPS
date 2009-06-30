@@ -14,7 +14,7 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.refactoring";
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.refactoring.plugin.Refactoring_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup");
     return groups;
   }
 

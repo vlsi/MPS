@@ -7467,21 +7467,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1222173496701">
-    <property name="package" value="Menu.ProjectPane.Model" />
-    <property name="name" value="ModelRefactoring" />
-    <property name="isPopup" value="true" />
-    <property name="caption" value="Refactoring" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1222173514374">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="6840593892233917935">
-        <link role="action" targetNodeId="6840593892233915864" resolveInfo="RenameModel" />
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1222173607728">
-      <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
-      <link role="point" targetNodeId="1222173595836" resolveInfo="refactoring" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1222347871198">
     <property name="package" value="Menu.ProjectPane.Module.Language" />
     <property name="name" value="LanguageRefactoring" />
@@ -21119,6 +21104,21 @@
           <link role="classifier" targetNodeId="80.~IEditor" resolveInfo="IEditor" />
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1222173496701">
+    <property name="package" value="Menu.ProjectPane.Model" />
+    <property name="name" value="ModelRefactoring" />
+    <property name="isPopup" value="true" />
+    <property name="caption" value="Refactoring" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1222173514374">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="6840593892233917935">
+        <link role="action" targetNodeId="6840593892233915864" resolveInfo="RenameModel" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1222173607728">
+      <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
+      <link role="point" targetNodeId="1222173595836" resolveInfo="refactoring" />
     </node>
   </node>
 </model>

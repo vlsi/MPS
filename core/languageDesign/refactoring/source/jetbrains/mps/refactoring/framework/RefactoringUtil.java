@@ -40,6 +40,19 @@ public class RefactoringUtil {
     return allRefactorings;
   }
 
+  public static Map<Class, ILoggableRefactoring> getRefactorings(RefactoringTarget target) {
+    Map<Class, ILoggableRefactoring> result = new HashMap<Class, ILoggableRefactoring>();
+
+    Map<Class, ILoggableRefactoring> refactorings = getAllRefactorings();
+    for (Class refClass:refactorings.keySet()){
+      ILoggableRefactoring refactoring = refactorings.get(refClass);
+      if (refactoring.getRefactoringTarget()==target){
+        result.put(refClass,refactoring);
+      }
+    }
+    return result;
+  }
+
   public static boolean isApplicableInContext(ILoggableRefactoring refactoring, List<SNode> nodes) {
     if (!isApplicableToNodes(refactoring, nodes)) return false;
 

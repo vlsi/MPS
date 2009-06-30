@@ -11,6 +11,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.List;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
@@ -26,6 +28,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private List<AnAction> myAllActions;
 
   public NamespaceInternalActions_ActionGroup() {
     super("NamespaceInternalActions", ID);
@@ -56,13 +59,12 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
     for(Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
-      super.addPlace(p.first, p.second);
+      this.addPlace(p.first, p.second);
     }
   }
 
   public void addPlace(ActionPlace place, @Nullable() Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-    super.addPlace(place, cond);
   }
 
   public void adjust() {
