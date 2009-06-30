@@ -1232,7 +1232,7 @@ public final class SNode {
     if (ModelChange.needFireEvents(getModel(), this)) {
       getModel().fireReferenceAddedEvent(reference);
     }
-  }
+}
 
   void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);
