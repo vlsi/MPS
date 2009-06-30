@@ -637,7 +637,7 @@
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1210952509952">
-      <property name="modifiers" value="ctrl+shift" />
+      <property name="modifiers" value="alt+shift" />
       <property name="keycode" value="VK_M" />
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1210952584861">
