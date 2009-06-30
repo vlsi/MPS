@@ -1129,30 +1129,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205675355325">
-    <property name="package" value="Actions.Groups.GroupMembers" />
-    <property name="name" value="ParameterizedActionCreator" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205675413186">
-      <property name="role" value="constructorDeclaration" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068580123140" resolveInfo="ConstructorDeclaration" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205675486953">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="actualArgument" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205675508671">
-      <property name="value" value="java action" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205676232975">
-      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
-    </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1227012955733" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1205676676847">
     <property name="package" value="Actions.Groups" />
     <property name="name" value="mnemonic" />
