@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new ParameterizedActionCreator_constructorDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ModificationStatement_point_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ModificationStatement_modifiedGroup_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ActionDataParameterDeclaration_key_ReferentConstraint());

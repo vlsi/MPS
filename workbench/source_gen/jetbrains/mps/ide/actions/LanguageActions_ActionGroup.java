@@ -9,7 +9,6 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = ID + "newGroup";
-  public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
@@ -22,7 +21,8 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
       this.addSeparator();
-      this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_generateModule);
+      this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", true);
+      this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", false);
       this.addAction("jetbrains.mps.ide.actions.CheckLanguage_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");

@@ -45,6 +45,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FolderActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModuleActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.LanguageRefactoring_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.SolutionRefactoring_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PackageActions_ActionGroup");
@@ -53,13 +54,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Bookmarks_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModule_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModels_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileManipulations_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModel_ActionGroup");
     return groups;
   }
 

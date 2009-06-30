@@ -4,13 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import com.intellij.ide.actions.SelectInAction;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
   public static final String LABEL_ID_structure = ID + "structure";
-  public static final String LABEL_ID_generateModel = ID + "generateModel";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
@@ -23,7 +21,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", "jetbrains.mps.ide", new SelectInAction());
+      this.addAction("jetbrains.mps.workbench.actions.nodes.SelectInActionAdapter", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowNodeInInspector_Action", "jetbrains.mps.ide");
@@ -35,8 +33,9 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_generateModel);
-      this.addAction("jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.lang.generator.plugin.actions.GoToUsageInMappingConfigAction", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");
